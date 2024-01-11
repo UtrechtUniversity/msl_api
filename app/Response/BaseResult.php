@@ -14,13 +14,13 @@ use App\Response\Elements\Spatial;
 class BaseResult
 {
     public $title = "";
-    
+
     public $name = "";
-    
+
     public $portalLink = "";
-    
+
     public $doi = "";
-    
+
     public $handle = "";
 
     public $license = "";
@@ -47,7 +47,7 @@ class BaseResult
 
     public $laboratories = [];
 
-    public $materials = [];   
+    public $materials = [];
 
     public $spatial = [];
 
@@ -60,16 +60,16 @@ class BaseResult
     public $maintainer = "";
 
     public $downloads = [];
-    
+
     public $researchAspects = [];
-    
 
 
-    public function __construct($data, $context) {        
+
+    public function __construct($data, $context) {
         if(isset($data['title'])) {
             $this->title = $data['title'];
         }
-        
+
         if(isset($data['name'])) {
             $this->name = $data['name'];
             $this->portalLink = config('ckan.ckan_root_url') . 'data-publication/' . $data['name'];
@@ -86,11 +86,11 @@ class BaseResult
         if(isset($data['msl_source'])) {
             $this->source = $data['msl_source'];
         }
-        
+
         if(isset($data['msl_doi'])) {
             $this->doi = $data['msl_doi'];
         }
-        
+
         if(isset($data['msl_handle'])) {
             $this->handle = $data['msl_handle'];
         }
@@ -105,8 +105,8 @@ class BaseResult
                     $this->subdomain[] = $subDomainDataValue['msl_subdomain'];
                 }
             }
-        }        
-        
+        }
+
         if(isset($data['group'])) {
             $this->subdomain = $data['group'];
         }
@@ -166,7 +166,7 @@ class BaseResult
                 }
             }
             $this->materials = array_values(array_unique($this->materials));
-        }        
+        }
 
         if(isset($data['msl_spatial_coordinates'])) {
             if(count($data['msl_spatial_coordinates']) > 0) {
@@ -213,23 +213,23 @@ class BaseResult
                 }
             }
         }
-        
+
         //set researchaspects based on context(calling api function)
         switch ($context) {
-            case 'rockPhysics':                
+            case 'rockPhysics':
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getRockPhysicsKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
-                $this->researchAspects = $keywords;                                
-                break;            
+
+                $this->researchAspects = $keywords;
+                break;
             case 'analogue':
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getAnalogueKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
+
                 $this->researchAspects = $keywords;
                 break;
             case 'paleo':
@@ -237,14 +237,14 @@ class BaseResult
                 $keywords = array_merge($keywords, $this->getPaleomagneticKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
+
                 $this->researchAspects = $keywords;
                 break;
             case 'microscopy':
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
+
                 $this->researchAspects = $keywords;
                 break;
             case 'geochemistry':
@@ -252,45 +252,45 @@ class BaseResult
                 $keywords = array_merge($keywords, $this->getGeochemistryKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
+
                 $this->researchAspects = $keywords;
                 break;
             case 'all':
                 $keywords = [];
-                
+
                 $keywords = array_merge($keywords, $this->getRockPhysicsKeywords($data));
                 $keywords = array_merge($keywords, $this->getAnalogueKeywords($data));
                 $keywords = array_merge($keywords, $this->getPaleomagneticKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeochemistryKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
-                
-                $this->researchAspects = $keywords;                                
+
+                $this->researchAspects = $keywords;
                 break;
-        }        
+        }
 
     }
-    
+
     private function getRockPhysicsKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/rockphysics/1.1/measured_property-', 
-            'https://epos-msl.uu.nl/voc/rockphysics/1.1/inferred_deformation_behavior-'            
+            'https://epos-msl.uu.nl/voc/rockphysics/1.1/measured_property-',
+            'https://epos-msl.uu.nl/voc/rockphysics/1.1/inferred_deformation_behavior-'
         ];
         $keywords = [];
-        
+
         if(isset($data['msl_enriched_keywords'])) {
             foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
                 foreach ($uriStarts as $uriStart) {
                     if(str_starts_with($enrichedKeyword['msl_enriched_keyword_uri'], $uriStart)) {
                         $keywords[] = $enrichedKeyword['msl_enriched_keyword_label'];
                     }
-                }                
+                }
             }
         }
-        
+
         return $keywords;
     }
-    
+
     private function getAnalogueKeywords($data) {
         $uriStarts = [
             'https://epos-msl.uu.nl/voc/analoguemodelling/1.1/modeled_structure-',
@@ -298,7 +298,7 @@ class BaseResult
             'https://epos-msl.uu.nl/voc/analoguemodelling/1.1/measured_property-'
         ];
         $keywords = [];
-        
+
         if(isset($data['msl_enriched_keywords'])) {
             foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
                 foreach ($uriStarts as $uriStart) {
@@ -308,16 +308,16 @@ class BaseResult
                 }
             }
         }
-        
-        return $keywords;        
+
+        return $keywords;
     }
-    
+
     private function getGeologicalSettingKeywords($data) {
         $uriStarts = [
             'https://epos-msl.uu.nl/voc/geologicalsetting/1.1/'
         ];
         $keywords = [];
-        
+
         if(isset($data['msl_enriched_keywords'])) {
             foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
                 foreach ($uriStarts as $uriStart) {
@@ -327,17 +327,17 @@ class BaseResult
                 }
             }
         }
-        
+
         return $keywords;
     }
-    
+
     private function getPaleomagneticKeywords($data) {
         $uriStarts = [
             'https://epos-msl.uu.nl/voc/paleomagnetism/1.1/measured_property-',
             'https://epos-msl.uu.nl/voc/paleomagnetism/1.1/inferred_behavior-'
         ];
         $keywords = [];
-        
+
         if(isset($data['msl_enriched_keywords'])) {
             foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
                 foreach ($uriStarts as $uriStart) {
@@ -347,16 +347,16 @@ class BaseResult
                 }
             }
         }
-        
-        return $keywords;        
+
+        return $keywords;
     }
-    
+
     private function getGeochemistryKeywords($data) {
         $uriStarts = [
             'https://epos-msl.uu.nl/voc/geochemistry/1.1/'
         ];
         $keywords = [];
-        
+
         if(isset($data['msl_enriched_keywords'])) {
             foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
                 foreach ($uriStarts as $uriStart) {
@@ -366,8 +366,11 @@ class BaseResult
                 }
             }
         }
-        
-        return $keywords;        
+
+        return $keywords;
     }
-    
+
+    private function extractEndTerm($data) {
+        return $data;
+    }
 }

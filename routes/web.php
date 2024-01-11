@@ -21,7 +21,7 @@ use App\Http\Controllers\SeederController;
 */
 
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/remove-dataset', [HomeController::class, 'removeDataset'])->name('remove-dataset');

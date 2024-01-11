@@ -5,7 +5,7 @@ namespace App\Ckan\Request;
 class PackageSearch
 {
     public $endPoint;
-    
+
     public $method = 'GET';
 
     public $query = '';
@@ -15,7 +15,7 @@ class PackageSearch
     public $rows;
 
     public $start;
-    
+
     public function __construct() {
         $this->endPoint = config('ckan.ckan_api_url') . 'action/package_search';
     }
@@ -34,7 +34,7 @@ class PackageSearch
     public function setbyRequest($request, $processedQuery = '') {
         $this->rows = (int)$request->get('rows');
         if($this->rows < 1) {
-            $this->rows = 10;
+            $this->rows = 1000;
         }
 
         $this->start = (int)$request->get('start');
@@ -45,9 +45,9 @@ class PackageSearch
         if($processedQuery !== '') {
             $this->query = $processedQuery;
         } else {
-            $this->query = $request->get('query');        
+            $this->query = $request->get('query');
         }
-        
+
         if(!$this->query) {
             $this->query = "";
         }
