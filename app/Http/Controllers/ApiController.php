@@ -277,9 +277,9 @@ class ApiController extends Controller
         // csic
         // 4TU
         if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_download_link:* AND organization:csic';
+            $searchRequest->filterQuery = 'type:"data-publication" AND msl_download_link:* AND organization:yoda-repository';
         } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND organization:csic';
+            $searchRequest->filterQuery = 'type:"data-publication" AND organization:yoda-repository';
         }
 
         try {
