@@ -262,7 +262,10 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
 
+        // HdR - overrule config to direct live site directly
         $endpoint = 'https://epos-msl.uu.nl/api/3/' . $action;
+
+
         $client = new \GuzzleHttp\Client([ 'verify' => false ]);
 
         $searchRequest = new PackageSearch();
