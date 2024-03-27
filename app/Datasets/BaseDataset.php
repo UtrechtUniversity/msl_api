@@ -3,7 +3,6 @@ namespace App\Datasets;
 
 class BaseDataset
 {
-
     public $title;
 
     public $msl_title_annotated;
@@ -51,6 +50,14 @@ class BaseDataset
     public $tag_string = [];
 
     public $msl_spatial_coordinates = [];
+
+    // GeoJSON for CKAN data-publication split into points and bounding boxes/
+    // Contains indications whether is original or interpreted coordinate data
+    public $msl_geojson_feature_points;
+    public $msl_geojson_feature_boxes;
+
+    // GeoJSON for SOLR search purposes based on bounding boxes in geometry format
+    public $msl_geojson_geometry_boxes;
 
     public $msl_geolocations = [];
 
@@ -112,6 +119,8 @@ class BaseDataset
     public $msl_has_lab = false;
 
     public $msl_has_organization = true;
+
+    public $extras = [];
 
     public function addSubDomain($subDomain, $original = true)
     {
@@ -282,20 +291,20 @@ class BaseDataset
                         $keyword['msl_enriched_keyword_associated_subdomains'][] = $associatedSubDomain;
                     }
                 }
-                                
+
                 //add matchlocation
                 foreach ($matchLocations as $matchLocation) {
                     if(!in_array($matchLocation, $keyword['msl_enriched_keyword_match_locations'])) {
                         $keyword['msl_enriched_keyword_match_locations'][] = $matchLocation;
                     }
-                }                
-                
+                }
+
                 $exists = true;
                 break;
             }
-            
+
         }
-        
+
         if(!$exists) {
             $enrichedKeyword = [
                 'msl_enriched_keyword_label' => $label,
@@ -304,10 +313,10 @@ class BaseDataset
                 'msl_enriched_keyword_associated_subdomains' => $associatedSubDomains,
                 'msl_enriched_keyword_match_locations' => $matchLocations
             ];
-            
+
             $this->msl_enriched_keywords[] = $enrichedKeyword;
-            $this->setHasVocabKeyword('enriched', $vocabUri);            
-        }                
+            $this->setHasVocabKeyword('enriched', $vocabUri);
+        }
     }
 
     public function hasOriginalKeyword($uri)
