@@ -18,7 +18,6 @@ use App\Converters\GeologicalSettingConverter;
 use App\Converters\PaleomagnetismConverter;
 use App\Converters\GeochemistryConverter;
 use App\Exports\UnmatchedKeywordsExport;
-use App\Mappers\Helpers\KeywordHelper;
 use App\Exports\AbstractMatchingExport;
 use App\Converters\MicroscopyConverter;
 use App\Models\Vocabulary;

@@ -89,6 +89,14 @@
                                     <a class="dropdown-item" href="{{ route('doi-export') }}">                                                                              
                                         DOI export
                                     </a>
+                                    
+                                    <a class="dropdown-item" href="{{ route('fuji-add-dois') }}">                                                                              
+                                        FUJI - add dois
+                                    </a>
+                                    
+                                    <a class="dropdown-item" href="{{ route('fuji-view-assessment-groups') }}">                                                                              
+                                        FUJI - view assessment groups
+                                    </a>
                                 </div>
                             </li>
                         

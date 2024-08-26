@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Http\Controllers\ToolsController;
 use App\Http\Controllers\SeederController;
 use App\Http\Controllers\LabController;
+use App\Http\Controllers\FujiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,10 @@ Route::get('tools/unmatchedkeywordsdownload', [ToolsController::class, 'download
 Route::get('tools/abstract-matching', [ToolsController::class, 'abstractMatching'])->name('abstract-matching');
 Route::get('tools/abstract-matching-download/{data_repo}', [ToolsController::class, 'abstractMatchingDownload'])->name('abstract-matching-download');
 Route::get('tools/query-generator', [ToolsController::class, 'queryGenerator'])->name('query-generator');
+
+Route::get('tools/fuji/add-dois', [FujiController::class, 'addDois'])->name('fuji-add-dois');
+Route::post('tools/fuji/add-dois', [FujiController::class, 'processDois'])->name('fuji-process-dois');
+Route::get('tools/fuji/view-groups', [FujiController::class, 'viewAssessmentGroups'])->name('fuji-view-assessment-groups');
 
 Route::get('labs/import-labdata', [LabController::class, 'importLabData'])->name('import-labdata');
 Route::post('labs/update-fast-data', [LabController::class, 'updateFastData'])->name('update-fast-data');
