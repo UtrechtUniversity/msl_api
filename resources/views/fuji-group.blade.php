@@ -7,21 +7,21 @@
             <div class="card">
                 <div class="card-header">Grouped FUJI FAIR assessments</div>
                 <div class="card-body">
-					@if($groups->count() > 0)
+					@if($assessments->count() > 0)
 						<table class="table">
 							<thead>
 								<tr>
-									<th>group identifier</th>
-									<th>avarage percentage</th>
-									<th>count</th>
+									<th>doi</th>
+									<th>processed</th>
+									<th>score</th>
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($groups as $group)								
+								@foreach($assessments as $assessment)								
     								<tr>
-    									<td><a href="{{ route('fuji-view-assessment-group', $group->group_identifier) }}">{{ $group->group_identifier }}</a></td>																		
-    									<td>{{ $group->avg_percent }}</td>
-    									<td>{{ $group->count }}</td>    									
+    									<td><a href="{{ route('fuji-view-assessment', $assessment->id) }}">{{ $assessment->doi }}</a></td>																		
+    									<td>{{ $assessment->processed }}</td>
+    									<td>{{ $assessment->score_percent }}</td>    									
     								</tr>
 								@endforeach
 							</tbody>

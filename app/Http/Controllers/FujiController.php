@@ -56,19 +56,18 @@ class FujiController extends Controller
             ->get();
         
         return view('fuji-group-overview', ['groups' => $groupings]);
-        
-        
-        $assessments = FujiFairAssessment::all();
-        
-        dd($assessments);        
     }
     
-    public function viewAssessmentGroup() {
+    public function viewAssessmentGroup($groupIdentifier) {        
+        $assessments = FujiFairAssessment::where('group_identifier', $groupIdentifier)->get();
         
-    }
+        return view('fuji-group', ['assessments' => $assessments]);        
+    }        
     
-    public function viewAssessment() {
+    public function viewAssessment($assessmentId) {
+        $assessment = FujiFairAssessment::where('id', $assessmentId)->first();
         
+        return view('fuji-assessment', ['assessment' => $assessment]);
     }
     
 }
