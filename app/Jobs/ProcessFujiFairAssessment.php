@@ -48,6 +48,62 @@ class ProcessFujiFairAssessment implements ShouldQueue
             $this->fujiFairAssessment->score_percent = $result->response_body['summary']['score_percent']['FAIR'];
         }
         
+                
+        if(isset($result->response_body['summary']['score_percent']['F'])) {
+            $this->fujiFairAssessment->score_F = $result->response_body['summary']['score_percent']['F'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['F1'])) {
+            $this->fujiFairAssessment->score_F1 = $result->response_body['summary']['score_percent']['F1'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['F2'])) {
+            $this->fujiFairAssessment->score_F2 = $result->response_body['summary']['score_percent']['F2'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['F3'])) {
+            $this->fujiFairAssessment->score_F3 = $result->response_body['summary']['score_percent']['F3'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['F4'])) {
+            $this->fujiFairAssessment->score_F4 = $result->response_body['summary']['score_percent']['F4'];
+        }
+        
+        if(isset($result->response_body['summary']['score_percent']['A'])) {
+            $this->fujiFairAssessment->score_A = $result->response_body['summary']['score_percent']['A'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['A1'])) {
+            $this->fujiFairAssessment->score_A1 = $result->response_body['summary']['score_percent']['A1'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['A2'])) {
+            $this->fujiFairAssessment->score_A2 = $result->response_body['summary']['score_percent']['A2'];
+        }
+        
+        if(isset($result->response_body['summary']['score_percent']['I'])) {
+            $this->fujiFairAssessment->score_I = $result->response_body['summary']['score_percent']['I'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I1'])) {
+            $this->fujiFairAssessment->score_I1 = $result->response_body['summary']['score_percent']['I1'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I2'])) {
+            $this->fujiFairAssessment->score_I2 = $result->response_body['summary']['score_percent']['I2'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I3'])) {
+            $this->fujiFairAssessment->score_I3 = $result->response_body['summary']['score_percent']['I3'];
+        }
+        
+        if(isset($result->response_body['summary']['score_percent']['R'])) {
+            $this->fujiFairAssessment->score_R = $result->response_body['summary']['score_percent']['R'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['R1'])) {
+            $this->fujiFairAssessment->score_R1 = $result->response_body['summary']['score_percent']['R1'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I'])) {
+            $this->fujiFairAssessment->score_R1_1 = $result->response_body['summary']['score_percent']['R1.1'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I'])) {
+            $this->fujiFairAssessment->score_R1_2 = $result->response_body['summary']['score_percent']['R1.2'];
+        }
+        if(isset($result->response_body['summary']['score_percent']['I'])) {
+            $this->fujiFairAssessment->score_R1_3 = $result->response_body['summary']['score_percent']['R1.3'];
+        }
+        
         $this->fujiFairAssessment->save();
     }    
 }

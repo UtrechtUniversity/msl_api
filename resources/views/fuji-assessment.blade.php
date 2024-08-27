@@ -33,8 +33,82 @@
 								<td>response code:</td>
 								<td>{{ $assessment->response_code }}</td>
 							</tr>
+							
 							<tr>
-								<td>score percentage:</td>
+								<td>score F:</td>
+								<td>{{ $assessment->score_F }}</td>
+							</tr>
+							<tr>
+								<td>score F1:</td>
+								<td>{{ $assessment->score_F1 }}</td>
+							</tr>
+							<tr>
+								<td>score F2:</td>
+								<td>{{ $assessment->score_F2 }}</td>
+							</tr>
+							<tr>
+								<td>score F3:</td>
+								<td>{{ $assessment->score_F3 }}</td>
+							</tr>
+							<tr>
+								<td>score F4:</td>
+								<td>{{ $assessment->score_F4 }}</td>
+							</tr>
+							
+							<tr>
+								<td>score A:</td>
+								<td>{{ $assessment->score_A }}</td>
+							</tr>
+							<tr>
+								<td>score A1:</td>
+								<td>{{ $assessment->score_A1 }}</td>
+							</tr>
+							<tr>
+								<td>score A2:</td>
+								<td>{{ $assessment->score_A2 }}</td>
+							</tr>
+							
+							<tr>
+								<td>score I:</td>
+								<td>{{ $assessment->score_I }}</td>
+							</tr>
+							<tr>
+								<td>score I1:</td>
+								<td>{{ $assessment->score_I1 }}</td>
+							</tr>
+							<tr>
+								<td>score I2:</td>
+								<td>{{ $assessment->score_I2 }}</td>
+							</tr>
+							<tr>
+								<td>score I3:</td>
+								<td>{{ $assessment->score_I3 }}</td>
+							</tr>
+							
+							<tr>
+								<td>score R:</td>
+								<td>{{ $assessment->score_R }}</td>
+							</tr>
+							<tr>
+								<td>score R1:</td>
+								<td>{{ $assessment->score_R1 }}</td>
+							</tr>
+							<tr>
+								<td>score R1_1:</td>
+								<td>{{ $assessment->score_R1_1 }}</td>
+							</tr>
+							<tr>
+								<td>score R1_2:</td>
+								<td>{{ $assessment->score_R1_2 }}</td>
+							</tr>
+							<tr>
+								<td>score R1_3:</td>
+								<td>{{ $assessment->score_R1_3 }}</td>
+							</tr>
+							
+							
+							<tr>
+								<td>score overal percentage:</td>
 								<td>{{ $assessment->score_percent }}</td>
 							</tr>																					
 						</tbody>

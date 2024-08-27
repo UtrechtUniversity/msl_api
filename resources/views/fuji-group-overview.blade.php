@@ -27,7 +27,7 @@
 							</tbody>
 						</table>
 					@else
-						<p>No creates/updates found for this seed.</p>
+						<p>No assessment groups found</p>
 					@endif
                 </div>
             </div>                                    
