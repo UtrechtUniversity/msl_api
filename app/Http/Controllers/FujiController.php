@@ -35,6 +35,9 @@ class FujiController extends Controller
         $groupIdentifier = $request->input('group-identifier');
         $dois = explode(PHP_EOL, $request->input('dois'));
         
+        //remove current assessments with same group-identifier
+        DB::table('fuji_fair_assessments')->where('group_identifier', $groupIdentifier)->delete();
+        
         foreach ($dois as $doi) {
             $fujiFairAssessment = FujiFairAssessment::create([
                 'group_identifier' => $groupIdentifier,
