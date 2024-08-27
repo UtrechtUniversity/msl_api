@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\FujiFairAssessment;
 use App\Jobs\ProcessFujiFairAssessment;
+use App\Exports\FujiExport;
 
 
 class FujiController extends Controller
@@ -72,5 +74,11 @@ class FujiController extends Controller
         
         return view('fuji-assessment', ['assessment' => $assessment]);
     }
+    
+    public function downloadFujiReport() {
+        
+        return Excel::download(new FujiExport(), 'fuji-report.xlsx');
+    }
+    
     
 }

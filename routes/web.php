@@ -74,6 +74,7 @@ Route::post('tools/fuji/add-dois', [FujiController::class, 'processDois'])->name
 Route::get('tools/fuji/view-groups', [FujiController::class, 'viewAssessmentGroups'])->name('fuji-view-assessment-groups');
 Route::get('tools/fuji/view-groups/{group_id}', [FujiController::class, 'viewAssessmentGroup'])->name('fuji-view-assessment-group');
 Route::get('tools/fuji/assessment/{assessment_id}', [FujiController::class, 'viewAssessment'])->name('fuji-view-assessment');
+Route::get('tools/fuji/download-report', [FujiController::class, 'downloadFujiReport'])->name('fuji-download-report');
 
 Route::get('labs/import-labdata', [LabController::class, 'importLabData'])->name('import-labdata');
 Route::post('labs/update-fast-data', [LabController::class, 'updateFastData'])->name('update-fast-data');

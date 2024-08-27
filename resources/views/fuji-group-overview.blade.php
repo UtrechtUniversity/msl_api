@@ -26,6 +26,8 @@
 								@endforeach
 							</tbody>
 						</table>
+						
+						<a href="{{ route('fuji-download-report') }}" class="btn btn-primary">Download report</a>
 					@else
 						<p>No assessment groups found</p>
 					@endif
