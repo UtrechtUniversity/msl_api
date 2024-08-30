@@ -16,6 +16,7 @@ class CreateFujiFairAssessmentsTable extends Migration
         Schema::create('fuji_fair_assessments', function (Blueprint $table) {
             $table->id();            
             $table->string('group_identifier');
+            $table->string('export_identifier');
             $table->string('doi');
             $table->boolean('processed')->default(0);
             $table->integer('response_code')->nullable();

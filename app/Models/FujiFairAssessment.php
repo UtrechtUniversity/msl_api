@@ -8,6 +8,7 @@ class FujiFairAssessment extends Model
 {
     protected $fillable = [
         'group_identifier',
+        'export_identifier',
         'doi',
     ];    
     

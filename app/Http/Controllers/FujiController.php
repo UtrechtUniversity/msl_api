@@ -31,18 +31,24 @@ class FujiController extends Controller
     {
         $request->validate([
             'group-identifier' => 'required',
+            'export-identifier' => 'required',
             'dois' => 'required'
         ]);
                 
         $groupIdentifier = $request->input('group-identifier');
+        $exportIdentifier = $request->input('export-identifier');               
         $dois = explode(PHP_EOL, $request->input('dois'));
         
-        //remove current assessments with same group-identifier
-        DB::table('fuji_fair_assessments')->where('group_identifier', $groupIdentifier)->delete();
+        $dois = str_replace("\r", '', $dois);
+        $dois = array_unique($dois);
+                
+        //remove current assessments with same group-identifier and export-identifier
+        DB::table('fuji_fair_assessments')->where('group_identifier', $groupIdentifier)->where('export_identifier', $exportIdentifier)->delete();
         
         foreach ($dois as $doi) {
             $fujiFairAssessment = FujiFairAssessment::create([
                 'group_identifier' => $groupIdentifier,
+                'export_identifier' => $exportIdentifier,
                 'doi' => $doi
             ]);
             
@@ -56,8 +62,8 @@ class FujiController extends Controller
     public function viewAssessmentGroups() {
         
         $groupings = DB::table('fuji_fair_assessments')
-            ->selectRaw('group_identifier, avg(score_percent) as avg_percent, count(group_identifier) as count')
-            ->groupBy('group_identifier')
+            ->selectRaw('export_identifier, group_identifier, avg(score_percent) as avg_percent, count(group_identifier) as count')
+            ->groupBy('export_identifier', 'group_identifier')
             ->get();
         
         return view('fuji-group-overview', ['groups' => $groupings]);
@@ -77,7 +83,7 @@ class FujiController extends Controller
     
     public function downloadFujiReport() {
         
-        return Excel::download(new FujiExport(), 'fuji-report.xlsx');
+        return Excel::download(new FujiExport(), 'WP-2 ND-03.xlsx');
     }
     
     

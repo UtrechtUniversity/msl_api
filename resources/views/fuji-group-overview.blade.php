@@ -11,6 +11,7 @@
 						<table class="table">
 							<thead>
 								<tr>
+									<th>export identifier</th>
 									<th>group identifier</th>
 									<th>avarage percentage</th>
 									<th>count</th>
@@ -19,6 +20,7 @@
 							<tbody>
 								@foreach($groups as $group)								
     								<tr>
+    									<td>{{ $group->export_identifier }}</td>
     									<td><a href="{{ route('fuji-view-assessment-group', $group->group_identifier) }}">{{ $group->group_identifier }}</a></td>																		
     									<td>{{ $group->avg_percent }}</td>
     									<td>{{ $group->count }}</td>    									

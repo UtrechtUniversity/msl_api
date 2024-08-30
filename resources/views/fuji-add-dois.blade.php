@@ -28,6 +28,11 @@
 					<form method="post" action="{{ route('fuji-process-dois') }}">
 					@csrf
 					<div class="form-group">
+    					<label for="export-identifier-input">DOI export identifier</label>
+    					<input type="text" class="form-control" id="export-identifier-input" name="export-identifier">
+  					</div>
+					
+					<div class="form-group">
     					<label for="group-identifier-input">DOI group identifier</label>
     					<input type="text" class="form-control" id="group-identifier-input" name="group-identifier">
   					</div>

@@ -41,6 +41,7 @@ class FujiExport implements FromCollection, WithHeadings, WithMapping
             avg(score_R1_3) as score_R1_3,
             avg(score_percent) as score_FAIR
             ')
+            ->where('export_identifier', 'WP-2 ND-03')
             ->groupBy('group_identifier')
             ->get();
         
