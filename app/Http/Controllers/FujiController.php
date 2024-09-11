@@ -83,7 +83,45 @@ class FujiController extends Controller
     
     public function downloadFujiReport() {
         
-        return Excel::download(new FujiExport(), 'WP-2 ND-03.xlsx');
+        return Excel::download(new FujiExport(), 'WP-5 AD-03.xlsx');
+    }
+    
+    public function requeueAssessments()
+    {
+        //update table and reset previous assessment data
+        DB::table('fuji_fair_assessments')
+            ->update([
+               'processed' => 0,
+                'response_code' => null,
+                'response_full' => null,
+                'score_F' => null,
+                'score_F1' => null,
+                'score_F2' => null,
+                'score_F3' => null,
+                'score_F4' => null,
+                'score_A' => null,
+                'score_A1' => null,
+                'score_A2' => null,
+                'score_I' => null,
+                'score_I1' => null,
+                'score_I2' => null,
+                'score_I3' => null,
+                'score_R' => null,
+                'score_R1' => null,
+                'score_R1_1' => null,
+                'score_R1_2' => null,
+                'score_R1_3' => null,                
+                'score_percent' => null
+            ]);
+                        
+        //add all to queue
+        $assessments = FujiFairAssessment::all();
+
+        foreach ($assessments as $assessment) {
+            ProcessFujiFairAssessment::dispatch($assessment);
+        }
+            
+        return redirect()->route('home');
     }
     
     

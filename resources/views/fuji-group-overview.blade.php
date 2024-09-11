@@ -30,6 +30,7 @@
 						</table>
 						
 						<a href="{{ route('fuji-download-report') }}" class="btn btn-primary">Download report</a>
+						<a href="{{ route('requeue-assessments') }}" class="btn btn-primary">Reset and requeue all</a>
 					@else
 						<p>No assessment groups found</p>
 					@endif

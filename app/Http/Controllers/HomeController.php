@@ -262,16 +262,8 @@ class HomeController extends Controller
     }
         
     public function test()
-    {
-        dd('test');
-        
-        $sourceDataset = SourceDataset::where('id', 6361)->first();        
-        
-        $mapper = new BgsMapper();
-        dd($mapper->map($sourceDataset));
-        
-        dd($sourceDataset);
-        
+    {        
+
         dd('test');        
     }
     
