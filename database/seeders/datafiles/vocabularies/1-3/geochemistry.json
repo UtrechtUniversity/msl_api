@@ -1,0 +1,3784 @@
+[
+    {
+        "value": "analysis",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "commodities analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "ore analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ore assay"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "coal analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "geochronology",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sample age",
+                    "assigned sample age",
+                    "age:assig",
+                    "geological sample age",
+                    "radio-isotopic sample age",
+                    "age:geo",
+                    "age-geo"
+                ],
+                "subTerms": [
+                    {
+                        "value": "argon-argon dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ar40\/ar39 age",
+                            "ar40\/ar39 dating",
+                            "argon argon dating",
+                            "argon-argon age",
+                            "argon-argon",
+                            "argon\/argon",
+                            "argon argon",
+                            "ar\/ar",
+                            "ar40-ar39 age",
+                            "ar40 ar39 age",
+                            "ar40_ar39 age determination",
+                            "ar_ar"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon-14 dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "carbon-14 age",
+                            "carbon dating",
+                            "carbon age",
+                            "c14 age",
+                            "c-14 age",
+                            "c14 dating",
+                            "c-14 dating",
+                            "carbon 14 age",
+                            "carbon 14 age determination",
+                            "14c"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lead-lead dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pb-pb age",
+                            "pb\/pb age",
+                            "lead-lead age",
+                            "pb-pb dating",
+                            "pb-pb"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lutetium-hafnium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "lutetium-hafnium age",
+                            "lutetium\/hafnium age",
+                            "lutetium\/hafnium dating",
+                            "lutetium hafnium age",
+                            "lutetium hafnium dating",
+                            "lu\/hf age",
+                            "lu\/hf dating",
+                            "lu-hf age",
+                            "lu-hf dating",
+                            "lu hf age",
+                            "lu hf dating",
+                            "lutetium-hafnium age determination",
+                            "lu-hf"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "potassium-argon dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "potassium argon age",
+                            "potassium\/argon age",
+                            "potassium\/argon dating",
+                            "potassium-argon dating",
+                            "k-ar age",
+                            "k\/ar age",
+                            "k\/ar dating",
+                            "k-ar dating",
+                            "k-ar age determination",
+                            "k-ar"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rubidium-strontium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rubidium-strontium age",
+                            "rb-sr age",
+                            "rb\/sr age",
+                            "rb-sr dating",
+                            "rb\/sr dating",
+                            "rb-sr age determination",
+                            "rb-sr"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "radium-thorium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "radium-226\/thorium230 age",
+                            "radium\/thorium age",
+                            "radium-thorium age",
+                            "radium\/thorium dating",
+                            "ra\/th dating",
+                            "ra-th dating",
+                            "ra\/th age",
+                            "ra-th age",
+                            "radium-226\/thorium230 dating",
+                            "ra226_th230 age",
+                            "ra226_th230 age determination",
+                            "ra-th"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rhenium-osmium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rhenium-osmium age",
+                            "rhenium\/osmium age",
+                            "rhenium\/osmium dating",
+                            "re-os age",
+                            "re\/os age",
+                            "re\/os dating",
+                            "re-187\/os-187 age",
+                            "re-187\/os-187 dating",
+                            "re-os dating",
+                            "rhenium-osmium dating",
+                            "rhenium-osmium age determination",
+                            "re-os"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "samarium-neodymium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "samarium-neodymium sge",
+                            "sm-nd dating",
+                            "sm-nd age",
+                            "sm nd dating",
+                            "sm-147\/nd 143 age",
+                            "sm-147\/nd 143 dating",
+                            "sm nd age",
+                            "sm\/nd dating",
+                            "sm\/nd age",
+                            "samarium-neodymium dating",
+                            "samarium-neodymium age determination",
+                            "sm-nd"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thorium-lead dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thorium-lead age",
+                            "thorium lead age",
+                            "thorium lead dating",
+                            "thorium\/lead age",
+                            "thorium\/lead dating",
+                            "th\/pb age",
+                            "th\/pb dating",
+                            "th-pb age",
+                            "th-pb dating",
+                            "thorium-lead age determination",
+                            "th_pb"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "uranium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "uranium age",
+                            "uranium age determination"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "uranium-paladium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-235\/paladium-231 dating",
+                                    "u-235\/pa-231 age",
+                                    "u-235\/pa-231 dating",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium age",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium dating",
+                                    "u\/pa age",
+                                    "u-pa age",
+                                    "u\/pa dating",
+                                    "u-pa dating",
+                                    "u235_pa231 age determination",
+                                    "u_pa"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-lead dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium\/lead age",
+                                    "uranium-lead age",
+                                    "u\/pb dating",
+                                    "u-pb dating",
+                                    "u\/pb age",
+                                    "u-pb age",
+                                    "uranium\/lead dating",
+                                    "uranium lead age determination",
+                                    "u_pb",
+                                    "uranium-lead age determination",
+                                    "u-pb"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-thorium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-238\/thorium-230 dating",
+                                    "u-238\/tho-230 age",
+                                    "u-238\/tho-230 dating",
+                                    "uranium-thorium dating",
+                                    "uranium thorium dating",
+                                    "uranium\/thorium dating",
+                                    "uranium thorium age",
+                                    "uranium\/thorium age",
+                                    "uranium-thorium age",
+                                    "u-th age",
+                                    "u-th dating",
+                                    "u238_th230 age determination",
+                                    "u_th"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-thorium-helium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "u-th-he age",
+                                    "u-th-he dating",
+                                    "u-th-he age determination",
+                                    "u_th_he"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "gas geochemistry",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "hydrogeochemistry",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "water geochemistry",
+                    "hydro-geochemistry"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "isotopic analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "isotopic analyses"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta 11B",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 13C",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 18O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 34S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "hydrogen isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "mercury isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "neodymium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "nitrogen isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lead isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rubidium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "strontium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "samarium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "mineralogical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "mineralogical analyses",
+                    "mineralogy analyses",
+                    "mineralogy analysis"
+                ],
+                "subTerms": [
+                    {
+                        "value": "qualitative mineral identification",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "quantitative mineral identification",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "modal analysis"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "microchemical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "major elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "major oxides"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "trace elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "2D microchemical map",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "chemical element maps",
+                            "chemical element map",
+                            "chemical map",
+                            "chemistry map",
+                            "microchemistry map"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "3D microchemical map",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "sample preparation for geochemical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "sample splitting",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sample drying",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sample crushing",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sample pulverization",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "mineral separation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "partial sample digestion",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total sample digestion",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "selective sample extraction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sample pressed pellet",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "fusion sample prepration",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "molten bead"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "whole rock analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "bulk analysis"
+                ],
+                "subTerms": [
+                    {
+                        "value": "major elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "major oxides"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "loss on ignition",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "trace elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "equipment",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "apparatus",
+            "equipment"
+        ],
+        "subTerms": [
+            {
+                "value": "atomic absorption spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "atomic absorption spectrometry",
+                    "(aas)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "graphite furnace-atomic absorption spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "gf-aas",
+                            "(gf-aas)",
+                            "(gfaas)"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "atomic emission spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "atomic emission spectrometry",
+                    "(aes)",
+                    "emission spectrometry",
+                    "optical spectroscopy",
+                    "ops",
+                    "optical emission spectrometry",
+                    "(oes)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "inductively coupled plasma-atomic emission spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "icp-aes",
+                            "inductively coupled plasma source emission spectrometry",
+                            "(icp-aes)",
+                            "(icpaes)"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "alpha spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "elemental analyzer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "electron probe micro-analyzer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "electron microprobe",
+                    "(epma)",
+                    "microprobe",
+                    "electron probe micro analyzer"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "gamma-ray spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "ion chromatograph",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "ion-exchange chromatograph"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "mass spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "accelerator mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ams",
+                            "(ams)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "isotope ratio mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "irms",
+                            "(irms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "gas chromatograph-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "gc-ms",
+                            "(gc-ms)",
+                            "(gcms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "icp-ms",
+                            "(icp-ms)",
+                            "(icpms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "single collector-inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sc-icp-ms",
+                            "hr-icp-ms",
+                            "high-resolution-inductively coupled plasma mass"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "multicollector-inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "mc-icp-ms",
+                            "(mc-icp-ms)",
+                            "(mc-icpms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "laser ablation-inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-icp-ms",
+                            "inductively coupled plasma mass spectrometry laser ablation microprobe",
+                            "icp:lam",
+                            "laser ablation inductively coupled plasma mass spectrometry",
+                            "la-icpms",
+                            "(la-icpms)",
+                            "(la-icp-ms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "laser ablation-single collector-inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-sc-icp-ms",
+                            "la-hr-icp-ms",
+                            "(la-hr-icp-ms)",
+                            "(lahr-icpms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "laser ablation-multicollector inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-mc-icp-ms",
+                            "(la-mc-icp-ms)",
+                            "(lamc-icp-ms)",
+                            "(lamc-icpms)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "secondary ionization mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sims",
+                            "nanosims"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thermal ionization-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "tims"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "instrumental neutron activation analysis system",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "inaa"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "spectrophotometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sp-ph"
+                ],
+                "subTerms": [
+                    {
+                        "value": "UV-Vis spectrophotometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Fourier-Transform\u00a0Infrared spectrophotometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(ftir)"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "titrator",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "x-ray diffractometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "x-ray spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "x-ray spectrometer",
+                    "x-ray spectroscopy"
+                ],
+                "subTerms": [
+                    {
+                        "value": "x-ray absorption near-edge structure spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "xanes"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "energy-dispersive x-ray spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "eds",
+                            "edx",
+                            "(edx)",
+                            "(edx)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "x-ray fluorescence spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "xrf"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "measured property",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "acetate",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "acetate"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "age of sample",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sample age",
+                    "assigned sample age",
+                    "age:assig",
+                    "geological sample age",
+                    "radio-isotopic sample age",
+                    "age:geo",
+                    "age-geo"
+                ],
+                "subTerms": [
+                    {
+                        "value": "argon-argon age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ar40\/ar39 age",
+                            "ar40\/ar39 dating",
+                            "argon argon dating",
+                            "argon-argon age",
+                            "argon-argon",
+                            "argon\/argon",
+                            "argon argon",
+                            "ar\/ar",
+                            "ar40-ar39 age",
+                            "ar40 ar39 age",
+                            "ar40_ar39 age determination",
+                            "ar_ar"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon-14 age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "carbon-14 age",
+                            "carbon dating",
+                            "carbon age",
+                            "c14 age",
+                            "c-14 age",
+                            "c14 dating",
+                            "c-14 dating",
+                            "carbon 14 age",
+                            "carbon 14 age determination",
+                            "14c"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lead-lead age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pb-pb age",
+                            "pb\/pb age",
+                            "lead-lead age",
+                            "pb-pb dating",
+                            "pb-pb"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lutetium-hafnium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "lutetium-hafnium age",
+                            "lutetium\/hafnium age",
+                            "lutetium\/hafnium dating",
+                            "lutetium hafnium age",
+                            "lutetium hafnium dating",
+                            "lu\/hf age",
+                            "lu\/hf dating",
+                            "lu-hf age",
+                            "lu-hf dating",
+                            "lu hf age",
+                            "lu hf dating",
+                            "lutetium-hafnium age determination",
+                            "lu-hf"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "potassium-argon age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "potassium argon age",
+                            "potassium\/argon age",
+                            "potassium\/argon dating",
+                            "potassium-argon dating",
+                            "k-ar age",
+                            "k\/ar age",
+                            "k\/ar dating",
+                            "k-ar dating",
+                            "k-ar age determination",
+                            "k-ar"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rubidium-strontium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rubidium-strontium age",
+                            "rb-sr age",
+                            "rb\/sr age",
+                            "rb-sr dating",
+                            "rb\/sr dating",
+                            "rb-sr age determination",
+                            "rb-sr"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "radium-thorium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "radium-226\/thorium230 age",
+                            "radium\/thorium age",
+                            "radium-thorium age",
+                            "radium\/thorium dating",
+                            "ra\/th dating",
+                            "ra-th dating",
+                            "ra\/th age",
+                            "ra-th age",
+                            "radium-226\/thorium230 dating",
+                            "ra226_th230 age",
+                            "ra226_th230 age determination",
+                            "ra-th"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rhenium-osmium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rhenium-osmium age",
+                            "rhenium\/osmium age",
+                            "rhenium\/osmium dating",
+                            "re-os age",
+                            "re\/os age",
+                            "re\/os dating",
+                            "re-187\/os-187 age",
+                            "re-187\/os-187 dating",
+                            "re-os dating",
+                            "rhenium-osmium dating",
+                            "rhenium-osmium age determination",
+                            "re-os"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "samarium-neodymium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "samarium-neodymium sge",
+                            "sm-nd dating",
+                            "sm-nd age",
+                            "sm nd dating",
+                            "sm-147\/nd 143 age",
+                            "sm-147\/nd 143 dating",
+                            "sm nd age",
+                            "sm\/nd dating",
+                            "sm\/nd age",
+                            "samarium-neodymium dating",
+                            "samarium-neodymium age determination",
+                            "sm-nd"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thorium-lead age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thorium-lead age",
+                            "thorium lead age",
+                            "thorium lead dating",
+                            "thorium\/lead age",
+                            "thorium\/lead dating",
+                            "th\/pb age",
+                            "th\/pb dating",
+                            "th-pb age",
+                            "th-pb dating",
+                            "thorium-lead age determination",
+                            "th_pb"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "uranium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "uranium age",
+                            "uranium age determination"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "uranium-paladium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-235\/paladium-231 dating",
+                                    "u-235\/pa-231 age",
+                                    "u-235\/pa-231 dating",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium age",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium dating",
+                                    "u\/pa age",
+                                    "u-pa age",
+                                    "u\/pa dating",
+                                    "u-pa dating",
+                                    "u235_pa231 age determination",
+                                    "u_pa"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-lead age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium\/lead age",
+                                    "uranium-lead age",
+                                    "u\/pb dating",
+                                    "u-pb dating",
+                                    "u\/pb age",
+                                    "u-pb age",
+                                    "uranium\/lead dating",
+                                    "uranium lead age determination",
+                                    "u_pb",
+                                    "uranium-lead age determination",
+                                    "u-pb"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-thorium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-238\/thorium-230 dating",
+                                    "u-238\/tho-230 age",
+                                    "u-238\/tho-230 dating",
+                                    "uranium-thorium dating",
+                                    "uranium thorium dating",
+                                    "uranium\/thorium dating",
+                                    "uranium thorium age",
+                                    "uranium\/thorium age",
+                                    "uranium-thorium age",
+                                    "u-th age",
+                                    "u-th dating",
+                                    "u238_th230 age determination",
+                                    "u_th"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "uranium-thorium-helium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "u-th-he age",
+                                    "u-th-he dating",
+                                    "u-th-he age determination",
+                                    "u_th_he"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "aluminium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Al,",
+                    "aluminum"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "ammonia",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "NH3,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "ammonium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "NH4,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "antimony",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sb,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "argon (Ar)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ar,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "arsenic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "barium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ba,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "beryllium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Be,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "bismuth",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Bi,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "boron",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "delta 11B",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_b11"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "bromium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Br,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "bromide",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Br-,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "carbon (C)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(inorg)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dissolved inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "organic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(org)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total organic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(tot)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "non-carbonate carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(non-carb)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon monoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CO2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "methane",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CH4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "bicarbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HCO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 13C",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "calcium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ca,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "calcium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "calcium sulfate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaSO4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "calcium carbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaCO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 44Ca",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ca44"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "cadmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cd,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "cerium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ce,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cerium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ce2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "cerium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CeO2,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "chlorine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cl,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "chloride",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 37Cl",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_cl37"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "cobalt",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Co,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cobalt oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CoO,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "chromium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "chromium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Cr2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "cesium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cs,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "copper",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cuprous oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Cu2O,",
+                            "copper(i) oxide"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "copper oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CuO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 65Cu",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_cu65"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "dysprosium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Dy,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "dysprosium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Dy2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "erbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Er,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "erbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Er2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "europium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Eu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "europium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Eu2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "fluorine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "francium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Fr,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "gallium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ga,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "gadolinium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Gd,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "gadolinium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Gd2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "germanium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ge,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "gold (Au)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Au,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "hydrogen (H)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "total hydrogen",
+                    "H(tot)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "water (H2O)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H2O,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "hydrogen sulfide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H2S,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta D",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_d"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "helium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "He,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "hafnium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Hf,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "hafnium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HfO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "hafnium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HfO2,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "holmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ho,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "holmium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ho2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "iodine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "indium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "iridium (Ir)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ir,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "iron",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Fe,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ferric iron oxide (tri-valent iron)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total iron oxide content reported as ferric (tri-valent) iron",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe2O3t,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ferrosoferric oxide (Iron (II,III) oxide)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe3O4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ratio of feric iron to total iron\u00a0",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe3\/Fet,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "siderite",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeCO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "iron ferrite (FeFe2O4)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe-Fe"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ferrous iron oxide (di-valent)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeO,"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "total iron oxide content reported as ferrous (di-valent) iron",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "FeOt,"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "ferrous sulfide (di-valent)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeS,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "iron sulfide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeS2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta_Fe56 calculated as (Fe56\/Fe54_ sample \/ Fe56\/Fe54_IRMM-014 -1)*1000",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_fe56"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "krypton",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Kr,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "lanthanum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "La,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lanthanum oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "La2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "lead (Pb)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lead oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "PbO,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "lithium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Li,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta Li6",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_li6"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 7Li",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_li7"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "lutetium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Lu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lutetium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Lu2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnesium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mg,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "magnesium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MgO,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "manganese",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mn,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "manganese tetroxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Mn3O4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "manganese carbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MnCO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "manganese oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MnO,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "mercury",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Hg,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "molybdenum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mo,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta 98Mo",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_mo98"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "neodymium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Nd,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "neodymium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nd2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "neon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ne,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "nickel",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ni,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "nickel oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NiO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 60Ni",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ni60"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "niobium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Nb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "niobium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nb2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "niobium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nb2O5,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "nitrogen",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "organic nitrogen",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "N(org)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "total nitrogen",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "N(tot)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "nitrogen dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NO2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "nitrate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delt 15N",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_n15"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "oxygen",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "delta 17O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_o17"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 18O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_o18"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "osmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Os,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "palladium (Pd)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pd,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "pH",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "phosphorus",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "phosphorous, organic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P(org)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "phosphorus trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "phosphorus oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P2O5,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "phosphate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "PO4,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "platinum (Pt)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pt,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ratio of platinum isotope Pt190 to osmium isotope Os188",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pt190\/os188"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "polonium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Po210,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "polonium isotope Po210, reported as activity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "po210_activity"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ratio of polonium isotope Po210 to lead isotope Pb210",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "po210\/pb210"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "potassium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "potassium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "K2O,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "protactinium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            },
+            {
+                "value": "praseodymium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pr,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "radium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ra,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "rhenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Re,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "rhodium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Rh,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "rubidium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Rb,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "ruthenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ru,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "samarium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sm,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "samarium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Sm2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "scandium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sc,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "scandium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Sc2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "selenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Se,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "silicon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "silicon dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "silica",
+                            "SiO2,"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "SiO2, high pressure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "SiOH,"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "amorphous silica",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Si(amorph),"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "silicic acid",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H4SiO4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 29Si",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_si29"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 30Si",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_si30"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "sodium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Na,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "sodium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Na2O,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "silver (Ag)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ag,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "strontium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "strontium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "SrO,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "sulphur",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sulfur",
+                    "total sulphur",
+                    "s(tot)",
+                    "total sulfur"
+                ],
+                "subTerms": [
+                    {
+                        "value": "sulphur dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur dioxide",
+                            "SO2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sulphur trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur trioxide",
+                            "SO3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sulphate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfate",
+                            "SO4,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sulphur present as sulphide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur present as sulfide",
+                            "s_(slfi)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sulphur present in pyrite form",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur present in pyrite form",
+                            "s_py"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 33S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s33"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 34S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s34"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 36S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s36"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "tantalum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ta,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "tantalum oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ta2O5,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "tellurium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Te,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "terbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "terbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Tb2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "thallium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tl,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "thorium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Th,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "thorium monoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ThO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thorium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ThO2,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "thulium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tm,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "thulium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Tm2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "tin",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sn,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "titanium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ti,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "titanium(III) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ti2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "titanium(II) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "TiO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "titanium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "TiO2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 49Ti",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ti49"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "tungsten",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "tungsten trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "WO3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "uranium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "uranium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "UO2,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 234U",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_u234"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 238U",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_u238"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "vanadium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "vanadium sesquioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "V2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "vanadium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "V2O5,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 51V",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_v51"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "xenon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Xe,"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "yttrium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "yttrium(III) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Y2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "yttrium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "YO2,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "ytterbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Yb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ytterbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Yb2O3,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "zinc",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Zn"
+                ],
+                "subTerms": [
+                    {
+                        "value": "zinc oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ZnO,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 66Zn",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_zn66"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "delta 68Zn",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_zn68"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "zirconium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Zr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "zirconium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Zr2O3,"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "zirconium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ZrO2,"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    }
+]

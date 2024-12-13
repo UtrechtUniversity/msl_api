@@ -79,7 +79,8 @@ class ProcessSourceDataset implements ShouldQueue
                 'dataset_type' => $dataset::class,
                 'dataset' => (array)$dataset,
                 'source_dataset_id' => $this->sourceDataset->id,
-                'import_id' => $import->id
+                'import_id' => $import->id,
+                'response_body' => ''
             ]);
             
             if($datasetCreate) {

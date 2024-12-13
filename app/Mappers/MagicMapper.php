@@ -3,8 +3,6 @@ namespace App\Mappers;
 
 use App\Models\SourceDataset;
 use App\Models\MappingLog;
-use App\Ckan\Request\PackageSearch;
-use App\Ckan\Response\PackageSearchResponse;
 use App\Mappers\Helpers\DataciteCitationHelper;
 use App\Datasets\BaseDataset;
 use App\Mappers\Helpers\KeywordHelper;
@@ -50,24 +48,7 @@ class MagicMapper
         }
         return $doi;
     }
-    
-    private function getLabNames()
-    {
-        $searchRequest = new PackageSearch();
         
-        $searchRequest->rows = 1000;
-        $searchRequest->query = 'type: lab';
-        try {
-            $response = $this->client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $packageSearchResponse = new PackageSearchResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        return $packageSearchResponse->getNameList();
-    }
-    
     private function extractExtension($filename)
     {
         $fileInfo = pathinfo($filename);

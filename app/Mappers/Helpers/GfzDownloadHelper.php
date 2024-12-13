@@ -2,7 +2,7 @@
 namespace App\Mappers\Helpers;
 
 use App\Datasets\BaseDataset;
-use Goutte\Client;
+use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\DomCrawler\Crawler;
 
 class GfzDownloadHelper
@@ -10,7 +10,7 @@ class GfzDownloadHelper
     private $client;
     
     public function __construct() {
-        $this->client = new Client();
+        $this->client = new HttpBrowser();
     }
     
     public function addData(BaseDataset $dataset) {

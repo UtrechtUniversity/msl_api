@@ -39,6 +39,8 @@ class RegistryExport
             $organizationGraph = $graph->resource($organization->external_identifier, 'schema:Organization');
             $schemaIdentifier = $graph->newBnode('schema:PropertyValue');
             $schemaIdentifier->set('schema:propertyID', "ROR");
+
+
             $schemaIdentifier->set('schema:value', $organization->external_identifier);
             $organizationGraph->set('schema:identifier', $schemaIdentifier);
             $organizationGraph->set('schema:legalName', $organization->name);
@@ -50,10 +52,9 @@ class RegistryExport
             $organizationGraph->set('schema:url', Literal::create($organization->ror_website , null, 'xsd:anyURI'));                                    
             
             // Get laboratories belonging to organization
+            
             foreach ($organization->laboratories as $laboratory) {
-                /*
-                 * Skip if no location data is present
-                 */
+    
                 
                 if((strlen($laboratory->latitude) == 0) || (strlen($laboratory->longitude) == 0)) {
                     continue;
@@ -72,9 +73,9 @@ class RegistryExport
                 $facilityGraph = $graph->resource($this->generateFacilityURI($laboratory), 'epos:Facility');
                 $facilityGraph->set('dct:identifier', $facilityGraph->getUri());
                 $facilityGraph->set('dct:title', $laboratory->name);
-                $facilityGraph->set('dct:description', $this->formatNewlines($laboratory->description));
-                $facilityGraph->set('dct:type', ['type' => 'uri', 'value' => '<epos:Laboratory>']);                
-                $facilityGraph->set('dcat:theme', ['type' => 'uri', 'value' => $this->getEPOSlabType($laboratory)]);
+                $facilityGraph->set('dct:description', $this->formatNewlines($laboratory->description));                
+                $facilityGraph->set('dct:type', ['type' => 'uri', 'value' => '<epos:Laboratory>']);
+                $facilityGraph->set('dcat:theme', ['type' => 'uri', 'value' => $this->getEPOSlabType($laboratory)]);                
                 $facilityGraph->set('dcat:contactPoint', ['type' => 'uri', 'value' => $contactPointGraph->getUri()]);
                 if((strlen($laboratory->latitude) > 0) && (strlen($laboratory->longitude) > 0)) {
                     $facilityLocation = $graph->newBNode('dct:Location');
@@ -90,7 +91,7 @@ class RegistryExport
                 foreach ($facilityKeywords as $facilityKeyword) {                    
                     $facilityGraph->add('dcat:keyword', $facilityKeyword);
                 }
-
+                
                 // optional
                 if(strlen($laboratory->website) > 0) {
                     $facilityGraph->add(
@@ -123,8 +124,9 @@ class RegistryExport
                     $equipmentGraph->set('dct:spatial', $equipmentLocation);
                     
                 }
-                                               
+                                              
             }
+            
             
         }
         
@@ -219,6 +221,9 @@ class RegistryExport
                 
             case 'Rock and melt physics':
                 return '<category:RockPhysics_conc>';
+
+            case 'Geo-energy':
+                return '<category:GeoEnergy_conc>';
                 
             default:
                 return '';

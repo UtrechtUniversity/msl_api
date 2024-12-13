@@ -3,15 +3,15 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\OrganizationCreate;
-use App\Ckan\Request\OrganizationShow;
-use App\Ckan\Response\OrganizationShowResponse;
-use App\Ckan\Request\OrganizationUpdate;
+use App\CkanClient\Client;
+use App\CkanClient\Request\OrganizationCreateRequest;
+use App\CkanClient\Request\OrganizationShowRequest;
+use App\CkanClient\Request\OrganizationUpdateRequest;
 
 class ProcessOrganizationCreate implements ShouldQueue
 {
@@ -37,47 +37,29 @@ class ProcessOrganizationCreate implements ShouldQueue
      */
     public function handle()
     {
-        $client = new \GuzzleHttp\Client();
-                
-        //check if organization is already in ckan
-        $packageShowRequest = new OrganizationShow();
-        $packageShowRequest->id = $this->organizationCreate->organization['name'];
-        
-        try {
-            $response = $client->request(
-                $packageShowRequest->method,
-                $packageShowRequest->endPoint,
-                $packageShowRequest->getPayloadAsArray()
-                );
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $organizationShowResponse = new OrganizationShowResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        if($organizationShowResponse->packageExists()) {
-            $this->updateOrganization($client, $organizationShowResponse->getId());
+        $client = new Client();
+
+        $organizationShowRequest = new OrganizationShowRequest();
+        $organizationShowRequest->id = $this->organizationCreate->organization['name'];
+
+        $response = $client->get($organizationShowRequest);
+
+        if($response->isSuccess()) {
+            $this->updateOrganization($client, $this->organizationCreate->organization['name']);
         } else {
             $this->createOrganization($client);
-        }                      
-                                  
+        }                
     }
     
     private function createOrganization($client)
     {
-        $OrganizationCreateRequest = new \App\Ckan\Request\OrganizationCreate();
-        $OrganizationCreateRequest->payload = $this->organizationCreate->organization;
-        
-        try {
-            $response = $client->request($OrganizationCreateRequest->method,
-                $OrganizationCreateRequest->endPoint,
-                $OrganizationCreateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->organizationCreate->response_code = $response->getStatusCode();
-        //$this->organizationCreate->response_body = (string)$response->getBody();
+        $organizationCreateRequest = new OrganizationCreateRequest();
+        $organizationCreateRequest->payload = $this->organizationCreate->organization;
+
+        $response = $client->get($organizationCreateRequest);
+
+        $this->organizationCreate->response_code = $response->responseCode;
+        //$this->organizationCreate->response_body = json_encode($response->responseBody);
         $this->organizationCreate->processed_type = 'insert'; 
         $this->organizationCreate->processed = now();
         $this->organizationCreate->save();
@@ -85,19 +67,13 @@ class ProcessOrganizationCreate implements ShouldQueue
     
     private function updateOrganization($client, $id)
     {
-        $OrganizationUpdateRequest = new OrganizationUpdate();
+        $OrganizationUpdateRequest = new OrganizationUpdateRequest();
         $OrganizationUpdateRequest->payload = $this->organizationCreate->organization;
-        $OrganizationUpdateRequest->addIdToPayload($id);
+        $OrganizationUpdateRequest->payload['id'] = $id;
+
+        $response = $client->get($OrganizationUpdateRequest);
         
-        try {
-            $response = $client->request($OrganizationUpdateRequest->method,
-                $OrganizationUpdateRequest->endPoint,
-                $OrganizationUpdateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->organizationCreate->response_code = $response->getStatusCode();
+        $this->organizationCreate->response_code = $response->responseCode;
         //$this->organizationCreate->response_body = (string)$response->getBody();
         $this->organizationCreate->processed_type = 'update';
         $this->organizationCreate->processed = now();

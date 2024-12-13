@@ -1,0 +1,3133 @@
+[
+    {
+        "value": "Apparatus",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "atomic force microscope",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "atomic force microscope (AFM) magnetic scanning"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "microchemical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "electron probe micro analyser",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "microprobe",
+                            "electron probe micro analyzer",
+                            "electron microprobe",
+                            "(EPMA)",
+                            "electron probe micro-analyzer",
+                            "electron probe micro-analyser"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "electron microscopy",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "electron microscope"
+                ],
+                "subTerms": [
+                    {
+                        "value": "focused ion beam - scanning electron microscope (FIB-SEM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FIBSEM",
+                            "FIB-SEM",
+                            "focused ion beam scanning electron microscope",
+                            "(FIB-SEM)",
+                            "(FIBSEM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "scanning electron microscope (SEM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "scanning electrone microscope",
+                            "scanning electron microscope",
+                            "SEM images"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "scanning transmission electron microscope (STEM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "scanning transmission electron microscope"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "transmission electron microscope (TEM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "transmission electron microscope"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "optical microscopy",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "light microscopy",
+                    "optical microscope",
+                    "light microscope"
+                ],
+                "subTerms": [
+                    {
+                        "value": "reflected light microscope",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "slide scanner microscope",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "transmitted light microscope",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "X-ray tomography",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "X-ray computed tomographic (CT) scanner",
+                    "CT scanner",
+                    "tomograph",
+                    "Xray computed tomographic scanner Ctscan",
+                    "Xray scanner",
+                    "X-ray scanner",
+                    "X-ray tomograph",
+                    "Xray tomograph",
+                    "X-ray computed tomographic (CT) scanning of analogue models",
+                    "X-ray imaging during testing",
+                    "\u00b5CT",
+                    "nanoCT",
+                    "microCT",
+                    "",
+                    "CT-scan",
+                    "CT-scans",
+                    "CT scan",
+                    "CT scans",
+                    "CT scanning",
+                    "CT-scanning"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "neutron tomography",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "neutron computed tomographic scanner",
+                    "neutron tomograph",
+                    "neutron imaging",
+                    "neutron imaging during testing"
+                ],
+                "subTerms": []
+            }
+        ]
+    },
+    {
+        "value": "Ancillary equipment",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "hardware filtering",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "1\/4 lambda plate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "cross polarizer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "gypsum plate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "plane polarizer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "quartz plate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Bertrand lense",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "light condensor",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "light filter",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "collimator",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "syn-deformation imaging",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "nanoindenter",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "nano-indenter"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "micropillar",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "micro-pillar"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "microcantilever",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "micro-cantilever"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "X-ray transparent cell",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "X-ray computed tomographic (CT) scanning of analogue models",
+                            "X-ray imaging during testing"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "neutron transparent cell",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "neutron imaging during testing"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "beam interferometry",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "light interferometry"
+                ],
+                "subTerms": [
+                    {
+                        "value": "source grating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "phase grating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "analyser grating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "detector",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "flat panel",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "charge coupled device (CCD) detector",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "complementary metal oxide semiconductor (CMOS) detector",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "energy resolving detector",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "photon counting detector",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Technique",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "section preperation",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "section polishing",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "ion polishing",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ion milling"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "focussed ion beam (FIB) milling",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "broad ion beam (BIB) milling",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "chemical polishing",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "mechanical polishing",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "section staining",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "section etching",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "section coating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "carbon coating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "carbon coated"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "iridium coating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "iridium coated"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "gold-platinum coating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "gold platinum coating",
+                                    "gold platinum coated",
+                                    "gold-platinum coated"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "platinum-palladium coating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "platinum palladium coating",
+                                    "platinum-palladium coated",
+                                    "platinum palladium coated"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "osmium coating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "osmium coated"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "imaging (2D)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "forescatter electron (FSE)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "forescatter electron"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "high-angle annular dark-field (HAADF)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "high-angle annular dark-field",
+                            "HAADF",
+                            "(HAADF)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "cathodoluminescence (CL) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "cathodoluminescence"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "panchromatic CL image",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "panchromatic CL",
+                                    "panchromatic cathodoluminescence"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "wavelength filtered CL image",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "secondary electron (SE) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "secondary electron"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "backscatter electron (BSE) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "backscatter electron",
+                            "backscattered electron microscopy"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "bright field (BF) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "bright field"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dark field (DF) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "dark field"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "annular dark field (ADF) imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "annular dark field"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "electron channeling contrast imaging (ECCI)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "electron channeling contrast imaging",
+                            "ECCI",
+                            "(ECCI)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "radiography",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "radioscopy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "imaging (3D)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "computed tomography (CT)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "computed tomography",
+                            "X-ray tomography",
+                            "micro Xray computed tomography"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "cone beam CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "fan beam CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "parallel beam CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "region of interest CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "local tomography"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "dual energy CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "spectral CT",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "dark field tomography",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "absorption contrast tomography",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "phase contrast tomography",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "X-ray diffraction",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "X-ray diffractometer",
+                                    "XRay Diffractometer",
+                                    "synchrotron Xray diffraction",
+                                    "XRD"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "tomoscopy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "dynamic CT",
+                            "4D CT"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "rheography",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "laminography",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "holotomography",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ghost imaging",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "multi-pass scan",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dual mode scan",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dual resolution scan",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "white beam",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "polychromatic"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "pink beam",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "monochromotic beam",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "chemical and mineralogical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "electron energy loss spectroscopy (EELS)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "electron energy loss spectroscopy",
+                            "EELS",
+                            "(EELS)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "wavelength-dispersive x-ray spectroscopy (WDS)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "wavelength-dispersive x-ray spectroscopy"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Raman spectrometry - chemistry and mineralogy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Raman spectrometry",
+                            "Raman"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "infrared spectroscopy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "fourier transform infrared spectroscopy (FTIR)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "fourier transform infrared spectroscopy"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "cathodoluminescence (CL) spectroscopy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "cathodoluminescence spectroscopy",
+                            "CL spectroscopy"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "energy dispersive x-ray spectroscopy (EDS EDX)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "energy dispersive x-ray spectroscopy"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "EDS in 2D",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "EDX in 2D"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "EDS in 3D",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "EDX in 3D",
+                                    "EDS tomography",
+                                    "EDX tomography"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "crystal structure analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "electron diffraction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "large area convergent beam electron diffraction (LACBED)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "large area convergent beam electron diffraction",
+                                    "LACBED",
+                                    "(LACBED)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "nano beam diffraction (NBD)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "nano beam diffraction"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "selected area electron diffraction (SAED)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "selected area electron diffraction"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "convergent beam electron diffraction (CBED)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "convergent beam electron diffraction"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "electron backscatter diffraction (EBSD)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "electron backscatter diffraction",
+                                    "EBSD",
+                                    "highangular resolution electron backscatter diffraction",
+                                    "(EBSD)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "transmission Kikuchi diffraction (TKD)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "transmission Kikuchi diffraction"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Raman spectrometry - crystal lattice",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Raman spectrometry",
+                            "Raman"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "automated crystal orientation mapping (ACOM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "automated crystal orientation mapping"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Analyzed feature",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "deformation microstructure",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "brittle microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "intragranular crack",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "grain failure",
+                                    "intragranular failure",
+                                    "microcracking",
+                                    "micro-cracking",
+                                    "intragranular crack",
+                                    "crack",
+                                    "intragranular cracking"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "intragranular crack distribution",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "intragranular crack orientation",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "intragranular crack density",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "crack density"
+                                        ],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "intergranular crack",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "intergranular fracture"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "intergranular slip",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "intergranular displacement",
+                                    "intergranular shear"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "transgranular crack",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "joint microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "fault microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "shear fracture microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "fault gouge microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Riedel shear microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "R1 shear",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "R' shear",
+                                            "R1 shears",
+                                            "R' shears"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Y shear",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "Y shears",
+                                            "boundary shear"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "P-foliation",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "pseudotachylite microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "slickenline",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "slickenside",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "breccia microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "crystal plastic microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ductile microstructure",
+                            "plastic microstructure",
+                            "viscous microstructure",
+                            "ductile feature",
+                            "plastic feature",
+                            "viscous feature"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "undulose extinction",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "deformation lamellae",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "fine extinction band (FEB) width sub-5 micron",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "short-wavelength undulatory extinction",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "wide extinction band (WEB)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "intragranular deformation band",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "intragranular kink band",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "localized extinction band (LEB)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "intragranular shear band"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "subgrains",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "subgrain"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "core and mantle subgrain structure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "core subgrain",
+                                            "mantle subgrain",
+                                            "subgrain core",
+                                            "subgrain mantle"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "subgrain size",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "subgrain size hierarchy",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "subgrain boundary orientations",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "subgrain misorientations",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "deformation twin",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "deformation twins"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "lattice dislocation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "lattice dislocations",
+                                    "latice defect",
+                                    "latice defects"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "dislocation density",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Burger's vector",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "Burgers vector",
+                                            "Burger vector"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "glide plane",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "stacking fault",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "stacking faults"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "pressure solution microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "solution-precipitation microstructure",
+                            "mass transport microstructure"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "surface dissolution and precipitation features",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "surface dissolution features",
+                                    "surface precipitation features",
+                                    "surface dissolution",
+                                    "surface precipitation"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "solution pits and ledges",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "growth features",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "grain indentation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "grain truncation"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "strain cap",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "strain or pressure shadow",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "fringe",
+                                    "strain shadow",
+                                    "pressure shadow"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "solution seam",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "solution cleavage",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "microstylolites",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "stylolite"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "overgrowths",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "overgrowth",
+                                    "grain boundary cement",
+                                    "pore filling",
+                                    "pore clogging"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "fluid inclusion planes",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "healed fracture",
+                                    "fluid inclusion plane"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "sealed fracture",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "vein",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "veins",
+                                    "microveins",
+                                    "intergranular vein",
+                                    "transgranular vein"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "generic deformation microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "cleavage",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "crenulation cleavage",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "foliation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "schistosity",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "microfold",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "microfolding",
+                                    "micro-fold",
+                                    "micro-folding"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "boudinage microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "pinch and swell microstructure",
+                                    "pinch-and-swell microstructure"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "deformation band",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "deformation bands"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "compaction band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "dilation band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "dilatation band microstructure",
+                                            "dissagregation deformation band microstructure",
+                                            "dissagregation band microstructure"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "shear band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "shear deformation band microstructure"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "phyllosilicate deformation band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "cataclastic band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "cataclastic deformation band",
+                                            "cataclastic deformation bands"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "solution and cementation band microstructure",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "solution and cementation deformation bands",
+                                            "pressure solution band"
+                                        ],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "deformed porphyroclast",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "deformed porphyroclasts",
+                                    "relic deformed grain"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "mantled porphyroclasts",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "sigma type porphyroclasts",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "delta type porphyroclasts",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "phi type porphyroclasts",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "complex porphyroclasts",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "shear band foliation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "shear bands",
+                                    "extensional crenulation cleavage"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "S-C foliation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "S-C microstructure",
+                                    "SC foliation",
+                                    "SC foliated",
+                                    "S-C foliated"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "mica fish",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "micafish"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "grain aggregate microstructure",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "grain aggregate shape"
+                ],
+                "subTerms": [
+                    {
+                        "value": "foam microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "interlobate microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "amoeboid microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "decussate microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ribbon microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "recrystallized grains",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "growth twins",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "diamond grain microstructure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "grain boundary geometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "grain boundary features",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "grain boundary triple junctions",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "four-grain junctions",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "grain boundary alignments",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "grain boundary voids and openings",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "grain boundary defect",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "grain boundary dislocations",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "disclination microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "disconnection microstructure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "mineralogy and composition",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "qualitative rock classification",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "sedimentary classification",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "igneous classification",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "metamorphic classification",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "structural classification",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "qualitative mineralogy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "quantitative mineralogy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "compositional mapping"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "mineral map",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "phase map",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "microchemical map",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "chemical element maps",
+                                    "chemical element map",
+                                    "chemical map",
+                                    "chemistry map",
+                                    "microchemistry map"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "fluid inclusion",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "grain size and configuration",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "grain size",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "grain size distribution",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "particle size distribution"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "shape preferred orientation (SPO)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "grain orientation",
+                            "shape preferred orientation"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "spatial frequency analysis (SFA)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "spatial frequency analysis"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "crystallographic preferred orientation (CPO)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "crystallographic orientation",
+                            "crystallographic preferred orientation"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "misorientation analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "spatial distribution (clustering)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "spatial distribution of grains",
+                            "grain clustering"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "pore structure and distribution",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "pore size",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "pore size distribution",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "pore shape",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "igneous microstructure",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "igneous vesicle lineation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "igneous lamination",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lava flow banding",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Schlieren",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "phenocryst",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "metamorphic microstructure",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "porphyroclast",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "porphyroclasts"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "porphyroblast",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "porphyroblasts"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "inclusion trail",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "inclusion trails"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "porphyroblast zoning",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "truncation surface",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "truncation surfaces"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "growth twin",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "growth twins"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "symplectite and exsolution",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "symplectite",
+                            "exsolution",
+                            "symplectites"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "spinodal decomposition",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "true exsolution"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "oxide exsolution",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "oxy-exsolution"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "oxidation lamellae",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "mineral polymorphism",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "reaction rim",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "shock microstructure",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "planar deformation feature (PDF)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "planar deformation feature",
+                            "planar deformation features"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "PDF orientation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "planar deformation feature orientation",
+                                    "PDF orientations"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "shock microfracture",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "shock microfracture"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "feather structure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "feather structure"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ballen structure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ballen structure"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "mosaicism",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "diaplectic glass",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "metamorphic facies",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "amphibolite metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "eclogite metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "epidote amphibolite metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "glaucophane schist facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "blueschist facies"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "granulite facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "greenschist metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "pyroxene hornfels metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "sanidinite metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "subgreenschist metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "zeolite metamorphic facies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Inferred parameter",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "inferred metamorphic conditions",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "interpreted conditions"
+                ],
+                "subTerms": [
+                    {
+                        "value": "inferred lithostatic pressure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred fluid pressure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred temperature",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred shock pressure and temperature",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "inferred deformation conditions",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "inferred kinematics",
+                    "interpreted kinematics"
+                ],
+                "subTerms": [
+                    {
+                        "value": "inferred stress",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred shear sense",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred strain rate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred finite strain",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred vorticity axis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred strain history",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "inferred properties",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "inferred sesimic anisotropy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred Internal stored stress",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred crystal plastic properties",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "dislocation slip systems",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "inferred permeability",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred rheology",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "inferred mechanical properties"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "inferred mechanisms",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "inferred recrystallization mechanisms",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "subgrain rotation",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "grain boundary bulging",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "grain boundary migration",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "geometric dynamic recrystallization",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "inferred deformation mechanisms",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    }
+]

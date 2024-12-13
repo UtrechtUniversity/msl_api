@@ -3,20 +3,14 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\DatasetCreate;
-use App\Ckan\Request\PackageCreate;
-use App\Ckan\Request\PackageShow;
-use App\Ckan\Response\PackageShowResponse;
-use App\Ckan\Request\PackageUpdate;
-use App\Models\OrganizationCreate;
-use App\Ckan\Request\OrganizationShow;
-use App\Ckan\Response\OrganizationShowResponse;
-use App\Ckan\Request\OrganizationUpdate;
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageCreateRequest;
+use App\CkanClient\Request\PackageShowRequest;
+use App\CkanClient\Request\PackageUpdateRequest;
 use App\Models\LaboratoryCreate;
 
 class ProcessLaboratoryCreate implements ShouldQueue
@@ -43,67 +37,40 @@ class ProcessLaboratoryCreate implements ShouldQueue
      */
     public function handle()
     {
-        $client = new \GuzzleHttp\Client();
-                
-        //check if organization is already in ckan
-        $packageShowRequest = new PackageShow();
+        $ckanClient = new Client();
+        $packageShowRequest = new PackageShowRequest();
         $packageShowRequest->id = $this->laboratoryCreate->laboratory['name'];
-        
-        try {
-            $response = $client->request(
-                $packageShowRequest->method,
-                $packageShowRequest->endPoint,
-                $packageShowRequest->getPayloadAsArray()
-                );
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $packageShowResponse = new PackageShowResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        if($packageShowResponse->packageExists()) {
-            $this->updateLaboratory($client);
+
+        $response = $ckanClient->get($packageShowRequest);
+
+        if($response->isSuccess()) {
+            $this->updateLaboratory($ckanClient);
         } else {
-            $this->createLaboratory($client);
-        }                      
-                                  
+            $this->createLaboratory($ckanClient);
+        }                                  
     }
     
-    private function createLaboratory($client)
+    private function createLaboratory(Client $client)
     {
-        $PackageCreateRequest = new PackageCreate();
-        $PackageCreateRequest->payload = $this->laboratoryCreate->laboratory;
+        $packageCreateRequest = new PackageCreateRequest();
+        $packageCreateRequest->payload = $this->laboratoryCreate->laboratory;
         
-        try {
-            $response = $client->request($PackageCreateRequest->method,
-                $PackageCreateRequest->endPoint,
-                $PackageCreateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->laboratoryCreate->response_code = $response->getStatusCode();
-        //$this->organizationCreate->response_body = (string)$response->getBody();
+        $response = $client->get($packageCreateRequest);
+
+        $this->laboratoryCreate->response_code = $response->responseCode;
         $this->laboratoryCreate->processed_type = 'insert';
         $this->laboratoryCreate->processed = now();
-        $this->laboratoryCreate->save();                        
+        $this->laboratoryCreate->save();
     }
     
-    private function updateLaboratory($client)
+    private function updateLaboratory(Client $client)
     {
-        $PackageCreateRequest = new PackageUpdate();
-        $PackageCreateRequest->payload = $this->laboratoryCreate->laboratory;
-        
-        try {
-            $response = $client->request($PackageCreateRequest->method,
-                $PackageCreateRequest->endPoint,
-                $PackageCreateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->laboratoryCreate->response_code = $response->getStatusCode();
-        //$this->laboratoryCreate->response_body = (string)$response->getBody();
+        $packageUpdateRequest = new PackageUpdateRequest();
+        $packageUpdateRequest->payload = $this->laboratoryCreate->laboratory;
+
+        $response = $client->get($packageUpdateRequest);
+
+        $this->laboratoryCreate->response_code = $response->responseCode;
         $this->laboratoryCreate->processed_type = 'update';
         $this->laboratoryCreate->processed = now();
         $this->laboratoryCreate->save();        

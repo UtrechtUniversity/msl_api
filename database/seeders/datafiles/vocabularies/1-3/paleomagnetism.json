@@ -1,0 +1,2275 @@
+[
+    {
+        "value": "Apparatus",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "natural remanent magnetisation measurement",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "natural remanent magnetization measurement"
+                ],
+                "subTerms": [
+                    {
+                        "value": "astatic magnetometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "astatic gradiometer",
+                            "parastatic gradiometer"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "cryogenic magnetometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "cryogenic magnetometer for discrete samples",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "cryogenic magnetometer for long core",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "spinner magnetometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "AGICO spinner magnetometer",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Molspin minispin",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Molspin spinner",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "microwave palaeointensity system",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "vibrating sample magnetometer (VSM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "vibrating sample magnetometer",
+                            "VSM",
+                            "(VSM)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "single axis VSM",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "one axis VSM",
+                                    "one-axis VSM"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "triaxial VSM",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "tri-axial VSM",
+                                    "three axes VSM",
+                                    "three-axes VSM"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Triaxe",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "optically pumped rock magnetometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "laboratory induced remanent magnetisation measurement",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "laboratory induced remanent magnetization measurement",
+                    "artificial remanence measurement",
+                    "magnetic mineralogy"
+                ],
+                "subTerms": [
+                    {
+                        "value": "isothermal remanent magnetiser (IRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "isothermal remanent magnetiser",
+                            "isothermal remanent magnetizer",
+                            "IRM",
+                            "(IRM)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "2G pulse magnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "2G pulse magnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "2G in line isothermal remanent magnetisation (IRM) device",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "2G in line isothermal remanent magnetization (IRM) device"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "AGICO pulse magnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "AGICO pulse magnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC pulse magnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC pulse magnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "M2T pulse magnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "M2T pulse magnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic measurements pulse magnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "magnetic measurements pulse magnetizer"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "anhysteretic remanence magnetiser (ARM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anhysteretic remanence magnetiser",
+                            "anhysteretic remanence magnetizer",
+                            "anhysteretic remanence ARM acquisition",
+                            "(ARM)",
+                            "AMU",
+                            "(AMU)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "2G in line anhysteretic magnetiser unit (AMU)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "2G in line anhysteretic magnetizer unit (AMU)",
+                                    "2G AMU"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "AGICO anhysteretic magnetiser unit (AMU)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "AGICO anhysteretic magnetizer unit (AMU)",
+                                    "AGICO AMU"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC DTech2000 in line anysteretic magnetiser unit (AMU)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC DTech2000 in line anysteretic magnetizer unit (AMU)",
+                                    "ASC AMU"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Molspin in-line anysteretic magnetiser unit (AMU)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Molspin in-line anysteretic magnetizer unit (AMU)",
+                                    "Molspin AMU"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Schonsted anhysteretic magnetiser unit (AMU)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Schonsted AMU"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "thermoremanent magnetiser (TRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thermoremanent magnetiser",
+                            "thermoremanent magnetizer",
+                            "TRM",
+                            "(TRM)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "ASC Scientific thermal demagnetiser - dual chamber with controlled field coil",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC Scientific thermal demagnetizer - dual chamber with controlled field coil"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC Scientific thermal demagnetiser - single chamber with controlled field coil",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC Scientific thermal demagnetizer - single chamber with controlled field coil"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnetic measurements thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MMTD thermal demagnetizer",
+                                    "MMTD",
+                                    "MM thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnetic measurements super-cooled thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MMTD super-cooled thermal demagnetizer",
+                                    "MMTD super-cooled",
+                                    "MM super-cooled thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Pyrox Scientific thermal demagnetiser with controlled field coil",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Pyrox Scientific thermal demagnetizer with controlled field coil"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Triaxe",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Bitter patterns",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Bitter pattern"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "coercitivity spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "M\u00f6ssbauer spectrometer",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "variable field translation balance (VFTB)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "VFTB",
+                            "(VFTB)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "MAG instruments variable field translation balance",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "modified horizontal translation Curie balance",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "hysteresis properties",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "vibrating sample magnetometer (VSM) - hysteresis properties",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "VSM - hysteresis properties"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "single axis VSM",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "one axis VSM",
+                                            "one-axis VSM"
+                                        ],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "triaxial VSM",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "tri-axial VSM",
+                                            "three axes VSM",
+                                            "three-axes VSM"
+                                        ],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "alternating gradient magnetometer (AGM)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "AGM",
+                                    "(AGM)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic properties measurement system (MPMS)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MPMS",
+                                    "(MPMS)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "physical property measurement system (PPMS)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "PPMS",
+                                    "(PPMS)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "AC hysteresis meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "microscope magnetic scanning",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "quantum diamond microscope (QDM)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "QDM",
+                                    "(QDM)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "superconducting quantum interference device (SQUID) microscope",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "(SQUID)",
+                                    "superconducting quantum interference device",
+                                    "super-conducting quantum interference device"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "atomic force microscope (AFM) magnetic scanning",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic force microscope (MFM)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MFM",
+                                    "(MFM)"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magneto optic Kerr effect (MOKE)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "surface magneto optic Kerr effect (SMOKE)",
+                                    "MOKE",
+                                    "SMOKE",
+                                    "(SMOKE)",
+                                    "(MOKE)"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "magnetic susceptibility measurements",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "susceptibility meter",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "susceptometer"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "AGICO Kappabridge susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "AGICO Kappabridge susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Bartington magnetic susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Bartington magnetic susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Sapphire Instruments susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Sapphire Instruments susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnon susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Magnon susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Lakeshore susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Lakeshore susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "MPMS susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MPMS susceptometer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "DynoMag AC susceptibility meter",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "DynoMag AC susceptometer"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "demagnetiser",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "demagnetizer"
+                ],
+                "subTerms": [
+                    {
+                        "value": "alternating field (AF) demagnetiser",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "alternating field (AF) demagnetizer",
+                            "AF demagnetiser",
+                            "AF demagnetizer",
+                            "demagnetisation type AF",
+                            "demagnetization type AF",
+                            "(AF)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "2G in-line AF degausser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "AGICO AF demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "AGICO AF demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC AF demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC AF demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Molspin AF demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Molspin AF demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Schonstedt AF demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Schonstedt AF demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "RMI AF demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "RMI AF demagnetizer"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "thermal demagnetiser",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thermal demagnetizer"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "ASC Scientific thermal demagnetiser - absolute paleointensity",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC Scientific thermal demagnetizer - absolute paleointensity"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC Scientific thermal demagnetiser - dual chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC Scientific thermal demagnetizer - dual chamber"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ASC Scientific thermal demagnetiser - single chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "ASC Scientific thermal demagnetizer - single chamber"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnetic measurements thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MMTD thermal demagnetizer",
+                                    "MMTD",
+                                    "MM thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnetic measurements super-cooled thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "MMTD super-cooled thermal demagnetizer",
+                                    "MMTD super-cooled",
+                                    "MM super-cooled thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Pyrox Scientific thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Pyrox Scientific thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Schonstedt thermal demagnetiser",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Schonstedt thermal demagnetizer"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Triaxe",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "sampling and preparation",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "magnetic extraction system in aqueous phase",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Franz magnetic separator",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "on-site measurement",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "on site measurement",
+                    "portable measurement",
+                    "field measurement0"
+                ],
+                "subTerms": [
+                    {
+                        "value": "portable magnetometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Bartington single axis fluxgate",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Overhauser magnetometer system",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Portable spinning magnetometer (PSM)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "PSM",
+                                    "(PSM)"
+                                ],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "portable susceptibility meter (PSG)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "PSG",
+                            "(PSG)"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "GF Instruments PSG",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "SI2B PSG",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "TerraPlus PSG",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "ZH Instruments PSG",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Bartington PSG",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "portable gradiometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Environment control",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "contolled magnetic field area",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "shielded room",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Lodestar magnetics chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Mu metal chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Mu-metal",
+                                    "Mu-ferro"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "soft iron chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "soft-iron"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Soudupin chamber",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Helmholtz coils",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Magnetic Measurements active shielding",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "self-compensating Helmholtz coils"
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Magnetic Measurements low field cage",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "temperature control",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "oven (paleomagnetism)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "slow cooling oven",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "muffle furnace",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "cryostat (paleomagnetism)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "atmosphere control system",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "air control system"
+                ],
+                "subTerms": [
+                    {
+                        "value": "argon atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "helium atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "nitrogen atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon monoxide atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "carbon dioxide atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "air atmosphere",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "evacuated atmosphere (vacuum)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Measured property",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "paleointensity",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "magnetic intensity"
+                ],
+                "subTerms": [
+                    {
+                        "value": "absolute paleointensity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "relative paleointensity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "demagnetisation",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "demagnetization"
+                ],
+                "subTerms": [
+                    {
+                        "value": "alternating field (AF) demagnetisation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "alternating field (AF) demagnetization",
+                            "alternating field demagnetisation",
+                            "alternating field demagnetization",
+                            "AF demagnetisation",
+                            "AF demagnetization"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thermal demagnetisation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thermal demagnetization"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "low temperature demagnetisation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "low temperature demagnetization"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "chemical demagnetisation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "chemical demagnetization"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "microwave demagnetisation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "microwave demagnetization"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "remanent magnetisation",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "remanent magnetization"
+                ],
+                "subTerms": [
+                    {
+                        "value": "anhysteretic remanent magnetisation (ARM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anhysteretic remanent magnetization (ARM)",
+                            "anhysteretic remanent magnetisation",
+                            "anhysteretic remanent magnetization",
+                            "(ARM)",
+                            "anhysteretic remanence ARM acquisition"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "partial anhysteretic remanent magnetisation (pARM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "partial anhysteretic remanent magnetization (pARM)",
+                            "partial anhysteretic remanent magnetisation",
+                            "partial anhysteretic remanent magnetization",
+                            "pARM",
+                            "(pARM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "isothermal remanent magnetisation (IRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "isothermal remanent magnetization (IRM)",
+                            "isothermal remanent magnetisation",
+                            "isothermal remanent magnetization",
+                            "IRM",
+                            "(IRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "natural remanent magnetisation (NRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "natural remanent magnetization (NRM)",
+                            "natural remanent magnetisation",
+                            "natural remanent magnetization",
+                            "NRM",
+                            "(NRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "thermoremanent magnetisation (TRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thermoremanent magnetization (TRM)",
+                            "thermoremanent magnetisation",
+                            "thermoremanent magnetization",
+                            "TRM",
+                            "(TRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "reversed thermoremanent magnetisation (rTRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "reversed thermoremanent magnetization (rTRM)",
+                            "reversed thermoremanent magnetisation",
+                            "reversed thermoremanent magnetization",
+                            "rTRM",
+                            "(rTRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "depositional remanent magnetisation (DRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "depositional remanent magnetization (DRM)",
+                            "depositional remanent magnetisation",
+                            "depositional remanent magnetization",
+                            "DRM",
+                            "(DRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "post-depositional remanent magnetisation (pDRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "post-depositional remanent magnetization (pDRM)",
+                            "post-depositional remanent magnetisation",
+                            "post-depositional remanent magnetization",
+                            "pDRM",
+                            "(pDRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "chemical remanent magnetisation (CRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "chemical remanenet magnetization (CRM)",
+                            "chemical remanent magnetisation",
+                            "chemical remanenet magnetization",
+                            "CRM",
+                            "(CRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "backfield remanence coercivity (BRC)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "backfield remanence coercivity",
+                            "BRC",
+                            "backfield remanent coercivity",
+                            "(BRC)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "gyromagnetic remanent magnetisation (GRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "gyromagnetic remanent magnetization",
+                            "rotational remanent magnetisation (RRM)",
+                            "rotational remanent magnetization",
+                            "RRM",
+                            "GRM",
+                            "(RRM)",
+                            "(GRM)"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnetic anisotropy",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "anisotropy of anhysteretic remanent magnetisation (AARM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anisotropy of anhysteretic remanent magnetization",
+                            "anisotropic anhysteretic remanent magnetisation",
+                            "anisotropic anhysteretic remanent magnetization",
+                            "AARM",
+                            "(AARM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "anisotropy of partial anhysteretic remanent magnetisation (pAARM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anisotropy of partial anhysteretic remanent magnetization",
+                            "anisotropic partial anhysteretic remanent magnetisation",
+                            "anisotropic partial anhysteretic remanent magnetization",
+                            "pAARM",
+                            "(pAARM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "anisotropy of isothermal remanent magnetisation (AIRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anisotropy of isothermal remanent magnetization",
+                            "anisotropic isothermal remanent magnetisation",
+                            "anisotropic of isothermal remanent magnetization",
+                            "AIRM",
+                            "(AIRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "anisotropy of magnetic susceptibility (AMS)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anisotropic magnetic susceptibility",
+                            "(AMS)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "anisotropy of thermalremanent magnetisation (ATRM)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "anisotropy of thermalremanent magnetization",
+                            "anisotropic thermal remanent magnetisation",
+                            "anisotropic of thermalremanent magnetization",
+                            "ATRM",
+                            "(ATRM)"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnetic hysteresis curves",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "magnetic hysteresis loops"
+                ],
+                "subTerms": [
+                    {
+                        "value": "hysteresis parameters",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "first order reversal curve (FORC)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "FORC",
+                    "FirstOrderReversal Curves FORC",
+                    "(FORC)"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "thermomagnetic magnetisation curves",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "thermomagnetic magnetization curves"
+                ],
+                "subTerms": [
+                    {
+                        "value": "high temperature thermomagnetic curves",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "low temperature thermomagnetic curves",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnetic susceptibility",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "bulk magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "field dependent magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "field dependence of magnetic susceptibility",
+                            "field-dependence of magnetic susceptibility",
+                            "field amplitude dependence"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "frequency dependendent magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "frequency dependendence of magnetic susceptibility",
+                            "frequency-dependendence of magnetic susceptibility"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "high temperature magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "high T magnetic susceptibility",
+                            "high-T magnetic susceptibility"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "low temperature magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "low-T magnetic susceptibility",
+                            "low T magnetic susceptibility"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "in-phase magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "in phase magnetic susceptibility"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "out-of-phase magnetic susceptibility",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "out of phase magnetic susceptibility",
+                            "quadrature magnetic susceptibility"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnetisation acquisition curves",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "magnetization acquisition curves"
+                ],
+                "subTerms": []
+            },
+            {
+                "value": "magnetic remanence demagnetisation curves",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "magnetic remanence demagnetization curves"
+                ],
+                "subTerms": []
+            }
+        ]
+    },
+    {
+        "value": "Inferred behavior",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "anisotropy of magnetic susceptibility and remanence",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "magnetic anisotropy through rock structure",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "magnetic anisotropy through sedimentary structure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic anisotropy through mineralogical structure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    ""
+                                ],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic anisotropy through crystallographic preferred orientation (CPO)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "magnetic anisotropy through shape preferred orientation (SPO)",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "principal axes of magnetic susceptibility and remancence",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "deformation and compaction in sediments",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "lava flow direction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "volcanic flow direction"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "paleo-magnetic current direction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "paleomagnetic current direction",
+                            "paleo magnetic current direction",
+                            "magnetic current direction",
+                            "magnetism current direction"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "ductile deformation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "plastic deformation",
+                            "viscous deformation"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "emplacement of ore body",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "mineral body",
+                            "mineral enrichment"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "natural remanent magnetisation (NRM) orientation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "natural remanent magnetisation orientation",
+                            "natural remanent magnetization orientation",
+                            "NRM",
+                            "(NRM)"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetic anomalies",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dike flow direction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "magmatic flow direction"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetic anisotropy degree",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "degree of magnetic anisotropy",
+                            "Magnetic fabrics and anisotropy"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetic lineation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetic foliation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "magnetic mineralogy analyses",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "inferred paleoenvironment",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred paleoclimate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "remanent magnetisation stability",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "remanent magnetization stability",
+                            "remagnetisation",
+                            "remagnetization"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "environmental pollution",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "origin of remanence",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "remanence acquisition mechanism"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "archaeological environment",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "heating potential of magnetic nanoparticles",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "mineral phase analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetic domain state",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "natural remanent magnetisation processing",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "natural remanent magnetization processing"
+                ],
+                "subTerms": [
+                    {
+                        "value": "crustal block rotation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "geodynamic and tectonic processes",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "inferred paleogeography",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "magnetostratigraphy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "(paleo-)secular variation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "geomagnetic polarity time scale (GPTS)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "geomagnetic polarity time scale",
+                            "GPTS",
+                            "(GPTS)",
+                            "Geomagnetic Field Reversals"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "relative paleointensity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "paleointensity"
+                        ],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "dating volcanic products",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "archeomagnetism",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "archeomagnetic dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "absolute palaeointensity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "archeointensity"
+                        ],
+                        "subTerms": []
+                    }
+                ]
+            }
+        ]
+    }
+]

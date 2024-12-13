@@ -11,47 +11,13 @@ class GeochemistryConverter
     {
         $spreadsheet = IOFactory::load($filepath);
         
-        $data = [
-            [
-                'value' => 'Technique',
-                'level' => 1,
-                'hyperlink' => '',
-                'vocabUri' => '',
-                'uri' => '',
-                'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'Technique', 2)
-            ],
-            [
-                'value' => 'Measured property',
-                'level' => 1,
-                'hyperlink' => '',
-                'vocabUri' => '',
-                'uri' => '',
-                'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'Measured property #parameter', 2)
-            ]
-        ];
-        
-        return json_encode($data, JSON_PRETTY_PRINT);
-    }
-    
-    private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1) {
-        $worksheet = $spreadsheet->getSheetByName($sheetName);
+        $worksheet = $spreadsheet->getActiveSheet();
         
         $nodes = [];
         
         $counter = 0;
-        foreach ($worksheet->getRowIterator(3, $worksheet->getHighestDataRow()) as $row) {
-            switch ($sheetName) {
-                case 'Technique':
-                    $cellIterator = $row->getCellIterator('A', 'C');
-                    break;
-                    
-                case 'Measured property #parameter':
-                    $cellIterator = $row->getCellIterator('A', 'C');
-                    break;                
-            }
-            
+        foreach ($worksheet->getRowIterator(2, $worksheet->getHighestDataRow()) as $row) {
+            $cellIterator = $row->getCellIterator('A', 'D');
             $cellIterator->setIterateOnlyExistingCells(false);
             
             foreach ($cellIterator as $cell) {
@@ -68,9 +34,8 @@ class GeochemistryConverter
                             $node['vocabUri'] = $this->extractVocabUri($node['hyperlink']);
                         }
                         
-                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
-                        $node['synonyms'] = $this->extractSynonyms($cell->getValue());
-                        
+                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());
+                        $node['synonyms'] = $this->extractSynonyms($this->getSynonymString($cell, $worksheet));
                         
                         $nodes[] = $node;
                     }
@@ -81,15 +46,20 @@ class GeochemistryConverter
         
         $nestedNodes = [];
         for ($i = 0; $i < count($nodes); $i++) {
-            if($nodes[$i]['level'] == $baseLevel) {
+            if($nodes[$i]['level'] == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $nestedNodes[] = $node;
             }
         }
         
+        return json_encode($nestedNodes, JSON_PRETTY_PRINT);        
+    }
+    
+    private function getSynonymString($activeCell, $worksheet) {
+        $row = $activeCell->getRow();
         
-        return $nestedNodes;
+        return $worksheet->getCell('E' . $row)->getValue();        
     }
     
     //http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock

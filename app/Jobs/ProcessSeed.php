@@ -2,8 +2,9 @@
 
 namespace App\Jobs;
 
+use App\Models\EquipmentCreate;
+use App\Models\Laboratory;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Seed;
 use App\Models\OrganizationCreate;
 use App\Models\LaboratoryCreate;
-
+use App\Models\LaboratoryEquipment;
 
 class ProcessSeed implements ShouldQueue
 {
@@ -58,23 +59,29 @@ class ProcessSeed implements ShouldQueue
                 }
             }
         } elseif ($seeder->type == "lab") {
-            if($seeder->options['type'] == 'fileSeeder') {
-                $filePath = $seeder->options['filePath'];
+            $laboratories = Laboratory::get();
+
+            foreach($laboratories as $laboratory) {
+                $LaboratoryCreate = LaboratoryCreate::create([
+                    'laboratory_type' => 'laboratory',
+                    'laboratory' => $laboratory->toCkanArray(),
+                    'seed_id' => $this->seed->id
+                ]);
                 
-                if(Storage::disk()->exists($filePath)) {
-                    $jsonEntries = json_decode(Storage::get($filePath), true);
-                    
-                    foreach ($jsonEntries as $jsonEntry) {
-                        $LaboratoryCreate = LaboratoryCreate::create([
-                            'laboratory_type' => 'organization',
-                            'laboratory' => $jsonEntry,
-                            'seed_id' => $this->seed->id
-                        ]);
-                        
-                        ProcessLaboratoryCreate::dispatch($LaboratoryCreate);
-                    }
-                }
+                ProcessLaboratoryCreate::dispatch($LaboratoryCreate);
             }
+        } elseif($seeder->type == "equipment") {
+            $equipmentList = LaboratoryEquipment::get();
+            foreach($equipmentList as $equipment) {
+                $equipmentCreate = EquipmentCreate::create([
+                    'equipment_type' => 'equipment',
+                    'equipment' => $equipment->toCkanArray(),
+                    'seed_id' => $this->seed->id
+                ]);
+
+                ProcessEquipmentCreate::dispatch($equipmentCreate);
+            }
+
         } else {
             throw new \Exception('Invalid Seeder configuration.');
         }

@@ -8,8 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\LaboratoryOrganizationUpdateRor;
-use App\ror\Ror;
-
+use App\Ror\Ror;
 
 class ProcessLaboratoryOrganizationUpdateRor implements ShouldQueue
 {

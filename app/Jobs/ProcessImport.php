@@ -78,12 +78,12 @@ class ProcessImport implements ShouldQueue
                 $counter = 0;
                 foreach ($jsonEntries as $jsonEntry)
                 {
-                    /*
-                    $counter++;
-                    if($counter >= 100) {
-                        break;
-                    }
-                    */
+                    
+                    // $counter++;
+                    // if($counter >= 2) {
+                    //     break;
+                    // }
+                    
                     if(isset($jsonEntry[$identifierKey])) {
                         $identifier = SourceDatasetIdentifier::create([
                             'import_id' => $this->import->id,

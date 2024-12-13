@@ -3,9 +3,8 @@ namespace App\Mappers;
 
 use App\Models\SourceDataset;
 use App\Models\MappingLog;
-use App\Ckan\Request\PackageSearch;
-use App\Ckan\Response\PackageSearchResponse;
 use App\Mappers\Helpers\DataciteCitationHelper;
+use App\Mappers\Helpers\GeoJSON;
 use App\Datasets\BaseDataset;
 use App\Mappers\Helpers\KeywordHelper;
 
@@ -83,23 +82,6 @@ class TestMapper
             return str_replace('https://doi.org/', '', $doi);
         }
         return $doi;
-    }
-    
-    private function getLabNames()
-    {
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->rows = 1000;
-        $searchRequest->query = 'type: lab';
-        try {
-            $response = $this->client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $packageSearchResponse = new PackageSearchResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        return $packageSearchResponse->getNameList();
     }
     
     private function extractExtension($filename)
@@ -359,7 +341,15 @@ class TestMapper
         $dataset->owner_org = $sourceDataset->source_dataset_identifier->import->importer->data_repository->ckan_name;
         
         //set publisher
-        $dataset->msl_publisher = 'YoDa Data Repository, Utrecht University, Netherlands';
+        $dataset->msl_publisher = 'Test mapper';
+        
+        
+        /*
+         * Test initial code from Harm
+         */
+        $geometriesBox = [];
+        $featuresBox = [];
+        $featuresPoint = [];
         
         //extract spatial coordinates
         $spatialResults = $xmlDocument->xpath("/dc:resource/dc:geoLocations/dc:geoLocation/dc:geoLocationBox");        
@@ -393,7 +383,41 @@ class TestMapper
                 }
                 
                 $dataset->msl_spatial_coordinates[] = $spatial;
+                                                
+                // Geo specific handling for presentation and search (SOLR) purposes.
+                $bbox = ['eastBoundLongitude' => (float)$elongNode[0],
+                    'northBoundLatitude' => (float)$nlatNode[0],
+                    'southBoundLatitude' => (float)$slatNode[0],
+                    'westBoundLongitude' => (float)$wlongNode[0]];
+                
+                if (GeoJSON::isCompleteBoundingBox($bbox)) {                    
+                    if (($feature = GeoJSON::coordsToGeoJSONFeatureBBox($bbox, 'Original coordinates')) && $feature != []) {
+                        $featuresBox[] = $feature;
+                        
+                        $featuresPoint[] = GeoJSON::coordsToGeoJSONFeaturePoint($bbox, 'Original coordinates');
+                    }
+                    
+                    if (($geometry = GeoJSON::coordsToGeoJSONGeometryBBox($bbox)) && $geometry != []) {
+                        $geometriesBox[] = $geometry;
+                    }
+                }
             }
+        }
+        
+        if (sizeof($featuresBox)) {
+            // featureCollection is for mapping functionality frontend
+            $featureCollectionBoxes = ["type" => "FeatureCollection", "features" => $featuresBox];
+            $featureCollectionPoints = ["type" => "FeatureCollection", "features" => $featuresPoint];
+            
+            $dataset->msl_geojson_featurecollection = json_encode($featureCollectionBoxes);
+            $dataset->msl_geojson_featurecollection_points = json_encode($featureCollectionPoints);
+        }
+        
+        if (sizeof($geometriesBox)) {
+            // geometryCollection is for SOLR
+            $geometryCollectionBoxes = ["type" => "GeometryCollection", "geometries" => $geometriesBox];
+                                   
+            $dataset->extras[] = ["key" => "spatial", "value" => json_encode($geometryCollectionBoxes)];            
         }
         
         //extract geo locations

@@ -8,10 +8,10 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\DatasetCreate;
-use App\Ckan\Request\PackageCreate;
-use App\Ckan\Request\PackageShow;
-use App\Ckan\Response\PackageShowResponse;
-use App\Ckan\Request\PackageUpdate;
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageCreateRequest;
+use App\CkanClient\Request\PackageShowRequest;
+use App\CkanClient\Request\PackageUpdateRequest;
 
 class ProcessDatasetCreate implements ShouldQueue
 {
@@ -37,67 +37,54 @@ class ProcessDatasetCreate implements ShouldQueue
      */
     public function handle()
     {
-        $client = new \GuzzleHttp\Client();
+        $ckanClient = new Client();
         
-        //check if package is already in ckan
-        $packageShowRequest = new PackageShow();
+        $packageShowRequest = new PackageShowRequest();
         $packageShowRequest->id = $this->datasetCreate->dataset['name'];
         
-        try {
-            $response = $client->request(
-                $packageShowRequest->method,
-                $packageShowRequest->endPoint,
-                $packageShowRequest->getPayloadAsArray()
-                );
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
+        //check if package is already in ckan
+        $response = $ckanClient->get($packageShowRequest);
         
-        $packageShowResponse = new PackageShowResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        if($packageShowResponse->packageExists()) {
-            $this->updateDataset($client);
+        if($response->isSuccess()) {
+            $this->updateDataset($ckanClient);
         } else {
-            $this->createDataset($client);
-        }                      
-                                  
+            $this->createDataset($ckanClient);
+        }                          
     }
     
+    /**
+     * Send package create request to ckan and update datasetcreate record in database
+     * 
+     * @return void
+     */
     private function createDataset($client)
     {
-        $PackageCreateRequest = new PackageCreate();
-        $PackageCreateRequest->payload = $this->datasetCreate->dataset;
+        $packageCreateRequest = new PackageCreateRequest();
+        $packageCreateRequest->payload = $this->datasetCreate->dataset;
+
+        $response = $client->get($packageCreateRequest);        
         
-        try {
-            $response = $client->request($PackageCreateRequest->method,
-                $PackageCreateRequest->endPoint,
-                $PackageCreateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->datasetCreate->response_code = $response->getStatusCode();
-        $this->datasetCreate->response_body = (string)$response->getBody();
+        $this->datasetCreate->response_code = $response->responseCode;
+        $this->datasetCreate->response_body = json_encode($response->responseBody);
         $this->datasetCreate->processed_type = 'insert'; 
         $this->datasetCreate->processed = now();
         $this->datasetCreate->save();
     }
     
+    /**
+     * Send package update request to ckan and update datasetcreate record in database
+     * 
+     * @return void
+     */
     private function updateDataset($client)
     {
-        $PackageCreateRequest = new PackageUpdate();
-        $PackageCreateRequest->payload = $this->datasetCreate->dataset;
-        
-        try {
-            $response = $client->request($PackageCreateRequest->method,
-                $PackageCreateRequest->endPoint,
-                $PackageCreateRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->datasetCreate->response_code = $response->getStatusCode();
-        $this->datasetCreate->response_body = (string)$response->getBody();
+        $packageUpdateRequest = new PackageUpdateRequest();
+        $packageUpdateRequest->payload = $this->datasetCreate->dataset;
+
+        $response = $client->get($packageUpdateRequest);
+
+        $this->datasetCreate->response_code = $response->responseCode;
+        $this->datasetCreate->response_body = json_encode($response->responseBody);
         $this->datasetCreate->processed_type = 'update';
         $this->datasetCreate->processed = now();
         $this->datasetCreate->save();

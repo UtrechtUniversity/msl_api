@@ -5,26 +5,24 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
-        "caseyamcl/phpoaipmh": "^3.0",
-        "doctrine/dbal": "^3.5",
+        "php": "^8.3",
+        "andreiio/blade-remix-icon": "^3.5",
+        "caseyamcl/phpoaipmh": "^3.3",
         "easyrdf/easyrdf": "^1.1",
-        "fabpot/goutte": "^4.0",
-        "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.40",
-        "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4",
-        "maatwebsite/excel": "^3.1"
+        "laravel/framework": "^11.9",
+        "laravel/tinker": "^2.9",
+        "laravel/ui": "^4.5",
+        "maatwebsite/excel": "^3.1",
+        "symfony/browser-kit": "^7.1",
+        "symfony/http-client": "^7.1"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.2",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.3.3"
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.32",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.1",
+        "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
         "psr-4": {

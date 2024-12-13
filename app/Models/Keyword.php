@@ -10,10 +10,11 @@ class Keyword extends Model
         'parent_id',
         'value',
         'uri',
-        'vocubulary_id',
+        'vocabulary_id',
         'level',
         'hyperlink',
-        'exclude_domain_mapping'
+        'exclude_domain_mapping',
+        'label'
     ];
     
     protected $casts = [

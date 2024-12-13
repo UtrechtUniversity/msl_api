@@ -11,7 +11,8 @@ class DatasetCreate extends Model
         'dataset_type',
         'dataset',
         'source_dataset_id',
-        'import_id'
+        'import_id',
+        'response_body'
     ];
     
     protected $casts = [

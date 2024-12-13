@@ -1,0 +1,56 @@
+[
+    {
+        "text": "Scientific domain",
+        "state": {
+            "opened": false,
+            "disabled": true,
+            "selected": false,
+            "checked": false
+        },
+        "extra": {
+            "type": "filter",
+            "url": "",
+            "filterName": "",
+            "filterValue": "",
+            "includeFacet": true,
+            "facetName": "msl_domain_name"
+        },
+        "children": []
+    },
+    {
+        "text": "Country",
+        "state": {
+            "opened": false,
+            "disabled": true,
+            "selected": false,
+            "checked": false
+        },
+        "extra": {
+            "type": "filter",
+            "url": "",
+            "filterName": "",
+            "filterValue": "",
+            "includeFacet": true,
+            "facetName": "msl_address_country_name"
+        },
+        "children": []
+    },
+    {
+        "text": "Organization",
+        "state": {
+            "opened": false,
+            "disabled": true,
+            "selected": false,
+            "checked": false
+        },
+        "extra": {
+            "type": "filter",
+            "url": "",
+            "filterName": "",
+            "filterValue": "",
+            "includeFacet": true,
+            "facetName": "msl_organization_name"
+        },
+        "children": []
+    }
+]

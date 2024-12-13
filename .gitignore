@@ -16,3 +16,5 @@ yarn-error.log
 .buildpath
 .project
 .settings/
+/public/build
+.phpunit.cache

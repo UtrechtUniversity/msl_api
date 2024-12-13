@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Ckan\Request\PackageSearch;
-use App\Ckan\Request\OrganizationList;
-use App\Ckan\Response\OrganizationListResponse;
+use App\CkanClient\Client;
+use App\CkanClient\Request\OrganizationListRequest;
+use App\CkanClient\Request\PackageSearchRequest;
 use App\Converters\MaterialsConverter;
 use App\Converters\RockPhysicsConverter;
 use App\Converters\ExcelToJsonConverter;
@@ -24,6 +24,9 @@ use App\Converters\MicroscopyConverter;
 use App\Models\Vocabulary;
 use App\Exports\UriLabelExport;
 use App\Models\Keyword;
+use App\Models\Laboratory;
+use App\Converters\SubsurfaceConverter;
+use App\Converters\TestbedsConverter;
 
 class ToolsController extends Controller
 {
@@ -39,7 +42,80 @@ class ToolsController extends Controller
         
     public function convertKeywords()
     {        
-        return view('convert-keywords');
+        return view('admin.convert-keywords');
+    }
+    
+    public function geoview()
+    {
+        $client = new Client();
+        $searchRequest = new PackageSearchRequest();
+        $searchRequest->query = 'type:data-publication msl_surface_area:[0 TO 500]';
+        $searchRequest->rows = 1000;
+
+        $result = $client->get($searchRequest);
+        $results = $result->getResults();
+        
+        $featureArray = [];
+        $featureArrayPoints = [];
+        
+        foreach ($results as $result) {
+            if(isset($result['msl_geojson_featurecollection'])) {
+                if(strlen($result['msl_geojson_featurecollection']) > 0) {
+                    $featureArray[] = $result['msl_geojson_featurecollection'];
+                }
+            }
+                                    
+            //include extra data in point features for map testing
+            if(isset($result['msl_geojson_featurecollection_points'])) {
+                if(strlen($result['msl_geojson_featurecollection_points']) > 0) {
+                    $pointFeature = json_decode($result['msl_geojson_featurecollection_points']);
+                    
+                    
+                    foreach ($pointFeature->features as &$subFeature) {
+                        $subFeature->properties->name = $result['title'];
+                        $subFeature->properties->ckan_id = $result['name'];
+                        $subFeature->properties->area_geojson = $result['msl_geojson_featurecollection'];
+                    }
+                    
+                    
+                    $pointFeature->features[0]->properties->name = $result['title'];
+                    $pointFeature->features[0]->properties->ckan_id = $result['name'];
+                    $pointFeature->features[0]->properties->area_geojson = $result['msl_geojson_featurecollection'];
+                    
+                    $pointFeature = json_encode($pointFeature);
+                    
+                    $featureArrayPoints[] = $pointFeature;
+                }
+            }
+            
+            
+        }
+        
+        return view('admin.geoview', ['features' => json_encode($featureArray), 'featuresPoints' => json_encode($featureArrayPoints)]);
+    }
+    
+    public function geoviewLabs()
+    {
+        $labs = Laboratory::where('latitude', '<>', '')->get();
+        
+        $featureArray = [];
+        
+        foreach ($labs as $lab) {
+            $feature = [
+                'type' => 'Feature',
+                'properties' => [
+                    'name' => $lab->name
+                ],
+                'geometry' => [
+                    'type' => 'Point',
+                    'coordinates' => [str_replace(',', '.', $lab->longitude), str_replace(',', '.', $lab->latitude)]
+                ]
+            ];
+            
+            $featureArray[] = $feature;
+        }        
+        
+        return view('admin.geoview-labs', ['features' => json_encode($featureArray)]);
     }
     
     public function processMaterialsFile(Request $request)
@@ -214,9 +290,47 @@ class ToolsController extends Controller
         ->with('status','Error');
     }
     
+    public function processSubsurfaceFile(Request $request)
+    {
+        $request->validate([
+            'subsurface-file' => 'required'
+        ]);
+        
+        if($request->hasFile('subsurface-file')) {
+            $converter = new SubsurfaceConverter();
+            
+            return response()->streamDownload(function () use($converter, $request) {
+                echo $converter->ExcelToJson($request->file('subsurface-file'));
+            }, 'subsurface.json');
+                
+        }
+        
+        return back()
+        ->with('status','Error');
+    }
+    
+    public function processTestbedsFile(Request $request)
+    {
+        $request->validate([
+            'testbeds-file' => 'required'
+        ]);
+        
+        if($request->hasFile('testbeds-file')) {
+            $converter = new TestbedsConverter();
+            
+            return response()->streamDownload(function () use($converter, $request) {
+                echo $converter->ExcelToJson($request->file('testbeds-file'));
+            }, 'testbeds.json');
+                
+        }
+        
+        return back()
+        ->with('status','Error');
+    }
+    
     public function convertExcel()
     {
-        return view('convert-excel');
+        return view('admin.convert-excel');
     }
     
     public function processExcelToJson(Request $request)
@@ -240,7 +354,7 @@ class ToolsController extends Controller
     
     public function uriLabels()
     {
-        return view('uri-labels');
+        return view('admin.uri-labels');
     }
     
     public function uriLabelsDownload()
@@ -254,7 +368,7 @@ class ToolsController extends Controller
     
     public function filterTree()
     {
-        return view('filter-tree');
+        return view('admin.filter-tree');
     }            
     
     public function filterTreeDownload()
@@ -274,24 +388,26 @@ class ToolsController extends Controller
             echo $exporter->exportOriginal();
         }, 'original.json');
     }
+
+    public function filterTreeDownloadEquipment()
+    {
+        $exporter = new FilterTreeExport();
+        
+        return response()->streamDownload(function () use($exporter) {
+            echo $exporter->exportEquipment();
+        }, 'equipment.json');
+    }
     
     public function viewUnmatchedKeywords()
     {
-        $client = new \GuzzleHttp\Client();
-        
-        $searchRequest = new PackageSearch();
+        $client = new Client();
+        $searchRequest = new PackageSearchRequest();
+        $searchRequest->query = 'type:data-publication';
         $searchRequest->rows = 1000;
-        $searchRequest->query = 'type: data-publication';
-        
-        try {
-            $response = $client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $content = json_decode($response->getBody(), true);
-        $results = $content['result']['results'];                
-                                
+
+        $result = $client->get($searchRequest);
+        $results = $result->getResults();
+                                             
         $keywords = [];
         foreach ($results as $result) {
             if(count($result['tags']) > 0) {
@@ -309,7 +425,7 @@ class ToolsController extends Controller
             return $b - $a;
         });
         
-        return view('unmatched-keywords', ['keywords' => $keywords]);
+        return view('admin.unmatched-keywords', ['keywords' => $keywords]);
     }
     
     public function downloadUnmatchedKeywords()
@@ -319,20 +435,11 @@ class ToolsController extends Controller
     
     public function abstractMatching(Request $request)
     {
-        $client = new \GuzzleHttp\Client();
-        
-        $OrganizationListrequest = new OrganizationList();
-        
-        try {
-            $response = $client->request($OrganizationListrequest->method,
-                $OrganizationListrequest->endPoint,
-                $OrganizationListrequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $organizationListResponse = new OrganizationListResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        $organizations = $organizationListResponse->getOrganizations();
+        $client = new Client();
+        $organizationListRequest = new OrganizationListRequest();
+
+        $result = $client->get($organizationListRequest);
+        $organizations = $result->getResult();
         
         $filteredOrganizations = [];
         
@@ -346,26 +453,19 @@ class ToolsController extends Controller
         $data = [];
         $selected = '';
         
-        if ($request->has('datasetSource')) {
+        if ($request->has('datasetSource')) {            
             $datasetSource = $request->query('datasetSource');
             $selected = $datasetSource;
-            
-            $searchRequest = new PackageSearch();
-            $searchRequest->rows = 10;
+
+            $client = new Client();
+            $searchRequest = new PackageSearchRequest();
             $searchRequest->query = 'type:data-publication';
-            $searchRequest->filterQuery =  'owner_org:' . $datasetSource;            
-            
-            try {
-                $response = $client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-            } catch (\Exception $e) {
-                
-            }
-            
-            $content = json_decode($response->getBody(), true);
-            $results = $content['result']['results'];
-            
-            //dd($content);
-            
+            $searchRequest->addFilterQuery('owner_org', $datasetSource);
+            $searchRequest->rows = 10;
+
+            $result = $client->get($searchRequest);
+            $results = $result->getResults();
+                        
             $keywordHelper = new KeywordHelper();
                     
             foreach ($results as $result) {
@@ -385,7 +485,7 @@ class ToolsController extends Controller
         }
                                 
         
-        return view('abstract-matching', ['data' => $data, 'organizations' => $filteredOrganizations, 'selected' => $selected]);
+        return view('admin.abstract-matching', ['data' => $data, 'organizations' => $filteredOrganizations, 'selected' => $selected]);
     }
     
     public function abstractMatchingDownload($dataRepo) 
@@ -395,36 +495,23 @@ class ToolsController extends Controller
     
     public function doiExport(Request $request)
     {
-        $client = new \GuzzleHttp\Client();
-        $OrganizationListrequest = new OrganizationList();
-        
-        try {
-            $response = $client->request($OrganizationListrequest->method,
-                $OrganizationListrequest->endPoint,
-                $OrganizationListrequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $organizationListResponse = new OrganizationListResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        $organizations = $organizationListResponse->getOrganizations();
+        $client = new Client();
+        $organizationListRequest = new OrganizationListRequest();
+
+        $result = $client->get($organizationListRequest);
+        $organizations = $result->getResult();        
         
         if ($request->has('organization')) {
             $OrganizationId = $request->query('organization');
-            
-            $client = new \GuzzleHttp\Client();
-            
-            $searchRequest = new PackageSearch();
-            $searchRequest->query = 'owner_org:' . $OrganizationId;
+
+            $client = new Client();
+            $searchRequest = new PackageSearchRequest();
+            $searchRequest->query = 'type:data-publication';
+            $searchRequest->addFilterQuery('owner_org', $OrganizationId);
             $searchRequest->rows = 200;
-            try {
-                $response = $client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-            } catch (\Exception $e) {
-                
-            }
-            
-            $content = json_decode($response->getBody(), true);
-            $results = $content['result']['results'];
+
+            $result = $client->get($searchRequest);
+            $results = $result->getResults();
             
             $dois = [];
             
@@ -435,7 +522,7 @@ class ToolsController extends Controller
             dd(implode(', ', $dois));
         }
         
-        return view('export-dois', ['organizations' => $organizations]);
+        return view('admin.export-dois', ['organizations' => $organizations]);
     }
     
     public function queryGenerator()
@@ -721,7 +808,7 @@ class ToolsController extends Controller
         $query .= implode(',', $terms);
         dd($query);
                         
-        return view('query-generator', ['query' => $query]);
+        return view('admin.query-generator', ['query' => $query]);
     }
     
     private function createKeywordSearchRegex($searchValue) {

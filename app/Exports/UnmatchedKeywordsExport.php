@@ -5,7 +5,8 @@ namespace App\Exports;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
-use App\Ckan\Request\PackageSearch;
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageSearchRequest;
 
 class UnmatchedKeywordsExport implements FromCollection, WithHeadings, WithMapping
 {   
@@ -20,21 +21,14 @@ class UnmatchedKeywordsExport implements FromCollection, WithHeadings, WithMappi
     */
     public function collection()
     {
-        $client = new \GuzzleHttp\Client();
-        
-        $searchRequest = new PackageSearch();
+        $client = new Client;
+        $searchRequest = new PackageSearchRequest();
+        $searchRequest->query = 'type:data-publication';
         $searchRequest->rows = 1000;
-        $searchRequest->query = 'type: data-publication';
-        
-        try {
-            $response = $client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $content = json_decode($response->getBody(), true);
-        $results = $content['result']['results'];
-        
+
+        $result = $client->get($searchRequest);
+        $results = $result->getResults();
+                
         $keywords = [];
         foreach ($results as $result) {
             if(count($result['tags']) > 0) {

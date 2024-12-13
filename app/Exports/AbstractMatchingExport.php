@@ -5,7 +5,8 @@ namespace App\Exports;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
-use App\Ckan\Request\PackageSearch;
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageSearchRequest;
 use App\Mappers\Helpers\KeywordHelper;
 
 class AbstractMatchingExport implements FromCollection, WithHeadings, WithMapping
@@ -22,23 +23,16 @@ class AbstractMatchingExport implements FromCollection, WithHeadings, WithMappin
     */
     public function collection()
     {
-        $client = new \GuzzleHttp\Client();
-        
         $datasetSource = $this->repositoryId;
-        
-        $searchRequest = new PackageSearch();
+
+        $client = new Client();
+        $searchRequest = new PackageSearchRequest();
+        $searchRequest->query = 'type:data-publication';
+        $searchRequest->addFilterQuery('owner_org', $datasetSource);
         $searchRequest->rows = 10;
-        $searchRequest->query = 'type: data-publication';
-        $searchRequest->filterQuery =  'owner_org:' . $datasetSource;
-        
-        try {
-            $response = $client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $content = json_decode($response->getBody(), true);
-        $results = $content['result']['results'];
+
+        $result = $client->get($searchRequest);
+        $results = $result->getResults();
         
         $keywordHelper = new KeywordHelper();
         

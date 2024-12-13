@@ -7,6 +7,7 @@ use App\Ckan\Request\PackageSearch;
 use App\Ckan\Response\PackageSearchResponse;
 use App\Mappers\Helpers\DataciteCitationHelper;
 use App\Datasets\BaseDataset;
+use App\Mappers\Helpers\GeoJSON;
 use App\Mappers\Helpers\KeywordHelper;
 use App\Mappers\Helpers\GfzDownloadHelper;
 
@@ -355,6 +356,11 @@ class GfzMapper
         $dataset = $this->keywordHelper->mapKeywordsFromText($dataset, $dataset->title, 'title');
         $dataset = $this->keywordHelper->mapKeywordsFromText($dataset, $dataset->notes, 'notes');
         
+        $geometriesBox = [];
+        $featuresBox = [];
+        $featuresPoint = [];
+        $areaSize = 0;
+        
         //extract spatial coordinates
         $spatialResults = $xmlDocument->xpath("/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata[1]/gmd:MD_Metadata/gmd:identificationInfo/gmd:MD_DataIdentification/gmd:extent/gmd:EX_Extent/gmd:geographicElement");
         if(count($spatialResults) > 0) {
@@ -385,7 +391,43 @@ class GfzMapper
                 }
                 
                 $dataset->msl_spatial_coordinates[] = $spatial;
+                
+                // Geo specific handling for presentation and search (SOLR) purposes.
+                $bbox = ['eastBoundLongitude' => (float)$elongNode[0],
+                    'northBoundLatitude' => (float)$nlatNode[0],
+                    'southBoundLatitude' => (float)$slatNode[0],
+                    'westBoundLongitude' => (float)$wlongNode[0]];
+                
+                if (GeoJSON::isCompleteBoundingBox($bbox)) {
+                    if (($feature = GeoJSON::coordsToGeoJSONFeatureBBox($bbox, 'Original coordinates')) && $feature != []) {
+                        $featuresBox[] = $feature;                        
+                        $featuresPoint[] = GeoJSON::coordsToGeoJSONFeaturePoint($bbox, 'Original coordinates');
+                        $areaSize = $areaSize + GeoJSON::bboxSurfaceSize($bbox);
+                    }
+                    
+                    if (($geometry = GeoJSON::coordsToGeoJSONGeometryBBox($bbox)) && $geometry != []) {
+                        $geometriesBox[] = $geometry;
+                    }
+                }
             }
+        }
+        
+        if (sizeof($featuresBox)) {
+            // featureCollection is for mapping functionality frontend
+            $featureCollectionBoxes = ["type" => "FeatureCollection", "features" => $featuresBox];
+            $featureCollectionPoints = ["type" => "FeatureCollection", "features" => $featuresPoint];
+            
+            $dataset->msl_geojson_featurecollection = json_encode($featureCollectionBoxes);
+            $dataset->msl_geojson_featurecollection_points = json_encode($featureCollectionPoints);
+            
+            $dataset->msl_surface_area = (int)$areaSize;
+        }
+        
+        if (sizeof($geometriesBox)) {
+            // geometryCollection is for SOLR
+            $geometryCollectionBoxes = ["type" => "GeometryCollection", "geometries" => $geometriesBox];
+            
+            $dataset->extras[] = ["key" => "spatial", "value" => json_encode($geometryCollectionBoxes)];
         }
                         
         //extract license id
@@ -429,7 +471,7 @@ class GfzMapper
         }
         
         //extract file information
-        $dataset = $this->gfzDownloadHelper->addData($dataset);
+        //$dataset = $this->gfzDownloadHelper->addData($dataset);
               
         return $dataset;
     }

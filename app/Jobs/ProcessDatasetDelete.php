@@ -2,14 +2,14 @@
 
 namespace App\Jobs;
 
+use App\CkanClient\Client;
+use App\CkanClient\Request\DatasetPurgeRequest;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\DatasetDelete;
-use App\Ckan\Request\DatasetPurge;
 
 class ProcessDatasetDelete implements ShouldQueue
 {
@@ -34,21 +34,14 @@ class ProcessDatasetDelete implements ShouldQueue
      */
     public function handle()
     {
-        $client = new \GuzzleHttp\Client();
-                        
-        $DatasetPurgeRequest = new DatasetPurge();
+        $ckanClient = new Client();
+        $DatasetPurgeRequest = new DatasetPurgeRequest();
         $DatasetPurgeRequest->id = $this->datasetDelete->ckan_id;
-                
-        try {
-            $response = $client->request($DatasetPurgeRequest->method, 
-                $DatasetPurgeRequest->endPoint,
-                $DatasetPurgeRequest->getPayloadAsArray());
-        } catch (\Exception $e) {
-            dd($e->getMessage());
-        }
-        
-        $this->datasetDelete->response_code = $response->getStatusCode();
+
+        $response = $ckanClient->get($DatasetPurgeRequest);
+                        
+        $this->datasetDelete->response_code = $response->responseCode;
         $this->datasetDelete->processed = now();
-        $this->datasetDelete->save();               
+        $this->datasetDelete->save();        
     }
 }
