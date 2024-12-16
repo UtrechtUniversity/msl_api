@@ -6,21 +6,24 @@
             How to contribute as a repository
         </p>
 
-        <div class="flex justify-center items-center flex-col px-4">
-            <p>
+        <div class="max-w-screen-md flex justify-center items-center flex-col px-4">
+            <p class="text-center">
                 Do you work at a data repository?
             </p>
-            <p>
-                Would you like to make sure that data or models from the EPOS Multi-Scale Laboratories research domains can be found on this catalogue, and on the EPOS data portal, alongside other European solid Earth scientific data? 
+            <p class="text-center">
+                Does your repository host data or models pertaining to one of the EPOS Multi-Scale Laboratories research domains?
+            </p>
+            <p class="text-center">
+                Would you like to make sure that these can be found on this catalogue, and on the EPOS data portal, alongside other European solid Earth scientific data?
             </p>            
-            <p>
+            <p class="text-center">
                 Find out how to do this here.
             </p>
         </div>        
 
         <div class="max-w-screen-md px-4">
-            <h2 class="pt-10 pb-4">Relevant data publications</h2>
-            <p>First, we need to be able to locate which data publications you want to make discoverable within this catalogue. We currently support the following options:</p>
+            <h2 class="pt-10 pb-4">Identifying data publications relevant to EPOS MSL</h2>
+            <p>First, we need to be able to identify which data publications you want to make discoverable within this catalogue. We currently support the following options:</p>
             <ul class="list-disc pt-6 pb-6 pl-10 pr-10">
                 <li>DataCite query</li>
                 <li>OAI-PMH service(s)</li>
@@ -34,7 +37,7 @@
             </ul>
             <p>With that in mind, you make it a lot easier for us to find MSL-relevant data, if researchers publishing at your repository know what terms to add, to optimize data findability. See the below metadata recommendations on how to possibly go about that.</p>
 
-            <h2 class="pt-5 pb-4">Import process</h2>
+            <h2 class="pt-5 pb-4">How do we import metadata?</h2>
             <ol class="list-decimal pt-6 pb-6 pl-10 pr-10">
                 <li>Retrieve list of relevant DOIs</li>
                 <li>(DataCite) metadata retrieval</li>
@@ -42,7 +45,7 @@
                 <li>You data is now findable within the MSL and EPOS data catalogues!</li>
             </ol>
 
-            <h2 class="pt-5 pb-4">Metadata recommendations</h2>
+            <h2 class="pt-5 pb-4">How you can help: metadata recommendations</h2>
             <ul class="list-disc pt-6 pb-6 pl-10 pr-10">
                 <li>Assign <abbr title="Persistent Identifier">PIDs</abbr> to digital objects where possible</li>
                 <li>
@@ -51,8 +54,7 @@
                 </li>
             </ul>
 
-            <h2 class="pt-5 pb-4">Specific metadata</h2>
-            <details class="collapse collapse-arrow">
+            <details class="collapse collapse-arrow  rounded-lg shadow-md mb-4">
                 <summary class="collapse-title">File information</summary>
                 <div class="collapse-content">
                 Using the general metadata description we can improve the findability of your data publications however this 
@@ -62,7 +64,7 @@
                 </div>
             </details>
 
-            <details class="collapse collapse-arrow">
+            <details class="collapse collapse-arrow rounded-lg shadow-md mb-4">
                 <summary class="collapse-title">Keywords and vocabularies</summary>
                 <div class="collapse-content">
                 Assigning keywords to your data publications greatly improves their findability. To maximize its impact it is important to understand 
@@ -72,14 +74,7 @@
                 </div>
             </details>
 
-            <details class="collapse collapse-arrow">
-                <summary class="collapse-title">Lab information</summary>
-                <div class="collapse-content">
-                    -
-                </div>
-            </details>
-
-            <details class="collapse collapse-arrow">
+            <details class="collapse collapse-arrow rounded-lg shadow-md mb-4">
                 <summary class="collapse-title">Versioning</summary>
                 <div class="collapse-content">
                     Data publications might be published as several versions over the course of time. It is 
@@ -89,7 +84,7 @@
                 </div>
             </details>
 
-            <details class="collapse collapse-arrow">
+            <details class="collapse collapse-arrow rounded-lg shadow-md mb-4">
                 <summary class="collapse-title">Location data</summary>
                 <div class="collapse-content">
                     By providing information about the geolocations associated with your data publication we can greatly improve the findability. 
@@ -98,10 +93,10 @@
             </details>
 
             <h2 class="pt-5 pb-4">Custom implementations</h2>
-            <p>Every data repository might have unique technologies in place to share data. Feel free to contact us to discuss what we can do to setup the best way of harvesting all related metadata.</p>
-
-    
-        </div>
-        
+            <p>
+                Every data repository might have unique technologies in place to share data. Feel free to 
+                <a href="{{ route('contact-us') }}" title="contact us">contact us</a> to discuss what we can do to setup the best way of harvesting all related metadata.
+            </p>
+        </div>        
 </div>
 </x-layout_main>
