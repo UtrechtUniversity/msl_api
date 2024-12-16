@@ -3,42 +3,49 @@
 		"name": "epos-multi-scale-laboratories-thematic-core-service",
 		"image_url": "",
 		"organization_display_name": "EPOS Multi-scale Laboratories Thematic Core Service",
-		"hide": "true"		
+		"hide": "true",
+		"url": ""
 	},
 	{
 		"name": "gfz-potsdam",
 		"image_url": "/repositories/GFZ-Data-Services-logo.png",
 		"organization_display_name": "GFZ data services",
-		"hide": "false"		
+		"hide": "false",
+		"url": "https://dataservices-cms.gfz-potsdam.de/"
 	},
 	{
 		"name": "4tu",
 		"image_url": "/repositories/4tu-logo.png",
 		"organization_display_name": "4TU.ResearchData",
-		"hide": "false"
+		"hide": "false",
+		"url": "https://data.4tu.nl/"
 	},
 	{
 		"name": "magic",
 		"image_url": "/repositories/Magic.png",
 		"organization_display_name": "MagIC",
-		"hide": "false"
+		"hide": "false",
+		"url": "https://www2.earthref.org/MagIC"
 	},
 	{
 		"name": "csic",
 		"image_url": "/repositories/CSIC.jpg",
 		"organization_display_name": "Digital.CSIC",
-		"hide": "false"
+		"hide": "false",
+		"url": "https://digital.csic.es/"
 	},
 	{
 		"name": "yoda-repository",
 		"image_url": "/repositories/Yoda UU.png",
 		"organization_display_name": "Yoda data services",
-		"hide": "false"
+		"hide": "false",
+		"url": "https://www.uu.nl/en/research/yoda"
 	},
 	{
 		"name": "bgs",
 		"image_url": "/repositories/BGS.png",
 		"organization_display_name": "British Geological Survey - National Geoscience Data Centre (UKRI/NERC)",
-		"hide": "false"
+		"hide": "false",
+		"url": "https://www.bgs.ac.uk/geological-data/national-geological-repository/"
 	}
 ]
