@@ -28,7 +28,7 @@
                 </div>
             </div>
             
-            <button class="btn btn-primary">Export</button>
+            <button class="btn btn-primary">Export to csv</button>
             </form>            
         </div>
 
