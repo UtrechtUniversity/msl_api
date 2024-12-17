@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\LaboratoryUpdateGroupFast;
 use App\Jobs\ProcessLaboratoryUpdateGroupFast;
 use App\Exports\epos\RegistryExport;
+use App\Jobs\ProcessFastVocabularyUpdate;
 use App\Models\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
 use App\Jobs\ProcessLaboratoryOrganizationUpdateGroupRor;
 use App\Jobs\ProcessLaboratoryKeywordUpdateGroup;
 use App\Models\Laboratory;
-use App\Models\LaboratoryEquipment;
 
 class LabController extends Controller
 {
@@ -39,11 +39,14 @@ class LabController extends Controller
     
     public function updateFastData(Request $request)
     {
+        // Dispatch job to update fast vocabulary
+        ProcessFastVocabularyUpdate::dispatch();
+
         $laboratoryUpdateGroup = LaboratoryUpdateGroupFast::create();        
         ProcessLaboratoryUpdateGroupFast::dispatch($laboratoryUpdateGroup);
                             
         $request->session()->flash('status', 'Updating using Fast started');        
-        return redirect()->route('importers');        
+        return redirect()->route('importers');
     }
     
     public function updateLaboratoryOrganizationsByROR(Request $request)

@@ -7,7 +7,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Laboratory;
 use App\fast\Fast;
 use App\Models\Keyword;
 use App\Models\LaboratoryUpdateFast;
