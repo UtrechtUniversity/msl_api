@@ -64,7 +64,7 @@
             <hr class="timeline-line-element"/>
             <a href="{{ route('contribute-researcher') }}#step-3"
             class="timeline-end timeline-box no-underline hover:bg-secondary-200">
-              <div id='nextStep' >Enrich your work with MSL vocab</div>
+              <div id='nextStep' >Enrich your work with MSL vocabularies</div>
 
             </a>
 
@@ -108,7 +108,7 @@
         
 
         <div class="max-w-screen-md px-4">
-            <h2 id='step-1' class="pt-10 pb-4">Step 1: Which repo will you submit your data? 
+            <h2 id='step-1' class="pt-10 pb-4">Step 1: At which repository will you publish your data? 
             </h2>
             <p>Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  
             </p>
@@ -118,7 +118,7 @@
                 We can then start working towards including data from your repository too. 
             </p>
     
-            <h2 class="pt-10 pb-4" id="step-2">Step 2: Prepare your data
+            <h2 class="pt-10 pb-4" id="step-2">Step 2: Check data formatting requirements
             </h2>
             <p>Some repositories have specific requirements or data formats/templates to take into account. 
                 Check whether this is relevant for your work → better to know this before you start publishing.</p>
@@ -157,7 +157,7 @@
               </div>
     
     
-            <h2 class="pt-10 pb-4" id="step-3">Step 3: While publishing, use MSL keywords    
+            <h2 class="pt-10 pb-4" id="step-3">Step 3: Enrich your work with MSL vocabularies    
             </h2>
 
             <p>Wherever you publish, you make it a lot easier for us to find your data by adding keywords from the Multi-Scale Labs vocabularies (the more the better!). 
@@ -174,7 +174,7 @@
             <p>Would you like to embed MSL vocabularies, or the above keyword selector in the data repository you’re affiliated to? You can - it’s all open access and open source. 
                 Have a look here on how to approach this (link to: how to contribute as a data repository → and include a few instructions on how to embed the keyword selector there). </p>
             
-            <h2 class="pt-10 pb-4" id="step-4">Step 4: Publish
+            <h2 class="pt-10 pb-4" id="step-4">Step 4: Publish your work
             </h2>
             <p>When you publish your data, make sure you do so with an open access license (e.g. <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> ). 
                 Most repositories provide clear guidance on which licenses are useful to provide your data openly, and promote citing. 
