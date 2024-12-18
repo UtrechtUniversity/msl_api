@@ -9,6 +9,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\fast\Fast;
 use App\Models\Keyword;
+use App\Models\Laboratory;
 use App\Models\LaboratoryUpdateFast;
 use App\Models\LaboratoryOrganization;
 use App\Models\LaboratoryContactPerson;
@@ -39,10 +40,11 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
      * @return void
      */
     public function handle()
-    {        
-        $lab = $this->laboratoryUpdateFast->laboratory;
+    {
+        $lab = new Laboratory();
+        $lab->fast_id = $this->laboratoryUpdateFast->laboratory_id;
         
-        $fast = new Fast();        
+        $fast = new Fast();
         $result = $fast->facilityRequest($lab->fast_id);
         
         if($result->response_code == 200) {
@@ -50,6 +52,7 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
                         
             $lab->name = $data['name'];
             $lab->description = $data['description'];
+            $lab->description_html = "";
             if(isset($data['description_html'])) {
                 $lab->description_html = $data['description_html'];
             }
@@ -65,6 +68,11 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
             $lab->longitude = $data['gps_longitude'];
             $lab->altitude = $data['gps_altitude'];
             $lab->external_identifier = $data['external_identifier'];
+            $lab->msl_identifier = "";
+            $lab->lab_portal_name = "";
+            $lab->lab_editor_name = "";
+            $lab->msl_identifier_inputstring = "";
+            $lab->original_domain = "";
             $lab->fast_domain_id = $data['domain']['id'];
             $lab->fast_domain_name = $data['domain']['name'];
             

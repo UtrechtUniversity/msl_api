@@ -20,9 +20,4 @@ class LaboratoryUpdateFast extends Model
     {
         return $this->belongsTo(LaboratoryUpdateGroupFast::class);
     }
-    
-    public function laboratory()
-    {
-        return $this->belongsTo(Laboratory::class);
-    }
 }
