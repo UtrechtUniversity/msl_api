@@ -27,27 +27,24 @@ includeIcon    = string - to select which icon
         @if (isset($includeIcon))
 
         
-            @foreach ( $routes as $route)
+            @foreach ($routes as $routeKey => $route)
 
                     <a role="tab" href="{{ $route  }}" class="tab no-underline hover:bg-secondary-100">
-
                         @if ($includeIcon == 'goBack')
                             <x-ri-arrow-left-line id="" class="goBack-icon"/>
-                        @endif
-                        
-                        {{ array_search($route, $routes) }}
-                    
+                        @endif                        
+                        {{ $routeKey }}                    
                     </a>
 
             @endforeach
 
         @else
 
-            @foreach ( $routes as $route)
+            @foreach ($routes as $routeKey => $route)
                     @if (isset($routeActive) && $routeActive == $route)
-                        <a role="tab" href="{{ $route }}" class="tab tab-active no-underline">{{ array_search($route, $routes) }}</a>
+                        <a role="tab" href="{{ $route }}" class="tab tab-active no-underline">{{ $routeKey }}</a>
                     @else
-                        <a role="tab" href="{{ $route  }}" class="tab no-underline hover:bg-secondary-100">{{ array_search($route, $routes) }}</a>
+                        <a role="tab" href="{{ $route  }}" class="tab no-underline hover:bg-secondary-100">{{ $routeKey }}</a>
                     @endif
             @endforeach
 

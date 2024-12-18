@@ -40,10 +40,10 @@
                                     <h2 class="">Data Publication</h2>
                                     <h1 class="text-lg">{!! $data['msl_title_annotated'] !!}</h1>
                                     <p class="italic text-center">                                       
-                                        @foreach ( $data['msl_authors'] as $author )
+                                        @foreach ( $data['msl_authors'] as $authorKey => $author )
                                             {{ $author["msl_author_name"] }} 
                                             {{-- a little divider between names --}}
-                                                @if (sizeof($data['msl_authors']) -1 != array_search($author, $data['msl_authors']) )
+                                                @if (sizeof($data['msl_authors']) -1 != $authorKey )
                                                     |
                                                 @endif
                                         @endforeach 
