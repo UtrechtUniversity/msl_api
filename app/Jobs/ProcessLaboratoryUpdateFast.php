@@ -43,7 +43,7 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
     {
         $lab = new Laboratory();
         $lab->fast_id = $this->laboratoryUpdateFast->laboratory_id;
-        
+                
         $fast = new Fast();
         $result = $fast->facilityRequest($lab->fast_id);
         
@@ -68,13 +68,16 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
             $lab->longitude = $data['gps_longitude'];
             $lab->altitude = $data['gps_altitude'];
             $lab->external_identifier = $data['external_identifier'];
-            $lab->msl_identifier = "";
+            $lab->msl_identifier = md5($lab->fast_id);
             $lab->lab_portal_name = "";
             $lab->lab_editor_name = "";
             $lab->msl_identifier_inputstring = "";
             $lab->original_domain = "";
             $lab->fast_domain_id = $data['domain']['id'];
             $lab->fast_domain_name = $data['domain']['name'];
+
+            // Save to optain a database id needed in further processing
+            $lab->save();
             
             // include affiliation
             if(isset($data['affiliation'])) {

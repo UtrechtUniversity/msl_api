@@ -52,42 +52,6 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
         LaboratoryEquipmentAddon::truncate();
         Laboratory::truncate();
 
-        //$ckanClient = new Client();
-
-        // Queue jobs to remove all present labs from CKAN
-        /*
-        $searchRequest = new PackageSearchRequest();
-        $searchRequest->addFilterQuery("type", "lab");
-        $searchRequest->rows = 1000;
-
-        $result = $ckanClient->get($searchRequest);
-        $results = $result->getResults();
-
-        foreach($results as $result) {
-            $datasetDelete = DatasetDelete::create([
-                'ckan_id' => $result['name']
-            ]);
-            
-            ProcessDatasetDelete::dispatch($datasetDelete);
-        }
-
-        // Queue jobs to remove all present equipment from CKAN
-        $searchRequest = new PackageSearchRequest();
-        $searchRequest->addFilterQuery("type", "equipment");
-        $searchRequest->rows = 1000;
-
-        $result = $ckanClient->get($searchRequest);
-        $results = $result->getResults();
-
-        foreach($results as $result) {
-            $datasetDelete = DatasetDelete::create([
-                'ckan_id' => $result['name']
-            ]);
-            
-            ProcessDatasetDelete::dispatch($datasetDelete);
-        }
-        */
-
         // Retrieve all fast lab ids using API
         $fast =  new Fast();
 
