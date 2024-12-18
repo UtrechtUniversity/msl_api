@@ -81,41 +81,43 @@
                                 </div>
                                 
                                 @if (array_key_exists("msl_location", $data))
-                                    <br>
-                                    <div class="detailEntryDiv flex flex-row">
-                                        <h4 class="detailEntrySub1">Location</h4>
-                                        <div class="detailEntrySub2">
-                                            <div id="map" style="height: 300px;"></div>
+                                    @if($data['msl_location'] !== "")
+                                        <br>
+                                        <div class="detailEntryDiv flex flex-row">
+                                            <h4 class="detailEntrySub1">Location</h4>
+                                            <div class="detailEntrySub2">
+                                                <div id="map" style="height: 300px;"></div>
 
-                                            <script>
-                                                function onEachFeature(feature, layer) {
-                                                    if (feature.properties) {                                
-                                                        var popupContent = `<h5>${feature.properties.title}</h5><p>${feature.properties.msl_organization_name}</p>`;
+                                                <script>
+                                                    function onEachFeature(feature, layer) {
+                                                        if (feature.properties) {                                
+                                                            var popupContent = `<h5>${feature.properties.title}</h5><p>${feature.properties.msl_organization_name}</p>`;
 
-                                                        layer.bindPopup(popupContent);
+                                                            layer.bindPopup(popupContent);
+                                                        }
                                                     }
-                                                }
 
-                                                var features = <?php echo $data['msl_location']; ?>;
+                                                    var features = <?php echo $data['msl_location']; ?>;
 
-                                                if(features.geometry.coordinates) {
-                                                    var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]], 4);    
-                                                }
-                                                else {
-                                                    var map = L.map('map').setView([51.505, -0.09], 4);
-                                                }                                        
-                                                
-                                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                                    maxZoom: 19,
-                                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                                                }).addTo(map);
-                                                                                                                                        
-                                                L.geoJSON(features, {
-                                                    onEachFeature: onEachFeature
-                                                }).addTo(map);                                                                                                                                                                                
-                                            </script>
+                                                    if(features.geometry.coordinates) {
+                                                        var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]], 4);    
+                                                    }
+                                                    else {
+                                                        var map = L.map('map').setView([51.505, -0.09], 4);
+                                                    }                                        
+                                                    
+                                                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                        maxZoom: 19,
+                                                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                                    }).addTo(map);
+                                                                                                                                            
+                                                    L.geoJSON(features, {
+                                                        onEachFeature: onEachFeature
+                                                    }).addTo(map);                                                                                                                                                                                
+                                                </script>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endif
 
                             <div class="p-20 w-full flex justify-around">
