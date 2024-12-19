@@ -41,7 +41,7 @@ class FormController extends Controller
         ]);
 
         // ####################################
-        // is the naming appropiate or better have a new email class?
+        // is the naming 'user' and 'server' appropiate or better have a new email class?
         Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'user'));
         Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'server'));
         // ####################################
@@ -99,7 +99,8 @@ class FormController extends Controller
         ]);
 
 
-        // Mail::to('m.nothbaum@uu.nl')->send(new LabContactResponse($formFields));
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactResponse($formFields, 'user'));
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactResponse($formFields, 'server'));
 
 
         // I dont like that the highlighted one is always on top of the page right under the edge
@@ -144,7 +145,8 @@ class FormController extends Controller
         ]);
 
         // is the naming appropiate or better have a new email class?
-        // Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields));
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'user'));
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'server'));
 
 
         // I dont like that the highlighted one is always on top of the page right under the edge

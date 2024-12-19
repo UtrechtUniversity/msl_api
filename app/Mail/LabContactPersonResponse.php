@@ -13,22 +13,37 @@ class LabContactPersonResponse extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public array $data;
+    public string $receiver;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(array $data, string $receiver)
     {
-        //
+        $this->data = $data;
+        $this->receiver = $receiver;
     }
+
 
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
-    {
-        return new Envelope(
-            subject: 'Laboratory contact person: confirmation email',
-        );
+    {   
+
+        if      ($this->receiver == 'user'){
+            
+            return new Envelope(
+                subject: 'Laboratory Contact Person: confirmation email ',
+            );
+        } 
+        elseif  ($this->receiver == 'server'){
+
+            return new Envelope(
+                subject: 'Laboratory Contact Person: ',
+            );
+        }
+
     }
 
     /**
@@ -36,10 +51,29 @@ class LabContactPersonResponse extends Mailable
      */
     public function content(): Content
     {
-        return new Content(
-            markdown: 'mails.labContactPersonResponse',
-        );
+        if      ($this->receiver == 'user'){
+
+            return new Content(
+                markdown: 'mails.labContactPersonResponseUser',
+                with: [
+                    'data' => $this->data
+                ]
+                
+            );
+        } 
+        elseif  ($this->receiver == 'server'){
+
+            return new Content(
+                markdown: 'mails.labContactPersonResponseServer',
+                with: [
+                    'data' => $this->data
+                ]
+                
+            );
+        }
+
     }
+
 
     /**
      * Get the attachments for the message.
