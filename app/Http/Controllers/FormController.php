@@ -6,11 +6,16 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\CkanClient\Request\PackageShowRequest;
+use App\Mail\ContactUsResponse;
+use App\Mail\LabContactPersonResponse;
+use App\Mail\LabContactResponse;
+use App\Mail\MarkTestMail;
 use App\Models\Keyword;
 use App\Models\Laboratory;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class FormController extends Controller
@@ -34,6 +39,12 @@ class FormController extends Controller
             'subject'       => ['required'],
             'message'       => ['required', 'min:50'],
         ]);
+
+        // ####################################
+        // is the naming appropiate or better have a new email class?
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'user'));
+        Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields, 'server'));
+        // ####################################
 
 
         // redirects to with the additonal elements located in components/notifications/
@@ -87,6 +98,10 @@ class FormController extends Controller
 
         ]);
 
+
+        // Mail::to('m.nothbaum@uu.nl')->send(new LabContactResponse($formFields));
+
+
         // I dont like that the highlighted one is always on top of the page right under the edge
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
@@ -127,6 +142,10 @@ class FormController extends Controller
             'subject'       => ['required'],
             'message'       => ['required', 'min:50'],
         ]);
+
+        // is the naming appropiate or better have a new email class?
+        // Mail::to('m.nothbaum@uu.nl')->send(new LabContactPersonResponse($formFields));
+
 
         // I dont like that the highlighted one is always on top of the page right under the edge
         return redirect('/contribute-laboratory#nextStep')->with('modals', [

@@ -118,7 +118,10 @@ Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->na
 Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
 
 Route::get('/contact-us', [FormController::class, 'contactCreate'])->name('contact-us');
+
+// Route::post('/contact-us', [FormController::class, 'contactStore'])->name('contact-us-process');
 Route::post('/contact-us', [FormController::class, 'contactStore'])->name('contact-us-process');
+
 Route::get('/laboratory-intake', [FormController::class, 'labCreate'])->name('laboratory-intake');
 Route::post('/laboratory-intake', [FormController::class, 'labStore'])->name('laboratory-intake-process');
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactPersonCreate'])->name('laboratory-contact-person');
@@ -127,7 +130,14 @@ Route::post('/laboratory-contact-person', [FormController::class, 'labContactPer
 
 
 Route::get('/mailTest', function () {
- 
-    Mail::to('m.nothbaum@uu.nl')->send(new MarkTestMail());
-    // return new App\Mail\MarkTestMail();
+    $formFields = [
+        'email'         => 'm.nothbaum@uu.nl',
+        'firstName'     => 'firstName',
+        'lastName'      => 'lastName',
+        'affiliation'   => 'affiliation',
+        'subject'       => 'subject',
+        'message'       => 'message',
+    ];
+    // Mail::to('m.nothbaum@uu.nl')->send(new MarkTestMail());
+    return new App\Mail\ContactUsResponse($formFields, 'server');
 });
