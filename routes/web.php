@@ -7,8 +7,10 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\SeederController;
 use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-
+use App\Mail\TestMail;
+use App\Mail\MarkTestMail;
  
 /*
 |--------------------------------------------------------------------------
@@ -126,5 +128,6 @@ Route::post('/laboratory-contact-person', [FormController::class, 'labContactPer
 
 Route::get('/mailTest', function () {
  
-    return new App\Mail\TestMail();
+    Mail::to('m.nothbaum@uu.nl')->send(new MarkTestMail());
+    // return new App\Mail\MarkTestMail();
 });

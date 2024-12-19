@@ -8,9 +8,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Routing\Route;
 
-class TestMail extends Mailable
+class MarkTestMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +27,7 @@ class TestMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Mail',
+            subject: 'Mark Test Mail',
         );
     }
 
@@ -38,7 +37,7 @@ class TestMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mails.testMail',
+            markdown: 'mails.markTestMail',
         );
     }
 
@@ -51,7 +50,4 @@ class TestMail extends Mailable
     {
         return [];
     }
-
-
-
 }
