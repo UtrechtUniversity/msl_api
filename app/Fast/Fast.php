@@ -47,7 +47,7 @@ class Fast
         $result =  new \stdClass();               
         
         try {
-            $response = $this->client->request('GET', "https://fast.geo.uu.nl/api/facilities?where[tags]=EPOS-MSL&page=$page", [
+            $response = $this->client->request('GET', "https://fast.geo.uu.nl/api/query/facilities?where[tags]=EPOS-MSL&page=$page", [
                 'headers' => [
                     'Authorization' => config('fast.fast_api_token'),
                 ],
