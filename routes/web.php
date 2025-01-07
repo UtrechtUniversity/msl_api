@@ -86,6 +86,7 @@ Route::prefix('admin')->group(function () {
     Route::get('labs/update-organizations-data', [LabController::class, 'updateLaboratoryOrganizationsByROR'])->name('update-lab-organizations-data');
     Route::get('labs/update-laboratory-keywords', [LabController::class, 'updateLaboratoryKeywords'])->name('update-laboratory-keywords');
     Route::get('labs/registry-turtle', [LabController::class, 'registryTurtle'])->name('registry-turtle');
+    Route::get('labs/download', [LabController::class, 'downloadLabData'])->name('download-lab-data');
 
     Route::post('/create-import', [HomeController::class, 'createImport'])->name('create-import');
     Route::get('/imports', [HomeController::class, 'imports'])->name('imports');

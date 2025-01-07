@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\LaboratoryUpdateGroupFast;
 use App\Jobs\ProcessLaboratoryUpdateGroupFast;
 use App\Exports\epos\RegistryExport;
+use App\Exports\LabExport;
 use App\Jobs\ProcessFastVocabularyUpdate;
 use App\Models\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
 use App\Jobs\ProcessLaboratoryOrganizationUpdateGroupRor;
 use App\Jobs\ProcessLaboratoryKeywordUpdateGroup;
 use App\Models\Laboratory;
+use Maatwebsite\Excel\Facades\Excel;
 
 class LabController extends Controller
 {
@@ -35,6 +37,11 @@ class LabController extends Controller
         $laboratories = Laboratory::get();
 
         return view('admin.laboratories', ['laboratories' => $laboratories]);
+    }
+
+    public function downloadLabData()
+    {
+        return Excel::download(new LabExport(), 'labs.xlsx');
     }
     
     public function updateFastData(Request $request)
