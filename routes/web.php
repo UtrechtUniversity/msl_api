@@ -127,18 +127,3 @@ Route::get('/laboratory-intake', [FormController::class, 'labCreate'])->name('la
 Route::post('/laboratory-intake', [FormController::class, 'labStore'])->name('laboratory-intake-process');
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactPersonCreate'])->name('laboratory-contact-person');
 Route::post('/laboratory-contact-person', [FormController::class, 'labContactPersonStore'])->name('laboratory-contact-person-process');
-
-
-
-Route::get('/mailTest', function () {
-    $formFields = [
-        'email'         => 'm.nothbaum@uu.nl',
-        'firstName'     => 'firstName',
-        'lastName'      => 'lastName',
-        'affiliation'   => 'affiliation',
-        'subject'       => 'subject',
-        'message'       => 'message',
-    ];
-    // Mail::to('m.nothbaum@uu.nl')->send(new MarkTestMail());
-    return new App\Mail\ContactUsResponse($formFields, 'server');
-});
