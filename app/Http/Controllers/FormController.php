@@ -28,18 +28,17 @@ class FormController extends Controller
      */
     public function contactFormProcess(Request $request): RedirectResponse
     {
-
         $formFields = $request->validate([
             'email'         => ['required', 'email'],
             'firstName'     => ['required'],
             'lastName'      => ['required'],
             'affiliation'   => ['required'],
             'subject'       => ['required'],
-            'message'       => ['required', 'min:50'],
+            'message'       => ['required', 'min:50']
         ]);
 
 
-        // redirects to with the additonal elements located in components/notifications/
+        // redirects to index with the additonal elements located in components/notifications
         return redirect('/')->with('modals', [
             'type'      => 'success', 
             'message'   => 'Contact request sent. You will receive a confirmation email soon, please check your spam as well']
@@ -85,10 +84,10 @@ class FormController extends Controller
             "contact-gender"      => ['required'],
             "contact-email"       => ['required', 'email'],
             "contact-affiliation" => ['required'],
-            "contact-affiliation-country" => ['required'],
-
+            "contact-affiliation-country" => ['required']
         ]);
 
+        // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
@@ -130,9 +129,10 @@ class FormController extends Controller
             'lastName'      => ['required'],
             'affiliation'   => ['required'],
             'subject'       => ['required'],
-            'message'       => ['required', 'min:50'],
+            'message'       => ['required', 'min:50']
         ]);
 
+        // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
