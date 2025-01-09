@@ -1,27 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\CkanClient\Client;
 
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
-use App\Models\Keyword;
-use App\Models\Laboratory;
-use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class FormController extends Controller
 {
+    /**
+     * Show the contact us form
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function contactCreate(): View
     {
         return view('forms.contact-us');
     }
  
     /**
-     * Store a new blog post.
+     * Process the contact us form
+     * 
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function contactStore(Request $request): RedirectResponse
     {
@@ -43,17 +46,21 @@ class FormController extends Controller
          );
     }
 
-    /////////////////////////////////////////////
-    /////////////////////////////////////////////
-    /////////////////////////////////////////////
-
+    /**
+     * Show the lab signup form
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function labCreate(): View
     {
         return view('forms.laboratory-intake');
     }
  
     /**
-     * Store a new blog post.
+     * Process the lab signup form
+     * 
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function labStore(Request $request): RedirectResponse
     {
@@ -67,16 +74,11 @@ class FormController extends Controller
             'city'                => ['required'],
             'state'               => ['required'],
             'country'             => ['required'],
-            'url'                 => ['required', 'url'],
-     
+            'url'                 => ['required', 'url'],     
             "description"         => ['required','min:10','max:4000'],
-
             // custom error message in the intake form below the checkboxes
-            "dataSharing-facilityAccess" => ['required'],
-            // "facilityAccess"      => ['required_without:dataSharing', 'nullable'],
-     
-            'subdomain'           => ['required'],
-     
+            "dataSharing-facilityAccess" => ['required'],     
+            'subdomain'           => ['required'],     
             "contact-firstName"   => ['required'],
             "contact-lastName"    => ['required'],
             "contact-nationality" => ['required'],
@@ -87,20 +89,20 @@ class FormController extends Controller
 
         ]);
 
-        // I dont like that the highlighted one is always on top of the page right under the edge
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
          );
     }
 
-    /////////////////////////////////////////////
-    /////////////////////////////////////////////
-    /////////////////////////////////////////////
-
+    /**
+     * Show the lab contact form
+     * 
+     * @param int $id
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function labContactPersonCreate($id): View
     {
-
         $client = new Client();
         $request = new PackageShowRequest();
         $request->id = $id;
@@ -114,7 +116,10 @@ class FormController extends Controller
     }
  
     /**
-     * Store a new blog post.
+     * Process the lab contact form
+     * 
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function labContactPersonStore(Request $request): RedirectResponse
     {
@@ -128,7 +133,6 @@ class FormController extends Controller
             'message'       => ['required', 'min:50'],
         ]);
 
-        // I dont like that the highlighted one is always on top of the page right under the edge
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
