@@ -15,7 +15,7 @@ class FormController extends Controller
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function contactCreate(): View
+    public function contactForm(): View
     {
         return view('forms.contact-us');
     }
@@ -26,7 +26,7 @@ class FormController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function contactStore(Request $request): RedirectResponse
+    public function contactFormProcess(Request $request): RedirectResponse
     {
 
         $formFields = $request->validate([
@@ -51,7 +51,7 @@ class FormController extends Controller
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function labCreate(): View
+    public function labIntakeForm(): View
     {
         return view('forms.laboratory-intake');
     }
@@ -62,7 +62,7 @@ class FormController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function labStore(Request $request): RedirectResponse
+    public function labIntakeFormProcess(Request $request): RedirectResponse
     {
         //  in order of appearance
         $formFields = $request->validate([
@@ -101,7 +101,7 @@ class FormController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function labContactPersonCreate($id): View
+    public function labContactForm($id): View
     {
         $client = new Client();
         $request = new PackageShowRequest();
@@ -121,7 +121,7 @@ class FormController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function labContactPersonStore(Request $request): RedirectResponse
+    public function labContactFormProcess(Request $request): RedirectResponse
     {
         //  in order of appearance
         $formFields = $request->validate([
