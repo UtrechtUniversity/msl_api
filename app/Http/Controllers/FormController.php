@@ -6,6 +6,8 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
 use App\Mail\ContactUsConfirmation;
 use App\Mail\ContactUsSubmission;
+use App\Mail\LabIntakeConfirmation;
+use App\Mail\LabIntakeSubmission;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -51,7 +53,7 @@ class FormController extends Controller
         return redirect('/')->with('modals', [
             'type'      => 'success', 
             'message'   => 'Contact request sent. You will receive a confirmation email soon, please check your spam as well']
-         );
+        );
     }
 
     /**
@@ -96,11 +98,17 @@ class FormController extends Controller
             "contact-affiliation-country" => ['required']
         ]);
 
+        // send e-mail to notification address containing form submission
+        Mail::to(config('mail.notifications.address'))->send(new LabIntakeSubmission($formFields));
+
+        // send e-mail to form submitter to confirm form submission
+        Mail::to($formFields['contact-email'])->send(new LabIntakeConfirmation($formFields));
+
         // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
-         );
+        );
     }
 
     /**
@@ -145,7 +153,7 @@ class FormController extends Controller
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type'      => 'success', 
             'message'   => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
-         );
+        );
     }
 
 }
