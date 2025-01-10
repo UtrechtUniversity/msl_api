@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
+use App\Mail\ContactUsConfirmation;
+use App\Mail\ContactUsSubmission;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -28,6 +31,7 @@ class FormController extends Controller
      */
     public function contactFormProcess(Request $request): RedirectResponse
     {
+        // validate input
         $formFields = $request->validate([
             'email'         => ['required', 'email'],
             'firstName'     => ['required'],
@@ -37,6 +41,11 @@ class FormController extends Controller
             'message'       => ['required', 'min:50']
         ]);
 
+        // send e-mail to notification address containing form submission
+        Mail::to(config('mail.notifications.address'))->send(new ContactUsSubmission($formFields));
+
+        // send e-mail to form submitter to confirm form submission
+        Mail::to($formFields['email'])->send(new ContactUsConfirmation($formFields));
 
         // redirects to index with the additonal elements located in components/notifications
         return redirect('/')->with('modals', [
