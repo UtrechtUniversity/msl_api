@@ -22,6 +22,13 @@ class LogMailSend
      */
     public function handle(MessageSent $event): void
     {
-        Log::channel('mail')->info($event->message->toString());
+        $from = $event->message->getFrom()[0]->getAddress();
+        $to = $event->message->getTo()[0]->getAddress();
+        $subject = $event->message->getSubject();
+        $body = $event->message->getTextBody();
+
+        $entry = "Mail send from: $from, to: $to, subject: $subject, body: $body";
+
+        Log::channel('mail')->info($entry);
     }
 }
