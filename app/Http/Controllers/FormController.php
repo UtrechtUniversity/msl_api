@@ -8,6 +8,7 @@ use App\Mail\ContactUsConfirmation;
 use App\Mail\ContactUsSubmission;
 use App\Mail\LabIntakeConfirmation;
 use App\Mail\LabIntakeSubmission;
+use App\Models\Laboratory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -128,6 +129,23 @@ class FormController extends Controller
         if(!$result->isSuccess()) {
             abort(404, 'ckan request failed');
         }
+
+        /**
+         * All labs should have a contact person defined with an email address however this is 
+         * depending on harvested data from FAST so we should check if this is the case. Abort 
+         * when this page has somehow been reached without valid data to process the form.
+         */
+
+         $labData = $result->getResult();
+         $labDatabase = Laboratory::where('fast_id', (int)$labData['msl_fast_id'])->first();
+ 
+         if($labDatabase) {
+             $contactPerson = $labDatabase->laboratoryContactPerson;
+             if(!$contactPerson->hasValidEmail()) {
+                 abort(404, 'Invalid lab contact form requested');
+             }
+         }
+
         return view('forms.laboratory-contact-person',['data' => $result->getResult()]);
     }
  

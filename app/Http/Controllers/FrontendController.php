@@ -306,7 +306,7 @@ class FrontendController extends Controller
         $labData = $result->getResult();
         
         /**
-         * All labs should have a contact person defined with a email address however this is 
+         * All labs should have a contact person defined with an email address however this is 
          * depending on harvested data from FAST so we should check if this is the case. Only 
          * display the contact button when a validated e-mail address is set in view.
          */
