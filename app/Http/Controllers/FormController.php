@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
+use App\Mail\ContactLabConfirmation;
+use App\Mail\ContactLabSubmission;
 use App\Mail\ContactUsConfirmation;
 use App\Mail\ContactUsSubmission;
 use App\Mail\LabIntakeConfirmation;
@@ -164,8 +166,30 @@ class FormController extends Controller
             'lastName'      => ['required'],
             'affiliation'   => ['required'],
             'subject'       => ['required'],
-            'message'       => ['required', 'min:50']
+            'message'       => ['required', 'min:50'],
+            'msl_fast_id'   => ['required']
         ]);
+
+        /**
+         * All labs should have a contact person defined with an email address however this is 
+         * depending on harvested data from FAST so we should check if this is the case. Abort 
+         * when this page has somehow been reached without valid data to process the form.
+         */
+
+        $labDatabase = Laboratory::where('fast_id', (int)$formFields['msl_fast_id'])->first();
+ 
+        if($labDatabase) {
+            $contactPerson = $labDatabase->laboratoryContactPerson;
+            if(!$contactPerson->hasValidEmail()) {
+                abort(404, 'Invalid lab identifier');
+            }
+        }
+
+        // send e-mail to lab contact person address containing form submission
+        Mail::to($contactPerson->email)->send(new ContactLabSubmission($formFields));
+
+        // send e-mail to form submitter to confirm form submission
+        Mail::to($formFields['email'])->send(new ContactLabConfirmation($formFields));
 
         // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
