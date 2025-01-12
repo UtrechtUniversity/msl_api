@@ -15,6 +15,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class FormController extends Controller
 {
@@ -47,10 +48,34 @@ class FormController extends Controller
         ]);
 
         // send e-mail to notification address containing form submission
-        Mail::to(config('mail.notifications.address'))->send(new ContactUsSubmission($formFields));
+        try {
+            Mail::to(config('mail.notifications.address'))->send(new ContactUsSubmission($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending ContactUsSubmission mail');
+            Log::channel('mail')->error(json_encode($formFields));
+
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // send e-mail to form submitter to confirm form submission
-        Mail::to($formFields['email'])->send(new ContactUsConfirmation($formFields));
+        try {
+            Mail::to($formFields['email'])->send(new ContactUsConfirmation($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending ContactUsConfirmation mail');
+            Log::channel('mail')->error(json_encode($formFields));
+            
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // redirects to index with the additonal elements located in components/notifications
         return redirect('/')->with('modals', [
@@ -102,10 +127,34 @@ class FormController extends Controller
         ]);
 
         // send e-mail to notification address containing form submission
-        Mail::to(config('mail.notifications.address'))->send(new LabIntakeSubmission($formFields));
+        try {
+            Mail::to(config('mail.notifications.address'))->send(new LabIntakeSubmission($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending LabIntakeSubmission mail');
+            Log::channel('mail')->error(json_encode($formFields));
+
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // send e-mail to form submitter to confirm form submission
-        Mail::to($formFields['contact-email'])->send(new LabIntakeConfirmation($formFields));
+        try {
+            Mail::to($formFields['contact-email'])->send(new LabIntakeConfirmation($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending LabIntakeConfirmation mail');
+            Log::channel('mail')->error(json_encode($formFields));
+
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
@@ -186,10 +235,34 @@ class FormController extends Controller
         }
 
         // send e-mail to lab contact person address containing form submission
-        Mail::to($contactPerson->email)->send(new ContactLabSubmission($formFields));
+        try {
+            Mail::to($contactPerson->email)->send(new ContactLabSubmission($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending ContactLabSubmission mail');
+            Log::channel('mail')->error(json_encode($formFields));
+
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // send e-mail to form submitter to confirm form submission
-        Mail::to($formFields['email'])->send(new ContactLabConfirmation($formFields));
+        try {
+            Mail::to($formFields['email'])->send(new ContactLabConfirmation($formFields));
+        } catch(\Exception $e) {
+            Log::error($e);
+
+            Log::channel('mail')->error('error sending ContactLabConfirmation mail');
+            Log::channel('mail')->error(json_encode($formFields));
+
+            return redirect('/')->with('modals', [
+                'type'      => 'error', 
+                'message'   => 'Contact request could not be send. Please try again later.']
+            );
+        }
 
         // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
