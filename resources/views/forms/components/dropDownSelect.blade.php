@@ -29,7 +29,7 @@
         <option disabled selected>{{ $placeholder }}</option>
         {{-- from https://laravel.com/docs/11.x/blade#additional-attributes --}}
             @foreach ($ElementsArray as $subject)
-                <option value="{{ $subject }}" @selected(old('{{ $sectionName }}') == $subject)>
+                <option value="{{ $subject }}" @selected(old($sectionName) == $subject)>
                     {{ $subject }}
                 </option>
             @endforeach
