@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 
 class LaboratoryContactPerson extends Model
 {
@@ -28,5 +29,16 @@ class LaboratoryContactPerson extends Model
     
     public function laboratories() {
         return $this->hasMany(Laboratory::class);
+    }
+
+    /**
+     * Determine if the data fails the validation rules.
+     *
+     * @return bool
+     */
+    public function hasValidEmail()
+    {        
+        $validator = Validator::make($this->toArray(), ['email' => ['required', 'email']]);        
+        return !$validator->fails();
     }
 }

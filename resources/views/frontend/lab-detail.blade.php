@@ -120,6 +120,7 @@
                                     @endif
                                 @endif
 
+                            @if($labHasMailContact)
                             <div class="p-20 w-full flex justify-around">
                                 <a href="{{ route('laboratory-contact-person', [
                                     'id'          => $data['name']
@@ -127,7 +128,7 @@
                                     <button class="btn btn-primary btn-lg btn-wide ">Contact Laboratory</button>
                                 </a>
                             </div>
-
+                            @endif
                         </div>
 
  

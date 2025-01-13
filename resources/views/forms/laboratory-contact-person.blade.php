@@ -65,6 +65,8 @@
                         ])
                     </div>
 
+                    <input type="hidden" name="msl_fast_id" value="{{ $data['msl_fast_id'] }}">
+
                 </div>
 
                 <div class="w-full">

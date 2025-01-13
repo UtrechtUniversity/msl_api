@@ -20,6 +20,8 @@
 
       @if ($t == 'success')
         bg-success-200 text-success-900
+      @elseif ($t == 'error')
+        bg-error-200 text-error-900
       @endif
     
       ">
