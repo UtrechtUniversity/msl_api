@@ -10,14 +10,9 @@ class Fast
     
     public function __construct()
     {
-        if (App::environment('local')) {
-            $this->client = new \GuzzleHttp\Client(['verify' => false, 'http_errors' => false]);
-        } else {
-            $this->client = new \GuzzleHttp\Client(['http_errors' => false]);
-        }
+        $this->client = new \GuzzleHttp\Client(['verify' => false, 'http_errors' => false]);     
     }
-    
-    
+
     public function facilityRequest($facilityId)
     {        
         $result =  new \stdClass();               
