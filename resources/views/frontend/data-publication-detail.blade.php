@@ -139,7 +139,7 @@
                                                 }
 
                                                 $.ajax({
-                                                    url: '/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
                                                     type: 'GET',
                                                     dataType: 'json',
                                                     dataset: instance.reference.dataset,
@@ -241,7 +241,7 @@
                                                 }
 
                                                 $.ajax({
-                                                    url: '/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
                                                     type: 'GET',
                                                     dataType: 'json',
                                                     dataset: instance.reference.dataset,
