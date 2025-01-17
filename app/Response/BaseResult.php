@@ -266,7 +266,7 @@ class BaseResult
     
     private function getMaterialKeyword($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/materials/1.2/'
+            'https://epos-msl.uu.nl/voc/materials/' . config('vocabularies.vocabularies_current_version') . '/'
         ];
         $keywords = [];
         
@@ -285,8 +285,8 @@ class BaseResult
     
     private function getRockPhysicsKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-', 
-            'https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-'            
+            'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/measured_property-', 
+            'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/inferred_deformation_behavior-'            
         ];
         $keywords = [];
         
@@ -305,9 +305,9 @@ class BaseResult
     
     private function getAnalogueKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-',
-            'https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_geomorphological_feature-',
-            'https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-'
+            'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_structure-',
+            'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_geomorphological_feature-',
+            'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/measured_property-'
         ];
         $keywords = [];
         
@@ -326,7 +326,7 @@ class BaseResult
     
     private function getGeologicalSettingKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/geologicalsetting/1.2/'
+            'https://epos-msl.uu.nl/voc/geologicalsetting/' . config('vocabularies.vocabularies_current_version') . '/'
         ];
         $keywords = [];
         
@@ -345,8 +345,8 @@ class BaseResult
     
     private function getPaleomagneticKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property-',
-            'https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-'
+            'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
+            'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/inferred_behavior-'
         ];
         $keywords = [];
         
@@ -365,7 +365,7 @@ class BaseResult
     
     private function getGeochemistryKeywords($data) {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/geochemistry/1.2/'
+            'https://epos-msl.uu.nl/voc/geochemistry/' . config('vocabularies.vocabularies_current_version') . '/'
         ];
         $keywords = [];
         
