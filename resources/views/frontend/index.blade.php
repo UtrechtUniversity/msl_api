@@ -25,13 +25,13 @@
           text-left
           ">
             
-            <p class="">
+            <p class="text-center">
               {{ $datasetsCount }} datasets
             </p>
-            <p class="">
+            <p class="text-center">
               {{ $labCount }} labs
             </p>
-            <p class="">
+            <p class="text-center">
               {{ $reposCount }} data repositories
             </p>
           </div>

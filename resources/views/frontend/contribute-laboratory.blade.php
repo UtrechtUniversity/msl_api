@@ -127,7 +127,7 @@
           </li>
         </ul>
 
-          <div class="max-w-screen-md px-4">
+          <div class="w-screen sm:max-w-screen-md  px-4">
             <h2 class="pt-10 pb-4">Introduction to EPOS and MSL
             </h2>
             <p>The goal of EPOS is to establish a comprehensive multidisciplinary research platform for the Earth sciences in Europe. It aims to facilitate the integrated use of data, models, and laboratories, from both existing and new pan-European Research Infrastructures, allowing open access and transparent use of data. To reach this goal EPOS is thematically subdivided in 10 different communities: so called Thematic Core Services (TCS). One of these is Multi-Scale Laboratories (MSL).</p>

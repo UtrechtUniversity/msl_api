@@ -107,7 +107,7 @@
 
         
 
-        <div class="max-w-screen-md px-4">
+        <div class="w-screen sm:max-w-screen-md px-4">
             <h2 id='step-1' class="pt-10 pb-4">Step 1: At which repository will you publish your data? 
             </h2>
             <p>Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  
@@ -132,7 +132,12 @@
     
 
 
-            <div role="tablist" class="tabs tabs-lifted tabs-lg p-4 rounded-xl bg-primary-200">
+            <div role="tablist" class="
+            tabs tabs-lifted tabs-sm sm:tabs-lg p-4 
+            rounded-xl bg-primary-200 
+            text-sm
+            sm:text-base
+            ">
                 <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Microscopy"/>
                 <div role="tabpanel" class="tab-content tabs-div bg-primary-100 border-primary-300 rounded-box">
                     Structure 2D micrographs using StraboMicro, 
