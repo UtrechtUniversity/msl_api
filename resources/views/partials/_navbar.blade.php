@@ -43,20 +43,25 @@
               class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-10
               absolute top-9 right-0
               ">
-              <li><a class="no-underline">Data Access</a></li>
-              <li><a class="no-underline">Labs</a></li>
-              <li><a class="no-underline">Data Repositories</a></li>          
+              <li><a class="no-underline" href="{{ route('data-access') }}">Data Access</a></li>
+              <li><a class="no-underline" href="{{ route('labs-map') }}">Labs</a></li>
+              <li><a class="no-underline" href="{{ route('data-repositories') }}">Data Repositories</a></li>          
               <li>
-                <details>
-                  <summary>How to contribute</summary>
+                  <summary class="menu-title">How to contribute</summary>
                   <ul class="bg-base-100 rounded-t-none p-2 z-20">
-                    <li><a class="no-underline">As a researcher</a></li>
-                    <li><a class="no-underline">As a repository</a></li>
+                    <li><a class="no-underline" href="{{ route('contribute-researcher') }}">As a researcher</a></li>
+                    <li><a class="no-underline" href="{{ route('contribute-repository') }}">As a repository</a></li>
+                    <li><a class="no-underline" href="{{ route('contribute-laboratory') }}">As a laboratory</a></li>
                   </ul>
-                </details>
               </li>
-              <li><a class="no-underline">About MSL</a></li>
-              <li><a class="no-underline">EPOS central data portal</a></li>
+              <li>
+                  <summary class="menu-title">Vocabularies</summary>
+                  <ul class="bg-base-100 rounded-t-none p-2 z-20">
+                    <li><a class="no-underline" href="{{ route('keyword-selector') }}">Keyword selector</a></li>
+                  </ul>
+              </li>
+              <li><a class="no-underline" href="{{ route('about') }}">About MSL</a></li>
+              <li><a class="no-underline" href="https://www.epos-eu.org/dataportal" target="_blank">EPOS central data portal</a></li>
             </ul>
           </div>
 
