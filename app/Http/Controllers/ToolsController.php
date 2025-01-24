@@ -560,7 +560,7 @@ class ToolsController extends Controller
         ];
 
         $skipSearchKeywords = [
-            2652, 1446, 822, 2862
+            2652, 1446, 822, 2862, 4622
         ];
         
         
