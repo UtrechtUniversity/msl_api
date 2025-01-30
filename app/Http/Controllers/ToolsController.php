@@ -834,6 +834,30 @@ class ToolsController extends Controller
         $terms = array_unique($terms);
         
         $query .= implode(',', $terms);
+        //dd($query);
+
+
+        $terms = [];
+        $query = "";
+                
+        //analogue modeling apparatus        
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-%')->get();
+        foreach ($keywords as $keyword) {
+            foreach ($keyword->keyword_search as $searchKeyword) {
+                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                    continue;
+                }
+                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                    continue;
+                }
+                
+                $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
+            }
+        }
+
+        $terms = array_unique($terms);
+        
+        $query .= implode(',', $terms);
         dd($query);
                         
         return view('admin.query-generator', ['query' => $query]);
