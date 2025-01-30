@@ -13,6 +13,8 @@ use App\Http\Resources\KeywordResource;
 
 class ApiController extends Controller
 {
+    private $guzzleClient;
+
     private $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
@@ -29,6 +31,11 @@ class ApiController extends Controller
         'labName' => 'msl_lab_name_text',
         'subDomain' => 'msl_subdomain'
     ];
+
+    public function __construct(\GuzzleHttp\Client $client)
+    {
+        $this->guzzleClient = $client;
+    }
     
     
     
@@ -36,7 +43,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
 
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
 
         $searchRequest = new PackageSearch();
                 
@@ -76,7 +83,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
         
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
         
         $searchRequest = new PackageSearch();               
         
@@ -116,7 +123,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
         
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
         
         $searchRequest = new PackageSearch();
         
@@ -157,7 +164,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
         
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
         
         $searchRequest = new PackageSearch();
         
@@ -198,7 +205,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
         
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
         
         $searchRequest = new PackageSearch();
         
@@ -239,7 +246,7 @@ class ApiController extends Controller
         $action = 'action/package_search';
         $endpoint = config('ckan.ckan_api_url') . $action;
         
-        $client = new \GuzzleHttp\Client();
+        $client = $this->guzzleClient;
         
         $searchRequest = new PackageSearch();
         
