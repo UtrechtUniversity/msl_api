@@ -21,7 +21,7 @@ class ApiTest extends TestCase
      * 
      * @return void
      */
-    public function test_all_succes_results(): void
+    public function test_all_success_results(): void
     {
         $this->app->bind(ApiController::class, function($app){
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_2818.txt'));
@@ -52,12 +52,82 @@ class ApiTest extends TestCase
         );
     }
 
+    /**
+     * Test /rock_physics API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_rockphysics_success_results(): void
+    {
+
+    }
+
+    /**
+     * Test /analogue API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_analogue_success_results(): void
+    {
+
+    }
+
+    /**
+     * Test /paleo API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_paleo_success_results(): void
+    {
+
+    }
+
+    /**
+     * Test /microscopy API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_microscopy_success_results(): void
+    {
+
+    }
+
+    /**
+     * Test /geochemistry API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_geochemistry_success_results(): void
+    {
+
+    }
+
+    /**
+     * Test /all endpoint with error received from CKAN
+     * 
+     * @return void
+     */
     public function test_all_error_ckan(): void
     {
 
     }
 
+    /**
+     * Test /all endpoint with empty resultset received from CKAN
+     * 
+     * @return void
+     */
     public function test_all_success_empty(): void
+    {
+
+    }
+
+    /**
+     * Test /all endpoint with Exception returned by GuzzleClient
+     * 
+     * @return void
+     */
+    public function test_all_guzzle_exception(): void
     {
 
     }
