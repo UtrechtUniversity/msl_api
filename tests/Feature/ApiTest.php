@@ -23,6 +23,7 @@ class ApiTest extends TestCase
      */
     public function test_all_success_results(): void
     {
+        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_2818.txt'));
         
@@ -35,10 +36,13 @@ class ApiTest extends TestCase
             return new ApiController(new Client(['handler' => $handler]));
         });
         
-        $response = $this->get('webservice/api/all?hasDownloads=false');
+        // Retrieve response from API
+        $response = $this->get('webservice/api/all');
         
+        // Check for 200 status response
         $response->assertStatus(200);
         
+        // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
