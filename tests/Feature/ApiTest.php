@@ -19,7 +19,7 @@ class ApiTest extends TestCase
     public function test_all_succes_results(): void
     {
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_31.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_31.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
