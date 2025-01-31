@@ -16,6 +16,11 @@ use Tests\TestCase;
 class ApiTest extends TestCase
 {
 
+    /**
+     * Test /all API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
     public function test_all_succes_results(): void
     {
         $this->app->bind(ApiController::class, function($app){
