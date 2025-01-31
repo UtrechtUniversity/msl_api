@@ -19,7 +19,7 @@ class ApiTest extends TestCase
     public function test_all_succes_results(): void
     {
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_31.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_2818.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -37,10 +37,10 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 31)
+                ->where('result.count', 2818)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
-                    $json->where('title', 'Dataset of particle size distribution data of Holocene volcanic ashes of NW Argentina')
+                    $json->where('title', 'North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England (Dataset)')
                         ->etc()
                 )
                 ->etc()
