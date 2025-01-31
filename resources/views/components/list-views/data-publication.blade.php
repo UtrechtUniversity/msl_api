@@ -15,10 +15,10 @@
 
         @if (isset($data['msl_authors']))
             <h5 class="text-left font-medium pt-4">
-                @foreach ( $data['msl_authors'] as $author )
+                @foreach ( $data['msl_authors'] as $authorKey => $author )
                     {{ $author["msl_author_name"] }} 
                     {{-- a little divider between names --}}
-                    @if (sizeof($data['msl_authors']) -1 != array_search($author, $data['msl_authors']) )
+                    @if (sizeof($data['msl_authors']) -1 != $authorKey )
                         |
                     @endif
                 @endforeach

@@ -160,13 +160,13 @@ $('#jstree-original').jstree({
                 urlParams.set('page', '1');
               }
 
-              urlParams.append(data.node.original.extra.filterName, data.node.original.extra.filterValue);
+              urlParams.append(data.node.original.extra.filterName + '[]', data.node.original.extra.filterValue);
               url.search = urlParams.toString();
             } else if (e.type == "uncheck_node") {
               var url = new URL(window.location.href);
               var urlParams = new URLSearchParams(url.search);
 
-              urlParams.remove(data.node.original.extra.filterName, data.node.original.extra.filterValue);
+              urlParams.remove(data.node.original.extra.filterName + '[]', data.node.original.extra.filterValue);
               url.search = urlParams.toString();
             }
 

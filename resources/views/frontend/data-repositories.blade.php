@@ -18,16 +18,17 @@
             @if ($repo["hide"] == "false")
               <div class="card bg-base-300 size-80 shadow-xl flex justify-between flex-col p-2">
                 <figure>
-                  <img
-                  class="h-48 object-contain"
-                  src= {{ asset( 'images/'.str_replace(' ', '', $repo["image_url"]) )}}
-                    alt={{ $repo["organization_display_name"] }} />
+                  <a href="{{ $repo['url'] }}" target="_blank" title="{{ $repo["organization_display_name"] }}">
+                    <img class="h-48 object-contain" src={{ asset( 'images/'.str_replace(' ', '', $repo["image_url"]) )}} alt={{ $repo["organization_display_name"] }}/>
+                  </a>
                 </figure>
                 <div class="card-body p-2">
-                  <h5 class="text-center">
-                    {{ $repo["organization_display_name"] }}
-                    {{-- <div class="badge badge-secondary">NEW</div> --}}
-                  </h5>
+                  <a href="{{ $repo['url'] }}" target="_blank" title="{{ $repo["organization_display_name"] }}" class="no-underline">
+                    <h5 class="text-center">
+                      {{ $repo["organization_display_name"] }}
+                      {{-- <div class="badge badge-secondary">NEW</div> --}}
+                    </h5>
+                  </a>
                 </div>
                 <a href="/data-access?organization[]={{ $repo["name"] }}">
                   <button class="btn btn-primary w-full">View Datasets</button>
@@ -36,5 +37,5 @@
             @endif            
           @endforeach
         </div>        
-    </div>    
+    </div>
 </x-layout_main>

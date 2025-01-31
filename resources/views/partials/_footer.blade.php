@@ -1,15 +1,23 @@
 
-<div class="w-full bg-base-200 text-base-content flex justify-around max-h-80">
+<div class="w-full bg-base-200 text-base-content flex justify-around xl:max-h-80">
 
   <footer class="footer 
   p-10 
-  w-full max-w-screen-xl
-  flex flex-row 
+  w-full xl:max-w-screen-xl
+  flex 
+  flex-col-reverse
+  xl:flex-row
   gap-20
+  h-full
   place-items-center">
 
   
-      <aside class="flex flex-row place-items-start gap-6">
+      <aside class="
+      flex 
+      flex-col
+      sm:flex-row 
+      place-items-start 
+      gap-6">
         <img 
           src={{ asset( 'images/logos/MSL.png')}} 
           alt="MSL-logo"
@@ -20,7 +28,7 @@
             href="https://www.epos-eu.org/">
               
               <img 
-              src={{ asset( 'images/logos/eposLarge.jpg')}} 
+              src={{ asset( 'images/logos/EPOScolour.png')}} 
               alt="MSL-logo"
               class="w-48">
             </a>
@@ -28,10 +36,18 @@
       </aside>
   
       <nav class="
-      {{-- grid grid-flow-col grid-rows-2  --}}
-      flex flex-col flex-wrap max-h-64
+      flex 
+      xl:flex-col 
+      flex-row
+      flex-wrap
+      h-full
+      xl:max-h-64
       gap-8
-      max-w-screen-sm">
+      place-items-center
+      w-full
+      justify-center
+      xl:justify-normal
+      xl:max-w-screen-sm">
         <nav class="link-list-item">
           <h6 class="footer-title">Data publications</h6>
           <a class="link link-hover"

@@ -8,17 +8,22 @@
 
         <div class="noMobileView_wideScreenDiv">
 
+            <div class="absolute">
+
+                @session('data_publication_active_search')
+                    @include('components.tabLinks',[
+                        // 'categoryName'  => 'Results',
+                        'includeIcon'   => 'goBack',
+                        'routes'        => array(
+                                'Back to search results'   => $value,
+                        )
+                    ])
+                @endsession
+            </div>
+
         <div class="tabLinksParent">
-            @session('data_publication_active_search')
-                @include('components.tabLinks',[
-                    'categoryName'  => 'Results',
-                    'routes'        => array(
-                            'Back to search results'   => $value,
-                    )
-                ])
-            @endsession
             @include('components.tabLinks',[
-                'categoryName'  => 'Sections',
+                // 'categoryName'  => 'Sections',
                 'routes'        => array(
                         'Metadata'   => route("data-publication-detail", ['id' => $data['name']]),
                         'Files'  => route("data-publication-detail-files", ['id' => $data['name']])
@@ -29,9 +34,20 @@
 
         <div class="listMapDetailDivParent">
             <div class="detailDiv">
-                <div class="detailEntryDiv">
+                <div class="detailEntryDiv flex flex-col place-items-center gap-4">
                     <h2>Files</h2>
                     <p class="text-center">(click to download)</p>
+
+                    <div class="bg-warning-300 rounded-lg 
+                    flex flex-col place-items-center w-2/3
+                    p-6
+                    text-warning-900
+                    ">
+                        <x-ri-error-warning-line class="warning-icon"/>
+
+                        <p class="text-center">Please note that this list is not exhaustive or complete and <span class="bg-none font-bold">under active development</span>. Each data repository manages data differently, which requires an interface to be developed and implented by MSL.</p>
+
+                    </div>
                 </div>
                     
                 <div class="detailEntryDiv"> 
@@ -58,7 +74,24 @@
                                 </div>
                             @endforeach
                         @else
-                            <p>No files found for this data publication</p>
+                            <div class="detailEntryDiv flex flex-col place-items-center gap-4">
+                                <div class="flex flex-col place-items-center bg-info-300
+                                rounded-lg
+                                w-2/3 p-6
+                                text-info-900">
+
+                                    <x-ri-emotion-sad-line class="info-icon size-14 fill-info-800"/>
+
+                                    
+                                    <p class=" text-center">No files found for this data publication or files not yet ingested by MSL. Check the source to make sure you dont miss anything:</p>
+                                            
+                                    @if (array_key_exists("msl_source",$data))
+                                        <a class="detailEntrySub2 text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                                    @endif
+                                </div>
+
+                            </div>
+
                         @endif
                     </div>
 

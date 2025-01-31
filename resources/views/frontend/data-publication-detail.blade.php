@@ -8,24 +8,30 @@
 
         <div class="noMobileView_wideScreenDiv">
 
-        <div class="tabLinksParent">
-            @session('data_publication_active_search')
+            <div class="absolute">
+
+                @session('data_publication_active_search')
+                    @include('components.tabLinks',[
+                        // 'categoryName'  => 'Results',
+                        'includeIcon'   => 'goBack',
+                        'routes'        => array(
+                                'Back to search results'   => $value,
+                        )
+                    ])
+                @endsession
+            </div>
+
+            <div class="tabLinksParent">
+ 
                 @include('components.tabLinks',[
-                    'categoryName'  => 'Results',
+                    // 'categoryName'  => 'Sections',
                     'routes'        => array(
-                            'Back to search results'   => $value,
-                    )
+                            'Metadata'  => route("data-publication-detail", ['id' => $data['name']]),
+                            'Files'     => route("data-publication-detail-files", ['id' => $data['name']])
+                    ),
+                    'routeActive'   => route("data-publication-detail", ['id' => $data['name']])
                 ])
-            @endsession
-            @include('components.tabLinks',[
-                'categoryName'  => 'Sections',
-                'routes'        => array(
-                        'Metadata'   => route("data-publication-detail", ['id' => $data['name']]),
-                        'Files'  => route("data-publication-detail-files", ['id' => $data['name']])
-                ),
-                'routeActive'   => route("data-publication-detail", ['id' => $data['name']])
-            ])
-        </div>
+            </div>
 
             <div class="listMapDetailDivParent">
                     <div class="detailDiv dividers">
@@ -34,18 +40,23 @@
                                     <h2 class="">Data Publication</h2>
                                     <h1 class="text-lg">{!! $data['msl_title_annotated'] !!}</h1>
                                     <p class="italic text-center">                                       
-                                        @foreach ( $data['msl_authors'] as $author )
+                                        @foreach ( $data['msl_authors'] as $authorKey => $author )
                                             {{ $author["msl_author_name"] }} 
                                             {{-- a little divider between names --}}
-                                                @if (sizeof($data['msl_authors']) -1 != array_search($author, $data['msl_authors']) )
+                                                @if (sizeof($data['msl_authors']) -1 != $authorKey )
                                                     |
                                                 @endif
                                         @endforeach 
                                     </p>
+                                    @if (array_key_exists("msl_publisher", $data))                                    
+                                    <p class="italic text-center">{{ $data['msl_publisher'] }} </p>
+                                    @endif
+                                    @if (array_key_exists("msl_publication_year", $data))
+                                    <p class="italic text-center">({{ $data['msl_publication_year'] }})</p>
+                                    @endif
                                 </div>
                                 
                                 <div class="detailEntryDiv">
-                                    <p class="">{{ $data['msl_publisher'] }} ({{ $data['msl_publication_year'] }})</p>
                                     <p>
                                         {!! $data['msl_notes_annotated'] !!}
                                     </p>
@@ -132,7 +143,7 @@
                                                 }
 
                                                 $.ajax({
-                                                    url: '/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
                                                     type: 'GET',
                                                     dataType: 'json',
                                                     dataset: instance.reference.dataset,
@@ -234,7 +245,7 @@
                                                 }
 
                                                 $.ajax({
-                                                    url: '/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
                                                     type: 'GET',
                                                     dataType: 'json',
                                                     dataset: instance.reference.dataset,
@@ -329,7 +340,7 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Source</h4>
-                                    <a class="detailEntrySub2" href="{{ $data['msl_source'] }}">{{ $data['msl_source'] }}</a>
+                                    <a class="detailEntrySub2" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
                                 </div>
                                 @endif
 

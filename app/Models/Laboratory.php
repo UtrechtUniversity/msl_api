@@ -77,6 +77,7 @@ class Laboratory extends Model
             'name' => $this->msl_identifier,
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
             'msl_id' => $this->id,
+            'msl_fast_id' => $this->fast_id,
             'msl_description' => $this->description,
             'msl_description_html' => $this->description_html,
             'msl_website' => $this->website,

@@ -16,14 +16,13 @@
           <li>
             <div id='nextStep' class="timeline-end timeline-box">Fill out the online form about your laboratory to start the process</div>
             <div class="timeline-middle">
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
               </svg>
             </div>
             <hr />
@@ -31,34 +30,59 @@
           <li>
             <hr />
             <div class="timeline-middle">
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
               </svg>
             </div>
             {{-- (add info-upon-hover: “We do this for two reasons: 1) To check whether your application to MSL affects any national projects, strategy or policy, and 2) For community building! We’re in this together.”), and relayed to the MSL Consortium Board (add info-upon-hover: “The MSL consortium board includes the twelve institutes that founded MSL”). --}}
-            <div class="timeline-start timeline-box">Your application will be checked with an MSL colleague situated in your country  </div>
+            <div class="timeline-start timeline-box">
+              Your application will be checked with an MSL colleague situated in your country  
+              <x-ri-information-line id="review-popup" class="info-icon "/>
+              <script>
+                tippy('#review-popup', {
+                    content: "We do this for two reasons: 1) To check whether your application to MSL affects any national projects, strategy or policy, and 2) For community building! We’re in this together.",
+                    placement: "top",
+                    theme: "msl"
+                });                                    
+              </script>
+            </div>
             <hr />
           </li>
 
           <li>
             <hr />
-            <div class="timeline-end timeline-box">Once approved by the MSL Consortium Board, you are officially part of the MSL community!</div>
+            {{-- <div class="absolute left-1/3  md:-right-4 p-2 -z-10"> --}}
+
+            {{-- </div> --}}
+            <div class="timeline-end timeline-box">
+              Once approved by the MSL Consortium Board, you are officially part of the MSL community!
+              
+              <x-ri-information-line id="consortium-popup" class="info-icon "/>
+              <script>
+                tippy('#consortium-popup', {
+                    content: "The MSL consortium board includes the twelve institutes that founded MSL",
+                    placement: "top",
+                    theme: "msl"
+                });                                    
+              </script>
+
+            </div>
+
+
 
             <div class="timeline-middle">
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
               </svg>
             </div>
             <hr />
@@ -69,14 +93,14 @@
             <div class="timeline-start timeline-box">The MSL Coordinator will initiate the registration of your laboratory via the FAST registration system. </div>
 
             <div class="timeline-middle">
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
+              <svg 
+              viewBox="0 0 24 24" 
+              class="h-10 w-10 p-2"
+
+              fill="currentColor">
+                  <path 
+                      d="M2 3H21.1384C21.4146 3 21.6385 3.22386 21.6385 3.5C21.6385 3.58701 21.6157 3.67252 21.5725 3.74807L18 10L21.5725 16.2519C21.7095 16.4917 21.6262 16.7971 21.3865 16.9341C21.3109 16.9773 21.2254 17 21.1384 17H4V22H2V3Z">
+                  </path>
               </svg>
             </div>
             <hr />
@@ -91,20 +115,19 @@
 
             </div>
             <div class="timeline-middle">
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5">
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                  clip-rule="evenodd" />
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
               </svg>
             </div>
           </li>
         </ul>
 
-          <div class="max-w-screen-md px-4">
+          <div class="w-screen sm:max-w-screen-md  px-4">
             <h2 class="pt-10 pb-4">Introduction to EPOS and MSL
             </h2>
             <p>The goal of EPOS is to establish a comprehensive multidisciplinary research platform for the Earth sciences in Europe. It aims to facilitate the integrated use of data, models, and laboratories, from both existing and new pan-European Research Infrastructures, allowing open access and transparent use of data. To reach this goal EPOS is thematically subdivided in 10 different communities: so called Thematic Core Services (TCS). One of these is Multi-Scale Laboratories (MSL).</p>

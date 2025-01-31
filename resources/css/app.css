@@ -149,20 +149,33 @@
       @apply size-8 fill-primary-800  rounded-full inline
     }
 
+    .goBack-icon{
+      @apply size-8 fill-secondary-600  rounded-full inline
+    }
+
+    .warning-icon{
+      @apply size-10 fill-warning-900  rounded-full inline
+    }
+
+    .sad-icon{
+      @apply size-20 fill-info-900  rounded-full inline
+    }
+
+
 
 
     /*###############
     various
     ###############*/
     .index-opacity-parent{
-      @apply bg-primary-200 text-primary-900 opacity-90 p-8 rounded-lg max-w-md
+      @apply bg-primary-200 text-primary-900 opacity-100 p-8 rounded-lg max-w-md
     }
     .index-opacity-child{
       @apply opacity-100
     }
 
     .tabs-div{
-      @apply   p-6 min-h-28
+      @apply   p-6 min-h-28 
     }
 
     /*###############
@@ -200,6 +213,16 @@
     .link-list-item{
       @apply flex flex-col gap-2 w-32
     }
+
+
+    /*###############
+    other
+    ###############*/
+    .timeline-line-element{
+      @apply py-5
+    }
+
+
 }
 
 /*###############

@@ -37,6 +37,8 @@
 					@else
 						<p>No laboratories found</p>
 					@endif
+
+					<a href="{{ route('download-lab-data') }}" class="btn btn-primary">Download Excel file</a>
                 </div>
             </div>                                    
         </div>

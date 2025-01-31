@@ -103,19 +103,30 @@
         
                     <p class="text-left py-2 pt-8">
                         This laboratory contributes to EPOS MSL by means of:
-                        (please select one or two options)
                     </p>
-                    <div class="flex flex-col gap-4 py-4">
-                        
-                        <div class="flex flex-row gap-10 bg-white rounded-md p-4">
-
-                            <div class="w-1/3">
+                    <div class="flex flex-col gap-2 pb-6 bg-white  rounded-lg ">
+                        <div class="flex flex-col px-10 py-8
+                        {{-- custom error message --}}
+                         @if ($errors->has('dataSharing-facilityAccess'))
+                                error-highlight bg-error-300 text-error-700 rounded-md
+                            @endif
+                        ">
+                            <div class="w-1/2 self-center">
                                 @include('forms.components.checkBox',[
-                                    'sectionName'   => 'dataSharing',
+                                    'sectionName'   => 'dataSharing-facilityAccess',
+                                    'showErrMess'   => true,
                                     'ElementsArray'=>    array(
-                                        'Data sharing'
+                                        'Facility Access and Data sharing'
                                     )
                                 ])
+                            </div>
+
+                        </div>
+
+                        <div class="flex flex-row gap-10 bg-white rounded-md px-4">
+
+                            <div class="w-1/3">
+                                <p>Data sharing</p>
                             </div>
                             <div class="w-full">
                                 <p class="text-justified">
@@ -130,14 +141,10 @@
         
                         </div>
         
-                        <div class="flex flex-row gap-10 bg-white rounded-md p-4">
+                        <div class="flex flex-row gap-10 bg-white rounded-md px-4">
                             <div class="w-1/3 ">
-                                @include('forms.components.checkBox',[
-                                    'sectionName'   => 'facilityAccess',
-                                    'ElementsArray'=>    array(
-                                        'Facility Access'
-                                    )
-                                ])
+                                <p>Facility Access</p>
+
                             </div>
                             <div class="w-full">
                                 <p  class="text-justified">
@@ -149,10 +156,7 @@
         
                         </div>
                     </div>
-                        {{-- custom error message --}}
-                    @if ($errors->has('dataSharing') && $errors->has('facilityAccess'))
-                        <p class="error-highlight bg-error-300 text-error-700 rounded-md"> Select at least one of the two options above </p>
-                    @endif
+
             </div>
             
             <h2 class="pt-20">Laboratory contact person </h2>
@@ -172,6 +176,26 @@
                         'placeholder'   => 'Last Name',
                     ])
                 </div>
+
+                <div class="flex flex-row w-full gap-4">
+                    @include('forms.components.freeText',[
+                        'sectionName'   => 'contact-nationality',
+                        'placeholder'   => 'Your nationality',
+                    ])
+                </div>
+                <div class="w-full">
+                    @include('forms.components.dropDownSelect',[
+                        'sectionName'   => 'contact-gender',
+                        'placeholder'   => 'Select your gender',
+                        'ElementsArray'=>    array(
+                            'Female',
+                            'Male',
+                            'Other'
+                        )
+                    ])
+
+                </div>
+
     
                 <div class="flex flex-row w-full gap-4">
                     @include('forms.components.freeText',[
@@ -183,7 +207,12 @@
                 <div class="flex flex-row w-full gap-4">
                     @include('forms.components.freeText',[
                         'sectionName'   => 'contact-affiliation',
-                        'placeholder'   => 'e.g. research institute, university',
+                        'placeholder'   => 'research institute, university',
+                    ])
+
+                    @include('forms.components.freeText',[
+                        'sectionName'   => 'contact-affiliation-country',
+                        'placeholder'   => 'Country of the institude, university',
                     ])
                 </div>
     

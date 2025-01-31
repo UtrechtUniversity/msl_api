@@ -17,86 +17,98 @@
             </p>
         </div>
 
-
-        <ul class="timeline p-20">
-            <li>
-              <div class="timeline-start timeline-box">At which repository will you publish your data?</div>
-              <div class="timeline-middle">
-                <svg 
-                viewBox="0 0 24 24"
-                class="h-8 w-8 p-1"
-                fill="currentColor">
-                    <path 
-                        d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
-                    </path>
-                </svg>
-
-              </div>
-              <hr class="bg-primary" />
-            </li>
-            <li>
-              <hr class="bg-primary" />
-              <div class="timeline-middle">
-                
-                <svg 
-                viewBox="0 0 24 24" 
-                class="h-10 w-10 p-2"
-
-                fill="currentColor">
-                    <path 
-                        d="M2 3H21.1384C21.4146 3 21.6385 3.22386 21.6385 3.5C21.6385 3.58701 21.6157 3.67252 21.5725 3.74807L18 10L21.5725 16.2519C21.7095 16.4917 21.6262 16.7971 21.3865 16.9341C21.3109 16.9773 21.2254 17 21.1384 17H4V22H2V3Z">
-                    </path>
-                </svg>
-
-              </div>
-              <div class="timeline-end timeline-box">Check data formatting requirements
+        <ul class="timeline timeline-vertical py-20 max-w-2xl">
+          <li>
+            <a href="{{ route('contribute-researcher') }}#step-1"
+            class="timeline-end timeline-box no-underline hover:bg-secondary-200">
+              <div id='nextStep' >At which repository will you publish your data?</div>
+            </a>
+            
+            <div class="timeline-middle ">
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
+              </svg>
             </div>
-              <hr class="bg-primary" />
-            </li>
-            <li>
-              <hr class="bg-primary" />
-              <div class="timeline-start timeline-box">Enrich your work with MSL vocab
+            <hr class="timeline-line-element"/>
+          </li>
+          <li>
+            <hr class="timeline-line-element"/>
+            <div class="timeline-middle">
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
+              </svg>
             </div>
-              <div class="timeline-middle">
-                <svg
-                  {{-- xmlns="http://www.w3.org/2000/svg" --}}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <hr class="bg-primary" />
-            </li>
-            <li>
-              <hr class="bg-primary" />
-              <div class="timeline-start timeline-box">Publish your work
+            {{-- (add info-upon-hover: “We do this for two reasons: 1) To check whether your application to MSL affects any national projects, strategy or policy, and 2) For community building! We’re in this together.”), and relayed to the MSL Consortium Board (add info-upon-hover: “The MSL consortium board includes the twelve institutes that founded MSL”). --}}
+            
+            <a href="{{ route('contribute-researcher') }}#step-2"
+              class="timeline-start timeline-box no-underline hover:bg-secondary-200">
+              <div id='nextStep' >Check data formatting requirements</div>
+              
+
+            </a>
+
+            <hr class="timeline-line-element"/>
+          </li>
+
+          <li>
+            <hr class="timeline-line-element"/>
+            <a href="{{ route('contribute-researcher') }}#step-3"
+            class="timeline-end timeline-box no-underline hover:bg-secondary-200">
+              <div id='nextStep' >Enrich your work with MSL vocabularies</div>
+
+            </a>
+
+            <div class="timeline-middle">
+              <svg 
+              viewBox="0 0 24 24"
+              class="h-8 w-8 p-1"
+              fill="currentColor">
+                  <path 
+                      d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12C14 13.1046 13.1046 14 12 14Z">
+                  </path>
+              </svg>
             </div>
-              <div class="timeline-middle">
-                <svg
-                  {{-- xmlns="http://www.w3.org/2000/svg" --}}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-            </li>
-          </ul>
+            <hr class="timeline-line-element"/>
+          </li>
+
+          <li>
+            <hr class="timeline-line-element"/>
+            <a href="{{ route('contribute-researcher') }}#step-4"
+            class="timeline-start timeline-box no-underline hover:bg-secondary-200">
+              <div id='nextStep'>Publish your work</div>
+
+            </a>
+
+            <div class="timeline-middle">
+              <svg 
+              viewBox="0 0 24 24" 
+              class="h-10 w-10 p-2"
+
+              fill="currentColor">
+                  <path 
+                      d="M2 3H21.1384C21.4146 3 21.6385 3.22386 21.6385 3.5C21.6385 3.58701 21.6157 3.67252 21.5725 3.74807L18 10L21.5725 16.2519C21.7095 16.4917 21.6262 16.7971 21.3865 16.9341C21.3109 16.9773 21.2254 17 21.1384 17H4V22H2V3Z">
+                  </path>
+              </svg>
+            </div>
+          </li>
+
+
+        </ul>
 
         
 
-
-
-
-        <div class="max-w-screen-md px-4">
-            <h2 class="pt-10 pb-4">Step 1: Which repo will you submit your data? 
+        <div class="w-screen sm:max-w-screen-md px-4">
+            <h2 id='step-1' class="pt-10 pb-4">Step 1: At which repository will you publish your data? 
             </h2>
             <p>Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  
             </p>
@@ -106,7 +118,7 @@
                 We can then start working towards including data from your repository too. 
             </p>
     
-            <h2 class="pt-10 pb-4">Step 2: Prepare your data
+            <h2 class="pt-10 pb-4" id="step-2">Step 2: Check data formatting requirements
             </h2>
             <p>Some repositories have specific requirements or data formats/templates to take into account. 
                 Check whether this is relevant for your work → better to know this before you start publishing.</p>
@@ -120,7 +132,12 @@
     
 
 
-            <div role="tablist" class="tabs tabs-lifted tabs-lg p-4 rounded-xl bg-primary-200">
+            <div role="tablist" class="
+            tabs tabs-lifted tabs-sm sm:tabs-lg p-4 
+            rounded-xl bg-primary-200 
+            text-sm
+            sm:text-base
+            ">
                 <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="Microscopy"/>
                 <div role="tabpanel" class="tab-content tabs-div bg-primary-100 border-primary-300 rounded-box">
                     Structure 2D micrographs using StraboMicro, 
@@ -145,7 +162,7 @@
               </div>
     
     
-            <h2 class="pt-10 pb-4">Step 3: While publishing, use MSL keywords    
+            <h2 class="pt-10 pb-4" id="step-3">Step 3: Enrich your work with MSL vocabularies    
             </h2>
 
             <p>Wherever you publish, you make it a lot easier for us to find your data by adding keywords from the Multi-Scale Labs vocabularies (the more the better!). 
@@ -162,7 +179,7 @@
             <p>Would you like to embed MSL vocabularies, or the above keyword selector in the data repository you’re affiliated to? You can - it’s all open access and open source. 
                 Have a look here on how to approach this (link to: how to contribute as a data repository → and include a few instructions on how to embed the keyword selector there). </p>
             
-            <h2 class="pt-10 pb-4">Step 4: Publish
+            <h2 class="pt-10 pb-4" id="step-4">Step 4: Publish your work
             </h2>
             <p>When you publish your data, make sure you do so with an open access license (e.g. <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> ). 
                 Most repositories provide clear guidance on which licenses are useful to provide your data openly, and promote citing. 

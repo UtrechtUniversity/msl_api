@@ -303,7 +303,26 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail', ['data' => $result->getResult()]);
+        $labData = $result->getResult();
+        
+        /**
+         * All labs should have a contact person defined with an email address however this is 
+         * depending on harvested data from FAST so we should check if this is the case. Only 
+         * display the contact button when a validated e-mail address is set in view.
+         */
+
+        $labHasMailContact = false;
+        $labData = $result->getResult();
+        $labDatabase = Laboratory::where('fast_id', (int)$labData['msl_fast_id'])->first();
+
+        if($labDatabase) {
+            $contactPerson = $labDatabase->laboratoryContactPerson;
+            if($contactPerson) {
+                $labHasMailContact = $contactPerson->hasValidEmail();                
+            }
+        }
+
+        return view('frontend.lab-detail', ['data' => $labData, 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**
