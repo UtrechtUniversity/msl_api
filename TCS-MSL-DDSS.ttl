@@ -38,8 +38,7 @@
 	  schema:qualifications "Senior Advisor, Data Librarian" ;
 	  schema:affiliation <PIC:99985805> ;
 	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/legalContact> ;
-	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/financialContact> ;
-      schema:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/financialContact> ;      
 	schema:affiliation <PIC:99985805>;
 . 
 
@@ -61,6 +60,7 @@
 	  schema:qualifications "Senior Developer" ;
 	  schema:affiliation <PIC:99985805> ;
 	  schema:contactPoint <http://orcid.org/0000-0002-9205-190X/technicalContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 	schema:affiliation <PIC:99985805>;
 . 
 
@@ -160,8 +160,8 @@
 	schema:contactType "financialContact" ;
 .
 
-<http://orcid.org/0000-0003-3560-988X/contactPoint> a schema:ContactPoint;
-	schema:email "o.a.lange@uu.nl";
+<http://orcid.org/0000-0002-9205-190X/contactPoint> a schema:ContactPoint;
+	schema:email "l.samshuijzen@uu.nl";
 	schema:availableLanguage "en" ;
 	schema:contactType "manager";
 .
@@ -232,7 +232,7 @@
         dcat:theme <category:geochemistry> ;
         
         dcat:keyword "analytical","crustal and upper mantle rheology","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability", "fluid inclusions (solid, liquid, gas)","fluid-rock interaction","geochemistry","geochronology","geothermal energy","induced seismicity /induced earthquakes","isotope geochemistry","major element composition","material property","mineral chemistry","mineral composition","natural disaster","natural seismicity /natural earthquakes","oil/gas production","rock mechanical testing","volcano","whole rock chemistry";
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -275,7 +275,7 @@
         dcat:theme <category:rockmeltphysics> ;
         
         dcat:keyword "acoustic measurements","anisotropy","brittle deformation","compaction /consolidation","crustal and upper mantle rheology","ductile deformation","elastic moduli","extension","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability","fluid-rock interaction","fracture strength /shear strength","friction","geothermal energy","high pressure","high temperature","induced seismicity /induced earthquakes","material property","microphysical deformation process","model parameter","natural disaster","natural seismicity /natural earthquakes","oil/gas production","plastic deformation","rock mechanical testing","stress-strain behavior","subsidence","torsion","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -317,7 +317,7 @@
         dcat:theme <category:analoguemodellgofgeologicprocesses> ;
         
         dcat:keyword "basin","brittle deformation","compression","crust and mantle behavior","digital image correlation (DIC)","ductile deformation","extension","fault and fold behavior","geological process","geothermal energy","induced seismicity /earthquakes","lithosphere, asthenosphere","model parameter","mountain","natural hazard or disaster","natural seismicity /earthquakes","oil/gas production","plastic deformation","plate tectonics","sandbox apparatus","shear","subsidence and uplift","viscous behavior","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -359,7 +359,7 @@
         dcat:theme <category:paleomagnetism> ;
         
         dcat:keyword "basin","basin evolution","crust and mantle behavior","crustal magnetism","directional data","environmental magnetism","fault and fold behavior","geo-hazard frequency","geological process","induced seismicity /earthquakes","lithosphere, asthenosphere","magnetic mineralogy","magnetic remanence","magnetic susceptibility","magnetiostratigraphy","mountain","natural hazard or disaster","natural seismicity /earthquakes","paleointensity","paleomagnetism","plate tectonics","polarity reversals","rock magnetism","subsidence and uplift","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -401,7 +401,7 @@
         dcat:theme <category:microscopymography> ;
         
         dcat:keyword "anisotropy","crystal and mineral orientation","electron microscopy (SEM, FIB-SEM, STEM, TEM)","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability","fluid-rock interaction","geothermal energy","induced seismicity /earthquakes","interferometry","micrograph","microphysical deformation process","microprobe","microstructure and rock structure","model parameter","natural disaster","natural seismicity /earthquakes","oil/gas production","pore network and porosity","spectroscopy","subsidence","volcano","X-ray tomography" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -443,7 +443,7 @@
         dcat:theme <category:crossdisciplelabatydata> ;
         
         dcat:keyword "laboratory data", "experiment", "measurement";
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -664,7 +664,7 @@
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/001/Operation/001>;
 	schema:keywords "geochemistry", "geochemical data", "element geochemistry", "elemental geochemistry", "isotope geochemistry" ;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -725,7 +725,7 @@
 	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/002/Operation/002>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -785,7 +785,7 @@
 	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/003/Operation/003>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -845,7 +845,7 @@
 	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/006/Operation/006>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -905,7 +905,7 @@
 	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/011/Operation/011>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -965,7 +965,7 @@
 	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/013/Operation/013>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
