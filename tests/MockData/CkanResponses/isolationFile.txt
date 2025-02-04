@@ -1,0 +1,62 @@
+    "title" => "New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)"
+    "name" => "1c6f44820342a409af0701f5997d8528"
+    "portalLink" => "data-publication/1c6f44820342a409af0701f5997d8528"
+    "doi" => "10.7288/V4/MAGIC/20007"
+    "handle" => ""
+    "license" => ""
+    "version" => ""
+    "source" => "http://dx.doi.org/10.7288/V4/MAGIC/20007"
+    "publisher" => "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7"
+    "subdomain" => array:1 [
+      0 => "geochemistry"
+    ]
+    "description" => "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: LISA TAUXE, DAVID R. CLARK (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin 99 (6):739. doi:10.1130/0016-7606(1987)992.0.CO;2."
+    "publicationDate" => "1987-01-01"
+    "citation" => "LISA Tauxe, &amp; DAVID R. Clark. (1987). <i>New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)</i> (Version 6) [Data set]. Geological Society of America Bulletin. https://doi.org/10.7288/V4/MAGIC/20007"
+    "creators" => array:2 [
+      0 => array:4 [
+        "authorName" => "LISA Tauxe"
+        "authorOrcid" => ""
+        "authorScopus" => ""
+        "authorAffiliation" => ""
+      ]
+      1 => array:4 [
+        "authorName" => "DAVID R. Clark"
+        "authorOrcid" => ""
+        "authorScopus" => ""
+        "authorAffiliation" => ""
+      ]
+    ]
+    "contributors" => array:1 [
+      0 => array:5 [
+        "contributorName" => "Magnetics Information Consortium (MagIC)"
+        "contributorOrcid" => ""
+        "contributorScopus" => ""
+        "contributorAffiliation" => ""
+        "contributorRole" => "Distributor"
+      ]
+    ]
+    "references" => array:1 [
+      0 => array:4 [
+        "referenceDoi" => "10.1130/0016-7606(1987)99<739:NPRFTE>2.0.CO;2"
+        "referenceHandle" => ""
+        "referenceTitle" => "TAUXE, L., & CLARK, D. R. (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin, 99(6), 739. https://doi.org/10.1130/0016-7606(1987)99<739:nprfte>2.0.co;2\n"
+        "referenceType" => "IsDocumentedBy"
+      ]
+    ]
+    "laboratories" => []
+    "materials" => []
+    "spatial" => []
+    "locations" => []
+    "coveredPeriods" => []
+    "collectionPeriods" => []
+    "maintainer" => ""
+    "downloads" => array:1 [
+      0 => array:2 [
+        "fileName" => "magic_contribution_20007"
+        "downloadLink" => "https://earthref.org/MagIC/download/20007/magic_contribution_20007.txt"
+      ]
+    ]
+    "researchAspects" => []
+  ]
+  -path: "result.results.0"

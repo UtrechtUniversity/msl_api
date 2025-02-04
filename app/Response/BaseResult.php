@@ -107,6 +107,7 @@ class BaseResult
             }
         }        
         
+        // is this an error? groups mentioned in ckan. Poential overwrite of previous var
         if(isset($data['group'])) {
             $this->subdomain = $data['group'];
         }
