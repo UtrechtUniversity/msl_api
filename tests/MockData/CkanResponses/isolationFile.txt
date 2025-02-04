@@ -1,30 +1,61 @@
-    "title" => "New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)"
-    "name" => "1c6f44820342a409af0701f5997d8528"
-    "portalLink" => "data-publication/1c6f44820342a409af0701f5997d8528"
-    "doi" => "10.7288/V4/MAGIC/20007"
+  -props: array:25 [
+    "title" => "Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion (Dataset)"
+    "name" => "7a04d77711bd95046f23e09111afbdbf"
+    "portalLink" => "data-publication/7a04d77711bd95046f23e09111afbdbf"
+    "doi" => "10.7288/V4/MAGIC/19551"
     "handle" => ""
     "license" => ""
     "version" => ""
-    "source" => "http://dx.doi.org/10.7288/V4/MAGIC/20007"
+    "source" => "http://dx.doi.org/10.7288/V4/MAGIC/19551"
     "publisher" => "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7"
     "subdomain" => array:1 [
-      0 => "geochemistry"
+      0 => "rock and melt physics"
     ]
-    "description" => "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: LISA TAUXE, DAVID R. CLARK (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin 99 (6):739. doi:10.1130/0016-7606(1987)992.0.CO;2."
-    "publicationDate" => "1987-01-01"
-    "citation" => "LISA Tauxe, &amp; DAVID R. Clark. (1987). <i>New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)</i> (Version 6) [Data set]. Geological Society of America Bulletin. https://doi.org/10.7288/V4/MAGIC/20007"
-    "creators" => array:2 [
+    "description" => "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Shuhui Cai, Rashida Doctor, Lisa Tauxe, Mitch Hendrickson, Quan Hua, Stéphanie Leroy, Kaseka Phon (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion. Proceedings of the National Academy of Sciences 118 (11). doi:10.1073/PNAS.2022490118."
+    "publicationDate" => "2021-01-01"
+    "citation" => "Cai, S., Doctor, R., Tauxe, L., Hendrickson, M., Hua, Q., Leroy, S., &amp; Kaseka Phon. (2021). <i>Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion (Dataset)</i> (Version 2) [Data set]. Proceedings of the National Academy of Sciences. https://doi.org/10.7288/V4/MAGIC/19551"
+    "creators" => array:7 [
       0 => array:4 [
-        "authorName" => "LISA Tauxe"
-        "authorOrcid" => ""
+        "authorName" => "Shuhui Cai"
+        "authorOrcid" => "0000-0003-1607-3477"
         "authorScopus" => ""
-        "authorAffiliation" => ""
+        "authorAffiliation" => "State Key Laboratory of Lithospheric Evolution, Institute of Geology and Geophysics, Chinese Academy of Sciences, 100029 Beijing, China;; Scripps Institution of Oceanography, University of California San Diego, La Jolla, CA 92093;;"
       ]
       1 => array:4 [
-        "authorName" => "DAVID R. Clark"
+        "authorName" => "Rashida Doctor"
         "authorOrcid" => ""
         "authorScopus" => ""
-        "authorAffiliation" => ""
+        "authorAffiliation" => "Department of Earth and Environmental Sciences, University of Minnesota, Minneapolis, MN 55455;;"
+      ]
+      2 => array:4 [
+        "authorName" => "Lisa Tauxe"
+        "authorOrcid" => "0000-0002-4837-8200"
+        "authorScopus" => ""
+        "authorAffiliation" => "Scripps Institution of Oceanography, University of California San Diego, La Jolla, CA 92093;;"
+      ]
+      3 => array:4 [
+        "authorName" => "Mitch Hendrickson"
+        "authorOrcid" => ""
+        "authorScopus" => ""
+        "authorAffiliation" => "Department of Anthropology, University of Illinois at Chicago, Chicago, IL 60607;;"
+      ]
+      4 => array:4 [
+        "authorName" => "Quan Hua"
+        "authorOrcid" => ""
+        "authorScopus" => ""
+        "authorAffiliation" => "Australian Nuclear Science and Technology Organisation, Kirrawee DC, NSW 2232, Australia;;"
+      ]
+      5 => array:4 [
+        "authorName" => "Stéphanie Leroy"
+        "authorOrcid" => "0000-0002-1835-3563"
+        "authorScopus" => ""
+        "authorAffiliation" => "Laboratoire Archéomatériaux et Prévision de l’Altération–Institut de Recherche sur les Archéomatériaux, Nanosciences et Innovation pour les Matériaux la Biomédecine et l'Énergie, Commissariat à l'énergie atomique, CNRS, CEA Saclay, Université Paris-Saclay, Gif-sur-Yvette 91191, France;;"
+      ]
+      6 => array:4 [
+        "authorName" => "Kaseka Phon"
+        "authorOrcid" => ""
+        "authorScopus" => ""
+        "authorAffiliation" => "Institute of Humanities and Social Sciences, Royal Academy of Cambodia, Phnom Penh 12000, Cambodia;"
       ]
     ]
     "contributors" => array:1 [
@@ -38,9 +69,9 @@
     ]
     "references" => array:1 [
       0 => array:4 [
-        "referenceDoi" => "10.1130/0016-7606(1987)99<739:NPRFTE>2.0.CO;2"
+        "referenceDoi" => "10.1073/PNAS.2022490118"
         "referenceHandle" => ""
-        "referenceTitle" => "TAUXE, L., & CLARK, D. R. (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin, 99(6), 739. https://doi.org/10.1130/0016-7606(1987)99<739:nprfte>2.0.co;2\n"
+        "referenceTitle" => "Cai, S., Doctor, R., Tauxe, L., Hendrickson, M., Hua, Q., Leroy, S., & Phon, K. (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion. Proceedings of the National Academy of Sciences, 118(11). https://doi.org/10.1073/pnas.2022490118\n"
         "referenceType" => "IsDocumentedBy"
       ]
     ]
@@ -53,10 +84,11 @@
     "maintainer" => ""
     "downloads" => array:1 [
       0 => array:2 [
-        "fileName" => "magic_contribution_20007"
-        "downloadLink" => "https://earthref.org/MagIC/download/20007/magic_contribution_20007.txt"
+        "fileName" => "magic_contribution_19551"
+        "downloadLink" => "https://earthref.org/MagIC/download/19551/magic_contribution_19551.txt"
       ]
     ]
     "researchAspects" => []
   ]
   -path: "result.results.0"
+  #interacted: []

@@ -118,7 +118,9 @@ class ApiTest extends TestCase
                             ->has('contributors.0.contributorAffiliation')
                             
                             ->where('references.0.referenceDoi', '10.1073/PNAS.2022490118')
-
+                            ->where('references.0.referenceType', 'IsDocumentedBy')
+                            ->where('references.0.referenceTitle', "Cai, S., Doctor, R., Tauxe, L., Hendrickson, M., Hua, Q., Leroy, S., & Phon, K. (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion. Proceedings of the National Academy of Sciences, 118(11). https://doi.org/10.1073/pnas.2022490118\n")
+                            ->has('references.0.referenceHandle')
 
                             ->has('laboratories')
                             ->has('materials')
@@ -208,6 +210,8 @@ class ApiTest extends TestCase
                             // needed a change from '' to ""
                             ->where('references.0.referenceTitle', "McEnroe, S. A. (1996). North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England. Geophysical Journal International, 126(2), 477–494. https://doi.org/10.1111/j.1365-246x.1996.tb05304.x\n")
                             ->where('references.0.referenceType', 'IsDocumentedBy')
+                            ->where('references.0.referenceDoi', '10.1111/J.1365-246X.1996.TB05304.X')
+                            ->has('references.0.referenceHandle')
 
                             ->has('laboratories')
                             ->has('materials')
@@ -299,6 +303,7 @@ class ApiTest extends TestCase
                             ->where('references.0.referenceDoi', '10.1016/0031-0182(82)90057-8')
                             ->where('references.0.referenceTitle', "Tauxe, L., & Opdyke, N. D. (1982). A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan. Palaeogeography, Palaeoclimatology, Palaeoecology, 37(1), 43–61. https://doi.org/10.1016/0031-0182(82)90057-8\n")
                             ->where('references.0.referenceType', 'IsDocumentedBy')
+                            ->has('references.0.referenceHandle')
 
                             ->has('laboratories')
                             ->has('materials')
