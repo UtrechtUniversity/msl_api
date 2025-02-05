@@ -48,9 +48,54 @@ class ApiTest extends TestCase
                 ->where('success', true)
                 ->where('result.count', 2818)
                 ->where('result.resultCount', 10)
-                ->has('result.results.0', fn (AssertableJson $json) =>
-                    $json->where('title', 'North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England (Dataset)')
-                        ->etc()
+                ->has('result.results.1', fn (AssertableJson $json) =>
+                    $json   
+                            ->where('title', 'The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn (Dataset)')
+                            ->where('name', 'f24c11eb13c8263373a6e01f02c86bd8')
+                            ->where('portalLink', 'data-publication/f24c11eb13c8263373a6e01f02c86bd8')
+                            ->where('doi', '10.7288/V4/MAGIC/20030')
+                            ->has('license')
+                            ->has('version')
+                            ->where('source', 'http://dx.doi.org/10.7288/V4/MAGIC/20030')
+                            ->where('publisher', '2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7')
+                            // ->where('subdomain.0', 'geochemistry') //not present here
+                            
+                            ->where('description', 'Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Sara Satolli, Jean Besse, Fabio Speranza, Fernando Calamita (2007). The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn. Earth and Planetary Science Letters 257 (1-2):329-342. doi:10.1016/J.EPSL.2007.03.009.')
+                            ->where('publicationDate', '2007-01-01')
+                            ->where('citation', 'Satolli, S., Besse, J., Speranza, F., &amp; Calamita, F. (2007). <i>The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn (Dataset)</i> (Version 1) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/20030')
+                            
+                            ->count('creators', 4)
+                            ->where('creators.0.authorName', 'Sara Satolli')
+                            ->has('creators.0.authorOrcid')
+                            ->has('creators.0.authorScopus') //most cases (99%) do have orcid instead
+                            ->has('creators.0.authorAffiliation')
+                            
+                            ->where('contributors.0.contributorName', 'Magnetics Information Consortium (MagIC)') //going through all counts or presence is enough
+                            ->where('contributors.0.contributorRole', 'Distributor')
+                            ->has('contributors.0.contributorOrcid')
+                            ->has('contributors.0.contributorScopus')
+                            ->has('contributors.0.contributorAffiliation')
+                            
+                            ->where('references.0.referenceDoi', '10.1016/J.EPSL.2007.03.009')
+                            ->where('references.0.referenceType', 'IsDocumentedBy')
+                            ->where('references.0.referenceTitle', "Satolli, S., Besse, J., Speranza, F., & Calamita, F. (2007). The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn. Earth and Planetary Science Letters, 257(1–2), 329–342. https://doi.org/10.1016/j.epsl.2007.03.009\n")
+                            ->has('references.0.referenceHandle')
+
+                            ->has('laboratories')
+                            ->has('materials')
+                            ->has('spatial')
+                            ->has('locations')
+                            ->has('coveredPeriods')
+                            ->has('collectionPeriods')
+                            ->has('maintainer')
+
+                            ->where('downloads.0.fileName', 'magic_contribution_20030')
+                            ->where('downloads.0.downloadLink', 'https://earthref.org/MagIC/download/20030/magic_contribution_20030.txt')
+
+                            ->has('researchAspects')
+
+                            // ->where('', '')
+                            ->etc()
                 )
                 ->etc()
         );
@@ -537,21 +582,14 @@ $response->assertJson(fn (AssertableJson $json) =>
         // Retrieve response from API
         $response = $this->get('webservice/api/all');
 
-        // Check for 200 status response
-        $response->assertStatus(200);
+        // Check for 500 status response
+        $response->assertStatus(500);
 
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', false)
-                ->has('message')
-                ->has('result', fn (AssertableJson $json) =>
-                $json 
-                    ->has('count')
-                    ->has('resultCount')     
-                    ->has('results')     
-
-                )
+                ->where('message', "Malformed request to CKAN.")
                 ->etc()
         );
     }
@@ -563,7 +601,37 @@ $response->assertJson(fn (AssertableJson $json) =>
      */
     public function test_all_success_empty(): void
     {
- 
+       // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
+       $this->app->bind(ApiController::class, function($app){
+        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_noresults.txt'));
+
+        $mock = new MockHandler([
+            new Response(200, [], $response)
+        ]);
+
+        $handler = HandlerStack::create($mock);
+                
+        return new ApiController(new Client(['handler' => $handler]));
+        });
+
+        // Retrieve response from API
+        $response = $this->get('webservice/api/all');
+
+        // Check for 500 status response
+        $response->assertStatus(200);
+
+        // Verify response body contents
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', true)
+                ->has('message')
+                ->has('result', fn (AssertableJson $json) =>
+                $json
+                    ->has('count')
+                    ->has('resultCount') 
+                    ->has('results') 
+                )
+        );
     }
 
     /**
