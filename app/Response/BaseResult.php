@@ -73,7 +73,7 @@ class BaseResult
         
         if(isset($data['name'])) {
             $this->name = $data['name'];
-            $this->portalLink = config('ckan.ckan_root_url') . 'data-publication/' . $data['name'];
+            $this->portalLink = config('app.url') . '/data-publication/' . $data['name'];
         }
 
         if(isset($data['license_id'])) {
