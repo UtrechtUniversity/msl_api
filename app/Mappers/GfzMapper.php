@@ -3,8 +3,6 @@ namespace App\Mappers;
 
 use App\Models\SourceDataset;
 use App\Models\MappingLog;
-use App\Ckan\Request\PackageSearch;
-use App\Ckan\Response\PackageSearchResponse;
 use App\Mappers\Helpers\DataciteCitationHelper;
 use App\Datasets\BaseDataset;
 use App\Mappers\Helpers\GeoJSON;
@@ -78,24 +76,7 @@ class GfzMapper
         } else {
             throw new \Exception('invalid log type');
         }
-    }
-    
-    private function getLabNames()
-    {
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->rows = 1000;
-        $searchRequest->query = 'type: lab';
-        try {
-            $response = $this->client->request($searchRequest->method, $searchRequest->endPoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            
-        }
-        
-        $packageSearchResponse = new PackageSearchResponse(json_decode($response->getBody(), true), $response->getStatusCode());
-        
-        return $packageSearchResponse->getNameList();
-    }
+    }        
     
     private function getYear($date)
     {
@@ -326,14 +307,9 @@ class GfzMapper
                 }
                 $idNode = $labResult->xpath(".//@uuidref");
                 if(isset($idNode[0])) {
-                    $lab['msl_lab_id'] = (string)$idNode[0];
-                    
-                    // check if lab id is present in ckan                    
-                    if(!in_array($lab['msl_lab_id'], $this->getLabNames())) {
-                        $this->log('WARNING', "LabId: \"" . $lab['msl_lab_id'] . "\" not found in ckan.", $sourceDataset);
-                    }                    
+                    $lab['msl_lab_id'] = (string)$idNode[0];                                        
                 } else {
-                    $this->log('WARNING', "Lab with name: \"" . $lab['msl_lab_name'] . "\" has no id.", $sourceDataset);
+                    //$this->log('WARNING', "Lab with name: \"" . $lab['msl_lab_name'] . "\" has no id.", $sourceDataset);
                 }
                                 
                 $dataset->addLab($lab);
