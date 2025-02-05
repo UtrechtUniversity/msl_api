@@ -526,7 +526,7 @@ $response->assertJson(fn (AssertableJson $json) =>
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.txt'));
 
             $mock = new MockHandler([
-                new Response(200, [], $response)
+                new Response(400, [], $response)
             ]);
 
             $handler = HandlerStack::create($mock);
