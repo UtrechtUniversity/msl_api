@@ -121,7 +121,7 @@ class ApiTest extends TestCase
         });
         
         // Retrieve response from API
-        $response = $this->get('webservice/api/all');
+        $response = $this->get('webservice/api/rock_physics');
         
         // Check for 200 status response
         $response->assertStatus(200);
@@ -205,7 +205,7 @@ class ApiTest extends TestCase
         });
         
         // Retrieve response from API
-        $response = $this->get('webservice/api/all');
+        $response = $this->get('webservice/api/analogue');
         
         // Check for 200 status response
         $response->assertStatus(200);
@@ -292,7 +292,7 @@ class ApiTest extends TestCase
         });
         
         // Retrieve response from API
-        $response = $this->get('webservice/api/all');
+        $response = $this->get('webservice/api/paleo');
         
         // Check for 200 status response
         $response->assertStatus(200);
@@ -378,7 +378,7 @@ class ApiTest extends TestCase
         });
         
         // Retrieve response from API
-        $response = $this->get('webservice/api/all');
+        $response = $this->get('webservice/api/microscopy');
         
         // Check for 200 status response
         $response->assertStatus(200);
@@ -464,7 +464,7 @@ class ApiTest extends TestCase
         });
 
         // Retrieve response from API
-        $response = $this->get('webservice/api/all');
+        $response = $this->get('webservice/api/geochemistry');
 
         // Check for 200 status response
         $response->assertStatus(200);
