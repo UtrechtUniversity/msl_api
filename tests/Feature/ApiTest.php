@@ -54,7 +54,7 @@ class ApiTest extends TestCase
                     $json
                         ->where('title', 'The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn (Dataset)')
                         ->where('name', 'f24c11eb13c8263373a6e01f02c86bd8')
-                        ->where('portalLink', 'data-publication/f24c11eb13c8263373a6e01f02c86bd8')
+                        ->where('portalLink', config('app.url') . '/data-publication/f24c11eb13c8263373a6e01f02c86bd8')
                         ->where('doi', '10.7288/V4/MAGIC/20030')
                         ->has('license')
                         ->has('version')
@@ -136,7 +136,7 @@ class ApiTest extends TestCase
                     $json   
                         ->where('title', 'Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion (Dataset)')
                         ->where('name', '7a04d77711bd95046f23e09111afbdbf')
-                        ->where('portalLink', 'data-publication/7a04d77711bd95046f23e09111afbdbf')
+                        ->where('portalLink', config('app.url') . '/data-publication/7a04d77711bd95046f23e09111afbdbf')
                         ->where('doi', '10.7288/V4/MAGIC/19551')
                         ->has('license')
                         ->has('version')
@@ -220,7 +220,7 @@ class ApiTest extends TestCase
                     $json   
                         ->where('title', 'North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England (Dataset)')
                         ->where('name', 'eb57658150cb78661c354363879495ba')
-                        ->where('portalLink', 'data-publication/eb57658150cb78661c354363879495ba')
+                        ->where('portalLink', config('app.url') . '/data-publication/eb57658150cb78661c354363879495ba')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'http://dx.doi.org/10.7288/V4/MAGIC/20031')
@@ -307,7 +307,7 @@ class ApiTest extends TestCase
                     $json   
                         ->where('title', 'A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan (Dataset)')
                         ->where('name', '1487d4269eefd09a91a57cc0e7c3d147')
-                        ->where('portalLink', 'data-publication/1487d4269eefd09a91a57cc0e7c3d147')
+                        ->where('portalLink', config('app.url') . '/data-publication/1487d4269eefd09a91a57cc0e7c3d147')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'http://dx.doi.org/10.7288/V4/MAGIC/20010')
@@ -393,7 +393,7 @@ class ApiTest extends TestCase
                     $json   
                         ->where('title', 'A rock-magnetic and paleointensity study of some Mexican volcanic lava flows during the Latest Pleistocene to the Holocene (Dataset)')
                         ->where('name', '50295d3f4bf09c0329d9a562e37f0036')
-                        ->where('portalLink', 'data-publication/50295d3f4bf09c0329d9a562e37f0036')
+                        ->where('portalLink', config('app.url') . '/data-publication/50295d3f4bf09c0329d9a562e37f0036')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'http://dx.doi.org/10.7288/V4/MAGIC/19374')
@@ -479,7 +479,7 @@ class ApiTest extends TestCase
                     $json      
                         ->where('title', 'New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)')
                         ->where('name', '1c6f44820342a409af0701f5997d8528')
-                        ->where('portalLink', 'data-publication/1c6f44820342a409af0701f5997d8528')
+                        ->where('portalLink', config('app.url') . '/data-publication/1c6f44820342a409af0701f5997d8528')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'http://dx.doi.org/10.7288/V4/MAGIC/20007')
