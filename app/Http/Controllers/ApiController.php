@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Ckan\Request\PackageSearch;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Response\ErrorResponse;
