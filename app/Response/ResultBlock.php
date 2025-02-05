@@ -12,16 +12,14 @@ class ResultBlock
 
 
     public function setByCkanResponse($response, $context) {
-        if(isset($response['result']['count'])) {
-            $this->count = $response['result']['count'];
-        }
-        if(isset($response['result']['results'])) {
-            $this->resultCount = count($response['result']['results']);
+        $this->count = $response->getTotalResultsCount();
 
-            foreach ($response['result']['results'] as $result) {               
-                $this->results[] = new BaseResult($result, $context);                
-            }
-        }
+        $results = $response->getResults();
+        $this->resultCount = count($results);
+
+        foreach ($results as $result) {               
+            $this->results[] = new BaseResult($result, $context);                
+        }        
     }
 
     public function getAsArray() {

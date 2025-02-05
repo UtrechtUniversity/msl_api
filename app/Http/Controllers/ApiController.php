@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Ckan\Request\PackageSearch;
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageSearchRequest;
 use App\Response\ErrorResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -40,245 +42,96 @@ class ApiController extends Controller
     
     
     public function rockPhysics(Request $request) {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-
-        $client = $this->guzzleClient;
-
-        $searchRequest = new PackageSearch();
-                
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappings));
-        
-        if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"rock and melt physics" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"rock and melt physics"';
-        }        
-
-        try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Malformed request to CKAN.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Error received from CKAN api.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-
-        //build api response object
-        $rockPhysicsResponse = new MainResponse();
-        $rockPhysicsResponse->setByCkanResponse($response, 'rockPhysics');
-
-        //return response object
-        return $rockPhysicsResponse->getAsLaravelResponse();
+        return $this->dataPublicationResponse($request, 'rockPhysics');
     }
     
     public function analogue(Request $request)
     {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-        
-        $client = $this->guzzleClient;
-        
-        $searchRequest = new PackageSearch();               
-        
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappings));
-        
-        if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"analogue modelling of geologic processes" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"analogue modelling of geologic processes"';
-        }        
-        
-        try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Malformed request to CKAN.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Error received from CKAN api.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //build api response object
-        $analogueResponse = new MainResponse();
-        $analogueResponse->setByCkanResponse($response, 'analogue');
-        
-        //return response object
-        return $analogueResponse->getAsLaravelResponse();
+        return $this->dataPublicationResponse($request, 'analogue');
     }
     
     public function paleo(Request $request)
     {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-        
-        $client = $this->guzzleClient;
-        
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappings));
-        
-        if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"paleomagnetism" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"paleomagnetism"';
-        }        
-        
-        try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Malformed request to CKAN.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Error received from CKAN api.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //build api response object
-        $paleoResponse = new MainResponse();
-        $paleoResponse->setByCkanResponse($response, 'paleo');
-        
-        //return response object
-        return $paleoResponse->getAsLaravelResponse();
+        return $this->dataPublicationResponse($request, 'paleo');
     }
     
     #microscopy and tomography
     public function microscopy(Request $request)
     {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-        
-        $client = $this->guzzleClient;
-        
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappings));
-        
-        if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"microscopy and tomography" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"microscopy and tomography"';
-        }                
-        
-        try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Malformed request to CKAN.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Error received from CKAN api.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //build api response object
-        $paleoResponse = new MainResponse();
-        $paleoResponse->setByCkanResponse($response, 'microscopy');
-        
-        //return response object
-        return $paleoResponse->getAsLaravelResponse();
+        return $this->dataPublicationResponse($request, 'microscopy');
     }
     
     #geochemistry
     public function geochemistry(Request $request)
     {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-        
-        $client = $this->guzzleClient;
-        
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappings));
-        
-        if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"geochemistry" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_subdomain:"geochemistry"';
-        }
-        
-        try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
-        } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Malformed request to CKAN.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
-            $errorResponse = new ErrorResponse();
-            $errorResponse->message = 'Error received from CKAN api.';
-            return $errorResponse->getAsLaravelResponse();
-        }
-        
-        //build api response object
-        $paleoResponse = new MainResponse();
-        $paleoResponse->setByCkanResponse($response, 'geochemistry');
-        
-        //return response object
-        return $paleoResponse->getAsLaravelResponse();
+        return $this->dataPublicationResponse($request, 'geochemistry');
     }
     
     #all
     public function all(Request $request)
     {
-        $action = 'action/package_search';
-        $endpoint = config('ckan.ckan_api_url') . $action;
-        
-        $client = $this->guzzleClient;
-        
-        $searchRequest = new PackageSearch();
-        
-        $searchRequest->setbyRequest($request, $this->buildQuery($request, $this->queryMappingsAll));  
+        return $this->dataPublicationResponse($request, 'all');
+    }
+
+    private function dataPublicationResponse(Request $request, $context)
+    {
+        $ckanClient = new Client($this->guzzleClient);
+
+        $packageSearchRequest = new PackageSearchRequest();
+
+        $packageSearchRequest->addFilterQuery("type", "data-publication");
         
         if($request->boolean('hasDownloads', true)) {
-            $searchRequest->filterQuery = 'type:"data-publication" AND msl_download_link:*';
-        } else {
-            $searchRequest->filterQuery = 'type:"data-publication"';
+            $packageSearchRequest->addFilterQuery('msl_download_link', '*', false);
+        }
+
+        switch($context) {
+            case 'rockPhysics':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "rock and melt physics");
+                break;
+
+            case 'analogue':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "analogue modelling of geologic processes");
+                break;
+
+            case 'paleo':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "paleomagnetism");
+                break;
+
+            case 'microscopy':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "microscopy and tomography");
+                break;
+
+            case 'geochemistry':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "geochemistry");
+                break;
         }        
+
+        if($context == 'all') {
+            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);    
+        } else {
+            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);    
+        }
         
         try {
-            $response = $client->request('GET', $endpoint, $searchRequest->getAsQueryArray());
+            $response = $ckanClient->get($packageSearchRequest);
         } catch (\Exception $e) {
             $errorResponse = new ErrorResponse();
             $errorResponse->message = 'Malformed request to CKAN.';
             return $errorResponse->getAsLaravelResponse();
         }
-        
-        //Check if response is ok
-        if($response->getStatusCode() !== 200) {
+
+        if(!$response->isSuccess()) {
             $errorResponse = new ErrorResponse();
             $errorResponse->message = 'Error received from CKAN api.';
             return $errorResponse->getAsLaravelResponse();
         }
-        
-        //build api response object
-        $paleoResponse = new MainResponse();
-        $paleoResponse->setByCkanResponse($response, 'all');
+
+        $ApiResponse = new MainResponse();
+        $ApiResponse->setByCkanResponse($response, $context);
         
         //return response object
-        return $paleoResponse->getAsLaravelResponse();
+        return $ApiResponse->getAsLaravelResponse();
     }
     
     public function tna() {
@@ -320,9 +173,7 @@ class ApiController extends Controller
                     
                 ]
             ], 200);
-        }
-        
-        
+        }                
     }
     
     

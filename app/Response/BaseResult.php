@@ -65,7 +65,8 @@ class BaseResult
     
 
 
-    public function __construct($data, $context) {        
+    public function __construct($data, $context) {
+
         if(isset($data['title'])) {
             $this->title = $data['title'];
         }
