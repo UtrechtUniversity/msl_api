@@ -14,8 +14,14 @@ use App\Http\Resources\KeywordResource;
 
 class ApiController extends Controller
 {
+    /**
+     * @var \GuzzleHttp\Client Guzzle http client instance
+     */
     private $guzzleClient;
 
+    /**
+     * @var array mappings from subdomain endpoint search parameters to ckan fields
+     */
     private $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
@@ -24,6 +30,9 @@ class ApiController extends Controller
         'labName' => 'msl_lab_name_text',
     ];
     
+    /**
+     * @var array mappings from all endpoint search parameters to ckan fields
+     */
     private $queryMappingsAll = [
         'query' => 'text',
         'tags' => 'tags',
@@ -33,57 +42,106 @@ class ApiController extends Controller
         'subDomain' => 'msl_subdomain'
     ];
 
+    /**
+     * Constructs a new ApiController
+     * 
+     * @param \GuzzleHttp\Client $client
+     */
     public function __construct(\GuzzleHttp\Client $client)
     {
         $this->guzzleClient = $client;
     }
     
-    
-    
+    /**
+     * Rock physics API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function rockPhysics(Request $request) {
         return $this->dataPublicationResponse($request, 'rockPhysics');
     }
     
+    /**
+     * Analogue modelling API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function analogue(Request $request)
     {
         return $this->dataPublicationResponse($request, 'analogue');
     }
     
+    /**
+     * Paleomagnetism API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function paleo(Request $request)
     {
         return $this->dataPublicationResponse($request, 'paleo');
     }
     
-    #microscopy and tomography
+    /**
+     * Microscopy and tomography API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function microscopy(Request $request)
     {
         return $this->dataPublicationResponse($request, 'microscopy');
     }
     
-    #geochemistry
+    /**
+     * Geochemistry API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function geochemistry(Request $request)
     {
         return $this->dataPublicationResponse($request, 'geochemistry');
     }
     
-    #all
+    /**
+     * All subdomains API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
     public function all(Request $request)
     {
         return $this->dataPublicationResponse($request, 'all');
     }
 
+    /**
+     * Creates a API response based upon search parameters provided in request
+     * Context is used to provide subdomain specific processing
+     * 
+     * @param Request $request
+     * @param string $context
+     * @return response
+     */
     private function dataPublicationResponse(Request $request, $context)
     {
+        // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
+        // Create packagesearch request
         $packageSearchRequest = new PackageSearchRequest();
 
+        // Filter on data-publications
         $packageSearchRequest->addFilterQuery("type", "data-publication");
         
+        // Filter for data-publications with files depending on request
         if($request->boolean('hasDownloads', true)) {
             $packageSearchRequest->addFilterQuery('msl_download_link', '*', false);
         }
 
+        // Add subdomain filtering if required
         switch($context) {
             case 'rockPhysics':
                 $packageSearchRequest->addFilterQuery("msl_subdomain", "rock and melt physics");
@@ -106,12 +164,14 @@ class ApiController extends Controller
                 break;
         }        
 
+        // Process search parameters
         if($context == 'all') {
             $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);    
         } else {
             $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);    
         }
         
+        // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($packageSearchRequest);
         } catch (\Exception $e) {
@@ -120,12 +180,14 @@ class ApiController extends Controller
             return $errorResponse->getAsLaravelResponse();
         }
 
+        // Check if CKAN was succesful
         if(!$response->isSuccess()) {
             $errorResponse = new ErrorResponse();
             $errorResponse->message = 'Error received from CKAN api.';
             return $errorResponse->getAsLaravelResponse();
         }
 
+        // Create response object
         $ApiResponse = new MainResponse();
         $ApiResponse->setByCkanResponse($response, $context);
         
@@ -175,7 +237,13 @@ class ApiController extends Controller
         }                
     }
     
-    
+    /**
+     * Converts search parameters to solr query using field mappings
+     * 
+     * @param Request $request
+     * @param array $querymappings
+     * @return string
+     */
     private function buildQuery(Request $request, $queryMappings)
     {
         $queryParts = [];
