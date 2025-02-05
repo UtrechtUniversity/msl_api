@@ -27,7 +27,8 @@ class PackageSearch
                 'fq' => $this->filterQuery,
                 'rows' => $this->rows,
                 'start' => $this->start,
-            ]
+            ],
+            'http_errors' => false
         ];
     }
 
