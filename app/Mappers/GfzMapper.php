@@ -447,7 +447,7 @@ class GfzMapper
         }
         
         //extract file information
-        //$dataset = $this->gfzDownloadHelper->addData($dataset);
+        $dataset = $this->gfzDownloadHelper->addData($dataset);
               
         return $dataset;
     }

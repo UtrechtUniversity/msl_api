@@ -38,8 +38,7 @@
 	  schema:qualifications "Senior Advisor, Data Librarian" ;
 	  schema:affiliation <PIC:99985805> ;
 	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/legalContact> ;
-	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/financialContact> ;
-      schema:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+	  schema:contactPoint <http://orcid.org/0000-0003-3560-988X/financialContact> ;      
 	schema:affiliation <PIC:99985805>;
 . 
 
@@ -61,6 +60,7 @@
 	  schema:qualifications "Senior Developer" ;
 	  schema:affiliation <PIC:99985805> ;
 	  schema:contactPoint <http://orcid.org/0000-0002-9205-190X/technicalContact> ;
+	  schema:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 	schema:affiliation <PIC:99985805>;
 . 
 
@@ -160,89 +160,43 @@
 	schema:contactType "financialContact" ;
 .
 
-<http://orcid.org/0000-0003-3560-988X/contactPoint> a schema:ContactPoint;
-	schema:email "o.a.lange@uu.nl";
+<http://orcid.org/0000-0002-9205-190X/contactPoint> a schema:ContactPoint;
+	schema:email "l.samshuijzen@uu.nl";
 	schema:availableLanguage "en" ;
 	schema:contactType "manager";
 .
 
-<PIC:99985805> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "PIC";
-		schema:value "PIC:99985805";
-	]; 
-	schema:legalName "Universiteit Utrecht";
-  	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Domplein 29";
-		schema:addressLocality "Utrecht";
-		schema:postalCode "3512JE";
-		schema:addressCountry "The Netherlands";
-	]; 
-.
+#<PIC:99985805> a schema:Organization;
+#	schema:identifier [ a schema:PropertyValue;
+#		schema:propertyID "PIC";
+#		schema:value "PIC:99985805";
+#	]; 
+#	schema:legalName "Universiteit Utrecht";
+#  	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+#	schema:address [ a schema:PostalAddress;
+#		schema:streetAddress "Domplein 29";
+#		schema:addressLocality "Utrecht";
+#		schema:postalCode "3512JE";
+#		schema:addressCountry "The Netherlands";
+#	]; 
+#.
 
-<PIC:999994341> a schema:Organization;
-	schema:identifier [ a schema:PropertyValue;
-		schema:propertyID "pic";
-		schema:value "999994341";
-	];
-	schema:legalName "GFZ German Research Centre for Geosciences";
-	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
-	schema:address [ a schema:PostalAddress;
-		schema:streetAddress "Telegrafenberg";
-		schema:addressLocality "Potsdam";
-		schema:postalCode "14473";
-		schema:addressCountry "Germany";
-	];
+#<PIC:999994341> a schema:Organization;
+#	schema:identifier [ a schema:PropertyValue;
+#		schema:propertyID "pic";
+#		schema:value "999994341";
+#	];
+#	schema:legalName "GFZ German Research Centre for Geosciences";
+#	schema:leiCode "Legal Entity Identifier Search: http://www.lei-lookup.com/#!search" ;
+#	schema:address [ a schema:PostalAddress;
+#		schema:streetAddress "Telegrafenberg";
+#		schema:addressLocality "Potsdam";
+#		schema:postalCode "14473";
+#		schema:addressCountry "Germany";
+#	];
+#.
 
-.
 
-# *************
-#
-# SKOS concepts
-#
-# *************
-
-	<epos:Multi-scale-laboratories> a skos:ConceptScheme;
-		dct:title "Multi-scale Laboratories";
-		dct:description "The Multi-scale Laboratories TCS includes a wide range of world-class experimental laboratory infrastructures: from high pressure-temperature rock and fault mechanics and rock physics facilities, to electron microscopy, micro-beam analysis, analogue modelling and paleomagnetic laboratories.";
-. 
-
-	<epos:RockAndMeltPhysicalProperties> a skos:Concept;
-		skos:definition "Physical behavior of Earth materials" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "rock and melt physics";
-. 
-
-	<epos:AnalogueModellingResults> a skos:Concept;
-		skos:definition "Analogue modelling of geological processes" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "analogue modelling of geological processes";
-. 
-
-	<epos:MagneticPaleomagneticData> a skos:Concept;
-		skos:definition "Magnetic and paleomagnetic measurements" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "paleomagnetism";
-. 
-
-	<epos:GeochemistryData> a skos:Concept;
-		skos:definition "Geochemistry data" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "geochemistry";
-. 
-
-	<epos:MicroscopyTomographyData> a skos:Concept;
-		skos:definition "Microscopy and tomography data" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "microscopy and tomography";
-. 
-
-	<epos:LaboratoryData> a skos:Concept;
-		skos:definition "Cross-discipline laboratory data" ;
-		skos:inScheme <epos:Multi-scale-laboratories>;
-		skos:prefLabel "cross-discipline laboratory data";
-. 
 
 # *********************************
 #
@@ -275,10 +229,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:GeochemistryData> ;
+        dcat:theme <category:geochemistry> ;
         
         dcat:keyword "analytical","crustal and upper mantle rheology","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability", "fluid inclusions (solid, liquid, gas)","fluid-rock interaction","geochemistry","geochronology","geothermal energy","induced seismicity /induced earthquakes","isotope geochemistry","major element composition","material property","mineral chemistry","mineral composition","natural disaster","natural seismicity /natural earthquakes","oil/gas production","rock mechanical testing","volcano","whole rock chemistry";
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -318,10 +272,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:RockAndMeltPhysicalProperties> ;
+        dcat:theme <category:rockmeltphysics> ;
         
         dcat:keyword "acoustic measurements","anisotropy","brittle deformation","compaction /consolidation","crustal and upper mantle rheology","ductile deformation","elastic moduli","extension","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability","fluid-rock interaction","fracture strength /shear strength","friction","geothermal energy","high pressure","high temperature","induced seismicity /induced earthquakes","material property","microphysical deformation process","model parameter","natural disaster","natural seismicity /natural earthquakes","oil/gas production","plastic deformation","rock mechanical testing","stress-strain behavior","subsidence","torsion","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -348,7 +302,7 @@
         ];
         dct:created "2022-02-22T00:00:00Z"^^xsd:dateTime ;
 		dct:issued "2022-02-23T00:00:00Z"^^xsd:dateTime ;
-		dct:modified "2022-02-230T00:00:00Z"^^xsd:dateTime ;
+		dct:modified "2022-02-23T00:00:00Z"^^xsd:dateTime ;
 		owl:versionInfo "1.0.0" ;
 
         # This property refers to the type of the Dataset. 
@@ -360,10 +314,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:AnalogueModellingResults> ;
+        dcat:theme <category:analoguemodellgofgeologicprocesses> ;
         
         dcat:keyword "basin","brittle deformation","compression","crust and mantle behavior","digital image correlation (DIC)","ductile deformation","extension","fault and fold behavior","geological process","geothermal energy","induced seismicity /earthquakes","lithosphere, asthenosphere","model parameter","mountain","natural hazard or disaster","natural seismicity /earthquakes","oil/gas production","plastic deformation","plate tectonics","sandbox apparatus","shear","subsidence and uplift","viscous behavior","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -402,10 +356,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:MagneticPaleomagneticData> ;
+        dcat:theme <category:paleomagnetism> ;
         
         dcat:keyword "basin","basin evolution","crust and mantle behavior","crustal magnetism","directional data","environmental magnetism","fault and fold behavior","geo-hazard frequency","geological process","induced seismicity /earthquakes","lithosphere, asthenosphere","magnetic mineralogy","magnetic remanence","magnetic susceptibility","magnetiostratigraphy","mountain","natural hazard or disaster","natural seismicity /earthquakes","paleointensity","paleomagnetism","plate tectonics","polarity reversals","rock magnetism","subsidence and uplift","volcano" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -432,7 +386,7 @@
         ];
         dct:created "2022-02-22T00:00:00Z"^^xsd:dateTime ;
 		dct:issued "2022-02-23T00:00:00Z"^^xsd:dateTime ;
-		dct:modified "2022-02-230T00:00:00Z"^^xsd:dateTime ;
+		dct:modified "2022-02-23T00:00:00Z"^^xsd:dateTime ;
 		owl:versionInfo "1.0.0" ;
 
         # This property refers to the type of the Dataset. 
@@ -444,10 +398,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:MicroscopyTomographyData> ;
+        dcat:theme <category:microscopymography> ;
         
         dcat:keyword "anisotropy","crystal and mineral orientation","electron microscopy (SEM, FIB-SEM, STEM, TEM)","fault behavior","fluid and radioactive waste storage","fluid flow, transport and permeability","fluid-rock interaction","geothermal energy","induced seismicity /earthquakes","interferometry","micrograph","microphysical deformation process","microprobe","microstructure and rock structure","model parameter","natural disaster","natural seismicity /earthquakes","oil/gas production","pore network and porosity","spectroscopy","subsidence","volcano","X-ray tomography" ;
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -474,7 +428,7 @@
         ];
         dct:created "2022-02-22T00:00:00Z"^^xsd:dateTime ;
 		dct:issued "2022-02-23T00:00:00Z"^^xsd:dateTime ;
-		dct:modified "2022-02-230T00:00:00Z"^^xsd:dateTime ;
+		dct:modified "2022-02-23T00:00:00Z"^^xsd:dateTime ;
 		owl:versionInfo "1.0.0" ;
 
         # This property refers to the type of the Dataset. 
@@ -486,10 +440,10 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <epos:LaboratoryData> ;
+        dcat:theme <category:crossdisciplelabatydata> ;
         
         dcat:keyword "laboratory data", "experiment", "measurement";
-        dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint> ;
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
 		dct:publisher <PIC:99985805>, <PIC:999994341> ;
@@ -546,7 +500,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 
@@ -575,7 +529,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 # WP16-DDSS-003 Analogue modelling of gelological processes ; EPOS-DCAT-AP:DISTRIBUTION definition
@@ -603,7 +557,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 # WP16-DDSS-006 Magnetic and paleomagnetic measurements ; EPOS-DCAT-AP:DISTRIBUTION definition
@@ -631,7 +585,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 # WP16-DDSS-011 Microscopy and tomography data ; EPOS-DCAT-AP:DISTRIBUTION definition
@@ -659,7 +613,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 # WP16-DDSS-013 Laboratory data ; EPOS-DCAT-AP:DISTRIBUTION definition
@@ -687,7 +641,7 @@
         dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
 
         # This property refers to the licence under which the Distribution is made available.
-        dct:license "http://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
 
@@ -702,16 +656,15 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/001> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/001";
 	schema:description "Service for data from geochemical measurements";
-	dcat:theme <epos:GeochemistryData>;
 	schema:name "Multi-scale Laboratories Geochemical Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/geochemistry?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2021-12-01Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2021-12-01T00:00:00Z"^^xsd:dateTime;  
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/001/Operation/001>;
 	schema:keywords "geochemistry", "geochemical data", "element geochemistry", "elemental geochemistry", "isotope geochemistry" ;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -765,15 +718,14 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/002> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/002";
 	schema:description "The TCS MSL Rock and Melt Physical Properties Data Service provides access to data coming from lab experiments in the Earth sciences.";
-	dcat:theme <epos:RockAndMeltPhysicalProperties>;
 	schema:name "Multi-scale Laboratories Rock and Melt Physical Properties Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/rock_physics?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2021-12-01Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2021-12-01T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/002/Operation/002>;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -826,15 +778,14 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/003> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/003";
 	schema:description "Data from analogue modeling studies into large-scale tectonic deformation of the crust and lithosphere (upper mantle) of the Earth. Analogue models are scaled from a natural geological feature (e.g. a mountain belt) down to the laboratory environment. Models utilize a combination of granular materials, like sand or glass beads, elastic materials, like gelatin or silicone, and/or viscous and plastic materials, like oil or clay, to simulate multi-layer deformation of various rheology. Data typically include force, pressure, strain and temperature versus time series, and 2D or 3D image data suitable for digital image correlation to monitor model evolution. The data can be applied to improve understanding into the fundamental physics and dynamics of geological processes like orogenesis (mountain building), extending basins, transform faults and salt flow, and hazards like earthquakes, subsidence, volcanic activity and landslides.";
-	dcat:theme <epos:AnalogueModellingResults>;
 	schema:name "Multi-scale Laboratories Analogue Modelling Results Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/analogue?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2022-02-22Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2022-02-22T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/003/Operation/003>;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -887,15 +838,14 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/006> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/006";
 	schema:description "Data from paleomagnetic and magnetic studies provide directional, magnetostratigraphic, magnetic susceptibility and paleointensity datasets, especially addressing the understanding of evolution of sedimentary basins and for charting geo-hazard frequency. Data can also include environmental magnetism and rock magnetism data. Paleomagnetic and magnetic data provide records of the strength and polarity reversals of the Earth’s magnetic field, among other applications. Materials typically studied are sedimentary rocks like sandstones, shales, limestone, and evaporites, igneous and metamorphic rocks like basalt, peridotite, serpentinite, gneiss and schists. Crucial is the understanding of magnetic mineralogy, presence and abundance of magnetite, hematite, titanomagnetite, chromite.";
-	dcat:theme <epos:MagneticPaleomagneticData>;
 	schema:name "Multi-scale Laboratories Magnetic and Paleomagnetic Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/paleo?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2022-02-22Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2022-02-22T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/006/Operation/006>;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -948,15 +898,14 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/011> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/011";
 	schema:description "Access to high-quality, high-resolution data emerging from electron and X-ray microscopes.";
-	dcat:theme <epos:MicroscopyTomographyData>;
 	schema:name "Multi-scale Laboratories Microscopy and Tomography Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/microscopy?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2022-02-22Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2022-02-22T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/011/Operation/011>;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -1009,15 +958,14 @@
 <https://www.epos-eu.org/multi-scale-laboratories/WebService/013> a epos:WebService;
 	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/013";
 	schema:description "Find experimental laboratory data accross all subdomains.";
-	dcat:theme <epos:LaboratoryData>;
 	schema:name "Multi-scale Laboratories Multi-domain Data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/all?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
-	schema:datePublished "2022-02-22Z"^^xsd:dateTime;
-	schema:dateModified "2022-02-22Z"^^xsd:dateTime;
+	schema:datePublished "2022-02-22T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2022-02-22T00:00:00Z"^^xsd:dateTime;
 	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/013/Operation/013>;
-	dct:license "http://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
-	dcat:contactPoint <http://orcid.org/0000-0003-3560-988X/contactPoint>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
@@ -1025,7 +973,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://epos-msl.uu.nl/webservice/api/all{?query, title, authorName, labName, rows}"^^xsd:string;
+			hydra:template "https://epos-msl.uu.nl/webservice/api/all{?subDomain, query, title, authorName, labName, rows}"^^xsd:string;
 				hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "subDomain"^^xsd:string;
 					rdfs:range "xsd:string";
