@@ -101,32 +101,15 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
                 $lab->laboratory_organization_id = $organization->id;
             }
             
-            // include contact person
-            if(isset($data['contact_person'])) {
-                $fastContactPersonId = $data['contact_person']['id'];
-                $contactPerson = LaboratoryContactPerson::where('fast_id', $fastContactPersonId)->first();
-                
-                if(!$contactPerson) {
+            // include contact persons
+            if(isset($data['contact_persons'])) {
+                foreach($data['contact_persons'] as $contactPersonEmail)
+                {
                     $contactPerson = new LaboratoryContactPerson();
-                    $contactPerson->fast_id = $data['contact_person']['id'];
+                    $contactPerson->email = $contactPersonEmail;
+                    $contactPerson->laboratory_id = $lab->id;
+                    $contactPerson->save();
                 }
-                
-                $contactPerson->email = $data['contact_person']['email'];
-                $contactPerson->first_name = $data['contact_person']['first_name'];
-                $contactPerson->last_name = $data['contact_person']['last_name'];
-                $contactPerson->orcid = $data['contact_person']['orcid'];
-                $contactPerson->address_street_1 = $data['contact_person']['address_street_1'];
-                $contactPerson->address_street_2 = $data['contact_person']['address_street_2'];
-                $contactPerson->address_postalcode = $data['contact_person']['address_postcode'];
-                $contactPerson->address_city = $data['contact_person']['address_city'];
-                $contactPerson->address_country_code = $data['contact_person']['address_country']['code'];
-                $contactPerson->address_country_name = $data['contact_person']['address_country']['name'];
-                $contactPerson->affiliation_fast_id = $data['contact_person']['affiliation_id'];
-                $contactPerson->nationality_code = $data['contact_person']['nationality']['code'];
-                $contactPerson->nationality_name = $data['contact_person']['nationality']['name'];
-                
-                $contactPerson->save();
-                $lab->laboratory_contact_person_id = $contactPerson->id;                
             }
             
             // include manager

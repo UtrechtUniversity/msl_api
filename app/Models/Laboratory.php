@@ -35,7 +35,6 @@ class Laboratory extends Model
         'fast_domain_id',
         'fast_domain_name',
         'laboratory_organization_id',
-        'laboratory_contact_person_id',
         'laboratory_manager_id'
     ];
     
@@ -46,7 +45,7 @@ class Laboratory extends Model
     
     public function laboratoryContactPerson()
     {
-        return $this->belongsTo(LaboratoryContactPerson::class, 'laboratory_contact_person_id');
+        return $this->hasMany(LaboratoryContactPerson::class, 'laboratory_id');
     }
     
     public function laboratoryManager()
