@@ -589,6 +589,7 @@ class ToolsController extends Controller
             if(in_array($geologicalSettingsTerm->keyword_id, $skipKeywords)) {
                 continue;
             }
+
             if(in_array($geologicalSettingsTerm->id, $skipSearchKeywords)) {
                 continue;
             }
@@ -611,9 +612,14 @@ class ToolsController extends Controller
             if(in_array($subsurfaceSettingsTerm->keyword_id, $skipKeywords)) {
                 continue;
             }
+
             if(in_array($subsurfaceSettingsTerm->id, $skipSearchKeywords)) {
                 continue;
             }
+            
+            if(str_starts_with($subsurfaceSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/subsurface/1.3/civil_engineered_setting')) {
+                continue;
+            }            
             
             $terms[] = $this->createKeywordSearchRegex($subsurfaceSettingsTerm->search_value);
         }
@@ -621,7 +627,7 @@ class ToolsController extends Controller
         //dd($terms);
 
         $query .= implode(',', array_unique($terms));
-        //dd($query);
+        dd($query);
         
         
         $total += count($terms);
