@@ -535,10 +535,11 @@ class ToolsController extends Controller
          * GROUP #1
          *  - Materials
          *  - Geological setting
+         *  - (sub)surface utilization setting
          * GROUP #2
          *  - Analogue modelling -> Apparatus
          *  - Analogue modelling -> Measured property
-         *  - Geochemistry -> Technique
+         *  - Geochemistry -> Analysis
          *  - Microscopy -> Apparatus
          *  - Microscopy -> Technique
          *  - Microscopy -> Analyzed feature
@@ -551,12 +552,19 @@ class ToolsController extends Controller
          *  - Rock physics -> Inferred deformation behavior
          */
         
-        //Keyword identifiers to be ignored while gathering terms (based on vocab 1.2)
-        $skipKeywords = [250, 251, 252, 253, 2321, 254, 2343, 255, 2353, 256, 2382, 257, 3396, 260, 2399, 261, 2403, 262, 263, 264, 2457, 266, 2555, 267, 2588, 268, 269, 2679, 270, 271, 272, 2704, 273, 2718, 274, 2749, 275, 2750, 276, 2830, 864, 1522, 895, 1542, 896, 1543, 897, 1544, 898, 1545, 899, 1546, 900, 1547, 918, 919, 920, 921, 922, 563, 564, 489, 565, 566, 567, 905, 1552, 932, 1572, 556, 24, 658, 915, 1553, 916, 1554, 917, 1555, 3064, 933, 1573, 3065, 362, 81];
-        $skipSearchKeywords = [2653, 1447, 606, 822, 2863];
+        //Keyword identifiers to be ignored while gathering terms (based on vocab 1.3)
+        $skipKeywords = [
+            250, 251, 252, 253, 254, 255, 256, 257, 260, 261, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 
+            864, 1522, 896, 1543, 897, 1544, 898, 1545, 899, 1546, 900, 1547, 919, 920, 921, 922, 563, 564, 489, 565, 566, 567, 905,
+            1552, 932, 1572, 556, 24, 658, 362, 81, 916, 1554, 917, 1555, 933, 1573, 2749, 2748, 915, 1553, 918, 895, 1542
+        ];
+
+        $skipSearchKeywords = [
+            2652, 1446, 822, 2862, 4622
+        ];
         
         
-        $materialVocab = Vocabulary::where('name', 'materials')->where('version', '1.2')->first();
+        $materialVocab = Vocabulary::where('name', 'materials')->where('version', '1.3')->first();
         $materialTerms = $materialVocab->search_keywords;
         $terms = array();
         $query = "";
@@ -573,7 +581,7 @@ class ToolsController extends Controller
             $terms[] = $this->createKeywordSearchRegex($materialTerm->search_value);
         }
                 
-        $geologicalSettingsVocab = Vocabulary::where('name', 'geologicalsetting')->where('version', '1.2')->first();
+        $geologicalSettingsVocab = Vocabulary::where('name', 'geologicalsetting')->where('version', '1.3')->first();
         $geologicalSettingsTerms = $geologicalSettingsVocab->search_keywords;
                
         
@@ -585,18 +593,33 @@ class ToolsController extends Controller
                 continue;
             }
             
-            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.2/antropogenic_setting-civil_engineered_setting')) {
+            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/antropogenic_setting-civil_engineered_setting')) {
                 continue;
             }
             
-            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.2/surface_morphological_setting')) {
+            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting')) {
                 continue;
             }
                                     
             $terms[] = $this->createKeywordSearchRegex($geologicalSettingsTerm->search_value);
         }
+
+        $subsurfaceVocab = Vocabulary::where('name', 'subsurface')->where('version', '1.3')->first();
+        $subsurfaceSettingsTerms = $subsurfaceVocab->search_keywords;
+
+        foreach ($subsurfaceSettingsTerms as $subsurfaceSettingsTerm) {
+            if(in_array($subsurfaceSettingsTerm->keyword_id, $skipKeywords)) {
+                continue;
+            }
+            if(in_array($subsurfaceSettingsTerm->id, $skipSearchKeywords)) {
+                continue;
+            }
+            
+            $terms[] = $this->createKeywordSearchRegex($subsurfaceSettingsTerm->search_value);
+        }
         
-        
+        //dd($terms);
+
         $query .= implode(',', array_unique($terms));
         //dd($query);
         
@@ -607,7 +630,7 @@ class ToolsController extends Controller
         $query = "";
                 
         //analogue modeling apparatus        
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.2/apparatus-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -622,7 +645,7 @@ class ToolsController extends Controller
         }
         
         //analogue modeling measured property
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -637,8 +660,8 @@ class ToolsController extends Controller
         }
         
         
-        //geochemistry technique
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/geochemistry/1.2/technique-%')->get();
+        //geochemistry analysis
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/geochemistry/1.3/analysis-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -651,9 +674,10 @@ class ToolsController extends Controller
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
+        
                 
         //microscopy apparatus        
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.2/apparatus-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -666,9 +690,10 @@ class ToolsController extends Controller
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
+        
         
         //microscopy technique
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.2/technique-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/technique-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -682,8 +707,9 @@ class ToolsController extends Controller
             }
         }
         
+        
         //microscopy analyzed feature
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.2/analyzed_feature-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -697,8 +723,9 @@ class ToolsController extends Controller
             }
         }
         
+        
         //microscopy inferred behavior
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.2/inferred_parameter-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/inferred_parameter-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {                
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -713,7 +740,7 @@ class ToolsController extends Controller
         }         
         
         //paleomagnetism apparatus        
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.2/apparatus-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -728,7 +755,7 @@ class ToolsController extends Controller
         }
         
         //paleomagnetism measured property
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -743,7 +770,7 @@ class ToolsController extends Controller
         }
         
         //paleomagnetism inferred behavior
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/inferred_behavior-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -758,7 +785,7 @@ class ToolsController extends Controller
         }
         
         //rockphysics apparatus
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -773,7 +800,7 @@ class ToolsController extends Controller
         }
         
         //rockphysics measured property
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -788,7 +815,7 @@ class ToolsController extends Controller
         }
         
         //rockphysics inferred deformation behavior
-        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-%')->get();
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
                 if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
@@ -801,8 +828,33 @@ class ToolsController extends Controller
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
+        
         //dd(count($terms), count(array_unique($terms)));
         
+        $terms = array_unique($terms);
+        
+        $query .= implode(',', $terms);
+        //dd($query);
+
+
+        $terms = [];
+        $query = "";
+                
+        //analogue modeling apparatus        
+        $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-%')->get();
+        foreach ($keywords as $keyword) {
+            foreach ($keyword->keyword_search as $searchKeyword) {
+                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                    continue;
+                }
+                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                    continue;
+                }
+                
+                $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
+            }
+        }
+
         $terms = array_unique($terms);
         
         $query .= implode(',', $terms);
