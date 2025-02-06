@@ -46,7 +46,7 @@ class FilterTreeExport
             ]
         ];
 
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
 
 
@@ -283,7 +283,7 @@ class FilterTreeExport
             ],
         ];
                 
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
     
     public function exportOriginal() {
@@ -517,7 +517,7 @@ class FilterTreeExport
             ],
         ];
         
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
     
     
@@ -534,14 +534,10 @@ class FilterTreeExport
                 'id' => $filterPrefix . $node->id . $filterSuffix,
                 'text' => $node->value,
                 'state' => [
-                    'opened' => false,
-                    'disabled' => true,
-                    'selected' => false,
-                    'checked' => false
+                    'disabled' => true
                 ],
                 'extra' => [
                     'type' => 'filter',
-                    'url' => '',
                     'filterName' => $filterPrefix,
                     'filterValue' => $node->uri
                 ],
@@ -564,14 +560,10 @@ class FilterTreeExport
                 'id' => $filterPrefix . $child->id . $filterSuffix,
                 'text' => $child->value,
                 'state' => [
-                    'opened' => false,
-                    'disabled' => true,
-                    'selected' => false,
-                    'checked' => false
+                    'disabled' => true
                 ],
                 'extra' => [
                     'type' => 'filter',
-                    'url' => '',
                     'filterName' => $filterPrefix,
                     'filterValue' => $child->uri
                 ],
