@@ -43,7 +43,7 @@ class Laboratory extends Model
         return $this->belongsTo(LaboratoryOrganization::class, 'laboratory_organization_id');
     }
     
-    public function laboratoryContactPerson()
+    public function laboratoryContactPersons()
     {
         return $this->hasMany(LaboratoryContactPerson::class, 'laboratory_id');
     }

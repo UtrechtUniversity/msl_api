@@ -191,10 +191,10 @@ class FormController extends Controller
          $labDatabase = Laboratory::where('fast_id', (int)$labData['msl_fast_id'])->first();
  
          if($labDatabase) {
-             $contactPerson = $labDatabase->laboratoryContactPerson;
-             if(!$contactPerson->hasValidEmail()) {
-                 abort(404, 'Invalid lab contact form requested');
-             }
+            $contactPersons = $labDatabase->laboratoryContactPersons;
+            if($contactPersons->count() == 0) {
+                abort(404, 'Invalid lab contact form requested');
+            }
          }
 
         return view('forms.laboratory-contact-person',['data' => $result->getResult()]);
@@ -228,15 +228,16 @@ class FormController extends Controller
         $labDatabase = Laboratory::where('fast_id', (int)$formFields['msl_fast_id'])->first();
  
         if($labDatabase) {
-            $contactPerson = $labDatabase->laboratoryContactPerson;
-            if(!$contactPerson->hasValidEmail()) {
+            $contactPersons = $labDatabase->laboratoryContactPersons;
+            if($contactPersons->count() == 0) {
                 abort(404, 'Invalid lab identifier');
-            }
+            }            
         }
 
         // send e-mail to lab contact person address containing form submission
         try {
-            Mail::to($contactPerson->email)->send(new ContactLabSubmission($formFields));
+            $pluckedEmails = $labDatabase->laboratoryContactPersons->pluck('email');
+            Mail::to($pluckedEmails->all())->send(new ContactLabSubmission($formFields));
         } catch(\Exception $e) {
             Log::error($e);
 
