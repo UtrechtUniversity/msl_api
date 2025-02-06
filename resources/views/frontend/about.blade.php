@@ -4,7 +4,7 @@
         <h1 class="pt-20">About MSL</h1>
 
         <img 
-            src= {{ asset('images/heros/about.png') }}
+            src= {{ asset('images/heros/about_small.png') }}
             alt="aboutImage"
             class="object-contain sm:max-w-lg w-fit sm:p-10">
 
