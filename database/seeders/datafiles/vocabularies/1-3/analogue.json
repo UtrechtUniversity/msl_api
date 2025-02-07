@@ -4607,7 +4607,10 @@
                                 "vocabUri": "",
                                 "uri": "",
                                 "synonyms": [
-                                    "laser vibrometre"
+                                    "laser vibrometre",
+                                    "vibrometer",
+                                    "vibrometre",
+                                    "PolyTec Vibrometer"
                                 ],
                                 "subTerms": []
                             },
