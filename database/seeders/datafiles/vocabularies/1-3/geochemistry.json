@@ -1106,7 +1106,10 @@
                         "vocabUri": "",
                         "uri": "",
                         "synonyms": [
-                            "xrf"
+                            "xrf",
+                            "(XRF)",
+                            "X-ray fluorescence",
+                            "X-ray fluoresence"
                         ],
                         "subTerms": []
                     }

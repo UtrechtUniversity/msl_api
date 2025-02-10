@@ -123,7 +123,14 @@
                     "DAPGEO-04",
                     "DAPGEO-05",
                     "Geothermal Delft",
-                    "DAPwell"
+                    "DAPwell",
+                    "TU Delft campus geothermal project",
+                    "Geothermie Delft",
+                    "Geothermal Project on TU Delft Campus",
+                    "DEL-GT-01",
+                    "DEL-GT-02",
+                    "DEL-GT-02-S1",
+                    "DEL-GT-02-S2"
                 ],
                 "subTerms": []
             },
@@ -136,7 +143,11 @@
                 "synonyms": [
                     "UK Geoenergy Observatory",
                     "Glasgow Observatory",
-                    "Cheshire Observatory"
+                    "Cheshire Observatory",
+                    "UK Geoenergy Observatories",
+                    "UKGEOS",
+                    "Glasgow Observatories",
+                    "Cheshire Observatories"
                 ],
                 "subTerms": []
             },

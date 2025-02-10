@@ -76,7 +76,7 @@
         "title": "[Dataset] Numerical models for the simulation of sedimentary geothermal systems and the potential for induced seismicity",
         "description": "This dataset comprises the input files for numerical simulation of 30-years cold water reinjection through a doublet for geothermal exploitation of a hot sedimentary aquifer (HSA) and the associated risk for reactivating distant faults. Numerical models explore the effect of fault permeability on the governing thermo-hydro-mechanical (THM) processes and the geomechanical response of the system. The models are 2D plane strain including a homogeneous and isotropic HSA laterally bounded by two opposite dipping normal faults. Following this brief explanation, the dataset has two folders, each containing data for a distinct model: - \u201cTHM_k=1e-19.gid\u201d for simulating the geothermal system with the embedded faults having low permeability k=1\u00b710-19 m2 - and - \u201cTHM_k=1e-16.gid\u201d for simulating the geothermal system featured with high fault permeability k=1\u00b710-16 m2. In each folder, there is a file with the name of the folder ended as \u201c_gen.dat\u201d which contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ended as \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model. To run the simulation, execute the Code_Bright executable \u201cCb_v9_3.exe\u201d in a folder that contains the three input files and the executable.",
         "subjects": "Cold water reinjection | Numerical simulation | Hot sedimentary aquifer (HSA) | Geothermal exploitation",
-        "group1matches": "geothermal|induced seismicity|geothermal|normal faults|geothermal|geothermal|Geothermal",
+        "group1matches": "geothermal|geothermal|normal faults|geothermal|geothermal|Geothermal|induced seismicity",
         "group2matches": "permeability|permeability|permeability",
         "group3matches": null
     },
@@ -103,7 +103,7 @@
         "title": "[Dataset] Global physics-based database of injection-induced seismicity",
         "description": "We present a comprehensive, publicly accessible database of injection-induced seismicity. The database is sourced from a comprehensive review of more than 500 published documents and contains information for 158 cases of induced earthquakes from around the world. The collected earthquakes are associated with a variety of geoenergy applications, which can be broadly categorized into geologic gas storage, geothermal energy development, shale gas fracturing, research projects and wastewater disposal. The compilation comprises more than 70 variables, including general project information, host rock properties, \u200ein situ site characteristics, fault attributes, operational parameters, and recorded seismicity data (both overall seismic activities and the largest event sequence). The developed database opens up opportunities for improved understanding of the causative mechanisms of injection-induced seismicity and advancing on seismic hazard forecasting and mitigation.",
         "subjects": "Induced Seismicity | Database | Multi-physics | Rock characteristics | Fault properties | Geoenergy resources | Energy transition",
-        "group1matches": "shale|induced seismicity|induced seismicity|gas storage|geothermal|induced seismicity|Induced Seismicity",
+        "group1matches": "shale|gas storage|geothermal|induced seismicity|induced seismicity|induced seismicity|Induced Seismicity",
         "group2matches": "geoenergy|Geoenergy",
         "group3matches": null
     },
@@ -121,7 +121,7 @@
         "title": "Dataset for Effectiveness of Injection protocols for hydraulic stimulation in Enhanced Geothermal Systems",
         "description": "This dataset includes the input files of the numerical models used in the manuscript for simulating the hydraulic stimulation in Enhanced Geothermal System with a single fracture setup. Each folder is named after the corresponding injection protocol in the manuscript, i.e., Constant, Step, and Cyclic. In each of these folders, there are two subfolders namely- Without Bleedoff and With Bleedoff. In the subfolders, the file ending with \u201c_gen.dat\u201d contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ending with \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model.",
         "subjects": "Permeability enhancement | Induced seismicity | Hydraulic stimulation | Enhanced geothermal systems (EGS) | Shear slip | Dilatancy",
-        "group1matches": "Geothermal|Geothermal|Induced seismicity|geothermal|Enhanced Geothermal System",
+        "group1matches": "Geothermal|Geothermal|geothermal|Enhanced Geothermal System|Induced seismicity",
         "group2matches": "Permeability",
         "group3matches": null
     },
@@ -140,7 +140,7 @@
         "description": "Datasets of mass-spectrometry signals were obtained in the experiments with non-thermal tribochemical decomposition of synthetic thin-film iron sulphide and mineral iron pyrite. Tribochemical reactions were studied on a micrometre scale using localized rubbing under ultrahigh vacuum. Mechanically Stimulated Gas Emission Mass-Spectrometry (MSGE-MS) including the Dynamic gas expansion method was used to determine the kinetic parameters of gas emission and the composition of the emitted gases. The study was complemented by structural, morphological, tribological, mechanical and surface analyses. It was found that carbon-containing gases were dominating. The sulfur-containing gases comprised H2S, COS and CS2. The latter two were unexpected. The emission of these gases was traced back to solid-state chemical reactions kinetically controlled by the precursor concentrations and driven through non-thermal mechanisms, which we tentatively assigned to formation of sulfur radicals.",
         "subjects": "Iron sulfide | Tribochemistry | Thin film | X-ray diffraction (XRD) | Gas emission | Raman spectroscopy | Indentation | Scanning electron microscopy (SEM) | Mass spectrometry",
         "group1matches": "Pyrite|pyrite",
-        "group2matches": "electron microscopy|X-ray diffraction|Raman|microscopy",
+        "group2matches": "electron microscopy|X-ray diffraction|XRD|Raman|microscopy",
         "group3matches": null
     },
     {
@@ -166,7 +166,7 @@
         "title": "The lithosphere and upper mantle of the Western-Central Mediterranean region from integrated geophysical-geochemical modelling",
         "description": "This study integrates geophysical-geochemical data to investigate the thermochemical structure of the lithosphere and sublithospheric mantle, along the Southern Tyrrhenian Basin, Apennines, Adriatic Sea, Dinarides, and Carpathians-Balkanides. We present the lithospheric structure of the Adria microplate and the two opposing mantle slabs along its NE and SW margins. The modelling shows the presence of two asthenospheric mantle wedges aligning with the Apenninic and Dinaric continental mantle slab rollback, along with cold (-200\u00baC) sublithospheric anomalies beneath Adria\u2019s NE and SW margins. In the northern Adria region, the lithosphere undergoes synchronous thinning in the Tyrrhenian domain and thickening toward the forefront of the northern Apennines. This is associated with the northeastward rollback of the SW Adriatic slab, leading to subsequent delamination of the continental mantle. In the southern Adria region, the complex deep structure results from the variably oriented lithospheric slabs, and nearly 90-degree shift of the tectonic grain between the southern Apennines and the Calabrian Arc. At the SW Adria margin, beneath the northern Apennines, the thermal sublithospheric anomaly is attached to the shallower lithosphere, while a slab gap is modelled in the southern Apennines. One possibility is that the gap is due to a recent horizontal slab tear. Along the NE margin of Adria, the thermal anomaly penetrates to depths of about 200 km in the northern Dinarides and 280 km in the southern Dinarides, shallower than the SW Adria anomaly, which extends to at least 400 km depth.",
         "subjects": "Thermomechanical structure of the Lithosphere &amp; sublithospheric mantle | Sublithospheric thermal anomalies | Lithospheric mantle composition | Potential field and thermal data | Convergent margins | Integrated geophysical-geochemical modelling",
-        "group1matches": "slab rollback|upper mantle|lithosphere|lithosphere|lithosphere|lithosphere|Lithosphere",
+        "group1matches": "slab rollback|lithosphere|upper mantle|lithosphere|lithosphere|lithosphere|Lithosphere",
         "group2matches": "geochemical|geochemical|geochemical",
         "group3matches": null
     },
