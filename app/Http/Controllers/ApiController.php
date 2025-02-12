@@ -105,6 +105,17 @@ class ApiController extends Controller
     {
         return $this->dataPublicationResponse($request, 'geochemistry');
     }
+
+        /**
+     * Geo Energy Test Beds API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
+    public function geoenergy(Request $request)
+    {
+        return $this->dataPublicationResponse($request, 'geoenergy');
+    }
     
     /**
      * All subdomains API endpoint
@@ -161,6 +172,10 @@ class ApiController extends Controller
 
             case 'geochemistry':
                 $packageSearchRequest->addFilterQuery("msl_subdomain", "geochemistry");
+                break;
+
+            case 'geoenergy':
+                $packageSearchRequest->addFilterQuery("msl_subdomain", "geo-energy test beds");
                 break;
         }        
 

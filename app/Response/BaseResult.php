@@ -245,6 +245,14 @@ class BaseResult
                 
                 $this->researchAspects = $keywords;
                 break;
+            case 'geoenergy':
+                $keywords = [];
+                $keywords = array_merge($keywords, $this->getGeoenergyKeywords($data));
+                $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
+                $keywords = array_values(array_unique($keywords));
+                
+                $this->researchAspects = $keywords;
+                break;
             case 'all':
                 $keywords = [];
                 
@@ -252,6 +260,7 @@ class BaseResult
                 $keywords = array_merge($keywords, $this->getAnalogueKeywords($data));
                 $keywords = array_merge($keywords, $this->getPaleomagneticKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeochemistryKeywords($data));
+                $keywords = array_merge($keywords, $this->getGeoenergyKeywords($data));
                 $keywords = array_merge($keywords, $this->getGeologicalSettingKeywords($data));
                 $keywords = array_values(array_unique($keywords));
                 
@@ -363,6 +372,28 @@ class BaseResult
     private function getGeochemistryKeywords($data) {
         $uriStarts = [
             'https://epos-msl.uu.nl/voc/geochemistry/' . config('vocabularies.vocabularies_current_version') . '/'
+        ];
+        $keywords = [];
+        
+        if(isset($data['msl_enriched_keywords'])) {
+            foreach ($data['msl_enriched_keywords'] as $enrichedKeyword) {
+                foreach ($uriStarts as $uriStart) {
+                    if(str_starts_with($enrichedKeyword['msl_enriched_keyword_uri'], $uriStart)) {
+                        $keywords[] = $enrichedKeyword['msl_enriched_keyword_label'];
+                    }
+                }
+            }
+        }
+        
+        return $keywords;        
+    }
+
+
+    private function getGeoenergyKeywords($data) {
+        $uriStarts = [
+            'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/facility_names-',
+            'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/equipment-',
+            'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/model-',
         ];
         $keywords = [];
         
