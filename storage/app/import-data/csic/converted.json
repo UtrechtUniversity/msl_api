@@ -1,171 +1,39 @@
 [
     {
-        "doi": "10.20350\/digitalcsic\/8643",
-        "title": "Apatite fission track and zircon (U-Th)\/He dataset in the eastern Basque-Cantabrian Zone - western Pyrenees",
-        "description": "Low-temperature thermochronology studies have increased our knowledge of the orogenic processes along the Pyrenean-Cantabrian mountain belt by placing time constraints on the exhumation history of its rocks. However, a significant gap of data existed between the Pyrenees and the Cantabrian Mountains, hampering a comprehensive view of the tectonothermal evolution along the belt. Thus, we present a new apatite fission-track (AFT) and zircon (U-Th)\/He (ZHe) dataset for the eastern Basque-Cantabrian zone and western Pyrenees. AFT central ages cluster in the Eocene-Oligocene. According to their ZHe age-eU correlations, samples can be separated into two groups: group 1 depicts clustered ZHe ages-eU concentrations (Cinco Villas Massif) and group 2 depicts dispersed ZHe ages-eU concentration (Alduides Massif and a Paleozoic rock pinned along the Leiza thrust sheet). A sample from the Oroz-Betelu Massif shows an intermediate behavior. Our results agree with previous data in the Pyrenean-Cantabrian mountain belt, supporting a Cenozoic cooling of the hinterlands of this part of the belt.",
+        "doi": "10.20350\/digitalcsic\/17021",
+        "title": "Data for in situ modification of the magnetocrystalline anisotropy in cobalt-ferrite microcrystals",
+        "description": "We present the in situ modification of the magnetocrystalline anisotropy of iron-rich cobalt-ferrite epitaxial islands by changing their composition. Crystalline cobalt-ferrite spinel islands have been grown by oxygen-assisted molecular beam epitaxy on a Ru(0001) single crystal. The micro-crystals are several micrometers wide with heights of tens of nanometers. Their spatially-resolved vector magnetization is mapped by x-ray magnetic circular dichroism in photoemission microscopy at the L3 absorption edges of Co and Fe. Thick islands present a closure-like magnetic domain structure with the magnetization directions predominantly aligned along the projections of the easy magnetic axes onto the (111) surface plane. Thinner islands are more affected by growth defects and present a more complex domain structure. Upon deposition of additional Fe in an oxygen background pressure, Co is found to segregate out of the spinel islands, while their Fe content increases. This produces a reduction in the magnetocrystalline anisotropy, which manifests as a reorientation of the magnetization directions towards the edges of the islands, reflecting an increased contribution of the shape anisotropy",
+        "subjects": "Cobalt ferrite | Photoemission microscopy | Magnetocrystalline anisotropy",
+        "group1matches": "spinel|spinel",
+        "group2matches": "microscopy|microscopy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16999",
+        "title": "Controls of focused fluid release in subduction zones: insights from experimental dehydration of brucite vein networks in serpentinite [Dataset 1: Electron microscopy]",
+        "description": "This data repository contains the full-resolution scanning electron microscopy (SEM-EDX, SEM-BSE and SEM-EBSD) data of (A) the starting material and (B) the post-experiment analysis, of the article: Menzel, Manuel D.; Eberhard, Lisa; Arias, Austin; Padr\u00f3n-Navarta, Jos\u00e9 Alberto; Pl\u00fcmper, Oliver; 2025. Controls of focused fluid release in subduction zones: insights from experimental dehydration of brucite vein networks in serpentinite (in review in Contributions to Mineralogy and Petrology).",
         "subjects": null,
-        "group1matches": "Apatite|zircon|apatite|zircon|exhumation",
-        "group2matches": "fission track"
+        "group1matches": "serpentinite|serpentinite|brucite|brucite|subduction zones|subduction zones",
+        "group2matches": "Electron microscopy|electron microscopy|EBSD|vein|vein|microscopy|microscopy",
+        "group3matches": null
     },
     {
-        "doi": "10.20350\/digitalcsic\/8629",
-        "title": "Dataset of SEM images, modelled isopach map and topographic profiles, radiocarbon ages and data of parameters of Tephra2 and AshCalc codes of Holocene volcanic ashes of NW Argentina",
-        "description": "This dataset compiles SEM images, modelled isopach map and topographic profiles, and data of radiocarbon ages, parameters of Tephra2 and AshCalc codes of Holocene volcanic ashes of of Southern Puna and neighbouring areas (NW Argentina). SEM images detail differences among the Bols\u00f3n de Fiambal\u00e1, Cerro Blanco and Cueros de Purulla fallout ash deposits. Tephra2 code was used to simulate the ash fallout, and the AshCalc code to compare different methods for ash volume estimates associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex. Topographic profiles are used to explain the secondary thickening of fallout ash deposits.",
-        "subjects": null,
-        "group1matches": "volcanic ashes|volcanic ashes|ash deposits|ash deposits",
-        "group2matches": "SEM images|SEM images|SEM images"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/8604",
-        "title": "AMPHIBIAN CSIC experimental data insitu exsitu PXRD NPD",
-        "description": "During the past decade, CoFe2O4 (hard)\/Co\u2013Fe alloy (soft) magnetic nanocomposites have been routinely prepared by partial reduction of CoFe2O4 nanoparticles. Monoxide (i.e., FeO or CoO) has often been detected as a byproduct of the reduction, although it remains unclear whether the formation of this phase occurs during the reduction itself or at a later stage. Here, a novel reaction cell was designed to monitor the reduction in situ using synchrotron powder X-ray diffraction (PXRD). Sequential Rietveld refinements of the in situ data yielded time-resolved information on the sample composition and confirmed that the monoxide is generated as an intermediate phase. The macroscopic magnetic properties of samples at different reduction stages were measured by means of vibrating sample magnetometry (VSM), revealing a magnetic softening with increasing soft phase content, which was too pronounced to be exclusively explained by the introduction of soft material in the system. The elemental compositions of the constituent phases were obtained from joint Rietveld refinements of ex situ high-resolution PXRD and neutron powder diffraction (NPD) data. It was found that the alloy has a tendency to emerge in a Co-rich form, inducing a Co deficiency on the remaining spinel phase, which can explain the early softening of the magnetic material.",
-        "subjects": "Elemental composition | Exchange-coupling | Ferrite | In situ | Nanocomposite | Neutron powder diffraction | Permanent magnet | Rietveld refinement",
-        "group1matches": "spinel",
-        "group2matches": "X-ray diffraction|VSM"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/8553",
-        "title": "Dataset of glass and mineral geochemical data of Holocene volcanic ashes of NW Argentina",
-        "description": "Groundmass glass, phenocrysts, microphenocrysts, and microlites of glass shards (1011 analyses at single points), feldspars (568), biotites (183), Fe\u2013Ti oxides (101), amphiboles (30), and pyroxenes (14) were analysed on polished thin sections of Holocene volcanic ashes, ignimbrites and lava domes of Southern Puna and neighbouring areas (NW Argentina) by electron probe microanalyser (EPMA). The quality of mineral analyses was reviewed, verifying that the structural formula gave a correct stoichiometry with specific measuring programs for feldspars, biotite, Fe\u2013Ti oxides, pyroxene, and amphibole. Geothermobarometry was constrained using the chemistry of feldspars, Fe\u2013Ti oxides, clinopyroxene, and amphibole. The studied volcanic materials are mainly associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex.",
-        "subjects": "in situ - mineral or glass analysis | major oxides | EMP | glass | mineral | igneous rock | rhyolite | dacite | K-feldspar | Plagioclase | Biotite | Magnetite | Ilmenite | Pyroxene | Amphibole | land section | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=MeasuredParameter | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=Method",
-        "group1matches": "rhyolite|dacite|lava|Ilmenite|amphibole|amphibole|Magnetite|Amphibole|volcanic ashes|volcanic ashes|biotite|Plagioclase|Biotite",
-        "group2matches": "geochemical"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/8545",
-        "title": "Dataset of total and nitric acid soluble element concentrations from stream sediments of the Upper Garonne Basin, Val d'Aran, Central Pyrenees",
-        "description": "This dataset comprises the total and the acid nitric soluble element concentrations of major and trace elements (Si, Ti, Al, Fe, Mn, Mg, Ca, Na, K, P, LOI, As, Ba, Be, Ce, Co, Cr, Cs, Cu, Dy, Er, Eu, Ga, Gd, Ge, Hf, Ho, La, Li, Lu, Mo, Nd, Ni, Pb, Pr, Rb, Sb, Sc, Sm, Sn, Sr, Tb, Th, Tm, U, V, Y, Yb, Zn, Zr) in stream sediments of the Garonne River watershed in the Val d'Aran in the Central Pyrenees. We used samples collected in 1981 in a pilot project of stream sediment geochemistry. The results of nitric acid leachates are used as proxies of the environmentally available fraction of such elements. The samples represents the lithogeochemical units consisting of the Maladeta-Marimanya granitoids, and the metasediments occurring in an extensive area of the basin.",
-        "subjects": "whole rock analyses | leachate analysis | major oxides | trace elements | HR-ICP-MS | IGN | unconsoilidated sediment | sedimentary_material | http:\/\/resource.geosciml.org\/classifier\/cgi\/lithology\/sedimentary_material",
-        "group1matches": "sediments|sediments",
-        "group2matches": "HR-ICP-MS|geochemistry"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/16070",
-        "title": "Seawater Carbonate System Variables in the Surface Waters of Two Time-Series in the NW Mediterranean Sea with Monthly Sampling: L'Estartit Oceanographic Station (EOS; 22\/01\/2010 to 23\/08\/2019) and the Blanes Bay Microbial Observatory (BBMO; 22\/12\/2009 to 02\/08\/2022) [dataset]",
-        "description": "[EN] The database provides discrete measurements of seawater carbonate system variables (pH and total alkalinity) and ancillary variables (dissolved inorganic nutrients, temperature, salinity, and pressure) in surface seawater collected at two time-series stations, EOS and BBMO, conducted over 2009\u20132022. The database compiles all the information, measurements, and analysis performed (including date, location, and equipment used). All chemical analyses were assigned a quality indicator. At the two time-series stations, monthly sampling of surface seawater was performed. BBMO temperature and salinity were measured with a SAIV-A\/S-SD204 CTD, while at EOS temperature was measured with reversible thermometers and salinity was measured with two CTDs, a SAIV-A\/S-SD204 CTD and a CTD75M. For consistency between BBMO and EOS datasets, the salinity record obtained with the SAIV-A\/S-SD204 CTD is considered in this study. When salinity values from the SAIV-A\/S-SD204 CTD were missing, salinity values from CTD75M were used. The salinity records obtained with the two CTDs were quality controlled and calibrated to obtain a consistent dataset. Discrete seawater samples for pH, TA, and dissolved inorganic nutrients were taken monthly from a depth of 0.5 m both stations (with a Niskin bottle at EOS and in 10 L polyethylene carboys at BBMO). The biogeochemical variables shown in the database are pH reported on the total hydrogen ion scale at 25 \u00b0C (PH_TOT), total alkalinity (ALKALI), and dissolved inorganic nutrients (phosphate, PHSPHT, Silicate, SILCAT, and Nitrate, NITRAT). PH_TOT data were obtained by the spectrophotometric method with m-cresol purple using a Cary 100 UV-vis spectrophotometer containing a 25 \u00b0C-thermostated cells holder following Clayton and Byrne (1993). Triplicate samples were taken. At EOS, three cylindrical optical glass cells with a 10 cm path-length were filled directly from the Niskin bottle right after reaching land, ready to be analyzed in the next 3\u20134 hrs. At BBMO, a 150 mL glass bottle was filled leaving no headspace, and three 10 cm path-length cylindrical optical glass cells were filled from it once in the ICM laboratory (&lt; 2h after sampling). For ALKALI measurements, two samples per site were taken in 500 mL borosilicate glass bottles were filled, rinsed three times, and carefully filled from the bottom with a tube. Samples for ALKALI were poisoned with 300 \u00b5L mercuric chloride (HgCl2) saturated solution to halt biological activity (Dickson et al., 2007), right after reaching land for EOS samples and at the ICM laboratory for BBMO samples. Bottles were then stored in the dark at room temperature until they were measured in the laboratory, within days up to one month. Each ALKALI sample was measured by duplicate. ALKALI was analyzed by potentiometric titration, determined by double endpoint titration (Mintrop et al., 2000; P\u00e9rez and Fraga, 1987), and calibrated with reference materials (Prof. A. Dickson, Scripps Institution of Oceanography (USA); Batches #93, #104, #136, and #179). Samples for dissolved inorganic nutrients were stored frozen at -20 \u00b0C in sterile falcon tubes until analysis. These tubes were filled directly from the Niskin bottle upon reaching land in EOS and from a bottle at the ICM laboratory in the case of BBMO samples. Dissolved inorganic nutrients were determined by standard continuous flow analysis with colorimetric detection (Hansen and Grassof, 1983) using a Bran + Luebbe autoanalyser.",
-        "subjects": "Acidification | Mediterranean Sea | CO2 system | pH | total alkalinity | time series",
-        "group1matches": "polyethylene",
-        "group2matches": "titration|titration"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/15507",
-        "title": "Data set: Chronostratigraphic, Sedimentological and Geochemical Data",
-        "description": "The research presents for the first time a jointly analysis about the impact of the light intermediate Mediterranean (LMW) and dense deep Mediterranean (DMW) bottom currents on the sedimentation in the Alboran Sea (SW Mediterranean) and its paleoceanographic significance in response to climatic oscillations from the last glacial period to the Holocene. For that, an integration of chronostratigraphical, sedimentological, and compositional data from contourites formed by those water masses is carried out. That integration enable us to define three distinct contourite stratigraphic models. (I) The contourite terrace model, characterized by coarse-grained contourites, which is an archive of the interplay between the high-energy Atlantic Water-LMW interface and glacioeustasy from the Younger Dryas to the Holocene. (II) The contourite drift models, which are archives of rapid ocean-climate coupled fluctuations since 29.5 kyr. They comprise coarse-grained contourites formed by a relatively fast LMW and fine-grained contourites formed by a relatively weak DMW, except for the Heinrich Stadials HS3 to HS1 and YD when coarse-grained contourites were deposited. (III) The contourite\/turbidite mixed model represents another archive of DMW and glacioeustasy interplay from the end of the late Pleistocene to Holocene.",
-        "subjects": "Marine sediments | Chronostratigraphy | Sedimentology | Geochemical data",
-        "group1matches": "sediments",
-        "group2matches": "Geochemical|Geochemical"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14818",
-        "title": "Responsive optical materials based on ligand-free perovskite quantum dots embedded in mesoporous scaffolds",
-        "description": "Herein we show that dispersing inorganic Cesium Lead Bromide (CsPbBr3) perovskite quantum dots (QDs) in optical quality films, possessing an accessible and controlled pore size distribution, gives rise to fluorescent materials with a controlled and highly sensitive response to ambient changes. A scaffold based synthetic approach is employed to attain ligand-free QDs, whose pristine surface endows them with high sensitivity to the presence of different vapors in their vicinity. At the same time, the void network of the host offers a means to gradually expose the embedded QDs to such vapors. Under these conditions, the luminescent response of the QDs is mediated by the mesostructure of the matrix, which determines the rate at which vapor molecules will adsorb onto the pore walls and, eventually, condensate, filling the void space. With luminescence quantum yields as high as 60%, scaffold supported ligand-free perovskite nanocrystals display intense photoemission signals over the whole process, as well as high photo and chemical stability, which allows illuminating them for long periods of time and recovering the original response upon desorption of the condensed phase. The results herein presented open a new route to explore the application of perovskite QDs based materials in sensing.",
-        "subjects": "Responsive materials | CsPbBr3 | Nanocrystals | Optical properties | Porous materials",
-        "group1matches": "perovskite|perovskite|perovskite|perovskite",
-        "group2matches": "pore size distribution|desorption"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/15703",
-        "title": "Dataset of Operando Exploration of Tribochemical Decomposition in Synthetic FeS2 thin film and Mineral Iron Pyrite",
-        "description": "Datasets of mass-spectrometry signals were obtained in the experiments with non-thermal tribochemical decomposition of synthetic thin-film iron sulphide and mineral iron pyrite. Tribochemical reactions were studied on a micrometre scale using localized rubbing under ultrahigh vacuum. Mechanically Stimulated Gas Emission Mass-Spectrometry (MSGE-MS) including the Dynamic gas expansion method was used to determine the kinetic parameters of gas emission and the composition of the emitted gases. The study was complemented by structural, morphological, tribological, mechanical and surface analyses. It was found that carbon-containing gases were dominating. The sulfur-containing gases comprised H2S, COS and CS2. The latter two were unexpected. The emission of these gases was traced back to solid-state chemical reactions kinetically controlled by the precursor concentrations and driven through non-thermal mechanisms, which we tentatively assigned to formation of sulfur radicals.",
-        "subjects": "Iron sulfide | Tribochemistry | Thin film | X-ray diffraction (XRD) | Gas emission | Raman spectroscopy | Indentation | Scanning electron microscopy (SEM) | Mass spectrometry",
-        "group1matches": "Pyrite|pyrite",
-        "group2matches": "Mass spectrometry|X-ray diffraction|XRD|electron microscopy|Raman|microscopy"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/15676",
-        "title": "Dataset for analytical and numerical solutions of cyclic pore pressure diffusion equation",
-        "description": "This dataset encompasses the input files associated with diverse analytical and numerical models investigating cyclic pressure diffusion within uniform poroelastic materials. The dataset is organized into two primary folders. The \"Analytical Solutions\" folder comprises three Python libraries containing the material properties and functions for calculating pressure amplitude at various distances. The \"Numerical Solutions\" folder contains simulations for both Hydraulic (\"01_\") and Hydro-Mechanical (\"HM_\") problems. The simulations are conducted for representative values corresponding to Berea sandstone (\"BS_\"), Opalinus Clay (\"OPA_\"), and Westerly granite (\"WG_\"), considering both monodimensional (\"1D\") and axisymmetric (\"Ax\") cases. Within each subfolder, files with the suffix \"_gen.dat\" provide input data for the model, encompassing material properties, initial and boundary conditions, and time intervals. Correspondingly, files concluding with \"_gri.dat\" contain information of the mesh employed. The \"_bfc.dat\" file documents the periodic injection pressure applied for each simulation, while the \"root.dat\" file specifies the model's nomenclature. To execute a model, launching the executable \"Cb_v9_1_3par4.exe\" within each \".gid\" folder is sufficient.",
-        "subjects": "Westerly granite | Confined aquifer | Analytical solutions | Periodic injection | Tight rock | Berea sandstone | Opalinus Clay",
-        "group1matches": "Berea sandstone|Opalinus Clay|granite|granite|Berea sandstone|Opalinus Clay|Westerly granite|Westerly granite",
-        "group2matches": "pore pressure|poroelastic"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/15558",
-        "title": "Dataset for Effectiveness of Injection protocols for hydraulic stimulation in Enhanced Geothermal Systems",
-        "description": "This dataset includes the input files of the numerical models used in the manuscript for simulating the hydraulic stimulation in Enhanced Geothermal System with a single fracture setup. Each folder is named after the corresponding injection protocol in the manuscript, i.e., Constant, Step, and Cyclic. In each of these folders, there are two subfolders namely- Without Bleedoff and With Bleedoff. In the subfolders, the file ending with \u201c_gen.dat\u201d contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ending with \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model.",
-        "subjects": "Permeability enhancement | Induced seismicity | Hydraulic stimulation | Enhanced geothermal systems (EGS) | Shear slip | Dilatancy",
-        "group1matches": "Geothermal|Geothermal|Induced seismicity|geothermal",
-        "group2matches": "Permeability"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/15474",
-        "title": "Full-Field numerical simulations of sub grain rotation and grain boundary migration in halite during viscoplastic deformation",
-        "description": "The way in which salt flows is highly heterogeneous and results in complex fabrics and structures. To improve our understanding of how halite deforms and recrystallizes under different conditions we performed full-field numerical modelling of polycrystalline aggregates of halite. The numerical approach is based on the coupling of the viscoplastic Full-Field Transform code (VPFFT, Lebensohn and Rollet, 2020) that simulates the viscoplastic deformation and multi-scale platform ELLE (Bons et al, 2008) that has enabled recrystallization processes such as recovery, nucleation and grain boundary migration. This data set This data set contains (i) the output files with the crystal orientation data of simulation DRX_100, DRX_200 and DRX_300, and (ii) a code to plot the crystallographic orientation density function (ODF) using the open-source code MTEX (Mainprice et al., 2011).",
-        "subjects": "Crystal orientation | Sub grain rotation | Halite | Viscoplastic deformation | Numerical simulations",
-        "group1matches": "halite|halite|halite|Halite",
-        "group2matches": "crystallographic orientation|grain boundary migration|grain boundary migration"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14762",
-        "title": "Dataset for the paper \"Crespo-Ib\u00e1\u00f1ez, Ana; P\u00e9rez, Gloria ; Jim\u00e9nez, Jos\u00e9 A.; Llorente, Irene; Mart\u00ednez-Ram\u00edrez, S.; Cano, Emilio; D\u00edaz, Iv\u00e1n. 2022 . Evolution and Evaluation of Aesthetic Properties in Weathering Steel Accelerated Patinas: The Role of Lepidocrocite. Metals 12(6): 977\"",
+        "doi": "10.20350\/digitalcsic\/16712",
+        "title": "Dataset on trace elements and legacy and emerging organic contaminants concentrations in sediments cores in L\u2019Albufera Natural Park (Valencia, East of Spain): Association with \u201cin-deep\u201d sediment characteristics and risk assessment to the aquatic biota",
         "description": null,
-        "subjects": "Color | Conservation-restoration | Contemporary art | Corrosion | Cultural heritage | Lepidocrocite | Raman spectroscopy | Sculpture | Weathering steel | X-ray Diffraction",
-        "group1matches": "Lepidocrocite|Lepidocrocite",
-        "group2matches": "X-ray Diffraction|Raman"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14744",
-        "title": "VERDI [Dataset]",
-        "description": "The presence of phytoplankton parasites along the water column was explored at the Long Term Ecological Station MareChiara (LTER-MC) in the Gulf of Naples (Mediterranean Sea) in October 2019. Microscopy analyses showed diatoms dominating the phytoplankton community in the upper layers (0-20 m). Metabarcoding data from the water column showed the presence of Chytridiomycota predominantly in the upper layers coinciding with the vertical distribution of diatoms. Laboratory incubations of natural samples enriched with different diatom cultures confirmed parasitic interactions of some of those chytrids \u2013 including members of Kappamyces \u2013 with diatom taxa. The temporal dynamics of diatoms and chytrids was also explored in a three-year metabarcoding time-series (2011-2013) from surface waters of the study area and in sediment samples. Chytrids were recurrently present at low relative abundances, and some taxa found to infect diatoms in the incubation experiments were also identified in the ASV time-series. However, co-occurrence analyses did not show any clear or recurrent pairing patterns for chytrid and diatom taxa along the three years. The chytrid community in the sediments showed a clearly different species composition compared to the recorded in the water column samples, with higher diversity and relative abundance. The combination of observations, incubations and metabarcoding confirmed that parasites are a common component of marine protist communities at LTER-MC. Host-parasite interactions must be determined and quantified to understand their role and the impact they have on phytoplankton dynamics",
-        "subjects": "Parasites | Chytrids | Diatoms | LTER | Metabarcoding",
-        "group1matches": "sediments",
-        "group2matches": "Microscopy"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14643",
-        "title": "Full-field numerical simulations of ice viscoplastic deformation during two deformation events",
-        "description": "This data set contains the output files with the crystal orientation of each simulation presented in the article (run using the open-source software platform ELLE; Bons et al., 2008). For the visualization of the crystallographic preferred orientation the information contained in these output files can be loaded to the software toolbox MTEX (Bachmann, F., Hielscher, R. and Schaeben, H. Grain detection from 2d and 3d EBSD data\u2014Specification of the MTEX algorithm. Ultramicroscopy, 111(12), pp.1720-1733. 2011).",
-        "subjects": "crystal orientation | Crystallography",
-        "group1matches": "ice",
-        "group2matches": "EBSD|crystallographic preferred orientation"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14481",
-        "title": "Laboratory guidelines for the detection and quantification of plastics particles from freshwater environmental samples",
-        "description": "The present document develops the laboratory protocols to analyse plastic pollution in freshwater environmental samples, although the methods followed can be extrapolated to other ecosystems. These protocols are developed in the framework of the PLASTIC\u00d8PYR project, which aims to tackle plastic pollution associated with mountain tourism activities by developing transversal actions involving several stakeholders. These guidelines are developed in order to quantify plastic pollution in different river habitats, from large items (macro- and mesoplastics) to tiny plastic particles (microplastics). The protocols are developed for the analysis of microplastics (MicP) up to 63 \u00b5m, from samples from the water column, the fluvial sediments, the fluvial biota (i.e., brown trout and biofilm), as well as plastic particles present in the atmosphere (either wet or dry deposition). The MicP analysis is done following the Nile Red method, a fluorescent dye that facilitates the observation of small particles. Although Nile Red cannot provide chemical characterisation, it can be compatible with MicP identification techniques, such as FTIR (Fourier-transform infrared spectroscopy). The samples procedure includes: the extraction of MicP from the inorganic matrix by density separation (using ZnCl2), a digestion step with hydrogen peroxide and catalysed with Fenton's reagent to eliminate the organic remains and finally, the staining of the sample with Nile Red.",
         "subjects": null,
         "group1matches": "sediments",
-        "group2matches": "infrared spectroscopy|staining"
+        "group2matches": "trace elements",
+        "group3matches": null
     },
     {
-        "doi": "10.20350\/digitalcsic\/14151",
-        "title": "Dataset of whole rock analysis of Holocene volcanic ashes and lava domes of 4.2 ka Cerro Blanco eruption, NW Argentina",
-        "description": "Whole rock analysis of Holocene volcanic ashes and lava domes of Southern Puna and neighboring areas (NW Argentina). The studied volcanic materials are associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex.",
-        "subjects": "major oxides | whole rock analysis | HR-ICP-MS | LOI | igneous rock | rhyolite | riolita | Cerro Blanco | eruption | erupci\u00f3n | Puna | Andes | Catamarca | Tucum\u00e1n | Argentina",
-        "group1matches": "rhyolite|lava|lava|volcanic ashes|volcanic ashes",
-        "group2matches": "HR-ICP-MS"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/13999",
-        "title": "[Dataset] Numerical models for the simulation of sedimentary geothermal systems and the potential for induced seismicity",
-        "description": "This dataset comprises the input files for numerical simulation of 30-years cold water reinjection through a doublet for geothermal exploitation of a hot sedimentary aquifer (HSA) and the associated risk for reactivating distant faults. Numerical models explore the effect of fault permeability on the governing thermo-hydro-mechanical (THM) processes and the geomechanical response of the system. The models are 2D plane strain including a homogeneous and isotropic HSA laterally bounded by two opposite dipping normal faults. Following this brief explanation, the dataset has two folders, each containing data for a distinct model: - \u201cTHM_k=1e-19.gid\u201d for simulating the geothermal system with the embedded faults having low permeability k=1\u00b710-19 m2 - and - \u201cTHM_k=1e-16.gid\u201d for simulating the geothermal system featured with high fault permeability k=1\u00b710-16 m2. In each folder, there is a file with the name of the folder ended as \u201c_gen.dat\u201d which contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ended as \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model. To run the simulation, execute the Code_Bright executable \u201cCb_v9_3.exe\u201d in a folder that contains the three input files and the executable.",
-        "subjects": "Cold water reinjection | Numerical simulation | Hot sedimentary aquifer (HSA) | Geothermal exploitation",
-        "group1matches": "geothermal|induced seismicity|geothermal|normal faults|geothermal|geothermal|Geothermal",
-        "group2matches": "permeability|permeability|permeability"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/12623",
-        "title": "The ILIHA deep seismic sounding experiment (Iberian LIthosphere Heterogeneity and Anisotropy)",
-        "description": "The ILIHA (Iberian Lithosphere Heterogeneity and Anisotropy) Project was designed to be a large-scale test for vertical and lateral heterogeneity and seismic anisotropy in the subcrustal lithosphere over the Variscan domain of the Iberian Peninsula. It consists of a star-shaped arrangement of six long-range deep seismic sounding profiles, acquired in 1989.",
-        "subjects": null,
-        "group1matches": "LIthosphere|Lithosphere|lithosphere",
-        "group2matches": "seismic anisotropy"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/12715",
-        "title": "Major elements geochemistry of Pico Cabras dome\u2019s explosive and effusive products (Tenerife) [Dataset]",
-        "description": "The dataset contains all the chemical data collected for the work \u201cMechanisms controlling explosive-effusive transition of Teide-Pico Viejo dome eruptions\u201d. The samples were taken from Pico Cabras dome (Tenerife), including deposits of the sub-plinian fallout (explosive phase) and the lava flow and dome (effusive phase). The samples were analysed with a SEM Merlin Compact ZEISS with an EDS Bruker detector (QUANTAX-XFlash6-30mm2-129eV) at the ISTO Measures Physiques laboratory (CNRS, Orleans). Additionally, we performed a micro-XRF analysis using the XTRACE detector (Tube Rh \u2013 filtres Al, Ti, Ni) connected to the MEB, which was calibrated against inner Br glassy standards containing different amounts of Br (Faranda et al. 2019) in order to analyze Br in sodalite and glass in the pumice samples. Mineral phase compositions were obtained with an electron microprobe SX-FIVE, also at the ISTO. An acceleration voltage of 15kV, a sample current of 6nA, and a counting time of 10s were used. For the glasses, a defocused beam of 10\u03bcm and 20\u03bcm was used, whereas for minerals a focused beam was employed. Whole-rock data was obtained by analysing two glass samples resulting from the two-step melting (with grinding in between) of lava and pumice samples at 1400\u00baC for 4 hours in total time, respectively. The aim of the study was contributing to the understanding of the mechanisms that control the transition between explosive and effusive dynamics in dome-forming eruptions at T-PV stratovolcanoes and propose a conceptual model for the magmatic reservoir of Pico Cabras prior to eruption. In this dataset we collect all de geochemical data obtained in the study. The Excel file consists of seven sheets, each one corresponding with one of the principal phases found in the samples: feldspars, pyroxenes, biotites, magnetites, ilmenites, sodalites and glasses (including the whole-rock analysis resulting from the obsidian obtained in the melting of the samples). The four analysed samples were given a International GeoSample Number (IGSN) for their correct identification. IEODG0001, IEODG0002 and IEODG0004 are samples from the effusive phase of Pico Cabras dome eruption (the later corresponding to an obsidian sample from the dome itself). IEODG0003 are pumices samples from the explosive phase in which minerals and glass fragments were selected for analysis.",
-        "subjects": "Explosive-effusive | Pico Cabras | Phonolite | Dome | Tenerife | Teide",
-        "group1matches": "Phonolite|lava|pumice|lava|pumice|obsidian|obsidian|sodalite",
-        "group2matches": "electron microprobe|XRF|microprobe|geochemistry|geochemical"
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/10527",
-        "title": "Dataset of whole-rock, glass and mineral geochemical data of recent shoshonitic volcanism of Puna, Central Volcanic Zone of Andes: San Jer\u00f3nimo and Negro de Chorrillos volcanoes",
-        "description": "This dataset contains analytical data of whole rock as well as of mineral macrocrysts and microcrysts, and glasses of the Pleistocene shoshonitic San Jer\u00f3nimo and Negro de Chorrillos volcanoes in the Puna, Central Volcanic Zone of Andes (NW Argentina). Whole rock major and some trace elements (Ba, Cr, Ni, Rb, Sr, V, Y, Zn and Zr) were determined by X-ray fluorescence (XRF) spectrometry at the Scientific and Technological Centers of the University of Barcelona (CCiTUB). Additional trace elements (Nb, Ta, Cs, Hf, Pb, Th, U and the rare Earth elements or REE) were analysed by High Resolution-Inductively Coupled Plasma-Mass Spectrometry (HR-ICP- MS) at the Laboratory of Geochemistry labGEOTOP (ICTJA, CSIC, Barcelona). The major composition of olivine, pyroxenes, phlogopite, feldspars, spinel, and apatite as well as of glasses were analysed in situ at the CCiTUB using an electron microprobe analyser (EMPA). The dataset contains also a compilation of whole-rock major and trace elements concentrations, and isotope ratios of San Jer\u00f3nimo and Negro de Chorrillos volcanoes and other shoshonitic centres of the Puna from published data.",
-        "subjects": "shoshonite | phlogopite | dusty plagioclase | glass | Central Volcanic Zone | Andes",
-        "group1matches": "olivine|spinel|apatite|phlogopite|phlogopite|plagioclase",
-        "group2matches": "electron microprobe|Mass Spectrometry|X-ray fluorescence|XRF|microprobe|geochemical|Geochemistry"
+        "doi": "10.20350\/digitalcsic\/16639",
+        "title": "Dataset for the paper \"Maestro-Guijarro, L., Mart\u00ednez-Ram\u00edrez, S.; S\u00e1nchez-Cort\u00e9s, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"",
+        "description": "his is the experimental dataset used in the paper Applied Surface Science, 662: 160107 (2024) (https:\/\/doi.org\/10.1016\/j.apsusc.2024.160107) in which a novel Surface-Enhanced Raman Spectroscopy (SERS) sensor based on a nanostructured substrate, calcium silicate hydrate (C-S-H), the main hydration product of Portland cement, was synthetized. The procedure involves first the incorporation of silver within the nanostructure of the gel (C-S-Ag-H) and second the modification of the surface of pellets of the newly synthesized material by laser irradiation at 532 nm or 355 nm. This data set includes the results of the effect of silver on the gel structure via visible UV spectroscopy, micro-Raman and 29Si Magic Angle Spinning Nuclear Magnetic Resonance (MAS NMR). It also includes the characterization analyses of the C-S-Ag-H pellets by X-ray Photoelectron Spectroscopy (XPS) to determine the silver oxidation state and the assessment of their SERS activity before and after laser irradiation using for the latter Rhodamine B (RhB) as a probe.",
+        "subjects": "SERS (surface enhanced Raman spectroscopy) | XPS (x-ray photoelectron spectroscopy) | Nuclear magnetic resonance | Ultraviolet-visible spectroscopy | Calcium silicate hydrate (C-S-H) | Laser irradiation | Silver nanoparticles | Rhodamine (colorant) | http:\/\/vocab.getty.edu\/page\/aat\/300389862 | http:\/\/vocab.getty.edu\/page\/aat\/300391193 | http:\/\/vocab.getty.edu\/page\/aat\/300220368 | http:\/\/vocab.getty.edu\/page\/aat\/300375717 | http:\/\/vocab.getty.edu\/page\/aat\/300444908 | http:\/\/vocab.getty.edu\/page\/aat\/300311474",
+        "group1matches": "synthesized material",
+        "group2matches": "Raman|Raman|Raman",
+        "group3matches": null
     },
     {
         "doi": "10.20350\/digitalcsic\/12553",
@@ -173,14 +41,232 @@
         "description": "This dataset is composed of the input files of the numerical models for simulating Amposta fault stability during different phases of the project and poromechanical pressure changes induced by shear slip. The input files of each numerical simulation are included in a folder. The names of the folders and the description of the model are: - \u201c1_Oil_production\u201d: simulation of oil production and 7 years of post-production to quantify the changes in the Amposta fault stability - \u201c2_Overpressure_plus_buoyancy_cushion\u201d: simulation of the cushion gas injection considering both the effect of pore pressure increase and buoyancy to quantify the changes in the Amposta fault stability - \u201c3_Overpressure_cushion\u201d: simulation of the cushion gas injection considering only the effect of pore pressure increase (without gravity) to quantify the changes in the Amposta fault stability - \u201c4_Buoyancy_cushion\u201d: simulation of the cushion gas injection considering only the buoyancy of the gas to quantify the changes in the Amposta fault stability - \u201c5_Buoyancy_full_capacity\u201d: simulation of the gas storage at its maximum capacity considering only the buoyancy of the gas to quantify the changes in the Amposta fault stability - \u201c6_Poromechanical_pressure_changes\u201d: simulation of the pore pressure changes induced by shear slip and its effects in the short and long term.",
         "subjects": null,
         "group1matches": "gas storage",
-        "group2matches": "pore pressure|pore pressure|pore pressure"
+        "group2matches": "pore pressure|pore pressure|pore pressure",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/10527",
+        "title": "Dataset of whole-rock, glass and mineral geochemical data of recent shoshonitic volcanism of Puna, Central Volcanic Zone of Andes: San Jer\u00f3nimo and Negro de Chorrillos volcanoes",
+        "description": "This dataset contains analytical data of whole rock as well as of mineral macrocrysts and microcrysts, and glasses of the Pleistocene shoshonitic San Jer\u00f3nimo and Negro de Chorrillos volcanoes in the Puna, Central Volcanic Zone of Andes (NW Argentina). Whole rock major and some trace elements (Ba, Cr, Ni, Rb, Sr, V, Y, Zn and Zr) were determined by X-ray fluorescence (XRF) spectrometry at the Scientific and Technological Centers of the University of Barcelona (CCiTUB). Additional trace elements (Nb, Ta, Cs, Hf, Pb, Th, U and the rare Earth elements or REE) were analysed by High Resolution-Inductively Coupled Plasma-Mass Spectrometry (HR-ICP- MS) at the Laboratory of Geochemistry labGEOTOP (ICTJA, CSIC, Barcelona). The major composition of olivine, pyroxenes, phlogopite, feldspars, spinel, and apatite as well as of glasses were analysed in situ at the CCiTUB using an electron microprobe analyser (EMPA). The dataset contains also a compilation of whole-rock major and trace elements concentrations, and isotope ratios of San Jer\u00f3nimo and Negro de Chorrillos volcanoes and other shoshonitic centres of the Puna from published data.",
+        "subjects": "shoshonite | phlogopite | dusty plagioclase | glass | Central Volcanic Zone | Andes",
+        "group1matches": "spinel|apatite|olivine|phlogopite|phlogopite|plagioclase",
+        "group2matches": "trace elements|trace elements|trace elements|electron microprobe|geochemical|Geochemistry",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/12715",
+        "title": "Major elements geochemistry of Pico Cabras dome\u2019s explosive and effusive products (Tenerife) [Dataset]",
+        "description": "The dataset contains all the chemical data collected for the work \u201cMechanisms controlling explosive-effusive transition of Teide-Pico Viejo dome eruptions\u201d. The samples were taken from Pico Cabras dome (Tenerife), including deposits of the sub-plinian fallout (explosive phase) and the lava flow and dome (effusive phase). The samples were analysed with a SEM Merlin Compact ZEISS with an EDS Bruker detector (QUANTAX-XFlash6-30mm2-129eV) at the ISTO Measures Physiques laboratory (CNRS, Orleans). Additionally, we performed a micro-XRF analysis using the XTRACE detector (Tube Rh \u2013 filtres Al, Ti, Ni) connected to the MEB, which was calibrated against inner Br glassy standards containing different amounts of Br (Faranda et al. 2019) in order to analyze Br in sodalite and glass in the pumice samples. Mineral phase compositions were obtained with an electron microprobe SX-FIVE, also at the ISTO. An acceleration voltage of 15kV, a sample current of 6nA, and a counting time of 10s were used. For the glasses, a defocused beam of 10\u03bcm and 20\u03bcm was used, whereas for minerals a focused beam was employed. Whole-rock data was obtained by analysing two glass samples resulting from the two-step melting (with grinding in between) of lava and pumice samples at 1400\u00baC for 4 hours in total time, respectively. The aim of the study was contributing to the understanding of the mechanisms that control the transition between explosive and effusive dynamics in dome-forming eruptions at T-PV stratovolcanoes and propose a conceptual model for the magmatic reservoir of Pico Cabras prior to eruption. In this dataset we collect all de geochemical data obtained in the study. The Excel file consists of seven sheets, each one corresponding with one of the principal phases found in the samples: feldspars, pyroxenes, biotites, magnetites, ilmenites, sodalites and glasses (including the whole-rock analysis resulting from the obsidian obtained in the melting of the samples). The four analysed samples were given a International GeoSample Number (IGSN) for their correct identification. IEODG0001, IEODG0002 and IEODG0004 are samples from the effusive phase of Pico Cabras dome eruption (the later corresponding to an obsidian sample from the dome itself). IEODG0003 are pumices samples from the explosive phase in which minerals and glass fragments were selected for analysis.",
+        "subjects": "Explosive-effusive | Pico Cabras | Phonolite | Dome | Tenerife | Teide",
+        "group1matches": "lava|pumice|lava|pumice|obsidian|obsidian|Phonolite|sodalite",
+        "group2matches": "Major elements|electron microprobe|geochemistry|geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/12623",
+        "title": "The ILIHA deep seismic sounding experiment (Iberian LIthosphere Heterogeneity and Anisotropy)",
+        "description": "The ILIHA (Iberian Lithosphere Heterogeneity and Anisotropy) Project was designed to be a large-scale test for vertical and lateral heterogeneity and seismic anisotropy in the subcrustal lithosphere over the Variscan domain of the Iberian Peninsula. It consists of a star-shaped arrangement of six long-range deep seismic sounding profiles, acquired in 1989.",
+        "subjects": null,
+        "group1matches": "LIthosphere|Lithosphere|lithosphere",
+        "group2matches": "seismic anisotropy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/13999",
+        "title": "[Dataset] Numerical models for the simulation of sedimentary geothermal systems and the potential for induced seismicity",
+        "description": "This dataset comprises the input files for numerical simulation of 30-years cold water reinjection through a doublet for geothermal exploitation of a hot sedimentary aquifer (HSA) and the associated risk for reactivating distant faults. Numerical models explore the effect of fault permeability on the governing thermo-hydro-mechanical (THM) processes and the geomechanical response of the system. The models are 2D plane strain including a homogeneous and isotropic HSA laterally bounded by two opposite dipping normal faults. Following this brief explanation, the dataset has two folders, each containing data for a distinct model: - \u201cTHM_k=1e-19.gid\u201d for simulating the geothermal system with the embedded faults having low permeability k=1\u00b710-19 m2 - and - \u201cTHM_k=1e-16.gid\u201d for simulating the geothermal system featured with high fault permeability k=1\u00b710-16 m2. In each folder, there is a file with the name of the folder ended as \u201c_gen.dat\u201d which contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ended as \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model. To run the simulation, execute the Code_Bright executable \u201cCb_v9_3.exe\u201d in a folder that contains the three input files and the executable.",
+        "subjects": "Cold water reinjection | Numerical simulation | Hot sedimentary aquifer (HSA) | Geothermal exploitation",
+        "group1matches": "geothermal|geothermal|normal faults|geothermal|geothermal|Geothermal|induced seismicity",
+        "group2matches": "permeability|permeability|permeability",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/14744",
+        "title": "VERDI [Dataset]",
+        "description": "The presence of phytoplankton parasites along the water column was explored at the Long Term Ecological Station MareChiara (LTER-MC) in the Gulf of Naples (Mediterranean Sea) in October 2019. Microscopy analyses showed diatoms dominating the phytoplankton community in the upper layers (0-20 m). Metabarcoding data from the water column showed the presence of Chytridiomycota predominantly in the upper layers coinciding with the vertical distribution of diatoms. Laboratory incubations of natural samples enriched with different diatom cultures confirmed parasitic interactions of some of those chytrids \u2013 including members of Kappamyces \u2013 with diatom taxa. The temporal dynamics of diatoms and chytrids was also explored in a three-year metabarcoding time-series (2011-2013) from surface waters of the study area and in sediment samples. Chytrids were recurrently present at low relative abundances, and some taxa found to infect diatoms in the incubation experiments were also identified in the ASV time-series. However, co-occurrence analyses did not show any clear or recurrent pairing patterns for chytrid and diatom taxa along the three years. The chytrid community in the sediments showed a clearly different species composition compared to the recorded in the water column samples, with higher diversity and relative abundance. The combination of observations, incubations and metabarcoding confirmed that parasites are a common component of marine protist communities at LTER-MC. Host-parasite interactions must be determined and quantified to understand their role and the impact they have on phytoplankton dynamics",
+        "subjects": "Parasites | Chytrids | Diatoms | LTER | Metabarcoding",
+        "group1matches": "sediments",
+        "group2matches": "Microscopy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/14762",
+        "title": "Dataset for the paper \"Crespo-Ib\u00e1\u00f1ez, Ana; P\u00e9rez, Gloria ; Jim\u00e9nez, Jos\u00e9 A.; Llorente, Irene; Mart\u00ednez-Ram\u00edrez, S.; Cano, Emilio; D\u00edaz, Iv\u00e1n. 2022 . Evolution and Evaluation of Aesthetic Properties in Weathering Steel Accelerated Patinas: The Role of Lepidocrocite. Metals 12(6): 977\"",
+        "description": null,
+        "subjects": "Color | Conservation-restoration | Contemporary art | Corrosion | Cultural heritage | Lepidocrocite | Raman spectroscopy | Sculpture | Weathering steel | X-ray Diffraction",
+        "group1matches": "Lepidocrocite|Lepidocrocite",
+        "group2matches": "X-ray Diffraction|Raman",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/14813",
+        "title": "[Dataset] Global physics-based database of injection-induced seismicity",
+        "description": "We present a comprehensive, publicly accessible database of injection-induced seismicity. The database is sourced from a comprehensive review of more than 500 published documents and contains information for 158 cases of induced earthquakes from around the world. The collected earthquakes are associated with a variety of geoenergy applications, which can be broadly categorized into geologic gas storage, geothermal energy development, shale gas fracturing, research projects and wastewater disposal. The compilation comprises more than 70 variables, including general project information, host rock properties, \u200ein situ site characteristics, fault attributes, operational parameters, and recorded seismicity data (both overall seismic activities and the largest event sequence). The developed database opens up opportunities for improved understanding of the causative mechanisms of injection-induced seismicity and advancing on seismic hazard forecasting and mitigation.",
+        "subjects": "Induced Seismicity | Database | Multi-physics | Rock characteristics | Fault properties | Geoenergy resources | Energy transition",
+        "group1matches": "shale|gas storage|geothermal|induced seismicity|induced seismicity|induced seismicity|Induced Seismicity",
+        "group2matches": "geoenergy|Geoenergy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15474",
+        "title": "Full-Field numerical simulations of sub grain rotation and grain boundary migration in halite during viscoplastic deformation",
+        "description": "The way in which salt flows is highly heterogeneous and results in complex fabrics and structures. To improve our understanding of how halite deforms and recrystallizes under different conditions we performed full-field numerical modelling of polycrystalline aggregates of halite. The numerical approach is based on the coupling of the viscoplastic Full-Field Transform code (VPFFT, Lebensohn and Rollet, 2020) that simulates the viscoplastic deformation and multi-scale platform ELLE (Bons et al, 2008) that has enabled recrystallization processes such as recovery, nucleation and grain boundary migration. This data set This data set contains (i) the output files with the crystal orientation data of simulation DRX_100, DRX_200 and DRX_300, and (ii) a code to plot the crystallographic orientation density function (ODF) using the open-source code MTEX (Mainprice et al., 2011).",
+        "subjects": "Crystal orientation | Sub grain rotation | Halite | Viscoplastic deformation | Numerical simulations",
+        "group1matches": "halite|halite|halite|Halite",
+        "group2matches": "crystallographic orientation|grain boundary migration|grain boundary migration",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15558",
+        "title": "Dataset for Effectiveness of Injection protocols for hydraulic stimulation in Enhanced Geothermal Systems",
+        "description": "This dataset includes the input files of the numerical models used in the manuscript for simulating the hydraulic stimulation in Enhanced Geothermal System with a single fracture setup. Each folder is named after the corresponding injection protocol in the manuscript, i.e., Constant, Step, and Cyclic. In each of these folders, there are two subfolders namely- Without Bleedoff and With Bleedoff. In the subfolders, the file ending with \u201c_gen.dat\u201d contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ending with \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model.",
+        "subjects": "Permeability enhancement | Induced seismicity | Hydraulic stimulation | Enhanced geothermal systems (EGS) | Shear slip | Dilatancy",
+        "group1matches": "Geothermal|Geothermal|geothermal|Enhanced Geothermal System|Induced seismicity",
+        "group2matches": "Permeability",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15676",
+        "title": "Dataset for analytical and numerical solutions of cyclic pore pressure diffusion equation",
+        "description": "This dataset encompasses the input files associated with diverse analytical and numerical models investigating cyclic pressure diffusion within uniform poroelastic materials. The dataset is organized into two primary folders. The \"Analytical Solutions\" folder comprises three Python libraries containing the material properties and functions for calculating pressure amplitude at various distances. The \"Numerical Solutions\" folder contains simulations for both Hydraulic (\"01_\") and Hydro-Mechanical (\"HM_\") problems. The simulations are conducted for representative values corresponding to Berea sandstone (\"BS_\"), Opalinus Clay (\"OPA_\"), and Westerly granite (\"WG_\"), considering both monodimensional (\"1D\") and axisymmetric (\"Ax\") cases. Within each subfolder, files with the suffix \"_gen.dat\" provide input data for the model, encompassing material properties, initial and boundary conditions, and time intervals. Correspondingly, files concluding with \"_gri.dat\" contain information of the mesh employed. The \"_bfc.dat\" file documents the periodic injection pressure applied for each simulation, while the \"root.dat\" file specifies the model's nomenclature. To execute a model, launching the executable \"Cb_v9_1_3par4.exe\" within each \".gid\" folder is sufficient.",
+        "subjects": "Westerly granite | Confined aquifer | Analytical solutions | Periodic injection | Tight rock | Berea sandstone | Opalinus Clay",
+        "group1matches": "Berea sandstone|Opalinus Clay|Westerly granite|Westerly granite|Berea sandstone|Opalinus Clay",
+        "group2matches": "pore pressure|poroelastic",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15703",
+        "title": "Dataset of Operando Exploration of Tribochemical Decomposition in Synthetic FeS2 thin film and Mineral Iron Pyrite",
+        "description": "Datasets of mass-spectrometry signals were obtained in the experiments with non-thermal tribochemical decomposition of synthetic thin-film iron sulphide and mineral iron pyrite. Tribochemical reactions were studied on a micrometre scale using localized rubbing under ultrahigh vacuum. Mechanically Stimulated Gas Emission Mass-Spectrometry (MSGE-MS) including the Dynamic gas expansion method was used to determine the kinetic parameters of gas emission and the composition of the emitted gases. The study was complemented by structural, morphological, tribological, mechanical and surface analyses. It was found that carbon-containing gases were dominating. The sulfur-containing gases comprised H2S, COS and CS2. The latter two were unexpected. The emission of these gases was traced back to solid-state chemical reactions kinetically controlled by the precursor concentrations and driven through non-thermal mechanisms, which we tentatively assigned to formation of sulfur radicals.",
+        "subjects": "Iron sulfide | Tribochemistry | Thin film | X-ray diffraction (XRD) | Gas emission | Raman spectroscopy | Indentation | Scanning electron microscopy (SEM) | Mass spectrometry",
+        "group1matches": "Pyrite|pyrite",
+        "group2matches": "electron microscopy|X-ray diffraction|XRD|Raman|microscopy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/14818",
+        "title": "Responsive optical materials based on ligand-free perovskite quantum dots embedded in mesoporous scaffolds",
+        "description": "Herein we show that dispersing inorganic Cesium Lead Bromide (CsPbBr3) perovskite quantum dots (QDs) in optical quality films, possessing an accessible and controlled pore size distribution, gives rise to fluorescent materials with a controlled and highly sensitive response to ambient changes. A scaffold based synthetic approach is employed to attain ligand-free QDs, whose pristine surface endows them with high sensitivity to the presence of different vapors in their vicinity. At the same time, the void network of the host offers a means to gradually expose the embedded QDs to such vapors. Under these conditions, the luminescent response of the QDs is mediated by the mesostructure of the matrix, which determines the rate at which vapor molecules will adsorb onto the pore walls and, eventually, condensate, filling the void space. With luminescence quantum yields as high as 60%, scaffold supported ligand-free perovskite nanocrystals display intense photoemission signals over the whole process, as well as high photo and chemical stability, which allows illuminating them for long periods of time and recovering the original response upon desorption of the condensed phase. The results herein presented open a new route to explore the application of perovskite QDs based materials in sensing.",
+        "subjects": "Responsive materials | CsPbBr3 | Nanocrystals | Optical properties | Porous materials",
+        "group1matches": "perovskite|perovskite|perovskite|perovskite",
+        "group2matches": "pore size distribution|desorption",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15507",
+        "title": "Data set: Chronostratigraphic, Sedimentological and Geochemical Data",
+        "description": "The research presents for the first time a jointly analysis about the impact of the light intermediate Mediterranean (LMW) and dense deep Mediterranean (DMW) bottom currents on the sedimentation in the Alboran Sea (SW Mediterranean) and its paleoceanographic significance in response to climatic oscillations from the last glacial period to the Holocene. For that, an integration of chronostratigraphical, sedimentological, and compositional data from contourites formed by those water masses is carried out. That integration enable us to define three distinct contourite stratigraphic models. (I) The contourite terrace model, characterized by coarse-grained contourites, which is an archive of the interplay between the high-energy Atlantic Water-LMW interface and glacioeustasy from the Younger Dryas to the Holocene. (II) The contourite drift models, which are archives of rapid ocean-climate coupled fluctuations since 29.5 kyr. They comprise coarse-grained contourites formed by a relatively fast LMW and fine-grained contourites formed by a relatively weak DMW, except for the Heinrich Stadials HS3 to HS1 and YD when coarse-grained contourites were deposited. (III) The contourite\/turbidite mixed model represents another archive of DMW and glacioeustasy interplay from the end of the late Pleistocene to Holocene.",
+        "subjects": "Marine sediments | Chronostratigraphy | Sedimentology | Geochemical data",
+        "group1matches": "sediments",
+        "group2matches": "Geochemical|Geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16154",
+        "title": "The lithosphere and upper mantle of the Western-Central Mediterranean region from integrated geophysical-geochemical modelling",
+        "description": "This study integrates geophysical-geochemical data to investigate the thermochemical structure of the lithosphere and sublithospheric mantle, along the Southern Tyrrhenian Basin, Apennines, Adriatic Sea, Dinarides, and Carpathians-Balkanides. We present the lithospheric structure of the Adria microplate and the two opposing mantle slabs along its NE and SW margins. The modelling shows the presence of two asthenospheric mantle wedges aligning with the Apenninic and Dinaric continental mantle slab rollback, along with cold (-200\u00baC) sublithospheric anomalies beneath Adria\u2019s NE and SW margins. In the northern Adria region, the lithosphere undergoes synchronous thinning in the Tyrrhenian domain and thickening toward the forefront of the northern Apennines. This is associated with the northeastward rollback of the SW Adriatic slab, leading to subsequent delamination of the continental mantle. In the southern Adria region, the complex deep structure results from the variably oriented lithospheric slabs, and nearly 90-degree shift of the tectonic grain between the southern Apennines and the Calabrian Arc. At the SW Adria margin, beneath the northern Apennines, the thermal sublithospheric anomaly is attached to the shallower lithosphere, while a slab gap is modelled in the southern Apennines. One possibility is that the gap is due to a recent horizontal slab tear. Along the NE margin of Adria, the thermal anomaly penetrates to depths of about 200 km in the northern Dinarides and 280 km in the southern Dinarides, shallower than the SW Adria anomaly, which extends to at least 400 km depth.",
+        "subjects": "Thermomechanical structure of the Lithosphere &amp; sublithospheric mantle | Sublithospheric thermal anomalies | Lithospheric mantle composition | Potential field and thermal data | Convergent margins | Integrated geophysical-geochemical modelling",
+        "group1matches": "slab rollback|lithosphere|upper mantle|lithosphere|lithosphere|lithosphere|Lithosphere",
+        "group2matches": "geochemical|geochemical|geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16167",
+        "title": "Numerical models for simulating reactive flow of HCl and CO2-rich water in cm-scale limestone samples [Dataset]",
+        "description": "This dataset is composed of the files required for simulating laboratory-scale injection of CO2-saturated water and HCl solution into cm-scale limestone samples. Six files required for simulating the CO2 injection experiment are included in the folder named CO2. The names of these files are as follows: \u201cCO2-input\u201d: input file read by the Crunchflow code and providing the necessary physical and chemical parameters needed for the simulation -these parameters mainly include time intervals, discretization, initial and boundary conditions, geochemical conditions-; \u201cdatabase\u201d: geochemical database for running the simulation; \u201c64bit-libiomp5md\u201d: A dynamic link library (DLL) required to run the Crunchflow code; \u201cPerm.in.x\u201d: permeability file in X direction for all grids; \u201cPerm.in.y\u201d: permeability file in Y direction for all grids; \u201cPerm.in.z\u201d: permeability file in Z direction for all grids. The same files for simulating the HCl injection experiment are included in the folder named HCl. This folder includes two input files \u201cHCl-input-1\u201d and \u201cHCl-input-2\u201d (instead of one) required for simulating the two stages of HCl solution injection into the limestone sample. To run the simulations, one needs to execute the Crunchflow executable file and enter the name of the input file, i.e., either \u201cCO2-input\u201d or \u201cHCl-input-1\u201d with the suffix \u201c.in\u201d in the command window and press enter. Note that in the HCl injection case, you only need to run the \u201cHCl-input-1\u201d file. The second input file will be read at the proper time by the keyword \u201clater_inputfiles HCl-input-2.in\u201d defined in the \u201cHCl-input-1\u201d.",
+        "subjects": null,
+        "group1matches": "limestone|limestone|limestone",
+        "group2matches": "permeability|permeability|permeability|geochemical|geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16267",
+        "title": "Dataset - Nanoparticulated Bimodal Contrast Agent for Ultra-High-Field Magnetic Resonance Imaging and Spectral X-ray Computed Tomography",
+        "description": "Bimodal medical imaging based on Magnetic Resonance Imaging (MRI) and Computed Tomography (CT) is a well-known strategy to increase diagnostic accuracy. The most recent advances in MRI and CT instrumentation are related to the use of ultrahigh magnetic fields (UHF-MRI) and different working voltages (spectral CT), respectively. Such advances require the parallel development of bimodal contrast agents (CAs) that are efficient under the new instrumental conditions. In this work, we have synthesized, through a precipitation reaction from a glycerol solution of the precursors, uniform barium dysprosium fluoride nanospheres with cubic fluorite structure, whose size was found to depend on the Ba\/(Ba+Dy) ratio of the starting solution. Moreover, irrespective of the starting Ba\/(Ba+Dy) ratio, the experimental Ba\/(Ba+Dy) values were always lower than those used in the starting solutions. This result was assigned to a lower precipitation kinetics of barium fluoride compared to dysprosium fluoride, as inferred from the detailed analysis of the effect of reaction time on the chemical composition of the precipitates. A sample composed of 34 nm nanospheres with a Ba0.51Dy0.49F2.49 stoichiometry, showed a transversal relaxivity (r2) value of 147.11 mM-1\u00b7s-1 at 9.4 T and gave a high negative contrast in the phantom image. Likewise, it produced high X-ray attenuation in a large range of working voltages (from 80 KVp to 140 KVp), which can be attributed to the presence of different K-edge values, high Z elements (Ba and Dy) in the nanospheres. Finally, these nanospheres showed negligible cytotoxicity for different biocompatibility tests. Taken together, these results show that the reported nanoparticles (NPs) are excellent candidates as UHF MRI\/Spectral CT bimodal imaging CAs.",
+        "subjects": "Contrast agent | UHF MRI | Spectral CT | Lanthanides | Nanoparticles | lanthanides",
+        "group1matches": "fluorite",
+        "group2matches": "Computed Tomography|Computed Tomography|spectral CT|Spectral CT|Spectral CT",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16382",
+        "title": "Quantitative Study of Triboemission Kinetics from Polymer Fiber-Reinforced Mortar Paving Blocks: Unraveling the Dynamics of Nanoparticle Aerosol Release",
+        "description": "Mortar blocks with addition of recycled polyurethane fibers (PUF) were subjected to abrasion using an original pin-on-disk tribometer in order to investigate the kinetic parameters and emission mechanisms of fine and ultrafine aerosol nanoparticles and the effect of the fiber concentration on the mechanical, tribological, and triboemission properties. Three different samples, referred as A (20% substitution level), B (40%), and C (60%) and a reference sample (Ref.) were analyzed for this study. The abrasion was performed in an environment chamber with filtered air using a stationary alumina sphere, 20 mm in diameter, which was pressed against the rotating sample using a dead weight of 1.3 kg. The sliding speed was 1 m s-1. A quantitative methodology was employed to assess the deposition rate, particle size distribution, and emissivity. The triboemission properties were correlated with the pore structure, morphology and tribochemical transformations of the particles and worn surfaces. The specific surface area, distribution of micro- and mesopore sizes, and skeleton density were evaluated through a comprehensive analysis involving three distinct methods: dynamic water adsorption, N2 adsorption, and He pycnometry. The mechanically affected zones were characterized using white-light confocal microscopy and Raman spectroscopy. The function of the particle size distribution exhibited two modes, with the most probable particle size falling within the range of 115-156 nm. Interestingly, the PUFs addition did not changed considerably the size of the particles. The aggregation of PUFs resulted in a gradual increase in the volume of pores, particularly mesopores, as well as an increase in the specific surface area. The study's results demonstrated a decline in the deposition rate of aerosol particles within the 10 to 60 nm aerodynamic diameter range as the concentration of PUFs increased. This observation strongly suggested the occurrence of direct emission of polymeric aerosol particles resulting from the abrasion of PUFs. The findings of this research provide valuable insights into the intricate relationship between material composition, particle size distribution, porosity, and emission kinetics.",
+        "subjects": "Triboemission | Aerosol nanoparticles | Kinetics | Polymer fibers | Pin-on-disk tribometer",
+        "group1matches": "polyurethane",
+        "group2matches": "Raman|microscopy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16505",
+        "title": "Global Granite Geochemistry and Outcrop Database (GGGOD)",
+        "description": "The Global Granite Geochemistry and Outcrop Database (GGGOD) is a free, Open Access, userfriendly, Geographical Information System (GIS)-based resource allowing the visualization, plotting, and spatial analysis of all granitoid compositions that have been reported hitherto in various Open Access databases and publications. Data can be filtered by location, composition, and source using GIS vector analysis tools. For historical context, a general overview of the GGGOD map is provided in Figure 1 together with type localities and influential works published during the early history of granite science (18th and 19th centuries). Geochemical data is compiled from FAIR (Findable, Accessible, Interoperable, Reusable), Open Access initiatives (dataset modified after Gard et al., 2019). Granitoid outcrops are redrawn from the Global Litholoigcal Map (GLIM, Universit\u00e4t Hamburg; Hartmann and Moosdorf, 2012). Basemap: ESRI\u00ae Ocean.",
+        "subjects": "Geochemistry | FOS: Earth and related environmental sciences | Geographic Information System | Granitic rock | Database | Granite",
+        "group1matches": "Granite|Granite|granite|Granitic|Granite",
+        "group2matches": "Geochemistry|Geochemistry|Geochemical|Geochemistry",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/16236",
+        "title": "NEIGRA - North-East Iberian Granitoids Database. Geochemistry of granitoids and orthogneisses from the Pyrenees and the Catalan Coastal Ranges",
+        "description": "Geochemical data of the Variscan gneisses derived from pre-Variscan intrusives and late-Variscan granitoids in the Pyrenees and the Catalan Coastal Ranges were obtained from two main sources: (1) individually mined from published articles and unpublished PhD theses (Autran et al., 1970; Guitard, 1970; Enrique, 1989; Soler and Enrique, 1989; Enrique, 1990; Soler, 1990; Gleizes, 1992; Debon et al., 1996; Arranz, 1997; Guitard et al., 1998b, 1998b; Roberts et al., 2000; Vil\u00e0 et al., 2005; Casas et al., 2010; Navidad et al., 2010; Druguet et al., 2014; Laumonier et al., 2015; Navidad et al., 2018; Lemirre et al., 2019; \u00c1lvaro et al., 2021; Liesa et al., 2021; Casas et al., 2024), and (2) the GEOROC Database (Geochemistry of Rocks of the Oceans and Continents, G\u00f6ttingen University, https:\/\/georoc.eu\/; last access: 03\/2024; Lehnert et al., 2000). Other Findable, Accessible, Interoperable, and Reusable (FAIR; Wilkinson et al., 2016) databases were searched using geographic and lithogeochemical constrains, yielding no results. The mined data were curated and classified based on the analysed rock types, ages, regional tectonic setting, and mode of occurrence in outcrop, resulting in more than 600 entries that are associated with up to 66 data fields. Associated with each entry are generic, descriptive and informative fields (Sample ID, Unit\/Massif, Rock category, Rock details, Outcrop description, and References), major element oxide abundances (SiO2, Al2O3, FeOT, Fe2O3T, MnO, MgO, CaO, Na2O, K2O, TiO2, P2O5, and LOI), and trace element concentrations (Ag, As, Ba, Be, Bi, Co, Cr, Cs, Cu, Ga, Ge, Hf, In, Mo, Nb, Ni, Pb, Rb, Sb, Sc, Sn, Sr, Ta, Th, Tl, U, V, W, Y, Zn, Zr, La, Ce, Pr, Nd, Sm, Eu, Gd, Tb, Dy, Ho, Er, Tm, Yb, and Lu). The resulting database, named NEIGRA (North-East Iberian GRAnitoids), represents the first Open-Access compilation of granite and orthogneiss geochemical data in the Pyrenees and the Catalan Coastal Ranges.",
+        "subjects": "Magmatism | Catalan Coastal Range | Granitoid | Pyrenees | Orthogneiss | Trace elements | Geochemistry | FOS: Earth and related environmental sciences | Major elements | Whole-rock",
+        "group1matches": "granite",
+        "group2matches": "Trace elements|Major elements|Geochemistry|Geochemical|Geochemistry|geochemical|Geochemistry",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/8629",
+        "title": "Dataset of SEM images, modelled isopach map and topographic profiles, radiocarbon ages and data of parameters of Tephra2 and AshCalc codes of Holocene volcanic ashes of NW Argentina",
+        "description": "This dataset compiles SEM images, modelled isopach map and topographic profiles, and data of radiocarbon ages, parameters of Tephra2 and AshCalc codes of Holocene volcanic ashes of of Southern Puna and neighbouring areas (NW Argentina). SEM images detail differences among the Bols\u00f3n de Fiambal\u00e1, Cerro Blanco and Cueros de Purulla fallout ash deposits. Tephra2 code was used to simulate the ash fallout, and the AshCalc code to compare different methods for ash volume estimates associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex. Topographic profiles are used to explain the secondary thickening of fallout ash deposits.",
+        "subjects": null,
+        "group1matches": "volcanic ashes|volcanic ashes|ash deposits|ash deposits",
+        "group2matches": "SEM images|SEM images|SEM images",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/8604",
+        "title": "AMPHIBIAN CSIC experimental data insitu exsitu PXRD NPD",
+        "description": "During the past decade, CoFe2O4 (hard)\/Co\u2013Fe alloy (soft) magnetic nanocomposites have been routinely prepared by partial reduction of CoFe2O4 nanoparticles. Monoxide (i.e., FeO or CoO) has often been detected as a byproduct of the reduction, although it remains unclear whether the formation of this phase occurs during the reduction itself or at a later stage. Here, a novel reaction cell was designed to monitor the reduction in situ using synchrotron powder X-ray diffraction (PXRD). Sequential Rietveld refinements of the in situ data yielded time-resolved information on the sample composition and confirmed that the monoxide is generated as an intermediate phase. The macroscopic magnetic properties of samples at different reduction stages were measured by means of vibrating sample magnetometry (VSM), revealing a magnetic softening with increasing soft phase content, which was too pronounced to be exclusively explained by the introduction of soft material in the system. The elemental compositions of the constituent phases were obtained from joint Rietveld refinements of ex situ high-resolution PXRD and neutron powder diffraction (NPD) data. It was found that the alloy has a tendency to emerge in a Co-rich form, inducing a Co deficiency on the remaining spinel phase, which can explain the early softening of the magnetic material.",
+        "subjects": "Elemental composition | Exchange-coupling | Ferrite | In situ | Nanocomposite | Neutron powder diffraction | Permanent magnet | Rietveld refinement",
+        "group1matches": "spinel",
+        "group2matches": "X-ray diffraction|VSM",
+        "group3matches": null
     },
     {
         "doi": "10.20350\/digitalcsic\/8554",
-        "title": null,
-        "description": null,
+        "title": "Dataset of particle size distribution data of Holocene volcanic ashes of NW Argentina",
+        "description": "This dataset includes particle size distribution data of volcanic ashes of Southern Puna and neighbouring areas (NW Argentina). The content of particles of 0.1\u20131000 \u03bcm was determined by lasser diffraction. The studied volcanic materials are mainly associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex. Some samples area related to the Cueros de Purulla volcano.",
+        "subjects": "in situ - mineral or glass analysis | major oxides | EMP | glass | mineral | igneous rock | rhyolite | K-feldspar | Plagioclase | Biotite | Magnetite | Ilmenite | land section | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=MeasuredParameter | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=Method",
+        "group1matches": "rhyolite|Magnetite|Ilmenite|Plagioclase|Biotite|volcanic ashes|volcanic ashes",
+        "group2matches": "major oxides",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/8553",
+        "title": "Dataset of glass and mineral geochemical data of Holocene volcanic ashes of NW Argentina",
+        "description": "Groundmass glass, phenocrysts, microphenocrysts, and microlites of glass shards (1011 analyses at single points), feldspars (568), biotites (183), Fe\u2013Ti oxides (101), amphiboles (30), and pyroxenes (14) were analysed on polished thin sections of Holocene volcanic ashes, ignimbrites and lava domes of Southern Puna and neighbouring areas (NW Argentina) by electron probe microanalyser (EPMA). The quality of mineral analyses was reviewed, verifying that the structural formula gave a correct stoichiometry with specific measuring programs for feldspars, biotite, Fe\u2013Ti oxides, pyroxene, and amphibole. Geothermobarometry was constrained using the chemistry of feldspars, Fe\u2013Ti oxides, clinopyroxene, and amphibole. The studied volcanic materials are mainly associated with the 4.2 ka cal BP eruption of the Cerro Blanco Volcanic Complex.",
+        "subjects": "in situ - mineral or glass analysis | major oxides | EMP | glass | mineral | igneous rock | rhyolite | dacite | K-feldspar | Plagioclase | Biotite | Magnetite | Ilmenite | Pyroxene | Amphibole | land section | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=MeasuredParameter | http:\/\/www.earthchem.org\/petdbWeb\/search\/vocabulary.jsp?category=Method",
+        "group1matches": "lava|rhyolite|dacite|Magnetite|Ilmenite|biotite|amphibole|amphibole|Plagioclase|Biotite|Amphibole|volcanic ashes|volcanic ashes",
+        "group2matches": "major oxides|geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/8545",
+        "title": "Dataset of total and nitric acid soluble element concentrations from stream sediments of the Upper Garonne Basin, Val d'Aran, Central Pyrenees",
+        "description": "This dataset comprises the total and the acid nitric soluble element concentrations of major and trace elements (Si, Ti, Al, Fe, Mn, Mg, Ca, Na, K, P, LOI, As, Ba, Be, Ce, Co, Cr, Cs, Cu, Dy, Er, Eu, Ga, Gd, Ge, Hf, Ho, La, Li, Lu, Mo, Nd, Ni, Pb, Pr, Rb, Sb, Sc, Sm, Sn, Sr, Tb, Th, Tm, U, V, Y, Yb, Zn, Zr) in stream sediments of the Garonne River watershed in the Val d'Aran in the Central Pyrenees. We used samples collected in 1981 in a pilot project of stream sediment geochemistry. The results of nitric acid leachates are used as proxies of the environmentally available fraction of such elements. The samples represents the lithogeochemical units consisting of the Maladeta-Marimanya granitoids, and the metasediments occurring in an extensive area of the basin.",
+        "subjects": "whole rock analyses | leachate analysis | major oxides | trace elements | HR-ICP-MS | IGN | unconsoilidated sediment | sedimentary_material | http:\/\/resource.geosciml.org\/classifier\/cgi\/lithology\/sedimentary_material",
+        "group1matches": "sediments|sediments",
+        "group2matches": "trace elements|major oxides|trace elements|geochemistry",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/15336",
+        "title": "Dataset for Numerical modeling of hydraulic stimulation of fractured crystalline rock at the Bedretto Underground Laboratory for Geosciences and Geoenergies",
+        "description": "This dataset includes the input files of the numerical models used in the manuscript for simulating the hydraulic stimulation at the Bedretto lab. Each folder is named after the corresponding model in the manuscript, i.e., EP (Elastic Prescribed), EE (Elastic Embedded), and VE (Viscoplastic Embedded). In each folder, there is a file with the name of the folder ended as \u201c_gen.dat\u201d which contains the input data of the model, including material properties, initial and boundary conditions and the time intervals. There is also a file ended as \u201c_gri.dat\u201d that includes the information on the mesh. The file \u201croot.dat\u201d includes the name of the model. The file ended as \u201c_bcf.dat\u201d contains injection rate input.",
         "subjects": null,
         "group1matches": null,
-        "group2matches": null
+        "group2matches": null,
+        "group3matches": "Bedretto Underground Laboratory for Geosciences and Geoenergies|Bedretto lab"
     }
 ]
