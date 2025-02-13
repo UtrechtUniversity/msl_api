@@ -1,17 +1,17 @@
 <?php
 namespace App\Mappers\Datacite;
 
-use App\Datasets\BaseDataset;
 use App\Mappers\MapperInterface;
+use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 
 class Datacite4Mapper implements MapperInterface
 {
 
-    public function map(SourceDataset $sourceDataset): BaseDataset
+    public function map(SourceDataset $sourceDataset): DataPublication
     {
-        // create empty BaseDataset
-        $dataset = new BaseDataset;
+        // create empty data publication
+        $dataset = new DataPublication;
 
         // read json text
         $metadata = json_decode($sourceDataset->source_dataset, true);
