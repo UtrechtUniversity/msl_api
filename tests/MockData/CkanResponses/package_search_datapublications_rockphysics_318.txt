@@ -1,0 +1,2535 @@
+{
+    "help": "https://epos-msl.uu.nl/api/3/action/help_show?name=package_search",
+    "success": true,
+    "result": {
+        "count": 318,
+        "facets": {},
+        "results": [
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "77fcdc14-2567-40c4-bdb8-68ae5921f37f",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:48:07.387053",
+                "metadata_modified": "2024-03-04T21:48:07.387058",
+                "msl_citation": "Cai, S., Doctor, R., Tauxe, L., Hendrickson, M., Hua, Q., Leroy, S., &amp; Kaseka Phon. (2021). <i>Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion (Dataset)</i> (Version 2) [Data set]. Proceedings of the National Academy of Sciences. https://doi.org/10.7288/V4/MAGIC/19551",
+                "msl_doi": "10.7288/V4/MAGIC/19551",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Shuhui Cai, Rashida Doctor, Lisa Tauxe, Mitch Hendrickson, Quan Hua, Stéphanie Leroy, Kaseka Phon (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption\"]'>expulsion</span>. Proceedings of the National Academy of Sciences 118 (11). doi:10.1073/PNAS.2022490118.",
+                "msl_publication_date": "2021-01-01",
+                "msl_publication_year": "2021",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19551",
+                "msl_title_annotated": "Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption\"]'>expulsion</span> (Dataset)",
+                "name": "7a04d77711bd95046f23e09111afbdbf",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Shuhui Cai, Rashida Doctor, Lisa Tauxe, Mitch Hendrickson, Quan Hua, Stéphanie Leroy, Kaseka Phon (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion. Proceedings of the National Academy of Sciences 118 (11). doi:10.1073/PNAS.2022490118.",
+                "num_resources": 0,
+                "num_tags": 6,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "State Key Laboratory of Lithospheric Evolution, Institute of Geology and Geophysics, Chinese Academy of Sciences, 100029 Beijing, China;; Scripps Institution of Oceanography, University of California San Diego, La Jolla, CA 92093;;",
+                        "msl_author_name": "Shuhui Cai",
+                        "msl_author_orcid": "0000-0003-1607-3477",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Department of Earth and Environmental Sciences, University of Minnesota, Minneapolis, MN 55455;;",
+                        "msl_author_name": "Rashida Doctor",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Scripps Institution of Oceanography, University of California San Diego, La Jolla, CA 92093;;",
+                        "msl_author_name": "Lisa Tauxe",
+                        "msl_author_orcid": "0000-0002-4837-8200",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Department of Anthropology, University of Illinois at Chicago, Chicago, IL 60607;;",
+                        "msl_author_name": "Mitch Hendrickson",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Australian Nuclear Science and Technology Organisation, Kirrawee DC, NSW 2232, Australia;;",
+                        "msl_author_name": "Quan Hua",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Laboratoire Archéomatériaux et Prévision de l’Altération–Institut de Recherche sur les Archéomatériaux, Nanosciences et Innovation pour les Matériaux la Biomédecine et l'Énergie, Commissariat à l'énergie atomique, CNRS, CEA Saclay, Université Paris-Saclay, Gif-sur-Yvette 91191, France;;",
+                        "msl_author_name": "Stéphanie Leroy",
+                        "msl_author_orcid": "0000-0002-1835-3563",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Institute of Humanities and Social Sciences, Royal Academy of Cambodia, Phnom Penh 12000, Cambodia;",
+                        "msl_author_name": "Kaseka Phon",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19551/magic_contribution_19551.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19551",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Inferred deformation behavior",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "microphysical deformation mechanism",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-microphysical_deformation_mechanism",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "fluid desorption",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1073/PNAS.2022490118",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Cai, S., Doctor, R., Tauxe, L., Hendrickson, M., Hua, Q., Leroy, S., & Phon, K. (2021). Archaeomagnetic results from Cambodia in Southeast Asia: Evidence for possible low-latitude flux expulsion. Proceedings of the National Academy of Sciences, 118(11). https://doi.org/10.1073/pnas.2022490118\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "559",
+                        "id": "fe0f73a9-8ac8-4438-ace0-16e479da5f5c",
+                        "name": "559",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "906",
+                        "id": "368223cb-a86a-42bc-a18d-ba7bd10aece5",
+                        "name": "906",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Not Specified",
+                        "id": "369daa64-1762-495a-8069-5dd041216551",
+                        "name": "Not Specified",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "b4dc8150-39e9-4efb-ab27-7b35d0e6f3c4",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:46:26.016710",
+                "metadata_modified": "2024-03-04T21:46:26.016716",
+                "msl_citation": "Tema, E., Hedley, I., Fasnacht, W., &amp; Peege, C. (2018). <i>Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)</i> (Version 1) [Data set]. Physics of the Earth and Planetary Interiors. https://doi.org/10.7288/V4/MAGIC/19316",
+                "msl_doi": "10.7288/V4/MAGIC/19316",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evdokia Tema, Ian Hedley, Walter Fasnacht, Christina Peege (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors 285:1-11. doi:10.1016/J.PEPI.2018.10.001.",
+                "msl_publication_date": "2018-01-01",
+                "msl_publication_year": "2018",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19316",
+                "msl_title_annotated": "Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)",
+                "name": "cfed876d4a14a6b5b27a593455f576e6",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evdokia Tema, Ian Hedley, Walter Fasnacht, Christina Peege (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors 285:1-11. doi:10.1016/J.PEPI.2018.10.001.",
+                "num_resources": 0,
+                "num_tags": 8,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Evdokia Tema",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Ian Hedley",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Walter Fasnacht",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Christina Peege",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19316/magic_contribution_19316.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19316",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.PEPI.2018.10.001",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Tema, E., Hedley, I., Fasnacht, W., & Peege, C. (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors, 285, 1–11. https://doi.org/10.1016/j.pepi.2018.10.001\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "1855",
+                        "id": "26bde390-385d-4319-bba7-a515c32e47b8",
+                        "name": "1855",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "2550",
+                        "id": "f70b08e1-20da-42b0-9ef1-5bcf392c6e09",
+                        "name": "2550",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Baked Earths",
+                        "id": "fb89612c-8abf-4b3e-ab29-2baa27003724",
+                        "name": "Baked Earths",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Oven",
+                        "id": "1b9a84d2-bd8c-4861-88a1-acb0f40cb6a2",
+                        "name": "Oven",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Roasting Pit",
+                        "id": "0071e74d-0ca2-4d1d-8b06-0e9a3e2c49fc",
+                        "name": "Roasting Pit",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "47b1b437-bd7f-4fbf-acbd-7cb9f14cd56d",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:46:18.239085",
+                "metadata_modified": "2024-03-04T21:46:18.239092",
+                "msl_citation": "Tema, E., Hedley, I., Fasnacht, W., &amp; Peege, C. (2018). <i>Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)</i> (Version 1) [Data set]. Physics of the Earth and Planetary Interiors. https://doi.org/10.7288/V4/MAGIC/19309",
+                "msl_doi": "10.7288/V4/MAGIC/19309",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evdokia Tema, Ian Hedley, Walter Fasnacht, Christina Peege (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors 285:1-11. doi:10.1016/J.PEPI.2018.10.001.",
+                "msl_publication_date": "2018-01-01",
+                "msl_publication_year": "2018",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19309",
+                "msl_title_annotated": "Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)",
+                "name": "6cfd153f117f61b2a20e4086ef3353e7",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evdokia Tema, Ian Hedley, Walter Fasnacht, Christina Peege (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors 285:1-11. doi:10.1016/J.PEPI.2018.10.001.",
+                "num_resources": 0,
+                "num_tags": 8,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Evdokia Tema",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Ian Hedley",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Walter Fasnacht",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Christina Peege",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19309/magic_contribution_19309.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19309",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.PEPI.2018.10.001",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Tema, E., Hedley, I., Fasnacht, W., & Peege, C. (2018). Insights on the geomagnetic secular variation in the Eastern Mediterranean: First directional data from Cyprus. Physics of the Earth and Planetary Interiors, 285, 1–11. https://doi.org/10.1016/j.pepi.2018.10.001\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "1855",
+                        "id": "26bde390-385d-4319-bba7-a515c32e47b8",
+                        "name": "1855",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "2550",
+                        "id": "f70b08e1-20da-42b0-9ef1-5bcf392c6e09",
+                        "name": "2550",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Baked Earths",
+                        "id": "fb89612c-8abf-4b3e-ab29-2baa27003724",
+                        "name": "Baked Earths",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Oven",
+                        "id": "1b9a84d2-bd8c-4861-88a1-acb0f40cb6a2",
+                        "name": "Oven",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Roasting Pit",
+                        "id": "0071e74d-0ca2-4d1d-8b06-0e9a3e2c49fc",
+                        "name": "Roasting Pit",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "bc6f36ad-03ca-4567-badd-f1ef9399410c",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:45:55.013742",
+                "metadata_modified": "2024-03-04T21:45:55.013748",
+                "msl_citation": "Ben-Yosef, E., Tauxe, L., Levy, T. E., Shaar, R., Ron, H., &amp; Najjar, M. (2009). <i>Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan (Dataset)</i> (Version 4) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/19212",
+                "msl_doi": "10.7288/V4/MAGIC/19212",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Erez Ben-Yosef, Lisa Tauxe, Thomas E. Levy, Ron Shaar, Hagai Ron, Mohammad Najjar (2009). Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan. Earth and Planetary Science Letters 287 (3-4):529-539. doi:10.1016/J.EPSL.2009.09.001.",
+                "msl_publication_date": "2009-01-01",
+                "msl_publication_year": "2009",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19212",
+                "msl_title_annotated": "Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan (Dataset)",
+                "name": "d45c0054cf80f61b51f24e6d78729f29",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Erez Ben-Yosef, Lisa Tauxe, Thomas E. Levy, Ron Shaar, Hagai Ron, Mohammad Najjar (2009). Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan. Earth and Planetary Science Letters 287 (3-4):529-539. doi:10.1016/J.EPSL.2009.09.001.",
+                "num_resources": 0,
+                "num_tags": 12,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Erez Ben-Yosef",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Lisa Tauxe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Thomas E. Levy",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Ron Shaar",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Hagai Ron",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Mohammad Najjar",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19212/magic_contribution_19212.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19212",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.EPSL.2009.09.001",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Ben-Yosef, E., Tauxe, L., Levy, T. E., Shaar, R., Ron, H., & Najjar, M. (2009). Geomagnetic intensity spike recorded in high resolution slag deposit in Southern Jordan. Earth and Planetary Science Letters, 287(3–4), 529–539. https://doi.org/10.1016/j.epsl.2009.09.001\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "2766",
+                        "id": "217c0d4e-0719-46e4-b4b0-10e151e2eec5",
+                        "name": "2766",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "2888",
+                        "id": "071d8688-61ae-45a0-a96a-160b7aea52bf",
+                        "name": "2888",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Baked Clay",
+                        "id": "416dcf6f-2d8e-44b4-ba4b-292483d3134f",
+                        "name": "Baked Clay",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Ceramic",
+                        "id": "4c37a664-3b7e-417f-8f4b-2c97f9e0de3c",
+                        "name": "Ceramic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace Slag",
+                        "id": "471b9c00-73c5-4d5f-850f-c30766d1265c",
+                        "name": "Furnace Slag",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Metallurgical Slag",
+                        "id": "781faa30-7216-4a95-a29f-6aef14fff3da",
+                        "name": "Metallurgical Slag",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Not Specified",
+                        "id": "369daa64-1762-495a-8069-5dd041216551",
+                        "name": "Not Specified",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Slag",
+                        "id": "5a345e48-89de-4efe-aabe-fd110329f6ae",
+                        "name": "Slag",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Tapping Slag",
+                        "id": "c9201d3d-88a7-42c3-a529-2c55f2a4cecb",
+                        "name": "Tapping Slag",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "e70f8088-a674-49e5-acc9-b120c31c5f4c",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:45:42.446944",
+                "metadata_modified": "2024-03-04T21:45:42.446949",
+                "msl_citation": "Jackson, M., &amp; Horst-Ulrich Worm. (2001). <i>Anomalous unblocking temperatures, viscosity and frequency-dependent susceptibility in the chemically-remagnetized Trenton limestone (Dataset)</i> (Version 4) [Data set]. Physics of the Earth and Planetary Interiors. https://doi.org/10.7288/V4/MAGIC/19196",
+                "msl_doi": "10.7288/V4/MAGIC/19196",
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Mike Jackson, Horst-Ulrich Worm (2001). Anomalous unblocking temperatures, <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-viscosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-viscosity\"]'>viscosity</span> and frequency-dependent susceptibility in the chemically-remagnetized Trenton <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-limestone\"]'>limestone</span>. Physics of the Earth and Planetary Interiors 126 (1-2):27-42. doi:10.1016/S0031-9201(01)00242-4.",
+                "msl_publication_date": "2001-01-01",
+                "msl_publication_year": "2001",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19196",
+                "msl_title_annotated": "Anomalous unblocking temperatures, <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-viscosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-viscosity\"]'>viscosity</span> and frequency-dependent susceptibility in the chemically-remagnetized Trenton <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-limestone\"]'>limestone</span> (Dataset)",
+                "name": "5c90f8ddf9af08987bd4081b55693068",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Mike Jackson, Horst-Ulrich Worm (2001). Anomalous unblocking temperatures, viscosity and frequency-dependent susceptibility in the chemically-remagnetized Trenton limestone. Physics of the Earth and Planetary Interiors 126 (1-2):27-42. doi:10.1016/S0031-9201(01)00242-4.",
+                "num_resources": 0,
+                "num_tags": 3,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Anomalous unblocking temperatures, viscosity and frequency-dependent susceptibility in the chemically-remagnetized Trenton limestone (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Mike Jackson",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Horst-Ulrich Worm",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19196/magic_contribution_19196.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19196",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sedimentary rock",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "limestone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-limestone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "viscosity",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-viscosity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "viscosity",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-viscosity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "limestone",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-limestone",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/S0031-9201(01)00242-4",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Jackson, M., & Worm, H.-U. (2001). Anomalous unblocking temperatures, viscosity and frequency-dependent susceptibility in the chemically-remagnetized Trenton limestone. Physics of the Earth and Planetary Interiors, 126(1–2), 27–42. https://doi.org/10.1016/s0031-9201(01)00242-4\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "Limestone",
+                        "id": "64d191eb-e91a-4525-991c-708d71204499",
+                        "name": "Limestone",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sediment Layer",
+                        "id": "579872c9-86f3-400a-b625-f02706816725",
+                        "name": "Sediment Layer",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "136f170d-ab92-42b5-beb2-15ed7af28be3",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:45:28.728661",
+                "metadata_modified": "2024-03-04T21:45:28.728667",
+                "msl_citation": "R LEONHARDT, J MATZKA, A NICHOLS, &amp; D DINGWELL. (2006). <i>Cooling rate correction of paleointensity determination for volcanic glasses by relaxation geospeedometry (Dataset)</i> (Version 5) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/19185",
+                "msl_doi": "10.7288/V4/MAGIC/19185",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "true",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: R LEONHARDT, J MATZKA, A NICHOLS, D DINGWELL (2006). Cooling rate correction of <span data-uris='[\"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property-paleointensity\", \"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-relative_paleointensity\"]'>paleointensity</span> determination for volcanic glasses by <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-stress_relaxation\"]'>relaxation</span> geospeedometry. Earth and Planetary Science Letters 243 (1-2):282-292. doi:10.1016/j.epsl.2005.12.038.",
+                "msl_publication_date": "2006-01-01",
+                "msl_publication_year": "2006",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19185",
+                "msl_title_annotated": "Cooling rate correction of <span data-uris='[\"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property-paleointensity\", \"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-relative_paleointensity\"]'>paleointensity</span> determination for volcanic glasses by <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-stress_relaxation\"]'>relaxation</span> geospeedometry (Dataset)",
+                "name": "30d435c5d2ef0fef0321bf54dc3616f1",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: R LEONHARDT, J MATZKA, A NICHOLS, D DINGWELL (2006). Cooling rate correction of paleointensity determination for volcanic glasses by relaxation geospeedometry. Earth and Planetary Science Letters 243 (1-2):282-292. doi:10.1016/j.epsl.2005.12.038.",
+                "num_resources": 0,
+                "num_tags": 6,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Cooling rate correction of paleointensity determination for volcanic glasses by relaxation geospeedometry (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "R LEONHARDT",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "J MATZKA",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "A NICHOLS",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "D DINGWELL",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19185/magic_contribution_19185.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19185",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "stress relaxation",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-stress_relaxation",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "paleointensity",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/measured_property-paleointensity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "Inferred behavior",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "natural remanent magnetisation processing",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "relative paleointensity",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-relative_paleointensity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.EPSL.2005.12.038",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "LEONHARDT, R., MATZKA, J., NICHOLS, A., & DINGWELL, D. (2006). Cooling rate correction of paleointensity determination for volcanic glasses by relaxation geospeedometry. Earth and Planetary Science Letters, 243(1–2), 282–292. https://doi.org/10.1016/j.epsl.2005.12.038\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain": "paleomagnetism"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "paleomagnetism"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "1407",
+                        "id": "8055f730-47f1-43ae-b9ac-ba01960fbe4d",
+                        "name": "1407",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Igneous",
+                        "id": "1d3ccdec-e9d7-40b3-aee3-fbd820e1b843",
+                        "name": "Igneous",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Lava Flow",
+                        "id": "71fd63b6-5b4e-4e1d-9762-ec4f9406a639",
+                        "name": "Lava Flow",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Not Specified",
+                        "id": "369daa64-1762-495a-8069-5dd041216551",
+                        "name": "Not Specified",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "f5967787-fddd-4768-803e-0b6aa1c562d8",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:42:00.940530",
+                "metadata_modified": "2024-03-04T21:42:00.940541",
+                "msl_citation": "P. Ertepinar, C.G. Langereis, A.J. Biggin, M. Frangipane, T. Matney, T. Ökse, &amp; A. Engin. (2012). <i>Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago (Dataset)</i> (Version 3) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/18881",
+                "msl_doi": "10.7288/V4/MAGIC/18881",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: P. Ertepinar, C.G. Langereis, A.J. Biggin, M. Frangipane, T. Matney, T. Ökse, A. Engin (2012). Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago. Earth and Planetary Science Letters 357-358:84-98. doi:10.1016/j.epsl.2012.08.039.",
+                "msl_publication_date": "2012-01-01",
+                "msl_publication_year": "2012",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/18881",
+                "msl_title_annotated": "Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago (Dataset)",
+                "name": "cd8c54fa0825a97a7cc04fa437118432",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: P. Ertepinar, C.G. Langereis, A.J. Biggin, M. Frangipane, T. Matney, T. Ökse, A. Engin (2012). Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago. Earth and Planetary Science Letters 357-358:84-98. doi:10.1016/j.epsl.2012.08.039.",
+                "num_resources": 0,
+                "num_tags": 5,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "P. Ertepinar",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "C.G. Langereis",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "A.J. Biggin",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "M. Frangipane",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "T. Matney",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "T. Ökse",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "A. Engin",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/18881/magic_contribution_18881.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_18881",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.EPSL.2012.08.039",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Ertepinar, P., Langereis, C. G., Biggin, A. J., Frangipane, M., Matney, T., Ökse, T., & Engin, A. (2012). Archaeomagnetic study of five mounds from Upper Mesopotamia between 2500 and 700 BCE: Further evidence for an extremely strong geomagnetic field ca. 3000 years ago. Earth and Planetary Science Letters, 357–358, 84–98. https://doi.org/10.1016/j.epsl.2012.08.039\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Brick",
+                        "id": "f86d311e-beaa-4100-8050-7889c4c53ff4",
+                        "name": "Brick",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Not Specified",
+                        "id": "369daa64-1762-495a-8069-5dd041216551",
+                        "name": "Not Specified",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Wall",
+                        "id": "a09f508e-79b1-41f0-8a36-57998fc1613b",
+                        "name": "Wall",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "29beffda-654d-480e-85e3-78c40ce4c4ac",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:25:48.678942",
+                "metadata_modified": "2024-03-04T21:25:48.678948",
+                "msl_citation": "Shaar, R., Tauxe, L., Ben-Yosef, E., Kassianidou, V., Lorentzen, B., Feinberg, J. M., &amp; Levy, T. E. (2015). <i>Decadal-scale variations in geomagnetic field intensity from ancient Cypriot slag mounds (Dataset)</i> (Version 1) [Data set]. Geochemistry, Geophysics, Geosystems. https://doi.org/10.7288/V4/MAGIC/17135",
+                "msl_doi": "10.7288/V4/MAGIC/17135",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Ron Shaar, Lisa Tauxe, Erez Ben-Yosef, Vasiliki Kassianidou, Brita Lorentzen, Joshua M. Feinberg, Thomas E. Levy (2015). Decadal-scale variations in geomagnetic field intensity from ancient Cypriot slag mounds. Geochemistry, Geophysics, Geosystems 16 (1):195-214. doi:10.1002/2014GC005455.",
+                "msl_publication_date": "2015-01-01",
+                "msl_publication_year": "2015",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/17135",
+                "msl_title_annotated": "Decadal-scale variations in geomagnetic field intensity from ancient Cypriot slag mounds (Dataset)",
+                "name": "c1839e5b0538ecc35fca4b3c52e59cf2",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Ron Shaar, Lisa Tauxe, Erez Ben-Yosef, Vasiliki Kassianidou, Brita Lorentzen, Joshua M. Feinberg, Thomas E. Levy (2015). Decadal-scale variations in geomagnetic field intensity from ancient Cypriot slag mounds. Geochemistry, Geophysics, Geosystems 16 (1):195-214. doi:10.1002/2014GC005455.",
+                "num_resources": 0,
+                "num_tags": 8,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Decadal-scale variations in geomagnetic field intensity from ancient Cypriot slag mounds (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "Scripps Institution of Oceanography; University of California; San Diego, La Jolla California USA;",
+                        "msl_author_name": "Ron Shaar",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Scripps Institution of Oceanography; University of California; San Diego, La Jolla California USA;",
+                        "msl_author_name": "Lisa Tauxe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Scripps Institution of Oceanography; University of California; San Diego, La Jolla California USA; Department of Archaeology and Ancient Near Eastern Cultures; Tel Aviv University; Tel Aviv Israel;",
+                        "msl_author_name": "Erez Ben-Yosef",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Department of History and Archaeology; University of Cyprus; Nicosia Cyprus;",
+                        "msl_author_name": "Vasiliki Kassianidou",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Cornell Tree-Ring Laboratory; Cornell University; Ithaca New York USA;",
+                        "msl_author_name": "Brita Lorentzen",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Department of Earth Sciences, Institute for Rock Magnetism; University of Minnesota; Minneapolis Minnesota USA; Department of Anthropology; University of Minnesota; Minneapolis Minnesota USA;",
+                        "msl_author_name": "Joshua M. Feinberg",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Department of Anthropology; University of California; San Diego, La Jolla California USA;",
+                        "msl_author_name": "Thomas E. Levy",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/17135/magic_contribution_17135.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_17135",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "environmental control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "temperature control",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "furnace",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "furnace",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/apparatus-environmental_control-temperature_control-furnace",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1002/2014GC005455",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Shaar, R., Tauxe, L., Ben‐Yosef, E., Kassianidou, V., Lorentzen, B., Feinberg, J. M., & Levy, T. E. (2015). Decadal‐scale variations in geomagnetic field intensity from ancient <scp>C</scp>ypriot slag mounds. Geochemistry, Geophysics, Geosystems, 16(1), 195–214. Portico. https://doi.org/10.1002/2014gc005455\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "15013",
+                        "id": "da741fd7-df62-4805-89de-c802e047fb47",
+                        "name": "15013",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "2846",
+                        "id": "e42744df-eb65-478e-957a-99b6f067e751",
+                        "name": "2846",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Archeologic",
+                        "id": "9762d894-5f41-4226-8aac-585278574fdb",
+                        "name": "Archeologic",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Baked Clay",
+                        "id": "416dcf6f-2d8e-44b4-ba4b-292483d3134f",
+                        "name": "Baked Clay",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Furnace",
+                        "id": "9055dcd2-8a22-4a11-b3be-37aa14d66f88",
+                        "name": "Furnace",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Not Specified",
+                        "id": "369daa64-1762-495a-8069-5dd041216551",
+                        "name": "Not Specified",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Slag",
+                        "id": "5a345e48-89de-4efe-aabe-fd110329f6ae",
+                        "name": "Slag",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "a1cad3ca-c8cd-411d-ae0b-29953be5eb90",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:11:53.445105",
+                "metadata_modified": "2024-03-04T21:11:53.445112",
+                "msl_citation": "Jean-Pascal Cogné, &amp; Perroud, H. (1985). <i>Strain removal applied to paleomagnetic directions in an orogenic belt: the Permian red slates of the Alpes Maritimes, France (Dataset)</i> (Version 2) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/13462",
+                "msl_doi": "10.7288/V4/MAGIC/13462",
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Jean-Pascal Cogné, Hervé Perroud (1985). <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain\"]'>Strain</span> removal applied to paleomagnetic directions in an orogenic belt: the <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian\"]'>Permian</span> red <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/metamorphic_rock-slate\"]'>slates</span> of the Alpes Maritimes, France. Earth and Planetary Science Letters 72 (1):125-140. doi:10.1016/0012-821x(85)90122-0.",
+                "msl_publication_date": "1985-01-01",
+                "msl_publication_year": "1985",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/13462",
+                "msl_title_annotated": "<span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain\"]'>Strain</span> removal applied to paleomagnetic directions in an orogenic belt: the <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian\"]'>Permian</span> red <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/metamorphic_rock-slate\"]'>slates</span> of the Alpes Maritimes, France (Dataset)",
+                "name": "ca531b3393b115777f66d07905fc4ff0",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Jean-Pascal Cogné, Hervé Perroud (1985). Strain removal applied to paleomagnetic directions in an orogenic belt: the Permian red slates of the Alpes Maritimes, France. Earth and Planetary Science Letters 72 (1):125-140. doi:10.1016/0012-821x(85)90122-0.",
+                "num_resources": 0,
+                "num_tags": 5,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Strain removal applied to paleomagnetic directions in an orogenic belt: the Permian red slates of the Alpes Maritimes, France (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Jean-Pascal Cogné",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Hervé Perroud",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/13462/magic_contribution_13462.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_13462",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "metamorphic rock",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/metamorphic_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "slate",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/metamorphic_rock-slate",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "strain",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "strain",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Paleozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Permian",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/0012-821X(85)90122-0",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Cogné, J.-P., & Perroud, H. (1985). Strain removal applied to paleomagnetic directions in an orogenic belt: the Permian red slates of the Alpes Maritimes, France. Earth and Planetary Science Letters, 72(1), 125–140. https://doi.org/10.1016/0012-821x(85)90122-0\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "251000000",
+                        "id": "f3d55dd5-6a03-45d4-a24b-97eeaf2c3e44",
+                        "name": "251000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "299000000",
+                        "id": "6206152f-0250-4e0a-8de2-1909d1a190f4",
+                        "name": "299000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Redbeds",
+                        "id": "b98a40f0-ac4e-4f1b-a905-97f813368778",
+                        "name": "Redbeds",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "397d2d00-812e-4d00-8e4a-96db492d627d",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:11:44.737516",
+                "metadata_modified": "2024-03-04T21:11:44.737522",
+                "msl_citation": "J.P. Cogné. (1987). <i>Paleomagnetic direction obtained by strain removal in the Pyrenean Permian redbeds at the “Col du Somport” (France) (Dataset)</i> (Version 2) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/13428",
+                "msl_doi": "10.7288/V4/MAGIC/13428",
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: J.P. Cogné (1987). Paleomagnetic direction obtained by <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain\"]'>strain</span> removal in the Pyrenean <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian\"]'>Permian</span> redbeds at the “Col du Somport” (France). Earth and Planetary Science Letters 85 (1-3):162-172. doi:10.1016/0012-821x(87)90029-x.",
+                "msl_publication_date": "1987-01-01",
+                "msl_publication_year": "1987",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/13428",
+                "msl_title_annotated": "Paleomagnetic direction obtained by <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain\"]'>strain</span> removal in the Pyrenean <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian\"]'>Permian</span> redbeds at the “Col du Somport” (France) (Dataset)",
+                "name": "1e6001722d16bd2aa9d56138b491fb64",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: J.P. Cogné (1987). Paleomagnetic direction obtained by strain removal in the Pyrenean Permian redbeds at the “Col du Somport” (France). Earth and Planetary Science Letters 85 (1-3):162-172. doi:10.1016/0012-821x(87)90029-x.",
+                "num_resources": 0,
+                "num_tags": 6,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Paleomagnetic direction obtained by strain removal in the Pyrenean Permian redbeds at the “Col du Somport” (France) (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "J.P. Cogné",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/13428/magic_contribution_13428.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_13428",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sedimentary rock",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sandstone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-sandstone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "strain",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/measured_property-strain",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "strain",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/measured_property-strain",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Paleozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Permian",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-paleozoic-permian",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "sandstone",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-sandstone",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/0012-821X(87)90029-X",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Cogné, J. P. (1987). Paleomagnetic direction obtained by strain removal in the Pyrenean Permian redbeds at the “Col du Somport” (France). Earth and Planetary Science Letters, 85(1–3), 162–172. https://doi.org/10.1016/0012-821x(87)90029-x\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "251000000",
+                        "id": "f3d55dd5-6a03-45d4-a24b-97eeaf2c3e44",
+                        "name": "251000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "299000000",
+                        "id": "6206152f-0250-4e0a-8de2-1909d1a190f4",
+                        "name": "299000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sandstone",
+                        "id": "dc972071-398d-47f2-bf6f-f5f33ccd5c65",
+                        "name": "Sandstone",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "mudstoneslates",
+                        "id": "bd0313c7-92d4-4862-8cd0-88886e9debc9",
+                        "name": "mudstoneslates",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            }
+        ],
+        "sort": "score desc, metadata_modified desc",
+        "search_facets": {}
+    }
+}

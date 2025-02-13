@@ -33,9 +33,9 @@ class Client
     /**
      * Contructs a new CKAN client
      */
-    public function __construct()
+    public function __construct($client = new GuzzleClient())
     {
-        $this->client = new GuzzleClient();
+        $this->client = $client;
         $this->apiToken = config('ckan.ckan_api_token');
         $this->ckanApiUrl = config('ckan.ckan_api_url');
     }
@@ -58,7 +58,7 @@ class Client
             $body = json_decode($response->getBody(), true);
             $statusCode = $response->getStatusCode();
         } catch (TransferException $e) {
-            dd($e->getMessage());
+            
         }
         
         $responseClassName = $request->getResponseClass();

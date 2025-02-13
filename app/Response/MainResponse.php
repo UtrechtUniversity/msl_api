@@ -15,9 +15,8 @@ class MainResponse
     }
 
     public function setByCkanResponse($response, $context) {
-        $content = json_decode($response->getBody(), true);
-        $this->success = (boolean)$content['success'];
-        $this->result->setByCkanResponse($content, $context);
+        $this->success = $response->isSuccess();
+        $this->result->setByCkanResponse($response, $context);
     }
 
     public function getAsLaravelResponse() {
