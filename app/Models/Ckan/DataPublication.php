@@ -45,11 +45,75 @@ class DataPublication
      */
     public string $owner_org;
 
-    public $notes;
+    /**
+     * abstract text
+     * @var string
+     */
+    public string $msl_description_abstract;
 
-    public $msl_notes_annotated;
+    /**
+     * abstract text annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_abstract_annotated;
 
-    public $msl_technical_description;
+    /**
+     * methods 
+     * @var string
+     */
+    public string $msl_description_methods;
+
+    /**
+     * methods annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_methods_annotated;
+
+    /**
+     * series information
+     */
+    public string $msl_description_series_information;
+    
+    /**
+     * series information annotated, includes elements to display keyword matches
+     */
+    public string $msl_description_series_information_annotated;
+
+    /**
+     * table of contents
+     * @var string
+     */
+    public string $msl_description_table_of_contents;
+
+    /**
+     * table of contents annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_table_of_contents_annotated;
+
+    /**
+     * technical info
+     * @var string
+     */
+    public string $msl_description_technical_info;
+
+    /**
+     * technical info annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_technical_info_annotated;
+
+    /**
+     * other description
+     * @var string
+     */
+    public string $msl_description_other;
+
+    /**
+     * other description annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_other_annotated;
 
     public $msl_doi;
 

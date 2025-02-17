@@ -4,11 +4,24 @@ namespace App\Datasets;
 class BaseDataset
 {
 
-    public $title;
+    /**
+     * title of the data publication
+     * @var string
+     */
+    public string $title;
 
-    public $msl_title_annotated;
+    /** 
+     * annotated title of the data publication
+     * elements used to display matched keywords within the original title are added during keyword detection
+     * @var string
+     */
+    public string $msl_title_annotated;
 
-    public $type = 'data-publication';
+    /**
+     * data type used in CKAN
+     * @var string
+     */
+    public string $type = 'data-publication';
 
     public $msl_subdomains = [];
 
@@ -20,9 +33,17 @@ class BaseDataset
 
     public $name;
 
-    public $private = false;
+    /**
+     * datapackage visability in CKAN
+     * @var bool
+     */
+    public bool $private = false;
 
-    public $owner_org;
+    /**
+     * name of organization in CKAN data publication should belong to
+     * @var string
+     */
+    public string $owner_org;
 
     public $notes;
 
