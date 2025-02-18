@@ -19,7 +19,7 @@
             <p class="text-center">
                 Find out how to do this here.
             </p>
-        </div>        
+        </div>
 
         <div class="w-screen sm:max-w-screen-md  px-4">
             <h2 class="pt-10 pb-4">Identifying data publications relevant to EPOS MSL</h2>
@@ -92,10 +92,11 @@
                 </div>
             </details>
 
-            <h2 class="pt-5 pb-4">Custom implementations</h2>
+            <h2 class="pt-5 pb-4">Contact us</h2>
             <p>
-                Every data repository might have unique technologies in place to share data. Feel free to 
-                <a href="{{ route('contact-us') }}" title="contact us">contact us</a> to discuss what we can do to setup the best way of harvesting all related metadata.
+                Every data repository has different technologies in place to share data. In addition to the above standard recommendations, 
+                each repository requires a unique approach for MSL to provide access to the data it hosts. 
+                To start developing this approach for your repository, please <a href="{{ route('contact-us') }}" title="contact us">contact us</a>.  
             </p>
         </div>        
 </div>
