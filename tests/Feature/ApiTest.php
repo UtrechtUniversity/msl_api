@@ -526,9 +526,14 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-);
+        );
     }
 
+    /**
+     * Test /geoenergy API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
     public function test_geoenergy_success_results(): void
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
@@ -545,7 +550,7 @@ class ApiTest extends TestCase
         });
 
         // Retrieve response from API
-        $response = $this->get('webservice/api/geochemistry');
+        $response = $this->get('webservice/api/geoenergy');
 
         // Check for 200 status response
         $response->assertStatus(200);
@@ -580,12 +585,6 @@ class ApiTest extends TestCase
                         ->has('creators.0.authorOrcid')
                         ->has('creators.0.authorScopus') //most cases (99%) do have orcid instead
                         ->has('creators.0.authorAffiliation')
-                        
-                        // ->where('contributors.0.contributorName', ' , Dutch Geological Survey') 
-                        // ->where('contributors.0.contributorRole', 'HostingInstitution')
-                        // ->has('contributors.0.contributorOrcid')
-                        // ->has('contributors.0.contributorScopus')
-                        // ->has('contributors.0.contributorAffiliation')
 
                         ->where('references.0.referenceDoi', '10.1007/s10950-022-10120-w')
                         ->where('references.0.referenceTitle', "Bommer, J. J., Stafford, P. J., Ruigrok, E., Rodriguez-Marek, A., Ntinalexis, M., Kruiver, P. P., Edwards, B., Dost, B., & van Elk, J. (2022). Ground-motion prediction models for induced earthquakes in the Groningen gas field, the Netherlands. Journal of Seismology, 26(6), 1157–1184. https://doi.org/10.1007/s10950-022-10120-w\n")
@@ -608,7 +607,7 @@ class ApiTest extends TestCase
                     )
                         ->etc()
             );
-                }
+    }
 
 
     /**
