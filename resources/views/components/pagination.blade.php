@@ -32,18 +32,34 @@
     @if ($count <= $rangeShown + 2)
 
         @for ($i = 1; $i < $count + 1; $i++)
-            <a href="{{ $paginator->url($i) }}">
-                <button 
-                class="join-item btn">{{ $i }}</button>
-            </a>
+
+            @if ($i == $currentPage)
+                <a href="{{ $paginator->url($i) }}">
+                    <button 
+                    class="join-item btn font-bold bg-primary-300">{{ $i }}</button>
+                </a>
+            @else
+                <a href="{{ $paginator->url($i) }}">
+                    <button 
+                    class="join-item btn">{{ $i }}</button>
+                </a>
+            @endif
+
         @endfor
 
     @else
 
-        <a href="{{ $paginator->url(1) }}">
-            <button 
-            class="join-item btn">{{ 1 }}</button>
-        </a>
+        @if (1 == $currentPage)
+            <a href="{{ $paginator->url(1) }}">
+                <button 
+                class="join-item btn font-bold bg-primary-300">{{ 1 }}</button>
+            </a>
+        @else
+            <a href="{{ $paginator->url(1) }}">
+                <button 
+                class="join-item btn">{{ 1 }}</button>
+            </a>
+        @endif
 
         {{-- if the range is close the first page dont show "..." otherwise show --}}
         @if ( $currentPage - $lowerRange  <  $lowerRange )
@@ -57,11 +73,21 @@
             {{-- if the count is not equal or over or under the first and last page then show 
             (because we substract and add to a number over/undercount will be the case)--}}
             @if ( !($i <= 1) && !($i >= $count))
-                <a href="{{ $paginator->url($i) }}">
-                    <button 
-                    class="join-item btn">{{ $i }}</button>
-                </a>
+
+                @if ($i == $currentPage)
+                    <a href="{{ $paginator->url($i) }}">
+                        <button 
+                        class="join-item btn font-bold bg-primary-300">{{ $i }}</button>
+                    </a>
+                @else
+                    <a href="{{ $paginator->url($i) }}">
+                        <button 
+                        class="join-item btn">{{ $i }}</button>
+                    </a>
+                @endif
+
             @endif
+
         @endfor
 
         {{-- if the range is close to the count dont show the "..." otherwise show --}}
@@ -71,10 +97,18 @@
             
         @endif
 
-        <a href="{{ $paginator->url($count) }}">
-            <button 
-            class="join-item btn">{{ $count }}</button>
-        </a>
+        @if ($count == $currentPage)
+            <a href="{{ $paginator->url($count) }}">
+                <button 
+                class="join-item btn font-bold bg-primary-300">{{ $count }}</button>
+            </a>
+        @else
+            <a href="{{ $paginator->url($count) }}">
+                <button 
+                class="join-item btn">{{ $count }}</button>
+            </a>
+        @endif
+
 
     @endif
 
