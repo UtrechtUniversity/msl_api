@@ -45,7 +45,23 @@
                     ">
                         <x-ri-error-warning-line class="warning-icon"/>
 
-                        <p class="text-center">Please note that this list is not exhaustive or complete and <span class="bg-none font-bold">under active development</span>. Each data repository manages data differently, which requires an interface to be developed and implented by MSL.</p>
+                        <p class="text-center">
+                            Please note that this page may not contain all files of the data publication, 
+                            as originally published at the source repository: 
+                            <br>
+                            <br>
+                            @if (array_key_exists("msl_source",$data))
+                                <a class="detailEntrySub2 text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                            @endif 
+                            <br>
+                            <br>
+                            Each data repository manages data differently, while the interface with MSL is being worked on continuously. 
+                            In the meantime, we recommend visiting the page of the data repository to ensure you find all the files you’re looking for.
+                            {{-- 
+                            Please note that this list is not exhaustive or complete and 
+                            <span class="bg-none font-bold">under active development</span>. 
+                            Each data repository manages data differently, which requires an interface to be developed and implented by MSL. --}}
+                        </p>
 
                     </div>
                 </div>
@@ -81,13 +97,9 @@
                                 text-info-900">
 
                                     <x-ri-emotion-sad-line class="info-icon size-14 fill-info-800"/>
-
                                     
-                                    <p class=" text-center">No files found for this data publication or files not yet ingested by MSL. Check the source to make sure you dont miss anything:</p>
-                                            
-                                    @if (array_key_exists("msl_source",$data))
-                                        <a class="detailEntrySub2 text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
-                                    @endif
+                                    <p class=" text-center">No files found for this data publication or files not yet ingested by MSL.</p>
+
                                 </div>
 
                             </div>
