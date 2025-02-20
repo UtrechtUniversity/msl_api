@@ -32,11 +32,13 @@
             ])
         </div>
 
+
         <div class="listMapDetailDivParent">
             <div class="detailDiv">
                 <div class="detailEntryDiv flex flex-col place-items-center gap-4">
                     <h2>Files</h2>
-                    <p class="text-center">(click to download)</p>
+                    <h5 class="pt-10 font-bold">{{ $data['title'] }}</h5>
+                    <h6 class="pb-10 italic"> {{ $data['msl_publisher'] }}</h6>
 
                     <div class="bg-warning-300 rounded-lg 
                     flex flex-col place-items-center w-2/3
@@ -57,18 +59,16 @@
                             <br>
                             Each data repository manages data differently, while the interface with MSL is being worked on continuously. 
                             In the meantime, we recommend visiting the page of the data repository to ensure you find all the files you’re looking for.
-                            {{-- 
-                            Please note that this list is not exhaustive or complete and 
-                            <span class="bg-none font-bold">under active development</span>. 
-                            Each data repository manages data differently, which requires an interface to be developed and implented by MSL. --}}
                         </p>
 
                     </div>
                 </div>
                     
                 <div class="detailEntryDiv"> 
+                    <p class="text-center">(click to download)</p>
 
-                    <div class="flex flex-wrap justify-center place-content-center gap-5 w-full">                
+                    <div class="flex flex-wrap justify-center place-content-center gap-5 w-full">
+                                        
                         @if (array_key_exists("msl_downloads", $data))
                             @foreach ($data['msl_downloads'] as $download)
 
