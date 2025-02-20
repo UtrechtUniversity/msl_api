@@ -97,7 +97,24 @@ class Datacite4Mapper implements MapperInterface
     
                     } else {
 
-                        
+                        foreach ($titlesCandidates as $candidate) {
+                            if($candidate['lang'] == "en"){
+
+                                $dataset->title = $candidate['title'];
+                                return $dataset;
+
+                            } elseif ($candidate['lang'] == "en-GB"){
+
+                                $dataset->title = $candidate['title'];
+                                return $dataset;
+                            } else {
+                                // exception handling? dotn fill out title
+                                // then it should be stopped 
+                                $dataset->title = "No title found";
+                                return $dataset;
+                            }
+                        }
+
 
                     }
 

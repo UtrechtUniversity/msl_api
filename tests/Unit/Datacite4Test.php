@@ -28,7 +28,7 @@ class Datacite4Test extends TestCase
                             },
                             {
                                 "lang": "en",
-                                "title": "Example Title"
+                                "title": "Example Title english"
                             },
                             {
                                 "lang": "es",
