@@ -21,8 +21,6 @@ class Datacite4Mapper implements MapperInterface
         // map title
         $this->mapTitle($metadata, $dataset);
 
-        dd($dataset->title);
-
         return $dataset;
     }
 
@@ -55,7 +53,6 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-
                 if(sizeof($titlesCandidates) == 1){
                     // if only one is left then take that one
                     $dataset->title = $titlesCandidates[0]['title'];
@@ -63,63 +60,47 @@ class Datacite4Mapper implements MapperInterface
 
                 } else {
 
-
                     // check if no "lang" property is set
                     foreach ($titlesCandidates as $candidate) {
-
-
                         if(!isset($candidate['lang'])){
                             // check if there is an entry without a "lang"
                             // if so then take it
+                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
                             $dataset->title = $candidate['title'];
                             return $dataset;
+                        } 
+                    }
 
-                        } elseif ($candidate['lang'] == "") {
+                    foreach ($titlesCandidates as $candidate) {
+                            if ($candidate['lang'] == "") {
                             // "lang" is set but empty
                             // take it
+                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
                             $dataset->title = $candidate['title'];
                             return $dataset;
-
-                        }elseif (!str_contains($candidate['lang'], "en")){
-                            // lang does not contain "en"
-                            // remove it
-                            unset($titlesCandidates[array_search($candidate, $titlesCandidates)]);
                         }
 
                     }
 
-
-                    // now if only one candidate remains with "en" in "lang" take it
-                    if(sizeof($titlesCandidates) == 1){
-                        // if only one is left then take that one
-                        $dataset->title = $titlesCandidates[0]['title'];
-                        return $dataset;
-    
-                    } else {
-
-                        foreach ($titlesCandidates as $candidate) {
-                            if($candidate['lang'] == "en"){
-
-                                $dataset->title = $candidate['title'];
-                                return $dataset;
-
-                            } elseif ($candidate['lang'] == "en-GB"){
-
-                                $dataset->title = $candidate['title'];
-                                return $dataset;
-                            } else {
-                                // exception handling? dotn fill out title
-                                // then it should be stopped 
-                                $dataset->title = "No title found";
-                                return $dataset;
-                            }
+                    foreach ($titlesCandidates as $candidate) {
+                        if($candidate['lang'] == "en"){
+                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'EN'
+                            $dataset->title = $candidate['title'];
+                            return $dataset;
                         }
-
-
                     }
 
-                    dd($titlesCandidates);
+                    foreach ($titlesCandidates as $candidate) {
+                        if ($candidate['lang'] == "en-GB"){
+                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'EN'
+                            $dataset->title = $candidate['title'];
+                            return $dataset;
+                        }
+                    }
 
+                    // nothing left. Just take the first one
+                    $dataset->title = $titlesCandidates[0]['title'];
+                    return $dataset;
 
                 }
 
