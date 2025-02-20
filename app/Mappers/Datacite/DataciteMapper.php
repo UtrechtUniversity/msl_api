@@ -10,21 +10,8 @@ class DataciteMapper implements MapperInterface
 
     public function map(SourceDataset $sourceDataset): DataPublication
     {
-        // create empty data publication
-        $dataset = new DataPublication;
+        $mapper = new Datacite4Mapper();
 
-        // read json text
-        $metadata = json_decode($sourceDataset->source_dataset, true);
-
-        // map somelthing
-        $this->mapPlaceholder($metadata, $dataset);
-
-        dd($dataset->title);
-
-        return $dataset;
-    }
-
-    public function mapPlaceholder(array $metadata, DataPublication $dataset){
-
+        return $mapper->map($sourceDataset);        
     }
 }
