@@ -526,8 +526,89 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-);
+        );
     }
+
+    /**
+     * Test /geoenergy API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_geoenergy_success_results(): void
+    {
+        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
+        $this->app->bind(ApiController::class, function($app){
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geoenergy_83.txt'));
+
+            $mock = new MockHandler([
+                new Response(200, [], $response)
+            ]);
+
+            $handler = HandlerStack::create($mock);
+                    
+            return new ApiController(new Client(['handler' => $handler]));
+        });
+
+        // Retrieve response from API
+        $response = $this->get('webservice/api/geoenergy');
+
+        // Check for 200 status response
+        $response->assertStatus(200);
+
+        // Verify response body contents
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', true)
+                ->where('result.count', 83)
+                ->where('result.resultCount', 10)
+                ->has('result.results.0', fn (AssertableJson $json) =>
+                    $json      
+                        ->where('title', 'The database of ground-motion recordings, site profiles and amplification factors used for the development of the Groningen Ground-Motion Prediction Models')
+                        ->where('name', 'c244d12fef1aba659598ded01699d46e')
+                        ->where('portalLink', config('app.url') . '/data-publication/c244d12fef1aba659598ded01699d46e')
+                        ->has('license')
+                        ->has('version')
+                        ->where('source', 'http://dx.doi.org/10.24416/uu01-kc2zhq')
+                        ->where('doi', '10.24416/uu01-kc2zhq')
+
+                        ->has('handle')
+                        ->where('publisher', '68f99610-b8a8-467d-b2ab-df16b9c40028')
+
+                        ->where('subdomain.0', 'geo-energy test beds')
+                        
+                        ->where('description', 'Induced earthquakes have occurred in the Groningen gas field in the Netherlands, since 1991, almost three decades after production began in 1963. As part of the Hazard and Risk Assment for the Groningen gas field, the field operator NAM (Nederlandse Aardolie Maatschappij BV) developed the Ground-Motion Model or Ground-Motion Prediction Model (GMM/GMPM) for spectral accelerations (Bommer et al., 2022a and b). The model translates seismicity to forces applied to buildings. With the model already published in said research articles, this data publication contains the data that were used to develop the model. This includes: (1) ground-motion recordings, (2) a field-wide shear-wave velocity and lithology model, (3) site characterization data at recording stations and (4) supplementary files, such as MATLAB code for the GMPM as well as key reports and papers. The published database is the result of an unprecedented data acquisition programme, lasting nearly 10 years, and is now provided openly by NAM BV, through EPOS-NL, the Dutch infrastructure for solid Earth sciences. Contact person for this dataset: Michail Ntinalexis - michail.ntinalexis10@alumni.imperial.ac.uk.   ')
+                        ->where('publicationDate', '2024-01-01')
+                        ->where('citation', 'Ntinalexis, M., Kruiver, P., Bommer, J., Ruigrok, E., Rodriguez-Marek, A., Edwards, B., Pinho, R., Spetzler, J., Obando Hernandez, E., Pefkos, M., Bahrampouri, M., van Onselen, E., Dost, B., &amp; van Elk, J. (2024). <i>The database of ground-motion recordings, site profiles and amplification factors used for the development of the Groningen Ground-Motion Prediction Models</i> (Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-KC2ZHQ')
+                        
+                        ->count('creators', 14)
+                        ->where('creators.0.authorName', 'Ntinalexis, Michail')
+                        ->has('creators.0.authorOrcid')
+                        ->has('creators.0.authorScopus') //most cases (99%) do have orcid instead
+                        ->has('creators.0.authorAffiliation')
+
+                        ->where('references.0.referenceDoi', '10.1007/s10950-022-10120-w')
+                        ->where('references.0.referenceTitle', "Bommer, J. J., Stafford, P. J., Ruigrok, E., Rodriguez-Marek, A., Ntinalexis, M., Kruiver, P. P., Edwards, B., Dost, B., & van Elk, J. (2022). Ground-motion prediction models for induced earthquakes in the Groningen gas field, the Netherlands. Journal of Seismology, 26(6), 1157–1184. https://doi.org/10.1007/s10950-022-10120-w\n")
+                        ->where('references.0.referenceType', 'IsSupplementTo')
+                        ->has('references.0.referenceHandle')
+
+                        ->has('laboratories')
+                        ->has('materials')
+                        ->has('spatial')
+                        ->has('locations')
+                        ->has('coveredPeriods')
+                        ->has('collectionPeriods')
+                        ->has('maintainer')
+
+                        ->where('downloads.0.fileName', 'Data description')
+                        ->where('downloads.0.downloadLink', 'https://geo.public.data.uu.nl/vault-nam-groningen-gas-field-ground-motion-model-complete/research-nam-groningen-gas-field-ground-motion-model-complete[1712039436]/original/Data description.pdf')
+
+                        ->has('researchAspects')
+                        ->etc()
+                    )
+                        ->etc()
+            );
+    }
+
 
     /**
      * Test /all endpoint with error received from CKAN
