@@ -133,7 +133,11 @@ class DataPublication
 
     public $msl_publication_month;
 
-    public $msl_publication_year;
+    /**
+     * year of publication
+     * @var ?string
+     */
+    public ?string $msl_publication_year;
 
     public $msl_publication_date;
 
