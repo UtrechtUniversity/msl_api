@@ -119,6 +119,12 @@ class DataPublication
      */
     public string $msl_description_other_annotated;
 
+    /**
+     * list of rights / licenses
+     * @var array
+     */
+    public array $msl_rights = [];
+
     public $msl_doi;
 
     public $msl_handle;
@@ -227,6 +233,16 @@ class DataPublication
         'title' => 'required',
         'msl_authors' => 'required'
     ];
+
+    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = "") {
+        $this->msl_rights[] = [
+            'msl_right' => $right,
+            'msl_right_uri' => $uri,
+            'msl_right_identifier' => $identifier,
+            'msl_right_identifier_scheme' => $identifierScheme,
+            'msl_right_scheme_uri' => $schemeUri
+        ];
+    }
     
     public function addTag($tagString, $uris = []) {
         $exists = false;
