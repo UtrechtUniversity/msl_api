@@ -1,8 +1,6 @@
 <?php
 namespace App\Mappers\Datacite;
 
-use PHPUnit\Util\Json;
-use PhpParser\JsonDecoder;
 use App\Models\SourceDataset;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\DataPublication;
@@ -24,7 +22,6 @@ class Datacite4Mapper implements MapperInterface
         
         return $dataset;
     }
-
 
     public function mapTitle(array $metadata, DataPublication $dataset)
     {
