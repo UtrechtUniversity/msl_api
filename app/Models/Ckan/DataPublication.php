@@ -1,6 +1,8 @@
 <?php
 namespace App\Models\Ckan;
 
+use Exception;
+
 class DataPublication
 {
 
@@ -71,11 +73,13 @@ class DataPublication
 
     /**
      * series information
+     * @var string
      */
     public string $msl_description_series_information;
     
     /**
      * series information annotated, includes elements to display keyword matches
+     * @var string
      */
     public string $msl_description_series_information_annotated;
 
@@ -381,7 +385,7 @@ class DataPublication
                 break;
 
             default:
-                throw new \Exception('attempt to add invalid subdomain');
+                throw new Exception('attempt to add invalid subdomain');
         }
     }
 
@@ -548,7 +552,7 @@ class DataPublication
                     break;
 
                 default:
-                    throw new \Exception('invalid keyword type added');
+                    throw new Exception('invalid keyword type added');
             }
         } elseif ($type == 'original') {
             switch (true) {
@@ -597,7 +601,7 @@ class DataPublication
                     break;
 
                 default:
-                    throw new \Exception('invalid keyword type added');
+                    throw new Exception('invalid keyword type added');
             }
         }
     }
