@@ -1,6 +1,7 @@
 <?php
 namespace App\Mappers\Datacite;
 
+use App\Exceptions\MappingException;
 use App\Models\SourceDataset;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\DataPublication;
@@ -43,16 +44,15 @@ class Datacite4Mapper implements MapperInterface
             // language can be empty
 
             // check if there is more than one title present if not then enter more detailed selection
-            if($titleSize > 1 )
-            {
+            if($titleSize > 1 ) {
                 // filter the titles for the ones which dont have 'titleType', this is indicator for main title
                 foreach ($titles as $title) {
-                    if(!isset($title['titleType']) && isset($title['title']) ){
+                    if(!isset($title['titleType']) && isset($title['title']) ) {
                         array_push($titlesCandidates, $title);
                     }
                 }
 
-                if(sizeof($titlesCandidates) == 1){
+                if(sizeof($titlesCandidates) == 1) {
                     // if only one is left then take that one
                     $dataset->title = $titlesCandidates[0]['title'];
                     return $dataset;
@@ -103,21 +103,14 @@ class Datacite4Mapper implements MapperInterface
 
                 }
 
-            }
-            else
-            {   
+            } else {   
                 // the only title present
                 $dataset->title = $metadata['data']['attributes']['titles'][0]['title'];
                 return $dataset;
-
             }
 
         } else {
-            // exception handling? dotn fill out title
-            // then it should be stopped 
-            $dataset->title = "No title found";
-            return $dataset;
-
+            throw new MappingException('No title mapped');
         }
 
         return $dataset;
