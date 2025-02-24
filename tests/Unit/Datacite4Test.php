@@ -26,20 +26,19 @@ class Datacite4Test extends TestCase
                     "attributes": {
                         "titles": [
                             {
-                                "lang": "en",
                                 "title": "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy"
-                            },
-                            {
-                                "lang": "en",
-                                "title": "Example Title"
                             },
                             {
                                 "lang": "es",
                                 "title": "Example Title spanish"
                             },
                             {   
-                                "lang": "es",
+                                "lang": "",
                                 "title": "Example Title no lang"
+                            },
+                            {   
+                                "lang": "en",
+                                "title": "Example Title with lang english"
                             },
                             {
                                 "lang": "en",

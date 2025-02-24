@@ -25,27 +25,36 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
+    /**
+     * chooses one title from the datacite entry according to the following priorities
+     * if multiple titles are available:
+     * 
+     * 'titleType' not set
+     * no "lang" property set
+     * "lang" property set and empty
+     * 'lang' set to 'en'
+     * 'lang set to 'en-GB'
+     * if none apply take first in list
+     * 
+     * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
+     */
     public function mapTitle(array $metadata, DataPublication $dataset)
     {
-        // check if present
-        // check for multiple occurences
-        // etc
-        // dd($metadata);
         $titles = $metadata['data']['attributes']['titles'];
         $titleSize = sizeof($titles);
 
+        // there MUST be at least one title, otherwise it is an exeption
         if( $titleSize > 0) {
 
             $titlesCandidates = [];
 
-            // main title is wihtout title type
-            // multiple without title type must have unique languages
-            // one title wihtout title type and no language and one that can have a language
-            // language can be empty
+            /////////////////  additional notes
+            // -> multiple 'title' entries without 'titleType' must have unique languages
+            // -> 'lang' can be empty 
+            /////////////////
 
-            // check if there is more than one title present if not then enter more detailed selection
             if($titleSize > 1 ) {
-                // filter the titles for the ones which dont have 'titleType', this is indicator for main title
+                // filter the titles for the ones which dont have 'titleType', this is the indicator for main title
                 foreach ($titles as $title) {
                     if(!isset($title['titleType']) && isset($title['title']) ) {
                         array_push($titlesCandidates, $title);
@@ -53,45 +62,40 @@ class Datacite4Mapper implements MapperInterface
                 }
 
                 if(sizeof($titlesCandidates) == 1) {
-                    // if only one is left then take that one
                     $dataset->title = $titlesCandidates[0]['title'];
                     return $dataset;
 
                 } else {
 
                     // check if no "lang" property is set
+                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
                     foreach ($titlesCandidates as $candidate) {
-                        if(!isset($candidate['lang'])){
-                            // check if there is an entry without a "lang"
-                            // if so then take it
-                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
+                        if(!isset($candidate['lang'])){                            
                             $dataset->title = $candidate['title'];
                             return $dataset;
                         } 
                     }
 
+                    // "lang" is set but empty
+                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
                     foreach ($titlesCandidates as $candidate) {
                             if ($candidate['lang'] == "") {
-                            // "lang" is set but empty
-                            // take it
-                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
                             $dataset->title = $candidate['title'];
                             return $dataset;
                         }
-
                     }
 
+                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
                     foreach ($titlesCandidates as $candidate) {
                         if($candidate['lang'] == "en"){
-                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'EN'
                             $dataset->title = $candidate['title'];
                             return $dataset;
                         }
                     }
 
+                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
                     foreach ($titlesCandidates as $candidate) {
                         if ($candidate['lang'] == "en-GB"){
-                            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'EN'
                             $dataset->title = $candidate['title'];
                             return $dataset;
                         }
@@ -115,7 +119,4 @@ class Datacite4Mapper implements MapperInterface
 
         return $dataset;
     }
-
-
-
 }
