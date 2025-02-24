@@ -24,10 +24,7 @@ class Datacite4Test extends TestCase
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                        "titles": [
-                            {
-                                "title": "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy"
-                            },
+                        "titles": [                            
                             {
                                 "lang": "es",
                                 "title": "Example Title spanish"
@@ -35,6 +32,9 @@ class Datacite4Test extends TestCase
                             {   
                                 "lang": "",
                                 "title": "Example Title no lang"
+                            },
+                            {
+                                "title": "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy"
                             },
                             {   
                                 "lang": "en",
