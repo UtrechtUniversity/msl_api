@@ -17,6 +17,7 @@ class Datacite4Mapper implements MapperInterface
         $metadata = json_decode($sourceDataset->source_dataset, true);
 
         // map title
+        $this->mapTitle($metadata, $dataset);
 
         $this->mapTitle($metadata, $dataset);
         
@@ -121,4 +122,7 @@ class Datacite4Mapper implements MapperInterface
 
         return $dataset;
     }
+
+
+
 }
