@@ -19,8 +19,6 @@ class Datacite4Mapper implements MapperInterface
 
         // map title
         $this->mapTitle($metadata, $dataset);
-
-        $this->mapTitle($metadata, $dataset);
         
         return $dataset;
     }
