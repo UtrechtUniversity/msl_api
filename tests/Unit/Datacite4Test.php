@@ -60,7 +60,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
-<<<<<<< HEAD
+
 
         $dataciteMapper = new Datacite4Mapper();
 
@@ -71,44 +71,6 @@ class Datacite4Test extends TestCase
         $metadata = json_decode($sourceData->source_dataset, true);
         
         $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
-=======
-        
-
-        // $sourceData->source_dataset = '
-        // {
-        //     "data": {
-        //         "id": "10.1594/pangaea.937090",
-        //         "type": "dois",
-        //         "attributes": {
-        //             "titles": [
-        //                 {
-        //                     "lang": "en",
-        //                     "title": "Example Title"
-        //                 },
-        //                 {
-        //                     "lang": "en",
-        //                     "title": "Example Subtitle",
-        //                     "titleType": "Subtitle"
-        //                 },
-        //                 {
-        //                     "lang": "fr",
-        //                     "title": "Example TranslatedTitle",
-        //                     "titleType": "TranslatedTitle"
-        //                 },
-        //                 {
-        //                     "lang": "en",
-        //                     "title": "Example AlternativeTitle",
-        //                     "titleType": "AlternativeTitle"
-        //                 }
-        //             ]
-        //         }
-        //     }
-        // }';
-
-        $dataciteMapper = new Datacite4Mapper();
-        
-        $dataset = $dataciteMapper->map($sourceData);
->>>>>>> 8c10722 (Merge in feature/datacite-mapper and resolve conflicts)
 
         $this->assertEquals($dataset->title, "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy");
         
