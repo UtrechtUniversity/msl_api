@@ -125,7 +125,10 @@ class DataPublication
      */
     public array $msl_rights = [];
 
-    public $msl_doi;
+    /**
+     * doi of the data publication
+     */
+    public string $msl_doi;
 
     public $msl_handle;
 
