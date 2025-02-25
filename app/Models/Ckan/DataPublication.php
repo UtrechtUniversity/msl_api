@@ -152,6 +152,11 @@ class DataPublication
      */
     public ?string $msl_publication_year;
 
+    /**
+     * References to sources of funding
+     */
+    public array $msl_funding_references = [];
+
     public $msl_publication_date;
 
     public $msl_authors = [];
@@ -278,6 +283,19 @@ class DataPublication
             'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
             'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
             'msl_related_identifier_resource_type_general' => $resourceType,
+        ];
+    }
+
+    public function addFundingReference($funderName, $funderIdentifier = "", $funderIdentifierType = "", $schemeUri = "", $awardNumber = "", $awardUri = "", $awardTitle = ""): void
+    {
+        $this->msl_funding_references[] = [
+            'msl_funding_reference_funder_name' => $funderName,
+            'msl_funding_reference_funder_identifier' => $funderIdentifier,
+            'msl_funding_reference_funder_identifier_type' => $funderIdentifierType,
+            'msl_funding_reference_scheme_uri' => $schemeUri,            
+            'msl_funding_reference_award_number' => $awardNumber,
+            'msl_funding_reference_award_uri' => $awardUri,
+            'msl_funding_reference_award_title' => $awardTitle,
         ];
     }
     
