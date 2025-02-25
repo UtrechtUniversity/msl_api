@@ -23,6 +23,29 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
+
+
+
+    /**
+     * 
+     */
+    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset){
+        $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
+
+        if($altIds > 0){
+            foreach ($altIds as $altIdEntry) {
+                $dataset->addAlternateIdentifier(
+                    (isset($altIdEntry["alternateIdentifier"])       ? $altIdEntry["alternateIdentifier"]     : ""),
+                    (isset($altIdEntry["alternateIdentifierType"])   ? $altIdEntry["alternateIdentifierType"] : "")
+                );
+            }
+        }
+
+        return $dataset;
+    }
+
+
+
     /**
      * chooses one description from the datacite entry according to the following priorities
      * if multiple descriptions are available:
