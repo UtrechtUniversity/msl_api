@@ -170,9 +170,13 @@ class DataPublication
      */
     public array $msl_dates = [];
 
-    public $msl_publication_date;
+    /**
+     * The main researchers involved in producing the data, or the authors of the publication, in priority order.
+     * May be a corporate/institutional or personal name.
+     */
+    public array $msl_creators = [];
 
-    public $msl_authors = [];
+    public $msl_publication_date;
 
     public $msl_contributors = [];
 
@@ -318,6 +322,23 @@ class DataPublication
             'msl_date_date' => $date,
             'msl_date_type' => $type,
             'msl_date_information' => $information
+        ];
+    }
+
+    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $affiliations = []): void
+    {
+        if(count($nameIdentifiers) !== count($nameIdentifierSchemes)) {
+            throw new Exception('number of name identifiers not equal to numbers of schemes');
+        }
+
+        $this->msl_creators[] = [
+            'msl_creator_name' => $name,
+            'msl_creator_given_name' => $givenName,
+            'msl_creator_family_name' => $familyName,
+            'msl_creator_name_type' => $nameType,
+            'msl_creator_name_identifiers' => $nameIdentifiers,
+            'msl_creator_name_identifiers_schemes' => $nameIdentifierSchemes,
+            'msl_creator_affiliations' => $affiliations
         ];
     }
     
