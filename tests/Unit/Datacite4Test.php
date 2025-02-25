@@ -10,6 +10,85 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+
+    /**
+     * test if rights are correctly mapped
+     */
+    public function test_rights_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+        {
+            "data": {
+                "id": "10.1594/pangaea.937090",
+                "type": "dois",
+                "attributes": {
+                    "rightsList": [
+                        {
+                            "lang": "en",
+                            "rights": "Creative Commons Attribution 4.0 International",
+                            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                            "schemeUri": "https://spdx.org/licenses/",
+                            "rightsIdentifier": "cc-by-4.0",
+                            "rightsIdentifierScheme": "SPDX"
+                        }
+                    ]
+                }
+            }
+        }';
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+    
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapRights($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
+
+            // new test
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "rightsList": [
+                            {
+                                "rights": "openAccess"
+                            },
+                            {
+                                "rights": "Creative Commons Attribution 4.0 International",
+                                "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                                "schemeUri": "https://spdx.org/licenses/",
+                                "rightsIdentifier": "cc-by-4.0",
+                                "rightsIdentifierScheme": "SPDX"
+                            }
+                        ]
+                    }
+                }
+            }';
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+    
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapRights($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_rights[0]['msl_right'], "openAccess");
+            $this->assertEquals($dataset->msl_rights[1]['msl_right'], "Creative Commons Attribution 4.0 International");
+
+    }   
+
     /**
      * test if description is correctly mapped
      */
