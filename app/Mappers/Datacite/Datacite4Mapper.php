@@ -27,7 +27,9 @@ class Datacite4Mapper implements MapperInterface
 
 
     /**
-     * 
+     * Takes available entries from 'alternateIdentifiers'
+     * and adds those to the dataset
+     * this is optional
      */
     public function mapAlternateIdentifier(array $metadata, DataPublication $dataset){
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
