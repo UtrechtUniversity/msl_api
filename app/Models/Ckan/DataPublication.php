@@ -135,6 +135,11 @@ class DataPublication
      */
     public array $msl_alternate_identifiers = [];
 
+    /**
+     * list of related identifiers
+     */
+    public array $msl_related_identifiers = [];
+
     public $msl_handle;
 
     public $msl_publication_day;
@@ -152,8 +157,6 @@ class DataPublication
     public $msl_authors = [];
 
     public $msl_contributors = [];
-
-    public $msl_references = [];
 
     public $tag_string = [];
     
@@ -262,6 +265,19 @@ class DataPublication
         $this->msl_alternate_identifiers[] = [
             'msl_alternate_identifier' => $identifier,
             'msl_alternate_identifier_type' => $type
+        ];
+    }
+
+    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType): void
+    {
+        $this->msl_related_identifiers[] = [
+            'msl_related_identifier' => $identifier,
+            'msl_related_identifier_type' => $identifierType,
+            'msl_related_identifier_relation_type' => $relationType,
+            'msl_related_identifier_metadata_scheme' => $metadataScheme,
+            'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
+            'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
+            'msl_related_identifier_resource_type_general' => $resourceType,
         ];
     }
     
