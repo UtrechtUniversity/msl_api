@@ -130,6 +130,11 @@ class DataPublication
      */
     public string $msl_doi;
 
+    /**
+     * list of alternate identifiers
+     */
+    public array $msl_alternate_identifiers = [];
+
     public $msl_handle;
 
     public $msl_publication_day;
@@ -241,7 +246,8 @@ class DataPublication
         'msl_authors' => 'required'
     ];
 
-    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = "") {
+    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = ""): void
+    {
         $this->msl_rights[] = [
             'msl_right' => $right,
             'msl_right_uri' => $uri,
@@ -250,8 +256,17 @@ class DataPublication
             'msl_right_scheme_uri' => $schemeUri
         ];
     }
+
+    public function addAlternateIdentifier($identifier, $type): void
+    {
+        $this->msl_alternate_identifiers[] = [
+            'msl_alternate_identifier' => $identifier,
+            'msl_alternate_identifier_type' => $type
+        ];
+    }
     
-    public function addTag($tagString, $uris = []) {
+    public function addTag($tagString, $uris = [])
+    {
         $exists = false;
         foreach ($this->msl_tags as $tag) {
             if($tag['msl_tag_string'] == $tagString) {
@@ -268,7 +283,8 @@ class DataPublication
         }
     }
     
-    public function addUriToTag($tagString, $uri) {
+    public function addUriToTag($tagString, $uri)
+    {
         foreach ($this->msl_tags as &$tag) {
             if($tag['msl_tag_string'] == $tagString) {
                 if(!in_array($uri, $tag['msl_tag_uris'])) {
