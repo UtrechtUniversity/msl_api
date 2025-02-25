@@ -125,7 +125,20 @@ class DataPublication
      */
     public array $msl_rights = [];
 
-    public $msl_doi;
+    /**
+     * doi of the data publication
+     */
+    public string $msl_doi;
+
+    /**
+     * list of alternate identifiers
+     */
+    public array $msl_alternate_identifiers = [];
+
+    /**
+     * list of related identifiers
+     */
+    public array $msl_related_identifiers = [];
 
     public $msl_handle;
 
@@ -144,8 +157,6 @@ class DataPublication
     public $msl_authors = [];
 
     public $msl_contributors = [];
-
-    public $msl_references = [];
 
     public $tag_string = [];
     
@@ -238,7 +249,8 @@ class DataPublication
         'msl_authors' => 'required'
     ];
 
-    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = "") {
+    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = ""): void
+    {
         $this->msl_rights[] = [
             'msl_right' => $right,
             'msl_right_uri' => $uri,
@@ -247,8 +259,30 @@ class DataPublication
             'msl_right_scheme_uri' => $schemeUri
         ];
     }
+
+    public function addAlternateIdentifier($identifier, $type): void
+    {
+        $this->msl_alternate_identifiers[] = [
+            'msl_alternate_identifier' => $identifier,
+            'msl_alternate_identifier_type' => $type
+        ];
+    }
+
+    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType): void
+    {
+        $this->msl_related_identifiers[] = [
+            'msl_related_identifier' => $identifier,
+            'msl_related_identifier_type' => $identifierType,
+            'msl_related_identifier_relation_type' => $relationType,
+            'msl_related_identifier_metadata_scheme' => $metadataScheme,
+            'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
+            'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
+            'msl_related_identifier_resource_type_general' => $resourceType,
+        ];
+    }
     
-    public function addTag($tagString, $uris = []) {
+    public function addTag($tagString, $uris = [])
+    {
         $exists = false;
         foreach ($this->msl_tags as $tag) {
             if($tag['msl_tag_string'] == $tagString) {
@@ -265,7 +299,8 @@ class DataPublication
         }
     }
     
-    public function addUriToTag($tagString, $uri) {
+    public function addUriToTag($tagString, $uri)
+    {
         foreach ($this->msl_tags as &$tag) {
             if($tag['msl_tag_string'] == $tagString) {
                 if(!in_array($uri, $tag['msl_tag_uris'])) {
