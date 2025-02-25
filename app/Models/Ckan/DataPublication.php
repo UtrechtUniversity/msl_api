@@ -165,6 +165,11 @@ class DataPublication
      */
     public string $msl_language;
 
+    /**
+     * storage for several types of dates
+     */
+    public array $msl_dates = [];
+
     public $msl_publication_date;
 
     public $msl_authors = [];
@@ -304,6 +309,15 @@ class DataPublication
             'msl_funding_reference_award_number' => $awardNumber,
             'msl_funding_reference_award_uri' => $awardUri,
             'msl_funding_reference_award_title' => $awardTitle,
+        ];
+    }
+
+    public function addDate($date, $type, $information = ""): void
+    {
+        $this->msl_dates[] = [
+            'msl_date_date' => $date,
+            'msl_date_type' => $type,
+            'msl_date_information' => $information
         ];
     }
     
