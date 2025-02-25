@@ -10,6 +10,38 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+    /**
+     * test if rights are correctly mapped
+     */
+    public function test_identifier_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+        {
+            "data": {
+                "id": "10.1594/pangaea.937090",
+                "type": "dois",
+                "attributes": {
+                    "doi": "10.82433/b09z-4k37"
+                }
+            }
+        }';
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+    
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapIdentifier($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_doi, "10.82433/b09z-4k37");
+
+
+    }   
+
 
     /**
      * test if rights are correctly mapped

@@ -17,32 +17,60 @@ class Datacite4Mapper implements MapperInterface
         // read json text
         $metadata = json_decode($sourceDataset->source_dataset, true);
 
-        // map title
+        // map things
         $this->mapTitle($metadata, $dataset);
         $this->mapDescription($metadata, $dataset);
         $this->mapRights($metadata, $dataset);
+        $this->mapIdentifier($metadata, $dataset);
         
         return $dataset;
     }
 
 
+
+         /**
+     * Maps the identifier/doi of a datacite entry
+     * It is a mandatory entry, failure throws exception
+     */
+    public function mapIdentifier(array $metadata, DataPublication $dataset){
+
+        $identifier = '';
+
+        if(isset($metadata['data']['attributes']['doi'])){
+            $identifier = $metadata['data']['attributes']['doi'];
+        } else {
+            throw new MappingException('Identifier/doi cannot be mapped: does not exist in entry');
+        }
+
+        if(strlen($identifier) > 0){
+            $dataset->msl_doi = $identifier;
+        } else {
+            throw new MappingException('Identifier/doi string empty');
+        }
+
+        return $dataset;
+    }
+
+
      /**
-     *  
-     * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
+     * Maps the rights of a datacite entry
+     * It is an optional entry
      */
     public function mapRights(array $metadata, DataPublication $dataset){
         $rights = $metadata['data']['attributes']['rightsList'];
+        if($rights >0){
+            foreach ($rights as $right) {
+                $dataset->addRight(
+                    (isset($right["rights"])                    ? $right["rights"]                  : ""), 
+                    (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
+                    (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
+                    (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
+                    (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
+                );
+            }
 
-        foreach ($rights as $right) {
-            $dataset->addRight(
-                (isset($right["rights"])                    ? $right["rights"]                  : ""), 
-                (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
-                (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
-                (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
-                (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
-            );
         }
-        // dd($dataset->msl_rights);
+
         return $dataset;
     }
 
