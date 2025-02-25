@@ -160,6 +160,11 @@ class DataPublication
      */
     public array $msl_funding_references = [];
 
+    /**
+     * primary language
+     */
+    public string $msl_language;
+
     public $msl_publication_date;
 
     public $msl_authors = [];
