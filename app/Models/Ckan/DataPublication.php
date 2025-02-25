@@ -31,7 +31,10 @@ class DataPublication
 
     public $msl_subdomains_interpreted = [];
 
-    public $msl_source;
+    /**
+     * link to landingpage
+     */    
+    public string $msl_source;
 
     public $name;
 
