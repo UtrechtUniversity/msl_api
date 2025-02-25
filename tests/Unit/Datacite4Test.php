@@ -10,6 +10,37 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+        /**
+     * test if publicationYear is correctly mapped
+     */
+    public function test_publicationYear_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "publicationYear": 2023
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapPublicationYear($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_publication_year, "2023");
+
+    }   
+
     /**
      * test if description is correctly mapped
      */
