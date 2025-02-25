@@ -39,16 +39,12 @@ class Datacite4Mapper implements MapperInterface
     public function mapDescription(array $metadata, DataPublication $dataset){
         $descriptions = $metadata['data']['attributes']['descriptions'];
 
-        if(sizeof($descriptions)>0){
-            $dataset->msl_description_abstract          = $this->receiveDescription('Abstract',            $descriptions);
-            $dataset->msl_description_methods           = $this->receiveDescription('Methods',             $descriptions);
-            $dataset->msl_description_series_information= $this->receiveDescription('SeriesInformation',   $descriptions);
-            $dataset->msl_description_table_of_contents = $this->receiveDescription('TableOfContents',     $descriptions);
-            $dataset->msl_description_technical_info    = $this->receiveDescription('TechnicalInfo',       $descriptions);
-            $dataset->msl_description_other             = $this->receiveDescription('Other',               $descriptions);
-        } else {
-            throw new MappingException('No description mapped (of any kind)');
-        }
+        $dataset->msl_description_abstract          = $this->receiveDescription('Abstract',            $descriptions);
+        $dataset->msl_description_methods           = $this->receiveDescription('Methods',             $descriptions);
+        $dataset->msl_description_series_information= $this->receiveDescription('SeriesInformation',   $descriptions);
+        $dataset->msl_description_table_of_contents = $this->receiveDescription('TableOfContents',     $descriptions);
+        $dataset->msl_description_technical_info    = $this->receiveDescription('TechnicalInfo',       $descriptions);
+        $dataset->msl_description_other             = $this->receiveDescription('Other',               $descriptions);
 
         return $dataset;
     }
@@ -58,6 +54,11 @@ class Datacite4Mapper implements MapperInterface
         $descriptionString = '';
         $descriptionsCandidates = [];
 
+        /////////////////  additional notes
+        // -> description is optional, so it can be empty
+        // -> "descriptionType" is always present
+        /////////////////
+
         // filter if descriptions with descriptionType are present and collect candidates
         foreach($descriptions as $description){
             if(isset($description["descriptionType"]) && $description["descriptionType"] == $descriptionType){
@@ -65,45 +66,11 @@ class Datacite4Mapper implements MapperInterface
             }
         }
 
-        if(sizeof($descriptionsCandidates) > 1 ) {
+        if(sizeof($descriptionsCandidates) > 0 ) {
             
-            // check if no "lang" property is set
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
-            foreach ($descriptionsCandidates as $candidate) {
-                if(!isset($candidate['lang'])){                            
-                    return $candidate['description'];
-                } 
-            }
-
-            // "lang" is set but empty
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
-            foreach ($descriptionsCandidates as $candidate) {
-                    if ($candidate['lang'] == "") {
-                    return $candidate['description'];
-                }
-            }
-
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
-            foreach ($descriptionsCandidates as $candidate) {
-                if($candidate['lang'] == "en"){
-                    return $candidate['description'];
-                }
-            }
-
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
-            foreach ($descriptionsCandidates as $candidate) {
-                if ($candidate['lang'] == "en-GB"){
-                    return $candidate['description'];
-                }
-            }
-
-            // nothing left. Just take the first one
-            return $descriptionsCandidates[0]['description'];
+            return $this->getEntryFilterByLang($descriptionsCandidates, 'description');
 
         } 
-        elseif(sizeof($descriptionsCandidates) == 1) {   
-            return $descriptionsCandidates[0]['description'];
-        }
 
         return $descriptionString;
     }
@@ -145,51 +112,8 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-                if(sizeof($titlesCandidates) == 1) {
-                    $dataset->title = $titlesCandidates[0]['title'];
-                    return $dataset;
-
-                } else {
-
-                    // check if no "lang" property is set
-                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
-                    foreach ($titlesCandidates as $candidate) {
-                        if(!isset($candidate['lang'])){                            
-                            $dataset->title = $candidate['title'];
-                            return $dataset;
-                        } 
-                    }
-
-                    // "lang" is set but empty
-                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
-                    foreach ($titlesCandidates as $candidate) {
-                            if ($candidate['lang'] == "") {
-                            $dataset->title = $candidate['title'];
-                            return $dataset;
-                        }
-                    }
-
-                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
-                    foreach ($titlesCandidates as $candidate) {
-                        if($candidate['lang'] == "en"){
-                            $dataset->title = $candidate['title'];
-                            return $dataset;
-                        }
-                    }
-
-                    // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
-                    foreach ($titlesCandidates as $candidate) {
-                        if ($candidate['lang'] == "en-GB"){
-                            $dataset->title = $candidate['title'];
-                            return $dataset;
-                        }
-                    }
-
-                    // nothing left. Just take the first one
-                    $dataset->title = $titlesCandidates[0]['title'];
-                    return $dataset;
-
-                }
+                $dataset->title = $this->getEntryFilterByLang($titlesCandidates, 'title');
+                return $dataset;
 
             } else {   
                 // the only title present
@@ -202,5 +126,44 @@ class Datacite4Mapper implements MapperInterface
         }
 
         return $dataset;
+    }
+
+
+    /**
+     * This function filters an array based on its "lang" entry
+     */
+    private function getEntryFilterByLang(array $allCandidates, string $filterOn){
+        // check if no "lang" property is set
+            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
+            foreach ($allCandidates as $candidate) {
+                if(!isset($candidate['lang'])){                            
+                    return $candidate[$filterOn];
+                } 
+            }
+
+            // "lang" is set but empty
+            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
+            foreach ($allCandidates as $candidate) {
+                if ($candidate['lang'] == "") {
+                    return $candidate[$filterOn];
+                }
+            }
+
+            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
+            foreach ($allCandidates as $candidate) {
+                if($candidate['lang'] == "en"){
+                    return $candidate[$filterOn];
+                }
+            }
+
+            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
+            foreach ($allCandidates as $candidate) {
+                if ($candidate['lang'] == "en-GB"){
+                    return $candidate[$filterOn];
+                }
+            }
+
+            // nothing left. Just take the first one
+            return $allCandidates[0][$filterOn];
     }
 }

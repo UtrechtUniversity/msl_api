@@ -6,7 +6,6 @@ use App\Models\SourceDataset;
 use PHPUnit\Framework\TestCase;
 use App\Models\Ckan\DataPublication;
 use App\Mappers\Datacite\Datacite4Mapper;
-use SebastianBergmann\Type\VoidType;
 
 class Datacite4Test extends TestCase
 {
@@ -218,7 +217,7 @@ class Datacite4Test extends TestCase
         $metadata = json_decode($sourceData->source_dataset, true);
         
         $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
-
+        
         $this->assertEquals($dataset->title, "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy");
         
 
