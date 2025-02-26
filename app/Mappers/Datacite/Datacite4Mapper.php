@@ -17,11 +17,15 @@ class Datacite4Mapper implements MapperInterface
         // read json text
         $metadata = json_decode($sourceDataset->source_dataset, true);
 
-        // map title
+        // map things
         $this->mapTitle($metadata, $dataset);
+        $this->mapDescription($metadata, $dataset);
+        $this->mapRights($metadata, $dataset);
+        $this->mapIdentifier($metadata, $dataset);
         
         return $dataset;
     }
+
 
 
          /**
@@ -42,12 +46,53 @@ class Datacite4Mapper implements MapperInterface
             $dataset->msl_publication_year = $publicationYear;
         } else {
             throw new MappingException('publicationYear string empty');
+
+
+         /**
+     * Maps the identifier/doi of a datacite entry
+     * It is a mandatory entry, failure throws exception
+     */
+    public function mapIdentifier(array $metadata, DataPublication $dataset){
+
+        $identifier = '';
+
+        if(isset($metadata['data']['attributes']['doi'])){
+            $identifier = $metadata['data']['attributes']['doi'];
+        } else {
+            throw new MappingException('Identifier/doi cannot be mapped: does not exist in entry');
+        }
+
+        if(strlen($identifier) > 0){
+            $dataset->msl_doi = $identifier;
+        } else {
+            throw new MappingException('Identifier/doi string empty');
         }
 
         return $dataset;
     }
 
 
+     /**
+     * Maps the rights of a datacite entry
+     * It is an optional entry
+     */
+    public function mapRights(array $metadata, DataPublication $dataset){
+        $rights = $metadata['data']['attributes']['rightsList'];
+        if($rights >0){
+            foreach ($rights as $right) {
+                $dataset->addRight(
+                    (isset($right["rights"])                    ? $right["rights"]                  : ""), 
+                    (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
+                    (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
+                    (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
+                    (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
+                );
+            }
+
+        }
+
+        return $dataset;
+    }
 
     /**
      * chooses one description from the datacite entry according to the following priorities
@@ -94,7 +139,7 @@ class Datacite4Mapper implements MapperInterface
 
         if(sizeof($descriptionsCandidates) > 0 ) {
             
-            return $this->getEntryFilterByLang($descriptionsCandidates, 'description');
+            return $this->getEntryFilterByLang($descriptionsCandidates)['description'];
 
         } 
 
@@ -138,7 +183,7 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-                $dataset->title = $this->getEntryFilterByLang($titlesCandidates, 'title');
+                $dataset->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
                 return $dataset;
 
             } else {   
@@ -158,12 +203,12 @@ class Datacite4Mapper implements MapperInterface
     /**
      * This function filters an array based on its "lang" entry
      */
-    private function getEntryFilterByLang(array $allCandidates, string $filterOn){
+    private function getEntryFilterByLang(array $allCandidates){
         // check if no "lang" property is set
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
             foreach ($allCandidates as $candidate) {
                 if(!isset($candidate['lang'])){                            
-                    return $candidate[$filterOn];
+                    return $candidate;
                 } 
             }
 
@@ -171,25 +216,25 @@ class Datacite4Mapper implements MapperInterface
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
             foreach ($allCandidates as $candidate) {
                 if ($candidate['lang'] == "") {
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
             foreach ($allCandidates as $candidate) {
                 if($candidate['lang'] == "en"){
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
             foreach ($allCandidates as $candidate) {
                 if ($candidate['lang'] == "en-GB"){
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // nothing left. Just take the first one
-            return $allCandidates[0][$filterOn];
+            return $allCandidates[0];
     }
 }

@@ -31,7 +31,10 @@ class DataPublication
 
     public $msl_subdomains_interpreted = [];
 
-    public $msl_source;
+    /**
+     * link to landingpage
+     */    
+    public string $msl_source;
 
     public $name;
 
@@ -125,7 +128,20 @@ class DataPublication
      */
     public array $msl_rights = [];
 
-    public $msl_doi;
+    /**
+     * doi of the data publication
+     */
+    public string $msl_doi;
+
+    /**
+     * list of alternate identifiers
+     */
+    public array $msl_alternate_identifiers = [];
+
+    /**
+     * list of related identifiers
+     */
+    public array $msl_related_identifiers = [];
 
     public $msl_handle;
 
@@ -139,13 +155,30 @@ class DataPublication
      */
     public ?string $msl_publication_year;
 
+    /**
+     * References to sources of funding
+     */
+    public array $msl_funding_references = [];
+
+    /**
+     * primary language
+     */
+    public string $msl_language;
+
+    /**
+     * storage for several types of dates
+     */
+    public array $msl_dates = [];
+
+    /**
+     * The main researchers involved in producing the data, or the authors of the publication, in priority order.
+     * May be a corporate/institutional or personal name.
+     */
+    public array $msl_creators = [];
+
     public $msl_publication_date;
 
-    public $msl_authors = [];
-
     public $msl_contributors = [];
-
-    public $msl_references = [];
 
     public $tag_string = [];
     
@@ -238,7 +271,8 @@ class DataPublication
         'msl_authors' => 'required'
     ];
 
-    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = "") {
+    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = ""): void
+    {
         $this->msl_rights[] = [
             'msl_right' => $right,
             'msl_right_uri' => $uri,
@@ -247,8 +281,70 @@ class DataPublication
             'msl_right_scheme_uri' => $schemeUri
         ];
     }
+
+    public function addAlternateIdentifier($identifier, $type): void
+    {
+        $this->msl_alternate_identifiers[] = [
+            'msl_alternate_identifier' => $identifier,
+            'msl_alternate_identifier_type' => $type
+        ];
+    }
+
+    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType): void
+    {
+        $this->msl_related_identifiers[] = [
+            'msl_related_identifier' => $identifier,
+            'msl_related_identifier_type' => $identifierType,
+            'msl_related_identifier_relation_type' => $relationType,
+            'msl_related_identifier_metadata_scheme' => $metadataScheme,
+            'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
+            'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
+            'msl_related_identifier_resource_type_general' => $resourceType,
+        ];
+    }
+
+    public function addFundingReference($funderName, $funderIdentifier = "", $funderIdentifierType = "", $schemeUri = "", $awardNumber = "", $awardUri = "", $awardTitle = ""): void
+    {
+        $this->msl_funding_references[] = [
+            'msl_funding_reference_funder_name' => $funderName,
+            'msl_funding_reference_funder_identifier' => $funderIdentifier,
+            'msl_funding_reference_funder_identifier_type' => $funderIdentifierType,
+            'msl_funding_reference_scheme_uri' => $schemeUri,            
+            'msl_funding_reference_award_number' => $awardNumber,
+            'msl_funding_reference_award_uri' => $awardUri,
+            'msl_funding_reference_award_title' => $awardTitle,
+        ];
+    }
+
+    public function addDate($date, $type, $information = ""): void
+    {
+        $this->msl_dates[] = [
+            'msl_date_date' => $date,
+            'msl_date_type' => $type,
+            'msl_date_information' => $information
+        ];
+    }
+
+    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $nameIdentifierUris = [], $affiliations = []): void
+    {
+        if((count($nameIdentifiers) !== count($nameIdentifierSchemes)) || (count($nameIdentifierSchemes) !== count($nameIdentifierUris))) {
+            throw new Exception('name identifier fields are not equal in length');
+        }
+
+        $this->msl_creators[] = [
+            'msl_creator_name' => $name,
+            'msl_creator_given_name' => $givenName,
+            'msl_creator_family_name' => $familyName,
+            'msl_creator_name_type' => $nameType,
+            'msl_creator_name_identifiers' => $nameIdentifiers,
+            'msl_creator_name_identifiers_schemes' => $nameIdentifierSchemes,
+            'msl_creator_name_identifiers_uris' => $nameIdentifierUris,
+            'msl_creator_affiliations_names' => $affiliations
+        ];
+    }
     
-    public function addTag($tagString, $uris = []) {
+    public function addTag($tagString, $uris = [])
+    {
         $exists = false;
         foreach ($this->msl_tags as $tag) {
             if($tag['msl_tag_string'] == $tagString) {
@@ -265,7 +361,8 @@ class DataPublication
         }
     }
     
-    public function addUriToTag($tagString, $uri) {
+    public function addUriToTag($tagString, $uri)
+    {
         foreach ($this->msl_tags as &$tag) {
             if($tag['msl_tag_string'] == $tagString) {
                 if(!in_array($uri, $tag['msl_tag_uris'])) {
