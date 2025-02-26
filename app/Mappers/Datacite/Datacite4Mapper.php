@@ -27,6 +27,21 @@ class Datacite4Mapper implements MapperInterface
     }
 
 
+    /**
+     * Takes available entries from 'alternateIdentifiers'
+     * and adds those to the dataset
+     * this is optional
+     */
+    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset){
+        $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
+
+        if($altIds > 0){
+            foreach ($altIds as $altIdEntry) {
+                $dataset->addAlternateIdentifier(
+                    (isset($altIdEntry["alternateIdentifier"])       ? $altIdEntry["alternateIdentifier"]     : ""),
+                    (isset($altIdEntry["alternateIdentifierType"])   ? $altIdEntry["alternateIdentifierType"] : "")
+                );
+            }
 
          /**
      * Maps the publicationYear of a datacite entry
@@ -94,6 +109,7 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
+
     /**
      * chooses one description from the datacite entry according to the following priorities
      * if multiple descriptions are available:
@@ -137,10 +153,8 @@ class Datacite4Mapper implements MapperInterface
             }
         }
 
-        if(sizeof($descriptionsCandidates) > 0 ) {
-            
+        if(sizeof($descriptionsCandidates) > 0 ) {            
             return $this->getEntryFilterByLang($descriptionsCandidates)['description'];
-
         } 
 
         return $descriptionString;
@@ -184,6 +198,7 @@ class Datacite4Mapper implements MapperInterface
                 }
 
                 $dataset->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
+
                 return $dataset;
 
             } else {   
