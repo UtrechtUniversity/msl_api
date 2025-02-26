@@ -44,6 +44,7 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "12345");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "Local accession number");
 
         //new test
         $sourceData = new SourceDataset();
@@ -105,7 +106,9 @@ class Datacite4Test extends TestCase
                 $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
                 
                 $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
+                $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "citation");
                 $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier'] , "http://hdl.handle.net/10261/371208");
+                $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier_type'] , "uri");
 
     }   
 
