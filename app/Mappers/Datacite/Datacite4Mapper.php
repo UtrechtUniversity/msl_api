@@ -19,9 +19,32 @@ class Datacite4Mapper implements MapperInterface
 
         // map title
         $this->mapTitle($metadata, $dataset);
+        $this->mapDescription($metadata, $dataset);
+        $this->mapRights($metadata, $dataset);
         
         return $dataset;
     }
+
+
+     /**
+     *  
+     * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
+     */
+    public function mapRights(array $metadata, DataPublication $dataset){
+        $rights = $metadata['data']['attributes']['rightsList'];
+
+        foreach ($rights as $right) {
+            $dataset->addRight(
+                (isset($right["rights"])                    ? $right["rights"]                  : ""), 
+                (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
+                (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
+                (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
+                (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
+            );
+        }
+        return $dataset;
+    }
+
 
     /**
      * chooses one description from the datacite entry according to the following priorities
