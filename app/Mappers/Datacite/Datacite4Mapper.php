@@ -18,12 +18,12 @@ class Datacite4Mapper implements MapperInterface
         $metadata = json_decode($sourceDataset->source_dataset, true);
 
         // map things
-        $this->mapTitle($metadata, $dataset);
-        $this->mapDescription($metadata, $dataset);
-        $this->mapRights($metadata, $dataset);
-        $this->mapIdentifier($metadata, $dataset);
-        $this->mapPublicationYear($metadata, $dataset);
-        $this->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $this->mapTitle($metadata, $dataset);
+        $dataset = $this->mapDescription($metadata, $dataset);
+        $dataset = $this->mapRights($metadata, $dataset);
+        $dataset = $this->mapIdentifier($metadata, $dataset);
+        $dataset = $this->mapPublicationYear($metadata, $dataset);
+        $dataset = $this->mapAlternateIdentifier($metadata, $dataset);
         
         return $dataset;
     }
