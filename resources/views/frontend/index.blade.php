@@ -9,8 +9,9 @@
           <h1 class="index-opacity-child p-2">Welcome </h1>
 
           <p class="index-opacity-child">
-              This is the EPOS Multi-Scale Labs data catalogue, an access point for Earth scientific laboratory data in Europe. 
-              Here you can find data from rock and melt physics, paleomagnetism, geochemistry, microscopy, tomography and analogue modelling of geological processes. 
+            This is the EPOS Multi-Scale Labs data catalogue, an access point for Earth scientific laboratory data in Europe. 
+            Here you can find data, labs and lab equipment from rock and melt physics, paleomagnetism, geochemistry, microscopy, 
+            tomography, geo-energy test beds and analogue modelling of geological processes.
           </p>
           
 

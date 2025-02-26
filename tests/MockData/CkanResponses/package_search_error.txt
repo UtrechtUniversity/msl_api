@@ -1,0 +1,8 @@
+{
+    "help": "https://epos-msl.uu.nl/api/3/action/help_show?name=package_search",
+    "error": {
+        "__type": "Search Error",
+        "message": "Search error: 'SOLR returned an error running query: {\\'fq\\': [\\'+capacity:public ///\\', \\'+site_id:\"default\"\\', \\'+state:active\\', \\'+permission_labels:(\"public\")\\'], \\'rows\\': 11, \\'df\\': \\'text\\', \\'sort\\': \\'score desc, metadata_modified desc\\', \\'fl\\': \\'id validated_data_dict\\', \\'q\\': \\'*:*\\', \\'facet\\': \\'true\\', \\'facet.limit\\': \\'10000\\', \\'facet.mincount\\': 1, \\'wt\\': \\'json\\', \\'q.op\\': \\'AND\\'} Error: SolrError(\\'Solr responded with an error (HTTP 400): [Reason: org.apache.solr.search.SyntaxError: Cannot parse \\\\\\'+capacity:public ///\\\\\\': Lexical error at line 1, column 19.  Encountered: \"/\" (47), after : \"/\"]\\')'"
+    },
+    "success": false
+}

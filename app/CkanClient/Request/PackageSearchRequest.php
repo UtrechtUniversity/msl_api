@@ -75,9 +75,13 @@ class PackageSearchRequest implements RequestInterface
         ];
     }
 
-    public function addFilterQuery($fieldName, $value)
+    public function addFilterQuery($fieldName, $value, $escape = true)
     {
-        $this->filterQueries[$fieldName][] = '"' .  SolrUtils::escape($value) . '"';
+        if($escape) {
+            $this->filterQueries[$fieldName][] = '"' .  SolrUtils::escape($value) . '"';    
+        } else {
+            $this->filterQueries[$fieldName][] = $value;
+        }
     }
 
     private function getFilterQueryQuery()
