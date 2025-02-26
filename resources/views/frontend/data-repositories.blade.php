@@ -12,7 +12,7 @@
               We can then start working towards including data from your repository too.
             </p>              
           
-        <div class="flex flex-wrap justify-center gap-4 max-w-screen-lg">
+        <div class="flex flex-wrap justify-center gap-4 max-w-screen-lg pb-20">
 
           @foreach ($repositories as $repo)
             @if ($repo["hide"] == "false")

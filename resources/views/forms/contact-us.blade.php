@@ -51,8 +51,12 @@
                     'title'         => 'Subject *',
                     'placeholder'   => 'Select subject',
                     'ElementsArray' =>    array(
-                        'Report a bug or feedback',
-                        'Contribute as a repository',
+                        "Report an issue on the page",
+                        "Give feedback or suggestions",
+                        "Contribute as a repository",
+                        "Contribute as a laboratory",
+                        "Contribute as a researcher",
+                        "Other"
                     )
                 ])
             </div>

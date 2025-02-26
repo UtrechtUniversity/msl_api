@@ -271,7 +271,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 # /analogue
-This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+This endpoint gives access to all data-publications available that are marked as belonging to the analogue modelling (sub)domain. 
 
 ## Search all analogue modelling data-publications [GET]
 + Parameters
@@ -849,7 +849,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 # /paleo
-This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+This endpoint gives access to all data-publications available that are marked as belonging to the paleomagnetism (sub)domain. 
 
 ## Search all paleomagnetism data-publications [GET]
 + Parameters
@@ -976,7 +976,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 # /microscopy
-This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+This endpoint gives access to all data-publications available that are marked as belonging to the microscopy and tomography (sub)domain. 
 
 ## Search all microscopy and tomography data-publications [GET]
 + Parameters
@@ -1201,7 +1201,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 # /geochemistry
-This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+This endpoint gives access to all data-publications available that are marked as belonging to the geochemistry (sub)domain. 
 
 ## Search all geochemistry data-publications [GET]
 + Parameters
@@ -1231,15 +1231,293 @@ This endpoint gives access to all data-publications available that are marked as
   
 ```json
 {
-    "success": true,
-    "message": "",
-    "result": {
-        "count": 0,
-        "resultCount": 0,
-        "results": []
-    }
+  "success": true,
+  "message": "",
+  "result": {
+    "count": 14,
+    "resultCount": 10,
+    "results": [
+      {
+        "title": "Frictional slip weakening and shear-enhanced crystallinity in simulated coal fault gouges at subseismic slip rates",
+        "name": "2d7d3045ac3d3ee06edac2fa61a9cc26",
+        "portalLink": "http:\/\/localhost\/data-publication\/2d7d3045ac3d3ee06edac2fa61a9cc26",
+        "doi": "10.24416\/UU01-48I5DA",
+        "handle": "",
+        "license": "",
+        "version": "",
+        "source": "http:\/\/dx.doi.org\/10.24416\/UU01-48I5DA",
+        "publisher": "e716d725-6846-4f70-b9cc-63900473d18a",
+        "subdomain": [
+          "rock and melt physics",
+          "analogue modelling of geologic processes",
+          "microscopy and tomography",
+          "geochemistry"
+        ],
+        "description": "We report seven velocity stepping (VS) and one slide-hold-slide (SHS) friction experiments performed on simulated fault gouges prepared from bituminous coal, collected from the upper Silesian Basin of Poland. These experiments were performed at 25-45 MPa effective normal stress and 100 \u2103, employing sliding velocities of 0.1-100 \u03bcm\/s, using a conventional triaxial apparatus plus direct shear assembly. All samples showed marked slip weakening behaviour at shear displacements beyond ~1-2 mm, from a peak friction coefficient approaching ~0.5 to (near) steady state values of ~0.3, regardless of effective normal stress or whether vacuum dry flooded with distilled (DI) water at 15 MPa pore fluid pressure. Analysis of both unsheared and sheared samples by means of microstructural observation, micro-area X-ray diffraction (XRD) and Raman spectroscopy suggests that the marked slip weakening behaviour can be attributed to the development of R-, B- and Y- shear bands, with internal shear-enhanced coal crystallinity development. The SHS experiment performed showed a transient peak healing (restrengthening) effect that increased with the logarithm of hold time at a linearized rate of ~0.006. We also determined the rate-dependence of steady state friction for all VS samples using a full rate and state friction approach. This showed a transition from velocity strengthening to velocity weakening at slip velocities >1 \u03bcm\/s in the coal sample under vacuum dry conditions, but at >10 \u03bcm\/s in coal samples exposed to DI water at 15 MPa pore pressure. This may be controlled by competition between dilatant granular flow and compaction enhanced by presence of water. Together with our previous work on frictional properties of coal-shale mixtures, our results imply that the presence of a weak, coal-dominated patch on faults that cut or smear-out coal seams may promote unstable, seismogenic slip behaviour, though the importance of this in enhancing either induced or natural seismicity depends on local conditions. The data is provided in a folder with 10 subfolders for 10 experiments\/samples, including friction, XRD and Raman data. Detailed information about the files in these subfolders as well as information on how the data is processed is given in the explanatory file Fan-et-al-2020-Data-Description.pdf. Contact person is Dr. Jinfeng Liu - Sun Yat-Sen University- liujinf5@mail.sysu.edu.cn",
+        "publicationDate": "2020-01-01",
+        "citation": "Liu, J., &amp; Hunfeld, L. B. (2020). Frictional slip weakening and shear-enhanced crystallinity in simulated coal fault gouges at subseismic slip rates. <i>Utrecht University<\/i>. https:\/\/doi.org\/10.24416\/UU01-48I5DA",
+        "creators": [
+          {
+            "authorName": "Liu, Jinfeng",
+            "authorOrcid": "0000-0002-6444-9427",
+            "authorScopus": "",
+            "authorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University; Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China; Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China;"
+          },
+          {
+            "authorName": "Hunfeld, Luuk Bernd",
+            "authorOrcid": "0000-0001-9250-414X",
+            "authorScopus": "",
+            "authorAffiliation": "Utrecht University;"
+          }
+        ],
+        "contributors": [
+          {
+            "contributorName": "Fan, Caiyuan",
+            "contributorOrcid": "0000-0002-0413-8467",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University;",
+            "contributorRole": "DataCollector"
+          },
+          {
+            "contributorName": "Fan, Caiyuan",
+            "contributorOrcid": "0000-0002-0413-8467",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University;",
+            "contributorRole": "Researcher"
+          },
+          {
+            "contributorName": "Liu, Jinfeng",
+            "contributorOrcid": "0000-0002-6444-9427",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University; Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China; Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China;",
+            "contributorRole": "DataCollector"
+          },
+          {
+            "contributorName": "Liu, Jinfeng",
+            "contributorOrcid": "0000-0002-6444-9427",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University; Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China; Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China;",
+            "contributorRole": "ProjectLeader"
+          },
+          {
+            "contributorName": "Liu, Jinfeng",
+            "contributorOrcid": "0000-0002-6444-9427",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University; Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China; Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China;",
+            "contributorRole": "Researcher"
+          },
+          {
+            "contributorName": "Hunfeld, Luuk Bernd",
+            "contributorOrcid": "0000-0001-9250-414X",
+            "contributorScopus": "",
+            "contributorAffiliation": "Utrecht University;",
+            "contributorRole": "Researcher"
+          },
+          {
+            "contributorName": "Spiers, Christopher James",
+            "contributorOrcid": "0000-0002-3436-8941",
+            "contributorScopus": "",
+            "contributorAffiliation": "Utrecht University;",
+            "contributorRole": "Researcher"
+          },
+          {
+            "contributorName": "Experimental rock deformation\/HPT-Lab (Utrecht University, The Netherlands)",
+            "contributorOrcid": "",
+            "contributorScopus": "",
+            "contributorAffiliation": "Utrecht University;",
+            "contributorRole": "HostingInstitution"
+          },
+          {
+            "contributorName": "of Earth Sciences and Engineering (Sun Yat-Sen University), School",
+            "contributorOrcid": "",
+            "contributorScopus": "",
+            "contributorAffiliation": "Sun Yat-Sen University;",
+            "contributorRole": "HostingInstitution"
+          },
+          {
+            "contributorName": "Liu, Jinfeng",
+            "contributorOrcid": "0000-0002-6444-9427",
+            "contributorScopus": "",
+            "contributorAffiliation": "School of Earth Sciences and Engineering, Sun Yat-Sen University; Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China; Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China;",
+            "contributorRole": "ContactPerson"
+          }
+        ],
+        "references": [
+          {
+            "referenceDoi": "10.1002\/2017JB014876",
+            "referenceHandle": "",
+            "referenceTitle": "Hunfeld, L. B., Niemeijer, A. R., & Spiers, C. J. (2017). Frictional Properties of Simulated Fault Gouges from the Seismogenic Groningen Gas Field Under In Situ P\u2013T \u2010Chemical Conditions. Journal of Geophysical Research: Solid Earth, 122(11), 8969\u20138989. Portico. https:\/\/doi.org\/10.1002\/2017jb014876\n",
+            "referenceType": "References"
+          }
+        ],
+        "laboratories": [
+          "Experimental rock deformation\/HPT-Lab (Utrecht University, The Netherlands)"
+        ],
+        "materials": [
+          "sedimentary rock",
+          "coal",
+          "fault rock",
+          "fault gouge",
+          "mudstone",
+          "shale",
+          "bituminous coal",
+          "simulated fault gouge"
+        ],
+        "spatial": [],
+        "locations": [
+          "49.96072880335346, 15.384399613612231, 51.57806093491139, 21.53674470471674",
+          "Coal samples were collected from Brzeszcze Mine (Seam 364), in the Upper Silesian Basin of Poland, Poland"
+        ],
+        "coveredPeriods": [],
+        "collectionPeriods": [
+          {
+            "startDate": "2016-10-01",
+            "endDate": "2020-01-31"
+          }
+        ],
+        "maintainer": "",
+        "downloads": [
+          {
+            "fileName": "Fan-et-al-2020-Data-Description",
+            "downloadLink": "https:\/\/geo.public.data.uu.nl\/vault-coal-friction-data\/Liu_et_al_2020_Solid_Earth%5B1585573908%5D\/original\/Fan-et-al-2020-Data-Description.pdf"
+          }
+        ],
+        "researchAspects": [
+          "equipment",
+          "x-ray diffractometer",
+          "tectonic deformation structure",
+          "tectonic fault"
+        ]
+      }
+    ]
+  }
 }
 ```
+
+
+# /geoenergy
+This endpoint gives access to all data-publications available that are marked as belonging to the Geo-energy test beds (sub)domain. 
+
+## Search all Geo-energy test beds data-publications [GET]
++ Parameters
+
+    + rows (number, optional) - The number of results to return.
+        + Default: `10`
+    + start (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `true`
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+  "success": true,
+  "message": "",
+  "result": {
+    "count": 3,
+    "resultCount": 3,
+    "results": [
+      {
+        "title": "In-situ Distributed Strain Sensing (DSS) data from the Zeerijp-3a well in the Groningen gas field, the Netherlands. Period 2015-2021",
+        "name": "4e0c10ff66e4b66624ca0efdedcbcdfc",
+        "portalLink": "http:\/\/localhost\/data-publication\/4e0c10ff66e4b66624ca0efdedcbcdfc",
+        "doi": "10.24416\/UU01-82HIJ4",
+        "handle": "",
+        "license": "",
+        "version": "",
+        "source": "http:\/\/dx.doi.org\/10.24416\/UU01-82HIJ4",
+        "publisher": "e716d725-6846-4f70-b9cc-63900473d18a",
+        "subdomain": [
+          "rock and melt physics",
+          "analogue modelling of geologic processes",
+          "geo-energy test beds"
+        ],
+        "description": "The Groningen gas field is the largest gas field in Europe. Gas production in this field has led to seismicity and surface subsidence, both believed to be caused by compaction of the underlying reservoir sandstone. In 2015, the field operator (Nederlandse Aardolie Maatschappij - NAM) installed a fibre optics cable in the Zeerijp-3a well, at a true vertical depth of about 2900 to 3200 m, i.e. in and around the gas reservoir. The Zeerijp-3a well is situated in the center of the field, where seismicity (<3.4 M) and subsidence (up to 35 cm) are both greatest. The fibre optics cable allows real-time, continuous, in-situ monitoring of compaction of the reservoir and the over- and underlying formations, through the Distributed Strain Sensing (DSS) technique. DSS data (strain-time-depth) obtained from October 2015 to December 2021 are provided by NAM, open access. The data were processed by NAM, as detailed in the report accompanying the data. Raw data are available on request. The data presented in this data publication were used and analyzed in the research report: \"Zeerijp-3 in-situ Strain Analysis - update 2021\" which is provided along with this data publication and is individually freely accessible at: \"https:\/\/nam-onderzoeksrapporten.data-app.nl\/reports\/download\/groningen\/en\/5c6ccc55-707d-49b6-bcc3-9fb02dc72a16\"",
+        "publicationDate": "2022-01-01",
+        "citation": "Kole, P. R., &amp; van Eijs, R. M. H. E. (2022). <i>In-situ Distributed Strain Sensing (DSS) data from the Zeerijp-3a well in the Groningen gas field, the Netherlands. Period 2015-2021<\/i> (Version 1.1) [Data set]. Utrecht University. https:\/\/doi.org\/10.24416\/UU01-82HIJ4",
+        "creators": [
+          {
+            "authorName": "Kole, Pepijn R.",
+            "authorOrcid": "",
+            "authorScopus": "8986439400",
+            "authorAffiliation": "Nederlandse Aardolie Maatschappij;"
+          },
+          {
+            "authorName": "van Eijs, Rob M.H.E.",
+            "authorOrcid": "",
+            "authorScopus": "6507367503",
+            "authorAffiliation": "Nederlandse Aardolie Maatschappij;"
+          }
+        ],
+        "contributors": [],
+        "references": [
+          {
+            "referenceDoi": "",
+            "referenceHandle": "",
+            "referenceTitle": "",
+            "referenceType": "IsSupplementTo"
+          }
+        ],
+        "laboratories": [],
+        "materials": [
+          "sedimentary rock",
+          "sandstone",
+          "wacke",
+          "Slochteren sandstone"
+        ],
+        "spatial": [],
+        "locations": [
+          "Groningen gas field",
+          "Zeerijp-3a well"
+        ],
+        "coveredPeriods": [],
+        "collectionPeriods": [
+          {
+            "startDate": "2015-10-12",
+            "endDate": "2021-12-31"
+          }
+        ],
+        "maintainer": "",
+        "downloads": [
+          {
+            "fileName": "readme",
+            "downloadLink": "https:\/\/geo.public.data.uu.nl\/vault-nam-geological-model\/Publication_DSS_Zeerijp-2015-2021%5B1669890990%5D\/original\/readme.txt"
+          },
+          {
+            "fileName": "2015-2021",
+            "downloadLink": "https:\/\/geo.public.data.uu.nl\/vault-nam-geological-model\/Publication_DSS_Zeerijp-2015-2021%5B1669890990%5D\/original\/2015-2021.zip"
+          }
+        ],
+        "researchAspects": [
+          "distributed fibre optic sensing",
+          "distributed strain sensing",
+          "antropogenic setting",
+          "Induced seismicity",
+          "surface subsidence",
+          "gas field"
+        ]
+      }
+    ]
+  }
+}
+```
+
+
 
 </details>
 

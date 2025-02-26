@@ -114,7 +114,7 @@
             </p>
             <p>
                 EPOS MSL currently provides access to data at these data repositories. The fastest route to make your data discoverable by MSL, 
-                is to publish your data at one of these. Would you like to publish elsewhere? Let us know! 
+                is to publish your data at one of these. Would you like to publish elsewhere? <a href="{{ route('contact-us') }}">Let us know!</a>
                 We can then start working towards including data from your repository too. 
             </p>
     
@@ -127,7 +127,7 @@
                 These can help you optimize the re-usability of your data by others, and therefore increase the impact of your data publication.
             </p>
             <p class="pb-8">
-                Do you know about a best practice relevant for MSL data and models, not listed here? Let us know!
+                Do you know about a best practice relevant for MSL data and models, not listed here? <a href="{{ route('contact-us') }}">Let us know!</a>
             </p>
     
 
@@ -177,7 +177,7 @@
             </div>
 
             <p>Would you like to embed MSL vocabularies, or the above keyword selector in the data repository you’re affiliated to? You can - it’s all open access and open source. 
-                Have a look here on how to approach this (link to: how to contribute as a data repository → and include a few instructions on how to embed the keyword selector there). </p>
+              Have a look <a href="{{ route('contribute-repository') }}">here</a> on how to approach this.  </p>
             
             <h2 class="pt-10 pb-4" id="step-4">Step 4: Publish your work
             </h2>
@@ -196,7 +196,7 @@
                 <li>A facility name from the Geo-Energy Test Beds. In this case, we know it concerns a GETB data publication.</li>
             </ul>
 
-            <p>Note that we renew this search once or twice per year, meaning that the data you just published may not be harvested by MSL for several months. In doubt? Or do you feel we missed your data publication? Let us know. </p>
+            <p>Note that we renew this search once or twice per year, meaning that the data you just published may not be harvested by MSL for several months. In doubt? Or do you feel we missed your data publication?<a href="{{ route('contact-us') }}">Let us know!</a></p>
 
         </div>
         
