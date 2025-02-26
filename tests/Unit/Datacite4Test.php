@@ -45,6 +45,70 @@ class Datacite4Test extends TestCase
 
         $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "12345");
         $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "Local accession number");
+
+        //new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "alternateIdentifiers": [
+                           
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_alternate_identifiers , []);
+
+        //new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "alternateIdentifiers": [
+                            {
+                                "alternateIdentifierType": "citation",
+                                "alternateIdentifier": "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107"
+                            },
+                            {
+                                "alternateIdentifierType": "uri",
+                                "alternateIdentifier": "http://hdl.handle.net/10261/371208"
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+        
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "citation");
+        $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier'] , "http://hdl.handle.net/10261/371208");
+        $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier_type'] , "uri");
     }   
 
     /**
@@ -64,20 +128,50 @@ class Datacite4Test extends TestCase
                 }
             }
         }';
-            $dataciteMapper = new Datacite4Mapper();
 
-            // create empty data publication
-            $dataset = new DataPublication;
-    
-            // read json text
-            $metadata = json_decode($sourceData->source_dataset, true);
-            
-            $dataset = $dataciteMapper->mapIdentifier($metadata, $dataset);
+        $dataciteMapper = new Datacite4Mapper();
 
-            $this->assertEquals($dataset->msl_doi, "10.82433/b09z-4k37");
+        // create empty data publication
+        $dataset = new DataPublication;
 
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapIdentifier($metadata, $dataset);
 
-    }   
+        $this->assertEquals($dataset->msl_doi, "10.82433/b09z-4k37");
+    }
+
+    /**
+     * test if publicationYear is correctly mapped
+     */
+    public function test_publicationYear_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "publicationYear": 2023
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapPublicationYear($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_publication_year, "2023");
+
+    } 
 
 
     /**
@@ -106,38 +200,7 @@ class Datacite4Test extends TestCase
                 }
             }
         }';
-            $dataciteMapper = new Datacite4Mapper();
 
-            // create empty data publication
-            $dataset = new DataPublication;
-    
-            // read json text
-            $metadata = json_decode($sourceData->source_dataset, true);
-            
-            $dataset = $dataciteMapper->mapRights($metadata, $dataset);
-
-            $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
-            $this->assertEquals($dataset->msl_rights[0]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
-            $this->assertEquals($dataset->msl_rights[0]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
-            $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier'], "cc-by-4.0");
-            $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier_scheme'], "SPDX");
-
-            // new test
-
-            $sourceData = new SourceDataset();
-
-            $sourceData->source_dataset = '
-            {
-                "data": {
-                    "id": "10.1594/pangaea.937090",
-                    "type": "dois",
-                    "attributes": {
-                        "alternateIdentifiers": [
-                           
-                        ]
-                    }
-                }
-            }';
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -146,46 +209,57 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapRights($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_alternate_identifiers , []);
+        $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
+        $this->assertEquals($dataset->msl_rights[0]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
+        $this->assertEquals($dataset->msl_rights[0]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
+        $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier'], "cc-by-4.0");
+        $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier_scheme'], "SPDX");
 
-                //new test
-                $sourceData = new SourceDataset();
+        // new test
 
-                $sourceData->source_dataset = '
-                    {
-                        "data": {
-                            "id": "10.1594/pangaea.937090",
-                            "type": "dois",
-                            "attributes": {
-                                "alternateIdentifiers": [
-                                    {
-                                        "alternateIdentifierType": "citation",
-                                        "alternateIdentifier": "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107"
-                                    },
-                                    {
-                                        "alternateIdentifierType": "uri",
-                                        "alternateIdentifier": "http://hdl.handle.net/10261/371208"
-                                    }
-                                ]
-                            }
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+        {
+            "data": {
+                "id": "10.1594/pangaea.937090",
+                "type": "dois",
+                "attributes": {
+                    "rightsList": [
+                        {
+                            "rights": "openAccess"
+                        },
+                        {
+                            "rights": "Creative Commons Attribution 4.0 International",
+                            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                            "schemeUri": "https://spdx.org/licenses/",
+                            "rightsIdentifier": "cc-by-4.0",
+                            "rightsIdentifierScheme": "SPDX"
                         }
-                    }';
-                $dataciteMapper = new Datacite4Mapper();
+                    ]
+                }
+            }
+        }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
         
-                // create empty data publication
-                $dataset = new DataPublication;
-        
-                // read json text
-                $metadata = json_decode($sourceData->source_dataset, true);
-                
-                $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
-                
-                $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
-                $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "citation");
-                $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier'] , "http://hdl.handle.net/10261/371208");
-                $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier_type'] , "uri");
+        $dataset = $dataciteMapper->mapRights($metadata, $dataset);
+
+
+        $this->assertEquals($dataset->msl_rights[0]['msl_right'], "openAccess");
+        $this->assertEquals($dataset->msl_rights[1]['msl_right'], "Creative Commons Attribution 4.0 International");
+
+        $this->assertEquals($dataset->msl_rights[1]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
+        $this->assertEquals($dataset->msl_rights[1]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
+        $this->assertEquals($dataset->msl_rights[1]['msl_right_identifier'], "cc-by-4.0");
+        $this->assertEquals($dataset->msl_rights[1]['msl_right_identifier_scheme'], "SPDX");
     }   
 
     /**
