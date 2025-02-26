@@ -120,7 +120,7 @@ class Datacite4Mapper implements MapperInterface
 
         if(sizeof($descriptionsCandidates) > 0 ) {
             
-            return $this->getEntryFilterByLang($descriptionsCandidates, 'description');
+            return $this->getEntryFilterByLang($descriptionsCandidates)['description'];
 
         } 
 
@@ -164,7 +164,7 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-                $dataset->title = $this->getEntryFilterByLang($titlesCandidates, 'title');
+                $dataset->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
                 return $dataset;
 
             } else {   
@@ -184,12 +184,12 @@ class Datacite4Mapper implements MapperInterface
     /**
      * This function filters an array based on its "lang" entry
      */
-    private function getEntryFilterByLang(array $allCandidates, string $filterOn){
+    private function getEntryFilterByLang(array $allCandidates){
         // check if no "lang" property is set
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
             foreach ($allCandidates as $candidate) {
                 if(!isset($candidate['lang'])){                            
-                    return $candidate[$filterOn];
+                    return $candidate;
                 } 
             }
 
@@ -197,25 +197,25 @@ class Datacite4Mapper implements MapperInterface
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
             foreach ($allCandidates as $candidate) {
                 if ($candidate['lang'] == "") {
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
             foreach ($allCandidates as $candidate) {
                 if($candidate['lang'] == "en"){
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
             foreach ($allCandidates as $candidate) {
                 if ($candidate['lang'] == "en-GB"){
-                    return $candidate[$filterOn];
+                    return $candidate;
                 }
             }
 
             // nothing left. Just take the first one
-            return $allCandidates[0][$filterOn];
+            return $allCandidates[0];
     }
 }
