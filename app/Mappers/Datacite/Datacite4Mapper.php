@@ -23,6 +23,15 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
+
+    /**
+     * stores the related identifier to the dataset
+     * 
+     */
+    public function mapRelatedIdentifier(array $metadata, DataPublication $dataset){
+
+    }
+
     /**
      * chooses one title from the datacite entry according to the following priorities
      * if multiple titles are available:
