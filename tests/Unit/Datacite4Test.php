@@ -10,8 +10,47 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+
+    /**
+     * test if funding reference is correctly mapped
+     */
+    public function test_fundingReference_mapping(): void{
+
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "alternateIdentifiers": [
+                            {
+                                "alternateIdentifierType": "Local accession number",
+                                "alternateIdentifier": "12345"
+                            }
+                        ]
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "12345");
+
+    }
+
+
         /**
-     * test if description is correctly mapped
+     * test if alternate Identifier is correctly mapped
      */
     public function test_alternateIdentifier_mapping(): void
     {
