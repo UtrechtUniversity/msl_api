@@ -1,7 +1,9 @@
 <?php
-namespace App\Datasets;
+namespace App\Models\Ckan;
 
-class BaseDataset
+use Exception;
+
+class DataPublication
 {
 
     /**
@@ -29,7 +31,10 @@ class BaseDataset
 
     public $msl_subdomains_interpreted = [];
 
-    public $msl_source;
+    /**
+     * link to landingpage
+     */    
+    public string $msl_source;
 
     public $name;
 
@@ -45,13 +50,98 @@ class BaseDataset
      */
     public string $owner_org;
 
-    public $notes;
+    /**
+     * abstract text
+     * @var string
+     */
+    public string $msl_description_abstract;
 
-    public $msl_notes_annotated;
+    /**
+     * abstract text annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_abstract_annotated;
 
-    public $msl_technical_description;
+    /**
+     * methods 
+     * @var string
+     */
+    public string $msl_description_methods;
 
-    public $msl_doi;
+    /**
+     * methods annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_methods_annotated;
+
+    /**
+     * series information
+     * @var string
+     */
+    public string $msl_description_series_information;
+    
+    /**
+     * series information annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_series_information_annotated;
+
+    /**
+     * table of contents
+     * @var string
+     */
+    public string $msl_description_table_of_contents;
+
+    /**
+     * table of contents annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_table_of_contents_annotated;
+
+    /**
+     * technical info
+     * @var string
+     */
+    public string $msl_description_technical_info;
+
+    /**
+     * technical info annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_technical_info_annotated;
+
+    /**
+     * other description
+     * @var string
+     */
+    public string $msl_description_other;
+
+    /**
+     * other description annotated, includes elements to display keyword matches
+     * @var string
+     */
+    public string $msl_description_other_annotated;
+
+    /**
+     * list of rights / licenses
+     * @var array
+     */
+    public array $msl_rights = [];
+
+    /**
+     * doi of the data publication
+     */
+    public string $msl_doi;
+
+    /**
+     * list of alternate identifiers
+     */
+    public array $msl_alternate_identifiers = [];
+
+    /**
+     * list of related identifiers
+     */
+    public array $msl_related_identifiers = [];
 
     public $msl_handle;
 
@@ -59,15 +149,36 @@ class BaseDataset
 
     public $msl_publication_month;
 
-    public $msl_publication_year;
+    /**
+     * year of publication
+     * @var ?string
+     */
+    public ?string $msl_publication_year;
+
+    /**
+     * References to sources of funding
+     */
+    public array $msl_funding_references = [];
+
+    /**
+     * primary language
+     */
+    public string $msl_language;
+
+    /**
+     * storage for several types of dates
+     */
+    public array $msl_dates = [];
+
+    /**
+     * The main researchers involved in producing the data, or the authors of the publication, in priority order.
+     * May be a corporate/institutional or personal name.
+     */
+    public array $msl_creators = [];
 
     public $msl_publication_date;
 
-    public $msl_authors = [];
-
     public $msl_contributors = [];
-
-    public $msl_references = [];
 
     public $tag_string = [];
     
@@ -159,8 +270,80 @@ class BaseDataset
         'title' => 'required',
         'msl_authors' => 'required'
     ];
+
+    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = ""): void
+    {
+        $this->msl_rights[] = [
+            'msl_right' => $right,
+            'msl_right_uri' => $uri,
+            'msl_right_identifier' => $identifier,
+            'msl_right_identifier_scheme' => $identifierScheme,
+            'msl_right_scheme_uri' => $schemeUri
+        ];
+    }
+
+    public function addAlternateIdentifier($identifier, $type): void
+    {
+        $this->msl_alternate_identifiers[] = [
+            'msl_alternate_identifier' => $identifier,
+            'msl_alternate_identifier_type' => $type
+        ];
+    }
+
+    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType): void
+    {
+        $this->msl_related_identifiers[] = [
+            'msl_related_identifier' => $identifier,
+            'msl_related_identifier_type' => $identifierType,
+            'msl_related_identifier_relation_type' => $relationType,
+            'msl_related_identifier_metadata_scheme' => $metadataScheme,
+            'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
+            'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
+            'msl_related_identifier_resource_type_general' => $resourceType,
+        ];
+    }
+
+    public function addFundingReference($funderName, $funderIdentifier = "", $funderIdentifierType = "", $schemeUri = "", $awardNumber = "", $awardUri = "", $awardTitle = ""): void
+    {
+        $this->msl_funding_references[] = [
+            'msl_funding_reference_funder_name' => $funderName,
+            'msl_funding_reference_funder_identifier' => $funderIdentifier,
+            'msl_funding_reference_funder_identifier_type' => $funderIdentifierType,
+            'msl_funding_reference_scheme_uri' => $schemeUri,            
+            'msl_funding_reference_award_number' => $awardNumber,
+            'msl_funding_reference_award_uri' => $awardUri,
+            'msl_funding_reference_award_title' => $awardTitle,
+        ];
+    }
+
+    public function addDate($date, $type, $information = ""): void
+    {
+        $this->msl_dates[] = [
+            'msl_date_date' => $date,
+            'msl_date_type' => $type,
+            'msl_date_information' => $information
+        ];
+    }
+
+    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $affiliations = []): void
+    {
+        if(count($nameIdentifiers) !== count($nameIdentifierSchemes)) {
+            throw new Exception('number of name identifiers not equal to numbers of schemes');
+        }
+
+        $this->msl_creators[] = [
+            'msl_creator_name' => $name,
+            'msl_creator_given_name' => $givenName,
+            'msl_creator_family_name' => $familyName,
+            'msl_creator_name_type' => $nameType,
+            'msl_creator_name_identifiers' => $nameIdentifiers,
+            'msl_creator_name_identifiers_schemes' => $nameIdentifierSchemes,
+            'msl_creator_affiliations' => $affiliations
+        ];
+    }
     
-    public function addTag($tagString, $uris = []) {
+    public function addTag($tagString, $uris = [])
+    {
         $exists = false;
         foreach ($this->msl_tags as $tag) {
             if($tag['msl_tag_string'] == $tagString) {
@@ -177,7 +360,8 @@ class BaseDataset
         }
     }
     
-    public function addUriToTag($tagString, $uri) {
+    public function addUriToTag($tagString, $uri)
+    {
         foreach ($this->msl_tags as &$tag) {
             if($tag['msl_tag_string'] == $tagString) {
                 if(!in_array($uri, $tag['msl_tag_uris'])) {
@@ -317,7 +501,7 @@ class BaseDataset
                 break;
 
             default:
-                throw new \Exception('attempt to add invalid subdomain');
+                throw new Exception('attempt to add invalid subdomain');
         }
     }
 
@@ -484,7 +668,7 @@ class BaseDataset
                     break;
 
                 default:
-                    throw new \Exception('invalid keyword type added');
+                    throw new Exception('invalid keyword type added');
             }
         } elseif ($type == 'original') {
             switch (true) {
@@ -533,7 +717,7 @@ class BaseDataset
                     break;
 
                 default:
-                    throw new \Exception('invalid keyword type added');
+                    throw new Exception('invalid keyword type added');
             }
         }
     }
