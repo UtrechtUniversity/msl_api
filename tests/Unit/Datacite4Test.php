@@ -45,11 +45,88 @@ class Datacite4Test extends TestCase
 
         $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "12345");
         $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "Local accession number");
+    }   
 
-        //new test
+    /**
+     * test if rights are correctly mapped
+     */
+    public function test_identifier_mapping(): void
+    {
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
+        {
+            "data": {
+                "id": "10.1594/pangaea.937090",
+                "type": "dois",
+                "attributes": {
+                    "doi": "10.82433/b09z-4k37"
+                }
+            }
+        }';
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+    
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapIdentifier($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_doi, "10.82433/b09z-4k37");
+
+
+    }   
+
+
+    /**
+     * test if rights are correctly mapped
+     */
+    public function test_rights_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+        {
+            "data": {
+                "id": "10.1594/pangaea.937090",
+                "type": "dois",
+                "attributes": {
+                    "rightsList": [
+                        {
+                            "lang": "en",
+                            "rights": "Creative Commons Attribution 4.0 International",
+                            "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                            "schemeUri": "https://spdx.org/licenses/",
+                            "rightsIdentifier": "cc-by-4.0",
+                            "rightsIdentifierScheme": "SPDX"
+                        }
+                    ]
+                }
+            }
+        }';
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+    
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapRights($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
+            $this->assertEquals($dataset->msl_rights[0]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
+            $this->assertEquals($dataset->msl_rights[0]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
+            $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier'], "cc-by-4.0");
+            $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier_scheme'], "SPDX");
+
+            // new test
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
             {
                 "data": {
                     "id": "10.1594/pangaea.937090",
@@ -109,7 +186,6 @@ class Datacite4Test extends TestCase
                 $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "citation");
                 $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier'] , "http://hdl.handle.net/10261/371208");
                 $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier_type'] , "uri");
-
     }   
 
     /**
