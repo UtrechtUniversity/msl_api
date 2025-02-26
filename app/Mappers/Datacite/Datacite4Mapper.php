@@ -22,6 +22,8 @@ class Datacite4Mapper implements MapperInterface
         $this->mapDescription($metadata, $dataset);
         $this->mapRights($metadata, $dataset);
         $this->mapIdentifier($metadata, $dataset);
+        $this->mapPublicationYear($metadata, $dataset);
+        $this->mapAlternateIdentifier($metadata, $dataset);
         
         return $dataset;
     }
@@ -32,7 +34,7 @@ class Datacite4Mapper implements MapperInterface
      * and adds those to the dataset
      * this is optional
      */
-    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset){
+    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset) {
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
 
         if($altIds > 0){
@@ -42,8 +44,12 @@ class Datacite4Mapper implements MapperInterface
                     (isset($altIdEntry["alternateIdentifierType"])   ? $altIdEntry["alternateIdentifierType"] : "")
                 );
             }
+        }
 
-         /**
+        return $dataset;
+    }     
+
+    /**
      * Maps the publicationYear of a datacite entry
      * It is a mandatory entry, failure throws exception
      */
@@ -61,9 +67,13 @@ class Datacite4Mapper implements MapperInterface
             $dataset->msl_publication_year = $publicationYear;
         } else {
             throw new MappingException('publicationYear string empty');
+        }
+
+        return $dataset;
+    }
 
 
-         /**
+    /**
      * Maps the identifier/doi of a datacite entry
      * It is a mandatory entry, failure throws exception
      */
