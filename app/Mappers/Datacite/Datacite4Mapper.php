@@ -285,4 +285,21 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+
+    /**
+     * stores the language to the dataset
+     * 
+     */
+    public function mapLanguage(array $metadata, DataPublication $dataset){
+
+        $lang = '';
+
+        if(isset($metadata['data']['attributes']['language'])){
+            $lang = $metadata['data']['attributes']['language'];
+        } 
+
+        $dataset->msl_language = $lang;
+        return $dataset;
+    }
 }

@@ -885,6 +885,37 @@ class Datacite4Test extends TestCase
                 $this->assertEquals($dataset->msl_related_identifiers,    []);
                 
         }
-    
+
+            /**
+     * test if description is correctly mapped
+     */
+    public function test_language_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "language": "en"
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapLanguage($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_language , "en");
+        
+    }   
 
 }
