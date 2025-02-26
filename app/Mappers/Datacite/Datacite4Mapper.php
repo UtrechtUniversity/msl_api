@@ -262,4 +262,27 @@ class Datacite4Mapper implements MapperInterface
             // nothing left. Just take the first one
             return $allCandidates[0];
     }
+
+
+     /**
+     * stores the related identifiers to the dataset
+     * 
+     */
+    public function mapRelatedIdentifier(array $metadata, DataPublication $dataset){
+        $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
+        if(sizeof($relatedIdentifiers)>0){
+            foreach ($relatedIdentifiers as $relId) {
+                $dataset->addRelatedIdentifier(
+                    (isset($relId["relatedIdentifier"])     ? $relId["relatedIdentifier"]                       : ""), // since it is mandatory, should it throw an exeption?
+                    (isset($relId["relatedIdentifierType"]) ? $relId["relatedIdentifierType"]                   : ""), // since it is mandatory, should it throw an exeption?
+                    (isset($relId["relationType"])          ? $relId["relationType"]                            : ""), // since it is mandatory, should it throw an exeption?
+                    (isset($relId["relatedMetadataScheme"]) ? $relId["relatedMetadataScheme"]                   : ""), 
+                    (isset($relId["schemeURI"])             ? $relId["schemeURI"]                               : ""), 
+                    (isset($relId["schemeType"])            ? $relId["schemeType"]                              : ""), 
+                    (isset($relId["resourceTypeGeneral"])   ? $relId["resourceTypeGeneral"]                     : ""), 
+                );
+            }
+        }
+        return $dataset;
+    }
 }
