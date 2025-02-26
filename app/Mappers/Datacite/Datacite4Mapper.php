@@ -42,7 +42,6 @@ class Datacite4Mapper implements MapperInterface
                 (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
             );
         }
-        // dd($dataset->msl_rights);
         return $dataset;
     }
 
