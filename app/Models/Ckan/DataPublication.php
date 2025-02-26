@@ -290,7 +290,7 @@ class DataPublication
         ];
     }
 
-    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType): void
+    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType = ""): void
     {
         $this->msl_related_identifiers[] = [
             'msl_related_identifier' => $identifier,
