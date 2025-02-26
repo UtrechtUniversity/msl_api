@@ -29,6 +29,26 @@ class Datacite4Mapper implements MapperInterface
 
 
          /**
+     * Maps the publicationYear of a datacite entry
+     * It is a mandatory entry, failure throws exception
+     */
+    public function mapPublicationYear(array $metadata, DataPublication $dataset){
+
+        $publicationYear = '';
+
+        if(isset($metadata['data']['attributes']['publicationYear'])){
+            $publicationYear = $metadata['data']['attributes']['publicationYear'];
+        } else {
+            throw new MappingException('publicationYear cannot be mapped: does not exist in entry');
+        }
+
+        if(strlen($publicationYear) > 0){
+            $dataset->msl_publication_year = $publicationYear;
+        } else {
+            throw new MappingException('publicationYear string empty');
+
+
+         /**
      * Maps the identifier/doi of a datacite entry
      * It is a mandatory entry, failure throws exception
      */
@@ -73,7 +93,6 @@ class Datacite4Mapper implements MapperInterface
 
         return $dataset;
     }
-
 
     /**
      * chooses one description from the datacite entry according to the following priorities
