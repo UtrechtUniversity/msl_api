@@ -325,10 +325,10 @@ class DataPublication
         ];
     }
 
-    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $affiliations = []): void
+    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $nameIdentifierUris = [], $affiliations = []): void
     {
-        if(count($nameIdentifiers) !== count($nameIdentifierSchemes)) {
-            throw new Exception('number of name identifiers not equal to numbers of schemes');
+        if((count($nameIdentifiers) !== count($nameIdentifierSchemes)) || (count($nameIdentifierSchemes) !== count($nameIdentifierUris))) {
+            throw new Exception('name identifier fields are not equal in length');
         }
 
         $this->msl_creators[] = [
@@ -338,7 +338,8 @@ class DataPublication
             'msl_creator_name_type' => $nameType,
             'msl_creator_name_identifiers' => $nameIdentifiers,
             'msl_creator_name_identifiers_schemes' => $nameIdentifierSchemes,
-            'msl_creator_affiliations' => $affiliations
+            'msl_creator_name_identifiers_uris' => $nameIdentifierUris,
+            'msl_creator_affiliations_names' => $affiliations
         ];
     }
     
