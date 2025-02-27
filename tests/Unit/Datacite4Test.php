@@ -887,4 +887,35 @@ class Datacite4Test extends TestCase
         }
     
 
+    /**
+     * test if publicationYear is correctly mapped
+     */
+    public function test_url_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "url": "https://doi.pangaea.de/10.1594/PANGAEA.937090"
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapUrl($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_source, "https://doi.pangaea.de/10.1594/PANGAEA.937090");
+
+    } 
+
 }

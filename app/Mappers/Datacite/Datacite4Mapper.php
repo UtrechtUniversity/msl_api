@@ -285,4 +285,17 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+
+         /**
+     * stores the url to the dataset
+     * 
+     */
+    public function mapUrl(array $metadata, DataPublication $dataset){
+
+        $dataset->msl_source = (isset($metadata['data']['attributes']["url"])   ? $metadata['data']['attributes']["url"] : throw new MappingException('No url mapped'));
+
+        return $dataset;
+    }
+
 }
