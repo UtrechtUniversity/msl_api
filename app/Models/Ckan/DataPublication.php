@@ -31,6 +31,10 @@ class DataPublication
 
     public $msl_subdomains_interpreted = [];
 
+    public $msl_enriched_keywords = [];
+
+    public $msl_original_keywords = [];
+
     /**
      * link to landingpage
      */    
@@ -151,9 +155,8 @@ class DataPublication
 
     /**
      * year of publication
-     * @var ?string
      */
-    public ?string $msl_publication_year;
+    public string $msl_publication_year;
 
     /**
      * References to sources of funding
@@ -208,58 +211,56 @@ class DataPublication
 
     public $msl_collection_period = [];
 
-    // vocabulary/keyword related fields
-    public $msl_has_material = false;
+    /**
+     * Fields listed below are used to provide top level filtering in the data-access filtertree navigation     
+     */
+    public bool $msl_has_material = false;
 
-    public $msl_has_material_original = false;
+    public bool $msl_has_material_original = false;
 
-    public $msl_has_porefluid = false;
+    public bool $msl_has_porefluid = false;
 
-    public $msl_has_porefluid_original = false;
+    public bool $msl_has_porefluid_original = false;
 
-    public $msl_has_rockphysic = false;
+    public bool $msl_has_rockphysic = false;
 
-    public $msl_has_rockphysic_original = false;
+    public bool $msl_has_rockphysic_original = false;
 
-    public $msl_has_analogue = false;
+    public bool $msl_has_analogue = false;
 
-    public $msl_has_analogue_original = false;
+    public bool $msl_has_analogue_original = false;
 
-    public $msl_has_geologicalage = false;
+    public bool $msl_has_geologicalage = false;
 
-    public $msl_has_geologicalage_original = false;
+    public bool $msl_has_geologicalage_original = false;
 
-    public $msl_has_geologicalsetting = false;
+    public bool $msl_has_geologicalsetting = false;
 
-    public $msl_has_geologicalsetting_original = false;
+    public bool $msl_has_geologicalsetting_original = false;
 
-    public $msl_has_paleomagnetism = false;
+    public bool $msl_has_paleomagnetism = false;
 
-    public $msl_has_paleomagnetism_original = false;
+    public bool $msl_has_paleomagnetism_original = false;
 
-    public $msl_has_geochemistry = false;
+    public bool $msl_has_geochemistry = false;
 
-    public $msl_has_geochemistry_original = false;
+    public bool $msl_has_geochemistry_original = false;
 
-    public $msl_has_microscopy = false;
+    public bool $msl_has_microscopy = false;
 
-    public $msl_has_microscopy_original = false;
+    public bool $msl_has_microscopy_original = false;
 
-    public $msl_has_subsurface = false;
+    public bool $msl_has_subsurface = false;
 
-    public $msl_has_subsurface_original = false;
+    public bool $msl_has_subsurface_original = false;
 
-    public $msl_has_geoenergy = false;
+    public bool $msl_has_geoenergy = false;
 
-    public $msl_has_geoenergy_original = false;
+    public bool $msl_has_geoenergy_original = false;
+    
+    public bool $msl_has_lab = false;
 
-    public $msl_enriched_keywords = [];
-
-    public $msl_original_keywords = [];
-
-    public $msl_has_lab = false;
-
-    public $msl_has_organization = true;
+    public bool $msl_has_organization = true;
     
     /**
      * Validation rules to be used after mapping stage of importing data. If rules fail processing of this dataset will be stopped.
