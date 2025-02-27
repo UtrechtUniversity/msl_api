@@ -285,4 +285,25 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+    
+     /**
+     * stores the related identifiers to the dataset
+     * 
+     */
+    public function mapDates(array $metadata, DataPublication $dataset){
+        $allDates = $metadata['data']['attributes']['dates'];
+        
+        if(sizeof($allDates) > 0){
+            foreach ($allDates as $date) {
+                $dataset->addDate(
+                    (isset($date["date"])              ? $date["date"]            : ""), 
+                    (isset($date["dateType"])          ? $date["dateType"]        : ""), 
+                    (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
+                );
+            }
+        }
+
+        return $dataset;
+    }
 }
