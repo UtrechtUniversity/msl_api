@@ -303,6 +303,43 @@ class Datacite4Mapper implements MapperInterface
                     (isset($funRef["awardNumber"])          ? $funRef["awardNumber"]            : ""),
                     (isset($funRef["awardUri"])             ? $funRef["awardUri"]               : ""),
                     (isset($funRef["awardTitle"])           ? $funRef["awardTitle"]             : ""),
+                 );
+            }
+        }
+        return $dataset;
+    }
+  
+    /*
+     * stores the language to the dataset
+     * 
+     */
+    public function mapLanguage(array $metadata, DataPublication $dataset){
+
+        $lang = '';
+
+        if(isset($metadata['data']['attributes']['language'])){
+            $lang = $metadata['data']['attributes']['language'];
+        } 
+
+        $dataset->msl_language = $lang;
+        
+        return $dataset;
+    }
+      
+    
+     /**
+     * stores the related identifiers to the dataset
+     * 
+     */
+    public function mapDates(array $metadata, DataPublication $dataset){
+        $allDates = $metadata['data']['attributes']['dates'];
+        
+        if(sizeof($allDates) > 0){
+            foreach ($allDates as $date) {
+                $dataset->addDate(
+                    (isset($date["date"])              ? $date["date"]            : ""), 
+                    (isset($date["dateType"])          ? $date["dateType"]        : ""), 
+                    (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
                 );
             }
         }
