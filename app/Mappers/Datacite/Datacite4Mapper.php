@@ -24,6 +24,11 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapIdentifier($metadata, $dataset);
         $dataset = $this->mapPublicationYear($metadata, $dataset);
         $dataset = $this->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $this->mapRelatedIdentifier($metadata, $dataset);
+        $dataset = $this->mapUrl($metadata, $dataset);
+        $dataset = $this->mapFundingReference($metadata, $dataset);
+        $dataset = $this->mapLanguage($metadata, $dataset);
+        $dataset = $this->mapDates($metadata, $dataset);
         
         return $dataset;
     }
