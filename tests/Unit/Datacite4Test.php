@@ -10,8 +10,10 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+
+
         /**
-     * test if description is correctly mapped
+     * test if alternate Identifier is correctly mapped
      */
     public function test_alternateIdentifier_mapping(): void
     {
@@ -1081,5 +1083,78 @@ class Datacite4Test extends TestCase
         
 
     }   
+
+
+        /**
+         * test if funding reference is correctly mapped
+         */
+        public function test_fundingReference_mapping(): void{
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+                {
+                    "data": {
+                        "id": "10.1594/pangaea.937090",
+                        "type": "dois",
+                        "attributes": {
+                             "fundingReferences": [
+                                {
+                                    "awardUri": "https://example.com/example-award-uri",
+                                    "awardTitle": "Example AwardTitle",
+                                    "funderName": "Example Funder",
+                                    "awardNumber": "12345",
+                                    "funderIdentifier": "https://doi.org/10.13039/501100000780",
+                                    "funderIdentifierType": "Crossref Funder ID"
+                                }
+                            ]
+                        }
+                    }
+                }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_name']            , "Example Funder");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier']      , "https://doi.org/10.13039/501100000780");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier_type'] , "Crossref Funder ID");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_number']           , "12345");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+                {
+                    "data": {
+                        "id": "10.1594/pangaea.937090",
+                        "type": "dois",
+                        "attributes": {
+                             "fundingReferences": [
+
+                            ]
+                        }
+                    }
+                }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_funding_references, []);
+        }
 
 }

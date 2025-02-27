@@ -287,6 +287,29 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
+     * maps the available funding references
+     * fundername is madatory
+     */
+    public function mapFundingReference(array $metadata, DataPublication $dataset){
+        $funRefs = $metadata['data']['attributes']['fundingReferences'];
+
+        if($funRefs > 0){
+            foreach ($funRefs as $funRef) {
+                $dataset->addFundingReference(
+                    (isset($funRef["funderName"])           ? $funRef["funderName"]             : ""),
+                    (isset($funRef["funderIdentifier"])     ? $funRef["funderIdentifier"]       : ""),
+                    (isset($funRef["funderIdentifierType"]) ? $funRef["funderIdentifierType"]   : ""),
+                    (isset($funRef["schemeURI"])            ? $funRef["schemeURI"]              : ""),
+                    (isset($funRef["awardNumber"])          ? $funRef["awardNumber"]            : ""),
+                    (isset($funRef["awardUri"])             ? $funRef["awardUri"]               : ""),
+                    (isset($funRef["awardTitle"])           ? $funRef["awardTitle"]             : ""),
+                 );
+            }
+        }
+        return $dataset;
+    }
+  
+    /*
      * stores the language to the dataset
      * 
      */
