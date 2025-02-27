@@ -40,7 +40,8 @@ class Datacite4Mapper implements MapperInterface
      * and adds those to the dataset
      * this is optional
      */
-    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset) {
+    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    {
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
 
         if($altIds > 0){
@@ -59,8 +60,8 @@ class Datacite4Mapper implements MapperInterface
      * Maps the publicationYear of a datacite entry
      * It is a mandatory entry, failure throws exception
      */
-    public function mapPublicationYear(array $metadata, DataPublication $dataset){
-
+    public function mapPublicationYear(array $metadata, DataPublication $dataset): DataPublication
+    {
         $publicationYear = '';
 
         if(isset($metadata['data']['attributes']['publicationYear'])){
@@ -83,8 +84,8 @@ class Datacite4Mapper implements MapperInterface
      * Maps the identifier/doi of a datacite entry
      * It is a mandatory entry, failure throws exception
      */
-    public function mapIdentifier(array $metadata, DataPublication $dataset){
-
+    public function mapIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    {
         $identifier = '';
 
         if(isset($metadata['data']['attributes']['doi'])){
@@ -107,7 +108,8 @@ class Datacite4Mapper implements MapperInterface
      * Maps the rights of a datacite entry
      * It is an optional entry
      */
-    public function mapRights(array $metadata, DataPublication $dataset){
+    public function mapRights(array $metadata, DataPublication $dataset): DataPublication
+    {
         $rights = $metadata['data']['attributes']['rightsList'];
         if($rights >0){
             foreach ($rights as $right) {
@@ -139,7 +141,8 @@ class Datacite4Mapper implements MapperInterface
      * 
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
-    public function mapDescription(array $metadata, DataPublication $dataset){
+    public function mapDescription(array $metadata, DataPublication $dataset): DataPublication
+    {
         $descriptions = $metadata['data']['attributes']['descriptions'];
 
         $dataset->msl_description_abstract          = $this->receiveDescription('Abstract',            $descriptions);
@@ -152,8 +155,8 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
-    private function receiveDescription(string $descriptionType, array $descriptions): string{
-        
+    private function receiveDescription(string $descriptionType, array $descriptions): string
+    {        
         $descriptionString = '';
         $descriptionsCandidates = [];
 
@@ -190,7 +193,7 @@ class Datacite4Mapper implements MapperInterface
      * 
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
-    public function mapTitle(array $metadata, DataPublication $dataset)
+    public function mapTitle(array $metadata, DataPublication $dataset): DataPublication
     {
         $titles = $metadata['data']['attributes']['titles'];
         $titleSize = sizeof($titles);
@@ -234,47 +237,48 @@ class Datacite4Mapper implements MapperInterface
     /**
      * This function filters an array based on its "lang" entry
      */
-    private function getEntryFilterByLang(array $allCandidates){
+    private function getEntryFilterByLang(array $allCandidates): array
+    {
         // check if no "lang" property is set
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
-            foreach ($allCandidates as $candidate) {
-                if(!isset($candidate['lang'])){                            
-                    return $candidate;
-                } 
-            }
+        // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
+        foreach ($allCandidates as $candidate) {
+            if(!isset($candidate['lang'])){                            
+                return $candidate;
+            } 
+        }
 
-            // "lang" is set but empty
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
-            foreach ($allCandidates as $candidate) {
-                if ($candidate['lang'] == "") {
-                    return $candidate;
-                }
+        // "lang" is set but empty
+        // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
+        foreach ($allCandidates as $candidate) {
+            if ($candidate['lang'] == "") {
+                return $candidate;
             }
+        }
 
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
-            foreach ($allCandidates as $candidate) {
-                if($candidate['lang'] == "en"){
-                    return $candidate;
-                }
+        // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
+        foreach ($allCandidates as $candidate) {
+            if($candidate['lang'] == "en"){
+                return $candidate;
             }
+        }
 
-            // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
-            foreach ($allCandidates as $candidate) {
-                if ($candidate['lang'] == "en-GB"){
-                    return $candidate;
-                }
+        // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
+        foreach ($allCandidates as $candidate) {
+            if ($candidate['lang'] == "en-GB"){
+                return $candidate;
             }
+        }
 
-            // nothing left. Just take the first one
-            return $allCandidates[0];
+        // nothing left. Just take the first one
+        return $allCandidates[0];
     }
 
 
-     /**
+    /**
      * stores the related identifiers to the dataset
-     * 
      */
-    public function mapRelatedIdentifier(array $metadata, DataPublication $dataset){
+    public function mapRelatedIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
         if(sizeof($relatedIdentifiers)>0){
             foreach ($relatedIdentifiers as $relId) {
@@ -297,8 +301,8 @@ class Datacite4Mapper implements MapperInterface
      * stores the url to the dataset
      * 
      */
-    public function mapUrl(array $metadata, DataPublication $dataset){
-
+    public function mapUrl(array $metadata, DataPublication $dataset): DataPublication
+    {
         $dataset->msl_source = (isset($metadata['data']['attributes']["url"])   ? $metadata['data']['attributes']["url"] : throw new MappingException($dataset->msl_doi . ': No url mapped'));
 
         return $dataset;
@@ -308,7 +312,8 @@ class Datacite4Mapper implements MapperInterface
      * maps the available funding references
      * fundername is madatory
      */
-    public function mapFundingReference(array $metadata, DataPublication $dataset){
+    public function mapFundingReference(array $metadata, DataPublication $dataset): DataPublication
+    {
         $funRefs = $metadata['data']['attributes']['fundingReferences'];
 
         if($funRefs > 0){
@@ -329,9 +334,9 @@ class Datacite4Mapper implements MapperInterface
   
     /*
      * stores the language to the dataset
-     * 
      */
-    public function mapLanguage(array $metadata, DataPublication $dataset){
+    public function mapLanguage(array $metadata, DataPublication $dataset): DataPublication
+    {
 
         $lang = '';
 
@@ -347,9 +352,9 @@ class Datacite4Mapper implements MapperInterface
     
      /**
      * stores the related identifiers to the dataset
-     * 
      */
-    public function mapDates(array $metadata, DataPublication $dataset){
+    public function mapDates(array $metadata, DataPublication $dataset): DataPublication
+    {
         $allDates = $metadata['data']['attributes']['dates'];
         
         if(sizeof($allDates) > 0){
