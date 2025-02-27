@@ -10,8 +10,10 @@ use App\Mappers\Datacite\Datacite4Mapper;
 class Datacite4Test extends TestCase
 {
 
+
+
         /**
-     * test if description is correctly mapped
+     * test if alternate Identifier is correctly mapped
      */
     public function test_alternateIdentifier_mapping(): void
     {
@@ -885,7 +887,275 @@ class Datacite4Test extends TestCase
                 $this->assertEquals($dataset->msl_related_identifiers,    []);
                 
         }
-    
+
+            /**
+     * test if description is correctly mapped
+     */
+    public function test_language_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "language": "en"
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapLanguage($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_language , "en");
+        
+    }   
+
+    /**
+     * test if description is correctly mapped
+     */
+    public function test_date_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "dates": [
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Accepted"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Available"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Copyrighted"
+                        },
+                        {
+                            "date": "2022-01-01/2022-12-31",
+                            "dateType": "Collected"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Created"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Issued"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Submitted"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Updated"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Valid"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Withdrawn"
+                        },
+                        {
+                            "date": "2023-01-01",
+                            "dateType": "Other",
+                            "dateInformation": "ExampleDateInformation"
+                        }
+                    ]
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapDates($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_dates[0] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[0] ["msl_date_type"       ], "Accepted");
+        $this->assertEquals($dataset->msl_dates[1] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[1] ["msl_date_type"       ], "Available");
+        $this->assertEquals($dataset->msl_dates[2] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[2] ["msl_date_type"       ], "Copyrighted");
+        $this->assertEquals($dataset->msl_dates[3] ["msl_date_date"       ], "2022-01-01/2022-12-31");
+        $this->assertEquals($dataset->msl_dates[3] ["msl_date_type"       ], "Collected");
+        $this->assertEquals($dataset->msl_dates[4] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[4] ["msl_date_type"       ], "Created");
+        $this->assertEquals($dataset->msl_dates[5] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[5] ["msl_date_type"       ], "Issued");
+        $this->assertEquals($dataset->msl_dates[6] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[6] ["msl_date_type"       ], "Submitted");
+        $this->assertEquals($dataset->msl_dates[7] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[7] ["msl_date_type"       ], "Updated");
+        $this->assertEquals($dataset->msl_dates[8] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[8] ["msl_date_type"       ], "Valid");
+        $this->assertEquals($dataset->msl_dates[9] ["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[9] ["msl_date_type"       ], "Withdrawn");
+        $this->assertEquals($dataset->msl_dates[10]["msl_date_date"       ], "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[10]["msl_date_type"       ], "Other");
+        $this->assertEquals($dataset->msl_dates[10]["msl_date_information"], "ExampleDateInformation");
+
+
+        //new test
+
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "dates": [
+                        {
+                            "date": "2021",
+                            "dateType": "Issued"
+                        }
+                    ]
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapDates($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_dates[0] ["msl_date_date"       ], "2021");
+        $this->assertEquals($dataset->msl_dates[0] ["msl_date_type"       ], "Issued");
+
+
+        //new test
+
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "dates": [
+                        ]
+                    }
+                }
+            }';
+
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapDates($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_dates, []);
+        
+
+    }   
+
+
+        /**
+         * test if funding reference is correctly mapped
+         */
+        public function test_fundingReference_mapping(): void{
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+                {
+                    "data": {
+                        "id": "10.1594/pangaea.937090",
+                        "type": "dois",
+                        "attributes": {
+                             "fundingReferences": [
+                                {
+                                    "awardUri": "https://example.com/example-award-uri",
+                                    "awardTitle": "Example AwardTitle",
+                                    "funderName": "Example Funder",
+                                    "awardNumber": "12345",
+                                    "funderIdentifier": "https://doi.org/10.13039/501100000780",
+                                    "funderIdentifierType": "Crossref Funder ID"
+                                }
+                            ]
+                        }
+                    }
+                }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_name']            , "Example Funder");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier']      , "https://doi.org/10.13039/501100000780");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier_type'] , "Crossref Funder ID");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_number']           , "12345");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
+            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
+
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+                {
+                    "data": {
+                        "id": "10.1594/pangaea.937090",
+                        "type": "dois",
+                        "attributes": {
+                             "fundingReferences": [
+
+                            ]
+                        }
+                    }
+                }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_funding_references, []);
+        }
 
     /**
      * test if publicationYear is correctly mapped

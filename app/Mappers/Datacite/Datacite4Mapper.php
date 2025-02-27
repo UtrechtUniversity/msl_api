@@ -287,7 +287,7 @@ class Datacite4Mapper implements MapperInterface
     }
 
 
-         /**
+     /**
      * stores the url to the dataset
      * 
      */
@@ -298,4 +298,64 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
+    /**
+     * maps the available funding references
+     * fundername is madatory
+     */
+    public function mapFundingReference(array $metadata, DataPublication $dataset){
+        $funRefs = $metadata['data']['attributes']['fundingReferences'];
+
+        if($funRefs > 0){
+            foreach ($funRefs as $funRef) {
+                $dataset->addFundingReference(
+                    (isset($funRef["funderName"])           ? $funRef["funderName"]             : ""),
+                    (isset($funRef["funderIdentifier"])     ? $funRef["funderIdentifier"]       : ""),
+                    (isset($funRef["funderIdentifierType"]) ? $funRef["funderIdentifierType"]   : ""),
+                    (isset($funRef["schemeURI"])            ? $funRef["schemeURI"]              : ""),
+                    (isset($funRef["awardNumber"])          ? $funRef["awardNumber"]            : ""),
+                    (isset($funRef["awardUri"])             ? $funRef["awardUri"]               : ""),
+                    (isset($funRef["awardTitle"])           ? $funRef["awardTitle"]             : ""),
+                 );
+            }
+        }
+        return $dataset;
+    }
+  
+    /*
+     * stores the language to the dataset
+     * 
+     */
+    public function mapLanguage(array $metadata, DataPublication $dataset){
+
+        $lang = '';
+
+        if(isset($metadata['data']['attributes']['language'])){
+            $lang = $metadata['data']['attributes']['language'];
+        } 
+
+        $dataset->msl_language = $lang;
+        
+        return $dataset;
+    }
+      
+    
+     /**
+     * stores the related identifiers to the dataset
+     * 
+     */
+    public function mapDates(array $metadata, DataPublication $dataset){
+        $allDates = $metadata['data']['attributes']['dates'];
+        
+        if(sizeof($allDates) > 0){
+            foreach ($allDates as $date) {
+                $dataset->addDate(
+                    (isset($date["date"])              ? $date["date"]            : ""), 
+                    (isset($date["dateType"])          ? $date["dateType"]        : ""), 
+                    (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
+                );
+            }
+        }
+
+        return $dataset;
+    }
 }
