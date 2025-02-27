@@ -934,6 +934,32 @@ class Datacite4Test extends TestCase
             $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
             $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
 
+            $sourceData = new SourceDataset();
+
+            $sourceData->source_dataset = '
+                {
+                    "data": {
+                        "id": "10.1594/pangaea.937090",
+                        "type": "dois",
+                        "attributes": {
+                             "fundingReferences": [
+
+                            ]
+                        }
+                    }
+                }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+            
+            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+
+            $this->assertEquals($dataset->msl_funding_references, []);
         }
 
 }
