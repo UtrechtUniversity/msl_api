@@ -9,10 +9,7 @@ use App\Mappers\Datacite\Datacite4Mapper;
 
 class Datacite4Test extends TestCase
 {
-
-
-
-        /**
+    /**
      * test if alternate Identifier is correctly mapped
      */
     public function test_alternateIdentifier_mapping(): void
@@ -97,6 +94,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
+
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -220,7 +218,6 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier_scheme'], "SPDX");
 
         // new test
-
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
@@ -244,6 +241,7 @@ class Datacite4Test extends TestCase
                 }
             }
         }';
+
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -253,7 +251,6 @@ class Datacite4Test extends TestCase
         $metadata = json_decode($sourceData->source_dataset, true);
         
         $dataset = $dataciteMapper->mapRights($metadata, $dataset);
-
 
         $this->assertEquals($dataset->msl_rights[0]['msl_right'], "openAccess");
         $this->assertEquals($dataset->msl_rights[1]['msl_right'], "Creative Commons Attribution 4.0 International");
@@ -312,6 +309,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
+
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -328,7 +326,6 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_description_table_of_contents , "Example TableOfContents");
         $this->assertEquals($dataset->msl_description_technical_info    , "Example TechnicalInfo");
         $this->assertEquals($dataset->msl_description_other             , "Example Other");
-
 
         // new test
         $sourceData = new SourceDataset();
@@ -348,6 +345,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
+
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -359,7 +357,6 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapDescription($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_description_abstract, "The timing of the Monte Peron Landslide is revised to 2890 cal. BP based on a radiocarbon-dated sediment stratigraphy of Lago di Vedana. This age fosters the importance of hydroclimatic triggers in the light of accelerating global warming with a predicted increase of precipitation enhancing the regional predisposition to large landslides. Moreover, a layer enriched in allochthonous organic and minerogenic detritus dating to the same wet period is interpreted as response to a younger and yet unidentified mass wasting event in the catchment of Lago di Vedana. Rock debris of the Monte Peron Landslide impounded the Cordevole River valley and created a landslide-dammed lake. Around AD 1150, eutrophication of this lacustrine ecosystem started with intensified human occupation – a process that ended 150 years later, when the river was diverted back into its original bed. Most likely, this occurred due to artificial opening of the river dam. In consequence, Lago di Vedana was isolated from an open and minerogenic to an endorheic and carbonaceous lacustrine system. After a monastery was established nearby in AD 1457, a second eutrophication process was initiated due to intensified land use linked with deforestation. Only in the 18th and 19th century, deposition of organic matter decreased coinciding with climatic (Little Ice Age) and cultural changes. Conversational measures are the likely reasons for a trend towards less eutrophic conditions since AD 1950.");
-
 
         // new Test
         $sourceData = new SourceDataset();
@@ -395,6 +392,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
+
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -411,7 +409,8 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_description_table_of_contents , "Materials folder: “Sample_synthesis”; “Laser_irradiation_conditions” NMR folder: \"NMR_readme\"; \"NMR_C-S-H\"; \"NMR_C-S-Ag-H\" Raman folder: “Raman_readme\"; \"Raman_C-S-H\"; \"Raman_C-S-Ag-H\"; \"Raman_C-S-H_RhB\"; \"Raman_C-S-Ag-H_RhB\" SERS folder: \"SERS_readme\"; \"SERS_RhB_C-S-Ag-H_355\"; \"SERS_RhB_C-S-Ag-H_355_NPs\"; \"SERS_RhB_C-S-Ag-H_532\"; \"SERS_RhB_C-S-Ag-H_532_NPs\"; \"SERS_RhB_C-S-Ag-H_NPs\"; \"SERS_RhB_C-S-H_NPs\" XPS folder: \"XPS_readme\"; \"XPS_AgAuger_C-S-Ag-H_532\"; \"XPS_AgAuger_C-S-Ag-H_355\"; \"XPS_Ag3d_C-S-Ag-H_532\"; \"XPS_Ag3d_C-S-Ag-H_355\"; \"XPS_Ag3d_C-S-Ag-H\"; \"XPS_Ag3d_C-S-H\"; \"XPS_Ca2p_C-S-Ag-H_532\"; \"XPS_C1s_C-S-Ag-H_532\"; \"XPS_wide_C-S-Ag-H_532\"; \"XPS_wide_C-S-Ag-H_355\"; \"XPS_wide_C-S-Ag-H\"; \"XPS_wide_C-S-H\" UV-Vis folder: \"UV-VIS_readme\"; \"UV-VIS_C-S-H\"; \"UV-VIS_C-S-Ag-H\"");
         $this->assertEquals($dataset->msl_description_technical_info    , "");
         $this->assertEquals($dataset->msl_description_other             , "Data life: 2024- (unlimited validity)");
-    }   
+    }
+
     /**
      * test if title is correctly mapped
      */
@@ -461,7 +460,6 @@ class Datacite4Test extends TestCase
                 }
             }';
 
-
         $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
@@ -474,7 +472,6 @@ class Datacite4Test extends TestCase
         
         $this->assertEquals($dataset->title, "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy");
         
-
         // Next test
         $sourceData = new SourceDataset();
 
@@ -520,7 +517,6 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
 
         $this->assertEquals($dataset->title, "Example Title");
-
 
         // Next test
         $sourceData = new SourceDataset();
@@ -823,7 +819,6 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier_resource_type_general"   ],    "Other");
         $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier_type"                    ],    "DOI");
 
-
         // new test
         $sourceData = new SourceDataset();
 
@@ -858,37 +853,35 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier"                         ],    "10.1007/s10346-021-01787-2");
         $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_type"                    ],    "DOI");
 
+        // new test
+        $sourceData = new SourceDataset();
 
-                // new test
-                $sourceData = new SourceDataset();
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "relatedIdentifiers": [
+                        ]
+                    }
+                }
+            }';
 
-                $sourceData->source_dataset = '
-                    {
-                        "data": {
-                            "id": "10.1594/pangaea.937090",
-                            "type": "dois",
-                            "attributes": {
-                                "relatedIdentifiers": [
-                                ]
-                            }
-                        }
-                    }';
-        
-                $dataciteMapper = new Datacite4Mapper();
-        
-                // create empty data publication
-                $dataset = new DataPublication;
-        
-                // read json text
-                $metadata = json_decode($sourceData->source_dataset, true);
-                
-                $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
-        
-                $this->assertEquals($dataset->msl_related_identifiers,    []);
-                
-        }
+        $dataciteMapper = new Datacite4Mapper();
 
-            /**
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_related_identifiers, []);                
+    }
+
+    /**
      * test if description is correctly mapped
      */
     public function test_language_mapping(): void
@@ -916,8 +909,7 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapLanguage($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_language , "en");
-        
+        $this->assertEquals($dataset->msl_language , "en");        
     }   
 
     /**
@@ -1018,9 +1010,7 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_dates[10]["msl_date_type"       ], "Other");
         $this->assertEquals($dataset->msl_dates[10]["msl_date_information"], "ExampleDateInformation");
 
-
         //new test
-
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
@@ -1052,9 +1042,7 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_dates[0] ["msl_date_date"       ], "2021");
         $this->assertEquals($dataset->msl_dates[0] ["msl_date_type"       ], "Issued");
 
-
         //new test
-
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
@@ -1079,83 +1067,80 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapDates($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_dates, []);
-        
-
+        $this->assertEquals($dataset->msl_dates, []);        
     }   
 
+    /**
+     * test if funding reference is correctly mapped
+     */
+    public function test_fundingReference_mapping(): void{
 
-        /**
-         * test if funding reference is correctly mapped
-         */
-        public function test_fundingReference_mapping(): void{
+        $sourceData = new SourceDataset();
 
-            $sourceData = new SourceDataset();
-
-            $sourceData->source_dataset = '
-                {
-                    "data": {
-                        "id": "10.1594/pangaea.937090",
-                        "type": "dois",
-                        "attributes": {
-                             "fundingReferences": [
-                                {
-                                    "awardUri": "https://example.com/example-award-uri",
-                                    "awardTitle": "Example AwardTitle",
-                                    "funderName": "Example Funder",
-                                    "awardNumber": "12345",
-                                    "funderIdentifier": "https://doi.org/10.13039/501100000780",
-                                    "funderIdentifierType": "Crossref Funder ID"
-                                }
-                            ]
-                        }
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                            "fundingReferences": [
+                            {
+                                "awardUri": "https://example.com/example-award-uri",
+                                "awardTitle": "Example AwardTitle",
+                                "funderName": "Example Funder",
+                                "awardNumber": "12345",
+                                "funderIdentifier": "https://doi.org/10.13039/501100000780",
+                                "funderIdentifierType": "Crossref Funder ID"
+                            }
+                        ]
                     }
-                }';
+                }
+            }';
 
-            $dataciteMapper = new Datacite4Mapper();
+        $dataciteMapper = new Datacite4Mapper();
 
-            // create empty data publication
-            $dataset = new DataPublication;
+        // create empty data publication
+        $dataset = new DataPublication;
 
-            // read json text
-            $metadata = json_decode($sourceData->source_dataset, true);
-            
-            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
 
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_name']            , "Example Funder");
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier']      , "https://doi.org/10.13039/501100000780");
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier_type'] , "Crossref Funder ID");
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_number']           , "12345");
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
-            $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_name']            , "Example Funder");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier']      , "https://doi.org/10.13039/501100000780");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier_type'] , "Crossref Funder ID");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_number']           , "12345");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
+        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
 
-            $sourceData = new SourceDataset();
+        $sourceData = new SourceDataset();
 
-            $sourceData->source_dataset = '
-                {
-                    "data": {
-                        "id": "10.1594/pangaea.937090",
-                        "type": "dois",
-                        "attributes": {
-                             "fundingReferences": [
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                            "fundingReferences": [
 
-                            ]
-                        }
+                        ]
                     }
-                }';
+                }
+            }';
 
-            $dataciteMapper = new Datacite4Mapper();
+        $dataciteMapper = new Datacite4Mapper();
 
-            // create empty data publication
-            $dataset = new DataPublication;
+        // create empty data publication
+        $dataset = new DataPublication;
 
-            // read json text
-            $metadata = json_decode($sourceData->source_dataset, true);
-            
-            $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
 
-            $this->assertEquals($dataset->msl_funding_references, []);
-        }
+        $this->assertEquals($dataset->msl_funding_references, []);
+    }
 
     /**
      * test if publicationYear is correctly mapped
@@ -1185,7 +1170,5 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapUrl($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_source, "https://doi.pangaea.de/10.1594/PANGAEA.937090");
-
-    } 
-
+    }
 }
