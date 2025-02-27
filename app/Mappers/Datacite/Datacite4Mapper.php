@@ -17,11 +17,12 @@ class Datacite4Mapper implements MapperInterface
         // read json text
         $metadata = json_decode($sourceDataset->source_dataset, true);
 
-        // map things
+        // map all fields
+        // start with the identifier to enable usage in logging/exceptions
+        $dataset = $this->mapIdentifier($metadata, $dataset);
         $dataset = $this->mapTitle($metadata, $dataset);
         $dataset = $this->mapDescription($metadata, $dataset);
         $dataset = $this->mapRights($metadata, $dataset);
-        $dataset = $this->mapIdentifier($metadata, $dataset);
         $dataset = $this->mapPublicationYear($metadata, $dataset);
         $dataset = $this->mapAlternateIdentifier($metadata, $dataset);
         $dataset = $this->mapRelatedIdentifier($metadata, $dataset);
@@ -65,13 +66,13 @@ class Datacite4Mapper implements MapperInterface
         if(isset($metadata['data']['attributes']['publicationYear'])){
             $publicationYear = $metadata['data']['attributes']['publicationYear'];
         } else {
-            throw new MappingException('publicationYear cannot be mapped: does not exist in entry');
+            throw new MappingException($dataset->msl_doi . ': publicationYear cannot be mapped: does not exist in entry');
         }
 
         if(strlen($publicationYear) > 0){
             $dataset->msl_publication_year = $publicationYear;
         } else {
-            throw new MappingException('publicationYear string empty');
+            throw new MappingException($dataset->msl_doi . ': publicationYear string empty');
         }
 
         return $dataset;
@@ -223,7 +224,7 @@ class Datacite4Mapper implements MapperInterface
             }
 
         } else {
-            throw new MappingException('No title mapped');
+            throw new MappingException($dataset->msl_doi . ': No title mapped');
         }
 
         return $dataset;
@@ -298,7 +299,7 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapUrl(array $metadata, DataPublication $dataset){
 
-        $dataset->msl_source = (isset($metadata['data']['attributes']["url"])   ? $metadata['data']['attributes']["url"] : throw new MappingException('No url mapped'));
+        $dataset->msl_source = (isset($metadata['data']['attributes']["url"])   ? $metadata['data']['attributes']["url"] : throw new MappingException($dataset->msl_doi . ': No url mapped'));
 
         return $dataset;
     }
