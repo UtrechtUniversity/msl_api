@@ -8,20 +8,17 @@ class DataPublication
 
     /**
      * title of the data publication
-     * @var string
      */
     public string $title;
 
     /** 
      * annotated title of the data publication
      * elements used to display matched keywords within the original title are added during keyword detection
-     * @var string
      */
     public string $msl_title_annotated;
 
     /**
      * data type used in CKAN
-     * @var string
      */
     public string $type = 'data-publication';
 
@@ -44,91 +41,76 @@ class DataPublication
 
     /**
      * datapackage visability in CKAN
-     * @var bool
      */
     public bool $private = false;
 
     /**
-     * name of organization in CKAN data publication should belong to
-     * @var string
+     * name of organization in CKAN data publication belongs to
      */
     public string $owner_org;
 
     /**
      * abstract text
-     * @var string
      */
     public string $msl_description_abstract;
 
     /**
      * abstract text annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_abstract_annotated;
 
     /**
      * methods 
-     * @var string
      */
     public string $msl_description_methods;
 
     /**
      * methods annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_methods_annotated;
 
     /**
      * series information
-     * @var string
      */
     public string $msl_description_series_information;
     
     /**
      * series information annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_series_information_annotated;
 
     /**
      * table of contents
-     * @var string
      */
     public string $msl_description_table_of_contents;
 
     /**
      * table of contents annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_table_of_contents_annotated;
 
     /**
      * technical info
-     * @var string
      */
     public string $msl_description_technical_info;
 
     /**
      * technical info annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_technical_info_annotated;
 
     /**
      * other description
-     * @var string
      */
     public string $msl_description_other;
 
     /**
      * other description annotated, includes elements to display keyword matches
-     * @var string
      */
     public string $msl_description_other_annotated;
 
     /**
      * list of rights / licenses
-     * @var array
      */
     public array $msl_rights = [];
 
