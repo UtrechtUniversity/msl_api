@@ -112,7 +112,7 @@ class Datacite4Test extends TestCase
     }   
 
     /**
-     * test if rights are correctly mapped
+     * test if identifier is correctly mapped
      */
     public function test_identifier_mapping(): void
     {
@@ -210,6 +210,8 @@ class Datacite4Test extends TestCase
         $metadata = json_decode($sourceData->source_dataset, true);
         
         $dataset = $dataciteMapper->mapRights($metadata, $dataset);
+
+        $dataset->toCkanArray();
 
         $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
         $this->assertEquals($dataset->msl_rights[0]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");

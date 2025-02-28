@@ -246,23 +246,18 @@ class DataPublication
     
     /**
      * Validation rules to be used after mapping stage of importing data. If rules fail processing of this dataset will be stopped.
-     * 
-     * @var array
      */
-    public static $importingRules = [
+    public static array $importingRules = [
         'title' => 'required',
         'msl_authors' => 'required'
     ];
 
-    public function addRight($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = ""): void
+    /**
+     * Add Right object to msl_rights
+     */
+    public function addRight(Right $right): void
     {
-        $this->msl_rights[] = [
-            'msl_right' => $right,
-            'msl_right_uri' => $uri,
-            'msl_right_identifier' => $identifier,
-            'msl_right_identifier_scheme' => $identifierScheme,
-            'msl_right_scheme_uri' => $schemeUri
-        ];
+        $this->msl_rights[] = $right;            
     }
 
     public function addAlternateIdentifier($identifier, $type): void
@@ -710,6 +705,13 @@ class DataPublication
     {
         $this->msl_laboratories[] = $lab;
         $this->msl_has_lab = true;
+    }
+
+    public function toCkanArray(): array
+    {
+        dd((array)$this);
+
+        return [];
     }
 }
 

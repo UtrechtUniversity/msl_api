@@ -5,6 +5,7 @@ use App\Exceptions\MappingException;
 use App\Models\SourceDataset;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\DataPublication;
+use App\Models\Ckan\Right;
 
 class Datacite4Mapper implements MapperInterface
 {
@@ -113,13 +114,15 @@ class Datacite4Mapper implements MapperInterface
         $rights = $metadata['data']['attributes']['rightsList'];
         if($rights >0){
             foreach ($rights as $right) {
-                $dataset->addRight(
+                $right = new Right(
                     (isset($right["rights"])                    ? $right["rights"]                  : ""), 
                     (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
                     (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
                     (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
                     (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
                 );
+
+                $dataset->addRight($right);
             }
 
         }
