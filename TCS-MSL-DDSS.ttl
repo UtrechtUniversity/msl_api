@@ -415,12 +415,17 @@
         dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/microscopy_and_tomography_data/Dataset/011/Distribution/011> ;
 .
 
-# Data from geo-energy test beds (GETB)
+# WP16-DDSS-012 Data from geo-energy test beds (GETB)
 
-<https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/014> a dcat:Dataset ;
-        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/014" ;
+<https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/012> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/012" ;
         dct:title "Data from geo-energy test beds (GETB)" ;
         dct:description "Geo Energy Test Beds are large-scale, experimental test and monitoring facilities developed to understand the subsurface processes associated with power generation technologies, such as renewable geothermal energy, carbon capture and storage (CCS), development of shale gas, storage of nuclear waste, and underground hydrogen storage. Data produced at these research infrastructures includes distributed acoustic sensing (DAS), distributed strain sensing (DSS), distributed temperature sensing (DTS), seismic waveforms, borehole drilling and logging data, geomechanical and hydrological and chemical data. Several of the GETB facilities are also included in the ECCSEL infrastructure for a.o. CCS." ;
+		adms:identifier [ a adms:Identifier ;
+            adms:schemeAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-012" ;
+
+        ];
         dct:created "2025-02-27T00:00:00Z"^^xsd:dateTime ;
 		dct:issued "2025-02-27T00:00:00Z"^^xsd:dateTime ;
 		dct:modified "2025-02-27T00:00:00Z"^^xsd:dateTime ;
@@ -449,7 +454,7 @@
         ];
 		
 		# This property links the Dataset to an available Distribution.
-        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/011/Distribution/011> ;
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/012/Distribution/012> ;
 .
 
 # WP16-DDSS-013 "catch all" laboratory data
@@ -653,10 +658,10 @@
         dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
-# Geo energy data ; EPOS-DCAT-AP:DISTRIBUTION definition
+# WP16-DDSS-012 Geo energy data ; EPOS-DCAT-AP:DISTRIBUTION definition
 
-<https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/014/Distribution/014> a dcat:Distribution ;
-        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/014/Distribution/014" ;
+<https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/012/Distribution/012> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/geo_energy_data/Dataset/012/Distribution/012" ;
         dct:title "Data from geo-energy test beds (GETB)" ;
 		dct:description "Geo Energy Test Beds are large-scale, experimental test and monitoring facilities developed to understand the subsurface processes associated with power generation technologies, such as renewable geothermal energy, carbon capture and storage (CCS), development of shale gas, storage of nuclear waste, and underground hydrogen storage. Data produced at these research infrastructures includes distributed acoustic sensing (DAS), distributed strain sensing (DSS), distributed temperature sensing (DTS), seismic waveforms, borehole drilling and logging data, geomechanical and hydrological and chemical data. Several of the GETB facilities are also included in the ECCSEL infrastructure for a.o. CCS." ;
 
@@ -667,11 +672,11 @@
 		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
 
         # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
-		dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/WebService/014> ;
+		dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/WebService/012> ;
 
         # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
         # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
-        dcat:accessURL <https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014> ;
+        dcat:accessURL <https://www.epos-eu.org/multi-scale-laboratories/WebService/012/Operation/012> ;
 
         # This property refers to the file format of the Distribution. 
         # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
@@ -1018,23 +1023,23 @@
 		] ;
 . 
 
-# Geo energy Data ; EPOS-DCAT-AP:WEBSERVICE definition
+# WP16-DDSS-012 Geo energy Data ; EPOS-DCAT-AP:WEBSERVICE definition
 
-<https://www.epos-eu.org/multi-scale-laboratories/WebService/014> a epos:WebService;
-	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/014";
+<https://www.epos-eu.org/multi-scale-laboratories/WebService/012> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/012";
 	schema:description "Geo Energy Test Beds are large-scale, experimental test and monitoring facilities developed to understand the subsurface processes associated with power generation technologies, such as renewable geothermal energy, carbon capture and storage (CCS), development of shale gas, storage of nuclear waste, and underground hydrogen storage. Data produced at these research infrastructures includes distributed acoustic sensing (DAS), distributed strain sensing (DSS), distributed temperature sensing (DTS), seismic waveforms, borehole drilling and logging data, geomechanical and hydrological and chemical data. Several of the GETB facilities are also included in the ECCSEL infrastructure for a.o. CCS. ";
 	schema:name "Multi-scale Laboratories geo-energy test beds data Service";
 	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/geoenergy?"^^xsd:anyURI; 
 	schema:provider <PIC:99985805>;
 	schema:datePublished "2025-02-27T00:00:00Z"^^xsd:dateTime;
 	schema:dateModified "2025-02-27T00:00:00Z"^^xsd:dateTime;
-	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014>;
+	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/012/Operation/012>;
 	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
 	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
 	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
 . 
 
-	<https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014> a hydra:Operation;
+	<https://www.epos-eu.org/multi-scale-laboratories/WebService/012/Operation/012> a hydra:Operation;
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
