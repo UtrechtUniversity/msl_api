@@ -163,7 +163,10 @@ class DataPublication
 
     public $msl_publication_date;
 
-    public $msl_contributors = [];
+    /**
+     * The institution(s) or person(s) responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.
+     */
+    public array $msl_contributors = [];
 
     public $tag_string = [];
     
@@ -283,6 +286,11 @@ class DataPublication
     public function addCreator(Creator $creator): void
     {
         $this->msl_creators[] = $creator;
+    }
+
+    public function addContributor(Contributor $contributor): void
+    {
+        $this->msl_contributors[] = $contributor;
     }
     
     public function addTag($tagString, $uris = [])
