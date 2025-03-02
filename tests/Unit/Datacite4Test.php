@@ -211,13 +211,11 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapRights($metadata, $dataset);
 
-        $dataset->toCkanArray();
-
-        $this->assertEquals($dataset->msl_rights[0]['msl_right'], "Creative Commons Attribution 4.0 International");
-        $this->assertEquals($dataset->msl_rights[0]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
-        $this->assertEquals($dataset->msl_rights[0]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
-        $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier'], "cc-by-4.0");
-        $this->assertEquals($dataset->msl_rights[0]['msl_right_identifier_scheme'], "SPDX");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right, "Creative Commons Attribution 4.0 International");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right_uri, "https://creativecommons.org/licenses/by/4.0/legalcode");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right_scheme_uri, "https://spdx.org/licenses/");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right_identifier, "cc-by-4.0");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right_identifier_scheme, "SPDX");        
 
         // new test
         $sourceData = new SourceDataset();
@@ -254,13 +252,13 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapRights($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_rights[0]['msl_right'], "openAccess");
-        $this->assertEquals($dataset->msl_rights[1]['msl_right'], "Creative Commons Attribution 4.0 International");
+        $this->assertEquals($dataset->msl_rights[0]->msl_right, "openAccess");
+        $this->assertEquals($dataset->msl_rights[1]->msl_right, "Creative Commons Attribution 4.0 International");
 
-        $this->assertEquals($dataset->msl_rights[1]['msl_right_uri'], "https://creativecommons.org/licenses/by/4.0/legalcode");
-        $this->assertEquals($dataset->msl_rights[1]['msl_right_scheme_uri'], "https://spdx.org/licenses/");
-        $this->assertEquals($dataset->msl_rights[1]['msl_right_identifier'], "cc-by-4.0");
-        $this->assertEquals($dataset->msl_rights[1]['msl_right_identifier_scheme'], "SPDX");
+        $this->assertEquals($dataset->msl_rights[1]->msl_right_uri, "https://creativecommons.org/licenses/by/4.0/legalcode");
+        $this->assertEquals($dataset->msl_rights[1]->msl_right_scheme_uri, "https://spdx.org/licenses/");
+        $this->assertEquals($dataset->msl_rights[1]->msl_right_identifier, "cc-by-4.0");
+        $this->assertEquals($dataset->msl_rights[1]->msl_right_identifier_scheme, "SPDX");
     }   
 
     /**

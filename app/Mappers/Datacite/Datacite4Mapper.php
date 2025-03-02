@@ -112,7 +112,8 @@ class Datacite4Mapper implements MapperInterface
     public function mapRights(array $metadata, DataPublication $dataset): DataPublication
     {
         $rights = $metadata['data']['attributes']['rightsList'];
-        if($rights >0){
+        
+        if($rights > 0) {
             foreach ($rights as $right) {
                 $right = new Right(
                     (isset($right["rights"])                    ? $right["rights"]                  : ""), 
@@ -124,7 +125,6 @@ class Datacite4Mapper implements MapperInterface
 
                 $dataset->addRight($right);
             }
-
         }
 
         return $dataset;

@@ -707,11 +707,32 @@ class DataPublication
         $this->msl_has_lab = true;
     }
 
-    public function toCkanArray(): array
+    public function toCkanArray()
     {
-        dd((array)$this);
+        $arr = [];
 
-        return [];
+        foreach($this as $key => $value) {
+            if(is_array($value)) {
+                $subArr = [];
+                foreach($value as $subValue) {
+                    if(is_object($subValue)) {
+                        if(class_implements($subValue, CkanArrayInterface::class)) {
+                            $subArr[] = $subValue->toCkanArray();
+                        } else {
+                            $subArr[] = (array) $subValue;
+                        }
+                    } else {
+                        $subArr[] = $subValue;
+                    }
+                }
+                $arr[$key] = $subArr;
+            } else if(is_object($value)) {
+
+            } else {
+                $arr[$key] = $value;
+            }            
+        }
+
+        return $arr;
     }
 }
-
