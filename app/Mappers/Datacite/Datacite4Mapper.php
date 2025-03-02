@@ -4,7 +4,11 @@ namespace App\Mappers\Datacite;
 use App\Exceptions\MappingException;
 use App\Models\SourceDataset;
 use App\Mappers\MapperInterface;
+use App\Models\Ckan\AlternateIdentifier;
 use App\Models\Ckan\DataPublication;
+use App\Models\Ckan\Date;
+use App\Models\Ckan\FundingReference;
+use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
 
 class Datacite4Mapper implements MapperInterface
@@ -47,10 +51,12 @@ class Datacite4Mapper implements MapperInterface
 
         if($altIds > 0){
             foreach ($altIds as $altIdEntry) {
-                $dataset->addAlternateIdentifier(
+                $alternateIdentifier = new AlternateIdentifier(
                     (isset($altIdEntry["alternateIdentifier"])       ? $altIdEntry["alternateIdentifier"]     : ""),
                     (isset($altIdEntry["alternateIdentifierType"])   ? $altIdEntry["alternateIdentifierType"] : "")
                 );
+                
+                $dataset->addAlternateIdentifier($alternateIdentifier);
             }
         }
 
@@ -283,17 +289,19 @@ class Datacite4Mapper implements MapperInterface
     public function mapRelatedIdentifier(array $metadata, DataPublication $dataset): DataPublication
     {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
-        if(sizeof($relatedIdentifiers)>0){
+        if(sizeof($relatedIdentifiers) > 0) {
             foreach ($relatedIdentifiers as $relId) {
-                $dataset->addRelatedIdentifier(
-                    (isset($relId["relatedIdentifier"])     ? $relId["relatedIdentifier"]                       : ""), // since it is mandatory, should it throw an exeption?
-                    (isset($relId["relatedIdentifierType"]) ? $relId["relatedIdentifierType"]                   : ""), // since it is mandatory, should it throw an exeption?
-                    (isset($relId["relationType"])          ? $relId["relationType"]                            : ""), // since it is mandatory, should it throw an exeption?
+                $relatedIdentifier = new RelatedIdentifier(
+                    (isset($relId["relatedIdentifier"])     ? $relId["relatedIdentifier"]                       : ""), 
+                    (isset($relId["relatedIdentifierType"]) ? $relId["relatedIdentifierType"]                   : ""), 
+                    (isset($relId["relationType"])          ? $relId["relationType"]                            : ""), 
                     (isset($relId["relatedMetadataScheme"]) ? $relId["relatedMetadataScheme"]                   : ""), 
                     (isset($relId["schemeURI"])             ? $relId["schemeURI"]                               : ""), 
                     (isset($relId["schemeType"])            ? $relId["schemeType"]                              : ""), 
                     (isset($relId["resourceTypeGeneral"])   ? $relId["resourceTypeGeneral"]                     : ""), 
                 );
+
+                $dataset->addRelatedIdentifier($relatedIdentifier);
             }
         }
         return $dataset;
@@ -321,7 +329,7 @@ class Datacite4Mapper implements MapperInterface
 
         if($funRefs > 0){
             foreach ($funRefs as $funRef) {
-                $dataset->addFundingReference(
+                $fundingReference = new FundingReference(
                     (isset($funRef["funderName"])           ? $funRef["funderName"]             : ""),
                     (isset($funRef["funderIdentifier"])     ? $funRef["funderIdentifier"]       : ""),
                     (isset($funRef["funderIdentifierType"]) ? $funRef["funderIdentifierType"]   : ""),
@@ -330,6 +338,8 @@ class Datacite4Mapper implements MapperInterface
                     (isset($funRef["awardUri"])             ? $funRef["awardUri"]               : ""),
                     (isset($funRef["awardTitle"])           ? $funRef["awardTitle"]             : ""),
                  );
+
+                 $dataset->addFundingReference($fundingReference);
             }
         }
         return $dataset;
@@ -362,11 +372,13 @@ class Datacite4Mapper implements MapperInterface
         
         if(sizeof($allDates) > 0){
             foreach ($allDates as $date) {
-                $dataset->addDate(
+                $date = new Date(                
                     (isset($date["date"])              ? $date["date"]            : ""), 
                     (isset($date["dateType"])          ? $date["dateType"]        : ""), 
                     (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
                 );
+
+                $dataset->addDate($date);
             }
         }
 

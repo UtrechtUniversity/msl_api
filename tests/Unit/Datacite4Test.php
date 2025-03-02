@@ -42,8 +42,8 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "12345");
-        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "Local accession number");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier , "12345");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier_type , "Local accession number");
 
         //new test
         $sourceData = new SourceDataset();
@@ -105,10 +105,10 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
         
-        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier'] , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
-        $this->assertEquals($dataset->msl_alternate_identifiers[0]['msl_alternate_identifier_type'] , "citation");
-        $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier'] , "http://hdl.handle.net/10261/371208");
-        $this->assertEquals($dataset->msl_alternate_identifiers[1]['msl_alternate_identifier_type'] , "uri");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
+        $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier_type , "citation");
+        $this->assertEquals($dataset->msl_alternate_identifiers[1]->msl_alternate_identifier , "http://hdl.handle.net/10261/371208");
+        $this->assertEquals($dataset->msl_alternate_identifiers[1]->msl_alternate_identifier_type , "uri");
     }   
 
     /**
@@ -717,107 +717,101 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
 
-        $counter = 0;
-        foreach ($dataset->msl_related_identifiers as $entry) {
-            if(isset($entry['msl_related_identifier'])){
-                ($entry['msl_related_identifier'] != "" ? $counter++ : false);
-            }
-        }
 
-        $this->assertEquals(sizeof($dataset->msl_related_identifiers), $counter);
+        $this->assertEquals(sizeof($dataset->msl_related_identifiers), sizeof($metadata['data']['attributes']['relatedIdentifiers']));
 
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_relation_type"            ],    "IsCitedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier"                          ],    "ark:/13030/tqb3kh97gh8w");
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_resource_type_general"    ],    "Audiovisual");
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_type"                     ],    "ARK");
-        $this->assertEquals($dataset->msl_related_identifiers [1]["msl_related_identifier_relation_type"            ],    "Cites");
-        $this->assertEquals($dataset->msl_related_identifiers [1]["msl_related_identifier"                          ],    "arXiv:0706.0001");
-        $this->assertEquals($dataset->msl_related_identifiers [1]["msl_related_identifier_resource_type_general"    ],    "Book");
-        $this->assertEquals($dataset->msl_related_identifiers [1]["msl_related_identifier_type"                     ],    "arXiv");
-        $this->assertEquals($dataset->msl_related_identifiers [2]["msl_related_identifier_relation_type"            ],    "IsSupplementedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [2]["msl_related_identifier"                          ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [2]["msl_related_identifier_resource_type_general"    ],    "Collection");
-        $this->assertEquals($dataset->msl_related_identifiers [2]["msl_related_identifier_type"                     ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [3]["msl_related_identifier_relation_type"            ],    "IsContinuedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [3]["msl_related_identifier"                          ],    "9783468111242");
-        $this->assertEquals($dataset->msl_related_identifiers [3]["msl_related_identifier_resource_type_general"    ],    "ComputationalNotebook");
-        $this->assertEquals($dataset->msl_related_identifiers [3]["msl_related_identifier_type"                     ],    "EAN13");
-        $this->assertEquals($dataset->msl_related_identifiers [4]["msl_related_identifier_relation_type"            ],    "Continues");
-        $this->assertEquals($dataset->msl_related_identifiers [4]["msl_related_identifier"                          ],    "1562-6865");
-        $this->assertEquals($dataset->msl_related_identifiers [4]["msl_related_identifier_resource_type_general"    ],    "ConferencePaper");
-        $this->assertEquals($dataset->msl_related_identifiers [4]["msl_related_identifier_type"                     ],    "EISSN");
-        $this->assertEquals($dataset->msl_related_identifiers [5]["msl_related_identifier_relation_type"            ],    "Describes");
-        $this->assertEquals($dataset->msl_related_identifiers [5]["msl_related_identifier"                          ],    "10013/epic.10033");
-        $this->assertEquals($dataset->msl_related_identifiers [5]["msl_related_identifier_resource_type_general"    ],    "ConferenceProceeding");
-        $this->assertEquals($dataset->msl_related_identifiers [5]["msl_related_identifier_type"                     ],    "Handle");
-        $this->assertEquals($dataset->msl_related_identifiers [6]["msl_related_identifier_relation_type"            ],    "IsDescribedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [6]["msl_related_identifier"                          ],    "IECUR0097");
-        $this->assertEquals($dataset->msl_related_identifiers [6]["msl_related_identifier_resource_type_general"    ],    "DataPaper");
-        $this->assertEquals($dataset->msl_related_identifiers [6]["msl_related_identifier_type"                     ],    "IGSN");
-        $this->assertEquals($dataset->msl_related_identifiers [7]["msl_related_identifier_relation_type"            ],    "HasMetadata");
-        $this->assertEquals($dataset->msl_related_identifiers [7]["msl_related_identifier"                          ],    "978-3-905673-82-1");
-        $this->assertEquals($dataset->msl_related_identifiers [7]["msl_related_identifier_resource_type_general"    ],    "Dataset");
-        $this->assertEquals($dataset->msl_related_identifiers [7]["msl_related_identifier_type"                     ],    "ISBN");
-        $this->assertEquals($dataset->msl_related_identifiers [8]["msl_related_identifier_relation_type"            ],    "IsMetadataFor");
-        $this->assertEquals($dataset->msl_related_identifiers [8]["msl_related_identifier"                          ],    "0077-5606");
-        $this->assertEquals($dataset->msl_related_identifiers [8]["msl_related_identifier_resource_type_general"    ],    "Dissertation");
-        $this->assertEquals($dataset->msl_related_identifiers [8]["msl_related_identifier_type"                     ],    "ISSN");
-        $this->assertEquals($dataset->msl_related_identifiers [9]["msl_related_identifier_relation_type"            ],    "IsNewVersionOf");
-        $this->assertEquals($dataset->msl_related_identifiers [9]["msl_related_identifier"                          ],    "urn:lsid:ubio.org:namebank:11815");
-        $this->assertEquals($dataset->msl_related_identifiers [9]["msl_related_identifier_resource_type_general"    ],    "InteractiveResource");
-        $this->assertEquals($dataset->msl_related_identifiers [9]["msl_related_identifier_type"                     ],    "LSID");
-        $this->assertEquals($dataset->msl_related_identifiers [10]["msl_related_identifier_relation_type"           ],    "IsPreviousVersionOf");
-        $this->assertEquals($dataset->msl_related_identifiers [10]["msl_related_identifier"                         ],    "12082125");
-        $this->assertEquals($dataset->msl_related_identifiers [10]["msl_related_identifier_resource_type_general"   ],    "Journal");
-        $this->assertEquals($dataset->msl_related_identifiers [10]["msl_related_identifier_type"                    ],    "PMID");
-        $this->assertEquals($dataset->msl_related_identifiers [11]["msl_related_identifier_relation_type"           ],    "IsPartOf");
-        $this->assertEquals($dataset->msl_related_identifiers [11]["msl_related_identifier"                         ],    "http://purl.oclc.org/foo/bar");
-        $this->assertEquals($dataset->msl_related_identifiers [11]["msl_related_identifier_resource_type_general"   ],    "JournalArticle");
-        $this->assertEquals($dataset->msl_related_identifiers [11]["msl_related_identifier_type"                    ],    "PURL");
-        $this->assertEquals($dataset->msl_related_identifiers [12]["msl_related_identifier_relation_type"           ],    "HasPart");
-        $this->assertEquals($dataset->msl_related_identifiers [12]["msl_related_identifier"                         ],    "123456789999");
-        $this->assertEquals($dataset->msl_related_identifiers [12]["msl_related_identifier_resource_type_general"   ],    "Model");
-        $this->assertEquals($dataset->msl_related_identifiers [12]["msl_related_identifier_type"                    ],    "UPC");
-        $this->assertEquals($dataset->msl_related_identifiers [13]["msl_related_identifier_relation_type"           ],    "IsPublishedIn");
-        $this->assertEquals($dataset->msl_related_identifiers [13]["msl_related_identifier"                         ],    "http://www.heatflow.und.edu/index2.html");
-        $this->assertEquals($dataset->msl_related_identifiers [13]["msl_related_identifier_resource_type_general"   ],    "OutputManagementPlan");
-        $this->assertEquals($dataset->msl_related_identifiers [13]["msl_related_identifier_type"                    ],    "URL");
-        $this->assertEquals($dataset->msl_related_identifiers [14]["msl_related_identifier_relation_type"           ],    "IsReferencedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [14]["msl_related_identifier"                         ],    "urn:nbn:de:101:1-201102033592");
-        $this->assertEquals($dataset->msl_related_identifiers [14]["msl_related_identifier_resource_type_general"   ],    "PeerReview");
-        $this->assertEquals($dataset->msl_related_identifiers [14]["msl_related_identifier_type"                    ],    "URN"    );
-        $this->assertEquals($dataset->msl_related_identifiers [15]["msl_related_identifier_relation_type"           ],    "IsDerivedFrom");
-        $this->assertEquals($dataset->msl_related_identifiers [15]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [15]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [15]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [16]["msl_related_identifier_relation_type"           ],    "IsSourceOf");
-        $this->assertEquals($dataset->msl_related_identifiers [16]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [16]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [16]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [17]["msl_related_identifier_relation_type"           ],    "IsRequiredBy");
-        $this->assertEquals($dataset->msl_related_identifiers [17]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [17]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [17]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [18]["msl_related_identifier_relation_type"           ],    "Requires");
-        $this->assertEquals($dataset->msl_related_identifiers [18]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [18]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [18]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [19]["msl_related_identifier_relation_type"           ],    "Obsoletes");
-        $this->assertEquals($dataset->msl_related_identifiers [19]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [19]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [19]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [20]["msl_related_identifier_relation_type"           ],    "IsObsoletedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [20]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [20]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [20]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [21]["msl_related_identifier_relation_type"           ],    "Collects");
-        $this->assertEquals($dataset->msl_related_identifiers [21]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [21]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [21]["msl_related_identifier_type"                    ],    "DOI");
-        $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier_relation_type"           ],    "IsCollectedBy");
-        $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier"                         ],    "10.1016/j.epsl.2011.11.037");
-        $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier_resource_type_general"   ],    "Other");
-        $this->assertEquals($dataset->msl_related_identifiers [22]["msl_related_identifier_type"                    ],    "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_relation_type, "IsCitedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier, "ark:/13030/tqb3kh97gh8w");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_resource_type_general, "Audiovisual");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_type, "ARK");
+        $this->assertEquals($dataset->msl_related_identifiers[1]->msl_related_identifier_relation_type, "Cites");
+        $this->assertEquals($dataset->msl_related_identifiers[1]->msl_related_identifier, "arXiv:0706.0001");
+        $this->assertEquals($dataset->msl_related_identifiers[1]->msl_related_identifier_resource_type_general, "Book");
+        $this->assertEquals($dataset->msl_related_identifiers[1]->msl_related_identifier_type, "arXiv");
+        $this->assertEquals($dataset->msl_related_identifiers[2]->msl_related_identifier_relation_type, "IsSupplementedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[2]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[2]->msl_related_identifier_resource_type_general, "Collection");
+        $this->assertEquals($dataset->msl_related_identifiers[2]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[3]->msl_related_identifier_relation_type, "IsContinuedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[3]->msl_related_identifier, "9783468111242");
+        $this->assertEquals($dataset->msl_related_identifiers[3]->msl_related_identifier_resource_type_general, "ComputationalNotebook");
+        $this->assertEquals($dataset->msl_related_identifiers[3]->msl_related_identifier_type, "EAN13");
+        $this->assertEquals($dataset->msl_related_identifiers[4]->msl_related_identifier_relation_type, "Continues");
+        $this->assertEquals($dataset->msl_related_identifiers[4]->msl_related_identifier, "1562-6865");
+        $this->assertEquals($dataset->msl_related_identifiers[4]->msl_related_identifier_resource_type_general, "ConferencePaper");
+        $this->assertEquals($dataset->msl_related_identifiers[4]->msl_related_identifier_type, "EISSN");
+        $this->assertEquals($dataset->msl_related_identifiers[5]->msl_related_identifier_relation_type, "Describes");
+        $this->assertEquals($dataset->msl_related_identifiers[5]->msl_related_identifier, "10013/epic.10033");
+        $this->assertEquals($dataset->msl_related_identifiers[5]->msl_related_identifier_resource_type_general, "ConferenceProceeding");
+        $this->assertEquals($dataset->msl_related_identifiers[5]->msl_related_identifier_type, "Handle");
+        $this->assertEquals($dataset->msl_related_identifiers[6]->msl_related_identifier_relation_type, "IsDescribedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[6]->msl_related_identifier, "IECUR0097");
+        $this->assertEquals($dataset->msl_related_identifiers[6]->msl_related_identifier_resource_type_general, "DataPaper");
+        $this->assertEquals($dataset->msl_related_identifiers[6]->msl_related_identifier_type, "IGSN");
+        $this->assertEquals($dataset->msl_related_identifiers[7]->msl_related_identifier_relation_type, "HasMetadata");
+        $this->assertEquals($dataset->msl_related_identifiers[7]->msl_related_identifier, "978-3-905673-82-1");
+        $this->assertEquals($dataset->msl_related_identifiers[7]->msl_related_identifier_resource_type_general, "Dataset");
+        $this->assertEquals($dataset->msl_related_identifiers[7]->msl_related_identifier_type, "ISBN");
+        $this->assertEquals($dataset->msl_related_identifiers[8]->msl_related_identifier_relation_type, "IsMetadataFor");
+        $this->assertEquals($dataset->msl_related_identifiers[8]->msl_related_identifier, "0077-5606");
+        $this->assertEquals($dataset->msl_related_identifiers[8]->msl_related_identifier_resource_type_general, "Dissertation");
+        $this->assertEquals($dataset->msl_related_identifiers[8]->msl_related_identifier_type, "ISSN");
+        $this->assertEquals($dataset->msl_related_identifiers[9]->msl_related_identifier_relation_type, "IsNewVersionOf");
+        $this->assertEquals($dataset->msl_related_identifiers[9]->msl_related_identifier, "urn:lsid:ubio.org:namebank:11815");
+        $this->assertEquals($dataset->msl_related_identifiers[9]->msl_related_identifier_resource_type_general, "InteractiveResource");
+        $this->assertEquals($dataset->msl_related_identifiers[9]->msl_related_identifier_type, "LSID");
+        $this->assertEquals($dataset->msl_related_identifiers[10]->msl_related_identifier_relation_type, "IsPreviousVersionOf");
+        $this->assertEquals($dataset->msl_related_identifiers[10]->msl_related_identifier, "12082125");
+        $this->assertEquals($dataset->msl_related_identifiers[10]->msl_related_identifier_resource_type_general, "Journal");
+        $this->assertEquals($dataset->msl_related_identifiers[10]->msl_related_identifier_type, "PMID");
+        $this->assertEquals($dataset->msl_related_identifiers[11]->msl_related_identifier_relation_type, "IsPartOf");
+        $this->assertEquals($dataset->msl_related_identifiers[11]->msl_related_identifier, "http://purl.oclc.org/foo/bar");
+        $this->assertEquals($dataset->msl_related_identifiers[11]->msl_related_identifier_resource_type_general, "JournalArticle");
+        $this->assertEquals($dataset->msl_related_identifiers[11]->msl_related_identifier_type, "PURL");
+        $this->assertEquals($dataset->msl_related_identifiers[12]->msl_related_identifier_relation_type, "HasPart");
+        $this->assertEquals($dataset->msl_related_identifiers[12]->msl_related_identifier, "123456789999");
+        $this->assertEquals($dataset->msl_related_identifiers[12]->msl_related_identifier_resource_type_general, "Model");
+        $this->assertEquals($dataset->msl_related_identifiers[12]->msl_related_identifier_type, "UPC");
+        $this->assertEquals($dataset->msl_related_identifiers[13]->msl_related_identifier_relation_type, "IsPublishedIn");
+        $this->assertEquals($dataset->msl_related_identifiers[13]->msl_related_identifier, "http://www.heatflow.und.edu/index2.html");
+        $this->assertEquals($dataset->msl_related_identifiers[13]->msl_related_identifier_resource_type_general, "OutputManagementPlan");
+        $this->assertEquals($dataset->msl_related_identifiers[13]->msl_related_identifier_type, "URL");
+        $this->assertEquals($dataset->msl_related_identifiers[14]->msl_related_identifier_relation_type, "IsReferencedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[14]->msl_related_identifier, "urn:nbn:de:101:1-201102033592");
+        $this->assertEquals($dataset->msl_related_identifiers[14]->msl_related_identifier_resource_type_general, "PeerReview");
+        $this->assertEquals($dataset->msl_related_identifiers[14]->msl_related_identifier_type, "URN");
+        $this->assertEquals($dataset->msl_related_identifiers[15]->msl_related_identifier_relation_type, "IsDerivedFrom");
+        $this->assertEquals($dataset->msl_related_identifiers[15]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[15]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[15]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[16]->msl_related_identifier_relation_type, "IsSourceOf");
+        $this->assertEquals($dataset->msl_related_identifiers[16]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[16]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[16]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[17]->msl_related_identifier_relation_type, "IsRequiredBy");
+        $this->assertEquals($dataset->msl_related_identifiers[17]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[17]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[17]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[18]->msl_related_identifier_relation_type, "Requires");
+        $this->assertEquals($dataset->msl_related_identifiers[18]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[18]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[18]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[19]->msl_related_identifier_relation_type, "Obsoletes");
+        $this->assertEquals($dataset->msl_related_identifiers[19]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[19]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[19]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[20]->msl_related_identifier_relation_type, "IsObsoletedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[20]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[20]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[20]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[21]->msl_related_identifier_relation_type, "Collects");
+        $this->assertEquals($dataset->msl_related_identifiers[21]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[21]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[21]->msl_related_identifier_type, "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[22]->msl_related_identifier_relation_type, "IsCollectedBy");
+        $this->assertEquals($dataset->msl_related_identifiers[22]->msl_related_identifier, "10.1016/j.epsl.2011.11.037");
+        $this->assertEquals($dataset->msl_related_identifiers[22]->msl_related_identifier_resource_type_general, "Other");
+        $this->assertEquals($dataset->msl_related_identifiers[22]->msl_related_identifier_type, "DOI");
 
         // new test
         $sourceData = new SourceDataset();
@@ -849,9 +843,9 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_relation_type"           ],    "IsSupplementTo");
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier"                         ],    "10.1007/s10346-021-01787-2");
-        $this->assertEquals($dataset->msl_related_identifiers [0]["msl_related_identifier_type"                    ],    "DOI");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_relation_type, "IsSupplementTo");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier, "10.1007/s10346-021-01787-2");
+        $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_type, "DOI");
 
         // new test
         $sourceData = new SourceDataset();
@@ -986,29 +980,29 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapDates($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_dates[0] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[0] ["msl_date_type"       ], "Accepted");
-        $this->assertEquals($dataset->msl_dates[1] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[1] ["msl_date_type"       ], "Available");
-        $this->assertEquals($dataset->msl_dates[2] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[2] ["msl_date_type"       ], "Copyrighted");
-        $this->assertEquals($dataset->msl_dates[3] ["msl_date_date"       ], "2022-01-01/2022-12-31");
-        $this->assertEquals($dataset->msl_dates[3] ["msl_date_type"       ], "Collected");
-        $this->assertEquals($dataset->msl_dates[4] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[4] ["msl_date_type"       ], "Created");
-        $this->assertEquals($dataset->msl_dates[5] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[5] ["msl_date_type"       ], "Issued");
-        $this->assertEquals($dataset->msl_dates[6] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[6] ["msl_date_type"       ], "Submitted");
-        $this->assertEquals($dataset->msl_dates[7] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[7] ["msl_date_type"       ], "Updated");
-        $this->assertEquals($dataset->msl_dates[8] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[8] ["msl_date_type"       ], "Valid");
-        $this->assertEquals($dataset->msl_dates[9] ["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[9] ["msl_date_type"       ], "Withdrawn");
-        $this->assertEquals($dataset->msl_dates[10]["msl_date_date"       ], "2023-01-01");
-        $this->assertEquals($dataset->msl_dates[10]["msl_date_type"       ], "Other");
-        $this->assertEquals($dataset->msl_dates[10]["msl_date_information"], "ExampleDateInformation");
+        $this->assertEquals($dataset->msl_dates[0]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[0]->msl_date_type, "Accepted");
+        $this->assertEquals($dataset->msl_dates[1]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[1]->msl_date_type, "Available");
+        $this->assertEquals($dataset->msl_dates[2]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[2]->msl_date_type, "Copyrighted");
+        $this->assertEquals($dataset->msl_dates[3]->msl_date_date, "2022-01-01/2022-12-31");
+        $this->assertEquals($dataset->msl_dates[3]->msl_date_type, "Collected");
+        $this->assertEquals($dataset->msl_dates[4]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[4]->msl_date_type, "Created");
+        $this->assertEquals($dataset->msl_dates[5]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[5]->msl_date_type, "Issued");
+        $this->assertEquals($dataset->msl_dates[6]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[6]->msl_date_type, "Submitted");
+        $this->assertEquals($dataset->msl_dates[7]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[7]->msl_date_type, "Updated");
+        $this->assertEquals($dataset->msl_dates[8]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[8]->msl_date_type, "Valid");
+        $this->assertEquals($dataset->msl_dates[9]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[9]->msl_date_type, "Withdrawn");
+        $this->assertEquals($dataset->msl_dates[10]->msl_date_date, "2023-01-01");
+        $this->assertEquals($dataset->msl_dates[10]->msl_date_type, "Other");
+        $this->assertEquals($dataset->msl_dates[10]->msl_date_information, "ExampleDateInformation");
 
         //new test
         $sourceData = new SourceDataset();
@@ -1039,8 +1033,8 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapDates($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_dates[0] ["msl_date_date"       ], "2021");
-        $this->assertEquals($dataset->msl_dates[0] ["msl_date_type"       ], "Issued");
+        $this->assertEquals($dataset->msl_dates[0]->msl_date_date, "2021");
+        $this->assertEquals($dataset->msl_dates[0]->msl_date_type, "Issued");
 
         //new test
         $sourceData = new SourceDataset();
@@ -1107,12 +1101,12 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_name']            , "Example Funder");
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier']      , "https://doi.org/10.13039/501100000780");
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_funder_identifier_type'] , "Crossref Funder ID");
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_number']           , "12345");
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_uri']              , "https://example.com/example-award-uri");
-        $this->assertEquals($dataset->msl_funding_references[0]['msl_funding_reference_award_title']            , "Example AwardTitle");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_funder_name, "Example Funder");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_funder_identifier, "https://doi.org/10.13039/501100000780");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_funder_identifier_type, "Crossref Funder ID");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_award_number, "12345");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_award_uri, "https://example.com/example-award-uri");
+        $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_award_title, "Example AwardTitle");
 
         $sourceData = new SourceDataset();
 

@@ -260,55 +260,28 @@ class DataPublication
         $this->msl_rights[] = $right;            
     }
 
-    public function addAlternateIdentifier($identifier, $type): void
+    public function addAlternateIdentifier(AlternateIdentifier $alternateIdentifier): void
     {
-        $this->msl_alternate_identifiers[] = [
-            'msl_alternate_identifier' => $identifier,
-            'msl_alternate_identifier_type' => $type
-        ];
+        $this->msl_alternate_identifiers[] = $alternateIdentifier;
     }
 
-    public function addRelatedIdentifier($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType = ""): void
+    public function addRelatedIdentifier(RelatedIdentifier $relatedIdentifier): void
     {
-        $this->msl_related_identifiers[] = [
-            'msl_related_identifier' => $identifier,
-            'msl_related_identifier_type' => $identifierType,
-            'msl_related_identifier_relation_type' => $relationType,
-            'msl_related_identifier_metadata_scheme' => $metadataScheme,
-            'msl_related_identifier_metadata_scheme_uri' => $metadataSchemeUri,
-            'msl_related_identifier_metadata_scheme_type' => $metadataSchemeType,
-            'msl_related_identifier_resource_type_general' => $resourceType,
-        ];
+        $this->msl_related_identifiers[] = $relatedIdentifier;
     }
 
-    public function addFundingReference($funderName, $funderIdentifier = "", $funderIdentifierType = "", $schemeUri = "", $awardNumber = "", $awardUri = "", $awardTitle = ""): void
+    public function addFundingReference(FundingReference $fundingReference): void
     {
-        $this->msl_funding_references[] = [
-            'msl_funding_reference_funder_name' => $funderName,
-            'msl_funding_reference_funder_identifier' => $funderIdentifier,
-            'msl_funding_reference_funder_identifier_type' => $funderIdentifierType,
-            'msl_funding_reference_scheme_uri' => $schemeUri,            
-            'msl_funding_reference_award_number' => $awardNumber,
-            'msl_funding_reference_award_uri' => $awardUri,
-            'msl_funding_reference_award_title' => $awardTitle,
-        ];
+        $this->msl_funding_references[] = $fundingReference;
     }
 
-    public function addDate($date, $type, $information = ""): void
+    public function addDate(Date $date): void
     {
-        $this->msl_dates[] = [
-            'msl_date_date' => $date,
-            'msl_date_type' => $type,
-            'msl_date_information' => $information
-        ];
+        $this->msl_dates[] = $date;
     }
 
     public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $nameIdentifierUris = [], $affiliations = []): void
     {
-        if((count($nameIdentifiers) !== count($nameIdentifierSchemes)) || (count($nameIdentifierSchemes) !== count($nameIdentifierUris))) {
-            throw new Exception('name identifier fields are not equal in length');
-        }
-
         $this->msl_creators[] = [
             'msl_creator_name' => $name,
             'msl_creator_given_name' => $givenName,
