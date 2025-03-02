@@ -280,18 +280,9 @@ class DataPublication
         $this->msl_dates[] = $date;
     }
 
-    public function addCreator($name, $givenName = "", $familyName = "", $nameType = "", $nameIdentifiers = [], $nameIdentifierSchemes = [], $nameIdentifierUris = [], $affiliations = []): void
+    public function addCreator(Creator $creator): void
     {
-        $this->msl_creators[] = [
-            'msl_creator_name' => $name,
-            'msl_creator_given_name' => $givenName,
-            'msl_creator_family_name' => $familyName,
-            'msl_creator_name_type' => $nameType,
-            'msl_creator_name_identifiers' => $nameIdentifiers,
-            'msl_creator_name_identifiers_schemes' => $nameIdentifierSchemes,
-            'msl_creator_name_identifiers_uris' => $nameIdentifierUris,
-            'msl_creator_affiliations_names' => $affiliations
-        ];
+        $this->msl_creators[] = $creator;
     }
     
     public function addTag($tagString, $uris = [])
