@@ -40,6 +40,16 @@ class DataPublication
     public $name;
 
     /**
+     * A description of the resource.
+     */
+    public string $msl_resource_type;
+
+    /**
+     * The general type of a resource
+     */
+    public string $msl_resource_type_general;
+
+    /**
      * datapackage visability in CKAN
      */
     public bool $private = false;
@@ -190,7 +200,11 @@ class DataPublication
 
     public $msl_downloads = [];
 
-    public $msl_publisher;
+    /**
+     * The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. 
+     * This property will be used to formulate the citation, so consider the prominence of the role.
+     */
+    public string $msl_publisher;
 
     public $msl_citation;
 
