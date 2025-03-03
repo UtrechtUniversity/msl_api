@@ -174,6 +174,11 @@ class DataPublication
      */
     public array $msl_sizes = [];
 
+    /**
+     * echnical format of the resource.
+     */
+    public array $msl_formats = [];
+
     public $license_id;
 
     public $msl_points_of_contact = [];
@@ -323,6 +328,11 @@ class DataPublication
     public function addSize(string $size): void
     {
         $this->msl_sizes[] = $size;
+    }
+
+    public function addFormat(string $format): void
+    {
+        $this->msl_formats[] = $format;
     }
     
     public function addTag($tagString, $uris = [])
