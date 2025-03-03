@@ -166,7 +166,13 @@ class DataPublication
     /**
      * The institution(s) or person(s) responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.
      */
-    public array $msl_contributors = [];    
+    public array $msl_contributors = [];
+
+    /**
+     * Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.
+     * This information does need to match the file references we find.
+     */
+    public array $msl_sizes = [];
 
     public $license_id;
 
@@ -312,6 +318,11 @@ class DataPublication
     public function addContributor(Contributor $contributor): void
     {
         $this->msl_contributors[] = $contributor;
+    }
+
+    public function addSize(string $size): void
+    {
+        $this->msl_sizes[] = $size;
     }
     
     public function addTag($tagString, $uris = [])
