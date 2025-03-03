@@ -179,6 +179,11 @@ class DataPublication
      */
     public array $msl_formats = [];
 
+    /**
+     * The version number of the resource. Is not definitive information as multiple variants for storing versioning information are available.
+     */
+    public string $msl_datacite_version = "";
+
     public $license_id;
 
     public $msl_points_of_contact = [];
