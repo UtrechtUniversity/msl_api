@@ -22,16 +22,6 @@ class DataPublication
      */
     public string $type = 'data-publication';
 
-    public $msl_subdomains = [];
-
-    public $msl_subdomains_original = [];
-
-    public $msl_subdomains_interpreted = [];
-
-    public $msl_enriched_keywords = [];
-
-    public $msl_original_keywords = [];
-
     /**
      * link to landingpage
      */    
@@ -176,21 +166,7 @@ class DataPublication
     /**
      * The institution(s) or person(s) responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.
      */
-    public array $msl_contributors = [];
-
-    public $tag_string = [];
-    
-    public $msl_tags = [];
-
-    public $msl_spatial_coordinates = [];
-    
-    public $msl_geojson_featurecollection;
-    
-    public $msl_geojson_featurecollection_points;
-    
-    public $msl_surface_area = 0;
-
-    public $msl_geolocations = [];
+    public array $msl_contributors = [];    
 
     public $license_id;
 
@@ -209,6 +185,37 @@ class DataPublication
     public $msl_citation;
 
     public $msl_collection_period = [];
+
+    /**
+     * Location related field below
+     */
+    public $msl_spatial_coordinates = [];
+    
+    public $msl_geojson_featurecollection;
+    
+    public $msl_geojson_featurecollection_points;
+    
+    public $msl_surface_area = 0;
+
+    public $msl_geolocations = [];
+
+    /**
+     * keyword related fields
+     */
+
+    public $tag_string = [];
+    
+    public $msl_tags = [];
+
+    public $msl_subdomains = [];
+
+    public $msl_subdomains_original = [];
+
+    public $msl_subdomains_interpreted = [];
+
+    public $msl_enriched_keywords = [];
+
+    public $msl_original_keywords = [];    
 
     /**
      * Fields listed below are used to provide top level filtering in the data-access filtertree navigation     
