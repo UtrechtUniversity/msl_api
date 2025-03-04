@@ -1550,5 +1550,31 @@ class Datacite4Test extends TestCase
 
         $this->assertEquals($dataset->msl_sizes[0], "1 MB");
         $this->assertEquals($dataset->msl_sizes[1], "90 pages");
+
+        // new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "sizes": [
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapSize($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_sizes, []);
     }
 }
