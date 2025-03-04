@@ -451,4 +451,16 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+           /**
+     * stores the version to the dataset
+     */
+    public function mapVersion(array $metadata, DataPublication $dataset): DataPublication
+    {
+        if(isset($metadata['data']['attributes']['version'])){
+            $dataset->msl_datacite_version = (($metadata['data']['attributes']['version']) != null ? $metadata['data']['attributes']['version'] : "");
+        }
+        
+        return $dataset;
+    }
 }
