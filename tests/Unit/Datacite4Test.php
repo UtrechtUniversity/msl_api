@@ -1196,6 +1196,6 @@ class Datacite4Test extends TestCase
         
         $dataset = $dataciteMapper->mapPublisher($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_source, "https://doi.pangaea.de/10.1594/PANGAEA.937090");
+        $this->assertEquals($dataset->msl_publisher, "Example Publisher");
     }
 }

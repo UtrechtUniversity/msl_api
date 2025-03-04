@@ -390,20 +390,13 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapPublisher(array $metadata, DataPublication $dataset): DataPublication
     {
-        $allDates = $metadata['data']['attributes']['dates'];
-        
-        if(sizeof($allDates) > 0){
-            foreach ($allDates as $date) {
-                $date = new Date(                
-                    (isset($date["date"])              ? $date["date"]            : ""), 
-                    (isset($date["dateType"])          ? $date["dateType"]        : ""), 
-                    (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
-                );
-
-                $dataset->addDate($date);
-            }
+        if(isset($metadata['data']['attributes']['publisher'])){
+            $publisherEntry =    $metadata['data']['attributes']['publisher'];
+            
+            $dataset->msl_publisher = (isset($publisherEntry["name"])   ? $publisherEntry["name"] : throw new MappingException($dataset->msl_doi . ': No publisher mapped'));
+            
         }
-
+        
         return $dataset;
     }
 }
