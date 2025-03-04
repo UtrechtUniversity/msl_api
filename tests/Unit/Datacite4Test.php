@@ -1519,6 +1519,60 @@ class Datacite4Test extends TestCase
             $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_uri,        "https://ror.org/");
       } 
 
+    public function test_version_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "version": "1"
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapVersion($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_datacite_version, "1");
+
+
+        //new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "version": null
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapVersion($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_datacite_version, "");
+    }
+  
+  
       public function test_ResourceType_mapping(): void
       {
           $sourceData = new SourceDataset();
@@ -1645,6 +1699,7 @@ public function test_contributor_mapping(): void
 
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
+        
         $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name,                                        "ExampleFamilyName, ExampleGivenName");
@@ -1696,7 +1751,7 @@ public function test_contributor_mapping(): void
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                                            "contributors": [
+                            "contributors": [
                             {
                                 "name": "Digital.CSIC",
                                 "affiliation": [],
@@ -1729,31 +1784,31 @@ public function test_contributor_mapping(): void
         $this->assertEquals($dataset->msl_contributors[1]->msl_contributor_type,    "HostingInstitution");
 
 
-                //new test
+        //new test
 
-                $sourceData = new SourceDataset();
+        $sourceData = new SourceDataset();
 
-                $sourceData->source_dataset = '
-                    {
-                        "data": {
-                            "id": "10.1594/pangaea.937090",
-                            "type": "dois",
-                            "attributes": {
-                                "contributors": []
-                            }
-                        }
-                    }';
-                $dataciteMapper = new Datacite4Mapper();
-        
-                // create empty data publication
-                $dataset = new DataPublication;
-        
-                // read json text
-                $metadata = json_decode($sourceData->source_dataset, true);
-                
-                $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
-        
-                $this->assertEquals($dataset->msl_contributors,    []);
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "contributors": []
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_contributors,    []);
 
         
         
@@ -1766,7 +1821,7 @@ public function test_contributor_mapping(): void
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                                            "contributors": [
+                          "contributors": [
                             {
                                 "name": "ExampleFamilyName, ExampleGivenName",
                                 "nameType": "Personal",
