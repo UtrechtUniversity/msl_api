@@ -451,4 +451,13 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapSize(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $dataset->msl_sizes = ((isset($metadata['data']['attributes']['sizes'])) ? $metadata['data']['attributes']['sizes'] : []);
+        return $dataset;
+    }
 }

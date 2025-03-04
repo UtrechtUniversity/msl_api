@@ -1517,4 +1517,38 @@ class Datacite4Test extends TestCase
             $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_scheme,     "ROR");
             $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_uri,        "https://ror.org/");
       } 
+
+    /**
+     * test if publicationYear is correctly mapped
+     */
+    public function test_size_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "sizes": [
+                            "1 MB",
+                            "90 pages"
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapSize($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_sizes[0], "1 MB");
+        $this->assertEquals($dataset->msl_sizes[1], "90 pages");
+    }
 }
