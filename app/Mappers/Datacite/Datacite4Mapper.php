@@ -388,7 +388,22 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
- /**
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapPublisher(array $metadata, DataPublication $dataset): DataPublication
+    {
+        if(isset($metadata['data']['attributes']['publisher'])){
+            $publisherEntry =    $metadata['data']['attributes']['publisher'];
+            
+            $dataset->msl_publisher = (isset($publisherEntry["name"])   ? $publisherEntry["name"] : throw new MappingException($dataset->msl_doi . ': No publisher mapped'));
+            
+        }
+        
+        return $dataset;
+    }
+
+    /**
      * stores the related identifiers to the dataset
      * 
      */
@@ -441,6 +456,5 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
-
 
 }
