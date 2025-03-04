@@ -451,4 +451,22 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+
+        /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapResourceType(array $metadata, DataPublication $dataset): DataPublication
+    {
+        if(isset($metadata['data']['attributes']['types'])){
+            $resourceTypeEntry =    $metadata['data']['attributes']['types'];
+            
+            $dataset->msl_resource_type         = (isset($resourceTypeEntry["resourceType"])        ? $resourceTypeEntry["resourceType"]        : '');
+            $dataset->msl_resource_type_general = (isset($resourceTypeEntry["resourceTypeGeneral"]) ? $resourceTypeEntry["resourceTypeGeneral"] : '');
+            
+        }
+        
+        return $dataset;
+    }
+
 }

@@ -1517,4 +1517,41 @@ class Datacite4Test extends TestCase
             $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_scheme,     "ROR");
             $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_uri,        "https://ror.org/");
       } 
+
+
+
+      public function test_ResourceType_mapping(): void
+      {
+          $sourceData = new SourceDataset();
+  
+          $sourceData->source_dataset = '
+              {
+                  "data": {
+                      "id": "10.1594/pangaea.937090",
+                      "type": "dois",
+                      "attributes": {
+                          "types": {
+                                "ris": "DATA",
+                                "bibtex": "misc",
+                                "citeproc": "dataset",
+                                "schemaOrg": "Dataset",
+                                "resourceType": "dataset",
+                                "resourceTypeGeneral": "Dataset"
+                            }
+                      }
+                  }
+              }';
+          $dataciteMapper = new Datacite4Mapper();
+  
+          // create empty data publication
+          $dataset = new DataPublication;
+  
+          // read json text
+          $metadata = json_decode($sourceData->source_dataset, true);
+          
+          $dataset = $dataciteMapper->mapResourceType($metadata, $dataset);
+  
+          $this->assertEquals($dataset->msl_resource_type, "dataset");
+          $this->assertEquals($dataset->msl_resource_type_general, "Dataset");
+      }
 }
