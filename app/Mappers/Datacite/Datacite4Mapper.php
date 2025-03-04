@@ -451,4 +451,14 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
+
+
+       /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapFormat(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $dataset->msl_formats = ((isset($metadata['data']['attributes']['formats'])) ? $metadata['data']['attributes']['formats'] : []);
+        return $dataset;
+    }
 }
