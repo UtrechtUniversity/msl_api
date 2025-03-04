@@ -353,7 +353,6 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapLanguage(array $metadata, DataPublication $dataset): DataPublication
     {
-
         $lang = '';
 
         if(isset($metadata['data']['attributes']['language'])){
@@ -405,12 +404,9 @@ class Datacite4Mapper implements MapperInterface
 
     /**
      * stores the related identifiers to the dataset
-     * 
      */
     public function mapCreators(array $metadata, DataPublication $dataset){
         $creators = $metadata['data']['attributes']['creators'];
-
-
 
         if(sizeof($creators)>0){
             foreach ($creators as $creator) {
@@ -422,7 +418,6 @@ class Datacite4Mapper implements MapperInterface
                 );
 
                 if( isset($creator["nameIdentifiers"]) && $creator["nameIdentifiers"] > 0 ){
-
                     foreach ($creator["nameIdentifiers"] as $nameIdentifierEntry) {
 
                         $nameIdentifierInst = new NameIdentifier(
@@ -433,7 +428,6 @@ class Datacite4Mapper implements MapperInterface
     
                         $creatorInstance->addNameIdentifier($nameIdentifierInst);
                     }
-
                 }
 
                 if( isset($creator["affiliation"]) && $creator["affiliation"] > 0 ){
@@ -449,12 +443,10 @@ class Datacite4Mapper implements MapperInterface
     
                         $creatorInstance->addAffiliation($affiliationInst);
                     }
-
                 }
                 $dataset->addCreator($creatorInstance);
             }
         }
         return $dataset;
     }
-
 }
