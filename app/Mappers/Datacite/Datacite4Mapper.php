@@ -44,6 +44,8 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapVersion($metadata, $dataset);
         $dataset = $this->mapResourceType($metadata, $dataset);
         $dataset = $this->mapContributor($metadata, $dataset);
+        $dataset = $this->mapSize($metadata, $dataset);
+        $dataset = $this->mapFormat($metadata, $dataset);
         
         return $dataset;
     }
@@ -542,7 +544,30 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapSize(array $metadata, DataPublication $dataset): DataPublication
     {
-        $dataset->msl_sizes = ((isset($metadata['data']['attributes']['sizes'])) ? $metadata['data']['attributes']['sizes'] : []);
+        $sizes = $metadata['data']['attributes']['sizes'];
+
+        if(sizeof($sizes) > 0) {
+            foreach($sizes as $size) {
+                $dataset->addSize($size);
+            }
+        }
+
+        return $dataset;
+    }
+
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapFormat(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $formats = $metadata['data']['attributes']['formats'];
+                
+        if(sizeof($formats) > 0) {
+            foreach($formats as $format) {
+                $dataset->addFormat($format);
+            }
+        }
+
         return $dataset;
     }
 
