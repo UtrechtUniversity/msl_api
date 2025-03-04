@@ -411,9 +411,9 @@ class Datacite4Mapper implements MapperInterface
                     foreach ($creator["nameIdentifiers"] as $nameIdentifierEntry) {
 
                         $nameIdentifierInst = new NameIdentifier(
-                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $this->arrToString($nameIdentifierEntry["nameIdentifier"]         ): ""),
-                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $this->arrToString($nameIdentifierEntry["nameIdentifierScheme"]   ): ""),
-                            (isset($nameIdentifierEntry["schemeUri"])            ? $this->arrToString($nameIdentifierEntry["schemeUri"]              ): ""),
+                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
+                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
+                            (isset($nameIdentifierEntry["schemeUri"])            ? $nameIdentifierEntry["schemeUri"]              : ""),
                         );
     
                         $creatorInstance->addNameIdentifier($nameIdentifierInst);
@@ -426,10 +426,10 @@ class Datacite4Mapper implements MapperInterface
                     foreach ($creator["affiliation"] as $affiliationEntry) {
 
                         $affiliationInst = new Affiliation(
-                            (isset($affiliationEntry["name"])                        ? $this->arrToString($affiliationEntry["name"]                          ): ""),
-                            (isset($affiliationEntry["affiliationIdentifier"])       ? $this->arrToString($affiliationEntry["affiliationIdentifier"]         ): ""),
-                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $this->arrToString($affiliationEntry["affiliationIdentifierScheme"]   ): ""),
-                            (isset($affiliationEntry["schemeUri"])                   ? $this->arrToString($affiliationEntry["schemeUri"]                     ): ""),
+                            (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
+                            (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
+                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
+                            (isset($affiliationEntry["schemeUri"])                   ? $affiliationEntry["schemeUri"]                     : ""),
                         );
     
                         $creatorInstance->addAffiliation($affiliationInst);
@@ -441,20 +441,6 @@ class Datacite4Mapper implements MapperInterface
         }
         return $dataset;
     }
-
-    private function arrToString($toCheck){
-
-        $returnValue = ""; //basically ignores any exceptions
-
-        if(gettype($toCheck) == 'string'){
-            $returnValue = $toCheck;
-        } elseif(gettype($toCheck) == 'array'){
-            $returnValue = implode(",", $toCheck);
-        }
-
-        return $returnValue;
-    }
-
 
 
 }
