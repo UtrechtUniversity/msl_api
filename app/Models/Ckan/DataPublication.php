@@ -22,16 +22,6 @@ class DataPublication
      */
     public string $type = 'data-publication';
 
-    public $msl_subdomains = [];
-
-    public $msl_subdomains_original = [];
-
-    public $msl_subdomains_interpreted = [];
-
-    public $msl_enriched_keywords = [];
-
-    public $msl_original_keywords = [];
-
     /**
      * link to landingpage
      */    
@@ -178,19 +168,21 @@ class DataPublication
      */
     public array $msl_contributors = [];
 
-    public $tag_string = [];
-    
-    public $msl_tags = [];
+    /**
+     * Size (e.g., bytes, pages, inches, etc.) or duration (extent), e.g., hours, minutes, days, etc., of a resource.
+     * This information does need to match the file references we find.
+     */
+    public array $msl_sizes = [];
 
-    public $msl_spatial_coordinates = [];
-    
-    public $msl_geojson_featurecollection;
-    
-    public $msl_geojson_featurecollection_points;
-    
-    public $msl_surface_area = 0;
+    /**
+     * echnical format of the resource.
+     */
+    public array $msl_formats = [];
 
-    public $msl_geolocations = [];
+    /**
+     * The version number of the resource. Is not definitive information as multiple variants for storing versioning information are available.
+     */
+    public string $msl_datacite_version = "";
 
     public $license_id;
 
@@ -209,6 +201,37 @@ class DataPublication
     public $msl_citation;
 
     public $msl_collection_period = [];
+
+    /**
+     * Location related field below
+     */
+    public $msl_spatial_coordinates = [];
+    
+    public $msl_geojson_featurecollection;
+    
+    public $msl_geojson_featurecollection_points;
+    
+    public $msl_surface_area = 0;
+
+    public $msl_geolocations = [];
+
+    /**
+     * keyword related fields
+     */
+
+    public $tag_string = [];
+    
+    public $msl_tags = [];
+
+    public $msl_subdomains = [];
+
+    public $msl_subdomains_original = [];
+
+    public $msl_subdomains_interpreted = [];
+
+    public $msl_enriched_keywords = [];
+
+    public $msl_original_keywords = [];    
 
     /**
      * Fields listed below are used to provide top level filtering in the data-access filtertree navigation     
@@ -305,6 +328,16 @@ class DataPublication
     public function addContributor(Contributor $contributor): void
     {
         $this->msl_contributors[] = $contributor;
+    }
+
+    public function addSize(string $size): void
+    {
+        $this->msl_sizes[] = $size;
+    }
+
+    public function addFormat(string $format): void
+    {
+        $this->msl_formats[] = $format;
     }
     
     public function addTag($tagString, $uris = [])
