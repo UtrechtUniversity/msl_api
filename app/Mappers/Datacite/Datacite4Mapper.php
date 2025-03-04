@@ -41,6 +41,9 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapDates($metadata, $dataset);
         $dataset = $this->mapPublisher($metadata, $dataset);
         $dataset = $this->mapCreators($metadata, $dataset);
+        $dataset = $this->mapVersion($metadata, $dataset);
+        $dataset = $this->mapResourceType($metadata, $dataset);
+        $dataset = $this->mapContributor($metadata, $dataset);
         
         return $dataset;
     }
@@ -531,6 +534,15 @@ class Datacite4Mapper implements MapperInterface
                 $dataset->addContributor($creatorInstance);
                             }
         }
+        return $dataset;
+    }
+
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapSize(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $dataset->msl_sizes = ((isset($metadata['data']['attributes']['sizes'])) ? $metadata['data']['attributes']['sizes'] : []);
         return $dataset;
     }
 
