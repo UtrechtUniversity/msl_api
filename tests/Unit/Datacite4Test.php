@@ -1166,11 +1166,7 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_source, "https://doi.pangaea.de/10.1594/PANGAEA.937090");
     }
 
-
-        /**
-     * test if publicationYear is correctly mapped
-     */
-    public function test_contributor_mapping(): void
+    public function test_publisher_mapping(): void
     {
         $sourceData = new SourceDataset();
 
@@ -1180,7 +1176,363 @@ class Datacite4Test extends TestCase
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                        "contributors": [
+                        "publisher": {
+                            "lang": "en",
+                            "name": "Example Publisher",
+                            "schemeUri": "https://ror.org/",
+                            "publisherIdentifier": "https://ror.org/04z8jg394",
+                            "publisherIdentifierScheme": "ROR"
+                        }
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapPublisher($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_publisher, "Example Publisher");
+    }
+  
+    /**
+     * test if publicationYear is correctly mapped
+     */
+    public function test_creator_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "creators": [
+                            {
+                            "name": "ExampleFamilyName, ExampleGivenName",
+                            "nameType": "Personal",
+                            "givenName": "ExampleGivenName",
+                            "familyName": "ExampleFamilyName",
+                            "affiliation": [
+                                {
+                                "name": "ExampleAffiliation",
+                                "schemeUri": "https://ror.org",
+                                "affiliationIdentifier": "https://ror.org/04wxnsj81",
+                                "affiliationIdentifierScheme": "ROR"
+                                }
+                            ],
+                            "nameIdentifiers": [
+                                {
+                                "schemeUri": "https://orcid.org",
+                                "nameIdentifier": "https://orcid.org/0000-0001-5727-2427",
+                                "nameIdentifierScheme": "ORCID"
+                                }
+                            ]
+                            },
+                            {
+                            "name": "ExampleOrganization",
+                            "nameType": "Organizational",
+                            "affiliation": [],
+                            "nameIdentifiers": [
+                                {
+                                "schemeUri": "https://ror.org",
+                                "nameIdentifier": "https://ror.org/04wxnsj81",
+                                "nameIdentifierScheme": "ROR"
+                                }
+                            ]
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapCreators($metadata, $dataset);
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_name,                                            "ExampleFamilyName, ExampleGivenName");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_given_name,                                      "ExampleGivenName");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_family_name,                                     "ExampleFamilyName");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_name_type,                                       "Personal");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://orcid.org/0000-0001-5727-2427");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ORCID");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://orcid.org");
+        $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_name,               "ExampleAffiliation");
+        $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_identifier,         "https://ror.org/04wxnsj81");
+        $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_identifier_scheme,  "ROR");
+        $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_scheme_uri,         "https://ror.org");
+
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_name,                                            "ExampleOrganization");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_name_type,                                       "Organizational");
+        $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://ror.org/04wxnsj81");
+        $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ROR");
+        $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://ror.org");
+
+
+        // new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "creators": [
+                            {
+                                "name": "Zolitschka, Bernd",
+                                "givenName": "Bernd",
+                                "familyName": "Zolitschka",
+                                "nameIdentifiers": [
+                                    {
+                                    "schemeUri": "https://orcid.org",
+                                    "nameIdentifier": "https://orcid.org/0000-0001-8256-0420",
+                                    "nameIdentifierScheme": "ORCID"
+                                    }
+                                ],
+                                "affiliation": []
+                            },
+                            {
+                                "name": "Polgar, Irene Sophie",
+                                "givenName": "Irene Sophie",
+                                "familyName": "Polgar",
+                                "affiliation": [],
+                                "nameIdentifiers": []
+                            },
+                            {
+                                "name": "Behling, Hermann",
+                                "givenName": "Hermann",
+                                "familyName": "Behling",
+                                "nameIdentifiers": [
+                                    {
+                                    "schemeUri": "https://orcid.org",
+                                    "nameIdentifier": "https://orcid.org/0000-0002-5843-8342",
+                                    "nameIdentifierScheme": "ORCID"
+                                    }
+                                ],
+                                "affiliation": []
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        $dataset = $dataciteMapper->mapCreators($metadata, $dataset);
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_name,                                            "Zolitschka, Bernd");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_given_name,                                      "Bernd");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_family_name,                                     "Zolitschka");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://orcid.org/0000-0001-8256-0420");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ORCID");
+        $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://orcid.org");
+
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_name,                                            "Polgar, Irene Sophie");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_given_name,                                      "Irene Sophie");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_family_name,                                     "Polgar");
+
+        $this->assertEquals($dataset->msl_creators[2]->msl_creator_name,                                            "Behling, Hermann");
+        $this->assertEquals($dataset->msl_creators[2]->msl_creator_given_name,                                      "Hermann");
+        $this->assertEquals($dataset->msl_creators[2]->msl_creator_family_name,                                     "Behling");
+        $this->assertEquals($dataset->msl_creators[2]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://orcid.org/0000-0002-5843-8342");
+        $this->assertEquals($dataset->msl_creators[2]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ORCID");
+        $this->assertEquals($dataset->msl_creators[2]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://orcid.org");
+
+
+        // new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "creators": [
+                            {
+                                "name": "Maestro-Guijarro, Laura",
+                                "nameType": "Personal",
+                                "givenName": "Laura",
+                                "familyName": "Maestro-Guijarro",
+                                "affiliation": [],
+                                "nameIdentifiers": []
+                            },
+                            {
+                                "name": "Martínez-Ramírez, S.",
+                                "nameType": "Personal",
+                                "givenName": "S.",
+                                "familyName": "Martínez-Ramírez",
+                                "affiliation": [],
+                                "nameIdentifiers": []
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapCreators($metadata, $dataset);
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_name,                                            "Maestro-Guijarro, Laura");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_given_name,                                      "Laura");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_family_name,                                     "Maestro-Guijarro");
+        $this->assertEquals($dataset->msl_creators[0]->msl_creator_name_type,                                       "Personal");
+
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_name,                                            "Martínez-Ramírez, S.");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_given_name,                                      "S.");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_family_name,                                     "Martínez-Ramírez");
+        $this->assertEquals($dataset->msl_creators[1]->msl_creator_name_type,                                       "Personal");
+
+        // new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+
+                        "creators": [
+                            {
+                                "name": "Maestro-Guijarro, Laura",
+                                "nameType": "Personal",
+                                "givenName": "Laura",
+                                "familyName": "Maestro-Guijarro",
+                                "affiliation": [
+                                    {
+                                    "name": "ExampleAffiliation",
+                                    "schemeUri": "https://ror.org",
+                                    "affiliationIdentifier": "https://ror.org/04wxnsj81",
+                                    "affiliationIdentifierScheme": "ROR"
+                                    },
+                                    {
+                                    "name": "Utrecht University"
+                                    }
+                                ],
+                                "nameIdentifiers": [
+                                    {
+                                    "schemeUri": "https://orcid.org",
+                                    "nameIdentifier": "https://orcid.org/0000-0001-5727-2427",
+                                    "nameIdentifierScheme": "ORCID"
+                                    },
+                                    {
+                                    "schemeUri": "https://isni.org/",
+                                    "nameIdentifier": "https://isni.org/isni/0000000492299539",
+                                    "nameIdentifierScheme": "ISNI"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Martínez-Ramírez, S.",
+                                "nameType": "Personal",
+                                "givenName": "S.",
+                                "familyName": "Martínez-Ramírez",
+                                "affiliation": [
+                                    {
+                                    "name": "Utrecht University"
+                                    },
+                                    {
+                                    "name": "Test University",
+                                    "affiliationIdentifierScheme": "ROR",
+                                    "affiliationIdentifier": "https://ror.org/04wxnsj81"
+                                    }
+                                ],
+                                "nameIdentifiers": [
+                                    {
+                                    "schemeUri": "https://orcid.org",
+                                    "nameIdentifier": "https://orcid.org/0000-0001-5727-1234",
+                                    "nameIdentifierScheme": "ORCID"
+                                    },
+                                    {
+                                    "schemeUri": "https://isni.org/",
+                                    "nameIdentifier": "https://isni.org/isni/0000000492291234",
+                                    "nameIdentifierScheme": "ISNI"
+                                    },
+                                    {
+                                    "schemeUri": "https://ror.org/",
+                                    "nameIdentifier": "https://ror.org/04aj4c181",
+                                    "nameIdentifierScheme": "ROR"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }';
+
+            $dataciteMapper = new Datacite4Mapper();
+
+            // create empty data publication
+            $dataset = new DataPublication;
+
+            // read json text
+            $metadata = json_decode($sourceData->source_dataset, true);
+
+            $dataset = $dataciteMapper->mapCreators($metadata, $dataset);
+            $this->assertEquals($dataset->msl_creators[0]->msl_creator_name,                                            "Maestro-Guijarro, Laura");
+            $this->assertEquals($dataset->msl_creators[0]->msl_creator_given_name,                                      "Laura");
+            $this->assertEquals($dataset->msl_creators[0]->msl_creator_family_name,                                     "Maestro-Guijarro");
+            $this->assertEquals($dataset->msl_creators[0]->msl_creator_name_type,                                       "Personal");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://orcid.org/0000-0001-5727-2427");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ORCID");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://orcid.org");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[1]->msl_creator_name_identifier,             "https://isni.org/isni/0000000492299539");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[1]->msl_creator_name_identifiers_scheme,     "ISNI");
+            $this->assertEquals($dataset->msl_creators[0]->nameIdentifiers[1]->msl_creator_name_identifiers_uri,        "https://isni.org/");
+            $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_name,               "ExampleAffiliation");
+            $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_identifier,         "https://ror.org/04wxnsj81");
+            $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_identifier_scheme,  "ROR");
+            $this->assertEquals($dataset->msl_creators[0]->affiliations[0]->msl_creator_affiliation_scheme_uri,         "https://ror.org");
+            $this->assertEquals($dataset->msl_creators[0]->affiliations[1]->msl_creator_affiliation_name,               "Utrecht University");
+
+            $this->assertEquals($dataset->msl_creators[1]->msl_creator_name,                                            "Martínez-Ramírez, S.");
+            $this->assertEquals($dataset->msl_creators[1]->msl_creator_given_name,                                      "S.");
+            $this->assertEquals($dataset->msl_creators[1]->msl_creator_family_name,                                     "Martínez-Ramírez");
+            $this->assertEquals($dataset->msl_creators[1]->msl_creator_name_type,                                       "Personal");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifier,             "https://orcid.org/0000-0001-5727-1234");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifiers_scheme,     "ORCID");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[0]->msl_creator_name_identifiers_uri,        "https://orcid.org");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[1]->msl_creator_name_identifier,             "https://isni.org/isni/0000000492291234");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[1]->msl_creator_name_identifiers_scheme,     "ISNI");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[1]->msl_creator_name_identifiers_uri,        "https://isni.org/");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifier,             "https://ror.org/04aj4c181");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_scheme,     "ROR");
+            $this->assertEquals($dataset->msl_creators[1]->nameIdentifiers[2]->msl_creator_name_identifiers_uri,        "https://ror.org/");
+      } 
+
+/**
+ * test if publicationYear is correctly mapped
+ */
+public function test_contributor_mapping(): void
+{
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                    "contributors": [
                             {
                                 "name": "ExampleFamilyName, ExampleGivenName",
                                 "nameType": "Personal",
@@ -1246,7 +1598,7 @@ class Datacite4Test extends TestCase
                                     "nameIdentifierScheme": "ORCID"
                                     }
                                 ]
-                            }
+                                                                }
                         ]
                     }
                 }
@@ -1258,7 +1610,6 @@ class Datacite4Test extends TestCase
 
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
-        
         $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name,                                        "ExampleFamilyName, ExampleGivenName");
@@ -1302,8 +1653,7 @@ class Datacite4Test extends TestCase
 
 
         //new test
-
-        $sourceData = new SourceDataset();
+         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
             {
@@ -1311,7 +1661,7 @@ class Datacite4Test extends TestCase
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                        "contributors": [
+                                            "contributors": [
                             {
                                 "name": "Digital.CSIC",
                                 "affiliation": [],
@@ -1322,7 +1672,7 @@ class Datacite4Test extends TestCase
                                 "name": "Digital.CSIC",
                                 "affiliation": [],
                                 "contributorType": "HostingInstitution",
-                                "nameIdentifiers": []
+                                                               "nameIdentifiers": []
                             }
                         ]
                     }
@@ -1373,7 +1723,6 @@ class Datacite4Test extends TestCase
         
         
         //new test
-
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
@@ -1382,7 +1731,7 @@ class Datacite4Test extends TestCase
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                        "contributors": [
+                                            "contributors": [
                             {
                                 "name": "ExampleFamilyName, ExampleGivenName",
                                 "nameType": "Personal",
@@ -1394,16 +1743,16 @@ class Datacite4Test extends TestCase
                                     }
                                 ],
                                 "contributorType": "ContactPerson",
-                                "nameIdentifiers": [
+                                                                "nameIdentifiers": [
                                     {
                                     "schemeUri": "https://orcid.org",
                                     "nameIdentifier": "https://orcid.org/0000-0001-5727-2427",
                                     "nameIdentifierScheme": "ORCID"
-                                    }
+                                                                        }
                                 ]
                             },
                             {
-                                "name": "ExampleFamilyName, ExampleGivenName",
+                                                            "name": "ExampleFamilyName, ExampleGivenName",
                                 "nameType": "Personal",
                                 "givenName": "ExampleGivenName",
                                 "familyName": "ExampleFamilyName",
@@ -1419,7 +1768,7 @@ class Datacite4Test extends TestCase
                                     }
                                 ],
                                 "contributorType": "DataCollector",
-                                "nameIdentifiers": [
+                                                                "nameIdentifiers": [
                                     {
                                     "schemeUri": "https://orcid.org",
                                     "nameIdentifier": "https://orcid.org/0000-0001-5727-1234",
@@ -1441,7 +1790,7 @@ class Datacite4Test extends TestCase
                     }
                 }
             }';
-        $dataciteMapper = new Datacite4Mapper();
+            $dataciteMapper = new Datacite4Mapper();
 
         // create empty data publication
         $dataset = new DataPublication;

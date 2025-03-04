@@ -1,18 +1,19 @@
 <?php
 namespace App\Mappers\Datacite;
 
-use App\Exceptions\MappingException;
+use App\Models\Ckan\Contributor;
+use App\Models\Ckan\Date;
+use App\Models\Ckan\Creator;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\Affiliation;
-use App\Models\Ckan\AlternateIdentifier;
-use App\Models\Ckan\Contributor;
+use App\Exceptions\MappingException;
 use App\Models\Ckan\DataPublication;
-use App\Models\Ckan\Date;
 use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
 use App\Models\SourceDataset;
+use App\Models\Ckan\AlternateIdentifier;
 
 class Datacite4Mapper implements MapperInterface
 {
@@ -38,6 +39,8 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapFundingReference($metadata, $dataset);
         $dataset = $this->mapLanguage($metadata, $dataset);
         $dataset = $this->mapDates($metadata, $dataset);
+        $dataset = $this->mapPublisher($metadata, $dataset);
+        $dataset = $this->mapCreators($metadata, $dataset);
         
         return $dataset;
     }
@@ -353,7 +356,6 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapLanguage(array $metadata, DataPublication $dataset): DataPublication
     {
-
         $lang = '';
 
         if(isset($metadata['data']['attributes']['language'])){
@@ -389,7 +391,73 @@ class Datacite4Mapper implements MapperInterface
     }
 
 
-     /**
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapPublisher(array $metadata, DataPublication $dataset): DataPublication
+    {
+        if(isset($metadata['data']['attributes']['publisher'])){
+            $publisherEntry =    $metadata['data']['attributes']['publisher'];
+            
+            $dataset->msl_publisher = (isset($publisherEntry["name"])   ? $publisherEntry["name"] : throw new MappingException($dataset->msl_doi . ': No publisher mapped'));
+            
+        }
+        
+        return $dataset;
+    }
+
+    /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapCreators(array $metadata, DataPublication $dataset){
+        $creators = $metadata['data']['attributes']['creators'];
+
+        if(sizeof($creators)>0){
+            foreach ($creators as $creator) {
+                $creatorInstance = new Creator(
+                    (isset($creator["name"])        ? $creator["name"]          : ""), 
+                    (isset($creator["givenName"])   ? $creator["givenName"]     : ""), 
+                    (isset($creator["familyName"])  ? $creator["familyName"]    : ""), 
+                    (isset($creator["nameType"])    ? $creator["nameType"]      : "")
+                );
+
+                if( isset($creator["nameIdentifiers"]) && $creator["nameIdentifiers"] > 0 ){
+                    foreach ($creator["nameIdentifiers"] as $nameIdentifierEntry) {
+
+                        $nameIdentifierInst = new NameIdentifier(
+                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
+                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
+                            (isset($nameIdentifierEntry["schemeUri"])            ? $nameIdentifierEntry["schemeUri"]              : ""),
+                        );
+    
+                        $creatorInstance->addNameIdentifier($nameIdentifierInst);
+                    }
+
+                }
+
+                if( isset($creator["affiliation"]) && $creator["affiliation"] > 0 ){
+
+                    foreach ($creator["affiliation"] as $affiliationEntry) {
+
+                        $affiliationInst = new Affiliation(
+                            (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
+                            (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
+                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
+                            (isset($affiliationEntry["schemeUri"])                   ? $affiliationEntry["schemeUri"]                     : ""),
+                        );
+    
+                        $creatorInstance->addAffiliation($affiliationInst);
+                    }
+
+                }
+                $dataset->addCreator($creatorInstance);
+            }
+        }
+        return $dataset;
+    }
+
+    
+ /**
      * stores the related identifiers to the dataset
      */
     public function mapContributor(array $metadata, DataPublication $dataset): DataPublication
@@ -411,7 +479,6 @@ class Datacite4Mapper implements MapperInterface
                 if( isset($contributor["nameIdentifiers"]) && $contributor["nameIdentifiers"] > 0 ){
 
                     foreach ($contributor["nameIdentifiers"] as $nameIdentifierEntry) {
-
                         $nameIdentifierInst = new NameIdentifier(
                             (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
                             (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
@@ -420,14 +487,12 @@ class Datacite4Mapper implements MapperInterface
     
                         $creatorInstance->addNameIdentifier($nameIdentifierInst);
                     }
-
                 }
 
                 if( isset($contributor["affiliation"]) && $contributor["affiliation"] > 0 ){
 
                     foreach ($contributor["affiliation"] as $affiliationEntry) {
-
-                        $affiliationInst = new Affiliation(
+                                            $affiliationInst = new Affiliation(
                             (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
                             (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
                             (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
@@ -436,13 +501,10 @@ class Datacite4Mapper implements MapperInterface
     
                         $creatorInstance->addAffiliation($affiliationInst);
                     }
-
-                }
+                                        }
                 $dataset->addContributor($creatorInstance);
-
-            }
+                            }
         }
         return $dataset;
     }
-
 }
