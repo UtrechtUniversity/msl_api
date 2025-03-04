@@ -2,14 +2,17 @@
 namespace App\Mappers\Datacite;
 
 use App\Exceptions\MappingException;
-use App\Models\SourceDataset;
 use App\Mappers\MapperInterface;
+use App\Models\Ckan\Affiliation;
 use App\Models\Ckan\AlternateIdentifier;
+use App\Models\Ckan\Contributor;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\Date;
 use App\Models\Ckan\FundingReference;
+use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
+use App\Models\SourceDataset;
 
 class Datacite4Mapper implements MapperInterface
 {
@@ -384,4 +387,62 @@ class Datacite4Mapper implements MapperInterface
 
         return $dataset;
     }
+
+
+     /**
+     * stores the related identifiers to the dataset
+     */
+    public function mapContributor(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $allContributors = $metadata['data']['attributes']['contributors'];
+        
+        if(sizeof($allContributors)>0){
+            foreach ($allContributors as $contributor) {
+
+
+                $creatorInstance = new Contributor(
+                    (isset($contributor["name"])            ? $contributor["name"]              : ""), 
+                    (isset($contributor["contributorType"]) ? $contributor["contributorType"]   : ""), 
+                    (isset($contributor["givenName"])       ? $contributor["givenName"]         : ""), 
+                    (isset($contributor["familyName"])      ? $contributor["familyName"]        : ""), 
+                    (isset($contributor["nameType"])        ? $contributor["nameType"]          : "")
+                );
+
+                if( isset($contributor["nameIdentifiers"]) && $contributor["nameIdentifiers"] > 0 ){
+
+                    foreach ($contributor["nameIdentifiers"] as $nameIdentifierEntry) {
+
+                        $nameIdentifierInst = new NameIdentifier(
+                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
+                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
+                            (isset($nameIdentifierEntry["schemeUri"])            ? $nameIdentifierEntry["schemeUri"]              : ""),
+                        );
+    
+                        $creatorInstance->addNameIdentifier($nameIdentifierInst);
+                    }
+
+                }
+
+                if( isset($contributor["affiliation"]) && $contributor["affiliation"] > 0 ){
+
+                    foreach ($contributor["affiliation"] as $affiliationEntry) {
+
+                        $affiliationInst = new Affiliation(
+                            (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
+                            (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
+                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
+                            (isset($affiliationEntry["schemeUri"])                   ? $affiliationEntry["schemeUri"]                     : ""),
+                        );
+    
+                        $creatorInstance->addAffiliation($affiliationInst);
+                    }
+
+                }
+                $dataset->addContributor($creatorInstance);
+
+            }
+        }
+        return $dataset;
+    }
+
 }
