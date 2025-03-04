@@ -1,23 +1,23 @@
 <?php
+
 namespace App\Mappers\Datacite;
 
-use App\Models\Ckan\Contributor;
-use App\Models\Ckan\Date;
-use App\Models\Ckan\Creator;
+use App\Exceptions\MappingException;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\Affiliation;
-use App\Exceptions\MappingException;
+use App\Models\Ckan\AlternateIdentifier;
+use App\Models\Ckan\Contributor;
+use App\Models\Ckan\Creator;
 use App\Models\Ckan\DataPublication;
+use App\Models\Ckan\Date;
 use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
 use App\Models\SourceDataset;
-use App\Models\Ckan\AlternateIdentifier;
 
 class Datacite4Mapper implements MapperInterface
 {
-
     public function map(SourceDataset $sourceDataset): DataPublication
     {
         // create empty data publication
@@ -46,10 +46,9 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapContributor($metadata, $dataset);
         $dataset = $this->mapSize($metadata, $dataset);
         $dataset = $this->mapFormat($metadata, $dataset);
-        
+
         return $dataset;
     }
-
 
     /**
      * Takes available entries from 'alternateIdentifiers'
@@ -60,19 +59,19 @@ class Datacite4Mapper implements MapperInterface
     {
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
 
-        if($altIds > 0){
+        if ($altIds > 0) {
             foreach ($altIds as $altIdEntry) {
                 $alternateIdentifier = new AlternateIdentifier(
-                    (isset($altIdEntry["alternateIdentifier"])       ? $altIdEntry["alternateIdentifier"]     : ""),
-                    (isset($altIdEntry["alternateIdentifierType"])   ? $altIdEntry["alternateIdentifierType"] : "")
+                    (isset($altIdEntry['alternateIdentifier']) ? $altIdEntry['alternateIdentifier'] : ''),
+                    (isset($altIdEntry['alternateIdentifierType']) ? $altIdEntry['alternateIdentifierType'] : '')
                 );
-                
+
                 $dataset->addAlternateIdentifier($alternateIdentifier);
             }
         }
 
         return $dataset;
-    }     
+    }
 
     /**
      * Maps the publicationYear of a datacite entry
@@ -82,21 +81,20 @@ class Datacite4Mapper implements MapperInterface
     {
         $publicationYear = '';
 
-        if(isset($metadata['data']['attributes']['publicationYear'])){
+        if (isset($metadata['data']['attributes']['publicationYear'])) {
             $publicationYear = $metadata['data']['attributes']['publicationYear'];
         } else {
-            throw new MappingException($dataset->msl_doi . ': publicationYear cannot be mapped: does not exist in entry');
+            throw new MappingException($dataset->msl_doi.': publicationYear cannot be mapped: does not exist in entry');
         }
 
-        if(strlen($publicationYear) > 0){
+        if (strlen($publicationYear) > 0) {
             $dataset->msl_publication_year = $publicationYear;
         } else {
-            throw new MappingException($dataset->msl_doi . ': publicationYear string empty');
+            throw new MappingException($dataset->msl_doi.': publicationYear string empty');
         }
 
         return $dataset;
     }
-
 
     /**
      * Maps the identifier/doi of a datacite entry
@@ -106,13 +104,13 @@ class Datacite4Mapper implements MapperInterface
     {
         $identifier = '';
 
-        if(isset($metadata['data']['attributes']['doi'])){
+        if (isset($metadata['data']['attributes']['doi'])) {
             $identifier = $metadata['data']['attributes']['doi'];
         } else {
             throw new MappingException('Identifier/doi cannot be mapped: does not exist in entry');
         }
 
-        if(strlen($identifier) > 0){
+        if (strlen($identifier) > 0) {
             $dataset->msl_doi = $identifier;
         } else {
             throw new MappingException('Identifier/doi string empty');
@@ -121,23 +119,22 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
-
-     /**
+    /**
      * Maps the rights of a datacite entry
      * It is an optional entry
      */
     public function mapRights(array $metadata, DataPublication $dataset): DataPublication
     {
         $rights = $metadata['data']['attributes']['rightsList'];
-        
-        if($rights > 0) {
+
+        if ($rights > 0) {
             foreach ($rights as $right) {
                 $right = new Right(
-                    (isset($right["rights"])                    ? $right["rights"]                  : ""), 
-                    (isset($right["rightsUri"])                 ? $right["rightsUri"]               : ""), 
-                    (isset($right["rightsIdentifier"])          ? $right["rightsIdentifier"]        : ""), 
-                    (isset($right["rightsIdentifierScheme"])    ? $right["rightsIdentifierScheme"]  : ""), 
-                    (isset($right["schemeUri"])                 ? $right["schemeUri"]               : ""), 
+                    (isset($right['rights']) ? $right['rights'] : ''),
+                    (isset($right['rightsUri']) ? $right['rightsUri'] : ''),
+                    (isset($right['rightsIdentifier']) ? $right['rightsIdentifier'] : ''),
+                    (isset($right['rightsIdentifierScheme']) ? $right['rightsIdentifierScheme'] : ''),
+                    (isset($right['schemeUri']) ? $right['schemeUri'] : ''),
                 );
 
                 $dataset->addRight($right);
@@ -147,36 +144,35 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
-
     /**
      * chooses one description from the datacite entry according to the following priorities
      * if multiple descriptions are available:
-     * 
+     *
      * 'descriptionType' not set
      * no "lang" property set
      * "lang" property set and empty
      * 'lang' set to 'en'
      * 'lang set to 'en-GB'
      * if none apply take first in list
-     * 
+     *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
     public function mapDescription(array $metadata, DataPublication $dataset): DataPublication
     {
         $descriptions = $metadata['data']['attributes']['descriptions'];
 
-        $dataset->msl_description_abstract          = $this->receiveDescription('Abstract',            $descriptions);
-        $dataset->msl_description_methods           = $this->receiveDescription('Methods',             $descriptions);
-        $dataset->msl_description_series_information= $this->receiveDescription('SeriesInformation',   $descriptions);
-        $dataset->msl_description_table_of_contents = $this->receiveDescription('TableOfContents',     $descriptions);
-        $dataset->msl_description_technical_info    = $this->receiveDescription('TechnicalInfo',       $descriptions);
-        $dataset->msl_description_other             = $this->receiveDescription('Other',               $descriptions);
+        $dataset->msl_description_abstract = $this->receiveDescription('Abstract', $descriptions);
+        $dataset->msl_description_methods = $this->receiveDescription('Methods', $descriptions);
+        $dataset->msl_description_series_information = $this->receiveDescription('SeriesInformation', $descriptions);
+        $dataset->msl_description_table_of_contents = $this->receiveDescription('TableOfContents', $descriptions);
+        $dataset->msl_description_technical_info = $this->receiveDescription('TechnicalInfo', $descriptions);
+        $dataset->msl_description_other = $this->receiveDescription('Other', $descriptions);
 
         return $dataset;
     }
 
     private function receiveDescription(string $descriptionType, array $descriptions): string
-    {        
+    {
         $descriptionString = '';
         $descriptionsCandidates = [];
 
@@ -186,52 +182,51 @@ class Datacite4Mapper implements MapperInterface
         /////////////////
 
         // filter if descriptions with descriptionType are present and collect candidates
-        foreach($descriptions as $description){
-            if(isset($description["descriptionType"]) && $description["descriptionType"] == $descriptionType){
+        foreach ($descriptions as $description) {
+            if (isset($description['descriptionType']) && $description['descriptionType'] == $descriptionType) {
                 array_push($descriptionsCandidates, $description);
             }
         }
 
-        if(sizeof($descriptionsCandidates) > 0 ) {            
+        if (count($descriptionsCandidates) > 0) {
             return $this->getEntryFilterByLang($descriptionsCandidates)['description'];
-        } 
+        }
 
         return $descriptionString;
     }
-        
 
     /**
      * chooses one title from the datacite entry according to the following priorities
      * if multiple titles are available:
-     * 
+     *
      * 'titleType' not set
      * no "lang" property set
      * "lang" property set and empty
      * 'lang' set to 'en'
      * 'lang set to 'en-GB'
      * if none apply take first in list
-     * 
+     *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
     public function mapTitle(array $metadata, DataPublication $dataset): DataPublication
     {
         $titles = $metadata['data']['attributes']['titles'];
-        $titleSize = sizeof($titles);
+        $titleSize = count($titles);
 
         // there MUST be at least one title, otherwise it is an exeption
-        if( $titleSize > 0) {
+        if ($titleSize > 0) {
 
             $titlesCandidates = [];
 
             /////////////////  additional notes
             // -> multiple 'title' entries without 'titleType' must have unique languages
-            // -> 'lang' can be empty 
+            // -> 'lang' can be empty
             /////////////////
 
-            if($titleSize > 1 ) {
+            if ($titleSize > 1) {
                 // filter the titles for the ones which dont have 'titleType', this is the indicator for main title
                 foreach ($titles as $title) {
-                    if(!isset($title['titleType']) && isset($title['title']) ) {
+                    if (! isset($title['titleType']) && isset($title['title'])) {
                         array_push($titlesCandidates, $title);
                     }
                 }
@@ -240,19 +235,19 @@ class Datacite4Mapper implements MapperInterface
 
                 return $dataset;
 
-            } else {   
+            } else {
                 // the only title present
                 $dataset->title = $metadata['data']['attributes']['titles'][0]['title'];
+
                 return $dataset;
             }
 
         } else {
-            throw new MappingException($dataset->msl_doi . ': No title mapped');
+            throw new MappingException($dataset->msl_doi.': No title mapped');
         }
 
         return $dataset;
     }
-
 
     /**
      * This function filters an array based on its "lang" entry
@@ -262,29 +257,29 @@ class Datacite4Mapper implements MapperInterface
         // check if no "lang" property is set
         // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITHOUT TITLE
         foreach ($allCandidates as $candidate) {
-            if(!isset($candidate['lang'])){                            
+            if (! isset($candidate['lang'])) {
                 return $candidate;
-            } 
+            }
         }
 
         // "lang" is set but empty
         // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH AN EMPTY LANG
         foreach ($allCandidates as $candidate) {
-            if ($candidate['lang'] == "") {
+            if ($candidate['lang'] == '') {
                 return $candidate;
             }
         }
 
         // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en'
         foreach ($allCandidates as $candidate) {
-            if($candidate['lang'] == "en"){
+            if ($candidate['lang'] == 'en') {
                 return $candidate;
             }
         }
 
         // THIS ASSUMES THAT THERE CAN BE ONLY ONE ENTRY WITH 'en-GB'
         foreach ($allCandidates as $candidate) {
-            if ($candidate['lang'] == "en-GB"){
+            if ($candidate['lang'] == 'en-GB') {
                 return $candidate;
             }
         }
@@ -293,39 +288,37 @@ class Datacite4Mapper implements MapperInterface
         return $allCandidates[0];
     }
 
-
     /**
      * stores the related identifiers to the dataset
      */
     public function mapRelatedIdentifier(array $metadata, DataPublication $dataset): DataPublication
     {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
-        if(sizeof($relatedIdentifiers) > 0) {
+        if (count($relatedIdentifiers) > 0) {
             foreach ($relatedIdentifiers as $relId) {
                 $relatedIdentifier = new RelatedIdentifier(
-                    (isset($relId["relatedIdentifier"])     ? $relId["relatedIdentifier"]                       : ""), 
-                    (isset($relId["relatedIdentifierType"]) ? $relId["relatedIdentifierType"]                   : ""), 
-                    (isset($relId["relationType"])          ? $relId["relationType"]                            : ""), 
-                    (isset($relId["relatedMetadataScheme"]) ? $relId["relatedMetadataScheme"]                   : ""), 
-                    (isset($relId["schemeURI"])             ? $relId["schemeURI"]                               : ""), 
-                    (isset($relId["schemeType"])            ? $relId["schemeType"]                              : ""), 
-                    (isset($relId["resourceTypeGeneral"])   ? $relId["resourceTypeGeneral"]                     : ""), 
+                    (isset($relId['relatedIdentifier']) ? $relId['relatedIdentifier'] : ''),
+                    (isset($relId['relatedIdentifierType']) ? $relId['relatedIdentifierType'] : ''),
+                    (isset($relId['relationType']) ? $relId['relationType'] : ''),
+                    (isset($relId['relatedMetadataScheme']) ? $relId['relatedMetadataScheme'] : ''),
+                    (isset($relId['schemeURI']) ? $relId['schemeURI'] : ''),
+                    (isset($relId['schemeType']) ? $relId['schemeType'] : ''),
+                    (isset($relId['resourceTypeGeneral']) ? $relId['resourceTypeGeneral'] : ''),
                 );
 
                 $dataset->addRelatedIdentifier($relatedIdentifier);
             }
         }
+
         return $dataset;
     }
 
-
-     /**
+    /**
      * stores the url to the dataset
-     * 
      */
     public function mapUrl(array $metadata, DataPublication $dataset): DataPublication
     {
-        $dataset->msl_source = (isset($metadata['data']['attributes']["url"])   ? $metadata['data']['attributes']["url"] : throw new MappingException($dataset->msl_doi . ': No url mapped'));
+        $dataset->msl_source = (isset($metadata['data']['attributes']['url']) ? $metadata['data']['attributes']['url'] : throw new MappingException($dataset->msl_doi.': No url mapped'));
 
         return $dataset;
     }
@@ -338,24 +331,25 @@ class Datacite4Mapper implements MapperInterface
     {
         $funRefs = $metadata['data']['attributes']['fundingReferences'];
 
-        if($funRefs > 0){
+        if ($funRefs > 0) {
             foreach ($funRefs as $funRef) {
                 $fundingReference = new FundingReference(
-                    (isset($funRef["funderName"])           ? $funRef["funderName"]             : ""),
-                    (isset($funRef["funderIdentifier"])     ? $funRef["funderIdentifier"]       : ""),
-                    (isset($funRef["funderIdentifierType"]) ? $funRef["funderIdentifierType"]   : ""),
-                    (isset($funRef["schemeURI"])            ? $funRef["schemeURI"]              : ""),
-                    (isset($funRef["awardNumber"])          ? $funRef["awardNumber"]            : ""),
-                    (isset($funRef["awardUri"])             ? $funRef["awardUri"]               : ""),
-                    (isset($funRef["awardTitle"])           ? $funRef["awardTitle"]             : ""),
-                 );
+                    (isset($funRef['funderName']) ? $funRef['funderName'] : ''),
+                    (isset($funRef['funderIdentifier']) ? $funRef['funderIdentifier'] : ''),
+                    (isset($funRef['funderIdentifierType']) ? $funRef['funderIdentifierType'] : ''),
+                    (isset($funRef['schemeURI']) ? $funRef['schemeURI'] : ''),
+                    (isset($funRef['awardNumber']) ? $funRef['awardNumber'] : ''),
+                    (isset($funRef['awardUri']) ? $funRef['awardUri'] : ''),
+                    (isset($funRef['awardTitle']) ? $funRef['awardTitle'] : ''),
+                );
 
-                 $dataset->addFundingReference($fundingReference);
+                $dataset->addFundingReference($fundingReference);
             }
         }
+
         return $dataset;
     }
-  
+
     /*
      * stores the language to the dataset
      */
@@ -363,29 +357,28 @@ class Datacite4Mapper implements MapperInterface
     {
         $lang = '';
 
-        if(isset($metadata['data']['attributes']['language'])){
+        if (isset($metadata['data']['attributes']['language'])) {
             $lang = $metadata['data']['attributes']['language'];
-        } 
+        }
 
         $dataset->msl_language = $lang;
-        
+
         return $dataset;
     }
-      
-    
-     /**
+
+    /**
      * stores the related identifiers to the dataset
      */
     public function mapDates(array $metadata, DataPublication $dataset): DataPublication
     {
         $allDates = $metadata['data']['attributes']['dates'];
-        
-        if(sizeof($allDates) > 0){
+
+        if (count($allDates) > 0) {
             foreach ($allDates as $date) {
-                $date = new Date(                
-                    (isset($date["date"])              ? $date["date"]            : ""), 
-                    (isset($date["dateType"])          ? $date["dateType"]        : ""), 
-                    (isset($date["dateInformation"])   ? $date["dateInformation"] : ""), 
+                $date = new Date(
+                    (isset($date['date']) ? $date['date'] : ''),
+                    (isset($date['dateType']) ? $date['dateType'] : ''),
+                    (isset($date['dateInformation']) ? $date['dateInformation'] : ''),
                 );
 
                 $dataset->addDate($date);
@@ -395,62 +388,61 @@ class Datacite4Mapper implements MapperInterface
         return $dataset;
     }
 
-
     /**
      * stores the related identifiers to the dataset
      */
     public function mapPublisher(array $metadata, DataPublication $dataset): DataPublication
     {
-        if(isset($metadata['data']['attributes']['publisher'])){
-            $publisherEntry =    $metadata['data']['attributes']['publisher'];
-            
-            $dataset->msl_publisher = (isset($publisherEntry["name"])   ? $publisherEntry["name"] : throw new MappingException($dataset->msl_doi . ': No publisher mapped'));
-            
+        if (isset($metadata['data']['attributes']['publisher'])) {
+            $publisherEntry = $metadata['data']['attributes']['publisher'];
+
+            $dataset->msl_publisher = (isset($publisherEntry['name']) ? $publisherEntry['name'] : throw new MappingException($dataset->msl_doi.': No publisher mapped'));
         }
-        
+
         return $dataset;
     }
 
     /**
      * stores the related identifiers to the dataset
      */
-    public function mapCreators(array $metadata, DataPublication $dataset){
+    public function mapCreators(array $metadata, DataPublication $dataset)
+    {
         $creators = $metadata['data']['attributes']['creators'];
 
-        if(sizeof($creators)>0){
+        if (count($creators) > 0) {
             foreach ($creators as $creator) {
                 $creatorInstance = new Creator(
-                    (isset($creator["name"])        ? $creator["name"]          : ""), 
-                    (isset($creator["givenName"])   ? $creator["givenName"]     : ""), 
-                    (isset($creator["familyName"])  ? $creator["familyName"]    : ""), 
-                    (isset($creator["nameType"])    ? $creator["nameType"]      : "")
+                    (isset($creator['name']) ? $creator['name'] : ''),
+                    (isset($creator['givenName']) ? $creator['givenName'] : ''),
+                    (isset($creator['familyName']) ? $creator['familyName'] : ''),
+                    (isset($creator['nameType']) ? $creator['nameType'] : '')
                 );
 
-                if( isset($creator["nameIdentifiers"]) && $creator["nameIdentifiers"] > 0 ){
-                    foreach ($creator["nameIdentifiers"] as $nameIdentifierEntry) {
+                if (isset($creator['nameIdentifiers']) && $creator['nameIdentifiers'] > 0) {
+                    foreach ($creator['nameIdentifiers'] as $nameIdentifierEntry) {
 
                         $nameIdentifierInst = new NameIdentifier(
-                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
-                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
-                            (isset($nameIdentifierEntry["schemeUri"])            ? $nameIdentifierEntry["schemeUri"]              : ""),
+                            (isset($nameIdentifierEntry['nameIdentifier']) ? $nameIdentifierEntry['nameIdentifier'] : ''),
+                            (isset($nameIdentifierEntry['nameIdentifierScheme']) ? $nameIdentifierEntry['nameIdentifierScheme'] : ''),
+                            (isset($nameIdentifierEntry['schemeUri']) ? $nameIdentifierEntry['schemeUri'] : ''),
                         );
-    
+
                         $creatorInstance->addNameIdentifier($nameIdentifierInst);
                     }
 
                 }
 
-                if( isset($creator["affiliation"]) && $creator["affiliation"] > 0 ){
+                if (isset($creator['affiliation']) && $creator['affiliation'] > 0) {
 
-                    foreach ($creator["affiliation"] as $affiliationEntry) {
+                    foreach ($creator['affiliation'] as $affiliationEntry) {
 
                         $affiliationInst = new Affiliation(
-                            (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
-                            (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
-                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
-                            (isset($affiliationEntry["schemeUri"])                   ? $affiliationEntry["schemeUri"]                     : ""),
+                            (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
+                            (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
+                            (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
+                            (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
                         );
-    
+
                         $creatorInstance->addAffiliation($affiliationInst);
                     }
 
@@ -458,18 +450,19 @@ class Datacite4Mapper implements MapperInterface
                 $dataset->addCreator($creatorInstance);
             }
         }
+
         return $dataset;
     }
 
-     /**
+    /**
      * stores the version to the dataset
      */
     public function mapVersion(array $metadata, DataPublication $dataset): DataPublication
     {
-        if(isset($metadata['data']['attributes']['version'])){
-            $dataset->msl_datacite_version = (($metadata['data']['attributes']['version']) != null ? $metadata['data']['attributes']['version'] : "");
+        if (isset($metadata['data']['attributes']['version'])) {
+            $dataset->msl_datacite_version = (($metadata['data']['attributes']['version']) != null ? $metadata['data']['attributes']['version'] : '');
         }
-      
+
         return $dataset;
     }
 
@@ -478,64 +471,64 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapResourceType(array $metadata, DataPublication $dataset): DataPublication
     {
-        if(isset($metadata['data']['attributes']['types'])){
-            $resourceTypeEntry =    $metadata['data']['attributes']['types'];
-            
-            $dataset->msl_resource_type         = (isset($resourceTypeEntry["resourceType"])        ? $resourceTypeEntry["resourceType"]        : '');
-            $dataset->msl_resource_type_general = (isset($resourceTypeEntry["resourceTypeGeneral"]) ? $resourceTypeEntry["resourceTypeGeneral"] : '');            
+        if (isset($metadata['data']['attributes']['types'])) {
+            $resourceTypeEntry = $metadata['data']['attributes']['types'];
+
+            $dataset->msl_resource_type = (isset($resourceTypeEntry['resourceType']) ? $resourceTypeEntry['resourceType'] : '');
+            $dataset->msl_resource_type_general = (isset($resourceTypeEntry['resourceTypeGeneral']) ? $resourceTypeEntry['resourceTypeGeneral'] : '');
         }
-        
+
         return $dataset;
     }
-    
+
     /**
      * stores the related identifiers to the dataset
      */
     public function mapContributor(array $metadata, DataPublication $dataset): DataPublication
     {
         $allContributors = $metadata['data']['attributes']['contributors'];
-        
-        if(sizeof($allContributors)>0){
+
+        if (count($allContributors) > 0) {
             foreach ($allContributors as $contributor) {
 
-
                 $creatorInstance = new Contributor(
-                    (isset($contributor["name"])            ? $contributor["name"]              : ""), 
-                    (isset($contributor["contributorType"]) ? $contributor["contributorType"]   : ""), 
-                    (isset($contributor["givenName"])       ? $contributor["givenName"]         : ""), 
-                    (isset($contributor["familyName"])      ? $contributor["familyName"]        : ""), 
-                    (isset($contributor["nameType"])        ? $contributor["nameType"]          : "")
+                    (isset($contributor['name']) ? $contributor['name'] : ''),
+                    (isset($contributor['contributorType']) ? $contributor['contributorType'] : ''),
+                    (isset($contributor['givenName']) ? $contributor['givenName'] : ''),
+                    (isset($contributor['familyName']) ? $contributor['familyName'] : ''),
+                    (isset($contributor['nameType']) ? $contributor['nameType'] : '')
                 );
 
-                if( isset($contributor["nameIdentifiers"]) && $contributor["nameIdentifiers"] > 0 ){
+                if (isset($contributor['nameIdentifiers']) && $contributor['nameIdentifiers'] > 0) {
 
-                    foreach ($contributor["nameIdentifiers"] as $nameIdentifierEntry) {
+                    foreach ($contributor['nameIdentifiers'] as $nameIdentifierEntry) {
                         $nameIdentifierInst = new NameIdentifier(
-                            (isset($nameIdentifierEntry["nameIdentifier"])       ? $nameIdentifierEntry["nameIdentifier"]         : ""),
-                            (isset($nameIdentifierEntry["nameIdentifierScheme"]) ? $nameIdentifierEntry["nameIdentifierScheme"]   : ""),
-                            (isset($nameIdentifierEntry["schemeUri"])            ? $nameIdentifierEntry["schemeUri"]              : ""),
+                            (isset($nameIdentifierEntry['nameIdentifier']) ? $nameIdentifierEntry['nameIdentifier'] : ''),
+                            (isset($nameIdentifierEntry['nameIdentifierScheme']) ? $nameIdentifierEntry['nameIdentifierScheme'] : ''),
+                            (isset($nameIdentifierEntry['schemeUri']) ? $nameIdentifierEntry['schemeUri'] : ''),
                         );
-    
+
                         $creatorInstance->addNameIdentifier($nameIdentifierInst);
                     }
                 }
 
-                if( isset($contributor["affiliation"]) && $contributor["affiliation"] > 0 ){
+                if (isset($contributor['affiliation']) && $contributor['affiliation'] > 0) {
 
-                    foreach ($contributor["affiliation"] as $affiliationEntry) {
-                                            $affiliationInst = new Affiliation(
-                            (isset($affiliationEntry["name"])                        ? $affiliationEntry["name"]                          : ""),
-                            (isset($affiliationEntry["affiliationIdentifier"])       ? $affiliationEntry["affiliationIdentifier"]         : ""),
-                            (isset($affiliationEntry["affiliationIdentifierScheme"]) ? $affiliationEntry["affiliationIdentifierScheme"]   : ""),
-                            (isset($affiliationEntry["schemeUri"])                   ? $affiliationEntry["schemeUri"]                     : ""),
+                    foreach ($contributor['affiliation'] as $affiliationEntry) {
+                        $affiliationInst = new Affiliation(
+                            (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
+                            (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
+                            (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
+                            (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
                         );
-    
+
                         $creatorInstance->addAffiliation($affiliationInst);
                     }
-                                        }
+                }
                 $dataset->addContributor($creatorInstance);
-                            }
+            }
         }
+
         return $dataset;
     }
 
@@ -546,8 +539,8 @@ class Datacite4Mapper implements MapperInterface
     {
         $sizes = $metadata['data']['attributes']['sizes'];
 
-        if(sizeof($sizes) > 0) {
-            foreach($sizes as $size) {
+        if (count($sizes) > 0) {
+            foreach ($sizes as $size) {
                 $dataset->addSize($size);
             }
         }
@@ -561,14 +554,13 @@ class Datacite4Mapper implements MapperInterface
     public function mapFormat(array $metadata, DataPublication $dataset): DataPublication
     {
         $formats = $metadata['data']['attributes']['formats'];
-                
-        if(sizeof($formats) > 0) {
-            foreach($formats as $format) {
+
+        if (count($formats) > 0) {
+            foreach ($formats as $format) {
                 $dataset->addFormat($format);
             }
         }
 
         return $dataset;
     }
-
 }
