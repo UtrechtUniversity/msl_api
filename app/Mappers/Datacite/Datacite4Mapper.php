@@ -302,15 +302,15 @@ class Datacite4Mapper implements MapperInterface
     {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
         if (count($relatedIdentifiers) > 0) {
-            foreach ($relatedIdentifiers as $relId) {
+            foreach ($relatedIdentifiers as $relatedIdentifier) {
                 $relatedIdentifier = new RelatedIdentifier(
-                    (isset($relId['relatedIdentifier']) ? $relId['relatedIdentifier'] : ''),
-                    (isset($relId['relatedIdentifierType']) ? $relId['relatedIdentifierType'] : ''),
-                    (isset($relId['relationType']) ? $relId['relationType'] : ''),
-                    (isset($relId['relatedMetadataScheme']) ? $relId['relatedMetadataScheme'] : ''),
-                    (isset($relId['schemeURI']) ? $relId['schemeURI'] : ''),
-                    (isset($relId['schemeType']) ? $relId['schemeType'] : ''),
-                    (isset($relId['resourceTypeGeneral']) ? $relId['resourceTypeGeneral'] : ''),
+                    (isset($relatedIdentifier['relatedIdentifier']) ? $relatedIdentifier['relatedIdentifier'] : ''),
+                    (isset($relatedIdentifier['relatedIdentifierType']) ? $relatedIdentifier['relatedIdentifierType'] : ''),
+                    (isset($relatedIdentifier['relationType']) ? $relatedIdentifier['relationType'] : ''),
+                    (isset($relatedIdentifier['relatedMetadataScheme']) ? $relatedIdentifier['relatedMetadataScheme'] : ''),
+                    (isset($relatedIdentifier['schemeURI']) ? $relatedIdentifier['schemeURI'] : ''),
+                    (isset($relatedIdentifier['schemeType']) ? $relatedIdentifier['schemeType'] : ''),
+                    (isset($relatedIdentifier['resourceTypeGeneral']) ? $relatedIdentifier['resourceTypeGeneral'] : ''),
                 );
 
                 $dataset->addRelatedIdentifier($relatedIdentifier);
@@ -337,21 +337,21 @@ class Datacite4Mapper implements MapperInterface
      */
     public function mapFundingReferences(array $metadata, DataPublication $dataset): DataPublication
     {
-        $funRefs = $metadata['data']['attributes']['fundingReferences'];
+        $fundingReferences = $metadata['data']['attributes']['fundingReferences'];
 
-        if ($funRefs > 0) {
-            foreach ($funRefs as $funRef) {
-                $fundingReference = new FundingReference(
-                    (isset($funRef['funderName']) ? $funRef['funderName'] : ''),
-                    (isset($funRef['funderIdentifier']) ? $funRef['funderIdentifier'] : ''),
-                    (isset($funRef['funderIdentifierType']) ? $funRef['funderIdentifierType'] : ''),
-                    (isset($funRef['schemeURI']) ? $funRef['schemeURI'] : ''),
-                    (isset($funRef['awardNumber']) ? $funRef['awardNumber'] : ''),
-                    (isset($funRef['awardUri']) ? $funRef['awardUri'] : ''),
-                    (isset($funRef['awardTitle']) ? $funRef['awardTitle'] : ''),
+        if ($fundingReferences > 0) {
+            foreach ($fundingReferences as $fundingReference) {
+                $fundingReferenceInstance = new FundingReference(
+                    (isset($fundingReference['funderName']) ? $fundingReference['funderName'] : ''),
+                    (isset($fundingReference['funderIdentifier']) ? $fundingReference['funderIdentifier'] : ''),
+                    (isset($fundingReference['funderIdentifierType']) ? $fundingReference['funderIdentifierType'] : ''),
+                    (isset($fundingReference['schemeURI']) ? $fundingReference['schemeURI'] : ''),
+                    (isset($fundingReference['awardNumber']) ? $fundingReference['awardNumber'] : ''),
+                    (isset($fundingReference['awardUri']) ? $fundingReference['awardUri'] : ''),
+                    (isset($fundingReference['awardTitle']) ? $fundingReference['awardTitle'] : ''),
                 );
 
-                $dataset->addFundingReference($fundingReference);
+                $dataset->addFundingReference($fundingReferenceInstance);
             }
         }
 
