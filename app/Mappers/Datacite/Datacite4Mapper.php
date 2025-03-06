@@ -29,23 +29,23 @@ class Datacite4Mapper implements MapperInterface
         // map all fields
         // start with the identifier to enable usage in logging/exceptions
         $dataset = $this->mapIdentifier($metadata, $dataset);
-        $dataset = $this->mapTitle($metadata, $dataset);
-        $dataset = $this->mapDescription($metadata, $dataset);
+        $dataset = $this->mapTitles($metadata, $dataset);
+        $dataset = $this->mapDescriptions($metadata, $dataset);
         $dataset = $this->mapRights($metadata, $dataset);
         $dataset = $this->mapPublicationYear($metadata, $dataset);
-        $dataset = $this->mapAlternateIdentifier($metadata, $dataset);
-        $dataset = $this->mapRelatedIdentifier($metadata, $dataset);
+        $dataset = $this->mapAlternateIdentifiers($metadata, $dataset);
+        $dataset = $this->mapRelatedIdentifiers($metadata, $dataset);
         $dataset = $this->mapUrl($metadata, $dataset);
-        $dataset = $this->mapFundingReference($metadata, $dataset);
-        $dataset = $this->mapLanguage($metadata, $dataset);
+        $dataset = $this->mapFundingReferences($metadata, $dataset);
+        $dataset = $this->mapLanguages($metadata, $dataset);
         $dataset = $this->mapDates($metadata, $dataset);
-        $dataset = $this->mapPublisher($metadata, $dataset);
+        $dataset = $this->mapPublishers($metadata, $dataset);
         $dataset = $this->mapCreators($metadata, $dataset);
         $dataset = $this->mapVersion($metadata, $dataset);
-        $dataset = $this->mapResourceType($metadata, $dataset);
-        $dataset = $this->mapContributor($metadata, $dataset);
-        $dataset = $this->mapSize($metadata, $dataset);
-        $dataset = $this->mapFormat($metadata, $dataset);
+        $dataset = $this->mapResourceTypes($metadata, $dataset);
+        $dataset = $this->mapContributors($metadata, $dataset);
+        $dataset = $this->mapSizes($metadata, $dataset);
+        $dataset = $this->mapFormats($metadata, $dataset);
 
         return $dataset;
     }
@@ -55,7 +55,7 @@ class Datacite4Mapper implements MapperInterface
      * and adds those to the dataset
      * this is optional
      */
-    public function mapAlternateIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    public function mapAlternateIdentifiers(array $metadata, DataPublication $dataset): DataPublication
     {
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
 
@@ -76,6 +76,7 @@ class Datacite4Mapper implements MapperInterface
     /**
      * Maps the publicationYear of a datacite entry
      * It is a mandatory entry, failure throws exception
+     * 
      */
     public function mapPublicationYear(array $metadata, DataPublication $dataset): DataPublication
     {
@@ -154,24 +155,26 @@ class Datacite4Mapper implements MapperInterface
      * 'lang' set to 'en'
      * 'lang set to 'en-GB'
      * if none apply take first in list
+     * 
+     * THis is an optional entry
      *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
-    public function mapDescription(array $metadata, DataPublication $dataset): DataPublication
+    public function mapDescriptions(array $metadata, DataPublication $dataset): DataPublication
     {
         $descriptions = $metadata['data']['attributes']['descriptions'];
 
-        $dataset->msl_description_abstract = $this->receiveDescription('Abstract', $descriptions);
-        $dataset->msl_description_methods = $this->receiveDescription('Methods', $descriptions);
-        $dataset->msl_description_series_information = $this->receiveDescription('SeriesInformation', $descriptions);
-        $dataset->msl_description_table_of_contents = $this->receiveDescription('TableOfContents', $descriptions);
-        $dataset->msl_description_technical_info = $this->receiveDescription('TechnicalInfo', $descriptions);
-        $dataset->msl_description_other = $this->receiveDescription('Other', $descriptions);
+        $dataset->msl_description_abstract = $this->getDescription('Abstract', $descriptions);
+        $dataset->msl_description_methods = $this->getDescription('Methods', $descriptions);
+        $dataset->msl_description_series_information = $this->getDescription('SeriesInformation', $descriptions);
+        $dataset->msl_description_table_of_contents = $this->getDescription('TableOfContents', $descriptions);
+        $dataset->msl_description_technical_info = $this->getDescription('TechnicalInfo', $descriptions);
+        $dataset->msl_description_other = $this->getDescription('Other', $descriptions);
 
         return $dataset;
     }
 
-    private function receiveDescription(string $descriptionType, array $descriptions): string
+    private function getDescription(string $descriptionType, array $descriptions): string
     {
         $descriptionString = '';
         $descriptionsCandidates = [];
@@ -206,9 +209,11 @@ class Datacite4Mapper implements MapperInterface
      * 'lang set to 'en-GB'
      * if none apply take first in list
      *
+     * this entry is mandatory
+     * 
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
-    public function mapTitle(array $metadata, DataPublication $dataset): DataPublication
+    public function mapTitles(array $metadata, DataPublication $dataset): DataPublication
     {
         $titles = $metadata['data']['attributes']['titles'];
         $titleSize = count($titles);
@@ -290,8 +295,10 @@ class Datacite4Mapper implements MapperInterface
 
     /**
      * stores the related identifiers to the dataset
+     * 
+     * this entry is optional
      */
-    public function mapRelatedIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    public function mapRelatedIdentifiers(array $metadata, DataPublication $dataset): DataPublication
     {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
         if (count($relatedIdentifiers) > 0) {
@@ -315,6 +322,7 @@ class Datacite4Mapper implements MapperInterface
 
     /**
      * stores the url to the dataset
+     * this is not part of the data-publication but part of the api response
      */
     public function mapUrl(array $metadata, DataPublication $dataset): DataPublication
     {
@@ -327,7 +335,7 @@ class Datacite4Mapper implements MapperInterface
      * maps the available funding references
      * fundername is madatory
      */
-    public function mapFundingReference(array $metadata, DataPublication $dataset): DataPublication
+    public function mapFundingReferences(array $metadata, DataPublication $dataset): DataPublication
     {
         $funRefs = $metadata['data']['attributes']['fundingReferences'];
 
@@ -352,8 +360,9 @@ class Datacite4Mapper implements MapperInterface
 
     /*
      * stores the language to the dataset
+     * this entry is optional
      */
-    public function mapLanguage(array $metadata, DataPublication $dataset): DataPublication
+    public function mapLanguages(array $metadata, DataPublication $dataset): DataPublication
     {
         $lang = '';
 
@@ -367,7 +376,8 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the dates to the dataset
+     * this entry is optional
      */
     public function mapDates(array $metadata, DataPublication $dataset): DataPublication
     {
@@ -389,9 +399,10 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the publishers to the dataset
+     * this entry is mandatory
      */
-    public function mapPublisher(array $metadata, DataPublication $dataset): DataPublication
+    public function mapPublishers(array $metadata, DataPublication $dataset): DataPublication
     {
         if (isset($metadata['data']['attributes']['publisher'])) {
             $publisherEntry = $metadata['data']['attributes']['publisher'];
@@ -403,7 +414,8 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the creators to the dataset
+     * this entry is mandatory
      */
     public function mapCreators(array $metadata, DataPublication $dataset)
     {
@@ -456,6 +468,7 @@ class Datacite4Mapper implements MapperInterface
 
     /**
      * stores the version to the dataset
+     * this entry is optional
      */
     public function mapVersion(array $metadata, DataPublication $dataset): DataPublication
     {
@@ -467,9 +480,10 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the resource type to the dataset
+     * this entry is optional
      */
-    public function mapResourceType(array $metadata, DataPublication $dataset): DataPublication
+    public function mapResourceTypes(array $metadata, DataPublication $dataset): DataPublication
     {
         if (isset($metadata['data']['attributes']['types'])) {
             $resourceTypeEntry = $metadata['data']['attributes']['types'];
@@ -482,9 +496,10 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the contributors to the dataset
+     * this entry is optional
      */
-    public function mapContributor(array $metadata, DataPublication $dataset): DataPublication
+    public function mapContributors(array $metadata, DataPublication $dataset): DataPublication
     {
         $allContributors = $metadata['data']['attributes']['contributors'];
 
@@ -533,9 +548,11 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the size to the dataset
+     * can be pages, or bytes
+     * this entry is optional
      */
-    public function mapSize(array $metadata, DataPublication $dataset): DataPublication
+    public function mapSizes(array $metadata, DataPublication $dataset): DataPublication
     {
         $sizes = $metadata['data']['attributes']['sizes'];
 
@@ -549,9 +566,11 @@ class Datacite4Mapper implements MapperInterface
     }
 
     /**
-     * stores the related identifiers to the dataset
+     * stores the format to the dataset
+     * can be "application/xml" or "text/plain"
+     * this entry is optional
      */
-    public function mapFormat(array $metadata, DataPublication $dataset): DataPublication
+    public function mapFormats(array $metadata, DataPublication $dataset): DataPublication
     {
         $formats = $metadata['data']['attributes']['formats'];
 

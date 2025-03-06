@@ -40,7 +40,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapAlternateIdentifiers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier , "12345");
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier_type , "Local accession number");
@@ -68,7 +68,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapAlternateIdentifiers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_alternate_identifiers , []);
 
@@ -103,7 +103,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapAlternateIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapAlternateIdentifiers($metadata, $dataset);
         
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier , "Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Dataset for the paper \"Maestro-Guijarro, L., Martínez-Ramírez, S.; Sánchez-Cortés, S., Marco, J.F., de la Figuera, J., Castillejo, M.,Oujja, M., Carmona-Quiroga, P. 2024. Assessment of silver-based calcium silicate hydrate as a novel SERS sensor. Applied Surface Science 662: 160107\"; DIGITAL CSIC; https://doi.org/10.1016/j.apsusc.2024.160107");
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier_type , "citation");
@@ -318,7 +318,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapDescription($metadata, $dataset);
+        $dataset = $dataciteMapper->mapDescriptions($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_description_abstract          , "Example Abstract");
         $this->assertEquals($dataset->msl_description_methods           , "Example Methods");
@@ -354,7 +354,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapDescription($metadata, $dataset);
+        $dataset = $dataciteMapper->mapDescriptions($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_description_abstract, "The timing of the Monte Peron Landslide is revised to 2890 cal. BP based on a radiocarbon-dated sediment stratigraphy of Lago di Vedana. This age fosters the importance of hydroclimatic triggers in the light of accelerating global warming with a predicted increase of precipitation enhancing the regional predisposition to large landslides. Moreover, a layer enriched in allochthonous organic and minerogenic detritus dating to the same wet period is interpreted as response to a younger and yet unidentified mass wasting event in the catchment of Lago di Vedana. Rock debris of the Monte Peron Landslide impounded the Cordevole River valley and created a landslide-dammed lake. Around AD 1150, eutrophication of this lacustrine ecosystem started with intensified human occupation – a process that ended 150 years later, when the river was diverted back into its original bed. Most likely, this occurred due to artificial opening of the river dam. In consequence, Lago di Vedana was isolated from an open and minerogenic to an endorheic and carbonaceous lacustrine system. After a monastery was established nearby in AD 1457, a second eutrophication process was initiated due to intensified land use linked with deforestation. Only in the 18th and 19th century, deposition of organic matter decreased coinciding with climatic (Little Ice Age) and cultural changes. Conversational measures are the likely reasons for a trend towards less eutrophic conditions since AD 1950.");
 
@@ -401,7 +401,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapDescription($metadata, $dataset);
+        $dataset = $dataciteMapper->mapDescriptions($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_description_abstract          , "This is the experimental dataset used in the paper Applied Surface Science, 662: 160107 (2024) (https://doi.org/10.1016/j.apsusc.2024.160107) in which a novel Surface-Enhanced Raman Spectroscopy (SERS) sensor based on a nanostructured substrate, calcium silicate hydrate (C-S-H), the main hydration product of Portland cement, was synthetized. The procedure involves first the incorporation of silver within the nanostructure of the gel (C-S-Ag-H) and second the modification of the surface of pellets of the newly synthesized material by laser irradiation at 532 nm or 355 nm. This data set includes the results of the effect of silver on the gel structure via visible UV spectroscopy, micro-Raman and 29Si Magic Angle Spinning Nuclear Magnetic Resonance (MAS NMR). It also includes the characterization analyses of the C-S-Ag-H pellets by X-ray Photoelectron Spectroscopy (XPS) to determine the silver oxidation state and the assessment of their SERS activity before and after laser irradiation using for the latter Rhodamine B (RhB) as a probe.");
         $this->assertEquals($dataset->msl_description_methods           , "");
@@ -468,7 +468,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
+        $dataset = $dataciteMapper->mapTitles($metadata, $dataset);
         
         $this->assertEquals($dataset->title, "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy");
         
@@ -514,7 +514,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
+        $dataset = $dataciteMapper->mapTitles($metadata, $dataset);
 
         $this->assertEquals($dataset->title, "Example Title");
 
@@ -544,7 +544,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapTitle($metadata, $dataset);
+        $dataset = $dataciteMapper->mapTitles($metadata, $dataset);
 
         $this->assertEquals($dataset->title, "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy");
     }
@@ -715,7 +715,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapRelatedIdentifiers($metadata, $dataset);
 
 
         $this->assertEquals(sizeof($dataset->msl_related_identifiers), sizeof($metadata['data']['attributes']['relatedIdentifiers']));
@@ -841,7 +841,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapRelatedIdentifiers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier_relation_type, "IsSupplementTo");
         $this->assertEquals($dataset->msl_related_identifiers[0]->msl_related_identifier, "10.1007/s10346-021-01787-2");
@@ -870,7 +870,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapRelatedIdentifier($metadata, $dataset);
+        $dataset = $dataciteMapper->mapRelatedIdentifiers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_related_identifiers, []);                
     }
@@ -901,7 +901,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapLanguage($metadata, $dataset);
+        $dataset = $dataciteMapper->mapLanguages($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_language , "en");        
     }   
@@ -1099,7 +1099,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+        $dataset = $dataciteMapper->mapFundingReferences($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_funder_name, "Example Funder");
         $this->assertEquals($dataset->msl_funding_references[0]->msl_funding_reference_funder_identifier, "https://doi.org/10.13039/501100000780");
@@ -1131,7 +1131,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapFundingReference($metadata, $dataset);
+        $dataset = $dataciteMapper->mapFundingReferences($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_funding_references, []);
     }
@@ -1194,7 +1194,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapPublisher($metadata, $dataset);
+        $dataset = $dataciteMapper->mapPublishers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_publisher, "Example Publisher");
     }
@@ -1602,14 +1602,14 @@ class Datacite4Test extends TestCase
           // read json text
           $metadata = json_decode($sourceData->source_dataset, true);
           
-          $dataset = $dataciteMapper->mapResourceType($metadata, $dataset);
+          $dataset = $dataciteMapper->mapResourceTypes($metadata, $dataset);
   
           $this->assertEquals($dataset->msl_resource_type, "dataset");
           $this->assertEquals($dataset->msl_resource_type_general, "Dataset");
       }
 
 /**
- * test if publicationYear is correctly mapped
+ * test if contributer is correctly mapped
  */
 public function test_contributor_mapping(): void
 {
@@ -1700,7 +1700,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
+        $dataset = $dataciteMapper->mapContributors($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name,                                        "ExampleFamilyName, ExampleGivenName");
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_given_name,                                  "ExampleGivenName");
@@ -1776,7 +1776,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
+        $dataset = $dataciteMapper->mapContributors($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name,    "Digital.CSIC");
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_type,    "DataManager");
@@ -1806,7 +1806,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
+        $dataset = $dataciteMapper->mapContributors($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors,    []);
 
@@ -1888,7 +1888,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
         
-        $dataset = $dataciteMapper->mapContributor($metadata, $dataset);
+        $dataset = $dataciteMapper->mapContributors($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name,                                        "ExampleFamilyName, ExampleGivenName");
         $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_given_name,                                  "ExampleGivenName");
@@ -1953,7 +1953,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapSize($metadata, $dataset);
+        $dataset = $dataciteMapper->mapSizes($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_sizes[0], "1 MB");
         $this->assertEquals($dataset->msl_sizes[1], "90 pages");
@@ -1980,7 +1980,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapSize($metadata, $dataset);
+        $dataset = $dataciteMapper->mapSizes($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_sizes, []);
     }
@@ -2013,7 +2013,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapFormat($metadata, $dataset);
+        $dataset = $dataciteMapper->mapFormats($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_formats[0], "application/xml");
         $this->assertEquals($dataset->msl_formats[1], "text/plain");
@@ -2042,7 +2042,7 @@ public function test_contributor_mapping(): void
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapFormat($metadata, $dataset);
+        $dataset = $dataciteMapper->mapFormats($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_formats, []);
     }
