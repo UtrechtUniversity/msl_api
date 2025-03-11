@@ -48,7 +48,7 @@
                                                 @endif
                                         @endforeach 
                                     </p>
-                                    @if (array_key_exists("msl_publisher", $data))                                    
+                                    @if (array_key_exists("msl_publisher", $data))
                                     <p class="italic text-center">{{ $data['msl_publisher'] }} </p>
                                     @endif
                                     @if (array_key_exists("msl_publication_year", $data))
@@ -56,12 +56,13 @@
                                     @endif
                                 </div>
                                 
+                                @if (array_key_exists("msl_notes_annotated", $data))
                                 <div class="detailEntryDiv">
                                     <p>
                                         {!! $data['msl_notes_annotated'] !!}
                                     </p>
                                 </div >
-
+                                @endif
                                 
                                 <div class="detailEntryDiv">
                                     <h4 class="text-left">Keywords</h4>

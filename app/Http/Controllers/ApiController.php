@@ -179,6 +179,18 @@ class ApiController extends Controller
                 break;
         }        
 
+        // Set rows
+        $paramRows = (int)$request->get('rows');
+        if($paramRows > 0) {
+            $packageSearchRequest->rows = $paramRows;
+        }
+
+        // Set start
+        $paramStart = (int)$request->get('start');
+        if($paramStart > 0) {
+            $packageSearchRequest->start = $paramStart;
+        }
+
         // Process search parameters
         if($context == 'all') {
             $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);    

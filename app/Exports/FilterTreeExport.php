@@ -24,7 +24,7 @@ class FilterTreeExport
                     'filterName' => '',
                     'filterValue' => ''
                 ],
-                'children' => $this->getVocabAsFilters($fastVocab->id, 'msl_original_keyword_uri', false, true)
+                'children' => $this->getVocabAsFilters($fastVocab->id, 'msl_original_keyword_uri', false, true, "", "00")
             ],
             [
                 'text' => 'Organization',
@@ -46,7 +46,7 @@ class FilterTreeExport
             ]
         ];
 
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
 
 
@@ -283,7 +283,7 @@ class FilterTreeExport
             ],
         ];
                 
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
     
     public function exportOriginal() {
@@ -517,11 +517,11 @@ class FilterTreeExport
             ],
         ];
         
-        return (json_encode($tree, JSON_PRETTY_PRINT));
+        return (json_encode($tree));
     }
     
     
-    private function getVocabAsFilters($vocabId, $filterPrefix = "", $sortToplevel = false, $sortChildren = true, $filterSuffix = "") {
+    private function getVocabAsFilters($vocabId, $filterPrefix = "", $sortToplevel = false, $sortChildren = true, $filterSuffix = "", $skipFilter = "") {
         if($sortToplevel) {
             $topNodes = Keyword::where(['vocabulary_id' => $vocabId, 'level' => 1])->orderBy('value', 'asc')->get();
         } else {
@@ -534,18 +534,14 @@ class FilterTreeExport
                 'id' => $filterPrefix . $node->id . $filterSuffix,
                 'text' => $node->value,
                 'state' => [
-                    'opened' => false,
-                    'disabled' => true,
-                    'selected' => false,
-                    'checked' => false
+                    'disabled' => true
                 ],
                 'extra' => [
                     'type' => 'filter',
-                    'url' => '',
                     'filterName' => $filterPrefix,
                     'filterValue' => $node->uri
                 ],
-                'children' => $this->getChildren($node, $filterPrefix, $sortChildren, $filterSuffix)                
+                'children' => $this->getChildren($node, $filterPrefix, $sortChildren, $filterSuffix, $skipFilter)
             ];
             
             $vocabFilters[] = $filter;
@@ -554,28 +550,30 @@ class FilterTreeExport
         return $vocabFilters;        
     }
     
-    private function getChildren($keyword, $filterPrefix = "", $sort = true, $filterSuffix = "")
+    private function getChildren($keyword, $filterPrefix = "", $sort = true, $filterSuffix = "", $skipFilter = "")
     {
         $children = $keyword->getChildren($sort);
         $childFilters = [];
         
         foreach ($children as $child) {
+            if(strlen($skipFilter) > 0) {
+                if(str_starts_with($child->value, $skipFilter)) {
+                    continue;
+                }
+            }
+
             $filter = [
                 'id' => $filterPrefix . $child->id . $filterSuffix,
                 'text' => $child->value,
                 'state' => [
-                    'opened' => false,
-                    'disabled' => true,
-                    'selected' => false,
-                    'checked' => false
+                    'disabled' => true
                 ],
                 'extra' => [
                     'type' => 'filter',
-                    'url' => '',
                     'filterName' => $filterPrefix,
                     'filterValue' => $child->uri
                 ],
-                'children' => $this->getChildren($child, $filterPrefix, $sort, $filterSuffix)
+                'children' => $this->getChildren($child, $filterPrefix, $sort, $filterSuffix, $skipFilter)
             ];
             
             $childFilters[] = $filter;

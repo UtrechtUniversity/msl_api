@@ -312,13 +312,12 @@ class FrontendController extends Controller
          */
 
         $labHasMailContact = false;
-        $labData = $result->getResult();
         $labDatabase = Laboratory::where('fast_id', (int)$labData['msl_fast_id'])->first();
 
         if($labDatabase) {
-            $contactPerson = $labDatabase->laboratoryContactPerson;
-            if($contactPerson) {
-                $labHasMailContact = $contactPerson->hasValidEmail();                
+            $contactPersons = $labDatabase->laboratoryContactPersons;
+            if($contactPersons->count() > 0) {
+                $labHasMailContact = $contactPersons->first()->hasValidEmail();                
             }
         }
 

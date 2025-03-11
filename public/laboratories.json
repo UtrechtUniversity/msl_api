@@ -3,7 +3,7 @@
         "text": "Scientific domain",
         "state": {
             "opened": false,
-            "disabled": true,
+            "disabled": false,
             "selected": false,
             "checked": false
         },
@@ -21,7 +21,7 @@
         "text": "Country",
         "state": {
             "opened": false,
-            "disabled": true,
+            "disabled": false,
             "selected": false,
             "checked": false
         },
@@ -39,7 +39,7 @@
         "text": "Organization",
         "state": {
             "opened": false,
-            "disabled": true,
+            "disabled": false,
             "selected": false,
             "checked": false
         },

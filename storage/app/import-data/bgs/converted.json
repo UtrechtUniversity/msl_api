@@ -67,7 +67,7 @@
         "title": "Experimental logs and analysis of olivine polymorphs and MORB (Mid-Ocean Ridge Basalt) composition garnetite samples recovered from high-pressure faulting experiments",
         "description": "Multi-anvil experiments were performed both in static and deformation geometries on olivine polymorphs and MORB (Mid-Ocean Ridge Basalt) -composition garnetite.  Faults were induced by uniaxial compression in both garnetite and wadsleyite but only the garnetite showed evidence of thermal run away to melting.  These results suggest that strain localisation by thermal feedback might be an important mechanism for triggering deep earthquakes in the crustal portion of subducted slabs in the deeper transition zone (~500-660 km depth).",
         "subjects": "deep seismicity | remote triggering | frictional heating | thermal runaway | garnet",
-        "group1matches": "Basalt|Basalt|olivine|olivine|garnet|Mid-Ocean Ridge|Mid-Ocean Ridge",
+        "group1matches": "Basalt|Basalt|olivine|olivine|garnet|Mid-Ocean Ridge|Mid-Ocean Ridge|crustal",
         "group2matches": "uniaxial compression|Multi-anvil|frictional heating|frictional",
         "group3matches": null
     },
@@ -148,7 +148,7 @@
         "title": "Geochemical products of laboratory-simulated abrasion of natural quartz and alkali feldspar incubated at low temperatures",
         "description": "Geochemical data collected during a 40 day incubation of crushed silicate minerals (quartz and alkali feldspar). Quartz and alkali were crushed separately under an oxygen-free atmosphere using a planetary ball mill. The crushed minerals where then incubated in serum vial under with oxygen-limited water, in an oxygen-free N2 atmosphere at 4 degrees C. Headspace gases were collected before the addition of water. Then, headspace gas samples and the water samples were collected 24, 48, 120, 240, 360 and 720 hours after the addition of water. Headspace gas samples were analysed for CH4, CO2 and H2 and O2. Water fraction samples were analysed for anions and organic acids (including acetate, formate, F-, Cl-, NO2-, NO3- and SO4 2-), cations (including Na+, K+, Mg2+ and Ca2+) and total dissolved iron (dFe).\n\nThe research was supported by NERC grant NE\/S001670\/1, CRUSH2LIFE (BGO, MT, JT) and by European Research Council (ERC) Synergy Grant DEEP PURPLE under the European Union's Horizon 2020 Research and Innovation Program (Grant Number 856416).",
         "subjects": "\"EARTH SCIENCE\",\"LAND SURFACE\",\"EROSION\/SEDIMENTATION\",\"WEATHERING\" | \"EARTH SCIENCE\",\"LAND SURFACE\",\"GEOMORPHIC LANDFORMS\/PROCESSES\",\"GLACIAL LANDFORMS\" | \"EARTH SCIENCE\",\"SOLID EARTH\",\"GEOCHEMISTRY\" | Crushing | Feldspar | Geochemistry | FOS: Earth and related environmental sciences | Mechanochemistry | Microcosm incubations | Quartz | Subglacial",
-        "group1matches": "silicate minerals|quartz|quartz|Quartz|Quartz",
+        "group1matches": "quartz|silicate minerals|quartz|Quartz|Quartz",
         "group2matches": "Geochemical|Geochemical|GEOCHEMISTRY|Geochemistry",
         "group3matches": null
     },
@@ -175,7 +175,7 @@
         "title": "Geochemical and geochronological data from the Fossil Bluff Group, Antarctica",
         "description": "The files include full analytical details and datasets from the laboratories used for the acquisition of U-Pb zircon geochronology and Lu-Hf isotope geochemistry. The data were collected in the interval September 2022 to January 2023 across a number of laboratories: Stockholm, University College London and Australian National University (U-Pb zircon geochronology); British Geological Survey (Lu-isotopes). The analyses were conducted by Teal Riley (Stockholm, British Geological Survey), Ian Millar (Australian National University) and Andrew Carter (University College London). The analyses were conducted to examine the provenance and depositional history of the Fossil Bluff Group fore arc basin sediments of Alexander Island.\n\nNERC N-ALI funding to Geology &amp; Geophysics.",
         "subjects": "\"EARTH SCIENCE\",\"SOLID EARTH\",\"GEOCHEMISTRY\" | geochemistry | geochronology | provenance | zircon",
-        "group1matches": "zircon|zircon|sediments|zircon",
+        "group1matches": "zircon|zircon|zircon|sediments",
         "group2matches": "geochronology|geochronology|geochronology|Lu-Hf|U-Pb|U-Pb|Geochemical|geochemistry|GEOCHEMISTRY|geochemistry",
         "group3matches": null
     },
@@ -220,7 +220,7 @@
         "title": "High precision zircon U-Pb data for plutonic rocks from the Masirah and Ra's Madrakah ophiolites, South East Oman",
         "description": "Zircon U-Pb isotope data are presented for eight plutonic rocks from the Masirah ophiolite and one plutonic rock from the Ra's Madrakah ophiolite (South East Oman). These data constrain the age of formation of the two ophiolite nappes exposed on Masirah Island (early Cretaceous), whereas two intrusions with younger ages (late Cretaceous) overlap with the proposed emplacement age of the ophiolite. The data cover two sites in the Masirah Lower Nappe, two sites in the Masirah Upper Nappe (on Masirah Island, off the SE coast of Oman) and one site on Ra's Madrakah (on the mainland of Oman). \nData collection was done using chemical abrasion isotope dilution thermal ionisation mass spectrometry (CA-ID-TIMS) at the NERC Isotope Geosciences Laboratories at the British geological Survey, supported by NERC Isotope Geosciences Facilities award IP-1919-0619. This work resulted from a PhD project funded by NERC GW4+ DTP grant NE\/L002434\/1.",
         "subjects": "ophiolite | ocean crustal accretion | break up of Gondwana | early Indian ocean | zircon | U-Pb age | geochronology",
-        "group1matches": "zircon|Zircon|zircon|ophiolite|ophiolite|ophiolite|ophiolite|ophiolite",
+        "group1matches": "zircon|Zircon|zircon|ophiolite|ophiolite|ophiolite|ophiolite|ophiolite|crustal",
         "group2matches": "geochronology|U-Pb age|U-Pb|U-Pb|U-Pb",
         "group3matches": null
     },
@@ -292,7 +292,7 @@
         "title": "Zircon U-Pb data for plutonic rocks from IODP Hole 1256D, eastern equatorial Pacific Ocean",
         "description": "Zircon U-Pb data are presented for six plutonic rocks recovered from the Pacific oceanic crust (IODP Hole 1256D). These data constrain the age of the section, as well as the duration of crustal accretion. The data cover the bulk of the plutonic section recovered and were generated during post-cruise research for IODP Expedition 335 (2011-2013; PI Lissenberg). Data collection was done at the NERC Isotope Geosciences Laboratories at the British geological Survey. NERC Isotope Geosciences Facilities award IP-1276-1111. \nThis work resulted from participation in IODP Expedition 335, NERC grant NE\/J005592\/1.",
         "subjects": "oceanic crust | zircon geochronology",
-        "group1matches": "Zircon|Zircon|zircon|oceanic crust|oceanic crust",
+        "group1matches": "Zircon|Zircon|zircon|oceanic crust|crustal|oceanic crust",
         "group2matches": "geochronology|U-Pb|U-Pb",
         "group3matches": null
     },
@@ -373,7 +373,7 @@
         "title": "Corinth Rift, Greece Fault Location and Activity Rate data",
         "description": "The data are derived from interpretation of seismic reflection profiles within the offshore Corinth Rift, Greece (the Gulf of Corinth) integrated with IODP scientific ocean drilling borehole data from IODP Expedition 381 (McNeill et al., 2019a, 2019b).\nThe data include rift fault coordinate (location, geometry) information and slip rate and extension rate information for the major faults.\nSeismic reflection data were published in Taylor et al. (2011) and in Nixon et al. (2016). Preliminary fault interpretations and rate data, prior to IODP drilling, were published in Nixon et al. (2016).\nDetails of datasets:\nThe data can be viewed in GIS software (ArcGIS, QGIS) or the Excel and .dbf files can be used for viewing of rate data and import of fault coordinates into other software.\nThe 4 folders are for different time periods with shape files for the N-Dipping and S-Dipping Faults in the offshore Corinth Rift and respective slip and extension (horizontal) rates.\nThe shapefiles are digitised fault traces for the basement offsetting faults, picked from the Multichannel Seismic Data collected by the R\/V Maurice Ewing. \nFault traces are segmented and each segment has an average throw (vertical) rate (Tavg) in mm\/yr. The rates for the segments are averages based on measurements at the ends of each segment.\nThe major fault trace segments also have slip-rates (slip_rate) and extension-rates (ext_rate or extension_) in mm\/yr. All rates as well as the names for major faults can be located in the attribute table of the shape files along with X- and Y-coordinates. The coordinate system is WGS84 UTM Zone 34N. \nThe shape files can be loaded into a GIS (ArcGIS, QGIS etc.) allowing mapping and visualization of the fault traces and their activity rates. \nIn addition, the attribute tables are .dbf files found within each folder. These have also been provided as .xlsx (Excel) files which include the fault coordinate information, and slip rates and extension rates along the major faults. \nReferences\nMcNeill, L.C., Shillington, D.J., Carter, G.D.O., and the Expedition 381 Participants, 2019a. Corinth Active Rift Development. Proceedings of the International Ocean Discovery Program, 381: College Station, TX (International Ocean Discovery Program).\nMcNeill, L.C., Shillington, D.J., et al., 2019b, High-resolution record reveals climate-driven environmental and sedimentary changes in an active rift, Scientific Reports, 9, 3116.\nNixon, C.W., McNeill, L.C., Bull, J.M., Bell, R.E., Gawthorpe, R.L., Henstock, T.J., Christodoulou, D., Ford, M., Taylor, B., Sakellariou, S. et al., 2016. Rapid spatiotemporal variations in rift structure during development of the Corinth Rift, central Greece. Tectonics, 35, 1225\u20131248.\nTaylor, B., J. R. Weiss, A. M. Goodliffe, M. Sachpazi, M. Laigle, and A. Hirn (2011), The structures, stratigraphy and evolution of the Gulf of Corinth Rift, Greece, Geophys. J. Int., 185(3), 1189\u20131219.",
         "subjects": "Corinth rift | extensional faulting | fault slip rates | active rifting",
-        "group1matches": "rifting|fault slip",
+        "group1matches": "Tectonics|rifting|fault slip",
         "group2matches": "slip rate",
         "group3matches": null
     },
@@ -483,7 +483,7 @@
         "subjects": "core scanning | ground investigation | X-ray radiography | geophysical property data",
         "group1matches": "Sherwood Sandstone",
         "group2matches": "computed tomography|radiography|Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/cb336b72-1978-4319-a591-c6ac42ffcd61",
@@ -492,7 +492,7 @@
         "subjects": "core scanning | optical images | radiographic images | X-ray fluorescence | multi-sensor core logger",
         "group1matches": "Sherwood Sandstone",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/5c9eb939-ebc3-46f6-8690-ed1d9c46bca6",
@@ -555,7 +555,7 @@
         "subjects": "core scanning | X-ray fluorescence | optical images",
         "group1matches": "Sherwood Sandstone",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/5a4bc758-ac88-4715-a665-81f69108f854",
@@ -591,7 +591,7 @@
         "subjects": "core scanning | X-ray fluorescence | optical images",
         "group1matches": "Sherwood Sandstone",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/56c7802c-93db-4f0f-8b89-e18e10215633",
@@ -679,7 +679,7 @@
         "title": "Electron backscatter diffraction data and sample analysis from the Nusfjord Shear Zone, Lofoten, Norway",
         "description": "Field and microstructural analysis of pseudotachylytes formed at lower crustal depths and now lying exposed in the Flakstad\u00f8y Anorthosite, Lofoten, Norway. \nElectron backscatter diffraction (EBSD) analysis: 10 EBSD datasets (cpr files) - unfiltered. These characterise deformation in pyroxenes spatially associated with pseudotachylyte faults in the Nusfjord anorthosite. \nGrain size analysis - backscattered electron (BSE) images and processed equivalents (segmented manually or with ImageJ software) of fragmented orthopyroxene for grain size analysis. Results are processed in the spreadsheet 'Grain size distributions for fragmented OPX'. Samples involved: LC1724 and N22\nGrain growth modelling - spreadsheet calculating grain growth rates for orthopyroxene in samples LC1724 and N22\nStrain analysis - used to estimate strain via clast analysis of mylonitised pseudotachylyte, sample 269c",
         "subjects": "Pseudotachylyte | Lower crustal earthquakes | Faults | Shear Zones | Seismicity",
-        "group1matches": "Anorthosite|anorthosite|pseudotachylyte|pseudotachylyte|Pseudotachylyte",
+        "group1matches": "Anorthosite|anorthosite|pseudotachylyte|pseudotachylyte|Pseudotachylyte|crustal|crustal",
         "group2matches": "Electron backscatter diffraction|Electron backscatter diffraction|EBSD|EBSD|microstructural",
         "group3matches": null
     },
@@ -724,7 +724,7 @@
         "title": "Petrology of Gravel Size Clasts from Miocene sediments collected at Site U1521 during International Ocean Discovery Programme (IODP) Expedition 374 to the Ross Sea, Antarctica",
         "description": "This dataset comprises continuous logging of clasts >2 mm from International Ocean Discovery Program Expedition 374 Site U1521 to the Ross Sea, collected on the RV JOIDES Resolution. Shipboard biostratigraphy and magnetostratigraphy suggests the sediments are early Miocene in age (McKay et al., 2019, Proceedings of the International Ocean Discovery Program). Logged clasts are grouped by core into seven main lithological groups: igneous rocks, quartz fragments, dolerites, volcanic rocks, metamorphic rocks, sedimentary rocks and sedimentary intraclasts. A full methods description is provided at the bottom of the data file. The clast abundances can be compared to knowledge of terrestrial geology, allowing the changing provenance of the sediments to be traced.",
         "subjects": "sediment provenance | clast petrography | Antarctic ice sheets | Early Miocene",
-        "group1matches": "metamorphic rocks|sediments|sediments|quartz|sediments",
+        "group1matches": "metamorphic rocks|quartz|sediments|sediments|sediments",
         "group2matches": "magnetostratigraphy",
         "group3matches": null
     },
@@ -742,7 +742,7 @@
         "title": "Zircon U-Pb Sediment provenance data for Miocene to recent sediments collected at Site U1521 during International Ocean Discovery Programme (IODP) Expedition 374 to the Ross Sea, Antarctica",
         "description": "This dataset comprises zircon U-Pb data on 11 samples, each containing ~90-150 individual grains. This method was applied to sediment samples from IODP Expedition 374 Site U1521 to the Ross Sea, collected on the RV JOIDES Resolution. Shipboard biostratigraphy and magnetostratigraphy suggests the samples are mainly early Miocene in age (McKay et al., 2019). The uppermost samples do, however, include younger Plio-Pleistocene sediments. Samples were measured using an Agilent 7900 laser ablation inductively-coupled plasma mass spectrometer (LA-ICP-MS) with a 25-35 \u00b5m pit diameter in the London Geochronology Centre at University College London.",
         "subjects": "sediment provenance | Geochronology | Antarctic Ice Sheets",
-        "group1matches": "Zircon|sediments|zircon|sediments",
+        "group1matches": "Zircon|zircon|sediments|sediments",
         "group2matches": "Geochronology|Geochronology|U-Pb|U-Pb|magnetostratigraphy",
         "group3matches": null
     },
@@ -851,7 +851,7 @@
         "description": "Summary of semi-quantitative whole-rock XRD analysis of hydrothermal alteration across the island of Milos, Greece. The samples were acquired during numerous field visits between 2010 and 2018 by the British Geological Survey and GW4+ Doctorial Training Partnership (NE\/L002434\/1). The data were acquired using a PANAlytical X\u2019Pert Pro diffractometer at the British Geological Survey, Keyworth, UK. These data were primarily used to identify mineral phases to improve our understanding of regional and local paleo-hydrothermal activity. This may be useful within the metallic and industrial mineral mining sector and associated researchers. The data includes grid references (\u00b1 5 m), field observations and instrument running conditions. Samples from 2010 are supported by a grant award from the Natural Environment Research Council (GA\/09F\/139). Samples from 2016 - 2018 are supported by the GW4+ Doctoral Training Partnership (NE\/L002434\/1) grant award GA\/09F\/139 \u2013 RMS E3557, and the British Geological Survey\u2019s University Funding Initiative (BUFI S345).",
         "subjects": "hydrothermal alteration | epithermal | hydrothermal | mineralogy | clays | geology | geothermal | volcanic",
         "group1matches": "geothermal",
-        "group2matches": "X-ray diffraction",
+        "group2matches": "XRD|X-ray diffraction|XRD",
         "group3matches": null
     },
     {
@@ -870,7 +870,7 @@
         "subjects": "sandstone | computed tomography | porosity | petrophysics | carbon capture and storage",
         "group1matches": "sandstone|sandstone",
         "group2matches": "computed tomography",
-        "group3matches": null
+        "group3matches": "UKGEOS"
     },
     {
         "doi": "10.5285\/7495cc8f-245c-4ea1-a9dc-c2b92449c4ca",
@@ -897,7 +897,7 @@
         "subjects": "near surface | shallow | ground gas | gas flux | environmental baseline",
         "group1matches": "Geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/b1282b1e-7852-5d16-e053-6c86abc04c61",
@@ -940,7 +940,7 @@
         "title": "Data associated with 'Rapid trans-crustal magma movement under Iceland' by Mutch et al. (2019)",
         "description": "Primary data, model initial conditions, model results, a compiled database of olivine diffusivity experiments and supplementary tables used in the paper: 'Mutch, E. J. F., Maclennan J., Shorttle, O., Edmonds, M. &amp; Rudge, J. F., (2019), Rapid trans-crustal magma movement under Iceland, Nature Geoscience'. Data_S1 contains electron probe microanalysis (EPMA) profile data of olivine crystals used in this study. This file also includes all of the initial conditions for forsterite content (XFo), Ni and Mn used in the diffusion modelling. Standard deviations are averaged values of standard deviations from counting statistics and repeat measurements of secondary standards. Data_S2 is a compiled database of olivine diffusion experiments used to derive multiple linear regressions for diffusion coefficients and associated covariance matrices. Regressions were only made through [001] data. Data_S3 contains median values for all of the inverted parameters estimated for each crystal profile from the Nested Sampling Bayesian inversion for each type of initial condition and model equation. All of the Monte Carlo realisations for each model are also included in this file. Table_S1 is a supplementary table that contains olivine diffusion equation regression parameters derived and used as part of this study. Table_S2 is a supplementary table that contains covariance matrices for olivine diffusion equations derived in this study. Table_S3 is a supplementary table that contains covariance matrices for aSiO2 (silica activity) dependent olivine diffusion equations derived in this study. Table_S4 is a supplementary table that contains angles between the EPMA profile and the main crystallographic axes in olivine as measured by EBSD. These angles are incorporated into the anisotropy calculation used to determine the apparent diffusivity parallel to the measured profile. angle100P, angle010P and angle001P are the angles between the profile and [100], [010] and [001] respectively. Table_S5 is a supplementary table that contains ,median timescales and 1 sigma errors obtained from the posterior distributions of the Nested Sampling Bayesian inversion conducted on each olivine profile. The results using Al-based initial conditions, constant initial conditions (diffusion only), and aSiO2 based equations using Al-based initial conditions are presented here. The classification of each profile (growth-dominated vs. Al-decoupled) is also shown. See paper (Mutch et al., 2019, Nature Geoscience) for more details.",
         "subjects": "Basalt | Earth crust | Fissure eruption | Geochemistry | FOS: Earth and related environmental sciences | FOS: Earth and related environmental sciences | Geology | Igneous petrology | Lavas | Magma | Major element analysis | Microanalysis | Moho | Olivine | Picrite | Trace elements | Volcanoes | Volcanology | Diffusion chronometry | Iceland | Theistareykir | Borgarhraun | Wehrlite | Timescales | DFENS (Diffusion chronometry using Finite Elements and Nested Sampling)",
-        "group1matches": "magma|magma|Basalt|Magma|Picrite|olivine|olivine|forsterite|olivine|olivine|olivine|olivine|olivine|olivine|Olivine|Earth crust|Moho",
+        "group1matches": "magma|magma|Basalt|Magma|Picrite|olivine|olivine|forsterite|olivine|olivine|olivine|olivine|olivine|olivine|Olivine|crustal|crustal|Earth crust|Moho",
         "group2matches": "Trace elements|EBSD|Geochemistry",
         "group3matches": null
     },
@@ -1103,7 +1103,7 @@
         "description": "These data accompany a manuscript, titled: Stream and Slope Weathering Effects on Organic-rich Mudstone Geochemistry and Implications for Hydrocarbon Source Rock Assessment: A Bowland Shale Case Study.  Data include:  1) A range of photographs from the outcrop, drill cores, sub-samples, 'weathering grades' and thin section microphotographs from the Bowland Shale;  2) The results of mineralogical (whole rock powder x-ray diffraction; XRD) analyses for 18 subsamples;  3) The results of inorganic geochemical analyses (LECO elemental C and S, x-ray fluorescence major and trace elements) for 18 subsamples;  4) The results of organic geochemical analyses (Rock-Eval pyrolysis, d13Corg) for 20 subsamples;  5) RStudio scripts used to conduct statistical analyses (e.g., Principal Components Analysis) and generation of figures. The data submitted for archiving were produced by Joe Emmings, NERC-funded PhD student at the University of Leicester and British Geological Survey, between 2014 and 2016.   The manuscript was submitted to the journal Chemical Geology in December 2016.  This study was funded by NERC grant NE\/L002493\/1, a part of the Central England Training Alliance (CENTA).",
         "subjects": "Bowland Shale | weathering | geochemistry",
         "group1matches": "Mudstone|Shale|Mudstone|Shale|Shale|Shale",
-        "group2matches": "trace elements|x-ray diffraction|Geochemistry|Geochemistry|geochemical|geochemical|geochemistry",
+        "group2matches": "trace elements|x-ray diffraction|XRD|Geochemistry|Geochemistry|geochemical|geochemical|geochemistry",
         "group3matches": null
     },
     {
@@ -1201,7 +1201,7 @@
         "title": "IODP Expedition 375 Site U1520 Unit IV fault and stylolite frequency and texture observations",
         "description": "Data are either (1) depths and spacings between stylolites and faults within Unit IV, (2) images from IODP drill core image logs of the locations of samples observed, (3) photomicrographs and flatbed thin section scans of thin sections cut from samples, (4) SEM BSE or EDS data collected at Cardiff University. These data form the basis of: Leah et al. \"Brittle-ductile strain localisation and weakening in pelagic sediments seaward of the Hikurangi margin, New Zealand\", Tectonics, Submitted. Images and data from samples collected at IODP Expedition 375 Site U1520 (38\u00b058.1532\u02b9S, 179\u00b07.9112\u02b9E, 3522.1 mbsl). This is just seaward (east) of the trench of the Hikurangi Margin, New Zealand.",
         "subjects": "Sediment | Stylolite | Fault | Compaction | Carbonate | Calcareous | Calcite | Trench | Subduction | Integrated Ocean Drilling Program | Hikurangi | New Zealand | North Island",
-        "group1matches": "Calcite|sediments|trench|Trench|Subduction",
+        "group1matches": "Calcite|sediments|Tectonics|trench|Trench|Subduction",
         "group2matches": "stylolite|Stylolite|Brittle-ductile",
         "group3matches": null
     },
@@ -1266,7 +1266,7 @@
         "subjects": "borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/7971dbc3-d4a3-4f74-90a9-89b46d39ad49",
@@ -1275,7 +1275,7 @@
         "subjects": "borehole drilling | characterisation and monitoring | mine water heat | environmental baseline monitoring | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/d8d27fb5-3be4-4a54-aef7-8429ec234667",
@@ -1284,7 +1284,7 @@
         "subjects": "borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/baf7cc61-4a46-423f-a491-23d107b25001",
@@ -1293,7 +1293,7 @@
         "subjects": "borehole drilling | mine water heat | environmental baseline characterisation and monitoring | geothermal | superficial deposits | drillers\u2019 log | rock chip log",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/189dac62-b720-4fde-8260-f129fb9b0233",
@@ -1302,7 +1302,7 @@
         "subjects": "Borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/83ab3481-45d9-475d-8814-008edc9fb1cb",
@@ -1311,7 +1311,7 @@
         "subjects": "Borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/d31f33b8-b34a-4843-b2d2-545722bf94ae",
@@ -1320,7 +1320,7 @@
         "subjects": "borehole drilling | mine water heat | environmental baseline characterisation and monitoring | geothermal | superficial deposits | drillers\u2019 log | rock chip log",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/e0ec7462-b731-47c6-93d6-e4613fb44be0",
@@ -1329,7 +1329,7 @@
         "subjects": "borehole drilling | mine water heat | environmental baseline characterisation and monitoring | geothermal | bedrock | superficial deposits | drillers\u2019 log",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/ccb1aabe-6062-4cb7-9731-535229316246",
@@ -1338,7 +1338,7 @@
         "subjects": "borehole drilling | characterisation and monitoring | mine water heat | environmental baseline characterisation and monitoring | geothermal | superficial deposits | drillers\u2019 log",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/b19497aa-75a5-4f51-8089-299f9229b9ca",
@@ -1347,7 +1347,7 @@
         "subjects": "borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/0d496c68-f79b-4956-8cd2-4970d1e86145",
@@ -1356,7 +1356,7 @@
         "subjects": "Borehole drilling | characterisation and monitoring | mine water heat | mine working | geothermal | bedrock | superficial deposits",
         "group1matches": "geothermal",
         "group2matches": "Geoenergy",
-        "group3matches": null
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/6c9d05aa-f1f2-49a9-868e-3d2d5947ad54",
@@ -1365,6 +1365,15 @@
         "subjects": "carbon dioxide | geological carbon storage | ultrasonic waves | electrical resistivity | salt",
         "group1matches": "sandstone|sandstone",
         "group2matches": "permeability",
+        "group3matches": null
+    },
+    {
+        "doi": "10.5285\/4a0e4a75-fdc6-45b1-a72a-f517164bb147",
+        "title": "Experimental work on Ivrea ultramafic pipe material",
+        "description": "Results of piston cylinder experiments on lower-crustal material from the Ivrea Zone, Italian Alps. Natural sulfides and sulfide-silicate mixes from lower crustal cumulates were heated and pressurised to conditions matching those of the MASH zone, which is hypothesised to be the source of metals for post-collisional porphyry Cu deposits. This was done in order to simulate partial melting and examine the mobility of metals in this environment. This data contains experimental logs stating the experimental conditions; reflected light photographs of the experimental capsules; scanning electron microscope element maps and identification of platinum group minerals and precious metal minerals in the capsules; and trace element concentration of sulfides in the capsules. This data was collected as part of the TeaSe consortium NERC grant in order to test hypotheses about porphyry Cu deposit formation. This data was collected by researchers at Cardiff University and the University of Edinburgh.",
+        "subjects": "Ivrea | piston cylinder experiment | sulphide | cumulate",
+        "group1matches": "crustal|crustal",
+        "group2matches": "scanning electron microscope",
         "group3matches": null
     },
     {
@@ -1404,13 +1413,58 @@
         "group3matches": null
     },
     {
+        "doi": "10.5285\/f22452ce-78a0-4e34-ada8-3a23baf1af3f",
+        "title": "UKGEOS Cheshire Core Scanning Dataset",
+        "description": "A comprehensive core scanning dataset from 17 boreholes drilled onshore at Thornton Science Park, Cheshire, UK as part of the UK Geoenergy Observatories (UKGEOS) Cheshire project funded by UKRI\/NERC. The core scanning dataset contains X-ray radiographic images (RAD), geophysical property data (MSCL-S), high-resolution optical images (LS) and X-ray fluorescence (XRF) point data obtained using the Core Scanning Facility (CSF) at the British Geological Survey (BGS).",
+        "subjects": "core scanning | optical images | radiographic images | X-ray Fluorescence (XRF) | Multi-Sensor Core Logger (MSCL-S)",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
         "doi": "10.5285\/f1ad3bf6-f32a-4895-9f5f-8fa95c158832",
         "title": "UKGEOS Cheshire TH0424 packer testing hydraulic and chemical data",
         "description": "This data pack contains processed data from straddle packer pump testing of TH0424 ground investigation borehole at the UK Geoenergy Observatory at Thornton Science Park, Cheshire during October 2022.  TH0424 (BGS borehole reference NG47NW249) is located at NGR Easting: 344965 Northing: 375857 and drilled to a depth of 101.14 mbgl. Full meta data for the test borehole is included in the borehole information pack (https:\/\/doi.org\/10.5285\/badff3b9-8bc8-4897-b324-7f4653fdd214).  This dataset is accompanied by BGS open report OR\/23\/037 (https:\/\/nora.nerc.ac.uk\/id\/eprint\/536445\/) which provides context, description, and analysis of the data.\nData sets included in this data pack:\n1)\tGroundwater level data as measured by downhole transducers in the isolated packer intervals and outside packer intervals for 20 pump tests at various target depths\/zones.  Level data includes raw level readings as well as barometric pressure readings at surface and barometrically compensated level data.\n2)\tPump flow rate data during pump tests\n3)\tEvent logs including timestamped events such as packer inflation, pump deployment etc.\n4)\tHydrochemical data from on-site parameter measurements and analysed groundwater samples collected during constant rate pump tests.\n5)\tCoring\/drilling log of TH0410 with timestamped coring progress during the pump testing period.  This dataset is included as activities at TH0410 during testing are thought to have significantly impacted data quality.\n6)\tLogged abstraction events from the Thornton Science Park abstraction borehole (Borehole reference SJ47NW25, NGR 344950 375500, ~350m south of TH0424) by means of a pressure transducer attached to the borehole headworks.  This dataset is included as abstraction of the TSP borehole is known to drawdown groundwater levels in TH0424.",
         "subjects": "Packer Testing | Hydraulic Testing | Pump Testing | Aquifer Properties | Hydrochemical | Step test | Constant Rate Test",
         "group1matches": null,
         "group2matches": "Geoenergy",
-        "group3matches": "UK Geoenergy Observatory"
+        "group3matches": "UKGEOS|UK Geoenergy Observatory"
+    },
+    {
+        "doi": "10.5285\/63f9a557-77d5-4a87-9afc-bd7b099bcd7c",
+        "title": "UKGEOS Glasgow groundwater and surface water chemistry dataset release (2020-2021) version 2",
+        "description": "The data release includes surface and groundwater chemistry data from 86 samples (20 surface water, 60 ground water, and 6 ground water duplicates) collected during the baseline water monitoring at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers surface and groundwater samples collected between 14 September 2020 and 20 May 2021 from 6 surface water sites, 5 mine water boreholes, and 5 environmental monitoring boreholes. The samples were then analysed for the concentrations of selected parameters at BGS and other laboratories. It contains a report and 2 data sheets GroundWaterChemData1 and SurfaceWaterChemData2. \nVersion 2 06\/09\/2023 - Edits made to create consistency with subsequent data release, field included erroneously, removed. ",
+        "subjects": "environmental baseline | geochemistry | water chemistry | chemical analysis | surface water | groundwater | borehole",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/9da2a537-b8f5-4520-bed8-5c629dce0bd9",
+        "title": "UKGEOS Glasgow groundwater and surface water chemistry dataset release (2021\u20132022)",
+        "description": "The data release includes surface and groundwater chemistry data from 99 samples (33 surface water, 60 groundwater, and 6 groundwater duplicates) collected during the baseline water monitoring at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers surface and groundwater samples collected between 22 June 2021 and 28 January 2022 from 6 surface water sites, 5 mine water boreholes, and 5 environmental monitoring boreholes. The samples were then analysed for the concentrations of selected parameters at BGS and other laboratories. It contains a report and 2 data sheets GroundWaterChemData2 and SurfaceWaterChemData3.",
+        "subjects": "environmental baseline | geochemistry | water chemistry | chemical analysis | surface water | groundwater | borehole",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/e38c58a6-48ec-4ad1-a996-6c6144968d7d",
+        "title": "UKGEOS Glasgow GGC01 Final Borehole Information Pack",
+        "description": "The borehole information pack from borehole GGC01, site 10 of the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This final data release pack from BGS contains geophysical (MSCL-S), Near Infrared (NIR) and X-ray Fluorescence (XRF; mineralogical and chemical) core scan and core-wireline depth integration data, in addition to sedimentology, discontinuity and engineering logs, core scan optical and X-ray images, composite and digital wireline logs, drillers' summary logs and prognosis, sample recovery information spreadsheets and daily drillers' borehole records that were contained within the now-superseded intermediate data release. \nThe cored, seismic monitoring borehole was drilled between 19 November and 12 December 2018 to 199m producing a core of 102 mm diameter. The borehole was wireline logged in December 2018 and a string of 5 seismometers were installed in February 2019. A range of fluid, water and core samples were taken during the drilling process. The borehole information pack- final release contains a range of logs on the core as well as images and scans of that core, these data were acquired in the first half of 2019 and late 2020\/early 2021. \nThe final data release for GGC01 includes:\n1.\tUKGEOSGlasgow_GGC01_Final.zip file that includes the majority of the various data files, including files from the intermediate and initial data packs.\n2.\tUKGEOSGlasgowGGC01_slabbedhighresimages.zip that contains the slabbed core optical images, 51GB in size.\n3.\tIntermediate Borehole Information Pack - Part Two, high resolution whole core optical and radiographic images https:\/\/doi.org\/10.5285\/0b49f25b-a5d6-401c-98ff-397ad9ee9ed1  71GB in size, already released.\n\nFurther details and model limitations can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/530762",
+        "subjects": "seismic monitoring borehole | core | sedimentology log | discontinuity log | engineering log | core scan log | drillers log | geophysical core scan | X-ray fluorescence | near infrared core scan | geophysical (wireline) log",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/badff3b9-8bc8-4897-b324-7f4653fdd214",
+        "title": "UKGEOS Cheshire - TH0424 Final Borehole Information Pack",
+        "description": "The final borehole information pack from the TH0424 Ground Investigation Borehole drilled as part of the UK Geoenergy Observatories (UKGEOS) Cheshire facility. TH0424 was drilled to TD of 101 m between the 08-Nov-2021 and 30 Nov-2021. Drill core was collected from 2 m \u2013 101 m with 100 mm diameter. This final data release pack from BGS contains composite and digital wireline logs alongside daily driller's borehole records, sedimentary and discontinuity logging and core analysis data. This information pack also contains the Initial and additional Core Scanning datasets from the BGS Core Scanning Facility (https:\/\/doi.org\/10.5285\/b06d44e6-324d-4e19-bf78-a4520b9b87c8 and https:\/\/doi.org\/10.5285\/381e9664-0f43-4e4c-90ae-1b16ba83681b).",
+        "subjects": "Ground Investigation | Wireline Logging | Core Scanning | Drilling Logs | Sedimentary Logging | Discontinuity logging | Core Analysis",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
     },
     {
         "doi": "10.5285\/98432556-c319-495a-a0e0-711806a0a237",
@@ -1419,6 +1473,159 @@
         "subjects": "ground investigation | wireline | geotechnical | contaminated land | UK Geoenergy Observatory | sedimentary log",
         "group1matches": null,
         "group2matches": "Geoenergy|Geoenergy",
-        "group3matches": "UK Geoenergy Observatory|Cheshire Observatory|UK Geoenergy Observatory"
+        "group3matches": "UKGEOS|UK Geoenergy Observatory|Cheshire Observatory|UK Geoenergy Observatory"
+    },
+    {
+        "doi": "10.5285\/8a980baa-e10f-4ecb-bd49-85b7eb33badd",
+        "title": "UKGEOS Glasgow groundwater and surface water chemistry dataset release (2020\u20132021)",
+        "description": "The data release includes surface and groundwater chemistry data from 86 samples (20 surface water, 60 ground water, and 6 ground water duplicates) collected during the baseline water monitoring at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers surface and groundwater samples collected between 14 September 2020 and 20 May 2021 from 6 surface water sites, 5 mine water boreholes, and 5 environmental monitoring boreholes. The samples were then analysed for the concentrations of selected parameters at BGS and other laboratories. It contains a report and 2 data sheets GroundWaterChemData1 and SurfaceWaterChemData2.",
+        "subjects": "environmental baseline | geochemistry | water chemistry | chemical analysis | surface water | groundwater | borehole",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/002e178b-3b74-4d3d-a353-f17626cce9c8",
+        "title": "UKGEOS Cheshire - TH0424 Initial Borehole Information Pack",
+        "description": "The initial borehole information pack from the TH0424 Ground Investigation Borehole drilled as part of the UK Geoenergy Observatories (UKGEOS) Cheshire facility. TH0424 was drilled to TD of 101 m between the 08-Nov-2021 and 30-Nov-2021. Drill core was collected from 2 m \u2013 101 mm with 100 mm diameter. This initial data release pack from BGS contains composite and digital wireline logs alongside daily driller's borehole records. This information pack also contains the Initial Core Scan dataset from the BGS Core Scanning Facility (https:\/\/doi.org\/10.5285\/b06d44e6-324d-4e19-bf78-a4520b9b87c8).",
+        "subjects": "ground investigation | wireline logging | core scanning | drilling logs",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/7a7bf4c1-b7be-42cc-aa58-a6c96acaf41a",
+        "title": "UK Geoenergy Observatories (UKGEOS) Glasgow pre-drill coal mine model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow 3D coal mine model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth and extent of surveyed and probable coal mine workings, plus stone and coal roads surveyed within the mines. The model allows users to visualise the surveyed and probable coal mine workings to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids, triangulated surfaces over a 5 by 4.15 km area, with the depth range to around 300 m below Ordnance Datum. The mine extents are \u2018cut out\u2019 of the UKGEOS Glasgow pre-drill bedrock model. This model describes both surveyed (recorded on mine abandonment plan) and probable coal mine workings before the UKGEOS Glasgow boreholes have been drilled, and was used to inform the expected sequence on drilling. Further details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/522737",
+        "subjects": "Bed rock | Coal mines | Three dimensional models",
+        "group1matches": null,
+        "group2matches": "Geoenergy|Geoenergy",
+        "group3matches": "UK Geoenergy Observatories|UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/915f690f-32cf-41b7-984e-c32344d3a543",
+        "title": "UKGEOS Glasgow post-drill superficial deposits model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow superficial deposits GSI3D model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth, thickness and extent of glacial and post-glacial lithostratigraphic units above rockhead. The model allows users to visualise the likely subsurface sequence to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids and shapefiles over a 7 by 4.15 km area, with the depth range to around 40 m below Ordnance Datum. This model describes an interpretation of the shallow geology updated to incorporate the results of drilling the 12 UKGEOS Glasgow boreholes (post-drill model). \nFurther details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/531155\/",
+        "subjects": "Three dimensional models | Superficial deposits geology | Glacial geology",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/369bc803-ddc1-47bc-b9f8-9cffa5ab659e",
+        "title": "UKGEOS Glasgow post-drill bedrock model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow bedrock model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth and extent of bedrock lithostratigraphic units, coals and faults. The model allows users to visualise the likely subsurface sequence to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids, triangulated surfaces and shapefiles over a 5 by 4.15 km area, with the depth range to around 350 m below Ordnance Datum. This model describes an interpretation of the bedrock geology after the UKGEOS Glasgow boreholes had been drilled, the results of the nine UKGEOS boreholes that penetrated bedrock have been incorporated. Further details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/531157\/",
+        "subjects": "coal | Three dimensional models | Coal fields | faults | Bed rock",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/1f19a50c-b600-4f63-9512-e6c94f79d49c",
+        "title": "UKGEOS Glasgow post-drill coal mine model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow 3D coal mine model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth and extent of surveyed and probable coal mine workings, plus stone and coal roads surveyed within the mines. The model allows users to visualise the surveyed and probable coal mine workings to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids, triangulated surfaces over a 5 by 4.15 km area, with the depth range to around 300 m below Ordnance Datum. The mine extents are \u2018cut out\u2019 of the UKGEOS Glasgow post-drill bedrock model. This model describes both surveyed (recorded on mine abandonment plan) and probable coal mine workings. An area of probable workings has been updated to account for the results of drilling borehole GGC01.  Further details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/531157\/  ",
+        "subjects": "coal | Three dimensional models | coal fields | faults | bedrock",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/53ded3f2-a4e9-4f49-8084-2c8b3b485268",
+        "title": "UKGEOS Glasgow Test Pumping Groundwater Chemistry Data Release",
+        "description": "The data release includes groundwater chemistry data from 15 samples collected during the borehole test pumping phase at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers groundwater samples collected between 14 January 2020 and 21 February 2020 and then analysed for the concentrations of selected parameters at BGS and other laboratories. It contains a report and 2 data sheets. Further details can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/531098\/.",
+        "subjects": "borehole | groundwater | mine water | environmental baseline | geochemistry",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/315c716a-8bc5-4071-ad67-62da22e4b6ab",
+        "title": "UKGEOS Glasgow Hydrogeological Test Pumping Data Release",
+        "description": "The data release includes initial interpretation from test pumping of boreholes at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers a programme of test pumping carried out in ten boreholes in January and February 2020. It contains contractors reports and data sheets, BGS data sheets of data logger and manual dip data in the pumped borehole and in the observation boreholes. Step tests and five hour constant rate tests were performed in nine of the boreholes and a slug (falling\/rising\/head) test was performed in one borehole. \nFurther details can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/530507",
+        "subjects": "borehole | test pumping | step drawdown test | constant rate test | hydrogeology | mine water | environmental baseline",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/295984e5-5f2a-43aa-aa3d-6995a80ac8ed",
+        "title": "UKGEOS Glasgow Construction Phase Groundwater Chemistry Data Release",
+        "description": "The data release includes groundwater chemistry data from 8 samples and 2 tap water samples collected during the borehole construction phase at the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This release from the British Geological Survey (BGS) covers water samples collected between December 2018 and December 2019 and then analysed for the concentrations of selected parameters at BGS and other laboratories. It contains a report and a data sheet. \nFurther details can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/530443",
+        "subjects": "borehole | groundwater | environmental baseline | geochemistry | mine water",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/b65716f4-4f4c-4070-8539-b796c4bf8796",
+        "title": "UKGEOS Glasgow Surface Water Chemistry Dataset1 \u2013 release (2019-2020)",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow baseline surface water chemistry dataset1 released from the BGS comprises an excel file with two spreadsheets. The first spreadsheet contains information on the chemical composition of 98 surface water samples (84 samples and 14 field duplicates) collected monthly for 14 months between February 2019 and March 2020 from six sampling locations. These comprised three on the River Clyde at the UKGEOS Glasgow Cuningar Loop borehole cluster and three from control sites (two on the River Clyde and one on the Tollcross Burn). Field measurements of pH, redox potential, specific electrical conductance, temperature, dissolved oxygen and alkalinity and laboratory chemical data for concentrations of 71 inorganic and 10 organic substances in the surface water samples are presented. The dataset contains locational and descriptive information about the samples also. The analyte name, element chemical symbols, analytical method, units of measurement and long-term limits of detection are recorded in header rows at the top of the spreadsheet. The limits of detection\/quantification for each monthly batch of samples are documented in rows at the head of each batch. The dataset includes abbreviations documenting quality control issues such as missing values. A guide to abbreviations used in the dataset is provided in the second excel spreadsheet released with the data. Further details about the dataset can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/529818.",
+        "subjects": "environmental baseline monthly monitoring | surface water quality | surface water chemistry | chemical analysis | inorganic substances | persistent organic pollutants | potentially harmful elements",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/ce921bb4-4f8c-43bb-af50-c32e6eae9919",
+        "title": "InSAR ground motion data between 2015 and 2017 over UKGEOS - Glasgow",
+        "description": "The data represent ground motion results obtained from Interferometric Synthetic Aperture Radar (InSAR) for the UKGEOS \u2013 Glasgow site. The InSAR techniques used is called Interferometric Point Target Analysis (IPTA) and the BGS processing is based on Sentinel-1 radar satellite data for the period August 2015 - June 2017. \nThe results include time series of displacement (in mm) during this interval and average velocity across the whole period (in mm\/yr) along the satellite Line of Sight (Hanssen, 2001). \nInSAR has provided information on the baseline conditions of ground stability ahead of any underground activity planned in at the Glasgow Geothermal Energy Research Field Site (GGERFS) as described in Bateson and Novellino (2019). \nReferences: \nBateson, L.; Novellino, A. 2019 Glasgow Geothermal Energy Research Field Site: ground motion survey report. Nottingham, UK, British Geological Survey, 35pp. (OR\/18\/054) (Unpublished). Available at http:\/\/nora.nerc.ac.uk\/id\/eprint\/524555\/ \nHanssen, R., 2001. Radar Interferometry: Dordrecht Kluwer Academic Publishers, The Netherlands (2001) (308 pp.)",
+        "subjects": "earth observation | satellite | radar | InSAR | ground motion",
+        "group1matches": "Geothermal|Geothermal",
+        "group2matches": null,
+        "group3matches": "UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/0b49f25b-a5d6-401c-98ff-397ad9ee9ed1",
+        "title": "UK Geoenergy Observatories (UKGEOS) Glasgow GGC01 Intermediate Borehole Information Pack - Part Two",
+        "description": "The borehole information pack from borehole GGC01, site 10 of the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This intermediate data release pack from BGS contains core scan optical and X-ray images from the core scanning facility at BGS Keyworth. The cored, seismic monitoring borehole was drilled between 19 November and 12 December 2018 to 199m producing a core of 102 mm diameter. The borehole was wireline logged in December 2018 and a string of 5 seismometers were installed in February 2019. A range of fluid, water and core samples were taken during the drilling process. The borehole information pack- intermediate release contains a range of logs on the core as well as images of that core, these data were acquired in the first half of 2019. More information is available in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/525009",
+        "subjects": "Borehole imaging | Boreholes | Drilling | Photography | X rays",
+        "group1matches": null,
+        "group2matches": "Geoenergy|Geoenergy",
+        "group3matches": "UK Geoenergy Observatories|UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/153a5938-bbcd-4264-aa65-f5ee1fd86e23",
+        "title": "UK Geoenergy Observatories (UKGEOS) Glasgow GGC01 Intermediate Borehole Information Pack - Part One",
+        "description": "The borehole information pack from borehole GGC01, site 10 of the UK Geoenergy Observatories (UKGEOS) Glasgow facility. This intermediate data release pack from BGS contains sedimentology, discontinuity and engineering logs, as well as the information contained within the initial release: composite and digital wireline logs; drillers summary logs and prognosis; sample recovery information spreadsheets; and daily driller's borehole records. The cored, seismic monitoring borehole was drilled between 19 November and 12 December 2018 to 199m producing a core of 102 mm diameter. The borehole was wireline logged in December 2018 and a string of 5 seismometers were installed in February 2019. A range of fluid, water and core samples were taken during the drilling process. The borehole information pack- intermediate release contains a range of logs on the core as well as images of that core, these data were acquired in the first half of 2019. More information is available in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/525009",
+        "subjects": "Boreholes | Drillers logs | Drilling | Logs | Sampling | Wire line logs",
+        "group1matches": null,
+        "group2matches": "Geoenergy|Geoenergy",
+        "group3matches": "UK Geoenergy Observatories|UKGEOS|UK Geoenergy Observatories|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/233f19d4-77af-47b7-865f-ce77385f1bc2",
+        "title": "UK Geoenergy Observatories (UKGEOS) Glasgow bedrock pre-drill model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow bedrock model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth and extent of bedrock lithostratigraphic units, coals and faults. The model allows users to visualise the likely subsurface sequence to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids, triangulated surfaces and shapefiles over a 5 by 4.15 km area, with the depth range to around 350 m below Ordnance Datum. This model describes an interpretation of the bedrock geology before the UKGEOS Glasgow boreholes have been drilled, and was used to inform the expected sequence on drilling. Further details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/522737",
+        "subjects": "Bed rock | Coal | Coal fields | Faults | Three dimensional models",
+        "group1matches": null,
+        "group2matches": "Geoenergy|Geoenergy",
+        "group3matches": "UK Geoenergy Observatories|UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/53cd1b1d-c9fa-4ecc-a651-878f22a8cfd4",
+        "title": "UK Geoenergy Observatories (UKGEOS) Glasgow superficial deposits pre-drill model",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow superficial deposits GSI3D model outputs, created by the British Geological Survey, provide a semi-regional overview of the depth, thickness and extent of glacial and post-glacial lithostratigraphic units above rockhead. The model allows users to visualise the likely subsurface sequence to be found beneath this part of Glasgow, applicable at a scale of around 1: 25,000 to 1: 10,000. The data is supplied as grids and shapefiles over a 7 by 4.15 km area, with the depth range to around 40 m below Ordnance Datum. This model describes an interpretation of the shallow geology before the UKGEOS Glasgow boreholes have been drilled, and was used to inform the expected sequence on drilling. Further details and model limitations can be found in the accompanying metadata report http:\/\/nora.nerc.ac.uk\/id\/eprint\/524556",
+        "subjects": "Glacial geology | Surficial geology | Three dimensional models",
+        "group1matches": null,
+        "group2matches": "Geoenergy|Geoenergy",
+        "group3matches": "UK Geoenergy Observatories|UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/0bfdeb32-db24-4221-9d02-f074f51edff2",
+        "title": "UKGEOS Glasgow Soil Chemistry 03_18 dataset",
+        "description": "The UK Geoenergy Observatories (UKGEOS) Glasgow facility, baseline soil geochemistry dataset released from the BGS comprises an excel file with two spreadsheets. The first spreadsheet contains information on the chemical composition of 90 topsoil (0 - 20 cm) samples collected from seven initially proposed borehole sites for the UKGEOS Glasgow facility, and from two control sites, in February-March 2018 (03-18). Ten samples were collected from each site prior to installation of the UKGEOS Glasgow facility, and underwent laboratory analysis. Chemical data for pH and the total concentrations of 54 inorganic and 75 organic substances in the soil samples are presented. In addition, the dataset contains locational and descriptive information about the samples noted during sampling. The analyte name, element chemical symbols, analytical method, units of measurement and limits of quantification are recorded in header rows at the top of the spreadsheet. The dataset includes qualifiers, highlighting any quality control issues reported with the data. The data qualifiers are explained in the second spreadsheet released with the data. Further details about the dataset can be found in the accompanying report http:\/\/nora.nerc.ac.uk\/id\/eprint\/527798\/.",
+        "subjects": "Environmental baseline monitoring | soil quality | topsoil geochemistry | topsoil chemical analysis | inorganic substances | persistent organic pollutants | potentially harmful elements",
+        "group1matches": null,
+        "group2matches": "Geoenergy|geochemistry|geochemistry",
+        "group3matches": "UKGEOS|UK Geoenergy Observatories|UKGEOS|UKGEOS|UKGEOS"
+    },
+    {
+        "doi": "10.5285\/dc0eb567-6ce5-46e2-9d52-a9b793bb7daf",
+        "title": "UKGEOS Glasgow - GGC01 Initial Borehole Information Pack",
+        "description": "The borehole information pack from borehole GGC01, site 10 of the UKGEOS (UK Geoenergy Observatories) Glasgow facility. This pack contains composite and digital wireline logs; drillers summary logs and prognosis; sample recovery information spreadsheets; and daily driller's borehole records.",
+        "subjects": "Boreholes | Sampling | Wire line logs | Drilling",
+        "group1matches": null,
+        "group2matches": "Geoenergy",
+        "group3matches": "UKGEOS|UKGEOS|UK Geoenergy Observatories"
     }
 ]
