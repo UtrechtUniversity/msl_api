@@ -7,10 +7,11 @@ use App\Models\SourceDataset;
 interface MapperInterface
 {
     /**
-     * Maps metadata available in sourceDataset to BaseDataset class
+     * Maps metadata available to BaseDataset class
      * 
-     * @param SourceDataset $sourceDataset
+     * @param array $metadata
+     * @param DataPublication $dataPublication
      * @return DataPublication
      */
-    public function map(SourceDataset $sourceDataset): DataPublication;
+    public function map(array $metadata, DataPublication $dataPublication): DataPublication;
 }

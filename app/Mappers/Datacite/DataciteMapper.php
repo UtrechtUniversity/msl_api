@@ -8,10 +8,10 @@ use App\Models\SourceDataset;
 class DataciteMapper implements MapperInterface
 {
 
-    public function map(SourceDataset $sourceDataset): DataPublication
+    public function map(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $mapper = new Datacite4Mapper();
 
-        return $mapper->map($sourceDataset);        
+        return $mapper->map($metadata, $dataPublication);
     }
 }

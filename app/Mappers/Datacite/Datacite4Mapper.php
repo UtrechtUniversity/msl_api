@@ -14,18 +14,14 @@ use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
-use App\Models\SourceDataset;
 
 class Datacite4Mapper implements MapperInterface
 {
-    public function map(SourceDataset $sourceDataset): DataPublication
+    public function map(array $metadata, DataPublication $dataPublication): DataPublication
     {
         // create empty data publication
         $dataset = new DataPublication;
-
-        // read json text
-        $metadata = json_decode($sourceDataset->source_dataset, true);
-
+        
         // map all fields
         // start with the identifier to enable usage in logging/exceptions
         $dataset = $this->mapIdentifier($metadata, $dataset);
