@@ -1,6 +1,7 @@
 <?php
 namespace App\Mappers;
 
+use App\Exceptions\MappingException;
 use App\Mappers\Datacite\DataciteMapper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
@@ -27,9 +28,12 @@ class MappingService
 
         // run additional mappers based on options
 
-        // validate datapublication
+        // validate data publication
         $validator = Validator::make((array)$dataPublication, $dataPublication::$importingRules);
 
+        if($validator->fails()) {
+            throw new MappingException('Datapublication could not be validated');
+        }
         
         return $dataPublication;
     }
