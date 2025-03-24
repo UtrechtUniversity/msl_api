@@ -185,6 +185,9 @@ class ToolsController extends Controller
         if($request->hasFile('analogue-file')) {
             $converter = new AnalogueModellingConverter();
             
+            // dd("exit");
+            // dd($converter->ExcelToJson($request->file('analogue-file')));
+
             return response()->streamDownload(function () use($converter, $request) {
                 echo $converter->ExcelToJson($request->file('analogue-file'));
             }, 'analogue.json');
