@@ -264,6 +264,8 @@ class ToolsController extends Controller
         if($request->hasFile('geochemistry-file')) {
             $converter = new GeochemistryConverter();
             
+            // dd($converter->ExcelToJson($request->file('geochemistry-file')));
+
             return response()->streamDownload(function () use($converter, $request) {
                 echo $converter->ExcelToJson($request->file('geochemistry-file'));
             }, 'geochemistry.json');
