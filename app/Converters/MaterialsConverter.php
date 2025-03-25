@@ -36,6 +36,7 @@ class MaterialsConverter
                         
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());                                                                        
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
+                        $node['rowNr'] = $cell->getRow();
                         
                         
                         
@@ -56,9 +57,63 @@ class MaterialsConverter
             }                                                 
         }
         
+
+        $newData = [];
+        foreach ($nestedNodes as $rootNode) {
+            $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'F', 'definition-link', $spreadsheet->getSheetByName('2021 sample material'));
+            $rootNode = $this->definitionForRoot($rootNode, 'F', 'definition-link', $spreadsheet->getSheetByName('2021 sample material'));
+            $newData [] = $rootNode;
+        }
+        $nestedNodes = $newData;
+
         
         return json_encode($nestedNodes, JSON_PRETTY_PRINT);
     }
+
+
+
+    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
+        // check rootnode itself
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+         return $node;
+    }
+
+    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
+        $newSubNode = [];
+        foreach ($node["subTerms"] as $subnode) {
+            //recursive
+            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
+            $newSubNode [] = $subnode;
+        }
+
+        return $newSubNode;
+    }
+
+    //recursive
+    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
+
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+
+        if(sizeof($node['subTerms']) > 0){
+            $newData = [];
+
+            foreach ($node['subTerms'] as $subNode) {
+                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
+                $newData []= $subNode;
+            }
+            $node['subTerms'] = $newData;
+        }
+
+        return $node;
+    }
+
     
     //http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
     private function isGovAuUrl($url)
