@@ -49,6 +49,36 @@ class PaleomagnetismConverter
                 'subTerms' => $this->getBySheet($spreadsheet, 'Inferred behavior', 2)
             ]
         ];
+
+        $newData = [];
+        foreach ($data as $rootNode) {
+            switch ($rootNode["value"]) {
+                case "Apparatus":
+                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'E', 'definition', $spreadsheet->getSheetByName('Apparatus'));
+                    // $rootNode = $this->definitionForRoot($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('Apparatus'));
+                    $newData [] = $rootNode;
+                    break;
+                case "Environment control":
+                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition-link', $spreadsheet->getSheetByName('Environment control'));
+                    // $rootNode = $this->definitionForRoot($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('Ancillary equipment'));
+                    $newData [] = $rootNode;
+                    break;
+                case "Measured property":
+                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition-link', $spreadsheet->getSheetByName('Measured property'));
+                    // $rootNode = $this->definitionForRoot($rootNode, 'E', 'definition-link', $spreadsheet->getSheetByName('Technique'));
+                    $newData [] = $rootNode;
+                    break;
+                case "Inferred behavior":
+                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition-link', $spreadsheet->getSheetByName('Inferred behavior'));
+                    // $rootNode = $this->definitionForRoot($rootNode, 'E', 'definition-link', $spreadsheet->getSheetByName('Analyzed feature'));
+                    $newData [] = $rootNode;
+                    break;
+                default:
+                    break;
+                }        
+
+        }
+        $data = $newData;
         
         return json_encode($data, JSON_PRETTY_PRINT);
     }
@@ -71,7 +101,7 @@ class PaleomagnetismConverter
                     break;
                     
                 case 'Measured property':
-                    $cellIterator = $row->getCellIterator('A', 'B');
+                    $cellIterator = $row->getCellIterator('A', 'C');
                     break;
                     
                 case 'Inferred behavior':
@@ -97,6 +127,7 @@ class PaleomagnetismConverter
                         
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
+                        $node['rowNr'] = $cell->getRow();
                         
                         
                         $nodes[] = $node;
@@ -119,6 +150,51 @@ class PaleomagnetismConverter
         return $nestedNodes;
     }
     
+
+
+    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
+        // check rootnode itself
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+         return $node;
+    }
+
+    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
+        $newSubNode = [];
+        foreach ($node["subTerms"] as $subnode) {
+            //recursive
+            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
+            $newSubNode [] = $subnode;
+        }
+
+        return $newSubNode;
+    }
+
+    //recursive
+    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
+
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+
+        if(sizeof($node['subTerms']) > 0){
+            $newData = [];
+
+            foreach ($node['subTerms'] as $subNode) {
+                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
+                $newData []= $subNode;
+            }
+            $node['subTerms'] = $newData;
+        }
+
+        return $node;
+    }
+
+
     
     private function isGovAuUrl($url)
     {
