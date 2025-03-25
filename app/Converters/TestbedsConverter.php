@@ -50,8 +50,70 @@ class TestbedsConverter
             ]
         ];
         
+
+
+        $newData = [];
+        foreach ($data as $rootNode) {
+            switch ($rootNode["value"]) {
+                case "Equipment":
+                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('equipment'));
+                    // $rootNode = $this->definitionForRoot($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('Apparatus'));
+                    $data[array_search($rootNode, $data)] = $rootNode;
+                    break;
+                default:
+                    break;
+                }        
+
+        }
+        // $data = $newData;
+
         return json_encode($data, JSON_PRETTY_PRINT);
     }
+
+
+    
+    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
+        // check rootnode itself
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+         return $node;
+    }
+
+    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
+        $newSubNode = [];
+        foreach ($node["subTerms"] as $subnode) {
+            //recursive
+            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
+            $newSubNode [] = $subnode;
+        }
+
+        return $newSubNode;
+    }
+
+    //recursive
+    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
+
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if($cellValue != ''){
+            $node[$entryName] = $cellValue;
+        }
+
+        if(sizeof($node['subTerms']) > 0){
+            $newData = [];
+
+            foreach ($node['subTerms'] as $subNode) {
+                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
+                $newData []= $subNode;
+            }
+            $node['subTerms'] = $newData;
+        }
+
+        return $node;
+    }
+
     
     private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1) {
         $worksheet = $spreadsheet->getSheetByName($sheetName);
@@ -96,6 +158,7 @@ class TestbedsConverter
                         
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
+                        $node['rowNr'] = $cell->getRow();
                         
                         
                         $nodes[] = $node;
