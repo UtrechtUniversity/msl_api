@@ -207,6 +207,8 @@ class ToolsController extends Controller
         if($request->hasFile('geological-age-file')) {
             $converter = new GeologicalAgeConverter();
             
+            // dd($converter->ExcelToJson($request->file('geological-age-file')));
+
             return response()->streamDownload(function () use($converter, $request) {
                 echo $converter->ExcelToJson($request->file('geological-age-file'));
             }, 'geological-age.json');
