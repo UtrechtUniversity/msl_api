@@ -3,6 +3,8 @@ namespace App\Converters;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+require 'fullExtractor.php';
+
 
 class TestbedsConverter
 {
@@ -19,7 +21,9 @@ class TestbedsConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'facility name', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'facility name', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Facility types',
@@ -28,7 +32,9 @@ class TestbedsConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'facility type', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'facility type', 2),
+                            "defininition-link" => '',
+            "defininition" => ''
             ],
             [
                 'value' => 'Equipment',
@@ -37,7 +43,9 @@ class TestbedsConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'equipment', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'equipment', 2),
+                            "defininition-link" => '',
+            "defininition" => ''
             ],
             [
                 'value' => 'Models',
@@ -46,17 +54,18 @@ class TestbedsConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'models', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'models', 2),
+                            "defininition-link" => '',
+            "defininition" => ''
             ]
         ];
         
 
 
-        $newData = [];
         foreach ($data as $rootNode) {
             switch ($rootNode["value"]) {
                 case "Equipment":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('equipment'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('equipment'));
                     // $rootNode = $this->definitionForRoot($rootNode, 'C', 'definition-link', $spreadsheet->getSheetByName('Apparatus'));
                     $data[array_search($rootNode, $data)] = $rootNode;
                     break;
@@ -71,50 +80,10 @@ class TestbedsConverter
     }
 
 
-    
-    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
-        // check rootnode itself
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-         return $node;
-    }
-
-    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
-        $newSubNode = [];
-        foreach ($node["subTerms"] as $subnode) {
-            //recursive
-            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
-            $newSubNode [] = $subnode;
-        }
-
-        return $newSubNode;
-    }
-
-    //recursive
-    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
-
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-
-        if(sizeof($node['subTerms']) > 0){
-            $newData = [];
-
-            foreach ($node['subTerms'] as $subNode) {
-                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
-                $newData []= $subNode;
-            }
-            $node['subTerms'] = $newData;
-        }
-
-        return $node;
-    }
 
     
+
+
     private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1) {
         $worksheet = $spreadsheet->getSheetByName($sheetName);
         
@@ -267,7 +236,9 @@ class TestbedsConverter
             'vocabUri' => '',
             'uri' => '',
             'synonyms' => [],
-            'subTerms' => []
+            'subTerms' => [],
+            "defininition-link" => '',
+            "defininition" => ''
         ];
         
         return $node;

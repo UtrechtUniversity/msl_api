@@ -3,6 +3,8 @@ namespace App\Converters;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+require 'fullExtractor.php';
+
 
 class GeologicalAgeConverter
 {
@@ -59,23 +61,23 @@ class GeologicalAgeConverter
         foreach ($nestedNodes as $rootNode) {
             switch ($rootNode["value"]) {
                 case "present-day":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = $this->definitionForRoot($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
                     $newData [] = $rootNode;
                     break;
                 case "Phanerozoic":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = $this->definitionForRoot($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
                     $newData [] = $rootNode;
                     break;
                 case "Precambrian":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = $this->definitionForRoot($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
                     $newData [] = $rootNode;
                     break;
                 case "FormationOfEarth":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = $this->definitionForRoot($rootNode, 'G', 'definition-link', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
                     $newData [] = $rootNode;
                     break;
                 default:
@@ -89,51 +91,6 @@ class GeologicalAgeConverter
         // return $nestedNodes;
         return json_encode($nestedNodes, JSON_PRETTY_PRINT);
     }
-
-
- 
-    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
-        // check rootnode itself
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-         return $node;
-    }
-
-    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
-        $newSubNode = [];
-        foreach ($node["subTerms"] as $subnode) {
-            //recursive
-            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
-            $newSubNode [] = $subnode;
-        }
-
-        return $newSubNode;
-    }
-
-    //recursive
-    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
-
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-
-        if(sizeof($node['subTerms']) > 0){
-            $newData = [];
-
-            foreach ($node['subTerms'] as $subNode) {
-                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
-                $newData []= $subNode;
-            }
-            $node['subTerms'] = $newData;
-        }
-
-        return $node;
-    }
-
 
     
     //http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
@@ -222,7 +179,9 @@ class GeologicalAgeConverter
             'vocabUri' => '',
             'uri' => '',
             'synonyms' => [],
-            'subTerms' => []
+            'subTerms' => [],
+            "defininition-link" => '',
+            "defininition" => ''
         ];
         
         return $node;

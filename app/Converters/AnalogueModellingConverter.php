@@ -3,6 +3,8 @@ namespace App\Converters;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+require 'fullExtractor.php';
+
 
 class AnalogueModellingConverter
 {
@@ -20,7 +22,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'modelled structure', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'modelled structure', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Modeled geomorphological feature',
@@ -29,7 +33,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'modelled geomorphological featu', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'modelled geomorphological featu', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Apparatus',
@@ -38,7 +44,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'apparatus', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'apparatus', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Ancillary equipment',
@@ -47,7 +55,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'ancillary equipment', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'ancillary equipment', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Measured property',
@@ -56,7 +66,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'measured property', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'measured property', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ],
             [
                 'value' => 'Software',
@@ -65,7 +77,9 @@ class AnalogueModellingConverter
                 'vocabUri' => '',
                 'uri' => '',
                 'synonyms' => [],
-                'subTerms' => $this->getBySheet($spreadsheet, 'software', 2)
+                'subTerms' => $this->getBySheet($spreadsheet, 'software', 2),
+                "defininition-link" => '',
+                "defininition" => ''
             ]
         ];
         
@@ -74,33 +88,33 @@ class AnalogueModellingConverter
         foreach ($data as $rootNode) {
             switch ($rootNode["value"]) {
                 case "Modeled structure":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition', $spreadsheet->getSheetByName('modelled structure'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('modelled structure'));
                     $newData [] = $rootNode;
                     break;
 
                 case "Modeled geomorphological feature":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition-link', $spreadsheet->getSheetByName('modelled geomorphological featu'));
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'E', 'definition', $spreadsheet->getSheetByName('modelled geomorphological featu'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('modelled geomorphological featu'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('modelled geomorphological featu'));
                     $newData [] = $rootNode;
                     break;
 
                 case "Apparatus":
-                    $rootNode["subTerms"] =  $this->checkRootNode($rootNode, 'F', 'definition', $spreadsheet->getSheetByName('apparatus'));
+                    $rootNode["subTerms"] =  checkRootNode($rootNode, 'F', $spreadsheet->getSheetByName('apparatus'));
                     $newData [] = $rootNode;
                     break;
 
                 case "Ancillary equipment":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition', $spreadsheet->getSheetByName('ancillary equipment'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('ancillary equipment'));
                     $newData [] = $rootNode;
                     break;
 
                 case "Measured property":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition', $spreadsheet->getSheetByName('measured property'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('measured property'));
                     $newData [] = $rootNode;
                     break;
 
                 case "Software":
-                    $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'D', 'definition', $spreadsheet->getSheetByName('software'));
+                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('software'));
                     $newData [] = $rootNode;
                     break;
 
@@ -115,38 +129,6 @@ class AnalogueModellingConverter
         return json_encode($data, JSON_PRETTY_PRINT);
     }
 
-    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
-        $newSubNode = [];
-        foreach ($node["subTerms"] as $subnode) {
-            //recursive
-            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
-            $newSubNode [] = $subnode;
-        }
-        return $newSubNode;
-    }
-
-    //recursive
-    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
-
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-
-        if(sizeof($node['subTerms']) > 0){
-            $newData = [];
-
-            foreach ($node['subTerms'] as $subNode) {
-                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
-                $newData []= $subNode;
-            }
-            $node['subTerms'] = $newData;
-        }
-
-        return $node;
-    }
-        
     
     private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1) {
         $worksheet = $spreadsheet->getSheetByName($sheetName);
@@ -314,7 +296,9 @@ class AnalogueModellingConverter
             'uri' => '',
             'link' => '',
             'synonyms' => [],
-            'subTerms' => []
+            'subTerms' => [],
+            "defininition-link" => '',
+            "defininition" => ''
         ];
         
         return $node;

@@ -1,0 +1,814 @@
+[
+    {
+        "value": "subsurface storage",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "subsurface energy storage",
+            "subsurface disposal",
+            "geological storage",
+            "underground energy storage",
+            "underground storage system"
+        ],
+        "subTerms": [
+            {
+                "value": "storage in depleted oil reservoir",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "storage in depleted hydrocarbon reservoir"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 4
+            },
+            {
+                "value": "gas storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "subsurface gas storage",
+                    "underground gas storage",
+                    "underground storage of gas",
+                    "subsurface storage of gas"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 5
+            },
+            {
+                "value": "CO2 storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "CO2 storage in subsurface",
+                    "carbon dioxide storage in the subsurface",
+                    "subsurface CO2 storage",
+                    "subsurface carbon dioxide storage",
+                    "subsurface hydrocarbon storage",
+                    "geological storage of CO2"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 6
+            },
+            {
+                "value": "oil storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "subsurface oil storage",
+                    "subsurface hydrocarbon storage"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 7
+            },
+            {
+                "value": "nitrogen storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "N2 storage in the subsurface",
+                    "subsurface nitrogen storage",
+                    "subsurface N2 storage",
+                    "underground nitrogen storage",
+                    "underground N2 storage"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 8
+            },
+            {
+                "value": "hydrogen storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "hydrogen storage in subsurface",
+                    "underground hydrogen storage",
+                    "(UHS)"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 9
+            },
+            {
+                "value": "compressed air storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "(CAES)",
+                    "compressed air storage in subsurface",
+                    "subsurface storage of compressed air",
+                    "underground storage of compressed air"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+                "defininition": "",
+                "rowNr": 10
+            },
+            {
+                "value": "waste storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "underground waste storage",
+                    "subsurface waste storage",
+                    "underground storage of waste",
+                    "subsurface storage of waste"
+                ],
+                "subTerms": [
+                    {
+                        "value": "wastewater storage in the subsurface",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "wastewater disposal in the subsurface",
+                            "subsurface wastewater disposal",
+                            "underground wastewater disposal"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
+                        "defininition": "",
+                        "rowNr": 12
+                    },
+                    {
+                        "value": "radioactive waste disposal in the subsurface",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "radioactive waste storage in the subsurface",
+                            "rad waste disposal in the subsurface",
+                            "nuclear waste storage in the subsurface",
+                            "radioactive waste storage in the subsurface",
+                            "rad waste disposal in the subsurface",
+                            "nuclear waste storage in the subsurface"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
+                        "defininition": "",
+                        "rowNr": 13
+                    }
+                ],
+                "defininition-link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
+                "defininition": "",
+                "rowNr": 11
+            },
+            {
+                "value": "thermal energy storage in the subsurface",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "underground thermal energy storage",
+                    "(UTES)",
+                    "subsurface thermal energy storage"
+                ],
+                "subTerms": [
+                    {
+                        "value": "mine thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(MTES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 15
+                    },
+                    {
+                        "value": "aquifer thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(ATES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 16
+                    },
+                    {
+                        "value": "high-temperature aquifer thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(HT-ATES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 17
+                    },
+                    {
+                        "value": "medium-temperature aquifer thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(MT-ATES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 18
+                    },
+                    {
+                        "value": "low-temperature aquifer thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(LT-ATES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 19
+                    },
+                    {
+                        "value": "borehole thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(BTES)",
+                            "ground-source heat pump",
+                            "geothermal heat pump",
+                            "geothermal heat pump system",
+                            "geothermal heat exchanger",
+                            "geothermal probe"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 20
+                    },
+                    {
+                        "value": "cavern thermal energy storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(CTES)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                        "defininition": "",
+                        "rowNr": 21
+                    }
+                ],
+                "defininition-link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
+                "defininition": "",
+                "rowNr": 14
+            }
+        ],
+        "defininition-link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
+        "defininition": "",
+        "rowNr": 3
+    },
+    {
+        "value": "subsurface energy production",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "subsurface energy provision",
+            "subsurface energy extraction",
+            "fluid production from the subsurface",
+            "subsurface fluid production",
+            "energy production from the subsurface",
+            "subsurface fluid production"
+        ],
+        "subTerms": [
+            {
+                "value": "geothermal energy extraction",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "geothermal energy field",
+                    "geothermal",
+                    "Krafla"
+                ],
+                "subTerms": [
+                    {
+                        "value": "advanced geothermal system",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(AGS)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S096014812200012X",
+                        "defininition": "",
+                        "rowNr": 24
+                    },
+                    {
+                        "value": "enhanced geothermal system",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(EGS)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 25
+                    },
+                    {
+                        "value": "geothermal doublet",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "hydrothermal doublet"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 26
+                    },
+                    {
+                        "value": "low enthalpy geothermal energy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "low enthalpy system",
+                            "direct use geothermal system",
+                            "DUGS"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 27
+                    },
+                    {
+                        "value": "high enthalpy geothermal energy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "high enthalpy system",
+                            "high enthalphy reservoir"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 28
+                    },
+                    {
+                        "value": "deep geothermal energy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 29
+                    },
+                    {
+                        "value": "shallow geothermal energy",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/geoera.eu\/projects\/muse3\/fact-sheets-of-shallow-geothermal-energy-concepts\/",
+                        "defininition": "",
+                        "rowNr": 30
+                    },
+                    {
+                        "value": "geothermal reservoir",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 31
+                    },
+                    {
+                        "value": "hydrothermal reservoir",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/voc.europe-geology.eu\/muse\/category\/8688",
+                        "defininition": "",
+                        "rowNr": 32
+                    },
+                    {
+                        "value": "geothermal reservoir temperature",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 33
+                    },
+                    {
+                        "value": "closed loop system",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "closed-loop system",
+                            "borehole heat exchanger",
+                            "(BHE)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/voc.europe-geology.eu\/?uri=https:\/\/voc.europe-geology.eu\/muse\/BoreholePurposeValue\/1327&lang=en",
+                        "defininition": "",
+                        "rowNr": 34
+                    },
+                    {
+                        "value": "open loop system",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "open-loop system"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 35
+                    },
+                    {
+                        "value": "mine geothermal energy provision",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "abandoned mine",
+                            "mine tailings"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 36
+                    }
+                ],
+                "defininition-link": "https:\/\/www.energy.gov\/eere\/geothermal\/geothermal-glossary",
+                "defininition": "",
+                "rowNr": 23
+            },
+            {
+                "value": "hydrogen energy production",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "native hydrogen",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 38
+                    },
+                    {
+                        "value": "steam methane reforming",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "grey hydrogen production"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
+                        "defininition": "",
+                        "rowNr": 39
+                    },
+                    {
+                        "value": "steam methane reforming with carbon capture and storage",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "blue hydrogen production"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
+                        "defininition": "",
+                        "rowNr": 40
+                    },
+                    {
+                        "value": "methane pyrolysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "turquoise hydrogen production"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
+                        "defininition": "",
+                        "rowNr": 41
+                    },
+                    {
+                        "value": "polymer electrolyte membrane electrolysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "green hydrogen production"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
+                        "defininition": "",
+                        "rowNr": 42
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 37
+            },
+            {
+                "value": "hydrocarbon energy production",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "gas field",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "hydrocarbon field",
+                            "gas reservoir",
+                            "hydrocarbon reservoir"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.spe.org\/en\/industry\/terms-used-petroleum-reserves-resource-definitions",
+                        "defininition": "",
+                        "rowNr": 44
+                    },
+                    {
+                        "value": "oil field",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "oil reservoir",
+                            "hydrocarbon field",
+                            "hydrocarbon reservoir"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/www.spe.org\/en\/industry\/terms-used-petroleum-reserves-resource-definitions\/",
+                        "defininition": "",
+                        "rowNr": 45
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 43
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 22
+    },
+    {
+        "value": "ore mine",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "mineral mine",
+            "ore deposit"
+        ],
+        "subTerms": [
+            {
+                "value": "mine tailing",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "mine wastes",
+                    "mine waste",
+                    "mine waste disposal",
+                    "mine disposal"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 47
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 46
+    },
+    {
+        "value": "civil engineered setting",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "civil engineering",
+            "civil engineered"
+        ],
+        "subTerms": [
+            {
+                "value": "underground research facility",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "underground science lab"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 49
+            },
+            {
+                "value": "tunnel",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "highway tunnel",
+                    "road tunnel"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 50
+            },
+            {
+                "value": "dam construction - geological aspects",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 51
+            },
+            {
+                "value": "road construction - geotechnical aspects",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 52
+            },
+            {
+                "value": "building foundation",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 53
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 48
+    },
+    {
+        "value": "induced seismicity",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "induced earthquake",
+            "induced seismic",
+            "Bedrottolab",
+            "Bedrotto lab",
+            "Bedrotto underground",
+            "Bedrottolaboratory",
+            "Bedrotto laboratory"
+        ],
+        "subTerms": [],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 54
+    },
+    {
+        "value": "surface subsidence",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "subsidence"
+        ],
+        "subTerms": [
+            {
+                "value": "sinkhole",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sink hole"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 56
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 55
+    }
+]

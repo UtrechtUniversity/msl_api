@@ -166,6 +166,8 @@ class ToolsController extends Controller
         if($request->hasFile('rockphysics-file')) {
             $converter = new RockPhysicsConverter();            
                         
+            $converter->ExcelToJson($request->file('rockphysics-file'));
+
             return response()->streamDownload(function () use($converter, $request) {
                 echo $converter->ExcelToJson($request->file('rockphysics-file'));
             }, 'rockphysics.json');
@@ -306,6 +308,8 @@ class ToolsController extends Controller
         if($request->hasFile('subsurface-file')) {
             $converter = new SubsurfaceConverter();
             
+            // $converter->ExcelToJson($request->file('subsurface-file'));
+
             return response()->streamDownload(function () use($converter, $request) {
                 echo $converter->ExcelToJson($request->file('subsurface-file'));
             }, 'subsurface.json');

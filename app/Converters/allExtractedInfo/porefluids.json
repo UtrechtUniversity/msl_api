@@ -1,0 +1,284 @@
+[
+    {
+        "value": "vacuum",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 3
+    },
+    {
+        "value": "solid phase",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "ice in pores",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 5
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 4
+    },
+    {
+        "value": "liquid phase",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "water in pores",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "tap water in pores",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 8
+                    },
+                    {
+                        "value": "demineralized water",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "demi water",
+                            "demiwater"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 9
+                    },
+                    {
+                        "value": "de-ionized water",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "deionized water",
+                            "DI water",
+                            "DIwater",
+                            "DI-water"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 10
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 7
+            },
+            {
+                "value": "salt brine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "brine"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 11
+            },
+            {
+                "value": "oil in pores",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "hydrocarbon oil",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 13
+                    },
+                    {
+                        "value": "silicon oil",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 14
+                    },
+                    {
+                        "value": "mineral oil",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 15
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 12
+            },
+            {
+                "value": "decane",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 16
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 6
+    },
+    {
+        "value": "gas phase",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "ambient air",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "room dry",
+                    "roomdry"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 18
+            },
+            {
+                "value": "hydrogen (H2)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 19
+            },
+            {
+                "value": "oxygen (O2)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 20
+            },
+            {
+                "value": "methane (CH4)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 21
+            },
+            {
+                "value": "carbon dioxide (CO2)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 22
+            },
+            {
+                "value": "nitrogen (N2)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 23
+            },
+            {
+                "value": "argon (Ar)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 24
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 17
+    }
+]

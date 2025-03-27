@@ -3,6 +3,7 @@ namespace App\Converters;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+require 'fullExtractor.php';
 
 class PorefluidsConverter
 {
@@ -36,6 +37,7 @@ class PorefluidsConverter
                         
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());                                                                        
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
+                        $node['rowNr'] = $cell->getRow();
                         
                         $nodes[] = $node;
                     }
@@ -143,7 +145,9 @@ class PorefluidsConverter
             'vocabUri' => '',
             'uri' => '',
             'synonyms' => [],
-            'subTerms' => []
+            'subTerms' => [],
+            "defininition-link" => '',
+            "defininition" => ''
         ];
         
         return $node;

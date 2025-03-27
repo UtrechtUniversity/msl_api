@@ -1,0 +1,4741 @@
+[
+    {
+        "value": "analysis",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "commodities analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "ore analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ore assay"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 4
+                    },
+                    {
+                        "value": "coal analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 5
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 3
+            },
+            {
+                "value": "geochronology",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sample age",
+                    "assigned sample age",
+                    "age:assig",
+                    "geological sample age",
+                    "radio-isotopic sample age",
+                    "age:geo",
+                    "age-geo"
+                ],
+                "subTerms": [
+                    {
+                        "value": "argon-argon dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ar40\/ar39 age",
+                            "ar40\/ar39 dating",
+                            "argon argon dating",
+                            "argon-argon age",
+                            "argon-argon",
+                            "argon\/argon",
+                            "argon argon",
+                            "ar\/ar",
+                            "ar40-ar39 age",
+                            "ar40 ar39 age",
+                            "ar40_ar39 age determination",
+                            "ar_ar"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 7
+                    },
+                    {
+                        "value": "carbon-14 dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "carbon-14 age",
+                            "carbon dating",
+                            "carbon age",
+                            "c14 age",
+                            "c-14 age",
+                            "c14 dating",
+                            "c-14 dating",
+                            "carbon 14 age",
+                            "carbon 14 age determination",
+                            "14c"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 8
+                    },
+                    {
+                        "value": "lead-lead dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pb-pb age",
+                            "pb\/pb age",
+                            "lead-lead age",
+                            "pb-pb dating",
+                            "pb-pb"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 9
+                    },
+                    {
+                        "value": "lutetium-hafnium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "lutetium-hafnium age",
+                            "lutetium\/hafnium age",
+                            "lutetium\/hafnium dating",
+                            "lutetium hafnium age",
+                            "lutetium hafnium dating",
+                            "lu\/hf age",
+                            "lu\/hf dating",
+                            "lu-hf age",
+                            "lu-hf dating",
+                            "lu hf age",
+                            "lu hf dating",
+                            "lutetium-hafnium age determination",
+                            "lu-hf"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 10
+                    },
+                    {
+                        "value": "potassium-argon dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "potassium argon age",
+                            "potassium\/argon age",
+                            "potassium\/argon dating",
+                            "potassium-argon dating",
+                            "k-ar age",
+                            "k\/ar age",
+                            "k\/ar dating",
+                            "k-ar dating",
+                            "k-ar age determination",
+                            "k-ar"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 11
+                    },
+                    {
+                        "value": "rubidium-strontium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rubidium-strontium age",
+                            "rb-sr age",
+                            "rb\/sr age",
+                            "rb-sr dating",
+                            "rb\/sr dating",
+                            "rb-sr age determination",
+                            "rb-sr"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 12
+                    },
+                    {
+                        "value": "radium-thorium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "radium-226\/thorium230 age",
+                            "radium\/thorium age",
+                            "radium-thorium age",
+                            "radium\/thorium dating",
+                            "ra\/th dating",
+                            "ra-th dating",
+                            "ra\/th age",
+                            "ra-th age",
+                            "radium-226\/thorium230 dating",
+                            "ra226_th230 age",
+                            "ra226_th230 age determination",
+                            "ra-th"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 13
+                    },
+                    {
+                        "value": "rhenium-osmium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rhenium-osmium age",
+                            "rhenium\/osmium age",
+                            "rhenium\/osmium dating",
+                            "re-os age",
+                            "re\/os age",
+                            "re\/os dating",
+                            "re-187\/os-187 age",
+                            "re-187\/os-187 dating",
+                            "re-os dating",
+                            "rhenium-osmium dating",
+                            "rhenium-osmium age determination",
+                            "re-os"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 14
+                    },
+                    {
+                        "value": "samarium-neodymium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "samarium-neodymium sge",
+                            "sm-nd dating",
+                            "sm-nd age",
+                            "sm nd dating",
+                            "sm-147\/nd 143 age",
+                            "sm-147\/nd 143 dating",
+                            "sm nd age",
+                            "sm\/nd dating",
+                            "sm\/nd age",
+                            "samarium-neodymium dating",
+                            "samarium-neodymium age determination",
+                            "sm-nd"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 15
+                    },
+                    {
+                        "value": "thorium-lead dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thorium-lead age",
+                            "thorium lead age",
+                            "thorium lead dating",
+                            "thorium\/lead age",
+                            "thorium\/lead dating",
+                            "th\/pb age",
+                            "th\/pb dating",
+                            "th-pb age",
+                            "th-pb dating",
+                            "thorium-lead age determination",
+                            "th_pb"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 16
+                    },
+                    {
+                        "value": "uranium dating",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "uranium age",
+                            "uranium age determination"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "uranium-paladium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-235\/paladium-231 dating",
+                                    "u-235\/pa-231 age",
+                                    "u-235\/pa-231 dating",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium age",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium dating",
+                                    "u\/pa age",
+                                    "u-pa age",
+                                    "u\/pa dating",
+                                    "u-pa dating",
+                                    "u235_pa231 age determination",
+                                    "u_pa"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 18
+                            },
+                            {
+                                "value": "uranium-lead dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium\/lead age",
+                                    "uranium-lead age",
+                                    "u\/pb dating",
+                                    "u-pb dating",
+                                    "u\/pb age",
+                                    "u-pb age",
+                                    "uranium\/lead dating",
+                                    "uranium lead age determination",
+                                    "u_pb",
+                                    "uranium-lead age determination",
+                                    "u-pb"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 19
+                            },
+                            {
+                                "value": "uranium-thorium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-238\/thorium-230 dating",
+                                    "u-238\/tho-230 age",
+                                    "u-238\/tho-230 dating",
+                                    "uranium-thorium dating",
+                                    "uranium thorium dating",
+                                    "uranium\/thorium dating",
+                                    "uranium thorium age",
+                                    "uranium\/thorium age",
+                                    "uranium-thorium age",
+                                    "u-th age",
+                                    "u-th dating",
+                                    "u238_th230 age determination",
+                                    "u_th"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 20
+                            },
+                            {
+                                "value": "uranium-thorium-helium dating",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "u-th-he age",
+                                    "u-th-he dating",
+                                    "u-th-he age determination",
+                                    "u_th_he"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 21
+                            }
+                        ],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 17
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 6
+            },
+            {
+                "value": "gas geochemistry",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 22
+            },
+            {
+                "value": "hydrogeochemistry",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "water geochemistry",
+                    "hydro-geochemistry"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 23
+            },
+            {
+                "value": "isotopic analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "isotopic analyses"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta 11B",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 25
+                    },
+                    {
+                        "value": "delta 13C",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 26
+                    },
+                    {
+                        "value": "delta 18O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 27
+                    },
+                    {
+                        "value": "delta 34S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 28
+                    },
+                    {
+                        "value": "hydrogen isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 29
+                    },
+                    {
+                        "value": "mercury isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 30
+                    },
+                    {
+                        "value": "neodymium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 31
+                    },
+                    {
+                        "value": "nitrogen isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 32
+                    },
+                    {
+                        "value": "lead isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 33
+                    },
+                    {
+                        "value": "rubidium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 34
+                    },
+                    {
+                        "value": "strontium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 35
+                    },
+                    {
+                        "value": "samarium isotopic analysis",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 36
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 24
+            },
+            {
+                "value": "mineralogical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "mineralogical analyses",
+                    "mineralogy analyses",
+                    "mineralogy analysis"
+                ],
+                "subTerms": [
+                    {
+                        "value": "qualitative mineral identification",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 38
+                    },
+                    {
+                        "value": "quantitative mineral identification",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "modal analysis"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 39
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 37
+            },
+            {
+                "value": "microchemical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "major elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "major oxides"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 41
+                    },
+                    {
+                        "value": "trace elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 42
+                    },
+                    {
+                        "value": "2D microchemical map",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "chemical element maps",
+                            "chemical element map",
+                            "chemical map",
+                            "chemistry map",
+                            "microchemistry map"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 43
+                    },
+                    {
+                        "value": "3D microchemical map",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 44
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 40
+            },
+            {
+                "value": "sample preparation for geochemical analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "sample splitting",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 46
+                    },
+                    {
+                        "value": "sample drying",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 47
+                    },
+                    {
+                        "value": "sample crushing",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 48
+                    },
+                    {
+                        "value": "sample pulverization",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 49
+                    },
+                    {
+                        "value": "mineral separation",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 50
+                    },
+                    {
+                        "value": "partial sample digestion",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 51
+                    },
+                    {
+                        "value": "total sample digestion",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 52
+                    },
+                    {
+                        "value": "selective sample extraction",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 53
+                    },
+                    {
+                        "value": "sample pressed pellet",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 54
+                    },
+                    {
+                        "value": "fusion sample prepration",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "molten bead"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 55
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 45
+            },
+            {
+                "value": "whole rock analysis",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "bulk analysis"
+                ],
+                "subTerms": [
+                    {
+                        "value": "major elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "major oxides"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 57
+                    },
+                    {
+                        "value": "loss on ignition",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 58
+                    },
+                    {
+                        "value": "trace elements",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 59
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 56
+            }
+        ],
+        "defininition-link": "",
+        "defininition": "",
+        "rowNr": 2
+    },
+    {
+        "value": "equipment",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "apparatus",
+            "equipment"
+        ],
+        "subTerms": [
+            {
+                "value": "atomic absorption spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "atomic absorption spectrometry",
+                    "(aas)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "graphite furnace-atomic absorption spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "gf-aas",
+                            "(gf-aas)",
+                            "(gfaas)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_absorption_spectrometry-graphite_furnace_atomic_absorption_spectrometry",
+                        "defininition": "",
+                        "rowNr": 62
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_absorption_spectrometry",
+                "defininition": "",
+                "rowNr": 61
+            },
+            {
+                "value": "atomic emission spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "atomic emission spectrometry",
+                    "(aes)",
+                    "emission spectrometry",
+                    "optical spectroscopy",
+                    "ops",
+                    "optical emission spectrometry",
+                    "(oes)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "inductively coupled plasma-atomic emission spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "icp-aes",
+                            "inductively coupled plasma source emission spectrometry",
+                            "(icp-aes)",
+                            "(icpaes)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_emission_spectrometry-inductively_coupled_plasmaatomic_emission_spectroscopy",
+                        "defininition": "",
+                        "rowNr": 64
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_emission_spectrometry",
+                "defininition": "",
+                "rowNr": 63
+            },
+            {
+                "value": "alpha spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-alpha_counting",
+                "defininition": "",
+                "rowNr": 65
+            },
+            {
+                "value": "elemental analyzer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-elemental_analysis",
+                "defininition": "",
+                "rowNr": 66
+            },
+            {
+                "value": "electron probe micro-analyzer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "electron microprobe",
+                    "(epma)",
+                    "microprobe",
+                    "electron probe micro analyzer"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-electron_probe_micro-analyzer_epma",
+                "defininition": "",
+                "rowNr": 67
+            },
+            {
+                "value": "gamma-ray spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-gamma_counting",
+                "defininition": "",
+                "rowNr": 68
+            },
+            {
+                "value": "ion chromatograph",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "ion-exchange chromatograph"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-ion_chromatography",
+                "defininition": "",
+                "rowNr": 69
+            },
+            {
+                "value": "mass spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "accelerator mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ams",
+                            "(ams)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-accelerator_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 71
+                    },
+                    {
+                        "value": "isotope ratio mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "irms",
+                            "(irms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-elemental_analyzer_continuous_flow_isotope_ratio_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 72
+                    },
+                    {
+                        "value": "gas chromatograph-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "gc-ms",
+                            "(gc-ms)",
+                            "(gcms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-gas_chromatography-mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 73
+                    },
+                    {
+                        "value": "inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "icp-ms",
+                            "(icp-ms)",
+                            "(icpms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 74
+                    },
+                    {
+                        "value": "single collector-inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sc-icp-ms",
+                            "hr-icp-ms",
+                            "high-resolution-inductively coupled plasma mass"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-high-resolution_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 75
+                    },
+                    {
+                        "value": "multicollector-inductively coupled plasma-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "mc-icp-ms",
+                            "(mc-icp-ms)",
+                            "(mc-icpms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-multicollector_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 76
+                    },
+                    {
+                        "value": "laser ablation-inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-icp-ms",
+                            "inductively coupled plasma mass spectrometry laser ablation microprobe",
+                            "icp:lam",
+                            "laser ablation inductively coupled plasma mass spectrometry",
+                            "la-icpms",
+                            "(la-icpms)",
+                            "(la-icp-ms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 77
+                    },
+                    {
+                        "value": "laser ablation-single collector-inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-sc-icp-ms",
+                            "la-hr-icp-ms",
+                            "(la-hr-icp-ms)",
+                            "(lahr-icpms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_high-resolution_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 78
+                    },
+                    {
+                        "value": "laser ablation-multicollector inductively coupled plasma-mass spectrometry",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "la-mc-icp-ms",
+                            "(la-mc-icp-ms)",
+                            "(lamc-icp-ms)",
+                            "(lamc-icpms)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_multicollector_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 79
+                    },
+                    {
+                        "value": "secondary ionization mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sims",
+                            "nanosims"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-secondary_ionization_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 80
+                    },
+                    {
+                        "value": "thermal ionization-mass spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "tims"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-thermal_ionization_mass_spectrometry",
+                        "defininition": "",
+                        "rowNr": 81
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry",
+                "defininition": "",
+                "rowNr": 70
+            },
+            {
+                "value": "instrumental neutron activation analysis system",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "inaa"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-neutron_activation_analysis",
+                "defininition": "",
+                "rowNr": 82
+            },
+            {
+                "value": "spectrophotometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sp-ph"
+                ],
+                "subTerms": [
+                    {
+                        "value": "UV-Vis spectrophotometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 84
+                    },
+                    {
+                        "value": "Fourier-Transform\u00a0Infrared spectrophotometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(ftir)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 85
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-spectrophotometry",
+                "defininition": "",
+                "rowNr": 83
+            },
+            {
+                "value": "titrator",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-titration",
+                "defininition": "",
+                "rowNr": 86
+            },
+            {
+                "value": "x-ray diffractometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 87
+            },
+            {
+                "value": "x-ray spectrometer",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "x-ray spectrometer",
+                    "x-ray spectroscopy"
+                ],
+                "subTerms": [
+                    {
+                        "value": "x-ray absorption near-edge structure spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "xanes"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-x-ray_absorption_near-edge_structure_spectroscopy",
+                        "defininition": "",
+                        "rowNr": 89
+                    },
+                    {
+                        "value": "energy-dispersive x-ray spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "eds",
+                            "edx",
+                            "(edx)",
+                            "(edx)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-energy-dispersive_x-ray_spectroscopy",
+                        "defininition": "",
+                        "rowNr": 90
+                    },
+                    {
+                        "value": "x-ray fluorescence spectrometer",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "xrf",
+                            "(XRF)",
+                            "X-ray fluorescence",
+                            "X-ray fluoresence"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-x-ray_fluorescence",
+                        "defininition": "",
+                        "rowNr": 91
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry",
+                "defininition": "",
+                "rowNr": 88
+            }
+        ],
+        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique",
+        "defininition": "",
+        "rowNr": 60
+    },
+    {
+        "value": "measured property",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "acetate",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "acetate"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-acetate",
+                "defininition": "",
+                "rowNr": 93
+            },
+            {
+                "value": "age of sample",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sample age",
+                    "assigned sample age",
+                    "age:assig",
+                    "geological sample age",
+                    "radio-isotopic sample age",
+                    "age:geo",
+                    "age-geo"
+                ],
+                "subTerms": [
+                    {
+                        "value": "argon-argon age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ar40\/ar39 age",
+                            "ar40\/ar39 dating",
+                            "argon argon dating",
+                            "argon-argon age",
+                            "argon-argon",
+                            "argon\/argon",
+                            "argon argon",
+                            "ar\/ar",
+                            "ar40-ar39 age",
+                            "ar40 ar39 age",
+                            "ar40_ar39 age determination",
+                            "ar_ar"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 95
+                    },
+                    {
+                        "value": "carbon-14 age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "carbon-14 age",
+                            "carbon dating",
+                            "carbon age",
+                            "c14 age",
+                            "c-14 age",
+                            "c14 dating",
+                            "c-14 dating",
+                            "carbon 14 age",
+                            "carbon 14 age determination",
+                            "14c"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 96
+                    },
+                    {
+                        "value": "lead-lead age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pb-pb age",
+                            "pb\/pb age",
+                            "lead-lead age",
+                            "pb-pb dating",
+                            "pb-pb"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 97
+                    },
+                    {
+                        "value": "lutetium-hafnium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "lutetium-hafnium age",
+                            "lutetium\/hafnium age",
+                            "lutetium\/hafnium dating",
+                            "lutetium hafnium age",
+                            "lutetium hafnium dating",
+                            "lu\/hf age",
+                            "lu\/hf dating",
+                            "lu-hf age",
+                            "lu-hf dating",
+                            "lu hf age",
+                            "lu hf dating",
+                            "lutetium-hafnium age determination",
+                            "lu-hf"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 98
+                    },
+                    {
+                        "value": "potassium-argon age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "potassium argon age",
+                            "potassium\/argon age",
+                            "potassium\/argon dating",
+                            "potassium-argon dating",
+                            "k-ar age",
+                            "k\/ar age",
+                            "k\/ar dating",
+                            "k-ar dating",
+                            "k-ar age determination",
+                            "k-ar"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 99
+                    },
+                    {
+                        "value": "rubidium-strontium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rubidium-strontium age",
+                            "rb-sr age",
+                            "rb\/sr age",
+                            "rb-sr dating",
+                            "rb\/sr dating",
+                            "rb-sr age determination",
+                            "rb-sr"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 100
+                    },
+                    {
+                        "value": "radium-thorium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "radium-226\/thorium230 age",
+                            "radium\/thorium age",
+                            "radium-thorium age",
+                            "radium\/thorium dating",
+                            "ra\/th dating",
+                            "ra-th dating",
+                            "ra\/th age",
+                            "ra-th age",
+                            "radium-226\/thorium230 dating",
+                            "ra226_th230 age",
+                            "ra226_th230 age determination",
+                            "ra-th"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 101
+                    },
+                    {
+                        "value": "rhenium-osmium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "rhenium-osmium age",
+                            "rhenium\/osmium age",
+                            "rhenium\/osmium dating",
+                            "re-os age",
+                            "re\/os age",
+                            "re\/os dating",
+                            "re-187\/os-187 age",
+                            "re-187\/os-187 dating",
+                            "re-os dating",
+                            "rhenium-osmium dating",
+                            "rhenium-osmium age determination",
+                            "re-os"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 102
+                    },
+                    {
+                        "value": "samarium-neodymium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "samarium-neodymium sge",
+                            "sm-nd dating",
+                            "sm-nd age",
+                            "sm nd dating",
+                            "sm-147\/nd 143 age",
+                            "sm-147\/nd 143 dating",
+                            "sm nd age",
+                            "sm\/nd dating",
+                            "sm\/nd age",
+                            "samarium-neodymium dating",
+                            "samarium-neodymium age determination",
+                            "sm-nd"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 103
+                    },
+                    {
+                        "value": "thorium-lead age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "thorium-lead age",
+                            "thorium lead age",
+                            "thorium lead dating",
+                            "thorium\/lead age",
+                            "thorium\/lead dating",
+                            "th\/pb age",
+                            "th\/pb dating",
+                            "th-pb age",
+                            "th-pb dating",
+                            "thorium-lead age determination",
+                            "th_pb"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 104
+                    },
+                    {
+                        "value": "uranium age",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "uranium age",
+                            "uranium age determination"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "uranium-paladium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-235\/paladium-231 dating",
+                                    "u-235\/pa-231 age",
+                                    "u-235\/pa-231 dating",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium age",
+                                    "uranium-paladium age",
+                                    "uranium\/paladium dating",
+                                    "u\/pa age",
+                                    "u-pa age",
+                                    "u\/pa dating",
+                                    "u-pa dating",
+                                    "u235_pa231 age determination",
+                                    "u_pa"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 106
+                            },
+                            {
+                                "value": "uranium-lead age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium\/lead age",
+                                    "uranium-lead age",
+                                    "u\/pb dating",
+                                    "u-pb dating",
+                                    "u\/pb age",
+                                    "u-pb age",
+                                    "uranium\/lead dating",
+                                    "uranium lead age determination",
+                                    "u_pb",
+                                    "uranium-lead age determination",
+                                    "u-pb"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 107
+                            },
+                            {
+                                "value": "uranium-thorium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "uranium-238\/thorium-230 dating",
+                                    "u-238\/tho-230 age",
+                                    "u-238\/tho-230 dating",
+                                    "uranium-thorium dating",
+                                    "uranium thorium dating",
+                                    "uranium\/thorium dating",
+                                    "uranium thorium age",
+                                    "uranium\/thorium age",
+                                    "uranium-thorium age",
+                                    "u-th age",
+                                    "u-th dating",
+                                    "u238_th230 age determination",
+                                    "u_th"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 108
+                            },
+                            {
+                                "value": "uranium-thorium-helium age",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "u-th-he age",
+                                    "u-th-he dating",
+                                    "u-th-he age determination",
+                                    "u_th_he"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 109
+                            }
+                        ],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 105
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-age_of_sample",
+                "defininition": "",
+                "rowNr": 94
+            },
+            {
+                "value": "aluminium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Al,",
+                    "aluminum"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-aluminum_measured",
+                "defininition": "",
+                "rowNr": 110
+            },
+            {
+                "value": "ammonia",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "NH3,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ammonia",
+                "defininition": "",
+                "rowNr": 111
+            },
+            {
+                "value": "ammonium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "NH4,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ammonium",
+                "defininition": "",
+                "rowNr": 112
+            },
+            {
+                "value": "antimony",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sb,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-antimony",
+                "defininition": "",
+                "rowNr": 113
+            },
+            {
+                "value": "argon (Ar)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ar,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-argon_measured",
+                "defininition": "",
+                "rowNr": 114
+            },
+            {
+                "value": "arsenic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-arsenic",
+                "defininition": "",
+                "rowNr": 115
+            },
+            {
+                "value": "barium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ba,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-barium",
+                "defininition": "",
+                "rowNr": 116
+            },
+            {
+                "value": "beryllium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Be,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-beryllium",
+                "defininition": "",
+                "rowNr": 117
+            },
+            {
+                "value": "bismuth",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Bi,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bismuth",
+                "defininition": "",
+                "rowNr": 118
+            },
+            {
+                "value": "boron",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "delta 11B",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_b11"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-boron-delta_b11_calculated_as_b11b10_sample__b11b10__nist_srm951_-11000",
+                        "defininition": "",
+                        "rowNr": 120
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-boron",
+                "defininition": "",
+                "rowNr": 119
+            },
+            {
+                "value": "bromium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Br,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bromium",
+                "defininition": "",
+                "rowNr": 121
+            },
+            {
+                "value": "bromide",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Br-,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bromide",
+                "defininition": "",
+                "rowNr": 122
+            },
+            {
+                "value": "carbon (C)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(inorg)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-inorganic_carbon",
+                        "defininition": "",
+                        "rowNr": 124
+                    },
+                    {
+                        "value": "dissolved inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-inorganic_carbon-dissolved_inorganic_carbon",
+                        "defininition": "",
+                        "rowNr": 125
+                    },
+                    {
+                        "value": "total inorganic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 126
+                    },
+                    {
+                        "value": "organic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(org)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-organic_carbon",
+                        "defininition": "",
+                        "rowNr": 127
+                    },
+                    {
+                        "value": "total organic carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-organic_carbon-total_organic_carbon",
+                        "defininition": "",
+                        "rowNr": 128
+                    },
+                    {
+                        "value": "total carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(tot)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-total_carbon",
+                        "defininition": "",
+                        "rowNr": 129
+                    },
+                    {
+                        "value": "non-carbonate carbon",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "C(non-carb)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-non-carbonate_carbon",
+                        "defininition": "",
+                        "rowNr": 130
+                    },
+                    {
+                        "value": "carbon monoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-carbon_monoxide_measured",
+                        "defininition": "",
+                        "rowNr": 131
+                    },
+                    {
+                        "value": "carbon dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-carbon_dioxide_measured",
+                        "defininition": "",
+                        "rowNr": 132
+                    },
+                    {
+                        "value": "methane",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CH4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-methane_measured",
+                        "defininition": "",
+                        "rowNr": 133
+                    },
+                    {
+                        "value": "bicarbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HCO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-bicarbonate",
+                        "defininition": "",
+                        "rowNr": 134
+                    },
+                    {
+                        "value": "delta 13C",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-delta_c13_calculated_as_c13c12_sample__c13c12_pdb_-11000",
+                        "defininition": "",
+                        "rowNr": 135
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured",
+                "defininition": "",
+                "rowNr": 123
+            },
+            {
+                "value": "calcium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ca,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "calcium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_oxide",
+                        "defininition": "",
+                        "rowNr": 137
+                    },
+                    {
+                        "value": "calcium sulfate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaSO4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_sulfate",
+                        "defininition": "",
+                        "rowNr": 138
+                    },
+                    {
+                        "value": "calcium carbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CaCO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_carbonate",
+                        "defininition": "",
+                        "rowNr": 139
+                    },
+                    {
+                        "value": "delta 44Ca",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ca44"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-delta_ca44_calculated_as_ca44ca40_sample__ca44ca40_std_-11000",
+                        "defininition": "",
+                        "rowNr": 140
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium",
+                "defininition": "",
+                "rowNr": 136
+            },
+            {
+                "value": "cadmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cd,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cadmium",
+                "defininition": "",
+                "rowNr": 141
+            },
+            {
+                "value": "cerium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ce,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cerium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ce2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium-cerium_oxide",
+                        "defininition": "",
+                        "rowNr": 143
+                    },
+                    {
+                        "value": "cerium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CeO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium-cerium_dioxide",
+                        "defininition": "",
+                        "rowNr": 144
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium",
+                "defininition": "",
+                "rowNr": 142
+            },
+            {
+                "value": "chlorine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cl,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "chloride",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 146
+                    },
+                    {
+                        "value": "delta 37Cl",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_cl37"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chlorine-delta_cl37_calculated_as_cl37cl35_sample__cl37cl35_smoc_-11000",
+                        "defininition": "",
+                        "rowNr": 147
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chlorine",
+                "defininition": "",
+                "rowNr": 145
+            },
+            {
+                "value": "cobalt",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Co,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cobalt oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CoO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cobalt-cobalt_oxide",
+                        "defininition": "",
+                        "rowNr": 149
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cobalt",
+                "defininition": "",
+                "rowNr": 148
+            },
+            {
+                "value": "chromium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "chromium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Cr2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chromium-chromium_oxide",
+                        "defininition": "",
+                        "rowNr": 151
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chromium",
+                "defininition": "",
+                "rowNr": 150
+            },
+            {
+                "value": "cesium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cs,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cesium",
+                "defininition": "",
+                "rowNr": 152
+            },
+            {
+                "value": "copper",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "cuprous oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Cu2O,",
+                            "copper(i) oxide"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-cuprous_oxide",
+                        "defininition": "",
+                        "rowNr": 154
+                    },
+                    {
+                        "value": "copper oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "CuO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-copper_oxide",
+                        "defininition": "",
+                        "rowNr": 155
+                    },
+                    {
+                        "value": "delta 65Cu",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_cu65"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-delta_cu65_calculated_as_cu65cu63_sample__cu65cu63_nist-976_-_11000",
+                        "defininition": "",
+                        "rowNr": 156
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper",
+                "defininition": "",
+                "rowNr": 153
+            },
+            {
+                "value": "dysprosium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Dy,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "dysprosium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Dy2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-dysprosium-dysprosium_oxide",
+                        "defininition": "",
+                        "rowNr": 158
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-dysprosium",
+                "defininition": "",
+                "rowNr": 157
+            },
+            {
+                "value": "erbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Er,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "erbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Er2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-erbium-erbium_oxide",
+                        "defininition": "",
+                        "rowNr": 160
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-erbium",
+                "defininition": "",
+                "rowNr": 159
+            },
+            {
+                "value": "europium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Eu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "europium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Eu2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-europium-europium_oxide",
+                        "defininition": "",
+                        "rowNr": 162
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-europium",
+                "defininition": "",
+                "rowNr": 161
+            },
+            {
+                "value": "fluorine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-fluorine",
+                "defininition": "",
+                "rowNr": 163
+            },
+            {
+                "value": "francium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Fr,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-francium",
+                "defininition": "",
+                "rowNr": 164
+            },
+            {
+                "value": "gallium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ga,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gallium",
+                "defininition": "",
+                "rowNr": 165
+            },
+            {
+                "value": "gadolinium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Gd,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "gadolinium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Gd2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gadolinium-gadolinium_oxide",
+                        "defininition": "",
+                        "rowNr": 167
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gadolinium",
+                "defininition": "",
+                "rowNr": 166
+            },
+            {
+                "value": "germanium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ge,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-germanium",
+                "defininition": "",
+                "rowNr": 168
+            },
+            {
+                "value": "gold (Au)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Au,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gold_measured",
+                "defininition": "",
+                "rowNr": 169
+            },
+            {
+                "value": "hydrogen (H)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "total hydrogen",
+                    "H(tot)"
+                ],
+                "subTerms": [
+                    {
+                        "value": "water (H2O)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H2O,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-water_h2o",
+                        "defininition": "",
+                        "rowNr": 171
+                    },
+                    {
+                        "value": "hydrogen sulfide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H2S,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-hydrogen_sulfide",
+                        "defininition": "",
+                        "rowNr": 172
+                    },
+                    {
+                        "value": "delta D",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_d"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-delta_d_calculated_as_h2h1_sample__h2h1_std_-11000",
+                        "defininition": "",
+                        "rowNr": 173
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h",
+                "defininition": "",
+                "rowNr": 170
+            },
+            {
+                "value": "helium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "He,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-helium",
+                "defininition": "",
+                "rowNr": 174
+            },
+            {
+                "value": "hafnium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Hf,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "hafnium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HfO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium-hafnium_dioxide",
+                        "defininition": "",
+                        "rowNr": 176
+                    },
+                    {
+                        "value": "hafnium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "HfO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium-hafnium_oxide",
+                        "defininition": "",
+                        "rowNr": 177
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium",
+                "defininition": "",
+                "rowNr": 175
+            },
+            {
+                "value": "holmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ho,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "holmium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ho2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-holmium-holmium_oxide",
+                        "defininition": "",
+                        "rowNr": 179
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-holmium",
+                "defininition": "",
+                "rowNr": 178
+            },
+            {
+                "value": "iodine",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iodine",
+                "defininition": "",
+                "rowNr": 180
+            },
+            {
+                "value": "indium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-indium",
+                "defininition": "",
+                "rowNr": 181
+            },
+            {
+                "value": "iridium (Ir)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ir,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iridium_measured",
+                "defininition": "",
+                "rowNr": 182
+            },
+            {
+                "value": "iron",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Fe,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ferric iron oxide (tri-valent iron)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferric_iron_oxide_tri-valent_iron",
+                        "defininition": "",
+                        "rowNr": 184
+                    },
+                    {
+                        "value": "total iron oxide content reported as ferric (tri-valent) iron",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe2O3t,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-total_iron_oxide_content_reported_as_ferric_tri-valent_iron",
+                        "defininition": "",
+                        "rowNr": 185
+                    },
+                    {
+                        "value": "ferrosoferric oxide (Iron (II,III) oxide)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe3O4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrosoferric_oxide_iron_iiiii_oxide",
+                        "defininition": "",
+                        "rowNr": 186
+                    },
+                    {
+                        "value": "ratio of feric iron to total iron\u00a0",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe3\/Fet,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ratio_of_feric_iron_to_total_iron",
+                        "defininition": "",
+                        "rowNr": 187
+                    },
+                    {
+                        "value": "siderite",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeCO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-siderite",
+                        "defininition": "",
+                        "rowNr": 188
+                    },
+                    {
+                        "value": "iron ferrite (FeFe2O4)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Fe-Fe"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-iron_ferrite_fefe2o4",
+                        "defininition": "",
+                        "rowNr": 189
+                    },
+                    {
+                        "value": "ferrous iron oxide (di-valent)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeO,"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "total iron oxide content reported as ferrous (di-valent) iron",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "FeOt,"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_iron_oxide_di-valent-total_iron_oxide_content_reported_as_ferrous_di-valent_iron",
+                                "defininition": "",
+                                "rowNr": 191
+                            }
+                        ],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_iron_oxide_di-valent",
+                        "defininition": "",
+                        "rowNr": 190
+                    },
+                    {
+                        "value": "ferrous sulfide (di-valent)",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeS,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_sulfide_di-valent",
+                        "defininition": "",
+                        "rowNr": 192
+                    },
+                    {
+                        "value": "iron sulfide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "FeS2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-iron_sulfide",
+                        "defininition": "",
+                        "rowNr": 193
+                    },
+                    {
+                        "value": "delta_Fe56 calculated as (Fe56\/Fe54_ sample \/ Fe56\/Fe54_IRMM-014 -1)*1000",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_fe56"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-delta_fe56_calculated_as_fe56fe54__sample__fe56fe54_irmm-014_-11000",
+                        "defininition": "",
+                        "rowNr": 194
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron",
+                "defininition": "",
+                "rowNr": 183
+            },
+            {
+                "value": "krypton",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Kr,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-krypton",
+                "defininition": "",
+                "rowNr": 195
+            },
+            {
+                "value": "lanthanum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "La,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lanthanum oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "La2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lanthanum-lanthanum_oxide",
+                        "defininition": "",
+                        "rowNr": 197
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lanthanum",
+                "defininition": "",
+                "rowNr": 196
+            },
+            {
+                "value": "lead (Pb)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lead oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "PbO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lead_pb-lead_oxide",
+                        "defininition": "",
+                        "rowNr": 199
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lead_pb",
+                "defininition": "",
+                "rowNr": 198
+            },
+            {
+                "value": "lithium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Li,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta Li6",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_li6"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium-delta_li6_calculated_as_li6li7_sample__li6li7_std_-11000",
+                        "defininition": "",
+                        "rowNr": 201
+                    },
+                    {
+                        "value": "delta 7Li",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_li7"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium-delta_li7_calculated_as_li7li6_sample__li7li6_std_-11000",
+                        "defininition": "",
+                        "rowNr": 202
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium",
+                "defininition": "",
+                "rowNr": 200
+            },
+            {
+                "value": "lutetium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Lu,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "lutetium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Lu2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lutetium-lutetium_oxide",
+                        "defininition": "",
+                        "rowNr": 204
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lutetium",
+                "defininition": "",
+                "rowNr": 203
+            },
+            {
+                "value": "magnesium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mg,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "magnesium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MgO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-magnesium-magnesium_oxide",
+                        "defininition": "",
+                        "rowNr": 206
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-magnesium",
+                "defininition": "",
+                "rowNr": 205
+            },
+            {
+                "value": "manganese",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mn,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "manganese tetroxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Mn3O4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_tetroxide",
+                        "defininition": "",
+                        "rowNr": 208
+                    },
+                    {
+                        "value": "manganese carbonate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MnCO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_carbonate",
+                        "defininition": "",
+                        "rowNr": 209
+                    },
+                    {
+                        "value": "manganese oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "MnO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_oxide",
+                        "defininition": "",
+                        "rowNr": 210
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese",
+                "defininition": "",
+                "rowNr": 207
+            },
+            {
+                "value": "mercury",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Hg,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-mercury",
+                "defininition": "",
+                "rowNr": 211
+            },
+            {
+                "value": "molybdenum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Mo,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "delta 98Mo",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_mo98"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-molybdenum-delta_mo98_calculated_as_mo98mo95_sample__mo98mo95_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 213
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-molybdenum",
+                "defininition": "",
+                "rowNr": 212
+            },
+            {
+                "value": "neodymium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Nd,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "neodymium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nd2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neodymium-neodymium_oxide",
+                        "defininition": "",
+                        "rowNr": 215
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neodymium",
+                "defininition": "",
+                "rowNr": 214
+            },
+            {
+                "value": "neon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ne,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neon",
+                "defininition": "",
+                "rowNr": 216
+            },
+            {
+                "value": "nickel",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ni,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "nickel oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NiO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel-nickel_oxide",
+                        "defininition": "",
+                        "rowNr": 218
+                    },
+                    {
+                        "value": "delta 60Ni",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ni60"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel-delta_ni60_calculated_as_ni60ni58_sample__ni60ni58_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 219
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel",
+                "defininition": "",
+                "rowNr": 217
+            },
+            {
+                "value": "niobium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Nb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "niobium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nb2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium-niobium_oxide",
+                        "defininition": "",
+                        "rowNr": 221
+                    },
+                    {
+                        "value": "niobium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Nb2O5,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium-niobium_pentoxide",
+                        "defininition": "",
+                        "rowNr": 222
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium",
+                "defininition": "",
+                "rowNr": 220
+            },
+            {
+                "value": "nitrogen",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "organic nitrogen",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "N(org)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-organic_nitrogen",
+                        "defininition": "",
+                        "rowNr": 224
+                    },
+                    {
+                        "value": "total nitrogen",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "N(tot)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-total_nitrogen",
+                        "defininition": "",
+                        "rowNr": 225
+                    },
+                    {
+                        "value": "nitrogen dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-nitrogen_dioxide",
+                        "defininition": "",
+                        "rowNr": 226
+                    },
+                    {
+                        "value": "nitrate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "NO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-nitrate",
+                        "defininition": "",
+                        "rowNr": 227
+                    },
+                    {
+                        "value": "delt 15N",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_n15"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-delta_n15_calculated_as_n15n14_sample__n15n14_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 228
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen",
+                "defininition": "",
+                "rowNr": 223
+            },
+            {
+                "value": "oxygen",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "delta 17O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_o17"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen-delta_o17_calculated_as_o17o16_sample__o17o16_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 230
+                    },
+                    {
+                        "value": "delta 18O",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_o18"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen-delta_o18_calculated_as_o18o16_sample__o18o16_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 231
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen",
+                "defininition": "",
+                "rowNr": 229
+            },
+            {
+                "value": "osmium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Os,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-osmium",
+                "defininition": "",
+                "rowNr": 232
+            },
+            {
+                "value": "palladium (Pd)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pd,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-palladium_measured",
+                "defininition": "",
+                "rowNr": 233
+            },
+            {
+                "value": "pH",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ph",
+                "defininition": "",
+                "rowNr": 234
+            },
+            {
+                "value": "phosphorus",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "phosphorous, organic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P(org)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorous_organic",
+                        "defininition": "",
+                        "rowNr": 236
+                    },
+                    {
+                        "value": "phosphorus trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorus_trioxide",
+                        "defininition": "",
+                        "rowNr": 237
+                    },
+                    {
+                        "value": "phosphorus oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "P2O5,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorus_oxide",
+                        "defininition": "",
+                        "rowNr": 238
+                    },
+                    {
+                        "value": "phosphate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "PO4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphate",
+                        "defininition": "",
+                        "rowNr": 239
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus",
+                "defininition": "",
+                "rowNr": 235
+            },
+            {
+                "value": "platinum (Pt)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pt,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ratio of platinum isotope Pt190 to osmium isotope Os188",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "pt190\/os188"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-platinum_measured-ratio_of_platinum_isotope_pt190_to_osmium_isotope_os188",
+                        "defininition": "",
+                        "rowNr": 241
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-platinum_measured",
+                "defininition": "",
+                "rowNr": 240
+            },
+            {
+                "value": "polonium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Po210,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "polonium isotope Po210, reported as activity",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "po210_activity"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210-polonium_isotope_po210_reported_as_activity",
+                        "defininition": "",
+                        "rowNr": 243
+                    },
+                    {
+                        "value": "ratio of polonium isotope Po210 to lead isotope Pb210",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "po210\/pb210"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210-ratio_of_polonium_isotope_po210_to_lead_isotope_pb210",
+                        "defininition": "",
+                        "rowNr": 244
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210",
+                "defininition": "",
+                "rowNr": 242
+            },
+            {
+                "value": "potassium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "potassium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "K2O,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-potassium-potassium_oxide",
+                        "defininition": "",
+                        "rowNr": 246
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-potassium",
+                "defininition": "",
+                "rowNr": 245
+            },
+            {
+                "value": "protactinium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-protactinium",
+                "defininition": "",
+                "rowNr": 247
+            },
+            {
+                "value": "praseodymium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Pr,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-praseodymium",
+                "defininition": "",
+                "rowNr": 248
+            },
+            {
+                "value": "radium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ra,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-radium",
+                "defininition": "",
+                "rowNr": 249
+            },
+            {
+                "value": "rhenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Re,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rhenium",
+                "defininition": "",
+                "rowNr": 250
+            },
+            {
+                "value": "rhodium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Rh,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rhodium",
+                "defininition": "",
+                "rowNr": 251
+            },
+            {
+                "value": "rubidium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Rb,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rubidium",
+                "defininition": "",
+                "rowNr": 252
+            },
+            {
+                "value": "ruthenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ru,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ruthenium",
+                "defininition": "",
+                "rowNr": 253
+            },
+            {
+                "value": "samarium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sm,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "samarium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Sm2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-samarium-samarium_oxide",
+                        "defininition": "",
+                        "rowNr": 255
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-samarium",
+                "defininition": "",
+                "rowNr": 254
+            },
+            {
+                "value": "scandium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sc,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "scandium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Sc2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-scandium-scandium_oxide",
+                        "defininition": "",
+                        "rowNr": 257
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-scandium",
+                "defininition": "",
+                "rowNr": 256
+            },
+            {
+                "value": "selenium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Se,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-selenium",
+                "defininition": "",
+                "rowNr": 258
+            },
+            {
+                "value": "silicon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "silicon dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "silica",
+                            "SiO2,"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "SiO2, high pressure",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "SiOH,"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 261
+                            },
+                            {
+                                "value": "amorphous silica",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Si(amorph),"
+                                ],
+                                "subTerms": [],
+                                "defininition-link": "",
+                                "defininition": "",
+                                "rowNr": 262
+                            }
+                        ],
+                        "defininition-link": "",
+                        "defininition": "",
+                        "rowNr": 260
+                    },
+                    {
+                        "value": "silicic acid",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "H4SiO4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-silicic_acid",
+                        "defininition": "",
+                        "rowNr": 263
+                    },
+                    {
+                        "value": "delta 29Si",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_si29"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-delta_si29_calculated_as_si29si28_sample__si29si28_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 264
+                    },
+                    {
+                        "value": "delta 30Si",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_si30"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-delta_si30_calculated_as_si30si28_sample__si30si28_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 265
+                    }
+                ],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 259
+            },
+            {
+                "value": "sodium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Na,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "sodium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Na2O,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sodium-sodium_oxide",
+                        "defininition": "",
+                        "rowNr": 267
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sodium",
+                "defininition": "",
+                "rowNr": 266
+            },
+            {
+                "value": "silver (Ag)",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ag,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silver_measured",
+                "defininition": "",
+                "rowNr": 268
+            },
+            {
+                "value": "strontium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "strontium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "SrO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-strontium-strontium_oxide",
+                        "defininition": "",
+                        "rowNr": 270
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-strontium",
+                "defininition": "",
+                "rowNr": 269
+            },
+            {
+                "value": "sulphur",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "sulfur",
+                    "total sulphur",
+                    "s(tot)",
+                    "total sulfur"
+                ],
+                "subTerms": [
+                    {
+                        "value": "sulphur dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur dioxide",
+                            "SO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_dioxide",
+                        "defininition": "",
+                        "rowNr": 272
+                    },
+                    {
+                        "value": "sulphur trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur trioxide",
+                            "SO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_trioxide",
+                        "defininition": "",
+                        "rowNr": 273
+                    },
+                    {
+                        "value": "sulphate",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfate",
+                            "SO4,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfate",
+                        "defininition": "",
+                        "rowNr": 274
+                    },
+                    {
+                        "value": "sulphur present as sulphide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur present as sulfide",
+                            "s_(slfi)"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_present_as_sulfide",
+                        "defininition": "",
+                        "rowNr": 275
+                    },
+                    {
+                        "value": "sulphur present in pyrite form",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "sulfur present in pyrite form",
+                            "s_py"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_present_in_pyrite_form",
+                        "defininition": "",
+                        "rowNr": 276
+                    },
+                    {
+                        "value": "delta 33S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s33"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s33_calculated_as_s33s32_sample__s33s32_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 277
+                    },
+                    {
+                        "value": "delta 34S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s34"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s34_calculated_as_s34s32_sample__s34s32_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 278
+                    },
+                    {
+                        "value": "delta 36S",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_s36"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s36_calculated_as_s36s32_sample__s36s32_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 279
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur",
+                "defininition": "",
+                "rowNr": 271
+            },
+            {
+                "value": "tantalum",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ta,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "tantalum oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ta2O5,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tantalum-tantalum_oxide",
+                        "defininition": "",
+                        "rowNr": 281
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tantalum",
+                "defininition": "",
+                "rowNr": 280
+            },
+            {
+                "value": "tellurium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Te,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tellurium",
+                "defininition": "",
+                "rowNr": 282
+            },
+            {
+                "value": "terbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "terbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Tb2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-terbium-terbium_oxide",
+                        "defininition": "",
+                        "rowNr": 284
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-terbium",
+                "defininition": "",
+                "rowNr": 283
+            },
+            {
+                "value": "thallium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tl,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thallium",
+                "defininition": "",
+                "rowNr": 285
+            },
+            {
+                "value": "thorium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Th,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "thorium monoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ThO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium-thorium_monoxide",
+                        "defininition": "",
+                        "rowNr": 287
+                    },
+                    {
+                        "value": "thorium dioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ThO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium-thorium_dioxide",
+                        "defininition": "",
+                        "rowNr": 288
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium",
+                "defininition": "",
+                "rowNr": 286
+            },
+            {
+                "value": "thulium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Tm,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "thulium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Tm2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thulium-thulium_oxide",
+                        "defininition": "",
+                        "rowNr": 290
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thulium",
+                "defininition": "",
+                "rowNr": 289
+            },
+            {
+                "value": "tin",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sn,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tin",
+                "defininition": "",
+                "rowNr": 291
+            },
+            {
+                "value": "titanium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Ti,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "titanium(III) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Ti2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_iii_oxide",
+                        "defininition": "",
+                        "rowNr": 293
+                    },
+                    {
+                        "value": "titanium(II) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "TiO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_ii_oxide",
+                        "defininition": "",
+                        "rowNr": 294
+                    },
+                    {
+                        "value": "titanium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "TiO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_oxide",
+                        "defininition": "",
+                        "rowNr": 295
+                    },
+                    {
+                        "value": "delta 49Ti",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_ti49"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-delta_ti49_calculated_as_ti49ti47_sample__ti49ti47_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 296
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium",
+                "defininition": "",
+                "rowNr": 292
+            },
+            {
+                "value": "tungsten",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "tungsten trioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "WO3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tungsten-tungsten_trioxide",
+                        "defininition": "",
+                        "rowNr": 298
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tungsten",
+                "defininition": "",
+                "rowNr": 297
+            },
+            {
+                "value": "uranium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "uranium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "UO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-uranium_oxide",
+                        "defininition": "",
+                        "rowNr": 300
+                    },
+                    {
+                        "value": "delta 234U",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_u234"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-delta_u234_calculated_as_u234u238_sample__u234u238_secular_equilibrium_-_11000",
+                        "defininition": "",
+                        "rowNr": 301
+                    },
+                    {
+                        "value": "delta 238U",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_u238"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-delta_u238_calculated_as_u238u235_sample__u238u235_secular_equilibrium_-_11000",
+                        "defininition": "",
+                        "rowNr": 302
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium",
+                "defininition": "",
+                "rowNr": 299
+            },
+            {
+                "value": "vanadium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "vanadium sesquioxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "V2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-vanadium_sesquioxide",
+                        "defininition": "",
+                        "rowNr": 304
+                    },
+                    {
+                        "value": "vanadium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "V2O5,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-vanadium_pentoxide",
+                        "defininition": "",
+                        "rowNr": 305
+                    },
+                    {
+                        "value": "delta 51V",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_v51"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-delta_v51_calculated_as_v51v50_sample__v51v50_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 306
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium",
+                "defininition": "",
+                "rowNr": 303
+            },
+            {
+                "value": "xenon",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Xe,"
+                ],
+                "subTerms": [],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-xenon",
+                "defininition": "",
+                "rowNr": 307
+            },
+            {
+                "value": "yttrium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "yttrium(III) oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Y2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium-yttrium_iii_oxide",
+                        "defininition": "",
+                        "rowNr": 309
+                    },
+                    {
+                        "value": "yttrium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "YO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium-yttrium_oxide",
+                        "defininition": "",
+                        "rowNr": 310
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium",
+                "defininition": "",
+                "rowNr": 308
+            },
+            {
+                "value": "ytterbium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Yb,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "ytterbium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Yb2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ytterbium-ytterbium_oxide",
+                        "defininition": "",
+                        "rowNr": 312
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ytterbium",
+                "defininition": "",
+                "rowNr": 311
+            },
+            {
+                "value": "zinc",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Zn"
+                ],
+                "subTerms": [
+                    {
+                        "value": "zinc oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ZnO,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-zinc_oxide",
+                        "defininition": "",
+                        "rowNr": 314
+                    },
+                    {
+                        "value": "delta 66Zn",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_zn66"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-delta_zn66_calculated_as_zn66zn64_sample__zn66zn64_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 315
+                    },
+                    {
+                        "value": "delta 68Zn",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "delta_zn68"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-delta_zn68_calculated_as_zn68zn64_sample__zn68zn64_std_-_11000",
+                        "defininition": "",
+                        "rowNr": 316
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc",
+                "defininition": "",
+                "rowNr": 313
+            },
+            {
+                "value": "zirconium",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Zr,"
+                ],
+                "subTerms": [
+                    {
+                        "value": "zirconium pentoxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Zr2O3,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium-zirconium_pentoxide",
+                        "defininition": "",
+                        "rowNr": 318
+                    },
+                    {
+                        "value": "zirconium oxide",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "ZrO2,"
+                        ],
+                        "subTerms": [],
+                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium-zirconium_oxide",
+                        "defininition": "",
+                        "rowNr": 319
+                    }
+                ],
+                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium",
+                "defininition": "",
+                "rowNr": 317
+            }
+        ],
+        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property",
+        "defininition": "",
+        "rowNr": 92
+    }
+]

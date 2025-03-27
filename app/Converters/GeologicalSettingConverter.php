@@ -3,6 +3,7 @@ namespace App\Converters;
 
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+require 'fullExtractor.php';
 
 class GeologicalSettingConverter
 {
@@ -58,8 +59,8 @@ class GeologicalSettingConverter
 
         $newData = [];
         foreach ($nestedNodes as $rootNode) {
-            $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'E', 'definition-link', $spreadsheet->getSheetByName('Geological setting'));
-            $rootNode = $this->definitionForRoot($rootNode, 'E', 'definition-link', $spreadsheet->getSheetByName('Geological setting'));
+            $rootNode["subTerms"] = checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('Geological setting'));
+            $rootNode = definitionForRoot($rootNode, 'E', $spreadsheet->getSheetByName('Geological setting'));
             $newData [] = $rootNode;
         }
         $nestedNodes = $newData;
@@ -69,48 +70,6 @@ class GeologicalSettingConverter
     }
 
 
-
-    private function definitionForRoot($node, $columnToCheck, $entryName, $worksheet){
-        // check rootnode itself
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-         return $node;
-    }
-
-    private function checkRootNode($node, $columnToCheck, $entryName, $worksheet){
-        $newSubNode = [];
-        foreach ($node["subTerms"] as $subnode) {
-            //recursive
-            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $entryName, $worksheet);
-            $newSubNode [] = $subnode;
-        }
-
-        return $newSubNode;
-    }
-
-    //recursive
-    private function addCellValueToEntry($node, $columnToCheck, $entryName, $worksheet){
-
-        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
-
-        if($cellValue != ''){
-            $node[$entryName] = $cellValue;
-        }
-
-        if(sizeof($node['subTerms']) > 0){
-            $newData = [];
-
-            foreach ($node['subTerms'] as $subNode) {
-                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $entryName, $worksheet);
-                $newData []= $subNode;
-            }
-            $node['subTerms'] = $newData;
-        }
-
-        return $node;
-    }
 
 
     
@@ -200,7 +159,9 @@ class GeologicalSettingConverter
             'vocabUri' => '',
             'uri' => '',
             'synonyms' => [],
-            'subTerms' => []
+            'subTerms' => [],
+            "defininition-link" => '',
+            "defininition" => ''
         ];
         
         return $node;
