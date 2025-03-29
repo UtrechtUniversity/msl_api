@@ -201,12 +201,15 @@ class DataPublication
      */
     public string $msl_publisher;
 
-    public $msl_citation;
+    /**
+     * Citation string for data publication
+     */
+    public string $msl_citation;
 
     public $msl_collection_period = [];
 
     /**
-     * Location related field below
+     * Location related fields
      */
     public $msl_spatial_coordinates = [];
     
