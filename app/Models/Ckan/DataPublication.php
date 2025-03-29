@@ -27,7 +27,10 @@ class DataPublication
      */    
     public string $msl_source;
 
-    public $name;
+    /**
+     * unique name of the data publication
+     */
+    public string $name;
 
     /**
      * A description of the resource.
