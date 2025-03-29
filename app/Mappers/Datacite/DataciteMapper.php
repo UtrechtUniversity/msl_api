@@ -2,6 +2,7 @@
 namespace App\Mappers\Datacite;
 
 use App\Exceptions\MappingException;
+use App\Mappers\Helpers\DataciteCitationHelper;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\DataPublication;
 
@@ -28,10 +29,19 @@ class DataciteMapper implements MapperInterface
         // set data publication name
         $dataPublication->name = $this->createDatasetNameFromDoi($dataPublication->msl_doi);
 
+        // get citation string
+        $citationHelper = new DataciteCitationHelper();
+        $dataPublication->msl_citation = $citationHelper->getCitationString($dataPublication->msl_doi);
+
         return $dataset;
     }
 
-    private function createDatasetNameFromDoi(string $doi) 
+    /**
+     * create name for data publication
+     * @param string $doi
+     * @return string
+     */
+    private function createDatasetNameFromDoi(string $doi): string
     {        
         return md5($doi);
     }
