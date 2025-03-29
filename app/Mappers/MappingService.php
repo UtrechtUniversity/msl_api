@@ -4,6 +4,7 @@ namespace App\Mappers;
 use App\Exceptions\MappingException;
 use App\Mappers\Datacite\DataciteMapper;
 use App\Models\Ckan\DataPublication;
+use App\Models\Importer;
 use App\Models\SourceDataset;
 use Illuminate\Support\Facades\Validator;
 
@@ -11,7 +12,7 @@ class MappingService
 {
 
 
-    public function map(SourceDataset $sourceDataset, $config): DataPublication
+    public function map(SourceDataset $sourceDataset, $config, Importer $importer): DataPublication
     {
         $dataPublication = new DataPublication();
 
@@ -25,6 +26,11 @@ class MappingService
                 $dataPublication = $mapper->map($metadata, $dataPublication);
                 break;
         }
+
+        // set general fields independend of mapping implementation
+        
+        // set owner organization for data publication
+        $dataPublication->owner_org = $importer->data_repository->ckan_name;
 
         // run additional mappers based on options
 
