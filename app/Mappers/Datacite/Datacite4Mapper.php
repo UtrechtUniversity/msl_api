@@ -14,6 +14,7 @@ use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
+use App\Models\Ckan\Tag;
 
 class Datacite4Mapper implements MapperInterface
 {
@@ -42,6 +43,7 @@ class Datacite4Mapper implements MapperInterface
         $dataset = $this->mapContributors($metadata, $dataset);
         $dataset = $this->mapSizes($metadata, $dataset);
         $dataset = $this->mapFormats($metadata, $dataset);
+        $dataset = $this->mapSubjects($metadata, $dataset);
 
         return $dataset;
     }
@@ -573,6 +575,27 @@ class Datacite4Mapper implements MapperInterface
         if (count($formats) > 0) {
             foreach ($formats as $format) {
                 $dataset->addFormat($format);
+            }
+        }
+
+        return $dataset;
+    }
+
+    public function mapSubjects(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $subjects = $metadata['data']['attributes']['subjects'];
+
+        if (count($subjects) > 0) {
+            foreach ($subjects as $subject) {
+                $tag = new Tag(
+                    $subject['subject'],
+                    (isset($subject['schemeUri']) ? $subject['schemeUri'] : ''),
+                    (isset($subject['valueUri']) ? $subject['valueUri'] : ''),
+                    (isset($subject['subjectScheme']) ? $subject['subjectScheme'] : ''),
+                    (isset($subject['classificationCode']) ? $subject['classificationCode'] : ''),
+                );
+
+                $dataset->addTag($tag);
             }
         }
 

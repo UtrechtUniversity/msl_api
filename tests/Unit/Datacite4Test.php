@@ -1573,46 +1573,46 @@ class Datacite4Test extends TestCase
     }
   
   
-      public function test_ResourceType_mapping(): void
-      {
-          $sourceData = new SourceDataset();
-  
-          $sourceData->source_dataset = '
-              {
-                  "data": {
-                      "id": "10.1594/pangaea.937090",
-                      "type": "dois",
-                      "attributes": {
-                          "types": {
-                                "ris": "DATA",
-                                "bibtex": "misc",
-                                "citeproc": "dataset",
-                                "schemaOrg": "Dataset",
-                                "resourceType": "dataset",
-                                "resourceTypeGeneral": "Dataset"
-                            }
-                      }
-                  }
-              }';
-          $dataciteMapper = new Datacite4Mapper();
-  
-          // create empty data publication
-          $dataset = new DataPublication;
-  
-          // read json text
-          $metadata = json_decode($sourceData->source_dataset, true);
-          
-          $dataset = $dataciteMapper->mapResourceTypes($metadata, $dataset);
-  
-          $this->assertEquals($dataset->msl_resource_type, "dataset");
-          $this->assertEquals($dataset->msl_resource_type_general, "Dataset");
-      }
+    public function test_ResourceType_mapping(): void
+    {
+        $sourceData = new SourceDataset();
 
-/**
- * test if contributer is correctly mapped
- */
-public function test_contributor_mapping(): void
-{
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "types": {
+                            "ris": "DATA",
+                            "bibtex": "misc",
+                            "citeproc": "dataset",
+                            "schemaOrg": "Dataset",
+                            "resourceType": "dataset",
+                            "resourceTypeGeneral": "Dataset"
+                        }
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapResourceTypes($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_resource_type, "dataset");
+        $this->assertEquals($dataset->msl_resource_type_general, "Dataset");
+    }
+
+    /**
+     * test if contributer is correctly mapped
+     */
+    public function test_contributor_mapping(): void
+    {
         $sourceData = new SourceDataset();
 
         $sourceData->source_dataset = '
@@ -2045,6 +2045,139 @@ public function test_contributor_mapping(): void
         $dataset = $dataciteMapper->mapFormats($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_formats, []);
+    }
+
+    /**
+     * Test if subjects are correctly mapped
+     */
+    public function test_subject_mapping(): void
+    {
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "subjects": [
+                            {
+                                "subject": "Digital curation and preservation",
+                                "schemeUri": "https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc",
+                                "subjectScheme": "Australian and New Zealand Standard Research Classification (ANZSRC), 2020",
+                                "classificationCode": "461001"
+                            },
+                            {
+                                "subject": "Example Subject"
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapSubjects($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_tags[0]->msl_tag_string, "Digital curation and preservation");
+        $this->assertEquals($dataset->msl_tags[0]->msl_tag_scheme_uri, "https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc");
+        $this->assertEquals($dataset->msl_tags[0]->msl_tag_subject_scheme, "Australian and New Zealand Standard Research Classification (ANZSRC), 2020");
+        $this->assertEquals($dataset->msl_tags[0]->msl_tag_classification_code, "461001");
+        
+        $this->assertEquals($dataset->msl_tags[1]->msl_tag_string, "Example Subject");
+
+        // test 2
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "subjects": [
+                            {
+                                "subject": "Cultural eutrophication"
+                            },
+                            {
+                                "subject": "Geochemistry"
+                            },
+                            {
+                                "subject": "FOS: Earth and related environmental sciences",
+                                "schemeUri": "http://www.oecd.org/science/inno/38235147.pdf",
+                                "subjectScheme": "Fields of Science and Technology (FOS)"
+                            },
+                            {
+                                "subject": "landslide"
+                            },
+                            {
+                                "subject": "Late Holocene"
+                            },
+                            {
+                                "subject": "Soil erosion"
+                            },
+                            {
+                                "subject": "XRF scanning"
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapSubjects($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_tags[0]->msl_tag_string, "Cultural eutrophication");
+
+        $this->assertEquals($dataset->msl_tags[1]->msl_tag_string, "Geochemistry");
+
+        $this->assertEquals($dataset->msl_tags[2]->msl_tag_string, "FOS: Earth and related environmental sciences");
+        $this->assertEquals($dataset->msl_tags[2]->msl_tag_scheme_uri, "http://www.oecd.org/science/inno/38235147.pdf");
+        $this->assertEquals($dataset->msl_tags[2]->msl_tag_subject_scheme, "Fields of Science and Technology (FOS)");
+
+        $this->assertEquals($dataset->msl_tags[3]->msl_tag_string, "landslide");
+
+        $this->assertEquals($dataset->msl_tags[4]->msl_tag_string, "Late Holocene");
+
+        $this->assertEquals($dataset->msl_tags[5]->msl_tag_string, "Soil erosion");
+
+        $this->assertEquals($dataset->msl_tags[6]->msl_tag_string, "XRF scanning");
+
+        // test empty
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "subjects": []
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapSubjects($metadata, $dataset);
+
+        $this->assertEmpty($dataset->msl_tags);
     }
 
 }

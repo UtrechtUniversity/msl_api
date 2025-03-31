@@ -349,21 +349,18 @@ class DataPublication
         $this->msl_formats[] = $format;
     }
         
-    public function addTag($tagString, $uris = [])
+    public function addTag(Tag $tag)
     {
         $exists = false;
-        foreach ($this->msl_tags as $tag) {
-            if($tag['msl_tag_string'] == $tagString) {
+        foreach ($this->msl_tags as $existingTag) {
+            if($existingTag->msl_tag_string == $tag->msl_tag_string) {
                 $exists = true;
                 break;
             }
         }
         
         if(!$exists) {
-            $this->msl_tags[] = [
-                'msl_tag_string' => $tagString,
-                'msl_tag_uris' => $uris
-            ];
+            $this->msl_tags[] = $tag;
         }
     }
     
