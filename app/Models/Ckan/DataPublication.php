@@ -178,7 +178,7 @@ class DataPublication
     public array $msl_sizes = [];
 
     /**
-     * echnical format of the resource.
+     * Technical format of the resource.
      */
     public array $msl_formats = [];
 
@@ -227,7 +227,10 @@ class DataPublication
 
     public $tag_string = [];
     
-    public $msl_tags = [];
+    /**
+     * Tags/subjects/keywords originally assigned by the author(s)
+     */
+    public array $msl_tags = [];
 
     public $msl_subdomains = [];
 
@@ -345,7 +348,7 @@ class DataPublication
     {
         $this->msl_formats[] = $format;
     }
-    
+        
     public function addTag($tagString, $uris = [])
     {
         $exists = false;
