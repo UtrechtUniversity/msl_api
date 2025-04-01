@@ -34,6 +34,11 @@ class PackageSearchRequest implements RequestInterface
     public $filterQueries = [];
 
     /**
+     * @var string bounding box spatial filter
+     */
+    private string $boundingBox = '';
+
+    /**
      * @var int number of rows to request from solr
      */
     public $rows;
@@ -66,6 +71,7 @@ class PackageSearchRequest implements RequestInterface
             'query' => [
                 'q' => $this->query,
                 'fq' => $this->getFilterQueryQuery(),
+                'ext_bbox' => $this->boundingBox,
                 'rows' => $this->rows,
                 'start' => $this->start,
                 'facet.field' => $this->getFacetFieldQuery(),
@@ -100,6 +106,11 @@ class PackageSearchRequest implements RequestInterface
         }
 
         return '';
+    }
+
+    public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY)
+    {
+        $this->boundingBox = (string) $minX . ',' . (string) $minY . ',' . (string) $maxX . ',' . (string) $maxY;
     }
 
     public function addFacetField($facetField)
