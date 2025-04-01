@@ -128,6 +128,18 @@ class ApiController extends Controller
         return $this->dataPublicationResponse($request, 'all');
     }
 
+
+    /**
+     * facilities API endpoint
+     * 
+     * @param Request $request
+     * @return response
+     */
+    public function facilities(Request $request)
+    {
+        return $this->facilitiesResponse($request);
+    }
+
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
@@ -292,4 +304,71 @@ class ApiController extends Controller
         
         return '';
     }
+
+    /**
+     * Creates a API response based upon search parameters provided in request
+     * Context is used to provide facility specific processing
+     * only facilities with location data are returned
+     * 
+     * @param Request $request
+     * @param string $context
+     * @return response
+     */
+    private function facilitiesResponse(Request $request)
+    {
+        $context ="facilities";
+        // Create CKAN client
+        $ckanClient = new Client($this->guzzleClient);
+
+        // Create packagesearch request
+        $packageSearchRequest = new PackageSearchRequest();
+
+        // Filter on facilities
+        $packageSearchRequest->addFilterQuery("type", "lab");
+
+        // Set rows
+        $paramRows = (int)$request->get('rows');
+        if($paramRows > 0) {
+            $packageSearchRequest->rows = $paramRows;
+        }
+
+        // Set start
+        $paramStart = (int)$request->get('start');
+        if($paramStart > 0) {
+            $packageSearchRequest->start = $paramStart;
+        }
+
+        // facility query
+
+        // equipment query
+
+        // bounding box
+
+
+        // Attempt to retrieve data from CKAN
+        try {
+            $response = $ckanClient->get($packageSearchRequest);
+        } catch (\Exception $e) {
+            $errorResponse = new ErrorResponse();
+            $errorResponse->message = 'Malformed request to CKAN.';
+            return $errorResponse->getAsLaravelResponse();
+        }
+
+        // Check if CKAN was succesful
+        if(!$response->isSuccess()) {
+            $errorResponse = new ErrorResponse();
+            $errorResponse->message = 'Error received from CKAN api.';
+            return $errorResponse->getAsLaravelResponse();
+        }
+
+        // dd($response);
+        // Create response object
+        $ApiResponse = new MainResponse();
+        $ApiResponse->setByCkanResponse($response, $context);
+        // $ApiResponse->result = $response;
+        // dd($response);
+        //return response object
+        return $ApiResponse->getAsLaravelResponse();
+    }
+
 }
