@@ -506,29 +506,33 @@ class DataPublication
         }
     }
 
-    public function addEnrichedKeyword($label, $uri = "", $vocabUri = "", $associatedSubDomains = [], $matchLocations = [], $matchChildUris = [])
+    /**
+     * Add enriched keyword, if enriched keyword with the same uri exists merge associated subdomains, match locations and match child uris
+     * @param EnrichedKeyword $keyword
+     */
+    public function addEnrichedKeyword(EnrichedKeyword $keyword): void
     {
         $exists = false;
-        foreach ($this->msl_enriched_keywords as &$keyword) {
-            if($keyword['msl_enriched_keyword_uri'] == $uri) {
-                //add associated subdomain
-                foreach ($associatedSubDomains as $associatedSubDomain) {
-                    if(!in_array($associatedSubDomain, $keyword['msl_enriched_keyword_associated_subdomains'])) {
-                        $keyword['msl_enriched_keyword_associated_subdomains'][] = $associatedSubDomain;
+        foreach ($this->msl_enriched_keywords as &$existingKeyword) {
+            if($existingKeyword->msl_enriched_keyword_uri == $keyword->msl_enriched_keyword_uri) {
+                //add associated subdomain(s)
+                foreach ($keyword->msl_enriched_keyword_associated_subdomains as $associatedSubDomain) {
+                    if(! in_array($associatedSubDomain, $existingKeyword->msl_enriched_keyword_associated_subdomains)) {
+                        $existingKeyword->msl_enriched_keyword_associated_subdomains[] = $associatedSubDomain;
                     }
                 }
                                 
-                //add matchlocation
-                foreach ($matchLocations as $matchLocation) {
-                    if(!in_array($matchLocation, $keyword['msl_enriched_keyword_match_locations'])) {
-                        $keyword['msl_enriched_keyword_match_locations'][] = $matchLocation;
+                //add matchlocation(s)
+                foreach ($keyword->msl_enriched_keyword_match_locations as $matchLocation) {
+                    if(! in_array($matchLocation, $existingKeyword->msl_enriched_keyword_match_locations)) {
+                        $existingKeyword->msl_enriched_keyword_match_locations[] = $matchLocation;
                     }
                 }
                 
-                //add match child uris
-                foreach ($matchChildUris as $matchChildUri) {
-                    if(!in_array($matchChildUri, $keyword['msl_enriched_keyword_match_child_uris'])) {
-                        $keyword['msl_enriched_keyword_match_child_uris'][] = $matchChildUri;
+                //add match child uri(s)
+                foreach ($keyword->msl_enriched_keyword_match_child_uris as $matchChildUri) {
+                    if(! in_array($matchChildUri, $existingKeyword->msl_enriched_keyword_match_child_uris)) {
+                        $existingKeyword->msl_enriched_keyword_match_child_uris[] = $matchChildUri;
                     }
                 }
                 
@@ -538,19 +542,10 @@ class DataPublication
             
         }
         
-        if(!$exists) {
-            $enrichedKeyword = [
-                'msl_enriched_keyword_label' => $label,
-                'msl_enriched_keyword_uri' => $uri,
-                'msl_enriched_keyword_vocab_uri' => $vocabUri,
-                'msl_enriched_keyword_associated_subdomains' => $associatedSubDomains,
-                'msl_enriched_keyword_match_locations' => $matchLocations,
-                'msl_enriched_keyword_match_child_uris' => $matchChildUris
-            ];
-            
-            $this->msl_enriched_keywords[] = $enrichedKeyword;
-            $this->setHasVocabKeyword('enriched', $vocabUri);            
-        }                
+        if(!$exists) {            
+            $this->msl_enriched_keywords[] = $keyword;
+            $this->setHasVocabKeyword('enriched', $keyword->msl_enriched_keyword_vocab_uri);            
+        }
     }
 
     /**
@@ -568,10 +563,14 @@ class DataPublication
         return false;
     }
 
+    /**
+     * Check if enriched keyword exists by uri
+     * @param string $uri
+     */
     public function hasEnrichedKeyword($uri)
     {
         foreach ($this->msl_enriched_keywords as $keyword) {
-            if ($keyword['msl_enriched_keyword_uri'] == $uri) {
+            if ($keyword->msl_enriched_keyword_uri == $uri) {
                 return true;
             }
         }
