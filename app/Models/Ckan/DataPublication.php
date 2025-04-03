@@ -417,137 +417,35 @@ class DataPublication
         }
     }
 
-    public function addSubDomain($subDomain, $original = true)
+    /**
+     * Add sub domain to data publication. msl_subdomain will also contain the new value, original/interpreted is indicated by parameter.
+     * @param string $subdomain
+     * @param bool $orginal
+     */
+    public function addSubDomain(string $subDomain, bool $original = true): void
     {
-        switch ($subDomain) {
-            case "rock and melt physics":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'rock and melt physics'
+        // add sub domain if it is valid
+        if(in_array($subDomain, config('subdomains.full_names'))) {
+            if (! $this->hasSubDomain($subDomain)) {
+                $this->msl_subdomains[] = [
+                    'msl_subdomain' => $subDomain
+                ];
+            }
+            if ($original) {
+                if (! $this->hasOriginalSubDomain($subDomain)) {
+                    $this->msl_subdomains_original[] = [
+                        'msl_subdomain_original' => $subDomain
                     ];
                 }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'rock and melt physics'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'rock and melt physics'
-                        ];
-                    }
-                }
-                break;
-
-            case "analogue modelling of geologic processes":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'analogue modelling of geologic processes'
+            } else {
+                if (! $this->hasInterpretedSubDomain($subDomain)) {
+                    $this->msl_subdomains_interpreted[] = [
+                        'msl_subdomain_interpreted' => $subDomain
                     ];
                 }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'analogue modelling of geologic processes'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'analogue modelling of geologic processes'
-                        ];
-                    }
-                }
-                break;
-
-            case "microscopy and tomography":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'microscopy and tomography'
-                    ];
-                }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'microscopy and tomography'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'microscopy and tomography'
-                        ];
-                    }
-                }
-                break;
-
-            case "paleomagnetism":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'paleomagnetism'
-                    ];
-                }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'paleomagnetism'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'paleomagnetism'
-                        ];
-                    }
-                }
-                break;
-
-            case "geochemistry":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'geochemistry'
-                    ];
-                }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'geochemistry'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'geochemistry'
-                        ];
-                    }
-                }
-                break;
-
-            case "geo-energy test beds":
-                if (! $this->hasSubDomain($subDomain)) {
-                    $this->msl_subdomains[] = [
-                        'msl_subdomain' => 'geo-energy test beds'
-                    ];
-                }
-                if ($original) {
-                    if (! $this->hasOriginalSubDomain($subDomain)) {
-                        $this->msl_subdomains_original[] = [
-                            'msl_subdomain_original' => 'geo-energy test beds'
-                        ];
-                    }
-                } else {
-                    if (! $this->hasInterpretedSubDomain($subDomain)) {
-                        $this->msl_subdomains_interpreted[] = [
-                            'msl_subdomain_interpreted' => 'geo-energy test beds'
-                        ];
-                    }
-                }
-                break;
-
-            default:
-                throw new Exception('attempt to add invalid subdomain');
+            }
+        } else {
+            throw new Exception('attempt to add invalid subdomain');
         }
     }
 
