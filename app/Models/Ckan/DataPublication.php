@@ -303,52 +303,89 @@ class DataPublication
 
     /**
      * Add Right object to msl_rights
+     * @param Rigth $right
      */
     public function addRight(Right $right): void
     {
         $this->msl_rights[] = $right;            
     }
 
+    /**
+     * Add AlternateIdentifier object to msl_alternate_identifiers
+     * @param AlternateIdentifier $alternateIdentifier
+     */
     public function addAlternateIdentifier(AlternateIdentifier $alternateIdentifier): void
     {
         $this->msl_alternate_identifiers[] = $alternateIdentifier;
     }
 
+    /**
+     * Add RelatedIdentifier object to msl_related_identifiers
+     * @param RelatedIdentifier $relatedIdentifier
+     */
     public function addRelatedIdentifier(RelatedIdentifier $relatedIdentifier): void
     {
         $this->msl_related_identifiers[] = $relatedIdentifier;
     }
 
+    /**
+     * Add FundingReference to msl_funding_references
+     * @param FundingReference $fundingReference
+     */
     public function addFundingReference(FundingReference $fundingReference): void
     {
         $this->msl_funding_references[] = $fundingReference;
     }
 
+    /**
+     * Add Date to msl_dates
+     * @param Date $date
+     */
     public function addDate(Date $date): void
     {
         $this->msl_dates[] = $date;
     }
 
+    /**
+     * Add Creator to msl_creators
+     * @param Creator $creator
+     */
     public function addCreator(Creator $creator): void
     {
         $this->msl_creators[] = $creator;
     }
 
+    /**
+     * Add Contributor to msl_contributors
+     * @param Contributor $contributor
+     */
     public function addContributor(Contributor $contributor): void
     {
         $this->msl_contributors[] = $contributor;
     }
 
+    /**
+     * Add size to msl_sizes
+     * @param string $size
+     */
     public function addSize(string $size): void
     {
         $this->msl_sizes[] = $size;
     }
 
+    /**
+     * Add format to msl_formats
+     * @param string $format
+     */
     public function addFormat(string $format): void
     {
         $this->msl_formats[] = $format;
     }
         
+    /**
+     * Add Tag to msl_tags if no existing tag with same msl_tag_string exists
+     * @param Tag $tag
+     */
     public function addTag(Tag $tag)
     {
         $exists = false;
@@ -364,12 +401,17 @@ class DataPublication
         }
     }
     
-    public function addUriToTag($tagString, $uri)
+    /**
+     * Add msl uri to Tag by tag string
+     * @param string $tagString
+     * @param string $uri
+     */
+    public function addUriToTag(string $tagString, string $uri): void
     {
         foreach ($this->msl_tags as &$tag) {
-            if($tag['msl_tag_string'] == $tagString) {
-                if(!in_array($uri, $tag['msl_tag_uris'])) {
-                    $tag['msl_tag_uris'][] = $uri;
+            if($tag->msl_tag_string == $tagString) {
+                if(! in_array($uri, $tag->msl_tag_msl_uris)) {
+                    $tag->msl_tag_msl_uris[] = $uri;
                 }
             }
         }
