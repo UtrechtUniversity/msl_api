@@ -1,175 +1,245 @@
 <?php
+
 namespace App\Converters;
 
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
-require 'fullExtractor.php';
-
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class GeologicalAgeConverter
 {
-    
     public function ExcelToJson($filepath)
     {
-        
+
         $spreadsheet = IOFactory::load($filepath);
         $worksheet = $spreadsheet->getActiveSheet();
-        
+
         $nodes = [];
-        
+
         $counter = 0;
-        foreach ($worksheet->getRowIterator(2, $worksheet->getHighestDataRow()) as $row) {            
+        foreach ($worksheet->getRowIterator(2, $worksheet->getHighestDataRow()) as $row) {
             $cellIterator = $row->getCellIterator('A', 'F');
-            $cellIterator->setIterateOnlyExistingCells(false);            
-                                    
-            foreach ($cellIterator as $cell) {                                  
-                if($cell->getValue()) {
-                    if($cell->getValue() !== "") {
+            $cellIterator->setIterateOnlyExistingCells(false);
+
+            foreach ($cellIterator as $cell) {
+                if ($cell->getValue()) {
+                    if ($cell->getValue() !== '') {
                         $node = $this->createSimpleNode();
-                                                                       
+
                         $node['value'] = $this->cleanValue($cell->getValue());
-                        
-                        
-                        if($cell->hasHyperlink()) {
+
+                        if ($cell->hasHyperlink()) {
                             $node['hyperlink'] = $cell->getHyperlink()->getUrl();
                             $node['uri'] = $this->extractLinkUri($node['hyperlink']);
                             $node['vocabUri'] = $this->extractVocabUri($node['hyperlink']);
                         }
-                        
-                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());                                                                        
+
+                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
                         $node['rowNr'] = $cell->getRow();
-                        
+
                         $nodes[] = $node;
                     }
                 }
             }
             $counter++;
         }
-                        
+
         $nestedNodes = [];
         for ($i = 0; $i < count($nodes); $i++) {
-            if($nodes[$i]['level'] == 1) {
+            if ($nodes[$i]['level'] == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $nestedNodes[] = $node;
-            }                                                 
+            }
         }
-
 
         $newData = [];
         foreach ($nestedNodes as $rootNode) {
-            switch ($rootNode["value"]) {
-                case "present-day":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $newData [] = $rootNode;
+            switch ($rootNode['value']) {
+                case 'present-day':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = $this->definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $newData[] = $rootNode;
                     break;
-                case "Phanerozoic":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $newData [] = $rootNode;
+                case 'Phanerozoic':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = $this->definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $newData[] = $rootNode;
                     break;
-                case "Precambrian":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $newData [] = $rootNode;
+                case 'Precambrian':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = $this->definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $newData[] = $rootNode;
                     break;
-                case "FormationOfEarth":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $rootNode = definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
-                    $newData [] = $rootNode;
+                case 'FormationOfEarth':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $rootNode = $this->definitionForRoot($rootNode, 'G', $spreadsheet->getSheetByName('Geological age'));
+                    $newData[] = $rootNode;
                     break;
                 default:
                     break;
-                }        
+            }
 
         }
         $nestedNodes = $newData;
-        
-        
+
         // return $nestedNodes;
         return json_encode($nestedNodes, JSON_PRETTY_PRINT);
     }
 
-    
-    //http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
+    private function definitionForRoot($node, $columnToCheck, $worksheet)
+    {
+        // check rootnode itself
+        $getCell = $worksheet->getCell($columnToCheck.$node['rowNr']);
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if ($cellValue != '') {
+            $node = $this->checkupValue($cellValue, $getCell, $node);
+        }
+
+        return $node;
+    }
+
+    private function checkRootNode($node, $columnToCheck, $worksheet)
+    {
+        $newSubNode = [];
+        foreach ($node['subTerms'] as $subnode) {
+            // recursive
+            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $worksheet);
+            $newSubNode[] = $subnode;
+        }
+
+        return $newSubNode;
+    }
+
+    // recursive
+    private function addCellValueToEntry($node, $columnToCheck, $worksheet)
+    {
+        $getCell = $worksheet->getCell($columnToCheck.$node['rowNr']);
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if ($cellValue != '') {
+            $node = $this->checkupValue($cellValue, $getCell, $node);
+        }
+
+        if (count($node['subTerms']) > 0) {
+            $newData = [];
+
+            foreach ($node['subTerms'] as $subNode) {
+                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $worksheet);
+                $newData[] = $subNode;
+            }
+            $node['subTerms'] = $newData;
+        }
+
+        return $node;
+    }
+
+    private function checkupValue($cellValue, $getCell, $node)
+    {
+        if ($cellValue instanceof \PhpOffice\PhpSpreadsheet\RichText\RichText) {
+            $fullstring = '';
+            foreach ($cellValue->getRichTextElements() as $richTextElement) {
+                $fullstring = $fullstring.$richTextElement->getText();
+            }
+            $node['defininition'] = $fullstring;
+        } else {
+
+            if ($getCell->hasHyperlink()) {
+                $node['defininition-link'] = $getCell->getHyperlink()->getUrl();
+
+            } elseif (str_contains(substr($cellValue, 0, 4), 'http')) {
+
+                $node['defininition-link'] = $cellValue;
+
+            } else {
+                $node['defininition'] = $cellValue;
+
+            }
+        }
+
+        return $node;
+    }
+
+    // http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
     private function isGovAuUrl($url)
     {
-        if(str_contains($url, 'cgi.vocabs.ga.gov.au')) {
+        if (str_contains($url, 'cgi.vocabs.ga.gov.au')) {
             return true;
         }
-        
+
         return false;
     }
-    
-    private function extractLinkUri($url) 
+
+    private function extractLinkUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['uri'])) {
+
+            if (isset($queryParts['uri'])) {
                 return $queryParts['uri'];
             }
         }
-        
+
         return '';
     }
-    
-    private function extractVocabUri($url) 
+
+    private function extractVocabUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['vocab_uri'])) {
+
+            if (isset($queryParts['vocab_uri'])) {
                 return $queryParts['vocab_uri'];
             }
         }
-        
-        return '';        
+
+        return '';
     }
-    
+
     private function cleanValue($string)
-    {        
-        if(str_contains($string, '#')) {
+    {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
+
             return trim($parts[0]);
         }
-        
+
         return trim($string);
     }
-    
-    private function extractSynonyms($string) 
+
+    private function extractSynonyms($string)
     {
         $synonyms = [];
-        if(str_contains($string, '#')) {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
             array_shift($parts);
-            foreach ($parts as $part) {                
+            foreach ($parts as $part) {
                 $synonyms[] = trim($part);
             }
         }
-                
+
         return $synonyms;
     }
-    
+
     private function getChildren($current, $nodes)
     {
         $children = [];
-        for($i = $current + 1; $i < count($nodes); $i++) {
-            if(($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
+        for ($i = $current + 1; $i < count($nodes); $i++) {
+            if (($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $children[] = $node;
             } elseif ($nodes[$i]['level'] == $nodes[$current]['level']) {
                 return $children;
-            }                                
+            }
         }
+
         return $children;
     }
-    
+
     private function createSimpleNode()
     {
         $node = [
@@ -180,12 +250,10 @@ class GeologicalAgeConverter
             'uri' => '',
             'synonyms' => [],
             'subTerms' => [],
-            "defininition-link" => '',
-            "defininition" => ''
+            'defininition-link' => '',
+            'defininition' => '',
         ];
-        
+
         return $node;
     }
-    
 }
-

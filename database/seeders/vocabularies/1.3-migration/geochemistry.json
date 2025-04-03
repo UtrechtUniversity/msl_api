@@ -935,12 +935,12 @@
                             "(gfaas)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_absorption_spectrometry-graphite_furnace_atomic_absorption_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 62
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_absorption_spectrometry",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 61
             },
@@ -973,12 +973,12 @@
                             "(icpaes)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_emission_spectrometry-inductively_coupled_plasmaatomic_emission_spectroscopy",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 64
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-atomic_emission_spectrometry",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 63
             },
@@ -990,7 +990,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-alpha_counting",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 65
             },
@@ -1002,7 +1002,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-elemental_analysis",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 66
             },
@@ -1019,7 +1019,7 @@
                     "electron probe micro analyzer"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-electron_probe_micro-analyzer_epma",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 67
             },
@@ -1031,7 +1031,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-gamma_counting",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 68
             },
@@ -1045,7 +1045,7 @@
                     "ion-exchange chromatograph"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-ion_chromatography",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 69
             },
@@ -1068,7 +1068,7 @@
                             "(ams)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-accelerator_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 71
                     },
@@ -1083,7 +1083,7 @@
                             "(irms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-elemental_analyzer_continuous_flow_isotope_ratio_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 72
                     },
@@ -1099,7 +1099,7 @@
                             "(gcms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-gas_chromatography-mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 73
                     },
@@ -1115,7 +1115,7 @@
                             "(icpms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 74
                     },
@@ -1131,7 +1131,7 @@
                             "high-resolution-inductively coupled plasma mass"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-high-resolution_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 75
                     },
@@ -1147,7 +1147,7 @@
                             "(mc-icpms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-multicollector_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 76
                     },
@@ -1167,7 +1167,7 @@
                             "(la-icp-ms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 77
                     },
@@ -1184,7 +1184,7 @@
                             "(lahr-icpms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_high-resolution_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 78
                     },
@@ -1201,7 +1201,7 @@
                             "(lamc-icpms)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-inductively_coupled_plasma_mass_spectrometry-laser_ablation_multicollector_inductively_coupled_plasma_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 79
                     },
@@ -1216,7 +1216,7 @@
                             "nanosims"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-secondary_ionization_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 80
                     },
@@ -1230,12 +1230,12 @@
                             "tims"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry-thermal_ionization_mass_spectrometry",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 81
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-mass_spectrometry",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 70
             },
@@ -1249,7 +1249,7 @@
                     "inaa"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-neutron_activation_analysis",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 82
             },
@@ -1290,7 +1290,7 @@
                         "rowNr": 85
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-spectrophotometry",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 83
             },
@@ -1302,7 +1302,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-titration",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 86
             },
@@ -1339,7 +1339,7 @@
                             "xanes"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-x-ray_absorption_near-edge_structure_spectroscopy",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 89
                     },
@@ -1356,7 +1356,7 @@
                             "(edx)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-energy-dispersive_x-ray_spectroscopy",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 90
                     },
@@ -1373,17 +1373,17 @@
                             "X-ray fluoresence"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry-x-ray_fluorescence",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 91
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique-x-ray_spectrometry",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 88
             }
         ],
-        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/technique",
+        "defininition-link": "",
         "defininition": "",
         "rowNr": 60
     },
@@ -1405,7 +1405,7 @@
                     "acetate"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-acetate",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 93
             },
@@ -1769,7 +1769,7 @@
                         "rowNr": 105
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-age_of_sample",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 94
             },
@@ -1784,7 +1784,7 @@
                     "aluminum"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-aluminum_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 110
             },
@@ -1798,7 +1798,7 @@
                     "NH3,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ammonia",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 111
             },
@@ -1812,7 +1812,7 @@
                     "NH4,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ammonium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 112
             },
@@ -1826,7 +1826,7 @@
                     "Sb,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-antimony",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 113
             },
@@ -1840,7 +1840,7 @@
                     "Ar,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-argon_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 114
             },
@@ -1852,7 +1852,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-arsenic",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 115
             },
@@ -1866,7 +1866,7 @@
                     "Ba,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-barium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 116
             },
@@ -1880,7 +1880,7 @@
                     "Be,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-beryllium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 117
             },
@@ -1894,7 +1894,7 @@
                     "Bi,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bismuth",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 118
             },
@@ -1916,12 +1916,12 @@
                             "delta_b11"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-boron-delta_b11_calculated_as_b11b10_sample__b11b10__nist_srm951_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 120
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-boron",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 119
             },
@@ -1935,7 +1935,7 @@
                     "Br,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bromium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 121
             },
@@ -1949,7 +1949,7 @@
                     "Br-,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-bromide",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 122
             },
@@ -1971,7 +1971,7 @@
                             "C(inorg)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-inorganic_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 124
                     },
@@ -1983,7 +1983,7 @@
                         "uri": "",
                         "synonyms": [],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-inorganic_carbon-dissolved_inorganic_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 125
                     },
@@ -2009,7 +2009,7 @@
                             "C(org)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-organic_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 127
                     },
@@ -2021,7 +2021,7 @@
                         "uri": "",
                         "synonyms": [],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-organic_carbon-total_organic_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 128
                     },
@@ -2035,7 +2035,7 @@
                             "C(tot)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-total_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 129
                     },
@@ -2049,7 +2049,7 @@
                             "C(non-carb)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-non-carbonate_carbon",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 130
                     },
@@ -2063,7 +2063,7 @@
                             "CO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-carbon_monoxide_measured",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 131
                     },
@@ -2077,7 +2077,7 @@
                             "CO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-carbon_dioxide_measured",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 132
                     },
@@ -2091,7 +2091,7 @@
                             "CH4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-methane_measured",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 133
                     },
@@ -2105,7 +2105,7 @@
                             "HCO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-bicarbonate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 134
                     },
@@ -2117,12 +2117,12 @@
                         "uri": "",
                         "synonyms": [],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured-delta_c13_calculated_as_c13c12_sample__c13c12_pdb_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 135
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-carbon_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 123
             },
@@ -2146,7 +2146,7 @@
                             "CaO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 137
                     },
@@ -2160,7 +2160,7 @@
                             "CaSO4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_sulfate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 138
                     },
@@ -2174,7 +2174,7 @@
                             "CaCO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-calcium_carbonate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 139
                     },
@@ -2188,12 +2188,12 @@
                             "delta_ca44"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium-delta_ca44_calculated_as_ca44ca40_sample__ca44ca40_std_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 140
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-calcium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 136
             },
@@ -2207,7 +2207,7 @@
                     "Cd,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cadmium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 141
             },
@@ -2231,7 +2231,7 @@
                             "Ce2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium-cerium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 143
                     },
@@ -2245,12 +2245,12 @@
                             "CeO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium-cerium_dioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 144
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cerium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 142
             },
@@ -2286,12 +2286,12 @@
                             "delta_cl37"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chlorine-delta_cl37_calculated_as_cl37cl35_sample__cl37cl35_smoc_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 147
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chlorine",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 145
             },
@@ -2315,12 +2315,12 @@
                             "CoO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cobalt-cobalt_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 149
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cobalt",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 148
             },
@@ -2344,12 +2344,12 @@
                             "Cr2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chromium-chromium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 151
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-chromium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 150
             },
@@ -2363,7 +2363,7 @@
                     "Cs,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-cesium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 152
             },
@@ -2388,7 +2388,7 @@
                             "copper(i) oxide"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-cuprous_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 154
                     },
@@ -2402,7 +2402,7 @@
                             "CuO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-copper_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 155
                     },
@@ -2416,12 +2416,12 @@
                             "delta_cu65"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper-delta_cu65_calculated_as_cu65cu63_sample__cu65cu63_nist-976_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 156
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-copper",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 153
             },
@@ -2445,12 +2445,12 @@
                             "Dy2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-dysprosium-dysprosium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 158
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-dysprosium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 157
             },
@@ -2474,12 +2474,12 @@
                             "Er2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-erbium-erbium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 160
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-erbium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 159
             },
@@ -2503,12 +2503,12 @@
                             "Eu2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-europium-europium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 162
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-europium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 161
             },
@@ -2520,7 +2520,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-fluorine",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 163
             },
@@ -2534,7 +2534,7 @@
                     "Fr,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-francium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 164
             },
@@ -2548,7 +2548,7 @@
                     "Ga,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gallium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 165
             },
@@ -2572,12 +2572,12 @@
                             "Gd2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gadolinium-gadolinium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 167
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gadolinium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 166
             },
@@ -2591,7 +2591,7 @@
                     "Ge,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-germanium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 168
             },
@@ -2605,7 +2605,7 @@
                     "Au,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-gold_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 169
             },
@@ -2630,7 +2630,7 @@
                             "H2O,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-water_h2o",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 171
                     },
@@ -2644,7 +2644,7 @@
                             "H2S,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-hydrogen_sulfide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 172
                     },
@@ -2658,12 +2658,12 @@
                             "delta_d"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h-delta_d_calculated_as_h2h1_sample__h2h1_std_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 173
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hydrogen_h",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 170
             },
@@ -2677,7 +2677,7 @@
                     "He,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-helium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 174
             },
@@ -2701,7 +2701,7 @@
                             "HfO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium-hafnium_dioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 176
                     },
@@ -2715,12 +2715,12 @@
                             "HfO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium-hafnium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 177
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-hafnium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 175
             },
@@ -2744,12 +2744,12 @@
                             "Ho2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-holmium-holmium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 179
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-holmium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 178
             },
@@ -2761,7 +2761,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iodine",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 180
             },
@@ -2773,7 +2773,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-indium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 181
             },
@@ -2787,7 +2787,7 @@
                     "Ir,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iridium_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 182
             },
@@ -2811,7 +2811,7 @@
                             "Fe2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferric_iron_oxide_tri-valent_iron",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 184
                     },
@@ -2825,7 +2825,7 @@
                             "Fe2O3t,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-total_iron_oxide_content_reported_as_ferric_tri-valent_iron",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 185
                     },
@@ -2839,7 +2839,7 @@
                             "Fe3O4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrosoferric_oxide_iron_iiiii_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 186
                     },
@@ -2853,7 +2853,7 @@
                             "Fe3\/Fet,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ratio_of_feric_iron_to_total_iron",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 187
                     },
@@ -2867,7 +2867,7 @@
                             "FeCO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-siderite",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 188
                     },
@@ -2881,7 +2881,7 @@
                             "Fe-Fe"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-iron_ferrite_fefe2o4",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 189
                     },
@@ -2905,12 +2905,12 @@
                                     "FeOt,"
                                 ],
                                 "subTerms": [],
-                                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_iron_oxide_di-valent-total_iron_oxide_content_reported_as_ferrous_di-valent_iron",
+                                "defininition-link": "",
                                 "defininition": "",
                                 "rowNr": 191
                             }
                         ],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_iron_oxide_di-valent",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 190
                     },
@@ -2924,7 +2924,7 @@
                             "FeS,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-ferrous_sulfide_di-valent",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 192
                     },
@@ -2938,7 +2938,7 @@
                             "FeS2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-iron_sulfide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 193
                     },
@@ -2952,12 +2952,12 @@
                             "delta_fe56"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron-delta_fe56_calculated_as_fe56fe54__sample__fe56fe54_irmm-014_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 194
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-iron",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 183
             },
@@ -2971,7 +2971,7 @@
                     "Kr,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-krypton",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 195
             },
@@ -2995,12 +2995,12 @@
                             "La2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lanthanum-lanthanum_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 197
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lanthanum",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 196
             },
@@ -3024,12 +3024,12 @@
                             "PbO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lead_pb-lead_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 199
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lead_pb",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 198
             },
@@ -3053,7 +3053,7 @@
                             "delta_li6"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium-delta_li6_calculated_as_li6li7_sample__li6li7_std_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 201
                     },
@@ -3067,12 +3067,12 @@
                             "delta_li7"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium-delta_li7_calculated_as_li7li6_sample__li7li6_std_-11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 202
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lithium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 200
             },
@@ -3096,12 +3096,12 @@
                             "Lu2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lutetium-lutetium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 204
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-lutetium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 203
             },
@@ -3125,12 +3125,12 @@
                             "MgO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-magnesium-magnesium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 206
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-magnesium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 205
             },
@@ -3154,7 +3154,7 @@
                             "Mn3O4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_tetroxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 208
                     },
@@ -3168,7 +3168,7 @@
                             "MnCO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_carbonate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 209
                     },
@@ -3182,12 +3182,12 @@
                             "MnO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese-manganese_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 210
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-manganese",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 207
             },
@@ -3201,7 +3201,7 @@
                     "Hg,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-mercury",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 211
             },
@@ -3225,12 +3225,12 @@
                             "delta_mo98"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-molybdenum-delta_mo98_calculated_as_mo98mo95_sample__mo98mo95_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 213
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-molybdenum",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 212
             },
@@ -3254,12 +3254,12 @@
                             "Nd2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neodymium-neodymium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 215
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neodymium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 214
             },
@@ -3273,7 +3273,7 @@
                     "Ne,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-neon",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 216
             },
@@ -3297,7 +3297,7 @@
                             "NiO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel-nickel_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 218
                     },
@@ -3311,12 +3311,12 @@
                             "delta_ni60"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel-delta_ni60_calculated_as_ni60ni58_sample__ni60ni58_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 219
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nickel",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 217
             },
@@ -3340,7 +3340,7 @@
                             "Nb2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium-niobium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 221
                     },
@@ -3354,12 +3354,12 @@
                             "Nb2O5,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium-niobium_pentoxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 222
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-niobium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 220
             },
@@ -3381,7 +3381,7 @@
                             "N(org)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-organic_nitrogen",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 224
                     },
@@ -3395,7 +3395,7 @@
                             "N(tot)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-total_nitrogen",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 225
                     },
@@ -3409,7 +3409,7 @@
                             "NO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-nitrogen_dioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 226
                     },
@@ -3423,7 +3423,7 @@
                             "NO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-nitrate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 227
                     },
@@ -3437,12 +3437,12 @@
                             "delta_n15"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen-delta_n15_calculated_as_n15n14_sample__n15n14_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 228
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-nitrogen",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 223
             },
@@ -3464,7 +3464,7 @@
                             "delta_o17"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen-delta_o17_calculated_as_o17o16_sample__o17o16_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 230
                     },
@@ -3478,12 +3478,12 @@
                             "delta_o18"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen-delta_o18_calculated_as_o18o16_sample__o18o16_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 231
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-oxygen",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 229
             },
@@ -3497,7 +3497,7 @@
                     "Os,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-osmium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 232
             },
@@ -3511,7 +3511,7 @@
                     "Pd,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-palladium_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 233
             },
@@ -3523,7 +3523,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ph",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 234
             },
@@ -3545,7 +3545,7 @@
                             "P(org)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorous_organic",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 236
                     },
@@ -3559,7 +3559,7 @@
                             "P2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorus_trioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 237
                     },
@@ -3573,7 +3573,7 @@
                             "P2O5,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphorus_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 238
                     },
@@ -3587,12 +3587,12 @@
                             "PO4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus-phosphate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 239
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-phosphorus",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 235
             },
@@ -3616,12 +3616,12 @@
                             "pt190\/os188"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-platinum_measured-ratio_of_platinum_isotope_pt190_to_osmium_isotope_os188",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 241
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-platinum_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 240
             },
@@ -3645,7 +3645,7 @@
                             "po210_activity"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210-polonium_isotope_po210_reported_as_activity",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 243
                     },
@@ -3659,12 +3659,12 @@
                             "po210\/pb210"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210-ratio_of_polonium_isotope_po210_to_lead_isotope_pb210",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 244
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-polonium_isotope_po210",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 242
             },
@@ -3686,12 +3686,12 @@
                             "K2O,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-potassium-potassium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 246
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-potassium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 245
             },
@@ -3703,7 +3703,7 @@
                 "uri": "",
                 "synonyms": [],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-protactinium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 247
             },
@@ -3717,7 +3717,7 @@
                     "Pr,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-praseodymium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 248
             },
@@ -3731,7 +3731,7 @@
                     "Ra,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-radium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 249
             },
@@ -3745,7 +3745,7 @@
                     "Re,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rhenium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 250
             },
@@ -3759,7 +3759,7 @@
                     "Rh,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rhodium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 251
             },
@@ -3773,7 +3773,7 @@
                     "Rb,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-rubidium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 252
             },
@@ -3787,7 +3787,7 @@
                     "Ru,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ruthenium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 253
             },
@@ -3811,12 +3811,12 @@
                             "Sm2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-samarium-samarium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 255
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-samarium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 254
             },
@@ -3840,12 +3840,12 @@
                             "Sc2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-scandium-scandium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 257
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-scandium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 256
             },
@@ -3859,7 +3859,7 @@
                     "Se,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-selenium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 258
             },
@@ -3925,7 +3925,7 @@
                             "H4SiO4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-silicic_acid",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 263
                     },
@@ -3939,7 +3939,7 @@
                             "delta_si29"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-delta_si29_calculated_as_si29si28_sample__si29si28_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 264
                     },
@@ -3953,7 +3953,7 @@
                             "delta_si30"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silica-delta_si30_calculated_as_si30si28_sample__si30si28_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 265
                     }
@@ -3982,12 +3982,12 @@
                             "Na2O,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sodium-sodium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 267
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sodium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 266
             },
@@ -4001,7 +4001,7 @@
                     "Ag,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-silver_measured",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 268
             },
@@ -4025,12 +4025,12 @@
                             "SrO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-strontium-strontium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 270
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-strontium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 269
             },
@@ -4058,7 +4058,7 @@
                             "SO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_dioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 272
                     },
@@ -4073,7 +4073,7 @@
                             "SO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_trioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 273
                     },
@@ -4088,7 +4088,7 @@
                             "SO4,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfate",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 274
                     },
@@ -4103,7 +4103,7 @@
                             "s_(slfi)"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_present_as_sulfide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 275
                     },
@@ -4118,7 +4118,7 @@
                             "s_py"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-sulfur_present_in_pyrite_form",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 276
                     },
@@ -4132,7 +4132,7 @@
                             "delta_s33"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s33_calculated_as_s33s32_sample__s33s32_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 277
                     },
@@ -4146,7 +4146,7 @@
                             "delta_s34"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s34_calculated_as_s34s32_sample__s34s32_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 278
                     },
@@ -4160,12 +4160,12 @@
                             "delta_s36"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur-delta_s36_calculated_as_s36s32_sample__s36s32_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 279
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-sulfur",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 271
             },
@@ -4189,12 +4189,12 @@
                             "Ta2O5,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tantalum-tantalum_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 281
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tantalum",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 280
             },
@@ -4208,7 +4208,7 @@
                     "Te,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tellurium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 282
             },
@@ -4232,12 +4232,12 @@
                             "Tb2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-terbium-terbium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 284
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-terbium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 283
             },
@@ -4251,7 +4251,7 @@
                     "Tl,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thallium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 285
             },
@@ -4275,7 +4275,7 @@
                             "ThO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium-thorium_monoxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 287
                     },
@@ -4289,12 +4289,12 @@
                             "ThO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium-thorium_dioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 288
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thorium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 286
             },
@@ -4318,12 +4318,12 @@
                             "Tm2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thulium-thulium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 290
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-thulium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 289
             },
@@ -4337,7 +4337,7 @@
                     "Sn,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tin",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 291
             },
@@ -4361,7 +4361,7 @@
                             "Ti2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_iii_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 293
                     },
@@ -4375,7 +4375,7 @@
                             "TiO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_ii_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 294
                     },
@@ -4389,7 +4389,7 @@
                             "TiO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-titanium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 295
                     },
@@ -4403,12 +4403,12 @@
                             "delta_ti49"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium-delta_ti49_calculated_as_ti49ti47_sample__ti49ti47_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 296
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-titanium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 292
             },
@@ -4430,12 +4430,12 @@
                             "WO3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tungsten-tungsten_trioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 298
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-tungsten",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 297
             },
@@ -4457,7 +4457,7 @@
                             "UO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-uranium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 300
                     },
@@ -4471,7 +4471,7 @@
                             "delta_u234"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-delta_u234_calculated_as_u234u238_sample__u234u238_secular_equilibrium_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 301
                     },
@@ -4485,12 +4485,12 @@
                             "delta_u238"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium-delta_u238_calculated_as_u238u235_sample__u238u235_secular_equilibrium_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 302
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-uranium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 299
             },
@@ -4512,7 +4512,7 @@
                             "V2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-vanadium_sesquioxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 304
                     },
@@ -4526,7 +4526,7 @@
                             "V2O5,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-vanadium_pentoxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 305
                     },
@@ -4540,12 +4540,12 @@
                             "delta_v51"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium-delta_v51_calculated_as_v51v50_sample__v51v50_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 306
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-vanadium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 303
             },
@@ -4559,7 +4559,7 @@
                     "Xe,"
                 ],
                 "subTerms": [],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-xenon",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 307
             },
@@ -4581,7 +4581,7 @@
                             "Y2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium-yttrium_iii_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 309
                     },
@@ -4595,12 +4595,12 @@
                             "YO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium-yttrium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 310
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-yttrium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 308
             },
@@ -4624,12 +4624,12 @@
                             "Yb2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ytterbium-ytterbium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 312
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-ytterbium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 311
             },
@@ -4653,7 +4653,7 @@
                             "ZnO,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-zinc_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 314
                     },
@@ -4667,7 +4667,7 @@
                             "delta_zn66"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-delta_zn66_calculated_as_zn66zn64_sample__zn66zn64_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 315
                     },
@@ -4681,12 +4681,12 @@
                             "delta_zn68"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc-delta_zn68_calculated_as_zn68zn64_sample__zn68zn64_std_-_11000",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 316
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zinc",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 313
             },
@@ -4710,7 +4710,7 @@
                             "Zr2O3,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium-zirconium_pentoxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 318
                     },
@@ -4724,17 +4724,17 @@
                             "ZrO2,"
                         ],
                         "subTerms": [],
-                        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium-zirconium_oxide",
+                        "defininition-link": "",
                         "defininition": "",
                         "rowNr": 319
                     }
                 ],
-                "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property-zirconium",
+                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 317
             }
         ],
-        "defininition-link": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.2\/measured_property",
+        "defininition-link": "",
         "defininition": "",
         "rowNr": 92
     }

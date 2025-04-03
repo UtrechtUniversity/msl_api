@@ -1,18 +1,16 @@
 <?php
+
 namespace App\Converters;
 
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
-require 'fullExtractor.php';
-
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class MicroscopyConverter
 {
-    
     public function ExcelToJson($filepath)
     {
         $spreadsheet = IOFactory::load($filepath);
-        
+
         $data = [
             [
                 'value' => 'Apparatus',
@@ -22,8 +20,8 @@ class MicroscopyConverter
                 'uri' => '',
                 'synonyms' => [],
                 'subTerms' => $this->getBySheet($spreadsheet, 'Apparatus', 2),
-                "defininition-link" => '',
-                "defininition" => ''
+                'defininition-link' => '',
+                'defininition' => '',
             ],
             [
                 'value' => 'Ancillary equipment',
@@ -33,8 +31,8 @@ class MicroscopyConverter
                 'uri' => '',
                 'synonyms' => [],
                 'subTerms' => $this->getBySheet($spreadsheet, 'Ancillary equipment', 2),
-                "defininition-link" => '',
-                "defininition" => ''
+                'defininition-link' => '',
+                'defininition' => '',
             ],
             [
                 'value' => 'Technique',
@@ -44,8 +42,8 @@ class MicroscopyConverter
                 'uri' => '',
                 'synonyms' => [],
                 'subTerms' => $this->getBySheet($spreadsheet, 'Technique', 2),
-                "defininition-link" => '',
-                "defininition" => ''
+                'defininition-link' => '',
+                'defininition' => '',
             ],
             [
                 'value' => 'Analyzed feature',
@@ -55,8 +53,8 @@ class MicroscopyConverter
                 'uri' => '',
                 'synonyms' => [],
                 'subTerms' => $this->getBySheet($spreadsheet, 'Analyzed feature', 2),
-                "defininition-link" => '',
-                "defininition" => ''
+                'defininition-link' => '',
+                'defininition' => '',
             ],
             [
                 'value' => 'Inferred parameter',
@@ -66,191 +64,264 @@ class MicroscopyConverter
                 'uri' => '',
                 'synonyms' => [],
                 'subTerms' => $this->getBySheet($spreadsheet, 'inferred parameter ', 2),
-                "defininition-link" => '',
-                "defininition" => ''
-            ]            
+                'defininition-link' => '',
+                'defininition' => '',
+            ],
         ];
 
         $newData = [];
         foreach ($data as $rootNode) {
-            switch ($rootNode["value"]) {
-                case "Apparatus":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('Apparatus'));
-                    $newData [] = $rootNode;
+            switch ($rootNode['value']) {
+                case 'Apparatus':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('Apparatus'));
+                    $newData[] = $rootNode;
                     break;
-                case "Ancillary equipment":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('Ancillary equipment'));
-                    $newData [] = $rootNode;
+                case 'Ancillary equipment':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('Ancillary equipment'));
+                    $newData[] = $rootNode;
                     break;
-                case "Technique":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('Technique'));
-                    $newData [] = $rootNode;
+                case 'Technique':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('Technique'));
+                    $newData[] = $rootNode;
                     break;
-                case "Analyzed feature":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('Analyzed feature'));
-                    $newData [] = $rootNode;
+                case 'Analyzed feature':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'E', $spreadsheet->getSheetByName('Analyzed feature'));
+                    $newData[] = $rootNode;
                     break;
-                case "Inferred parameter":
-                    $rootNode["subTerms"] = checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('inferred parameter '));
-                    $newData [] = $rootNode;
+                case 'Inferred parameter':
+                    $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'D', $spreadsheet->getSheetByName('inferred parameter '));
+                    $newData[] = $rootNode;
                     break;
                 default:
                     break;
-                }        
+            }
 
         }
         $data = $newData;
-        
+
         return json_encode($data, JSON_PRETTY_PRINT);
     }
-        
-    
-    private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1) {
+
+    private function definitionForRoot($node, $columnToCheck, $worksheet)
+    {
+        // check rootnode itself
+        $getCell = $worksheet->getCell($columnToCheck.$node['rowNr']);
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if ($cellValue != '') {
+            $node = $this->checkupValue($cellValue, $getCell, $node);
+        }
+
+        return $node;
+    }
+
+    private function checkRootNode($node, $columnToCheck, $worksheet)
+    {
+        $newSubNode = [];
+        foreach ($node['subTerms'] as $subnode) {
+            // recursive
+            $subnode = $this->addCellValueToEntry($subnode, $columnToCheck, $worksheet);
+            $newSubNode[] = $subnode;
+        }
+
+        return $newSubNode;
+    }
+
+    // recursive
+    private function addCellValueToEntry($node, $columnToCheck, $worksheet)
+    {
+        $getCell = $worksheet->getCell($columnToCheck.$node['rowNr']);
+        $cellValue = $worksheet->getCell($columnToCheck.$node['rowNr'])->getValue();
+
+        if ($cellValue != '') {
+            $node = $this->checkupValue($cellValue, $getCell, $node);
+        }
+
+        if (count($node['subTerms']) > 0) {
+            $newData = [];
+
+            foreach ($node['subTerms'] as $subNode) {
+                $subNode = $this->addCellValueToEntry($subNode, $columnToCheck, $worksheet);
+                $newData[] = $subNode;
+            }
+            $node['subTerms'] = $newData;
+        }
+
+        return $node;
+    }
+
+    private function checkupValue($cellValue, $getCell, $node)
+    {
+        if ($cellValue instanceof \PhpOffice\PhpSpreadsheet\RichText\RichText) {
+            $fullstring = '';
+            foreach ($cellValue->getRichTextElements() as $richTextElement) {
+                $fullstring = $fullstring.$richTextElement->getText();
+            }
+            $node['defininition'] = $fullstring;
+        } else {
+
+            if ($getCell->hasHyperlink()) {
+                $node['defininition-link'] = $getCell->getHyperlink()->getUrl();
+
+            } elseif (str_contains(substr($cellValue, 0, 4), 'http')) {
+
+                $node['defininition-link'] = $cellValue;
+
+            } else {
+                $node['defininition'] = $cellValue;
+
+            }
+        }
+
+        return $node;
+    }
+
+    private function getBySheet($spreadsheet, $sheetName, $baseLevel = 1)
+    {
         $worksheet = $spreadsheet->getSheetByName($sheetName);
-        
+
         $nodes = [];
-        
+
         $counter = 0;
         foreach ($worksheet->getRowIterator(3, $worksheet->getHighestDataRow()) as $row) {
             switch ($sheetName) {
                 case 'Apparatus':
                     $cellIterator = $row->getCellIterator('A', 'B');
                     break;
-                
+
                 case 'Ancillary equipment':
                     $cellIterator = $row->getCellIterator('A', 'B');
                     break;
-                    
+
                 case 'Technique':
                     $cellIterator = $row->getCellIterator('A', 'D');
                     break;
-                
+
                 case 'Analyzed feature':
                     $cellIterator = $row->getCellIterator('A', 'D');
                     break;
-                    
+
                 case 'inferred parameter ':
                     $cellIterator = $row->getCellIterator('A', 'C');
-                    break;      
+                    break;
             }
-            
+
             $cellIterator->setIterateOnlyExistingCells(false);
-            
+
             foreach ($cellIterator as $cell) {
-                if($cell->getValue()) {
-                    if($cell->getValue() !== "") {
+                if ($cell->getValue()) {
+                    if ($cell->getValue() !== '') {
                         $node = $this->createSimpleNode();
-                        
+
                         $node['value'] = $this->cleanValue($cell->getValue());
-                        
-                        
-                        if($cell->hasHyperlink()) {
+
+                        if ($cell->hasHyperlink()) {
                             $node['hyperlink'] = $cell->getHyperlink()->getUrl();
                             $node['uri'] = $this->extractLinkUri($node['hyperlink']);
                             $node['vocabUri'] = $this->extractVocabUri($node['hyperlink']);
                         }
-                        
+
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
                         $node['rowNr'] = $cell->getRow();
-                        
-                        
+
                         $nodes[] = $node;
                     }
                 }
             }
             $counter++;
         }
-        
+
         $nestedNodes = [];
         for ($i = 0; $i < count($nodes); $i++) {
-            if($nodes[$i]['level'] == $baseLevel) {
+            if ($nodes[$i]['level'] == $baseLevel) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $nestedNodes[] = $node;
             }
-        }        
-        
+        }
+
         return $nestedNodes;
     }
-    
-    
+
     private function isGovAuUrl($url)
     {
-        if(str_contains($url, 'cgi.vocabs.ga.gov.au')) {
+        if (str_contains($url, 'cgi.vocabs.ga.gov.au')) {
             return true;
         }
-        
+
         return false;
     }
-    
-    private function extractLinkUri($url) 
+
+    private function extractLinkUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['uri'])) {
+
+            if (isset($queryParts['uri'])) {
                 return $queryParts['uri'];
             }
         }
-        
+
         return '';
     }
-    
-    private function extractVocabUri($url) 
+
+    private function extractVocabUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['vocab_uri'])) {
+
+            if (isset($queryParts['vocab_uri'])) {
                 return $queryParts['vocab_uri'];
             }
         }
-        
-        return '';        
+
+        return '';
     }
-    
+
     private function cleanValue($string)
-    {        
-        if(str_contains($string, '#')) {
+    {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
+
             return trim($parts[0]);
         }
-        
+
         return trim($string);
     }
-    
-    private function extractSynonyms($string) 
+
+    private function extractSynonyms($string)
     {
         $synonyms = [];
-        if(str_contains($string, '#')) {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
             array_shift($parts);
-            foreach ($parts as $part) {                
+            foreach ($parts as $part) {
                 $synonyms[] = trim($part);
             }
         }
-                
+
         return $synonyms;
     }
-    
+
     private function getChildren($current, $nodes)
     {
         $children = [];
-        for($i = $current + 1; $i < count($nodes); $i++) {
-            if(($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
+        for ($i = $current + 1; $i < count($nodes); $i++) {
+            if (($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $children[] = $node;
             } elseif ($nodes[$i]['level'] == $nodes[$current]['level']) {
                 return $children;
-            }                                
+            }
         }
+
         return $children;
     }
-    
+
     private function createSimpleNode()
     {
         $node = [
@@ -261,12 +332,10 @@ class MicroscopyConverter
             'uri' => '',
             'synonyms' => [],
             'subTerms' => [],
-            "defininition-link" => '',
-            "defininition" => ''
+            'defininition-link' => '',
+            'defininition' => '',
         ];
-        
+
         return $node;
     }
-    
 }
-

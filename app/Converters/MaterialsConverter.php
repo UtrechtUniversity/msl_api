@@ -1,157 +1,145 @@
 <?php
+
 namespace App\Converters;
 
-use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class MaterialsConverter
 {
-    
     public function ExcelToJson($filepath)
     {
-        
+
         $spreadsheet = IOFactory::load($filepath);
         $worksheet = $spreadsheet->getActiveSheet();
-        
+
         $nodes = [];
-        
+
         $counter = 0;
-        foreach ($worksheet->getRowIterator(3, $worksheet->getHighestDataRow()) as $row) {            
+        foreach ($worksheet->getRowIterator(3, $worksheet->getHighestDataRow()) as $row) {
             $cellIterator = $row->getCellIterator('A', 'E');
-            $cellIterator->setIterateOnlyExistingCells(false);            
-                                    
-            foreach ($cellIterator as $cell) {                                  
-                if($cell->getValue()) {
-                    if($cell->getValue() !== "") {
+            $cellIterator->setIterateOnlyExistingCells(false);
+
+            foreach ($cellIterator as $cell) {
+                if ($cell->getValue()) {
+                    if ($cell->getValue() !== '') {
                         $node = $this->createSimpleNode();
-                                                                       
+
                         $node['value'] = $this->cleanValue($cell->getValue());
-                        
-                        
-                        if($cell->hasHyperlink()) {
+
+                        if ($cell->hasHyperlink()) {
                             $node['hyperlink'] = $cell->getHyperlink()->getUrl();
                             $node['uri'] = $this->extractLinkUri($node['hyperlink']);
                             $node['vocabUri'] = $this->extractVocabUri($node['hyperlink']);
                         }
-                        
-                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());                                                                        
+
+                        $node['level'] = Coordinate::columnIndexFromString($cell->getColumn());
                         $node['synonyms'] = $this->extractSynonyms($cell->getValue());
                         $node['rowNr'] = $cell->getRow();
-                        
-                        if($cell->hasHyperlink()){
-                            $node["defininition-link"] = $cell->getHyperlink()->getUrl();
-                    
+
+                        if ($cell->hasHyperlink()) {
+                            $node['defininition-link'] = $cell->getHyperlink()->getUrl();
+
                         }
-                        
-                        
-                        
+
                         $nodes[] = $node;
                     }
                 }
             }
             $counter++;
         }
-                        
+
         $nestedNodes = [];
         for ($i = 0; $i < count($nodes); $i++) {
-            if($nodes[$i]['level'] == 1) {
+            if ($nodes[$i]['level'] == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $nestedNodes[] = $node;
-            }                                                 
+            }
         }
-        
 
-        // $newData = [];
-        // foreach ($nestedNodes as $rootNode) {
-        //     $rootNode["subTerms"] = $this->checkRootNode($rootNode, 'F', 'definition-link', $spreadsheet->getSheetByName('2021 sample material'));
-        //     $rootNode = $this->definitionForRoot($rootNode, 'F', 'definition-link', $spreadsheet->getSheetByName('2021 sample material'));
-        //     $newData [] = $rootNode;
-        // }
-        // $nestedNodes = $newData;
-
-        
         return json_encode($nestedNodes, JSON_PRETTY_PRINT);
     }
 
-    
-    //http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
+    // http://cgi.vocabs.ga.gov.au/object?vocab_uri=http://resource.geosciml.org/classifierScheme/cgi/2016.01/simplelithology&uri=http%3A//resource.geosciml.org/classifier/cgi/lithology/igneous_rock
     private function isGovAuUrl($url)
     {
-        if(str_contains($url, 'cgi.vocabs.ga.gov.au')) {
+        if (str_contains($url, 'cgi.vocabs.ga.gov.au')) {
             return true;
         }
-        
+
         return false;
     }
-    
-    private function extractLinkUri($url) 
+
+    private function extractLinkUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['uri'])) {
+
+            if (isset($queryParts['uri'])) {
                 return $queryParts['uri'];
             }
         }
-        
+
         return '';
     }
-    
-    private function extractVocabUri($url) 
+
+    private function extractVocabUri($url)
     {
-        if($this->isGovAuUrl($url)) {
+        if ($this->isGovAuUrl($url)) {
             $urlParts = parse_url($url);
             parse_str($urlParts['query'], $queryParts);
-            
-            if(isset($queryParts['vocab_uri'])) {
+
+            if (isset($queryParts['vocab_uri'])) {
                 return $queryParts['vocab_uri'];
             }
         }
-        
-        return '';        
+
+        return '';
     }
-    
+
     private function cleanValue($string)
-    {        
-        if(str_contains($string, '#')) {
+    {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
+
             return trim($parts[0]);
         }
-        
+
         return trim($string);
     }
-    
-    private function extractSynonyms($string) 
+
+    private function extractSynonyms($string)
     {
         $synonyms = [];
-        if(str_contains($string, '#')) {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
             array_shift($parts);
-            foreach ($parts as $part) {                
+            foreach ($parts as $part) {
                 $synonyms[] = trim($part);
             }
         }
-                
+
         return $synonyms;
     }
-    
+
     private function getChildren($current, $nodes)
     {
         $children = [];
-        for($i = $current + 1; $i < count($nodes); $i++) {
-            if(($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
+        for ($i = $current + 1; $i < count($nodes); $i++) {
+            if (($nodes[$i]['level'] - $nodes[$current]['level']) == 1) {
                 $node = $nodes[$i];
                 $node['subTerms'] = $this->getChildren($i, $nodes);
                 $children[] = $node;
             } elseif ($nodes[$i]['level'] == $nodes[$current]['level']) {
                 return $children;
-            }                                
+            }
         }
+
         return $children;
     }
-    
+
     private function createSimpleNode()
     {
         $node = [
@@ -162,12 +150,10 @@ class MaterialsConverter
             'uri' => '',
             'synonyms' => [],
             'subTerms' => [],
-            "defininition-link" => '',
-            "defininition" => ''
+            'defininition-link' => '',
+            'defininition' => '',
         ];
-        
+
         return $node;
     }
-    
 }
-
