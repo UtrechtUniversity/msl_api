@@ -538,8 +538,7 @@ class DataPublication
                 
                 $exists = true;
                 break;
-            }
-            
+            }            
         }
         
         if(!$exists) {            
@@ -578,7 +577,12 @@ class DataPublication
         return false;
     }
 
-    private function setHasVocabKeyword($type, $vocabUri)
+    /**
+     * Set facet fields based upon vocabulary uri
+     * @param string $type
+     * @param string $vocabUri
+     */
+    private function setHasVocabKeyword(string $type, string $vocabUri): void
     {
         if ($type == 'enriched') {
             switch (true) {
