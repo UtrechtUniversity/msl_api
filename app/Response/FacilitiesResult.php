@@ -58,9 +58,7 @@ class FacilitiesResult
             $this->altitude = $data['msl_altitude'];
         }
 
-        // if(isset($data['msl_altitude'])) {
-        //     $this->portalLink = $data['msl_altitude'];
-        // }
+        $this->portalLink = route('lab-detail', ['id' => $data['name']]);
 
         if(isset($data['msl_organization_name'])) {
             $this->organization = $data['msl_organization_name'];

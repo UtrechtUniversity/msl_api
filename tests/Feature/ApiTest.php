@@ -718,4 +718,63 @@ class ApiTest extends TestCase
         );
     }
 
+
+
+     /**
+     * Test /geoenergy API endpoint based on mocked CKAN request
+     * 
+     * @return void
+     */
+    public function test_facilities_success_results(): void
+    {
+        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
+        $this->app->bind(ApiController::class, function($app){
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_facilities_117.txt'));
+            $mock = new MockHandler([
+                new Response(200, [], $response)
+            ]);
+
+            $handler = HandlerStack::create($mock);
+                    
+            return new ApiController(new Client(['handler' => $handler]));
+        });
+
+        // Retrieve response from API
+        $response = $this->get('webservice/api/facilities');
+
+        // Check for 200 status response
+        $response->assertStatus(200);
+
+        // dd($response);
+        // Verify response body contents
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', true)
+                ->where('result.count', 117)
+                ->where('result.resultCount', 10)
+                ->has('result.results.0', fn (AssertableJson $json) =>
+                    $json
+                        ->where('name', 'HelLabs - Geophysical laboratory')
+                        ->where('description', 'Paleomagnetism, rock magnetism and petrophysics')
+                        ->where('descriptionHtml', "<p>Paleomagnetism, rock magnetism and petrophysics</p>\n")
+                        ->where('domain', 'Paleomagnetism')
+                        ->where('latitude', '60.2026')
+                        ->where('longitude', '24.9576')
+                        ->has('altitude')
+                        ->where('portalLink', 'http://localhost/lab/fa7cdfad1a5aaf8370ebeda47a1ff1c3')
+                        ->where('organization', 'University of Helsinki')
+                        ->where('equipment.0.title', '2G cryogenic magnetometer')
+                        ->where('equipment.0.description', 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,')
+                        ->where('equipment.0.descriptionHtml', "<p>cryogenic magnetometer for discrete samples, 2G Model 755 DC,</p>\n")
+                        ->where('equipment.0.domain', "Paleomagnetism")
+                        ->where('equipment.0.category', "Permanent")
+                        ->where('equipment.0.group', "Cryogenic Magnetometer")
+                        ->where('equipment.0.type', "Magnetometer")
+                        ->where('equipment.0.brand', "2G")
+                        ->etc()
+                    )
+                        ->etc()
+            );
+    }
+
 }

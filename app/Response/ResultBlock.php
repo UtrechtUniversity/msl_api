@@ -22,12 +22,7 @@ class ResultBlock
 
         foreach ($results as $result) {     
                 if($context == 'facilities'){
-                    
-                    $facilityInstance = new FacilitiesResult($result);
-                    if($facilityInstance->latitude != "" && $facilityInstance->longitude != ""){ //sufficient?
-                        $this->results[] = new FacilitiesResult($result);                
-                    }
-
+                    $this->results[] = new FacilitiesResult($result);                
                 } else {
                     $this->results[] = new BaseResult($result, $context);                
                 }          

@@ -42,6 +42,9 @@ class ApiController extends Controller
         'subDomain' => 'msl_subdomain'
     ];
 
+
+
+
     /**
      * Constructs a new ApiController
      * 
@@ -326,6 +329,10 @@ class ApiController extends Controller
         // Filter on facilities
         $packageSearchRequest->addFilterQuery("type", "lab");
 
+        // Filter for failities with coordinates
+        $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);  //sufficient?
+        $packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
+
         // Set rows
         $paramRows = (int)$request->get('rows');
         if($paramRows > 0) {
@@ -338,12 +345,21 @@ class ApiController extends Controller
             $packageSearchRequest->start = $paramStart;
         }
 
-        // facility query
+        // $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);
+
+        // facility query -> like so:
+        $paramStart = (string)$request->get('facilityQuery');
+        if($paramStart > 0) {
+            $packageSearchRequest->query = $paramStart;
+        }
 
         // equipment query
 
         // bounding box
-
+        // $paramStart = (string)$request->get('boundingBox');
+        // if($paramStart > 0) {
+        //     $packageSearchRequest->XXX = $paramStart;
+        // }
 
         // Attempt to retrieve data from CKAN
         try {
@@ -361,13 +377,10 @@ class ApiController extends Controller
             return $errorResponse->getAsLaravelResponse();
         }
 
-        // dd($response);
         // Create response object
         $ApiResponse = new MainResponse();
         $ApiResponse->setByCkanResponse($response, $context);
-        // $ApiResponse->result = $response;
-        // dd($response);
-        //return response object
+
         return $ApiResponse->getAsLaravelResponse();
     }
 
