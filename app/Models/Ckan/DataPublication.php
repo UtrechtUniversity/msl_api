@@ -774,7 +774,11 @@ class DataPublication
         $this->msl_has_lab = true;
     }
 
-    public function toCkanArray()
+    /**
+     * Convert this objects and its internal objects to an array confirming to the data-publication schema in CKAN.
+     * @return array
+     */
+    public function toCkanArray(): array
     {
         $arr = [];
 
