@@ -8,8 +8,6 @@ use App\Models\Ckan\OriginalKeyword;
 use App\Models\Ckan\Tag;
 use PHPUnit\Framework\TestCase;
 
-use function PHPUnit\Framework\assertContains;
-use function PHPUnit\Framework\assertEquals;
 
 class DataPublicationTest extends TestCase
 {
@@ -70,7 +68,7 @@ class DataPublicationTest extends TestCase
         $dataPublication->addUriToTag('test tag1', 'test/uri');
 
         // check if tag contains added uri
-        assertContains('test/uri', $dataPublication->msl_tags[0]->msl_tag_msl_uris);
+        $this->assertContains('test/uri', $dataPublication->msl_tags[0]->msl_tag_msl_uris);
 
         // add the same uri again and check that is not added
         $dataPublication->addUriToTag('test tag1', 'test/uri');
