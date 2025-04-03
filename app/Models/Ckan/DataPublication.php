@@ -232,15 +232,30 @@ class DataPublication
      */
     public array $msl_tags = [];
 
-    public $msl_subdomains = [];
+    /**
+     * sub domains
+     */
+    public array $msl_subdomains = [];
 
-    public $msl_subdomains_original = [];
+    /**
+     * originally assigned sub domains
+     */
+    public array $msl_subdomains_original = [];
 
-    public $msl_subdomains_interpreted = [];
+    /**
+     * interpreted sub domains
+     */
+    public array $msl_subdomains_interpreted = [];
 
-    public $msl_enriched_keywords = [];
+    /**
+     * enriched keyword
+     */
+    public array $msl_enriched_keywords = [];
 
-    public $msl_original_keywords = [];    
+    /**
+     * original keywords translated to msl keywords
+     */
+    public array $msl_original_keywords = [];    
 
     /**
      * Fields listed below are used to provide top level filtering in the data-access filtertree navigation     
