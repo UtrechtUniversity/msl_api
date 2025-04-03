@@ -494,15 +494,15 @@ class DataPublication
         return false;
     }
 
-    public function addOriginalKeyword($label, $uri = "", $vocabUri = "")
+    /**
+     * Add original keyword.
+     * @param OriginalKeyword $keyword
+     */
+    public function addOriginalKeyword(OriginalKeyword $keyword): void
     {
-        if (! $this->hasOriginalKeyword($uri)) {
-            $this->msl_original_keywords[] = [
-                'msl_original_keyword_label' => $label,
-                'msl_original_keyword_uri' => $uri,
-                'msl_original_keyword_vocab_uri' => $vocabUri
-            ];
-            $this->setHasVocabKeyword('original', $vocabUri);
+        if (! $this->hasOriginalKeyword($keyword->msl_original_keyword_uri)) {
+            $this->msl_original_keywords[] = $keyword;
+            $this->setHasVocabKeyword('original', $keyword->msl_original_keyword_vocab_uri);
         }
     }
 
@@ -553,10 +553,14 @@ class DataPublication
         }                
     }
 
-    public function hasOriginalKeyword($uri)
+    /**
+     * Check if original keyword exists by uri
+     * @param string $uri
+     */
+    public function hasOriginalKeyword(string $uri): bool
     {
         foreach ($this->msl_original_keywords as $keyword) {
-            if ($keyword['msl_original_keyword_uri'] == $uri) {
+            if ($keyword->msl_original_keyword_uri == $uri) {
                 return true;
             }
         }
