@@ -449,7 +449,11 @@ class DataPublication
         }
     }
 
-    public function hasSubDomain($subDomain)
+    /**
+     * Check if sub domain is included in data publication
+     * @param string $subDomain
+     */
+    public function hasSubDomain(string $subDomain): bool
     {
         foreach ($this->msl_subdomains as $key => $value) {
             if ($value['msl_subdomain'] == $subDomain) {
@@ -460,7 +464,11 @@ class DataPublication
         return false;
     }
 
-    public function hasOriginalSubDomain($subDomain)
+    /**
+     * Check if orginal sub domain is included in data publication
+     * @param string $subDomain
+     */
+    public function hasOriginalSubDomain(string $subDomain): bool
     {
         foreach ($this->msl_subdomains_original as $key => $value) {
             if ($value['msl_subdomain_original'] == $subDomain) {
@@ -471,7 +479,11 @@ class DataPublication
         return false;
     }
 
-    public function hasInterpretedSubDomain($subDomain)
+    /**
+     * Check if interpreted sub domain is included in data publication
+     * @param string $subDomain
+     */
+    public function hasInterpretedSubDomain(string $subDomain): bool
     {
         foreach ($this->msl_subdomains_interpreted as $key => $value) {
             if ($value['msl_subdomain_interpreted'] == $subDomain) {
