@@ -26,11 +26,9 @@ class KeywordHelper
      */
     public function mapTagsToKeywords(DataPublication $dataPublication): DataPublication
     {
-        foreach($dataPublication->msl_tags as $tag) {
-            $keyword = $tag->msl_tag_string;
-                                  
+        foreach($dataPublication->msl_tags as $tag) {                                          
             // retrieve all searchkeywords that match keyword and belong to currently used vocabularies
-            $searchKeywords = KeywordSearch::where('search_value', strtolower($keyword))->where('version', config('vocabularies.vocabularies_current_version'))->get();
+            $searchKeywords = KeywordSearch::where('search_value', strtolower(trim($tag->msl_tag_string)))->where('version', config('vocabularies.vocabularies_current_version'))->get();
 
             foreach ($searchKeywords as $searchKeyword) {
                 // get the keyword associated with the search keyword
