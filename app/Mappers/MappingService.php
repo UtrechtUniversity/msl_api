@@ -38,6 +38,15 @@ class MappingService
         $keywordHelper = new KeywordHelper;
         $dataPublication = $keywordHelper->mapTagsToKeywords($dataPublication);
 
+        // run description and title annotations and keyword detection
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'title', 'msl_title_annotated', 'title');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_abstract', 'msl_description_abstract_annotated', 'description abstract');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_methods', 'msl_description_methods_annotated', 'description methods');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_series_information', 'msl_description_series_information_annotated', 'description series');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_table_of_contents', 'msl_description_table_of_contents_annotated', 'description table of contents');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_technical_info', 'msl_description_technical_info_annotated', 'description technical information');
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_other', 'msl_description_other_annotated', 'description other');
+
         // run additional mappers based on options
 
         // validate data publication

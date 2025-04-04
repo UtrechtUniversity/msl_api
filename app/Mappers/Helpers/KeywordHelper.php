@@ -7,7 +7,7 @@ use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\EnrichedKeyword;
 use App\Models\Ckan\OriginalKeyword;
 use App\Models\Vocabulary;
-
+use Exception;
 
 class KeywordHelper
 {        
@@ -75,6 +75,100 @@ class KeywordHelper
                 }
             }
         }
+
+        return $dataPublication;
+    }
+
+    /**
+     * Locates keyword matches within a given field of a datapublication. Keywords are added to the data publication on matches and an annotated version of the text
+     * is stored in the given property. A specific relation can be supplied to store as the keyword source relation if the relation type is not parental.
+     * @param DataPublication $dataPublication
+     * @param string $sourceProperty
+     * @param string $annotatedProperty
+     * @param string $sourceRelation
+     */
+    public function mapTextToKeywordsAnnotated(DataPublication $dataPublication, string $sourceProperty, string $annotatedProperty, string $sourceRelation): DataPublication
+    {
+        // check if the properties provided exist
+        if(! (property_exists($dataPublication, $sourceProperty) && property_exists($dataPublication, $annotatedProperty))) {
+            throw new Exception('invalid properties provided');
+        }
+
+        // skip processing if no information is present
+        if(strlen($dataPublication->{$sourceProperty}) < 2) {
+            return $dataPublication;
+        }
+
+        // retrieve all searchkeywords that match keyword and belong to currently used vocabularies
+        $searchKeywords = KeywordSearch::where('exclude_abstract_mapping', false)->where('version', config('vocabularies.vocabularies_current_version'))->get();
+
+        $dataPublication->{$annotatedProperty} = $dataPublication->{$sourceProperty};
+
+        $combinedMatches = [];
+        
+        foreach ($searchKeywords as $searchKeyword) {
+            if($searchKeyword->search_value !== '') {
+                // check if the searchkeyword is present within the text
+                $expr = $this->createKeywordSearchRegex($searchKeyword->search_value);
+                if (preg_match($expr, $dataPublication->{$sourceProperty})) {
+                    $keyword = $searchKeyword->keyword;
+                                        
+                    foreach ($keyword->getFullHierarchy() as $relatedKeyword) {
+                        // create the base enriched keyword
+                        $enrichedKeyword = new EnrichedKeyword(
+                            $relatedKeyword->value,
+                            $relatedKeyword->uri,
+                            $relatedKeyword->vocabulary->uri
+                        );
+
+                        // add subdomain information if the keyword is not excluded
+                        if(!$relatedKeyword->exclude_domain_mapping) {
+                            if(isset($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name])) {
+                                $dataPublication->addSubDomain($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name], false);
+                                $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$this->vocabularySubDomainMapping[$keyword->vocabulary->name]];
+                            }
+                        }
+
+                        // setup the location of the enriched keyword match, keyword is a direct or parent match
+                        if($relatedKeyword->uri == $keyword->uri) {
+                            $enrichedKeyword->msl_enriched_keyword_match_locations = [$sourceRelation];
+                        } else {
+                            $enrichedKeyword->msl_enriched_keyword_match_locations = ['parent'];
+                            $enrichedKeyword->msl_enriched_keyword_match_child_uris = [$keyword->uri];
+                        }
+
+                        $dataPublication->addEnrichedKeyword($enrichedKeyword);                      
+                    }
+                                                
+                    $matches = [];
+                    // get all matches within the text including offsets
+                    preg_match_all($expr, $dataPublication->{$annotatedProperty}, $matches, PREG_OFFSET_CAPTURE);
+                    
+                    foreach ($matches[0] as $match) {
+                        $combinedMatches[] = [
+                            'uri' => [$keyword->uri],
+                            'text' => $match[0],
+                            'offset' => $match[1],
+                            'end' => $match[1] + strlen($match[0])
+                        ];
+                    }                                        
+                }                                        
+            }
+        }
+
+        // merge matches
+        $combinedMatches = $this->mergeMatches($combinedMatches);
+                
+        // remove elements included in greater elements
+        $combinedMatches = $this->removeIncludedMatches($combinedMatches);
+        
+        // sort merge matches from start to end
+        usort($combinedMatches, function($a, $b) {
+            return $a['offset'] <=> $b['offset'];
+        });
+        
+        // annotate and store text
+        $dataPublication->{$annotatedProperty} = $this->annotateText($dataPublication->{$annotatedProperty}, $combinedMatches);;
 
         return $dataPublication;
     }
