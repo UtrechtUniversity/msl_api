@@ -313,7 +313,7 @@ class DataPublication
      */
     public static array $importingRules = [
         'title' => 'required',
-        'msl_authors' => 'required'
+        'msl_creators' => 'required'
     ];
 
     /**
