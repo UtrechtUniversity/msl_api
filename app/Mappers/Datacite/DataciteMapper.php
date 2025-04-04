@@ -22,7 +22,7 @@ class DataciteMapper implements MapperInterface
                 throw new MappingException('No DataCiteMapper found for version:' . $metadata['metadataVersion']);
         }
 
-        $dataset = $mapper->map($metadata, $dataPublication);
+        $dataPublication = $mapper->map($metadata, $dataPublication);
 
         // map aditional fields that are independed of the schema version
         
@@ -33,7 +33,7 @@ class DataciteMapper implements MapperInterface
         $citationHelper = new DataciteCitationHelper();
         $dataPublication->msl_citation = $citationHelper->getCitationString($dataPublication->msl_doi);
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**
