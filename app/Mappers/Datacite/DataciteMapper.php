@@ -30,8 +30,8 @@ class DataciteMapper implements MapperInterface
         $dataPublication->name = $this->createDatasetNameFromDoi($dataPublication->msl_doi);
 
         // get citation string
-        $citationHelper = new DataciteCitationHelper();
-        $dataPublication->msl_citation = $citationHelper->getCitationString($dataPublication->msl_doi);
+        $citationHelper = new DataciteCitationHelper;
+        $dataPublication->msl_citation = $citationHelper->getCitationString($dataPublication->msl_doi);        
 
         return $dataPublication;
     }

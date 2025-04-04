@@ -20,7 +20,10 @@ class KeywordHelper
         'testbeds' => 'geo-energy test beds'
     ];       
     
-    
+    /**
+     * Add original and enriched keywords to the data publication by finding matching keywords using the vocabularies
+     * @param DataPublication $dataPublication 
+     */
     public function mapTagsToKeywords(DataPublication $dataPublication): DataPublication
     {
         foreach($dataPublication->msl_tags as $tag) {

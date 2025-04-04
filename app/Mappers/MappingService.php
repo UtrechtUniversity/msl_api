@@ -3,6 +3,7 @@ namespace App\Mappers;
 
 use App\Exceptions\MappingException;
 use App\Mappers\Datacite\DataciteMapper;
+use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Importer;
 use App\Models\SourceDataset;
@@ -32,6 +33,10 @@ class MappingService
         
         // set owner organization for data publication
         $dataPublication->owner_org = $importer->data_repository->ckan_name;
+
+        // map keywords
+        $keywordHelper = new KeywordHelper;
+        $dataPublication = $keywordHelper->mapTagsToKeywords($dataPublication);
 
         // run additional mappers based on options
 
