@@ -1197,6 +1197,30 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapPublishers($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_publisher, "Example Publisher");
+
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "publisher": "PANGAEA"
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapPublishers($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_publisher, "PANGAEA");
     }
   
     /**

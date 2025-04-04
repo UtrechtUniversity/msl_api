@@ -405,7 +405,15 @@ class Datacite4Mapper implements MapperInterface
         if (isset($metadata['data']['attributes']['publisher'])) {
             $publisherEntry = $metadata['data']['attributes']['publisher'];
 
-            $dataset->msl_publisher = (isset($publisherEntry['name']) ? $publisherEntry['name'] : throw new MappingException($dataset->msl_doi.': No publisher mapped'));
+            if(isset($publisherEntry['name'])) {
+                $dataset->msl_publisher = $publisherEntry['name'];
+            }
+
+            if(! is_array($publisherEntry)) {
+                $dataset->msl_publisher = $publisherEntry;
+            }
+        } else {
+            throw new MappingException($dataset->msl_doi.': No publisher mapped');
         }
 
         return $dataset;
