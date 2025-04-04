@@ -3,6 +3,9 @@ namespace App\Mappers\Helpers;
 
 use App\Models\KeywordSearch;
 use App\Datasets\BaseDataset;
+use App\Models\Ckan\DataPublication;
+use App\Models\Ckan\EnrichedKeyword;
+use App\Models\Ckan\OriginalKeyword;
 use App\Models\Vocabulary;
 
 
@@ -17,6 +20,63 @@ class KeywordHelper
         'testbeds' => 'geo-energy test beds'
     ];       
     
+    
+    public function mapTagsToKeywords(DataPublication $dataPublication): DataPublication
+    {
+        foreach($dataPublication->msl_tags as $tag) {
+            $keyword = $tag->msl_tag_string;
+                                  
+            // retrieve all searchkeywords that match keyword and belong to currently used vocabularies
+            $searchKeywords = KeywordSearch::where('search_value', strtolower($keyword))->where('version', config('vocabularies.vocabularies_current_version'))->get();
+
+            foreach ($searchKeywords as $searchKeyword) {
+                // get the keyword associated with the search keyword
+                $keyword = $searchKeyword->keyword;
+
+                // add a orginal keyword to the data publication
+                $dataPublication->addOriginalKeyword(
+                    new OriginalKeyword(
+                        $keyword->value,
+                        $keyword->uri,
+                        $keyword->vocabulary->uri
+                    )
+                );
+
+                // add the msl uri to the tag
+                $dataPublication->addUriToTag($tag->msl_tag_string, $keyword->uri);
+
+                // get the full hierarchy of keywords to be added as enriched keywords
+                foreach ($keyword->getFullHierarchy() as $relatedKeyword) {
+                    // create the base enriched keyword
+                    $enrichedKeyword = new EnrichedKeyword(
+                        $relatedKeyword->value,
+                        $relatedKeyword->uri,
+                        $relatedKeyword->vocabulary->uri
+                    );
+
+                    // add subdomain information if the keyword is not excluded
+                    if(!$relatedKeyword->exclude_domain_mapping) {
+                        if(isset($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name])) {
+                            $dataPublication->addSubDomain($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name], false);
+                            $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$this->vocabularySubDomainMapping[$keyword->vocabulary->name]];
+                        }
+                    }
+
+                    // setup the location of the enriched keyword match, keyword is a direct or parent match
+                    if($relatedKeyword->uri == $keyword->uri) {
+                        $enrichedKeyword->msl_enriched_keyword_match_locations = ['keyword'];
+                    } else {
+                        $enrichedKeyword->msl_enriched_keyword_match_locations = ['parent'];
+                        $enrichedKeyword->msl_enriched_keyword_match_child_uris = [$keyword->uri];
+                    }
+
+                    $dataPublication->addEnrichedKeyword($enrichedKeyword);
+                }
+            }
+        }
+
+        return $dataPublication;
+    }
     
     
     public function mapKeywords(BaseDataset $dataset, $keywords, $extractLastTerm = false, $lastTermDelimiter = '>')
@@ -40,7 +100,7 @@ class KeywordHelper
             
             if(count($searchKeywords) > 0) {
                 foreach ($searchKeywords as $searchKeyword) {
-                    $keyword = $searchKeyword->keyword;                
+                    $keyword = $searchKeyword->keyword;
                                        
                     $dataset->addOriginalKeyword($keyword->value, $keyword->uri, $keyword->vocabulary->uri);
                     $dataset->addUriToTag($keywordTag, $keyword->uri);
