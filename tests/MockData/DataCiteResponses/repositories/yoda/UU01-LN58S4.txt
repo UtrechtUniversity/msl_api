@@ -1,0 +1,488 @@
+{
+    "data": {
+        "id": "10.24416/uu01-ln58s4",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.24416/uu01-ln58s4",
+            "prefix": "10.24416",
+            "suffix": "uu01-ln58s4",
+            "identifiers": [],
+            "alternateIdentifiers": [],
+            "creators": [
+                {
+                    "nameType": "Personal",
+                    "givenName": "Taco",
+                    "familyName": "Broerse",
+                    "affiliation": [
+                        "Utrecht University"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3235-0844",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Nemanja",
+                    "familyName": "Krstekanic",
+                    "affiliation": [
+                        "Utrecht University",
+                        "University of Belgrade"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-2798-2003",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ernst",
+                    "familyName": "Willingshofer",
+                    "affiliation": [
+                        "Utrecht University"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-9119-5557",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                }
+            ],
+            "titles": [
+                {
+                    "title": "Data supplement to: Mapping and classifying large deformation from digital imagery: application to analogue models of lithosphere deformation"
+                }
+            ],
+            "publisher": "Utrecht University",
+            "container": {},
+            "publicationYear": 2021,
+            "subjects": [
+                {
+                    "subject": "Natural Sciences - Earth and related environmental sciences (1.5)",
+                    "subjectScheme": "OECD FOS 2007"
+                },
+                {
+                    "subject": "analogue modelling of geologic processes",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "strain partitioning",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "strike-slip",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "indenter",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "indenter geometry",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "deformation transfer",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "top-view photographs",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "cross-section photographs",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "EPOS",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "multi-scale laboratories",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "tectonic setting &gt; plate margin setting &gt; transform plate boundary setting",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "tectonic setting &gt; plate margin setting &gt; active continental margin setting",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "earth interior setting &gt; crust setting &gt; continental-crustal setting &gt; collisional setting",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "earth interior setting &gt; crust setting &gt; continental-crustal setting &gt; upper continental crustal setting",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "tectonic process &gt; transform faulting",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "tectonic process &gt; orogenic process",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "geological process",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "deformation &gt; shearing",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "deformation &gt; fracturing",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "deformation &gt; ductile flow",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "thrust sheet/nappe/overthrust",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "graben",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "fracture",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "fold-and-thrust belt",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "wrench fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "thrust fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "normal fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "fault &gt; strike-slip fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "fault &gt; reverse fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "fault &gt; oblique slip fault",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "slope and gravitational features",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "tectonic and structural features",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "natural geomorphologic feature",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "mountaintop",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "mountainslope",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "mountain",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "depression",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Sand &gt; Quartz Sand",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Sandbox &gt; Sandbox (cm scale)",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Electric engine (mm/hr)",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "SLR Camera",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Generic camera",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Matlab (Mathworks)",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Digitial Image Correlation (DIC) / Particle Image Velocimetry (PIV) &gt; Matlab code",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Digitial Image Correlation (DIC) / Particle Image Velocimetry (PIV) &gt; PIVlab",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "EARTH SCIENCE SERVICES &gt; MODELS &gt; GEOLOGIC/TECTONIC/PALEOCLIMATE MODELS",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "SOLID EARTH &gt; TECTONICS &gt; PLATE TECTONICS &gt; STRAIN",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "SOLID EARTH &gt; TECTONICS &gt; PLATE TECTONICS &gt; FAULT MOVEMENT &gt; FAULT MOVEMENT DIRECTION",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "SOLID EARTH &gt; TECTONICS &gt; PLATE TECTONICS &gt; FAULT MOVEMENT &gt; FAULT MOVEMENT RATE",
+                    "subjectScheme": "Keyword"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Broerse, Taco",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "Utrecht University"
+                    ],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3235-0844",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Krstekanic, Nemanja",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "Utrecht University",
+                        "University of Belgrade"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-2798-2003",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "(Utrecht University, The Netherlands), TecLab - Tectonic  Modelling Laboratory",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "Utrecht University"
+                    ],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Kasbergen, Cor",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "Delft University of Technology"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-7076-2348",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Willingshofer, Ernst",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "Utrecht University"
+                    ],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-9119-5557",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:08:26",
+                    "dateType": "Updated"
+                },
+                {
+                    "date": "2019-03-29/2019-03-29",
+                    "dateType": "Collected"
+                }
+            ],
+            "language": "en",
+            "types": {
+                "ris": "RPRT",
+                "bibtex": "article",
+                "citeproc": "article-journal",
+                "schemaOrg": "ScholarlyArticle",
+                "resourceType": "Other Document",
+                "resourceTypeGeneral": "Text"
+            },
+            "relatedIdentifiers": [
+                {
+                    "relationType": "IsSupplementTo",
+                    "relatedIdentifier": "https://doi.org/10.1093/gji/ggab120",
+                    "relatedIdentifierType": "DOI"
+                },
+                {
+                    "relationType": "References",
+                    "relatedIdentifier": "https://doi.org/10.1016/0040-1951(91)90311-F",
+                    "relatedIdentifierType": "DOI"
+                },
+                {
+                    "relationType": "References",
+                    "relatedIdentifier": "https://doi.org/10.1130/GSAB-48-1459",
+                    "relatedIdentifierType": "DOI"
+                },
+                {
+                    "relationType": "References",
+                    "relatedIdentifier": "https://doi.org/10.5880/fidgeo.2018.072",
+                    "relatedIdentifierType": "DOI"
+                }
+            ],
+            "relatedItems": [],
+            "sizes": [],
+            "formats": [],
+            "version": "1.0",
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess"
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": ""
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "The dataset consists of the original top-view and cross-section digital photographs of the model presented in Broerse et al. (2020) (Mappingand classifying large deformation from digital imagery: application to analogue models of lithosphere deformation.). The top-view images have been taken at a regular interval of 45 seconds during the entire experiment. Cross-section images have been taken after the experiment was finished. The purpose of the top-view images is to track incremental displacement fields of the model surface in time, estimated by Particle Image Velocimetry (PIV) based on the digital images. The cross-section images serve to inspect the final internal deformation along vertical planes.\nThe images are located in two folders; top-views contains the full range of top-view images as used in the PIV analysis, starting at the original undeformed state until the final deformed state at the end of the experiment. A sub-folder not used in PIV contains images from before the start and after the stop of the experiment, and that are not used in the accompanying manuscript. The folder cross-sections contains an overview image of the locations of all cross-sections taken (IMG 7243) and images of vertical model cross-sections. In total 13 cross-sections have been made, where the cross-section numbering starts from the north, and continues southward (see image IMG 7243). The cross-sections a-a’, b-b’ and c-c’ that are used in Broerse et al. (2020) correspond to numbers 2, 6 and 13, respectively. The cross- section images have been taken with a southward view, while in Broerse et al. (2020) we have mirrored the images to present a northward view on the cross-sections. All photographs are in .jpg format and their names are original generic names created by the camera software at the moment of acquisition. Contact person is Taco Broerse - D.B.T.Broerse@uu.nl",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "geoLocations": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Netherlands Research Centre for Integrated Solid Earth Science (ISES)"
+                }
+            ],
+            "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMjQ0MTYvVVUwMS1MTjU4UzQ8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkJyb2Vyc2UsIFRhY288L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lPlRhY288L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+QnJvZXJzZTwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi0zMjM1LTA4NDQ8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5LcnN0ZWthbmljLCBOZW1hbmphPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5OZW1hbmphPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPktyc3Rla2FuaWM8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDItMjc5OC0yMDAzPC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPlV0cmVjaHQgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICAgIDxhZmZpbGlhdGlvbj5Vbml2ZXJzaXR5IG9mIEJlbGdyYWRlPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5XaWxsaW5nc2hvZmVyLCBFcm5zdDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+RXJuc3Q8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+V2lsbGluZ3Nob2ZlcjwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi05MTE5LTU1NTc8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+RGF0YSBzdXBwbGVtZW50IHRvOiBNYXBwaW5nIGFuZCBjbGFzc2lmeWluZyBsYXJnZSBkZWZvcm1hdGlvbiBmcm9tIGRpZ2l0YWwgaW1hZ2VyeTogYXBwbGljYXRpb24gdG8gYW5hbG9ndWUgbW9kZWxzIG9mIGxpdGhvc3BoZXJlIGRlZm9ybWF0aW9uPC90aXRsZT4KICA8L3RpdGxlcz4KICA8cHVibGlzaGVyPlV0cmVjaHQgVW5pdmVyc2l0eTwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyMTwvcHVibGljYXRpb25ZZWFyPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iVGV4dCI+T3RoZXIgRG9jdW1lbnQ8L3Jlc291cmNlVHlwZT4KICA8c3ViamVjdHM+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJPRUNEIEZPUyAyMDA3Ij5OYXR1cmFsIFNjaWVuY2VzIC0gRWFydGggYW5kIHJlbGF0ZWQgZW52aXJvbm1lbnRhbCBzY2llbmNlcyAoMS41KTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmFuYWxvZ3VlIG1vZGVsbGluZyBvZiBnZW9sb2dpYyBwcm9jZXNzZXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5zdHJhaW4gcGFydGl0aW9uaW5nPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+c3RyaWtlLXNsaXA8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5pbmRlbnRlcjwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmluZGVudGVyIGdlb21ldHJ5PC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+ZGVmb3JtYXRpb24gdHJhbnNmZXI8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj50b3AtdmlldyBwaG90b2dyYXBoczwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmNyb3NzLXNlY3Rpb24gcGhvdG9ncmFwaHM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5FUE9TPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+bXVsdGktc2NhbGUgbGFib3JhdG9yaWVzPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+dGVjdG9uaWMgc2V0dGluZyAmZ3Q7IHBsYXRlIG1hcmdpbiBzZXR0aW5nICZndDsgdHJhbnNmb3JtIHBsYXRlIGJvdW5kYXJ5IHNldHRpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj50ZWN0b25pYyBzZXR0aW5nICZndDsgcGxhdGUgbWFyZ2luIHNldHRpbmcgJmd0OyBhY3RpdmUgY29udGluZW50YWwgbWFyZ2luIHNldHRpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5lYXJ0aCBpbnRlcmlvciBzZXR0aW5nICZndDsgY3J1c3Qgc2V0dGluZyAmZ3Q7IGNvbnRpbmVudGFsLWNydXN0YWwgc2V0dGluZyAmZ3Q7IGNvbGxpc2lvbmFsIHNldHRpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5lYXJ0aCBpbnRlcmlvciBzZXR0aW5nICZndDsgY3J1c3Qgc2V0dGluZyAmZ3Q7IGNvbnRpbmVudGFsLWNydXN0YWwgc2V0dGluZyAmZ3Q7IHVwcGVyIGNvbnRpbmVudGFsIGNydXN0YWwgc2V0dGluZzwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPnRlY3RvbmljIHByb2Nlc3MgJmd0OyB0cmFuc2Zvcm0gZmF1bHRpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj50ZWN0b25pYyBwcm9jZXNzICZndDsgb3JvZ2VuaWMgcHJvY2Vzczwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmdlb2xvZ2ljYWwgcHJvY2Vzczwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmRlZm9ybWF0aW9uICZndDsgc2hlYXJpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5kZWZvcm1hdGlvbiAmZ3Q7IGZyYWN0dXJpbmc8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5kZWZvcm1hdGlvbiAmZ3Q7IGR1Y3RpbGUgZmxvdzwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPnRocnVzdCBzaGVldC9uYXBwZS9vdmVydGhydXN0PC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+Z3JhYmVuPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+ZnJhY3R1cmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5mb2xkLWFuZC10aHJ1c3QgYmVsdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPndyZW5jaCBmYXVsdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPnRocnVzdCBmYXVsdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPm5vcm1hbCBmYXVsdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmZhdWx0ICZndDsgc3RyaWtlLXNsaXAgZmF1bHQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5mYXVsdCAmZ3Q7IHJldmVyc2UgZmF1bHQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5mYXVsdCAmZ3Q7IG9ibGlxdWUgc2xpcCBmYXVsdDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPnNsb3BlIGFuZCBncmF2aXRhdGlvbmFsIGZlYXR1cmVzPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+dGVjdG9uaWMgYW5kIHN0cnVjdHVyYWwgZmVhdHVyZXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5uYXR1cmFsIGdlb21vcnBob2xvZ2ljIGZlYXR1cmU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5tb3VudGFpbnRvcDwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPm1vdW50YWluc2xvcGU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5tb3VudGFpbjwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPmRlcHJlc3Npb248L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TYW5kICZndDsgUXVhcnR6IFNhbmQ8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TYW5kYm94ICZndDsgU2FuZGJveCAoY20gc2NhbGUpPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+RWxlY3RyaWMgZW5naW5lIChtbS9ocik8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TTFIgQ2FtZXJhPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+R2VuZXJpYyBjYW1lcmE8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5NYXRsYWIgKE1hdGh3b3Jrcyk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5EaWdpdGlhbCBJbWFnZSBDb3JyZWxhdGlvbiAoRElDKSAvIFBhcnRpY2xlIEltYWdlIFZlbG9jaW1ldHJ5IChQSVYpICZndDsgTWF0bGFiIGNvZGU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5EaWdpdGlhbCBJbWFnZSBDb3JyZWxhdGlvbiAoRElDKSAvIFBhcnRpY2xlIEltYWdlIFZlbG9jaW1ldHJ5IChQSVYpICZndDsgUElWbGFiPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+RUFSVEggU0NJRU5DRSBTRVJWSUNFUyAmZ3Q7IE1PREVMUyAmZ3Q7IEdFT0xPR0lDL1RFQ1RPTklDL1BBTEVPQ0xJTUFURSBNT0RFTFM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TT0xJRCBFQVJUSCAmZ3Q7IFRFQ1RPTklDUyAmZ3Q7IFBMQVRFIFRFQ1RPTklDUyAmZ3Q7IFNUUkFJTjwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPlNPTElEIEVBUlRIICZndDsgVEVDVE9OSUNTICZndDsgUExBVEUgVEVDVE9OSUNTICZndDsgRkFVTFQgTU9WRU1FTlQgJmd0OyBGQVVMVCBNT1ZFTUVOVCBESVJFQ1RJT048L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TT0xJRCBFQVJUSCAmZ3Q7IFRFQ1RPTklDUyAmZ3Q7IFBMQVRFIFRFQ1RPTklDUyAmZ3Q7IEZBVUxUIE1PVkVNRU5UICZndDsgRkFVTFQgTU9WRU1FTlQgUkFURTwvc3ViamVjdD4KICA8L3N1YmplY3RzPgogIDxjb250cmlidXRvcnM+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJDb250YWN0UGVyc29uIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPkJyb2Vyc2UsIFRhY288L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi0zMjM1LTA4NDQ8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJSZXNlYXJjaGVyIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPktyc3Rla2FuaWMsIE5lbWFuamE8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi0yNzk4LTIwMDM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgICAgPGFmZmlsaWF0aW9uPlVuaXZlcnNpdHkgb2YgQmVsZ3JhZGU8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj4oVXRyZWNodCBVbml2ZXJzaXR5LCBUaGUgTmV0aGVybGFuZHMpLCBUZWNMYWIgLSBUZWN0b25pYyAgTW9kZWxsaW5nIExhYm9yYXRvcnk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPGFmZmlsaWF0aW9uPlV0cmVjaHQgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NvbnRyaWJ1dG9yPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iUmVzZWFyY2hlciI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5LYXNiZXJnZW4sIENvcjwvY29udHJpYnV0b3JOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9IiI+aHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAyLTcwNzYtMjM0ODwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbj5EZWxmdCBVbml2ZXJzaXR5IG9mIFRlY2hub2xvZ3k8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlN1cGVydmlzb3IiPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+V2lsbGluZ3Nob2ZlciwgRXJuc3Q8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi05MTE5LTU1NTc8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgPC9jb250cmlidXRvcnM+CiAgPGRhdGVzPgogICAgPGRhdGUgZGF0ZVR5cGU9IlVwZGF0ZWQiPjIwMjQtMDctMTJUMTE6MDg6MjY8L2RhdGU+CiAgICA8ZGF0ZSBkYXRlVHlwZT0iQ29sbGVjdGVkIj4yMDE5LTAzLTI5LzIwMTktMDMtMjk8L2RhdGU+CiAgPC9kYXRlcz4KICA8bGFuZ3VhZ2U+ZW4tdXM8L2xhbmd1YWdlPgogIDxyZWxhdGVkSWRlbnRpZmllcnM+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiIHJlbGF0aW9uVHlwZT0iSXNTdXBwbGVtZW50VG8iPmh0dHBzOi8vZG9pLm9yZy8xMC4xMDkzL2dqaS9nZ2FiMTIwPC9yZWxhdGVkSWRlbnRpZmllcj4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJSZWZlcmVuY2VzIj5odHRwczovL2RvaS5vcmcvMTAuMTAxNi8wMDQwLTE5NTEoOTEpOTAzMTEtRjwvcmVsYXRlZElkZW50aWZpZXI+CiAgICA8cmVsYXRlZElkZW50aWZpZXIgcmVsYXRlZElkZW50aWZpZXJUeXBlPSJET0kiIHJlbGF0aW9uVHlwZT0iUmVmZXJlbmNlcyI+aHR0cHM6Ly9kb2kub3JnLzEwLjExMzAvR1NBQi00OC0xNDU5PC9yZWxhdGVkSWRlbnRpZmllcj4KICAgIDxyZWxhdGVkSWRlbnRpZmllciByZWxhdGVkSWRlbnRpZmllclR5cGU9IkRPSSIgcmVsYXRpb25UeXBlPSJSZWZlcmVuY2VzIj5odHRwczovL2RvaS5vcmcvMTAuNTg4MC9maWRnZW8uMjAxOC4wNzI8L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uPjEuMDwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJpbmZvOmV1LXJlcG8vc2VtYW50aWNzL29wZW5BY2Nlc3MiPk9wZW4gLSBmcmVlbHkgcmV0cmlldmFibGU8L3JpZ2h0cz4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSIiPkNyZWF0aXZlIENvbW1vbnMgQXR0cmlidXRpb24gNC4wIEludGVybmF0aW9uYWwgUHVibGljIExpY2Vuc2U8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0Ij5UaGUgZGF0YXNldCBjb25zaXN0cyBvZiB0aGUgb3JpZ2luYWwgdG9wLXZpZXcgYW5kIGNyb3NzLXNlY3Rpb24gZGlnaXRhbCBwaG90b2dyYXBocyBvZiB0aGUgbW9kZWwgcHJlc2VudGVkIGluIEJyb2Vyc2UgZXQgYWwuICgyMDIwKSAoTWFwcGluZ2FuZCBjbGFzc2lmeWluZyBsYXJnZSBkZWZvcm1hdGlvbiBmcm9tIGRpZ2l0YWwgaW1hZ2VyeTogYXBwbGljYXRpb24gdG8gYW5hbG9ndWUgbW9kZWxzIG9mIGxpdGhvc3BoZXJlIGRlZm9ybWF0aW9uLikuIFRoZSB0b3AtdmlldyBpbWFnZXMgaGF2ZSBiZWVuIHRha2VuIGF0IGEgcmVndWxhciBpbnRlcnZhbCBvZiA0NSBzZWNvbmRzIGR1cmluZyB0aGUgZW50aXJlIGV4cGVyaW1lbnQuIENyb3NzLXNlY3Rpb24gaW1hZ2VzIGhhdmUgYmVlbiB0YWtlbiBhZnRlciB0aGUgZXhwZXJpbWVudCB3YXMgZmluaXNoZWQuIFRoZSBwdXJwb3NlIG9mIHRoZSB0b3AtdmlldyBpbWFnZXMgaXMgdG8gdHJhY2sgaW5jcmVtZW50YWwgZGlzcGxhY2VtZW50IGZpZWxkcyBvZiB0aGUgbW9kZWwgc3VyZmFjZSBpbiB0aW1lLCBlc3RpbWF0ZWQgYnkgUGFydGljbGUgSW1hZ2UgVmVsb2NpbWV0cnkgKFBJVikgYmFzZWQgb24gdGhlIGRpZ2l0YWwgaW1hZ2VzLiBUaGUgY3Jvc3Mtc2VjdGlvbiBpbWFnZXMgc2VydmUgdG8gaW5zcGVjdCB0aGUgZmluYWwgaW50ZXJuYWwgZGVmb3JtYXRpb24gYWxvbmcgdmVydGljYWwgcGxhbmVzLgpUaGUgaW1hZ2VzIGFyZSBsb2NhdGVkIGluIHR3byBmb2xkZXJzOyB0b3Atdmlld3MgY29udGFpbnMgdGhlIGZ1bGwgcmFuZ2Ugb2YgdG9wLXZpZXcgaW1hZ2VzIGFzIHVzZWQgaW4gdGhlIFBJViBhbmFseXNpcywgc3RhcnRpbmcgYXQgdGhlIG9yaWdpbmFsIHVuZGVmb3JtZWQgc3RhdGUgdW50aWwgdGhlIGZpbmFsIGRlZm9ybWVkIHN0YXRlIGF0IHRoZSBlbmQgb2YgdGhlIGV4cGVyaW1lbnQuIEEgc3ViLWZvbGRlciBub3QgdXNlZCBpbiBQSVYgY29udGFpbnMgaW1hZ2VzIGZyb20gYmVmb3JlIHRoZSBzdGFydCBhbmQgYWZ0ZXIgdGhlIHN0b3Agb2YgdGhlIGV4cGVyaW1lbnQsIGFuZCB0aGF0IGFyZSBub3QgdXNlZCBpbiB0aGUgYWNjb21wYW55aW5nIG1hbnVzY3JpcHQuIFRoZSBmb2xkZXIgY3Jvc3Mtc2VjdGlvbnMgY29udGFpbnMgYW4gb3ZlcnZpZXcgaW1hZ2Ugb2YgdGhlIGxvY2F0aW9ucyBvZiBhbGwgY3Jvc3Mtc2VjdGlvbnMgdGFrZW4gKElNRyA3MjQzKSBhbmQgaW1hZ2VzIG9mIHZlcnRpY2FsIG1vZGVsIGNyb3NzLXNlY3Rpb25zLiBJbiB0b3RhbCAxMyBjcm9zcy1zZWN0aW9ucyBoYXZlIGJlZW4gbWFkZSwgd2hlcmUgdGhlIGNyb3NzLXNlY3Rpb24gbnVtYmVyaW5nIHN0YXJ0cyBmcm9tIHRoZSBub3J0aCwgYW5kIGNvbnRpbnVlcyBzb3V0aHdhcmQgKHNlZSBpbWFnZSBJTUcgNzI0MykuIFRoZSBjcm9zcy1zZWN0aW9ucyBhLWHigJksIGItYuKAmSBhbmQgYy1j4oCZIHRoYXQgYXJlIHVzZWQgaW4gQnJvZXJzZSBldCBhbC4gKDIwMjApIGNvcnJlc3BvbmQgdG8gbnVtYmVycyAyLCA2IGFuZCAxMywgcmVzcGVjdGl2ZWx5LiBUaGUgY3Jvc3MtIHNlY3Rpb24gaW1hZ2VzIGhhdmUgYmVlbiB0YWtlbiB3aXRoIGEgc291dGh3YXJkIHZpZXcsIHdoaWxlIGluIEJyb2Vyc2UgZXQgYWwuICgyMDIwKSB3ZSBoYXZlIG1pcnJvcmVkIHRoZSBpbWFnZXMgdG8gcHJlc2VudCBhIG5vcnRod2FyZCB2aWV3IG9uIHRoZSBjcm9zcy1zZWN0aW9ucy4gQWxsIHBob3RvZ3JhcGhzIGFyZSBpbiAuanBnIGZvcm1hdCBhbmQgdGhlaXIgbmFtZXMgYXJlIG9yaWdpbmFsIGdlbmVyaWMgbmFtZXMgY3JlYXRlZCBieSB0aGUgY2FtZXJhIHNvZnR3YXJlIGF0IHRoZSBtb21lbnQgb2YgYWNxdWlzaXRpb24uIENvbnRhY3QgcGVyc29uIGlzIFRhY28gQnJvZXJzZSAtIEQuQi5ULkJyb2Vyc2VAdXUubmw8L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgogIDxmdW5kaW5nUmVmZXJlbmNlcz4KICAgIDxmdW5kaW5nUmVmZXJlbmNlPgogICAgICA8ZnVuZGVyTmFtZT5OZXRoZXJsYW5kcyBSZXNlYXJjaCBDZW50cmUgZm9yIEludGVncmF0ZWQgU29saWQgRWFydGggU2NpZW5jZSAoSVNFUyk8L2Z1bmRlck5hbWU+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgPC9mdW5kaW5nUmVmZXJlbmNlcz4KPC9yZXNvdXJjZT4K",
+            "url": "https://public.yoda.uu.nl/geo/UU01/LN58S4.html",
+            "contentUrl": null,
+            "metadataVersion": 6,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": "mds",
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 3,
+            "citationCount": 1,
+            "citationsOverTime": [
+                {
+                    "year": "2024",
+                    "total": 1
+                }
+            ],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2021-03-29T12:46:04.000Z",
+            "registered": "2021-03-29T12:46:10.000Z",
+            "published": "2021",
+            "updated": "2024-07-12T11:30:30.000Z"
+        },
+        "relationships": {
+            "client": {
+                "data": {
+                    "id": "delft.uu",
+                    "type": "clients"
+                }
+            },
+            "provider": {
+                "data": {
+                    "id": "pzax",
+                    "type": "providers"
+                }
+            },
+            "media": {
+                "data": {
+                    "id": "10.24416/uu01-ln58s4",
+                    "type": "media"
+                }
+            },
+            "references": {
+                "data": [
+                    {
+                        "id": "10.1016/0040-1951(91)90311-f",
+                        "type": "dois"
+                    },
+                    {
+                        "id": "10.1130/gsab-48-1459",
+                        "type": "dois"
+                    },
+                    {
+                        "id": "10.5880/fidgeo.2018.072",
+                        "type": "dois"
+                    }
+                ]
+            },
+            "citations": {
+                "data": [
+                    {
+                        "id": "10.1093/gji/ggab120",
+                        "type": "dois"
+                    }
+                ]
+            },
+            "parts": {
+                "data": []
+            },
+            "partOf": {
+                "data": []
+            },
+            "versions": {
+                "data": []
+            },
+            "versionOf": {
+                "data": []
+            }
+        }
+    }
+}
