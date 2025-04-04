@@ -12,9 +12,10 @@ class MappingService
 {
 
 
-    public function map(SourceDataset $sourceDataset, $config, Importer $importer): DataPublication
+    public function map(SourceDataset $sourceDataset, Importer $importer): DataPublication
     {
         $dataPublication = new DataPublication();
+        $config = $importer->options;
 
         switch ($config['sourceDatasetProcessor']['type'])
         {

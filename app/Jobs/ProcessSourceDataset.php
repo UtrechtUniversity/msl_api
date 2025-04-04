@@ -40,7 +40,7 @@ class ProcessSourceDataset implements ShouldQueue
         $import = $this->sourceDataset->source_dataset_identifier->import;
 
         try {
-            $dataPublication = $mappingService->map($this->sourceDataset, $importer->options, $importer);
+            $dataPublication = $mappingService->map($this->sourceDataset, $importer);
         } catch(Exception $e) {
             $this->sourceDataset->status = 'error';
             $this->sourceDataset->save();

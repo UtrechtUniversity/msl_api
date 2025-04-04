@@ -12,9 +12,9 @@ class DataciteMapper implements MapperInterface
     public function map(array $metadata, DataPublication $dataPublication): DataPublication
     {
         // select version based on metadata
-        switch ($metadata['metadataVersion'])
+        switch ($metadata['data']['attributes']['schemaVersion'])
         {
-            case 4:
+            case 'http://datacite.org/schema/kernel-4':
                 $mapper = new Datacite4Mapper();
                 break;
 
