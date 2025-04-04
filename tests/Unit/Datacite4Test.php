@@ -2017,6 +2017,68 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_contributors[1]->affiliations[0]->msl_creator_affiliation_scheme_uri,         "https://ror.org");
         $this->assertEquals($dataset->msl_contributors[1]->affiliations[1]->msl_creator_affiliation_name,               "ExampleAffiliation2");
 
+        //new test
+        $sourceData = new SourceDataset();
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "contributors": [
+                            {
+                                "name": "Broerse, Taco",
+                                "nameType": "Personal",
+                                "affiliation": [
+                                    "Utrecht University"
+                                ],
+                                "contributorType": "ContactPerson",
+                                "nameIdentifiers": [
+                                    {
+                                        "nameIdentifier": "https://orcid.org/0000-0002-3235-0844",
+                                        "nameIdentifierScheme": "ORCID"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Krstekanic, Nemanja",
+                                "nameType": "Personal",
+                                "affiliation": [
+                                    "Utrecht University",
+                                    "University of Belgrade"
+                                ],
+                                "contributorType": "Researcher",
+                                "nameIdentifiers": [
+                                    {
+                                        "nameIdentifier": "https://orcid.org/0000-0002-2798-2003",
+                                        "nameIdentifierScheme": "ORCID"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper();
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+        
+        $dataset = $dataciteMapper->mapContributors($metadata, $dataset);
+
+        
+        $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_name, "Broerse, Taco");
+        $this->assertEquals($dataset->msl_contributors[0]->msl_contributor_type, "ContactPerson");
+        $this->assertEquals($dataset->msl_contributors[0]->affiliations[0]->msl_creator_affiliation_name, "Utrecht University");
+
+        $this->assertEquals($dataset->msl_contributors[1]->msl_contributor_name, "Krstekanic, Nemanja");
+        $this->assertEquals($dataset->msl_contributors[1]->msl_contributor_type, "Researcher");
+        $this->assertEquals($dataset->msl_contributors[1]->affiliations[0]->msl_creator_affiliation_name, "Utrecht University");
+        $this->assertEquals($dataset->msl_contributors[1]->affiliations[1]->msl_creator_affiliation_name, "University of Belgrade");
     }
 
      /**
