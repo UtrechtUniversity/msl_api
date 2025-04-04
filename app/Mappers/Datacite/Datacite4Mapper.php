@@ -438,7 +438,6 @@ class Datacite4Mapper implements MapperInterface
 
                 if (isset($creator['nameIdentifiers']) && $creator['nameIdentifiers'] > 0) {
                     foreach ($creator['nameIdentifiers'] as $nameIdentifierEntry) {
-
                         $nameIdentifierInst = new NameIdentifier(
                             (isset($nameIdentifierEntry['nameIdentifier']) ? $nameIdentifierEntry['nameIdentifier'] : ''),
                             (isset($nameIdentifierEntry['nameIdentifierScheme']) ? $nameIdentifierEntry['nameIdentifierScheme'] : ''),
@@ -451,17 +450,19 @@ class Datacite4Mapper implements MapperInterface
                 }
 
                 if (isset($creator['affiliation']) && $creator['affiliation'] > 0) {
-
                     foreach ($creator['affiliation'] as $affiliationEntry) {
+                        if(isset($affiliationEntry['name'])) {
+                            $affiliation = new Affiliation(
+                                (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
+                                (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
+                                (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
+                                (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
+                            );
+                        } elseif (! is_array($affiliationEntry)) {
+                            $affiliation = new Affiliation($affiliationEntry);
+                        }
 
-                        $affiliationInst = new Affiliation(
-                            (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
-                            (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
-                            (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
-                            (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
-                        );
-
-                        $creatorInstance->addAffiliation($affiliationInst);
+                        $creatorInstance->addAffiliation($affiliation);
                     }
 
                 }
