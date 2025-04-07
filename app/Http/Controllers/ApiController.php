@@ -356,10 +356,24 @@ class ApiController extends Controller
         // equipment query
 
         // bounding box
-        // $paramStart = (string)$request->get('boundingBox');
-        // if($paramStart > 0) {
-        //     $packageSearchRequest->XXX = $paramStart;
-        // }
+        $paramStart = (string)$request->get('boundingBox');
+        if($paramStart > 0) {
+            // $packageSearchRequest->addBoundingBox($paramStart);
+            if($this->checkBoundingBoxQuery($paramStart)){
+                $checkedQ = $this->checkBoundingBoxQuery($paramStart, false);
+                $packageSearchRequest->setBoundingBox(
+                    $checkedQ[0],
+                    $checkedQ[1],
+                    $checkedQ[2],
+                    $checkedQ[3]
+                );
+
+            } else {
+                $errorResponse = new ErrorResponse();
+                $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals';
+                return $errorResponse->getAsLaravelResponse();
+            }
+        }
 
         // Attempt to retrieve data from CKAN
         try {
@@ -382,6 +396,48 @@ class ApiController extends Controller
         $ApiResponse->setByCkanResponse($response, $context);
 
         return $ApiResponse->getAsLaravelResponse();
+    }
+
+    private function checkBoundingBoxQuery($boundingBoxQuery, $check = true){
+        $bbr = explode(',', $boundingBoxQuery);
+        $checkedArr =[];
+
+        if(sizeof($bbr) == 4 ){ // must be 4 values. It could be that decimals are indicated with comma instead of dot
+            foreach ($bbr as $toCheck) {
+                $toCheck = (float) $toCheck;
+                if( $toCheck % 2 == 0 && $this->checkBounds($toCheck, 90, -90)){ 
+                    $checkedArr[] = $toCheck;
+                } else if($toCheck % 2 == 0 && $this->checkBounds($toCheck, 180, -180)){
+                    $checkedArr[] = $toCheck;
+                } else {
+                    $checkedArr[] = 'false';
+                }
+            }
+
+            $bbProcessed = implode(",", $checkedArr);
+
+            if(!str_contains($bbProcessed, 'false')){
+                if(!$check){
+                    return  $checkedArr;
+                } else {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+
+    }
+
+    private function checkBounds($toCheck,float $limitUp,float $limitLow){
+        if($toCheck <= $limitUp && $toCheck >= $limitLow){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
