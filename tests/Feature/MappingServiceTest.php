@@ -48,9 +48,8 @@ class MappingServiceTest extends TestCase
                 'data_repository_id' => 1
         ]);
 
+
         $mappingService = new MappingService();
         $mappedData = $mappingService->map($sourceDataset, $importer);
-
-        dd($mappedData);
     }
 }
