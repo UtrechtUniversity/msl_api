@@ -348,17 +348,17 @@ class ApiController extends Controller
         // $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);
 
         // facility query -> like so:
-        $paramStart = (string)$request->get('facilityQuery');
-        if($paramStart > 0) {
-            $packageSearchRequest->query = $paramStart;
+        $paramFacilities = (string)$request->get('facilityQuery');
+        if($paramFacilities > 0) {
+            $packageSearchRequest->query = $paramFacilities;
         }
 
         // equipment query
 
         // bounding box
-        $paramStart = (string)$request->get('boundingBox');
-        if($paramStart > 0) {
-            $evaluatedQuery = $this->checkBoundingBoxQuery($paramStart);
+        $paramBoundingBox = (string)$request->get('boundingBox');
+        if($paramBoundingBox > 0) {
+            $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
             if(sizeof($evaluatedQuery) > 0){
                 $packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
