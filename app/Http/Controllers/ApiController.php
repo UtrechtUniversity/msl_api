@@ -358,9 +358,9 @@ class ApiController extends Controller
         // bounding box
         $paramStart = (string)$request->get('boundingBox');
         if($paramStart > 0) {
-            // $packageSearchRequest->addBoundingBox($paramStart);
-            if($this->checkBoundingBoxQuery($paramStart)){
-                $checkedQ = $this->checkBoundingBoxQuery($paramStart, false);
+            $evaluatedQuery = $this->checkBoundingBoxQuery($paramStart);
+            if($evaluatedQuery[0]){
+                $checkedQ = $evaluatedQuery[1];
                 $packageSearchRequest->setBoundingBox(
                     $checkedQ[0],
                     $checkedQ[1],
@@ -406,46 +406,32 @@ class ApiController extends Controller
      * 
      * 
      */
-    private function checkBoundingBoxQuery($boundingBoxQuery, $check = true){
+    private function checkBoundingBoxQuery($boundingBoxQuery){
         $bbr = explode(',', $boundingBoxQuery);
         $checkedArr =[];
 
         if(sizeof($bbr) == 4 ){ // must be 4 values. It could be that decimals are indicated with comma instead of dot
             foreach ($bbr as $toCheck) {
                 $toCheck = (float) $toCheck;
-                if( $toCheck % 2 == 0 && $this->checkBounds($toCheck, 90, -90)){ 
+                if( array_search($toCheck, $bbr) % 2 == 1 && $this->checkBounds($toCheck, 90, -90)){ 
                     $checkedArr[] = $toCheck;
-                } else if($toCheck % 2 == 0 && $this->checkBounds($toCheck, 180, -180)){
+                } else if(array_search($toCheck, $bbr) % 2 == 0 && $this->checkBounds($toCheck, 180, -180)){
                     $checkedArr[] = $toCheck;
                 } else {
-                    $checkedArr[] = 'false';
+                    return [false, []];
                 }
             }
 
-            $bbProcessed = implode(",", $checkedArr);
-
-            if(!str_contains($bbProcessed, 'false')){
-                if(!$check){
-                    return  $checkedArr;
-                } else {
-                    return true;
-                }
-            } else {
-                return false;
-            }
+            return  [true, $checkedArr];
 
         } else {
-            return false;
+            return [false, []];
         }
 
     }
 
-    private function checkBounds($toCheck,float $limitUp,float $limitLow){
-        if($toCheck <= $limitUp && $toCheck >= $limitLow){
-            return true;
-        } else {
-            return false;
-        }
+    private function checkBounds(float $toCheck,float $limitUp,float $limitLow){
+        return $toCheck <= $limitUp && $toCheck >= $limitLow ? true :false;
     }
 
 }

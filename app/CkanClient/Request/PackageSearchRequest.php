@@ -111,7 +111,6 @@ class PackageSearchRequest implements RequestInterface
     public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY)
     {
         $this->boundingBox = (string) $minX . ',' . (string) $minY . ',' . (string) $maxX . ',' . (string) $maxY;
-        dd($this->boundingBox);
     }
 
     public function addFacetField($facetField)
