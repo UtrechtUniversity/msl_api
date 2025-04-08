@@ -359,8 +359,8 @@ class ApiController extends Controller
         $paramStart = (string)$request->get('boundingBox');
         if($paramStart > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramStart);
-            if($evaluatedQuery[0]){
-                $checkedQ = $evaluatedQuery[1];
+            if(sizeof($evaluatedQuery) > 0){
+                $checkedQ = $evaluatedQuery;
                 $packageSearchRequest->setBoundingBox(
                     $checkedQ[0],
                     $checkedQ[1],
@@ -418,14 +418,14 @@ class ApiController extends Controller
                 } else if(array_search($toCheck, $bbr) % 2 == 0 && $this->checkBounds($toCheck, 180, -180)){
                     $checkedArr[] = $toCheck;
                 } else {
-                    return [false, []];
+                    return [];
                 }
             }
 
-            return  [true, $checkedArr];
+            return  $checkedArr;
 
         } else {
-            return [false, []];
+            return [];
         }
 
     }
