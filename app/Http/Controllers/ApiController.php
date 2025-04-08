@@ -360,12 +360,11 @@ class ApiController extends Controller
         if($paramStart > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramStart);
             if(sizeof($evaluatedQuery) > 0){
-                $checkedQ = $evaluatedQuery;
                 $packageSearchRequest->setBoundingBox(
-                    $checkedQ[0],
-                    $checkedQ[1],
-                    $checkedQ[2],
-                    $checkedQ[3]
+                    $evaluatedQuery[0],
+                    $evaluatedQuery[1],
+                    $evaluatedQuery[2],
+                    $evaluatedQuery[3]
                 );
 
             } else {
