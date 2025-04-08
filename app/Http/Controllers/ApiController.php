@@ -398,6 +398,14 @@ class ApiController extends Controller
         return $ApiResponse->getAsLaravelResponse();
     }
 
+    /**
+     * Checks the string from the boundingBox query
+     * or
+     * returns each float of the 4 values in an array instead of string
+     * when parameter $check equals false
+     * 
+     * 
+     */
     private function checkBoundingBoxQuery($boundingBoxQuery, $check = true){
         $bbr = explode(',', $boundingBoxQuery);
         $checkedArr =[];

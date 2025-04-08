@@ -171,7 +171,4 @@ class PackageSearchRequest implements RequestInterface
         return $this->endpoint;
     }
 
-
-
-
 }
