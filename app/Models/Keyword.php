@@ -14,7 +14,9 @@ class Keyword extends Model
         'level',
         'hyperlink',
         'exclude_domain_mapping',
-        'label'
+        'label',
+        'extracted_definition',
+        'extracted_definition_link'
     ];
     
     protected $casts = [
