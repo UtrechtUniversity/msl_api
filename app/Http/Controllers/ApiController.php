@@ -27,7 +27,8 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'labName' => 'msl_lab_name_text',
+        'facilityQuery' => 'msl_lab_name',
+        'equipmentQuery' => 'msl_laboratory_equipment_title',
     ];
     
     /**
@@ -38,10 +39,10 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'labName' => 'msl_lab_name_text',
-        'subDomain' => 'msl_subdomain'
+        'facilityQuery' => 'msl_lab_name_text',
+        'subDomain' => 'msl_subdomain',
+        'equipmentQuery' => 'msl_laboratory_equipment_title',
     ];
-
 
 
 
@@ -330,7 +331,7 @@ class ApiController extends Controller
         $packageSearchRequest->addFilterQuery("type", "lab");
 
         // Filter for failities with coordinates
-        $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);  //sufficient?
+        $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
         $packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
         // Set rows
@@ -345,15 +346,20 @@ class ApiController extends Controller
             $packageSearchRequest->start = $paramStart;
         }
 
-        // $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);
+        // //facility query
+        // $paramFacilities = (string)$request->get('facilityQuery');
+        // if($paramFacilities > 0) {
+        //     $packageSearchRequest->addFilterQuery('msl_lab_name_text', "*$paramFacilities*", false);
+        // }
 
-        // facility query -> like so:
-        $paramFacilities = (string)$request->get('facilityQuery');
-        if($paramFacilities > 0) {
-            $packageSearchRequest->query = $paramFacilities;
-        }
+        // // equipment query
+        // $paramEquipment = (string)$request->get('equipmentQuery');
+        // if($paramEquipment > 0) {
+        //     $packageSearchRequest->addFilterQuery('msl_laboratory_equipment_title', "*$paramEquipment*", false);
+        // }
 
-        // equipment query
+        $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
+        // dd($packageSearchRequest->query);
 
         // bounding box
         $paramBoundingBox = (string)$request->get('boundingBox');
@@ -373,6 +379,8 @@ class ApiController extends Controller
                 return $errorResponse->getAsLaravelResponse();
             }
         }
+
+
 
         // Attempt to retrieve data from CKAN
         try {
@@ -410,15 +418,30 @@ class ApiController extends Controller
         $checkedArr =[];
 
         if(sizeof($bbr) == 4 ){ // must be 4 values. It could be that decimals are indicated with comma instead of dot
-            foreach ($bbr as $toCheck) {
-                $toCheck = (float) $toCheck;
-                if( array_search($toCheck, $bbr) % 2 == 1 && $this->checkBounds($toCheck, 90, -90)){ 
-                    $checkedArr[] = $toCheck;
-                } else if(array_search($toCheck, $bbr) % 2 == 0 && $this->checkBounds($toCheck, 180, -180)){
-                    $checkedArr[] = $toCheck;
-                } else {
-                    return [];
-                }
+
+           // make it more explicit and check each entry individually instead of %
+            //more readable in the future
+
+
+            if($this->checkBounds($bbr[0], 180, -180)){ 
+                $checkedArr[] = (float) $bbr[0];
+            } else {
+                return [];
+            }
+            if($this->checkBounds($bbr[1], 90, -90)){ 
+                $checkedArr[] = (float) $bbr[1];
+            } else {
+                return [];
+            }
+            if($this->checkBounds($bbr[2], 180, -180)){ 
+                $checkedArr[] = (float) $bbr[2];
+            } else {
+                return [];
+            }
+            if($this->checkBounds($bbr[3], 90, -90)){ 
+                $checkedArr[] = (float) $bbr[3];
+            } else {
+                return [];
             }
 
             return  $checkedArr;
