@@ -2,7 +2,6 @@
 namespace App\Mappers\Helpers;
 
 use App\Models\KeywordSearch;
-use App\Datasets\BaseDataset;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\EnrichedKeyword;
 use App\Models\Ckan\OriginalKeyword;
