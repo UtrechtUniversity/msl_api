@@ -1,13 +1,12 @@
 <?php
+
 namespace App\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
 use App\CkanClient\Response\PackageSearchResponse;
 use App\CkanClient\SolrUtils;
 
 class PackageSearchRequest implements RequestInterface
 {
-
     /**
      * @var string endpoint in CKAN used for this request;
      */
@@ -63,8 +62,6 @@ class PackageSearchRequest implements RequestInterface
      */
     private $facetLimit = -1;
 
-
-
     public function getPayloadAsArray(): array
     {
         return [
@@ -76,15 +73,15 @@ class PackageSearchRequest implements RequestInterface
                 'start' => $this->start,
                 'facet.field' => $this->getFacetFieldQuery(),
                 'facet.limit' => $this->facetLimit,
-                'sort' => $this->sortField
-            ]
+                'sort' => $this->sortField,
+            ],
         ];
     }
 
     public function addFilterQuery($fieldName, $value, $escape = true)
     {
-        if($escape) {
-            $this->filterQueries[$fieldName][] = '"' .  SolrUtils::escape($value) . '"';    
+        if ($escape) {
+            $this->filterQueries[$fieldName][] = '"'.SolrUtils::escape($value).'"';
         } else {
             $this->filterQueries[$fieldName][] = $value;
         }
@@ -92,11 +89,11 @@ class PackageSearchRequest implements RequestInterface
 
     private function getFilterQueryQuery()
     {
-        if(count($this->filterQueries) > 0) {
+        if (count($this->filterQueries) > 0) {
             $parts = [];
-            foreach($this->filterQueries as $key => $values) {
-                foreach($values as $value) {
-                    $parts[] = $key . ':' . $value;
+            foreach ($this->filterQueries as $key => $values) {
+                foreach ($values as $value) {
+                    $parts[] = $key.':'.$value;
                 }
             }
 
@@ -110,7 +107,7 @@ class PackageSearchRequest implements RequestInterface
 
     public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY)
     {
-        $this->boundingBox = (string) $minX . ',' . (string) $minY . ',' . (string) $maxX . ',' . (string) $maxY;
+        $this->boundingBox = (string) $minX.','.(string) $minY.','.(string) $maxX.','.(string) $maxY;
     }
 
     public function addFacetField($facetField)
@@ -120,19 +117,19 @@ class PackageSearchRequest implements RequestInterface
 
     public function loadFacetsFromConfig($type)
     {
-        if($type == "data-publications") {
+        if ($type == 'data-publications') {
             $facets = config('ckan.facets.data-publications');
-            foreach($facets as $key => $value) {
+            foreach ($facets as $key => $value) {
                 $this->addFacetField($key);
             }
-        } elseif($type == 'laboratories') {
+        } elseif ($type == 'laboratories') {
             $facets = config('ckan.facets.laboratories');
-            foreach($facets as $key => $value) {
+            foreach ($facets as $key => $value) {
                 $this->addFacetField($key);
             }
-        } elseif($type == 'equipment') {
+        } elseif ($type == 'equipment') {
             $facets = config('ckan.facets.equipment');
-            foreach($facets as $key => $value) {
+            foreach ($facets as $key => $value) {
                 $this->addFacetField($key);
             }
         }
@@ -140,11 +137,11 @@ class PackageSearchRequest implements RequestInterface
 
     private function getFacetFieldQuery()
     {
-        if(count($this->facetFields) > 0) {
+        if (count($this->facetFields) > 0) {
             $return = '[';
             $parts = [];
-            foreach($this->facetFields as $facetField) {
-                $parts[] = '"' . $facetField . '"';
+            foreach ($this->facetFields as $facetField) {
+                $parts[] = '"'.$facetField.'"';
             }
             $return .= implode(',', $parts);
             $return .= ']';
@@ -169,5 +166,4 @@ class PackageSearchRequest implements RequestInterface
     {
         return $this->endpoint;
     }
-
 }

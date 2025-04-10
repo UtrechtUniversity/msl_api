@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\Http\Resources\KeywordResource;
+use App\Models\Keyword;
+use App\Models\TnaMockup;
 use App\Response\ErrorResponse;
+use App\Response\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Response\MainResponse;
-use App\Models\TnaMockup;
-use App\Models\Keyword;
-use App\Http\Resources\KeywordResource;
 
 class ApiController extends Controller
 {
@@ -27,10 +27,10 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'facilityQuery' => 'msl_lab_name',
+        'facilityQuery' => 'title',
         'equipmentQuery' => 'msl_laboratory_equipment_title',
     ];
-    
+
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
@@ -39,70 +39,62 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'facilityQuery' => 'msl_lab_name_text',
+        'facilityQuery' => 'title',
         'subDomain' => 'msl_subdomain',
         'equipmentQuery' => 'msl_laboratory_equipment_title',
     ];
 
-
-
     /**
      * Constructs a new ApiController
-     * 
-     * @param \GuzzleHttp\Client $client
      */
     public function __construct(\GuzzleHttp\Client $client)
     {
         $this->guzzleClient = $client;
     }
-    
+
     /**
      * Rock physics API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
-    public function rockPhysics(Request $request) {
+    public function rockPhysics(Request $request)
+    {
         return $this->dataPublicationResponse($request, 'rockPhysics');
     }
-    
+
     /**
      * Analogue modelling API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function analogue(Request $request)
     {
         return $this->dataPublicationResponse($request, 'analogue');
     }
-    
+
     /**
      * Paleomagnetism API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function paleo(Request $request)
     {
         return $this->dataPublicationResponse($request, 'paleo');
     }
-    
+
     /**
      * Microscopy and tomography API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function microscopy(Request $request)
     {
         return $this->dataPublicationResponse($request, 'microscopy');
     }
-    
+
     /**
      * Geochemistry API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function geochemistry(Request $request)
@@ -110,21 +102,19 @@ class ApiController extends Controller
         return $this->dataPublicationResponse($request, 'geochemistry');
     }
 
-        /**
+    /**
      * Geo Energy Test Beds API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function geoenergy(Request $request)
     {
         return $this->dataPublicationResponse($request, 'geoenergy');
     }
-    
+
     /**
      * All subdomains API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function all(Request $request)
@@ -132,11 +122,9 @@ class ApiController extends Controller
         return $this->dataPublicationResponse($request, 'all');
     }
 
-
     /**
      * facilities API endpoint
-     * 
-     * @param Request $request
+     *
      * @return response
      */
     public function facilities(Request $request)
@@ -147,9 +135,8 @@ class ApiController extends Controller
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
-     * 
-     * @param Request $request
-     * @param string $context
+     *
+     * @param  string  $context
      * @return response
      */
     private function dataPublicationResponse(Request $request, $context)
@@ -158,154 +145,158 @@ class ApiController extends Controller
         $ckanClient = new Client($this->guzzleClient);
 
         // Create packagesearch request
-        $packageSearchRequest = new PackageSearchRequest();
+        $packageSearchRequest = new PackageSearchRequest;
 
         // Filter on data-publications
-        $packageSearchRequest->addFilterQuery("type", "data-publication");
-        
+        $packageSearchRequest->addFilterQuery('type', 'data-publication');
+
         // Filter for data-publications with files depending on request
-        if($request->boolean('hasDownloads', true)) {
+        if ($request->boolean('hasDownloads', true)) {
             $packageSearchRequest->addFilterQuery('msl_download_link', '*', false);
         }
 
         // Add subdomain filtering if required
-        switch($context) {
+        switch ($context) {
             case 'rockPhysics':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "rock and melt physics");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'rock and melt physics');
                 break;
 
             case 'analogue':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "analogue modelling of geologic processes");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'analogue modelling of geologic processes');
                 break;
 
             case 'paleo':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "paleomagnetism");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'paleomagnetism');
                 break;
 
             case 'microscopy':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "microscopy and tomography");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'microscopy and tomography');
                 break;
 
             case 'geochemistry':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "geochemistry");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'geochemistry');
                 break;
 
             case 'geoenergy':
-                $packageSearchRequest->addFilterQuery("msl_subdomain", "geo-energy test beds");
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'geo-energy test beds');
                 break;
-        }        
+        }
 
         // Set rows
-        $paramRows = (int)$request->get('rows');
-        if($paramRows > 0) {
+        $paramRows = (int) $request->get('rows');
+        if ($paramRows > 0) {
             $packageSearchRequest->rows = $paramRows;
         }
 
         // Set start
-        $paramStart = (int)$request->get('start');
-        if($paramStart > 0) {
+        $paramStart = (int) $request->get('start');
+        if ($paramStart > 0) {
             $packageSearchRequest->start = $paramStart;
         }
 
         // Process search parameters
-        if($context == 'all') {
-            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);    
+        if ($context == 'all') {
+            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
         } else {
-            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);    
+            $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappings);
         }
-        
+
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($packageSearchRequest);
         } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
+            $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Malformed request to CKAN.';
+
             return $errorResponse->getAsLaravelResponse();
         }
 
         // Check if CKAN was succesful
-        if(!$response->isSuccess()) {
-            $errorResponse = new ErrorResponse();
+        if (! $response->isSuccess()) {
+            $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Error received from CKAN api.';
+
             return $errorResponse->getAsLaravelResponse();
         }
 
         // Create response object
-        $ApiResponse = new MainResponse();
+        $ApiResponse = new MainResponse;
         $ApiResponse->setByCkanResponse($response, $context);
-        
-        //return response object
+
+        // return response object
         return $ApiResponse->getAsLaravelResponse();
     }
-    
-    public function tna() {
+
+    public function tna()
+    {
         $data = TnaMockup::all()->toArray();
-                        
+
         return response()->json([
             'success' => true,
             'message' => '',
             'result' => [
                 'count' => count($data),
                 'resultCount' => count($data),
-                'results' => $data
-            ]
+                'results' => $data,
+            ],
         ], 200);
     }
-    
-    public function term(Request $request) {
-        
+
+    public function term(Request $request)
+    {
+
         $validator = Validator::make(request()->all(), [
-            'uri' => 'required'
+            'uri' => 'required',
         ]);
-        
+
         if ($validator->fails()) {
-            $errorResponse = new ErrorResponse();
+            $errorResponse = new ErrorResponse;
             $errorResponse->message = $validator->errors();
-            return $errorResponse->getAsLaravelResponse();            
+
+            return $errorResponse->getAsLaravelResponse();
         }
-        
+
         $keyword = Keyword::where('uri', $request->get('uri'))->first();
-        
-        if($keyword) {
+
+        if ($keyword) {
             $resource = new KeywordResource($keyword);
+
             return $resource->toArray($request);
         } else {
             return response()->json([
                 'success' => false,
                 'message' => 'term not found',
                 'result' => [
-                    
-                ]
+
+                ],
             ], 200);
-        }                
+        }
     }
-    
+
     /**
      * Converts search parameters to solr query using field mappings
-     * 
-     * @param Request $request
-     * @param array $querymappings
+     *
+     * @param  array  $querymappings
      * @return string
      */
     private function buildQuery(Request $request, $queryMappings)
     {
         $queryParts = [];
-        
-        foreach ($queryMappings as $key => $value)
-        {
-            if($request->filled($key)) {
-                if($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key). '"';
+
+        foreach ($queryMappings as $key => $value) {
+            if ($request->filled($key)) {
+                if ($key == 'subDomain') {
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
                 } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
+                    $queryParts[] = $value.':'.$request->get($key);
                 }
             }
         }
-                
-        if(count($queryParts) > 0) {
+
+        if (count($queryParts) > 0) {
             return implode(' AND ', $queryParts);
-        }                
-        
+        }
+
         return '';
     }
 
@@ -313,59 +304,46 @@ class ApiController extends Controller
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
-     * 
-     * @param Request $request
-     * @param string $context
+     *
+     * @param  string  $context
      * @return response
      */
     private function facilitiesResponse(Request $request)
     {
-        $context ="facilities";
+        $context = 'facilities';
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
         // Create packagesearch request
-        $packageSearchRequest = new PackageSearchRequest();
+        $packageSearchRequest = new PackageSearchRequest;
 
         // Filter on facilities
-        $packageSearchRequest->addFilterQuery("type", "lab");
+        $packageSearchRequest->addFilterQuery('type', 'lab');
 
         // Filter for failities with coordinates
         $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
         $packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
         // Set rows
-        $paramRows = (int)$request->get('rows');
-        if($paramRows > 0) {
+        $paramRows = (int) $request->get('rows');
+        if ($paramRows > 0) {
             $packageSearchRequest->rows = $paramRows;
         }
 
         // Set start
-        $paramStart = (int)$request->get('start');
-        if($paramStart > 0) {
+        $paramStart = (int) $request->get('start');
+        if ($paramStart > 0) {
             $packageSearchRequest->start = $paramStart;
         }
 
-        // //facility query
-        // $paramFacilities = (string)$request->get('facilityQuery');
-        // if($paramFacilities > 0) {
-        //     $packageSearchRequest->addFilterQuery('msl_lab_name_text', "*$paramFacilities*", false);
-        // }
-
-        // // equipment query
-        // $paramEquipment = (string)$request->get('equipmentQuery');
-        // if($paramEquipment > 0) {
-        //     $packageSearchRequest->addFilterQuery('msl_laboratory_equipment_title', "*$paramEquipment*", false);
-        // }
-
+        // includes facility and equipment query
         $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
-        // dd($packageSearchRequest->query);
 
         // bounding box
-        $paramBoundingBox = (string)$request->get('boundingBox');
-        if($paramBoundingBox > 0) {
+        $paramBoundingBox = (string) $request->get('boundingBox');
+        if ($paramBoundingBox > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
-            if(sizeof($evaluatedQuery) > 0){
+            if (count($evaluatedQuery) > 0) {
                 $packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
                     $evaluatedQuery[1],
@@ -374,32 +352,33 @@ class ApiController extends Controller
                 );
 
             } else {
-                $errorResponse = new ErrorResponse();
+                $errorResponse = new ErrorResponse;
                 $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals';
+
                 return $errorResponse->getAsLaravelResponse();
             }
         }
-
-
 
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($packageSearchRequest);
         } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse();
+            $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Malformed request to CKAN.';
+
             return $errorResponse->getAsLaravelResponse();
         }
 
         // Check if CKAN was succesful
-        if(!$response->isSuccess()) {
-            $errorResponse = new ErrorResponse();
+        if (! $response->isSuccess()) {
+            $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Error received from CKAN api.';
+
             return $errorResponse->getAsLaravelResponse();
         }
 
         // Create response object
-        $ApiResponse = new MainResponse();
+        $ApiResponse = new MainResponse;
         $ApiResponse->setByCkanResponse($response, $context);
 
         return $ApiResponse->getAsLaravelResponse();
@@ -410,41 +389,39 @@ class ApiController extends Controller
      * or
      * returns each float of the 4 values in an array instead of string
      * when parameter $check equals false
-     * 
-     * 
      */
-    private function checkBoundingBoxQuery($boundingBoxQuery){
+    private function checkBoundingBoxQuery($boundingBoxQuery)
+    {
         $bbr = explode(',', $boundingBoxQuery);
-        $checkedArr =[];
+        $checkedArr = [];
 
-        if(sizeof($bbr) == 4 ){ // must be 4 values. It could be that decimals are indicated with comma instead of dot
+        if (count($bbr) == 4) { // must be 4 values. It could be that decimals are indicated with comma instead of dot
 
-           // make it more explicit and check each entry individually instead of %
-            //more readable in the future
+            // make it more explicit and check each entry individually instead of %
+            // more readable in the future
 
-
-            if($this->checkBounds($bbr[0], 180, -180)){ 
+            if ($this->checkBounds($bbr[0], 180, -180)) {
                 $checkedArr[] = (float) $bbr[0];
             } else {
                 return [];
             }
-            if($this->checkBounds($bbr[1], 90, -90)){ 
+            if ($this->checkBounds($bbr[1], 90, -90)) {
                 $checkedArr[] = (float) $bbr[1];
             } else {
                 return [];
             }
-            if($this->checkBounds($bbr[2], 180, -180)){ 
+            if ($this->checkBounds($bbr[2], 180, -180)) {
                 $checkedArr[] = (float) $bbr[2];
             } else {
                 return [];
             }
-            if($this->checkBounds($bbr[3], 90, -90)){ 
+            if ($this->checkBounds($bbr[3], 90, -90)) {
                 $checkedArr[] = (float) $bbr[3];
             } else {
                 return [];
             }
 
-            return  $checkedArr;
+            return $checkedArr;
 
         } else {
             return [];
@@ -452,8 +429,8 @@ class ApiController extends Controller
 
     }
 
-    private function checkBounds(float $toCheck,float $limitUp,float $limitLow){
-        return $toCheck <= $limitUp && $toCheck >= $limitLow ? true :false;
+    private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
+    {
+        return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
     }
-
 }
