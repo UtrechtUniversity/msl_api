@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\EnrichedKeyword;
+use App\Models\Ckan\File;
 use App\Models\Ckan\OriginalKeyword;
 use App\Models\Ckan\Tag;
 use PHPUnit\Framework\TestCase;
@@ -166,5 +167,29 @@ class DataPublicationTest extends TestCase
         $this->assertEquals(count($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris), 2);
         $this->assertContains('childUri1', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
         $this->assertContains('childUri2', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
+    }
+
+    /**
+     * test adding files to data publication
+     */
+    public function test_add_files(): void
+    {
+        $dataPublication = new DataPublication;
+
+        $file1 = new File('test.html', 'test.nl/download/test.html', 'html');
+        $file2 = new File('test.pdf', 'test.nl/download/test.pdf', 'pdf', '123456');
+
+        $dataPublication->addFile($file1);
+        $dataPublication->addFile($file2);
+
+        $this->assertEquals('test.html', $dataPublication->msl_files[0]->msl_file_name);
+        $this->assertEquals('test.nl/download/test.html', $dataPublication->msl_files[0]->msl_download_link);
+        $this->assertEquals('html', $dataPublication->msl_files[0]->msl_extension);
+        $this->assertEmpty($dataPublication->msl_files[0]->msl_timestamp);
+
+        $this->assertEquals('test.pdf', $dataPublication->msl_files[1]->msl_file_name);
+        $this->assertEquals('test.nl/download/test.pdf', $dataPublication->msl_files[1]->msl_download_link);
+        $this->assertEquals('pdf', $dataPublication->msl_files[1]->msl_extension);
+        $this->assertEquals('123456', $dataPublication->msl_files[1]->msl_timestamp);
     }
 }

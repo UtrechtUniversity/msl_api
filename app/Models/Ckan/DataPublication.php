@@ -193,7 +193,10 @@ class DataPublication
 
     public $msl_laboratories = [];
 
-    public $msl_downloads = [];
+    /**
+     * Files in data publication
+     */
+    public array $msl_files = [];
 
     /**
      * The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. 
@@ -560,6 +563,15 @@ class DataPublication
             $this->msl_enriched_keywords[] = $keyword;
             $this->setHasVocabKeyword('enriched', $keyword->msl_enriched_keyword_vocab_uri);            
         }
+    }
+
+    /**
+     * Add file object
+     * @param file $file
+     */
+    public function addFile(File $file): void
+    {
+        $this->msl_files[] = $file;
     }
 
     /**
