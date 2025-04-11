@@ -163,4 +163,43 @@ class KeywordHelperTest extends TestCase
         // check that the abstract annotation is set correctly
         $this->assertEquals('This is about <span data-uris=\'["https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-sandstone"]\'>sandstone</span>', $dataPublication->msl_description_abstract_annotated);
     }
+
+    public function test_map_text_to_keywords_annotated_overlapping_keyword(): void
+    {
+        //set the current vocabulary version to 1.3 to make sure we make the right assumptions
+        Config::set('vocabularies.vocabularies_current_version', 1.3);
+        
+        $dataPublication = new DataPublication;
+        $dataPublication->msl_description_abstract = "This is about anstrude limestone";
+
+        $keywordHelper = new KeywordHelper;
+        $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_abstract', 'msl_description_abstract_annotated', 'description abstract');
+
+        // check that the correct enriched keywords are added
+        $this->assertEquals('sedimentary rock', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_label);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_uri);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_vocab_uri);
+        $this->assertEmpty($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains);
+        $this->assertContains('parent', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_locations);
+        $this->assertContains('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
+        $this->assertContains('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-anstrude_limestone', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
+
+        $this->assertEquals('limestone', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_label);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_uri);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_vocab_uri);
+        $this->assertEmpty($dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_associated_subdomains);
+        $this->assertContains('parent', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_match_locations);
+        $this->assertContains('description abstract', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_match_locations);
+        $this->assertContains('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-anstrude_limestone', $dataPublication->msl_enriched_keywords[1]->msl_enriched_keyword_match_child_uris);
+
+        $this->assertEquals('Anstrude limestone', $dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_label);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-anstrude_limestone', $dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_uri);
+        $this->assertEquals('https://epos-msl.uu.nl/voc/materials/1.3/', $dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_vocab_uri);
+        $this->assertEmpty($dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_associated_subdomains);
+        $this->assertContains('description abstract', $dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_match_locations);
+        $this->assertEmpty($dataPublication->msl_enriched_keywords[2]->msl_enriched_keyword_match_child_uris);
+
+        // check that the abstract annotation is set correctly
+        $this->assertEquals('This is about <span data-uris=\'["https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-anstrude_limestone"]\'>anstrude limestone</span>', $dataPublication->msl_description_abstract_annotated);
+    }
 }
