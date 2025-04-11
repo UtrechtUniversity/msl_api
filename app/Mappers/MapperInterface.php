@@ -2,7 +2,6 @@
 namespace App\Mappers;
 
 use App\Models\Ckan\DataPublication;
-use App\Models\SourceDataset;
 
 interface MapperInterface
 {
