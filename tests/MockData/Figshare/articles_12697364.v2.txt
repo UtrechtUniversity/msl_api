@@ -1,0 +1,26 @@
+[
+    {
+        "project_id": null,
+        "id": 12697364,
+        "title": "Supporting data for: Core Testing Method to Assess Nonlinear Shear-Sliding Behaviour of Brick-Mortar Interfaces: A Comparative Experimental Study",
+        "doi": "10.4121/12697364.v2",
+        "handle": "",
+        "url": "https://api.figshare.com/v2/articles/12697364",
+        "published_date": "2021-02-19T17:06:23Z",
+        "thumb": "",
+        "defined_type": 3,
+        "defined_type_name": "dataset",
+        "group_id": 28586,
+        "url_private_api": "https://api.figshare.com/v2/account/articles/12697364",
+        "url_public_api": "https://api.figshare.com/v2/articles/12697364",
+        "url_private_html": "https://figshare.com/account/articles/12697364",
+        "url_public_html": "https://data.4tu.nl/articles/dataset/Supporting_data_for_Core_Testing_Method_to_Assess_Nonlinear_Shear-Sliding_Behaviour_of_Brick-Mortar_Interfaces_A_Comparative_Experimental_Study/12697364",
+        "timeline": {
+            "posted": "2021-02-19T17:06:23",
+            "publisherPublication": "2020-03-03T00:00:00",
+            "firstOnline": "2020-03-03T00:00:00"
+        },
+        "resource_title": "Core testing method to assess nonlinear shear-sliding behaviour of brick-mortar interfaces: A comparative experimental study",
+        "resource_doi": "10.1016/j.conbuildmat.2020.118236"
+    }
+]

@@ -1,0 +1,215 @@
+{
+    "files": [
+        {
+            "id": 24044669,
+            "name": "README.txt",
+            "size": 638,
+            "is_link_only": false,
+            "download_url": "https://ndownloader.figshare.com/files/24044669",
+            "supplied_md5": "3315787ee65dac6e49f9c67948e8c955",
+            "computed_md5": "3315787ee65dac6e49f9c67948e8c955",
+            "mimetype": "text/plain"
+        },
+        {
+            "id": 24044672,
+            "name": "data.zip",
+            "size": 4335,
+            "is_link_only": false,
+            "download_url": "https://ndownloader.figshare.com/files/24044672",
+            "supplied_md5": "57ca9aa3e468ef034059eba8efed90f3",
+            "computed_md5": "57ca9aa3e468ef034059eba8efed90f3",
+            "mimetype": "application/zip"
+        }
+    ],
+    "custom_fields": [
+        {
+            "name": "Publisher",
+            "value": "4TU.Centre for Research Data"
+        },
+        {
+            "name": "Language",
+            "value": ""
+        },
+        {
+            "name": "Time coverage",
+            "value": ""
+        },
+        {
+            "name": "Geolocation",
+            "value": ""
+        },
+        {
+            "name": "Geolocation Longitude",
+            "value": ""
+        },
+        {
+            "name": "Geolocation Latitude",
+            "value": ""
+        },
+        {
+            "name": "Format",
+            "value": "media types: application/zip, text/csv, text/plain"
+        },
+        {
+            "name": "Data Link",
+            "value": []
+        },
+        {
+            "name": "Derived From",
+            "value": []
+        },
+        {
+            "name": "Same As",
+            "value": []
+        },
+        {
+            "name": "Organizations",
+            "value": "TU Delft, Faculty of Civil Engineering and Geosciences, Department of Materials, Mechanics, Management and Design"
+        }
+    ],
+    "authors": [
+        {
+            "id": 9125272,
+            "full_name": "samira jafari",
+            "first_name": "Samira",
+            "last_name": "Jafari",
+            "is_active": true,
+            "url_name": "samira_jafari",
+            "orcid_id": "0000-0001-8079-3685"
+        },
+        {
+            "id": 9125227,
+            "full_name": "Rita Esposito",
+            "first_name": "Rita",
+            "last_name": "Esposito",
+            "is_active": true,
+            "url_name": "Rita_Esposito",
+            "orcid_id": "0000-0002-8519-5999"
+        },
+        {
+            "id": 9147818,
+            "full_name": "J.G. (Jan) Rots",
+            "first_name": "J.G. (Jan)",
+            "last_name": "Rots",
+            "is_active": false,
+            "url_name": "_",
+            "orcid_id": ""
+        }
+    ],
+    "figshare_url": "https://data.4tu.nl/articles/dataset/Supporting_data_for_Core_Testing_Method_to_Assess_Nonlinear_Shear-Sliding_Behaviour_of_Brick-Mortar_Interfaces_A_Comparative_Experimental_Study/12697364",
+    "download_disabled": false,
+    "description": "In this study, tests on cores and companion tests on triplets are compared with respect to the evaluation of the nonlinear shear-sliding behaviour of masonry, including the determination of post-peak softening response. Due to its slightly-destructive sampling nature and its good agreement with triplet results, the core testing method is confirmed to be a competitive technique for the in-situ assessment of the cohesion, friction coefficient, and shear modulus of mortar. Additionally, the comparisons in terms of dilatancy and energy dissipation, novel aspects with respect to previous studies, provide interesting insights for further research on the cohesive and frictional mechanisms occurring at brick-mortar interfaces.",
+    "funding": "NAM, UI46268",
+    "funding_list": [
+        {
+            "id": 18647561,
+            "title": "NAM, UI46268",
+            "grant_code": "",
+            "funder_name": null,
+            "is_user_defined": 1
+        },
+        {
+            "id": 18647564,
+            "title": "NAM, UI63654",
+            "grant_code": "",
+            "funder_name": null,
+            "is_user_defined": 1
+        }
+    ],
+    "version": 2,
+    "status": "public",
+    "size": 4973,
+    "created_date": "2021-02-19T17:06:23Z",
+    "modified_date": "2023-06-06T01:50:15Z",
+    "is_public": true,
+    "is_confidential": false,
+    "is_metadata_record": false,
+    "confidential_reason": "",
+    "metadata_reason": "",
+    "license": {
+        "value": 1,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "tags": [
+        "Cylindrical cores",
+        "Energy dissipation in shear",
+        "Nonlinear shear-sliding behaviour",
+        "Post-peak softening",
+        "Slightly-destructive sampling method",
+        "dissertation",
+        "Construction Materials Performance and Processes",
+        "Civil Engineering"
+    ],
+    "categories": [
+        {
+            "id": 37965,
+            "title": "Construction Materials Performance and Processes",
+            "parent_id": 37956,
+            "path": "/37956/37965",
+            "source_id": "",
+            "taxonomy_id": 110
+        },
+        {
+            "id": 38334,
+            "title": "Civil Engineering",
+            "parent_id": 38319,
+            "path": "/38319/38334",
+            "source_id": "",
+            "taxonomy_id": 110
+        }
+    ],
+    "references": [
+        "https://doi.org/10.1016/j.conbuildmat.2020.118236",
+        "https://doi.org/10.1016/j.conbuildmat.2020.118236"
+    ],
+    "has_linked_file": false,
+    "citation": "Jafari, Samira; Esposito, Rita; Rots, J.G. (Jan) (2020). Supporting data for: Core Testing Method to Assess Nonlinear Shear-Sliding Behaviour of Brick-Mortar Interfaces: A Comparative Experimental Study. 4TU.ResearchData. Dataset. https://doi.org/10.4121/12697364.v2",
+    "related_materials": [
+        {
+            "id": 49463729,
+            "identifier": "https://doi.org/10.1016/j.conbuildmat.2020.118236",
+            "title": "",
+            "relation": "References",
+            "identifier_type": "URL",
+            "is_linkout": false,
+            "link": "https://doi.org/10.1016/j.conbuildmat.2020.118236"
+        },
+        {
+            "id": 49463732,
+            "identifier": "10.1016/j.conbuildmat.2020.118236",
+            "title": "Core testing method to assess nonlinear shear-sliding behaviour of brick-mortar interfaces: A comparative experimental study",
+            "relation": "IsSupplementTo",
+            "identifier_type": "DOI",
+            "is_linkout": true,
+            "link": "https://doi.org/10.1016/j.conbuildmat.2020.118236"
+        }
+    ],
+    "is_embargoed": false,
+    "embargo_date": null,
+    "embargo_type": "file",
+    "embargo_title": "",
+    "embargo_reason": "",
+    "embargo_options": [],
+    "id": 12697364,
+    "title": "Supporting data for: Core Testing Method to Assess Nonlinear Shear-Sliding Behaviour of Brick-Mortar Interfaces: A Comparative Experimental Study",
+    "doi": "10.4121/12697364.v2",
+    "handle": "",
+    "url": "https://api.figshare.com/v2/articles/12697364",
+    "published_date": "2021-02-19T17:06:23Z",
+    "thumb": "",
+    "defined_type": 3,
+    "defined_type_name": "dataset",
+    "group_id": 28586,
+    "url_private_api": "https://api.figshare.com/v2/account/articles/12697364",
+    "url_public_api": "https://api.figshare.com/v2/articles/12697364",
+    "url_private_html": "https://figshare.com/account/articles/12697364",
+    "url_public_html": "https://data.4tu.nl/articles/dataset/Supporting_data_for_Core_Testing_Method_to_Assess_Nonlinear_Shear-Sliding_Behaviour_of_Brick-Mortar_Interfaces_A_Comparative_Experimental_Study/12697364",
+    "timeline": {
+        "posted": "2021-02-19T17:06:23",
+        "publisherPublication": "2020-03-03T00:00:00",
+        "firstOnline": "2020-03-03T00:00:00"
+    },
+    "resource_title": "Core testing method to assess nonlinear shear-sliding behaviour of brick-mortar interfaces: A comparative experimental study",
+    "resource_doi": "10.1016/j.conbuildmat.2020.118236"
+}

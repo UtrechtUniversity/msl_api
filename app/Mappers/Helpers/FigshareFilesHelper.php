@@ -1,17 +1,31 @@
 <?php
 namespace App\Mappers\Helpers;
 
+use Exception;
+use GuzzleHttp\Client;
+
 class FigshareFilesHelper
 {
+    /**
+     * @var GuzzleClient Guzzle HTTP client instance
+     */
     protected $client;
     
-    
-    public function __construct()
+    /**
+     * Contructs a new FigshareFilesHelper
+     * @param Client $client
+     */
+    public function __construct($client = new Client())
     {
-        $this->client = new \GuzzleHttp\Client();
+        $this->client = $client;
     }
     
-    public function getFileListByDOI($doi) {        
+    /**
+     * Get list of files for given doi
+     * @param string $doi
+     */
+    public function getFileListByDOI(string $doi): array
+    {        
         $articleId = $this->getArticleIdByDoi($doi);
         
         if($articleId) {
@@ -21,14 +35,18 @@ class FigshareFilesHelper
         return [];
     }
     
-    
-    public function getArticleIdByDoi($doi) {
+    /**
+     * retrieve article id for given doi
+     * @param string $doi
+     */
+    public function getArticleIdByDoi(string $doi) 
+    {
         try {
             $response = $this->client->request(
                 'POST',
                 "https://api.figshare.com/v2/articles/search?doi=$doi",                
             );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             
         }
         
@@ -37,21 +55,24 @@ class FigshareFilesHelper
             
             if(isset($body[0]['id'])) {
                 return $body[0]['id'];
-            }
-            
-            else {
+            } else {
                 return null;
             }            
         }
     }
     
-    public function getFileList($articleId) {
+    /**
+     * get array with file information by article id
+     * @param $articleId
+     */
+    public function getFileList($articleId): array
+    {
         try {
             $response = $this->client->request(
                 'GET',
                 "https://api.figshare.com/v2/articles/$articleId",
                 );
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             
         }
         
@@ -66,7 +87,7 @@ class FigshareFilesHelper
                 return [];
             }
         }
-    }
-    
-}
 
+        return [];
+    }    
+}
