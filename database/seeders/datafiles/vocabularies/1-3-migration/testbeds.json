@@ -1,5 +1,444 @@
 [
     {
+        "value": "Facility names",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "Geothermal research platform Gro\u00df Sch\u00f6nebeck",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Geothermal laboratory Gro\u00df Sch\u00f6nebeck",
+                    "Geothermal Gro\u00df Sch\u00f6nebeck",
+                    "Geothermal lab Gro\u00df Sch\u00f6nebeck",
+                    "Geothermal research Gro\u00df Sch\u00f6nebeck",
+                    "Geothermal research platform Gross Schoenebeck",
+                    "Geothermal laboratory Gross Schoenebeck",
+                    "Geothermal Gross Schoenebeck",
+                    "Geothermal lab Gross Schoenebeck",
+                    "Geothermal research Gross Schoenebeck",
+                    "Geothermal research platform Gross Sch\u00f6nebeck",
+                    "Geothermal laboratory Gross Sch\u00f6nebeck",
+                    "Geothermal Gross Sch\u00f6nebeck",
+                    "Geothermal lab Gross Sch\u00f6nebeck",
+                    "Geothermal research Gross Sch\u00f6nebeck"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 3
+            },
+            {
+                "value": "Pilot site for geological storage of CO2 Ketzin",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "pilot site Ketzin"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 4
+            },
+            {
+                "value": "Geotechnology Laboratory Fraunhofer IEG",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Geotechnology Laboratory Fraunhofer",
+                    "Match-borehole and geofluid simulator",
+                    "match.BOGS",
+                    "i.BOGS",
+                    "drill.BOGS",
+                    "fluid.BOGS"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 5
+            },
+            {
+                "value": "Bochum Research and Exploration Drilling Rig",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Drilling rig BO.REX",
+                    "BO.REX"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 6
+            },
+            {
+                "value": "Energy Technology Fraunhofer IEG",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Forschung und Technologien Fraunhofer IEG",
+                    "Energy Technology Fraunhofer"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 7
+            },
+            {
+                "value": "TRUDI underground laboratory",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Field Scale Laboratory Fraunhofer IEG",
+                    "Field Scale Laboratory Fraunhofer",
+                    "Field-Scale Laboratory Fraunhofer"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 8
+            },
+            {
+                "value": "Reallabore Weisweiler",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 9
+            },
+            {
+                "value": "Geothermal Project on TU Delft campus",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "TU Delft Campus Geothermal Well",
+                    "Delft Subsurface Urban Energy Laboratory",
+                    "(DSUEL)",
+                    "Geothermal Research Project on TU Delft",
+                    "Geothermal Project at TU Delft",
+                    "Geothermal Research Project at TU Delft",
+                    "DAPGEO-01",
+                    "DAPGEO-02",
+                    "DAPGEO-03",
+                    "DAPGEO-04",
+                    "DAPGEO-05",
+                    "Geothermal Delft",
+                    "DAPwell",
+                    "TU Delft campus geothermal project",
+                    "Geothermie Delft",
+                    "Geothermal Project on TU Delft Campus",
+                    "DEL-GT-01",
+                    "DEL-GT-02",
+                    "DEL-GT-02-S1",
+                    "DEL-GT-02-S2"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 10
+            },
+            {
+                "value": "UK Geos",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "UK Geoenergy Observatory",
+                    "Glasgow Observatory",
+                    "Cheshire Observatory",
+                    "UK Geoenergy Observatories",
+                    "UKGEOS",
+                    "Glasgow Observatories",
+                    "Cheshire Observatories"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 11
+            },
+            {
+                "value": "UK GeoEnergy Research Centre",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "(GERC)",
+                    "Geoenergy Test Bed Nottingham"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 12
+            },
+            {
+                "value": "Bedretto Underground Laboratory for Geosciences and Geoenergies",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "BedrettoLab",
+                    "Bedretto Underground",
+                    "Bedretto Laboratory",
+                    "Bedretto Lab"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 13
+            },
+            {
+                "value": "Rijswijk Centre for Sustainable Geo-energy",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "RCSG"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 14
+            },
+            {
+                "value": "ECCSEL Svelvik CO2 Field Lab",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Svelvik CO2 Field Lab",
+                    "SINTEF AS",
+                    "Svelvik Field Lab",
+                    "Svelvik CO2 Lab",
+                    "Svelvik CO2 Field Laboratory"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 15
+            },
+            {
+                "value": "BRGM\u2019s Geothermal Testing Facility",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 16
+            },
+            {
+                "value": "Sotacarbo Fault Laboratory",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Sotacarbo Fault Lab",
+                    "Satocarbo Fault Laboratory",
+                    "Satocarbo Fault Lab"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 17
+            },
+            {
+                "value": "Underground research laboratory Andra",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "URL-Andra",
+                    "Andra Underground Research Laboratory",
+                    "Underground research lab Andra",
+                    "URL-Andra",
+                    "Andra Underground Research Lab"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 18
+            },
+            {
+                "value": "CATenoy experimental site",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "gas-water-rock interactions LAB",
+                    "CATLAB",
+                    "CATenoy lab",
+                    "CATenoy laboratory"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 19
+            },
+            {
+                "value": "PITOP Borehole Geophysical Test Site",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "OGS geophysical-drilling",
+                    "OGS geophysical drilling"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 20
+            },
+            {
+                "value": "Krafla Magma Testbed",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Krafla"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 21
+            }
+        ],
+        "defininition-link": "",
+        "defininition": ""
+    },
+    {
+        "value": "Facility types",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "geo-energy testbed",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "geoenergy testbed",
+                    "geoenergy test bed",
+                    "geo-energy test bed",
+                    "Krafla",
+                    "magma testbed",
+                    "magma test bed"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 3
+            },
+            {
+                "value": "in-situ laboratory",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "in-situ lab",
+                    "underground laboratory",
+                    "subsurface laboratory",
+                    "subsurface infrastructure",
+                    "bedrottolab",
+                    "insitu lab",
+                    "in situ lab",
+                    "nsitu laboratory",
+                    "in situ laboratory"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 4
+            },
+            {
+                "value": "field-scale laboratory - active testing",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "full-scale testing laboratory",
+                    "full scale testing laboratory",
+                    "testing at full-scale"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 5
+            },
+            {
+                "value": "field-scale observatory - passive monitoring",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "field-scale monitoring",
+                    "seismic network",
+                    "seismic monitoring network"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 6
+            },
+            {
+                "value": "monitoring borehole",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "monitoring wellbore",
+                    "monitoring well"
+                ],
+                "subTerms": [],
+                "defininition-link": "",
+                "defininition": "",
+                "rowNr": 7
+            }
+        ],
+        "defininition-link": "",
+        "defininition": ""
+    },
+    {
         "value": "Equipment",
         "level": 1,
         "hyperlink": "",
@@ -463,611 +902,6 @@
                     }
                 ],
                 "defininition-link": "https:\/\/voc.europe-geology.eu\/?uri=https:\/\/voc.europe-geology.eu\/muse\/category\/8675&lang=en",
-                "defininition": "",
-                "rowNr": 25
-            },
-            {
-                "value": "borehole logging",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "well logging",
-                    "geophysical borehole logging",
-                    "wireline logging"
-                ],
-                "subTerms": [
-                    {
-                        "value": "open hole logging",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "cased-hole logging",
-                            "cased hole logging",
-                            "sidewall coring",
-                            "open-hole logging"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 32
-                    }
-                ],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 31
-            }
-        ],
-        "defininition-link": "",
-        "defininition": ""
-    },
-    {
-        "value": "Facility types",
-        "level": 1,
-        "hyperlink": "",
-        "vocabUri": "",
-        "uri": "",
-        "synonyms": [],
-        "subTerms": [
-            {
-                "value": "geo-energy testbed",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "geoenergy testbed",
-                    "geoenergy test bed",
-                    "geo-energy test bed",
-                    "Krafla",
-                    "magma testbed",
-                    "magma test bed"
-                ],
-                "subTerms": [],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 3
-            },
-            {
-                "value": "in-situ laboratory",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "in-situ lab",
-                    "underground laboratory",
-                    "subsurface laboratory",
-                    "subsurface infrastructure",
-                    "bedrottolab",
-                    "insitu lab",
-                    "in situ lab",
-                    "nsitu laboratory",
-                    "in situ laboratory"
-                ],
-                "subTerms": [],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 4
-            },
-            {
-                "value": "field-scale laboratory - active testing",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "full-scale testing laboratory",
-                    "full scale testing laboratory",
-                    "testing at full-scale"
-                ],
-                "subTerms": [],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 5
-            },
-            {
-                "value": "field-scale observatory - passive monitoring",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "field-scale monitoring",
-                    "seismic network",
-                    "seismic monitoring network"
-                ],
-                "subTerms": [],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 6
-            },
-            {
-                "value": "monitoring borehole",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "monitoring wellbore",
-                    "monitoring well"
-                ],
-                "subTerms": [],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 7
-            }
-        ],
-        "defininition-link": "",
-        "defininition": ""
-    },
-    {
-        "value": "Equipment",
-        "level": 1,
-        "hyperlink": "",
-        "vocabUri": "",
-        "uri": "",
-        "synonyms": [],
-        "subTerms": [
-            {
-                "value": "seismic monitoring",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "seismic borehole",
-                    "seismic station"
-                ],
-                "subTerms": [
-                    {
-                        "value": "three-component seismic station",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "seismic borehole",
-                            "seismic monitoring borehole",
-                            "three-component seismometer",
-                            "three component seismometer"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 4
-                    },
-                    {
-                        "value": "tilt strain gauge",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "tilt gauge",
-                            "tiltmeter",
-                            "tilt meter",
-                            "tilt-strain gauge"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 5
-                    }
-                ],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 3
-            },
-            {
-                "value": "distributed fibre optic sensing",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "(DFOS)",
-                    "distributed fiber optic sensing",
-                    "fibre optic sensing",
-                    "fiber optic sensing",
-                    "fibre optics sensing",
-                    "fiber optics sensing"
-                ],
-                "subTerms": [
-                    {
-                        "value": "distributed acoustic sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(DAS)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 7
-                    },
-                    {
-                        "value": "distributed strain sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(DSS)",
-                            "distributed strain and temperature sensor",
-                            "(DSTS)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 8
-                    },
-                    {
-                        "value": "distributed temperature sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(DTS)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 9
-                    },
-                    {
-                        "value": "distributed pressure sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(DPS)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 10
-                    }
-                ],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 6
-            },
-            {
-                "value": "borehole monitoring",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "downhole monitoring",
-                    "monitoring well",
-                    "monitoring borehole"
-                ],
-                "subTerms": [
-                    {
-                        "value": "borehole geophone",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "downhole geophone",
-                            "Borehole Triaxial Geophone"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 12
-                    },
-                    {
-                        "value": "downhole electromagnetic sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "downhole electromagnetic sensors",
-                            "borehole electromagnetic sensing",
-                            "borehole electromagnetic sensor",
-                            "downhole EM sensing",
-                            "downhole EM sensors",
-                            "borehole EM sensing",
-                            "borehole EM sensor",
-                            "downhole magnetoelastic sensing",
-                            "borehole magnetoelastic sensing",
-                            "downhole magnetoelastic sensor",
-                            "borehole magnetoelastic sensor"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 13
-                    },
-                    {
-                        "value": "downhole electric conductivity sensing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "downhole electric conductivity sensor",
-                            "borehole electric conductivity sensing",
-                            "borehole electric conductivity sensor",
-                            "downhole specific conductance sensing",
-                            "downhole specific conductance sensor",
-                            "borehole specific conductance sensing",
-                            "borehole specific conductance sensor",
-                            "downhole EC sensing",
-                            "downhole EC sensor",
-                            "borehole EC sensing",
-                            "borehole EC sensor"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 14
-                    },
-                    {
-                        "value": "downhole soil gas probe",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "downhole soil gas monitoring",
-                            "downhole soil gas sensor",
-                            "borehole soil gas probe",
-                            "borehole soil gas monitoring",
-                            "borehole soil gas sensor"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 15
-                    }
-                ],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 11
-            },
-            {
-                "value": "borehole testing",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "well testing",
-                    "wellbore testing"
-                ],
-                "subTerms": [
-                    {
-                        "value": "formation integrity test",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(FIT)",
-                            "leak-off test",
-                            "(LOT)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 17
-                    },
-                    {
-                        "value": "production testing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 18
-                    },
-                    {
-                        "value": "injection testing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 19
-                    },
-                    {
-                        "value": "intervention and stimulation equipment",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(ISE)",
-                            "intervention and stimulation solutions",
-                            "intervention and stimulation solution",
-                            "well intervention",
-                            "well stimulation",
-                            "borehole ntervention",
-                            "borehole stimulation",
-                            "wellbore ntervention",
-                            "wellbore stimulation"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 20
-                    },
-                    {
-                        "value": "pressure performance system",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(PPS)",
-                            "Pressure transient testing",
-                            "pressure performance"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 21
-                    },
-                    {
-                        "value": "heat pump test rig",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 22
-                    },
-                    {
-                        "value": "heat pump mobile unit",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 23
-                    },
-                    {
-                        "value": "thermal response testing",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(TRT)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 24
-                    }
-                ],
-                "defininition-link": "",
-                "defininition": "",
-                "rowNr": 16
-            },
-            {
-                "value": "borehole drilling",
-                "level": 2,
-                "hyperlink": "",
-                "vocabUri": "",
-                "uri": "",
-                "synonyms": [
-                    "wellbore drilling",
-                    "well drilling"
-                ],
-                "subTerms": [
-                    {
-                        "value": "measurement while drilling",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "(MWD)",
-                            "logging while drilling",
-                            "(LWD)"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 26
-                    },
-                    {
-                        "value": "mud logging",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "mud logger",
-                            "mud log",
-                            "mudlog",
-                            "mudlogging"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 27
-                    },
-                    {
-                        "value": "drilling test rig",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "drill test rig",
-                            "drill testrig",
-                            "drilling testrig"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 28
-                    },
-                    {
-                        "value": "borehole and geofluid simulator",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "borehole simulator",
-                            "geofluid simulator"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 29
-                    },
-                    {
-                        "value": "drill core",
-                        "level": 3,
-                        "hyperlink": "",
-                        "vocabUri": "",
-                        "uri": "",
-                        "synonyms": [
-                            "drilling cuttings",
-                            "core scanning",
-                            "cutting samples",
-                            "drillcore",
-                            "core samples",
-                            "downhole coring",
-                            "wellbore coring",
-                            "well coring"
-                        ],
-                        "subTerms": [],
-                        "defininition-link": "",
-                        "defininition": "",
-                        "rowNr": 30
-                    }
-                ],
-                "defininition-link": "",
                 "defininition": "",
                 "rowNr": 25
             },

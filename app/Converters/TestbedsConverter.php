@@ -58,18 +58,25 @@ class TestbedsConverter
             ],
         ];
 
+        $newData = [];
+
         foreach ($data as $rootNode) {
+
             switch ($rootNode['value']) {
                 case 'Equipment':
                     $rootNode['subTerms'] = $this->checkRootNode($rootNode, 'C', $spreadsheet->getSheetByName('equipment'));
-                    $data[array_search($rootNode, $data)] = $rootNode;
+                    // $rootNode = $this->definitionForRoot($rootNode, 'C', $spreadsheet->getSheetByName('equipment'));
+                    $newData[] = $rootNode;
+                    
                     break;
                 default:
+                    $newData[] = $rootNode;
+
                     break;
             }
 
         }
-        // $data = $newData;
+        $data = $newData;
 
         return json_encode($data, JSON_PRETTY_PRINT);
     }
