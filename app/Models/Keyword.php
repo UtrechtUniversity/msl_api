@@ -16,7 +16,9 @@ class Keyword extends Model
         'exclude_domain_mapping',
         'label',
         'extracted_definition',
-        'extracted_definition_link'
+        'extracted_definition_link',
+        'external_vocab_scheme',
+        'external_description'
     ];
     
     protected $casts = [
