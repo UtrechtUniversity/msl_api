@@ -2,15 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Exports\Vocabs\ExcelExportInternal;
 use App\Models\Vocabulary;
 use Illuminate\Console\Command;
-use App\Exports\Vocabs\RdfExport;
-use App\Exports\Vocabs\JsonExport;
-use App\Exports\Vocabs\ExcelExport;
-use App\Exports\Vocabs\ExcelExportInternal;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\Storage;
-
 
 class GenerateVocabExportInternal extends Command
 {
@@ -34,27 +29,25 @@ class GenerateVocabExportInternal extends Command
     public function handle()
     {
         $vocabularies = Vocabulary::where('version', $this->argument('version'))->get();
-        $this->line($vocabularies->count() . " vocabularies found.");
+        $this->line($vocabularies->count().' vocabularies found.');
 
-        // dd($vocabularies);
         foreach ($vocabularies as $vocabulary) {
-            $this->line("processing " . $vocabulary->name . " exports...");
-            $basePath = 'vocabularies/internal/' . $vocabulary->version . '/';
-            
-            
-            // //store Excel export                        
-            $path = $basePath . $vocabulary->name . '_' . $this->versionFileName($vocabulary->version) . '.xlsx';                       
+            $this->line('processing '.$vocabulary->name.' exports...');
+            $basePath = 'vocabularies/internal/'.$vocabulary->version.'/';
+
+            // //store Excel export
+            $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.xlsx';
             Excel::store(new ExcelExportInternal($vocabulary), $path, 'local');
-            dd($basePath, $path);
-            
-        }        
-        
-        $this->line("Finished exporting vocabularies.");
+
+        }
+
+        $this->line('Finished exporting vocabularies.');
+
         return 0;
     }
 
-
-    private function versionFileName($version) {
-        return str_replace('.', '-', $version);        
+    private function versionFileName($version)
+    {
+        return str_replace('.', '-', $version);
     }
 }
