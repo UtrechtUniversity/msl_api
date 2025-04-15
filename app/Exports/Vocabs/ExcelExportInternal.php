@@ -60,8 +60,8 @@ class ExcelExportInternal implements FromCollection, WithHeadings, WithMapping
                 $keyword->uri,
                 $keyword->hyperlink,
                 $keyword->external_uri,
-                '',
-                '',
+                $keyword->external_vocab_scheme,
+                $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
                 0
