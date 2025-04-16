@@ -39,7 +39,6 @@ class GenerateVocabExportInternal extends Command
             // //store Excel export
             $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.xlsx';
             Excel::store(new ExcelExportInternal($vocabulary), $path, 'local');
-            dd('example done');
         }
 
         $this->line('Finished exporting vocabularies.');    

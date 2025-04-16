@@ -23,7 +23,6 @@ class ExcelExportInternal implements WithMultipleSheets
             new ExcelSheetInternal($this->vocabulary),
             new ExcelSheetColumnDescriptions()
         ];
-
         return $sheets;
     }
 

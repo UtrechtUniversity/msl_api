@@ -71,7 +71,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
-                0
+                $keyword->getSynonymExcludedString()
             ]
         );
     }

@@ -53,6 +53,16 @@ class Keyword extends Model
     {
         return $this->hasMany(KeywordSearch::class, 'keyword_id')->where('isSynonym', '=', 1)->get();        
     }
+
+    
+    public function getSynonymsExcluded(){
+        return $this->hasMany(KeywordSearch::class, 'keyword_id')->where(
+            [
+                'isSynonym' => 1,
+                'exclude_abstract_mapping' => 1
+            ]
+            )->get(); 
+    }
     
     public function getChildren($sort = true)
     {
@@ -125,6 +135,18 @@ class Keyword extends Model
         }
         
         return $string;        
+    }
+
+    public function getSynonymExcludedString($startCharacter = '#'){
+        $synonyms = $this->getSynonymsExcluded();
+        $string = "";
+        
+        if($synonyms) {
+            foreach ($synonyms as $synonym) {
+                $string .= $startCharacter . $synonym->search_value;
+            }
+        }
+        return $string;   
     }
     
 }
