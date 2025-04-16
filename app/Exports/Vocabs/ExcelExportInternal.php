@@ -12,8 +12,6 @@ class ExcelExportInternal implements WithMultipleSheets
 {
     public $vocabulary;
     
-    
-    
     public function __construct(Vocabulary $vocabulary)
     {
         $this->vocabulary = $vocabulary;        
@@ -26,10 +24,6 @@ class ExcelExportInternal implements WithMultipleSheets
             new ExcelSheetColumnDescriptions()
         ];
 
-        // $sheets[] = new ExcelSheetInternal($this->vocabulary);
-        // $sheets[] = new ExcelSheetColumnDescriptions();
-
-        // dd($sheets);
         return $sheets;
     }
 
