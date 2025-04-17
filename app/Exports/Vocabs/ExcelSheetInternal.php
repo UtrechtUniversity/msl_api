@@ -61,7 +61,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
         return array_merge(
             $this->getLevels($keyword),
             [
-                $keyword->getSynonymString(true), // get synonyms
+                $keyword->getSynonymString(false), // get synonyms
                 $keyword->exclude_domain_mapping,
                 $keyword->uri,
                 $keyword->hyperlink,
@@ -70,7 +70,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
-                $keyword->getSynonymString(false), // get excluded abstract mapping synonyms
+                $keyword->getSynonymString(true), // get excluded abstract mapping synonyms
             ]
         );
     }

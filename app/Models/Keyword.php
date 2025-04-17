@@ -127,9 +127,9 @@ class Keyword extends Model
 
     /**
      * @param  bool  $excludedSynonym
-     *                                 boolean to locate the type of synonyms from table keyword_search
-     *                                 false = query synonyms in column value_search with column isSynonym equal 1
-     *                                 true = query synonyms in column value_search with column isSynonym AND exclude_abstract_mapping equal 1
+     *boolean to locate the type of synonyms from table keyword_search
+     *false = query synonyms in column value_search with column isSynonym equal 1
+     *true = query synonyms in column value_search with column isSynonym AND exclude_abstract_mapping equal 1
      * @return string
      */
     public function getSynonymString(bool $excludedSynonym, $startCharacter = '#')
