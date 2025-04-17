@@ -19,12 +19,14 @@ class Keyword extends Model
         'extracted_definition_link',
         'external_vocab_scheme',
         'external_description',
+        'selection_group_1',
+        'selection_group_2'
     ];
 
     protected $casts = [
         'exclude_domain_mapping' => 'boolean',
-        'extracted_definition' => 'boolean',
-        'extracted_definition_link' => 'boolean',
+        'selection_group_1' => 'boolean',
+        'selection_group_2' => 'boolean'
     ];
 
     public function parent()
