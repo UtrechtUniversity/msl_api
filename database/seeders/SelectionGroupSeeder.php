@@ -53,7 +53,7 @@ class SelectionGroupSeeder extends Seeder
 
             }
         }
-        dd($names);
+        // dd($names);
     }
 
     private function assignSelectionGroup(int $groupNumber, $vocabulary, $uriSearchValues){
@@ -83,7 +83,7 @@ class SelectionGroupSeeder extends Seeder
                         $keyword->selection_group_1 = 0;
                         $keyword->selection_group_2 = $excludeKeyword ? 0 : 1;
                     }
-                    // $keyword->save();
+                    $keyword->save();
 
 
                     $keyword_search_equivalents = KeywordSearch::where('keyword_id', $keyword->id)->get();
@@ -91,7 +91,6 @@ class SelectionGroupSeeder extends Seeder
                     foreach ($keyword_search_equivalents as $keyword_search_equivalent) {
 
                         $excludeKeywordSearch = in_array($keyword_search_equivalent->search_value, $this->excludedSearchKeywords, true);
-                        $excludeKeywordSearch ? dd($keyword_search_equivalent->search_value): false;
 
                         if($groupNumber == 1){
                             $keyword_search_equivalent->exclude_selection_group_1 = $excludeKeywordSearch ? 1 : 0;
@@ -100,14 +99,11 @@ class SelectionGroupSeeder extends Seeder
                             $keyword_search_equivalent->exclude_selection_group_1 = 1;
                             $keyword_search_equivalent->exclude_selection_group_2 = $excludeKeywordSearch ? 1 : 0;
                         }
-                    // $keyword_search_equivalent->save();
+                    $keyword_search_equivalent->save();
 
                     }
 
-                       
-                
                 }
-
 
             }
 
