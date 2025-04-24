@@ -4,10 +4,11 @@ namespace App\Exports\Vocabs;
 
 use App\Models\Keyword;
 use App\Models\Vocabulary;
-use Maatwebsite\Excel\Concerns\FromCollection;
-use Maatwebsite\Excel\Concerns\WithHeadings;
-use Maatwebsite\Excel\Concerns\WithMapping;
+use App\Models\KeywordSearch;
 use Maatwebsite\Excel\Concerns\WithTitle;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, WithTitle
 {
@@ -52,12 +53,17 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 'extracted_definition',
                 'extracted_definition_link',
                 'indicators_exclude_abstract_mapping',
+                'selection_group_1',
+                'selection_group_2',
+                'exclude_selection_group_1',
+                'exclude_selection_group_2'
             ]
         );
     }
 
     public function map($keyword): array
     {
+        dd(KeywordSearch::where('id', $keyword->id)->get()[0]->exclude_selection_group_1);
         return array_merge(
             $this->getLevels($keyword),
             [
@@ -71,6 +77,10 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
                 $keyword->getSynonymString(true), // get excluded abstract mapping synonyms
+                $keyword->selection_group_1,
+                $keyword->selection_group_2,
+                // KeywordSearch::where('id', $keyword->id)->get()[0]->exclude_selection_group_1,
+                // KeywordSearch::where('id', $keyword->id)->get()[0]->exclude_selection_group_2
             ]
         );
     }

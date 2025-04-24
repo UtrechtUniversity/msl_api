@@ -28,7 +28,9 @@ class ExcelSheetColumnDescriptions implements WithHeadings, WithTitle
                 (in the same format with #) will be excluded from the abstract mapping process. 
                 This process determines if the indicator term is used to detect this term within the textual metadata of a data publication. 
                 For instance, it may be excluded using this indicator term to find the term within the title of the data publication 
-                or any other place where text is present' ]
+                or any other place where text is present' ],
+                ['selection_group_1', 'Contains a Boolean value indicating if the keywords is used in the group 1 words.'],
+                ['selection_group_2', 'Contains a Boolean value indicating if the keywords is used in the group 2 words.'],
             ]
         ;
     }
