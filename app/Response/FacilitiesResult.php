@@ -29,7 +29,6 @@ class FacilitiesResult
 
     public function __construct($data) {
 
-        // dd($data);
         if(isset($data['title'])) {
             $this->name = $data['title'];
         }
