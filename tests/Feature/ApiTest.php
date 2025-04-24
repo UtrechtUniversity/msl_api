@@ -739,13 +739,15 @@ class ApiTest extends TestCase
             return new ApiController(new Client(['handler' => $handler]));
         });
 
+
+
+
         // Retrieve response from API
         $response = $this->get('webservice/api/facilities');
 
         // Check for 200 status response
         $response->assertStatus(200);
 
-        // dd($response);
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -775,6 +777,68 @@ class ApiTest extends TestCase
                     )
                         ->etc()
             );
+
+        // test the bounding box function
+        // $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_facilities_117.txt'));
+        // $mock = new MockHandler([
+        //     new Response(200, [], $response)
+        // ]);
+
+        // $handler = HandlerStack::create($mock);
+        // $apiControllerInstance = new ApiController(new Client(['handler' => $handler]));
+        // tehn public function bounding box?
+
+        // $responseBoundingBox = Http::get('http://localhost:80/webservice/api/facilities?boundingBox=180,-91,180,90');
+        // dd($responseBoundingBox->assertStatus(200));
+
+        // over the bounds of +/-90 or +/-180
+        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=[180,-90,180,91]');
+        $responseBoundingBox->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
+                ->etc()
+        );
+
+        // comma instead of dot for decimal
+        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=[180,-90,180,85,5]');
+        $responseBoundingBox->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
+                ->etc()
+        );
+
+        // switch first two inputs
+        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=[-90,180,180,85]');
+        $responseBoundingBox->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
+                ->etc()
+        );
+
+        // 3 inputs
+        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=[-90,180,180]');
+        $responseBoundingBox->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
+                ->etc()
+        );
+
+        // 3 inputs
+        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=[180,90,180,nine]');
+        $responseBoundingBox->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
+                ->etc()
+        );
+
+
+
+
     }
 
 }
