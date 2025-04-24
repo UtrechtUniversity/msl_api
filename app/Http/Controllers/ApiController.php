@@ -27,8 +27,7 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'facilityQuery' => 'title',
-        'equipmentQuery' => 'msl_laboratory_equipment_title',
+        'labName' => 'msl_lab_name_text'
     ];
 
     /**
@@ -39,9 +38,21 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
+        'labName' => 'msl_lab_name_text',
+        'subDomain' => 'msl_subdomain'
+    ];
+
+    /**
+     * @var array mappings from all endpoint search parameters to ckan fields
+     */
+    private $queryMappingsFacilities = [
+        'query' => 'text',
+        'tags' => 'tags',
+        'title' => 'title',
+        'authorName' => 'msl_author_name_text',
         'facilityQuery' => 'title',
         'subDomain' => 'msl_subdomain',
-        'equipmentQuery' => 'msl_laboratory_equipment_title',
+        'equipmentQuery' => 'msl_laboratory_equipment_text'
     ];
 
     /**
@@ -337,13 +348,13 @@ class ApiController extends Controller
         }
 
         // includes facility and equipment query
-        $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
+        $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
 
         // bounding box
         $paramBoundingBox = (string) $request->get('boundingBox');
         if ($paramBoundingBox > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
-            if (count($evaluatedQuery) > 0) {
+            if (sizeof($evaluatedQuery) == 4) {
                 $packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
                     $evaluatedQuery[1],
@@ -353,7 +364,7 @@ class ApiController extends Controller
 
             } else {
                 $errorResponse = new ErrorResponse;
-                $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals';
+                $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4';
 
                 return $errorResponse->getAsLaravelResponse();
             }
@@ -392,13 +403,17 @@ class ApiController extends Controller
      */
     private function checkBoundingBoxQuery($boundingBoxQuery)
     {
+        //check for [ and ] at beginning and end of query
+        if($boundingBoxQuery[0] == '[' && $boundingBoxQuery[strlen($boundingBoxQuery)-1] == ']') {
+            $boundingBoxQuery = str_replace(['[', ']'], "", $boundingBoxQuery);
+        } else {
+            return [];
+        }
+
         $bbr = explode(',', $boundingBoxQuery);
         $checkedArr = [];
 
         if (count($bbr) == 4) { // must be 4 values. It could be that decimals are indicated with comma instead of dot
-
-            // make it more explicit and check each entry individually instead of %
-            // more readable in the future
 
             if ($this->checkBounds($bbr[0], 180, -180)) {
                 $checkedArr[] = (float) $bbr[0];
@@ -431,6 +446,10 @@ class ApiController extends Controller
 
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
     {
-        return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
+        if(gettype($toCheck) != 'float'){
+            return false;
+        } else {
+            return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
+        }
     }
 }
