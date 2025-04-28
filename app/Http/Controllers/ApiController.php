@@ -27,7 +27,7 @@ class ApiController extends Controller
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
-        'labName' => 'msl_lab_name_text'
+        'labName' => 'msl_lab_name_text',
     ];
 
     /**
@@ -39,7 +39,7 @@ class ApiController extends Controller
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
         'labName' => 'msl_lab_name_text',
-        'subDomain' => 'msl_subdomain'
+        'subDomain' => 'msl_subdomain',
     ];
 
     /**
@@ -52,7 +52,7 @@ class ApiController extends Controller
         'authorName' => 'msl_author_name_text',
         'facilityQuery' => 'title',
         'subDomain' => 'msl_subdomain',
-        'equipmentQuery' => 'msl_laboratory_equipment_text'
+        'equipmentQuery' => 'msl_laboratory_equipment_text',
     ];
 
     /**
@@ -354,7 +354,7 @@ class ApiController extends Controller
         $paramBoundingBox = (string) $request->get('boundingBox');
         if ($paramBoundingBox > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
-            if (sizeof($evaluatedQuery) == 4) {
+            if (count($evaluatedQuery) == 4) {
                 $packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
                     $evaluatedQuery[1],
@@ -403,9 +403,9 @@ class ApiController extends Controller
      */
     private function checkBoundingBoxQuery($boundingBoxQuery)
     {
-        //check for [ and ] at beginning and end of query
-        if($boundingBoxQuery[0] == '[' && $boundingBoxQuery[strlen($boundingBoxQuery)-1] == ']') {
-            $boundingBoxQuery = str_replace(['[', ']'], "", $boundingBoxQuery);
+        // check for [ and ] at beginning and end of query
+        if ($boundingBoxQuery[0] == '[' && $boundingBoxQuery[strlen($boundingBoxQuery) - 1] == ']') {
+            $boundingBoxQuery = str_replace(['[', ']'], '', $boundingBoxQuery);
         } else {
             return [];
         }
@@ -446,7 +446,7 @@ class ApiController extends Controller
 
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
     {
-        if(gettype($toCheck) != 'float'){
+        if (gettype($toCheck) != 'float') {
             return false;
         } else {
             return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
