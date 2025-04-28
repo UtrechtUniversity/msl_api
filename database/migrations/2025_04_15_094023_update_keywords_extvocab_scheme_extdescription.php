@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('keywords', function (Blueprint $table) {
             $table->string('external_vocab_scheme')->nullable();
-            $table->mediumText('external_description', 2048)->nullable();
+            $table->mediumText('external_description')->nullable();
         });
     }
 
