@@ -20,13 +20,13 @@ class Keyword extends Model
         'external_vocab_scheme',
         'external_description',
         'selection_group_1',
-        'selection_group_2'
+        'selection_group_2',
     ];
 
     protected $casts = [
         'exclude_domain_mapping' => 'boolean',
         'selection_group_1' => 'boolean',
-        'selection_group_2' => 'boolean'
+        'selection_group_2' => 'boolean',
     ];
 
     public function parent()
@@ -144,5 +144,26 @@ class Keyword extends Model
         }
 
         return $string;
+    }
+
+    public function getExcludedSelectionGroup($groupNumber, $startCharacter = '#')
+    {
+
+        if (! ($groupNumber == 1 || $groupNumber == 2)) {
+            throw new \RuntimeException('Group number not within bounds: 1 or 2');
+        }
+
+        $groupColumn = 'exclude_selection_group_'.$groupNumber;
+        $string = '';
+
+        $synonyms = $this->hasMany(KeywordSearch::class, 'keyword_id')->where('isSynonym', '=', 1)->where($groupColumn, '=', 1)->get();
+        if ($synonyms) {
+            foreach ($synonyms as $synonym) {
+                $string .= $startCharacter.$synonym->search_value;
+            }
+        }
+
+        return $string;
+
     }
 }
