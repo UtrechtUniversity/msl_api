@@ -48,7 +48,7 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
         return array_merge(
             $this->getLevels($keyword),
             [
-                $keyword->getSynonymString(false), // get all synonyms not excluded ones
+                $keyword->getSynonymString(),
                 $keyword->uri,
                 $keyword->hyperlink,
                 $keyword->external_uri,

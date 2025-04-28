@@ -63,11 +63,10 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
 
     public function map($keyword): array
     {
-        dd(KeywordSearch::where('id', $keyword->id)->get()[0]->exclude_selection_group_1);
         return array_merge(
             $this->getLevels($keyword),
             [
-                $keyword->getSynonymString(false), // get synonyms
+                $keyword->getSynonymString(), // get synonyms
                 $keyword->exclude_domain_mapping,
                 $keyword->uri,
                 $keyword->hyperlink,
@@ -76,7 +75,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
-                $keyword->getSynonymString(true), // get excluded abstract mapping synonyms
+                $keyword->getSynonymString(includeAbstractMappingSynonyms: true), // get excluded abstract mapping synonyms
                 $keyword->selection_group_1,
                 $keyword->selection_group_2,
                 // KeywordSearch::where('id', $keyword->id)->get()[0]->exclude_selection_group_1,

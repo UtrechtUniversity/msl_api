@@ -128,15 +128,13 @@ class Keyword extends Model
     }
 
     /**
-     * @param  bool  $excludedSynonym
+     * @param  bool  $getSynonymsExcludedAbstractMapping
      *boolean to locate the type of synonyms from table keyword_search
-     *false = query synonyms in column value_search with column isSynonym equal 1
-     *true = query synonyms in column value_search with column isSynonym AND exclude_abstract_mapping equal 1
      * @return string
      */
-    public function getSynonymString(bool $excludedSynonym, $startCharacter = '#')
+    public function getSynonymString(bool $includeAbstractMappingSynonyms = false, $startCharacter = '#')
     {
-        $synonyms = $excludedSynonym ? $this->getSynonymsExcludedAbstractMapping() : $this->getSynonyms();
+        $synonyms = $includeAbstractMappingSynonyms ? $this->getSynonymsExcludedAbstractMapping() : $this->getSynonyms();
         $string = '';
 
         if ($synonyms) {
