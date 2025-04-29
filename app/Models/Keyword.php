@@ -132,9 +132,9 @@ class Keyword extends Model
      *boolean to locate the type of synonyms from table keyword_search
      * @return string
      */
-    public function getSynonymString(bool $includeAbstractMappingSynonyms = false, $startCharacter = '#')
+    public function getSynonymString(bool $excludedAbstractMappingSynonyms = false, $startCharacter = '#')
     {
-        $synonyms = $includeAbstractMappingSynonyms ? $this->getSynonymsExcludedAbstractMapping() : $this->getSynonyms();
+        $synonyms = $excludedAbstractMappingSynonyms ? $this->getSynonymsExcludedAbstractMapping() : $this->getSynonyms();
         $string = '';
 
         if ($synonyms) {
