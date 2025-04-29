@@ -74,7 +74,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
-                $keyword->getSynonymString(includeAbstractMappingSynonyms: true), // get excluded abstract mapping synonyms
+                $keyword->getSynonymString(excludedAbstractMappingSynonyms: true), // get excluded abstract mapping synonyms
                 $keyword->selection_group_1,
                 $keyword->selection_group_2,
                 $keyword->getExcludedSelectionGroup(1),
