@@ -21,12 +21,14 @@ use App\Exports\UnmatchedKeywordsExport;
 use App\Mappers\Helpers\KeywordHelper;
 use App\Exports\AbstractMatchingExport;
 use App\Converters\MicroscopyConverter;
+use App\Converters\SheetConverter;
 use App\Models\Vocabulary;
 use App\Exports\UriLabelExport;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Converters\SubsurfaceConverter;
 use App\Converters\TestbedsConverter;
+use PhpParser\Node\Stmt\TryCatch;
 
 class ToolsController extends Controller
 {
@@ -117,228 +119,46 @@ class ToolsController extends Controller
         
         return view('admin.geoview-labs', ['features' => json_encode($featureArray)]);
     }
-    
-    public function processMaterialsFile(Request $request)
-    {
-        $request->validate([
-            'materials-file' => 'required'
+
+    public function processFile(Request $request){
+        $formFields = $request->validate([
+            'uploaded-file' => 'required',
+            'domain-selection' => 'required'
         ]);
+
+        $filePath = $request->file('uploaded-file');
+        $selectedDomain = $formFields['domain-selection'];
+
+        
+        if(!(str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomain))){
+            return back()
+            ->with('error','Ooops, the filename string does not contain the selected domain/field string from the dropdown. Are you sure you selected the right file?');
+        }
+
+        // how to verify the content of each file?
+        // e.g. in rockphysics we have the following main categories:
+        // Apparatus, Ancillary equipment, Measured property, Inferred deformation behavior
+        // so we could verifiy like so: check if these are present in the uploaded file. If not then the name is correct but the main categories changed...
+        // basically we are updating the database based on this input and was thinking how to make it more foolproof
+        // but this could be complicated
+        // e.g. adding a hidden sheet with the file details or bury it in the metadata of the file itself
+
+        
+        if($request->hasFile('uploaded-file')) {
+
+            $converter = new SheetConverter();
+            $outcomeJson = $converter->excelToJson($filePath, $selectedDomain);
+
+            return response()->streamDownload(function () use($outcomeJson) {
+                echo $outcomeJson;
+            }, $selectedDomain.'.json');
                         
-        if($request->hasFile('materials-file')) {
-            $converter = new MaterialsConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('materials-file'));
-            }, 'materials.json');
-                        
         }
         
         return back()
-            ->with('status','Error');
+            ->with('error','Error. Something went wrong');
     }
-    
-    public function processPoreFluidsFile(Request $request)
-    {
-        $request->validate([
-            'porefluids-file' => 'required'
-        ]);
-        
-        if($request->hasFile('porefluids-file')) {
-            $converter = new PorefluidsConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('porefluids-file'));
-            }, 'porefluids.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    
-    public function processRockPhysicsFile(Request $request)
-    {        
-        $request->validate([
-            'rockphysics-file' => 'required'
-        ]);
-        
-        if($request->hasFile('rockphysics-file')) {
-            $converter = new RockPhysicsConverter();            
-                        
-            $converter->ExcelToJson($request->file('rockphysics-file'));
 
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('rockphysics-file'));
-            }, 'rockphysics.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processAnalogueModellingFile(Request $request)
-    {
-        $request->validate([
-            'analogue-file' => 'required'
-        ]);
-        
-        if($request->hasFile('analogue-file')) {
-            $converter = new AnalogueModellingConverter();
-            
-            // dd("exit");
-            // dd($converter->ExcelToJson($request->file('analogue-file')));
-
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('analogue-file'));
-            }, 'analogue.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processGeologicalAgeFile(Request $request)
-    {
-        $request->validate([
-            'geological-age-file' => 'required'
-        ]);
-        
-        if($request->hasFile('geological-age-file')) {
-            $converter = new GeologicalAgeConverter();
-            
-            // dd($converter->ExcelToJson($request->file('geological-age-file')));
-
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('geological-age-file'));
-            }, 'geological-age.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processGeologicalSettingFile(Request $request)
-    {
-        $request->validate([
-            'geological-setting-file' => 'required'
-        ]);
-        
-        if($request->hasFile('geological-setting-file')) {
-            $converter = new GeologicalSettingConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('geological-setting-file'));
-            }, 'geological-setting.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processPaleomagnetismFile(Request $request)
-    {
-        $request->validate([
-            'paleomagnetism-file' => 'required'
-        ]);
-        
-        if($request->hasFile('paleomagnetism-file')) {
-            $converter = new PaleomagnetismConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('paleomagnetism-file'));
-            }, 'paleomagnetism.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processGeochemistryFile(Request $request)
-    {
-        $request->validate([
-            'geochemistry-file' => 'required'
-        ]);
-        
-        if($request->hasFile('geochemistry-file')) {
-            $converter = new GeochemistryConverter();
-            
-            // dd($converter->ExcelToJson($request->file('geochemistry-file')));
-
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('geochemistry-file'));
-            }, 'geochemistry.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processMiscroscopyFile(Request $request)
-    {
-        $request->validate([
-            'microscopy-file' => 'required'
-        ]);
-        
-        if($request->hasFile('microscopy-file')) {
-            $converter = new MicroscopyConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('microscopy-file'));
-            }, 'microscopy.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processSubsurfaceFile(Request $request)
-    {
-        $request->validate([
-            'subsurface-file' => 'required'
-        ]);
-        
-        if($request->hasFile('subsurface-file')) {
-            $converter = new SubsurfaceConverter();
-            
-            // $converter->ExcelToJson($request->file('subsurface-file'));
-
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('subsurface-file'));
-            }, 'subsurface.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
-    public function processTestbedsFile(Request $request)
-    {
-        $request->validate([
-            'testbeds-file' => 'required'
-        ]);
-        
-        if($request->hasFile('testbeds-file')) {
-            $converter = new TestbedsConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
-                echo $converter->ExcelToJson($request->file('testbeds-file'));
-            }, 'testbeds.json');
-                
-        }
-        
-        return back()
-        ->with('status','Error');
-    }
-    
     public function convertExcel()
     {
         return view('admin.convert-excel');
