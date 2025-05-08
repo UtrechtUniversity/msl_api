@@ -25,8 +25,6 @@
                 <div class="card-body">
 					<form action="{{ route('process-file') }}" method="POST" enctype="multipart/form-data">
 						@csrf
-
-
                         {{-- 
                         does this make sense? I want to make sure that we are forced to keep the list in one place
                         because if we add a file then there is only one place from which it is sourced and that is the class
@@ -46,7 +44,6 @@
                         <br>
 
 						<div class="">
-                        	{{-- <label for="formFile" class="form-label"></label> --}}
                         	<input class="form-control" type="file" id="formFile" name="uploaded-file">
                         </div>
                         <br>

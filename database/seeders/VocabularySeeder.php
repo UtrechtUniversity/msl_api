@@ -7,6 +7,7 @@ use App\Models\KeywordSearch;
 use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Psy\Readline\Hoa\ConsoleException;
 
 class VocabularySeeder extends Seeder
 {
@@ -150,6 +151,8 @@ class VocabularySeeder extends Seeder
                     $domain['name'] == 'testbeds'
                 ) {
                     $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true, false);
+                } else {
+                    throw new ConsoleException($domain['name'].' -> This domain name not listed or not present in path: '.$fileString);
                 }
             }
 

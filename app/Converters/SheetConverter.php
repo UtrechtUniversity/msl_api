@@ -2,7 +2,6 @@
 
 namespace App\Converters;
 
-use App\Exports\Vocabs\ExcelSheetInternal;
 use App\Models\Vocabulary;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -22,7 +21,6 @@ class SheetConverter
                 $dbSheetName = substr($dbSheetName, 0, 31); // excel tab name character limit is 31
             }
         } else {
-            // this does not work for some reason
             return redirect()->back()->with('error', 'There are multiple or no entries for this domain in the database with this version');
         }
 
@@ -90,7 +88,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['exclude_domain_mapping'] = 0;
                         } else {
-                            // throw error
+                            return redirect()->back()->with('error', 'exclude_domain_mapping entry is not string "no" or "yes" for: '.$node['value']);
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('uri', $allColNames)) {
                         $node['uri'] = $cell->getValue();
@@ -114,7 +112,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['selection_group_1'] = 0;
                         } else {
-                            // throw error
+                            return redirect()->back()->with('error', 'selection_group_1 entry is not string "no" or "yes" for: '.$node['value']);
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_2', $allColNames)) {
                         if ($cell->getValue() == 'yes') {
@@ -122,7 +120,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['selection_group_2'] = 0;
                         } else {
-                            // throw error
+                            return redirect()->back()->with('error', 'selection_group_2 entry is not string "no" or "yes" for: '.$node['value']);
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_selection_group_1', $allColNames)) {
                         $node['exclude_selection_group_1'] = $this->extractSynonyms($cell->getValue());

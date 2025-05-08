@@ -2,33 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 use App\CkanClient\Client;
 use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Converters\MaterialsConverter;
-use App\Converters\RockPhysicsConverter;
 use App\Converters\ExcelToJsonConverter;
-use App\Exports\FilterTreeExport;
-use App\Converters\PorefluidsConverter;
-use App\Converters\AnalogueModellingConverter;
-use App\Converters\GeologicalAgeConverter;
-use App\Converters\GeologicalSettingConverter;
-use App\Converters\PaleomagnetismConverter;
-use App\Converters\GeochemistryConverter;
-use App\Exports\UnmatchedKeywordsExport;
-use App\Mappers\Helpers\KeywordHelper;
-use App\Exports\AbstractMatchingExport;
-use App\Converters\MicroscopyConverter;
 use App\Converters\SheetConverter;
-use App\Models\Vocabulary;
+use App\Exports\AbstractMatchingExport;
+use App\Exports\FilterTreeExport;
+use App\Exports\UnmatchedKeywordsExport;
 use App\Exports\UriLabelExport;
+use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Keyword;
 use App\Models\Laboratory;
-use App\Converters\SubsurfaceConverter;
-use App\Converters\TestbedsConverter;
-use PhpParser\Node\Stmt\TryCatch;
+use App\Models\Vocabulary;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ToolsController extends Controller
 {
@@ -41,98 +29,95 @@ class ToolsController extends Controller
     {
         $this->middleware('auth');
     }
-        
+
     public function convertKeywords()
-    {        
+    {
         return view('admin.convert-keywords');
     }
-    
+
     public function geoview()
     {
-        $client = new Client();
-        $searchRequest = new PackageSearchRequest();
+        $client = new Client;
+        $searchRequest = new PackageSearchRequest;
         $searchRequest->query = 'type:data-publication msl_surface_area:[0 TO 500]';
         $searchRequest->rows = 1000;
 
         $result = $client->get($searchRequest);
         $results = $result->getResults();
-        
+
         $featureArray = [];
         $featureArrayPoints = [];
-        
+
         foreach ($results as $result) {
-            if(isset($result['msl_geojson_featurecollection'])) {
-                if(strlen($result['msl_geojson_featurecollection']) > 0) {
+            if (isset($result['msl_geojson_featurecollection'])) {
+                if (strlen($result['msl_geojson_featurecollection']) > 0) {
                     $featureArray[] = $result['msl_geojson_featurecollection'];
                 }
             }
-                                    
-            //include extra data in point features for map testing
-            if(isset($result['msl_geojson_featurecollection_points'])) {
-                if(strlen($result['msl_geojson_featurecollection_points']) > 0) {
+
+            // include extra data in point features for map testing
+            if (isset($result['msl_geojson_featurecollection_points'])) {
+                if (strlen($result['msl_geojson_featurecollection_points']) > 0) {
                     $pointFeature = json_decode($result['msl_geojson_featurecollection_points']);
-                    
-                    
+
                     foreach ($pointFeature->features as &$subFeature) {
                         $subFeature->properties->name = $result['title'];
                         $subFeature->properties->ckan_id = $result['name'];
                         $subFeature->properties->area_geojson = $result['msl_geojson_featurecollection'];
                     }
-                    
-                    
+
                     $pointFeature->features[0]->properties->name = $result['title'];
                     $pointFeature->features[0]->properties->ckan_id = $result['name'];
                     $pointFeature->features[0]->properties->area_geojson = $result['msl_geojson_featurecollection'];
-                    
+
                     $pointFeature = json_encode($pointFeature);
-                    
+
                     $featureArrayPoints[] = $pointFeature;
                 }
             }
-            
-            
+
         }
-        
+
         return view('admin.geoview', ['features' => json_encode($featureArray), 'featuresPoints' => json_encode($featureArrayPoints)]);
     }
-    
+
     public function geoviewLabs()
     {
         $labs = Laboratory::where('latitude', '<>', '')->get();
-        
+
         $featureArray = [];
-        
+
         foreach ($labs as $lab) {
             $feature = [
                 'type' => 'Feature',
                 'properties' => [
-                    'name' => $lab->name
+                    'name' => $lab->name,
                 ],
                 'geometry' => [
                     'type' => 'Point',
-                    'coordinates' => [str_replace(',', '.', $lab->longitude), str_replace(',', '.', $lab->latitude)]
-                ]
+                    'coordinates' => [str_replace(',', '.', $lab->longitude), str_replace(',', '.', $lab->latitude)],
+                ],
             ];
-            
+
             $featureArray[] = $feature;
-        }        
-        
+        }
+
         return view('admin.geoview-labs', ['features' => json_encode($featureArray)]);
     }
 
-    public function processFile(Request $request){
+    public function processFile(Request $request)
+    {
         $formFields = $request->validate([
             'uploaded-file' => 'required',
-            'domain-selection' => 'required'
+            'domain-selection' => 'required',
         ]);
 
         $filePath = $request->file('uploaded-file');
         $selectedDomain = $formFields['domain-selection'];
 
-        
-        if(!(str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomain))){
+        if (! (str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomain))) {
             return back()
-            ->with('error','Ooops, the filename string does not contain the selected domain/field string from the dropdown. Are you sure you selected the right file?');
+                ->with('error', 'Ooops, the filename string does not contain the selected domain/field string from the dropdown. Are you sure you selected the right file?');
         }
 
         // how to verify the content of each file?
@@ -143,107 +128,106 @@ class ToolsController extends Controller
         // but this could be complicated
         // e.g. adding a hidden sheet with the file details or bury it in the metadata of the file itself
 
-        
-        if($request->hasFile('uploaded-file')) {
+        if ($request->hasFile('uploaded-file')) {
 
-            $converter = new SheetConverter();
+            $converter = new SheetConverter;
             $outcomeJson = $converter->excelToJson($filePath, $selectedDomain);
 
-            return response()->streamDownload(function () use($outcomeJson) {
+            return response()->streamDownload(function () use ($outcomeJson) {
                 echo $outcomeJson;
             }, $selectedDomain.'.json');
-                        
+
         }
-        
+
         return back()
-            ->with('error','Error. Something went wrong');
+            ->with('error', 'Error. Something went wrong');
     }
 
     public function convertExcel()
     {
         return view('admin.convert-excel');
     }
-    
+
     public function processExcelToJson(Request $request)
     {
         $request->validate([
-            'excel-file' => 'required'
+            'excel-file' => 'required',
         ]);
-        
-        if($request->hasFile('excel-file')) {
-            $converter = new ExcelToJsonConverter();
-            
-            return response()->streamDownload(function () use($converter, $request) {
+
+        if ($request->hasFile('excel-file')) {
+            $converter = new ExcelToJsonConverter;
+
+            return response()->streamDownload(function () use ($converter, $request) {
                 echo $converter->ExcelToJson($request->file('excel-file'));
             }, 'converted.json');
-                
+
         }
-        
+
         return back()
-        ->with('status','Error');
+            ->with('status', 'Error');
     }
-    
+
     public function uriLabels()
     {
         return view('admin.uri-labels');
     }
-    
+
     public function uriLabelsDownload()
     {
-        $exporter = new UriLabelExport();
-        
-        return response()->streamDownload(function () use($exporter) {
+        $exporter = new UriLabelExport;
+
+        return response()->streamDownload(function () use ($exporter) {
             echo $exporter->export();
         }, 'uri-labels.json');
     }
-    
+
     public function filterTree()
     {
         return view('admin.filter-tree');
-    }            
-    
+    }
+
     public function filterTreeDownload()
     {
-        $exporter = new FilterTreeExport();
-                
-        return response()->streamDownload(function () use($exporter) {
+        $exporter = new FilterTreeExport;
+
+        return response()->streamDownload(function () use ($exporter) {
             echo $exporter->exportInterpreted();
         }, 'interpreted.json');
     }
-    
+
     public function filterTreeDownloadOriginal()
     {
-        $exporter = new FilterTreeExport();
-        
-        return response()->streamDownload(function () use($exporter) {
+        $exporter = new FilterTreeExport;
+
+        return response()->streamDownload(function () use ($exporter) {
             echo $exporter->exportOriginal();
         }, 'original.json');
     }
 
     public function filterTreeDownloadEquipment()
     {
-        $exporter = new FilterTreeExport();
-        
-        return response()->streamDownload(function () use($exporter) {
+        $exporter = new FilterTreeExport;
+
+        return response()->streamDownload(function () use ($exporter) {
             echo $exporter->exportEquipment();
         }, 'equipment.json');
     }
-    
+
     public function viewUnmatchedKeywords()
     {
-        $client = new Client();
-        $searchRequest = new PackageSearchRequest();
+        $client = new Client;
+        $searchRequest = new PackageSearchRequest;
         $searchRequest->query = 'type:data-publication';
         $searchRequest->rows = 1000;
 
         $result = $client->get($searchRequest);
         $results = $result->getResults();
-                                             
+
         $keywords = [];
         foreach ($results as $result) {
-            if(count($result['tags']) > 0) {
+            if (count($result['tags']) > 0) {
                 foreach ($result['tags'] as $tag) {
-                    if(!array_key_exists($tag['name'], $keywords)) {
+                    if (! array_key_exists($tag['name'], $keywords)) {
                         $keywords[$tag['name']] = 1;
                     } else {
                         $keywords[$tag['name']] = $keywords[$tag['name']] + 1;
@@ -251,115 +235,113 @@ class ToolsController extends Controller
                 }
             }
         }
-        
-        uasort($keywords, function($a, $b) {
+
+        uasort($keywords, function ($a, $b) {
             return $b - $a;
         });
-        
+
         return view('admin.unmatched-keywords', ['keywords' => $keywords]);
     }
-    
+
     public function downloadUnmatchedKeywords()
     {
-        return Excel::download(new UnmatchedKeywordsExport(), 'unmatched-keywords.xlsx');
+        return Excel::download(new UnmatchedKeywordsExport, 'unmatched-keywords.xlsx');
     }
-    
+
     public function abstractMatching(Request $request)
     {
-        $client = new Client();
-        $organizationListRequest = new OrganizationListRequest();
+        $client = new Client;
+        $organizationListRequest = new OrganizationListRequest;
 
         $result = $client->get($organizationListRequest);
         $organizations = $result->getResult();
-        
+
         $filteredOrganizations = [];
-        
+
         foreach ($organizations as $organization) {
-            if($organization['name'] !== 'epos-multi-scale-laboratories-thematic-core-service')
-            {
+            if ($organization['name'] !== 'epos-multi-scale-laboratories-thematic-core-service') {
                 $filteredOrganizations[] = $organization;
             }
         }
-        
+
         $data = [];
         $selected = '';
-        
-        if ($request->has('datasetSource')) {            
+
+        if ($request->has('datasetSource')) {
             $datasetSource = $request->query('datasetSource');
             $selected = $datasetSource;
 
-            $client = new Client();
-            $searchRequest = new PackageSearchRequest();
+            $client = new Client;
+            $searchRequest = new PackageSearchRequest;
             $searchRequest->query = 'type:data-publication';
             $searchRequest->addFilterQuery('owner_org', $datasetSource);
             $searchRequest->rows = 10;
 
             $result = $client->get($searchRequest);
             $results = $result->getResults();
-                        
-            $keywordHelper = new KeywordHelper();
-                    
+
+            $keywordHelper = new KeywordHelper;
+
             foreach ($results as $result) {
                 $item = [];
                 $item['identifier'] = $result['msl_doi'];
                 $item['title'] = $result['title'];
                 $item['abstract'] = $result['notes'];
                 $item['keywords'] = [];
-                $keywords = $keywordHelper->extractFromText($item['abstract'] . ' ' . $item['title']);
-                
+                $keywords = $keywordHelper->extractFromText($item['abstract'].' '.$item['title']);
+
                 foreach ($keywords as $keyword) {
                     $item['keywords'][] = $keyword->getFullPath('>', true);
                 }
-                
+
                 $data[] = $item;
             }
         }
-                                
-        
+
         return view('admin.abstract-matching', ['data' => $data, 'organizations' => $filteredOrganizations, 'selected' => $selected]);
     }
-    
-    public function abstractMatchingDownload($dataRepo) 
+
+    public function abstractMatchingDownload($dataRepo)
     {
         return Excel::download(new AbstractMatchingExport($dataRepo), 'abstract-matching.xlsx');
     }
-    
+
     public function doiExport(Request $request)
     {
-        $client = new Client();
-        $organizationListRequest = new OrganizationListRequest();
+        $client = new Client;
+        $organizationListRequest = new OrganizationListRequest;
 
         $result = $client->get($organizationListRequest);
-        $organizations = $result->getResult();        
-        
+        $organizations = $result->getResult();
+
         if ($request->has('organization')) {
             $OrganizationId = $request->query('organization');
 
-            $client = new Client();
-            $searchRequest = new PackageSearchRequest();
+            $client = new Client;
+            $searchRequest = new PackageSearchRequest;
             $searchRequest->query = 'type:data-publication';
             $searchRequest->addFilterQuery('owner_org', $OrganizationId);
             $searchRequest->rows = 200;
 
             $result = $client->get($searchRequest);
             $results = $result->getResults();
-            
+
             $dois = [];
-            
+
             foreach ($results as $result) {
-                $dois[] = '"' . strtolower($result['msl_doi']) . '"';
+                $dois[] = '"'.strtolower($result['msl_doi']).'"';
             }
-            
+
             dd(implode(', ', $dois));
         }
-        
+
         return view('admin.export-dois', ['organizations' => $organizations]);
     }
-    
+
     public function queryGenerator()
-    {        
-        $terms = [];        
-        
+    {
+        $terms = [];
+
         /*
          //* Produce and display query for testing with datacite
          * Results of query should contain one word from two large groups:
@@ -382,57 +364,55 @@ class ToolsController extends Controller
          *  - Rock physics -> Measured property
          *  - Rock physics -> Inferred deformation behavior
          */
-        
-        //Keyword identifiers to be ignored while gathering terms (based on vocab 1.3)
+
+        // Keyword identifiers to be ignored while gathering terms (based on vocab 1.3)
         $skipKeywords = [
-            250, 251, 252, 253, 254, 255, 256, 257, 260, 261, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 
+            250, 251, 252, 253, 254, 255, 256, 257, 260, 261, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276,
             864, 1522, 896, 1543, 897, 1544, 898, 1545, 899, 1546, 900, 1547, 919, 920, 921, 922, 563, 564, 489, 565, 566, 567, 905,
-            1552, 932, 1572, 556, 24, 658, 362, 81, 916, 1554, 917, 1555, 933, 1573, 2749, 2748, 915, 1553, 918, 895, 1542
+            1552, 932, 1572, 556, 24, 658, 362, 81, 916, 1554, 917, 1555, 933, 1573, 2749, 2748, 915, 1553, 918, 895, 1542,
         ];
 
         $skipSearchKeywords = [
-            2652, 1446, 822, 2862, 4622
+            2652, 1446, 822, 2862, 4622,
         ];
-        
-        
+
         $materialVocab = Vocabulary::where('name', 'materials')->where('version', '1.3')->first();
         $materialTerms = $materialVocab->search_keywords;
-        $terms = array();
-        $query = "";
+        $terms = [];
+        $query = '';
         $total = 0;
-                        
+
         foreach ($materialTerms as $materialTerm) {
-            if(in_array($materialTerm->keyword_id, $skipKeywords)) {
+            if (in_array($materialTerm->keyword_id, $skipKeywords)) {
                 continue;
             }
-            if(in_array($materialTerm->id, $skipSearchKeywords)) {
-                continue;
-            }
-            
-            $terms[] = $this->createKeywordSearchRegex($materialTerm->search_value);
-        }
-                
-        $geologicalSettingsVocab = Vocabulary::where('name', 'geologicalsetting')->where('version', '1.3')->first();
-        $geologicalSettingsTerms = $geologicalSettingsVocab->search_keywords;
-               
-        
-        foreach ($geologicalSettingsTerms as $geologicalSettingsTerm) {
-            if(in_array($geologicalSettingsTerm->keyword_id, $skipKeywords)) {
+            if (in_array($materialTerm->id, $skipSearchKeywords)) {
                 continue;
             }
 
-            if(in_array($geologicalSettingsTerm->id, $skipSearchKeywords)) {
+            $terms[] = $this->createKeywordSearchRegex($materialTerm->search_value);
+        }
+
+        $geologicalSettingsVocab = Vocabulary::where('name', 'geologicalsetting')->where('version', '1.3')->first();
+        $geologicalSettingsTerms = $geologicalSettingsVocab->search_keywords;
+
+        foreach ($geologicalSettingsTerms as $geologicalSettingsTerm) {
+            if (in_array($geologicalSettingsTerm->keyword_id, $skipKeywords)) {
                 continue;
             }
-            
-            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/antropogenic_setting-civil_engineered_setting')) {
+
+            if (in_array($geologicalSettingsTerm->id, $skipSearchKeywords)) {
                 continue;
             }
-            
-            if(str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting')) {
+
+            if (str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/antropogenic_setting-civil_engineered_setting')) {
                 continue;
             }
-                                    
+
+            if (str_starts_with($geologicalSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting')) {
+                continue;
+            }
+
             $terms[] = $this->createKeywordSearchRegex($geologicalSettingsTerm->search_value);
         }
 
@@ -440,292 +420,284 @@ class ToolsController extends Controller
         $subsurfaceSettingsTerms = $subsurfaceVocab->search_keywords;
 
         foreach ($subsurfaceSettingsTerms as $subsurfaceSettingsTerm) {
-            if(in_array($subsurfaceSettingsTerm->keyword_id, $skipKeywords)) {
+            if (in_array($subsurfaceSettingsTerm->keyword_id, $skipKeywords)) {
                 continue;
             }
 
-            if(in_array($subsurfaceSettingsTerm->id, $skipSearchKeywords)) {
+            if (in_array($subsurfaceSettingsTerm->id, $skipSearchKeywords)) {
                 continue;
             }
-            
-            if(str_starts_with($subsurfaceSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/subsurface/1.3/civil_engineered_setting')) {
+
+            if (str_starts_with($subsurfaceSettingsTerm->keyword->uri, 'https://epos-msl.uu.nl/voc/subsurface/1.3/civil_engineered_setting')) {
                 continue;
-            }            
-            
+            }
+
             $terms[] = $this->createKeywordSearchRegex($subsurfaceSettingsTerm->search_value);
         }
-        
-        //dd($terms);
 
         $query .= implode(',', array_unique($terms));
         dd($query);
-        
-        
+
         $total += count($terms);
-        
+
         $terms = [];
-        $query = "";
-                
-        //analogue modeling apparatus        
+        $query = '';
+
+        // analogue modeling apparatus
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //analogue modeling measured property
+
+        // analogue modeling measured property
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        
-        //geochemistry analysis
+
+        // geochemistry analysis
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/geochemistry/1.3/analysis-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-                
-        //microscopy apparatus        
+
+        // microscopy apparatus
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        
-        //microscopy technique
+
+        // microscopy technique
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/technique-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        
-        //microscopy analyzed feature
+
+        // microscopy analyzed feature
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        
-        //microscopy inferred behavior
+
+        // microscopy inferred behavior
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/microscopy/1.3/inferred_parameter-%')->get();
         foreach ($keywords as $keyword) {
-            foreach ($keyword->keyword_search as $searchKeyword) {                
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+            foreach ($keyword->keyword_search as $searchKeyword) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
-        }         
-        
-        //paleomagnetism apparatus        
+        }
+
+        // paleomagnetism apparatus
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //paleomagnetism measured property
+
+        // paleomagnetism measured property
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //paleomagnetism inferred behavior
+
+        // paleomagnetism inferred behavior
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/paleomagnetism/1.3/inferred_behavior-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //rockphysics apparatus
+
+        // rockphysics apparatus
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //rockphysics measured property
+
+        // rockphysics measured property
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
 
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //rockphysics inferred deformation behavior
+
+        // rockphysics inferred deformation behavior
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
-        
-        //dd(count($terms), count(array_unique($terms)));
-        
-        $terms = array_unique($terms);
-        
-        $query .= implode(',', $terms);
-        //dd($query);
 
+        // dd(count($terms), count(array_unique($terms)));
+
+        $terms = array_unique($terms);
+
+        $query .= implode(',', $terms);
+        // dd($query);
 
         $terms = [];
-        $query = "";
-                
-        //analogue modeling apparatus        
+        $query = '';
+
+        // analogue modeling apparatus
         $keywords = Keyword::where('uri', 'like', 'https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-%')->get();
         foreach ($keywords as $keyword) {
             foreach ($keyword->keyword_search as $searchKeyword) {
-                if(in_array($searchKeyword->keyword_id, $skipKeywords)) {
+                if (in_array($searchKeyword->keyword_id, $skipKeywords)) {
                     continue;
                 }
-                if(in_array($searchKeyword->id, $skipSearchKeywords)) {
+                if (in_array($searchKeyword->id, $skipSearchKeywords)) {
                     continue;
                 }
-                
+
                 $terms[] = $this->createKeywordSearchRegex($searchKeyword->search_value);
             }
         }
 
         $terms = array_unique($terms);
-        
+
         $query .= implode(',', $terms);
         dd($query);
-                        
+
         return view('admin.query-generator', ['query' => $query]);
     }
-    
-    private function createKeywordSearchRegex($searchValue) {
+
+    private function createKeywordSearchRegex($searchValue)
+    {
         $term = $searchValue;
-        
+
         $term = str_replace('(', '\\\\(', $term);
         $term = str_replace(')', '\\\\)', $term);
         $term = str_replace('.', '\\\\.', $term);
-        $term = str_replace('*', '\\\\*', $term);                        
-        
-        if(str_ends_with($searchValue, ',')) {
-            return "\"\\\\b" . $term . "\"";;
+        $term = str_replace('*', '\\\\*', $term);
+
+        if (str_ends_with($searchValue, ',')) {
+            return '"\\\\b'.$term.'"';
         }
-        return "\"\\\\b" . $term . "\\\\b\"";
+
+        return '"\\\\b'.$term.'\\\\b"';
     }
-    
+
     private function extractSynonyms($string)
     {
         $synonyms = [];
-        if(str_contains($string, '#')) {
+        if (str_contains($string, '#')) {
             $parts = explode('#', $string);
             array_shift($parts);
             foreach ($parts as $part) {
                 $synonyms[] = trim($part);
             }
         }
-        
+
         return $synonyms;
     }
-  
 }
