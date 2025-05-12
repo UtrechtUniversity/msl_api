@@ -617,7 +617,7 @@ class ApiTest extends TestCase
     }
 
     /**
-     * Test /geoenergy API endpoint based on mocked CKAN request
+     * Test /facilities API endpoint based on mocked CKAN request
      */
     public function test_facilities_success_results(): void
     {
