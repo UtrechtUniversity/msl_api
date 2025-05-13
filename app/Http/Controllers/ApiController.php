@@ -350,9 +350,11 @@ class ApiController extends Controller
         // includes facility and equipment query
         $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
 
+        
+
         // bounding box
         $paramBoundingBox = (string) $request->get('boundingBox');
-        if ($paramBoundingBox > 0) {
+        if (strlen($paramBoundingBox) > 0) {
             $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
             if (count($evaluatedQuery) == 4) {
                 $packageSearchRequest->setBoundingBox(
@@ -403,34 +405,27 @@ class ApiController extends Controller
      */
     private function checkBoundingBoxQuery($boundingBoxQuery)
     {
-        // check for [ and ] at beginning and end of query
-        if ($boundingBoxQuery[0] == '[' && $boundingBoxQuery[strlen($boundingBoxQuery) - 1] == ']') {
-            $boundingBoxQuery = str_replace(['[', ']'], '', $boundingBoxQuery);
-        } else {
-            return [];
-        }
-
         $bbr = explode(',', $boundingBoxQuery);
         $checkedArr = [];
-
+        
         if (count($bbr) == 4) { // must be 4 values. It could be that decimals are indicated with comma instead of dot
 
-            if ($this->checkBounds($bbr[0], 180, -180)) {
+            if ($this->checkBounds((float) $bbr[0], 180, -180) && is_numeric($bbr[0])) {
                 $checkedArr[] = (float) $bbr[0];
             } else {
                 return [];
             }
-            if ($this->checkBounds($bbr[1], 90, -90)) {
+            if ($this->checkBounds((float) $bbr[1], 90, -90) && is_numeric($bbr[1])) {
                 $checkedArr[] = (float) $bbr[1];
             } else {
                 return [];
             }
-            if ($this->checkBounds($bbr[2], 180, -180)) {
+            if ($this->checkBounds((float) $bbr[2], 180, -180) && is_numeric($bbr[2])) {
                 $checkedArr[] = (float) $bbr[2];
             } else {
                 return [];
             }
-            if ($this->checkBounds($bbr[3], 90, -90)) {
+            if ($this->checkBounds((float) $bbr[3], 90, -90) && is_numeric($bbr[3])) {
                 $checkedArr[] = (float) $bbr[3];
             } else {
                 return [];
@@ -446,7 +441,7 @@ class ApiController extends Controller
 
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
     {
-        if (gettype($toCheck) != 'float') {
+        if (gettype($toCheck) != 'double') {
             return false;
         } else {
             return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
