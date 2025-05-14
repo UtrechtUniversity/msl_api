@@ -1790,7 +1790,7 @@ This endpoint gives access to all facilities and the equipment pieces on site.
         + Default: ``
     + equipmentQuery (text, optional) - Search query filtering using equipment information. 
         + Default: ``
-    + boundingBox 	([minx,miny,maxx,maxy]) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
         + Default: ``
 
         
