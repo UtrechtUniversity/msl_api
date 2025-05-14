@@ -132,12 +132,6 @@ class DataPublication
      */
     public array $msl_related_identifiers = [];
 
-    public $msl_handle;
-
-    public $msl_publication_day;
-
-    public $msl_publication_month;
-
     /**
      * year of publication
      */
@@ -163,8 +157,6 @@ class DataPublication
      * May be a corporate/institutional or personal name.
      */
     public array $msl_creators = [];
-
-    public $msl_publication_date;
 
     /**
      * The institution(s) or person(s) responsible for collecting, managing, distributing, or otherwise contributing to the development of the resource.
