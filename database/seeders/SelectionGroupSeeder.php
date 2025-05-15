@@ -24,41 +24,6 @@ class SelectionGroupSeeder extends Seeder
         'rockphysics' => ['apparatus', 'measured_property', 'inferred_deformation_behavior'],
     ];
 
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-
-        // include all
-        $vocabsBaseURI = 'https://epos-msl.uu.nl/voc';
-
-        foreach ($this->includedVocabularies_group_1 as $vocabPrefix => $value) {
-            DB::table('keywords')
-                ->where('uri', 'LIKE', $vocabsBaseURI.'/'.$vocabPrefix.'/'.$this->version.'%')
-                ->update(['selection_group_1' => 1]);
-        }
-
-        foreach ($this->includedVocabularies_group_2 as $vocabPrefix => $value) {
-            foreach ($value as $subCategory) {
-                DB::table('keywords')
-                    ->where('uri', 'LIKE', $vocabsBaseURI.'/'.$vocabPrefix.'/'.$this->version.'/'.$subCategory.'%')
-                    ->update(['selection_group_2' => 1]);
-            }
-        }
-
-        // exclude the exeptions
-
-        foreach ($this->excludedKeywordsList as $excludedKeywordUri) {
-            DB::table('keywords')->where('uri', '=', $excludedKeywordUri)->update(['selection_group_1' => 0], ['selection_group_2' => 0]);
-        }
-
-        foreach ($this->excludedSearchKeywords as $excludedSearchKeyword) {
-            DB::table('keywords_search')->where('search_value', '=', $excludedSearchKeyword)->update(['exclude_selection_group_1' => 1], ['exclude_selection_group_2' => 1]);
-        }
-
-    }
-
     private $excludedSearchKeywords = [
         'rubber',
         'spontaneous potential',
@@ -137,4 +102,41 @@ class SelectionGroupSeeder extends Seeder
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size',
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size-grain_size_distribution',
     ];
+    
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+
+        // include all
+        $vocabsBaseURI = 'https://epos-msl.uu.nl/voc';
+
+        foreach ($this->includedVocabularies_group_1 as $vocabPrefix => $value) {
+            DB::table('keywords')
+                ->where('uri', 'LIKE', $vocabsBaseURI.'/'.$vocabPrefix.'/'.$this->version.'%')
+                ->update(['selection_group_1' => 1]);
+        }
+
+        foreach ($this->includedVocabularies_group_2 as $vocabPrefix => $value) {
+            foreach ($value as $subCategory) {
+                DB::table('keywords')
+                    ->where('uri', 'LIKE', $vocabsBaseURI.'/'.$vocabPrefix.'/'.$this->version.'/'.$subCategory.'%')
+                    ->update(['selection_group_2' => 1]);
+            }
+        }
+
+        // exclude the exeptions
+
+        foreach ($this->excludedKeywordsList as $excludedKeywordUri) {
+            DB::table('keywords')->where('uri', '=', $excludedKeywordUri)->update(['selection_group_1' => 0], ['selection_group_2' => 0]);
+        }
+
+        foreach ($this->excludedSearchKeywords as $excludedSearchKeyword) {
+            DB::table('keywords_search')->where('search_value', '=', $excludedSearchKeyword)->update(['exclude_selection_group_1' => 1], ['exclude_selection_group_2' => 1]);
+        }
+
+    }
+
+
 }
