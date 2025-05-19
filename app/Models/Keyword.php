@@ -146,17 +146,17 @@ class Keyword extends Model
         return $string;
     }
 
-    public function getExcludedSelectionGroup($groupNumber, $startCharacter = '#')
+    public function getExcludedSearchKeywordsString($groupNumber, $startCharacter = '#')
     {
 
         if (! ($groupNumber == 1 || $groupNumber == 2)) {
-            throw new \RuntimeException('Group number not within bounds: 1 or 2');
+            throw new \Exception('Group number not within bounds: 1 or 2');
         }
 
         $groupColumn = 'exclude_selection_group_'.$groupNumber;
         $string = '';
 
-        $synonyms = $this->hasMany(KeywordSearch::class, 'keyword_id')->where('isSynonym', '=', 1)->where($groupColumn, '=', 1)->get();
+        $synonyms = $this->hasMany(KeywordSearch::class, 'keyword_id')->where($groupColumn, '=', 1)->get();
         if ($synonyms) {
             foreach ($synonyms as $synonym) {
                 $string .= $startCharacter.$synonym->search_value;
