@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\Converters\ExcelToJsonConverter;
-use App\Converters\SheetConverter;
-use App\Exports\AbstractMatchingExport;
-use App\Exports\FilterTreeExport;
-use App\Exports\UnmatchedKeywordsExport;
-use App\Exports\UriLabelExport;
-use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Keyword;
+use App\CkanClient\Client;
 use App\Models\Laboratory;
 use App\Models\Vocabulary;
 use Illuminate\Http\Request;
+use App\Exports\UriLabelExport;
+use App\Exports\FilterTreeExport;
+use App\Converters\SheetConverter;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Mappers\Helpers\KeywordHelper;
+use App\Exports\AbstractMatchingExport;
+use App\Converters\ExcelToJsonConverter;
+use App\Exports\UnmatchedKeywordsExport;
+use App\CkanClient\Request\PackageSearchRequest;
+use App\CkanClient\Request\OrganizationListRequest;
 
 class ToolsController extends Controller
 {
@@ -32,7 +33,17 @@ class ToolsController extends Controller
 
     public function convertKeywords()
     {
-        return view('admin.convert-keywords');
+        $allVocabs = $this->getVocabularies(config('vocabularies.vocabularies_current_version'));
+        $displayNames= [];
+        foreach ($allVocabs as $entry) {
+            $displayNames [] = $entry->display_name;
+        }  
+
+        return view('admin.convert-keywords', ['displayNames' => $displayNames]);
+    }
+
+    private function getVocabularies($version){
+        return DB::table('vocabularies')->where('version', 'LIKE', $version)->get();
     }
 
     public function geoview()
@@ -113,29 +124,34 @@ class ToolsController extends Controller
         ]);
 
         $filePath = $request->file('uploaded-file');
-        $selectedDomain = $formFields['domain-selection'];
+        $selectedDomainDisplayName = $formFields['domain-selection'];
+        $selectedDomainName = 'none';
+        // get the selected name
+        $allVocabs = $this->getVocabularies(config('vocabularies.vocabularies_current_version'));
+        foreach ($allVocabs as $entry) {
+            if($entry->display_name == $selectedDomainDisplayName){
+                $selectedDomainName = $entry->name;
+                break;
+            }
+        }  
 
-        if (! (str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomain))) {
+        if (! (str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomainName))) {
             return back()
                 ->with('error', 'Ooops, the filename string does not contain the selected domain/field string from the dropdown. Are you sure you selected the right file?');
         }
 
-        // how to verify the content of each file?
-        // e.g. in rockphysics we have the following main categories:
-        // Apparatus, Ancillary equipment, Measured property, Inferred deformation behavior
-        // so we could verifiy like so: check if these are present in the uploaded file. If not then the name is correct but the main categories changed...
-        // basically we are updating the database based on this input and was thinking how to make it more foolproof
-        // but this could be complicated
-        // e.g. adding a hidden sheet with the file details or bury it in the metadata of the file itself
-
         if ($request->hasFile('uploaded-file')) {
 
             $converter = new SheetConverter;
-            $outcomeJson = $converter->excelToJson($filePath, $selectedDomain);
-
-            return response()->streamDownload(function () use ($outcomeJson) {
-                echo $outcomeJson;
-            }, $selectedDomain.'.json');
+            try {
+                $outcomeJson = $converter->excelToJson($filePath, $selectedDomainName);
+                return response()->streamDownload(function () use ($outcomeJson) {
+                    echo $outcomeJson;
+                }, $selectedDomainName.'.json');
+            } catch (\Exception $e) {
+                return back()
+                ->with('error', $e->getMessage());
+            }
 
         }
 

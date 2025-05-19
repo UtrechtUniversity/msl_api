@@ -8,6 +8,20 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class SheetConverter
 {
+    private $verifyDomainContent = [
+        'analogue' => [],
+        'geochemistry' => [],
+        'geologicalage' => [],
+        'geologicalsetting' => [],
+        'materials' => [],
+        'microscopy' => [],
+        'paleomagnetism' => [],
+        'porefluids' => [],
+        'rockphysics' => ['Apparatus', 'Ancillary equipment', 'Measured property', 'Inferred deformation behavior'],
+        'subsurface' => [],
+        'testbeds' => [],
+    ];
+
     public function excelToJson($filepath, $selectedDomain)
     {
         $spreadsheet = IOFactory::load($filepath);
@@ -31,25 +45,6 @@ class SheetConverter
         return json_encode($data, JSON_PRETTY_PRINT);
 
     }
-
-    public function getFileList()
-    {
-        return array_keys($this->verifyDomainContent);
-    }
-
-    private $verifyDomainContent = [
-        'analogue' => [],
-        'geochemistry' => [],
-        'geologicalage' => [],
-        'geologicalsetting' => [],
-        'materials' => [],
-        'microscopy' => [],
-        'paleomagnetism' => [],
-        'porefluids' => [],
-        'rockphysics' => ['Apparatus', 'Ancillary equipment', 'Measured property', 'Inferred deformation behavior'],
-        'subsurface' => [],
-        'testbeds' => [],
-    ];
 
     private function retrieveData($worksheet)
     {
@@ -88,7 +83,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['exclude_domain_mapping'] = 0;
                         } else {
-                            return redirect()->back()->with('error', 'exclude_domain_mapping entry is not string "no" or "yes" for: '.$node['value']);
+                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('uri', $allColNames)) {
                         $node['uri'] = $cell->getValue();
@@ -112,7 +107,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['selection_group_1'] = 0;
                         } else {
-                            return redirect()->back()->with('error', 'selection_group_1 entry is not string "no" or "yes" for: '.$node['value']);
+                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_2', $allColNames)) {
                         if ($cell->getValue() == 'yes') {
@@ -120,7 +115,7 @@ class SheetConverter
                         } elseif ($cell->getValue() == 'no') {
                             $node['selection_group_2'] = 0;
                         } else {
-                            return redirect()->back()->with('error', 'selection_group_2 entry is not string "no" or "yes" for: '.$node['value']);
+                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_selection_group_1', $allColNames)) {
                         $node['exclude_selection_group_1'] = $this->extractSynonyms($cell->getValue());
@@ -229,7 +224,6 @@ class SheetConverter
     // get column list via reflection class: https://www.php.net/manual/en/class.reflectionclass.php
     // https://stackoverflow.com/questions/2555883/in-php-is-it-possible-to-create-an-instance-of-an-class-without-calling-classs
     // $excelSheetHeadings = ExcelSheetInternal::newInstanceWithoutConstructor();
-    // dd($excelSheetHeadings->headings());
     private function createSimpleNode()
     {
         $node = [
@@ -255,44 +249,4 @@ class SheetConverter
         return $node;
     }
 
-    // ////////////////////////////////////////////////////////////
-    // what to do with these functions? implement or toss?
-    // /////
-
-    private function isGovAuUrl($url)
-    {
-        if (str_contains($url, 'cgi.vocabs.ga.gov.au')) {
-            return true;
-        }
-
-        return false;
-    }
-
-    private function extractLinkUri($url)
-    {
-        if ($this->isGovAuUrl($url)) {
-            $urlParts = parse_url($url);
-            parse_str($urlParts['query'], $queryParts);
-
-            if (isset($queryParts['uri'])) {
-                return $queryParts['uri'];
-            }
-        }
-
-        return '';
-    }
-
-    private function extractVocabUri($url)
-    {
-        if ($this->isGovAuUrl($url)) {
-            $urlParts = parse_url($url);
-            parse_str($urlParts['query'], $queryParts);
-
-            if (isset($queryParts['vocab_uri'])) {
-                return $queryParts['vocab_uri'];
-            }
-        }
-
-        return '';
-    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Vocabulary extends Model
@@ -23,4 +24,5 @@ class Vocabulary extends Model
     public function maxLevel() {
         return Keyword::where('vocabulary_id', $this->id)->max('level');
     }
+
 }
