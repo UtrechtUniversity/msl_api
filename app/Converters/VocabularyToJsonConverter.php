@@ -6,27 +6,13 @@ use App\Models\Vocabulary;
 use PhpOffice\PhpSpreadsheet\Cell\Coordinate;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
-class SheetConverter
+class VocabularyToJsonConverter
 {
-    private $verifyDomainContent = [
-        'analogue' => [],
-        'geochemistry' => [],
-        'geologicalage' => [],
-        'geologicalsetting' => [],
-        'materials' => [],
-        'microscopy' => [],
-        'paleomagnetism' => [],
-        'porefluids' => [],
-        'rockphysics' => ['Apparatus', 'Ancillary equipment', 'Measured property', 'Inferred deformation behavior'],
-        'subsurface' => [],
-        'testbeds' => [],
-    ];
-
     public function excelToJson($filepath, $selectedDomain)
     {
         $spreadsheet = IOFactory::load($filepath);
 
-        $dbSheetNameOptions = Vocabulary::where('name', $selectedDomain)->where('version', '1.3')->get();
+        $dbSheetNameOptions = Vocabulary::where('name', $selectedDomain)->where('version', config('vocabularies.vocabularies_current_version'))->get();
 
         $dbSheetName = '';
         if (count($dbSheetNameOptions) == 1) {
@@ -35,7 +21,7 @@ class SheetConverter
                 $dbSheetName = substr($dbSheetName, 0, 31); // excel tab name character limit is 31
             }
         } else {
-            return redirect()->back()->with('error', 'There are multiple or no entries for this domain in the database with this version');
+            throw new \Exception('There are multiple or no entries for this domain in the database with this version');
         }
 
         $worksheet = $spreadsheet->getSheetByName($dbSheetName);
@@ -51,10 +37,9 @@ class SheetConverter
 
         $allColNames = $this->getAllHeaderStrings($worksheet);
 
-        $lastSynonymCol = $this->getLastSynonymCol($allColNames);
+        $lastColumnLetter = $this->getLastColumnAsLetter($allColNames);
 
         $nodes = [];
-        $counter = 0;
         $baseLevel = 1;
 
         foreach ($worksheet->getRowIterator(2, $worksheet->getHighestDataRow()) as $row) {
@@ -69,7 +54,7 @@ class SheetConverter
 
                 if ($cell->getValue() && $cell->getValue() !== '') {
 
-                    if (in_array($currentColumn, range('A', $lastSynonymCol))) {
+                    if (in_array($currentColumn, range('A', $lastColumnLetter))) {
 
                         $node['value'] = $cell->getValue();
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
@@ -127,7 +112,6 @@ class SheetConverter
             }
 
             $nodes[] = $node;
-            $counter++;
         }
 
         // nest the nodes
@@ -159,7 +143,7 @@ class SheetConverter
         return $alphabet[$no];
     }
 
-    private function getLastSynonymCol($allColNames)
+    private function getLastColumnAsLetter($allColNames)
     {
 
         $all = [];
@@ -187,6 +171,7 @@ class SheetConverter
             $allcols[] = $value;
         }
         dd($allcols);
+
         return $allcols;
     }
 
@@ -220,10 +205,6 @@ class SheetConverter
         return $synonyms;
     }
 
-    // why not closing the manual addition and base the node on the ExcelSHeetInternal.php column list?
-    // get column list via reflection class: https://www.php.net/manual/en/class.reflectionclass.php
-    // https://stackoverflow.com/questions/2555883/in-php-is-it-possible-to-create-an-instance-of-an-class-without-calling-classs
-    // $excelSheetHeadings = ExcelSheetInternal::newInstanceWithoutConstructor();
     private function createSimpleNode()
     {
         $node = [
@@ -248,5 +229,4 @@ class SheetConverter
 
         return $node;
     }
-
 }

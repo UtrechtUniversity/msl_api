@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Keyword;
 use App\CkanClient\Client;
+use App\CkanClient\Request\OrganizationListRequest;
+use App\CkanClient\Request\PackageSearchRequest;
+use App\Converters\ExcelToJsonConverter;
+use App\Converters\VocabularyToJsonConverter;
+use App\Exports\AbstractMatchingExport;
+use App\Exports\FilterTreeExport;
+use App\Exports\UnmatchedKeywordsExport;
+use App\Exports\UriLabelExport;
+use App\Mappers\Helpers\KeywordHelper;
+use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Vocabulary;
 use Illuminate\Http\Request;
-use App\Exports\UriLabelExport;
-use App\Exports\FilterTreeExport;
-use App\Converters\SheetConverter;
-use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Mappers\Helpers\KeywordHelper;
-use App\Exports\AbstractMatchingExport;
-use App\Converters\ExcelToJsonConverter;
-use App\Exports\UnmatchedKeywordsExport;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\CkanClient\Request\OrganizationListRequest;
 
 class ToolsController extends Controller
 {
@@ -33,12 +32,12 @@ class ToolsController extends Controller
 
     public function convertKeywords()
     {
-        
+
         $allVocabs = Vocabulary::where('version', 'LIKE', config('vocabularies.vocabularies_current_version'))->get();
-        $displayNames= [];
+        $displayNames = [];
         foreach ($allVocabs as $entry) {
-            $displayNames [] = $entry->display_name;
-        }  
+            $displayNames[] = $entry->display_name;
+        }
 
         return view('admin.convert-keywords', ['displayNames' => $displayNames]);
     }
@@ -126,11 +125,11 @@ class ToolsController extends Controller
         // get the selected name
         $allVocabs = Vocabulary::where('version', 'LIKE', config('vocabularies.vocabularies_current_version'))->get();
         foreach ($allVocabs as $entry) {
-            if($entry->display_name == $selectedDomainDisplayName){
+            if ($entry->display_name == $selectedDomainDisplayName) {
                 $selectedDomainName = $entry->name;
                 break;
             }
-        }  
+        }
 
         if (! (str_contains($request->file('uploaded-file')->getClientOriginalName(), $selectedDomainName))) {
             return back()
@@ -139,15 +138,16 @@ class ToolsController extends Controller
 
         if ($request->hasFile('uploaded-file')) {
 
-            $converter = new SheetConverter;
+            $converter = new VocabularyToJsonConverter;
             try {
                 $outcomeJson = $converter->excelToJson($filePath, $selectedDomainName);
+
                 return response()->streamDownload(function () use ($outcomeJson) {
                     echo $outcomeJson;
                 }, $selectedDomainName.'.json');
             } catch (\Exception $e) {
                 return back()
-                ->with('error', $e->getMessage());
+                    ->with('error', $e->getMessage());
             }
 
         }

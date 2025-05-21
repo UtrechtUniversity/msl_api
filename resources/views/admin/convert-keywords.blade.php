@@ -16,15 +16,15 @@
                     @endif
 
                     @if (session('error'))
-                        <div class="error-highlight-input" role="alert">
-                            <h3 class="text-error-800 p-6">{{ session('error') }}</h3>
+                        <div class="card-body" role="alert">
+                            <h4 class="p-6">{{ session('error') }}</h4>
                         </div>
                     @endif
                 </div>
 
 
                 <div class="card p-10 ">
-                    <h2 class="justify-center">Upload a file</h2>
+                    <div class="card-header">Upload a file</div>
                     <div class="card-body">
                         <form action="{{ route('process-file') }}" method="POST" enctype="multipart/form-data">
                             @csrf
