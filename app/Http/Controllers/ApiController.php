@@ -353,7 +353,7 @@ class ApiController extends Controller
         // bounding box
         $paramBoundingBox = (string) $request->get('boundingBox');
         if (strlen($paramBoundingBox) > 0) {
-            $evaluatedQuery = $this->checkBoundingBoxQuery($paramBoundingBox);
+            $evaluatedQuery = $this->boundingboxStringToArray($paramBoundingBox);
             if (count($evaluatedQuery) == 4) {
                 $packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
@@ -396,47 +396,54 @@ class ApiController extends Controller
     }
 
     /**
-     * Checks the string from the boundingBox query
-     * or
-     * returns each float of the 4 values in an array instead of string
-     * when parameter $check equals false
+     * Convert boundingbox parameter to array
+     * 
+     * @param string $boundingBoxQuery
+     * @return array
      */
-    private function checkBoundingBoxQuery($boundingBoxQuery)
+    private function boundingboxStringToArray(string $boundingBoxQuery)
     {
-        $bbr = explode(',', $boundingBoxQuery);
+        $boundingBoxElements = explode(',', $boundingBoxQuery);
         $checkedArr = [];
 
-        if (count($bbr) == 4) { // must be 4 values. It could be that decimals are indicated with comma instead of dot
-
-            if ($this->checkBounds((float) $bbr[0], 180, -180) && is_numeric($bbr[0])) {
-                $checkedArr[] = (float) $bbr[0];
+        // must be 4 values. It could be that decimals are indicated with comma instead of dot
+        if (count($boundingBoxElements) == 4) {
+            if ($this->checkBounds((float) $boundingBoxElements[0], 180, -180) && is_numeric($boundingBoxElements[0])) {
+                $checkedArr[] = (float) $boundingBoxElements[0];
             } else {
                 return [];
             }
-            if ($this->checkBounds((float) $bbr[1], 90, -90) && is_numeric($bbr[1])) {
-                $checkedArr[] = (float) $bbr[1];
+            if ($this->checkBounds((float) $boundingBoxElements[1], 90, -90) && is_numeric($boundingBoxElements[1])) {
+                $checkedArr[] = (float) $boundingBoxElements[1];
             } else {
                 return [];
             }
-            if ($this->checkBounds((float) $bbr[2], 180, -180) && is_numeric($bbr[2])) {
-                $checkedArr[] = (float) $bbr[2];
+            if ($this->checkBounds((float) $boundingBoxElements[2], 180, -180) && is_numeric($boundingBoxElements[2])) {
+                $checkedArr[] = (float) $boundingBoxElements[2];
             } else {
                 return [];
             }
-            if ($this->checkBounds((float) $bbr[3], 90, -90) && is_numeric($bbr[3])) {
-                $checkedArr[] = (float) $bbr[3];
+            if ($this->checkBounds((float) $boundingBoxElements[3], 90, -90) && is_numeric($boundingBoxElements[3])) {
+                $checkedArr[] = (float) $boundingBoxElements[3];
             } else {
                 return [];
             }
 
             return $checkedArr;
-
         } else {
             return [];
         }
 
     }
 
+    /**
+     * Check if bounding box component is within limits
+     * 
+     * @param float $toCheck
+     * @param float $limitUp
+     * @param float $limitLow
+     * @return bool
+     */
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
     {
         if (gettype($toCheck) != 'double') {
