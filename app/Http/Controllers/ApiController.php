@@ -350,8 +350,6 @@ class ApiController extends Controller
         // includes facility and equipment query
         $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
 
-        
-
         // bounding box
         $paramBoundingBox = (string) $request->get('boundingBox');
         if (strlen($paramBoundingBox) > 0) {
@@ -407,7 +405,7 @@ class ApiController extends Controller
     {
         $bbr = explode(',', $boundingBoxQuery);
         $checkedArr = [];
-        
+
         if (count($bbr) == 4) { // must be 4 values. It could be that decimals are indicated with comma instead of dot
 
             if ($this->checkBounds((float) $bbr[0], 180, -180) && is_numeric($bbr[0])) {
