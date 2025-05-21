@@ -179,10 +179,6 @@ class DataPublication
      */
     public string $msl_datacite_version = "";
 
-    public $license_id;
-
-    public $msl_points_of_contact = [];
-
     public $msl_laboratories = [];
 
     /**
@@ -201,20 +197,34 @@ class DataPublication
      */
     public string $msl_citation;
 
-    public $msl_collection_period = [];
-
     /**
      * Location related fields
      */
-    public $msl_spatial_coordinates = [];
+
+    /**
+     * Spatial coordinates
+     */
+    public array $msl_spatial_coordinates = [];
     
+    /**
+     * Geojson feature collection string containing spatial features
+     */
     public $msl_geojson_featurecollection;
     
+    /**
+     * Geojson feature collection string containing spatial features converted to points
+     */
     public $msl_geojson_featurecollection_points;
     
+    /**
+     * Service area of feature collection
+     */
     public $msl_surface_area = 0;
 
-    public $msl_geolocations = [];
+    /**
+     * Textual described location
+     */
+    public array $msl_geolocations = [];
 
     /**
      * keyword related fields
