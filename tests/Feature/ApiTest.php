@@ -666,9 +666,13 @@ class ApiTest extends TestCase
             )
             ->etc()
         );
+    }
 
-        // test the bounding box function
-
+    /**
+     * Test /facilities API endpoint for malformed bounding box errors
+     */
+    public function test_facilities_bounding_box_errors(): void
+    {
         // over the bounds of +/-90 or +/-180
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,-90,180,91');
         $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
@@ -716,14 +720,36 @@ class ApiTest extends TestCase
             ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
             ->etc()
         );
+    }
 
-        // string input
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,90,180,90');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN.')
+    /**
+     * Test /facilities API endpoint corect bounding box
+     */
+    public function test_facilities_bounding_box_success(): void
+    {
+        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
+        $this->app->bind(ApiController::class, function ($app) {
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_facilities_boundingbox.txt'));
+            $mock = new MockHandler([
+                new Response(200, [], $response),
+            ]);
+
+            $handler = HandlerStack::create($mock);
+
+            return new ApiController(new Client(['handler' => $handler]));
+        });
+
+        // Retrieve response from API
+        $response = $this->get('http://localhost:8000/webservice/api/facilities?boundingBox=14.05,54.08,45.25,63.86');
+
+        // Check for 200 status response
+        $response->assertStatus(200);
+
+        // Verify response body contents
+        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
+            ->where('success', true)
+            ->where('result.count', 2)
             ->etc()
         );
-
     }
 }
