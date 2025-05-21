@@ -11,6 +11,8 @@ use Psy\Readline\Hoa\ConsoleException;
 
 class VocabularySeeder extends Seeder
 {
+
+    private $exclude_abstract_mapping_dynamic_array = [];
     /**
      * Run the database seeds.
      *
@@ -21,6 +23,8 @@ class VocabularySeeder extends Seeder
         // remove current keywords and keywordsearches
         Keyword::truncate();
         KeywordSearch::truncate();
+
+        
 
         // vocabularies version 1.3
         $allFileDomains = [
@@ -102,58 +106,12 @@ class VocabularySeeder extends Seeder
 
             // loop over top nodes and add sub-nodes
             foreach ($vocabData as $topNode) {
+                $this->processNodeUpdated($topNode, $vocabulary, null);
 
-                if (
-                    $domain['name'] == 'materials' ||
-                    $domain['name'] == 'porefluids' ||
-                    $domain['name'] == 'geologicalage' ||
-                    $domain['name'] == 'geologicalsetting'
-                ) {
-                    $this->processNodeUpdated($topNode, $vocabulary, null, true);
-                } elseif (
-                    $domain['name'] == 'rockphysics'
-                ) {
-                    if ($topNode->value == 'Ancillary equipment') {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true, true);
-                    } else {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true);
-                    }
-                } elseif (
-                    $domain['name'] == 'analogue'
-                ) {
-                    if ($topNode->value == 'Modeled structure') {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, true, true);
-                    } elseif ($topNode->value == 'Modeled geomorphological feature') {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, true, true);
-                    } elseif ($topNode->value == 'Ancillary equipment') {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true, true);
-                    } else {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true);
-                    }
-                } elseif (
-                    $domain['name'] == 'paleomagnetism' ||
-                    $domain['name'] == 'geochemistry'
-                ) {
-                    $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true);
-                } elseif (
-                    $domain['name'] == 'microscopy'
-                ) {
-                    if ($topNode->value == 'Ancillary equipment') {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true, true);
-                    } else {
-                        $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true);
-                    }
-                } elseif (
-                    $domain['name'] == 'subsurface'
-                ) {
-                    $this->processNodeUpdated($topNode, $vocabulary, null, false, false, true, true);
-                } elseif (
-                    $domain['name'] == 'testbeds'
-                ) {
-                    $this->processNodeUpdated($topNode, $vocabulary, null, true, false, true, false);
-                } else {
-                    throw new ConsoleException($domain['name'].' -> This domain name not listed or not present in path: '.$fileString);
-                }
+                // } else {
+                //     throw new ConsoleException($domain['name'].' -> This domain name not listed or not present in path: '.$fileString);
+                // }
+
             }
 
         }
@@ -834,8 +792,15 @@ class VocabularySeeder extends Seeder
         }
     }
 
-    private function processNodeUpdated($node, $vocabulary, $parentId = null, $excludeAbstractMapping = false, $forceExcludeAbstractMapping = false, $excludeSubdomainMapping = false, $forceExcludeSubdomainMapping = false)
+    private function processNodeUpdated($node, $vocabulary, $parentId = null)
     {
+        //first add exclude_abstract_mapping terms from nodes indicators_exclude_abstract_mapping to dynamic list
+        if(strlen($node->indicators_exclude_abstract_mapping) > 0){
+            $allStrings = $this->extract_indicators_exclude_abstract_mapping($node->indicators_exclude_abstract_mapping);
+            foreach ($allStrings as $entry) {
+                $this->exclude_abstract_mapping_dynamic_array [] = $entry; 
+            }
+        }
 
         $keyword = Keyword::create([
             'parent_id' => $parentId,
@@ -846,7 +811,7 @@ class VocabularySeeder extends Seeder
             'level' => $node->level,
             'hyperlink' => $node->hyperlink,
             'label' => $node->value,
-            'exclude_domain_mapping' => $excludeSubdomainMapping,
+            'exclude_domain_mapping' => $node->exclude_domain_mapping,
             'extracted_definition' => isset($node->extracted_definition) ? $node->extracted_definition : '',
             'extracted_definition_link' => isset($node->extracted_definition_link) ? $node->extracted_definition_link : '',
             'selection_group_1' => $node->selection_group_1,
@@ -859,7 +824,7 @@ class VocabularySeeder extends Seeder
             'keyword_id' => $keyword->id,
             'search_value' => strtolower($node->value),
             'isSynonym' => false,
-            'exclude_abstract_mapping' => $excludeAbstractMapping,
+            'exclude_abstract_mapping' => in_array($node->value,$this->exclude_abstract_mapping_dynamic_array)? 1 : 0,
             'version' => $vocabulary->version,
         ]);
 
@@ -870,7 +835,7 @@ class VocabularySeeder extends Seeder
                         'keyword_id' => $keyword->id,
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
-                        'exclude_abstract_mapping' => $excludeAbstractMapping,
+                        'exclude_abstract_mapping' => in_array($node->value, $this->exclude_abstract_mapping_dynamic_array)? 1 : 0,
                         'version' => $vocabulary->version,
                     ]);
                 }
@@ -879,17 +844,23 @@ class VocabularySeeder extends Seeder
 
         if (count($node->subTerms)) {
             foreach ($node->subTerms as $subNode) {
-                if ($forceExcludeAbstractMapping && $forceExcludeSubdomainMapping) {
-                    $this->processNodeUpdated($subNode, $vocabulary, $keyword->id, true, true, true, true);
-                } elseif ($forceExcludeAbstractMapping) {
-                    $this->processNodeUpdated($subNode, $vocabulary, $keyword->id, true, true);
-                } elseif ($forceExcludeSubdomainMapping) {
-                    $this->processNodeUpdated($subNode, $vocabulary, $keyword->id, false, false, true, true);
-                } else {
-                    $this->processNodeUpdated($subNode, $vocabulary, $keyword->id);
-                }
+                $this->processNodeUpdated($subNode, $vocabulary, $keyword->id);
             }
         }
+    }
+
+    private function extract_indicators_exclude_abstract_mapping($string)
+    {
+        $indicators = [];
+        if (str_contains($string, '#')) {
+            $parts = explode('#', $string);
+            array_shift($parts);
+            foreach ($parts as $part) {
+                $indicators[] = trim($part);
+            }
+        }
+
+        return $indicators;
     }
 
     private function processNode($node, $vocabulary, $parentId = null, $excludeAbstractMapping = false, $forceExcludeAbstractMapping = false, $excludeSubdomainMapping = false, $forceExcludeSubdomainMapping = false)
@@ -985,6 +956,7 @@ class VocabularySeeder extends Seeder
 
         return $out;
     }
+    
 
     public function remove_accents($string)
     {
