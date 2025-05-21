@@ -33,17 +33,14 @@ class ToolsController extends Controller
 
     public function convertKeywords()
     {
-        $allVocabs = $this->getVocabularies(config('vocabularies.vocabularies_current_version'));
+        
+        $allVocabs = Vocabulary::where('version', 'LIKE', config('vocabularies.vocabularies_current_version'))->get();
         $displayNames= [];
         foreach ($allVocabs as $entry) {
             $displayNames [] = $entry->display_name;
         }  
 
         return view('admin.convert-keywords', ['displayNames' => $displayNames]);
-    }
-
-    private function getVocabularies($version){
-        return DB::table('vocabularies')->where('version', 'LIKE', $version)->get();
     }
 
     public function geoview()
