@@ -124,7 +124,7 @@ class ToolsController extends Controller
         $selectedDomainDisplayName = $formFields['domain-selection'];
         $selectedDomainName = 'none';
         // get the selected name
-        $allVocabs = $this->getVocabularies(config('vocabularies.vocabularies_current_version'));
+        $allVocabs = Vocabulary::where('version', 'LIKE', config('vocabularies.vocabularies_current_version'))->get();
         foreach ($allVocabs as $entry) {
             if($entry->display_name == $selectedDomainDisplayName){
                 $selectedDomainName = $entry->name;
