@@ -32,9 +32,8 @@ class VocabularyToJsonConverter
 
     }
 
-    private function retrieveData($worksheet)
+    private function retrieveData($worksheet): array
     {
-
         $allColNames = $this->getAllHeaderStrings($worksheet);
 
         $lastColumnLetter = $this->getLastColumnAsLetter($allColNames);
@@ -125,7 +124,6 @@ class VocabularyToJsonConverter
         }
 
         return $nestedNodes;
-
     }
 
     private function checkColumnByName($columnName, $allColNames)
@@ -145,7 +143,6 @@ class VocabularyToJsonConverter
 
     private function getLastColumnAsLetter($allColNames)
     {
-
         $all = [];
 
         foreach ($allColNames as $value) {
@@ -157,7 +154,6 @@ class VocabularyToJsonConverter
         }
 
         return $this->getLetterFromNumber(end($all) - 1);
-
     }
 
     private function getAllHeaderStrings($worksheet)
