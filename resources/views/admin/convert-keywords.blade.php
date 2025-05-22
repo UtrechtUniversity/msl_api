@@ -22,21 +22,22 @@
                     @endif
                 </div>
 
-
                 <div class="card p-10 ">
                     <div class="card-header">Upload a file</div>
                     <div class="card-body">
                         <form action="{{ route('process-file') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <div class="row mb-3">
+                                <div>
+                                    <select class="form-select" aria-label="domain-selection" name="domain-selection">
+                                        @foreach($displayNames as $displayName)
+                                            <option value="{{ $displayName }}">{{ $displayName }}</option>    								
+                                        @endforeach
+                                    </select>    					
+                                </div>
+                            </div>                       
 
-                            @include('forms.components.dropDownSelect', [
-                                'sectionName' => 'domain-selection',
-                                'placeholder' => 'Select the domain/field',
-                                'ElementsArray' => $displayNames,
-                            ])
-                            <br>
-
-                            <div class="">
+                            <div>
                                 <input class="form-control" type="file" id="formFile" name="uploaded-file">
                             </div>
                             <br>
