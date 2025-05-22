@@ -170,7 +170,6 @@ class VocabularyToJsonConverter
             $value = $worksheet->getCell([$col, 1])->getValue();
             $allcols[] = $value;
         }
-        dd($allcols);
 
         return $allcols;
     }
