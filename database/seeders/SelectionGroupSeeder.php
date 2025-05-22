@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -102,13 +101,12 @@ class SelectionGroupSeeder extends Seeder
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size',
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size-grain_size_distribution',
     ];
-    
+
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-
         // include all
         $vocabsBaseURI = 'https://epos-msl.uu.nl/voc';
 
@@ -135,8 +133,5 @@ class SelectionGroupSeeder extends Seeder
         foreach ($this->excludedSearchKeywords as $excludedSearchKeyword) {
             DB::table('keywords_search')->where('search_value', '=', $excludedSearchKeyword)->update(['exclude_selection_group_1' => 1], ['exclude_selection_group_2' => 1]);
         }
-
     }
-
-
 }

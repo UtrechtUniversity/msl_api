@@ -19,7 +19,6 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
     {
         $this->vocabulary = $vocabulary;
         $this->levels = range(1, $this->vocabulary->maxLevel());
-
     }
 
     /**

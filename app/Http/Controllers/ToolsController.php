@@ -122,8 +122,9 @@ class ToolsController extends Controller
         $filePath = $request->file('uploaded-file');
         $selectedDomainDisplayName = $formFields['domain-selection'];
         $selectedDomainName = 'none';
+
         // get the selected name
-        $allVocabs = Vocabulary::where('version', 'LIKE', config('vocabularies.vocabularies_current_version'))->get();
+        $allVocabs = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->get();
         foreach ($allVocabs as $entry) {
             if ($entry->display_name == $selectedDomainDisplayName) {
                 $selectedDomainName = $entry->name;

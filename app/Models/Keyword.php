@@ -148,7 +148,6 @@ class Keyword extends Model
 
     public function getExcludedSearchKeywordsString($groupNumber, $startCharacter = '#')
     {
-
         if (! ($groupNumber == 1 || $groupNumber == 2)) {
             throw new \Exception('Group number not within bounds: 1 or 2');
         }
@@ -164,6 +163,5 @@ class Keyword extends Model
         }
 
         return $string;
-
     }
 }

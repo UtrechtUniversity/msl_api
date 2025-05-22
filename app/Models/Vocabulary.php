@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 
 class Vocabulary extends Model
@@ -10,19 +9,21 @@ class Vocabulary extends Model
     public $fillable = [
         'name',
         'uri',
-        'display_name'
+        'display_name',
     ];
-             
-    public function keywords() {
+
+    public function keywords()
+    {
         return $this->hasMany(Keyword::class);
     }
-    
-    public function search_keywords() {
+
+    public function search_keywords()
+    {
         return $this->hasManyThrough(KeywordSearch::class, Keyword::class);
     }
-    
-    public function maxLevel() {
+
+    public function maxLevel()
+    {
         return Keyword::where('vocabulary_id', $this->id)->max('level');
     }
-
 }

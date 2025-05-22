@@ -2,11 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Exports\Vocabs\ExcelExportInternal;
 use App\Models\Vocabulary;
 use Illuminate\Console\Command;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\Vocabs\ExcelExportInternal;
-use App\Exports\Vocabs\ExcelExportColumnDescriptions;
 
 class GenerateVocabExportInternal extends Command
 {
@@ -41,7 +40,7 @@ class GenerateVocabExportInternal extends Command
             Excel::store(new ExcelExportInternal($vocabulary), $path, 'local');
         }
 
-        $this->line('Finished exporting vocabularies.');    
+        $this->line('Finished exporting vocabularies.');
 
         return 0;
     }
