@@ -12,7 +12,6 @@ use Psy\Readline\Hoa\ConsoleException;
 class VocabularySeeder extends Seeder
 {
 
-    private $exclude_abstract_mapping_dynamic_array = [];
     /**
      * Run the database seeds.
      *
@@ -107,11 +106,6 @@ class VocabularySeeder extends Seeder
             // loop over top nodes and add sub-nodes
             foreach ($vocabData as $topNode) {
                 $this->processNodeUpdated($topNode, $vocabulary, null);
-
-                // } else {
-                //     throw new ConsoleException($domain['name'].' -> This domain name not listed or not present in path: '.$fileString);
-                // }
-
             }
 
         }
@@ -794,11 +788,12 @@ class VocabularySeeder extends Seeder
 
     private function processNodeUpdated($node, $vocabulary, $parentId = null)
     {
+        $exclude_abstract_mapping_dynamic_array = [];
         //first add exclude_abstract_mapping terms from nodes indicators_exclude_abstract_mapping to dynamic list
         if(strlen($node->indicators_exclude_abstract_mapping) > 0){
-            $allStrings = $this->extract_indicators_exclude_abstract_mapping($node->indicators_exclude_abstract_mapping);
+            $allStrings = $this->extractIndicatorsExcludeAbstractMapping($node->indicators_exclude_abstract_mapping);
             foreach ($allStrings as $entry) {
-                $this->exclude_abstract_mapping_dynamic_array [] = $entry; 
+                $exclude_abstract_mapping_dynamic_array [] = $entry; 
             }
         }
 
@@ -824,7 +819,7 @@ class VocabularySeeder extends Seeder
             'keyword_id' => $keyword->id,
             'search_value' => strtolower($node->value),
             'isSynonym' => false,
-            'exclude_abstract_mapping' => in_array($node->value,$this->exclude_abstract_mapping_dynamic_array)? 1 : 0,
+            'exclude_abstract_mapping' => in_array($node->value, $exclude_abstract_mapping_dynamic_array, true)? 1 : 0,
             'version' => $vocabulary->version,
         ]);
 
@@ -835,7 +830,7 @@ class VocabularySeeder extends Seeder
                         'keyword_id' => $keyword->id,
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
-                        'exclude_abstract_mapping' => in_array($node->value, $this->exclude_abstract_mapping_dynamic_array)? 1 : 0,
+                        'exclude_abstract_mapping' => in_array($node->value, $exclude_abstract_mapping_dynamic_array, true)? 1 : 0,
                         'version' => $vocabulary->version,
                     ]);
                 }
@@ -849,7 +844,7 @@ class VocabularySeeder extends Seeder
         }
     }
 
-    private function extract_indicators_exclude_abstract_mapping($string)
+    private function extractIndicatorsExcludeAbstractMapping($string)
     {
         $indicators = [];
         if (str_contains($string, '#')) {
