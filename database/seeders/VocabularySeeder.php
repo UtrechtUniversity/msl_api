@@ -7,11 +7,9 @@ use App\Models\KeywordSearch;
 use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use Psy\Readline\Hoa\ConsoleException;
 
 class VocabularySeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -22,8 +20,6 @@ class VocabularySeeder extends Seeder
         // remove current keywords and keywordsearches
         Keyword::truncate();
         KeywordSearch::truncate();
-
-        
 
         // vocabularies version 1.3
         $allFileDomains = [
@@ -85,7 +81,6 @@ class VocabularySeeder extends Seeder
         ];
 
         foreach ($allFileDomains as $domain) {
-
             $vocabulary = Vocabulary::updateOrCreate(
                 [
                     'name' => $domain['name'],
@@ -107,7 +102,6 @@ class VocabularySeeder extends Seeder
             foreach ($vocabData as $topNode) {
                 $this->processNodeUpdated($topNode, $vocabulary, null);
             }
-
         }
 
         // vocabularies version 1.2
@@ -788,12 +782,12 @@ class VocabularySeeder extends Seeder
 
     private function processNodeUpdated($node, $vocabulary, $parentId = null)
     {
-        $exclude_abstract_mapping_dynamic_array = [];
+        $excludeAbstractMapping = [];
         //first add exclude_abstract_mapping terms from nodes indicators_exclude_abstract_mapping to dynamic list
-        if(strlen($node->indicators_exclude_abstract_mapping) > 0){
+        if (strlen($node->indicators_exclude_abstract_mapping) > 0) {
             $allStrings = $this->extractIndicatorsExcludeAbstractMapping($node->indicators_exclude_abstract_mapping);
             foreach ($allStrings as $entry) {
-                $exclude_abstract_mapping_dynamic_array [] = $entry; 
+                $excludeAbstractMapping[] = $entry;
             }
         }
 
@@ -819,7 +813,7 @@ class VocabularySeeder extends Seeder
             'keyword_id' => $keyword->id,
             'search_value' => strtolower($node->value),
             'isSynonym' => false,
-            'exclude_abstract_mapping' => in_array($node->value, $exclude_abstract_mapping_dynamic_array, true)? 1 : 0,
+            'exclude_abstract_mapping' => in_array($node->value, $excludeAbstractMapping, true) ? 1 : 0,
             'version' => $vocabulary->version,
         ]);
 
@@ -830,7 +824,7 @@ class VocabularySeeder extends Seeder
                         'keyword_id' => $keyword->id,
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
-                        'exclude_abstract_mapping' => in_array($node->value, $exclude_abstract_mapping_dynamic_array, true)? 1 : 0,
+                        'exclude_abstract_mapping' => in_array($node->value, $excludeAbstractMapping, true) ? 1 : 0,
                         'version' => $vocabulary->version,
                     ]);
                 }
@@ -951,7 +945,6 @@ class VocabularySeeder extends Seeder
 
         return $out;
     }
-    
 
     public function remove_accents($string)
     {
