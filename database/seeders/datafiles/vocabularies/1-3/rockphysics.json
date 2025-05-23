@@ -14,8 +14,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "deformation testing",
@@ -38,8 +38,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "compression testing",
@@ -59,8 +59,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "confining pressure vessel",
@@ -79,8 +79,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 5
                             },
@@ -107,8 +107,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "uniaxial (oedometer) apparatus",
@@ -128,8 +128,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 7
                                     },
@@ -158,8 +158,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 8
                                     }
@@ -191,8 +191,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 9
                             },
@@ -222,8 +222,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "conventional triaxial apparatus",
@@ -248,8 +248,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 11
                                     },
@@ -273,8 +273,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 12
                                     }
@@ -299,8 +299,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 13
                             },
@@ -319,8 +319,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 14
                             },
@@ -341,8 +341,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 15
                             },
@@ -365,8 +365,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 16
                             },
@@ -385,8 +385,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 17
                             },
@@ -405,8 +405,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 18
                             },
@@ -425,8 +425,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 19
                             },
@@ -447,8 +447,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 20
                             },
@@ -469,8 +469,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 21
                             },
@@ -491,8 +491,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 22
                             },
@@ -513,8 +513,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 23
                             },
@@ -536,8 +536,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 24
                             },
@@ -559,8 +559,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 25
                             },
@@ -579,8 +579,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 26
                             }
@@ -605,8 +605,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "conventional triaxial apparatus - extension",
@@ -625,8 +625,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 28
                             },
@@ -647,8 +647,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 29
                             },
@@ -670,8 +670,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 30
                             },
@@ -693,8 +693,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 31
                             },
@@ -713,8 +713,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 32
                             },
@@ -733,8 +733,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 33
                             }
@@ -774,8 +774,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "biaxial apparatus: direct shear",
@@ -795,8 +795,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 35
                             },
@@ -826,8 +826,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 36
                             },
@@ -853,8 +853,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 37
                             },
@@ -879,8 +879,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 38
                             },
@@ -901,8 +901,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 39
                             }
@@ -927,8 +927,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "conventional triaxial apparatus - torsion",
@@ -947,8 +947,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 41
                             },
@@ -967,8 +967,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 42
                             },
@@ -987,8 +987,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 43
                             },
@@ -1007,8 +1007,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 44
                             }
@@ -1036,8 +1036,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "permeameter",
@@ -1060,8 +1060,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "permeameter - steady state flow method",
@@ -1078,8 +1078,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 47
                             },
@@ -1098,8 +1098,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 48
                             },
@@ -1118,8 +1118,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 49
                             }
@@ -1143,8 +1143,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "rheometer",
@@ -1161,8 +1161,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 51
                             },
@@ -1184,8 +1184,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 52
                             },
@@ -1208,8 +1208,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 53
                             }
@@ -1236,8 +1236,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "temperature control",
@@ -1254,8 +1254,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "cryostat",
@@ -1272,8 +1272,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 56
                             },
@@ -1292,8 +1292,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 57
                             },
@@ -1312,8 +1312,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 58
                             }
@@ -1339,8 +1339,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "humidity controlled chamber",
@@ -1357,8 +1357,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 60
                             }
@@ -1385,8 +1385,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "porosity and density determination",
@@ -1407,8 +1407,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "densimeter",
@@ -1425,8 +1425,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 63
                             },
@@ -1445,8 +1445,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 64
                             },
@@ -1465,8 +1465,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 65
                             },
@@ -1485,8 +1485,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 66
                             }
@@ -1508,8 +1508,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "particle analyser",
@@ -1528,8 +1528,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 68
                             },
@@ -1548,8 +1548,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 69
                             },
@@ -1568,8 +1568,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 70
                             }
@@ -1591,8 +1591,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "conductivity cell",
@@ -1609,8 +1609,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 72
                             },
@@ -1629,8 +1629,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 73
                             },
@@ -1649,8 +1649,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 74
                             },
@@ -1669,8 +1669,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 75
                             }
@@ -1692,8 +1692,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "calorimeter",
@@ -1710,8 +1710,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 77
                             },
@@ -1730,8 +1730,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 78
                             },
@@ -1750,8 +1750,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 79
                             },
@@ -1770,8 +1770,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 80
                             }
@@ -1793,8 +1793,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Cherchar equipment",
@@ -1811,8 +1811,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 82
                             },
@@ -1831,8 +1831,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 83
                             },
@@ -1851,8 +1851,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 84
                             },
@@ -1871,8 +1871,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 85
                             },
@@ -1891,8 +1891,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 86
                             }
@@ -1920,8 +1920,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "syn-deformation imaging",
@@ -1938,8 +1938,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "camera imaging during testing",
@@ -1956,8 +1956,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 89
                     },
@@ -1978,8 +1978,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 90
                     },
@@ -1998,8 +1998,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "X-ray imaging of fluid transport",
@@ -2016,8 +2016,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 92
                             },
@@ -2036,8 +2036,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 93
                             }
@@ -2059,8 +2059,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "neutron imaging of fluid transport",
@@ -2077,8 +2077,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 95
                             },
@@ -2097,8 +2097,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 96
                             }
@@ -2120,8 +2120,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 97
                     },
@@ -2145,8 +2145,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 98
                     }
@@ -2172,8 +2172,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "accelerometer",
@@ -2192,8 +2192,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 100
                     },
@@ -2214,8 +2214,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 101
                     },
@@ -2237,8 +2237,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 102
                     },
@@ -2260,8 +2260,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 103
                     }
@@ -2287,8 +2287,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "acoustic emission (AE) monitoring equipment - triggered",
@@ -2308,8 +2308,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 105
                     },
@@ -2328,8 +2328,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 106
                     }
@@ -2359,8 +2359,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "distributed acoustic sensing (DAS) system",
@@ -2379,8 +2379,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 108
                     },
@@ -2401,8 +2401,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 109
                     },
@@ -2423,8 +2423,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 110
                     }
@@ -2446,8 +2446,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "in-line pH meter",
@@ -2464,8 +2464,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 112
                     },
@@ -2484,8 +2484,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 113
                     },
@@ -2504,8 +2504,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 114
                     },
@@ -2524,8 +2524,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 115
                     }
@@ -2550,8 +2550,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "mechanical strength",
@@ -2568,8 +2568,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "unconfined compressive strength (UCS)",
@@ -2590,8 +2590,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 118
                     },
@@ -2615,8 +2615,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 119
                     },
@@ -2635,8 +2635,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 120
                     },
@@ -2660,8 +2660,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 121
                     },
@@ -2686,8 +2686,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 122
                     },
@@ -2708,8 +2708,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 123
                     },
@@ -2731,8 +2731,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 124
                     },
@@ -2756,8 +2756,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 125
                     },
@@ -2776,8 +2776,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 126
                     },
@@ -2796,8 +2796,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 127
                     },
@@ -2818,8 +2818,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "plastic flow law stress exponent",
@@ -2838,8 +2838,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 129
                             }
@@ -2868,8 +2868,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "linear-elastic (critical stress intensity factor KIC)",
@@ -2891,8 +2891,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 131
                     },
@@ -2913,8 +2913,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 132
                     }
@@ -2941,8 +2941,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "friction coefficient",
@@ -2963,8 +2963,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "peak friction coefficient",
@@ -2981,8 +2981,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 135
                             },
@@ -3001,8 +3001,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 136
                             },
@@ -3021,8 +3021,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 137
                             },
@@ -3046,8 +3046,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 138
                             },
@@ -3074,8 +3074,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 139
                             }
@@ -3111,8 +3111,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 140
                     },
@@ -3136,8 +3136,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 141
                     },
@@ -3158,8 +3158,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 142
                     },
@@ -3178,8 +3178,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 143
                     },
@@ -3200,8 +3200,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 144
                     },
@@ -3222,8 +3222,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 145
                     }
@@ -3245,8 +3245,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "slip rate",
@@ -3263,8 +3263,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 147
                     }
@@ -3290,8 +3290,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "elastic strain",
@@ -3308,8 +3308,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 149
                     },
@@ -3328,8 +3328,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 150
                     },
@@ -3351,8 +3351,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 151
                     },
@@ -3373,8 +3373,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 152
                     }
@@ -3398,8 +3398,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 153
             },
@@ -3420,8 +3420,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 154
             },
@@ -3442,8 +3442,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 155
             },
@@ -3469,8 +3469,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "force of crystallization (FOC)",
@@ -3490,8 +3490,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 157
                     },
@@ -3514,8 +3514,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 158
                     },
@@ -3541,8 +3541,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 159
                     },
@@ -3561,8 +3561,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 160
                     }
@@ -3584,8 +3584,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 161
             },
@@ -3604,8 +3604,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "endothermic reaction",
@@ -3622,8 +3622,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 163
                     },
@@ -3642,8 +3642,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 164
                     },
@@ -3664,8 +3664,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 165
                     }
@@ -3691,8 +3691,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Young's modulus",
@@ -3712,8 +3712,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 167
                     },
@@ -3732,8 +3732,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 168
                     },
@@ -3752,8 +3752,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 169
                     },
@@ -3772,8 +3772,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 170
                     },
@@ -3792,8 +3792,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 171
                     },
@@ -3814,8 +3814,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 172
                     },
@@ -3836,8 +3836,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 173
                     },
@@ -3856,8 +3856,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 174
                     },
@@ -3876,8 +3876,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 175
                     },
@@ -3896,8 +3896,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 176
                     },
@@ -3916,8 +3916,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 177
                     },
@@ -3941,8 +3941,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 178
                     }
@@ -3964,8 +3964,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "P-wave",
@@ -3989,8 +3989,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 180
                     },
@@ -4016,8 +4016,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 181
                     },
@@ -4036,8 +4036,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 182
                     },
@@ -4056,8 +4056,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 183
                     },
@@ -4076,8 +4076,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 184
                     }
@@ -4104,8 +4104,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "acoustic emission (AE) energy",
@@ -4125,8 +4125,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 186
                     },
@@ -4151,8 +4151,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 187
                     },
@@ -4174,8 +4174,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 188
                     }
@@ -4197,8 +4197,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 189
             },
@@ -4217,8 +4217,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "absolute permeability",
@@ -4238,8 +4238,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 191
                     },
@@ -4258,8 +4258,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 192
                     },
@@ -4278,8 +4278,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 193
                     },
@@ -4298,8 +4298,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 194
                     },
@@ -4320,8 +4320,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 195
                     },
@@ -4340,8 +4340,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 196
                     },
@@ -4360,8 +4360,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 197
                     },
@@ -4380,8 +4380,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 198
                     }
@@ -4403,8 +4403,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "heat capacity",
@@ -4421,8 +4421,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 200
                     },
@@ -4441,8 +4441,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 201
                     }
@@ -4464,8 +4464,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "electrical conductivity",
@@ -4482,8 +4482,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 203
                     },
@@ -4502,8 +4502,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 204
                     },
@@ -4524,10 +4524,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [
-                            "spontaneous potential"
-                        ],
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 205
                     },
@@ -4546,8 +4544,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 206
                     }
@@ -4569,8 +4567,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "strength anisotropy",
@@ -4587,8 +4585,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 208
                     },
@@ -4607,8 +4605,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 209
                     },
@@ -4627,8 +4625,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 210
                     },
@@ -4647,8 +4645,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 211
                     }
@@ -4670,8 +4668,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "grain surface roughness",
@@ -4688,8 +4686,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 213
                     },
@@ -4708,8 +4706,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 214
                     }
@@ -4731,8 +4729,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 215
             },
@@ -4751,8 +4749,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 216
             },
@@ -4774,8 +4772,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 217
             }
@@ -4797,8 +4795,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "deformation behaviour",
@@ -4817,8 +4815,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "poroelastic deformation",
@@ -4846,8 +4844,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 220
                     },
@@ -4869,8 +4867,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 221
                     },
@@ -4893,8 +4891,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 222
                     },
@@ -4918,8 +4916,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 223
                     },
@@ -4947,8 +4945,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 224
                     },
@@ -4975,8 +4973,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 225
                     },
@@ -5002,8 +5000,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 226
                     },
@@ -5034,8 +5032,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 227
                     },
@@ -5054,8 +5052,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 228
                     },
@@ -5074,8 +5072,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 229
                     },
@@ -5094,8 +5092,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "mean strain tensor",
@@ -5114,8 +5112,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 231
                             },
@@ -5134,8 +5132,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 232
                             },
@@ -5154,8 +5152,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 233
                             },
@@ -5174,8 +5172,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 234
                             }
@@ -5200,8 +5198,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "associated flow",
@@ -5227,8 +5225,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 236
                             },
@@ -5257,8 +5255,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 237
                             }
@@ -5282,8 +5280,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "shear failure",
@@ -5305,8 +5303,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 239
                             },
@@ -5327,8 +5325,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 240
                             },
@@ -5352,8 +5350,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 241
                             },
@@ -5376,8 +5374,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 242
                             },
@@ -5399,8 +5397,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 243
                             }
@@ -5431,8 +5429,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "intragranular cracking",
@@ -5457,8 +5455,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 245
                     },
@@ -5480,8 +5478,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 246
                     },
@@ -5503,8 +5501,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 247
                     },
@@ -5526,8 +5524,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 248
                     },
@@ -5550,8 +5548,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 249
                     },
@@ -5578,8 +5576,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "pressure solution",
@@ -5602,8 +5600,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 251
                             },
@@ -5624,8 +5622,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 252
                             },
@@ -5644,8 +5642,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 253
                             },
@@ -5667,8 +5665,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 254
                             },
@@ -5689,8 +5687,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 255
                             }
@@ -5715,8 +5713,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 256
                     },
@@ -5738,8 +5736,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 257
                     },
@@ -5764,8 +5762,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 258
                     }
@@ -5795,8 +5793,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 259
             }

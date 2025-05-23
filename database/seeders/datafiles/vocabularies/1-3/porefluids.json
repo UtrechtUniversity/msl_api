@@ -14,8 +14,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [],
         "rowNr": 2
     },
@@ -34,8 +34,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "ice in pores",
@@ -52,8 +52,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 4
             }
@@ -75,8 +75,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "water in pores",
@@ -93,8 +93,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "tap water in pores",
@@ -111,8 +111,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 7
                     },
@@ -134,8 +134,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 8
                     },
@@ -159,8 +159,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 9
                     }
@@ -184,8 +184,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 10
             },
@@ -204,8 +204,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "hydrocarbon oil",
@@ -222,8 +222,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 12
                     },
@@ -242,8 +242,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 13
                     },
@@ -262,8 +262,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 14
                     }
@@ -285,8 +285,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 15
             }
@@ -308,8 +308,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "ambient air",
@@ -329,8 +329,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 17
             },
@@ -349,8 +349,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 18
             },
@@ -369,8 +369,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 19
             },
@@ -389,8 +389,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 20
             },
@@ -409,8 +409,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 21
             },
@@ -429,8 +429,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 22
             },
@@ -449,8 +449,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 23
             }

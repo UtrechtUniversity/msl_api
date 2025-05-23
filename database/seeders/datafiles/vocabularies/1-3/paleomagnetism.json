@@ -14,8 +14,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "natural remanent magnetisation measurement",
@@ -34,8 +34,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "astatic magnetometer",
@@ -55,8 +55,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 4
                     },
@@ -75,8 +75,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "cryogenic magnetometer for discrete samples",
@@ -93,8 +93,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 6
                             },
@@ -113,8 +113,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 7
                             }
@@ -136,8 +136,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "AGICO spinner magnetometer",
@@ -154,8 +154,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 9
                             },
@@ -174,8 +174,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 10
                             },
@@ -194,8 +194,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 11
                             }
@@ -217,8 +217,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 12
                     },
@@ -241,8 +241,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "single axis VSM",
@@ -262,8 +262,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 14
                             },
@@ -286,8 +286,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 15
                             },
@@ -306,8 +306,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 16
                             }
@@ -329,8 +329,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 17
                     }
@@ -356,8 +356,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "isothermal remanent magnetiser (IRM)",
@@ -379,8 +379,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G pulse magnetiser",
@@ -399,8 +399,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 20
                             },
@@ -421,8 +421,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 21
                             },
@@ -443,8 +443,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 22
                             },
@@ -465,8 +465,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 23
                             },
@@ -487,8 +487,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 24
                             },
@@ -509,8 +509,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 25
                             }
@@ -539,8 +539,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G in line anhysteretic magnetiser unit (AMU)",
@@ -560,8 +560,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 27
                             },
@@ -583,8 +583,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 28
                             },
@@ -606,8 +606,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 29
                             },
@@ -629,8 +629,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 30
                             },
@@ -651,8 +651,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 31
                             }
@@ -679,8 +679,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "ASC Scientific thermal demagnetiser - dual chamber with controlled field coil",
@@ -699,8 +699,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 33
                             },
@@ -721,8 +721,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 34
                             },
@@ -745,8 +745,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 35
                             },
@@ -769,8 +769,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 36
                             },
@@ -791,8 +791,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 37
                             },
@@ -811,8 +811,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 38
                             }
@@ -836,8 +836,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 39
                     },
@@ -856,8 +856,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "M\u00f6ssbauer spectrometer",
@@ -874,8 +874,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 41
                             }
@@ -900,8 +900,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "MAG instruments variable field translation balance",
@@ -918,8 +918,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 43
                             },
@@ -938,8 +938,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 44
                             }
@@ -961,8 +961,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "vibrating sample magnetometer (VSM) - hysteresis properties",
@@ -981,8 +981,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "single axis VSM",
@@ -1002,8 +1002,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 47
                                     },
@@ -1026,8 +1026,8 @@
                                         "indicators_exclude_abstract_mapping": "",
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": "",
-                                        "exclude_selection_group_2": "",
+                                        "exclude_selection_group_1": [],
+                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 48
                                     }
@@ -1052,8 +1052,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 49
                             },
@@ -1075,8 +1075,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 50
                             },
@@ -1098,8 +1098,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 51
                             },
@@ -1118,8 +1118,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 52
                             }
@@ -1141,8 +1141,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "quantum diamond microscope (QDM)",
@@ -1162,8 +1162,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 54
                             },
@@ -1186,8 +1186,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 55
                             },
@@ -1206,8 +1206,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 56
                             },
@@ -1229,8 +1229,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 57
                             },
@@ -1255,8 +1255,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 58
                             }
@@ -1281,8 +1281,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "susceptibility meter",
@@ -1301,8 +1301,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "AGICO Kappabridge susceptibility meter",
@@ -1321,8 +1321,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 61
                             },
@@ -1343,8 +1343,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 62
                             },
@@ -1365,8 +1365,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 63
                             },
@@ -1387,8 +1387,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 64
                             },
@@ -1409,8 +1409,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 65
                             },
@@ -1431,8 +1431,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 66
                             },
@@ -1453,8 +1453,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 67
                             }
@@ -1481,8 +1481,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "alternating field (AF) demagnetiser",
@@ -1506,8 +1506,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G in-line AF degausser",
@@ -1524,8 +1524,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 70
                             },
@@ -1546,8 +1546,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 71
                             },
@@ -1568,8 +1568,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 72
                             },
@@ -1590,8 +1590,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 73
                             },
@@ -1612,8 +1612,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 74
                             },
@@ -1634,8 +1634,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 75
                             }
@@ -1659,8 +1659,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "ASC Scientific thermal demagnetiser - absolute paleointensity",
@@ -1679,8 +1679,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 77
                             },
@@ -1701,8 +1701,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 78
                             },
@@ -1723,8 +1723,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 79
                             },
@@ -1747,8 +1747,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 80
                             },
@@ -1771,8 +1771,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 81
                             },
@@ -1793,8 +1793,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 82
                             },
@@ -1815,8 +1815,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 83
                             },
@@ -1835,8 +1835,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 84
                             }
@@ -1861,8 +1861,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "magnetic extraction system in aqueous phase",
@@ -1879,8 +1879,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 86
                     },
@@ -1899,8 +1899,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 87
                     }
@@ -1926,8 +1926,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "portable magnetometer",
@@ -1944,8 +1944,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Bartington single axis fluxgate",
@@ -1962,8 +1962,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 90
                             },
@@ -1982,8 +1982,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 91
                             },
@@ -2005,8 +2005,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 92
                             }
@@ -2031,8 +2031,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "GF Instruments PSG",
@@ -2049,8 +2049,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 94
                             },
@@ -2069,8 +2069,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 95
                             },
@@ -2089,8 +2089,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 96
                             },
@@ -2109,8 +2109,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 97
                             },
@@ -2129,8 +2129,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 98
                             }
@@ -2152,8 +2152,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 99
                     }
@@ -2178,8 +2178,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "contolled magnetic field area",
@@ -2196,8 +2196,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "shielded room",
@@ -2214,8 +2214,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Lodestar magnetics chamber",
@@ -2232,8 +2232,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 103
                             },
@@ -2255,8 +2255,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 104
                             },
@@ -2277,8 +2277,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 105
                             },
@@ -2297,8 +2297,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 106
                             }
@@ -2320,8 +2320,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Magnetic Measurements active shielding",
@@ -2340,8 +2340,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 108
                             },
@@ -2360,8 +2360,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 109
                             }
@@ -2386,8 +2386,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "oven (paleomagnetism)",
@@ -2404,8 +2404,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "slow cooling oven",
@@ -2422,8 +2422,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 112
                             },
@@ -2442,8 +2442,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 113
                             }
@@ -2465,8 +2465,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 114
                     }
@@ -2490,8 +2490,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "argon atmosphere",
@@ -2508,8 +2508,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 116
                     },
@@ -2528,8 +2528,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 117
                     },
@@ -2548,8 +2548,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 118
                     },
@@ -2568,8 +2568,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 119
                     },
@@ -2588,8 +2588,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 120
                     },
@@ -2608,8 +2608,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 121
                     },
@@ -2628,8 +2628,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 122
                     }
@@ -2654,8 +2654,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "paleointensity",
@@ -2674,8 +2674,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "absolute paleointensity",
@@ -2692,8 +2692,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 125
                     },
@@ -2712,8 +2712,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 126
                     }
@@ -2737,8 +2737,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "alternating field (AF) demagnetisation",
@@ -2761,8 +2761,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 128
                     },
@@ -2783,8 +2783,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 129
                     },
@@ -2805,8 +2805,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 130
                     },
@@ -2827,8 +2827,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 131
                     },
@@ -2849,8 +2849,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 132
                     }
@@ -2874,8 +2874,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "anhysteretic remanent magnetisation (ARM)",
@@ -2898,8 +2898,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 134
                     },
@@ -2924,8 +2924,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 135
                     },
@@ -2950,8 +2950,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 136
                     },
@@ -2976,8 +2976,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 137
                     },
@@ -3002,8 +3002,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 138
                     },
@@ -3028,8 +3028,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 139
                     },
@@ -3054,8 +3054,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 140
                     },
@@ -3080,8 +3080,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 141
                     },
@@ -3106,8 +3106,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 142
                     },
@@ -3131,8 +3131,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 143
                     },
@@ -3159,8 +3159,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 144
                     }
@@ -3182,8 +3182,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "anisotropy of anhysteretic remanent magnetisation (AARM)",
@@ -3206,8 +3206,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 146
                     },
@@ -3232,8 +3232,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 147
                     },
@@ -3258,8 +3258,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 148
                     },
@@ -3281,8 +3281,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 149
                     },
@@ -3307,8 +3307,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 150
                     }
@@ -3332,8 +3332,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "hysteresis parameters",
@@ -3350,8 +3350,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "coercive force",
@@ -3368,8 +3368,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 153
                             },
@@ -3388,8 +3388,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 154
                             },
@@ -3408,8 +3408,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 155
                             },
@@ -3428,8 +3428,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 156
                             },
@@ -3448,8 +3448,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 157
                             },
@@ -3470,8 +3470,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 158
                             },
@@ -3490,8 +3490,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 159
                             }
@@ -3520,8 +3520,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 160
             },
@@ -3542,8 +3542,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "high temperature thermomagnetic curves",
@@ -3560,8 +3560,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 162
                     },
@@ -3580,8 +3580,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 163
                     }
@@ -3603,8 +3603,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "bulk magnetic susceptibility",
@@ -3621,8 +3621,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 165
                     },
@@ -3645,8 +3645,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 166
                     },
@@ -3668,8 +3668,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 167
                     },
@@ -3691,8 +3691,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 168
                     },
@@ -3714,8 +3714,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 169
                     },
@@ -3736,8 +3736,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 170
                     },
@@ -3759,8 +3759,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 171
                     }
@@ -3784,8 +3784,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 172
             },
@@ -3806,8 +3806,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 173
             }
@@ -3829,8 +3829,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "anisotropy of magnetic susceptibility and remanence",
@@ -3847,8 +3847,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "magnetic anisotropy through rock structure",
@@ -3865,8 +3865,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "magnetic anisotropy through sedimentary structure",
@@ -3883,8 +3883,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 177
                             },
@@ -3903,8 +3903,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 178
                             },
@@ -3923,8 +3923,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 179
                             },
@@ -3943,8 +3943,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 180
                             }
@@ -3966,8 +3966,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 181
                     },
@@ -3986,8 +3986,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 182
                     },
@@ -4008,8 +4008,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 183
                     },
@@ -4033,8 +4033,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 184
                     },
@@ -4056,8 +4056,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 185
                     },
@@ -4079,8 +4079,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 186
                     },
@@ -4104,8 +4104,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 187
                     },
@@ -4124,8 +4124,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 188
                     },
@@ -4146,8 +4146,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 189
                     },
@@ -4169,8 +4169,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 190
                     },
@@ -4189,8 +4189,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 191
                     },
@@ -4209,8 +4209,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 192
                     }
@@ -4232,8 +4232,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "inferred paleoenvironment",
@@ -4250,8 +4250,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 194
                     },
@@ -4270,8 +4270,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 195
                     },
@@ -4294,8 +4294,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 196
                     },
@@ -4314,8 +4314,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 197
                     },
@@ -4336,8 +4336,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 198
                     },
@@ -4356,8 +4356,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 199
                     },
@@ -4376,8 +4376,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 200
                     },
@@ -4396,8 +4396,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 201
                     },
@@ -4416,8 +4416,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 202
                     }
@@ -4441,8 +4441,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "crustal block rotation",
@@ -4459,8 +4459,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 204
                     },
@@ -4479,8 +4479,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 205
                     },
@@ -4499,8 +4499,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 206
                     },
@@ -4519,8 +4519,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 207
                     },
@@ -4539,8 +4539,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 208
                     },
@@ -4564,8 +4564,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 209
                     },
@@ -4586,8 +4586,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 210
                     },
@@ -4606,8 +4606,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 211
                     },
@@ -4626,8 +4626,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 212
                     },
@@ -4646,8 +4646,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 213
                     },
@@ -4668,8 +4668,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 214
                     }

@@ -14,8 +14,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "commodities analysis",
@@ -32,8 +32,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "ore analysis",
@@ -52,8 +52,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 4
                     },
@@ -72,8 +72,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 5
                     }
@@ -103,8 +103,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "argon-argon dating",
@@ -134,8 +134,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 7
                     },
@@ -165,8 +165,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 8
                     },
@@ -191,8 +191,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 9
                     },
@@ -225,8 +225,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 10
                     },
@@ -256,8 +256,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 11
                     },
@@ -284,8 +284,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 12
                     },
@@ -317,8 +317,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 13
                     },
@@ -350,8 +350,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 14
                     },
@@ -383,8 +383,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 15
                     },
@@ -415,8 +415,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 16
                     },
@@ -438,8 +438,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "uranium-paladium dating",
@@ -470,8 +470,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 18
                             },
@@ -502,8 +502,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 19
                             },
@@ -536,8 +536,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 20
                             },
@@ -561,8 +561,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 21
                             }
@@ -587,8 +587,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 22
             },
@@ -610,8 +610,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 23
             },
@@ -632,8 +632,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "delta 11B",
@@ -650,8 +650,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 25
                     },
@@ -670,8 +670,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 26
                     },
@@ -690,8 +690,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 27
                     },
@@ -710,8 +710,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 28
                     },
@@ -730,8 +730,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 29
                     },
@@ -750,8 +750,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 30
                     },
@@ -770,8 +770,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 31
                     },
@@ -790,8 +790,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 32
                     },
@@ -810,8 +810,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 33
                     },
@@ -830,8 +830,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 34
                     },
@@ -850,8 +850,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 35
                     },
@@ -870,8 +870,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 36
                     }
@@ -897,8 +897,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "qualitative mineral identification",
@@ -915,8 +915,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 38
                     },
@@ -937,8 +937,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 39
                     }
@@ -960,8 +960,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "major elements",
@@ -980,8 +980,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 41
                     },
@@ -1000,8 +1000,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 42
                     },
@@ -1026,8 +1026,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 43
                     },
@@ -1046,8 +1046,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 44
                     }
@@ -1069,8 +1069,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "sample splitting",
@@ -1087,8 +1087,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 46
                     },
@@ -1107,8 +1107,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 47
                     },
@@ -1127,8 +1127,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 48
                     },
@@ -1147,8 +1147,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 49
                     },
@@ -1167,8 +1167,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 50
                     },
@@ -1187,8 +1187,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 51
                     },
@@ -1207,8 +1207,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 52
                     },
@@ -1227,8 +1227,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 53
                     },
@@ -1247,8 +1247,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 54
                     },
@@ -1269,8 +1269,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 55
                     }
@@ -1294,8 +1294,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "major elements",
@@ -1314,8 +1314,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 57
                     },
@@ -1334,8 +1334,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 58
                     },
@@ -1354,8 +1354,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 59
                     }
@@ -1383,8 +1383,8 @@
         "indicators_exclude_abstract_mapping": "#apparatus#equipment",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "atomic absorption spectrometer",
@@ -1404,8 +1404,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "graphite furnace-atomic absorption spectrometer",
@@ -1426,8 +1426,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 62
                     }
@@ -1457,8 +1457,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "inductively coupled plasma-atomic emission spectrometer",
@@ -1480,8 +1480,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 64
                     }
@@ -1503,8 +1503,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 65
             },
@@ -1523,8 +1523,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 66
             },
@@ -1548,8 +1548,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 67
             },
@@ -1568,8 +1568,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 68
             },
@@ -1590,8 +1590,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 69
             },
@@ -1610,8 +1610,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "accelerator mass spectrometer",
@@ -1631,8 +1631,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 71
                     },
@@ -1654,8 +1654,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 72
                     },
@@ -1678,8 +1678,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 73
                     },
@@ -1702,8 +1702,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 74
                     },
@@ -1726,8 +1726,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 75
                     },
@@ -1750,8 +1750,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 76
                     },
@@ -1778,8 +1778,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 77
                     },
@@ -1803,8 +1803,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 78
                     },
@@ -1828,8 +1828,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 79
                     },
@@ -1851,8 +1851,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 80
                     },
@@ -1873,8 +1873,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 81
                     }
@@ -1898,8 +1898,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 82
             },
@@ -1920,8 +1920,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "UV-Vis spectrophotometer",
@@ -1938,8 +1938,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 84
                     },
@@ -1960,8 +1960,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 85
                     }
@@ -1983,8 +1983,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 86
             },
@@ -2003,8 +2003,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 87
             },
@@ -2026,8 +2026,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "x-ray absorption near-edge structure spectrometer",
@@ -2046,8 +2046,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 89
                     },
@@ -2071,8 +2071,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 90
                     },
@@ -2096,8 +2096,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 91
                     }
@@ -2122,8 +2122,8 @@
         "indicators_exclude_abstract_mapping": "",
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": "",
-        "exclude_selection_group_2": "",
+        "exclude_selection_group_1": [],
+        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "acetate",
@@ -2142,8 +2142,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 93
             },
@@ -2170,8 +2170,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "argon-argon age",
@@ -2201,8 +2201,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 95
                     },
@@ -2232,8 +2232,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 96
                     },
@@ -2258,8 +2258,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 97
                     },
@@ -2292,8 +2292,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 98
                     },
@@ -2323,8 +2323,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 99
                     },
@@ -2351,8 +2351,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 100
                     },
@@ -2384,8 +2384,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 101
                     },
@@ -2417,8 +2417,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 102
                     },
@@ -2450,8 +2450,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 103
                     },
@@ -2482,8 +2482,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 104
                     },
@@ -2505,8 +2505,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "uranium-paladium age",
@@ -2537,8 +2537,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 106
                             },
@@ -2569,8 +2569,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 107
                             },
@@ -2603,8 +2603,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 108
                             },
@@ -2628,8 +2628,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 109
                             }
@@ -2657,8 +2657,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 110
             },
@@ -2679,8 +2679,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 111
             },
@@ -2701,8 +2701,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 112
             },
@@ -2723,8 +2723,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 113
             },
@@ -2745,8 +2745,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 114
             },
@@ -2765,8 +2765,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 115
             },
@@ -2787,8 +2787,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 116
             },
@@ -2809,8 +2809,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 117
             },
@@ -2831,8 +2831,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 118
             },
@@ -2851,8 +2851,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "delta 11B",
@@ -2871,8 +2871,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 120
                     }
@@ -2896,8 +2896,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 121
             },
@@ -2918,8 +2918,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 122
             },
@@ -2938,8 +2938,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "inorganic carbon",
@@ -2958,8 +2958,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 124
                     },
@@ -2978,8 +2978,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 125
                     },
@@ -2998,8 +2998,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 126
                     },
@@ -3020,8 +3020,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 127
                     },
@@ -3040,8 +3040,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 128
                     },
@@ -3062,8 +3062,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 129
                     },
@@ -3084,8 +3084,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 130
                     },
@@ -3106,8 +3106,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 131
                     },
@@ -3128,8 +3128,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 132
                     },
@@ -3150,8 +3150,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 133
                     },
@@ -3172,8 +3172,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 134
                     },
@@ -3192,8 +3192,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 135
                     }
@@ -3217,8 +3217,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "calcium oxide",
@@ -3237,8 +3237,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 137
                     },
@@ -3259,8 +3259,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 138
                     },
@@ -3281,8 +3281,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 139
                     },
@@ -3303,8 +3303,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 140
                     }
@@ -3328,8 +3328,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 141
             },
@@ -3350,8 +3350,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "cerium oxide",
@@ -3370,8 +3370,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 143
                     },
@@ -3392,8 +3392,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 144
                     }
@@ -3417,8 +3417,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "chloride",
@@ -3435,8 +3435,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 146
                     },
@@ -3457,8 +3457,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 147
                     }
@@ -3482,8 +3482,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "cobalt oxide",
@@ -3502,8 +3502,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 149
                     }
@@ -3527,8 +3527,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "chromium oxide",
@@ -3547,8 +3547,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 151
                     }
@@ -3572,8 +3572,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 152
             },
@@ -3594,8 +3594,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "cuprous oxide",
@@ -3615,8 +3615,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 154
                     },
@@ -3637,8 +3637,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 155
                     },
@@ -3659,8 +3659,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 156
                     }
@@ -3684,8 +3684,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "dysprosium oxide",
@@ -3704,8 +3704,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 158
                     }
@@ -3729,8 +3729,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "erbium oxide",
@@ -3749,8 +3749,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 160
                     }
@@ -3774,8 +3774,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "europium oxide",
@@ -3794,8 +3794,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 162
                     }
@@ -3817,8 +3817,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 163
             },
@@ -3839,8 +3839,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 164
             },
@@ -3861,8 +3861,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 165
             },
@@ -3883,8 +3883,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "gadolinium oxide",
@@ -3903,8 +3903,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 167
                     }
@@ -3928,8 +3928,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 168
             },
@@ -3950,8 +3950,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 169
             },
@@ -3973,8 +3973,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "water (H2O)",
@@ -3993,8 +3993,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 171
                     },
@@ -4015,8 +4015,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 172
                     },
@@ -4037,8 +4037,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 173
                     }
@@ -4062,8 +4062,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 174
             },
@@ -4084,8 +4084,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "hafnium dioxide",
@@ -4104,8 +4104,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 176
                     },
@@ -4126,8 +4126,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 177
                     }
@@ -4151,8 +4151,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "holmium oxide",
@@ -4171,8 +4171,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 179
                     }
@@ -4194,8 +4194,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 180
             },
@@ -4214,8 +4214,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 181
             },
@@ -4236,8 +4236,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 182
             },
@@ -4258,8 +4258,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "ferric iron oxide (tri-valent iron)",
@@ -4278,8 +4278,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 184
                     },
@@ -4300,8 +4300,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 185
                     },
@@ -4322,8 +4322,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 186
                     },
@@ -4344,8 +4344,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 187
                     },
@@ -4366,8 +4366,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 188
                     },
@@ -4388,8 +4388,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 189
                     },
@@ -4410,8 +4410,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "total iron oxide content reported as ferrous (di-valent) iron",
@@ -4430,8 +4430,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 191
                             }
@@ -4455,8 +4455,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 192
                     },
@@ -4477,8 +4477,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 193
                     },
@@ -4499,8 +4499,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 194
                     }
@@ -4524,8 +4524,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 195
             },
@@ -4546,8 +4546,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "lanthanum oxide",
@@ -4566,8 +4566,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 197
                     }
@@ -4591,8 +4591,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "lead oxide",
@@ -4611,8 +4611,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 199
                     }
@@ -4636,8 +4636,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "delta Li6",
@@ -4656,8 +4656,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 201
                     },
@@ -4678,8 +4678,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 202
                     }
@@ -4703,8 +4703,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "lutetium oxide",
@@ -4723,8 +4723,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 204
                     }
@@ -4748,8 +4748,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "magnesium oxide",
@@ -4768,8 +4768,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 206
                     }
@@ -4793,8 +4793,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "manganese tetroxide",
@@ -4813,8 +4813,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 208
                     },
@@ -4835,8 +4835,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 209
                     },
@@ -4857,8 +4857,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 210
                     }
@@ -4882,8 +4882,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 211
             },
@@ -4904,8 +4904,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "delta 98Mo",
@@ -4924,8 +4924,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 213
                     }
@@ -4949,8 +4949,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "neodymium oxide",
@@ -4969,8 +4969,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 215
                     }
@@ -4994,8 +4994,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 216
             },
@@ -5016,8 +5016,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "nickel oxide",
@@ -5036,8 +5036,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 218
                     },
@@ -5058,8 +5058,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 219
                     }
@@ -5083,8 +5083,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "niobium oxide",
@@ -5103,8 +5103,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 221
                     },
@@ -5125,8 +5125,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 222
                     }
@@ -5148,8 +5148,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "organic nitrogen",
@@ -5168,8 +5168,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 224
                     },
@@ -5190,8 +5190,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 225
                     },
@@ -5212,8 +5212,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 226
                     },
@@ -5234,8 +5234,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 227
                     },
@@ -5256,8 +5256,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 228
                     }
@@ -5279,8 +5279,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "delta 17O",
@@ -5299,8 +5299,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 230
                     },
@@ -5321,8 +5321,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 231
                     }
@@ -5346,8 +5346,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 232
             },
@@ -5368,8 +5368,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 233
             },
@@ -5388,8 +5388,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 234
             },
@@ -5408,8 +5408,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "phosphorous, organic",
@@ -5428,8 +5428,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 236
                     },
@@ -5450,8 +5450,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 237
                     },
@@ -5472,8 +5472,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 238
                     },
@@ -5494,8 +5494,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 239
                     }
@@ -5519,8 +5519,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "ratio of platinum isotope Pt190 to osmium isotope Os188",
@@ -5539,8 +5539,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 241
                     }
@@ -5564,8 +5564,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "polonium isotope Po210, reported as activity",
@@ -5584,8 +5584,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 243
                     },
@@ -5606,8 +5606,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 244
                     }
@@ -5629,8 +5629,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "potassium oxide",
@@ -5649,8 +5649,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 246
                     }
@@ -5672,8 +5672,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 247
             },
@@ -5694,8 +5694,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 248
             },
@@ -5716,8 +5716,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 249
             },
@@ -5738,8 +5738,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 250
             },
@@ -5760,8 +5760,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 251
             },
@@ -5782,8 +5782,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 252
             },
@@ -5804,8 +5804,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 253
             },
@@ -5826,8 +5826,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "samarium oxide",
@@ -5846,8 +5846,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 255
                     }
@@ -5871,8 +5871,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "scandium oxide",
@@ -5891,8 +5891,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 257
                     }
@@ -5916,8 +5916,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 258
             },
@@ -5936,8 +5936,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "silicon dioxide",
@@ -5957,8 +5957,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "SiO2, high pressure",
@@ -5977,8 +5977,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 261
                             },
@@ -5999,8 +5999,8 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": "",
-                                "exclude_selection_group_2": "",
+                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 262
                             }
@@ -6024,8 +6024,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 263
                     },
@@ -6046,8 +6046,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 264
                     },
@@ -6068,8 +6068,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 265
                     }
@@ -6093,8 +6093,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "sodium oxide",
@@ -6113,8 +6113,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 267
                     }
@@ -6138,8 +6138,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 268
             },
@@ -6160,8 +6160,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "strontium oxide",
@@ -6180,8 +6180,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 270
                     }
@@ -6208,8 +6208,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "sulphur dioxide",
@@ -6229,8 +6229,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 272
                     },
@@ -6252,8 +6252,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 273
                     },
@@ -6275,8 +6275,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 274
                     },
@@ -6298,8 +6298,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 275
                     },
@@ -6321,8 +6321,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 276
                     },
@@ -6343,8 +6343,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 277
                     },
@@ -6365,8 +6365,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 278
                     },
@@ -6387,8 +6387,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 279
                     }
@@ -6412,8 +6412,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "tantalum oxide",
@@ -6432,8 +6432,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 281
                     }
@@ -6457,8 +6457,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 282
             },
@@ -6479,8 +6479,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "terbium oxide",
@@ -6499,8 +6499,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 284
                     }
@@ -6524,8 +6524,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 285
             },
@@ -6546,8 +6546,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "thorium monoxide",
@@ -6566,8 +6566,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 287
                     },
@@ -6588,8 +6588,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 288
                     }
@@ -6613,8 +6613,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "thulium oxide",
@@ -6633,8 +6633,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 290
                     }
@@ -6658,8 +6658,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 291
             },
@@ -6680,8 +6680,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "titanium(III) oxide",
@@ -6700,8 +6700,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 293
                     },
@@ -6722,8 +6722,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 294
                     },
@@ -6744,8 +6744,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 295
                     },
@@ -6766,8 +6766,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 296
                     }
@@ -6789,8 +6789,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "tungsten trioxide",
@@ -6809,8 +6809,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 298
                     }
@@ -6832,8 +6832,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "uranium oxide",
@@ -6852,8 +6852,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 300
                     },
@@ -6874,8 +6874,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 301
                     },
@@ -6896,8 +6896,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 302
                     }
@@ -6919,8 +6919,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "vanadium sesquioxide",
@@ -6939,8 +6939,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 304
                     },
@@ -6961,8 +6961,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 305
                     },
@@ -6983,8 +6983,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 306
                     }
@@ -7008,8 +7008,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 307
             },
@@ -7028,8 +7028,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "yttrium(III) oxide",
@@ -7048,8 +7048,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 309
                     },
@@ -7070,8 +7070,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 310
                     }
@@ -7095,8 +7095,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "ytterbium oxide",
@@ -7115,8 +7115,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 312
                     }
@@ -7140,8 +7140,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "zinc oxide",
@@ -7160,8 +7160,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 314
                     },
@@ -7182,8 +7182,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 315
                     },
@@ -7204,8 +7204,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 316
                     }
@@ -7229,8 +7229,8 @@
                 "indicators_exclude_abstract_mapping": "",
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": "",
-                "exclude_selection_group_2": "",
+                "exclude_selection_group_1": [],
+                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "zirconium pentoxide",
@@ -7249,8 +7249,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 318
                     },
@@ -7271,8 +7271,8 @@
                         "indicators_exclude_abstract_mapping": "",
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": "",
-                        "exclude_selection_group_2": "",
+                        "exclude_selection_group_1": [],
+                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 319
                     }
