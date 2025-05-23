@@ -1758,7 +1758,9 @@
                                 "indicators_exclude_abstract_mapping": "",
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
+                                "exclude_selection_group_1": [
+                                    "absorption contrast tomography"
+                                ],
                                 "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 83
