@@ -127,11 +127,16 @@ class SelectionGroupSeeder extends Seeder
         // exclude the exeptions
 
         foreach ($this->excludedKeywordsList as $excludedKeywordUri) {
-            DB::table('keywords')->where('uri', '=', $excludedKeywordUri)->update(['selection_group_1' => 0], ['selection_group_2' => 0]);
+            DB::table('keywords')
+                ->where('uri', '=', $excludedKeywordUri)
+                ->update(['selection_group_1' => 0], ['selection_group_2' => 0]);
         }
 
         foreach ($this->excludedSearchKeywords as $excludedSearchKeyword) {
-            DB::table('keywords_search')->where('search_value', '=', $excludedSearchKeyword)->update(['exclude_selection_group_1' => 1], ['exclude_selection_group_2' => 1]);
+            DB::table('keywords_search')
+                ->where('search_value', '=', $excludedSearchKeyword)
+                ->where('version', '=', '1.3')
+                ->update(['exclude_selection_group_1' => 1], ['exclude_selection_group_2' => 1]);
         }
     }
 }
