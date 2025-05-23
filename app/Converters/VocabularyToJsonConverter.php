@@ -60,7 +60,7 @@ class VocabularyToJsonConverter
                         $node['rowNr'] = $cell->getRow();
 
                     } elseif ($currentColumn == $this->checkColumnByName('indicator terms', $allColNames)) {
-                        $node['synonyms'] = $this->extractSynonyms($cell->getValue());
+                        $node['synonyms'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_domain_mapping', $allColNames)) {
                         if ($cell->getValue() == 'yes') {
                             $node['exclude_domain_mapping'] = 1;
@@ -102,9 +102,9 @@ class VocabularyToJsonConverter
                             throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
                         }
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_selection_group_1', $allColNames)) {
-                        $node['exclude_selection_group_1'] = $this->extractSynonyms($cell->getValue());
+                        $node['exclude_selection_group_1'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_selection_group_2', $allColNames)) {
-                        $node['exclude_selection_group_2'] = $this->extractSynonyms($cell->getValue());
+                        $node['exclude_selection_group_2'] = $this->extractTermsFromString($cell->getValue());
                     }
 
                 }
@@ -186,7 +186,7 @@ class VocabularyToJsonConverter
         return $children;
     }
 
-    private function extractSynonyms($string)
+    private function extractTermsFromString($string)
     {
         $synonyms = [];
         if (str_contains($string, '#')) {
