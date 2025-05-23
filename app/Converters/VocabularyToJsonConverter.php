@@ -217,8 +217,8 @@ class VocabularyToJsonConverter
             'indicators_exclude_abstract_mapping' => '',
             'selection_group_1' => '',
             'selection_group_2' => '',
-            'exclude_selection_group_1' => '',
-            'exclude_selection_group_2' => '',
+            'exclude_selection_group_1' => [],
+            'exclude_selection_group_2' => [],
             'subTerms' => [],
         ];
 
