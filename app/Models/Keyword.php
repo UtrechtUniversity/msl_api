@@ -155,10 +155,10 @@ class Keyword extends Model
         $groupColumn = 'exclude_selection_group_'.$groupNumber;
         $string = '';
 
-        $synonyms = $this->hasMany(KeywordSearch::class, 'keyword_id')->where($groupColumn, '=', 1)->get();
-        if ($synonyms) {
-            foreach ($synonyms as $synonym) {
-                $string .= $startCharacter.$synonym->search_value;
+        $searchKeywords = $this->hasMany(KeywordSearch::class, 'keyword_id')->where($groupColumn, '=', 1)->get();
+        if ($searchKeywords) {
+            foreach ($searchKeywords as $searchKeyword) {
+                $string .= $startCharacter.$searchKeyword->search_value;
             }
         }
 
