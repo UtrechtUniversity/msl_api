@@ -18,7 +18,7 @@ class SelectionGroupSeeder extends Seeder
     private $includedVocabularies_group_2 = [
         'analogue' => ['apparatus', 'measured_property'],
         'geochemistry' => ['analysis'],
-        'microscopy' => ['apparatus', 'technique', 'analyzed_feature'.'inferred_behavior'],
+        'microscopy' => ['apparatus', 'technique', 'analyzed_feature', 'inferred_behavior'],
         'paleomagnetism' => ['apparatus', 'measured_property', 'inferred_behavior'],
         'rockphysics' => ['apparatus', 'measured_property', 'inferred_deformation_behavior'],
     ];
