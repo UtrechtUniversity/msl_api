@@ -22,7 +22,9 @@
         "exclude_selection_group_1": [
             "tectonic plate boundary"
         ],
-        "exclude_selection_group_2": [],
+        "exclude_selection_group_2": [
+            "tectonic plate boundary"
+        ],
         "subTerms": [
             {
                 "value": "convergent tectonic plate boundary",
@@ -1967,7 +1969,9 @@
         "exclude_selection_group_1": [
             "earth shells"
         ],
-        "exclude_selection_group_2": [],
+        "exclude_selection_group_2": [
+            "earth shells"
+        ],
         "subTerms": [
             {
                 "value": "Earth crust",

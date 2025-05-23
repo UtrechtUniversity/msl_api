@@ -1761,7 +1761,9 @@
                                 "exclude_selection_group_1": [
                                     "absorption contrast tomography"
                                 ],
-                                "exclude_selection_group_2": [],
+                                "exclude_selection_group_2": [
+                                    "absorption contrast tomography"
+                                ],
                                 "subTerms": [],
                                 "rowNr": 83
                             },

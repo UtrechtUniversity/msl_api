@@ -13142,7 +13142,9 @@
                                 "exclude_selection_group_1": [
                                     "rubber"
                                 ],
-                                "exclude_selection_group_2": [],
+                                "exclude_selection_group_2": [
+                                    "rubber"
+                                ],
                                 "subTerms": [
                                     {
                                         "value": "latex rubber",
