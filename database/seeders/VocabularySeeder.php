@@ -869,8 +869,8 @@ class VocabularySeeder extends Seeder
             'hyperlink' => $node->hyperlink,
             'label' => $node->value,
             'exclude_domain_mapping' => $excludeSubdomainMapping,
-            'extracted_definition' => isset($node->defininition) ? $node->defininition : '',
-            'extracted_definition_link' => isset($node->{'defininition-link'}) ? $node->{'defininition-link'} : '',
+            'extracted_definition' => '',
+            'extracted_definition_link' => '',
         ]);
 
         $this->generateURI($keyword, $vocabulary);
