@@ -20,9 +20,9 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
         ['columnName' => 'external_description', 'columnDescription' => 'The description found on the "external_uri" of external vocabulary'],
         ['columnName' => 'extracted_definition', 'columnDescription' => '!!!This is a temporary field!!! Definition of the term given by a contributor like you working in this excel sheet. This data should be transferred to other columns, like "external_uri" or "hyperlink"'],
         ['columnName' => 'extracted_definition_link', 'columnDescription' => '!!!This is a temporary field!!! Definition of the term given by a contributor like you working in this excel sheet. This data should be transferred to other columns, like "external_uri" or "hyperlink"'],
-        ['columnName' => 'indicators_exclude_abstract_mapping', 'columnDescription' => '!!!Awareness required!!! Any entry from "indicator terms" which is inserted in this field 
+        ['columnName' => 'indicators_exclude_abstract_mapping', 'columnDescription' => '!!!Awareness required!!! Any entry from "indicator terms" and the term name itself which is inserted in this field 
         (in the same format with #) will be excluded from the abstract mapping process. 
-        This process determines if the indicator term is used to detect this term within the textual metadata of a data publication. 
+        This process determines if the indicator term is used to detect this term within the textual metadata of a data publication. This is just used within the catalogue itself and not in the process of selecting relevant data publications. 
         For instance, it may be excluded using this indicator term to find the term within the title of the data publication 
         or any other place where text is present'],
         ['columnName' => 'selection_group_1', 'columnDescription' => 'Contains a Boolean value indicating if the keywords is used in the group 1 words.'],
