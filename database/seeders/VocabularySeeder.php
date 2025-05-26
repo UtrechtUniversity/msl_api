@@ -782,15 +782,6 @@ class VocabularySeeder extends Seeder
 
     private function processNode($node, $vocabulary, $parentId = null)
     {
-        $excludeAbstractMapping = [];
-        //first add exclude_abstract_mapping terms from nodes indicators_exclude_abstract_mapping to dynamic list
-        if (strlen($node->indicators_exclude_abstract_mapping) > 0) {
-            $allStrings = $this->extractIndicatorsExcludeAbstractMapping($node->indicators_exclude_abstract_mapping);
-            foreach ($allStrings as $entry) {
-                $excludeAbstractMapping[] = $entry;
-            }
-        }
-
         $keyword = Keyword::create([
             'parent_id' => $parentId,
             'vocabulary_id' => $vocabulary->id,
@@ -813,7 +804,7 @@ class VocabularySeeder extends Seeder
             'keyword_id' => $keyword->id,
             'search_value' => strtolower($node->value),
             'isSynonym' => false,
-            'exclude_abstract_mapping' => in_array($node->value, $excludeAbstractMapping, true) ? 1 : 0,
+            'exclude_abstract_mapping' => in_array($node->value, $node->indicators_exclude_abstract_mapping, true) ? 1 : 0,
             'exclude_selection_group_1' => in_array($node->value, $node->exclude_selection_group_1, true) ? 1 : 0,
             'exclude_selection_group_2' => in_array($node->value, $node->exclude_selection_group_2, true) ? 1 : 0,
             'version' => $vocabulary->version,
@@ -826,7 +817,7 @@ class VocabularySeeder extends Seeder
                         'keyword_id' => $keyword->id,
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
-                        'exclude_abstract_mapping' => in_array($node->value, $excludeAbstractMapping, true) ? 1 : 0,
+                        'exclude_abstract_mapping' => in_array($synonym, $node->indicators_exclude_abstract_mapping, true) ? 1 : 0,
                         'exclude_selection_group_1' => in_array($synonym, $node->exclude_selection_group_1, true) ? 1 : 0,
                         'exclude_selection_group_2' => in_array($synonym, $node->exclude_selection_group_2, true) ? 1 : 0,
                         'version' => $vocabulary->version,
