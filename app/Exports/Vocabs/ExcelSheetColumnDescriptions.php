@@ -27,6 +27,8 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
         or any other place where text is present'],
         ['columnName' => 'selection_group_1', 'columnDescription' => 'Contains a Boolean value indicating if the keywords is used in the group 1 words.'],
         ['columnName' => 'selection_group_2', 'columnDescription' => 'Contains a Boolean value indicating if the keywords is used in the group 2 words.'],
+        ['columnName' => 'exclude_selection_group_1', 'columnDescription' => 'Term and/or indicator terms to be excluded from group 1 words. Every term/indicator should start with a #.'],
+        ['columnName' => 'exclude_selection_group_2', 'columnDescription' => 'Term and/or indicator terms to be excluded from group 2 words. Every term/indicator should start with a #.'],
     ];
 
     public function array(): array
