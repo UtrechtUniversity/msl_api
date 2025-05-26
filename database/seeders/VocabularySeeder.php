@@ -827,8 +827,8 @@ class VocabularySeeder extends Seeder
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
                         'exclude_abstract_mapping' => in_array($node->value, $excludeAbstractMapping, true) ? 1 : 0,
-                        'exclude_selection_group_1' => in_array($node->value, $node->exclude_selection_group_1, true) ? 1 : 0,
-                        'exclude_selection_group_2' => in_array($node->value, $node->exclude_selection_group_2, true) ? 1 : 0,
+                        'exclude_selection_group_1' => in_array($synonym, $node->exclude_selection_group_1, true) ? 1 : 0,
+                        'exclude_selection_group_2' => in_array($synonym, $node->exclude_selection_group_2, true) ? 1 : 0,
                         'version' => $vocabulary->version,
                     ]);
                 }
