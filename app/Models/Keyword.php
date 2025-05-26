@@ -164,4 +164,18 @@ class Keyword extends Model
 
         return $string;
     }
+    
+    public function getAbstractMathcingExcludedSearchKeywordsString($startCharacter = '#')
+    {
+        $string = '';
+
+        $searchKeywords = $this->hasMany(KeywordSearch::class, 'keyword_id')->where('exclude_abstract_mapping', '=', 1)->get();
+        if ($searchKeywords) {
+            foreach ($searchKeywords as $searchKeyword) {
+                $string .= $startCharacter.$searchKeyword->search_value;
+            }
+        }
+
+        return $string;
+    }
 }
