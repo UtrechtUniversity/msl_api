@@ -833,20 +833,6 @@ class VocabularySeeder extends Seeder
         }
     }
 
-    private function extractIndicatorsExcludeAbstractMapping($string)
-    {
-        $indicators = [];
-        if (str_contains($string, '#')) {
-            $parts = explode('#', $string);
-            array_shift($parts);
-            foreach ($parts as $part) {
-                $indicators[] = trim($part);
-            }
-        }
-
-        return $indicators;
-    }
-
     /**
      * This function is depricated and only used for vocabularies prior to 1.3
      */
