@@ -50,7 +50,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 'external_description',
                 'extracted_definition',
                 'extracted_definition_link',
-                'indicators_exclude_abstract_mapping',
+                'terms_exclude_abstract_mapping',
                 'selection_group_1',
                 'selection_group_2',
                 'exclude_selection_group_1',
