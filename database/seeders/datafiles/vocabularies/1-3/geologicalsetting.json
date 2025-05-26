@@ -26,18 +26,10 @@
         "selection_group_1": 1,
         "selection_group_2": 0,
         "exclude_selection_group_1": [
-            "tectonic plate boundary",
-            "plate margin",
-            "plate margin setting",
-            "tectonics",
-            "plate boundaries"
+            "tectonic plate boundary"
         ],
         "exclude_selection_group_2": [
-            "tectonic plate boundary",
-            "plate margin",
-            "plate margin setting",
-            "tectonics",
-            "plate boundaries"
+            "tectonic plate boundary"
         ],
         "subTerms": [
             {
