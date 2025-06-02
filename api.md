@@ -41,7 +41,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -292,7 +292,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -870,7 +870,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -997,7 +997,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -1222,7 +1222,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -1418,7 +1418,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
@@ -1543,7 +1543,7 @@ This endpoint gives access to all data-publications available that are marked as
     + tags (text, optional) - Tags to search for. 
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
-        + Default: `true`
+        + Default: `false`
 
         
 + Response 200 (application/json)
