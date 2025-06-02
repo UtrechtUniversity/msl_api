@@ -162,8 +162,8 @@ class ApiController extends Controller
         $packageSearchRequest->addFilterQuery('type', 'data-publication');
 
         // Filter for data-publications with files depending on request
-        if ($request->boolean('hasDownloads', true)) {
-            $packageSearchRequest->addFilterQuery('msl_download_link', '*', false);
+        if ($request->boolean('hasDownloads', false)) {
+            $packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
         }
 
         // Add subdomain filtering if required
