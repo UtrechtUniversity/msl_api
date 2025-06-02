@@ -10,6 +10,7 @@ The API offers 5 domain specific endpoints and 1 endpoint offering access to all
 + [microscopy](#microscopy)
 + [geochemistry](#geochemistry)
 + [all](#all)
++ [facilities](#facilities)
 
 ## Base url
 
@@ -1393,6 +1394,7 @@ This endpoint gives access to all data-publications available that are marked as
   }
 }
 ```
+</details>
 
 
 # /geoenergy
@@ -1516,9 +1518,6 @@ This endpoint gives access to all data-publications available that are marked as
   }
 }
 ```
-
-
-
 </details>
 
 # /all
@@ -1773,3 +1772,148 @@ This endpoint gives access to all data-publications available that are marked as
 ```
 
 </details>
+
+
+
+
+# /facilities
+This endpoint gives access to all facilities and the equipment pieces on site.  
+
+## Search all facilities including equipment [GET]
++ Parameters
+
+    + rows (number, optional) - The number of results to return.
+        + Default: `10`
+    + start (number, optional) - The number to start results from. 
+        + Default: `0`
+    + facilityQuery (text, optional) - Search query filtering using facility information. 
+        + Default: ``
+    + equipmentQuery (text, optional) - Search query filtering using equipment information. 
+        + Default: ``
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+  "success": true,
+  "message": "",
+  "result": {
+    "count": 66,
+    "resultCount": 10,
+    "results": [
+      {
+        "name": "EM Centre",
+        "description": "A full multi-scale workflow of innovative scanning electron microscopy (SEM) and transmission electron microscopy (TEM) techniques, as well as an X-ray microscopy (XRM) system, are used to understand the micro-physical basis of Earth-material properties. These instruments come together in the Utrecht University Electron Microscopy Centre and the Multi-scale Imaging and Tomography Facility (MINT) as part of EPOS-NL and NEMI.\r\n\r\nWe use electron backscattered diffraction (EBSD) in the SEM to map the crystal orientations and textures of geological materials and ice (cryo-EBSD); cathodoluminescence to probe defect structures and chemistry of a wide range of microstructures; and focused ion beam (FIB)-SEM tomography to study materials in three-dimensions, for example, pore or fracture networks.\r\n\r\nAutomated mineralogy mapping using energy-dispersive spectroscopy (EDS) and wavelength-dispersive spectroscopy analysis (WDS) in the microprobe allow us to determine mineral compositions as well as the reconstruction of bulk rock compositions. Via FIB-SEM nanomanipulation we obtain electron transparent foils for TEM analysis to study structure, composition and processes in Earth materials down to the atomic scale.\r\n\r\nWe also use innovative computational approaches such as machine learning to extract quantitative information from two- and three-dimensional microstructural datasets. For this, we have several high-powered computer workstations.\r\n\r\nScanning Electron Microscopes:\r\n- FEI (now Thermo Fisher) Helios G3 Nanolab FIB-SEM with EDS, EBSD, cryo-stage, panchromatic and wavelength filtered CL\r\n- Zeiss Gemini 450 variable pressure SEM with EDS, EBSD, cryo-stage, panchromatic and wavelength-filtered CL\r\n- Zeiss EVO 15 environmental SEM with Peltier cooling stage, EDS and automated mineralogy\r\n- JEOL Neoscope II JCM-6000 table-top SEM with EDS\r\n\r\nTransmission Electron Microscopes:\r\n- Thermo Fisher Spectra 300 monochromated, double-aberration corrected (S)TEM with high-sensitivity EDS and electron energy loss spectroscopy (EELS)\r\n- Thermo Fisher Talos F200X: 200 kV (S)TEM with HAADF, EDS and electron tomography\r\n- Several additional TEMs including cryo-systems\r\n\r\nMicroprobe:\r\n- JEOL JXA-8530F Hyperprobe Field Emission Electron probe microanalyser, equipped with 5 WDS spectrometers, SDD ED system, CL system (panchromatic imaging and xCLent hyperspectral CL).\r\n\r\nX-ray microscopy and tomography:\r\n- Zeiss Xradia 610 Versa high-resolution X-ray tomography microscope system equipped with a 160kV high-energy, high-power microfocus X-ray source, several high-contrast detectors and a large flat panel detector as well as in situ experimental capabilities.\r\n\r\nAdditional specialist equipment:\r\n- Atomic Force Microscope (Bruker MultiMode 3)\r\n- Several workstations for image analysis including GPU clusters\r\n- Several ion beam polishing systems\r\n\r\nProcessing and acquisition software available at the facility:\r\n- Avizo\r\n- Aztec\r\n- Esprit\r\n- Zen\r\n- Atlas\r\n- Velox\r\n- GMS3\r\n- STEMx\r\n- Donovan\r\n- Zeiss Reconstructor",
+        "descriptionHtml": "<p>A full multi-scale workflow of innovative scanning electron microscopy (SEM) and transmission electron microscopy (TEM) techniques, as well as an X-ray microscopy (XRM) system, are used to understand the micro-physical basis of Earth-material properties. These instruments come together in the Utrecht University Electron Microscopy Centre and the Multi-scale Imaging and Tomography Facility (MINT) as part of EPOS-NL and NEMI.</p>\n<p>We use electron backscattered diffraction (EBSD) in the SEM to map the crystal orientations and textures of geological materials and ice (cryo-EBSD); cathodoluminescence to probe defect structures and chemistry of a wide range of microstructures; and focused ion beam (FIB)-SEM tomography to study materials in three-dimensions, for example, pore or fracture networks.</p>\n<p>Automated mineralogy mapping using energy-dispersive spectroscopy (EDS) and wavelength-dispersive spectroscopy analysis (WDS) in the microprobe allow us to determine mineral compositions as well as the reconstruction of bulk rock compositions. Via FIB-SEM nanomanipulation we obtain electron transparent foils for TEM analysis to study structure, composition and processes in Earth materials down to the atomic scale.</p>\n<p>We also use innovative computational approaches such as machine learning to extract quantitative information from two- and three-dimensional microstructural datasets. For this, we have several high-powered computer workstations.</p>\n<p>Scanning Electron Microscopes:</p>\n<ul>\n<li>FEI (now Thermo Fisher) Helios G3 Nanolab FIB-SEM with EDS, EBSD, cryo-stage, panchromatic and wavelength filtered CL</li>\n<li>Zeiss Gemini 450 variable pressure SEM with EDS, EBSD, cryo-stage, panchromatic and wavelength-filtered CL</li>\n<li>Zeiss EVO 15 environmental SEM with Peltier cooling stage, EDS and automated mineralogy</li>\n<li>JEOL Neoscope II JCM-6000 table-top SEM with EDS</li>\n</ul>\n<p>Transmission Electron Microscopes:</p>\n<ul>\n<li>Thermo Fisher Spectra 300 monochromated, double-aberration corrected (S)TEM with high-sensitivity EDS and electron energy loss spectroscopy (EELS)</li>\n<li>Thermo Fisher Talos F200X: 200 kV (S)TEM with HAADF, EDS and electron tomography</li>\n<li>Several additional TEMs including cryo-systems</li>\n</ul>\n<p>Microprobe:</p>\n<ul>\n<li>JEOL JXA-8530F Hyperprobe Field Emission Electron probe microanalyser, equipped with 5 WDS spectrometers, SDD ED system, CL system (panchromatic imaging and xCLent hyperspectral CL).</li>\n</ul>\n<p>X-ray microscopy and tomography:</p>\n<ul>\n<li>Zeiss Xradia 610 Versa high-resolution X-ray tomography microscope system equipped with a 160kV high-energy, high-power microfocus X-ray source, several high-contrast detectors and a large flat panel detector as well as in situ experimental capabilities.</li>\n</ul>\n<p>Additional specialist equipment:</p>\n<ul>\n<li>Atomic Force Microscope (Bruker MultiMode 3)</li>\n<li>Several workstations for image analysis including GPU clusters</li>\n<li>Several ion beam polishing systems</li>\n</ul>\n<p>Processing and acquisition software available at the facility:</p>\n<ul>\n<li>Avizo</li>\n<li>Aztec</li>\n<li>Esprit</li>\n<li>Zen</li>\n<li>Atlas</li>\n<li>Velox</li>\n<li>GMS3</li>\n<li>STEMx</li>\n<li>Donovan</li>\n<li>Zeiss Reconstructor</li>\n</ul>\n",
+        "domain": "Microscopy and tomography",
+        "latitude": "52.086507941561706",
+        "longitude": "5.175506283838553",
+        "altitude": "",
+        "portalLink": "http://localhost:8000/lab/c4ca4238a0b923820dcc509a6f75849b",
+        "organization": "Universiteit Utrecht (UU)",
+        "equipment": [
+          {
+            "title": "EVO 15 (SEM)",
+            "description": "Environmental SEM with Peltier cooling stage, 2x Bruker EDS and automated mineralogy.",
+            "descriptionHtml": "<p>Environmental SEM with Peltier cooling stage, 2x Bruker EDS and automated mineralogy.</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Scanning Electron Microscope (SEM)",
+            "brand": "ZEISS"
+          },
+          {
+            "title": "Neoscope II JCM-6000 table-top",
+            "description": "JEOL Neoscope II JCM-6000 table-top SEM with EDS",
+            "descriptionHtml": "<p>JEOL Neoscope II JCM-6000 table-top SEM with EDS</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Scanning Electron Microscope (SEM)",
+            "brand": "JEOL"
+          },
+          {
+            "title": "MultiMode 3",
+            "description": "",
+            "descriptionHtml": "",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Atomic Force Microscopy",
+            "group": "Atomic Force Microscope (AFM)",
+            "brand": "Bruker"
+          },
+          {
+            "title": "Xradia 610 Versa (μ-CT)",
+            "description": "High-resolution X-ray tomography microscope system equipped with a 160kV high-energy, high-power microfocus X-ray source, several high-contrast detectors and a large flat panel detector as well as in situ experimental capabilities.",
+            "descriptionHtml": "<p>High-resolution X-ray tomography microscope system equipped with a 160kV high-energy, high-power microfocus X-ray source, several high-contrast detectors and a large flat panel detector as well as in situ experimental capabilities.</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "X-Ray Tomography",
+            "group": "X-ray CT (Computed Tomography)",
+            "brand": "ZEISS"
+          },
+          {
+            "title": "Helios Nanolab G3 (FIB-SEM)",
+            "description": "FIB-SEM with Cryostage. Nordlys EBSD, Oxford xxx EDS, Gatan CL.",
+            "descriptionHtml": "<p>FIB-SEM with Cryostage. Nordlys EBSD, Oxford xxx EDS, Gatan CL.</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Focused Ion Beam - Scanning Electron Microscope (FIB-SEM)",
+            "brand": "ThermoFisher Scientific"
+          },
+          {
+            "title": "Spectra 300 (STEM)",
+            "description": "30-300 kV (S)TEM. Double aberration corrected microscope with a variable acceleration voltage (30, 80, 200 and 300 kV), enabling high-resolution imaging up to 50 pm both in TEM and STEM imaging mode. Equipped with EDX spectrometry for chemical mapping, and ultra-high-resolution electron energy loss spectrometry (UHR-EELS) enabled by its double monochromator and Gatan Continuum filter. It also has a direct-direction Gatan K3 IS camera allowing imaging of soft and beam-sensitive materials.",
+            "descriptionHtml": "<p>30-300 kV (S)TEM. Double aberration corrected microscope with a variable acceleration voltage (30, 80, 200 and 300 kV), enabling high-resolution imaging up to 50 pm both in TEM and STEM imaging mode. Equipped with EDX spectrometry for chemical mapping, and ultra-high-resolution electron energy loss spectrometry (UHR-EELS) enabled by its double monochromator and Gatan Continuum filter. It also has a direct-direction Gatan K3 IS camera allowing imaging of soft and beam-sensitive materials.</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Transmission Electron Microscope (TEM)",
+            "brand": "ThermoFisher Scientific"
+          },
+          {
+            "title": "Talos F200X (STEM)",
+            "description": "200 kV (S)TEM. High-brightness X-FEG electron gun, high-resolution imaging up tot 1.1 Å, electron diffraction, electron tomography, and high-sensitivity 2D EDX chemical mapping (Super-X).",
+            "descriptionHtml": "<p>200 kV (S)TEM. High-brightness X-FEG electron gun, high-resolution imaging up tot 1.1 Å, electron diffraction, electron tomography, and high-sensitivity 2D EDX chemical mapping (Super-X).</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Transmission Electron Microscope (TEM)",
+            "brand": "ThermoFisher Scientific"
+          },
+          {
+            "title": "JXA-8530F Hyperprobe (EPMA)",
+            "description": "Field Emission Electron probe microanalyser, equipped with 5 WDS spectrometers, SDD ED system, CL system (panchromatic imaging and xCLent hyperspectral CL).",
+            "descriptionHtml": "<p>Field Emission Electron probe microanalyser, equipped with 5 WDS spectrometers, SDD ED system, CL system (panchromatic imaging and xCLent hyperspectral CL).</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Probe Micro Analyzer",
+            "group": "Electron Probe Micro Analyzer (EPMA)",
+            "brand": "JEOL"
+          },
+          {
+            "title": "Gemini 450 (SEM)",
+            "description": "High-end SEM with low vacuum capabilities. Symmetry EBSD detector, Oxford xxx EDS, Delmic CL, Quorum Cryostage.",
+            "descriptionHtml": "<p>High-end SEM with low vacuum capabilities. Symmetry EBSD detector, Oxford xxx EDS, Delmic CL, Quorum Cryostage.</p>\n",
+            "domain": "Microscopy and tomography",
+            "category": "Permanent",
+            "type": "Electron Microscopy",
+            "group": "Scanning Electron Microscope (SEM)",
+            "brand": "ZEISS"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+</details>
+
