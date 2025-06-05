@@ -7,7 +7,7 @@ class LaboratoriesJsonExport
 {
     public function export()
     {
-        $laboratories = Laboratory::all();
+        $laboratories = Laboratory::where('external_identifier', '<>', '')->get();
 
         $output = [];
 
@@ -15,7 +15,7 @@ class LaboratoriesJsonExport
             $organization = $laboratory->laboratoryOrganization;
 
             $element = [
-                'identifier' => $laboratory->msl_identifier,
+                'identifier' => $laboratory->external_identifier,
                 'name' => mb_convert_encoding($laboratory->name, 'UTF-8'),
                 'affiliation_name' => $organization->name,
                 'affiliation_ror' => $organization->external_identifier
