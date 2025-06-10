@@ -230,6 +230,9 @@ class DataPublication
      * keyword related fields
      */
 
+    /**
+     * CKAN original keyword/tags field
+     */
     public $tag_string = [];
     
     /**
@@ -253,7 +256,7 @@ class DataPublication
     public array $msl_subdomains_interpreted = [];
 
     /**
-     * enriched keyword
+     * enriched keywords
      */
     public array $msl_enriched_keywords = [];
 
