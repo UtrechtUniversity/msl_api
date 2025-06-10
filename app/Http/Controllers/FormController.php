@@ -272,4 +272,16 @@ class FormController extends Controller
         );
     }
 
+
+            /**
+     * Show the contribute survey scenario page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contributeSurveyScenario(Request $request)
+    {
+        return view('forms.contribute-survey-scenario');
+    }
+
+
 }

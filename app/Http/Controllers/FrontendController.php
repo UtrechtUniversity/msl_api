@@ -552,6 +552,17 @@ class FrontendController extends Controller
     }
 
     /**
+     * Show the contribute select scenario page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contributeSelectScenario()
+    {
+        return view('frontend.contribute-select-scenario');
+    }
+
+
+    /**
      * Show the contribute as laboratory page
      * 
      * @return \Illuminate\Contracts\Support\Renderable
