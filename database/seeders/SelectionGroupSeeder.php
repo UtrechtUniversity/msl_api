@@ -10,7 +10,7 @@ class SelectionGroupSeeder extends Seeder
     private $version = 1.3;
 
     private $includedVocabularies_group_1 = [
-        'materials' => [], // empty array = all uri's in this vocabulary
+        'materials' => [],
         'geologicalsetting' => [],
         'subsurface' => [],
     ];
@@ -23,13 +23,7 @@ class SelectionGroupSeeder extends Seeder
         'rockphysics' => ['apparatus', 'measured_property', 'inferred_deformation_behavior'],
     ];
 
-    private $excludedSearchKeywords = [
-        'rubber',
-        'spontaneous potential',
-        'tectonic plate boundary',
-        'earth shells',
-        'absorption contrast tomography',
-    ];
+    private $excludedSearchKeywords = [];
 
     private $excludedKeywordsList = [
         'https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-chalk',
@@ -100,6 +94,11 @@ class SelectionGroupSeeder extends Seeder
         'https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-grain_size_distribution',
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size',
         'https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-grain_size_and_configuration-grain_size-grain_size_distribution',
+        'https://epos-msl.uu.nl/voc/materials/1.3/analogue_modelling_material-elastic_modelling_material-natural_elastic_material-natural_rubber',
+        'https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties-electrical_capacity',
+        'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary',
+        'https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure',
+        'https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct-absorption_contrast_tomography',
     ];
 
     /**
