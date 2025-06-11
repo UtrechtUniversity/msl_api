@@ -42,7 +42,6 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
             $this->levels,
             [
                 'indicator terms',
-                'exclude_domain_mapping',
                 'uri',
                 'hyperlink',
                 'external_uri',
@@ -50,6 +49,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 'external_description',
                 'contributor_definition',
                 'contributor_definition_link',
+                'exclude_domain_mapping',
                 'terms_exclude_abstract_mapping',
                 'selection_group_1',
                 'selection_group_2',
@@ -62,8 +62,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
         return array_merge(
             $this->getLevels($keyword),
             [
-                $keyword->getSynonymString(), // get synonyms
-                $keyword->exclude_domain_mapping ? 'yes' : 'no',
+                $keyword->getSynonymString(),
                 $keyword->uri,
                 $keyword->hyperlink,
                 $keyword->external_uri,
@@ -71,6 +70,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_description,
                 $keyword->extracted_definition,
                 $keyword->extracted_definition_link,
+                $keyword->exclude_domain_mapping ? 'yes' : 'no',
                 $keyword->getAbstractMatchingExcludedSearchKeywordsString(),
                 $keyword->selection_group_1 ? 'yes' : 'no',
                 $keyword->selection_group_2 ? 'yes' : 'no',
