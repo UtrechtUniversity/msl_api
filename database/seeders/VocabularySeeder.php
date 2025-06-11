@@ -805,8 +805,6 @@ class VocabularySeeder extends Seeder
             'search_value' => strtolower($node->value),
             'isSynonym' => false,
             'exclude_abstract_mapping' => in_array(strtolower($node->value), $node->terms_exclude_abstract_mapping, true) ? 1 : 0,
-            'exclude_selection_group_1' => in_array(strtolower($node->value), $node->exclude_selection_group_1, true) ? 1 : 0,
-            'exclude_selection_group_2' => in_array(strtolower($node->value), $node->exclude_selection_group_2, true) ? 1 : 0,
             'version' => $vocabulary->version,
         ]);
 
@@ -818,8 +816,6 @@ class VocabularySeeder extends Seeder
                         'search_value' => strtolower($synonym),
                         'isSynonym' => true,
                         'exclude_abstract_mapping' => in_array(strtolower($synonym), $node->terms_exclude_abstract_mapping, true) ? 1 : 0,
-                        'exclude_selection_group_1' => in_array(strtolower($synonym), $node->exclude_selection_group_1, true) ? 1 : 0,
-                        'exclude_selection_group_2' => in_array(strtolower($synonym), $node->exclude_selection_group_2, true) ? 1 : 0,
                         'version' => $vocabulary->version,
                     ]);
                 }
