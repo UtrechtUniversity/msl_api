@@ -145,27 +145,8 @@ class Keyword extends Model
 
         return $string;
     }
-
-    public function getSelectionGroupExcludedSearchKeywordsString($groupNumber, $startCharacter = '#')
-    {
-        if (! ($groupNumber == 1 || $groupNumber == 2)) {
-            throw new \Exception('Group number not within bounds: 1 or 2');
-        }
-
-        $groupColumn = 'exclude_selection_group_'.$groupNumber;
-        $string = '';
-
-        $searchKeywords = $this->hasMany(KeywordSearch::class, 'keyword_id')->where($groupColumn, '=', 1)->get();
-        if ($searchKeywords) {
-            foreach ($searchKeywords as $searchKeyword) {
-                $string .= $startCharacter.$searchKeyword->search_value;
-            }
-        }
-
-        return $string;
-    }
     
-    public function getAbstractMathcingExcludedSearchKeywordsString($startCharacter = '#')
+    public function getAbstractMatchingExcludedSearchKeywordsString($startCharacter = '#')
     {
         $string = '';
 
