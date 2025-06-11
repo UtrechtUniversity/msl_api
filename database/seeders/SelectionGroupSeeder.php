@@ -23,8 +23,6 @@ class SelectionGroupSeeder extends Seeder
         'rockphysics' => ['apparatus', 'measured_property', 'inferred_deformation_behavior'],
     ];
 
-    private $excludedSearchKeywords = [];
-
     private $excludedKeywordsList = [
         'https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone-chalk',
         'https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-coal',
@@ -128,13 +126,6 @@ class SelectionGroupSeeder extends Seeder
             DB::table('keywords')
                 ->where('uri', '=', $excludedKeywordUri)
                 ->update(['selection_group_1' => 0, 'selection_group_2' => 0]);
-        }
-
-        foreach ($this->excludedSearchKeywords as $excludedSearchKeyword) {
-            DB::table('keywords_search')
-                ->where('search_value', '=', $excludedSearchKeyword)
-                ->where('version', '=', '1.3')
-                ->update(['exclude_selection_group_1' => 1, 'exclude_selection_group_2' => 1]);
         }
     }
 }
