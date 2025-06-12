@@ -52,19 +52,15 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
         ],
         [
             'columnName' => 'terms_exclude_abstract_mapping',
-            'columnDescription' => 'Enter terms that should be excluded from being detected within the abstract, title, etc. during the importing process. 
-                Either the term itself (set in 1, 2, 3, etc.) or specific indicator terms (set in indicator terms) may be entered. 
-                Each term should start with a “#” and match the term specified in the other fields.',
+            'columnDescription' => 'Enter terms that should be excluded from being detected within the abstract, title, etc. during the importing process. Either the term itself (set in 1, 2, 3, etc.) or specific indicator terms (set in indicator terms) may be entered. Each term should start with a “#” and match the term specified in the other fields.',
         ],
         [
             'columnName' => 'selection_group_1',
-            'columnDescription' => 'Indicate if this term should be included in the group 1 words determining if data publications are relevant to MSL (“yes”/”no”). 
-                Relevant data publications have a combination of at least 1 group 1 and 1 group 2 word. Group 1 words indicate that an Earth scientific material or setting was studied.',
+            'columnDescription' => 'Indicate if this term should be included in the group 1 words determining if data publications are relevant to MSL (“yes”/”no”). Relevant data publications have a combination of at least 1 group 1 and 1 group 2 word. Group 1 words indicate that an Earth scientific material or setting was studied.',
         ],
         [
             'columnName' => 'selection_group_2',
-            'columnDescription' => 'Indicate if this term should be included in the group 2 words determining if data publications are relevant to MSL (“yes”/”no”). 
-                Relevant data publications have a combination of at least 1 group 1 and 1 group 2 word. Group 2 words indicate lab use, notably "apparatus", "measured property", etc.',
+            'columnDescription' => 'Indicate if this term should be included in the group 2 words determining if data publications are relevant to MSL (“yes”/”no”). Relevant data publications have a combination of at least 1 group 1 and 1 group 2 word. Group 2 words indicate lab use, notably "apparatus", "measured property", etc.',
         ],
     ];
 
