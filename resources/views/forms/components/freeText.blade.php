@@ -15,7 +15,7 @@ $title => title for the text-field
     @if (isset($textBlock) && $textBlock)
         <textarea type="{{ $sectionName  }}" id="{{ $sectionName  }}" name="{{ $sectionName  }}" 
         class="
-        h-64
+        h-28
         form-field-text 
         @if ($errors->has($sectionName))
             error-highlight-input
