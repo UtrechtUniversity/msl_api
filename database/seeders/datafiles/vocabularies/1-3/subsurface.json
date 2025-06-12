@@ -20,8 +20,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "storage in depleted oil reservoir",
@@ -40,8 +38,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 3
             },
@@ -65,8 +61,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 4
             },
@@ -92,8 +86,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 5
             },
@@ -115,8 +107,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 6
             },
@@ -141,8 +131,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 7
             },
@@ -165,8 +153,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 8
             },
@@ -190,8 +176,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 9
             },
@@ -215,8 +199,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "wastewater storage in the subsurface",
@@ -237,8 +219,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 11
                     },
@@ -264,8 +244,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 12
                     }
@@ -291,8 +269,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "mine thermal energy storage",
@@ -311,8 +287,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 14
                     },
@@ -333,8 +307,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 15
                     },
@@ -355,8 +327,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 16
                     },
@@ -377,8 +347,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 17
                     },
@@ -399,8 +367,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 18
                     },
@@ -426,8 +392,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 19
                     },
@@ -448,8 +412,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 20
                     }
@@ -481,8 +443,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "geothermal energy extraction",
@@ -503,8 +463,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "advanced geothermal system",
@@ -523,8 +481,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 23
                     },
@@ -545,8 +501,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 24
                     },
@@ -567,8 +521,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 25
                     },
@@ -591,8 +543,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 26
                     },
@@ -614,8 +564,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 27
                     },
@@ -634,8 +582,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 28
                     },
@@ -654,8 +600,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 29
                     },
@@ -674,8 +618,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 30
                     },
@@ -694,8 +636,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 31
                     },
@@ -714,8 +654,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 32
                     },
@@ -738,8 +676,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 33
                     },
@@ -760,8 +696,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 34
                     },
@@ -783,8 +717,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 35
                     }
@@ -806,8 +738,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "native hydrogen",
@@ -824,8 +754,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 37
                     },
@@ -846,8 +774,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 38
                     },
@@ -868,8 +794,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 39
                     },
@@ -890,8 +814,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 40
                     },
@@ -912,8 +834,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 41
                     }
@@ -935,8 +855,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "gas field",
@@ -957,8 +875,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 43
                     },
@@ -981,8 +897,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 1,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 44
                     }
@@ -1010,8 +924,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "mine tailing",
@@ -1033,8 +945,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 46
             }
@@ -1059,8 +969,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "underground research facility",
@@ -1079,8 +987,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 48
             },
@@ -1102,8 +1008,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 49
             },
@@ -1122,8 +1026,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 50
             },
@@ -1142,8 +1044,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 51
             },
@@ -1162,8 +1062,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 52
             }
@@ -1193,8 +1091,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [],
         "rowNr": 53
     },
@@ -1215,8 +1111,6 @@
         "terms_exclude_abstract_mapping": [],
         "selection_group_1": 1,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "sinkhole",
@@ -1235,8 +1129,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 1,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 55
             }

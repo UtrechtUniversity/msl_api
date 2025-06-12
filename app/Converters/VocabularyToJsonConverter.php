@@ -79,9 +79,9 @@ class VocabularyToJsonConverter
                         $node['external_vocab_scheme'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_description', $allColNames)) {
                         $node['external_description'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('extracted_definition', $allColNames)) {
+                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition', $allColNames)) {
                         $node['extracted_definition'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('extracted_definition_link', $allColNames)) {
+                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition_link', $allColNames)) {
                         $node['extracted_definition_link'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('terms_exclude_abstract_mapping', $allColNames)) {
                         $node['terms_exclude_abstract_mapping'] = $this->extractTermsFromString($cell->getValue());

@@ -23,8 +23,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [],
         "rowNr": 2
     },
@@ -45,8 +43,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "Cenozoic",
@@ -65,8 +61,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Quaternary",
@@ -83,8 +77,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Holocene",
@@ -101,8 +93,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 6
                             },
@@ -121,8 +111,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Upper\/LatePleistocene",
@@ -139,8 +127,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 8
                                     },
@@ -159,8 +145,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 9
                                     },
@@ -179,8 +163,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 10
                                     },
@@ -199,8 +181,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 11
                                     }
@@ -225,8 +205,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Pliocene",
@@ -243,8 +221,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Piacenzian",
@@ -261,8 +237,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 14
                                     },
@@ -281,8 +255,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 15
                                     }
@@ -304,8 +276,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Messinian",
@@ -322,8 +292,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 17
                                     },
@@ -342,8 +310,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 18
                                     },
@@ -362,8 +328,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 19
                                     },
@@ -382,8 +346,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 20
                                     },
@@ -402,8 +364,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 21
                                     },
@@ -422,8 +382,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 22
                                     }
@@ -448,8 +406,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Oligocene",
@@ -466,8 +422,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Chattian",
@@ -484,8 +438,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 25
                                     },
@@ -504,8 +456,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 26
                                     }
@@ -527,8 +477,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Priabonian",
@@ -545,8 +493,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 28
                                     },
@@ -565,8 +511,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 29
                                     },
@@ -585,8 +529,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 30
                                     },
@@ -605,8 +547,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 31
                                     }
@@ -628,8 +568,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Thanetian",
@@ -646,8 +584,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 33
                                     },
@@ -666,8 +602,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 34
                                     },
@@ -686,8 +620,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 35
                                     }
@@ -715,8 +647,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Cretaceous",
@@ -733,8 +663,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Upper\/LateCretaceous",
@@ -751,8 +679,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Maastrichtian",
@@ -769,8 +695,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 39
                                     },
@@ -789,8 +713,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 40
                                     },
@@ -809,8 +731,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 41
                                     },
@@ -829,8 +749,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 42
                                     },
@@ -849,8 +767,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 43
                                     },
@@ -869,8 +785,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 44
                                     }
@@ -892,8 +806,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Albian",
@@ -910,8 +822,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 46
                                     },
@@ -930,8 +840,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 47
                                     },
@@ -950,8 +858,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 48
                                     },
@@ -970,8 +876,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 49
                                     },
@@ -990,8 +894,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 50
                                     },
@@ -1010,8 +912,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 51
                                     }
@@ -1036,8 +936,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Upper\/LateJurassic",
@@ -1054,8 +952,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Tithonian",
@@ -1072,8 +968,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 54
                                     },
@@ -1092,8 +986,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 55
                                     },
@@ -1112,8 +1004,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 56
                                     }
@@ -1135,8 +1025,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Callovian",
@@ -1153,8 +1041,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 58
                                     },
@@ -1173,8 +1059,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 59
                                     },
@@ -1193,8 +1077,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 60
                                     },
@@ -1213,8 +1095,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 61
                                     }
@@ -1236,8 +1116,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Toarcian",
@@ -1254,8 +1132,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 63
                                     },
@@ -1274,8 +1150,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 64
                                     },
@@ -1294,8 +1168,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 65
                                     },
@@ -1314,8 +1186,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 66
                                     }
@@ -1340,8 +1210,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Upper\/LateTriassic",
@@ -1358,8 +1226,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Rhaetian",
@@ -1376,8 +1242,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 69
                                     },
@@ -1396,8 +1260,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 70
                                     },
@@ -1416,8 +1278,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 71
                                     }
@@ -1439,8 +1299,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Ladinian",
@@ -1457,8 +1315,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 73
                                     },
@@ -1477,8 +1333,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 74
                                     }
@@ -1500,8 +1354,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Olenekian",
@@ -1518,8 +1370,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 76
                                     },
@@ -1538,8 +1388,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 77
                                     }
@@ -1567,8 +1415,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Permian",
@@ -1587,8 +1433,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Lopingian",
@@ -1605,8 +1449,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Changhsingian",
@@ -1623,8 +1465,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 81
                                     },
@@ -1643,8 +1483,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 82
                                     }
@@ -1666,8 +1504,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Capitanian",
@@ -1684,8 +1520,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 84
                                     },
@@ -1704,8 +1538,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 85
                                     },
@@ -1724,8 +1556,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 86
                                     }
@@ -1747,8 +1577,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Kungurian",
@@ -1765,8 +1593,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 88
                                     },
@@ -1785,8 +1611,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 89
                                     },
@@ -1805,8 +1629,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 90
                                     },
@@ -1825,8 +1647,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 91
                                     }
@@ -1851,8 +1671,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Pennsylvanian",
@@ -1869,8 +1687,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Upper\/LatePennsylvanian",
@@ -1887,8 +1703,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Kasimovian",
@@ -1905,8 +1719,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 95
                                             },
@@ -1925,8 +1737,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 96
                                             }
@@ -1948,8 +1758,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Moscovian",
@@ -1966,8 +1774,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 98
                                             }
@@ -1989,8 +1795,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Bashkirian",
@@ -2007,8 +1811,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 100
                                             }
@@ -2033,8 +1835,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Upper\/LateMississippian",
@@ -2051,8 +1851,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Serpukhovian",
@@ -2069,8 +1867,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 103
                                             }
@@ -2092,8 +1888,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Visean",
@@ -2110,8 +1904,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 105
                                             }
@@ -2133,8 +1925,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [
                                             {
                                                 "value": "Tournaisian",
@@ -2151,8 +1941,6 @@
                                                 "terms_exclude_abstract_mapping": [],
                                                 "selection_group_1": 0,
                                                 "selection_group_2": 0,
-                                                "exclude_selection_group_1": [],
-                                                "exclude_selection_group_2": [],
                                                 "subTerms": [],
                                                 "rowNr": 107
                                             }
@@ -2180,8 +1968,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Upper\/LateDevonian",
@@ -2198,8 +1984,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Famennian",
@@ -2216,8 +2000,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 110
                                     },
@@ -2236,8 +2018,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 111
                                     }
@@ -2259,8 +2039,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Givetian",
@@ -2277,8 +2055,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 113
                                     },
@@ -2297,8 +2073,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 114
                                     }
@@ -2320,8 +2094,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Emsian",
@@ -2338,8 +2110,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 116
                                     },
@@ -2358,8 +2128,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 117
                                     },
@@ -2378,8 +2146,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 118
                                     }
@@ -2404,8 +2170,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Pridoli",
@@ -2422,8 +2186,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 120
                             },
@@ -2442,8 +2204,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Ludfordian",
@@ -2460,8 +2220,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 122
                                     },
@@ -2480,8 +2238,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 123
                                     }
@@ -2503,8 +2259,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Homerian",
@@ -2521,8 +2275,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 125
                                     },
@@ -2541,8 +2293,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 126
                                     }
@@ -2564,8 +2314,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Telychian",
@@ -2582,8 +2330,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 128
                                     },
@@ -2602,8 +2348,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 129
                                     },
@@ -2622,8 +2366,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 130
                                     }
@@ -2648,8 +2390,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Upper\/LateOrdovician",
@@ -2666,8 +2406,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Hirnantian",
@@ -2684,8 +2422,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 133
                                     },
@@ -2704,8 +2440,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 134
                                     },
@@ -2724,8 +2458,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 135
                                     }
@@ -2747,8 +2479,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Darriwilian",
@@ -2765,8 +2495,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 137
                                     },
@@ -2785,8 +2513,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 138
                                     }
@@ -2808,8 +2534,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Floian",
@@ -2826,8 +2550,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 140
                                     },
@@ -2846,8 +2568,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 141
                                     }
@@ -2872,8 +2592,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Furongian",
@@ -2890,8 +2608,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "CambrianStage10",
@@ -2908,8 +2624,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 144
                                     },
@@ -2928,8 +2642,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 145
                                     },
@@ -2948,8 +2660,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 146
                                     }
@@ -2973,8 +2683,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "Guzhangian",
@@ -2991,8 +2699,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 148
                                     },
@@ -3011,8 +2717,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 149
                                     },
@@ -3033,8 +2737,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 150
                                     }
@@ -3056,8 +2758,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "CambrianStage4",
@@ -3074,8 +2774,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 152
                                     },
@@ -3094,8 +2792,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 153
                                     }
@@ -3117,8 +2813,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "CambrianStage2",
@@ -3135,8 +2829,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 155
                                     },
@@ -3155,8 +2847,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 0,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 156
                                     }
@@ -3189,8 +2879,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "Proterozoic",
@@ -3207,8 +2895,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Neoproterozoic",
@@ -3225,8 +2911,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Ediacaran",
@@ -3243,8 +2927,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 160
                             },
@@ -3263,8 +2945,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 161
                             },
@@ -3283,8 +2963,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 162
                             }
@@ -3306,8 +2984,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Stenian",
@@ -3324,8 +3000,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 164
                             },
@@ -3344,8 +3018,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 165
                             },
@@ -3364,8 +3036,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 166
                             }
@@ -3387,8 +3057,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Statherian",
@@ -3405,8 +3073,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 168
                             },
@@ -3425,8 +3091,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 169
                             },
@@ -3445,8 +3109,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 170
                             },
@@ -3465,8 +3127,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 171
                             }
@@ -3491,8 +3151,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "Eoarchean",
@@ -3509,8 +3167,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 173
                     },
@@ -3529,8 +3185,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 174
                     },
@@ -3549,8 +3203,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 175
                     },
@@ -3569,8 +3221,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 176
                     }
@@ -3592,8 +3242,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 177
             }
@@ -3617,8 +3265,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [],
         "rowNr": 178
     }

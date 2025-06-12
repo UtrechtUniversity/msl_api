@@ -16,8 +16,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "natural remanent magnetisation measurement",
@@ -36,8 +34,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "astatic magnetometer",
@@ -57,8 +53,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 4
                     },
@@ -77,8 +71,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "cryogenic magnetometer for discrete samples",
@@ -95,8 +87,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 6
                             },
@@ -115,8 +105,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 7
                             }
@@ -138,8 +126,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "AGICO spinner magnetometer",
@@ -156,8 +142,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 9
                             },
@@ -176,8 +160,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 10
                             },
@@ -196,8 +178,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 11
                             }
@@ -219,8 +199,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 12
                     },
@@ -243,8 +221,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "single axis VSM",
@@ -264,8 +240,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 14
                             },
@@ -288,8 +262,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 15
                             },
@@ -308,8 +280,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 16
                             }
@@ -331,8 +301,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 17
                     }
@@ -358,8 +326,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "isothermal remanent magnetiser (IRM)",
@@ -381,8 +347,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G pulse magnetiser",
@@ -401,8 +365,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 20
                             },
@@ -423,8 +385,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 21
                             },
@@ -445,8 +405,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 22
                             },
@@ -467,8 +425,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 23
                             },
@@ -489,8 +445,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 24
                             },
@@ -511,8 +465,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 25
                             }
@@ -541,8 +493,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G in line anhysteretic magnetiser unit (AMU)",
@@ -562,8 +512,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 27
                             },
@@ -585,8 +533,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 28
                             },
@@ -608,8 +554,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 29
                             },
@@ -631,8 +575,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 30
                             },
@@ -653,8 +595,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 31
                             }
@@ -681,8 +621,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "ASC Scientific thermal demagnetiser - dual chamber with controlled field coil",
@@ -701,8 +639,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 33
                             },
@@ -723,8 +659,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 34
                             },
@@ -747,8 +681,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 35
                             },
@@ -771,8 +703,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 36
                             },
@@ -793,8 +723,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 37
                             },
@@ -813,8 +741,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 38
                             }
@@ -838,8 +764,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 39
                     },
@@ -858,8 +782,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "M\u00f6ssbauer spectrometer",
@@ -876,8 +798,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 41
                             }
@@ -902,8 +822,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "MAG instruments variable field translation balance",
@@ -920,8 +838,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 43
                             },
@@ -940,8 +856,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 44
                             }
@@ -963,8 +877,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "vibrating sample magnetometer (VSM) - hysteresis properties",
@@ -983,8 +895,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [
                                     {
                                         "value": "single axis VSM",
@@ -1004,8 +914,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 47
                                     },
@@ -1028,8 +936,6 @@
                                         "terms_exclude_abstract_mapping": [],
                                         "selection_group_1": 0,
                                         "selection_group_2": 1,
-                                        "exclude_selection_group_1": [],
-                                        "exclude_selection_group_2": [],
                                         "subTerms": [],
                                         "rowNr": 48
                                     }
@@ -1054,8 +960,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 49
                             },
@@ -1077,8 +981,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 50
                             },
@@ -1100,8 +1002,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 51
                             },
@@ -1120,8 +1020,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 52
                             }
@@ -1143,8 +1041,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "quantum diamond microscope (QDM)",
@@ -1164,8 +1060,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 54
                             },
@@ -1188,8 +1082,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 55
                             },
@@ -1208,8 +1100,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 56
                             },
@@ -1231,8 +1121,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 57
                             },
@@ -1257,8 +1145,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 58
                             }
@@ -1283,8 +1169,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "susceptibility meter",
@@ -1303,8 +1187,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "AGICO Kappabridge susceptibility meter",
@@ -1323,8 +1205,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 61
                             },
@@ -1345,8 +1225,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 62
                             },
@@ -1367,8 +1245,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 63
                             },
@@ -1389,8 +1265,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 64
                             },
@@ -1411,8 +1285,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 65
                             },
@@ -1433,8 +1305,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 66
                             },
@@ -1455,8 +1325,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 67
                             }
@@ -1483,8 +1351,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "alternating field (AF) demagnetiser",
@@ -1508,8 +1374,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "2G in-line AF degausser",
@@ -1526,8 +1390,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 70
                             },
@@ -1548,8 +1410,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 71
                             },
@@ -1570,8 +1430,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 72
                             },
@@ -1592,8 +1450,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 73
                             },
@@ -1614,8 +1470,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 74
                             },
@@ -1636,8 +1490,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 75
                             }
@@ -1661,8 +1513,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "ASC Scientific thermal demagnetiser - absolute paleointensity",
@@ -1681,8 +1531,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 77
                             },
@@ -1703,8 +1551,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 78
                             },
@@ -1725,8 +1571,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 79
                             },
@@ -1749,8 +1593,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 80
                             },
@@ -1773,8 +1615,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 81
                             },
@@ -1795,8 +1635,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 82
                             },
@@ -1817,8 +1655,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 83
                             },
@@ -1837,8 +1673,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 84
                             }
@@ -1863,8 +1697,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "magnetic extraction system in aqueous phase",
@@ -1881,8 +1713,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 86
                     },
@@ -1901,8 +1731,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 87
                     }
@@ -1928,8 +1756,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "portable magnetometer",
@@ -1946,8 +1772,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Bartington single axis fluxgate",
@@ -1964,8 +1788,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 90
                             },
@@ -1984,8 +1806,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 91
                             },
@@ -2007,8 +1827,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 92
                             }
@@ -2033,8 +1851,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "GF Instruments PSG",
@@ -2051,8 +1867,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 94
                             },
@@ -2071,8 +1885,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 95
                             },
@@ -2091,8 +1903,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 96
                             },
@@ -2111,8 +1921,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 97
                             },
@@ -2131,8 +1939,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 98
                             }
@@ -2154,8 +1960,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 99
                     }
@@ -2182,8 +1986,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "contolled magnetic field area",
@@ -2200,8 +2002,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "shielded room",
@@ -2218,8 +2018,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Lodestar magnetics chamber",
@@ -2236,8 +2034,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 103
                             },
@@ -2259,8 +2055,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 104
                             },
@@ -2281,8 +2075,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 105
                             },
@@ -2301,8 +2093,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 106
                             }
@@ -2324,8 +2114,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "Magnetic Measurements active shielding",
@@ -2344,8 +2132,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 108
                             },
@@ -2364,8 +2150,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 109
                             }
@@ -2390,8 +2174,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "oven (paleomagnetism)",
@@ -2408,8 +2190,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "slow cooling oven",
@@ -2426,8 +2206,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 112
                             },
@@ -2446,8 +2224,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 0,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 113
                             }
@@ -2469,8 +2245,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 114
                     }
@@ -2494,8 +2268,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "argon atmosphere",
@@ -2512,8 +2284,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 116
                     },
@@ -2532,8 +2302,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 117
                     },
@@ -2552,8 +2320,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 118
                     },
@@ -2572,8 +2338,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 119
                     },
@@ -2592,8 +2356,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 120
                     },
@@ -2612,8 +2374,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 121
                     },
@@ -2632,8 +2392,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 122
                     }
@@ -2660,8 +2418,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "paleointensity",
@@ -2680,8 +2436,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "absolute paleointensity",
@@ -2698,8 +2452,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 125
                     },
@@ -2718,8 +2470,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 126
                     }
@@ -2743,8 +2493,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "alternating field (AF) demagnetisation",
@@ -2767,8 +2515,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 128
                     },
@@ -2789,8 +2535,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 129
                     },
@@ -2811,8 +2555,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 130
                     },
@@ -2833,8 +2575,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 131
                     },
@@ -2855,8 +2595,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 132
                     }
@@ -2880,8 +2618,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "anhysteretic remanent magnetisation (ARM)",
@@ -2904,8 +2640,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 134
                     },
@@ -2930,8 +2664,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 135
                     },
@@ -2956,8 +2688,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 136
                     },
@@ -2982,8 +2712,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 137
                     },
@@ -3008,8 +2736,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 138
                     },
@@ -3034,8 +2760,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 139
                     },
@@ -3060,8 +2784,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 140
                     },
@@ -3086,8 +2808,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 141
                     },
@@ -3112,8 +2832,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 142
                     },
@@ -3137,8 +2855,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 143
                     },
@@ -3165,8 +2881,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 144
                     }
@@ -3188,8 +2902,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "anisotropy of anhysteretic remanent magnetisation (AARM)",
@@ -3212,8 +2924,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 146
                     },
@@ -3238,8 +2948,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 147
                     },
@@ -3264,8 +2972,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 148
                     },
@@ -3287,8 +2993,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 149
                     },
@@ -3313,8 +3017,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 150
                     }
@@ -3338,8 +3040,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "hysteresis parameters",
@@ -3356,8 +3056,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "coercive force",
@@ -3374,8 +3072,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 153
                             },
@@ -3394,8 +3090,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 154
                             },
@@ -3414,8 +3108,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 155
                             },
@@ -3434,8 +3126,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 156
                             },
@@ -3454,8 +3144,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 157
                             },
@@ -3476,8 +3164,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 158
                             },
@@ -3496,8 +3182,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 159
                             }
@@ -3526,8 +3210,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 160
             },
@@ -3548,8 +3230,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "high temperature thermomagnetic curves",
@@ -3566,8 +3246,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 162
                     },
@@ -3586,8 +3264,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 163
                     }
@@ -3609,8 +3285,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "bulk magnetic susceptibility",
@@ -3627,8 +3301,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 165
                     },
@@ -3651,8 +3323,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 166
                     },
@@ -3674,8 +3344,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 167
                     },
@@ -3697,8 +3365,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 168
                     },
@@ -3720,8 +3386,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 169
                     },
@@ -3742,8 +3406,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 170
                     },
@@ -3765,8 +3427,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 171
                     }
@@ -3790,8 +3450,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 172
             },
@@ -3812,8 +3470,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [],
                 "rowNr": 173
             }
@@ -3837,8 +3493,6 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 1,
-        "exclude_selection_group_1": [],
-        "exclude_selection_group_2": [],
         "subTerms": [
             {
                 "value": "anisotropy of magnetic susceptibility and remanence",
@@ -3855,8 +3509,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "magnetic anisotropy through rock structure",
@@ -3873,8 +3525,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [
                             {
                                 "value": "magnetic anisotropy through sedimentary structure",
@@ -3891,8 +3541,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 177
                             },
@@ -3911,8 +3559,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 178
                             },
@@ -3931,8 +3577,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 179
                             },
@@ -3951,8 +3595,6 @@
                                 "terms_exclude_abstract_mapping": [],
                                 "selection_group_1": 0,
                                 "selection_group_2": 1,
-                                "exclude_selection_group_1": [],
-                                "exclude_selection_group_2": [],
                                 "subTerms": [],
                                 "rowNr": 180
                             }
@@ -3974,8 +3616,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 181
                     },
@@ -3994,8 +3634,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 182
                     },
@@ -4016,8 +3654,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 183
                     },
@@ -4041,8 +3677,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 184
                     },
@@ -4064,8 +3698,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 185
                     },
@@ -4087,8 +3719,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 186
                     },
@@ -4112,8 +3742,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 187
                     },
@@ -4132,8 +3760,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 188
                     },
@@ -4154,8 +3780,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 189
                     },
@@ -4177,8 +3801,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 190
                     },
@@ -4197,8 +3819,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 191
                     },
@@ -4217,8 +3837,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 192
                     }
@@ -4240,8 +3858,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "inferred paleoenvironment",
@@ -4258,8 +3874,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 194
                     },
@@ -4278,8 +3892,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 195
                     },
@@ -4302,8 +3914,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 196
                     },
@@ -4322,8 +3932,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 197
                     },
@@ -4344,8 +3952,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 198
                     },
@@ -4364,8 +3970,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 199
                     },
@@ -4384,8 +3988,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 200
                     },
@@ -4404,8 +4006,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 201
                     },
@@ -4424,8 +4024,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 202
                     }
@@ -4449,8 +4047,6 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 1,
-                "exclude_selection_group_1": [],
-                "exclude_selection_group_2": [],
                 "subTerms": [
                     {
                         "value": "crustal block rotation",
@@ -4467,8 +4063,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 204
                     },
@@ -4487,8 +4081,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 205
                     },
@@ -4507,8 +4099,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 206
                     },
@@ -4527,8 +4117,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 207
                     },
@@ -4547,8 +4135,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 208
                     },
@@ -4572,8 +4158,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 209
                     },
@@ -4594,8 +4178,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 210
                     },
@@ -4614,8 +4196,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 211
                     },
@@ -4634,8 +4214,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 212
                     },
@@ -4654,8 +4232,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 213
                     },
@@ -4676,8 +4252,6 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 1,
-                        "exclude_selection_group_1": [],
-                        "exclude_selection_group_2": [],
                         "subTerms": [],
                         "rowNr": 214
                     }
