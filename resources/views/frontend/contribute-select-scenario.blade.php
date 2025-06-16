@@ -13,7 +13,7 @@
     @php
     $domainList = [
       array(
-        "name"=>"Analogue modelling of geological processes", 
+        "name"=>"Analogue Modelling of Geological Processes", 
         "routeParam" => 'analogue'
       ),
       array(
@@ -21,19 +21,19 @@
         "routeParam" => 'geochemistry'
       ),
       array(
-        "name"=>"Geo-energy test beds", 
+        "name"=>"Geo-energy Test Beds", 
         "routeParam" => 'testbeds'
       ),
       array(
-        "name"=>"Rock and melt physics",  
+        "name"=>"Rock and Melt Physics",  
         "routeParam" => 'rockmelt'
       ),
       array(
-        "name"=>"Magnetism and paleomagnetism", 
-        "routeParam" => 'paleoMag'
+        "name"=>"Magnetism and Paleomagnetism", 
+        "routeParam" => 'paleomag'
       ),
       array(
-        "name"=>"Microscopy and tomography", 
+        "name"=>"Microscopy and Tomography", 
         "routeParam" => 'mircotomo'
       ),
     ]
