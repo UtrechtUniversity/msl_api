@@ -278,9 +278,36 @@ class FormController extends Controller
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function contributeSurveyScenario(Request $request)
+    public function contributeSurveyScenario($domain): View
     {
-        return view('forms.contribute-survey-scenario');
+        //sort out image src here
+        return view('forms.contribute-survey-scenario',['imageSource' => $domain]);
+    }
+
+                /**
+     * Show the contribute survey scenario page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contributeSurveyScenarioProcess(Request $request): RedirectResponse
+    {
+
+        //  in order of appearance
+        $formFields = $request->validate([
+            // 'email'         => ['required', 'email'],
+            // 'firstName'     => ['required'],
+            // 'lastName'      => ['required'],
+            // 'affiliation'   => ['required'],
+            // 'subject'       => ['required'],
+            // 'message'       => ['required', 'min:50'],
+            // 'msl_fast_id'   => ['required']
+        ]);
+        
+        // redirects to contribute-laboratory with the additonal elements located in components/notifications
+        return redirect('/index')->with('modals', [
+            'type'      => 'success', 
+            'message'   => 'Thanks for your input!']
+        );
     }
 
 
