@@ -6,7 +6,7 @@
     <div class="max-w-screen-md pt-10 sm:pt-20">
         <h3 class="pb-2 pt-6">What is this survey about?</h3>
         <p class="inline">
-            We ask questions, you answer and everyone is happy!!
+          Many people are hesitant to answer questions about themselves and their opinions. If you are developing your survey for a science fair project, people will probably be more willing to help if you clearly state your intentions. At the top of your survey, write a brief statement explaining why you are collecting the information and reassure each respondent that the information is entirely anonymous. If you need to know specifics about a person, respect their privacy by identifying them as subject1, subject2, etc...
         </p>
     </div>
 
