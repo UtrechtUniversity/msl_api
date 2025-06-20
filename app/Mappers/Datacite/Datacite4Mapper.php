@@ -20,32 +20,29 @@ class Datacite4Mapper implements MapperInterface
 {
     public function map(array $metadata, DataPublication $dataPublication): DataPublication
     {
-        // create empty data publication
-        $dataset = new DataPublication;
-        
         // map all fields
         // start with the identifier to enable usage in logging/exceptions
-        $dataset = $this->mapIdentifier($metadata, $dataset);
-        $dataset = $this->mapTitles($metadata, $dataset);
-        $dataset = $this->mapDescriptions($metadata, $dataset);
-        $dataset = $this->mapRights($metadata, $dataset);
-        $dataset = $this->mapPublicationYear($metadata, $dataset);
-        $dataset = $this->mapAlternateIdentifiers($metadata, $dataset);
-        $dataset = $this->mapRelatedIdentifiers($metadata, $dataset);
-        $dataset = $this->mapUrl($metadata, $dataset);
-        $dataset = $this->mapFundingReferences($metadata, $dataset);
-        $dataset = $this->mapLanguages($metadata, $dataset);
-        $dataset = $this->mapDates($metadata, $dataset);
-        $dataset = $this->mapPublishers($metadata, $dataset);
-        $dataset = $this->mapCreators($metadata, $dataset);
-        $dataset = $this->mapVersion($metadata, $dataset);
-        $dataset = $this->mapResourceTypes($metadata, $dataset);
-        $dataset = $this->mapContributors($metadata, $dataset);
-        $dataset = $this->mapSizes($metadata, $dataset);
-        $dataset = $this->mapFormats($metadata, $dataset);
-        $dataset = $this->mapSubjects($metadata, $dataset);
+        $dataPublication = $this->mapIdentifier($metadata, $dataPublication);
+        $dataPublication = $this->mapTitles($metadata, $dataPublication);
+        $dataPublication = $this->mapDescriptions($metadata, $dataPublication);
+        $dataPublication = $this->mapRights($metadata, $dataPublication);
+        $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
+        $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
+        $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
+        $dataPublication = $this->mapUrl($metadata, $dataPublication);
+        $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
+        $dataPublication = $this->mapLanguages($metadata, $dataPublication);
+        $dataPublication = $this->mapDates($metadata, $dataPublication);
+        $dataPublication = $this->mapPublishers($metadata, $dataPublication);
+        $dataPublication = $this->mapCreators($metadata, $dataPublication);
+        $dataPublication = $this->mapVersion($metadata, $dataPublication);
+        $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
+        $dataPublication = $this->mapContributors($metadata, $dataPublication);
+        $dataPublication = $this->mapSizes($metadata, $dataPublication);
+        $dataPublication = $this->mapFormats($metadata, $dataPublication);
+        $dataPublication = $this->mapSubjects($metadata, $dataPublication);
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**
