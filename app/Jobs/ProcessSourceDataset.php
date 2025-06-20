@@ -44,7 +44,8 @@ class ProcessSourceDataset implements ShouldQueue
         } catch(Exception $e) {
             $this->sourceDataset->status = 'error';
             $this->sourceDataset->save();
-            $this->fail();
+            $this->fail($e);
+            return;
         }
 
         $datasetCreate = DatasetCreate::create([
