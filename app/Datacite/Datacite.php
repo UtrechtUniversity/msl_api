@@ -12,7 +12,7 @@ class Datacite
     }
     
     
-    public function doisRequest($doi, $retryOnFailure = false)
+    public function doisRequest($doi, $retryOnFailure = false, $jsonDecode = true)
     {
         $doi = urlencode($doi);
         $result =  new \stdClass();
@@ -39,7 +39,11 @@ class Datacite
         $result->response_body = [];
         
         if($result->response_code == 200) {
-            $result->response_body = json_decode($response->getBody(), true);
+            if($jsonDecode) {
+                $result->response_body = json_decode($response->getBody(), true);
+            } else {
+                $result->response_body = $response->getBody();
+            }
         }
                 
         return $result;

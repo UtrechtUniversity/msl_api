@@ -61,6 +61,26 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
                 $this->sourceDatasetIdentifier->response_code = 404;
                 $this->sourceDatasetIdentifier->save();
             }
+        } elseif ($importer->options['identifierProcessor']['type'] == 'dataciteJsonRetrieval') {
+            $datacite = new Datacite();
+            
+            $result = $datacite->doisRequest($this->sourceDatasetIdentifier->identifier, true, false);
+            
+            if($result->response_code == 200) {                
+                $SourceDataset = SourceDataset::create([
+                    'source_dataset_identifier_id'=> $this->sourceDatasetIdentifier->id,
+                    'import_id' => $import->id,
+                    'source_dataset' => $result->response_body,
+                ]);
+                
+                ProcessSourceDataset::dispatch($SourceDataset);
+                
+                $this->sourceDatasetIdentifier->response_code = 200;
+                $this->sourceDatasetIdentifier->save();                
+            } else {                                
+                $this->sourceDatasetIdentifier->response_code = 404;
+                $this->sourceDatasetIdentifier->save();
+            }
         } elseif ($importer->options['identifierProcessor']['type'] == 'dataciteXmlRetrieval') {
             $datacite = new Datacite();
             
@@ -72,16 +92,14 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
                 $SourceDataset = SourceDataset::create([
                     'source_dataset_identifier_id'=> $this->sourceDatasetIdentifier->id,
                     'import_id' => $import->id,
-                    'source_dataset' => $xml
+                    'source_dataset' => $xml,
                 ]);
                 
                 ProcessSourceDataset::dispatch($SourceDataset);
                 
                 $this->sourceDatasetIdentifier->response_code = 200;
                 $this->sourceDatasetIdentifier->save();                
-            } else {
-                
-                
+            } else {                                
                 $this->sourceDatasetIdentifier->response_code = 404;
                 $this->sourceDatasetIdentifier->save();
             }
