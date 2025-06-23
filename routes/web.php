@@ -110,6 +110,6 @@ Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeT
 Route::get('/contact-us', [FormController::class, 'contactForm'])->name('contact-us');
 Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process')->middleware(ProtectAgainstSpam::class);
 Route::get('/laboratory-intake', [FormController::class, 'labIntakeForm'])->name('laboratory-intake');
-Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process');
+Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process')->middleware(ProtectAgainstSpam::class);
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
-Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process');
+Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process')->middleware(ProtectAgainstSpam::class);
