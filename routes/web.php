@@ -8,7 +8,7 @@ use App\Http\Controllers\SeederController;
 use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Honeypot\ProtectAgainstSpam;
  
 /*
 |--------------------------------------------------------------------------
@@ -117,7 +117,7 @@ Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->na
 Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
 
 Route::get('/contact-us', [FormController::class, 'contactForm'])->name('contact-us');
-Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process');
+Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process')->middleware(ProtectAgainstSpam::class);
 Route::get('/laboratory-intake', [FormController::class, 'labIntakeForm'])->name('laboratory-intake');
 Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process');
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
