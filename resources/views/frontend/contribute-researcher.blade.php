@@ -113,7 +113,7 @@
             <p>Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  
             </p>
             <p>
-                EPOS MSL currently provides access to data at these data repositories. The fastest route to make your data discoverable by MSL, 
+                EPOS MSL currently provides access to data at these <a href="{{ route('data-repositories') }}">data repositories</a>. The fastest route to make your data discoverable by MSL, 
                 is to publish your data at one of these. Would you like to publish elsewhere? <a href="{{ route('contact-us') }}">Let us know!</a>
                 We can then start working towards including data from your repository too. 
             </p>

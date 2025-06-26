@@ -432,7 +432,7 @@
                                 @if (array_key_exists("msl_citation",$data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
-                                    <h4 class="detailEntrySub1">Citiation</h4>
+                                    <h4 class="detailEntrySub1">Citation</h4>
                                     <p class="detailEntrySub2 text-sm">{!! $data['msl_citation'] !!}</p>
                                 </div>
                                 @endif
