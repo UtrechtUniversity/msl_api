@@ -42,11 +42,11 @@ class Import4TUSeeder extends Seeder
                         ]                        
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
+                        'type' => 'dataciteJsonRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'FourTUMapper',
+                        'type' => 'datacite',
                         'options' => []
                     ]
                 ],
