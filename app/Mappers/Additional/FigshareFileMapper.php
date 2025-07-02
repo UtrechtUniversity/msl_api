@@ -23,7 +23,8 @@ class FigshareFileMapper implements AdditionalMapperInterface
             $mslFile = new File(
                 $file['name'],                
                 $file['download_url'],
-                $this->extractFileExtension($file['name'])
+                $this->extractFileExtension($file['name']),
+                false
             );
 
             $dataPublication->addFile($mslFile);
