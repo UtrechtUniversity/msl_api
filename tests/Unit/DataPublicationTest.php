@@ -178,9 +178,11 @@ class DataPublicationTest extends TestCase
 
         $file1 = new File('test.html', 'test.nl/download/test.html', 'html', false);
         $file2 = new File('test.pdf', 'test.nl/download/test.pdf', 'pdf', false, '123456');
+        $file3 = new File('folder', 'test.nl/download/', '', true, '123456');
 
         $dataPublication->addFile($file1);
         $dataPublication->addFile($file2);
+        $dataPublication->addFile($file3);
 
         $this->assertEquals('test.html', $dataPublication->msl_files[0]->msl_file_name);
         $this->assertEquals('test.nl/download/test.html', $dataPublication->msl_files[0]->msl_download_link);
@@ -193,5 +195,11 @@ class DataPublicationTest extends TestCase
         $this->assertEquals('pdf', $dataPublication->msl_files[1]->msl_extension);
         $this->assertEquals(false, $dataPublication->msl_files[1]->msl_is_folder);
         $this->assertEquals('123456', $dataPublication->msl_files[1]->msl_timestamp);
+
+        $this->assertEquals('folder', $dataPublication->msl_files[2]->msl_file_name);
+        $this->assertEquals('test.nl/download/', $dataPublication->msl_files[2]->msl_download_link);
+        $this->assertEquals('', $dataPublication->msl_files[2]->msl_extension);
+        $this->assertEquals(true, $dataPublication->msl_files[2]->msl_is_folder);
+        $this->assertEquals('123456', $dataPublication->msl_files[2]->msl_timestamp);
     }
 }
