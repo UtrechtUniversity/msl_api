@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\YodaFileMapper;
 use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
@@ -47,7 +48,11 @@ class ImportYodaSeeder extends Seeder
                     ],
                     'sourceDatasetProcessor' => [
                         'type' => 'datacite',
-                        'options' => []
+                        'options' => [
+                            'additionalMappers' => [
+                                YodaFileMapper::class,
+                            ]
+                        ]
                     ]
                 ],
                 'data_repository_id' => $yoda->id

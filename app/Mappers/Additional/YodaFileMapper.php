@@ -6,7 +6,7 @@ use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
 use Exception;
 
-class YodaFileMapper extends AdditionalMapperInterface
+class YodaFileMapper implements AdditionalMapperInterface
 {
  
     /**
@@ -19,7 +19,7 @@ class YodaFileMapper extends AdditionalMapperInterface
         $yodaFileHelper = new YodaDownloadHelper;
 
         try {
-            $filelist = $yodaFileHelper->getFileList($dataPublication->msl_doi);
+            $filelist = $yodaFileHelper->getFileList($dataPublication->msl_source);
         }
         catch(Exception $e) {
             return $dataPublication;

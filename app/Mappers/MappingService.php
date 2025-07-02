@@ -48,6 +48,13 @@ class MappingService
         $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_other', 'msl_description_other_annotated', 'description other');
 
         // run additional mappers based on options
+        if(isset($config['sourceDatasetProcessor']['options']['additionalMappers'])) {
+            foreach($config['sourceDatasetProcessor']['options']['additionalMappers'] as $additionalMapper)
+            {
+                $mapper = new $additionalMapper;
+                $dataPublication = $mapper->map($dataPublication);
+            }
+        }
 
         // validate data publication
         $validator = Validator::make((array)$dataPublication, $dataPublication::$importingRules);
