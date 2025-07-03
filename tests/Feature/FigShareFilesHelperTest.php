@@ -3,96 +3,72 @@
 namespace Tests\Feature;
 
 use App\Mappers\Helpers\FigshareFilesHelper;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Exception;
 use Tests\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Exception\RequestException;
 
 class FigShareFilesHelperTest extends TestCase
 {
     /**
-     * Test retrieveing article id by doi
+     * Test retrieving ro crate
      */
-    public function test_get_article_id_by_doi(): void
+    public function test_get_ro_crate(): void
     {
-        $response = file_get_contents(base_path('/tests/MockData/Figshare/articles_12697364.v2.txt'));
-        
+        $responseContentLandingpage = file_get_contents(base_path('/tests/MockData/Figshare/landingpage.txt'));
+        $roCrateResponse = file_get_contents(base_path('/tests/MockData/Figshare/rocrate.txt'));
+
         $mock = new MockHandler([
-            new Response(200, [], $response)
+            new Response(200, [], $responseContentLandingpage),
+            new Response(200, [], $roCrateResponse),
         ]);
     
         $handler = HandlerStack::create($mock);
         
-        $figshareHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
+        $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
+        
+        $roCrate = $fileHelper->getRoCrate('test');
 
-        $this->assertEquals('12697364', $figshareHelper->getArticleIdByDoi('10.4121/12697364.v2'));
+        $this->assertEquals('https://w3id.org/ro/crate/1.1/context', $roCrate['@context']);
     }
 
     /**
-     * Test retrieveing file list by doi
+     * Test getting ro crate with missing link in html
      */
-    public function test_get_file_list(): void
+    public function test_get_to_crate_not_found()
     {
-        $response = file_get_contents(base_path('/tests/MockData/Figshare/articles_12697364.txt'));
-        
+        $responseContentLandingpage = file_get_contents(base_path('/tests/MockData/Figshare/missing_ro_crate_link.txt'));
+
         $mock = new MockHandler([
-            new Response(200, [], $response)
+            new Response(200, [], $responseContentLandingpage),
         ]);
     
         $handler = HandlerStack::create($mock);
         
-        $figshareHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
+        $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
 
-        $results = $figshareHelper->getFileList('12697364');
-
-        $this->assertEquals('README.txt', $results[0]['name']);
-        $this->assertEquals('https://ndownloader.figshare.com/files/24044669', $results[0]['download_url']);
-
-        $this->assertEquals('data.zip', $results[1]['name']);
-        $this->assertEquals('https://ndownloader.figshare.com/files/24044672', $results[1]['download_url']);
+        $this->expectException(Exception::class);
+        $fileHelper->getRoCrate('test');
     }
 
     /**
-     * Test retrieveing file list by doi
+     * test getting ro create with requestexception from Guzzle client
      */
-    public function test_get_file_list_by_doi(): void
+    public function test_get_file_list_guzzle_exception()
     {
-        $response1 = file_get_contents(base_path('/tests/MockData/Figshare/articles_12697364.v2.txt'));
-        $response2 = file_get_contents(base_path('/tests/MockData/Figshare/articles_12697364.txt'));
-        
         $mock = new MockHandler([
-            new Response(200, [], $response1),
-            new Response(200, [], $response2),
+            new RequestException('Error Communicating with Server', new Request('GET', 'test')),
         ]);
     
         $handler = HandlerStack::create($mock);
         
-        $figshareHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
+        $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
 
-        $results = $figshareHelper->getFileListByDOI('10.4121/12697364.v2');
-
-        $this->assertEquals('README.txt', $results[0]['name']);
-        $this->assertEquals('https://ndownloader.figshare.com/files/24044669', $results[0]['download_url']);
-
-        $this->assertEquals('data.zip', $results[1]['name']);
-        $this->assertEquals('https://ndownloader.figshare.com/files/24044672', $results[1]['download_url']);
-    }
-
-    public function test_get_file_list_by_doi_article_not_found(): void
-    {
-
-    }
-
-    public function test_get_file_list_by_doi_files_not_found(): void
-    {
-
-    }
-
-    public function test_get_file_list_by_doi_guzzle_error(): void
-    {
-        
+        $this->expectException(RequestException::class);
+        $fileHelper->getRoCrate('test');        
     }
 }

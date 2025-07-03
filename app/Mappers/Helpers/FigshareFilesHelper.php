@@ -2,6 +2,8 @@
 namespace App\Mappers\Helpers;
 
 use Exception;
+use DOMDocument;
+use DOMXPath;
 use GuzzleHttp\Client;
 
 class FigshareFilesHelper
@@ -19,63 +21,55 @@ class FigshareFilesHelper
     {
         $this->client = $client;
     }
-    
+
     /**
-     * Get list of files for given doi
-     * @param string $doi
+     * Get ro crate by url of landing page
      */
-    public function getFileListByDOI(string $doi): array
-    {        
-        $articleId = $this->getArticleIdByDoi($doi);
-        
-        if($articleId) {
-            return $this->getFileList($articleId);
-        }
-            
-        return [];
+    public function getRoCrate($url): array
+    {
+        // get landingpage
+        $page = $this->getPage($url);
+
+        // get ro-crate location
+        $roCrateLocation = $this->getRoCrateUrl($page);
+
+        // get the ro crate
+        $roCrate = $this->getPage($roCrateLocation);
+
+        return json_decode($roCrate, true);
     }
     
     /**
-     * retrieve article id for given doi
-     * @param string $doi
+     * get page content by url
      */
-    public function getArticleIdByDoi(string $doi) 
+    private function getPage($url)
     {
-        $response = $this->client->request(
-            'POST',
-            "https://api.figshare.com/v2/articles/search?doi=$doi",                
-        );
-        
+        $response = $this->client->request('GET', $url);
+
         if(isset($response)) {
-            $body = json_decode($response->getBody(), true);
-            
-            if(isset($body[0]['id'])) {
-                return $body[0]['id'];
-            }
+            return (string)$response->getBody();
         }
 
-        throw new Exception('Could not retrieve article id from figshare');
+        throw new Exception('page retrieved empty');
     }
-    
+
     /**
-     * get array with file information by article id
-     * @param $articleId
+     * get the url of the ro crate location from html
      */
-    public function getFileList($articleId): array
+    private function getRoCrateUrl($page)
     {
-        $response = $this->client->request(
-            'GET',
-            "https://api.figshare.com/v2/articles/$articleId",
-        );
-        
-        if(isset($response)) {
-            $body = json_decode($response->getBody(), true);
-                        
-            if(isset($body['files'])) {
-                return $body['files'];
-            }
+        $domDocument = new DOMDocument();
+        $domDocument->loadHTML($page, LIBXML_NOERROR);
+
+        $xpath = new DOMXPath($domDocument);
+        $query = '//a[contains(@title, "RO-Crate Metadata")]';
+
+        $matches = $xpath->query($query);
+        if($matches->length > 0) {
+            $resultNode = $matches->item(0);
+            return $resultNode->getAttribute('href');
         }
 
-        throw new Exception('Could not retrieve file information from figshare');
+        throw new Exception('ro crate location could not be extracted');
     }    
 }
