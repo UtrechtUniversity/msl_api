@@ -2,6 +2,7 @@
 namespace App\Mappers\Additional;
 
 use App\Mappers\Helpers\FigshareFilesHelper;
+use App\Mappers\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
 
@@ -9,20 +10,22 @@ class FigshareFileMapper implements AdditionalMapperInterface
 {
 
     /**
-     * Add figshare files associated by DOI
+     * Add figshare files associated by landing page/source
      * @param DataPublication $dataPublication
      * @return DataPublication
      */
     public function map(DataPublication $dataPublication): DataPublication
     {
         $figshareHelper = new FigshareFilesHelper;
+        $roCrateHelper = new RoCrateHelper;
 
-        $filelist = $figshareHelper->getFileListByDOI($dataPublication->msl_doi);
+        $roCrate = $figshareHelper->getRoCrate($dataPublication->msl_source);
+        $filelist = $roCrateHelper->getFiles($roCrate);
 
         foreach($filelist as $file) {
             $mslFile = new File(
                 $file['name'],                
-                $file['download_url'],
+                $file['contentUrl'],
                 $this->extractFileExtension($file['name']),
                 false
             );
