@@ -18,6 +18,7 @@ use App\CkanClient\Request\PackageSearchRequest;
 use App\Models\MappingLog;
 use App\Exports\MappingLogsExport;
 use App\Mappers\BgsMapper;
+use App\Mappers\MappingService;
 
 class HomeController extends Controller
 {

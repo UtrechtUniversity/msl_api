@@ -5,6 +5,7 @@ use App\Mappers\Helpers\FigshareFilesHelper;
 use App\Mappers\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
+use Exception;
 
 class FigshareFileMapper implements AdditionalMapperInterface
 {
@@ -19,7 +20,13 @@ class FigshareFileMapper implements AdditionalMapperInterface
         $figshareHelper = new FigshareFilesHelper;
         $roCrateHelper = new RoCrateHelper;
 
-        $roCrate = $figshareHelper->getRoCrate($dataPublication->msl_source);
+        try{
+            $roCrate = $figshareHelper->getRoCrate($dataPublication->msl_source);    
+        }
+        catch(Exception $e) {
+            return $dataPublication;
+        }
+
         $filelist = $roCrateHelper->getFiles($roCrate);
 
         foreach($filelist as $file) {
