@@ -18,13 +18,13 @@ class FigshareFileMapper implements AdditionalMapperInterface
     public function map(DataPublication $dataPublication): DataPublication
     {
         $figshareHelper = new FigshareFilesHelper;
-        $roCrateHelper = new RoCrateHelper;
+        $roCrateHelper = new RoCrateHelper;        
 
         try{
             $roCrate = $figshareHelper->getRoCrate($dataPublication->msl_source);    
         }
         catch(Exception $e) {
-            return $dataPublication;
+            return $dataPublication;            
         }
 
         $filelist = $roCrateHelper->getFiles($roCrate);

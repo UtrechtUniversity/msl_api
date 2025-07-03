@@ -67,7 +67,7 @@ class FigshareFilesHelper
         $matches = $xpath->query($query);
         if($matches->length > 0) {
             $resultNode = $matches->item(0);
-            return $resultNode->getAttribute('href');
+            return 'https://data.4tu.nl/' . $resultNode->getAttribute('href');
         }
 
         throw new Exception('ro crate location could not be extracted');
