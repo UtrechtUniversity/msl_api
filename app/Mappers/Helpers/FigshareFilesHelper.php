@@ -41,24 +41,20 @@ class FigshareFilesHelper
      */
     public function getArticleIdByDoi(string $doi) 
     {
-        try {
-            $response = $this->client->request(
-                'POST',
-                "https://api.figshare.com/v2/articles/search?doi=$doi",                
-            );
-        } catch (Exception $e) {
-            
-        }
+        $response = $this->client->request(
+            'POST',
+            "https://api.figshare.com/v2/articles/search?doi=$doi",                
+        );
         
         if(isset($response)) {
             $body = json_decode($response->getBody(), true);
             
             if(isset($body[0]['id'])) {
                 return $body[0]['id'];
-            } else {
-                return null;
-            }            
+            }
         }
+
+        throw new Exception('Could not retrieve article id from figshare');
     }
     
     /**
@@ -67,14 +63,10 @@ class FigshareFilesHelper
      */
     public function getFileList($articleId): array
     {
-        try {
-            $response = $this->client->request(
-                'GET',
-                "https://api.figshare.com/v2/articles/$articleId",
-                );
-        } catch (Exception $e) {
-            
-        }
+        $response = $this->client->request(
+            'GET',
+            "https://api.figshare.com/v2/articles/$articleId",
+        );
         
         if(isset($response)) {
             $body = json_decode($response->getBody(), true);
@@ -82,12 +74,8 @@ class FigshareFilesHelper
             if(isset($body['files'])) {
                 return $body['files'];
             }
-            
-            else {
-                return [];
-            }
         }
 
-        return [];
+        throw new Exception('Could not retrieve file information from figshare');
     }    
 }

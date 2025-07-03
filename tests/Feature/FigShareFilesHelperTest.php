@@ -32,7 +32,7 @@ class FigShareFilesHelperTest extends TestCase
     }
 
     /**
-     * Test retrieveing article id by doi
+     * Test retrieveing file list by doi
      */
     public function test_get_file_list(): void
     {
@@ -79,5 +79,20 @@ class FigShareFilesHelperTest extends TestCase
 
         $this->assertEquals('data.zip', $results[1]['name']);
         $this->assertEquals('https://ndownloader.figshare.com/files/24044672', $results[1]['download_url']);
+    }
+
+    public function test_get_file_list_by_doi_article_not_found(): void
+    {
+
+    }
+
+    public function test_get_file_list_by_doi_files_not_found(): void
+    {
+
+    }
+
+    public function test_get_file_list_by_doi_guzzle_error(): void
+    {
+        
     }
 }
