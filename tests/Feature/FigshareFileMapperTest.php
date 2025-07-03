@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Mappers\Additional\FigshareFileMapper;
 use App\Mappers\Helpers\FigshareFilesHelper;
+use App\Mappers\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -23,44 +24,38 @@ class FigshareFileMapperTest extends TestCase
     public function test_map(): void
     {
         $dataPublication = new DataPublication;
-        $dataPublication->msl_doi = '12345';
+        $dataPublication->msl_source = '12345';
 
         $this->mock('overload:' . FigshareFilesHelper::class, function(MockInterface $mock) {
-            $mock->shouldReceive('getFileListByDOI')
+            $mock->shouldReceive('getRoCrate')
                 ->once()
-                ->andReturn([
+                ->andReturn(json_decode(file_get_contents(base_path('/tests/MockData/Figshare/rocrate.txt')), true));
+        });
+
+        $this->mock('overload:' . RoCrateHelper::class, function(MockInterface $mock) {
+            $mock->shouldReceive('getFiles')
+                ->once()
+                ->andReturn(
                     [
-                        'id' => 24044669,
-                        'name' => "README.txt",
-                        'size' => 638,
-                        'is_link_only' => false,
-                        'download_url' => "https://ndownloader.figshare.com/files/24044669",
-                        'supplied_md5' => '3315787ee65dac6e49f9c67948e8c955',
-                        'computed_md5' => '3315787ee65dac6e49f9c67948e8c955',
-                        'mimetype' => 'text/plain'
-                    ],
-                    [
-                        'id' => 24044672,
-                        'name' => "data.zip",
-                        'size' => 4335,
-                        'is_link_only' => false,
-                        'download_url' => "https://ndownloader.figshare.com/files/24044672",
-                        'supplied_md5' => '57ca9aa3e468ef034059eba8efed90f3',
-                        'computed_md5' => '57ca9aa3e468ef034059eba8efed90f3',
-                        'mimetype' => 'application/zip'
-                    ],
-                ]);
+                        [
+                            '@id' => '8ddd1afc-9f74-4ac6-9e2f-61592909c9e8',
+                            '@type' => 'File',
+                            'name' => 'DATA True Triax.zip',
+                            'contentSize' => '775931560',
+                            'contentUrl' => 'https://data.4tu.nl/file/38262dab-3eea-4991-87a0-1b7e849efbfb/8ddd1afc-9f74-4ac6-9e2f-61592909c9e8',
+                        ]
+                    ]
+                );
         });
 
         $figshareMapper = new FigshareFileMapper;
         $dataPublication = $figshareMapper->map($dataPublication);
 
-        $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'README.txt');
-        $this->assertEquals($dataPublication->msl_files[0]->msl_download_link, 'https://ndownloader.figshare.com/files/24044669');
-        $this->assertEquals($dataPublication->msl_files[0]->msl_extension, 'txt');
+        //dd($dataPublication);
 
-        $this->assertEquals($dataPublication->msl_files[1]->msl_file_name, 'data.zip');
-        $this->assertEquals($dataPublication->msl_files[1]->msl_download_link, 'https://ndownloader.figshare.com/files/24044672');
-        $this->assertEquals($dataPublication->msl_files[1]->msl_extension, 'zip');
+        $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'DATA True Triax.zip');
+        $this->assertEquals($dataPublication->msl_files[0]->msl_download_link, 'https://data.4tu.nl/file/38262dab-3eea-4991-87a0-1b7e849efbfb/8ddd1afc-9f74-4ac6-9e2f-61592909c9e8');
+        $this->assertEquals($dataPublication->msl_files[0]->msl_extension, 'zip');
+        $this->assertEquals($dataPublication->msl_files[0]->msl_is_folder, false);
     }
 }
