@@ -51,8 +51,6 @@ class FigshareFileMapperTest extends TestCase
         $figshareMapper = new FigshareFileMapper;
         $dataPublication = $figshareMapper->map($dataPublication);
 
-        //dd($dataPublication);
-
         $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'DATA True Triax.zip');
         $this->assertEquals($dataPublication->msl_files[0]->msl_download_link, 'https://data.4tu.nl/file/38262dab-3eea-4991-87a0-1b7e849efbfb/8ddd1afc-9f74-4ac6-9e2f-61592909c9e8');
         $this->assertEquals($dataPublication->msl_files[0]->msl_extension, 'zip');
