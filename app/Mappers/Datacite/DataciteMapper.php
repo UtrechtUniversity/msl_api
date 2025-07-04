@@ -17,9 +17,13 @@ class DataciteMapper implements MapperInterface
             case 'http://datacite.org/schema/kernel-4':
                 $mapper = new Datacite4Mapper();
                 break;
+            
+            case 'http://datacite.org/schema/kernel-3':
+                $mapper = new Datacite3Mapper();
+                break;
 
             default:
-                throw new MappingException('No DataCiteMapper found for version:' . $metadata['metadataVersion']);
+                throw new MappingException('No DataCiteMapper found for version:' . $metadata['data']['attributes']['schemaVersion']);
         }
 
         $dataPublication = $mapper->map($metadata, $dataPublication);
