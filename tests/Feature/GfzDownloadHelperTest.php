@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Mappers\Helpers\GfzDownloadHelper;
+use Exception;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use GuzzleHttp\Client;
@@ -74,5 +75,35 @@ class GfzDownloadHelperTest extends TestCase
         $this->assertEquals('https://datapub.gfz-potsdam.de/download/10.5880.GFZ.1.4.2019.005/2019-005_Koerting_et-al_Technical_report_Apliki_version-2.0.pdf', $fileList[2]['downloadLink']);
         $this->assertEquals('pdf', $fileList[2]['extension']);
         $this->assertEquals(false, $fileList[2]['isFolder']);
+    }
+
+    public function test_get_file_list_content_not_found()
+    {
+        $responseContentLandingpage = file_get_contents(base_path('/tests/MockData/Gfz/landingpage_missing_link.txt'));
+
+        $mock = new MockHandler([
+            new Response(200, [], $responseContentLandingpage),
+        ]);
+    
+        $handler = HandlerStack::create($mock);
+        
+        $fileHelper = new GfzDownloadHelper(new Client(['handler' => $handler]));
+
+        $this->expectException(Exception::class);
+        $fileHelper->getFiles('test');
+    }
+
+    public function test_get_file_list_guzzle_exception()
+    {
+        $mock = new MockHandler([
+            new RequestException('Error Communicating with Server', new Request('GET', 'test')),
+        ]);
+    
+        $handler = HandlerStack::create($mock);
+        
+        $fileHelper = new GfzDownloadHelper(new Client(['handler' => $handler]));
+
+        $this->expectException(RequestException::class);
+        $fileHelper->getFiles('test');        
     }
 }
