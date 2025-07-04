@@ -1,13 +1,10 @@
 <?php
 namespace App\Mappers\Helpers;
 
-use App\Datasets\BaseDataset;
 use DOMDocument;
 use DOMXPath;
 use Exception;
 use GuzzleHttp\Client;
-use Symfony\Component\BrowserKit\HttpBrowser;
-use Symfony\Component\DomCrawler\Crawler;
 
 class GfzDownloadHelper
 {
