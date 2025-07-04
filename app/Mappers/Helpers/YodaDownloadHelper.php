@@ -25,7 +25,7 @@ class YodaDownloadHelper
     /**
      * get a array with file information extracted via the Yoda landing page
      */
-    public function getFileList($landingPageUrl): array
+    public function getFileList(string $landingPageUrl): array
     {
         // Get landingpage
         $landingPage = $this->getpage($landingPageUrl);
@@ -46,7 +46,7 @@ class YodaDownloadHelper
     }
 
     /**
-     * Get contant of page by url
+     * Get content of page by url
      */
     private function getPage($url): string
     {
