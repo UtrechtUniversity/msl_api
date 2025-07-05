@@ -52,11 +52,11 @@ class ImportMagicSeeder extends Seeder
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
+                        'type' => 'dataciteJsonRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'MagicMapper',
+                        'type' => 'datacite',
                         'options' => []
                     ]
                 ],
