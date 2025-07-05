@@ -42,11 +42,11 @@ class ImportBgsSeeder extends Seeder
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
+                        'type' => 'dataciteJsonRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'BgsMapper',
+                        'type' => 'datacite',
                         'options' => []
                     ]
                 ],
