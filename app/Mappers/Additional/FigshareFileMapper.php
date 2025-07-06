@@ -5,6 +5,7 @@ use App\Mappers\Helpers\FigshareFilesHelper;
 use App\Mappers\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
+use App\Models\SourceDataset;
 use Exception;
 
 class FigshareFileMapper implements AdditionalMapperInterface
@@ -13,9 +14,10 @@ class FigshareFileMapper implements AdditionalMapperInterface
     /**
      * Add figshare files associated by landing page/source
      * @param DataPublication $dataPublication
+     * @param SourceDataset $sourceDataset
      * @return DataPublication
      */
-    public function map(DataPublication $dataPublication): DataPublication
+    public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
         $figshareHelper = new FigshareFilesHelper;
         $roCrateHelper = new RoCrateHelper;        

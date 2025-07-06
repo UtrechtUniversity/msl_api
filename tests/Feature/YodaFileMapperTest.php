@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Mappers\Additional\YodaFileMapper;
 use App\Mappers\Helpers\YodaDownloadHelper;
 use App\Models\Ckan\DataPublication;
+use App\Models\SourceDataset;
 use Mockery\MockInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -24,6 +25,8 @@ class YodaFileMapperTest extends TestCase
         $dataPublication = new DataPublication;
         $dataPublication->msl_source = '12345';
 
+        $sourceDataset = new SourceDataset;
+
         $this->mock('overload:' . YodaDownloadHelper::class, function(MockInterface $mock) {
             $mock->shouldReceive('getFileList')
                 ->once()
@@ -40,7 +43,7 @@ class YodaFileMapperTest extends TestCase
         });
 
         $yodaFileMapper = new YodaFileMapper;
-        $dataPublication = $yodaFileMapper->map($dataPublication);
+        $dataPublication = $yodaFileMapper->map($dataPublication, $sourceDataset);
 
         $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'Data_explanation.pdf');
         $this->assertEquals($dataPublication->msl_files[0]->msl_download_link, 'https://geo.public.data.uu.nl:443/vault-seismic-slip-pulse-experiments/research-seismic-slip-pulse-experiments[1618835278]/original/Data_explanation.pdf');
