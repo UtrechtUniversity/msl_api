@@ -52,7 +52,7 @@ class MappingService
             foreach($config['sourceDatasetProcessor']['options']['additionalMappers'] as $additionalMapper)
             {
                 $mapper = new $additionalMapper;
-                $dataPublication = $mapper->map($dataPublication);
+                $dataPublication = $mapper->map($dataPublication, $sourceDataset);
             }
         }
 
