@@ -9,9 +9,6 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">Datasets</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('importer-imports-log', ['importer_id' => $importer_id, 'import_id' => $import_id]) }}">Mapping log</a>
-          </li>          
         </ul>
         
             <div class="card">

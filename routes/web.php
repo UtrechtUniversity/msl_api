@@ -37,8 +37,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/importers', [HomeController::class, 'importers'])->name('importers');
     Route::get('/importer/{id}/imports', [HomeController::class, 'importerImports'])->name('importer-imports');
     Route::get('/importer/{importer_id}/imports/{import_id}/flow', [HomeController::class, 'importerImportsFlow'])->name('importer-imports-flow');
-    Route::get('/importer/{importer_id}/imports/{import_id}/log', [HomeController::class, 'importerImportsLog'])->name('importer-imports-log');
-    Route::get('/importer/{importer_id}/imports/{import_id}/log-export', [HomeController::class, 'exportImportLog'])->name('importer-imports-log-export');
     Route::get('/importer/{importer_id}/imports/{import_id}/detail/{source_dataset_identifier_id}', [HomeController::class, 'importerImportsDetail'])->name('importer-imports-detail');
 
     Route::get('/seeders', [SeederController::class, 'index'])->name('seeders');

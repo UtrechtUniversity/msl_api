@@ -2,7 +2,6 @@
 namespace App\Mappers;
 
 use App\Models\SourceDataset;
-use App\Models\MappingLog;
 use App\Mappers\Helpers\DataciteCitationHelper;
 use App\Datasets\BaseDataset;
 use App\Mappers\Helpers\GeoJSON;
@@ -55,29 +54,10 @@ class GfzMapper
                     break;
             }            
         }
-             
-        if($results == 0) {
-            $this->log('WARNING', 'No keyword found to set subdomain', $sourceDataset);
-        }
-        
+                             
         return $dataset;
     }
-    
-    private function log($severity, $text, $sourceDataset)
-    {
-        $levels = ['ERROR', 'WARNING'];
-        if(in_array($severity, $levels)) {
-            MappingLog::create([
-                'type' => $severity,
-                'message' => $text,
-                'source_dataset_id' => $sourceDataset->id,
-                'import_id' => $sourceDataset->source_dataset_identifier->import->id
-            ]);
-        } else {
-            throw new \Exception('invalid log type');
-        }
-    }        
-    
+        
     private function getYear($date)
     {
         $datetime = new \DateTime($date);
@@ -275,7 +255,7 @@ class GfzMapper
                         
                         $citationString = $this->dataciteHelper->getCitationString($reference['msl_reference_doi']);
                         if(strlen($citationString) == 0) {
-                            $this->log('WARNING', "datacite citation returned empty for DOI: " . $reference['msl_reference_doi'], $sourceDataset);
+                            
                         } else {
                             $reference['msl_reference_title'] = $citationString;
                         }                                                
@@ -309,7 +289,7 @@ class GfzMapper
                 if(isset($idNode[0])) {
                     $lab['msl_lab_id'] = (string)$idNode[0];                                        
                 } else {
-                    //$this->log('WARNING', "Lab with name: \"" . $lab['msl_lab_name'] . "\" has no id.", $sourceDataset);
+                    
                 }
                                 
                 $dataset->addLab($lab);

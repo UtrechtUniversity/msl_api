@@ -27,12 +27,7 @@ class Import extends Model
     public function dataset_creates() {
         return $this->hasMany(DatasetCreate::class);
     }
-    
-    public function mapping_logs()
-    {
-        return $this->hasMany(MappingLog::class);
-    }
-    
+        
     public function getStatsOverview()
     {        
         $results = [            
