@@ -9,7 +9,7 @@ class File implements CkanArrayInterface
 
     public string $msl_extension;
 
-    public string $msl_is_folder;
+    public bool $msl_is_folder;
 
     public string $msl_timestamp;
 
