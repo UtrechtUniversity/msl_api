@@ -27,7 +27,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all_2818.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -48,7 +48,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 2818)
+                ->where('result.count', 670)
                 ->where('result.resultCount', 10)
                 ->has('result.results.1', fn (AssertableJson $json) =>
                     $json
@@ -109,7 +109,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_rockphysics_318.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_rockphysics.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -130,7 +130,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 318)
+                ->where('result.count', 256)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json   
@@ -193,7 +193,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_analogue_398.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_analogue.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -214,7 +214,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 398)
+                ->where('result.count', 183)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json   
@@ -280,7 +280,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_paleo_340.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_paleo.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -301,7 +301,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 340)
+                ->where('result.count', 63)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json   
@@ -366,7 +366,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_microscopy_199.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_microscopy.txt'));
         
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -387,7 +387,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 199)
+                ->where('result.count', 228)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json   
@@ -452,7 +452,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geochemistry_658.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geochemistry.txt'));
 
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -473,7 +473,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 658)
+                ->where('result.count', 273)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json      
@@ -538,7 +538,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function($app){
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geoenergy_83.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geoenergy.txt'));
 
             $mock = new MockHandler([
                 new Response(200, [], $response)
@@ -559,7 +559,7 @@ class ApiTest extends TestCase
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
                 ->where('success', true)
-                ->where('result.count', 83)
+                ->where('result.count', 116)
                 ->where('result.resultCount', 10)
                 ->has('result.results.0', fn (AssertableJson $json) =>
                     $json      
