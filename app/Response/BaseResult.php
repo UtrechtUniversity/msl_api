@@ -108,8 +108,8 @@ class BaseResult
             }
         }        
         
-        if(isset($data['notes'])) {
-            $this->description = $data['notes'];
+        if(isset($data['msl_description_abstract'])) {
+            $this->description = $data['msl_description_abstract'];
         }
 
         if(isset($data['msl_publication_date'])) {
@@ -120,9 +120,9 @@ class BaseResult
             $this->citation = $data['msl_citation'];
         }
 
-        if(isset($data['msl_authors'])) {
-            if(count($data['msl_authors']) > 0) {
-                foreach ($data['msl_authors'] as $authorData) {
+        if(isset($data['msl_creators'])) {
+            if(count($data['msl_creators']) > 0) {
+                foreach ($data['msl_creators'] as $authorData) {
                     $this->creators[] = new Author($authorData);
                 }
             }
@@ -196,9 +196,9 @@ class BaseResult
             $this->maintainer = $data['maintainer'];
         }
 
-        if(isset($data['msl_downloads'])) {
-            if(count($data['msl_downloads']) > 0) {
-                foreach ($data['msl_downloads'] as $downloadData) {
+        if(isset($data['msl_files'])) {
+            if(count($data['msl_files']) > 0) {
+                foreach ($data['msl_files'] as $downloadData) {
                     $this->downloads[] = new Download($downloadData);
                 }
             }
