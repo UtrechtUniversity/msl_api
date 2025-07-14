@@ -459,7 +459,7 @@
                                                 @if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor))
 
                                                     @foreach ( $contributor['msl_contributor_name_identifiers'] as $key => $value )
-                                                        <div class="flex flex-row justify-between w-96">
+                                                        <div class="flex flex-row justify-between w-1/2">
                                                             <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}:</p>
                                                             <p class="text-sm p-0">{{ $value }}</p>
                                                         </div>
@@ -522,7 +522,7 @@
                                     <h4 class="detailEntrySub1">Dates</h4>
                                     <div class="detailEntrySub2 flex flex-col justify-items-start">
                                         @foreach ( $data['msl_dates'] as $value)
-                                            <div class="flex flex-row justify-between w-96">
+                                            <div class="flex flex-row justify-between w-3/4">
                                                 <p class="text-sm p-0">{{ $value['msl_date_type'] }}:</p>
                                                 <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
                                             </div>                                    
