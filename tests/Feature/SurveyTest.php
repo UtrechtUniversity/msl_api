@@ -2,14 +2,15 @@
 
 namespace Tests\Feature;
 
-use App\Models\Surveys\Answer;
-use App\Models\Surveys\Question;
-use App\Models\Surveys\QuestionSurvey;
-use App\Models\Surveys\QuestionType;
-use App\Models\Surveys\Response;
-use App\Models\Surveys\SelectQuestion;
 use Tests\TestCase;
+use App\Models\Surveys\Answer;
 use App\Models\Surveys\Survey;
+use App\Models\Surveys\Question;
+use App\Models\Surveys\Response;
+use Illuminate\Support\Facades\DB;
+use App\Models\Surveys\QuestionType;
+use App\Models\Surveys\QuestionSurvey;
+use App\Models\Surveys\SelectQuestion;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -23,16 +24,6 @@ class SurveyTest extends TestCase
 
     public function test_db(): void
     {
-        ////
-        //question Type instances
-        $qt1 = new SelectQuestion(            [
-            'label' => "selectQuestion1",
-            'options' => [
-                'option1',
-                'option2'
-            ]
-
-        ]);
 
         ////
         // save question types
@@ -40,7 +31,7 @@ class SurveyTest extends TestCase
         $questionType->fill(
             [
                 'name' => 'questionType1',
-                'class' => json_encode($qt1)
+                'class' => SelectQuestion::class
             ]
         );
         $questionType->save();
@@ -50,7 +41,14 @@ class SurveyTest extends TestCase
         $question1 = new Question();
         $question1->fill(
             [
-                'question' => 'question1',
+                'question' => [
+                    'label' => "Is this a question?",
+                    'options' => [
+                        'option1',
+                        'option2'
+                    ]
+                ],
+
                 'question_type_id' => $questionType->id
             ]
             );
@@ -60,11 +58,22 @@ class SurveyTest extends TestCase
         $question2 = new Question();
         $question2->fill(
             [
-                'question' => 'question2',
+                'question' => [
+                    'label' => "Is this another question?",
+                    'options' => [
+                        'option1',
+                        'option2'
+                    ]
+                ],
                 'question_type_id' => $questionType->id
             ]
             );
         $question2->save();
+
+        ////
+        //question Type instances
+        $qt1 = $question1->question;
+        $qt2 = $question2->question;
 
         ////
         //first define the survey itself
@@ -143,19 +152,36 @@ class SurveyTest extends TestCase
         $this->assertDatabaseCount('question_types', 1);
         $this->assertDatabaseHas('question_types', [
             'name' => 'questionType1',
-            'class' => $qt1
+            'class' => SelectQuestion::class
         ]);
 
         //questions
         $this->assertDatabaseCount('questions', 2);
-        $this->assertDatabaseHas('questions', [
-            'question' => 'question1',
-            'question_type_id' => $questionType->id 
-        ]);
-        $this->assertDatabaseHas('questions', [
-            'question' => 'question2',
-            'question_type_id' => $questionType->id
-        ]);
+        $this->assertDatabaseHas('questions', 
+        [
+                'question' => $this->castAsJson([
+                        'label' => "Is this a question?",
+                        'options' => [
+                            'option1',
+                            'option2'
+                        ]
+                    ]),
+                'question_type_id' => $questionType->id
+        ]
+        );
+        $this->assertDatabaseHas('questions', 
+        [
+                'question' => $this->castAsJson([
+                        'label' => "Is this another question?",
+                        'options' => [
+                            'option1',
+                            'option2'
+                        ]
+                    ]),
+                'question_type_id' => $questionType->id
+        ]
+        );
+
 
         //surveys
         $this->assertDatabaseCount('surveys', 1);
@@ -197,10 +223,18 @@ class SurveyTest extends TestCase
             'answer' => 'answerQuestion2'
         ]);
 
-        // checking relations
-        $this->assertEquals('survey1', $questionSurvey->survey->name);
-        dd($questionSurvey->question->question);
+        // // checking relations
+        //surveyname via the question survey
+        $this->assertEquals($survey->name, $questionSurvey->survey->name);
+
+        //question id via question survey
         $this->assertEquals($question1->id, $questionSurvey->question->question_type_id);
+
+        //response id via an answer
+        $this->assertEquals($reponseSurvey->id, $answer1->response_id);
+
+        //survey id via response survey
+        $this->assertEquals($survey->id, $reponseSurvey->survey_id);
 
     }
 }
