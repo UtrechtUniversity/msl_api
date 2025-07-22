@@ -26,4 +26,8 @@ class Question extends Model
     {
         return $this->belongsTo(QuestionType::class);
     }
+
+    public function question_survey(){
+        return $this->belongsToMany(QuestionSurvey::class);
+    }
 }
