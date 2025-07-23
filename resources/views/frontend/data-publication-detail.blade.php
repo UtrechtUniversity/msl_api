@@ -9,6 +9,51 @@
             dd($data);
         @endphp --}}
 
+        {{-- 
+        what about these
+        "msl_tags" => array:12 [▶ ▶] 
+          "msl_description_methods" => ""
+  "msl_description_other" => ""
+  "msl_description_series_information" => ""
+  "msl_description_table_of_contents" => ""
+  "msl_description_technical_info" => ""
+  "msl_doi" => "10.4121/e65ed658-0d8d-4890-a252-c85a7c1c2619.v2"
+  "msl_formats" => "{"tiff, txt"}"
+  "msl_has_analogue" => "false"
+  "msl_has_analogue_original" => "false"
+  "msl_has_geochemistry" => "true"
+  "msl_has_geochemistry_original" => "false"
+  "msl_has_geoenergy" => "false"
+  "msl_has_geoenergy_original" => "false"
+  "msl_has_geologicalage" => "false"
+  "msl_has_geologicalage_original" => "false"
+  "msl_has_geologicalsetting" => "false"
+  "msl_has_geologicalsetting_original" => "false"
+  "msl_has_lab" => "false"
+  "msl_has_material" => "true"
+  "msl_has_material_original" => "true"
+  "msl_has_microscopy" => "true"
+  "msl_has_microscopy_original" => "true"
+  "msl_has_organization" => "true"
+  "msl_has_paleomagnetism" => "true"
+  "msl_has_paleomagnetism_original" => "false"
+  "msl_has_porefluid" => "false"
+  "msl_has_porefluid_original" => "false"
+  "msl_has_rockphysic" => "false"
+  "msl_has_rockphysic_original" => "false"
+  "msl_has_subsurface" => "false"
+  "msl_has_subsurface_original" => "false"
+  "msl_language" => "en"
+  "msl_publication_year" => "2023"
+  "msl_publisher" => "4TU.ResearchData"
+  "msl_resource_type" => "Dataset"
+  "msl_resource_type_general" => "Dataset"
+  "msl_sizes" => "{}"
+  "msl_source" => "https://data.4tu.nl/datasets/e65ed658-0d8d-4890-a252-c85a7c1c2619/2"
+  "msl_surface_area" => "0"
+  "msl_title_annotated" => "
+        --}}
+
         {{-- a general no small width view notification --}}
         @include('components.no_mobile_view')
 
@@ -52,7 +97,7 @@
                                                 @if (sizeof($data['msl_creators']) -1 != $authorKey )
                                                     |
                                                 @endif
-                                        @endforeach 
+                                        @endforeach
                                     </p>
                                     @if (array_key_exists("msl_publisher", $data))
                                     <p class="italic text-center">{{ $data['msl_publisher'] }} </p>
@@ -420,8 +465,14 @@
 
                                                     @foreach ( $creator['msl_creator_name_identifiers'] as $key => $value )
                                                         <div class="flex flex-row w-96">
-                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}:</p>
-                                                            <p class="text-sm p-0">{{ $value }}</p>
+
+                                                            @if( $creator['msl_creator_name_identifiers_schemes'][$key] == 'https://orcid.org/')
+                                                                <p class="text-sm p-0">ORCID: <a href="{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a></p>
+                                                            @elseif( $creator['msl_creator_name_identifiers_schemes'][$key]  == 'ORCID')
+                                                                <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}: <a href={{ $value }}>{{ $value }}</a></p>
+                                                            @else
+                                                                <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}: {{ $value }}</p>
+                                                            @endif
                                                         </div>
                                                     @endforeach
 
@@ -431,8 +482,6 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Authors</h4>
                                 @endif
 
                                 @if (array_key_exists("msl_contributors",$data))
@@ -453,21 +502,59 @@
                                                                 |
                                                             @endif
                                                         @endforeach
-                                                    </p>
+                                                    </p>    
                                                 @endif
 
                                                 @if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor))
 
                                                     @foreach ( $contributor['msl_contributor_name_identifiers'] as $key => $value )
-                                                        <div class="flex flex-row justify-between w-1/2">
-                                                            <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}:</p>
-                                                            <p class="text-sm p-0">{{ $value }}</p>
-                                                        </div>
+
+                                                        @if( $contributor['msl_contributor_name_identifiers_schemes'][$key] == 'https://orcid.org/')
+                                                            <p class="text-sm p-0">ORCID: <a href="{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a></p>
+                                                        @elseif( $contributor['msl_contributor_name_identifiers_schemes'][$key]  == 'ORCID')
+                                                            <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}: <a href={{ $value }}>{{ $value }}</a></p>
+                                                        @else
+                                                            <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}: {{ $value }}</p>
+                                                        @endif
                                                     @endforeach
 
                                                 @endif
-                                                {{-- <p class="text-sm p-0">{{ $keyword['msl_contributor_orcid'] }}</p> --}}
-                                                {{-- <p class="text-sm p-0">{{ $keyword['msl_contributor_affiliation'] }}</p> --}}
+
+                                                @foreach ($contributor as $key => $value)
+                                                    @if( in_array( $key ,[                                                
+                                                        "msl_contributor_affiliation_identifier_schemes",
+                                                        "msl_contributor_affiliation_identifiers",
+                                                        "msl_contributor_affiliation_scheme_uris",
+                                                        "msl_contributor_affiliations_names",
+                                                        "msl_contributor_name_identifiers_uris"]) 
+                                                        )
+                                                        <p class="text-sm p-0">
+                                                            {{-- {{ $key }} --}}
+                                                            @php
+                                                                $keys = explode('_', $key);
+                                                                unset($keys[0]);
+                                                                unset($keys[1]);
+                                                                // unset($keys[2]);
+                                                                // $key_done;
+                                                                foreach ($keys as $pos => $key_s) {
+                                                                    $keys[$pos] = ucfirst($key_s);
+                                                                };
+
+                                                                echo implode(' ', $keys);
+                                                            @endphp: 
+                                                            
+                                                        @foreach ( $value as $entry )
+                                                            {{ $entry }}
+                                                        
+                                                            {{-- @if ($entry != '')
+                                                                
+                                                            @endif --}}
+
+                                                        @endforeach
+                                                        </p>
+                                                    @endif
+                                                @endforeach
+
                                             </div>
                                         @endforeach
                                     </div>
@@ -479,33 +566,41 @@
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">References</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                            @foreach ( $data['msl_related_identifiers'] as $keyword)
-                                                <div>
-                                                    <p class="text-sm p-0">{{ $keyword['msl_related_identifier'] }}</p>
-                                                </div>
-                                            @endforeach
+                                            @foreach ( $data['msl_related_identifiers'] as $entry)
+                                                <div class="">
 
+                                                    @foreach ( $entry as $key => $value)
+                                                    
+                                                            @if ($value != '')
+                                                            @endif
+                                                            
+                                                            @if ( $key == 'msl_related_identifier')
+                                                                <p class="text-sm p-0">Main Reference: {{ $value }}</p>
+                                                            @else
+                                                                <p class="text-sm p-0">
+                                                                    {{-- {{ $key }} --}}
+                                                                    @php
+                                                                        $keys = explode('_', $key);
+                                                                        unset($keys[0]);
+                                                                        unset($keys[1]);
+                                                                        unset($keys[2]);    
+                                                                        foreach ($keys as $pos => $key_s) {
+                                                                            $keys[$pos] = ucfirst($key_s);
+                                                                        };
+
+                                                                        echo implode(' ', $keys);
+                                                                    @endphp: 
+                                                                    {{ $value }}</p>
+                                                            @endif
+
+                                                            
+                                                    @endforeach
+                                                </div>
+
+                                            @endforeach
                                     </div>
                                 </div>
                                 @endif
-
-                                {{-- @if (array_key_exists("msl_contributors",$data))
-                                <br>
-                                    <div class="detailEntryDiv flex flex-row">
-                                        <h4 class="detailEntrySub1">Contact</h4>
-                                        <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                            @foreach ( $data['msl_contributors'] as $contributor)
-                                                @if ($contributor['msl_contributor_type'] == 'ContactPerson')
-                                                    <div>
-                                                        <p class="text-sm p-0">{{ $contributor['msl_contributor_name'] }}</p>
-
-                                                    </div>
-                                                @endif
-                                            @endforeach
-  
-                                        </div>
-                                    </div>
-                                @endif --}}
                                 
                                 @if (array_key_exists("msl_citation",$data))
                                 <br>
@@ -518,14 +613,19 @@
                                 {{-- include all dates --}}
                                 @if (array_key_exists("msl_dates",$data))
                                 <br>
-                                <div class="detailEntryDiv flex flex-row">
+                                <div class="detailEntryDiv flex flex-row">  
                                     <h4 class="detailEntrySub1">Dates</h4>
                                     <div class="detailEntrySub2 flex flex-col justify-items-start">
                                         @foreach ( $data['msl_dates'] as $value)
                                             <div class="flex flex-row justify-between w-3/4">
                                                 <p class="text-sm p-0">{{ $value['msl_date_type'] }}:</p>
                                                 <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
-                                            </div>                                    
+                                            </div>
+                                            <div class="flex flex-row justify-between w-3/4">
+                                                <p class="text-sm p-0">Date Information:</p>
+                                                <p class="text-sm p-0">{{ $value['msl_date_information'] }}</p>
+                                            </div>
+
                                         @endforeach
                                     </div>
                                 </div>
@@ -548,7 +648,7 @@
                                     <div class="detailEntrySub2 ">
                                         @foreach ( $data['msl_funding_references'] as $entry)
                                             @foreach ($entry as $key => $value)
-                                                    @if ($value != '')
+                                                    {{-- @if ($value != '') --}}
                                                         <div class=" flex flex-row justify-between w-3/4">
                                                             <p class="text-sm p-0">
                                                                 @php
@@ -566,7 +666,7 @@
                                                                 </p> 
                                                             <p class="text-sm p-0">{{ $value }}</p> 
                                                         </div>
-                                                    @endif
+                                                    {{-- @endif --}}
                                             @endforeach                                      
                                         @endforeach
                                     </div>
@@ -577,9 +677,36 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Rights</h4>
-                                    <div class="detailEntrySub2">
-                                        @foreach ( $data['msl_rights'] as $value)
-                                            <p class="text-sm p-0">{{ $value['msl_right'] }}</p>                                             
+                                    <div class="detailEntrySub2 dividers">
+                                        @foreach ( $data['msl_rights'] as $entry)
+                                            <div>
+                                                @foreach ($entry as $key => $value)
+                                                        {{-- @if ($value != '') --}}
+                                                            <div class=" flex flex-row justify-between w-3/4">
+                                                                <p class="text-sm p-0">
+                                                                    @php
+                                                                        $keys = explode('_', $key);
+                                                                        unset($keys[0]);
+                                                                        unset($keys[1]);
+                                                                        // unset($keys[2]);
+                                                                        if(sizeof($keys) == 0){
+                                                                            $keys[0] = 'Name';
+                                                                        } 
+
+                                                                        foreach ($keys as $pos => $key_s) {
+
+                                                                            $keys[$pos] = ucfirst($key_s);
+
+                                                                        };
+
+                                                                        echo implode(' ', $keys);
+                                                                    @endphp:
+                                                                    </p> 
+                                                                <p class="text-sm p-0">{{ $value }}</p> 
+                                                            </div>
+                                                        {{-- @endif --}}
+                                                @endforeach      
+                                            </div>                                
                                         @endforeach
                                     </div>
                                 </div>
