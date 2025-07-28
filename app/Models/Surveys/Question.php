@@ -3,8 +3,9 @@
 namespace App\Models\Surveys;
 
 use App\Casts\asQuestion;
-use Illuminate\Database\Eloquent\Model;
 use App\Casts\asTextQuestion;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Question extends Model
 {
@@ -17,6 +18,7 @@ class Question extends Model
 
     protected function casts(): array
     {   
+        
         return [
             'question' => asQuestion::class,
         ];
@@ -24,10 +26,16 @@ class Question extends Model
 
     public function question_type()
     {
-        return $this->belongsTo(QuestionType::class);
+        return $this->belongsTo(QuestionType::class, 'question_type_id');
     }
 
-    public function question_survey(){
-        return $this->belongsToMany(QuestionSurvey::class);
+    public function surveys(): BelongsToMany
+    {
+        return $this->belongsToMany(Survey::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
     }
 }
