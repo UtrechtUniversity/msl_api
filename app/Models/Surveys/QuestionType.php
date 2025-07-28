@@ -13,8 +13,7 @@ class QuestionType extends Model
         'class',
     ];
 
-    // protected function question()
-    // {
-    //     $this->hasMany(Question::class);
-    // }
+    public function questions(){
+        return $this->hasMany(Question::class);
+    }
 }
