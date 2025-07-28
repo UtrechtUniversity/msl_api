@@ -2,8 +2,9 @@
 
 namespace App\Models\Surveys;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Survey extends Model
 {
@@ -14,5 +15,16 @@ class Survey extends Model
         'name',
         'active'
     ];
+
+    public function questions(): BelongsToMany
+    {
+        return $this->belongsToMany(Question::class);
+    }
+
+    public function reponses(){
+        return $this->hasMany(Response::class);
+    }
+
+
 
 }
