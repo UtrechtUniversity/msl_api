@@ -15,10 +15,10 @@ class Answer extends Model
     ];
 
     public function response(){
-        return $this->belongsTo(Response::class);
+        return $this->belongsTo(Response::class, 'response_id');
     }
 
     public function question(){
-        return $this->belongsTo(Question::class);
+        return $this->belongsTo(Question::class, 'question_id');
     }
 }
