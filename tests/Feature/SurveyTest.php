@@ -1,18 +1,20 @@
 <?php
 
 namespace Tests\Feature;
+// namespace App\Models\Surveys\QuestionTypes;
 
 use Tests\TestCase;
 use App\Models\Surveys\Answer;
 use App\Models\Surveys\Survey;
 use App\Models\Surveys\Question;
 use App\Models\Surveys\Response;
-use Illuminate\Support\Facades\DB;
 use App\Models\Surveys\QuestionType;
-use App\Models\Surveys\QuestionSurvey;
-use App\Models\Surveys\SelectQuestion;
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Artisan;
+use PHPUnit\Framework\Attributes\Depends;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Surveys\QuestionTypes\SelectQuestion;
+
 
 class SurveyTest extends TestCase
 {
@@ -20,11 +22,33 @@ class SurveyTest extends TestCase
      * A basic feature test example.
      */
 
-     use RefreshDatabase;
 
-    public function test_db(): void
-    {
+     use RefreshDatabase;   
 
+
+     private $surveys = [];
+     private $questionTypes = [];
+     private $questions = [];
+     private $responses = [];
+     private $answers = [];
+
+    protected function setUp(): void {
+ ////
+        parent::setUp();
+
+        //first define the survey itself
+        $survey = new Survey();
+        $survey->fill(
+            
+            [
+                'name'=>'survey1',
+                'active'=> true
+            ]
+            );
+        $survey->save();
+        array_push($this->surveys, $survey);
+
+        
         ////
         // save question types
         $questionType = new QuestionType();
@@ -35,6 +59,9 @@ class SurveyTest extends TestCase
             ]
         );
         $questionType->save();
+        array_push($this->questionTypes, $questionType);
+
+
 
         ////
         //generate questions based on type
@@ -53,7 +80,7 @@ class SurveyTest extends TestCase
             ]
             );
         $question1->save();
-
+        $question1->surveys()->attach($survey->id, ['order' => 1]);
 
         $question2 = new Question();
         $question2->fill(
@@ -69,172 +96,100 @@ class SurveyTest extends TestCase
             ]
             );
         $question2->save();
+        $question2->surveys()->attach($survey->id, ['order' => 2]);
 
-        ////
-        //question Type instances
-        $qt1 = $question1->question;
-        $qt2 = $question2->question;
+        array_push($this->questions, $question1, $question2);
 
-        ////
-        //first define the survey itself
-        $survey = new Survey();
-        $survey->fill(
-            
-            [
-                'name'=>'survey1',
-                'active'=> true
-            ]
-            );
-        $survey->save();
-
-        ////
-        //generating the question collection for the survey
-        $questionSurvey = new QuestionSurvey();
-        $questionSurvey->fill(
-            
-            [
-                'survey_id'=> $survey->id,
-                'question_id'=> $question1->id,
-                'order'=> 2
-            ]
-            );
-        $questionSurvey->save();
-        
-        $questionSurvey2 = new QuestionSurvey();
-        $questionSurvey2->fill(
-            
-            [
-                'survey_id'=> $survey->id,
-                'question_id'=> $question2->id,
-                'order'=> 1 //how to make sure that there is no doublicate in the ordering
-            ]
-            );
-        $questionSurvey2->save();
 
         ////
         //creating a response
-        $reponseSurvey = new Response();
-        $reponseSurvey->fill(
+        $responseSurvey = new Response();
+        $responseSurvey->fill(
             [
                 'survey_id' => $survey->id,
                 'email' => 'em@il'
             ]
         );
-        $reponseSurvey -> save();
+        $responseSurvey -> save();
+
+        array_push($this->responses, $responseSurvey);
+
 
         ////
         //all the answers
         $answer1 = new Answer();
         $answer1->fill(
             [
-                'response_id' => $reponseSurvey->id,
-                'question_id' => $questionSurvey->id,
+                'response_id' => $responseSurvey->id,
+                'question_id' => $question1->id,
                 'answer' => 'answerQuestion1'
             ]
         );
         $answer1->save();
+        // $this->answer = $answer1;
+
 
         $answer2 = new Answer();
         $answer2->fill(
             [
-                'response_id' => $reponseSurvey->id,
-                'question_id' => $questionSurvey2->id,
+                'response_id' => $responseSurvey->id,
+                'question_id' => $question2->id,
                 'answer' => 'answerQuestion2'
             ]
         );
         $answer2->save();
 
-
-        ////
-        //Testing
-
-        //question Types
-        $this->assertDatabaseCount('question_types', 1);
-        $this->assertDatabaseHas('question_types', [
-            'name' => 'questionType1',
-            'class' => SelectQuestion::class
-        ]);
-
-        //questions
-        $this->assertDatabaseCount('questions', 2);
-        $this->assertDatabaseHas('questions', 
-        [
-                'question' => $this->castAsJson([
-                        'label' => "Is this a question?",
-                        'options' => [
-                            'option1',
-                            'option2'
-                        ]
-                    ]),
-                'question_type_id' => $questionType->id
-        ]
-        );
-        $this->assertDatabaseHas('questions', 
-        [
-                'question' => $this->castAsJson([
-                        'label' => "Is this another question?",
-                        'options' => [
-                            'option1',
-                            'option2'
-                        ]
-                    ]),
-                'question_type_id' => $questionType->id
-        ]
-        );
-
-
-        //surveys
-        $this->assertDatabaseCount('surveys', 1);
-        $this->assertDatabaseHas('surveys', [
-            'name' => 'survey1',
-            'active' => true
-        ]);
-
-        //question survey
-        $this->assertDatabaseCount('question_surveys', 2);
-        $this->assertDatabaseHas('question_surveys', [
-            'survey_id'=> $survey->id,
-            'question_id'=> $question1->id,
-            'order'=> 2
-        ]);
-        $this->assertDatabaseHas('question_surveys', [
-            'survey_id'=> $survey->id,
-            'question_id'=> $question2->id,
-            'order'=> 1 
-        ]);
-
-        //responses
-        $this->assertDatabaseCount('responses', 1);
-        $this->assertDatabaseHas('responses', [
-            'survey_id' => $survey->id,
-            'email' => 'em@il'
-        ]);
-
-        //answers
-        $this->assertDatabaseCount('answers', 2);
-        $this->assertDatabaseHas('answers', [
-            'response_id' => $reponseSurvey->id,
-            'question_id' => $questionSurvey->id,
-            'answer' => 'answerQuestion1'
-        ]);
-        $this->assertDatabaseHas('answers', [
-            'response_id' => $reponseSurvey->id,
-            'question_id' => $questionSurvey2->id,
-            'answer' => 'answerQuestion2'
-        ]);
-
-        // // checking relations
-        //surveyname via the question survey
-        $this->assertEquals($survey->name, $questionSurvey->survey->name);
-
-        //question id via question survey
-        $this->assertEquals($question1->id, $questionSurvey->question->question_type_id);
-
-        //response id via an answer
-        $this->assertEquals($reponseSurvey->id, $answer1->response_id);
-
-        //survey id via response survey
-        $this->assertEquals($survey->id, $reponseSurvey->survey_id);
-
+        array_push($this->answers, $answer1, $answer2);
     }
+
+    public function test_relation_question_to_survey(): void
+    {
+        $this->assertInstanceOf(Survey::class,$this->questions[0]->surveys->first->id);
+    }
+
+    public function test_relation_survey_to_question(): void
+    {
+        $this->assertInstanceOf(Question::class,$this->surveys[0]->questions->first->id);
+    }
+
+    public function test_relation_questiontype_to_question(): void
+    {
+        $this->assertInstanceOf(Question::class,$this->questionTypes[0]->questions->first->id);
+    }
+
+    public function test_relation_question_to_questiontype(): void
+    {
+        $this->assertInstanceOf(QuestionType::class,$this->questions[0]->question_type);
+    }
+
+    public function test_relation_answers_to_question(): void
+    {
+        $this->assertInstanceOf(Question::class,$this->answers[0]->question);
+    }
+
+    public function test_relation_question_to_answer(): void
+    {
+        $this->assertInstanceOf(Answer::class,$this->questions[0]->answers->first->id);
+    }
+
+    public function test_relation_answers_to_response(): void
+    {
+        $this->assertInstanceOf(Response::class,$this->answers[0]->response);
+    }
+
+    public function test_relation_response_to_answer(): void
+    {
+        $this->assertInstanceOf(Answer::class,$this->responses[0]->answers->first->id);
+    }
+
+    public function test_relation_response_to_survey(): void
+    {
+        $this->assertInstanceOf(Survey::class,$this->responses[0]->survey);
+    }
+
+    public function test_relation_survey_to_response(): void
+    {
+        $this->assertInstanceOf(Response::class,$this->surveys[0]->reponses->first->id);
+    }
+
 }
