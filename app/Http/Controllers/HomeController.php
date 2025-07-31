@@ -255,5 +255,24 @@ class HomeController extends Controller
         
         dd('test');        
     }
+
+
+    //admin page control
+    public function statusSurvey()
+    {
+        return view('admin.status-survey');
+    }
+
+    public function statusSurveyProcess(Request $request)
+    {
+        // validate input
+        $formFields = $request->validate([
+            'name'         => ['required'],
+            'isSurveyActive'     => ['required'],
+        ]);
+        dd($formFields);
+        return view('admin.status-survey');
+        // return view('admin.create-survey');
+    }
     
 }

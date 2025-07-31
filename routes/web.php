@@ -1,13 +1,14 @@
 <?php
 
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LabController;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\SeederController;
-use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LabController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\SeederController;
+use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\FrontendController;
 
  
 /*
@@ -94,6 +95,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/create-actions', [HomeController::class, 'createActions'])->name('create-actions');
     Route::get('/create-action/{id}', [HomeController::class, 'createAction'])->name('create-action');
 
+    Route::get('/status-survey', [HomeController::class, 'statusSurvey'])->name('status-survey');
+    Route::post('/status-survey', [HomeController::class, 'statusSurveyProcess'])->name('status-survey-process');
+
+
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });
 
@@ -124,5 +129,8 @@ Route::get('/laboratory-intake', [FormController::class, 'labIntakeForm'])->name
 Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process');
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
 Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process');
-Route::get('/contribute-survey-scenario/{domain}', [FormController::class, 'contributeSurveyScenario'])->name('contribute-survey-scenario');
-Route::post('/contribute-survey-scenario', [FormController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
+
+Route::get('/contribute-survey-scenario/{domain}', [SurveyController::class, 'contributeSurveyScenario'])->name('contribute-survey-scenario');
+Route::post('/contribute-survey-scenario/{surveyId}', [SurveyController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
+// Route::post('/contribute-survey-scenario', [SurveyController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
+
