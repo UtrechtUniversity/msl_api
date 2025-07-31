@@ -18,7 +18,6 @@ class Question extends Model
 
     protected function casts(): array
     {   
-        
         return [
             'question' => asQuestion::class,
         ];
@@ -31,11 +30,16 @@ class Question extends Model
 
     public function surveys(): BelongsToMany
     {
-        return $this->belongsToMany(Survey::class);
+        return $this->belongsToMany(Survey::class)->withPivot('order');
     }
 
     public function answers()
     {
         return $this->hasMany(Answer::class);
+    }
+
+    public function order()
+    {
+        return $this->pivot->order;
     }
 }
