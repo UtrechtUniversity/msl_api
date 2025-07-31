@@ -2,22 +2,23 @@
 
 namespace App\Models\Surveys\QuestionTypes;
 
-class TextQuestion
+class RadioSelect
 {
     public $title = '';
-    public $titleBold = false;
-    public $sectionName = '';
-    public $textBlock = false;
-    public $placeholder = '';
+    public $options = [];
     public $validation = [];
+    public $sectionName = '';
+    public $titleBold = '';
+
+
 
     public function __construct(array $config)
     {
         $this->title = $config['title'];
         $this->titleBold = $config['titleBold'];
-        $this->sectionName = $config['sectionName'];
-        $this->textBlock = $config['textBlock'];
-        $this->placeholder = $config['placeholder'];
+        $this->options = $config['options'];
         $this->validation = $config['validation'];
+        $this->sectionName = $config['sectionName'];
     }
+
 }
