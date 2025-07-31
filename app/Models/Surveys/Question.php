@@ -30,7 +30,7 @@ class Question extends Model
 
     public function surveys(): BelongsToMany
     {
-        return $this->belongsToMany(Survey::class)->withPivot('order');
+        return $this->belongsToMany(Survey::class);
     }
 
     public function answers()
