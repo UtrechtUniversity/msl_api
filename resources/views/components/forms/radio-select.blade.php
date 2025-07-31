@@ -34,7 +34,6 @@
                     value={{ $key }} 
                     name={{ $sectionName }} 
                     class="radio checked:bg-secondary-500" 
-                    {{-- @checked(old($sectionName)) --}}
                     @if (old($sectionName) == $key && old($sectionName) !== null)
                         checked
                     @endif
