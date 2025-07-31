@@ -5,10 +5,33 @@
 
     {{-- {{ $imageSource }} --}}
 
-    <form method="POST" action="{{ route('contribute-survey-scenario-process') }}" class="space-y-8 flex flex-col justify-center items-center" novalidate>
+
+
+
+    <form method="POST"
+    autocomplete="off"
+    action={{ route('contribute-survey-scenario-process', ['surveyId' => 1]) }}
+    {{-- action={{ route('contribute-survey-scenario-process') }} --}}
+    class="space-y-8 flex flex-col justify-center items-center" novalidate>
         @csrf 
+        
+
+        @foreach ($allQuestions as $question)
+
+            <div class="w-full">
+                <x-survey-component :questionConfig="$question" />
+            </div>
+        
+        @endforeach
 
 
+
+
+            <div class="flex place-content-center">
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </div>
+            
+        </form>
 
 
             <div class="w-full">
@@ -32,8 +55,6 @@
 
 
             <p class="p-20">scenario here</p>
-
-
 
 
             <div class="w-full">
@@ -161,7 +182,6 @@
 
 
 
-    </form>
         
 </div>
 
