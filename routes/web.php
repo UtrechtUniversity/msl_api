@@ -98,6 +98,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/status-survey', [HomeController::class, 'statusSurvey'])->name('status-survey');
     Route::post('/status-survey', [HomeController::class, 'statusSurveyProcess'])->name('status-survey-process');
 
+    Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
+    Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
+
 
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });

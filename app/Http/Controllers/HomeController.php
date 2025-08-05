@@ -2,22 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Models\DatasetDelete;
-use App\Jobs\ProcessDatasetDelete;
-use App\Models\Importer;
 use App\Models\Import;
-use App\Jobs\ProcessImport;
-use App\Models\SourceDatasetIdentifier;
-use App\Models\SourceDataset;
-use App\Models\DatasetCreate;
+use App\Models\Importer;
 use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\Models\MappingLog;
-use App\Exports\MappingLogsExport;
 use App\Mappers\BgsMapper;
+use App\Models\MappingLog;
+use App\Jobs\ProcessImport;
+use Illuminate\Http\Request;
+use App\Exports\SurveyExport;
+use App\Models\DatasetCreate;
+use App\Models\DatasetDelete;
+use App\Models\SourceDataset;
+use App\Models\Surveys\Survey;
+use App\Exports\MappingLogsExport;
+use App\Jobs\ProcessDatasetDelete;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\SourceDatasetIdentifier;
+use App\CkanClient\Request\PackageSearchRequest;
+use App\CkanClient\Request\OrganizationListRequest;
 
 class HomeController extends Controller
 {
@@ -256,23 +258,60 @@ class HomeController extends Controller
         dd('test');        
     }
 
-
     //admin page control
     public function statusSurvey()
     {
-        return view('admin.status-survey');
+        $allSurveys = Survey::all();
+        return view('admin.status-survey', [
+            'allSurveys' => $allSurveys
+        ]);
     }
 
     public function statusSurveyProcess(Request $request)
     {
-        // validate input
         $formFields = $request->validate([
-            'name'         => ['required'],
+            'surveyID'         => ['required'],
             'isSurveyActive'     => ['required'],
         ]);
-        dd($formFields);
-        return view('admin.status-survey');
-        // return view('admin.create-survey');
+
+        $status = false;
+        if($request->input('isSurveyActive') == 'yes'){
+            $status = true;
+        } else if($request->input('isSurveyActive') == 'no'){
+            $status = false;
+        }
+
+        $survey = Survey::where('id', $request->input('surveyID'))->first();
+        $survey->update(
+            [
+                'active' => $status
+            ]
+        );
+
+        $allSurveys = Survey::all();
+        return view('admin.status-survey', ['allSurveys' => $allSurveys]);
+    }
+
+
+    public function downloadSurvey()
+    {
+        $allSurveys = Survey::all();
+        return view('admin.download-survey', [
+            'allSurveys' => $allSurveys
+        ]);
+    }
+
+    public function downloadSurveyProcess(Request $request)
+    {        
+        $formFields = $request->validate([
+            'surveyID'         => ['required']
+        ]);
+
+        $targetSurvey = Survey::where('id', $request->input('surveyID'))->first();
+
+        $fileName = 'SurveyExport_'.$targetSurvey->name;
+
+        return Excel::download(new SurveyExport($targetSurvey), $fileName.'.xlsx');
     }
     
 }
