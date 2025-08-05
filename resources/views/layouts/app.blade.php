@@ -125,10 +125,11 @@
                                     <a class="dropdown-item" href="{{ route('status-survey') }}">                                                                              
                                         Change status of survey
                                     </a>
+
+                                    <a class="dropdown-item" href="{{ route('download-survey') }}">                                                                              
+                                        Download survey
+                                    </a>
                                     
-                                    {{-- <a class="dropdown-item" href="{{ route('convert-excel') }}">                                                                              
-                                        Convert excel file
-                                    </a> --}}
                                 </div>
                             </li>
                             

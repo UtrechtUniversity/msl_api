@@ -27,7 +27,7 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
     public function collection()
     {      
         $keywords = $this->vocabulary->keywords;
-                
+
         return $keywords;
     }
     
