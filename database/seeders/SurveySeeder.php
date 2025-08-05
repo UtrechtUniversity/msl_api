@@ -57,6 +57,12 @@ class SurveySeeder extends Seeder
             'active' => true,
         ]);
 
+        //survey test
+        $survey2 = Survey::create([
+            'name' => 'randomSurvey_inactive',
+            'active' => false,
+        ]);
+
         $order = 0;
         // seed test questions
         $order++;

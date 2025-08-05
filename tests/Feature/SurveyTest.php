@@ -182,6 +182,6 @@ class SurveyTest extends TestCase
 
     public function test_relation_survey_to_response(): void
     {
-        $this->assertInstanceOf(Response::class, $this->surveys[0]->reponses->first->id);
+        $this->assertInstanceOf(Response::class, $this->surveys[0]->responses->first->id);
     }
 }

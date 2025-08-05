@@ -10,6 +10,7 @@ class TextQuestion
     public $textBlock = false;
     public $placeholder = '';
     public $validation = [];
+    
 
     public function __construct(array $config)
     {

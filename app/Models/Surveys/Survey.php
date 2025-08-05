@@ -21,7 +21,7 @@ class Survey extends Model
         return $this->belongsToMany(Question::class)->withPivot('order');
     }
 
-    public function reponses(){
+    public function responses(){
         return $this->hasMany(Response::class);
     }
 
