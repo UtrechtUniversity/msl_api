@@ -26,7 +26,7 @@ class SurveyController extends Controller
         $surveyId = 1;
 
         return view('surveys.contribute-survey-scenario',[
-            'imageSource' => $domain,
+            'domain' => $domain,
             'allQuestions' => $this->getSortedQuestions($surveyId),
             'surveyId' => $surveyId
         ]);
@@ -39,12 +39,15 @@ class SurveyController extends Controller
      */
     public function contributeSurveyScenarioProcess(Request $request, $surveyId): RedirectResponse
     {
+        // dd($request);
         $sortedQuestions = $this->getSortedQuestions($surveyId);
         
         $validationFields = [];
         
         foreach ($sortedQuestions as $question) {
-            $validationFields[$question->question->sectionName] = $question->question->validation;
+            if(!empty($question->question->validation)){
+                $validationFields[$question->question->sectionName] = $question->question->validation;
+            }
         }
 
         $request->validate($validationFields);
@@ -54,29 +57,26 @@ class SurveyController extends Controller
             'email' => $request->input('email')
         ]);
 
-        // dd($request->input('PhaseSelect'));
-
         foreach ($sortedQuestions as $question) {
-
-            if(is_array($request->input($question->question->sectionName))){
-                foreach ($request->input($question->question->sectionName) as $input) {
+            if(!empty($question->question->validation)){
+                if(is_array($request->input($question->question->sectionName))){
+                    foreach ($request->input($question->question->sectionName) as $input) {
+                        Answer::create([
+                            'response_id' => $responseSurvey->id,
+                            'question_id' => $question->id,
+                            'answer' => $input,
+                        ]);
+                    }
+                 } else {
                     Answer::create([
                         'response_id' => $responseSurvey->id,
                         'question_id' => $question->id,
-                        'answer' => $input,
+                        'answer' => $request->input($question->question->sectionName),
                     ]);
                 }
-             } else {
-                Answer::create([
-                    'response_id' => $responseSurvey->id,
-                    'question_id' => $question->id,
-                    'answer' => $request->input($question->question->sectionName),
-                ]);
             }
-
         }
 
-        // redirects to contribute-laboratory with the additonal elements located in components/notifications
         return redirect('/')->with('modals', [
             'type'      => 'success', 
             'message'   => 'Thanks for your input!']
