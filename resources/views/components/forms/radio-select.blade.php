@@ -33,7 +33,7 @@
                 <input type="radio" 
                     value={{ $key }} 
                     name={{ $sectionName }} 
-                    class="radio checked:bg-secondary-500" 
+                    class="radio checked:bg-secondary-500 hover:bg-secondary-500" 
                     @if (old($sectionName) == $key && old($sectionName) !== null)
                         checked
                     @endif

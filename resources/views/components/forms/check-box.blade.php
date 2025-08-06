@@ -6,6 +6,8 @@
             class="block mb-2 
             @if (isset($titleBold) && $titleBold)
                 font-bold
+                text-left
+                w-full
             @endif
             ">
             {{ $title }}
@@ -18,7 +20,12 @@
           @endif
       ">
       <div class="flex-col space-y-2 
-      place-content-center h-full">
+      place-content-center h-full
+        @if ($errors->has($sectionName))
+            error-highlight-input
+            rounded-xl
+        @endif 
+      ">
   
       @foreach ( $options as $key => $option)
           <div class="form-control">
@@ -32,9 +39,7 @@
                   value={{ $key }} 
                   name={{ $sectionName.'[]' }}
                   class="checkbox checkbox-secondary checkbox-md
-                          @if ($errors->has($sectionName))
-                              error-highlight-input
-                          @endif 
+
                   " 
                   @if (is_array(old( $sectionName )) && in_array($key, old( $sectionName )) )
                       checked="checked"

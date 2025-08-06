@@ -38,9 +38,23 @@
             :titleBold="$questionConfig->question->titleBold"
             />
         @break
+
+        @case('gallery')
+            <br>
+
+            <x-forms.gallery
+            :title="$questionConfig->question->title"
+            :sectionName="$questionConfig->question->sectionName"
+            :images="$allImages"
+            :descriptions="$allDescriptions"
+            :titleBold="$questionConfig->question->titleBold"
+            />
+
+            <br>
+        @break
     
         @default
-            <p>none</p>
+            <p>Component not found</p>
     @endswitch
 
 </div>
