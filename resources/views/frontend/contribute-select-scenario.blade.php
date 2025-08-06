@@ -10,43 +10,14 @@
         </p>
     </div>
 
-    @php
-    $domainList = [
-      array(
-        "name"=>"Analogue Modelling of Geological Processes", 
-        "routeParam" => 'analogue'
-      ),
-      array(
-        "name"=>"Geochemistry", 
-        "routeParam" => 'geochemistry'
-      ),
-      array(
-        "name"=>"Geo-energy Test Beds", 
-        "routeParam" => 'testbeds'
-      ),
-      array(
-        "name"=>"Rock and Melt Physics",  
-        "routeParam" => 'rockmelt'
-      ),
-      array(
-        "name"=>"Magnetism and Paleomagnetism", 
-        "routeParam" => 'paleomag'
-      ),
-      array(
-        "name"=>"Microscopy and Tomography", 
-        "routeParam" => 'mircotomo'
-      ),
-    ]
-  @endphp
-
         <h3 class="pb-2 pt-16">Select your domain!</h3>
         <div class="sm:max-w-screen-lg flex md:flex-row flex-wrap sm:p-10 py-10 gap-8 justify-center place-items-center">
-            @foreach ($domainList as $infoElement)
+            @foreach ($allDomains as $domain => $domainName)
                     <a role="button" 
-                    href="{{ route('contribute-survey-scenario', ['domain' => $infoElement["routeParam"]]) }}"
+                    href="{{ route('contribute-survey-scenario', ['domain' => $domain]) }}"
                     class="no-underline m-1 p-4 bg-base-300 rounded-lg w-64 h-24 place-content-center shadow-lg hover:bg-secondary-100 hover:text-secondary-900"
                     > 
-                        <h5 class="text-base font-normal">{{ $infoElement["name"] }}</h5>
+                        <h5 class="text-base font-normal">{{ $domainName }}</h5>
                     </a>
             @endforeach
         </div>

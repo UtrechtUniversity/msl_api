@@ -10,10 +10,12 @@ use App\Models\Surveys\Response;
 use Illuminate\Support\Facades\DB;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\CheckBox;
+use App\Models\Surveys\QuestionTypes\Gallery;
 use App\Models\Surveys\QuestionTypes\RadioSelect;
 use App\Models\Surveys\QuestionTypes\TextQuestion;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use PhpOption\None;
 
 class SurveySeeder extends Seeder
 {
@@ -51,75 +53,220 @@ class SurveySeeder extends Seeder
             'class' => CheckBox::class,
         ]);
 
-        //survey test
+        $galleryType = QuestionType::create([
+            'name' => 'gallery',
+            'class' => Gallery::class,
+        ]);
+
+        $allDomains = [
+            'analogue' => 'Analogue Modelling of Geological Processes',
+            'geochemistry' => 'Geochemistry',
+            'microtomo' => 'Microscopy and Tomography',
+            'paleomag' => 'Magnetism and Paleomagnetism',
+            'rockmelt' => 'Rock and Melt Physics',
+            'testbeds' => 'Geo-Energy Test Beds'
+        ];
+
+        foreach ($allDomains as $key => $value) {
+            $this->scenarioSurveySeeding(
+                $key,
+                $textQuestionType,
+                $selectQuestionType,
+                $radioSelectType,
+                $checkBoxType,
+                $galleryType
+            );
+        }
+
+
+    }
+
+
+    private function scenarioSurveySeeding(
+            $domainName,                
+            $textQuestionType,
+            $selectQuestionType,
+            $radioSelectType,
+            $checkBoxType,
+            $galleryType
+        ){
+
+        //survey
         $survey = Survey::create([
-            'name' => 'scenarioSurvey',
+            'name' => 'scenarioSurvey-'.$domainName,
             'active' => true,
         ]);
 
-        //survey test
-        $survey2 = Survey::create([
-            'name' => 'randomSurvey_inactive',
-            'active' => false,
-        ]);
-
         $order = 0;
-        // seed test questions
+        // seed questions
         $order++;
-        $question2 = Question::create([
+        Question::create([
             'question_type_id' => $selectQuestionType->id,
             'question' => [
-                'title' => 'Is this a question?',
+                'title' => 'Which describes your role the best?',
                 'options' => [
-                    'Netherlands',
-                    'Germany',
+                    'Modeler',
+                    'Researcher',
+                    'Other',
                 ],
                 'validation' => ['required'],
-                'sectionName' => "WhichCountry",
+                'sectionName' => "WhichRoleDescribesYouBest",
                 'placeholder' => 'Select an option from this list',
                 'titleBold' => true,
 
             ]
-        ]);
-        $question2->surveys()->attach($survey->id, ['order' => $order]);
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        $question1 = Question::create([
-            'question_type_id' => $textQuestionType->id,
+        Question::create([
+            'question_type_id' => $selectQuestionType->id,
             'question' => [
-                'title' => 'Is this another question?',
+                'title' => 'In which sector is your role?',
+                'options' => [
+                    'Industry',
+                    'Academic',
+                    'Government',
+                    'Nonprofit / NGO',
+                ],
+                'validation' => ['required'],
+                'sectionName' => "WhichSectorIsYourRole",
+                'placeholder' => 'Select an option from this list',
                 'titleBold' => true,
-                'sectionName' => 'AnotherQuestion',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:50']
+
             ]
-        ]);
-        $question1->surveys()->attach($survey->id, ['order' => $order]);
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
 
         $order++;
-        $question3 = Question::create([
+        Question::create([
+            'question_type_id' => $galleryType->id,
+            'question' => [
+                'title' => 'Please read the following scenario',
+                'titleBold' => true,
+                'validation' => [],
+                'sectionName' => "scenario",
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+
+        $order++;
+        Question::create([
             'question_type_id' => $radioSelectType->id,
             'question' => [
-                'title' => 'Is this another question?',
+                'title' => 'Do you recognize the challenge portrayed in this scenario in your work?',
                 'titleBold' => true,
-                'sectionName' => 'AgreementRadio',
+                'sectionName' => 'AgreementChallengeScenario',
                 'validation' => ['required'],
                 'options' => [
-                    'Agree very much',
-                    'Agree',
+                    'Strongly disagree',
                     'Disagree',
-                    'Disagree very much',
+                    'Somewhat disagree',
+                    'Somewhat agree',
+                    'Agree',
+                    'Strongly Agree',
                 ],
             ]
-        ]);
-        $question3->surveys()->attach($survey->id, ['order' => $order]);
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
 
         $order++;
-        $question4 = Question::create([
+        Question::create([
+            'question_type_id' => $textQuestionType->id,
+            'question' => [
+                'title' => "Please list examples of such challenges or explain why you don't recognize any",
+                'titleBold' => true,
+                'sectionName' => 'ChallengesExamples',
+                'textBlock' => true,
+                'placeholder' => 'Please type your answer here',
+                'validation' => ['required', 'min:20']
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+
+        $order++;
+        Question::create([
+            'question_type_id' => $textQuestionType->id,
+            'question' => [
+                'title' => "How do you approach a similar challenge in your work?",
+                'titleBold' => true,
+                'sectionName' => 'SimilarChallengeApproach',
+                'textBlock' => true,
+                'placeholder' => 'Please type your answer here',
+                'validation' => ['required', 'min:20']
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+
+        $order++;
+        Question::create([
+            'question_type_id' => $textQuestionType->id,
+            'question' => [
+                'title' => "How would you change this scenario to make it reflect your work?",
+                'titleBold' => true,
+                'sectionName' => 'ChangeScenario',
+                'textBlock' => true,
+                'placeholder' => 'Please type your answer here',
+                'validation' => ['required', 'min:20']
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+
+        $order++;
+        Question::create([
+            'question_type_id' => $textQuestionType->id,
+            'question' => [
+                'title' => "Please describe briefly what function the software tool in the scenario fulfills?",
+                'titleBold' => true,
+                'sectionName' => 'FunctionalDescription',
+                'textBlock' => true,
+                'placeholder' => 'Please type your answer here',
+                'validation' => ['required', 'min:20']
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        $order++;
+        Question::create([
+            'question_type_id' => $radioSelectType->id,
+            'question' => [
+                'title' => 'Would you see yourself using this tool?',
+                'titleBold' => true,
+                'sectionName' => 'UsingTool',
+                'validation' => ['required'],
+                'options' => [
+                    'Very Probably',
+                    'Definitely Not',
+                    'Probably Not',
+                    'Possibly',
+                    'Probably',
+                    'Very Probably',
+                    'Definitely',
+                ],
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        $order++;
+        Question::create([
+            'question_type_id' => $radioSelectType->id,
+            'question' => [
+                'title' => 'How often would you use the software tool described in the scenario?',
+                'titleBold' => true,
+                'sectionName' => 'UsingToolHowOften',
+                'validation' => ['required'],
+                'options' => [
+                    'Daily',
+                    'Weekly',
+                    'Monthly',
+                    'Yearly',
+                    'Never',
+                ],
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        $order++;
+        Question::create([
             'question_type_id' => $checkBoxType->id,
             'question' => [
-                'title' => 'Is this another question?',
+                'title' => 'When would you see this data tool being beneficial in your process?',
                 'titleBold' => true,
                 'sectionName' => 'PhaseSelect',
                 'validation' => ['required'],
@@ -128,10 +275,43 @@ class SurveySeeder extends Seeder
                     'Literature Review',
                     'Setting Research Questions, Objectives, and Hypothesis',
                     'Choosing the Design Study',
+                    'Deciding on the Sample Design',
+                    'Collecting Data',
+                    'Processing and Analyzing Data',
+                    'Writing the Report',
+                    'None'
                 ],
             ]
-        ]);
-        $question4->surveys()->attach($survey->id, ['order' => $order]);
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        $order++;
+        Question::create([
+            'question_type_id' => $checkBoxType->id,
+            'question' => [
+                'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
+                'titleBold' => true,
+                'sectionName' => 'gdprAgreement',
+                'validation' => ['required_with:EmailContact', 'nullable'],
+                'options' => [
+                    'I agree'
+                ],
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        $order++;
+        Question::create([
+            'question_type_id' => $textQuestionType->id,
+            'question' => [
+                // 'title' => "If you agreed please leave your email!",
+                'title' => "Leave your email in the box below:",
+                'titleBold' => false,
+                'sectionName' => 'EmailContact',
+                'textBlock' => false,
+                'placeholder' => 'your@email.domain',
+                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable']
+            ]
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
     }
+
 }

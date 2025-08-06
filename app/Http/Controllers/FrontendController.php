@@ -558,7 +558,17 @@ class FrontendController extends Controller
      */
     public function contributeSelectScenario()
     {
-        return view('frontend.contribute-select-scenario');
+        $allDomains = [
+            'analogue' => 'Analogue Modelling of Geological Processes',
+            'geochemistry' => 'Geochemistry',
+            'microtomo' => 'Microscopy and Tomography',
+            'paleomag' => 'Magnetism and Paleomagnetism',
+            'rockmelt' => 'Rock and Melt Physics',
+            'testbeds' => 'Geo-Energy Test Beds'
+        ];
+
+        return view('frontend.contribute-select-scenario', 
+        ['allDomains' => $allDomains]);
     }
 
 
