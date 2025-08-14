@@ -135,5 +135,4 @@ Route::post('/laboratory-contact-person', [FormController::class, 'labContactFor
 
 Route::get('/contribute-survey-scenario/{domain}', [SurveyController::class, 'contributeSurveyScenario'])->name('contribute-survey-scenario');
 Route::post('/contribute-survey-scenario/{surveyId}', [SurveyController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
-// Route::post('/contribute-survey-scenario', [SurveyController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
 
