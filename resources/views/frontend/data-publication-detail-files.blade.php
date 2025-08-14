@@ -65,30 +65,63 @@
                 </div>
                     
                 <div class="detailEntryDiv"> 
-                    <p class="text-center">(click to download)</p>
 
-                    <div class="flex flex-wrap justify-center place-content-center gap-5 w-full">
+
+                    <div class="
+                        flex flex-col
+                        place-items-center w-full
+                        ">
                                         {{-- msl_files --}}
                         @if (array_key_exists("msl_files", $data))
-                            @foreach ($data['msl_files'] as $download)
+                        <h3 class="text-center py-4">{{ count($data['msl_files']) }} files</h3>
 
-                                <div class="card bg-base-300 shadow-xl flex justify-around flex-row p-2 w-9/12 ">
-                                    
+                        @php
+                            $allExtensions = [];
+                            foreach ($data['msl_files'] as $download) {
+                                if (! in_array($download['msl_extension'], $allExtensions) ) {
+                                    $allExtensions [] = $download['msl_extension'];
+                                }
+                            }
+                        @endphp
 
-                                    <a href="{!! $download['msl_download_link'] !!}" title="download file"
-                                    class="no-underline"
-                                    id=""
-                                    >
-                                        <x-ri-file-3-fill class="file-icon"/>
-                                        &nbsp;
-                                        &nbsp;
-                                        &nbsp;
-                                        <p class="inline underline">
-                                            {{ $download['msl_file_name'] }}.{{ $download['msl_extension'] }}
-                                        </p>
-                                    </a>
-                                </div>
+                        <p class="text-center pb-0">available file types: 
+
+                            
+                        </p>
+                        <div class="text-center pt-0 flex">
+                            @foreach ($allExtensions as $key => $extension)
+                                    <p class="font-bold">.{{ $extension }}</p>
+                                @if (sizeof($allExtensions) -1 != $key )
+                                   <p class="px-2"> | </p> 
+                                @endif
                             @endforeach
+                        </div>
+
+
+                        
+                        <p class="text-center pt-6">(click to download)</p>
+
+                            <div class='bg-primary-100 flex flex-wrap overflow-auto gap-5 w-1/2 h-96 p-4 rounded-md'>
+                                
+                                @foreach ($data['msl_files'] as $key => $download)
+
+                                    <a class=" bg-base-300 shadow-md flex justify-around flex-row px-4 w-full hover:bg-secondary-100 "
+                                        href="{!! $download['msl_download_link'] !!}" title="download file">
+
+                                            <div class='flex justify-left items-center w-full'>
+                                                <p class="no-underline px-4 w-20">{{ $key + 1 }}</p>
+                                                <x-ri-file-3-fill class="file-icon"/>
+                                                <div 
+                                                id=""
+                                                class='font-medium no-underline px-4'>
+                                                    {{ $download['msl_file_name'] }}.{{ $download['msl_extension'] }}
+                                                </div>
+                                            </div>
+                                    </a>
+
+                                @endforeach
+                            {{-- </div> --}}
+
                         @else
                             <div class="detailEntryDiv flex flex-col place-items-center gap-4">
                                 <div class="flex flex-col place-items-center bg-info-300
