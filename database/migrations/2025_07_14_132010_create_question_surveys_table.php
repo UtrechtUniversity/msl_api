@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('question_survey', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('survey_id'); 
+            $table->unsignedBigInteger('survey_id');
             $table->unsignedBigInteger('question_id');
-            $table->Integer('order'); //how to save array data?
+            $table->Integer('order'); // how to save array data?
         });
     }
 
