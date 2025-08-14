@@ -3,19 +3,17 @@
 namespace Database\Seeders;
 
 use App\Models\Surveys\Answer;
-use App\Models\Surveys\Survey;
-use Illuminate\Database\Seeder;
 use App\Models\Surveys\Question;
-use App\Models\Surveys\Response;
-use Illuminate\Support\Facades\DB;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\CheckBox;
 use App\Models\Surveys\QuestionTypes\Gallery;
 use App\Models\Surveys\QuestionTypes\RadioSelect;
-use App\Models\Surveys\QuestionTypes\TextQuestion;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use PhpOption\None;
+use App\Models\Surveys\QuestionTypes\TextQuestion;
+use App\Models\Surveys\Response;
+use App\Models\Surveys\Survey;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SurveySeeder extends Seeder
 {
@@ -31,11 +29,11 @@ class SurveySeeder extends Seeder
         Answer::truncate();
         Response::truncate();
         DB::table('question_survey')->truncate();
-       
+
         // Seed question types
         $textQuestionType = QuestionType::create([
             'name' => 'text',
-            'class' => TextQuestion::class
+            'class' => TextQuestion::class,
         ]);
 
         $selectQuestionType = QuestionType::create([
@@ -64,7 +62,7 @@ class SurveySeeder extends Seeder
             'microtomo' => 'Microscopy and Tomography',
             'paleomag' => 'Magnetism and Paleomagnetism',
             'rockmelt' => 'Rock and Melt Physics',
-            'testbeds' => 'Geo-Energy Test Beds'
+            'testbeds' => 'Geo-Energy Test Beds',
         ];
 
         foreach ($allDomains as $key => $value) {
@@ -78,20 +76,18 @@ class SurveySeeder extends Seeder
             );
         }
 
-
     }
 
-
     private function scenarioSurveySeeding(
-            $domainName,                
-            $textQuestionType,
-            $selectQuestionType,
-            $radioSelectType,
-            $checkBoxType,
-            $galleryType
-        ){
+        $domainName,
+        $textQuestionType,
+        $selectQuestionType,
+        $radioSelectType,
+        $checkBoxType,
+        $galleryType
+    ) {
 
-        //survey
+        // survey
         $survey = Survey::create([
             'name' => 'scenarioSurvey-'.$domainName,
             'active' => true,
@@ -110,11 +106,11 @@ class SurveySeeder extends Seeder
                     'Other',
                 ],
                 'validation' => ['required'],
-                'sectionName' => "WhichRoleDescribesYouBest",
+                'sectionName' => 'WhichRoleDescribesYouBest',
                 'placeholder' => 'Select an option from this list',
                 'titleBold' => true,
 
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -129,13 +125,12 @@ class SurveySeeder extends Seeder
                     'Nonprofit / NGO',
                 ],
                 'validation' => ['required'],
-                'sectionName' => "WhichSectorIsYourRole",
+                'sectionName' => 'WhichSectorIsYourRole',
                 'placeholder' => 'Select an option from this list',
                 'titleBold' => true,
 
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
@@ -144,10 +139,9 @@ class SurveySeeder extends Seeder
                 'title' => 'Please read the following scenario',
                 'titleBold' => true,
                 'validation' => [],
-                'sectionName' => "scenario",
-            ]
+                'sectionName' => 'scenario',
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
@@ -165,9 +159,8 @@ class SurveySeeder extends Seeder
                     'Agree',
                     'Strongly Agree',
                 ],
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
@@ -178,50 +171,47 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'ChallengesExamples',
                 'textBlock' => true,
                 'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20']
-            ]
+                'validation' => ['required', 'min:20'],
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
             'question' => [
-                'title' => "How do you approach a similar challenge in your work?",
+                'title' => 'How do you approach a similar challenge in your work?',
                 'titleBold' => true,
                 'sectionName' => 'SimilarChallengeApproach',
                 'textBlock' => true,
                 'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20']
-            ]
+                'validation' => ['required', 'min:20'],
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
             'question' => [
-                'title' => "How would you change this scenario to make it reflect your work?",
+                'title' => 'How would you change this scenario to make it reflect your work?',
                 'titleBold' => true,
                 'sectionName' => 'ChangeScenario',
                 'textBlock' => true,
                 'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20']
-            ]
+                'validation' => ['required', 'min:20'],
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
 
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
             'question' => [
-                'title' => "Please describe briefly what function the software tool in the scenario fulfills?",
+                'title' => 'Please describe briefly what function the software tool in the scenario fulfills?',
                 'titleBold' => true,
                 'sectionName' => 'FunctionalDescription',
                 'textBlock' => true,
                 'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20']
-            ]
+                'validation' => ['required', 'min:20'],
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -241,7 +231,7 @@ class SurveySeeder extends Seeder
                     'Very Probably',
                     'Definitely',
                 ],
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -259,7 +249,7 @@ class SurveySeeder extends Seeder
                     'Yearly',
                     'Never',
                 ],
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -279,9 +269,9 @@ class SurveySeeder extends Seeder
                     'Collecting Data',
                     'Processing and Analyzing Data',
                     'Writing the Report',
-                    'None'
+                    'None',
                 ],
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -293,9 +283,9 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'gdprAgreement',
                 'validation' => ['required_with:EmailContact', 'nullable'],
                 'options' => [
-                    'I agree'
+                    'I agree',
                 ],
-            ]
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
@@ -303,15 +293,14 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'question' => [
                 // 'title' => "If you agreed please leave your email!",
-                'title' => "Leave your email in the box below:",
+                'title' => 'Leave your email in the box below:',
                 'titleBold' => false,
                 'sectionName' => 'EmailContact',
                 'textBlock' => false,
                 'placeholder' => 'your@email.domain',
-                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable']
-            ]
+                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+            ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
     }
-
 }
