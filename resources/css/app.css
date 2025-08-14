@@ -149,6 +149,10 @@
       @apply size-8 fill-primary-800  rounded-full inline
     }
 
+    .folder-icon {
+      @apply size-8 fill-primary-800  rounded-full inline
+    }
+
     .goBack-icon{
       @apply size-8 fill-secondary-600  rounded-full inline
     }
