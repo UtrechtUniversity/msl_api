@@ -2,7 +2,6 @@
 
 namespace App\Models\Surveys;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Response extends Model
@@ -12,7 +11,7 @@ class Response extends Model
         'email',
     ];
 
-    public function survey() 
+    public function survey()
     {
         return $this->belongsTo(Survey::class);
     }
@@ -20,5 +19,5 @@ class Response extends Model
     public function answers()
     {
         return $this->hasMany(Answer::class);
-    }    
+    }
 }

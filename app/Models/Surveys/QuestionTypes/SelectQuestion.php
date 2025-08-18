@@ -7,12 +7,14 @@ class SelectQuestion
     public $title = '';
 
     public $options = [];
+
     public $validation = [];
+
     public $sectionName = '';
+
     public $placeholder = '';
+
     public $titleBold = '';
-
-
 
     public function __construct(array $config)
     {

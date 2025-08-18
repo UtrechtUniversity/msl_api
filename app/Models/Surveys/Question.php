@@ -3,7 +3,6 @@
 namespace App\Models\Surveys;
 
 use App\Casts\asQuestion;
-use App\Casts\asTextQuestion;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -17,7 +16,7 @@ class Question extends Model
     ];
 
     protected function casts(): array
-    {   
+    {
         return [
             'question' => asQuestion::class,
         ];

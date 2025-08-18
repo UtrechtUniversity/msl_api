@@ -3,7 +3,6 @@
 namespace App\Models\Surveys;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Survey extends Model
@@ -13,7 +12,7 @@ class Survey extends Model
 
     protected $fillable = [
         'name',
-        'active'
+        'active',
     ];
 
     public function questions(): BelongsToMany
@@ -21,10 +20,8 @@ class Survey extends Model
         return $this->belongsToMany(Question::class)->withPivot('order');
     }
 
-    public function responses(){
+    public function responses()
+    {
         return $this->hasMany(Response::class);
     }
-
-
-
 }
