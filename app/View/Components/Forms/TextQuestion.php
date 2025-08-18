@@ -2,7 +2,6 @@
 
 namespace App\View\Components\Forms;
 
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -17,8 +16,7 @@ class TextQuestion extends Component
         public string $title,
         public bool $titleBold,
         public bool $textBlock
-    )
-    {}
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

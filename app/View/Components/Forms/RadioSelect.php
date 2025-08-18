@@ -16,7 +16,7 @@ class RadioSelect extends Component
         public string $title,
         public array $options,
         public bool $titleBold
-    ){}
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

@@ -17,10 +17,7 @@ class Gallery extends Component
         public array $images,
         public array $descriptions,
         public bool $titleBold,
-    )
-    {
-        
-    }
+    ) {}
 
     /**
      * Get the view / contents that represent the component.

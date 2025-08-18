@@ -18,7 +18,7 @@ class SelectQuestion extends Component
         public array $options,
         public bool $titleBold,
 
-    ){}
+    ) {}
 
     /**
      * Get the view / contents that represent the component.
