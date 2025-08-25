@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('response_id');
             $table->unsignedBigInteger('question_id');
-            $table->longText('answer');
+            $table->longText('answer')->nullable();
         });
     }
 

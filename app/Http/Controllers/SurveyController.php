@@ -21,9 +21,7 @@ class SurveyController extends Controller
         $surveyId = Survey::where('name', 'scenarioSurvey-'.$domain)->first()->id;
 
         return view('surveys.contribute-survey-scenario', [
-            // 'domain' => $domain,
-            'allQuestions' => $this->getSortedQuestions($surveyId),
-            // 'surveyId' => $surveyId,
+            'allQuestions' => Survey::where('id', $surveyId)->first()->questions
         ]);
     }
 
@@ -34,7 +32,7 @@ class SurveyController extends Controller
      */
     public function contributeSurveyScenarioProcess(Request $request, $surveyId): RedirectResponse
     {
-        $sortedQuestions = $this->getSortedQuestions($surveyId);
+        $sortedQuestions = Survey::where('id', $surveyId)->first()->questions;
 
         $validationFields = [];
 
@@ -52,6 +50,7 @@ class SurveyController extends Controller
         ]);
 
         foreach ($sortedQuestions as $question) {
+            // needs to check if the question instance has a validation field, since we have non-questions
             if (! empty($question->question->validation)) {
                 if (is_array($request->input($question->question->sectionName))) {
                     foreach ($request->input($question->question->sectionName) as $input) {
@@ -77,16 +76,4 @@ class SurveyController extends Controller
         );
     }
 
-    private function getSortedQuestions($surveyId)
-    {
-        $allQuestions = Survey::where('id', $surveyId)->first()->questions;
-        // the ->orderBy() has no effect for some reason
-        // this is why it is done this way
-        $allQuestionsSorted = [];
-        foreach ($allQuestions as $question) {
-            $allQuestionsSorted[$question->pivot->order] = $question;
-        }
-
-        return $allQuestionsSorted;
-    }
 }
