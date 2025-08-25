@@ -39,11 +39,6 @@
         @break
 
         @case('displayBlade')
-
-        {{-- @php
-            dd($questionConfig->question->bladeVars);
-        @endphp --}}
-
             <br>
             <x-forms.display-blade-content
             :bladeName="$questionConfig->question->bladeName"

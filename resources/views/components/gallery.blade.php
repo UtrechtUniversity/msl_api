@@ -1,13 +1,13 @@
 <div class="w-full">
     @if (isset($title))
-        <label
+        <p
             class="block mb-2 
             @if (isset($titleBold) && $titleBold)
                 font-bold
             @endif
             ">
             {{ $title }}
-        </label>
+        </p>
     @endif
 
     <div class="
