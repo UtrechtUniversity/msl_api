@@ -1,6 +1,6 @@
 <div class="w-full">
     @if (isset($title))
-        <label for="{{ $sectionName  }}" 
+        <label
             class="block mb-2 
             @if (isset($titleBold) && $titleBold)
                 font-bold

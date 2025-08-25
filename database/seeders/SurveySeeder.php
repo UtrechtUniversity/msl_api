@@ -6,6 +6,7 @@ use App\Models\Surveys\Answer;
 use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\CheckBox;
+use App\Models\Surveys\QuestionTypes\DisplayBlade;
 use App\Models\Surveys\QuestionTypes\Gallery;
 use App\Models\Surveys\QuestionTypes\RadioSelect;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
@@ -14,6 +15,8 @@ use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+
 
 class SurveySeeder extends Seeder
 {
@@ -51,9 +54,9 @@ class SurveySeeder extends Seeder
             'class' => CheckBox::class,
         ]);
 
-        $galleryType = QuestionType::create([
-            'name' => 'gallery',
-            'class' => Gallery::class,
+        $displayBladeType = QuestionType::create([
+            'name' => 'displayBlade',
+            'class' => DisplayBlade::class,
         ]);
 
         $allDomains = [
@@ -72,7 +75,7 @@ class SurveySeeder extends Seeder
                 $selectQuestionType,
                 $radioSelectType,
                 $checkBoxType,
-                $galleryType
+                $displayBladeType
             );
         }
 
@@ -84,7 +87,7 @@ class SurveySeeder extends Seeder
         $selectQuestionType,
         $radioSelectType,
         $checkBoxType,
-        $galleryType
+        $displayBladeType
     ) {
 
         // survey
@@ -133,13 +136,17 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
-            'question_type_id' => $galleryType->id,
+        $imageInfo = $this->getAllImages($domainName);
+        Question::create([  
+            'question_type_id' => $displayBladeType->id,
             'question' => [
-                'title' => 'Please read the following scenario',
-                'titleBold' => true,
-                'validation' => [],
-                'sectionName' => 'scenario',
+                'bladeName' => 'survey-gallery',
+                'bladeVars' => [
+                    'imageLinks' => $imageInfo['imageLinks'],
+                    'imageDescriptions' => $imageInfo['imageDescriptions'],
+                    'title' => 'Please read the following scenario:'
+                ]
+
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
@@ -302,5 +309,21 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
+    }
+
+
+    private function getAllImages($domain){
+        $all=[];
+
+        foreach (File::files(public_path('images/surveys/scenario/'.$domain)) as $entry) {
+            if($entry->getExtension() == 'png'){
+                $all['imageLinks'][] = 'images/surveys/scenario/'.$domain."/".$entry->getFilename();
+            } else if ($entry->getExtension() == 'json'){
+                $json = file_get_contents(public_path('images/surveys/scenario/'.$domain."/".$entry->getFilename()));
+                $all['imageDescriptions'] = json_decode($json, true)['descriptions'];
+            }
+        }
+
+        return $all;
     }
 }

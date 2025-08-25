@@ -21,9 +21,9 @@ class SurveyController extends Controller
         $surveyId = Survey::where('name', 'scenarioSurvey-'.$domain)->first()->id;
 
         return view('surveys.contribute-survey-scenario', [
-            'domain' => $domain,
+            // 'domain' => $domain,
             'allQuestions' => $this->getSortedQuestions($surveyId),
-            'surveyId' => $surveyId,
+            // 'surveyId' => $surveyId,
         ]);
     }
 

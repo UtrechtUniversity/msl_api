@@ -12,24 +12,26 @@ use Illuminate\Support\Facades\Storage;
 class SurveyComponent extends Component
 {
 
-    private $questionConfig;
-    private $allImages;
-    private $allDescriptions;
+    // private $questionConfig;
+    // private $allImages;
+    // private $allDescriptions;
+    private $allQuestions;
     /**
      * Create a new component instance.
      */
-    public function __construct($questionConfig, $domain)
+    public function __construct($allQuestions)
     {
-        $this->questionConfig = $questionConfig;
 
-        foreach (File::files(public_path('images/surveys/scenario/'.$domain)) as $entry) {
-            if($entry->getExtension() == 'png'){
-                $this->allImages [] = 'images/surveys/scenario/'.$domain."/".$entry->getFilename();
-            } else if ($entry->getExtension() == 'json'){
-                $json = file_get_contents(public_path('images/surveys/scenario/'.$domain."/".$entry->getFilename()));
-                $this->allDescriptions = json_decode($json, true)['descriptions'];
-            }
-        }
+        $this->allQuestions = $allQuestions;
+
+        // foreach (File::files(public_path('images/surveys/scenario/'.$domain)) as $entry) {
+        //     if($entry->getExtension() == 'png'){
+        //         $this->allImages [] = 'images/surveys/scenario/'.$domain."/".$entry->getFilename();
+        //     } else if ($entry->getExtension() == 'json'){
+        //         $json = file_get_contents(public_path('images/surveys/scenario/'.$domain."/".$entry->getFilename()));
+        //         $this->allDescriptions = json_decode($json, true)['descriptions'];
+        //     }
+        // }
 
     }
 
@@ -39,9 +41,7 @@ class SurveyComponent extends Component
     public function render(): View|Closure|string
     {
         return view('components.survey-component',[
-            'questionConfig' => $this->questionConfig,
-            'allImages' => $this->allImages,
-            'allDescriptions' => $this->allDescriptions
+            'allQuestions' => $this->allQuestions
         ]);
     }
 }

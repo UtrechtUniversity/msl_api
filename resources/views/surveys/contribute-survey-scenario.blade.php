@@ -9,13 +9,10 @@
     class="space-y-8 flex flex-col justify-center items-center" novalidate>
         @csrf 
         
-            @foreach ($allQuestions as $question)
-
-                <div class="w-full">
-                    <x-survey-component :questionConfig="$question" :domain="$domain" />
-                </div>
+            <div class="w-full">
+                <x-survey-component :allQuestions="$allQuestions" />
+            </div>
             
-            @endforeach
 
             <div class="flex place-content-center">
                 <button type="submit" class="btn btn-primary" >Submit</button>

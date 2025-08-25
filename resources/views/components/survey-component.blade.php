@@ -1,60 +1,9 @@
-<div>
+<div class="w-full">
 
-    @switch($questionConfig->question_type->name)
-        @case('text')
-            <x-forms.text-question 
-                :title="$questionConfig->question->title"
-                :titleBold="$questionConfig->question->titleBold"
-                :sectionName="$questionConfig->question->sectionName"
-                :placeholder="$questionConfig->question->placeholder"
-                :textBlock="$questionConfig->question->textBlock"
-            />
-        @break
-        
-        @case('select')
-            <x-forms.select-question
-            :title="$questionConfig->question->title"
-            :sectionName="$questionConfig->question->sectionName"
-            :placeholder="$questionConfig->question->placeholder"
-            :options="$questionConfig->question->options"
-            :titleBold="$questionConfig->question->titleBold"
-            />
-        @break
+    @foreach ($allQuestions as $question)
 
-        @case('radio')
-            <x-forms.radio-select
-            :title="$questionConfig->question->title"
-            :sectionName="$questionConfig->question->sectionName"
-            :options="$questionConfig->question->options"
-            :titleBold="$questionConfig->question->titleBold"
-            />
-        @break
+            <x-question-component :questionConfig="$question" />
 
-        @case('check')
-            <x-forms.check-box
-            :title="$questionConfig->question->title"
-            :sectionName="$questionConfig->question->sectionName"
-            :options="$questionConfig->question->options"
-            :titleBold="$questionConfig->question->titleBold"
-            />
-        @break
-
-        @case('gallery')
-            <br>
-
-            <x-forms.gallery
-            :title="$questionConfig->question->title"
-            :sectionName="$questionConfig->question->sectionName"
-            :images="$allImages"
-            :descriptions="$allDescriptions"
-            :titleBold="$questionConfig->question->titleBold"
-            />
-
-            <br>
-        @break
-    
-        @default
-            <p>Component not found</p>
-    @endswitch
+    @endforeach
 
 </div>
