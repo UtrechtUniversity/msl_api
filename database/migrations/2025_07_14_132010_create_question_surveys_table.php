@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('survey_id');
             $table->unsignedBigInteger('question_id');
-            $table->Integer('order'); // how to save array data?
+            $table->Integer('order');
         });
     }
 
