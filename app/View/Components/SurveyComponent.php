@@ -11,10 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class SurveyComponent extends Component
 {
-
-    // private $questionConfig;
-    // private $allImages;
-    // private $allDescriptions;
+    
     private $allQuestions;
     /**
      * Create a new component instance.
@@ -23,16 +20,6 @@ class SurveyComponent extends Component
     {
 
         $this->allQuestions = $allQuestions;
-
-        // foreach (File::files(public_path('images/surveys/scenario/'.$domain)) as $entry) {
-        //     if($entry->getExtension() == 'png'){
-        //         $this->allImages [] = 'images/surveys/scenario/'.$domain."/".$entry->getFilename();
-        //     } else if ($entry->getExtension() == 'json'){
-        //         $json = file_get_contents(public_path('images/surveys/scenario/'.$domain."/".$entry->getFilename()));
-        //         $this->allDescriptions = json_decode($json, true)['descriptions'];
-        //     }
-        // }
-
     }
 
     /**

@@ -9,8 +9,6 @@ use Illuminate\View\Component;
 class QuestionComponent extends Component
 {
     private $questionConfig;
-    private $allImages;
-    private $allDescriptions;
 
     /**
      * Create a new component instance.
@@ -26,9 +24,7 @@ class QuestionComponent extends Component
     public function render(): View|Closure|string
     {
         return view('components.question-component',[
-            'questionConfig' => $this->questionConfig,
-            // 'allImages' => $this->allImages,
-            // 'allDescriptions' => $this->allDescriptions
+            'questionConfig' => $this->questionConfig
         ]);
     }
 }

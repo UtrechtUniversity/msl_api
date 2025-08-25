@@ -36,13 +36,4 @@
         
     </div>
 
-
-    {{-- <div class="flex flex-wrap">
-        <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-            <div class="h-32 md:h-64 flex items-center justify-center">
-                Box 1
-            </div>
-        </div>
-    </div> --}}
-
 </div>
