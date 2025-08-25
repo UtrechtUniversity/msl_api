@@ -61,11 +61,13 @@ class SurveyController extends Controller
                         ]);
                     }
                 } else {
-                    Answer::create([
-                        'response_id' => $responseSurvey->id,
-                        'question_id' => $question->id,
-                        'answer' => $request->input($question->question->sectionName),
-                    ]);
+                    if(! $request->input($question->question->sectionName) == null) {
+                        Answer::create([
+                            'response_id' => $responseSurvey->id,
+                            'question_id' => $question->id,
+                            'answer' => $request->input($question->question->sectionName),
+                        ]);
+                    }
                 }
             }
         }
