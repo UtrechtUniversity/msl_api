@@ -34,7 +34,7 @@ class SurveyController extends Controller
     }
 
     /**
-     * Show the contribute survey scenario page
+     * Process the survey
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
