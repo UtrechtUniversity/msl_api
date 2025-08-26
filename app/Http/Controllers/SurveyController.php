@@ -16,13 +16,21 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function contributeSurveyScenario($domain): View
+    public function surveyForm($surveyId): View
     {
-        $surveyId = Survey::where('name', 'scenarioSurvey-'.$domain)->first()->id;
+        $survey = Survey::where('id', $surveyId)->first();
 
-        return view('surveys.contribute-survey-scenario', [
-            'allQuestions' => Survey::where('id', $surveyId)->first()->questions
-        ]);
+        if($survey->active){
+            return view('surveys.contribute-survey-scenario', [
+                'allQuestions' => $survey->questions,
+                'surveyId' => $survey->id
+            ]);
+        } else {
+            return view('/')->with('modals', [
+                'type' => 'error',
+                'message' => 'This survey is no longer active! Thank you for your interest. Please contact us for more information or feedback.']
+            );
+        }
     }
 
     /**
@@ -30,45 +38,27 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function contributeSurveyScenarioProcess(Request $request, $surveyId): RedirectResponse
+    public function surveyProcess(Request $request, $surveyId): RedirectResponse
     {
-        $sortedQuestions = Survey::where('id', $surveyId)->first()->questions;
+        $survey = Survey::where('id', $surveyId)->first();
 
-        $validationFields = [];
-
-        foreach ($sortedQuestions as $question) {
-            if (! empty($question->question->validation)) {
-                $validationFields[$question->question->sectionName] = $question->question->validation;
-            }
-        }
-
-        $request->validate($validationFields);
+        $request->validate($survey->getValidationRules());
 
         $responseSurvey = Response::create([
             'survey_id' => $surveyId,
             'email' => $request->input('email'),
         ]);
 
-        foreach ($sortedQuestions as $question) {
-            // needs to check if the question instance has a validation field, since we have non-questions
-            if (! empty($question->question->validation)) {
-                if (is_array($request->input($question->question->sectionName))) {
-                    foreach ($request->input($question->question->sectionName) as $input) {
-                        Answer::create([
-                            'response_id' => $responseSurvey->id,
-                            'question_id' => $question->id,
-                            'answer' => $input,
-                        ]);
-                    }
-                } else {
-                    if(! $request->input($question->question->sectionName) == null) {
-                        Answer::create([
-                            'response_id' => $responseSurvey->id,
-                            'question_id' => $question->id,
-                            'answer' => $request->input($question->question->sectionName),
-                        ]);
-                    }
-                }
+        foreach ($survey->questions as $question) {
+            if ($question->hasValidation) {
+                    Answer::create([
+                        'response_id' => $responseSurvey->id,
+                        'question_id' => $question->id,
+                        'answer' => json_encode(
+                                        $request->input($question->question->sectionName),
+                                        JSON_THROW_ON_ERROR,
+                                    )
+                    ]);
             }
         }
 
