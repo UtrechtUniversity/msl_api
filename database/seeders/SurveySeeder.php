@@ -25,39 +25,32 @@ class SurveySeeder extends Seeder
      */
     public function run(): void
     {
-        // instead of that check for each entry if exists already
-        //update or create
-
-        // // dump current data
-        // Survey::truncate();
-        // Question::truncate();
-        // QuestionType::truncate();
-        // Answer::truncate();
-        // Response::truncate();
-        // DB::table('question_survey')->truncate();
+        //truncation due to duplication of entries each seed run
+        DB::table('question_survey')->truncate();
+        Question::truncate();
 
         // Seed question types
-        $textQuestionType = QuestionType::create([
+        $textQuestionType = QuestionType::updateOrCreate([
             'name' => 'text',
             'class' => TextQuestion::class,
         ]);
 
-        $selectQuestionType = QuestionType::create([
+        $selectQuestionType = QuestionType::updateOrCreate([
             'name' => 'select',
             'class' => SelectQuestion::class,
         ]);
 
-        $radioSelectType = QuestionType::create([
+        $radioSelectType = QuestionType::updateOrCreate([
             'name' => 'radio',
             'class' => RadioSelect::class,
         ]);
 
-        $checkBoxType = QuestionType::create([
+        $checkBoxType = QuestionType::updateOrCreate([
             'name' => 'check',
             'class' => CheckBox::class,
         ]);
 
-        $displayBladeType = QuestionType::create([
+        $displayBladeType = QuestionType::updateOrCreate([
             'name' => 'displayBlade',
             'class' => DisplayBlade::class,
         ]);
@@ -94,7 +87,7 @@ class SurveySeeder extends Seeder
     ) {
 
         // survey
-        $survey = Survey::create([
+        $survey = Survey::updateOrCreate([
             'name' => 'scenarioSurvey-'.$domainName,
             'active' => true,
         ]);
@@ -102,7 +95,7 @@ class SurveySeeder extends Seeder
         $order = 0;
         // seed questions
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $selectQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -120,7 +113,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $selectQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -141,7 +134,7 @@ class SurveySeeder extends Seeder
 
         $order++;
         $imageInfo = $this->getAllImages($domainName);
-        Question::create([  
+        Question::updateOrCreate([  
             'question_type_id' => $displayBladeType->id,
             'hasValidation' => false,
             'question' => [
@@ -156,7 +149,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $radioSelectType->id,
             'hasValidation' => true,
             'question' => [
@@ -176,7 +169,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $textQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -190,7 +183,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $textQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -204,7 +197,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $textQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -218,7 +211,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $textQuestionType->id,
             'hasValidation' => true,
             'question' => [
@@ -232,7 +225,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $radioSelectType->id,
             'hasValidation' => true,
             'question' => [
@@ -253,7 +246,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $radioSelectType->id,
             'hasValidation' => true,
             'question' => [
@@ -272,7 +265,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $checkBoxType->id,
             'hasValidation' => true,
             'question' => [
@@ -295,7 +288,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $checkBoxType->id,
             'hasValidation' => true,
             'question' => [
@@ -310,7 +303,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::create([
+        Question::updateOrCreate([
             'question_type_id' => $textQuestionType->id,
             'hasValidation' => true,
             'question' => [
