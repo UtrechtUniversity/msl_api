@@ -2,16 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Surveys\Answer;
 use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\CheckBox;
 use App\Models\Surveys\QuestionTypes\DisplayBlade;
-use App\Models\Surveys\QuestionTypes\Gallery;
 use App\Models\Surveys\QuestionTypes\RadioSelect;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
 use App\Models\Surveys\QuestionTypes\TextQuestion;
-use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
