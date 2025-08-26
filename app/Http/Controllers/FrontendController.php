@@ -556,6 +556,16 @@ class FrontendController extends Controller
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function contributeProject()
+    {
+        return view('frontend.contribute-project');
+    }
+
+    /**
+     * Show the contribute as laboratory page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function contactUs()
     {
         return view('frontend.contact-us');
