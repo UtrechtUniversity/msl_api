@@ -126,4 +126,4 @@ Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContac
 Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process')->middleware(ProtectAgainstSpam::class);
 
 Route::get('/survey-form/{surveyId}', [SurveyController::class, 'surveyForm'])->name('survey-form');
-Route::post('/survey-form/{surveyId}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');
+Route::post('/survey-form/{surveyId}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process')->middleware(ProtectAgainstSpam::class);
