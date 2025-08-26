@@ -24,4 +24,17 @@ class Survey extends Model
     {
         return $this->hasMany(Response::class);
     }
+
+    public function getValidationRules(){
+
+        $validationFields = [];
+
+        foreach ($this->questions as $question) {
+            if (! empty($question->question->validation)) {
+                $validationFields[$question->question->sectionName] = $question->question->validation;
+            }
+        }
+
+        return $validationFields;
+    }
 }

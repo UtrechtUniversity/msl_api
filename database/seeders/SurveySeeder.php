@@ -25,13 +25,16 @@ class SurveySeeder extends Seeder
      */
     public function run(): void
     {
-        // dump current data
-        Survey::truncate();
-        Question::truncate();
-        QuestionType::truncate();
-        Answer::truncate();
-        Response::truncate();
-        DB::table('question_survey')->truncate();
+        // instead of that check for each entry if exists already
+        //update or create
+
+        // // dump current data
+        // Survey::truncate();
+        // Question::truncate();
+        // QuestionType::truncate();
+        // Answer::truncate();
+        // Response::truncate();
+        // DB::table('question_survey')->truncate();
 
         // Seed question types
         $textQuestionType = QuestionType::create([
@@ -101,6 +104,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $selectQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'Which describes your role the best?',
                 'options' => [
@@ -112,13 +116,13 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'WhichRoleDescribesYouBest',
                 'placeholder' => 'Select an option from this list',
                 'titleBold' => true,
-
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
         Question::create([
             'question_type_id' => $selectQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'In which sector is your role?',
                 'options' => [
@@ -139,6 +143,7 @@ class SurveySeeder extends Seeder
         $imageInfo = $this->getAllImages($domainName);
         Question::create([  
             'question_type_id' => $displayBladeType->id,
+            'hasValidation' => false,
             'question' => [
                 'bladeName' => 'survey-gallery',
                 'bladeVars' => [
@@ -153,6 +158,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $radioSelectType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'Do you recognize the challenge portrayed in this scenario in your work?',
                 'titleBold' => true,
@@ -172,6 +178,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => "Please list examples of such challenges or explain why you don't recognize any",
                 'titleBold' => true,
@@ -185,6 +192,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'How do you approach a similar challenge in your work?',
                 'titleBold' => true,
@@ -198,6 +206,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'How would you change this scenario to make it reflect your work?',
                 'titleBold' => true,
@@ -211,6 +220,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'Please describe briefly what function the software tool in the scenario fulfills?',
                 'titleBold' => true,
@@ -224,6 +234,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $radioSelectType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'Would you see yourself using this tool?',
                 'titleBold' => true,
@@ -244,6 +255,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $radioSelectType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'How often would you use the software tool described in the scenario?',
                 'titleBold' => true,
@@ -262,6 +274,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $checkBoxType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'When would you see this data tool being beneficial in your process?',
                 'titleBold' => true,
@@ -284,6 +297,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $checkBoxType->id,
+            'hasValidation' => true,
             'question' => [
                 'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
                 'titleBold' => true,
@@ -298,6 +312,7 @@ class SurveySeeder extends Seeder
         $order++;
         Question::create([
             'question_type_id' => $textQuestionType->id,
+            'hasValidation' => true,
             'question' => [
                 // 'title' => "If you agreed please leave your email!",
                 'title' => 'Leave your email in the box below:',
