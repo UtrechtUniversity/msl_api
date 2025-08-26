@@ -16,7 +16,7 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function surveyForm($surveyId): View
+    public function surveyForm($surveyId)
     {
         $survey = Survey::where('id', $surveyId)->first();
 
@@ -26,7 +26,7 @@ class SurveyController extends Controller
                 'surveyId' => $survey->id
             ]);
         } else {
-            return view('/')->with('modals', [
+            return redirect('/')->with('modals', [
                 'type' => 'error',
                 'message' => 'This survey is no longer active! Thank you for your interest. Please contact us for more information or feedback.']
             );
