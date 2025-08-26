@@ -133,6 +133,6 @@ Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
 Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process');
 
-Route::get('/contribute-survey-scenario/{domain}', [SurveyController::class, 'contributeSurveyScenario'])->name('contribute-survey-scenario');
-Route::post('/contribute-survey-scenario/{surveyId}', [SurveyController::class, 'contributeSurveyScenarioProcess'])->name('contribute-survey-scenario-process');
+Route::get('/survey-form/{surveyId}', [SurveyController::class, 'surveyForm'])->name('survey-form');
+Route::post('/survey-form/{surveyId}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');
 
