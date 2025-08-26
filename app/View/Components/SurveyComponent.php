@@ -10,6 +10,7 @@ class SurveyComponent extends Component
 {
     
     private $allQuestions;
+    
     /**
      * Create a new component instance.
      */
