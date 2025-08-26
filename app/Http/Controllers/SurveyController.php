@@ -8,6 +8,7 @@ use App\Models\Surveys\Survey;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use PHPUnit\TextUI\Configuration\Php;
 
 class SurveyController extends Controller
 {
@@ -54,10 +55,7 @@ class SurveyController extends Controller
                     Answer::create([
                         'response_id' => $responseSurvey->id,
                         'question_id' => $question->id,
-                        'answer' => json_encode(
-                                        $request->input($question->question->sectionName),
-                                        JSON_THROW_ON_ERROR,
-                                    )
+                        'answer' => $request->input($question->question->sectionName)
                     ]);
             }
         }

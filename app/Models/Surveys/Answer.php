@@ -2,6 +2,7 @@
 
 namespace App\Models\Surveys;
 
+use App\Casts\asAnswer;
 use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
@@ -14,6 +15,13 @@ class Answer extends Model
         'answer',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'answer' => asAnswer::class,
+        ];
+    }
+
     public function response()
     {
         return $this->belongsTo(Response::class, 'response_id');
@@ -23,4 +31,5 @@ class Answer extends Model
     {
         return $this->belongsTo(Question::class, 'question_id');
     }
+
 }

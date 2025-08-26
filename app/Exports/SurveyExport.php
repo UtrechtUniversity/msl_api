@@ -51,6 +51,7 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
 
                 'answer_id',
                 'answer_answer',
+                'answer_raw',
 
                 'downloadDate'
             ];
@@ -64,7 +65,23 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
 
         if(property_exists($answer->question->question, "options")){
             $options=Implode(" | ", $answer->question->question->options);
-            $answerString = $answer->question->question->options[$answer->answer];
+            if(is_array($answer->answer)) {
+                $answerString = [];
+                foreach ($answer->answer as $value) {
+                    $answerString[] = $answer->question->question->options[$value];
+                }
+                $answerString = implode(",", $answerString);
+            } else {
+                if($answer->answer == null || $answer->answer == "")
+                {
+                    $answerString = 'null';
+                } 
+                else 
+                {  
+                    $answerString = $answer->question->question->options[$answer->answer];
+                }
+                
+            }
         }
 
         return
@@ -86,6 +103,7 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
 
                 $answer->id,
                 $answerString,
+                $answer->answer,
 
                 date('Y-m-d H:i:s')
             ];
