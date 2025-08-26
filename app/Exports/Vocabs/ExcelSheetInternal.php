@@ -7,8 +7,9 @@ use App\Models\Vocabulary;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithTitle;
 
-class ExcelExport implements FromCollection, WithHeadings, WithMapping
+class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, WithTitle
 {
     public $vocabulary;
 
@@ -30,15 +31,28 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
         return $keywords;
     }
 
+    public function title(): string
+    {
+        return $this->vocabulary->display_name;
+    }
+
     public function headings(): array
     {
         return array_merge(
             $this->levels,
             [
-                'synonyms',
+                'indicator terms',
                 'uri',
                 'hyperlink',
                 'external_uri',
+                'external_vocab_scheme',
+                'external_description',
+                'contributor_definition',
+                'contributor_definition_link',
+                'exclude_domain_mapping',
+                'terms_exclude_abstract_mapping',
+                'selection_group_1',
+                'selection_group_2',
             ]
         );
     }
@@ -52,6 +66,14 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
                 $keyword->uri,
                 $keyword->hyperlink,
                 $keyword->external_uri,
+                $keyword->external_vocab_scheme,
+                $keyword->external_description,
+                $keyword->extracted_definition,
+                $keyword->extracted_definition_link,
+                $keyword->exclude_domain_mapping ? 'yes' : 'no',
+                $keyword->getAbstractMatchingExcludedSearchKeywordsString(),
+                $keyword->selection_group_1 ? 'yes' : 'no',
+                $keyword->selection_group_2 ? 'yes' : 'no',
             ]
         );
     }

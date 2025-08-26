@@ -8,6 +8,7 @@
         <form method="POST" action="{{ route('laboratory-intake-process') }}" class="space-y-4" novalidate>
             @csrf
 
+            <x-honeypot />
             <h2> Contact details </h2>
             @include('forms.components.freeText',[
                 'sectionName'   => 'lab-name',
