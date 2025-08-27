@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-// namespace App\Models\Surveys\QuestionTypes;
-
 use App\Models\Surveys\Answer;
 use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
@@ -16,14 +14,10 @@ use Tests\TestCase;
 
 class SurveyTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     use RefreshDatabase;
 
     protected function setUp(): void
     {
-        // //
         parent::setUp();
 
         // first define the survey itself
@@ -34,7 +28,6 @@ class SurveyTest extends TestCase
             ]
         );
 
-        // //
         // save question types
         $questionType = QuestionType::create(
             [
@@ -43,7 +36,6 @@ class SurveyTest extends TestCase
             ]
         );
 
-        // //
         // generate questions based on type
 
         $question1 = Question::create(
@@ -75,7 +67,6 @@ class SurveyTest extends TestCase
         );
         $question2->surveys()->attach($survey->id, ['order' => 2]);
 
-        // //
         // creating a response
         $responseSurvey = Response::create(
             [
@@ -84,7 +75,6 @@ class SurveyTest extends TestCase
             ]
         );
 
-        // //
         // all the answers
         Answer::create(
             [

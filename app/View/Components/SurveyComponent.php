@@ -3,22 +3,19 @@
 namespace App\View\Components;
 
 use Closure;
-use App\Models\Surveys\Survey;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 
 class SurveyComponent extends Component
 {
     
     private $allQuestions;
+    
     /**
      * Create a new component instance.
      */
     public function __construct($allQuestions)
     {
-
         $this->allQuestions = $allQuestions;
     }
 

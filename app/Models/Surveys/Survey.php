@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Survey extends Model
 {
-    // timestamps needed?
     public $timestamps = false;
 
     protected $fillable = [
@@ -25,7 +24,8 @@ class Survey extends Model
         return $this->hasMany(Response::class);
     }
 
-    public function getValidationRules(){
+    public function getValidationRules()
+    {
 
         $validationFields = [];
 

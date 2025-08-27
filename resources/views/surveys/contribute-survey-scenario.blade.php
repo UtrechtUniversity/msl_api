@@ -7,7 +7,8 @@
     autocomplete="off"
     action={{ route('survey-form-process', ['surveyName' => $surveyName]) }}
     class="space-y-8 flex flex-col justify-center items-center" novalidate>
-        @csrf 
+        @csrf
+        <x-honeypot />
         
             <div class="w-full">
                 <x-survey-component :allQuestions="$allQuestions" />
