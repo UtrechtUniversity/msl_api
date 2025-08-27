@@ -37,7 +37,6 @@ class SurveyTest extends TestCase
         );
 
         // generate questions based on type
-
         $question1 = Question::create(
             [
                 'question' => [
@@ -47,7 +46,6 @@ class SurveyTest extends TestCase
                         'option2',
                     ],
                 ],
-
                 'question_type_id' => $questionType->id,
                 'answerable' => true
             ]
