@@ -18,7 +18,7 @@ class Answer extends Model
     protected function casts(): array
     {
         return [
-            'answer' => asAnswer::class,
+            'answer' => 'array',
         ];
     }
 
