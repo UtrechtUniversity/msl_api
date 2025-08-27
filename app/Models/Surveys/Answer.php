@@ -2,7 +2,6 @@
 
 namespace App\Models\Surveys;
 
-use App\Casts\asAnswer;
 use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
