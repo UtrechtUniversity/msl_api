@@ -52,7 +52,7 @@ class SurveyController extends Controller
         ]);
 
         foreach ($survey->questions as $question) {
-            if ($question->hasValidation) {
+            if ($question->answerable) {
                     Answer::create([
                         'response_id' => $responseSurvey->id,
                         'question_id' => $question->id,

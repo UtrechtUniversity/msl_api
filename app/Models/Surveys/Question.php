@@ -13,6 +13,7 @@ class Question extends Model
     protected $fillable = [
         'question',
         'question_type_id',
+        'answerable'
     ];
 
     protected function casts(): array

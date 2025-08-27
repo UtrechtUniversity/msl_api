@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('question_type_id');
             $table->json('question');
-            $table->boolean('hasValidation');
+            $table->boolean('answerable');
         });
 
         Schema::create('question_types', function (Blueprint $table) {
