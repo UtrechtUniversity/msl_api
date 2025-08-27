@@ -6,18 +6,14 @@
         <div class="col-md-10">
 
 
-        <h1>Change status of survey</h1>
-            <form action="{{ route('status-survey-process') }}" method="POST">
-                @csrf
-
-                <div class="card">
-
-                    <div class="row">
-                        <h4>Select survey by name</h4>
-
-                        <div class="row">
-                			<div class="col">
-                        		<select class="form-select" aria-label="select organization" name="surveyID">
+            <div class="card p-10 ">
+                <div class="card-header">Change status of survey</div>
+                <div class="card-body">
+                    <form action="{{ route('status-survey-process') }}" method="POST">
+                        @csrf
+                        <div class="row mb-3">
+                            <div>
+                                <select class="form-select" aria-label="select organization" name="surveyID">
         							@foreach($allSurveys as $survey)
         								<option value="{{ $survey['id'] }}" >{{ $survey['name'].' - Status:'}}@if ($survey['active'])
                                             active
@@ -25,27 +21,26 @@
                                             inactive
                                         @endif</option>    								
         							@endforeach
-        						</select>
-							</div>
-						</div>
-                    </div>
-
-
-                    <div class="row">
-                        <h4>Is active?</h4>
-                        <div class="col">
-                            <select name="isSurveyActive">
-                                    <option value="yes">Yes<option>
-                                    <option value="no">No<option>  								
-                            </select>
+        						</select>  					
+                            </div>
+                        </div>            
+                        <br>           
+                        <div class="row">
+                            <h4>Is active?</h4>
+                            <div class="col">
+                                <select name="isSurveyActive">
+                                        <option value="yes">Yes<option>
+                                        <option value="no">No<option>  								
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    
+                        <br>
 
+                        <button type="submit" class="btn btn-primary">Change survey status</button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary">Change survey status</button>
 
-            </form>
+ 
         </div>
 	</div>
 </div>
