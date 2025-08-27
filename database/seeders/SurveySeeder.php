@@ -297,7 +297,6 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'answerable' => true,
             'question' => [
-                // 'title' => "If you agreed please leave your email!",
                 'title' => 'Leave your email in the box below:',
                 'titleBold' => false,
                 'sectionName' => 'EmailContact',
