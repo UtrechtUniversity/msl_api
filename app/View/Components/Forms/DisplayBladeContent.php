@@ -11,11 +11,9 @@ class DisplayBladeContent extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $bladeName
-        )
+    public function __construct(public string $bladeName)
     {
-        //
+
     }
 
     /**
