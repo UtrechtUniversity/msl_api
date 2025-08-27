@@ -578,7 +578,9 @@ class FrontendController extends Controller
         }
 
         return view('frontend.contribute-select-scenario', 
-        ['allDomains' => $allDomains]);
+        [
+            'allDomains' => $allDomains
+        ]);
     }
 
 

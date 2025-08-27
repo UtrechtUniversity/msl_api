@@ -1,4 +1,4 @@
-<div>
+<div class="w-full">
     @switch($questionConfig->question_type->name)
         @case('text')
             <x-forms.text-question 

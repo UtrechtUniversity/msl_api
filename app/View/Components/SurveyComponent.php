@@ -10,13 +10,15 @@ class SurveyComponent extends Component
 {
     
     private $allQuestions;
+    private $surveyName;
     
     /**
      * Create a new component instance.
      */
-    public function __construct($allQuestions)
+    public function __construct($allQuestions, $surveyName)
     {
         $this->allQuestions = $allQuestions;
+        $this->surveyName = $surveyName;
     }
 
     /**
@@ -25,7 +27,8 @@ class SurveyComponent extends Component
     public function render(): View|Closure|string
     {
         return view('components.survey-component',[
-            'allQuestions' => $this->allQuestions
+            'allQuestions' => $this->allQuestions,
+            'surveyName' => $this->surveyName
         ]);
     }
 }

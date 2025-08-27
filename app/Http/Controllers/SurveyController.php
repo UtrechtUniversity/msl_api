@@ -41,7 +41,6 @@ class SurveyController extends Controller
      */
     public function surveyProcess(Request $request, $surveyName): RedirectResponse
     {   
-
         $survey = Survey::where('name', $surveyName)->first();
 
         $request->validate($survey->getValidationRules());
