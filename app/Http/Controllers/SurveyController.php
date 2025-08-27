@@ -17,14 +17,14 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function surveyForm($surveyId)
+    public function surveyForm($surveyName)
     {
-        $survey = Survey::where('id', $surveyId)->first();
+        $survey = Survey::where('name', $surveyName)->first();
 
         if($survey->active){
             return view('surveys.contribute-survey-scenario', [
                 'allQuestions' => $survey->questions,
-                'surveyId' => $survey->id
+                'surveyName' => $survey->name
             ]);
         } else {
             return redirect('/')->with('modals', [
@@ -39,14 +39,15 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function surveyProcess(Request $request, $surveyId): RedirectResponse
-    {
-        $survey = Survey::where('id', $surveyId)->first();
+    public function surveyProcess(Request $request, $surveyName): RedirectResponse
+    {   
+
+        $survey = Survey::where('name', $surveyName)->first();
 
         $request->validate($survey->getValidationRules());
 
         $responseSurvey = Response::create([
-            'survey_id' => $surveyId,
+            'survey_id' => $survey->id,
             'email' => $request->input('email'),
         ]);
 

@@ -5,7 +5,7 @@
 
     <form method="POST"
     autocomplete="off"
-    action={{ route('survey-form-process', ['surveyId' => $surveyId]) }}
+    action={{ route('survey-form-process', ['surveyName' => $surveyName]) }}
     class="space-y-8 flex flex-col justify-center items-center" novalidate>
         @csrf 
         

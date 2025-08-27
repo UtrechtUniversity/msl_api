@@ -12,9 +12,9 @@
 
         <h3 class="pb-2 pt-16">Select your domain!</h3>
         <div class="sm:max-w-screen-lg flex md:flex-row flex-wrap sm:p-10 py-10 gap-8 justify-center place-items-center">
-            @foreach ($allDomains as $id => $domainName)
+            @foreach ($allDomains as $surveyName => $domainName)
                     <a role="button" 
-                    href="{{ route('survey-form', ['surveyId' => $id]) }}"
+                    href="{{ route('survey-form', ['surveyName' => $surveyName]) }}"
                     class="no-underline m-1 p-4 bg-base-300 rounded-lg w-64 h-24 place-content-center shadow-lg hover:bg-secondary-100 hover:text-secondary-900"
                     > 
                         <h5 class="text-base font-normal">{{ $domainName }}</h5>
