@@ -130,18 +130,11 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        $imageInfo = $this->getAllImages($domainName);
         Question::updateOrCreate([  
             'question_type_id' => $displayBladeType->id,
             'answerable' => false,
             'question' => [
-                'bladeName' => 'survey-gallery',
-                'bladeVars' => [
-                    'imageLinks' => $imageInfo['imageLinks'],
-                    'imageDescriptions' => $imageInfo['imageDescriptions'],
-                    'title' => 'Please read the following scenario:'
-                ]
-
+                'bladeName' => 'surveys.bladeDisplays.surveyScenario.survey-gallery-'.$domainName,
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
@@ -314,21 +307,5 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
-    }
-
-
-    private function getAllImages($domain){
-        $all=[];
-
-        foreach (File::files(public_path('images/surveys/scenario/'.$domain)) as $entry) {
-            if($entry->getExtension() == 'png'){
-                $all['imageLinks'][] = 'images/surveys/scenario/'.$domain."/".$entry->getFilename();
-            } else if ($entry->getExtension() == 'json'){
-                $json = file_get_contents(public_path('images/surveys/scenario/'.$domain."/".$entry->getFilename()));
-                $all['imageDescriptions'] = json_decode($json, true)['descriptions'];
-            }
-        }
-
-        return $all;
     }
 }

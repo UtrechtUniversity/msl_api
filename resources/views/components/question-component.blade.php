@@ -42,7 +42,6 @@
             <br>
             <x-forms.display-blade-content
             :bladeName="$questionConfig->question->bladeName"
-            :bladeVars="$questionConfig->question->bladeVars"
             />
             <br>
         @break
