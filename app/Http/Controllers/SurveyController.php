@@ -7,8 +7,6 @@ use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
-use PHPUnit\TextUI\Configuration\Php;
 
 class SurveyController extends Controller
 {
@@ -37,7 +35,7 @@ class SurveyController extends Controller
     /**
      * Process the survey
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\Support\RedirectResponse
      */
     public function surveyProcess(Request $request, $surveyName): RedirectResponse
     {   
