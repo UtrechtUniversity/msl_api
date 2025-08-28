@@ -552,7 +552,7 @@ class FrontendController extends Controller
     }
 
     /**
-     * Show the contribute as laboratory page
+     * Show the contribute with a proposal or project
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
