@@ -1,4 +1,4 @@
-@section('title', 'Contribute as a researcher')
+@section('title', 'How to contribute with your proposal or project?')
 <x-layout_main>
 <div class="mainContentDiv flex-col">
         <p class="text-4xl p-20">
