@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\GfzFileMapper;
 use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
@@ -38,20 +39,24 @@ class ImportGFZSeeder extends Seeder
                         'type' => 'oaiListing',
                         'options' => [
                             'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'iso19139',
+                            'metadataPrefix' => 'datacite',
                             'setDefinition' => '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg'
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'oaiRetrieval',
+                        'type' => 'oaiToDataciteRetrieval',
                         'options' => [
                             'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'iso19139',
+                            'metadataPrefix' => 'datacite',
                         ]
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'gfzMapper',
-                        'options' => []
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                GfzFileMapper::class,
+                            ]
+                        ]
                     ]      
                 ],
                 'data_repository_id' => $gfz->id

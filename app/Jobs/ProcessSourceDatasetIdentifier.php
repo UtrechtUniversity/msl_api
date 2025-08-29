@@ -12,6 +12,7 @@ use App\Jobs\SourceDatasetIdentifierProcessors\ProcessDataciteJsonRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessDataciteXmlRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessFileRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessOaiRetrieval;
+use App\Jobs\SourceDatasetIdentifierProcessors\ProcessOaiToDataciteJsonRetrieval;
 
 class ProcessSourceDatasetIdentifier implements ShouldQueue
 {
@@ -53,6 +54,10 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
 
             case 'fileRetrieval':
                 $processor = ProcessFileRetrieval::class;
+                break;
+
+            case 'oaiToDataciteRetrieval':
+                $processor = ProcessOaiToDataciteJsonRetrieval::class;
                 break;
 
             default:
