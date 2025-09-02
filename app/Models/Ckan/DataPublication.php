@@ -217,7 +217,7 @@ class DataPublication
     public $msl_geojson_featurecollection_points;
     
     /**
-     * Service area of feature collection
+     * Surface area of feature collection
      */
     public $msl_surface_area = 0;
 
