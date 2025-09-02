@@ -607,7 +607,7 @@ class DataPublication
      * Check if enriched keyword exists by uri
      * @param string $uri
      */
-    public function hasEnrichedKeyword($uri)
+    public function hasEnrichedKeyword($uri): bool
     {
         foreach ($this->msl_enriched_keywords as $keyword) {
             if ($keyword->msl_enriched_keyword_uri == $uri) {
