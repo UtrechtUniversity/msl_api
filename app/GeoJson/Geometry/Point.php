@@ -1,0 +1,41 @@
+<?php
+
+namespace App\GeoJson\Geometry;
+
+use App\GeoJson\Geometry\Geometry;
+use Exception;
+
+class Point extends Geometry
+{
+    /**
+     * x coordinate, longitude for geographic coordinate
+     */
+    public float $x;
+
+    /**
+     * y coordinate, latitude for geographic coordinate
+     */
+    public float $y;
+
+    public function __construct($x, $y)
+    {
+        if (! is_int($x) && ! is_float($x)) {
+            throw new Exception('x coordinate must be integer or float');
+        }
+
+        if (! is_int($y) && ! is_float($y)) {
+            throw new Exception('y coordinate must be integer or float');
+        }
+
+        $this->x = $x;
+        $this->y = $y;
+    }
+    
+    public function jsonSerialize(): array
+    {        
+        return [
+            'type'=> 'Point',
+            'coordinates' => [$this->x, $this->y]
+        ];
+    }
+}
