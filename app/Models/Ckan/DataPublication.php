@@ -404,6 +404,15 @@ class DataPublication
     {
         $this->msl_formats[] = $format;
     }
+
+    /**
+     * Add geolocation to msl_geolocations
+     * @param string $location
+     */
+    public function addGeolocation(string $location): void
+    {
+        $this->msl_geolocations[] = $location;
+    }
         
     /**
      * Add Tag to msl_tags if no existing tag with same msl_tag_string exists

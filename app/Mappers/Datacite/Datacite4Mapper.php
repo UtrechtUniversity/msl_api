@@ -41,6 +41,7 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
+        $dataPublication = $this->mapGeolocationPlaces($metadata, $dataPublication);
 
         return $dataPublication;
     }
@@ -603,6 +604,21 @@ class Datacite4Mapper implements MapperInterface
                 );
 
                 $dataset->addTag($tag);
+            }
+        }
+
+        return $dataset;
+    }
+
+    public function mapGeolocationPlaces(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $geoData = $metadata['data']['attributes']['geoLocations'];
+
+        foreach($geoData as $geoEntry) {
+            foreach($geoEntry as $key => $value) {
+                if($key === 'geoLocationPlace') {
+                    $dataset->addGeolocation($value);
+                }
             }
         }
 

@@ -10,7 +10,6 @@ use App\Models\Ckan\Contributor;
 use App\Models\Ckan\Creator;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\Date;
-use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
@@ -40,6 +39,7 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
+        $dataPublication = $this->mapGeolocationPlaces($metadata, $dataPublication);
 
         return $dataPublication;
     }
@@ -575,6 +575,21 @@ class Datacite3Mapper implements MapperInterface
                 );
 
                 $dataset->addTag($tag);
+            }
+        }
+
+        return $dataset;
+    }
+
+    public function mapGeolocationPlaces(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $geoData = $metadata['data']['attributes']['geoLocations'];
+
+        foreach($geoData as $geoEntry) {
+            foreach($geoEntry as $key => $value) {
+                if($key === 'geoLocationPlace') {
+                    $dataset->addGeolocation($value);
+                }
             }
         }
 

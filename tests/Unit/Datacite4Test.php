@@ -2321,4 +2321,75 @@ class Datacite4Test extends TestCase
 
         $this->assertEmpty($dataset->msl_tags);
     }
+
+    /**
+     * test if geolocations are correctly mapped
+     */
+    public function test_geolocation_places_mapping(): void
+    {
+        $sourceData = new SourceDataset;
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.24416/uu01-vqenlo",
+                    "type": "dois",
+                    "attributes": {
+                        "geoLocations": [
+                            {
+                                "geoLocationPlace": "Groningen, the Netherlands"
+                            },
+                            {
+                                "geoLocationPlace": "South Holland, the Netherlands"
+                            },
+                            {
+                                "geoLocationPlace": "Friesland, the Netherlands"
+                            },
+                            {
+                                "geoLocationPlace": "Drenthe, the Netherlands"
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper;
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_geolocations[0], 'Groningen, the Netherlands');        
+        $this->assertEquals($dataset->msl_geolocations[1], 'South Holland, the Netherlands');
+        $this->assertEquals($dataset->msl_geolocations[2], 'Friesland, the Netherlands');
+        $this->assertEquals($dataset->msl_geolocations[3], 'Drenthe, the Netherlands');
+
+        // new test
+        $sourceData = new SourceDataset;
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.1594/pangaea.937090",
+                    "type": "dois",
+                    "attributes": {
+                        "geoLocations": []
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper;
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_geolocations, []);
+    }
 }
