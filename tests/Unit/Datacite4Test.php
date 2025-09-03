@@ -2391,5 +2391,40 @@ class Datacite4Test extends TestCase
         $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_geolocations, []);
+
+        // test mixed
+        $sourceData = new SourceDataset;
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.5285/c57a3261-f5f8-40e3-bcd3-c749733b3119",
+                    "type": "dois",
+                    "attributes": {
+                        "geoLocations": [
+                            {
+                                "geoLocationBox": {
+                                    "eastBoundLongitude": "-54.36389",
+                                    "northBoundLatitude": "58.475",
+                                    "southBoundLatitude": "58.28028",
+                                    "westBoundLongitude": "-54.33028"
+                                },
+                                "geoLocationPlace": "Labrador Sea North Atlantic Ocean"
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper;
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+
+        $this->assertEquals($dataset->msl_geolocations[0], 'Labrador Sea North Atlantic Ocean');
     }
 }
