@@ -120,6 +120,7 @@ class SurveySeeder extends Seeder
                     'Academic',
                     'Government',
                     'Nonprofit / NGO',
+                    'Consultancy'
                 ],
                 'validation' => ['required'],
                 'sectionName' => 'WhichSectorIsYourRole',
@@ -191,21 +192,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'How would you change this scenario to make it reflect your work?',
-                'titleBold' => true,
-                'sectionName' => 'ChangeScenario',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Please describe briefly what function the software tool in the scenario fulfills?',
+                'title' => 'Please describe briefly what function the software tool fulfills in the scenario?',
                 'titleBold' => true,
                 'sectionName' => 'FunctionalDescription',
                 'textBlock' => true,
@@ -214,6 +201,7 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
+        
         $order++;
         Question::updateOrCreate([
             'question_type_id' => $radioSelectType->id,
@@ -254,6 +242,7 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
+        
         $order++;
         Question::updateOrCreate([
             'question_type_id' => $checkBoxType->id,
@@ -271,23 +260,7 @@ class SurveySeeder extends Seeder
                     'Deciding on the Sample Design',
                     'Collecting Data',
                     'Processing and Analyzing Data',
-                    'Writing the Report',
-                    'None',
-                ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $checkBoxType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
-                'titleBold' => true,
-                'sectionName' => 'gdprAgreement',
-                'validation' => ['required_with:EmailContact', 'nullable'],
-                'options' => [
-                    'I agree',
+                    'Writing the Report'
                 ],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
@@ -297,14 +270,45 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'Leave your email in the box below:',
-                'titleBold' => false,
-                'sectionName' => 'EmailContact',
-                'textBlock' => false,
-                'placeholder' => 'your@email.domain',
-                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+                'title' => 'How would you change the software tool to make useful for your work?',
+                'titleBold' => true,
+                'sectionName' => 'ChangeScenario',
+                'textBlock' => true,
+                'placeholder' => 'Please type your answer here',
+                'validation' => ['required', 'min:20'],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
+
+
+
+        // $order++;
+        // Question::updateOrCreate([
+        //     'question_type_id' => $checkBoxType->id,
+        //     'answerable' => true,
+        //     'question' => [
+        //         'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
+        //         'titleBold' => true,
+        //         'sectionName' => 'gdprAgreement',
+        //         'validation' => ['required_with:EmailContact', 'nullable'],
+        //         'options' => [
+        //             'I agree',
+        //         ],
+        //     ],
+        // ])->surveys()->attach($survey->id, ['order' => $order]);
+
+        // $order++;
+        // Question::updateOrCreate([
+        //     'question_type_id' => $textQuestionType->id,
+        //     'answerable' => true,
+        //     'question' => [
+        //         'title' => 'Leave your email in the box below:',
+        //         'titleBold' => false,
+        //         'sectionName' => 'EmailContact',
+        //         'textBlock' => false,
+        //         'placeholder' => 'your@email.domain',
+        //         'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+        //     ],
+        // ])->surveys()->attach($survey->id, ['order' => $order]);
 
     }
 }
