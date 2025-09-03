@@ -2360,7 +2360,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+        $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_geolocations[0], 'Groningen, the Netherlands');        
         $this->assertEquals($dataset->msl_geolocations[1], 'South Holland, the Netherlands');
@@ -2388,7 +2388,7 @@ class Datacite4Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+        $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_geolocations, []);
 
