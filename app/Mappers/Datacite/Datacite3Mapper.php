@@ -597,8 +597,8 @@ class Datacite3Mapper implements MapperInterface
                     $dataset->addGeolocation($value);
                 } elseif($key === 'geoLocationPoint') {
                     $geometries[] = new Point(
-                        $value['pointLongitude'],
-                        $value['pointLatitude'],
+                        (float)$value['pointLongitude'],
+                        (float)$value['pointLatitude'],
                     );
                 } elseif($key === 'geoLocationBox') {
                     $boundingBox = new BoundingBox(
@@ -609,6 +609,17 @@ class Datacite3Mapper implements MapperInterface
                     );
                     
                     $geometries[] = Polygon::createFromBoundingBox($boundingBox);
+                } elseif($key === 'geoLocationPolygon') {
+                    $points = [];
+
+                    foreach($value as $point) {
+                        $points[] = new Point(
+                            (float)$point['polygonPoint']['pointLongitude'],
+                            (float)$point['polygonPoint']['pointLatitude']
+                        );
+                    }
+
+                    $geometries[] = new Polygon($points);
                 }
             }
         }

@@ -2517,5 +2517,63 @@ class Datacite4Test extends TestCase
         $this->assertEquals($dataset->msl_geolocations[1], 'Atlantic Ocean');
         $this->assertEquals($dataset->msl_geolocations[2], 'Northwest Atlantic Ocean (40W)');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]}]}');
+
+        // test multiple polygon
+        $sourceData = new SourceDataset;
+
+        $sourceData->source_dataset = '
+            {
+                "data": {
+                    "id": "10.5285/fd971fc7-a730-4c68-9a02-76022e56ddab",
+                    "type": "dois",
+                    "attributes": {
+                        "geoLocations": [
+                            {
+                                "geoLocationPoint": {
+                                    "pointLatitude": "55.859623",
+                                    "pointLongitude": "-4.25549"
+                                },
+                                "geoLocationPolygon": [
+                                    {
+                                    "polygonPoint": {
+                                        "pointLatitude": "55.859623",
+                                        "pointLongitude": "-4.25549"
+                                    }
+                                    },
+                                    {
+                                    "polygonPoint": {
+                                        "pointLatitude": "55.86096",
+                                        "pointLongitude": "-4.24366"
+                                    }
+                                    },
+                                    {
+                                    "polygonPoint": {
+                                        "pointLatitude": "55.86096",
+                                        "pointLongitude": "-4.24366"
+                                    }
+                                    },
+                                    {
+                                    "polygonPoint": {
+                                        "pointLatitude": "55.859623",
+                                        "pointLongitude": "-4.25549"
+                                    }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }';
+        $dataciteMapper = new Datacite4Mapper;
+
+        // create empty data publication
+        $dataset = new DataPublication;
+
+        // read json text
+        $metadata = json_decode($sourceData->source_dataset, true);
+
+        $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
+
+        $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Point","coordinates":[-4.25549,55.859623]},{"type":"Polygon","coordinates":[[[-4.25549,55.859623],[-4.24366,55.86096],[-4.24366,55.86096],[-4.25549,55.859623]]]}]}');
     }
 }
