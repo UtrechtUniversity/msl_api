@@ -18,7 +18,7 @@ class Collection implements JsonSerializable
      * Constructs a new Collection
      * @param array<Geometry> $geometries
      */
-    public function __construct(array $geometries)
+    public function __construct(array $geometries= [])
     {
         foreach($geometries as $geometry) {            
             $this->addGeometry($geometry);
