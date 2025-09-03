@@ -2350,7 +2350,7 @@ class Datacite3Test extends TestCase
         // read json text
         $metadata = json_decode($sourceData->source_dataset, true);
 
-        $dataset = $dataciteMapper->mapGeolocationPlaces($metadata, $dataset);
+        $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_geolocations[0], 'Labrador Sea North Atlantic Ocean');
     }
