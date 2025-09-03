@@ -2,6 +2,7 @@
 
 namespace App\GeoJson\Geometry;
 
+use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Geometry;
 use Exception;
 
@@ -37,6 +38,21 @@ class Polygon extends Geometry
         if(($firstPoint->x !== $lastPoint->x )|| ($firstPoint->y !== $lastPoint->y )) {
             throw new Exception('First and last point must be equal for valid polygon');
         }
+    }
+
+    /**
+     * Create Polygon from BoundingBox
+     * @param BoundingBox $boundingBox
+     */
+    public static function createFromBoundingBox(BoundingBox $boundingBox)
+    {    
+        return new self([
+            new Point($boundingBox->minX, $boundingBox->maxY),
+            new Point($boundingBox->minX, $boundingBox->minY),
+            new Point($boundingBox->maxX, $boundingBox->minY),
+            new Point($boundingBox->maxX, $boundingBox->maxY),
+            new Point($boundingBox->minX, $boundingBox->maxY),
+        ]);
     }
 
     public function jsonSerialize(): array
