@@ -227,6 +227,12 @@ class DataPublication
     public array $msl_geolocations = [];
 
     /**
+     * Extras field only used for SOLR processing of location data.
+     * Not to be used by anything else
+     */
+    public array $extras = [];
+
+    /**
      * keyword related fields
      */
 
@@ -412,6 +418,15 @@ class DataPublication
     public function addGeolocation(string $location): void
     {
         $this->msl_geolocations[] = $location;
+    }
+
+    /**
+     * Add geojson object to specific extras field for processing by spatial plugin
+     * @param string $location
+     */
+    public function addLocationToExtras(string $location)
+    {
+        $this->extras[] = ["key" => "spatial", "value" => $location];
     }
         
     /**
@@ -756,7 +771,7 @@ class DataPublication
                 }
                 $arr[$key] = $subArr;
             } else if(is_object($value)) {
-
+                
             } else {
                 $arr[$key] = $value;
             }            

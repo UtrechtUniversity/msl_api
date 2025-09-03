@@ -3,6 +3,10 @@
 namespace App\Mappers\Datacite;
 
 use App\Exceptions\MappingException;
+use App\GeoJson\BoundingBox;
+use App\GeoJson\Geometry\Collection;
+use App\GeoJson\Geometry\Point;
+use App\GeoJson\Geometry\Polygon;
 use App\Mappers\MapperInterface;
 use App\Models\Ckan\Affiliation;
 use App\Models\Ckan\AlternateIdentifier;
@@ -614,12 +618,39 @@ class Datacite4Mapper implements MapperInterface
     {
         $geoData = $metadata['data']['attributes']['geoLocations'];
 
+        $geometries = [];
+
         foreach($geoData as $geoEntry) {
             foreach($geoEntry as $key => $value) {
                 if($key === 'geoLocationPlace') {
                     $dataset->addGeolocation($value);
+                } elseif($key === 'geoLocationPoint') {
+                    $geometries[] = new Point(
+                        $value['pointLongitude'],
+                        $value['pointLatitude'],
+                    );
+                } elseif($key === 'geoLocationBox') {
+                    $boundingBox = new BoundingBox(
+                        $value['westBoundLongitude'],
+                        $value['southBoundLatitude'],
+                        $value['eastBoundLongitude'],
+                        $value['northBoundLatitude']
+                    );
+                    
+                    $geometries[] = Polygon::createFromBoundingBox($boundingBox);
                 }
             }
+        }
+
+        if(count($geometries) === 1) {
+            $dataset->addLocationToExtras(
+                json_encode($geometries[0])
+            );
+        } elseif (count($geometries) > 1) {
+            $collection = new Collection($geometries);
+            $dataset->addLocationToExtras(
+                json_encode($collection)
+            );          
         }
 
         return $dataset;
