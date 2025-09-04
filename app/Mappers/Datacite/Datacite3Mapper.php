@@ -590,6 +590,7 @@ class Datacite3Mapper implements MapperInterface
         $geoData = $metadata['data']['attributes']['geoLocations'];
 
         $geometries = [];
+        $area = 0;
 
         foreach($geoData as $geoEntry) {
             foreach($geoEntry as $key => $value) {
@@ -608,7 +609,10 @@ class Datacite3Mapper implements MapperInterface
                         $value['northBoundLatitude']
                     );
                     
-                    $geometries[] = Polygon::createFromBoundingBox($boundingBox);
+                    $polygon = Polygon::createFromBoundingBox($boundingBox);
+                    $geometries[] = $polygon;                    
+
+                    $area += $polygon->area();
                 } elseif($key === 'geoLocationPolygon') {
                     $points = [];
 
@@ -619,7 +623,9 @@ class Datacite3Mapper implements MapperInterface
                         );
                     }
 
-                    $geometries[] = new Polygon($points);
+                    $polygon = new Polygon($points);
+                    $geometries[] = $polygon;
+                    $area += $polygon->area();
                 }
             }
         }
@@ -634,6 +640,11 @@ class Datacite3Mapper implements MapperInterface
                 json_encode($collection)
             );          
         }
+
+        /**
+         * Area calculated is just a rough proximation as projection is not taken into account
+         */
+        $dataset->msl_surface_area = round($area);
 
         return $dataset;
     }

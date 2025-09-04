@@ -2388,6 +2388,7 @@ class Datacite3Test extends TestCase
 
         $this->assertEquals($dataset->msl_geolocations[0], 'Barents Sea Arctic');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"Polygon","coordinates":[[[-43.995,82.89083],[-43.995,60.00083],[70.305,60.00083],[70.305,82.89083],[-43.995,82.89083]]]}');
+        $this->assertEquals($dataset->msl_surface_area, 2616.0);
 
         // test multiple boxes
         $sourceData = new SourceDataset;
@@ -2444,6 +2445,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_geolocations[1], 'Atlantic Ocean');
         $this->assertEquals($dataset->msl_geolocations[2], 'Northwest Atlantic Ocean (40W)');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]}]}');        
+        $this->assertEquals($dataset->msl_surface_area, 28176.0);
 
         // test multiple polygon
         $sourceData = new SourceDataset;

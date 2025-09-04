@@ -218,6 +218,7 @@ class DataPublication
     
     /**
      * Surface area of feature collection
+     * Area calculated is just a rough proximation as projection is not taken into account
      */
     public $msl_surface_area = 0;
 
