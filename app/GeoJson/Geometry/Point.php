@@ -30,6 +30,13 @@ class Point extends Geometry
         $this->x = $x;
         $this->y = $y;
     }
+
+    public function distanceToPoint(Point $point)
+    {
+        $dX = $this->x - $point->x;
+        $dY = $this->y - $point->y;
+        return sqrt($dX * $dX + $dY * $dY);
+    }
     
     public function jsonSerialize(): array
     {        

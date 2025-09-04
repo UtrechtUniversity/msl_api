@@ -41,6 +41,33 @@ class Polygon extends Geometry
     }
 
     /**
+     * Calculate area of polygon
+     */
+    public function area(): float
+    {
+        $area = 0.0;
+
+        $xCoords = [];
+        $yCoords = [];
+
+        for($i = 0; $i < count($this->points); $i++)
+        {
+            $xCoords[] = $this->points[$i]->x;
+            $yCoords[] = $this->points[$i]->y;
+        }
+        
+        $j = count($xCoords) - 1;
+        for ($i = 0; $i < count($xCoords); $i++)
+        {
+            $area += ($xCoords[$j] + $xCoords[$i]) * ($yCoords[$j] - $yCoords[$i]);
+                    
+            $j = $i; 
+        }
+
+        return abs($area / 2.0);
+    }
+
+    /**
      * Create Polygon from BoundingBox
      * @param BoundingBox $boundingBox
      */
