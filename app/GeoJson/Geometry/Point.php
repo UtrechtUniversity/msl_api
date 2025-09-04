@@ -17,6 +17,11 @@ class Point extends Geometry
      */
     public float $y;
 
+    /**
+     * Constructs new Point object
+     * @param int|float $x
+     * @param int|float $y
+     */
     public function __construct($x, $y)
     {
         if (! is_int($x) && ! is_float($x)) {
@@ -31,6 +36,10 @@ class Point extends Geometry
         $this->y = $y;
     }
 
+    /**
+     * returns distance between this and provided point
+     * @param Point $point
+     */
     public function distanceToPoint(Point $point)
     {
         $dX = $this->x - $point->x;
