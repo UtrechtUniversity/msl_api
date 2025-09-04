@@ -4,6 +4,8 @@ namespace App\Mappers\Datacite;
 
 use App\Exceptions\MappingException;
 use App\GeoJson\BoundingBox;
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Feature\FeatureCollection;
 use App\GeoJson\Geometry\Collection;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
@@ -619,16 +621,28 @@ class Datacite4Mapper implements MapperInterface
         $geoData = $metadata['data']['attributes']['geoLocations'];
 
         $geometries = [];
+        $features = [];
+
         $area = 0;
 
         foreach($geoData as $geoEntry) {
+            $locationName = '';
+            if(array_key_exists('geoLocationPlace', $geoEntry)) {
+                $dataset->addGeolocation($geoEntry['geoLocationPlace']);
+                $locationName = $geoEntry['geoLocationPlace'];
+            }
+
             foreach($geoEntry as $key => $value) {
-                if($key === 'geoLocationPlace') {
-                    $dataset->addGeolocation($value);
-                } elseif($key === 'geoLocationPoint') {
-                    $geometries[] = new Point(
+                if($key === 'geoLocationPoint') {
+                    $point = new Point(
                         (float)$value['pointLongitude'],
                         (float)$value['pointLatitude'],
+                    );
+                    $geometries[] = $point;
+                    
+                    $features[] = new Feature(
+                        $point,
+                        ['name' => $locationName]
                     );
                 } elseif($key === 'geoLocationBox') {
                     $boundingBox = new BoundingBox(
@@ -639,9 +653,15 @@ class Datacite4Mapper implements MapperInterface
                     );
                     
                     $polygon = Polygon::createFromBoundingBox($boundingBox);
-                    $geometries[] = $polygon;                    
+                    $geometries[] = $polygon;
+                    
+                    $features[] = new Feature(
+                        $polygon,
+                        ['name' => $locationName]
+                    );
 
                     $area += $polygon->area();
+
                 } elseif($key === 'geoLocationPolygon') {
                     $points = [];
 
@@ -654,6 +674,11 @@ class Datacite4Mapper implements MapperInterface
 
                     $polygon = new Polygon($points);
                     $geometries[] = $polygon;
+
+                    $features[] = new Feature(
+                        $polygon,
+                        ['name' => $locationName]
+                    );
                     $area += $polygon->area();
                 }
             }
@@ -668,6 +693,11 @@ class Datacite4Mapper implements MapperInterface
             $dataset->addLocationToExtras(
                 json_encode($collection)
             );          
+        }
+
+        if(count($features) > 0) {
+            $featureCollection = new FeatureCollection($features);
+            $dataset->msl_geojson_featurecollection = json_encode($featureCollection);
         }
 
         /**
