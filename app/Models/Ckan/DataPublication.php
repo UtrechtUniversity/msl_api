@@ -400,7 +400,7 @@ class DataPublication
      */
     public function addSize(string $size): void
     {
-        $this->msl_sizes[] = $size;
+        $this->msl_sizes[] = ['msl_size' => $size];
     }
 
     /**
@@ -409,7 +409,7 @@ class DataPublication
      */
     public function addFormat(string $format): void
     {
-        $this->msl_formats[] = $format;
+        $this->msl_formats[] = ['msl_format' => $format];
     }
 
     /**
@@ -418,7 +418,7 @@ class DataPublication
      */
     public function addGeolocation(string $location): void
     {
-        $this->msl_geolocations[] = $location;
+        $this->msl_geolocations[] = ['msl_geolocation' => $location];
     }
 
     /**

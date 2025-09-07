@@ -2098,8 +2098,8 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapSizes($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_sizes[0], '1 MB');
-        $this->assertEquals($dataset->msl_sizes[1], '90 pages');
+        $this->assertEquals($dataset->msl_sizes[0]['msl_size'], '1 MB');
+        $this->assertEquals($dataset->msl_sizes[1]['msl_size'], '90 pages');
 
         // new test
         $sourceData = new SourceDataset;
@@ -2158,8 +2158,8 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapFormats($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_formats[0], 'application/xml');
-        $this->assertEquals($dataset->msl_formats[1], 'text/plain');
+        $this->assertEquals($dataset->msl_formats[0]['msl_format'], 'application/xml');
+        $this->assertEquals($dataset->msl_formats[1]['msl_format'], 'text/plain');
 
         //new test
 
@@ -2362,10 +2362,10 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_geolocations[0], 'Groningen, the Netherlands');        
-        $this->assertEquals($dataset->msl_geolocations[1], 'South Holland, the Netherlands');
-        $this->assertEquals($dataset->msl_geolocations[2], 'Friesland, the Netherlands');
-        $this->assertEquals($dataset->msl_geolocations[3], 'Drenthe, the Netherlands');
+        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'Groningen, the Netherlands');        
+        $this->assertEquals($dataset->msl_geolocations[1]['msl_geolocation'], 'South Holland, the Netherlands');
+        $this->assertEquals($dataset->msl_geolocations[2]['msl_geolocation'], 'Friesland, the Netherlands');
+        $this->assertEquals($dataset->msl_geolocations[3]['msl_geolocation'], 'Drenthe, the Netherlands');
 
         // new test
         $sourceData = new SourceDataset;
@@ -2423,7 +2423,7 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_geolocations[0], 'Disko Bay');
+        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'Disko Bay');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"Point","coordinates":[52,69]}');
         $this->assertEquals($dataset->msl_geojson_featurecollection, '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[52,69]},"properties":{"name":"Disko Bay"}}]}');
 
@@ -2460,7 +2460,7 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_geolocations[0], 'Barents Sea Arctic');
+        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'Barents Sea Arctic');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"Polygon","coordinates":[[[-43.995,82.89083],[-43.995,60.00083],[70.305,60.00083],[70.305,82.89083],[-43.995,82.89083]]]}');
         $this->assertEquals($dataset->msl_surface_area, 2616.0);
         $this->assertEquals($dataset->msl_geojson_featurecollection, '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-43.995,82.89083],[-43.995,60.00083],[70.305,60.00083],[70.305,82.89083],[-43.995,82.89083]]]},"properties":{"name":"Barents Sea Arctic"}}]}');
@@ -2516,9 +2516,9 @@ class Datacite4Test extends TestCase
 
         $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_geolocations[0], 'North Atlantic Ocean');
-        $this->assertEquals($dataset->msl_geolocations[1], 'Atlantic Ocean');
-        $this->assertEquals($dataset->msl_geolocations[2], 'Northwest Atlantic Ocean (40W)');
+        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'North Atlantic Ocean');
+        $this->assertEquals($dataset->msl_geolocations[1]['msl_geolocation'], 'Atlantic Ocean');
+        $this->assertEquals($dataset->msl_geolocations[2]['msl_geolocation'], 'Northwest Atlantic Ocean (40W)');
         $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]}]}');
         $this->assertEquals($dataset->msl_surface_area, 28176.0);
         $this->assertEquals($dataset->msl_geojson_featurecollection, '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},"properties":{"name":"North Atlantic Ocean"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},"properties":{"name":"Atlantic Ocean"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]},"properties":{"name":"Northwest Atlantic Ocean (40W)"}}]}');
