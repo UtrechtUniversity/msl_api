@@ -1,0 +1,1667 @@
+[
+    {
+        "value": "present-day",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [
+            "presentday",
+            "present-day",
+            "antropogenic setting"
+        ],
+        "subTerms": []
+    },
+    {
+        "value": "Phanerozoic",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "Cenozoic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "Cenozoic times"
+                ],
+                "subTerms": [
+                    {
+                        "value": "Quaternary",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Holocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Pleistocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Upper\/LatePleistocene",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "MiddlePleistocene",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Calabrian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Gelasian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Neogene",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Pliocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Piacenzian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Zanclean",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Miocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Messinian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Tortonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Serravallian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Langhian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Burdigalian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Aquitanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Paleogene",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Oligocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Chattian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Rupelian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Eocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Priabonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Lutetian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Bartonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Ypresian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Paleocene",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Thanetian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Selandian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Danian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "Mesozoic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "Cretaceous",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Upper\/LateCretaceous",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Maastrichtian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Campanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Santonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Coniacian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Turonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Cenomanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Lower\/EarlyCretaceous",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Albian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Aptian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Barremian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Hauterivian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Valanginian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Berriasian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Jurassic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Upper\/LateJurassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Tithonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Kimmeridgian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Oxfordian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "MiddleJurassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Callovian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Bathonian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Bajocian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Aalenian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Lower\/EarlyJurassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Toarcian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Pliensbachian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Sinemurian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Hettangian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Triassic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Upper\/LateTriassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Rhaetian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Norian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Carnian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "MiddleTriassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Ladinian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Anisian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Lower\/EarlyTriassic",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Olenekian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Induan",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "Paleozoic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "Permian",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "Perm"
+                        ],
+                        "subTerms": [
+                            {
+                                "value": "Lopingian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Changhsingian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Wuchiapingian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Guadalupian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Capitanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Wordian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Roadian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Cisuralian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Kungurian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Artinskian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Sakmarian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Asselian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Carboniferous",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Pennsylvanian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Upper\/LatePennsylvanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Kasimovian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            },
+                                            {
+                                                "value": "Gzhelian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "MiddlePennsylvanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Moscovian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "Lower\/EarlyPennsylvanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Bashkirian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Mississippian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Upper\/LateMississippian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Serpukhovian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "MiddleMississippian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Visean",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "value": "Lower\/EarlyMississippian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": [
+                                            {
+                                                "value": "Tournaisian",
+                                                "level": 6,
+                                                "hyperlink": "",
+                                                "vocabUri": "",
+                                                "uri": "",
+                                                "synonyms": [],
+                                                "subTerms": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Devonian",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Upper\/LateDevonian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Famennian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Frasnian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "MiddleDevonian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Givetian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Eifelian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Lower\/EarlyDevonian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Emsian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Pragian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Lochkovian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Silurian",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Pridoli",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Ludlow",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Ludfordian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Gorstian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Wenlock",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Homerian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Sheinwoodian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Llandovery",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Telychian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Aeronian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Rhuddanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Ordovician",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Upper\/LateOrdovician",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Hirnantian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Katian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Sandbian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "MiddleOrdovician",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Darriwilian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Dapingian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Lower\/EarlyOrdovician",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "Floian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Tremadocian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Cambrian",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Furongian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "CambrianStage10",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Jiangshanian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Paibian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "CambrianSeries3",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [
+                                    "Miaolingian"
+                                ],
+                                "subTerms": [
+                                    {
+                                        "value": "Guzhangian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Drumian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "CambrianStage5",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [
+                                            "Wuliuan"
+                                        ],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "CambrianSeries2",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "CambrianStage4",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "CambrianStage3",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            },
+                            {
+                                "value": "Terreneuvian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": [
+                                    {
+                                        "value": "CambrianStage2",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    },
+                                    {
+                                        "value": "Fortunian",
+                                        "level": 5,
+                                        "hyperlink": "",
+                                        "vocabUri": "",
+                                        "uri": "",
+                                        "synonyms": [],
+                                        "subTerms": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "value": "Precambrian",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": [
+            {
+                "value": "Proterozoic",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "Neoproterozoic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Ediacaran",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Cryogenian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Tonian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Mesoproterozoic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Stenian",
+                                "level": 4,
+                                "hyperlink": "http:\/\/resource.geosciml.org\/classifier\/ics\/ischart\/Stenian",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Ectasian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Calymmian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    },
+                    {
+                        "value": "Paleoproterozoic",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": [
+                            {
+                                "value": "Statherian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Orosirian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Rhyacian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            },
+                            {
+                                "value": "Siderian",
+                                "level": 4,
+                                "hyperlink": "",
+                                "vocabUri": "",
+                                "uri": "",
+                                "synonyms": [],
+                                "subTerms": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "value": "Archean",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": [
+                    {
+                        "value": "Eoarchean",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Mesoarchean",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Neoarchean",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    },
+                    {
+                        "value": "Paleoarchean",
+                        "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
+                    }
+                ]
+            },
+            {
+                "value": "Hadean",
+                "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
+            }
+        ]
+    },
+    {
+        "value": "FormationOfEarth",
+        "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
+        "synonyms": [],
+        "subTerms": []
+    }
+]

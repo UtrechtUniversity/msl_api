@@ -2,9 +2,6 @@
 
 namespace App\Response;
 
-use App\Response\BaseResult;
-use App\Response\FacilitiesResult;
-
 class ResultBlock
 {
     public $count = 0;
@@ -20,14 +17,9 @@ class ResultBlock
         $results = $response->getResults();
         $this->resultCount = count($results);
 
-        foreach ($results as $result) {     
-                if($context == 'facilities'){
-                    $this->results[] = new FacilitiesResult($result);                
-                } else {
-                    $this->results[] = new BaseResult($result, $context);                
-                }          
-        }   
-
+        foreach ($results as $result) {               
+            $this->results[] = new BaseResult($result, $context);                
+        }        
     }
 
     public function getAsArray() {

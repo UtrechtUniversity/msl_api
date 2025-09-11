@@ -83,11 +83,6 @@
             <x-ri-corner-down-right-fill class="size-4 fill-primary-700 inline"/>
             Laboratory intake form
           </a>
-          <a class="link link-hover"
-          href="{{ route("contribute-select-scenario") }}">
-            <x-ri-corner-down-right-fill class="size-4 fill-primary-700 inline"/>
-            Data Tooling - Survey
-          </a>
         </nav>
 
         <nav class="link-list-item">

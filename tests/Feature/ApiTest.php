@@ -7,18 +7,21 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 
 class ApiTest extends TestCase
 {
-    use RefreshDatabase;
 
     /**
      * Test /all API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_all_success_results(): void
     {
@@ -27,20 +30,21 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_all.txt'));
         
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
-
+        
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
-
+        
         // Retrieve response from API
         $response = $this->get('webservice/api/all');
-
+        
+        
         // Check for 200 status response
         $response->assertStatus(200);
-
+        
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -93,13 +97,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /rock_physics API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_rockphysics_success_results(): void
     {
@@ -108,20 +112,20 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_rockphysics.txt'));
         
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
-
+        
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
-
+        
         // Retrieve response from API
         $response = $this->get('webservice/api/rock_physics');
-
+        
         // Check for 200 status response
         $response->assertStatus(200);
-
+        
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -173,13 +177,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /analogue API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_analogue_success_results(): void
     {
@@ -188,20 +192,20 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_analogue.txt'));
         
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
-
+        
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
-
+        
         // Retrieve response from API
         $response = $this->get('webservice/api/analogue');
-
+        
         // Check for 200 status response
         $response->assertStatus(200);
-
+        
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -254,13 +258,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /paleo API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_paleo_success_results(): void
     {
@@ -269,20 +273,20 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_paleo.txt'));
         
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
-
+        
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
-
+        
         // Retrieve response from API
         $response = $this->get('webservice/api/paleo');
-
+        
         // Check for 200 status response
         $response->assertStatus(200);
-
+        
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -334,13 +338,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /microscopy API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_microscopy_success_results(): void
     {
@@ -349,20 +353,20 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_microscopy.txt'));
         
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
-
+        
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
-
+        
         // Retrieve response from API
         $response = $this->get('webservice/api/microscopy');
-
+        
         // Check for 200 status response
         $response->assertStatus(200);
-
+        
         // Verify response body contents
         $response->assertJson(fn (AssertableJson $json) =>
             $json->has('success')
@@ -409,13 +413,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /geochemistry API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_geochemistry_success_results(): void
     {
@@ -424,11 +428,11 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geochemistry.txt'));
 
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
 
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
 
@@ -487,13 +491,13 @@ class ApiTest extends TestCase
                         ->etc()
                 )
                 ->etc()
-            )
-            ->etc()
         );
     }
 
     /**
      * Test /geoenergy API endpoint based on mocked CKAN request
+     * 
+     * @return void
      */
     public function test_geoenergy_success_results(): void
     {
@@ -502,11 +506,11 @@ class ApiTest extends TestCase
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_geoenergy.txt'));
 
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
 
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
 
@@ -565,21 +569,24 @@ class ApiTest extends TestCase
             );
     }
 
+
     /**
      * Test /all endpoint with error received from CKAN
+     * 
+     * @return void
      */
     public function test_all_error_ckan(): void
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(ApiController::class, function ($app) {
+        $this->app->bind(ApiController::class, function($app){
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.txt'));
 
             $mock = new MockHandler([
-                new Response(400, [], $response),
+                new Response(400, [], $response)
             ]);
 
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
 
@@ -590,28 +597,31 @@ class ApiTest extends TestCase
         $response->assertStatus(500);
 
         // Verify response body contents
-        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Error received from CKAN api.')
-            ->etc()
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', "Error received from CKAN api.")
+                ->etc()
         );
     }
 
     /**
      * Test /all endpoint with empty resultset received from CKAN
+     * 
+     * @return void
      */
     public function test_all_success_empty(): void
     {
-        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(ApiController::class, function ($app) {
+       // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
+       $this->app->bind(ApiController::class, function($app){
             $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_datapublications_noresults.txt'));
 
             $mock = new MockHandler([
-                new Response(200, [], $response),
+                new Response(200, [], $response)
             ]);
 
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
 
@@ -622,30 +632,34 @@ class ApiTest extends TestCase
         $response->assertStatus(200);
 
         // Verify response body contents
-        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', true)
-            ->has('message')
-            ->has('result', fn (AssertableJson $json) => $json
-                ->has('count')
-                ->has('resultCount')
-                ->has('results')
-            )
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', true)
+                ->has('message')
+                ->has('result', fn (AssertableJson $json) =>
+                $json
+                    ->has('count')
+                    ->has('resultCount') 
+                    ->has('results') 
+                )
         );
     }
 
     /**
      * Test /all endpoint with Exception returned by GuzzleClient
+     * 
+     * @return void
      */
     public function test_all_guzzle_exception(): void
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(ApiController::class, function ($app) {
+        $this->app->bind(ApiController::class, function($app){
             $mock = new MockHandler([
-                new RequestException('Error Communicating with Server', new Request('GET', 'test')),
+                new RequestException('Error Communicating with Server', new Request('GET', 'test'))
             ]);
 
             $handler = HandlerStack::create($mock);
-
+                    
             return new ApiController(new Client(['handler' => $handler]));
         });
 
@@ -656,147 +670,12 @@ class ApiTest extends TestCase
         $response->assertStatus(500);
 
         // Verify response body contents
-        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN.')
-            ->etc()
-        );
-    }
-
-    /**
-     * Test /facilities API endpoint based on mocked CKAN request
-     */
-    public function test_facilities_success_results(): void
-    {
-        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(ApiController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_facilities_117.txt'));
-            $mock = new MockHandler([
-                new Response(200, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new ApiController(new Client(['handler' => $handler]));
-        });
-
-        // Retrieve response from API
-        $response = $this->get('webservice/api/facilities');
-
-        // Check for 200 status response
-        $response->assertStatus(200);
-
-        // Verify response body contents
-        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', true)
-            ->where('result.count', 117)
-            ->where('result.resultCount', 10)
-            ->has('result.results.0', fn (AssertableJson $json) => $json
-                ->where('name', 'HelLabs - Geophysical laboratory')
-                ->where('description', 'Paleomagnetism, rock magnetism and petrophysics')
-                ->where('descriptionHtml', "<p>Paleomagnetism, rock magnetism and petrophysics</p>\n")
-                ->where('domain', 'Paleomagnetism')
-                ->where('latitude', '60.2026')
-                ->where('longitude', '24.9576')
-                ->has('altitude')
-                ->where('portalLink', 'http://localhost/lab/fa7cdfad1a5aaf8370ebeda47a1ff1c3')
-                ->where('organization', 'University of Helsinki')
-                ->where('equipment.0.title', '2G cryogenic magnetometer')
-                ->where('equipment.0.description', 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,')
-                ->where('equipment.0.descriptionHtml', "<p>cryogenic magnetometer for discrete samples, 2G Model 755 DC,</p>\n")
-                ->where('equipment.0.domain', 'Paleomagnetism')
-                ->where('equipment.0.category', 'Permanent')
-                ->where('equipment.0.group', 'Cryogenic Magnetometer')
-                ->where('equipment.0.type', 'Magnetometer')
-                ->where('equipment.0.brand', '2G')
+        $response->assertJson(fn (AssertableJson $json) =>
+            $json->has('success')
+                ->where('success', false)
+                ->where('message', "Malformed request to CKAN.")
                 ->etc()
-            )
-            ->etc()
         );
     }
 
-    /**
-     * Test /facilities API endpoint for malformed bounding box errors
-     */
-    public function test_facilities_bounding_box_errors(): void
-    {
-        // over the bounds of +/-90 or +/-180
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,-90,180,91');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-
-        // comma instead of dot for decimal
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,-90,180,85,5');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-
-        // switch first two inputs
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180,85');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-
-        // 3 inputs
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-
-        // 5 inputs
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180,55');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-
-        // string input
-        $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,90,180,nine');
-        $responseBoundingBox->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', false)
-            ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
-            ->etc()
-        );
-    }
-
-    /**
-     * Test /facilities API endpoint corect bounding box
-     */
-    public function test_facilities_bounding_box_success(): void
-    {
-        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(ApiController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_facilities_boundingbox.txt'));
-            $mock = new MockHandler([
-                new Response(200, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new ApiController(new Client(['handler' => $handler]));
-        });
-
-        // Retrieve response from API
-        $response = $this->get('http://localhost:8000/webservice/api/facilities?boundingBox=14.05,54.08,45.25,63.86');
-
-        // Check for 200 status response
-        $response->assertStatus(200);
-
-        // Verify response body contents
-        $response->assertJson(fn (AssertableJson $json) => $json->has('success')
-            ->where('success', true)
-            ->where('result.count', 2)
-            ->etc()
-        );
-    }
 }

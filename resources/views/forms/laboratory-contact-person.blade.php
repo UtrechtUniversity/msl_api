@@ -24,9 +24,7 @@
             </div>
 
             <form method="POST" action="{{ route('laboratory-contact-person-process') }}" class="space-y-8" novalidate>
-                @csrf
-                
-                <x-honeypot />               
+                @csrf                        
                 <div  class="flex flex-col w-full gap-4">
                     
                     <div class="flex flex-row w-full gap-4">

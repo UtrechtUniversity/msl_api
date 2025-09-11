@@ -2,6 +2,9 @@
     {
         "value": "subsurface storage",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "subsurface energy storage",
             "subsurface disposal",
@@ -9,222 +12,134 @@
             "underground energy storage",
             "underground storage system"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
         "subTerms": [
             {
                 "value": "storage in depleted oil reservoir",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "storage in depleted hydrocarbon reservoir"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-storage_in_depleted_oil_reservoir",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 3
+                "subTerms": []
             },
             {
                 "value": "gas storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "subsurface gas storage",
                     "underground gas storage",
                     "underground storage of gas",
                     "subsurface storage of gas"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-gas_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 4
+                "subTerms": []
             },
             {
                 "value": "CO2 storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
-                    "co2 storage in subsurface",
+                    "CO2 storage in subsurface",
                     "carbon dioxide storage in the subsurface",
-                    "subsurface co2 storage",
+                    "subsurface CO2 storage",
                     "subsurface carbon dioxide storage",
                     "subsurface hydrocarbon storage",
-                    "geological storage of co2"
+                    "geological storage of CO2"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-co2_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 5
+                "subTerms": []
             },
             {
                 "value": "oil storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "subsurface oil storage",
                     "subsurface hydrocarbon storage"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-oil_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 6
+                "subTerms": []
             },
             {
                 "value": "nitrogen storage in the subsurface",
                 "level": 2,
-                "synonyms": [
-                    "n2 storage in the subsurface",
-                    "subsurface nitrogen storage",
-                    "subsurface n2 storage",
-                    "underground nitrogen storage",
-                    "underground n2 storage"
-                ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-nitrogen_storage_in_the_subsurface",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 7
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [
+                    "N2 storage in the subsurface",
+                    "subsurface nitrogen storage",
+                    "subsurface N2 storage",
+                    "underground nitrogen storage",
+                    "underground N2 storage"
+                ],
+                "subTerms": []
             },
             {
                 "value": "hydrogen storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "hydrogen storage in subsurface",
                     "underground hydrogen storage",
-                    "(uhs)"
+                    "(UHS)"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-hydrogen_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 8
+                "subTerms": []
             },
             {
                 "value": "compressed air storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
-                    "(caes)",
+                    "(CAES)",
                     "compressed air storage in subsurface",
                     "subsurface storage of compressed air",
                     "underground storage of compressed air"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-compressed_air_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/eurogeosurveys.org\/research\/our-experts\/geoenergy\/",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 9
+                "subTerms": []
             },
             {
                 "value": "waste storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "underground waste storage",
                     "subsurface waste storage",
                     "underground storage of waste",
                     "subsurface storage of waste"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-waste_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
                 "subTerms": [
                     {
                         "value": "wastewater storage in the subsurface",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "wastewater disposal in the subsurface",
                             "subsurface wastewater disposal",
                             "underground wastewater disposal"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-waste_storage_in_the_subsurface-wastewater_storage_in_the_subsurface",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 11
+                        "subTerms": []
                     },
                     {
                         "value": "radioactive waste disposal in the subsurface",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "radioactive waste storage in the subsurface",
                             "rad waste disposal in the subsurface",
@@ -233,197 +148,114 @@
                             "rad waste disposal in the subsurface",
                             "nuclear waste storage in the subsurface"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-waste_storage_in_the_subsurface-radioactive_waste_disposal_in_the_subsurface",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/cgi.vocabs.ga.gov.au\/object?uri=http%3A\/\/resource.geosciml.org\/classifier\/cgi\/waste-storage\/underground",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 12
+                        "subTerms": []
                     }
-                ],
-                "rowNr": 10
+                ]
             },
             {
                 "value": "thermal energy storage in the subsurface",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "underground thermal energy storage",
-                    "(utes)",
+                    "(UTES)",
                     "subsurface thermal energy storage"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
                 "subTerms": [
                     {
                         "value": "mine thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(mtes)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-mine_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 14
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(MTES)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "aquifer thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(ates)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-aquifer_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 15
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(ATES)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "high-temperature aquifer thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(ht-ates)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-high-temperature_aquifer_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 16
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(HT-ATES)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "medium-temperature aquifer thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(mt-ates)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-medium-temperature_aquifer_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 17
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(MT-ATES)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "low-temperature aquifer thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(lt-ates)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-low-temperature_aquifer_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 18
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(LT-ATES)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "borehole thermal energy storage",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
-                            "(btes)",
+                            "(BTES)",
                             "ground-source heat pump",
                             "geothermal heat pump",
                             "geothermal heat pump system",
                             "geothermal heat exchanger",
                             "geothermal probe"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-borehole_thermal_energy_storage",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 19
+                        "subTerms": []
                     },
                     {
                         "value": "cavern thermal energy storage",
                         "level": 3,
-                        "synonyms": [
-                            "(ctes)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_storage-thermal_energy_storage_in_the_subsurface-cavern_thermal_energy_storage",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.heatstore.eu\/documents\/HEATSTORE_UTES%20State%20of%20the%20Art_WP1_D1.1_Final_2019.04.26.pdf",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 20
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(CTES)"
+                        ],
+                        "subTerms": []
                     }
-                ],
-                "rowNr": 13
+                ]
             }
-        ],
-        "rowNr": 2
+        ]
     },
     {
         "value": "subsurface energy production",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "subsurface energy provision",
             "subsurface energy extraction",
@@ -432,707 +264,389 @@
             "energy production from the subsurface",
             "subsurface fluid production"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
         "subTerms": [
             {
                 "value": "geothermal energy extraction",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "geothermal energy field",
                     "geothermal",
-                    "krafla"
+                    "Krafla"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "https:\/\/www.energy.gov\/eere\/geothermal\/geothermal-glossary",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
                 "subTerms": [
                     {
                         "value": "advanced geothermal system",
                         "level": 3,
-                        "synonyms": [
-                            "(ags)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-advanced_geothermal_system",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S096014812200012X",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 23
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(AGS)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "enhanced geothermal system",
                         "level": 3,
-                        "synonyms": [
-                            "(egs)"
-                        ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-enhanced_geothermal_system",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 24
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [
+                            "(EGS)"
+                        ],
+                        "subTerms": []
                     },
                     {
                         "value": "geothermal doublet",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "hydrothermal doublet"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-geothermal_doublet",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 25
+                        "subTerms": []
                     },
                     {
                         "value": "low enthalpy geothermal energy",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "low enthalpy system",
                             "direct use geothermal system",
-                            "dugs"
+                            "DUGS"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-low_enthalpy_geothermal_energy",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 26
+                        "subTerms": []
                     },
                     {
                         "value": "high enthalpy geothermal energy",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "high enthalpy system",
                             "high enthalphy reservoir"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-high_enthalpy_geothermal_energy",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 27
+                        "subTerms": []
                     },
                     {
                         "value": "deep geothermal energy",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-deep_geothermal_energy",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 28
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "shallow geothermal energy",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-shallow_geothermal_energy",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/geoera.eu\/projects\/muse3\/fact-sheets-of-shallow-geothermal-energy-concepts\/",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 29
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "geothermal reservoir",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 30
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "hydrothermal reservoir",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-hydrothermal_reservoir",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/voc.europe-geology.eu\/muse\/category\/8688",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 31
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "geothermal reservoir temperature",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir_temperature",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 32
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "closed loop system",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "closed-loop system",
                             "borehole heat exchanger",
-                            "(bhe)"
+                            "(BHE)"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-closed_loop_system",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/voc.europe-geology.eu\/?uri=https:\/\/voc.europe-geology.eu\/muse\/BoreholePurposeValue\/1327&lang=en",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 33
+                        "subTerms": []
                     },
                     {
                         "value": "open loop system",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "open-loop system"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-open_loop_system",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 34
+                        "subTerms": []
                     },
                     {
                         "value": "mine geothermal energy provision",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "abandoned mine",
                             "mine tailings"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-geothermal_energy_extraction-mine_geothermal_energy_provision",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 35
+                        "subTerms": []
                     }
-                ],
-                "rowNr": 22
+                ]
             },
             {
                 "value": "hydrogen energy production",
                 "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
                 "subTerms": [
                     {
                         "value": "native hydrogen",
                         "level": 3,
-                        "synonyms": [],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production-native_hydrogen",
                         "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 37
+                        "vocabUri": "",
+                        "uri": "",
+                        "synonyms": [],
+                        "subTerms": []
                     },
                     {
                         "value": "steam methane reforming",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "grey hydrogen production"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 38
+                        "subTerms": []
                     },
                     {
                         "value": "steam methane reforming with carbon capture and storage",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "blue hydrogen production"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming_with_carbon_capture_and_storage",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 39
+                        "subTerms": []
                     },
                     {
                         "value": "methane pyrolysis",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "turquoise hydrogen production"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production-methane_pyrolysis",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 40
+                        "subTerms": []
                     },
                     {
                         "value": "polymer electrolyte membrane electrolysis",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "green hydrogen production"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrogen_energy_production-polymer_electrolyte_membrane_electrolysis",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.sciencedirect.com\/science\/article\/pii\/S0360128522000053",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 41
+                        "subTerms": []
                     }
-                ],
-                "rowNr": 36
+                ]
             },
             {
                 "value": "hydrocarbon energy production",
                 "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrocarbon_energy_production",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
                 "subTerms": [
                     {
                         "value": "gas field",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "hydrocarbon field",
                             "gas reservoir",
                             "hydrocarbon reservoir"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrocarbon_energy_production-gas_field",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.spe.org\/en\/industry\/terms-used-petroleum-reserves-resource-definitions",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 43
+                        "subTerms": []
                     },
                     {
                         "value": "oil field",
                         "level": 3,
+                        "hyperlink": "",
+                        "vocabUri": "",
+                        "uri": "",
                         "synonyms": [
                             "oil reservoir",
                             "hydrocarbon field",
                             "hydrocarbon reservoir"
                         ],
-                        "exclude_domain_mapping": 1,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/subsurface_energy_production-hydrocarbon_energy_production-oil_field",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "extracted_definition_link": "https:\/\/www.spe.org\/en\/industry\/terms-used-petroleum-reserves-resource-definitions\/",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 1,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 44
+                        "subTerms": []
                     }
-                ],
-                "rowNr": 42
+                ]
             }
-        ],
-        "rowNr": 21
+        ]
     },
     {
         "value": "ore mine",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "mineral mine",
             "ore deposit"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/ore_mine",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
         "subTerms": [
             {
                 "value": "mine tailing",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "mine wastes",
                     "mine waste",
                     "mine waste disposal",
                     "mine disposal"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/ore_mine-mine_tailing",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 46
+                "subTerms": []
             }
-        ],
-        "rowNr": 45
+        ]
     },
     {
         "value": "civil engineered setting",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "civil engineering",
             "civil engineered"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
         "subTerms": [
             {
                 "value": "underground research facility",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "underground science lab"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting-underground_research_facility",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 48
+                "subTerms": []
             },
             {
                 "value": "tunnel",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "highway tunnel",
                     "road tunnel"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting-tunnel",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 49
+                "subTerms": []
             },
             {
                 "value": "dam construction - geological aspects",
                 "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting-dam_construction_-_geological_aspects",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 50
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
             },
             {
                 "value": "road construction - geotechnical aspects",
                 "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting-road_construction_-_geotechnical_aspects",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 51
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
             },
             {
                 "value": "building foundation",
                 "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/civil_engineered_setting-building_foundation",
                 "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 52
+                "vocabUri": "",
+                "uri": "",
+                "synonyms": [],
+                "subTerms": []
             }
-        ],
-        "rowNr": 47
+        ]
     },
     {
         "value": "induced seismicity",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "induced earthquake",
             "induced seismic",
-            "bedrottolab",
-            "bedrotto lab",
-            "bedrotto underground",
-            "bedrottolaboratory",
-            "bedrotto laboratory"
+            "Bedrottolab",
+            "Bedrotto lab",
+            "Bedrotto underground",
+            "Bedrottolaboratory",
+            "Bedrotto laboratory"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/induced_seismicity",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
-        "subTerms": [],
-        "rowNr": 53
+        "subTerms": []
     },
     {
         "value": "surface subsidence",
         "level": 1,
+        "hyperlink": "",
+        "vocabUri": "",
+        "uri": "",
         "synonyms": [
             "subsidence"
         ],
-        "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/surface_subsidence",
-        "hyperlink": "",
-        "external_uri": "",
-        "external_vocab_scheme": "",
-        "external_description": "",
-        "extracted_definition": "",
-        "extracted_definition_link": "",
-        "terms_exclude_abstract_mapping": [],
-        "selection_group_1": 1,
-        "selection_group_2": 0,
         "subTerms": [
             {
                 "value": "sinkhole",
                 "level": 2,
+                "hyperlink": "",
+                "vocabUri": "",
+                "uri": "",
                 "synonyms": [
                     "sink hole"
                 ],
-                "exclude_domain_mapping": 1,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.3\/surface_subsidence-sinkhole",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 1,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 55
+                "subTerms": []
             }
-        ],
-        "rowNr": 54
+        ]
     }
 ]

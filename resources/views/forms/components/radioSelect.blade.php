@@ -3,14 +3,19 @@
 
     $ElementsArray => array(string)
     $sectionName => string, describes the name of the elements for interactions
+    $placeholder => string
+    $title => title for the text-field
 
 --}}
 
-<div class="form-control flex flex-col phone:flex-row">
-    @foreach ($ElementsArray as $choice)
-        <label class="label cursor-pointer flex flex-col gap-4 p-2 phone:w-20 sm:w-28 border sm:border-0 ">
-            <span class="label-text text-center">{{ $choice }}</span>
-            <input type="radio" name={{ $sectionName }} class="radio checked:bg-secondary-500" checked="false" />
-        </label>
-    @endforeach
-</div>
+{{-- not completed --}}
+{{-- <div class="w-full ">
+        @foreach ( $ElementsArray as $element)
+            <div class="form-control">
+                <label class="label cursor-pointer">
+                    <span class="label-text">{{ $element }}</span>
+                    <input type="radio" name="{{ $sectionName }}" class="radio checked:bg-secondary-500"/>
+                </label>
+            </div>
+        @endforeach
+</div> --}}

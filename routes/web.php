@@ -1,16 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ToolsController;
 use App\Http\Controllers\SeederController;
-use App\Http\Controllers\SurveyController;
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\ToolsController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
-use Spatie\Honeypot\ProtectAgainstSpam;
  
 /*
 |--------------------------------------------------------------------------
@@ -47,8 +45,17 @@ Route::prefix('admin')->group(function () {
     Route::get('/seeds/{id}', [SeederController::class, 'seeds'])->name('seeds');
 
     Route::get('tools/convert-keywords', [ToolsController::class, 'convertKeywords'])->name('convert-keywords');
-    Route::post('tools/convert-keywords', [ToolsController::class, 'processFile'])->name('process-file');
-    
+    Route::post('tools/convert-keywords', [ToolsController::class, 'processMaterialsFile'])->name('process-materials-file');
+    Route::post('tools/convert-porefluids', [ToolsController::class, 'processPorefluidsFile'])->name('process-porefluids-file');
+    Route::post('tools/convert-rockphysics', [ToolsController::class, 'processRockPhysicsFile'])->name('process-rockphysics-file');
+    Route::post('tools/convert-analogue', [ToolsController::class, 'processAnalogueModellingFile'])->name('process-analogue-file');
+    Route::post('tools/convert-geological-age', [ToolsController::class, 'processGeologicalAgeFile'])->name('process-geological-age-file');
+    Route::post('tools/convert-geological-setting', [ToolsController::class, 'processGeologicalSettingFile'])->name('process-geological-setting-file');
+    Route::post('tools/convert-paleomagnetism', [ToolsController::class, 'processPaleomagnetismFile'])->name('process-paleomagnetism-file');
+    Route::post('tools/convert-geochemistry', [ToolsController::class, 'processGeochemistryFile'])->name('process-geochemistry-file');
+    Route::post('tools/convert-microscopy', [ToolsController::class, 'processMiscroscopyFile'])->name('process-microscopy-file');
+    Route::post('tools/convert-subsurface', [ToolsController::class, 'processSubsurfaceFile'])->name('process-subsurface-file');
+    Route::post('tools/convert-testbeds', [ToolsController::class, 'processTestbedsFile'])->name('process-testbeds-file');
     Route::get('tools/convert-excel', [ToolsController::class, 'convertExcel'])->name('convert-excel');
     Route::post('tools/convert-excel', [ToolsController::class, 'processExcelToJson'])->name('process-excel-file');
     Route::get('tools/doi-export', [ToolsController::class, 'doiExport'])->name('doi-export');
@@ -85,13 +92,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/create-actions', [HomeController::class, 'createActions'])->name('create-actions');
     Route::get('/create-action/{id}', [HomeController::class, 'createAction'])->name('create-action');
 
-    Route::get('/status-survey', [HomeController::class, 'statusSurvey'])->name('status-survey');
-    Route::post('/status-survey', [HomeController::class, 'statusSurveyProcess'])->name('status-survey-process');
-
-    Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
-    Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
-
-
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });
 
@@ -114,14 +114,9 @@ Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])-
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
 Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
 
-Route::get('/contribute-select-scenario', [FrontendController::class, 'contributeSelectScenario'])->name('contribute-select-scenario');
-
 Route::get('/contact-us', [FormController::class, 'contactForm'])->name('contact-us');
-Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process')->middleware(ProtectAgainstSpam::class);
+Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process');
 Route::get('/laboratory-intake', [FormController::class, 'labIntakeForm'])->name('laboratory-intake');
-Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process')->middleware(ProtectAgainstSpam::class);
+Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process');
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
-Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process')->middleware(ProtectAgainstSpam::class);
-
-Route::get('/survey-form/{surveyName}', [SurveyController::class, 'surveyForm'])->name('survey-form');
-Route::post('/survey-form/{surveyName}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');
+Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process');
