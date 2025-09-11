@@ -24,7 +24,7 @@ class FilterTreeExport
                     'filterName' => '',
                     'filterValue' => ''
                 ],
-                'children' => $this->getVocabAsFilters($fastVocab->id, 'msl_original_keyword_uri', false, true, "", "")
+                'children' => $this->getVocabAsFilters($fastVocab->id, 'msl_original_keyword_uri', false, true, "", "00")
             ],
             [
                 'text' => 'Organization',
