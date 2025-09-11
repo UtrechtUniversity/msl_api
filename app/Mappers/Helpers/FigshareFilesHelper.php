@@ -1,75 +1,72 @@
 <?php
 namespace App\Mappers\Helpers;
 
-use Exception;
-use DOMDocument;
-use DOMXPath;
-use GuzzleHttp\Client;
-
 class FigshareFilesHelper
 {
-    /**
-     * @var GuzzleClient Guzzle HTTP client instance
-     */
     protected $client;
     
-    /**
-     * Contructs a new FigshareFilesHelper
-     * @param Client $client
-     */
-    public function __construct($client = new Client())
+    
+    public function __construct()
     {
-        $this->client = $client;
-    }
-
-    /**
-     * Get ro crate by url of landing page
-     */
-    public function getRoCrate($url): array
-    {
-        // get landingpage
-        $page = $this->getPage($url);
-
-        // get ro-crate location
-        $roCrateLocation = $this->getRoCrateUrl($page);
-
-        // get the ro crate
-        $roCrate = $this->getPage($roCrateLocation);
-
-        return json_decode($roCrate, true);
+        $this->client = new \GuzzleHttp\Client();
     }
     
-    /**
-     * get page content by url
-     */
-    private function getPage($url)
-    {
-        $response = $this->client->request('GET', $url);
-
-        if(isset($response)) {
-            return (string)$response->getBody();
+    public function getFileListByDOI($doi) {        
+        $articleId = $this->getArticleIdByDoi($doi);
+        
+        if($articleId) {
+            return $this->getFileList($articleId);
         }
-
-        throw new Exception('page retrieved empty');
+            
+        return [];
     }
-
-    /**
-     * get the url of the ro crate location from html
-     */
-    private function getRoCrateUrl($page)
-    {
-        $domDocument = new DOMDocument();
-        $domDocument->loadHTML($page, LIBXML_NOERROR);
-
-        $xpath = new DOMXPath($domDocument);
-        $query = '//a[contains(@title, "RO-Crate Metadata")]';
-
-        $matches = $xpath->query($query);
-        if($matches->length > 0) {
-            $resultNode = $matches->item(0);
-            return 'https://data.4tu.nl/' . $resultNode->getAttribute('href');
+    
+    
+    public function getArticleIdByDoi($doi) {
+        try {
+            $response = $this->client->request(
+                'POST',
+                "https://api.figshare.com/v2/articles/search?doi=$doi",                
+            );
+        } catch (\Exception $e) {
+            
         }
-
-        throw new Exception('ro crate location could not be extracted');
-    }    
+        
+        if(isset($response)) {
+            $body = json_decode($response->getBody(), true);
+            
+            if(isset($body[0]['id'])) {
+                return $body[0]['id'];
+            }
+            
+            else {
+                return null;
+            }            
+        }
+    }
+    
+    public function getFileList($articleId) {
+        try {
+            $response = $this->client->request(
+                'GET',
+                "https://api.figshare.com/v2/articles/$articleId",
+                );
+        } catch (\Exception $e) {
+            
+        }
+        
+        if(isset($response)) {
+            $body = json_decode($response->getBody(), true);
+                        
+            if(isset($body['files'])) {
+                return $body['files'];
+            }
+            
+            else {
+                return [];
+            }
+        }
+    }
+    
 }
+

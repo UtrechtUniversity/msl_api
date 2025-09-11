@@ -42,11 +42,11 @@ class ImportCsicSeeder extends Seeder
                         ]                      
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteJsonRetrieval',
+                        'type' => 'dataciteXmlRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'datacite',
+                        'type' => 'CsicMapper',
                         'options' => []
                     ]
                 ],

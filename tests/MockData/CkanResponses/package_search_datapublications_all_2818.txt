@@ -1,0 +1,2823 @@
+{
+    "help": "https://epos-msl.uu.nl/api/3/action/help_show?name=package_search",
+    "success": true,
+    "result": {
+        "count": 2818,
+        "facets": {},
+        "results": [
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "4a9f61a7-e08c-4bdc-8e72-cad3db0b511e",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:11.839928",
+                "metadata_modified": "2024-03-04T21:52:11.839934",
+                "msl_citation": "McEnroe, S. A. (1996). <i>North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England (Dataset)</i> (Version 1) [Data set]. Geophysical Journal International. https://doi.org/10.7288/V4/MAGIC/20031",
+                "msl_doi": "10.7288/V4/MAGIC/20031",
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "true",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Suzanne A. McEnroe (1996). North America during the Lower <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous\"]'>Cretaceous</span>: new palaeomagnetic constraints from intrusions in New England. Geophysical Journal International 126 (2):477-494. doi:10.1111/J.1365-246X.1996.TB05304.X.",
+                "msl_publication_date": "1996-01-01",
+                "msl_publication_year": "1996",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20031",
+                "msl_title_annotated": "North America during the Lower <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous\"]'>Cretaceous</span>: new palaeomagnetic constraints from intrusions in New England (Dataset)",
+                "name": "eb57658150cb78661c354363879495ba",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Suzanne A. McEnroe (1996). North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England. Geophysical Journal International 126 (2):477-494. doi:10.1111/J.1365-246X.1996.TB05304.X.",
+                "num_resources": 0,
+                "num_tags": 20,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Suzanne A. McEnroe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20031/magic_contribution_20031.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20031",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Modeled structure",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "modelled magmatic structure",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "pluton",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure-pluton",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "igneous rock - intrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "acidic intrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-acidic_intrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "syenite",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-acidic_intrusive-syenite",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "igneous rock - extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "acidic extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-acidic_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "rhyolite",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-acidic_extrusive-rhyolite",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basic extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basalt",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "trachyte",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-acidic_extrusive-trachyte",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basic intrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "gabbro",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-gabbro",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Mesozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Cretaceous",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "pluton",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure-pluton",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "syenite",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-acidic_intrusive-syenite",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "rhyolite",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-acidic_extrusive-rhyolite",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "basalt",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "trachyte",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-acidic_extrusive-trachyte",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "gabbro",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-gabbro",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1111/J.1365-246X.1996.TB05304.X",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "McEnroe, S. A. (1996). North America during the Lower Cretaceous: new palaeomagnetic constraints from intrusions in New England. Geophysical Journal International, 126(2), 477–494. https://doi.org/10.1111/j.1365-246x.1996.tb05304.x\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "100000000",
+                        "id": "e8946dde-3e54-4d7a-a7db-0b124bc95a34",
+                        "name": "100000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "112600000",
+                        "id": "14ff35f5-fbcf-4c33-95ff-12078c798fcd",
+                        "name": "112600000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Basalt",
+                        "id": "283baeb1-f407-4f14-93ab-708efabb96a4",
+                        "name": "Basalt",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Essexite",
+                        "id": "a47f1de8-4c82-4ff9-86cc-0aa50acb73d0",
+                        "name": "Essexite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Extrusive",
+                        "id": "e725452c-5c39-40fa-b082-38a05ffb31ad",
+                        "name": "Extrusive",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Gabbro",
+                        "id": "dc41a18f-3864-42b2-a0a6-d67dcb85c570",
+                        "name": "Gabbro",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Igneous",
+                        "id": "1d3ccdec-e9d7-40b3-aee3-fbd820e1b843",
+                        "name": "Igneous",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Intrusive",
+                        "id": "227f3ff6-bbed-4842-9f4f-43930af84a67",
+                        "name": "Intrusive",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Lamprophyre",
+                        "id": "c42ec70c-b597-4ac6-873e-24e2593a39c5",
+                        "name": "Lamprophyre",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Lava Flow",
+                        "id": "71fd63b6-5b4e-4e1d-9762-ec4f9406a639",
+                        "name": "Lava Flow",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Monzodiorite",
+                        "id": "91c63d20-0d12-4453-83aa-c24899834113",
+                        "name": "Monzodiorite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Monzogabbro",
+                        "id": "83f2f9fa-f950-49ab-b576-044c136d78c1",
+                        "name": "Monzogabbro",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Pluton",
+                        "id": "1e6e3a3b-353d-4f34-8fd3-ac73ce82e9fd",
+                        "name": "Pluton",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Quartz Syenite",
+                        "id": "66a5772b-b797-4342-a77d-866c01029590",
+                        "name": "Quartz Syenite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Rhyolite",
+                        "id": "119663b9-982a-45ae-a235-bb2820a7b7a0",
+                        "name": "Rhyolite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Syenite",
+                        "id": "ee07cccc-804e-4f73-b701-1276d6515fb6",
+                        "name": "Syenite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Trachyte",
+                        "id": "8808bb41-b210-41c3-a8be-ff16a487adf8",
+                        "name": "Trachyte",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Volcanic Dike",
+                        "id": "775e2414-8920-464f-acbe-7e3a806d702a",
+                        "name": "Volcanic Dike",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Volcanic Undefined",
+                        "id": "47e09790-7ffe-45e1-9c59-8303f29368ba",
+                        "name": "Volcanic Undefined",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "65a7a95e-fe92-4c03-a7bf-f5396e6784b4",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:10.526687",
+                "metadata_modified": "2024-03-04T21:52:10.526693",
+                "msl_citation": "Satolli, S., Besse, J., Speranza, F., &amp; Calamita, F. (2007). <i>The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn (Dataset)</i> (Version 1) [Data set]. Earth and Planetary Science Letters. https://doi.org/10.7288/V4/MAGIC/20030",
+                "msl_doi": "10.7288/V4/MAGIC/20030",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Sara Satolli, Jean Besse, Fabio Speranza, Fernando Calamita (2007). The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic\"]'>Jurassic</span>–<span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous\"]'>Cretaceous</span> hairpin turn. Earth and Planetary Science Letters 257 (1-2):329-342. doi:10.1016/J.EPSL.2007.03.009.",
+                "msl_publication_date": "2007-01-01",
+                "msl_publication_year": "2007",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20030",
+                "msl_title_annotated": "The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic\"]'>Jurassic</span>–<span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous\"]'>Cretaceous</span> hairpin turn (Dataset)",
+                "name": "f24c11eb13c8263373a6e01f02c86bd8",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Sara Satolli, Jean Besse, Fabio Speranza, Fernando Calamita (2007). The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn. Earth and Planetary Science Letters 257 (1-2):329-342. doi:10.1016/J.EPSL.2007.03.009.",
+                "num_resources": 0,
+                "num_tags": 9,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Sara Satolli",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Jean Besse",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Fabio Speranza",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Fernando Calamita",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20030/magic_contribution_20030.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20030",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "minerals",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "silicate minerals",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "phyllosilicates",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clay",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates-clay",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "unconsolidated sediment",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clastic sediment",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clay",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment-clay",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "tectosilicates",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-tectosilicates",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "quartz",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-tectosilicates-quartz",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "chert",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-tectosilicates-quartz-chert",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Mesozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Cretaceous",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-cretaceous",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Jurassic",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "clay",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates-clay",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "clay",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment-clay",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "chert",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-tectosilicates-quartz-chert",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.EPSL.2007.03.009",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Satolli, S., Besse, J., Speranza, F., & Calamita, F. (2007). The 125–150 Ma high-resolution Apparent Polar Wander Path for Adria from magnetostratigraphic sections in Umbria–Marche (Northern Apennines, Italy): Timing and duration of the global Jurassic–Cretaceous hairpin turn. Earth and Planetary Science Letters, 257(1–2), 329–342. https://doi.org/10.1016/j.epsl.2007.03.009\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "120500000",
+                        "id": "bb56d518-8336-4071-8a61-3d84f67b3eeb",
+                        "name": "120500000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "146700000",
+                        "id": "b9e615ba-10e0-444e-9009-73c05e0a4e2e",
+                        "name": "146700000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Carbonate",
+                        "id": "28ebd22c-3472-484f-a17e-e831578b3f90",
+                        "name": "Carbonate",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Chert",
+                        "id": "d10ef34d-fe23-42b7-ae46-91f86e11e4ea",
+                        "name": "Chert",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Clay",
+                        "id": "1f2313b8-e2c6-49cb-9716-ac0720403646",
+                        "name": "Clay",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Nannofossil Ooze",
+                        "id": "64ce35ac-5363-473b-9af4-5d9b938af22d",
+                        "name": "Nannofossil Ooze",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sediment Layer",
+                        "id": "579872c9-86f3-400a-b625-f02706816725",
+                        "name": "Sediment Layer",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "de776f36-4a42-486b-b1ce-b1bbaa583d33",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:09.272726",
+                "metadata_modified": "2024-03-04T21:52:09.272732",
+                "msl_citation": "L. B. Ziegler, C. G. Constable, C. L. Johnson, &amp; L. Tauxe. (2011). <i>PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment (Dataset)</i> (Version 1) [Data set]. Geophysical Journal International. https://doi.org/10.7288/V4/MAGIC/20028",
+                "msl_doi": "10.7288/V4/MAGIC/20028",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: L. B. Ziegler, C. G. Constable, C. L. Johnson, L. Tauxe (2011). PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment. Geophysical Journal International 184 (3):1069-1089. doi:10.1111/J.1365-246X.2010.04905.X.",
+                "msl_publication_date": "2011-01-01",
+                "msl_publication_year": "2011",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20028",
+                "msl_title_annotated": "PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment (Dataset)",
+                "name": "66aca1b19d6452de45b8eda6802878ea",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: L. B. Ziegler, C. G. Constable, C. L. Johnson, L. Tauxe (2011). PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment. Geophysical Journal International 184 (3):1069-1089. doi:10.1111/J.1365-246X.2010.04905.X.",
+                "num_resources": 0,
+                "num_tags": 8,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "L. B. Ziegler",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "C. G. Constable",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "C. L. Johnson",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "L. Tauxe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20028/magic_contribution_20028.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20028",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "minerals",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "silicate minerals",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "phyllosilicates",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clay",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates-clay",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "unconsolidated sediment",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clastic sediment",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "clay",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment-clay",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "clay",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/minerals-silicate_minerals-phyllosilicates-clay",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "clay",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/unconsolidated_sediment-clastic_sediment-clay",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1111/J.1365-246X.2010.04905.X",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Ziegler, L. B., Constable, C. G., Johnson, C. L., & Tauxe, L. (2011). PADM2M: a penalized maximum likelihood model of the 0-2 Ma palaeomagnetic axial dipole moment. Geophysical Journal International, 184(3), 1069–1089. https://doi.org/10.1111/j.1365-246x.2010.04905.x\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "40353000000000005",
+                        "id": "197df7a6-875f-49f9-bb30-7a21d7d63744",
+                        "name": "40353000000000005",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Clay",
+                        "id": "1f2313b8-e2c6-49cb-9716-ac0720403646",
+                        "name": "Clay",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Diatomaceous Ooze",
+                        "id": "57c1655c-c5a4-4650-a426-7855492a3e6c",
+                        "name": "Diatomaceous Ooze",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Nannofossil Ooze",
+                        "id": "64ce35ac-5363-473b-9af4-5d9b938af22d",
+                        "name": "Nannofossil Ooze",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sediment Layer",
+                        "id": "579872c9-86f3-400a-b625-f02706816725",
+                        "name": "Sediment Layer",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Silty Clay",
+                        "id": "b928b62e-ffae-40f5-8a70-d656352c53ef",
+                        "name": "Silty Clay",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "8aa30e98-0fe5-46b7-9310-57c17e3a81f3",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:08.018806",
+                "metadata_modified": "2024-03-04T21:52:08.018811",
+                "msl_citation": "Tauxe, L., &amp; Opdyke, N. D. (1982). <i>A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan (Dataset)</i> (Version 1) [Data set]. Palaeogeography, Palaeoclimatology, Palaeoecology. https://doi.org/10.7288/V4/MAGIC/20010",
+                "msl_doi": "10.7288/V4/MAGIC/20010",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "true",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Lisa Tauxe, Neil D. Opdyke (1982). A time framework based on <span data-uris='[\"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-magnetostratigraphy\"]'>magnetostratigraphy</span> for the siwalik sediments of the Khaur area, Northern Pakistan. Palaeogeography, Palaeoclimatology, Palaeoecology 37 (1):43-61. doi:10.1016/0031-0182(82)90057-8.",
+                "msl_publication_date": "1982-01-01",
+                "msl_publication_year": "1982",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20010",
+                "msl_title_annotated": "A time framework based on <span data-uris='[\"https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-magnetostratigraphy\"]'>magnetostratigraphy</span> for the siwalik sediments of the Khaur area, Northern Pakistan (Dataset)",
+                "name": "1487d4269eefd09a91a57cc0e7c3d147",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Lisa Tauxe, Neil D. Opdyke (1982). A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan. Palaeogeography, Palaeoclimatology, Palaeoecology 37 (1):43-61. doi:10.1016/0031-0182(82)90057-8.",
+                "num_resources": 0,
+                "num_tags": 6,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Lisa Tauxe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Neil D. Opdyke",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20010/magic_contribution_20010.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20010",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sedimentary rock",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "mudstone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "siltstone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone-siltstone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "Inferred behavior",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "natural remanent magnetisation processing",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "paleomagnetism"
+                        ],
+                        "msl_enriched_keyword_label": "magnetostratigraphy",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/inferred_behavior-natural_remanent_magnetisation_processing-magnetostratigraphy",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/paleomagnetism/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "siltstone",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone-siltstone",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/0031-0182(82)90057-8",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Tauxe, L., & Opdyke, N. D. (1982). A time framework based on magnetostratigraphy for the siwalik sediments of the Khaur area, Northern Pakistan. Palaeogeography, Palaeoclimatology, Palaeoecology, 37(1), 43–61. https://doi.org/10.1016/0031-0182(82)90057-8\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "paleomagnetism"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "paleomagnetism"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "15000000",
+                        "id": "bae1fd9a-8e81-454e-843b-2bb727688972",
+                        "name": "15000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "7000000",
+                        "id": "dcbee63b-f4e8-4aeb-a3c4-4025b5687857",
+                        "name": "7000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sediment Layer",
+                        "id": "579872c9-86f3-400a-b625-f02706816725",
+                        "name": "Sediment Layer",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Siltstone",
+                        "id": "0920ff3d-1cda-4a94-83ba-c1004e985eb2",
+                        "name": "Siltstone",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "0e6735ca-7f8c-4d86-95ec-275c47e126d9",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:06.727638",
+                "metadata_modified": "2024-03-04T21:52:06.727644",
+                "msl_citation": "LISA Tauxe, &amp; DAVID R. Clark. (1987). <i>New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)</i> (Version 6) [Data set]. Geological Society of America Bulletin. https://doi.org/10.7288/V4/MAGIC/20007",
+                "msl_doi": "10.7288/V4/MAGIC/20007",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "true",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: LISA TAUXE, DAVID R. CLARK (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin 99 (6):739. doi:10.1130/0016-7606(1987)992.0.<span data-uris='[\"https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-carbon_measured-carbon_monoxide_measured\"]'>CO</span>;2.",
+                "msl_publication_date": "1987-01-01",
+                "msl_publication_year": "1987",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20007",
+                "msl_title_annotated": "New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)",
+                "name": "1c6f44820342a409af0701f5997d8528",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: LISA TAUXE, DAVID R. CLARK (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin 99 (6):739. doi:10.1130/0016-7606(1987)992.0.CO;2.",
+                "num_resources": 0,
+                "num_tags": 6,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "LISA Tauxe",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "DAVID R. Clark",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20007/magic_contribution_20007.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20007",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sedimentary rock",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "mudstone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "siltstone",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone-siltstone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "carbon (measured)",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-carbon_measured",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "carbon monoxide (measured)",
+                        "msl_enriched_keyword_match_locations": [
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-carbon_measured-carbon_monoxide_measured",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "siltstone",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/sedimentary_rock-mudstone-siltstone",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1130/0016-7606(1987)99<739:NPRFTE>2.0.CO;2",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "TAUXE, L., & CLARK, D. R. (1987). New paleomagnetic results from the Eureka Sound Group: Implications for the age of early Tertiary Arctic biota. Geological Society of America Bulletin, 99(6), 739. https://doi.org/10.1130/0016-7606(1987)99<739:nprfte>2.0.co;2\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "geochemistry"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "geochemistry"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "57000000",
+                        "id": "6d472102-84dd-4be5-958a-4738a01cbaaa",
+                        "name": "57000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "62000000",
+                        "id": "e08c5cd1-e6b3-45da-94a7-66a4ef341199",
+                        "name": "62000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sediment Layer",
+                        "id": "579872c9-86f3-400a-b625-f02706816725",
+                        "name": "Sediment Layer",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Sedimentary",
+                        "id": "b7a2fb62-7c1e-4fae-bfdd-c5b271d9d6fe",
+                        "name": "Sedimentary",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Siltstone",
+                        "id": "0920ff3d-1cda-4a94-83ba-c1004e985eb2",
+                        "name": "Siltstone",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "176048ff-9880-4077-a77a-22abec1af408",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:05.079424",
+                "metadata_modified": "2024-03-04T21:52:05.079432",
+                "msl_citation": "Cao, T., Huapei Wang, Shaochen Hu, &amp; Kaixian Qi. (2024). <i>The Martian crustal field recorded in Antarctic meteorite Grove Mountains 020090 (Dataset)</i> (Version 1) [Data set]. Meteoritics &amp; Planetary Science. https://doi.org/10.7288/V4/MAGIC/20005",
+                "msl_doi": "10.7288/V4/MAGIC/20005",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "true",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "true",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Ting <span data-uris='[\"https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-calcium-calcium_oxide\"]'>Cao</span>, Huapei Wang, Shaochen Hu, Kaixian Qi (2024). The Martian <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalsetting/1.2/earths_structure-earth_crust\"]'>crustal</span> field recorded in Antarctic meteorite Grove Mountains 020090. Meteoritics &amp; Planetary Science. doi:10.1111/MAPS.14136.",
+                "msl_publication_date": "2024-01-01",
+                "msl_publication_year": "2024",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20005",
+                "msl_title_annotated": "The Martian <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalsetting/1.2/earths_structure-earth_crust\"]'>crustal</span> field recorded in Antarctic meteorite Grove Mountains 020090 (Dataset)",
+                "name": "42d937d044398967634fc527baf224e4",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Ting Cao, Huapei Wang, Shaochen Hu, Kaixian Qi (2024). The Martian crustal field recorded in Antarctic meteorite Grove Mountains 020090. Meteoritics &amp; Planetary Science. doi:10.1111/MAPS.14136.",
+                "num_resources": 0,
+                "num_tags": 5,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "The Martian crustal field recorded in Antarctic meteorite Grove Mountains 020090 (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "School of Earth Sciences China University of Geosciences  Wuhan Hubei China; Paleomagnetism and Planetary Magnetism Laboratory, School of Geophysics and Geomatics China University of Geosciences  Wuhan Hubei China;",
+                        "msl_author_name": "Ting Cao",
+                        "msl_author_orcid": "0000-0002-2185-6487",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Paleomagnetism and Planetary Magnetism Laboratory, School of Geophysics and Geomatics China University of Geosciences  Wuhan Hubei China;",
+                        "msl_author_name": "Huapei Wang",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "Paleomagnetism and Planetary Magnetism Laboratory, School of Geophysics and Geomatics China University of Geosciences  Wuhan Hubei China;",
+                        "msl_author_name": "Shaochen Hu",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "State Key Laboratory of Lithospheric Evolution Institute of Geology and Geophysics, Chinese Academy of Sciences  Beijing China; College of Earth and Planetary Sciences, University of the Chinese Academy of Sciences  Beijing China;",
+                        "msl_author_name": "Kaixian Qi",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20005/magic_contribution_20005.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20005",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "meteorite",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/meteorite",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Earth's structure",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalsetting/1.2/earths_structure",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalsetting/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Earth crust",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalsetting/1.2/earths_structure-earth_crust",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalsetting/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "calcium",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-calcium",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "calcium oxide",
+                        "msl_enriched_keyword_match_locations": [
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-calcium-calcium_oxide",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "meteorite",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/meteorite",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1111/MAPS.14136",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Cao, T., Wang, H., Hu, S., & Qi, K. (2024). The Martian crustal field recorded in Antarctic meteorite Grove Mountains 020090. Meteoritics &amp; Planetary Science. Portico. https://doi.org/10.1111/maps.14136\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "geochemistry"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "geochemistry"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "192000000",
+                        "id": "36b70bcc-28db-4aa1-a1e6-dc63587188c4",
+                        "name": "192000000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Lherzolitic Shergottite",
+                        "id": "ec845a29-607a-4465-91c1-18d69c90f07b",
+                        "name": "Lherzolitic Shergottite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Martian",
+                        "id": "6485d026-0873-4a9f-a2cc-e220365b6204",
+                        "name": "Martian",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Meteorite",
+                        "id": "ef363b0f-fabe-4b30-aad6-ba7f6425e537",
+                        "name": "Meteorite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "94694e56-1f12-4d14-9e88-634bffb1e368",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:03.819632",
+                "metadata_modified": "2024-03-04T21:52:03.819638",
+                "msl_citation": "Xu, W., Yan, M., Van Hinsbergen, D. J. J., Bingshuai Li, Guan, C., Fu, Q., Yu, L., Xu, Z., Dawen Zhang, Shen, M., Feng, Z., Zhichao Niu, &amp; Vaes, B. (2023). <i>50° post-Eocene clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau (Dataset)</i> (Version 1) [Data set]. Gondwana Research. https://doi.org/10.7288/V4/MAGIC/20003",
+                "msl_doi": "10.7288/V4/MAGIC/20003",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "true",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "false",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Wanlong Xu, Maodu Yan, Douwe J. J. van Hinsbergen, Bingshuai <span data-uris='[\"https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-lithium\"]'>Li,</span> Chong Guan, Qiang Fu, Liang Yu, Zunbo Xu, Dawen Zhang, Miaomiao Shen, Zhantao Feng, Zhichao Niu, Bram Vaes (2023). 50° post-<span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-cenozoic-paleogene-eocene\"]'>Eocene</span> clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau. Gondwana Research. doi:10.1016/J.GR.2023.12.004.",
+                "msl_publication_date": "2023-01-01",
+                "msl_publication_year": "2023",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/20003",
+                "msl_title_annotated": "50° post-<span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-cenozoic-paleogene-eocene\"]'>Eocene</span> clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau (Dataset)",
+                "name": "e759c61cf1b2dce33d611d6fc70aac08",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Wanlong Xu, Maodu Yan, Douwe J. J. van Hinsbergen, Bingshuai Li, Chong Guan, Qiang Fu, Liang Yu, Zunbo Xu, Dawen Zhang, Miaomiao Shen, Zhantao Feng, Zhichao Niu, Bram Vaes (2023). 50° post-Eocene clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau. Gondwana Research. doi:10.1016/J.GR.2023.12.004.",
+                "num_resources": 0,
+                "num_tags": 0,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "50° post-Eocene clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Wanlong Xu",
+                        "msl_author_orcid": "0000-0001-8150-4507",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Maodu Yan",
+                        "msl_author_orcid": "0000-0002-9257-5412",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Douwe J. J. van Hinsbergen",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Bingshuai Li",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Chong Guan",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Qiang Fu",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Liang Yu",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Zunbo Xu",
+                        "msl_author_orcid": "0000-0002-2581-3513",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Dawen Zhang",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Miaomiao Shen",
+                        "msl_author_orcid": "0000-0003-4894-7140",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Zhantao Feng",
+                        "msl_author_orcid": "0000-0002-2601-289X",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Zhichao Niu",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Bram Vaes",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/20003/magic_contribution_20003.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_20003",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Cenozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-cenozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Paleogene",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-cenozoic-paleogene",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Eocene",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-cenozoic-paleogene-eocene",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "lithium",
+                        "msl_enriched_keyword_match_locations": [
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-lithium",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.GR.2023.12.004",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Xu, W., Yan, M., van Hinsbergen, D. J. J., Li, B., Guan, C., Fu, Q., Yu, L., Xu, Z., Zhang, D., Shen, M., Feng, Z., Niu, Z., & Vaes, B. (2024). 50° Post-Eocene clockwise rotation of Mangkang and its implications for the oroclinal bending of the southeastern Tibetan Plateau. Gondwana Research, 129, 23–35. https://doi.org/10.1016/j.gr.2023.12.004\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "geochemistry"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "geochemistry"
+                    }
+                ],
+                "resources": [],
+                "tags": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "ea03db40-c88e-4fce-b731-eca2e733f589",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:02.572952",
+                "metadata_modified": "2024-03-04T21:52:02.572959",
+                "msl_citation": "Kulakov, E. V., Torsvik, T. H., Doubrovine, P. V., Slagstad, T., Ganerød, M., Silkoset, P., &amp; Werner, S. C. (2021). <i>Jurassic fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland (Dataset)</i> (Version 1) [Data set]. Gondwana Research. https://doi.org/10.7288/V4/MAGIC/19997",
+                "msl_doi": "10.7288/V4/MAGIC/19997",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "true",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "true",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evgeniy V. Kulakov, Trond <span data-uris='[\"https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-hydrogen_h\"]'>H</span>. Torsvik, Pavel V. Doubrovine, Trond Slagstad, Morgan Ganerød, Petter Silkoset, Stephanie C. Werner (2021). <span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic\"]'>Jurassic</span> fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland. Gondwana Research 97:240-262. doi:10.1016/J.GR.2021.05.021.",
+                "msl_publication_date": "2021-01-01",
+                "msl_publication_year": "2021",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19997",
+                "msl_title_annotated": "<span data-uris='[\"https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic\"]'>Jurassic</span> fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland (Dataset)",
+                "name": "57035231d2692809a0f0c352f8cccc0c",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Evgeniy V. Kulakov, Trond H. Torsvik, Pavel V. Doubrovine, Trond Slagstad, Morgan Ganerød, Petter Silkoset, Stephanie C. Werner (2021). Jurassic fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland. Gondwana Research 97:240-262. doi:10.1016/J.GR.2021.05.021.",
+                "num_resources": 0,
+                "num_tags": 8,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Jurassic fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Evgeniy V. Kulakov",
+                        "msl_author_orcid": "0000-0002-4088-6833",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Trond H. Torsvik",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Pavel V. Doubrovine",
+                        "msl_author_orcid": "0000-0002-8724-7027",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Trond Slagstad",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Morgan Ganerød",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Petter Silkoset",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Stephanie C. Werner",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19997/magic_contribution_19997.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19997",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "igneous rock - extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basic extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basalt",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Phanerozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Mesozoic",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Jurassic",
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/phanerozoic-mesozoic-jurassic",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geologicalage/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "geochemistry"
+                        ],
+                        "msl_enriched_keyword_label": "hydrogen (H)",
+                        "msl_enriched_keyword_match_locations": [
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/measured_property-hydrogen_h",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/geochemistry/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "basalt",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/J.GR.2021.05.021",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Kulakov, E. V., Torsvik, T. H., Doubrovine, P. V., Slagstad, T., Ganerød, M., Silkoset, P., & Werner, S. C. (2021). Jurassic fast polar shift rejected by a new high-quality paleomagnetic pole from southwest Greenland. Gondwana Research, 97, 240–262. https://doi.org/10.1016/j.gr.2021.05.021\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "geochemistry"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "geochemistry"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "134900000",
+                        "id": "3ac76c81-801f-4a87-8531-84ece07afbb5",
+                        "name": "134900000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "152100000",
+                        "id": "e47aefcb-91df-4610-a8fb-ff2ce65e9c1f",
+                        "name": "152100000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Basalt",
+                        "id": "283baeb1-f407-4f14-93ab-708efabb96a4",
+                        "name": "Basalt",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Igneous",
+                        "id": "1d3ccdec-e9d7-40b3-aee3-fbd820e1b843",
+                        "name": "Igneous",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Intrusive",
+                        "id": "227f3ff6-bbed-4842-9f4f-43930af84a67",
+                        "name": "Intrusive",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Monchiquite",
+                        "id": "e4213f01-38c6-4577-93ad-8e9739bf5456",
+                        "name": "Monchiquite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Volcanic Dike",
+                        "id": "775e2414-8920-464f-acbe-7e3a806d702a",
+                        "name": "Volcanic Dike",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "0f6b2d96-4536-409a-a0f4-cf7b4deb1043",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:01.295440",
+                "metadata_modified": "2024-03-04T21:52:01.295446",
+                "msl_citation": "Wang, H., Weiss, B. P., Bai, X.-N., Brynna G. Downey, Wang, J., Jiajun Wang, Suavet, C., Fu, R. R., &amp; Zucolotto, M. E. (2017). <i>Lifetime of the solar nebula constrained by meteorite paleomagnetism (Dataset)</i> (Version 1) [Data set]. Science. https://doi.org/10.7288/V4/MAGIC/19996",
+                "msl_doi": "10.7288/V4/MAGIC/19996",
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "true",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Huapei Wang, Benjamin P. Weiss, Xue-Ning Bai, Brynna G. Downey, Jun Wang, Jiajun Wang, Clément Suavet, Roger R. Fu, Maria E. Zucolotto (2017). Lifetime of the solar nebula constrained by meteorite paleomagnetism. Science 355 (6325):623-627. doi:10.1126/SCIENCE.AAF5043.",
+                "msl_publication_date": "2017-01-01",
+                "msl_publication_year": "2017",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19996",
+                "msl_title_annotated": "Lifetime of the solar nebula constrained by meteorite paleomagnetism (Dataset)",
+                "name": "3535070bab5c91806ead14211baf67e7",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: Huapei Wang, Benjamin P. Weiss, Xue-Ning Bai, Brynna G. Downey, Jun Wang, Jiajun Wang, Clément Suavet, Roger R. Fu, Maria E. Zucolotto (2017). Lifetime of the solar nebula constrained by meteorite paleomagnetism. Science 355 (6325):623-627. doi:10.1126/SCIENCE.AAF5043.",
+                "num_resources": 0,
+                "num_tags": 9,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Lifetime of the solar nebula constrained by meteorite paleomagnetism (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Huapei Wang",
+                        "msl_author_orcid": "0000-0003-1676-3494",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Benjamin P. Weiss",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Xue-Ning Bai",
+                        "msl_author_orcid": "0000-0003-1172-3039",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Brynna G. Downey",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Jun Wang",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Jiajun Wang",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Clément Suavet",
+                        "msl_author_orcid": "0000-0001-9970-0864",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Roger R. Fu",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    },
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "Maria E. Zucolotto",
+                        "msl_author_orcid": "0000-0003-2896-1105",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19996/magic_contribution_19996.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19996",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Modeled structure",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "modelled magmatic structure",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "pluton",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure-pluton",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "igneous rock - extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "lava",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-lava",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "Modeled geomorphological feature",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_geomorphological_feature",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "volcanic landforms",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_geomorphological_feature-volcanic_landforms",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "lava",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_geomorphological_feature-volcanic_landforms-lava",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "meteorite",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/meteorite",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basic extrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basalt",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "pluton",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_structure-modelled_magmatic_structure-pluton",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "lava",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-lava",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "lava",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/modeled_geomorphological_feature-volcanic_landforms-lava",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "meteorite",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/meteorite",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_original_keyword_label": "basalt",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_extrusive-basic_extrusive-basalt",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1126/SCIENCE.AAF5043",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Wang, H., Weiss, B. P., Bai, X.-N., Downey, B. G., Wang, J., Wang, J., Suavet, C., Fu, R. R., & Zucolotto, M. E. (2017). Lifetime of the solar nebula constrained by meteorite paleomagnetism. Science, 355(6325), 623–627. https://doi.org/10.1126/science.aaf5043\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "4556510000",
+                        "id": "fe456149-2568-43c9-a652-1f056db9560a",
+                        "name": "4556510000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "4563540000",
+                        "id": "d830d476-34a1-4265-8eea-4a8f3512e0bc",
+                        "name": "4563540000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Angrite",
+                        "id": "3a1fe29c-0504-4a8e-ba62-9390ab54db4c",
+                        "name": "Angrite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Basalt",
+                        "id": "283baeb1-f407-4f14-93ab-708efabb96a4",
+                        "name": "Basalt",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Extraterrestrial",
+                        "id": "32560a59-2ceb-4b46-9560-2011b1aa7c65",
+                        "name": "Extraterrestrial",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Lava",
+                        "id": "a2d755a9-d24a-4511-9810-f036a10ff02c",
+                        "name": "Lava",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Meteorite",
+                        "id": "ef363b0f-fabe-4b30-aad6-ba7f6425e537",
+                        "name": "Meteorite",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Pluton",
+                        "id": "1e6e3a3b-353d-4f34-8fd3-ac73ce82e9fd",
+                        "name": "Pluton",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            },
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "0cc605e9-8769-4d20-b480-ff89f5110a06",
+                "id": "6025b02a-4464-4398-9105-cdf46a38fdbf",
+                "isopen": false,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "metadata_created": "2024-03-04T21:52:00.044246",
+                "metadata_modified": "2024-03-04T21:52:00.044253",
+                "msl_citation": "Smith, W. A. (1987). <i>Paleomagnetic results from a crosscutting system of northwest and north-south trending diabase dikes in the North Carolina Piedmont (Dataset)</i> (Version 1) [Data set]. Tectonophysics. https://doi.org/10.7288/V4/MAGIC/19992",
+                "msl_doi": "10.7288/V4/MAGIC/19992",
+                "msl_has_analogue": "false",
+                "msl_has_analogue_original": "false",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "true",
+                "msl_has_microscopy": "false",
+                "msl_has_microscopy_original": "false",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "false",
+                "msl_has_rockphysic_original": "false",
+                "msl_notes_annotated": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: William A. Smith (1987). Paleomagnetic results from a crosscutting system of northwest and north-south trending <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-dolerite\"]'>diabase</span> dikes in the North Carolina Piedmont. Tectonophysics 136 (1-2):137-150. doi:10.1016/0040-1951(87)90336-2.",
+                "msl_publication_date": "1987-01-01",
+                "msl_publication_year": "1987",
+                "msl_publisher": "Magnetics Information Consortium (MagIC)",
+                "msl_source": "http://dx.doi.org/10.7288/V4/MAGIC/19992",
+                "msl_title_annotated": "Paleomagnetic results from a crosscutting system of northwest and north-south trending <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-dolerite\"]'>diabase</span> dikes in the North Carolina Piedmont (Dataset)",
+                "name": "74db07f55302c7185645435517ca662a",
+                "notes": "Paleomagnetic, rock magnetic, or geomagnetic data found in the MagIC data repository from a paper titled: William A. Smith (1987). Paleomagnetic results from a crosscutting system of northwest and north-south trending diabase dikes in the North Carolina Piedmont. Tectonophysics 136 (1-2):137-150. doi:10.1016/0040-1951(87)90336-2.",
+                "num_resources": 0,
+                "num_tags": 7,
+                "organization": {
+                    "id": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                    "name": "magic",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Magic.png",
+                    "created": "2024-03-04T13:14:47.138758",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "2d5b899a-d9f3-4c77-a4d0-d478a0f5ccd7",
+                "private": false,
+                "state": "active",
+                "title": "Paleomagnetic results from a crosscutting system of northwest and north-south trending diabase dikes in the North Carolina Piedmont (Dataset)",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_authors": [
+                    {
+                        "msl_author_affiliation": "",
+                        "msl_author_name": "William A. Smith",
+                        "msl_author_orcid": "",
+                        "msl_author_scopus": ""
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation": "",
+                        "msl_contributor_name": "Magnetics Information Consortium (MagIC)",
+                        "msl_contributor_orcid": "",
+                        "msl_contributor_role": "Distributor",
+                        "msl_contributor_scopus": ""
+                    }
+                ],
+                "msl_downloads": [
+                    {
+                        "msl_download_link": "https://earthref.org/MagIC/download/19992/magic_contribution_19992.txt",
+                        "msl_extension": "txt",
+                        "msl_file_name": "magic_contribution_19992",
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "igneous rock - intrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "basic intrusive",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "dolerite",
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "title",
+                            "notes"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-dolerite",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "dolerite",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.2/igneous_rock_-_intrusive-basic_intrusive-dolerite",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.2/"
+                    }
+                ],
+                "msl_references": [
+                    {
+                        "msl_reference_doi": "10.1016/0040-1951(87)90336-2",
+                        "msl_reference_handle": "",
+                        "msl_reference_title": "Smith, W. A. (1987). Paleomagnetic results from a crosscutting system of northwest and north-south trending diabase dikes in the North Carolina Piedmont. Tectonophysics, 136(1–2), 137–150. https://doi.org/10.1016/0040-1951(87)90336-2\n",
+                        "msl_reference_type": "IsDocumentedBy"
+                    }
+                ],
+                "tags": [
+                    {
+                        "display_name": "194200000",
+                        "id": "de46382c-5b1b-416b-9d69-145c8ed64a06",
+                        "name": "194200000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "201635000",
+                        "id": "56da7e01-e4b3-4e83-adef-da3ad15d064f",
+                        "name": "201635000",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Diabase",
+                        "id": "84f72544-c718-49c1-9414-baef8e05c074",
+                        "name": "Diabase",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Igneous",
+                        "id": "1d3ccdec-e9d7-40b3-aee3-fbd820e1b843",
+                        "name": "Igneous",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Intrusive",
+                        "id": "227f3ff6-bbed-4842-9f4f-43930af84a67",
+                        "name": "Intrusive",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Volcanic Dike",
+                        "id": "775e2414-8920-464f-acbe-7e3a806d702a",
+                        "name": "Volcanic Dike",
+                        "state": "active",
+                        "vocabulary_id": null
+                    },
+                    {
+                        "display_name": "Years BP",
+                        "id": "2bcd0d72-4aab-4443-8210-5397c24e446c",
+                        "name": "Years BP",
+                        "state": "active",
+                        "vocabulary_id": null
+                    }
+                ],
+                "resources": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            }
+        ],
+        "sort": "score desc, metadata_modified desc",
+        "search_facets": {}
+    }
+}

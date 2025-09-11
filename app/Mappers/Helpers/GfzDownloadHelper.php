@@ -1,119 +1,66 @@
 <?php
 namespace App\Mappers\Helpers;
 
-use DOMDocument;
-use DOMXPath;
-use Exception;
-use GuzzleHttp\Client;
+use App\Datasets\BaseDataset;
+use Symfony\Component\BrowserKit\HttpBrowser;
+use Symfony\Component\DomCrawler\Crawler;
 
 class GfzDownloadHelper
 {
-    /**
-     * @var GuzzleClient Guzzle HTTP client instance
-     */
     private $client;
     
-    /**
-     * constructs a new GfzDownloadHelper
-     * @param client $client
-     */
-    public function __construct($client = new Client()) 
-    {
-        $this->client = $client;
+    public function __construct() {
+        $this->client = new HttpBrowser();
     }
-
-    public function getFiles(string $landingPageUrl)
-    {
-        // get landing page
-        $landingPage = $this->getpage($landingPageUrl);
-
-        // get downloads page url
-        $downloadsUrl = $this->getDownloadsUrl($landingPage);
-
-        // get downloads page
-        $downloadsPage = $this->getpage($downloadsUrl);
-
-        // extract files from downloads page
-        return $this->getFilesFromPage($downloadsPage, $downloadsUrl);
-    }
-
-    /**
-     * Get content of page by url
-     */
-    private function getPage($url): string
-    {
-        $response = $this->client->request('GET', $url);
-
-        if(isset($response)) {
-            return (string)$response->getBody();
+    
+    public function addData(BaseDataset $dataset) {
+        if(!$dataset->msl_source) {
+            throw new \Exception('msl_source required to extract files from GFZ page(s).');
         }
-
-        throw new Exception('page retrieved empty');
-    }
-
-    /**
-     * extract url of link to downloads page from landingpage source
-     */
-    private function getDownloadsUrl(string $landingPageSource): string
-    {
-        $domDocument = new DOMDocument();
-        $domDocument->loadHTML($landingPageSource, LIBXML_NOERROR);
-
-        $xpath = new DOMXPath($domDocument);
-        // Link text sometimes contains whitespace at end...
-        $query = '//a[contains(text(), "Download data and description")]';
-
-        $matches = $xpath->query($query);
-        if($matches->length > 0) {
-            $resultNode = $matches->item(0);
-            return $resultNode->getAttribute('href');
-        }
-
-        // some landing pages have a different name for the download link
-        $query = '//a[text() = "Download data"]';
-
-        $matches = $xpath->query($query);
-        if($matches->length > 0) {
-            $resultNode = $matches->item(0);
-            return $resultNode->getAttribute('href');
-        }
-
-        throw new Exception('download url could not be extracted');
-    }
-
-    /**
-     * extract file information from downloads page source
-     */
-    private function getFilesFromPage(string $downsloadPageSource, string $baseUrl): array
-    {
-        $domDocument = new DOMDocument();
-        $domDocument->loadHTML($downsloadPageSource, LIBXML_NOERROR);
-
-        $xpath = new DOMXPath($domDocument);
-        $query = '//body/pre/a';
-
-        $files = [];
-        $matches = $xpath->query($query);
-
-        // first 5 a elements are ui elements
-        if($matches->length > 5) {
-            for($i = 5; $i < $matches->length; $i++) {
-                $isFolder = false;
-                if(substr($matches->item($i)->getAttribute('href'), -1) == "/") {
-                    $isFolder = true;
-                }
-
-                $file = [];
-                $file['fileName'] = $matches->item($i)->nodeValue;
-                $file['downloadLink'] = $baseUrl . $matches->item($i)->getAttribute('href');
-                $file['extension'] = $this->extractFileExtension($matches->item($i)->nodeValue);
-                $file['isFolder'] = $isFolder;
-
-                $files[] = $file;
+        
+        // Go to downloadpage
+        $crawler = $this->client->request('GET', $dataset->msl_source);
+        
+        try {
+            $link = $crawler->selectLink('Download data and description')->link();
+        } catch (\Exception $e) {
+            try {
+                $link = $crawler->selectLink('Download data')->link();
+            } catch (\Exception $e) {
+                return $dataset;
             }
         }
-
-        return $files;
+        $crawler = $this->client->click($link);
+        
+        // extract link elements, all links are grouped within <pre> element. First 4 <a> elements are UI elements
+        $links = $crawler
+            ->filter('body > pre > a')
+            ->reduce(function (Crawler $node, $i) {
+                return ($i >= 5);
+        });
+            
+        //loop over links and add file information to dataset
+        $links->each(function ($node) use (&$dataset) {
+            $file = [
+                'msl_file_name' => $this->extractFileName($node->attr('href')),
+                'msl_download_link' => $node->getBaseHref() . $node->attr('href'),
+                'msl_extension' => $this->extractFileExtension($node->attr('href')),
+                'msl_timestamp' => ''
+            ];
+            
+            $dataset->msl_downloads[] = $file;
+        });
+        
+        return $dataset;
+    }
+       
+    private function extractFileName($filename) {
+        $fileInfo = pathinfo($filename);
+        if(isset($fileInfo['filename'])) {
+            return $fileInfo['filename'];
+        }
+        
+        return '';
     }
     
     private function extractFileExtension($filename) {
@@ -123,6 +70,9 @@ class GfzDownloadHelper
         }
         
         return '';
-    }    
+    }
+    
+    
+    
 }
 

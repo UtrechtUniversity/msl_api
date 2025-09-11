@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\FigshareFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
@@ -43,16 +42,12 @@ class Import4TUSeeder extends Seeder
                         ]                        
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteJsonRetrieval',
+                        'type' => 'dataciteXmlRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'datacite',
-                        'options' => [
-                            'additionalMappers' => [
-                                FigshareFileMapper::class,
-                            ]
-                        ]
+                        'type' => 'FourTUMapper',
+                        'options' => []
                     ]
                 ],
                 'data_repository_id' => $repo->id

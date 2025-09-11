@@ -1,29 +1,17 @@
 <?php
 namespace App\Mappers\Helpers;
 
-use GuzzleHttp\Client;
-
 class DataciteCitationHelper
 {
-    /**
-     * @var GuzzleClient Guzzle HTTP client instance
-     */
-    protected $client;    
+    protected $client;
     
-    /**
-     * Contructs a new DataciteCitationHelper
-     */
-    public function __construct($client = new Client())
+    
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new \GuzzleHttp\Client();
     }
     
-    /**
-     * Retrieve a citationstring in apa style using doi
-     * @param string $doi
-     * @return string
-     */
-    public function getCitationString($doi): string
+    public function getCitationString($doi)
     {
         try {
             $response = $this->client->request(
@@ -37,7 +25,7 @@ class DataciteCitationHelper
                 ]
             );
         } catch (\Exception $e) {
-            return '';
+            
         }
         
         if(isset($response)) {

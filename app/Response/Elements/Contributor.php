@@ -19,8 +19,20 @@ class Contributor
             $this->contributorName = $data['msl_contributor_name'];
         }        
 
-        if(isset($data['msl_contributor_type'])) {
-            $this->contributorRole = $data['msl_contributor_type'];
+        if(isset($data['msl_contributor_orcid'])) {
+            $this->contributorOrcid = $data['msl_contributor_orcid'];
+        }
+        
+        if(isset($data['msl_contributor_scopus'])) {
+            $this->contributorScopus = $data['msl_contributor_scopus'];
+        }
+
+        if(isset($data['msl_contributor_affiliation'])) {
+            $this->contributorAffiliation = $data['msl_contributor_affiliation'];
+        }
+
+        if(isset($data['msl_contributor_role'])) {
+            $this->contributorRole = $data['msl_contributor_role'];
         }
     }
 

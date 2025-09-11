@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\GfzFileMapper;
 use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
@@ -43,16 +42,12 @@ class ImportGFZDataciteSeeder extends Seeder
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteJsonRetrieval',
+                        'type' => 'dataciteXmlRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'datacite',
-                        'options' => [
-                            'additionalMappers' => [
-                                GfzFileMapper::class,
-                            ]
-                        ]
+                        'type' => 'GFZDataciteMapper',
+                        'options' => []
                     ]
                 ],
                 'data_repository_id' => $gfz->id
