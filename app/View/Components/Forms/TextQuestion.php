@@ -1,0 +1,28 @@
+<?php
+
+namespace App\View\Components\Forms;
+
+use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
+
+class TextQuestion extends Component
+{
+    /**
+     * Create a new component instance.
+     */
+    public function __construct(
+        public string $sectionName,
+        public string $placeholder,
+        public string $title,
+        public bool $titleBold,
+        public bool $textBlock
+    ) {}
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render(): View
+    {
+        return view('components.forms.text-question');
+    }
+}

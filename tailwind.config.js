@@ -7,7 +7,13 @@ export default {
     "./resources/**/*.vue"
   ],
   theme: {
+
     extend: {
+
+          screens: {
+            'phone': '450px',
+            // => @media (min-width: 640px) { ... }
+          },
        colors: {
           "primary-100": "var(--primary-100)",
           "primary-200": "var(--primary-200)",
@@ -109,6 +115,7 @@ export default {
 
        }
     },
+
   },
   daisyui: {
     themes: [
@@ -244,5 +251,6 @@ export default {
     require('daisyui')
   ],
 }
+
 
 

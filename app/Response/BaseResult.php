@@ -62,7 +62,6 @@ class BaseResult
     public $downloads = [];
     
     public $researchAspects = [];
-    
 
 
     public function __construct($data, $context) {
@@ -203,6 +202,7 @@ class BaseResult
                 }
             }
         }
+
         
         //set researchaspects based on context(calling api function)
         switch ($context) {
