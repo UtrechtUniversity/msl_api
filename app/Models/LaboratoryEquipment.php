@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
 
 class LaboratoryEquipment extends Model
@@ -175,10 +177,9 @@ class LaboratoryEquipment extends Model
     {
         if($this->hasSpatialData()) {
             if((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
-                return json_encode([
-                    'type' => 'Point',
-                    'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-                ]);
+                return json_encode(
+                    new Point((float)$this->longitude, (float)$this->latitude)
+                );
             } else {
                 return $this->laboratory->getPointGeoJson();
             }            
@@ -197,41 +198,37 @@ class LaboratoryEquipment extends Model
     {
         if($this->hasSpatialData()) {
             if((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
-                return json_encode([
-                    'type' => 'Feature',
-                    'geometry' => [
-                        'type' => 'Point',
-                        'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-                    ],
-                    'properties' => [
-                        'title' => $this->name,
-                        'name' => md5($this->fast_id . '-' . $this->laboratory_id),
-                        'msl_id' => $this->id,
-                        'msl_lab_ckan_name' => $this->laboratory->msl_identifier,
-                        'msl_lab_name' => $this->laboratory->name,
-                        'msl_domain_name' => $this->domain_name,
-                        'msl_group_name' => $this->group_name,
-                        'msl_type_name' => $this->type_name
-                    ]
-                ]);
+                return json_encode(
+                    new Feature(
+                        new Point((float)$this->longitude, (float)$this->latitude),
+                        [
+                            'title' => $this->name,
+                            'name' => md5($this->fast_id . '-' . $this->laboratory_id),
+                            'msl_id' => $this->id,
+                            'msl_lab_ckan_name' => $this->laboratory->msl_identifier,
+                            'msl_lab_name' => $this->laboratory->name,
+                            'msl_domain_name' => $this->domain_name,
+                            'msl_group_name' => $this->group_name,
+                            'msl_type_name' => $this->type_name
+                        ]
+                    )
+                );
             } else {
-                return json_encode([
-                    'type' => 'Feature',
-                    'geometry' => [
-                        'type' => 'Point',
-                        'coordinates' => [(float)$this->laboratory->longitude, (float)$this->laboratory->latitude]
-                    ],
-                    'properties' => [
-                        'title' => $this->name,
-                        'name' => md5($this->fast_id . '-' . $this->laboratory_id),
-                        'msl_id' => $this->id,
-                        'msl_lab_ckan_name' => $this->laboratory->msl_identifier,
-                        'msl_lab_name' => $this->laboratory->name,
-                        'msl_domain_name' => $this->domain_name,
-                        'msl_group_name' => $this->group_name,
-                        'msl_type_name' => $this->type_name
-                    ]
-                ]);
+                return json_encode(
+                    new Feature(
+                        new Point((float)$this->laboratory->longitude, (float)$this->laboratory->latitude),
+                        [
+                            'title' => $this->name,
+                            'name' => md5($this->fast_id . '-' . $this->laboratory_id),
+                            'msl_id' => $this->id,
+                            'msl_lab_ckan_name' => $this->laboratory->msl_identifier,
+                            'msl_lab_name' => $this->laboratory->name,
+                            'msl_domain_name' => $this->domain_name,
+                            'msl_group_name' => $this->group_name,
+                            'msl_type_name' => $this->type_name
+                        ]
+                    )
+                );
             }
         }
 

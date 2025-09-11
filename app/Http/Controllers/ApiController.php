@@ -26,7 +26,7 @@ class ApiController extends Controller
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
-        'authorName' => 'msl_author_name_text',
+        'authorName' => 'msl_creator_name_text',
         'labName' => 'msl_lab_name_text',
     ];
 
@@ -37,7 +37,7 @@ class ApiController extends Controller
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
-        'authorName' => 'msl_author_name_text',
+        'authorName' => 'msl_creator_name_text',
         'labName' => 'msl_lab_name_text',
         'subDomain' => 'msl_subdomain',
     ];

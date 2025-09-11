@@ -95,43 +95,7 @@
     									<td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
     								</tr>															
     							</tbody>
-    						</table>
-    						<p>Mapping log:</p>
-    						@if(count($sourceDataset->mapping_logs) > 0)
-    						<table class="table">
-    							<thead>
-    								<tr>
-    									<th>#</th>
-    									<th>type</th>
-    									<th>message</th>
-    									<th>created_at</th>
-    								</tr>
-    							</thead>
-    							<tbody>							
-    								@foreach($sourceDataset->mapping_logs as $mapping_log)
-    									<tr 
-    									 @switch($mapping_log->type)									
-    									 	@case('ERROR')
-    											class="table-danger"
-    											@break
-    										
-    										@case('WARNING')
-    											class="table-warning"
-    											@break
-    										@endswitch
-    									>
-    										<td>{{ $loop->iteration }}</td>
-    										<td>{{ $mapping_log->type }}</td>
-    										<td>{{ $mapping_log->message }}</td>
-    										<td>{{ $mapping_log->created_at }}</td>
-    									</tr>
-    								@endforeach
-    							</tbody>
-    						</table>
-    						@else
-    							<p>No mapping log entries</p>
-    						@endif
-    						
+    						</table>    						
     						<p>Source data:</p>
     						<div class="overflow-scroll"><pre>{{ $sourceDataset->source_dataset }}</pre></div>
 						</div>
