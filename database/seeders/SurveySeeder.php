@@ -207,7 +207,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $radioSelectType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'Would you see yourself using this tool?',
+                'title' => 'Would you see yourself using the tool shown in the scenario?',
                 'titleBold' => true,
                 'sectionName' => 'UsingTool',
                 'validation' => ['required'],
@@ -235,7 +235,9 @@ class SurveySeeder extends Seeder
                 'options' => [
                     'Daily',
                     'Weekly',
+                    'Bi-Weekly',
                     'Monthly',
+                    'Quarterly',
                     'Yearly',
                     'Never',
                 ],
@@ -270,7 +272,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'How would you change the software tool to make useful for your work?',
+                'title' => 'How would you change the software tool as shown in the scenario to make it useful for your work?',
                 'titleBold' => true,
                 'sectionName' => 'ChangeScenario',
                 'textBlock' => true,
