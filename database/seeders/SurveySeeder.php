@@ -283,34 +283,34 @@ class SurveySeeder extends Seeder
 
 
 
-        // $order++;
-        // Question::updateOrCreate([
-        //     'question_type_id' => $checkBoxType->id,
-        //     'answerable' => true,
-        //     'question' => [
-        //         'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
-        //         'titleBold' => true,
-        //         'sectionName' => 'gdprAgreement',
-        //         'validation' => ['required_with:EmailContact', 'nullable'],
-        //         'options' => [
-        //             'I agree',
-        //         ],
-        //     ],
-        // ])->surveys()->attach($survey->id, ['order' => $order]);
+        $order++;
+        Question::updateOrCreate([
+            'question_type_id' => $checkBoxType->id,
+            'answerable' => true,
+            'question' => [
+                'title' => 'Do you want to be contacted to stay up to date with further contributions? By providing your email address, you consent to us storing and using it to contact you regarding updates and other activites for MSL. Your data will be stored securely and not shared with third parties. You can withdraw your consent at any time by reaching out to us via our contact form.',
+                'titleBold' => true,
+                'sectionName' => 'gdprAgreement',
+                'validation' => ['required_with:EmailContact', 'nullable'],
+                'options' => [
+                    'I agree',
+                ],
+            ],
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
-        // $order++;
-        // Question::updateOrCreate([
-        //     'question_type_id' => $textQuestionType->id,
-        //     'answerable' => true,
-        //     'question' => [
-        //         'title' => 'Leave your email in the box below:',
-        //         'titleBold' => false,
-        //         'sectionName' => 'EmailContact',
-        //         'textBlock' => false,
-        //         'placeholder' => 'your@email.domain',
-        //         'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
-        //     ],
-        // ])->surveys()->attach($survey->id, ['order' => $order]);
+        $order++;
+        Question::updateOrCreate([
+            'question_type_id' => $textQuestionType->id,
+            'answerable' => true,
+            'question' => [
+                'title' => 'Leave your email in the box below:',
+                'titleBold' => false,
+                'sectionName' => 'EmailContact',
+                'textBlock' => false,
+                'placeholder' => 'your@email.domain',
+                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+            ],
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
     }
 }
