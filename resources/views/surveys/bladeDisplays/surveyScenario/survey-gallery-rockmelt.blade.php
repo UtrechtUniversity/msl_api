@@ -14,7 +14,7 @@
             ),
         'descriptions' => array(
             "Andrea is working on a design experiment protocol, which needs to be presented to her supervisor",            
-            "She needs existing data on sandstone friction at specific stress and temperature (typo) conditions. What should be used? Which data is reliable? ",            
+            "She needs existing data on sandstone friction at specific stress and temperature conditions. What should be used? Which data is reliable? ",            
             "She is overwhelmed by existing literature and has trouble finding suitable data in the right format. She reaches out to her supervisor for advice.",           
             "Her supervisor is not really available for her and recommends her to try out the Rock and Melt physics tool on the EPOS Multi-Scale Laboratory platform. There she will find trustworthy data.",           
             "Andrea visits the website and selects “sandstone” with the property category “shear” in the filter tool. Rename property to property set.",          
