@@ -5,8 +5,9 @@
 
     <div class="max-w-screen-md pt-10 sm:pt-20">
         <h3 class="pb-2 pt-6">What is this survey about?</h3>
+        <p class="inline">Having data findable, centrally, in EPOS, doesn’t necessarily make these easy to re-use.  </p>
         <p class="inline">
-          Many people are hesitant to answer questions about themselves and their opinions. If you are developing your survey for a science fair project, people will probably be more willing to help if you clearly state your intentions. At the top of your survey, write a brief statement explaining why you are collecting the information and reassure each respondent that the information is entirely anonymous. If you need to know specifics about a person, respect their privacy by identifying them as subject1, subject2, etc...
+            At what point during your research would you actually want to re-use data? How should data be offered, such that you could easily re-use these? You can help us explore questions like these by filling out a 10-minute survey. When you select your research domain below, you’ll find a scenario of a researcher looking to re-use data. The survey is about this scenario. We will use your (anonymous) input to further refine specifications on tools to be developed, and to understand where and when these would be useful in research. We appreciate your time! 
         </p>
     </div>
 
