@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2012e05fa8963b00241aa1bbdacd4b86",
+    "content-hash": "5831518b61060a378eff0237499797be",
     "packages": [
         {
             "name": "andreiio/blade-remix-icon",
@@ -9602,7 +9602,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
