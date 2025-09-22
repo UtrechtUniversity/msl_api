@@ -27,9 +27,12 @@
                         alt=""
                         class="max-w-96 object-contain"/>
 
-                    <p class="h-full">
-                       {{ $key + 1 }}: {{ $descriptions[$key] }}
-                    </p>
+                        @if (isset($descriptions[$key]))
+                            <p class="h-full">
+                                {{ $key + 1 }}: {{ $descriptions[$key] }}
+                            </p>
+                        @endif
+
             </div>
         @endforeach
 
