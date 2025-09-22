@@ -47,7 +47,7 @@ class CreateKeywordTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keyword');
+        Schema::dropIfExists('keywords');
         Schema::dropIfExists('vocabularies');
         Schema::dropIfExists('keywords_search');
     }

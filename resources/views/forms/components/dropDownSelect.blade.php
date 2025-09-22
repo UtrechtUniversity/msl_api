@@ -18,7 +18,6 @@
         name="{{ $sectionName }}"
         id="{{ $sectionName }}"
         class="select form-field-text focus:select-secondary 
-        {{-- @error('{{ $sectionName }}') error-highlight-input bg-error-300 @else bg-white @enderror --}}
         @if ($errors->has($sectionName))
             error-highlight-input bg-error-300
         @else

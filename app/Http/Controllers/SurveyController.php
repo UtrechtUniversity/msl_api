@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Surveys\Answer;
+use App\Models\Surveys\Response;
+use App\Models\Surveys\Survey;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+class SurveyController extends Controller
+{
+    /**
+     * Show the contribute survey scenario page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function surveyForm($surveyName)
+    {
+        $survey = Survey::where('name', $surveyName)->first();
+
+        if($survey->active){
+            return view('surveys.contribute-survey-scenario', [
+                'allQuestions' => $survey->questions,
+                'surveyName' => $survey->name
+            ]);
+        } else {
+            return redirect('/')->with('modals', [
+                'type' => 'error',
+                'message' => 'This survey is no longer active! Thank you for your interest. Please contact us for more information or feedback.']
+            );
+        }
+    }
+
+    /**
+     * Process the survey
+     *
+     * @return \Illuminate\Contracts\Support\RedirectResponse
+     */
+    public function surveyProcess(Request $request, $surveyName): RedirectResponse
+    {   
+        $survey = Survey::where('name', $surveyName)->first();
+
+        $request->validate($survey->getValidationRules());
+
+        $responseSurvey = Response::create([
+            'survey_id' => $survey->id,
+            'email' => $request->input('email'),
+        ]);
+
+        foreach ($survey->questions as $question) {
+            if ($question->answerable) {
+                    Answer::create([
+                        'response_id' => $responseSurvey->id,
+                        'question_id' => $question->id,
+                        'answer' => $request->input($question->question->sectionName)
+                    ]);
+            }
+        }
+
+        return redirect('/')->with('modals', [
+            'type' => 'success',
+            'message' => 'Thanks for your input!']
+        );
+    }
+
+}
