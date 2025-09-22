@@ -54,9 +54,9 @@ class SurveySeeder extends Seeder
 
         $allDomains = [
             'analogue' => 'Analogue Modelling of Geological Processes',
-            'geochemistry' => 'Geochemistry',
+            // 'geochemistry' => 'Geochemistry',
             'microtomo' => 'Microscopy and Tomography',
-            'paleomag' => 'Magnetism and Paleomagnetism',
+            // 'paleomag' => 'Magnetism and Paleomagnetism',
             'rockmelt' => 'Rock and Melt Physics',
             'testbeds' => 'Geo-Energy Test Beds',
         ];
@@ -207,7 +207,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $radioSelectType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'Would you see yourself using this tool?',
+                'title' => 'Would you see yourself using the tool shown in the scenario?',
                 'titleBold' => true,
                 'sectionName' => 'UsingTool',
                 'validation' => ['required'],
@@ -233,11 +233,13 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'UsingToolHowOften',
                 'validation' => ['required'],
                 'options' => [
+                    'Never',
                     'Daily',
                     'Weekly',
+                    'Bi-Weekly',
                     'Monthly',
+                    'Quarterly',
                     'Yearly',
-                    'Never',
                 ],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
@@ -270,7 +272,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $textQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'How would you change the software tool to make useful for your work?',
+                'title' => 'How would you change the software tool as shown in the scenario to make it useful for your work?',
                 'titleBold' => true,
                 'sectionName' => 'ChangeScenario',
                 'textBlock' => true,
@@ -281,34 +283,34 @@ class SurveySeeder extends Seeder
 
 
 
-        // $order++;
-        // Question::updateOrCreate([
-        //     'question_type_id' => $checkBoxType->id,
-        //     'answerable' => true,
-        //     'question' => [
-        //         'title' => 'Do you want to be contacted to stay up to date with futher contributions? Then you must acknowledge...blabla...legal chatter',
-        //         'titleBold' => true,
-        //         'sectionName' => 'gdprAgreement',
-        //         'validation' => ['required_with:EmailContact', 'nullable'],
-        //         'options' => [
-        //             'I agree',
-        //         ],
-        //     ],
-        // ])->surveys()->attach($survey->id, ['order' => $order]);
+        $order++;
+        Question::updateOrCreate([
+            'question_type_id' => $checkBoxType->id,
+            'answerable' => true,
+            'question' => [
+                'title' => 'Do you want to be contacted to stay up to date with further contributions? By providing your email address, you consent to us storing and using it to contact you regarding updates and other activites for MSL. Your data will be stored securely and not shared with third parties. You can withdraw your consent at any time by reaching out to us via our contact form.',
+                'titleBold' => true,
+                'sectionName' => 'gdprAgreement',
+                'validation' => ['required_with:EmailContact', 'nullable'],
+                'options' => [
+                    'I agree',
+                ],
+            ],
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
-        // $order++;
-        // Question::updateOrCreate([
-        //     'question_type_id' => $textQuestionType->id,
-        //     'answerable' => true,
-        //     'question' => [
-        //         'title' => 'Leave your email in the box below:',
-        //         'titleBold' => false,
-        //         'sectionName' => 'EmailContact',
-        //         'textBlock' => false,
-        //         'placeholder' => 'your@email.domain',
-        //         'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
-        //     ],
-        // ])->surveys()->attach($survey->id, ['order' => $order]);
+        $order++;
+        Question::updateOrCreate([
+            'question_type_id' => $textQuestionType->id,
+            'answerable' => true,
+            'question' => [
+                'title' => 'Leave your email in the box below:',
+                'titleBold' => false,
+                'sectionName' => 'EmailContact',
+                'textBlock' => false,
+                'placeholder' => 'your@email.domain',
+                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+            ],
+        ])->surveys()->attach($survey->id, ['order' => $order]);
 
     }
 }
