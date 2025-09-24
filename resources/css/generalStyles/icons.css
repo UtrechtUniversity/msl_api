@@ -1,0 +1,31 @@
+.info-icon{
+    @apply size-8 p-1 fill-info-700  rounded-full inline
+  }
+
+  .close-icon{
+    @apply size-6 fill-error-600  rounded-full inline
+  }
+
+  .remove-all-icon{
+    @apply size-6 fill-error-600  rounded-full inline
+  }
+
+  .chevron-icon {
+    @apply size-5 fill-primary-800  rounded-full inline
+  }
+
+  .file-icon {
+    @apply size-8 fill-primary-800  rounded-full inline
+  }
+
+  .goBack-icon{
+    @apply size-8 fill-secondary-600  rounded-full inline
+  }
+
+  .warning-icon{
+    @apply size-10 fill-warning-900  rounded-full inline
+  }
+
+  .sad-icon{
+    @apply size-20 fill-info-900  rounded-full inline
+  }

@@ -1,10 +1,16 @@
 @import 'tailwindcss';
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
-/* @plugin "daisyui"; */
-/* @config '../../tailwind.config.js'; */
+
+/* imports of general styles */
+@import './generalStyles/icons.css';
+@import './generalStyles/daisyUI.css';
+@import './generalStyles/pages.css';
+@import './generalStyles/divs.css';
+
 
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
@@ -66,56 +72,7 @@
     }
 
 
-    /*###############
-      general pages 
-      ###############*/
-    /* general page structure used on every template due to the formatting of the landing page */
-    .mainContentDiv{
-      @apply pb-20 flex justify-center items-center p-10
-    }
-    /* controls behaviour when components.no_mobile_view is shown*/
-    .noMobileView_wideScreenDiv{
-      @apply hidden md:block grow max-w-(--breakpoint-2xl) 
-    }
-    .noMobileView_smallScreenDiv{
-      @apply block md:hidden
-    }
-    /* main content div for labsMaps-div, filterTree-div and the detail-divs */
-    .listMapDetailDivParent{
-      @apply flex w-full justify-center min-h-screen
-    }
 
-    /*###############
-      map and list views
-      ###############*/
-    /* map and list div */
-    .listMapDiv{
-      @apply w-full flex flex-col
-    }
-     
-    /* List view div */
-    .listView{
-      @apply flex flex-col 
-      /* dividers */
-    }
-
-    /*###############
-      detail views
-      ###############*/
-    /* main div containing detail-view elements */
-    .detailDiv{
-      @apply bg-primary-200 grow w-full 
-      flex flex-col place-items-center p-10 
-      max-w-(--breakpoint-lg)
-    }
-    
-    /*###############
-      Components
-      ###############*/
-    /* top Map List tabLinks */
-    .tabLinksParent{
-      @apply flex justify-center items-center
-    }
 
     /* all the word cards including the parent */
     .wordCardParent{
@@ -135,59 +92,6 @@
       @apply bg-secondary-100 text-secondary-900
     }
 
-    /*###############
-      general elements
-      ###############*/
-    /* .dividers{
-      @apply divide-y divide-primary-700
-    } */
-    .detailEntryDiv{
-      @apply w-full pt-5 pb-5
-    }
-    .detailEntrySub1{
-      @apply w-1/3 text-left
-    }
-    .detailEntrySub2{
-      @apply w-full
-    }
-
-    /*###############
-      icons
-      ###############*/
-    .info-icon{
-      @apply size-8 p-1 fill-info-700  rounded-full inline
-    }
-
-    .close-icon{
-      @apply size-6 fill-error-600  rounded-full inline
-    }
-
-    .remove-all-icon{
-      @apply size-6 fill-error-600  rounded-full inline
-    }
-
-    .chevron-icon {
-      @apply size-5 fill-primary-800  rounded-full inline
-    }
-
-    .file-icon {
-      @apply size-8 fill-primary-800  rounded-full inline
-    }
-
-    .goBack-icon{
-      @apply size-8 fill-secondary-600  rounded-full inline
-    }
-
-    .warning-icon{
-      @apply size-10 fill-warning-900  rounded-full inline
-    }
-
-    .sad-icon{
-      @apply size-20 fill-info-900  rounded-full inline
-    }
-
-
-
 
     /*###############
     various
@@ -199,9 +103,7 @@
       @apply opacity-100
     }
 
-    .tabs-div{
-      @apply   p-6 min-h-28 
-    }
+
 
     /*###############
     forms
@@ -349,121 +251,4 @@ tippy theme
   --color-error-900: var(--error-900);
 }
 
-@plugin "daisyui" {
-  themes: "theme1" --default
-}
-
-@plugin "daisyui/theme" {
-  name: "theme1";
-  default: true;
-  
-  --color-base-100: #f7f4ef;
-  --color-base-200: #ede3d4;
-  --color-base-300: #eed3ad;
-  --color-base-content: #583706;
-
-  /* --color-primary: "#e1ae62"; */
-  --color-primary: #e1ae62;
-  --color-primary-100: #f7f4ef;
-  --color-primary-200: #ede3d4;
-  --color-primary-300: #eed3ad;
-  --color-primary-400: #f0c380;
-  --color-primary-500: #e1ae62;
-  --color-primary-600: #c38a33;
-  --color-primary-700: #956521;
-  --color-primary-800: #583706;
-  --color-primary-900: #160f04;
-  --color-primary-content: #000000;
-
-  --color-secondary: #18dbdb;
-  --color-secondary-100: #dff2f2;
-  --color-secondary-200: #abf5f5;
-  --color-secondary-300: #70f5f5;
-  --color-secondary-400: #62e4e4;
-  --color-secondary-500: #18dbdb;
-  --color-secondary-600: #13b5b5;
-  --color-secondary-700: #098383;
-  --color-secondary-800: #014747;
-  --color-secondary-900: #001010;
-  --color-secondary-content: #000000;
-
-  --color-accent: #eed3ad;
-  --color-accent-content: #000000;
-
-  --color-neutral: #aeaba6;
-  --color-neutral-100: #f4f2ed;
-  --color-neutral-200: #e5e2dd;
-  --color-neutral-300: #dad7d2;
-  --color-neutral-400: #c2c0bd;
-  --color-neutral-500: #aeaba6;
-  --color-neutral-600: #8b8983;
-  --color-neutral-700: #67655c;
-  --color-neutral-800: #46443c;
-  --color-neutral-900: #0a0700;
-  --color-neutral-content: #000000;
-
-  --color-info: #233798;
-  --color-info-100: #edeff8;
-  --color-info-200: #e3e6fb;
-  --color-info-300: #d5daf7;
-  --color-info-400: #bfc6ea;
-  --color-info-500: #9faef2;
-  --color-info-600: #788aec;
-  --color-info-700: #5267d6;
-  --color-info-800: #233798;
-  --color-info-900: #040a25;
-  --color-info-content: #000000;
-
-  --color-success: #28e178;
-  --color-success-100: #e2f2e9;
-  --color-success-200: #b9f3d2;
-  --color-success-300: #95f3be;
-  --color-success-400: #5aed9a;
-  --color-success-500: #28e178;
-  --color-success-600: #1fbb63;
-  --color-success-700: #0d8240;
-  --color-success-800: #01471f;
-  --color-success-900: #040a25;
-  --color-success-content: #000000;
-
-  --color-warning: #bdbd22ff;
-  --color-warning-100: #f2f2dfff;
-  --color-warning-200: #eaeaaeff;
-  --color-warning-300: #e1e172ff;
-  --color-warning-400: #d2d242ff;
-  --color-warning-500: #bdbd22ff;
-  --color-warning-600: #9c9c12ff;
-  --color-warning-700: #6b6b0bff;
-  --color-warning-800: #3d3d0aff;
-  --color-warning-900: #101000ff;
-  --color-warning-content: #000000;
-
-  --color-error: #e7a18a;
-  --color-error-100: #f1f0ef;
-  --color-error-200: #eae1de;
-  --color-error-300: #f0d5ca;
-  --color-error-400: #ebbdae;
-  --color-error-500: #e7a18a;
-  --color-error-600: #db7a58;
-  --color-error-700: #af5739;
-  --color-error-800: #683a2a;
-  --color-error-900: #100400;
-  --color-error-content: #000000;
-
-  /* border radius */
-  --radius-selector: 1rem;
-  --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
-
-  /* base sizes */
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-
-  /* border size */
-  --border: 1px;
-
-  /* effects */
-  --depth: 1;
-  --noise: 0;
-}
 

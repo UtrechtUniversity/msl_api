@@ -1,0 +1,55 @@
+    /*###############
+      map and list views
+      ###############*/
+    /* map and list div */
+    .listMapDiv{
+        @apply w-full flex flex-col
+      }
+       
+      /* List view div */
+      .listView{
+        @apply flex flex-col 
+        /* dividers */
+      }
+  
+      /*###############
+        detail views
+        ###############*/
+      /* main div containing detail-view elements */
+      .detailDiv{
+        @apply bg-primary-200 grow w-full 
+        flex flex-col place-items-center p-10 
+        max-w-(--breakpoint-lg)
+      }
+      
+      /*###############
+        Components
+        ###############*/
+      /* top Map List tabLinks */
+      .tabLinksParent{
+        @apply flex justify-center items-center
+      }
+
+          /*###############
+      general elements
+      ###############*/
+    /* .dividers{
+      @apply divide-y divide-primary-700
+    } */
+    .detailEntryDiv{
+        @apply w-full pt-5 pb-5
+      }
+      .detailEntrySub1{
+        @apply w-1/3 text-left
+      }
+      .detailEntrySub2{
+        @apply w-full
+      }
+      
+    /*###############
+    various
+    ###############*/
+
+      .tabs-div{
+        @apply   p-6 min-h-28 
+      }
