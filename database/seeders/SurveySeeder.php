@@ -72,6 +72,17 @@ class SurveySeeder extends Seeder
             );
         }
 
+        //single domains - no conent
+        Survey::updateOrCreate([
+            'name' => 'scenarioSurvey-paleomag',
+            'active' => true,
+        ]);
+
+        Survey::updateOrCreate([
+            'name' => 'scenarioSurvey-geochemistry',
+            'active' => true,
+        ]);
+
     }
 
     private function scenarioSurveySeeding(
