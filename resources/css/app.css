@@ -1,4 +1,28 @@
-@tailwind base;
+@import 'tailwindcss';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+/* @plugin "daisyui"; */
+/* @config '../../tailwind.config.js'; */
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
     h1 {
@@ -30,15 +54,15 @@
     }
 
     .search-bar{
-      @apply h-full w-full outline-none text-sm pr-2
+      @apply h-full w-full outline-hidden text-sm pr-2
     }
 
     .search-div-list{
-      @apply h-full w-full outline-none text-sm pr-2
+      @apply h-full w-full outline-hidden text-sm pr-2
     }
 
     .search-div-filters{
-      @apply h-full w-full outline-none text-sm pr-2
+      @apply h-full w-full outline-hidden text-sm pr-2
     }
 
 
@@ -51,7 +75,7 @@
     }
     /* controls behaviour when components.no_mobile_view is shown*/
     .noMobileView_wideScreenDiv{
-      @apply hidden md:block grow max-w-screen-2xl 
+      @apply hidden md:block grow max-w-(--breakpoint-2xl) 
     }
     .noMobileView_smallScreenDiv{
       @apply block md:hidden
@@ -71,7 +95,8 @@
      
     /* List view div */
     .listView{
-      @apply flex flex-col dividers
+      @apply flex flex-col 
+      /* dividers */
     }
 
     /*###############
@@ -81,7 +106,7 @@
     .detailDiv{
       @apply bg-primary-200 grow w-full 
       flex flex-col place-items-center p-10 
-      max-w-screen-lg
+      max-w-(--breakpoint-lg)
     }
     
     /*###############
@@ -113,9 +138,9 @@
     /*###############
       general elements
       ###############*/
-    .dividers{
+    /* .dividers{
       @apply divide-y divide-primary-700
-    }
+    } */
     .detailEntryDiv{
       @apply w-full pt-5 pb-5
     }
@@ -183,13 +208,13 @@
     ###############*/
     .form-field-text{
       @apply 
-      shadow-sm text-sm 
+      shadow-xs text-sm 
       h-10 p-3 rounded-lg 
       ring-1
       ring-primary-500
       block w-full
       bg-white
-      outline-none
+      outline-hidden
       focus:ring-2
       focus:ring-secondary-400
       active:ring-2
@@ -225,21 +250,220 @@
 
 }
 
-/*###############
+@layer base {
+  /*###############
 tippy theme
 ###############*/
-    
-.tippy-box[data-theme~='msl'] {
-  @apply bg-info-300
+
+  .tippy-box[data-theme~='msl'] {
+    @apply bg-info-300;
+  }
 }
-      
-
-
-@tailwind components;
-@tailwind utilities;
 
 
 
 ::placeholder {
   color: green
 }
+
+@theme {
+
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-primary-800: var(--primary-800);
+  --color-primary-900: var(--primary-900);
+
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-secondary-600: var(--secondary-600);
+  --color-secondary-700: var(--secondary-700);
+  --color-secondary-800: var(--secondary-800);
+  --color-secondary-900: var(--secondary-900);
+
+  --color-accent-100: var(--accent-100);
+  --color-accent-200: var(--accent-200);
+  --color-accent-300: var(--accent-300);
+  --color-accent-400: var(--accent-400);
+  --color-accent-500: var(--accent-500);
+  --color-accent-600: var(--accent-600);
+  --color-accent-700: var(--accent-700);
+  --color-accent-800: var(--accent-800);
+  --color-accent-900: var(--accent-900);
+
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+
+  --color-info-100: var(--info-100);
+  --color-info-200: var(--info-200);
+  --color-info-300: var(--info-300);
+  --color-info-400: var(--info-400);
+  --color-info-500: var(--info-500);
+  --color-info-600: var(--info-600);
+  --color-info-700: var(--info-700);
+  --color-info-800: var(--info-800);
+  --color-info-900: var(--info-900);
+
+  --color-success-100: var(--success-100);
+  --color-success-200: var(--success-200);
+  --color-success-300: var(--success-300);
+  --color-success-400: var(--success-400);
+  --color-success-500: var(--success-500);
+  --color-success-600: var(--success-600);
+  --color-success-700: var(--success-700);
+  --color-success-800: var(--success-800);
+  --color-success-900: var(--success-900);
+  
+  --color-warning-100: var(--warning-100);
+  --color-warning-200: var(--warning-200);
+  --color-warning-300: var(--warning-300);
+  --color-warning-400: var(--warning-400);
+  --color-warning-500: var(--warning-500);
+  --color-warning-600: var(--warning-600);
+  --color-warning-700: var(--warning-700);
+  --color-warning-800: var(--warning-800);
+  --color-warning-900: var(--warning-900);
+            
+  --color-error-100: var(--error-100);
+  --color-error-200: var(--error-200);
+  --color-error-300: var(--error-300);
+  --color-error-400: var(--error-400);
+  --color-error-500: var(--error-500);
+  --color-error-600: var(--error-600);
+  --color-error-700: var(--error-700);
+  --color-error-800: var(--error-800);
+  --color-error-900: var(--error-900);
+}
+
+@plugin "daisyui" {
+  themes: "theme1" --default
+}
+
+@plugin "daisyui/theme" {
+  name: "theme1";
+  default: true;
+  
+  --color-base-100: #f7f4ef;
+  --color-base-200: #ede3d4;
+  --color-base-300: #eed3ad;
+  --color-base-content: #583706;
+
+  /* --color-primary: "#e1ae62"; */
+  --color-primary: #e1ae62;
+  --color-primary-100: #f7f4ef;
+  --color-primary-200: #ede3d4;
+  --color-primary-300: #eed3ad;
+  --color-primary-400: #f0c380;
+  --color-primary-500: #e1ae62;
+  --color-primary-600: #c38a33;
+  --color-primary-700: #956521;
+  --color-primary-800: #583706;
+  --color-primary-900: #160f04;
+  --color-primary-content: #000000;
+
+  --color-secondary: #18dbdb;
+  --color-secondary-100: #dff2f2;
+  --color-secondary-200: #abf5f5;
+  --color-secondary-300: #70f5f5;
+  --color-secondary-400: #62e4e4;
+  --color-secondary-500: #18dbdb;
+  --color-secondary-600: #13b5b5;
+  --color-secondary-700: #098383;
+  --color-secondary-800: #014747;
+  --color-secondary-900: #001010;
+  --color-secondary-content: #000000;
+
+  --color-accent: #eed3ad;
+  --color-accent-content: #000000;
+
+  --color-neutral: #aeaba6;
+  --color-neutral-100: #f4f2ed;
+  --color-neutral-200: #e5e2dd;
+  --color-neutral-300: #dad7d2;
+  --color-neutral-400: #c2c0bd;
+  --color-neutral-500: #aeaba6;
+  --color-neutral-600: #8b8983;
+  --color-neutral-700: #67655c;
+  --color-neutral-800: #46443c;
+  --color-neutral-900: #0a0700;
+  --color-neutral-content: #000000;
+
+  --color-info: #233798;
+  --color-info-100: #edeff8;
+  --color-info-200: #e3e6fb;
+  --color-info-300: #d5daf7;
+  --color-info-400: #bfc6ea;
+  --color-info-500: #9faef2;
+  --color-info-600: #788aec;
+  --color-info-700: #5267d6;
+  --color-info-800: #233798;
+  --color-info-900: #040a25;
+  --color-info-content: #000000;
+
+  --color-success: #28e178;
+  --color-success-100: #e2f2e9;
+  --color-success-200: #b9f3d2;
+  --color-success-300: #95f3be;
+  --color-success-400: #5aed9a;
+  --color-success-500: #28e178;
+  --color-success-600: #1fbb63;
+  --color-success-700: #0d8240;
+  --color-success-800: #01471f;
+  --color-success-900: #040a25;
+  --color-success-content: #000000;
+
+  --color-warning: #bdbd22ff;
+  --color-warning-100: #f2f2dfff;
+  --color-warning-200: #eaeaaeff;
+  --color-warning-300: #e1e172ff;
+  --color-warning-400: #d2d242ff;
+  --color-warning-500: #bdbd22ff;
+  --color-warning-600: #9c9c12ff;
+  --color-warning-700: #6b6b0bff;
+  --color-warning-800: #3d3d0aff;
+  --color-warning-900: #101000ff;
+  --color-warning-content: #000000;
+
+  --color-error: #e7a18a;
+  --color-error-100: #f1f0ef;
+  --color-error-200: #eae1de;
+  --color-error-300: #f0d5ca;
+  --color-error-400: #ebbdae;
+  --color-error-500: #e7a18a;
+  --color-error-600: #db7a58;
+  --color-error-700: #af5739;
+  --color-error-800: #683a2a;
+  --color-error-900: #100400;
+  --color-error-content: #000000;
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
+}
+
