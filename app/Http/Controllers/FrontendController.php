@@ -728,6 +728,16 @@ class FrontendController extends Controller
     {
         return view('frontend.themeTest');
     }
+
+        /**
+     * Show demo page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function demoPage()
+    {
+        return view('frontend.demoPage');
+    }
     
 }
 
