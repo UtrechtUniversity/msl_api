@@ -9,7 +9,7 @@
     <div class="noMobileView_wideScreenDiv">
         <h1 class="pt-20">Keyword selector</h1>
 
-        <div class="max-w-screen-lg px-4">
+        <div class="max-w-(--breakpoint-lg) px-4">
             <p>Here you can explore and select which Multi-Scale Labs keywords apply to your research. When you’re done, you 
             can export the keywords you selected, so you know which words to assign when you’re making your next data 
             publication. By adding terms like these (the more the better!), you make it much easier for us to find your data 

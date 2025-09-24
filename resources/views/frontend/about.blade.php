@@ -8,7 +8,7 @@
             alt="aboutImage"
             class="object-contain sm:max-w-lg w-fit sm:p-10">
 
-            <div class="max-w-screen-lg flex flex-col md:flex-row sm:p-10 py-10  gap-6">
+            <div class="max-w-(--breakpoint-lg) flex flex-col md:flex-row sm:p-10 py-10  gap-6">
                 <div class="w-full card bg-base-300 shadow-xl p-4 flex flex-col justify-start ">
                     <h4>Our Vision</h4>
                     <p class="sm:px-10">We strive to create the best earth science laboratory data service to 
@@ -25,7 +25,7 @@
             
             </div>
 
-        <div class="max-w-screen-md pt-10 sm:pt-20">
+        <div class="max-w-(--breakpoint-md) pt-10 sm:pt-20">
             <h3 class="pb-2 pt-6">Why EPOS MSL?</h3>
             <p class="inline">
                 In a world that demands increasing collaboration within the scientific community, solid Earth science laboratories are challenged with finding each other 
@@ -103,14 +103,14 @@
         
         <h3 class="pt-20">The MSL subdomains</h3>
 
-        <div class="sm:max-w-screen-lg flex md:flex-row flex-wrap sm:p-10 py-10 gap-4 justify-center place-items-center">
+        <div class="sm:max-w-(--breakpoint-lg) flex md:flex-row flex-wrap sm:p-10 py-10 gap-4 justify-center place-items-center">
             @foreach ($infoList as $infoElement)
                 <div class="dropdown dropdown-hover p-4">
                     <div tabindex="0" role="button" class="m-1 p-4 bg-base-300 rounded-lg w-64 h-24 place-content-center"> 
                         <h5 class="text-base font-normal">{{ $infoElement["name"] }}</h5>
                     </div>
 
-                    <ul tabindex="0" class="dropdown-content menu bg-base-300 rounded-box z-[1] p-2 shadow-xl w-64 sm:w-96 list-disc">
+                    <ul tabindex="0" class="dropdown-content menu bg-base-300 rounded-box z-1 p-2 shadow-xl w-64 sm:w-96 list-disc">
                         @foreach ( $infoElement["listItems"] as $listItem)
                             <li class="p-1">{{ $listItem }}</li> 
                         @endforeach
@@ -120,7 +120,7 @@
         
         </div>
 
-        <div class="max-w-screen-lg flex flex-col md:flex-row sm:p-10 gap-6 justify-center">
+        <div class="max-w-(--breakpoint-lg) flex flex-col md:flex-row sm:p-10 gap-6 justify-center">
             <div class="w-full card bg-base-300 shadow-xl p-4 flex flex-col justify-center md:w-2/3">
                 <h4>EPOS central data portal</h4>
                 <p class="sm:px-10">MSL data can be found in the MSL data catalogue on this dedicated website, and in the <a href="https://www.epos-eu.org/dataportal">EPOS data portal</a>, 

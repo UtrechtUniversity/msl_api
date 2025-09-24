@@ -83,7 +83,7 @@
                   </div>
                   <ul
                     tabindex="0"
-                    class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow">
                     <li><a class="no-underline" href="{{ route('contribute-researcher') }}">As a researcher</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-repository') }}">As a repository</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-laboratory') }}">As a laboratory</a></li>
@@ -99,7 +99,7 @@
                   </div>
                   <ul
                     tabindex="0"
-                    class="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow">
                     <li><a class="no-underline" href="{{ route('keyword-selector') }}">Keyword selector</a></li>
   
                   </ul>

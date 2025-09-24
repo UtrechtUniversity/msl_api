@@ -3,7 +3,7 @@
 
   <footer class="footer 
   p-10 
-  w-full xl:max-w-screen-xl
+  w-full xl:max-w-(--breakpoint-xl)
   flex 
   flex-col-reverse
   xl:flex-row
@@ -47,7 +47,7 @@
       w-full
       justify-center
       xl:justify-normal
-      xl:max-w-screen-sm">
+      xl:max-w-(--breakpoint-sm)">
         <nav class="link-list-item">
           <h6 class="footer-title">Data publications</h6>
           <a class="link link-hover"

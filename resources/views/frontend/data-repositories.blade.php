@@ -5,14 +5,14 @@
         <h1 class="p-20">
             Data repositories</h1>
 
-            <p class="max-w-screen-md pb-10">
+            <p class="max-w-(--breakpoint-md) pb-10">
               EPOS MSL currently provides access to MSL relevant data at the data repositories shown on this page. 
               The fastest route to make your data discoverable by MSL, is to publish your data at one of these. Note that some of these are only accessible for 
               researchers affiliated to the hosting institutes. Would you like to publish elsewhere? <a href="{{ route('contact-us') }}" title="Contact us">Let us know</a>! 
               We can then start working towards including data from your repository too.
             </p>              
           
-        <div class="flex flex-wrap justify-center gap-4 max-w-screen-lg pb-20">
+        <div class="flex flex-wrap justify-center gap-4 max-w-(--breakpoint-lg) pb-20">
 
           @foreach ($repositories as $repo)
             @if ($repo["hide"] == "false")
