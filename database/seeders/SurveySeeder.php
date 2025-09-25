@@ -319,7 +319,7 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'EmailContact',
                 'textBlock' => false,
                 'placeholder' => 'your@email.domain',
-                'validation' => ['required_with:gdprAgreement', 'email:rfc,dns,filter,spoof', 'nullable'],
+                'validation' => ['required_with:gdprAgreement', 'email:rfc,filter', 'nullable'],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
