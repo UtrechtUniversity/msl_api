@@ -572,8 +572,10 @@ class FrontendController extends Controller
 
         foreach ($allDomainNames as $key => $value) {
             $survey = Survey::where('name', 'scenarioSurvey-'.$key)->first();
-            if($survey->active){
-                $allDomains [$survey->name] = $value;
+            if($survey) {
+                if($survey->active){
+                    $allDomains [$survey->name] = $value;
+                }
             }
         }
 
