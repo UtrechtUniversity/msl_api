@@ -599,10 +599,7 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Geo location(s)</h4>
-                                    <div class="detailEntrySub2">
-                                        @foreach ( $data['msl_geolocations'] as $keyword)
-                                            <p class="text-sm">{{ $keyword['msl_geolocation_place'] }}</p>
-                                        @endforeach
+                                    <div class="detailEntrySub2">                                        
                                     </div>
                                 </div>
                                 @else
