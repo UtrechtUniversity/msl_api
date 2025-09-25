@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
 
 class Laboratory extends Model
@@ -137,10 +139,9 @@ class Laboratory extends Model
     public function getPointGeoJson()
     {
         if($this->hasSpatialData()) {
-            return json_encode([
-                'type' => 'Point',
-                'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-            ]);
+            return json_encode(
+                new Point((float)$this->longitude, (float)$this->latitude)
+            );
         }
 
         return '';
@@ -154,20 +155,18 @@ class Laboratory extends Model
     private function getGeoJsonFeature()
     {
         if($this->hasSpatialData()) {
-            return json_encode([
-                'type' => 'Feature',
-                'geometry' => [
-                    'type' => 'Point',
-                    'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-                ],
-                'properties' => [
-                    'title' => $this->name,
-                    'name' => $this->msl_identifier,
-                    'msl_id' => $this->id,
-                    'msl_organization_name' => $this->laboratoryOrganization->name,
-                    'msl_domain_name' => $this->fast_domain_name
-                ]
-            ]);
+            return json_encode(
+                new Feature(
+                    new Point((float)$this->longitude, (float)$this->latitude),
+                    [
+                        'title' => $this->name,
+                        'name' => $this->msl_identifier,
+                        'msl_id' => $this->id,
+                        'msl_organization_name' => $this->laboratoryOrganization->name,
+                        'msl_domain_name' => $this->fast_domain_name
+                    ]
+                )
+            );
         }
 
         return '';
