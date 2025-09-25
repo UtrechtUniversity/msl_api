@@ -1,0 +1,27 @@
+/* 
+general utility
+*/
+@utility hover-interactive-group {
+    @apply px-1 
+    group-hover:text-secondary-900 
+    group-hover:bg-secondary-200 
+    group-hover:rounded 
+    group-hover:cursor-pointer
+  }
+
+  @utility hover-interactive {
+    @apply px-1 
+    hover:text-secondary-900
+    hover:bg-secondary-200 
+    hover:rounded 
+    hover:cursor-pointer
+  }
+
+
+/* 
+change here the underlying styling to daisy ui native elements 
+*/
+@utility btn{
+    @apply btn-primary 
+    hover-interactive;
+  }

@@ -2,6 +2,29 @@
       map and list views
       ###############*/
     /* map and list div */
+        /* general page structure used on every template due to the formatting of the landing page */
+    .main-content{
+        @apply pb-20 flex justify-center items-center p-10
+        }
+    .sub-content{
+        @apply md:max-w-2xl
+    }
+
+
+    /* =============== old =============== */
+
+          /* controls behaviour when components.no_mobile_view is shown*/
+          .noMobileView_wideScreenDiv{
+            @apply hidden md:block grow max-w-(--breakpoint-2xl) 
+          }
+          .noMobileView_smallScreenDiv{ 
+            @apply block md:hidden
+          }
+          /* main content div for labsMaps-div, filterTree-div and the detail-divs */
+          .listMapDetailDivParent{
+            @apply flex w-full justify-center min-h-screen
+          }
+
     .listMapDiv{
         @apply w-full flex flex-col
       }
@@ -45,7 +68,7 @@
       .detailEntrySub2{
         @apply w-full
       }
-      
+
     /*###############
     various
     ###############*/
