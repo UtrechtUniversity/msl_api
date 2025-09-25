@@ -90,12 +90,45 @@ class Laboratory extends Model
             'msl_address_country_name' => $this->address_country_name,
             'msl_domain_name' => $this->fast_domain_name,
             'msl_organization_name' => $this->laboratoryOrganization->name,
+            'msl_latitude' => $this->latitude,
+            'msl_longitude' => $this->longitude,
+            'msl_altitude' => $this->altitude,
             'msl_location' => $this->getGeoJsonFeature(),
             'msl_has_spatial_data' => $this->hasSpatialData(),
+            'msl_laboratory_equipment' => $this->getLimitedEquipment(),
             'extras' => [
                 ["key" => "spatial", "value" => $this->getPointGeoJson()]
             ]
         ];
+    }
+
+    /**
+     * Returns a limited set of properties for each equipment belonging to the lab.
+     * This data is used in CKAN to populate the facility API endpoint working around the 
+     * need to combine equipment and laboratory datatypes seperately. 
+     * 
+     * @return array
+     */
+    private function getLimitedEquipment(): array
+    {
+        $equipment = [];
+
+        $equipmentList = $this->laboratoryEquipment;
+
+        foreach($equipmentList as $equipmentEntry) {
+            $equipment[] = [
+                'msl_laboratory_equipment_title' => $equipmentEntry->name,
+                'msl_laboratory_equipment_description' => $equipmentEntry->description,
+                'msl_laboratory_equipment_description_html' => $equipmentEntry->description_html,
+                'msl_laboratory_equipment_domain' => $equipmentEntry->domain_name,
+                'msl_laboratory_equipment_category' => $equipmentEntry->category_name,
+                'msl_laboratory_equipment_type' => $equipmentEntry->type_name,
+                'msl_laboratory_equipment_group' => $equipmentEntry->group_name,
+                'msl_laboratory_equipment_brand' => $equipmentEntry->brand
+            ];
+        }
+
+        return $equipment;
     }
 
     /**

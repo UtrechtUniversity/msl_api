@@ -8,8 +8,8 @@
 	},
 	{
 		"name": "gfz-potsdam",
-		"image_url": "/repositories/GFZ-Data-Services-logo.png",
-		"organization_display_name": "GFZ data services",
+		"image_url": "/repositories/GFZ_Data_Services.png",
+		"organization_display_name": "GFZ Data Services",
 		"hide": "false",
 		"url": "https://dataservices-cms.gfz-potsdam.de/"
 	},

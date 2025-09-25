@@ -53,8 +53,26 @@ class GenerateEditorExport extends Command
         
     private function export($vocabularies)
     {
+        $sortPriority = [
+            'materials',
+            'geologicalage',
+            'porefluids',
+            'geologicalsetting',
+            'subsurface',
+            'analogue',
+            'geochemistry',
+            'testbeds',
+            'microscopy',
+            'paleomagnetism',
+            'rockphysics',
+        ];
+
+        $sortedVocabularies = $vocabularies->sortBy(function($vocabulary) use ($sortPriority) {
+            return array_search($vocabulary->name, $sortPriority);
+        });
+
         $tree = [];
-        foreach ($vocabularies as $vocabulary) {
+        foreach ($sortedVocabularies as $vocabulary) {
             $element = [
                 'text' => $vocabulary->display_name,
                 'extra' => [
