@@ -11,11 +11,16 @@ class KeywordSearch extends Model
         'value',
         'is_synonym',
         'exclude_abstract_mapping',
-        'version'
+        'version',
     ];
-    
+
+    protected $casts = [
+        'is_synonym' => 'boolean',
+        'exclude_abstract_mapping' => 'boolean',
+    ];
+
     protected $table = 'keywords_search';
- 
+
     public function keyword()
     {
         return $this->belongsTo(Keyword::class);

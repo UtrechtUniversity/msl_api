@@ -28,3 +28,4 @@ Route::get('/geoenergy', [ApiController::class, 'geoenergy']);
 Route::get('/all', [ApiController::class, 'all']);
 Route::get('/tna', [ApiController::class, 'tna']);
 Route::get('/vocabularies/term', [ApiController::class, 'term']);
+Route::get('/facilities', [ApiController::class, 'facilities']);

@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*', 'webservice/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['https://www.ics-c.epos-eu.org', 'https://epos-ics-c-staging.brgm-rec.fr', 'https://ics-c.epos-ip.org/development/k8s-epos-deploy/latest'],
 
     'allowed_origins_patterns' => [],
 
@@ -27,7 +27,7 @@ return [
 
     'exposed_headers' => [],
 
-    'max_age' => 0,
+    'max_age' => 60,
 
     'supports_credentials' => false,
 
