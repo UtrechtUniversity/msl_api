@@ -2,7 +2,36 @@
 
 ## About
 
-## Development setup using Laravel Sail
+## Laravel Sail / Docker
+
+The project contains a Docker Compose setup build using Laravel Sail. An vs code devcontainer setup is also included. If you are setting up the project where no PHP/Composer is available you can use the following command to install Laravel sail to run the containers. 
+
+```
+sudo docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php84-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+## Project setup
+
+Add an .env file for the application. You can use the example as a base
+
+`cp .env.example .env`
+
+Create the application key:
+
+`php artisan key:generate`
+
+Run database migrations:
+
+`php artisan migrate`
+
+Run database seeders:
+
+`php artisan db:seed`
 
 ## Queue processor
 
