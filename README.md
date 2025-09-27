@@ -17,6 +17,10 @@ sudo docker run --rm \
 
 ## Project setup
 
+Install project dependencies:
+
+`composer install`
+
 Add an .env file for the application. You can use the example as a base
 
 `cp .env.example .env`
