@@ -57,13 +57,17 @@ The projects tests are written to be used with [PHPUnit](https://phpunit.de/). T
 
 To run the tests use the following command:
 
-`php artisan test`
+```
+php artisan test
+```
 
 Make sure that the config used by the application is not cached. If cached the env variables from the application itself will be used instead of the test specific settings. Causing the application database to be emptied.
 
 To disable the config cache use the following command:
 
-`php artisan config:clear`
+```
+php artisan config:clear
+```
 
 Tests using the RefreshDatabase trait will make sure the test database is fully migrated and reset after each individual test.
 
