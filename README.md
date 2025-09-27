@@ -2,6 +2,8 @@
 
 ## About
 
+This repository contains the code for the [EPOS MSL data catalogue](https://epos-msl.uu.nl/). The applications requires a specific [CKAN](https://ckan.org/) server is to run besides this application. This application is build using [Laravel](https://laravel.com/). The frontend is build using [Tailwind](https://tailwindcss.com/).
+
 ## Laravel Sail / Docker
 
 The project contains a Docker Compose setup build using Laravel Sail. An vs code devcontainer setup is also included. If you are setting up the project where no PHP/Composer is available you can use the following command to install Laravel sail to run the containers. 
@@ -49,6 +51,12 @@ php artisan db:seed
 
 ## Queue processor
 
+This project uses queued jobs for several tasks like importing data publications and retrieving lab information. To run the queue processor use the following command:
+```
+php artisan queue:work  --rest=1 --tries=3 --timeout=300
+```
+
+
 ## Env settings
 
 ## Tests
@@ -81,22 +89,14 @@ More information about testing in Laravel can be found [here](https://laravel.co
 
 ### Developement
 
+```
+npm run dev
+```
+
 ### Builds
 
-## Composer
-
-
-
-open wsl
-cd /mnt/c/projects/msl_api
-
-./vendor/bin/sail root-shell
-npm run dev
+```
 npm run build
+```
 
-php artisan queue:work  --rest=1 --tries=3 --timeout=300
-
-
-Originally assigned keywords -> msl_tags
-Corresponding MSL vocabulary keywords -> msl_original_keywords
-MSL enriched keywords -> msl_enriched_keywords
+## Composer
