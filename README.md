@@ -19,23 +19,33 @@ sudo docker run --rm \
 
 Install project dependencies:
 
-`composer install`
+```
+composer install
+```
 
 Add an .env file for the application. You can use the example as a base
 
-`cp .env.example .env`
+```
+cp .env.example .env
+```
 
 Create the application key:
 
-`php artisan key:generate`
+```
+php artisan key:generate
+```
 
 Run database migrations:
 
-`php artisan migrate`
+```
+php artisan migrate
+```
 
 Run database seeders:
 
-`php artisan db:seed`
+```
+php artisan db:seed
+```
 
 ## Queue processor
 
