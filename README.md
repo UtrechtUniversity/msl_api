@@ -56,8 +56,22 @@ This project uses queued jobs for several tasks like importing data publications
 php artisan queue:work  --rest=1 --tries=3 --timeout=300
 ```
 
-
 ## Env settings
+
+Running the project requires a .env file to be present within the root directory. This file is used to store deployment specific application settings. As a base the project contains a .env.example file to use for a fresh setup.
+
+Most configuration options are Laravel and plugin specific settings. More information about Laravel configuration can be found [here](https://laravel.com/docs/11.x/configuration).
+
+The project adds some specific settings to the .env file:
+
+| Setting | Description |
+| --- | --- |
+| VOCABULARIES_CURRENT_VERSION | Current version of the vocabularies used by the application. |
+| FAST_API_TOKEN | API token used to authenticate FAST requests. |
+| CKAN_API_URL | Base URL for CKAN APIs. |
+| CKAN_API_TOKEN | API token for CKAN requests. |
+| CKAN_ROOT_URL | Base URL for CKAN installation. |
+
 
 ## Tests
 
