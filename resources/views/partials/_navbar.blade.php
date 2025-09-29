@@ -7,12 +7,12 @@
             <img 
             src= {{ asset('images/logos/MSL-logo-data-catalogue_1.png') }}
             alt="multi-scale-laboratories-logo"
-            class="max-h-full m-auto max-w-fit xl:block hidden">
+            class="max-h-full m-auto max-w-fit min-[1100px]:block hidden">
 
             <img 
             src= {{ asset('images/logos/MSLsidewaysText.png') }}
             alt="multi-scale-laboratories-logo"
-            class="max-h-full  object-contain xl:hidden block">
+            class="max-h-full  object-contain min-[1100px]:hidden block">
           </a>
         </div>
 
