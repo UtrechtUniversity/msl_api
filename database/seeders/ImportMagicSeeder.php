@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\MagicFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
@@ -52,12 +53,16 @@ class ImportMagicSeeder extends Seeder
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
+                        'type' => 'dataciteJsonRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'MagicMapper',
-                        'options' => []
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                MagicFileMapper::class,
+                            ]
+                        ]
                     ]
                 ],
                 'data_repository_id' => $repo->id

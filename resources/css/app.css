@@ -67,6 +67,19 @@
       @apply pt-2 pb-2 text-justify;
     }
 
+
+
+    /* nav */
+    .nav-button {
+      @apply p-1 md:p-2 lg:p-4 btn rounded-none btn-ghost text-primary-800
+    }
+
+    .nav-button-sub {
+      @apply no-underline text-primary-800
+    }
+
+
+
     .search-bar{
       @apply h-full w-full outline-hidden text-sm pr-2
     }

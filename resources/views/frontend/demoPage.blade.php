@@ -70,11 +70,23 @@
                 </div>
 
             </div>
+        </div>
 
 
+        <h2 class="pt-6 py-20">Window layers</h2>
+        <div>
+
+        </div>
 
 
+        <h2 class="pt-6 py-20">Navigation</h2>
+        <div>
+            
+        </div>
 
+        <h2 class="pt-6 py-20">Dividers</h2>
+        <div>
+            
         </div>
 
 

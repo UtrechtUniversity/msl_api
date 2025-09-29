@@ -27,3 +27,9 @@ change here the underlying styling to daisy ui native elements
     @apply btn-primary 
     hover-interactive;
   }
+
+
+/* nav */
+@utility menu-title{
+  @apply text-secondary-900
+}

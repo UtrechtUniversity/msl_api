@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" lang="en-GB"><head><meta charset="utf-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1"></meta><link rel="stylesheet" type="text/css" href="css/template.css" media="all"></link><link rel="stylesheet" type="text/css" href="css/gfz_text.css" media="all"></link><link rel="stylesheet" type="text/css" href="css/datasetoverview.css"></link><title>Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script><script src="/lib/js/clipboardjs/clipboard.min.js"></script><script src="/lib/js/OpenLayers/OpenLayers.js" type="text/javascript"></script><script id="schemaorg" type="application/ld+json"></script><script type="text/javascript">
+	    var schemaorgurl="https://data.crosscite.org/application/vnd.schemaorg.ld+json/";
+	    schemaorgurl+="10.5880/GFZ.1.4.2019.005";
+             
+                /* <![CDATA[ */
+		
+	var params=new Object();		
+	
+        $(document).ready(function(){    
+
+                var args = window.location.search.substring(1).split('&');
+                for (var i=0; i < args.length; i++){
+                        var param = args[i].split('=');
+			var key=param[0];
+			var value=param[1];
+			params[key]=value;
+                }   
+
+
+	    if (params["id"]){	    
+		$('.gcmdkeywordslink').each(function(i,divelement){
+			var href=$(divelement).attr("href");
+			href=href.replace("?","?id="+params["id"]+"&");
+			$(divelement).attr("href",href);
+		});
+	    }
+        
+	    if (params["show_gcmdcitation"]==="true"){        
+                $('#gcmdkeywords').toggle();    
+                $('#content').toggle();                     
+	    } 
+
+	    
+                $.get(schemaorgurl, {}, function(reqdata) {
+			var jsonstring=JSON.stringify(reqdata);
+			$("#schemaorg").html(jsonstring);
+			var schematag = document.getElementById("schemaorg2");
+			schematag.textContent = jsonstring;
+                 });
+        });   
+
+function getescidocid(){
+	return params["id"];
+}
+				
+          /* ]]> */
+        </script><script type="text/javascript"> 
+
+    
+ $(document).ready(function(){
+
+	var keywords=$('.keywords').text().toLowerCase();
+
+	if (keywords.indexOf('epos')>=0 && keywords.indexOf('multi-scale laboratories')>=0){
+	
+
+	    var style='margin-left:20px;margin-top:10px;';
+
+	    var bibexplain='Find more reasearch data at GFZ.';
+	    var biblogo='<img src="images/bib_logo.png" style="'+style+'height:30px;" alt="'+bibexplain+'" title="'+bibexplain+'" >';
+	    $('.findmorecolor a').html(biblogo);
+
+
+	    var utrechtexplain='These data are also accessible via the EPOS Multi-scale laboratory catalogue.';
+	    var utrechtlink='<a';
+		utrechtlink+=' href="http://epos-msl.uu.nl" '; 
+		utrechtlink+=' >';
+		utrechtlink+='<img src="images/epos-msl-logo.png" style="'+style+'height:40px;" alt="'+utrechtexplain+'" title="'+utrechtexplain+'" >';
+		utrechtlink+='</a>';
+
+	    $('.findmorecolor').append(utrechtlink);
+
+	}
+
+
+}); 
+    
+	</script><script type="text/javascript">
+  var _paq = _paq || [];
+  var trackdoi = '10.5880/GFZ.1.4.2019.005';
+  trackdoi=trackdoi.toUpperCase();
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['setDocumentTitle',trackdoi]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//webstats.gfz-potsdam.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '15']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script><noscript><p><img src="//webstats.gfz-potsdam.de/piwik.php?idsite=15&amp;rec=1" style="border:0;" alt=""></img></p></noscript></head><body class="subpage-2column"><script style="display:hidden;" id="schemaorg2" type="application/ld+json"></script><div id="wrapper_borderOverall"><div id="borderOverall"><div id="header" style="height:20px"><div id="wrapper_serviceNav_quicksearch"><div id="serviceNav"><ul><li><a href="http://dataservices.gfz-potsdam.de/portal/imprint.html" title="Impressum">Impressum</a></li></ul></div></div></div><div id="sddbheader"><center><a href="http://dataservices.gfz-potsdam.de/"><img src="images/GFZDS.png" height="75px"></img></a></center></div><div id="wrapper_mainContent_leftColumn_rightColumn"><div id="gcmdkeywords" style="display:none"><a class="gcmdkeywordslink" href="?show_gcmdcitation=false">← back</a><br/> 
+            The GCMD vocabulary is developed and maintained by:
+ <a href="http://gcmd.nasa.gov/add/difguide/">Olsen, L.M., G. Major, K. Shein, J. Scialdone, S. Ritz, T. Stevens, M. Morahan, A. Aleman, R. Vogel, S. Leicester, H. Weir, M. Meaux, S. Grebas, C.Solomon, M. Holland, T. Northcutt, R. A. Restrepo, R. Bilodeau, 2013. NASA/Global Change Master Directory (GCMD) Earth Science Keywords. Version 8.0.0.0.0</a><br/><a class="gcmdkeywordslink" href="?show_gcmdcitation=false">← back</a></div><div id="content"><div class="overview"><div><div class="datasetcontainer citationcolor"><div style="float:right; text-align:center; margin-left: 2.0909em;"><img src="images/All_Status_ItemReleased_31_Static.png"></img><span style="display:block">Released</span></div><div style="float:left; text-align:center; margin-right: 2.0909em;"><img src="images/resourcetype/Dataset.png"></img><b style="display:block">Dataset</b></div><h1>Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus</h1><div style="margin-top:25px"><span class="citation"><h2>Cite as: <button class="citationcopy" style="float:right;font-size: 0.688rem">Copy citation to clipboard</button></h2><span class="citationtext">Koerting, Friederike; Rogass, Christian; Koellner, Nicole; Kuras, Agnieszka; Horning, Marcel; Altenberger, Uwe (2019): Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus. V. 2.0. GFZ Data Services. https://doi.org/10.5880/GFZ.1.4.2019.005</span></span><span class="review"><h2>Status</h2><span style="background: #00589c;color: rgb(255, 255, 255)"><b><i>I   N       R   E   V   I   E   W :</i></b></span> Koerting, Friederike; Rogass, Christian; Koellner, Nicole; Kuras, Agnieszka; Horning, Marcel; Altenberger, Uwe (2019): Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus. V. 2.0. GFZ Data Services. https://doi.org/10.5880/GFZ.1.4.2019.005</span></div></div><div style="float:right;width: 625px;"><div class="datasetcontainer abstractcolor"><script type="text/javascript"> 
+
+    
+ $(document).ready(function(){
+
+
+	var relatedlinks = new Object();
+        $('.citation a , .isdocumentedby a , .relatedidentifiers li a').each(function(i,divelement){
+		var link=$(divelement).attr("href");
+		if (link.match(/http:\/\/(dx.)?doi.org\//)){
+		    var doi=link.replace(/http:\/\/dx.doi.org\//,"");
+		    relatedlinks["http://dx.doi.org/"+doi]=true;
+		    relatedlinks["http://doi.org/"+doi]=true;
+		    relatedlinks["https://dx.doi.org/"+doi]=true;
+		    relatedlinks["https://doi.org/"+doi]=true;
+		}else{
+		    relatedlinks[link]=true;
+		}
+	});
+
+
+	$('.abstracts').each(function(i,divelement){
+
+	    var html=$(divelement).html();
+	    
+	    for (var linkvalue in relatedlinks){
+		var escapedlink=linkvalue.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		var regex=new RegExp(escapedlink,'g');
+		html=html.replace(regex,'<a href="'+linkvalue+'">'+linkvalue+'</a>');
+	    }
+	    $(divelement).html(html)
+	});
+
+
+	var citationtext;
+	$('.citationtext').each(function(i,divelement){
+		citationtext=$(divelement).text();
+	});
+        
+	var clipboard=new Clipboard('.citationcopy',{
+	    text: function() {
+		return citationtext;
+	    }
+	});
+}); 
+    
+	</script><span class="abstracts"><h2><img align="right" src="images/abstract_31.png"></img>Abstract</h2>The data set contains mineral chemical analyses of 37 different surface materials from the copper-gold-pyrite mine Apliki in the Republic of Cyprus and their corresponding hyperspectral spectra. The field samples were sampled in March 2018 in cooperation of the Cyprus Geological Survey Department of the Republic of Cyprus (GSD) and the German Research Centre for Geosciences (GFZ). The hyperspectral data was acquired with the HySpex system in a range of 400 – 2500nm and is presented in a spectral library. The resulting reflectance data are scaled from 0 - 10000. Detailed information about the mineral specimen, sample area and geochemistry is presented in the data sheets. The spectral library presented here is part of a bigger collection of spectral libraries including samples from rare-earth minerals, rare-earth-oxides (Koerting et al., 2019a, https://doi.org/10.5880/GFZ.1.4.2019.004) and copper-bearing minerals (Koellner et al., 2019, https://doi.org/10.5880/GFZ.1.4.2019.003).      <br/>
+     </span><h2>Additional Information</h2><span class="abstracts">Version history:       <br/>
+      <br/>
+14 December 2020: release of version 2.0 with completely restructured Technical Report and data files according to the review recommendations of the related article in Earth System Science Data (ESSD)      <br/>
+      <br/>
+• New title of the data publication      <br/>
+• Rearrangement of the report following the revised version of Koellner et al. (2019)      <br/>
+   - Additional references to Koerting et al. (2021, new Apliki technical report) for the outcrop data and Koerting (Doctoral Thesis in review) that refer to this specific dataset.      <br/>
+   - Additional chapers (5 and 6): explaining the area of origin of the samples and the deposit type where the samples stem from.      <br/>
+   - Table 1: The XRD mineralogy of every sample was added to the sample table, the sample column is now called “sample ID”, as is the “sample” column in all the xlsx files. For example, “Apl1_A_1a” is now always called the Sample ID. Sample 10c and 10d now both have images, an arrow in the image points to the sampling location      <br/>
+   - Removal of Figure 2 (jpg showing the .txt file) and excel file “overviews” these are now fully and only explained in the tables.      <br/>
+• file “Apliki_samples_hyperspectral_parameters”      <br/>
+   - Update of Table according to the updates in the Technical Report and addition of units are in brackets [ ].      <br/>
+• file: "Apliki_speclib_closeup":      <br/>
+   - additional image in the report of the spectral library      <br/>
+   - and new citation due to this image to the Doctoral thesis of F. Koerting (in review)      <br/>
+     </span><h2>Authors</h2><ul class="datasetauthorlist" style="list-style-type:none;padding:0;margin:0"><li><a target="_blank" href="https://orcid.org/0000-0002-0759-5655">Koerting, Friederike<img src="images/ORCIDiD_icon16x16.png"></img></a>;GFZ German Research Centre for Geosciences, Potsdam, Germany</li><li><a target="_blank" href="https://orcid.org/0000-0002-7855-7971">Rogass, Christian<img src="images/ORCIDiD_icon16x16.png"></img></a>;GFZ German Research Centre for Geosciences, Potsdam, Germany</li><li><a target="_blank" href="https://orcid.org/0000-0002-4282-8979">Koellner, Nicole<img src="images/ORCIDiD_icon16x16.png"></img></a>;GFZ German Research Centre for Geosciences, Potsdam, Germany</li><li>Kuras, Agnieszka;GFZ German Research Centre for Geosciences, Potsdam, Germany</li><li>Horning, Marcel;GFZ German Research Centre for Geosciences, Potsdam, Germany</li><li><a target="_blank" href="https://orcid.org/0000-0001-9860-3915">Altenberger, Uwe<img src="images/ORCIDiD_icon16x16.png"></img></a>;University Potsdam, Potsdam, Germany</li></ul><script type="text/javascript">
+		function mailto (user, host){
+			window.location.href = 'mailto:'+user+'@'+host;
+			return false;
+		}
+	</script><h2>Contact</h2><ul class="datasetcontact" style="list-style-type:none;padding:0;margin:0"><li><a href="javascript:mailto('koerting','gfz-potsdam.de')">Koerting, Friederike</a>; GFZ German Research Centre for Geosciences, Potsdam, Germany; </li></ul><h2>Keywords</h2><span class="keywords">copper mining, mine surface weathering, hyperspectral, spectral library, copper mineral, geochemical analyses</span><h2><a class="gcmdkeywordslink" href="?show_gcmdcitation=true">GCMD Science Keywords</a></h2><ul style="margin: 0; padding-left: 0px"><li style="list-style-type: none"><a target="_blank" href='http://dataservices.gfz-potsdam.de/portal/?fq=sciencekeywordtree:"earth science &gt; solid earth &gt; geochemistry &gt; geochemical processes &gt; chemical weathering"'>EARTH SCIENCE &gt; SOLID EARTH &gt; GEOCHEMISTRY &gt; GEOCHEMICAL PROCESSES &gt; CHEMICAL WEATHERING</a></li><li style="list-style-type: none"><a target="_blank" href='http://dataservices.gfz-potsdam.de/portal/?fq=sciencekeywordtree:"earth science &gt; solid earth &gt; rocks/minerals/crystals &gt; metals &gt; metals physical/optical properties"'>EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; METALS &gt; METALS PHYSICAL/OPTICAL PROPERTIES</a></li><li style="list-style-type: none"><a target="_blank" href='http://dataservices.gfz-potsdam.de/portal/?fq=sciencekeywordtree:"earth science &gt; solid earth &gt; rocks/minerals/crystals &gt; minerals &gt; mineral physical/optical properties"'>EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; MINERALS &gt; MINERAL PHYSICAL/OPTICAL PROPERTIES</a></li><li style="list-style-type: none">Earth Remote Sensing Instruments &gt; Passive Remote Sensing &gt; Spectrometers/Radiometers &gt; Imaging Spectrometers/Radiometers</li></ul><script type="text/javascript"> 
+
+ $(document).ready(function(){             //
+                      $('#lddata').click(function(){                  
+				bschematagtest2 = document.getElementById("schemaorg2").textContent;
+				    data = bschematagtest2;
+				    var win= window.open("data:text/json" , '_blank' ); 
+				    win.document.write(data);
+				    win.focus;
+                      });
+    }); 
+
+	</script><h2>More Metadata</h2><ul style="list-style-type:none;padding-left:0;margin-top:0;"><li>datacite:
+                  <a href="#" class="metadata" style="display:inline;color: #00589c"></a><a href="download.php?item=/ir/item/escidoc:4573901&amp;mdrecord=datacite">
+                       download xml
+                   </a><ul style="display:none"><li>resource (xsi:schemaLocation=http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.3/metadata.xsd)<ul style="display:none"><li>identifier (identifierType=DOI): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.005</span></b></li></ul><ul style="display:none"><li>creators<ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting, Friederike</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Friederike</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-0759-5655</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-0759-5655 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Rogass, Christian</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Christian</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Rogass</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-7855-7971</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-7855-7971 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koellner, Nicole</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Nicole</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koellner</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-4282-8979</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-4282-8979 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Kuras, Agnieszka</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Agnieszka</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Kuras</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier= affiliationIdentifierScheme=): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Horning, Marcel</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Marcel</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Horning</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier= affiliationIdentifierScheme=): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>creator<ul style="display:none"><li>creatorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Altenberger, Uwe</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Uwe</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Altenberger</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0001-9860-3915</span></b></li></ul><ul style="display:none"><li>affiliation: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">University Potsdam, Potsdam, Germany</span></b></li></ul></li></ul></li></ul><ul style="display:none"><li>titles<ul style="display:none"><li>title: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus</span></b></li></ul></li></ul><ul style="display:none"><li>publisher: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ Data Services</span></b></li></ul><ul style="display:none"><li>publicationYear: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2019</span></b></li></ul><ul style="display:none"><li>subjects<ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">copper mining</span></b></li></ul><ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">mine surface weathering</span></b></li></ul><ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">hyperspectral</span></b></li></ul><ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">spectral library</span></b></li></ul><ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">copper mineral</span></b></li></ul><ul style="display:none"><li>subject: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">geochemical analyses</span></b></li></ul><ul style="display:none"><li>subject (subjectScheme=GCMD Instruments): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Earth Remote Sensing Instruments &gt; Passive Remote Sensing &gt; Spectrometers/Radiometers &gt; Imaging Spectrometers/Radiometers</span></b></li></ul><ul style="display:none"><li>subject (subjectScheme=NASA/GCMD Earth Science Keywords): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; GEOCHEMISTRY &gt; GEOCHEMICAL PROCESSES &gt; CHEMICAL WEATHERING</span></b></li></ul><ul style="display:none"><li>subject (subjectScheme=NASA/GCMD Earth Science Keywords): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; METALS &gt; METALS PHYSICAL/OPTICAL PROPERTIES</span></b></li></ul><ul style="display:none"><li>subject (subjectScheme=NASA/GCMD Earth Science Keywords): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; MINERALS &gt; MINERAL PHYSICAL/OPTICAL PROPERTIES</span></b></li></ul></li></ul><ul style="display:none"><li>contributors<ul style="display:none"><li>contributor (contributorType=ProjectLeader)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting, Friederike</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Friederike</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-0759-5655</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-0759-5655 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=Supervisor)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Rogass, Christian</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Christian</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Rogass</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-7855-7971</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-7855-7971 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=WorkPackageLeader)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koellner, Nicole</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Nicole</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koellner</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0002-4282-8979</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier=0000-0002-4282-8979 affiliationIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=DataCollector)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Kuras, Agnieszka</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Agnieszka</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Kuras</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier= affiliationIdentifierScheme=): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=DataCollector)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Horning, Marcel</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Marcel</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Horning</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier= affiliationIdentifierScheme=): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=Supervisor)<ul style="display:none"><li>contributorName (nameType=Personal): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Altenberger, Uwe</span></b></li></ul><ul style="display:none"><li>givenName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Uwe</span></b></li></ul><ul style="display:none"><li>familyName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Altenberger</span></b></li></ul><ul style="display:none"><li>nameIdentifier (nameIdentifierScheme=ORCID): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">0000-0001-9860-3915</span></b></li></ul><ul style="display:none"><li>affiliation: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">University Potsdam, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contributor (contributorType=ContactPerson)<ul style="display:none"><li>contributorName: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting, Friederike</span></b></li></ul><ul style="display:none"><li>affiliation (affiliationIdentifier= affiliationIdentifierScheme=): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul></li></ul><ul style="display:none"><li>dates<ul style="display:none"><li>date (dateType=Collected): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2018-03-21</span></b></li></ul></li></ul><ul style="display:none"><li>resourceType (resourceTypeGeneral=Dataset): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Dataset</span></b></li></ul><ul style="display:none"><li>relatedIdentifiers<ul style="display:none"><li>relatedIdentifier (relatedIdentifierType=DOI relationType=IsSupplementTo): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5194/essd-2019-228</span></b></li></ul><ul style="display:none"><li>relatedIdentifier (relatedIdentifierType=DOI relationType=References): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.003</span></b></li></ul><ul style="display:none"><li>relatedIdentifier (relatedIdentifierType=DOI relationType=References): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.004</span></b></li></ul></li></ul><ul style="display:none"><li>sizes: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>formats: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>version: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2.0</span></b></li></ul><ul style="display:none"><li>rightsList<ul style="display:none"><li>rights (rightsURI=http://creativecommons.org/licenses/by/4.0/): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">CC BY 4.0</span></b></li></ul></li></ul><ul style="display:none"><li>descriptions<ul style="display:none"><li>description (descriptionType=Abstract)<ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul><ul style="display:none"><li>description (descriptionType=Other)<ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>br: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul></li></ul><ul style="display:none"><li>geoLocations<ul style="display:none"><li>geoLocation<ul style="display:none"><li>geoLocationPlace: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Central coordinate of the Apliki Mine</span></b></li></ul><ul style="display:none"><li>geoLocationPoint<ul style="display:none"><li>pointLongitude: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">32.8428</span></b></li></ul><ul style="display:none"><li>pointLatitude: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">35.077</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li><li>iso19115:
+                  <a href="#" class="metadata" style="display:inline;color: #00589c"></a><a href="download.php?item=/ir/item/escidoc:4573901&amp;mdrecord=iso19115">
+                       download xml
+                   </a><ul style="display:none"><li>MD_Metadata (xsi:schemaLocation=http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd)<ul style="display:none"><li>fileIdentifier<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.005</span></b></li></ul></li></ul><ul style="display:none"><li>language<ul style="display:none"><li>LanguageCode (codeList=http://www.loc.gov/standards/iso639-2/ codeListValue=eng): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">eng</span></b></li></ul></li></ul><ul style="display:none"><li>characterSet<ul style="display:none"><li>MD_CharacterSetCode (codeListValue=utf8 codeList=http://www.isotc211.org/2005/resources/codeList.xml#MD_CharacterSetCode): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul><ul style="display:none"><li>hierarchyLevel<ul style="display:none"><li>MD_ScopeCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode codeListValue=dataset): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">dataset</span></b></li></ul></li></ul><ul style="display:none"><li>hierarchyLevelName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul><ul style="display:none"><li>contact<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences</span></b></li></ul></li></ul><ul style="display:none"><li>contactInfo<ul style="display:none"><li>CI_Contact<ul style="display:none"><li>address<ul style="display:none"><li>CI_Address<ul style="display:none"><li>electronicMailAddress<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">datapub(_at_)gfz-potsdam.de</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>onlineResource<ul style="display:none"><li>CI_OnlineResource<ul style="display:none"><li>linkage<ul style="display:none"><li>URL: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">http://www.gfz-potsdam.de</span></b></li></ul></li></ul><ul style="display:none"><li>name<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Helmholtz-Centre Potsdam - GFZ German Research Centre for Geosciences</span></b></li></ul></li></ul><ul style="display:none"><li>description<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Helmholtz-Centre Potsdam - GFZ German Research Centre for Geosciences</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=pointOfContact): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">pointOfContact</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>dateStamp<ul style="display:none"><li>Date: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2021-09-20</span></b></li></ul></li></ul><ul style="display:none"><li>referenceSystemInfo<ul style="display:none"><li>MD_ReferenceSystem<ul style="display:none"><li>referenceSystemIdentifier<ul style="display:none"><li>RS_Identifier<ul style="display:none"><li>code<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">urn:ogc:def:crs:EPSG:4326</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>identificationInfo<ul style="display:none"><li>MD_DataIdentification<ul style="display:none"><li>citation<ul style="display:none"><li>CI_Citation<ul style="display:none"><li>title<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Mineral reflectance spectra and chemistry of 37 copper-bearing surface samples from Apliki copper-gold-pyrite mine in the Republic of Cyprus</span></b></li></ul></li></ul><ul style="display:none"><li>date<ul style="display:none"><li>CI_Date<ul style="display:none"><li>date<ul style="display:none"><li>Date: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2021-09-20</span></b></li></ul></li></ul><ul style="display:none"><li>dateType<ul style="display:none"><li>CI_DateTypeCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode codeListValue=revision): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">revision</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>identifier<ul style="display:none"><li>MD_Identifier<ul style="display:none"><li>code<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">doi:10.5880/GFZ.1.4.2019.005</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty (xlink:href=http://orcid.org/0000-0002-0759-5655)<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting, Friederike</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty (xlink:href=http://orcid.org/0000-0002-7855-7971)<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Rogass, Christian</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty (xlink:href=http://orcid.org/0000-0002-4282-8979)<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koellner, Nicole</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Kuras, Agnieszka</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Horning, Marcel</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty (xlink:href=http://orcid.org/0000-0001-9860-3915)<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Altenberger, Uwe</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">University Potsdam, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=author): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">author</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>citedResponsibleParty<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ Data Services</span></b></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=publisher): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">publisher</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>abstract<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">The data set contains mineral chemical analyses of 37 different surface materials from the copper-gold-pyrite mine Apliki in the Republic of Cyprus and their corresponding hyperspectral spectra. The field samples were sampled in March 2018 in cooperation of the Cyprus Geological Survey Department of the Republic of Cyprus (GSD) and the German Research Centre for Geosciences (GFZ). The hyperspectral data was acquired with the HySpex system in a range of 400 – 2500nm and is presented in a spectral library. The resulting reflectance data are scaled from 0 - 10000. Detailed information about the mineral specimen, sample area and geochemistry is presented in the data sheets. The spectral library presented here is part of a bigger collection of spectral libraries including samples from rare-earth minerals, rare-earth-oxides (Koerting et al., 2019a, https://doi.org/10.5880/GFZ.1.4.2019.004) and copper-bearing minerals (Koellner et al., 2019, https://doi.org/10.5880/GFZ.1.4.2019.003).</span></b></li></ul></li></ul><ul style="display:none"><li>status<ul style="display:none"><li>MD_ProgressCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode codeListValue=Complete): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Complete</span></b></li></ul></li></ul><ul style="display:none"><li>pointOfContact<ul style="display:none"><li>CI_ResponsibleParty<ul style="display:none"><li>individualName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Koerting, Friederike</span></b></li></ul></li></ul><ul style="display:none"><li>organisationName<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GFZ German Research Centre for Geosciences, Potsdam, Germany</span></b></li></ul></li></ul><ul style="display:none"><li>contactInfo<ul style="display:none"><li>CI_Contact<ul style="display:none"><li>address<ul style="display:none"><li>CI_Address<ul style="display:none"><li>electronicMailAddress<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">koerting(_at_)gfz-potsdam.de</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>role<ul style="display:none"><li>CI_RoleCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode codeListValue=pointOfContact): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">pointOfContact</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>descriptiveKeywords<ul style="display:none"><li>MD_Keywords<ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">copper mining</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">mine surface weathering</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">hyperspectral</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">spectral library</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">copper mineral</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">geochemical analyses</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>descriptiveKeywords<ul style="display:none"><li>MD_Keywords<ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Earth Remote Sensing Instruments &gt; Passive Remote Sensing &gt; Spectrometers/Radiometers &gt; Imaging Spectrometers/Radiometers</span></b></li></ul></li></ul><ul style="display:none"><li>thesaurusName<ul style="display:none"><li>CI_Citation<ul style="display:none"><li>title<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">GCMD Instruments</span></b></li></ul></li></ul><ul style="display:none"><li>date<ul style="display:none"><li>CI_Date<ul style="display:none"><li>date (gco:nilReason=missing): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>dateType<ul style="display:none"><li>CI_DateTypeCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode codeListValue=publication): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">publication</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>descriptiveKeywords<ul style="display:none"><li>MD_Keywords<ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; GEOCHEMISTRY &gt; GEOCHEMICAL PROCESSES &gt; CHEMICAL WEATHERING</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; METALS &gt; METALS PHYSICAL/OPTICAL PROPERTIES</span></b></li></ul></li></ul><ul style="display:none"><li>keyword<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">EARTH SCIENCE &gt; SOLID EARTH &gt; ROCKS/MINERALS/CRYSTALS &gt; MINERALS &gt; MINERAL PHYSICAL/OPTICAL PROPERTIES</span></b></li></ul></li></ul><ul style="display:none"><li>thesaurusName<ul style="display:none"><li>CI_Citation<ul style="display:none"><li>title<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">NASA/GCMD Earth Science Keywords</span></b></li></ul></li></ul><ul style="display:none"><li>date<ul style="display:none"><li>CI_Date<ul style="display:none"><li>date (gco:nilReason=missing): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul><ul style="display:none"><li>dateType<ul style="display:none"><li>CI_DateTypeCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode codeListValue=publication): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">publication</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>resourceConstraints (xlink:href=http://creativecommons.org/licenses/by/4.0/)<ul style="display:none"><li>MD_Constraints<ul style="display:none"><li>useLimitation<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">CC BY 4.0</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>resourceConstraints<ul style="display:none"><li>MD_LegalConstraints<ul style="display:none"><li>accessConstraints<ul style="display:none"><li>MD_RestrictionCode (codeList=http://www.isotc211.org/2005/resources/codeList.xml#MD_RestrictionCode codeListValue=otherRestrictions): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul><ul style="display:none"><li>otherConstraints<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">CC BY 4.0</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>resourceConstraints<ul style="display:none"><li>MD_SecurityConstraints<ul style="display:none"><li>classification<ul style="display:none"><li>MD_ClassificationCode (codeList=http://www.isotc211.org/2005/resources/codeList.xml#MD_ClassificationCode codeListValue=unclassified): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>aggregationInfo<ul style="display:none"><li>MD_AggregateInformation<ul style="display:none"><li>aggregateDataSetIdentifier<ul style="display:none"><li>RS_Identifier<ul style="display:none"><li>code<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5194/essd-2019-228</span></b></li></ul></li></ul><ul style="display:none"><li>codeSpace<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">DOI</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>associationType<ul style="display:none"><li>DS_AssociationTypeCode (codeList=http://datacite.org/schema/kernel-4 codeListValue=IsSupplementTo): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">IsSupplementTo</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>aggregationInfo<ul style="display:none"><li>MD_AggregateInformation<ul style="display:none"><li>aggregateDataSetIdentifier<ul style="display:none"><li>RS_Identifier<ul style="display:none"><li>code<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.003</span></b></li></ul></li></ul><ul style="display:none"><li>codeSpace<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">DOI</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>associationType<ul style="display:none"><li>DS_AssociationTypeCode (codeList=http://datacite.org/schema/kernel-4 codeListValue=References): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">References</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>aggregationInfo<ul style="display:none"><li>MD_AggregateInformation<ul style="display:none"><li>aggregateDataSetIdentifier<ul style="display:none"><li>RS_Identifier<ul style="display:none"><li>code<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">10.5880/GFZ.1.4.2019.004</span></b></li></ul></li></ul><ul style="display:none"><li>codeSpace<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">DOI</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>associationType<ul style="display:none"><li>DS_AssociationTypeCode (codeList=http://datacite.org/schema/kernel-4 codeListValue=References): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">References</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>language<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">eng</span></b></li></ul></li></ul><ul style="display:none"><li>characterSet<ul style="display:none"><li>MD_CharacterSetCode (codeListValue=utf8 codeList=http://www.isotc211.org/2005/resources/codeList.xml#MD_CharacterSetCode): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul><ul style="display:none"><li>topicCategory<ul style="display:none"><li>MD_TopicCategoryCode: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">geoscientificInformation</span></b></li></ul></li></ul><ul style="display:none"><li>extent<ul style="display:none"><li>EX_Extent<ul style="display:none"><li>description<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Central coordinate of the Apliki Mine</span></b></li></ul></li></ul><ul style="display:none"><li>geographicElement<ul style="display:none"><li>EX_GeographicBoundingBox<ul style="display:none"><li>westBoundLongitude<ul style="display:none"><li>Decimal: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">32.8428</span></b></li></ul></li></ul><ul style="display:none"><li>eastBoundLongitude<ul style="display:none"><li>Decimal: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">32.8428</span></b></li></ul></li></ul><ul style="display:none"><li>southBoundLatitude<ul style="display:none"><li>Decimal: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">35.077</span></b></li></ul></li></ul><ul style="display:none"><li>northBoundLatitude<ul style="display:none"><li>Decimal: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">35.077</span></b></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>temporalElement<ul style="display:none"><li>EX_TemporalExtent<ul style="display:none"><li>extent<ul style="display:none"><li>TimePeriod (xsi:type=gml:TimePeriodType gml:id=T6148a46993b4f)<ul style="display:none"><li>beginPosition: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">2018-03-21</span></b></li></ul><ul style="display:none"><li>endPosition (indeterminatePosition=now): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>distributionInfo<ul style="display:none"><li>MD_Distribution<ul style="display:none"><li>transferOptions<ul style="display:none"><li>MD_DigitalTransferOptions<ul style="display:none"><li>onLine<ul style="display:none"><li>CI_OnlineResource<ul style="display:none"><li>linkage<ul style="display:none"><li>URL: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">http://doi.org/10.5880/GFZ.1.4.2019.005</span></b></li></ul></li></ul><ul style="display:none"><li>protocol<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">WWW:LINK-1.0-http--link</span></b></li></ul></li></ul><ul style="display:none"><li>name<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Data Access - DOI</span></b></li></ul></li></ul><ul style="display:none"><li>description<ul style="display:none"><li>CharacterString: <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">Data Access - DOI</span></b></li></ul></li></ul><ul style="display:none"><li>function<ul style="display:none"><li>CI_OnLineFunctionCode (codeList=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode codeListValue=http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode_information): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none">information</span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul><ul style="display:none"><li>dataQualityInfo<ul style="display:none"><li>DQ_DataQuality<ul style="display:none"><li>scope<ul style="display:none"><li>DQ_Scope<ul style="display:none"><li>level<ul style="display:none"><li>MD_ScopeCode (codeListValue=dataset codeList=http://www.isotc211.org/2005/resources/codeList.xml#MD_ScopeCode): <b><span style="word-break:keep-all;hyphens:none;-moz-hyphens:none;-ms-hyphens:none;-webkit-hyphens:none"></span></b></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li></ul></li><li> schema.org  
+           <a id="lddata" target="_blank" style="display:inline;color: #00589c">download</a></li></ul></div><script type="text/javascript">
+		var extents=new Array();
+		var extent=new Object();
+		var extentdescription=new Array();
+
+		
+				extent=new Object();
+				extent["south"]= 35.077   ;
+				extent["east"]= 32.8428   ;
+				extent["north"]= 35.077   ;
+				extent["west"]= 32.8428   ;
+				//extent["description"]="Central coordinate of the Apliki Mine";
+				extent["description"]="Central coordinate of the Apliki Mine";
+
+				extent["start"]="2018-03-21";
+				extent["end"]="";
+				extent["linestring"]="";
+				if (extent["south"].length!=0 && extent["north"].length!=0 && extent["east"].length!=0 && extent["west"].length!=0)
+				    extents.push(extent);
+			</script><script type="text/javascript">  
+
+
+ 	$(document).ready(function(){
+	extents.sort(function(a,b){
+		if (a["start"] && b["start"] ){
+			if (a["start"] < b["start"]) return -1;
+			if (a["start"] > b["start"]) return 1;
+			return 0;
+		}
+	});
+	
+console.log(extents.length);
+
+	if ( extents.length===0 ||
+             (extents.length===1 && ((extents[0]["east"]-extents[0]["west"]==360 && extents[0]["north"]-extents[0]["south"]==180) ||
+                extents[0]["description"].match(/global/i))) ||
+             (extents.length===2 && (((extents[0]["east"]-extents[0]["west"]==360 && extents[0]["north"]-extents[0]["south"]==180)) ||
+					    ((extents[1]["east"]-extents[1]["west"]==360 && extents[1]["north"]-extents[1]["south"]==180)))
+	     )
+
+	){
+		$('.locationcolor').hide();
+		return;
+	}
+	var projectflag = false;
+	if(extents.length===1 &&  extents[0]["north"]< -50 &&  extents[0]["south"]< -85){
+		projectflag = true;
+	}
+	console.log('projectflag:'+projectflag);
+	console.log(extents);
+		var map=new OpenLayers.Map({
+			div: "openlayers",
+			//projection: "EPSG:4326",
+			//maxExtent: new OpenLayers.Bounds(-200000, -200000, 200000, 200000),
+			//center: new OpenLayers.LonLat(-12356463.476333, 5621521.4854095),
+
+//			allOverlays: true,
+			eventListeners: {
+				featureover: function(e) {
+				    $('#'+e.feature.attributes.extentid).addClass("featureselect");
+				},
+				featureout: function(e) {
+				    $('#'+e.feature.attributes.extentid).removeClass("featureselect");
+				},
+				featureclick: function(e) {		
+				//debug if(map.popups.length >=1){ console.log(map.popups.length);}
+			
+					if (e.feature.popup){					
+				    map.removePopup(e.feature.popup);
+					e.feature.popup.destroy();
+					e.feature.popup = null;
+				    }
+				 var msg;   
+				 var starttemp = e.feature.attributes.start;
+				 var endtemp =e.feature.attributes.end;
+				 var pop_description =e.feature.attributes.description;
+				 //console.log(endtemp);
+				 
+				  if (e.feature.attributes.north==e.feature.attributes.south && e.feature.attributes.west == e.feature.attributes.east){
+				    msg = '<div style="font-size:.8em">';
+				     msg+= '<p style="font-size: 1.5em">' + e.feature.attributes.description + '</p>';
+					   msg+= "<b>Latitude:</b> " + e.feature.attributes.north + "°";
+					   msg+= "<br>";
+					   msg+= "<b>Longitude:</b> " + e.feature.attributes.west +  "°";
+					   
+					   if(!starttemp){
+					   msg+= "</div>";
+					}
+				    
+				    }else{
+					 msg= '<div style="font-size:.8em">';
+					   msg+= '<p style="font-size: 1.2em; max-width: 20em; "><b>' + e.feature.attributes.description + ' </b></p>';
+					   msg+= "<b>Latitude:</b> " + e.feature.attributes.south +"°";
+					   msg+= "<b> to </b>" + e.feature.attributes.north +  "°";
+					   msg+= "<br>";
+					   msg+= "<b>Longitude:</b> " + e.feature.attributes.west +  "°";
+					   msg+= "<b> to </b>" + e.feature.attributes.east + "°";
+
+					  if(!starttemp){
+					   msg+= "</div>";
+					}
+					}
+					
+					if(starttemp){
+						if(endtemp){
+						msg+= "<br>";
+					    msg+= "<b>Temporal coverage: </b>"; 
+					    msg+= "<br>";
+						msg+=  starttemp +  " (start)";
+					    msg+= "<br>";
+					    msg+=  endtemp +  " (end)";
+					     msg+= "</div>";
+					   }else{	
+						msg+= "<br>";				 
+						msg+= "<b>Temporal coverage: </b>"; 
+					    msg+= "<br>";
+						msg+=  starttemp +  "(start)";
+						 msg+= "</div>";
+					   }
+					   }
+					 
+					   
+					popupshide(map);
+					var popuppoint = e.feature.geometry.getVertices();
+					//e.feature.geometry.getBounds().getCenterLonLat()
+					   var popup = new OpenLayers.Popup.FramedCloud("popup",
+					popuppoint[0].getBounds().getCenterLonLat() ,
+					      null,
+					       msg,
+					       null,
+					       true
+					   );
+					   popup.autoSize =true;
+					   e.feature.popup = popup;
+					 
+					   map.addPopup(popup);
+					   $("#popup" ).css( "opacity", 0.8);
+					   
+					  
+					var sstyle={strokeColor: '#8B0000' , fillOpacity: 0.01,};
+					var estyle = {};
+					$('#'+e.feature.attributes.extentid).siblings().removeClass("featureselect");
+					$('#'+e.feature.attributes.extentid).addClass("featureselect");
+
+					overlay.features.forEach(function(feature){
+						if (e.feature.attributes.extentid===feature.attributes.extentid){
+							    feature.layer.drawFeature(feature);
+						}else{
+							    feature.renderIntent = "default";
+							    feature.layer.drawFeature(feature);
+						}
+					});
+				}
+			},
+            layers:[
+		
+	        new OpenLayers.Layer.OSM("Openstreetmap",
+			  ["https://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
+			   "https://b.tile.openstreetmap.org/${z}/${x}/${y}.png",
+			   "https://c.tile.openstreetmap.org/${z}/${x}/${y}.png"])
+
+/*              ,
+
+                new OpenLayers.Layer.Google(
+                        "Google Physical",
+                        {type: google.maps.MapTypeId.TERRAIN}
+                    ),
+                new OpenLayers.Layer.Google(
+                        "Google Streets",
+                        {numZoomLevels: 20}
+                    ),
+                new OpenLayers.Layer.Google(
+                        "Google Hybrid",
+                        {type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20}
+                    ),
+                new OpenLayers.Layer.Google(
+                        "Google Satellite",
+                        {type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22}
+                    )
+ */           ]
+		});
+	
+
+		var overlay=new OpenLayers.Layer.Vector("Sites",{
+		    externalGraphic: '../img/marker.png',
+		    graphicWidth: 20, graphicHeight: 24, graphicYOffset: -24,
+		    eventListeners: {
+
+			featuresadded: function(e){
+				e.features.forEach (function(feature){
+				
+					    var start="";
+						if (feature.attributes.start && feature.attributes.start.length > 0){
+							start='<td style="vertical-align:middle;text-align:right">'+'Start (Date/Time):'+'</td>'+
+							          '<td style="vertical-align:middle;text-align:right">'+feature.attributes.start.replace('T','&nbsp;')+'</td>';
+						}
+					    var end="";
+						if (feature.attributes.end && feature.attributes.end.length > 0){
+							end='<td style="vertical-align:middle;text-align:right">'+'End (Date/Time):'+'</td>'+
+							        '<td style="vertical-align:middle;text-align:right">'+feature.attributes.end.replace('T','&nbsp;')+'</td>'+'</tr>';
+						}
+					    var msg='<li id="'+feature.attributes.extentid+'">'+
+						'<h3>'+feature.attributes.description+'</h3>'+
+						'</li">';
+					    //small boxes have an additional marker - do not draw twice in legend
+					    
+					    if ($('#'+feature.attributes.extentid).length == 0){
+						   $('#mapdescription ul').append(msg);
+					    }
+					      $('#mapdescription ul li').css("margin-bottom","-1em");
+					    
+				});
+				  if( $('#mapdescription ul li').length < 2){
+							if(e.features.length < 4){
+							$('#mapdescription ul').hide();
+					    }
+					    }  	
+				 if( $('#mapdescription ul li').length > 5){
+				 
+					$('#mapdescription ul').hide();
+				 
+				 }	    
+			$('#mapdescription ul li h3').each(function(){
+
+				if($(this).text() === "" || typeof($(this).text())=="undefined")
+					{
+						$('#mapdescription ul li').hide();
+					}		
+					})
+				
+                                //Sorting in dekorp only
+				//$('#mapdescription ul li').sort(Ascending_sort).appendTo('#mapdescription ul');
+				$('#mapdescription ul li').hover(function() {
+
+					$(this).siblings().removeClass("featureselect");
+
+					var id = $(this).attr("id");
+
+					$(this).addClass("featureselect");
+				},function() {
+					$(this).removeClass("featureselect");
+				});
+	// Listsection with extra popup			
+				$('#mapdescription ul li').click(function(e) 
+   { 
+   var liid = $(this).attr("id");
+   overlay.features.forEach(function(feature){
+   if (feature.attributes.extentid===liid){
+		
+					if (feature.popup){					
+                                        map.removePopup(feature.popup);
+					feature.popup.destroy();
+					feature.popup = null;
+				    }
+				 var msg;   
+				 var starttemp = feature.attributes.start;
+				 var endtemp =feature.attributes.end;
+				 var pop_description =feature.attributes.description;
+				 
+				  if (feature.attributes.north==feature.attributes.south && feature.attributes.west == feature.attributes.east){
+				    msg = '<div style="font-size:.8em">';
+				     msg+= '<p style="font-size: 1.5em">' + feature.attributes.description + '</p>';
+					  msg+= "<b>Latitude:</b> " + feature.attributes.north + "°";
+					  msg+= "<br>";
+					  msg+= "<b>Longitude:</b> " + feature.attributes.west +  "°";
+					   
+					   if(!starttemp){
+					   msg+= "</div>";
+					}
+				    
+				    }else{
+					 msg= '<div style="font-size:.8em">';
+					   msg+= '<p style="font-size: 1.2em; max-width: 20em; "><b>' + feature.attributes.description + ' </b></p>';
+					   msg+= "<b>Latitude:</b> " + feature.attributes.south +"°";
+					   msg+= "<b> to </b>" + feature.attributes.north +  "°";
+					   msg+= "<br>";
+					   msg+= "<b>Longitude:</b> " + feature.attributes.west +  "°";
+					   msg+= "<b> to </b>" + feature.attributes.east + "°";
+				   
+					  if(!starttemp){
+					   msg+= "</div>";
+					}
+					}
+					
+					if(starttemp){
+						if(endtemp){
+						msg+= "<br>";
+					    msg+= "<b>Temporal coverage: </b>"; 
+					    msg+= "<br>";
+						msg+=  starttemp +  " (start)";
+					    msg+= "<br>";
+					    msg+=  endtemp +  " (end)";
+					     msg+= "</div>";
+					   }else{	
+						msg+= "<br>";				 
+						msg+= "<b>Temporal coverage: </b>"; 
+					    msg+= "<br>";
+						msg+=  starttemp +  "(start)";
+						 msg+= "</div>";
+					   }
+					   }
+					 
+					   
+					popupshide(map);
+					var popuppoint = feature.geometry.getVertices();
+					var popup = new OpenLayers.Popup.FramedCloud("popup",
+					popuppoint[0].getBounds().getCenterLonLat() ,
+					      null,
+					       msg,
+					       null,
+					       true
+					   );
+					   popup.autoSize =true;
+					   feature.popup = popup;					 
+					   map.addPopup(popup);
+					   $("#popup" ).css( "opacity", 0.8);
+                                }
+                             });
+                         });		
+                        }   
+		    }
+		});
+
+		map.addLayers([overlay]);		
+		//var pstyle={strokeWidth: 0.01, fillOpacity: 0.01,  };
+		var pstyle={display: 'none'}
+		var bstyle={fillColor: '#ff00ff', strokeWidth: 1, strokeColor: '#ff00ff',fillOpacity: .3};
+		var features=new Array();		
+		var extentcount=0;
+		extents.forEach(function (extent){
+		console.log(extent);
+		var polyflag = false;
+			var attributes={south: extent["south"],
+					east: extent["east"],
+					north: extent["north"],
+					west: extent["west"],
+					description: extent["description"],
+					start: extent["start"],
+					end: extent["end"],
+					extentid: "extentid"+extentcount};
+					extentcount++;
+
+			if (extent["linestring"].length > 10){
+				var points=[];
+				polyflag =true;
+				var coords = extent["linestring"].trim().split(/\s+/);
+
+				for (var i=0;i<coords.length;i+=2){		
+					console.log(coords[i]+" "+coords[i+1]);		
+					var point=new OpenLayers.Geometry.Point(coords[i],coords[i+1]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject());
+					points.push(point);
+				}
+
+				var line=new OpenLayers.Geometry.LineString(points);
+				var style={strokeWidth: 4, strokeColor: '#004373'};
+				features.push(new OpenLayers.Feature.Vector(line, attributes,style));
+
+			}
+			if (extent["west"]===extent["east"] && extent["south"]===extent["north"] ){
+				var piontstyle={fillColor: 'Blue', strokeColor: 'Blue', strokeWidth: 1,  pointRadius: 6, strokeOpacity: .8, fillOpacity: .4};
+				var point=new OpenLayers.Geometry.Point(extent["west"],extent["south"]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject());
+				features.push(new OpenLayers.Feature.Vector(point, attributes, piontstyle));
+			}
+			//
+			else{
+				var latdiff=extent["north"]-extent["south"];
+				var londiff=extent["east"]-extent["west"];
+				console.log(latdiff +" " + londiff);
+
+				if ( londiff <  1 && latdiff  < 1 ){
+				 bstyle={fillColor: '#ff00ff', strokeWidth: 4, strokeColor: '#ff00ff',fillOpacity: .4};
+					var pointlat=extent["south"]+(latdiff/2);
+					var pointlon=extent["west"]+(londiff/2);
+					var point=new OpenLayers.Geometry.Point(pointlon,pointlat).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject());
+					var piontstylemulti={fillColor: 'Blue', strokeColor: '#990000', strokeWidth: 1,  pointRadius: 5, strokeOpacity: .8, fillOpacity: .6};
+					features.push(new OpenLayers.Feature.Vector(point, attributes));
+					/** invisible middlepoint with polyflag **/					
+					if(polyflag){					
+					features.push(new OpenLayers.Feature.Vector(point, attributes, pstyle));
+					}else{
+					
+					features.push(new OpenLayers.Feature.Vector(point, attributes,pstyle));
+					}
+				}
+
+				var points=[
+					new OpenLayers.Geometry.Point(extent["west"],extent["south"]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject()),
+					new OpenLayers.Geometry.Point(extent["west"],extent["north"]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject()),
+					new OpenLayers.Geometry.Point(extent["east"],extent["north"]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject()),
+					new OpenLayers.Geometry.Point(extent["east"],extent["south"]).transform(new OpenLayers.Projection("EPSG:4326"),map.getProjectionObject())
+				];
+				var ring=new OpenLayers.Geometry.LinearRing(points);
+				var polygon=new OpenLayers.Geometry.Polygon([ring]);
+				var polyfeat = new OpenLayers.Feature.Vector(polygon,attributes);
+				if(polyflag){
+
+				features.push(new OpenLayers.Feature.Vector(polygon,attributes,pstyle));
+				//features.push(polyfeat);
+				}else{				
+				features.push(new OpenLayers.Feature.Vector(polygon,attributes,bstyle));
+				}
+			}
+		});
+
+		overlay.addFeatures(features);
+		map.addControl(new OpenLayers.Control.LayerSwitcher());  
+		map.addControl(new OpenLayers.Control.ScaleLine());
+		console.log('projectflag:'+projectflag);
+		console.log('project:'+map.getProjection());
+
+		map.addControl(new OpenLayers.Control.MousePosition({displayProjection:new OpenLayers.Projection("EPSG:4326")}));
+	
+		map.zoomToExtent(overlay.getDataExtent());
+
+		if (map.getZoom() > 16){
+			map.zoomTo(4);
+		}
+
+		if(projectflag==true){
+		arcbounds = new OpenLayers.Bounds();
+		bounds.extend(new OpenLayers.LonLat(2,-55));
+		map.zoomToExtent(arcbounds);
+		//var lonlat = new OpenLayers.LonLat(2,-90)
+			//map.zoomTo(2,lonlat);
+		}
+	});
+		
+function popupshide(map){
+	this.map =map;
+	this.length =  this.map.popups.length;
+this.map.popups.forEach(function(popup){
+					   console.log("debug");
+						this.map.removePopup(popup);
+						})
+
+};
+function Ascending_sort(a, b) {
+this.a = a;
+this.b =b;
+if (($(b).text().toUpperCase()) < ($(a).text().toUpperCase())){
+return 1;
+}else{
+return -1;
+}
+}
+
+	</script><div class="datasetcontainer locationcolor"><h2>Location</h2><div>Please, <b>click </b> on markers, line , bounding boxes or the list below to see related details in popup.</div><div>To explore to full geographic extent of the map please click and drag the map.</div><div class="map"><div id="openlayersframe"><div id="openlayers" class="map"></div></div></div><div id="mapdescription"><ul></ul></div></div></div><div style="float:left;width: 305px;"><div class="datafilescolor datasetcontainer"><h2><img align="right" src="images/external_Ressources_31.png"></img>Files</h2><span class="citation"><ul class="datasetfiles" style="list-style-type:none;padding:0;margin:0"><li><a class="piwik_download" target="_blank" href="https://datapub.gfz-potsdam.de/download/10.5880.GFZ.1.4.2019.005/">Download data and description </a></li></ul></span><span class="review"><ul style="list-style-type:none;padding:0;margin:0"><li><a href="https://datapub.gfz-potsdam.de/download/10.5880.GFZ.1.4.2019.005/">Download data and description </a></li></ul></span><script type="text/javascript">     
+                /* <![CDATA[ */
+		
+	function datamailrequest_verify(){
+		var count=0;
+		var status=false; 
+		var e=$('.datamailrequestrequired'); 
+		e.each(function(unused,val){
+			if ($(val).val()!=='')count++;
+		});
+		if (count!==e.length){
+			status=true;
+		};
+		$('input[type=submit]').prop('disabled',status);
+
+
+		if (!$('input[name=escidocid]').val() || $('input[name=escidocid]').val().length==0){
+			var args = window.location.search.substring(1).split('&'); 
+			for (var i=0; i < args.length; i++){
+				if (args[i].match(/id=(.+)/)){ 
+					var ret = args[i].split('=');
+					$('input[name=escidocid]').val(decodeURIComponent(ret[1])); 
+				}
+			}
+		}
+
+	}
+		
+          /* ]]> */
+        </script><p>License: 
+                            <a target="_blank" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p></div><div class="datafilesdescriptioncolor datasetcontainer"><h2>Dataset Description</h2><p>
+                            Supplement to
+                        </p><ul style="list-style-type:none;padding:0;margin:0" class="isdocumentedby"><li><li><a href="https://doi.org/10.5194/essd-2019-228" target="_blank">https://dx.doi.org/10.5194/essd-2019-228</a></li></li></ul></div><script type="text/javascript"> 
+
+ $(document).ready(function(){	   
+	   
+	
+	
+	var guesslanguage= function(text){
+		var de_words=new Array("und","mit","bei","ohne","der", "die","das","ein","einer","eines","auf", "im");
+		var en_words=new Array("and","with","the","of","a","on","by","or","not","can","from","as");
+		//guess language
+		   var de_count=0;
+		   var en_count=0;
+		    $.each(de_words,function(idx,elem){
+			reg=new RegExp(" "+elem+"[\.| ]", "ig");
+			de_count+=(text.match(reg) || []).length;			    
+		    });
+		    $.each(en_words,function(idx,elem){
+			reg=new RegExp(" "+elem+"[\.| ]", "ig");
+			en_count+=(text.match(reg) || []).length;			    
+		    });
+		   if (de_count > en_count){
+			return "de-DE";
+		   }else{
+			return "en-GB";			   
+		   }	
+	}
+	
+
+            $('.isdocumentedby a , .relatedidentifiers li a, .newversionidentifier a').each(function(i,divelement){
+
+                var doiurl=$(divelement).attr("href");
+                $.get("/getcitationinfo.php", {doi: doiurl, item: getescidocid()}, function(reqdata) {
+                    if (reqdata.length>0){
+                        var data=JSON.parse(reqdata);
+                        if (data.citation && data.citation.length>0){
+  			   var language=guesslanguage(data.citation);
+			   $(divelement).attr("lang",language);			
+			    data.citation=data.citation.replace(/\b(\S{30,})\b/ig,'<span  style="word-break: break-all" >$1</span>');
+                            $(divelement).html(data.citation);
+                        }
+                    }
+                 });			
+            });
+	    
+            $('.isdocumentedby .isbn , .relatedidentifiers .isbn').each(function(i,divelement){
+
+                var doiurl=$(divelement).html();
+                
+                $.get("/getcitationinfo.php",{doi: doiurl, item: getescidocid()}, function(reqdata) {
+                    if (reqdata.length>0){
+                        var data=JSON.parse(reqdata);
+                        if (data.citation && data.citation.length>0){
+  			   var language=guesslanguage(data.citation);
+			   $(divelement).attr("lang",language);			
+			    data.citation=data.citation.replace(/\b(\S{30,})\b/ig,'<span  style="word-break: break-all" >$1</span>');		    
+                            $(divelement).html(data.citation);
+                        }
+                    }
+                 });			
+            });	    
+	    
+	$('.igsn').each(function(i,divelement){
+	    var linkigsnhref=$(divelement).attr("href");
+	    var linkigsn=linkigsnhref.replace("http://igsn.org/","");
+	    $.get("/getigsnname.php",{igsn: linkigsn}, function(reqdata){
+	    if (reqdata.length>0)
+		$(divelement).html(linkigsn+" ("+reqdata+")");
+	    });
+	});
+	    
+}); 
+
+	</script><div class="relatedcolor datasetcontainer"><h2>Related Work</h2><p>References</p><ul style="list-style-type:none;padding:0;margin:0" class="relatedidentifiers"><li><a href="https://doi.org/10.5880/GFZ.1.4.2019.003" target="_blank">https://dx.doi.org/10.5880/GFZ.1.4.2019.003</a></li><li><a href="https://doi.org/10.5880/GFZ.1.4.2019.004" target="_blank">https://dx.doi.org/10.5880/GFZ.1.4.2019.004</a></li></ul></div><div class="findmorecolor datasetcontainer"></div></div></div></div></div><div id="footer" class="clearfix"><div style="float:left"><a href="http://www.gfz-potsdam.de" title="Opens website of GFZ Potsdam in new window" target="_blank"><div><img src="images/logo_gfz_en.gif" class="logo" alt="Logo GFZ Potsdam" width="90"></img></div></a></div><a href="http://www.helmholtz.de/" title="Opens website of Helmholtz Association in new window" target="_blank"><div id="logoHelmholtzGemeinschaft" class="clearfix"><img src="images/logo_helmholtz_gemeinschaft_de.gif" alt="Logo der Helmholtz-Gemeinschaft" height="36" width="100"></img></div></a></div></div></div></div></body></html>

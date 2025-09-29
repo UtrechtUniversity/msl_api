@@ -561,9 +561,9 @@ class FrontendController extends Controller
     {
         $allDomainNames = [
             'analogue' => 'Analogue Modelling of Geological Processes',
-            //'geochemistry' => 'Geochemistry',
+            'geochemistry' => 'Geochemistry',
             'microtomo' => 'Microscopy and Tomography',
-            //'paleomag' => 'Magnetism and Paleomagnetism',
+            'paleomag' => 'Magnetism and Paleomagnetism',
             'rockmelt' => 'Rock and Melt Physics',
             'testbeds' => 'Geo-Energy Test Beds'
         ];
@@ -572,8 +572,10 @@ class FrontendController extends Controller
 
         foreach ($allDomainNames as $key => $value) {
             $survey = Survey::where('name', 'scenarioSurvey-'.$key)->first();
-            if($survey->active){
-                $allDomains [$survey->name] = $value;
+            if($survey) {
+                if($survey->active){
+                    $allDomains [$survey->name] = $value;
+                }
             }
         }
 

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\YodaFileMapper;
 use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
@@ -39,28 +40,19 @@ class ImportYodaSeeder extends Seeder
                         'options' => [
                             'filePath' => '/import-data/yoda/converted.json',
                             'identifierKey' => 'DOI'
-                        ],
-                        'extra_data_loader' => [
-                            'type' => 'jsonLoader',
-                            'options' => [
-                                'filePath' => '/import-data/yoda/converted.json',
-                                'dataKeyMapping' => [
-                                    'Subdomain' => 'subDomain',
-                                    'Data documentation' => 'dataDocumentation',
-                                    'Data' => 'data',
-                                    'LabIdentifier' => 'labIdentifier',
-                                    'LabName' => 'LabName'
-                                ]                            
-                            ]
                         ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
+                        'type' => 'dataciteJsonRetrieval',
                         'options' => []
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'yodaMapper',
-                        'options' => []
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                YodaFileMapper::class,
+                            ]
+                        ]
                     ]
                 ],
                 'data_repository_id' => $yoda->id

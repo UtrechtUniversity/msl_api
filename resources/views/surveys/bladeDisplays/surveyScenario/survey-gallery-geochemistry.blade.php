@@ -17,4 +17,6 @@
             ),
         'titleBold' => true
     ])
+
+    <p>balblabal</p>
 </div>

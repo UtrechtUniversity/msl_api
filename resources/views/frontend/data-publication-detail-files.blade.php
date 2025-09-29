@@ -38,8 +38,9 @@
                 <div class="detailEntryDiv flex flex-col place-items-center gap-4">
                     <h2>Files</h2>
                     <h5 class="pt-10 font-bold">{{ $data['title'] }}</h5>
+                    @if (array_key_exists("msl_publisher", $data))
                     <h6 class="pb-10 italic"> {{ $data['msl_publisher'] }}</h6>
-
+                    @endif
                     <div class="bg-warning-300 rounded-lg 
                     flex flex-col place-items-center w-2/3
                     p-6
@@ -68,9 +69,9 @@
                     <p class="text-center">(click to download)</p>
 
                     <div class="flex flex-wrap justify-center place-content-center gap-5 w-full">
-                                        
-                        @if (array_key_exists("msl_downloads", $data))
-                            @foreach ($data['msl_downloads'] as $download)
+                                        {{-- msl_files --}}
+                        @if (array_key_exists("msl_files", $data))
+                            @foreach ($data['msl_files'] as $download)
 
                                 <div class="card bg-base-300 shadow-xl flex justify-around flex-row p-2 w-9/12 ">
                                     
