@@ -28,7 +28,7 @@
             <h2>buttons</h2>
             <p>all buttons come with primary style and secondary on hover, unless indicated differently</p>
             <div class="flex items-center flex-col">
-                <button class="btn">Standart button</button>
+                <button class="btn">Hover me</button>
             </div>
         </div>
 
@@ -71,7 +71,7 @@
 
             </div>
 
-            
+
 
 
 

@@ -1,6 +1,8 @@
 /* 
 general utility
 */
+
+/* interaction: change together */
 @utility hover-interactive-group {
     @apply px-1 
     group-hover:text-secondary-900 

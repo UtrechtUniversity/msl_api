@@ -15,17 +15,20 @@
           </p>
           
 
-          <a href="{{ route('data-access') }}">
-            <button class="btn btn-primary btn-lg btn-wide ">Data Access</button>
+          <a href="{{ route('data-access') }}" class="w-full flex justify-center">
+            <button class="btn btn-lg btn-wide ">Data Access</button>
           </a>
 
           <div class="index-opacity-child w-1/2 
           bg-primary-100 text-primary-900 rounded-lg 
-           place-items-center pl-4 pr-4 
+           place-items-center p-4
           flex flex-col
           text-left
           ">
-            
+            <div class="flex justify-between w-full">
+              <h2 class="font-bold text-primary-800">{{ $datasetsCount }}</h2>
+              <h5 >Datasets</h5>
+            </div>
             <p class="text-center">
               {{ $datasetsCount }} datasets
             </p>
