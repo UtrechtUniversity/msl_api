@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [1.7.4] - 2025-09-30
+- bugfix: minor changes to survey information
+
 ## [1.7.3] - 2025-09-25
 - bugfix: resolve issue with gfz data services logo change
 - bugfix: prevent possible error in new survey section
