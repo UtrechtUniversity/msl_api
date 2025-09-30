@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="py-20 sub-content">
+        <div class="pt-20 sub-content">
             <h2>Links</h2>
             <div class="flex items-center flex-col">
                 <a href="">Links like this do not have an underline, because the buttons in nav and elsewhere are wrapped as such</a>
@@ -73,20 +73,47 @@
         </div>
 
 
-        <h2 class="pt-6 py-20">Window layers</h2>
-        <div>
+        <h2 class=" pt-6 pt-20">Nested Windows</h2>
+        <div class="sub-content bg-primary-200">
+            <p>this is a window highlighting information</p>
+
+            <div class="bg-primary-100 h-90 m-10">
+                <p>match the background to make it visually lighter. it pops</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae iste ea repellat hic repudiandae aut vel corporis sunt officia sed atque perferendis, adipisci labore? Est soluta eum natus doloremque iure.</p>
+            </div>
+
+            <div class="bg-primary-300 h-90 m-10">
+                <p>this works for interactable headlines/dropdowns, but can be too heavy for too much text:</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet commodi exercitationem eaque nisi odit nostrum beatae, voluptatibus tempore rerum totam hic debitis? Illum at vel illo nemo porro natus soluta.</p>
+            </div>
 
         </div>
 
+        <h2 class="pt-6 pt-20">Window Tabs</h2>
+        <div class="sub-content">
+            <p>here an example on how to condense more information into a tab list. Also allows html tags</p>
+            @include('components.tab-list',[
+                'allTabs' => array(
+                    'First Tab' => [
+                        'content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem harum perspiciatis eum laboriosam nostrum ipsam perferendis quae aspernatur itaque recusandae aut, totam ea sit sapiente numquam voluptatem molestiae ducimus unde.',
+                        'id' => 'id1'
+                    ],
+                    'Second Tab' => [
+                        'content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem harum perspiciatis eum laboriosam nostrum ipsam perferendis quae aspernatur itaque recusandae aut, totam ea sit sapiente numquam voluptatem molestiae ducimus unde.',
+                        'id' => 'id2'
+                    ],
+                    'Third Tab html tags' => [
+                        'content' => '<h2>This is a title</h2> 
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                        Doloremque reprehenderit ex a, corrupti totam aspernatur porro 
+                                        assumenda modi aut labore! Qui vel corporis debitis, nesciunt 
+                                        odio quibusdam vitae enim doloremque!</p>',
+                        'id' => 'id3'
+                    ]
+                ),
+                'checkedElementId' => 'id1'
+            ])
 
-        <h2 class="pt-6 py-20">Navigation</h2>
-        <div>
-            
-        </div>
-
-        <h2 class="pt-6 py-20">Dividers</h2>
-        <div>
-            
         </div>
 
 
