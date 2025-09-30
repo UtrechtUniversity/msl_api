@@ -13,6 +13,7 @@
             src= {{ asset('images/logos/MSLsidewaysText.png') }}
             alt="multi-scale-laboratories-logo"
             class="max-h-full  object-contain min-[1100px]:hidden block">
+            
           </a>
         </div>
 
@@ -40,12 +41,12 @@
         <div class="navbar-end w-full">
 
           {{-- min nav --}}
-          <div class="dropdown dropdown-hover relative ">
+          <div class="dropdown dropdown-hover relative px-4">
 
             <div tabindex="0" role="button" class="btn btn-ghost min-[810px]:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
+                class="h-6 w-6 mr-2"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor">
@@ -55,7 +56,7 @@
                   stroke-width="2"
                   d="M4 6h16M4 12h8m-8 6h16" />
               </svg>
-              <h5>Menu</h5>
+              <h3 class="align-top">Menu</h3>
             </div>
 
             <ul
