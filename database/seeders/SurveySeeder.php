@@ -110,7 +110,8 @@ class SurveySeeder extends Seeder
                 'title' => 'Which describes your role the best?',
                 'options' => [
                     'Modeler',
-                    'Researcher',
+                    'Lab Researcher',
+                    'Technician',
                     'Other',
                 ],
                 'validation' => ['required'],
@@ -128,7 +129,7 @@ class SurveySeeder extends Seeder
                 'title' => 'In which sector is your role?',
                 'options' => [
                     'Industry',
-                    'Academic',
+                    'Academia',
                     'Government',
                     'Nonprofit / NGO',
                     'Consultancy'
@@ -223,7 +224,6 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'UsingTool',
                 'validation' => ['required'],
                 'options' => [
-                    'Very Probably',
                     'Definitely Not',
                     'Probably Not',
                     'Possibly',
