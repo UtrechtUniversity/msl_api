@@ -107,11 +107,10 @@ class SurveySeeder extends Seeder
             'question_type_id' => $selectQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'Which describes your role the best?',
+                'title' => 'Which describes your role best?',
                 'options' => [
-                    'Modeler',
+                    'Digital Modeler',
                     'Lab Researcher',
-                    'Technician',
                     'Other',
                 ],
                 'validation' => ['required'],
