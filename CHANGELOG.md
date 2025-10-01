@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [1.7.5] - 2025-10-01
+- Add contribute with a proposal/project
+- bugfix: minor changes to survey information
+
 ## [1.7.4] - 2025-09-30
 - bugfix: minor changes to survey information
 
