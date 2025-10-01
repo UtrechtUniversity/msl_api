@@ -244,13 +244,13 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'UsingToolHowOften',
                 'validation' => ['required'],
                 'options' => [
-                    'Never',
                     'Daily',
                     'Weekly',
                     'Bi-Weekly',
                     'Monthly',
                     'Quarterly',
                     'Yearly',
+                    'Never',
                 ],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
