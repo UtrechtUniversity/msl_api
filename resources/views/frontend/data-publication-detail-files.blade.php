@@ -38,8 +38,9 @@
                 <div class="detailEntryDiv flex flex-col place-items-center gap-4">
                     <h2>Files</h2>
                     <h5 class="pt-10 font-bold">{{ $data['title'] }}</h5>
+                    @if (array_key_exists("msl_publisher", $data))
                     <h6 class="pb-10 italic"> {{ $data['msl_publisher'] }}</h6>
-
+                    @endif
                     <div class="bg-warning-300 rounded-lg 
                     flex flex-col place-items-center w-2/3
                     p-6

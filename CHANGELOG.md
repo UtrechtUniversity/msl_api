@@ -9,6 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [1.7.4] - 2025-09-30
+- bugfix: minor changes to survey information
+
+## [1.7.3] - 2025-09-25
+- bugfix: resolve issue with gfz data services logo change
+- bugfix: prevent possible error in new survey section
+- bugfix: prevent error when msl_publisher is missing on detail files pages
+- bugfix: remove e-mail validators used in survey section depending on not present PHP extensions
+
+## [1.7.2] - 2025-09-24
+- bugfix: resolve issue with commented code in surveys section
+
+## [1.7.1] - 2025-09-22
+- bugfix: resolve composer issues
+
+## [1.7.0] - 2025-09-22
+- Rework of vocabulary management
+- Add survey system used in new data tooling - surveys section
+
+## [1.6.0] - 2025-06-26
 - Add base organization used by CKAN to organization seeder to ease initial setup
 - Add vocabulary display names to database, seeding, vocabulary api and exports
 - Add new tag field to datapublication schema to work with matched vocabulary terms
@@ -18,7 +38,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Create update function to synch data from fast to msl_api
   - Populate facility organization data using ROR identifier as set in FAST
   - Add function to ass keywords to facilities based on vocabularies and facility description/title
-  - Add option to serialise facility data to RDF/turtle for data exange with EPOS  
+  - Add option to serialise facility data to RDF/turtle for data exange with EPOS
+- Frontend of data catalogue moved to msl_api replacing CKAN frontend. Large set of improvements included in this change
+
+## [1.5.2] - 2024-03-04
+
+- Bugfix: resolve issue in API response objects
 
 ## [1.5.1] - 2024-02-28
 

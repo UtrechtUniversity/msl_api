@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LabController;
-use App\Http\Controllers\FormController;
-use App\Http\Controllers\SeederController;
-use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LabController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\SeederController;
+use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\FrontendController;
+
 use Spatie\Honeypot\ProtectAgainstSpam;
  
 /*
@@ -85,6 +87,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/create-actions', [HomeController::class, 'createActions'])->name('create-actions');
     Route::get('/create-action/{id}', [HomeController::class, 'createAction'])->name('create-action');
 
+    Route::get('/status-survey', [HomeController::class, 'statusSurvey'])->name('status-survey');
+    Route::post('/status-survey', [HomeController::class, 'statusSurveyProcess'])->name('status-survey-process');
+
+    Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
+    Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
+
+
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });
 
@@ -108,9 +117,14 @@ Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])-
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
 Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
 
+Route::get('/contribute-select-scenario', [FrontendController::class, 'contributeSelectScenario'])->name('contribute-select-scenario');
+
 Route::get('/contact-us', [FormController::class, 'contactForm'])->name('contact-us');
 Route::post('/contact-us', [FormController::class, 'contactFormProcess'])->name('contact-us-process')->middleware(ProtectAgainstSpam::class);
 Route::get('/laboratory-intake', [FormController::class, 'labIntakeForm'])->name('laboratory-intake');
 Route::post('/laboratory-intake', [FormController::class, 'labIntakeFormProcess'])->name('laboratory-intake-process')->middleware(ProtectAgainstSpam::class);
 Route::get('/laboratory-contact-person/{id}', [FormController::class, 'labContactForm'])->name('laboratory-contact-person');
 Route::post('/laboratory-contact-person', [FormController::class, 'labContactFormProcess'])->name('laboratory-contact-person-process')->middleware(ProtectAgainstSpam::class);
+
+Route::get('/survey-form/{surveyName}', [SurveyController::class, 'surveyForm'])->name('survey-form');
+Route::post('/survey-form/{surveyName}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');

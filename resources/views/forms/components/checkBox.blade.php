@@ -3,18 +3,20 @@
 
     $ElementsArray => array(string)
     $sectionName => string, describes the name of the elements for interactions
-    $placeholder => string
-    $title => title for the text-field
     $checked => boolean
+    $horizontal => boolean, should multiple elements arranged horizontal or vertical
+
 --}}
 
-{{-- no error handling --}}
 
-<div class="w-full flex-row place-content-center h-full ">
+<div class="w-full flex-col space-y-2 
+    place-content-center h-full">
+
     @foreach ( $ElementsArray as $element)
         <div class="form-control">
-            <label class="cursor-pointer label">
-                <span class="label-text">{{ $element }}</span>
+            <label class="cursor-pointer label p-2
+             hover:bg-secondary-100 hover:rounded-lg hover:text-secondary-900">
+                <span class=" pr-4 text-sm">{{ $element }}</span>
                 <input type="checkbox" 
                 name="{{ $sectionName }}"
                 class="checkbox checkbox-secondary checkbox-md

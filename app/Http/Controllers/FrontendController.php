@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\CkanClient\Request\PackageShowRequest;
 use App\Models\Keyword;
+use App\CkanClient\Client;
 use App\Models\Laboratory;
 use Illuminate\Http\Request;
+use App\Models\Surveys\Survey;
+use App\CkanClient\Request\PackageShowRequest;
 use Illuminate\Pagination\LengthAwarePaginator;
+use App\CkanClient\Request\PackageSearchRequest;
+use App\CkanClient\Request\OrganizationListRequest;
 
 class FrontendController extends Controller
 {
@@ -559,6 +560,39 @@ class FrontendController extends Controller
     public function contributeProject()
     {
         return view('frontend.contribute-project');
+    }
+
+    /**
+     * Show the contribute select scenario page
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contributeSelectScenario()
+    {
+        $allDomainNames = [
+            'analogue' => 'Analogue Modelling of Geological Processes',
+            'geochemistry' => 'Geochemistry',
+            'microtomo' => 'Microscopy and Tomography',
+            'paleomag' => 'Magnetism and Paleomagnetism',
+            'rockmelt' => 'Rock and Melt Physics',
+            'testbeds' => 'Geo-Energy Test Beds'
+        ];
+
+        $allDomains = [];
+
+        foreach ($allDomainNames as $key => $value) {
+            $survey = Survey::where('name', 'scenarioSurvey-'.$key)->first();
+            if($survey) {
+                if($survey->active){
+                    $allDomains [$survey->name] = $value;
+                }
+            }
+        }
+
+        return view('frontend.contribute-select-scenario', 
+        [
+            'allDomains' => $allDomains
+        ]);
     }
 
     /**

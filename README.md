@@ -1,13 +1,116 @@
-open wsl
-cd /mnt/c/projects/msl_api
+# MSL_API
 
-./vendor/bin/sail root-shell
-npm run dev
-npm run build
+## About
 
+This repository contains the code for the [EPOS MSL data catalogue](https://epos-msl.uu.nl/). The applications requires a specific [CKAN](https://ckan.org/) server is to run besides this application. This application is build using [Laravel](https://laravel.com/). The frontend is build using [Tailwind](https://tailwindcss.com/).
+
+## Laravel Sail / Docker
+
+The project contains a Docker Compose setup build using Laravel Sail. An vs code devcontainer setup is also included. If you are setting up the project where no PHP/Composer is available you can use the following command to install Laravel sail to run the containers. 
+
+```
+sudo docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php84-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+## Project setup
+
+Install project dependencies:
+
+```
+composer install
+```
+
+Add an .env file for the application. You can use the example as a base
+
+```
+cp .env.example .env
+```
+
+Create the application key:
+
+```
+php artisan key:generate
+```
+
+Run database migrations:
+
+```
+php artisan migrate
+```
+
+Run database seeders:
+
+```
+php artisan db:seed
+```
+
+## Queue processor
+
+This project uses queued jobs for several tasks like importing data publications and retrieving lab information. To run the queue processor use the following command:
+```
 php artisan queue:work  --rest=1 --tries=3 --timeout=300
+```
+
+## Env settings
+
+Running the project requires a .env file to be present within the root directory. This file is used to store deployment specific application settings. As a base the project contains a .env.example file to use for a fresh setup.
+
+Most configuration options are Laravel and plugin specific settings. More information about Laravel configuration can be found [here](https://laravel.com/docs/11.x/configuration).
+
+The project adds some specific settings to the .env file:
+
+| Setting | Description |
+| --- | --- |
+| VOCABULARIES_CURRENT_VERSION | Current version of the vocabularies used by the application. |
+| FAST_API_TOKEN | API token used to authenticate FAST requests. |
+| CKAN_API_URL | Base URL for CKAN APIs. |
+| CKAN_API_TOKEN | API token for CKAN requests. |
+| CKAN_ROOT_URL | Base URL for CKAN installation. |
 
 
-Originally assigned keywords -> msl_tags
-Corresponding MSL vocabulary keywords -> msl_original_keywords
-MSL enriched keywords -> msl_enriched_keywords
+## Tests
+
+The projects tests are written to be used with [PHPUnit](https://phpunit.de/). The PHPUnit configuration can be found in the `phpunit.xml` file which resides in the root of the project. Within this file you can also find the env variables that are specific for testing purposes.
+
+To run the tests use the following command:
+
+```
+php artisan test
+```
+
+Make sure that the config used by the application is not cached. If cached the env variables from the application itself will be used instead of the test specific settings. Causing the application database to be emptied.
+
+To disable the config cache use the following command:
+
+```
+php artisan config:clear
+```
+
+Tests using the RefreshDatabase trait will make sure the test database is fully migrated and reset after each individual test.
+
+The tests assume a separate database is available for testing purposes. Laravel Sail will set this up by default. The connection settings can be configured in the PHPUnit configuration file.
+
+If you manually create a database for testing its name, user credentials etc. have to be specified in the PHPUnit configuration.
+
+More information about testing in Laravel can be found [here](https://laravel.com/docs/12.x/testing).
+
+## Frontend
+
+### Developement
+
+```
+npm run dev
+```
+
+### Builds
+
+```
+npm run build
+```
+
+## Composer
