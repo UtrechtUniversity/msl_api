@@ -18,10 +18,8 @@
             "Charlie grows frustrated reading incomplete info available in published papers, and she is trying to move randomly on ISI Web of Knowledge and Google Scholar to find a solution, without success. Her supervisor suggests looking into the EPOS MSL data portal.",
             "On the EPOS MSL data platform she opens the analogue modeling tool and is searching on the first page listing the analogue materials, where she can select between a variety of materials with properties, and selects the granular material and the sand.",
             "The tool suggests a set of properties for her search from which she selects those that are interesting to her.",
-            "The proper ranges of the values available are selected and the table view gets updated accordingly.",
-            "Based on the filters, she finds the material “fine feldspar” and 
-            orders it from her suppliers list. 
-            With this she follows the same protocol as from the beginning and the experiment is a success. Now the analogue model has beautiful intricate structures, perfect for her study aims",
+            "The proper ranges of the values available are selected and the table view gets updated accordingly. Based on the filters, she finds the material “fine feldspar” and orders it from her suppliers list. ",
+            "With this she follows the same protocol as from the beginning and the experiment is a success. Now the analogue model has beautiful intricate structures, perfect for her study aims",
 ),
         'titleBold' => true
     ])
