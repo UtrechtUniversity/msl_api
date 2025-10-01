@@ -52,6 +52,7 @@
                     <li><a class="no-underline" href="{{ route('contribute-researcher') }}">As a researcher</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-repository') }}">As a repository</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-laboratory') }}">As a laboratory</a></li>
+                    <li><a class="no-underline" href="{{ route('contribute-project') }}">With a proposal/project</a></li>
                     <summary class="menu-title">Surveys</summary>
                     <li><a class="no-underline" href="{{ route('contribute-select-scenario') }}">Data Tooling - Survey</a></li>
                   </ul>
@@ -87,6 +88,8 @@
                     <li><a class="no-underline" href="{{ route('contribute-researcher') }}">As a researcher</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-repository') }}">As a repository</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-laboratory') }}">As a laboratory</a></li>
+                    <li><a class="no-underline" href="{{ route('contribute-project') }}">With a proposal/project</a></li>
+
                     <summary class="menu-title">Surveys</summary>
                     <li><a class="no-underline" href="{{ route('contribute-select-scenario') }}">Data Tooling - Survey</a></li>
                   </ul>
