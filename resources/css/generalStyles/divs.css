@@ -9,21 +9,15 @@
     .sub-content{
         @apply md:max-w-2xl
     }
-
-
+    
+    .sub-content-wide{
+      @apply max-w-[1400px]
+    }
     /* =============== old =============== */
 
-          /* controls behaviour when components.no_mobile_view is shown*/
-          .noMobileView_wideScreenDiv{
-            @apply hidden md:block grow max-w-(--breakpoint-2xl) 
-          }
-          .noMobileView_smallScreenDiv{ 
-            @apply block md:hidden
-          }
-          /* main content div for labsMaps-div, filterTree-div and the detail-divs */
-          .listMapDetailDivParent{
-            @apply flex w-full justify-center min-h-screen
-          }
+
+      
+
 
     .listMapDiv{
         @apply w-full flex flex-col

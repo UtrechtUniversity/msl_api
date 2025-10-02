@@ -18,7 +18,12 @@ general utility
     hover:rounded 
     hover:cursor-pointer
   }
-
+  @utility hover-neutral{
+    @apply 
+    hover:bg-neutral-900 
+    hover:text-neutral-100
+    cursor-pointer
+  }
 
 /* 
 change here the underlying styling to daisy ui native elements 

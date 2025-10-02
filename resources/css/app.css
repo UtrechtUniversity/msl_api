@@ -94,23 +94,29 @@
 
 
     /* all the word cards including the parent */
-    .wordCardParent{
-      @apply flex flex-wrap gap-2 w-full
-    }
-    .wordCard{
-      @apply rounded-full border border-neutral-500 w-fit h-fit
-      text-base
-      p-1 pr-2 pl-2
-      bg-neutral-200 text-neutral-900 hover:bg-neutral-900 hover:text-neutral-100 
-      subpixel-antialiased cursor-pointer
-    }
-    .wordCardCollapser{
-      @apply bg-primary-300 shadow-lg
-    }
-    .wordCardHighlighted{
-      @apply bg-secondary-100 text-secondary-900
+
+
+    .word-card-parent{
+      @apply 
+      flex flex-wrap 
+      justify-start
+      /* items-start */
+      /* items-stretch */
+      content-start
+      gap-2 w-full
     }
 
+    .word-card{
+      @apply 
+      rounded-xl border border-neutral-500
+      text-base
+      p-1 pr-2 pl-2
+      bg-neutral-200 text-neutral-900
+      subpixel-antialiased
+    }
+    .word-card-collapser{
+      @apply bg-primary-300 shadow-lg
+    }
 
     /*###############
     various

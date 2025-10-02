@@ -89,6 +89,45 @@
 
         </div>
 
+        <h2 class="pt-6 pt-20">word cards</h2>
+        <div class="sub-content  bg-primary-200 w-full p-10">
+
+            <h3>No interaction</h3>
+            <p>just the class 'word-card'</p>
+            <div class="word-card-parent bg-primary-100">
+                    <div class="word-card">this is a word-card</div>
+                    <div class="word-card">in word-card-parent</div>
+                    <div class="word-card">without width limit it can actually take a lot of space, better avoid by using component below</div>
+            </div>
+            <br>
+            <h3>word card component</h3>
+            <p>the hover behaviour is different because on click nothing happens. For this hover-neutral is used</p>
+            <div class="word-card-parent bg-primary-100 h-40">
+                @include('components.word-card',[
+                    'word' => 'this is a word'
+                ])
+                @include('components.word-card',[
+                    'word' => 'extreme length Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eligendi numquam voluptatum quaerat vel qui eveniet! Earum voluptas, deleniti debitis numquam aperiam inventore nobis, explicabo accusamus nisi eius animi consequuntur.'
+                ])
+                @include('components.word-card',[
+                    'word' => 'this is a word'
+                ])
+                @include('components.word-card',[
+                    'word' => 'this is a word'
+                ])
+                @include('components.word-card',[
+                    'word' => 'this is a word'
+                ])
+                @include('components.word-card',[
+                    'word' => 'this is a word'
+                ])
+                @include('components.word-card',[
+                    'word' => 'longWordlongWordlongWordlongWordlongWordlongWordlongWordlongWord'
+                ])
+
+            </div>
+        </div>
+
         <h2 class="pt-6 pt-20">Window Tabs</h2>
         <div class="sub-content">
             <p>here an example on how to condense more information into a tab list. Also allows html tags</p>
@@ -117,6 +156,57 @@
         </div>
 
 
+
+
+        <h2 class="pt-6 pt-20">no mobile view</h2>
+        <div class="sub-content h-90 bg-primary-200 w-full p-4">
+                <p class="">decrease size to see effects</p>
+                    {{-- a general no small width view notification --}}
+                @include('components.no_mobile_view', [
+                    'breakpoint' => 'md'
+                ])
+
+                <div class="hidden md:block m-4 bg-primary-100">
+                    <p>to be coupled with a div which should not be visible on small screen. like this one for example. Reduce the screen size to see. 
+                        The classes in this div are required for it to work. note the same breakpoint as for the component above</p>
+                </div>
+        </div>
+
+        <h2 class="pt-6 pt-20">Main Window with sidemenu</h2>
+        {{-- <div> --}}
+            <div class="sub-content-wide flex place-content-center w-full h-screen">
+                <div class="drawer md:drawer-open ">
+                    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+                    <div class="drawer-content bg-secondary-100 flex">
+                        {{-- content here --}}
+                        <div class="w-10 bg-secondary-200 md:hidden relative opacity-25 hover:opacity-100">
+                            <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center "
+                            >
+                            <p style="writing-mode: sideways-lr;" >
+                                This is text
+                              </p>
+                        </div>
+                        <div class="w-full min-h-full bg-blue-100">
+                            we are using a daisyUI component for this
+                        </div>
+    
+                    </div>
+                    <div class="drawer-side">
+                        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                        <!-- Sidebar content here -->
+                        <li><a>Sidebar Item 1</a></li>
+                        <li><a>Sidebar Item 2</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {{-- </div> --}}
+
+
+        {{-- </div> --}}
+
     </div>
+
 
 </x-layout_main>
