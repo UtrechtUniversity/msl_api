@@ -9,6 +9,8 @@
         <p class="inline">
             At what point during your research would you actually want to re-use data? How should data be offered, such that you could easily re-use these? You can help us explore questions like these by filling out a 10-minute survey. When you select your research domain below, you’ll find a scenario of a researcher looking to re-use data. The survey is about this scenario. We will use your (anonymous) input to further refine specifications on tools to be developed, and to understand where and when these would be useful in research. We appreciate your time! 
         </p>
+
+        
     </div>
 
         <h3 class="pb-2 pt-16">Select your domain!</h3>
@@ -22,7 +24,10 @@
                     </a>
             @endforeach
         </div>
-        
+        <div class="flex">
+            <x-ri-information-line  class="info-icon"/>
+            <h5 class="text-info-900">Inactive domain surveys are not displayed</h5>
+        </div>
 </div>
 
 
