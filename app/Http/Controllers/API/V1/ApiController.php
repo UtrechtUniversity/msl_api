@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\V1;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Http\Resources\KeywordResource;
+use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;
 use App\Models\TnaMockup;
 use App\Response\V1\ErrorResponse;
