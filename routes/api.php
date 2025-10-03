@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 /**
- * Unversioned responses. In place for transationing period EPOS.
+ * Unversioned responses. In place for transitioning period EPOS.
  */
 Route::get('/rock_physics', [V1Controller::class, 'rockPhysics']);
 Route::get('/analogue', [V1Controller::class, 'analogue']);
