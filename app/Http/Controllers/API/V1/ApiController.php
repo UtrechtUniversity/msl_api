@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
@@ -11,8 +11,9 @@ use App\Response\ErrorResponse;
 use App\Response\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Controller as BaseController;
 
-class ApiController extends Controller
+class ApiController extends BaseController
 {
     /**
      * @var \GuzzleHttp\Client Guzzle http client instance
