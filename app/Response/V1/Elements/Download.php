@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Response\Elements;
+namespace App\Response\V1\Elements;
 
 class Download
 {

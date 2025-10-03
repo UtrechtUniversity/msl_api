@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Response;
+namespace App\Response\V1;
 
-use App\Response\Elements\EquipmentPiece;
+use App\Response\V1\Elements\EquipmentPiece;
 
 class FacilitiesResult
 {
