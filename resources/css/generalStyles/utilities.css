@@ -33,6 +33,10 @@ change here the underlying styling to daisy ui native elements
     hover-interactive;
   }
 
+  @utility tab-active{
+    @apply bg-primary-300;
+  }
+
 
 /* nav */
 @utility menu-title{

@@ -71,10 +71,169 @@
 
             </div>
         </div>
+        
+        <h2 class="pt-20">tab links </h2>
+        <div class="tabLinksParent">
+            @include('components.tab-links',[
+                'categoryName'  => 'Laboratories',
+                'routes'        => array(
+                        'Map'   => route("labs-map"),
+                        'List'  => route("labs-list")
+                ),
+            ])
+            @include('components.tab-links',[
+                'categoryName'  => 'Equipment',
+                'routes'        => array(
+                        'Map'   => route("equipment-map"),
+                        'List'  => route("equipment-list"),
+                ),
+                'routeActive'   => route("equipment-map")
+
+            ])
+        </div>
+
+        <h2 class=" pt-6 pt-20">Dividers</h2>
+        <div class="sub-content flex flex-col gap-4">
+            <h3 class="pt-2">primary-bg</h3>
+            <p>norm</p>
+            <div class="sub-content flex">
+                <div class="sub-content content-divide-y px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y bg-primary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y bg-primary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary bg-primary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary bg-primary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+            </div>
+            <p>light</p>
+            <div class="sub-content flex">
+                <div class="sub-content content-divide-y-light px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light bg-primary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light bg-primary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary bg-primary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary bg-primary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+            </div>
+            <h3>secondary bg</h3>
+            <p>norm</p>
+            <div class="sub-content flex">
+                <div class="sub-content content-divide-y bg-secondary-100 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y bg-secondary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y bg-secondary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary bg-secondary-100 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary bg-secondary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-secondary bg-secondary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+            </div>
+            <p>light</p>
+            <div class="sub-content flex">
+                <div class="sub-content content-divide-y-light bg-secondary-100  px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light bg-secondary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light bg-secondary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary bg-secondary-100 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary bg-secondary-200 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+                <div class="sub-content content-divide-y-light-secondary bg-secondary-300 px-4">
+                    <p>this is text</p>
+                    <p>this is text</p>
+                    <p>this is text</p>
+                </div>
+            </div>
+        </div>
 
 
         <h2 class=" pt-6 pt-20">Nested Windows</h2>
         <div class="sub-content bg-primary-200">
+            <h3>primary (for main pages)</h3>
             <p>this is a window highlighting information</p>
 
             <div class="bg-primary-100 h-90 m-10">
@@ -86,7 +245,23 @@
                 <p>this works for interactable headlines/dropdowns, but can be too heavy for too much text:</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet commodi exercitationem eaque nisi odit nostrum beatae, voluptatibus tempore rerum totam hic debitis? Illum at vel illo nemo porro natus soluta.</p>
             </div>
+        </div>
+        <div class="sub-content bg-secondary-200 text-secondary-900">
+            <h3>secondary (for admin pages)</h3>
+            <h4>other use cases need to be explored. It could be that it might be useful for highlighting certain info which do not fit into 
+                info, alert, error, warning
+            </h4>
+            <p>this is a window highlighting information</p>
 
+            <div class="bg-secondary-100 h-90 m-10">
+                <p>match the background to make it visually lighter. it pops</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae iste ea repellat hic repudiandae aut vel corporis sunt officia sed atque perferendis, adipisci labore? Est soluta eum natus doloremque iure.</p>
+            </div>
+
+            <div class="bg-secondary-400 h-90 m-10">
+                <p>this works for interactable headlines/dropdowns, but can be too heavy for too much text:</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet commodi exercitationem eaque nisi odit nostrum beatae, voluptatibus tempore rerum totam hic debitis? Illum at vel illo nemo porro natus soluta.</p>
+            </div>
         </div>
 
         <h2 class="pt-6 pt-20">word cards</h2>
@@ -173,20 +348,23 @@
         </div>
 
         <h2 class="pt-6 pt-20">Main Window with sidemenu</h2>
+        <h3>responsive</h3>        
         {{-- <div> --}}
             <div class="sub-content-wide flex place-content-center w-full h-screen">
                 <div class="drawer md:drawer-open ">
                     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content bg-secondary-100 flex">
                         {{-- content here --}}
-                        <div class="w-10 bg-secondary-200 md:hidden relative opacity-25 hover:opacity-100">
+                        <div class="w-10 bg-secondary-200 md:hidden relative opacity-75 hover:opacity-100">
                             <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center "
                             >
-                            <p style="writing-mode: sideways-lr;" >
+                            <p 
+                            class=""
+                            style="writing-mode: sideways-lr;" >
                                 This is text
                               </p>
                         </div>
-                        <div class="w-full min-h-full bg-blue-100">
+                        <div class="w-full min-h-full bg-blue-100 pl-4">
                             we are using a daisyUI component for this
                         </div>
     
@@ -205,6 +383,7 @@
 
 
         {{-- </div> --}}
+
 
     </div>
 

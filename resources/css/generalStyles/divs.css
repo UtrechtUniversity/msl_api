@@ -13,10 +13,35 @@
     .sub-content-wide{
       @apply max-w-[1400px]
     }
+
+
+    /* dividers */
+    .content-divide-y{
+      @apply divide-y-2 divide-primary-700
+    }
+    .content-divide-y-secondary{
+      @apply divide-y-2 divide-secondary-700
+    }
+    .content-divide-y-light{
+      @apply divide-y-2 divide-primary-300
+    }
+    .content-divide-y-light-secondary{
+      @apply divide-y-2 divide-secondary-300
+    }    
+
+    .content-divide-x{
+      @apply divide-x-2 divide-primary-700
+    }
+    .content-divide-x-secondary{
+      @apply divide-x-2 divide-secondary-700
+    }
+    .content-divide-x-light{
+      @apply divide-x-2 divide-primary-300
+    }
+    .content-divide-x-light-secondary{
+      @apply divide-x-2 divide-secondary-300
+    }    
     /* =============== old =============== */
-
-
-      
 
 
     .listMapDiv{
