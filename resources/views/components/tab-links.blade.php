@@ -13,23 +13,19 @@ includeIcon    = string - to select which icon
 
 <div class="flex flex-col justify-center items-center px-10 py-5 ">
 
-
-
-
-
     @if (isset($categoryName))
         <h5 class="pb-2">{{ $categoryName }}</h5>
     @endif
     
-    <div role="tablist" class="tabs tabs-boxed flex flex-row ">
+    <div role="tablist" class="tabs tabs-box tabs-md flex flex-row bg-primary-200 ">
 
             
-        @if (isset($includeIcon))
+        {{-- @if (isset($includeIcon))
 
         
             @foreach ($routes as $routeKey => $route)
 
-                    <a role="tab" href="{{ $route  }}" class="tab no-underline hover:bg-secondary-100">
+                    <a role="tab" href="{{ $route  }}" class="tab hover-interactive">
                         @if ($includeIcon == 'goBack')
                             <x-ri-arrow-left-line id="" class="goBack-icon"/>
                         @endif                        
@@ -38,17 +34,17 @@ includeIcon    = string - to select which icon
 
             @endforeach
 
-        @else
+        @else --}}
 
             @foreach ($routes as $routeKey => $route)
                     @if (isset($routeActive) && $routeActive == $route)
-                        <a role="tab" href="{{ $route }}" class="tab tab-active no-underline">{{ $routeKey }}</a>
+                        <a role="tab" href="{{ $route }}" class="tab tab-active w-20 hover-interactive">{{ $routeKey }}</a>
                     @else
-                        <a role="tab" href="{{ $route  }}" class="tab no-underline hover:bg-secondary-100">{{ $routeKey }}</a>
+                        <a role="tab" href="{{ $route  }}" class="tab w-20 hover-interactive">{{ $routeKey }}</a>
                     @endif
             @endforeach
 
-        @endif
+        {{-- @endif --}}
 
 
     </div>
