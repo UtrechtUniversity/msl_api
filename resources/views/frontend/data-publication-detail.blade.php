@@ -10,7 +10,9 @@
         @endphp --}}
 
         {{-- a general no small width view notification --}}
-        @include('components.no_mobile_view')
+        @include('components.no_mobile_view', [
+            'breakpoint' => 'md'
+        ])
 
         <div class="noMobileView_wideScreenDiv">
 

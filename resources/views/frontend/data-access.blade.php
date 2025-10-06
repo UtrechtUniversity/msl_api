@@ -4,10 +4,12 @@
     <div class="mainContentDiv">
 
         {{-- a general no small width view notification --}}
-        @include('components.no_mobile_view')
+        @include('components.no_mobile_view', [
+            'breakpoint' => 'md'
+        ])
 
         {{-- top div --}}
-        <div class="noMobileView_wideScreenDiv">
+        <div class="hidden md:block">
 
  
             {{-- content bottom div --}}
