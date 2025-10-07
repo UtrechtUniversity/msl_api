@@ -361,7 +361,7 @@
                             <p 
                             class=""
                             style="writing-mode: sideways-lr;" >
-                                This is text
+                                click here to see filters
                               </p>
                         </div>
                         <div class="w-full min-h-full bg-blue-100 pl-4">
