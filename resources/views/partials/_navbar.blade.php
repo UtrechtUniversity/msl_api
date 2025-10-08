@@ -86,14 +86,11 @@
 
           </div>
 
-
-          {{-- max nav --}}
           <div class="hidden min-[810px]:flex pl-4">
             <div class="flex justify-end
               divide-x-2 divide-primary-100
               lg:divide-x-0 divide-primary-100
               ">
-              {{-- <div class="flex items-stretch gap-2"> --}}
                 @foreach ($allLinks as $name => $linkOrArray)
                   @if(is_array($linkOrArray))
                     <div class="dropdown dropdown-hover">
@@ -118,8 +115,6 @@
                     <a class="nav-button" href="{{ $linkOrArray }}">{{ $name }}</a>
                   @endif
                 @endforeach
-  
-              {{-- </div> --}}
             </div>
           </div>
 

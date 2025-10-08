@@ -107,7 +107,7 @@ class SurveySeeder extends Seeder
             'question_type_id' => $selectQuestionType->id,
             'answerable' => true,
             'question' => [
-                'title' => 'Which describes your role the best?',
+                'title' => 'Which describes your role best?',
                 'options' => [
                     'Modeler',
                     'Lab Researcher',
@@ -244,13 +244,13 @@ class SurveySeeder extends Seeder
                 'sectionName' => 'UsingToolHowOften',
                 'validation' => ['required'],
                 'options' => [
-                    'Never',
                     'Daily',
                     'Weekly',
                     'Bi-Weekly',
                     'Monthly',
                     'Quarterly',
                     'Yearly',
+                    'Never',
                 ],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);

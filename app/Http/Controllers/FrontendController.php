@@ -553,6 +553,16 @@ class FrontendController extends Controller
     }
 
     /**
+     * Show the contribute with a proposal or project
+     * 
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contributeProject()
+    {
+        return view('frontend.contribute-project');
+    }
+
+    /**
      * Show the contribute select scenario page
      * 
      * @return \Illuminate\Contracts\Support\Renderable
@@ -584,7 +594,6 @@ class FrontendController extends Controller
             'allDomains' => $allDomains
         ]);
     }
-
 
     /**
      * Show the contribute as laboratory page
