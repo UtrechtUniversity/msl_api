@@ -4,13 +4,13 @@ namespace Tests\Feature;
 
 use App\Mappers\Helpers\FigshareFilesHelper;
 use Exception;
-use Tests\TestCase;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\Response;
+use Tests\TestCase;
 
 class FigShareFilesHelperTest extends TestCase
 {
@@ -26,11 +26,11 @@ class FigShareFilesHelperTest extends TestCase
             new Response(200, [], $responseContentLandingpage),
             new Response(200, [], $roCrateResponse),
         ]);
-    
+
         $handler = HandlerStack::create($mock);
-        
+
         $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
-        
+
         $roCrate = $fileHelper->getRoCrate('test');
 
         $this->assertEquals('https://w3id.org/ro/crate/1.1/context', $roCrate['@context']);
@@ -46,9 +46,9 @@ class FigShareFilesHelperTest extends TestCase
         $mock = new MockHandler([
             new Response(200, [], $responseContentLandingpage),
         ]);
-    
+
         $handler = HandlerStack::create($mock);
-        
+
         $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
 
         $this->expectException(Exception::class);
@@ -63,12 +63,12 @@ class FigShareFilesHelperTest extends TestCase
         $mock = new MockHandler([
             new RequestException('Error Communicating with Server', new Request('GET', 'test')),
         ]);
-    
+
         $handler = HandlerStack::create($mock);
-        
+
         $fileHelper = new FigshareFilesHelper(new Client(['handler' => $handler]));
 
         $this->expectException(RequestException::class);
-        $fileHelper->getRoCrate('test');        
+        $fileHelper->getRoCrate('test');
     }
 }

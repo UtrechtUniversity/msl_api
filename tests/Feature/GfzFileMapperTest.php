@@ -7,11 +7,9 @@ use App\Mappers\Helpers\GfzDownloadHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Mockery\MockInterface;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
-use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use Tests\TestCase;
 
 class GfzFileMapperTest extends TestCase
 {
@@ -27,7 +25,7 @@ class GfzFileMapperTest extends TestCase
 
         $sourceDataset = new SourceDataset;
 
-        $this->mock('overload:' . GfzDownloadHelper::class, function(MockInterface $mock) {
+        $this->mock('overload:'.GfzDownloadHelper::class, function (MockInterface $mock) {
             $mock->shouldReceive('getFiles')
                 ->once()
                 ->andReturn(
@@ -37,7 +35,7 @@ class GfzFileMapperTest extends TestCase
                             'downloadLink' => 'https://datapub.gfz-potsdam.de/download/10.5880.GFZ.3.3.2024.001jbbbh2024-001_Wittmann-et-al_Data-Description.pdf',
                             'extension' => 'pdf',
                             'isFolder' => false,
-                        ]
+                        ],
                     ]
                 );
         });
