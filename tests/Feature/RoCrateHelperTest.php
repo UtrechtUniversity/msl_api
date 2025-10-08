@@ -3,8 +3,6 @@
 namespace Tests\Feature;
 
 use App\Mappers\Helpers\RoCrateHelper;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class RoCrateHelperTest extends TestCase
@@ -16,7 +14,7 @@ class RoCrateHelperTest extends TestCase
     {
         $roCrate = json_decode(file_get_contents(base_path('/tests/MockData/Figshare/rocrate.txt')), true);
 
-        $roCrateHelper = new RoCrateHelper();
+        $roCrateHelper = new RoCrateHelper;
 
         $files = $roCrateHelper->getFiles($roCrate);
 
@@ -34,7 +32,7 @@ class RoCrateHelperTest extends TestCase
     {
         $roCrate = json_decode(file_get_contents(base_path('/tests/MockData/Figshare/rocrate_multiple_files.txt')), true);
 
-        $roCrateHelper = new RoCrateHelper();
+        $roCrateHelper = new RoCrateHelper;
 
         $files = $roCrateHelper->getFiles($roCrate);
 

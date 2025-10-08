@@ -7,13 +7,10 @@ use App\Mappers\Helpers\FigshareFilesHelper;
 use App\Mappers\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Mockery\MockInterface;
-use Tests\TestCase;
-use PHPUnit\Framework\Attributes\RunInSeparateProcess;
 use PHPUnit\Framework\Attributes\PreserveGlobalState;
-
+use PHPUnit\Framework\Attributes\RunInSeparateProcess;
+use Tests\TestCase;
 
 class FigshareFileMapperTest extends TestCase
 {
@@ -29,13 +26,13 @@ class FigshareFileMapperTest extends TestCase
 
         $sourceDataset = new SourceDataset;
 
-        $this->mock('overload:' . FigshareFilesHelper::class, function(MockInterface $mock) {
+        $this->mock('overload:'.FigshareFilesHelper::class, function (MockInterface $mock) {
             $mock->shouldReceive('getRoCrate')
                 ->once()
                 ->andReturn(json_decode(file_get_contents(base_path('/tests/MockData/Figshare/rocrate.txt')), true));
         });
 
-        $this->mock('overload:' . RoCrateHelper::class, function(MockInterface $mock) {
+        $this->mock('overload:'.RoCrateHelper::class, function (MockInterface $mock) {
             $mock->shouldReceive('getFiles')
                 ->once()
                 ->andReturn(
@@ -46,7 +43,7 @@ class FigshareFileMapperTest extends TestCase
                             'name' => 'DATA True Triax.zip',
                             'contentSize' => '775931560',
                             'contentUrl' => 'https://data.4tu.nl/file/38262dab-3eea-4991-87a0-1b7e849efbfb/8ddd1afc-9f74-4ac6-9e2f-61592909c9e8',
-                        ]
+                        ],
                     ]
                 );
         });
