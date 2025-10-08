@@ -13,20 +13,21 @@ class Author
     public $authorAffiliation = [];
 
     public function __construct($data) {
-        if(isset($data['msl_author_name'])) {
-            $this->authorName = $data['msl_author_name'];
-        }        
+        if(isset($data['msl_creator_name'])) {
+            if(strlen($data['msl_creator_name']) > 0) {
+                $this->authorName = $data['msl_creator_name'];
+            }
+            else
+            {
+                $name = $data['msl_creator_given_name'];
+                if(strlen($name) > 0) {
+                    $name .= " " . $data['msl_creator_family_name'];
+                } else {
+                    $name = $data['msl_creator_family_name'];
+                }
 
-        if(isset($data['msl_author_orcid'])) {
-            $this->authorOrcid = $data['msl_author_orcid'];
-        }
-        
-        if(isset($data['msl_author_scopus'])) {
-            $this->authorScopus = $data['msl_author_scopus'];
-        }
-        
-        if(isset($data['msl_author_affiliation'])) {
-            $this->authorAffiliation = $data['msl_author_affiliation'];
+                $this->authorName = $name;
+            }
         }
     }
 

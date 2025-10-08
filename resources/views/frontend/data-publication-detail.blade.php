@@ -72,9 +72,6 @@
                 @endsession
             </div>
 
-            @php
-                dd($data)
-            @endphp
             <div class="tabLinksParent">
  
                 @include('components.tabLinks',[
@@ -704,6 +701,11 @@
                                                 <p class="text-sm p-0">{{ $geolocation }}</p>
                                             @endforeach
                                         @endforeach
+                                        {{-- 
+                                        @foreach ( $data['msl_geolocations'] as $keyword)
+                                            <p class="text-sm">{{ $keyword['msl_geolocation_place'] }}</p>
+                                        @endforeach
+                                        --}}
                                     </div>
                                 </div>
                                 @endif
