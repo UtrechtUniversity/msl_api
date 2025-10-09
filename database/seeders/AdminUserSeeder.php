@@ -34,6 +34,17 @@ class AdminUserSeeder extends Seeder
                 'email' => 'm.nothbaum@uu.nl',
                 'password' => bcrypt('testtest')
             ]
-        );   
+        );
+
+        User::updateOrCreate(
+            [
+                'name' => 'Dionysia'
+            ],
+            [
+                'name' => 'Dionysia',
+                'email' => 'd.nakou@uu.nl',
+                'password' => bcrypt('testtest')
+            ]
+        );
     }
 }
