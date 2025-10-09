@@ -2,21 +2,18 @@
 
 namespace Tests\Feature;
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\API\V1\ApiController;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 
 class ApiTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * Test /all API endpoint based on mocked CKAN request
      */
