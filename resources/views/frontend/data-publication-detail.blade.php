@@ -4,55 +4,6 @@
 
 
     <div class="mainContentDiv">
-        
-        {{-- @php
-            dd($data);
-        @endphp --}}
-
-        {{-- 
-        what about these
-        "msl_tags" => array:12 [▶ ▶] 
-          "msl_description_methods" => ""
-  "msl_description_other" => ""
-  "msl_description_series_information" => ""
-  "msl_description_table_of_contents" => ""
-  "msl_description_technical_info" => ""
-  "msl_doi" => "10.4121/e65ed658-0d8d-4890-a252-c85a7c1c2619.v2"
-  "msl_formats" => "{"tiff, txt"}"
-  "msl_has_analogue" => "false"
-  "msl_has_analogue_original" => "false"
-  "msl_has_geochemistry" => "true"
-  "msl_has_geochemistry_original" => "false"
-  "msl_has_geoenergy" => "false"
-  "msl_has_geoenergy_original" => "false"
-  "msl_has_geologicalage" => "false"
-  "msl_has_geologicalage_original" => "false"
-  "msl_has_geologicalsetting" => "false"
-  "msl_has_geologicalsetting_original" => "false"
-  "msl_has_lab" => "false"
-  "msl_has_material" => "true"
-  "msl_has_material_original" => "true"
-  "msl_has_microscopy" => "true"
-  "msl_has_microscopy_original" => "true"
-  "msl_has_organization" => "true"
-  "msl_has_paleomagnetism" => "true"
-  "msl_has_paleomagnetism_original" => "false"
-  "msl_has_porefluid" => "false"
-  "msl_has_porefluid_original" => "false"
-  "msl_has_rockphysic" => "false"
-  "msl_has_rockphysic_original" => "false"
-  "msl_has_subsurface" => "false"
-  "msl_has_subsurface_original" => "false"
-  "msl_language" => "en"
-  "msl_publication_year" => "2023"
-  "msl_publisher" => "4TU.ResearchData"
-  "msl_resource_type" => "Dataset"
-  "msl_resource_type_general" => "Dataset"
-  "msl_sizes" => "{}"
-  "msl_source" => "https://data.4tu.nl/datasets/e65ed658-0d8d-4890-a252-c85a7c1c2619/2"
-  "msl_surface_area" => "0"
-  "msl_title_annotated" => "
-        --}}
 
         {{-- a general no small width view notification --}}
         @include('components.no_mobile_view')
@@ -60,7 +11,6 @@
         <div class="noMobileView_wideScreenDiv">
 
             <div class="absolute">
-
                 @session('data_publication_active_search')
                     @include('components.tabLinks',[
                         // 'categoryName'  => 'Results',
@@ -667,7 +617,7 @@
                                 @endif
                                 
 
-                                @if (array_key_exists("msl_rights",$data))
+                            @if (array_key_exists("msl_rights",$data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Rights</h4>
@@ -703,9 +653,9 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                @endif
+                            @endif
 
-                                @if (array_key_exists("msl_geolocations",$data))
+                            @if (array_key_exists("msl_geolocations",$data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Geo location(s)</h4>
@@ -717,9 +667,9 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                @endif
+                            @endif
 
-                                @if (array_key_exists("msl_geojson_featurecollection",$data))
+                            @if (array_key_exists("msl_geojson_featurecollection",$data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Spatial coordinates</h4>
@@ -750,24 +700,14 @@
                                         }).addTo(map);                                                                                                                                                                                
                                     </script>
                                 </div>
-                                @endif
-
-
-                        
-
-                    </div>
-                    
+                            @endif
+                    </div>                    
             </div>
         </div>
-       
-        
-
-
     </div>
 
 @push('vite')
     @vite(['resources/js/tooltip.js'])
 @endpush
-
 
 </x-layout_main>
