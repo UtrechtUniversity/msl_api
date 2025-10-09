@@ -72,6 +72,7 @@
                 @endsession
             </div>
 
+
             <div class="tabLinksParent">
  
                 @include('components.tabLinks',[
@@ -93,7 +94,7 @@
                                     <p class="italic text-center">                                       
                                         @foreach ( $data['msl_creators'] as $authorKey => $author )
                                             {{ $author["msl_creator_family_name"]}} {{ $author["msl_creator_given_name"] }} 
-                                            {{-- a little divider between names --}}
+                                                {{-- a little divider between names --}}
                                                 @if (sizeof($data['msl_creators']) -1 != $authorKey )
                                                     |
                                                 @endif
@@ -173,7 +174,6 @@
                                             });                                    
                                         </script>
                                     @endif
-
 
                                     @if (array_key_exists("msl_original_keywords", $data))
                                         <br>
@@ -378,6 +378,7 @@
                                     @endif
                                 </div>
 
+                                
                                 @if (array_key_exists("msl_subdomains", $data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
@@ -618,38 +619,51 @@
                                 @endif
 
 
-                                @if (array_key_exists("msl_funding_references",$data))
                                 <br>
-                                <div class="detailEntryDiv flex flex-row">
-                                    <h4 class="detailEntrySub1">Funding References</h4>
-                                    <div class="detailEntrySub2 ">
-                                        @foreach ( $data['msl_funding_references'] as $entry)
-                                            @foreach ($entry as $key => $value)
-                                                    {{-- @if ($value != '') --}}
-                                                        <div class=" flex flex-row justify-between w-3/4">
-                                                            <p class="text-sm p-0">
-                                                                @php
-                                                                    $keys = explode('_', $key);
-                                                                    unset($keys[0]);
-                                                                    unset($keys[1]);
-                                                                    unset($keys[2]);
-                                                                    // $key_done;
-                                                                    foreach ($keys as $pos => $key_s) {
-                                                                        $keys[$pos] = ucfirst($key_s);
-                                                                    };
+                                @if (array_key_exists("msl_funding_references",$data))                                 
+                                    <div class="detailEntryDiv flex flex-row">
+                                        <h4 class="detailEntrySub1">Funding References</h4>
+                                        <div class="detailEntrySub2 dividers">
+                                            @foreach ( $data['msl_funding_references'] as $entry)
 
-                                                                    echo implode(' ', $keys);
-                                                                @endphp:
+                                                <div class=" py-3 ">
+                                                    @foreach ($entry as $key => $value)
+                                                        @if ($key != 'msl_funding_reference_funder_identifier_type'
+                                                            &&
+                                                            $key != 'msl_funding_reference_award_uri'
+                                                            &&
+                                                            $value != ''
+                                                            )
+                                                            <div class=" flex flex-row justify-between w-3/4 gap-6">
+
+                                                                <p class="text-sm p-0  w-full">
+                                                                    @php
+                                                                        $keys = explode('_', $key);
+                                                                        unset($keys[0]);
+                                                                        unset($keys[1]);
+                                                                        unset($keys[2]);
+
+                                                                        foreach ($keys as $pos => $key_s) {
+                                                                            $keys[$pos] = ucfirst($key_s);
+                                                                        };
+
+                                                                        echo implode(' ', $keys);
+                                                                    @endphp:
                                                                 </p> 
-                                                            <p class="text-sm p-0">{{ $value }}</p> 
-                                                        </div>
-                                                    {{-- @endif --}}
-                                            @endforeach                                      
-                                        @endforeach
+                                                                @if($key != 'msl_funding_reference_funder_identifier')
+                                                                    <p class="text-sm p-0 text-right w-full">{{ $value }}</p> 
+
+                                                                @else
+                                                                    <a class="text-sm p-0 text-right w-full" href="{{ $value }}">{{ $value }}</a>
+                                                                @endif
+                                                            </div>
+                                                        @endif
+                                                    @endforeach   
+                                                </div>
+                                   
+                                            @endforeach
+                                        </div>
                                     </div>
-                                </div>
-                                @else
-                                    <h1 class="bg-red-400">funding references missing</h1>
                                 @endif
                                 
 
@@ -696,16 +710,11 @@
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Geo location(s)</h4>
                                     <div class="detailEntrySub2">
-                                        @foreach ( $data['msl_geolocations'] as $geolocationEntry)
-                                            @foreach ($geolocationEntry as $geolocation )
-                                                <p class="text-sm p-0">{{ $geolocation }}</p>
+                                        @foreach ( $data['msl_geolocations'] as $locationPackage)
+                                            @foreach ($locationPackage as $location)
+                                                <p class="text-sm">{{ $location }}</p>
                                             @endforeach
                                         @endforeach
-                                        {{-- 
-                                        @foreach ( $data['msl_geolocations'] as $keyword)
-                                            <p class="text-sm">{{ $keyword['msl_geolocation_place'] }}</p>
-                                        @endforeach
-                                        --}}
                                     </div>
                                 </div>
                                 @endif
