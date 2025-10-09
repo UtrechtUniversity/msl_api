@@ -364,14 +364,14 @@
                                 click here to see filters
                               </p>
                         </div>
-                        <div class="w-full min-h-full bg-blue-100 pl-4">
+                        <div class="w-full min-h-full bg-primary-200 pl-4">
                             we are using a daisyUI component for this
                         </div>
     
                     </div>
-                    <div class="drawer-side">
+                    <div class="drawer-side ">
                         <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-                        <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+                        <ul class="menu bg-secondary-100 min-h-full w-80 p-4 text-secondary-900">
                         <!-- Sidebar content here -->
                         <li><a>Sidebar Item 1</a></li>
                         <li><a>Sidebar Item 2</a></li>
