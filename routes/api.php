@@ -29,7 +29,6 @@ Route::get('/microscopy', [V1Controller::class, 'microscopy']);
 Route::get('/geochemistry', [V1Controller::class, 'geochemistry']);
 Route::get('/geoenergy', [V1Controller::class, 'geoenergy']);
 Route::get('/all', [V1Controller::class, 'all']);
-Route::get('/tna', [V1Controller::class, 'tna']);
 Route::get('/vocabularies/term', [V1Controller::class, 'term']);
 Route::get('/facilities', [V1Controller::class, 'facilities']);
 
