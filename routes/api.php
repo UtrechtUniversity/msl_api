@@ -41,7 +41,6 @@ Route::prefix('v1')->group(function () {
     Route::get('/datapublications/geochemistry', [V1Controller::class, 'geochemistry']);
     Route::get('/datapublications/geoenergy', [V1Controller::class, 'geoenergy']);
     Route::get('/datapublications/all', [V1Controller::class, 'all']);
-    Route::get('/tna', [V1Controller::class, 'tna']);
     Route::get('/vocabularies/term', [V1Controller::class, 'term']);
     Route::get('/facilities/all', [V1Controller::class, 'facilities']);
 });

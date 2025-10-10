@@ -239,21 +239,6 @@ class ApiController extends BaseController
         return $ApiResponse->getAsLaravelResponse();
     }
 
-    public function tna()
-    {
-        $data = TnaMockup::all()->toArray();
-
-        return response()->json([
-            'success' => true,
-            'message' => '',
-            'result' => [
-                'count' => count($data),
-                'resultCount' => count($data),
-                'results' => $data,
-            ],
-        ], 200);
-    }
-
     public function term(Request $request)
     {
 
