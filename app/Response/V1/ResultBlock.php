@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Response;
+namespace App\Response\V1;
 
-use App\Response\BaseResult;
-use App\Response\FacilitiesResult;
+use App\Response\V1\BaseResult;
+use App\Response\V1\FacilitiesResult;
 
 class ResultBlock
 {

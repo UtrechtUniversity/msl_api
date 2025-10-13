@@ -38,6 +38,14 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            Route::prefix('/api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/api.php'));
+
+            /**
+             * Maintained while EPOS migrates to new API structure
+             */
             Route::prefix('webservice/api')
                 ->middleware('api')
                 ->namespace($this->namespace)

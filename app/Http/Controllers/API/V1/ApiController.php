@@ -1,18 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V1;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Http\Resources\KeywordResource;
+use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;
 use App\Models\TnaMockup;
-use App\Response\ErrorResponse;
-use App\Response\MainResponse;
+use App\Response\V1\ErrorResponse;
+use App\Response\V1\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Routing\Controller as BaseController;
 
-class ApiController extends Controller
+class ApiController extends BaseController
 {
     /**
      * @var \GuzzleHttp\Client Guzzle http client instance
@@ -236,21 +237,6 @@ class ApiController extends Controller
 
         // return response object
         return $ApiResponse->getAsLaravelResponse();
-    }
-
-    public function tna()
-    {
-        $data = TnaMockup::all()->toArray();
-
-        return response()->json([
-            'success' => true,
-            'message' => '',
-            'result' => [
-                'count' => count($data),
-                'resultCount' => count($data),
-                'results' => $data,
-            ],
-        ], 200);
     }
 
     public function term(Request $request)
