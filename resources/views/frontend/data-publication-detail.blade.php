@@ -462,8 +462,11 @@
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
                                         @foreach ( $data['msl_contributors'] as $contributor)
                                             <div>
-
-                                                <p class="text-sm p-0">{{ $contributor["msl_contributor_family_name"]}} {{ $contributor["msl_contributor_given_name"] }} </p>
+                                                @if ($contributor["msl_contributor_family_name"] != '')
+                                                    <p class="text-sm p-0">{{ $contributor["msl_contributor_family_name"]}} {{ $contributor["msl_contributor_given_name"] }} </p>
+                                                @else
+                                                    <p class="text-sm p-0">{{ $contributor["msl_contributor_name"]}} </p>                                               
+                                                @endif
                                                 
                                                 @if(array_key_exists('msl_contributor_type', $contributor))
 
