@@ -576,7 +576,11 @@
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Language</h4>
                                     <div class="detailEntrySub2">
-                                        <p class="text-sm p-0">{{ $data['msl_language'] }}</p>    
+                                        @if ($data['msl_language'] != '')
+                                            <p class="text-sm p-0">{{ $data['msl_language'] }}</p>                                        
+                                        @else
+                                            <p class="text-sm p-0 italic">No language entry found</p>                                        
+                                        @endif
                                     </div>
                                 </div>
                                 @endif
