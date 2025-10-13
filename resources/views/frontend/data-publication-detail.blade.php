@@ -412,6 +412,16 @@
                                             <div>
                                                 <p class="text-sm p-0">{{ $creator["msl_creator_family_name"]}} {{ $creator["msl_creator_given_name"] }} </p>
 
+                                                @if(array_key_exists('msl_creator_name_type', $creator))
+
+                                                    <p class="text-sm p-0">
+                                                        @php
+                                                            $preppedString = preg_split('/(?=[A-Z])/', $creator['msl_creator_name_type']);
+                                                        @endphp
+                                                        {{ implode(' ', $preppedString) }}
+                                                    </p>
+                                                @endif
+
                                                 @if (array_key_exists("msl_creator_affiliations_names",$creator))
                                                     <p class="text-sm p-0">
                                                         @foreach ($creator['msl_creator_affiliations_names'] as $key => $affiliation)
@@ -455,7 +465,8 @@
 
                                                 <p class="text-sm p-0">{{ $contributor["msl_contributor_family_name"]}} {{ $contributor["msl_contributor_given_name"] }} </p>
                                                 
-                                                @if(array_key_exists($contributor['msl_contributor_type'], $contributor))
+                                                @if(array_key_exists('msl_contributor_type', $contributor))
+
                                                     <p class="text-sm p-0">
                                                         @php
                                                             $preppedString = preg_split('/(?=[A-Z])/', $contributor['msl_contributor_type']);
@@ -463,6 +474,7 @@
                                                         {{ implode(' ', $preppedString) }}
                                                     </p>
                                                 @endif
+
 
 
                                                 @if (array_key_exists("msl_contributor_affiliations_names",$contributor))
@@ -516,7 +528,7 @@
                                                     @if ($entry['msl_related_identifier_type'] == 'DOI')
                                                         <a href="https://doi.org/{{ $entry['msl_related_identifier'] }}">https://doi.org/{{ $entry['msl_related_identifier'] }}</a>
                                                     @else
-                                                        <p class="text-sm p-0">Main Reference: {{ $entry['msl_related_identifier'] }}</p>
+                                                        <p class="text-sm p-0">{{ $entry['msl_related_identifier'] }}</p>
 
                                                         @if(array_key_exists( 'msl_related_identifier_type', $entry ))
                                                             <p class="text-sm p-0">{{ $entry['msl_related_identifier_type'] }}</p>
@@ -551,8 +563,6 @@
                                                     <p class="text-sm p-0">{{ $value['msl_date_information'] }}</p>
                                                 </div>
                                             @endif
-
-
                                         @endforeach
                                     </div>
                                 </div>
