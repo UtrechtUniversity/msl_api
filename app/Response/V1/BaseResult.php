@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Response;
+namespace App\Response\V1;
 
-use App\Response\Elements\CollectionPeriod;
-use App\Response\Elements\Contributor;
-use App\Response\Elements\CoveredPeriod;
-use App\Response\Elements\Author;
-use App\Response\Elements\Download;
-use App\Response\Elements\Pid;
-use App\Response\Elements\Reference;
-use App\Response\Elements\Spatial;
+use App\Response\V1\Elements\CollectionPeriod;
+use App\Response\V1\Elements\Contributor;
+use App\Response\V1\Elements\CoveredPeriod;
+use App\Response\V1\Elements\Author;
+use App\Response\V1\Elements\Download;
+use App\Response\V1\Elements\Pid;
+use App\Response\V1\Elements\Reference;
+use App\Response\V1\Elements\Spatial;
 
 class BaseResult
 {

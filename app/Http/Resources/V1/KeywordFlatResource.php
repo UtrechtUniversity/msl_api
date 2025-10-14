@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\V1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class KeywordSearchResource extends JsonResource
+class KeywordFlatResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,7 +15,8 @@ class KeywordSearchResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->search_value
+            'name' => $this->value,
+            'uri' => $this->uri            
         ];
     }
 }
