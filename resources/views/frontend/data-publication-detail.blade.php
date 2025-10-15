@@ -1,8 +1,6 @@
 @section('title', 'Data publication')
 <x-layout_main>
 
-
-
     <div class="mainContentDiv">
 
         {{-- a general no small width view notification --}}
@@ -434,17 +432,40 @@
                                                 @endif
 
                                                 @if (array_key_exists("msl_creator_name_identifiers",$creator) && array_key_exists("msl_creator_name_identifiers_schemes",$creator))
-
+                                                    
                                                     @foreach ( $creator['msl_creator_name_identifiers'] as $key => $value )
-                                                        <div class="flex flex-row w-96">
-                                                            @if( $creator['msl_creator_name_identifiers_schemes'][$key] == 'https://orcid.org/')
-                                                                <p class="text-sm p-0">ORCID: <a href="{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a></p>
-                                                            @elseif( $creator['msl_creator_name_identifiers_schemes'][$key]  == 'ORCID')
-                                                                <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}: <a href={{ $value }}>{{ $value }}</a></p>
-                                                            @else
-                                                                <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}: {{ $value }}</p>
-                                                            @endif
-                                                        </div>
+                                                        <table class="table-auto w-full">
+                                                            <tbody>
+                                                                @if( $creator['msl_creator_name_identifiers_schemes'][$key] == 'https://orcid.org/')
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="text-sm p-0">ORCID</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                @elseif( $creator['msl_creator_name_identifiers_schemes'][$key]  == 'ORCID')
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-sm p-0" href={{ $value }}>{{ $value }}</a> 
+                                                                        </td>
+                                                                    </tr>
+                                                                @else
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}</p>
+                                                                        </td>
+                                                                        <td>
+                                                                            <p class="text-sm p-0">{{ $value }}</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                @endif
+                                                            </tbody>
+                                                        </table>
                                                     @endforeach
                                                 @endif
 
@@ -494,15 +515,38 @@
                                                 @if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor))
 
                                                     @foreach ( $contributor['msl_contributor_name_identifiers'] as $key => $value )
-                                                        <div class="flex flex-row w-96">
-                                                            @if( $contributor['msl_contributor_name_identifiers_schemes'][$key] == 'https://orcid.org/')
-                                                                <p class="text-sm p-0">ORCID: <a href="{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $contributor['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a></p>
-                                                            @elseif( $contributor['msl_contributor_name_identifiers_schemes'][$key]  == 'ORCID')
-                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}: <a href={{ $value }}>{{ $value }}</a></p>
-                                                            @else
-                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}: {{ $value }}</p>
-                                                            @endif
-                                                        </div>
+                                                            <table class="table-auto w-full">
+                                                                <tbody>
+                                                                    @if( $contributor['msl_contributor_name_identifiers_schemes'][$key] == 'https://orcid.org/')
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="text-sm p-0">ORCID</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <a href="{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}</a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @elseif( $contributor['msl_contributor_name_identifiers_schemes'][$key]  == 'ORCID')
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <a class="text-sm p-0" href={{ $value }}>{{ $value }}</a> 
+                                                                            </td>
+                                                                        </tr>
+                                                                    @else
+                                                                        <tr>
+                                                                            <td>
+                                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}</p>
+                                                                            </td>
+                                                                            <td>
+                                                                                <p class="text-sm p-0">{{ $value }}</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    @endif
+                                                                </tbody>
+                                                            </table>
                                                     @endforeach
                                                 @endif
 
@@ -555,18 +599,20 @@
                                 <div class="detailEntryDiv flex flex-row">  
                                     <h4 class="detailEntrySub1">Dates</h4>
                                     <div class="detailEntrySub2 flex flex-col justify-items-start">
-                                        @foreach ( $data['msl_dates'] as $value)
-                                            <div class="flex flex-row justify-between w-3/4">
-                                                <p class="text-sm p-0">{{ $value['msl_date_type'] }}:</p>
-                                                <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
-                                            </div>
-                                            @if ($value['msl_date_information'] != '')
-                                                <div class="flex flex-row justify-between w-3/4">
-                                                    <p class="text-sm p-0">Date Information:</p>
-                                                    <p class="text-sm p-0">{{ $value['msl_date_information'] }}</p>
-                                                </div>
-                                            @endif
-                                        @endforeach
+                                        <table class="table-fixed w-full">
+                                            <tbody>
+                                                @foreach ( $data['msl_dates'] as $value)
+                                                    <tr>
+                                                        <td>
+                                                            <p class="text-sm p-0">{{ $value['msl_date_type']}}</p>
+                                                        </td>
+                                                        <td>
+                                                            <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                                 @endif
@@ -594,38 +640,46 @@
                                             @foreach ( $data['msl_funding_references'] as $entry)
 
                                                 <div class=" py-3 ">
-                                                    @foreach ($entry as $key => $value)
-                                                        @if ($key != 'msl_funding_reference_funder_identifier_type'
-                                                            &&
-                                                            $key != 'msl_funding_reference_award_uri'
-                                                            &&
-                                                            $value != ''
-                                                            )
-                                                            <div class=" flex flex-row justify-between w-3/4 gap-6">
+                                                    <table class="table-fixed w-full">
+                                                        <tbody>
+                                                            @foreach ($entry as $key => $value)
+                                                                @if ($key != 'msl_funding_reference_funder_identifier_type'
+                                                                    &&
+                                                                    $key != 'msl_funding_reference_award_uri'
+                                                                    &&
+                                                                    $value != ''
+                                                                    )
+                                                                        <tr>
+                                                                            <td class="w-40">
+                                                                                <p class="text-sm p-0">
+                                                                                    @php
+                                                                                        $keys = explode('_', $key);
+                                                                                        unset($keys[0]);
+                                                                                        unset($keys[1]);
+                                                                                        unset($keys[2]);
 
-                                                                <p class="text-sm p-0  w-full">
-                                                                    @php
-                                                                        $keys = explode('_', $key);
-                                                                        unset($keys[0]);
-                                                                        unset($keys[1]);
-                                                                        unset($keys[2]);
+                                                                                        foreach ($keys as $pos => $key_s) {
+                                                                                            $keys[$pos] = ucfirst($key_s);
+                                                                                        };
 
-                                                                        foreach ($keys as $pos => $key_s) {
-                                                                            $keys[$pos] = ucfirst($key_s);
-                                                                        };
-
-                                                                        echo implode(' ', $keys);
-                                                                    @endphp:
-                                                                </p> 
-                                                                @if($key != 'msl_funding_reference_funder_identifier')
-                                                                    <p class="text-sm p-0 text-right w-full">{{ $value }}</p> 
-
-                                                                @else
-                                                                    <a class="text-sm p-0 text-right w-full" href="{{ $value }}">{{ $value }}</a>
+                                                                                        echo implode(' ', $keys);
+                                                                                    @endphp
+                                                                                </p>
+                                                                            </td>
+                                                                            <td>
+                                                                                @if($key != 'msl_funding_reference_funder_identifier')
+                                                                                    <p class="text-sm p-0 ">{{ $value }}</p> 
+                                                                                @else
+                                                                                    <a class="text-sm p-0 " href="{{ $value }}">{{ $value }}</a>
+                                                                                @endif
+                                                                            </td>
+                                                                        </tr>
                                                                 @endif
-                                                            </div>
-                                                        @endif
-                                                    @endforeach   
+                                                            @endforeach   
+                                                                
+                                                        </tbody>
+                                                    </table>
+                                                    
                                                 </div>
                                    
                                             @endforeach
@@ -641,31 +695,39 @@
                                     <div class="detailEntrySub2 dividers">
                                         @foreach ( $data['msl_rights'] as $entry)
                                             <div>
-                                                @foreach ($entry as $key => $value)
-                                                        @if ($value != '')
-                                                            <div class=" flex flex-row justify-between w-3/4">
-                                                                <p class="text-sm p-0">
-                                                                    @php
-                                                                        $keys = explode('_', $key);
-                                                                        unset($keys[0]);
-                                                                        unset($keys[1]);
-                                                                        if(sizeof($keys) == 0){
-                                                                            $keys[0] = 'Name';
-                                                                        } 
-
-                                                                        foreach ($keys as $pos => $key_s) {
-
-                                                                            $keys[$pos] = ucfirst($key_s);
-
-                                                                        };
-
-                                                                        echo implode(' ', $keys);
-                                                                    @endphp:
-                                                                    </p> 
-                                                                <p class="text-sm p-0">{{ $value }}</p> 
-                                                            </div>
-                                                        @endif
-                                                @endforeach      
+                                                <table class="table-fixed w-full">
+                                                    <tbody>
+                                                        @foreach ($entry as $key => $value)
+                                                            @if ($value != '')
+                                                                <tr>
+                                                                    <td class="w-40">
+                                                                        <p class="text-sm p-0">
+                                                                            @php
+                                                                                $keys = explode('_', $key);
+                                                                                unset($keys[0]);
+                                                                                unset($keys[1]);
+                                                                                if(sizeof($keys) == 0){
+                                                                                    $keys[0] = 'Name';
+                                                                                } 
+    
+                                                                                foreach ($keys as $pos => $key_s) {
+    
+                                                                                    $keys[$pos] = ucfirst($key_s);
+    
+                                                                                };
+    
+                                                                                echo implode(' ', $keys);
+                                                                            @endphp
+                                                                        </p> 
+                                                                    </td>
+                                                                    <td>
+                                                                        <p class="text-sm p-0">{{ $value }}</p> 
+                                                                    </td>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach      
+                                                    </tbody>
+                                                </table>
                                             </div>                                
                                         @endforeach
                                     </div>
