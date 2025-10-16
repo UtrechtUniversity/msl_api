@@ -20,28 +20,33 @@
           
 
           <a href="{{ route('data-access') }}" class="w-full flex justify-center">
-            <button class="btn btn-lg btn-wide ">Data Access</button>
+            <button class="btn btn-xl btn-wide ">Data Access</button>
           </a>
 
-          <div class="w-1/2 
-          bg-primary-100 text-primary-900 rounded-lg 
-           place-items-center p-4
-          flex flex-col
+          <div class="w-full
+           text-primary-900 
+           place-items-center pt-4
+          flex flex-row
           text-left
+          gap-4
           ">
-            <div class="flex justify-between w-full">
-              <h2 class="font-bold text-primary-800">{{ $datasetsCount }}</h2>
+              
+            <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+            href="{{ route('labs-map') }}">
+              <h2 class="font-bold ">{{ $datasetsCount }}</h2>
               <h5 >Datasets</h5>
-            </div>
-            <p class="text-center">
-              {{ $datasetsCount }} datasets
-            </p>
-            <p class="text-center">
-              {{ $labCount }} labs
-            </p>
-            <p class="text-center">
-              {{ $reposCount }} data repositories
-            </p>
+            </a>
+            <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+            href="{{ route('labs-map') }}">
+              <h2 class="font-bold ">{{ $labCount }}</h2>
+              <h5 >Labs</h5>
+            </a>
+            <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+              href="{{ route('data-repositories') }}"
+            >
+              <h2 class="font-bold ">{{ $reposCount }}</h2>
+              <h5 class="" >Repos</h5>
+            </a>
           </div>
 
         </div>
