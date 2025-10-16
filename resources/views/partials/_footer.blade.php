@@ -61,8 +61,8 @@
       alt="MSL-logo"
       class="h-fit">
     </aside>
-    <aside class="w-48">
-      <a class="link link-hover "
+    <aside class="w-48 hover-interactive" >
+      <a class=" "
       href="https://www.epos-eu.org/">
         
         <img 
