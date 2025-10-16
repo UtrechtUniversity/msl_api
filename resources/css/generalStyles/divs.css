@@ -4,7 +4,7 @@
     /* map and list div */
         /* general page structure used on every template due to the formatting of the landing page */
     .main-content{
-        @apply pb-20 flex justify-center items-center p-10
+        @apply pb-20 flex  md:justify-center items-start md:items-center p-2 md:p-10
         }
     .sub-content{
         @apply md:max-w-2xl
@@ -41,6 +41,41 @@
     .content-divide-x-light-secondary{
       @apply divide-x-2 divide-secondary-300
     }    
+
+
+    /* List view div */
+    .list-view{
+      @apply flex flex-col 
+    }
+
+    .pagination-button{
+      @apply 
+      join-item /* needed for daisyUI */
+      btn 
+      md:btn-lg
+      btn-md
+      font-semibold
+      lg:w-12
+      md:w-8
+      w-6  
+      text-primary-800
+      bg-primary-200
+      hover:rounded-none 
+    }
+    .pagination-button-active-page{
+      @apply
+      text-primary-900
+      font-bold 
+      bg-primary-300
+      min-w-10
+    }
+    .pagination-button-last-left{
+      @apply rounded-l-xl hover:rounded-l-xl w-6 min-[500px]:w-18 md:w-24 
+    }
+    .pagination-button-last-right{
+      @apply rounded-r-xl hover:rounded-r-xl w-6 min-[500px]:w-18 md:w-24 
+    }
+
     /* =============== old =============== */
 
 
@@ -48,11 +83,7 @@
         @apply w-full flex flex-col
       }
        
-      /* List view div */
-      .listView{
-        @apply flex flex-col 
-        /* dividers */
-      }
+
   
       /*###############
         detail views
