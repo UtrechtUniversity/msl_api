@@ -375,7 +375,19 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Source</h4>
-                                    <a class="detailEntrySub2" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                                    <div class="detailEntrySub2">
+                                        <a  href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                                        @if (array_key_exists('msl_alternate_identifiers', $data))
+                                            @foreach ( $data['msl_alternate_identifiers'] as $altId)
+                                                @if (filter_var($altId['msl_alternate_identifier'], FILTER_VALIDATE_URL) )
+                                                    <a class="pt-2" href="{{ $altId['msl_alternate_identifier'] }}" target="_blank">{{ $altId['msl_alternate_identifier'] }}</a>
+                                                @else
+                                                    <p class="pt-2 detailEntrySub2">{{ $altId['msl_alternate_identifier'] }}</p>
+                                                @endif 
+                                            @endforeach
+                                        @endif
+                                    </div>
+    
                                 </div>
                                 @else
                                 <h4 class="detailEntrySub1 bg-red-500">missing: Source</h4>
