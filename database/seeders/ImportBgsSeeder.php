@@ -24,7 +24,7 @@ class ImportBgsSeeder extends Seeder
                 'ckan_name' => 'bgs'
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
                 'name' => 'bgs importer'
