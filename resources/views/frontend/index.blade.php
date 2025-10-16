@@ -20,7 +20,7 @@
           
 
           <a href="{{ route('data-access') }}" class="w-full flex justify-center">
-            <button class="btn btn-xl btn-wide ">Data Access</button>
+            <button class="btn btn-xl btn-wide shadow-xl">Data Access</button>
           </a>
 
           <div class="w-full
@@ -50,10 +50,6 @@
           </div>
 
         </div>
-
-        {{-- <div class="index-opacity-parent h-max">
-
-        </div> --}}
 
       </div>
        
