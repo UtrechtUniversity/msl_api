@@ -369,7 +369,17 @@
                                 @else
                                 <h4 class="detailEntrySub1 bg-red-500">missing: MSL enriched sub domains</h4>
                                 @endif
-                                
+
+                                @if (array_key_exists("msl_resource_type",$data))
+                                <br>
+                                <div class="detailEntryDiv flex flex-row">
+                                    <h4 class="detailEntrySub1">Resource Type</h4>
+                                    <div class="detailEntrySub2">
+                                        <p class="pt-2 detailEntrySub2">{{ $data['msl_resource_type'] }}</p>
+                                    </div>
+    
+                                </div>
+                                @endif
 
                                 @if (array_key_exists("msl_source",$data))
                                 <br>
@@ -389,8 +399,6 @@
                                     </div>
     
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Source</h4>
                                 @endif
 
                                 @if (array_key_exists("msl_publisher",$data))
