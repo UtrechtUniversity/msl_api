@@ -47,12 +47,5 @@
 		"organization_display_name": "British Geological Survey - National Geoscience Data Centre (UKRI/NERC)",
 		"hide": "false",
 		"url": "https://www.bgs.ac.uk/geological-data/national-geological-repository/"
-	},
-	{
-		"name": "Development",
-		"image_url": "/repositories/BGS.png",
-		"organization_display_name": "Development of MSL",
-		"hide": "false",
-		"url": "/"
 	}
 ]
