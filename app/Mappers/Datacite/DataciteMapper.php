@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mappers\Datacite;
 
 use App\Exceptions\MappingException;

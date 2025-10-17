@@ -14,7 +14,7 @@ class SeederSeeder extends dbSeeder
      */
     public function run()
     {
-        
+
         //organization seeder        
         Seeder::updateOrCreate(
             [
@@ -30,7 +30,7 @@ class SeederSeeder extends dbSeeder
                 ]
             ]
         );
-        
+
         //laboratory seeder
         Seeder::updateOrCreate(
             [
@@ -60,6 +60,21 @@ class SeederSeeder extends dbSeeder
                 ]
             ]
         );
-        
-    }       
+        // Development seeder
+        Seeder::updateOrCreate(
+            [
+                'name' => 'Development seeder'
+            ],
+            [
+                'name' => 'Development seeder',
+                'description' => 'create/update development data in ckan',
+                'type' => 'organization',
+                'options' => [
+                    'type' => 'fileSeeder',
+                    'filePath' => '/seed-data/development.json'
+
+                ]
+            ]
+        );
+    }
 }

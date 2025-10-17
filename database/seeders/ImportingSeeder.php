@@ -22,7 +22,8 @@ class ImportingSeeder extends Seeder
             Import4TUSeeder::class,
             ImportMagicSeeder::class,
             ImportBgsSeeder::class,
-            ImportGFZDataciteSeeder::class
+            ImportGFZDataciteSeeder::class,
+            ImportDevelopmentSeeder::class
         ]);
     }
 }
