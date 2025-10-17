@@ -17,7 +17,7 @@ class CreateDatasetDeletesTable extends Migration
             $table->id();
             $table->string('ckan_id');
             $table->dateTime('processed')->nullable();
-            $table->integer('response_code')->nullable();            
+            $table->integer('response_code')->nullable();
             $table->timestamps();
         });
     }

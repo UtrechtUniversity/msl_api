@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mappers\Helpers;
 
 use GuzzleHttp\Client;
@@ -8,20 +9,20 @@ class DataciteCitationHelper
     /**
      * @var GuzzleClient Guzzle HTTP client instance
      */
-    protected $client;    
-    
+    protected $client;
+
     /**
      * Contructs a new DataciteCitationHelper
      */
-    public function __construct($client = new Client())
+    public function __construct($client = new Client)
     {
         $this->client = $client;
     }
-    
+
     /**
      * Retrieve a citationstring in apa style using doi
-     * @param string $doi
-     * @return string
+     *
+     * @param  string  $doi
      */
     public function getCitationString($doi): string
     {
@@ -31,21 +32,19 @@ class DataciteCitationHelper
                 "https://doi.org/doi:$doi",
                 [
                     'headers' => [
-                        'Accept' => 'text/x-bibliography; style=apa'
-                    ]
-                    
+                        'Accept' => 'text/x-bibliography; style=apa',
+                    ],
+
                 ]
             );
         } catch (\Exception $e) {
             return '';
         }
-        
-        if(isset($response)) {
-            return (string)$response->getBody();
-        }
-        return "";
-    }
-    
-    
-}
 
+        if (isset($response)) {
+            return (string) $response->getBody();
+        }
+
+        return '';
+    }
+}

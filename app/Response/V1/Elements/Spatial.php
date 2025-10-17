@@ -4,29 +4,29 @@ namespace App\Response\V1\Elements;
 
 class Spatial
 {
+    public $eLong = '';
 
-    public $eLong = "";
+    public $nLat = '';
 
-    public $nLat = "";
+    public $sLate = '';
 
-    public $sLate = "";
+    public $wLong = '';
 
-    public $wLong = "";
-
-    public function __construct($data) {
-        if(isset($data['msl_elong'])) {
+    public function __construct($data)
+    {
+        if (isset($data['msl_elong'])) {
             $this->eLong = $data['msl_elong'];
         }
 
-        if(isset($data['msl_nLat'])) {
+        if (isset($data['msl_nLat'])) {
             $this->nLat = $data['msl_nLat'];
         }
 
-        if(isset($data['msl_sLat'])) {
+        if (isset($data['msl_sLat'])) {
             $this->sLate = $data['msl_sLat'];
         }
 
-        if(isset($data['msl_wLong'])) {
+        if (isset($data['msl_wLong'])) {
             $this->wLong = $data['msl_wLong'];
         }
     }

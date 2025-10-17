@@ -6,12 +6,11 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;
-use App\Models\TnaMockup;
 use App\Response\V1\ErrorResponse;
 use App\Response\V1\MainResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Validator;
 
 class ApiController extends BaseController
 {
@@ -383,8 +382,7 @@ class ApiController extends BaseController
 
     /**
      * Convert boundingbox parameter to array
-     * 
-     * @param string $boundingBoxQuery
+     *
      * @return array
      */
     private function boundingboxStringToArray(string $boundingBoxQuery)
@@ -424,10 +422,7 @@ class ApiController extends BaseController
 
     /**
      * Check if bounding box component is within limits
-     * 
-     * @param float $toCheck
-     * @param float $limitUp
-     * @param float $limitLow
+     *
      * @return bool
      */
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow)

@@ -2,13 +2,11 @@
 
 namespace App\GeoJson\Geometry;
 
-use App\GeoJson\Geometry\Geometry;
 use Exception;
 use JsonSerializable;
 
 class Collection implements JsonSerializable
 {
-
     /**
      * @var array<Geometry>
      */
@@ -16,23 +14,23 @@ class Collection implements JsonSerializable
 
     /**
      * Constructs a new Collection
-     * @param array<Geometry> $geometries
+     *
+     * @param  array<Geometry>  $geometries
      */
-    public function __construct(array $geometries= [])
+    public function __construct(array $geometries = [])
     {
-        foreach($geometries as $geometry) {            
+        foreach ($geometries as $geometry) {
             $this->addGeometry($geometry);
         }
     }
 
     /**
      * Add geometry to collection
-     * @param Geometry $geometry
      */
     public function addGeometry(Geometry $geometry)
     {
-        if(!$geometry instanceof Geometry) {
-                throw new Exception('Only Geometry objects may be included in geometry collection');
+        if (! $geometry instanceof Geometry) {
+            throw new Exception('Only Geometry objects may be included in geometry collection');
         }
 
         $this->geometries[] = $geometry;
@@ -41,13 +39,13 @@ class Collection implements JsonSerializable
     public function jsonSerialize(): array
     {
         $geometries = [];
-        foreach($this->geometries as $geometry) {
+        foreach ($this->geometries as $geometry) {
             $geometries[] = $geometry->jsonSerialize();
         }
 
         return [
-            "type" => "GeometryCollection",
-            "geometries" => $geometries
+            'type' => 'GeometryCollection',
+            'geometries' => $geometries,
         ];
     }
 }

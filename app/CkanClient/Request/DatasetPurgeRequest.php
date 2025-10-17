@@ -1,4 +1,5 @@
 <?php
+
 namespace App\CkanClient\Request;
 
 use App\CkanClient\Response\BaseResponse;
@@ -25,13 +26,12 @@ class DatasetPurgeRequest implements RequestInterface
      */
     public $id;
 
-    
     public function getPayloadAsArray(): array
     {
         return [
             'form_params' => [
-                'id' => $this->id
-            ]
+                'id' => $this->id,
+            ],
         ];
     }
 

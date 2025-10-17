@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\API\V1\ApiController as V1Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\V1\ApiController as V1Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +44,4 @@ Route::prefix('v1')->group(function () {
     Route::get('/facilities/all', [V1Controller::class, 'facilities']);
 });
 
-Route::prefix('v2')->group(function () {
-
-});
+Route::prefix('v2')->group(function () {});

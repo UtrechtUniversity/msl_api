@@ -11,19 +11,20 @@ class Importer extends Model
         'description',
         'type',
         'options',
-        'data_repository_id'
+        'data_repository_id',
     ];
-    
+
     protected $casts = [
-        'options' => 'array'
+        'options' => 'array',
     ];
-    
+
     public function data_repository()
     {
         return $this->belongsTo(DataRepository::class);
     }
-    
-    public function imports() {
+
+    public function imports()
+    {
         return $this->hasMany(Import::class);
     }
 }

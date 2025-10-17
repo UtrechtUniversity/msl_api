@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Console\Commands;
 
 use App\Exports\Vocabs\LaboratoriesJsonExport;
@@ -27,17 +28,17 @@ class GenerateLaboratoryExport extends Command
 
     /**
      * Execute the console command.
-     *
      */
     public function handle(): int
     {
-        $exporter = new LaboratoriesJsonExport();
+        $exporter = new LaboratoriesJsonExport;
         $basePath = 'vocabs/laboratories/';
 
-        $path = $basePath . 'laboratories.json';
-        Storage::disk('public')->put($path, $exporter->export());        
+        $path = $basePath.'laboratories.json';
+        Storage::disk('public')->put($path, $exporter->export());
 
-        $this->line("Finished exporting laboratories.");
+        $this->line('Finished exporting laboratories.');
+
         return 0;
     }
 }

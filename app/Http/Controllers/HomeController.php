@@ -10,6 +10,7 @@ use App\Exports\SurveyExport;
 use App\Jobs\ProcessDatasetDelete;
 use App\Jobs\ProcessImport;
 use App\Mappers\BgsMapper;
+use App\Mappers\MappingService;
 use App\Models\DatasetCreate;
 use App\Models\DatasetDelete;
 use App\Models\Import;
@@ -20,8 +21,6 @@ use App\Models\SourceDatasetIdentifier;
 use App\Models\Surveys\Survey;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Mappers\MappingService;
-
 
 class HomeController extends Controller
 {
@@ -163,7 +162,7 @@ class HomeController extends Controller
     {
         return Excel::download(new MappingLogsExport($importId), 'log.xlsx');
     }
-    
+
     public function importerImportsDetail($importerid, $importId, $sourceDatasetIdentifierId)
     {
         $sourceDatasetIdentifier = SourceDatasetIdentifier::where('id', $sourceDatasetIdentifierId)->first();
@@ -282,12 +281,12 @@ class HomeController extends Controller
         $sourceDataset = SourceDataset::where('id', 2374)->first();
 
         dd($sourceDataset);
-        
+
         $mappingService = new MappingService;
         $importer = Importer::where('name', 'GFZ Datacite importer')->first();
 
         dd($mappingService->map($sourceDataset, $importer));
-        
+
         dd($sourceDataset);
 
         dd('test');

@@ -359,12 +359,12 @@ class ToolsController extends Controller
 
         $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->get();
 
-        foreach($vocabularies as $vocabulary) {
+        foreach ($vocabularies as $vocabulary) {
             $keywordsGroup1 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_1', true)->get();
 
-            foreach($keywordsGroup1 as $keywordGroup1) {
-                foreach($keywordGroup1->keyword_search as $keywordSearch) {
-                    if(!$keywordSearch->exclude_abstract_mapping) {
+            foreach ($keywordsGroup1 as $keywordGroup1) {
+                foreach ($keywordGroup1->keyword_search as $keywordSearch) {
+                    if (! $keywordSearch->exclude_abstract_mapping) {
                         $group1[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
                     }
                 }
@@ -372,15 +372,15 @@ class ToolsController extends Controller
 
             $keywordsGroup2 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_2', true)->get();
 
-            foreach($keywordsGroup2 as $keywordGroup2) {
-                foreach($keywordGroup2->keyword_search as $keywordSearch) {
-                    if(!$keywordSearch->exclude_abstract_mapping) {
+            foreach ($keywordsGroup2 as $keywordGroup2) {
+                foreach ($keywordGroup2->keyword_search as $keywordSearch) {
+                    if (! $keywordSearch->exclude_abstract_mapping) {
                         $group2[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
                     }
                 }
             }
         }
-        
+
         $query1 = implode(',', array_unique($group1));
         $query2 = implode(',', array_unique($group2));
 

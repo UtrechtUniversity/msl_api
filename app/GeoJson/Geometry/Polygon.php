@@ -3,7 +3,6 @@
 namespace App\GeoJson\Geometry;
 
 use App\GeoJson\BoundingBox;
-use App\GeoJson\Geometry\Geometry;
 use Exception;
 
 class Polygon extends Geometry
@@ -17,9 +16,9 @@ class Polygon extends Geometry
      * @param array<Point>
      */
     public function __construct(array $points)
-    {        
-        foreach($points as $point) {
-            if(!$point instanceof Point) {
+    {
+        foreach ($points as $point) {
+            if (! $point instanceof Point) {
                 throw new Exception('Invalid argument(s) provided, only point values allowed');
             }
 
@@ -27,7 +26,7 @@ class Polygon extends Geometry
         }
 
         // a valid polygon requires at least 4 points
-        if(count($points) < 4) {
+        if (count($points) < 4) {
             throw new Exception('Polygon requires at least 4 points');
         }
 
@@ -35,7 +34,7 @@ class Polygon extends Geometry
         $firstPoint = $points[0];
         $lastPoint = $points[count($points) - 1];
 
-        if(($firstPoint->x !== $lastPoint->x )|| ($firstPoint->y !== $lastPoint->y )) {
+        if (($firstPoint->x !== $lastPoint->x) || ($firstPoint->y !== $lastPoint->y)) {
             throw new Exception('First and last point must be equal for valid polygon');
         }
     }
@@ -50,18 +49,16 @@ class Polygon extends Geometry
         $xCoords = [];
         $yCoords = [];
 
-        for($i = 0; $i < count($this->points); $i++)
-        {
+        for ($i = 0; $i < count($this->points); $i++) {
             $xCoords[] = $this->points[$i]->x;
             $yCoords[] = $this->points[$i]->y;
         }
-        
+
         $j = count($xCoords) - 1;
-        for ($i = 0; $i < count($xCoords); $i++)
-        {
+        for ($i = 0; $i < count($xCoords); $i++) {
             $area += ($xCoords[$j] + $xCoords[$i]) * ($yCoords[$j] - $yCoords[$i]);
-                    
-            $j = $i; 
+
+            $j = $i;
         }
 
         return abs($area / 2.0);
@@ -69,10 +66,9 @@ class Polygon extends Geometry
 
     /**
      * Create Polygon from BoundingBox
-     * @param BoundingBox $boundingBox
      */
     public static function createFromBoundingBox(BoundingBox $boundingBox)
-    {    
+    {
         return new self([
             new Point($boundingBox->minX, $boundingBox->maxY),
             new Point($boundingBox->minX, $boundingBox->minY),
@@ -85,13 +81,13 @@ class Polygon extends Geometry
     public function jsonSerialize(): array
     {
         $coordinates = [];
-        foreach($this->points as $point) {
+        foreach ($this->points as $point) {
             $coordinates[] = [$point->x, $point->y];
         }
 
         return [
             'type' => 'Polygon',
-            'coordinates' => [$coordinates]
+            'coordinates' => [$coordinates],
         ];
     }
 }

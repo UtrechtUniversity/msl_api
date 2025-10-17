@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class EnrichedKeyword implements CkanArrayInterface
@@ -15,7 +16,7 @@ class EnrichedKeyword implements CkanArrayInterface
 
     public array $msl_enriched_keyword_match_child_uris;
 
-    public function __construct(string $label, string $uri = "", string $vocabUri = "", array $associatedSubdomains = [], array $matchLocations = [], array $matchChildUris = [])
+    public function __construct(string $label, string $uri = '', string $vocabUri = '', array $associatedSubdomains = [], array $matchLocations = [], array $matchChildUris = [])
     {
         $this->msl_enriched_keyword_label = $label;
         $this->msl_enriched_keyword_uri = $uri;
@@ -26,7 +27,7 @@ class EnrichedKeyword implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

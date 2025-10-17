@@ -12,8 +12,6 @@ use App\Models\Surveys\QuestionTypes\TextQuestion;
 use App\Models\Surveys\Survey;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
-
 
 class SurveySeeder extends Seeder
 {
@@ -22,7 +20,7 @@ class SurveySeeder extends Seeder
      */
     public function run(): void
     {
-        //truncation due to duplication of entries each seed run
+        // truncation due to duplication of entries each seed run
         DB::table('question_survey')->truncate();
         Question::truncate();
 
@@ -72,7 +70,7 @@ class SurveySeeder extends Seeder
             );
         }
 
-        //single domains - no conent
+        // single domains - no conent
         Survey::updateOrCreate([
             'name' => 'scenarioSurvey-paleomag',
             'active' => true,
@@ -131,7 +129,7 @@ class SurveySeeder extends Seeder
                     'Academia',
                     'Government',
                     'Nonprofit / NGO',
-                    'Consultancy'
+                    'Consultancy',
                 ],
                 'validation' => ['required'],
                 'sectionName' => 'WhichSectorIsYourRole',
@@ -142,7 +140,7 @@ class SurveySeeder extends Seeder
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
         $order++;
-        Question::updateOrCreate([  
+        Question::updateOrCreate([
             'question_type_id' => $displayBladeType->id,
             'answerable' => false,
             'question' => [
@@ -212,7 +210,6 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
-        
         $order++;
         Question::updateOrCreate([
             'question_type_id' => $radioSelectType->id,
@@ -254,7 +251,6 @@ class SurveySeeder extends Seeder
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
 
-        
         $order++;
         Question::updateOrCreate([
             'question_type_id' => $checkBoxType->id,
@@ -272,7 +268,7 @@ class SurveySeeder extends Seeder
                     'Deciding on the Sample Design',
                     'Collecting Data',
                     'Processing and Analyzing Data',
-                    'Writing the Report'
+                    'Writing the Report',
                 ],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
@@ -290,8 +286,6 @@ class SurveySeeder extends Seeder
                 'validation' => ['required', 'min:20'],
             ],
         ])->surveys()->attach($survey->id, ['order' => $order]);
-
-
 
         $order++;
         Question::updateOrCreate([

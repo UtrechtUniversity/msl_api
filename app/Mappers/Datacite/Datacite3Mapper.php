@@ -76,7 +76,6 @@ class Datacite3Mapper implements MapperInterface
     /**
      * Maps the publicationYear of a datacite entry
      * It is a mandatory entry, failure throws exception
-     * 
      */
     public function mapPublicationYear(array $metadata, DataPublication $dataset): DataPublication
     {
@@ -155,7 +154,7 @@ class Datacite3Mapper implements MapperInterface
      * 'lang' set to 'en'
      * 'lang set to 'en-GB'
      * if none apply take first in list
-     * 
+     *
      * THis is an optional entry
      *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
@@ -179,10 +178,10 @@ class Datacite3Mapper implements MapperInterface
         $descriptionString = '';
         $descriptionsCandidates = [];
 
-        /////////////////  additional notes
+        // ///////////////  additional notes
         // -> description is optional, so it can be empty
         // -> "descriptionType" is always present
-        /////////////////
+        // ///////////////
 
         // filter if descriptions with descriptionType are present and collect candidates
         foreach ($descriptions as $description) {
@@ -210,7 +209,7 @@ class Datacite3Mapper implements MapperInterface
      * if none apply take first in list
      *
      * this entry is mandatory
-     * 
+     *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
     public function mapTitles(array $metadata, DataPublication $dataset): DataPublication
@@ -223,10 +222,10 @@ class Datacite3Mapper implements MapperInterface
 
             $titlesCandidates = [];
 
-            /////////////////  additional notes
+            // ///////////////  additional notes
             // -> multiple 'title' entries without 'titleType' must have unique languages
             // -> 'lang' can be empty
-            /////////////////
+            // ///////////////
 
             if ($titleSize > 1) {
                 // filter the titles for the ones which dont have 'titleType', this is the indicator for main title
@@ -295,7 +294,7 @@ class Datacite3Mapper implements MapperInterface
 
     /**
      * stores the related identifiers to the dataset
-     * 
+     *
      * this entry is optional
      */
     public function mapRelatedIdentifiers(array $metadata, DataPublication $dataset): DataPublication
@@ -330,7 +329,7 @@ class Datacite3Mapper implements MapperInterface
 
         return $dataset;
     }
-    
+
     /*
      * stores the language to the dataset
      * this entry is optional
@@ -380,11 +379,11 @@ class Datacite3Mapper implements MapperInterface
         if (isset($metadata['data']['attributes']['publisher'])) {
             $publisherEntry = $metadata['data']['attributes']['publisher'];
 
-            if(isset($publisherEntry['name'])) {
+            if (isset($publisherEntry['name'])) {
                 $dataset->msl_publisher = $publisherEntry['name'];
             }
 
-            if(! is_array($publisherEntry)) {
+            if (! is_array($publisherEntry)) {
                 $dataset->msl_publisher = $publisherEntry;
             }
         } else {
@@ -426,7 +425,7 @@ class Datacite3Mapper implements MapperInterface
 
                 if (isset($creator['affiliation']) && $creator['affiliation'] > 0) {
                     foreach ($creator['affiliation'] as $affiliationEntry) {
-                        if(isset($affiliationEntry['name'])) {
+                        if (isset($affiliationEntry['name'])) {
                             $affiliation = new Affiliation(
                                 (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
                                 (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
@@ -509,7 +508,7 @@ class Datacite3Mapper implements MapperInterface
 
                 if (isset($contributor['affiliation']) && $contributor['affiliation'] > 0) {
                     foreach ($contributor['affiliation'] as $affiliationEntry) {
-                        if(isset($affiliationEntry['name'])) {
+                        if (isset($affiliationEntry['name'])) {
                             $affiliation = new Affiliation(
                                 (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
                                 (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
@@ -596,36 +595,36 @@ class Datacite3Mapper implements MapperInterface
 
         $area = 0;
 
-        foreach($geoData as $geoEntry) {
+        foreach ($geoData as $geoEntry) {
             $locationName = '';
-            if(array_key_exists('geoLocationPlace', $geoEntry)) {
+            if (array_key_exists('geoLocationPlace', $geoEntry)) {
                 $dataset->addGeolocation($geoEntry['geoLocationPlace']);
                 $locationName = $geoEntry['geoLocationPlace'];
             }
 
-            foreach($geoEntry as $key => $value) {
-                if($key === 'geoLocationPoint') {
+            foreach ($geoEntry as $key => $value) {
+                if ($key === 'geoLocationPoint') {
                     $point = new Point(
-                        (float)$value['pointLongitude'],
-                        (float)$value['pointLatitude'],
+                        (float) $value['pointLongitude'],
+                        (float) $value['pointLatitude'],
                     );
                     $geometries[] = $point;
-                    
+
                     $features[] = new Feature(
                         $point,
                         ['name' => $locationName]
                     );
-                } elseif($key === 'geoLocationBox') {
+                } elseif ($key === 'geoLocationBox') {
                     $boundingBox = new BoundingBox(
                         $value['westBoundLongitude'],
                         $value['southBoundLatitude'],
                         $value['eastBoundLongitude'],
                         $value['northBoundLatitude']
                     );
-                    
+
                     $polygon = Polygon::createFromBoundingBox($boundingBox);
                     $geometries[] = $polygon;
-                    
+
                     $features[] = new Feature(
                         $polygon,
                         ['name' => $locationName]
@@ -633,13 +632,13 @@ class Datacite3Mapper implements MapperInterface
 
                     $area += $polygon->area();
 
-                } elseif($key === 'geoLocationPolygon') {
+                } elseif ($key === 'geoLocationPolygon') {
                     $points = [];
 
-                    foreach($value as $point) {
+                    foreach ($value as $point) {
                         $points[] = new Point(
-                            (float)$point['polygonPoint']['pointLongitude'],
-                            (float)$point['polygonPoint']['pointLatitude']
+                            (float) $point['polygonPoint']['pointLongitude'],
+                            (float) $point['polygonPoint']['pointLatitude']
                         );
                     }
 
@@ -655,7 +654,7 @@ class Datacite3Mapper implements MapperInterface
             }
         }
 
-        if(count($geometries) === 1) {
+        if (count($geometries) === 1) {
             $dataset->addLocationToExtras(
                 json_encode($geometries[0])
             );
@@ -663,10 +662,10 @@ class Datacite3Mapper implements MapperInterface
             $collection = new Collection($geometries);
             $dataset->addLocationToExtras(
                 json_encode($collection)
-            );          
+            );
         }
 
-        if(count($features) > 0) {
+        if (count($features) > 0) {
             $featureCollection = new FeatureCollection($features);
             $dataset->msl_geojson_featurecollection = json_encode($featureCollection);
         }

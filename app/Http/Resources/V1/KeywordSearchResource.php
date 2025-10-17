@@ -15,7 +15,7 @@ class KeywordSearchResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name' => $this->search_value
+            'name' => $this->search_value,
         ];
     }
 }

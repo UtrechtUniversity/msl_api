@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class Right implements CkanArrayInterface
 {
-
     public string $msl_right;
 
     public string $msl_right_uri;
@@ -14,7 +14,7 @@ class Right implements CkanArrayInterface
 
     public string $msl_right_scheme_uri;
 
-    public function __construct($right, $uri = "", $identifier = "", $identifierScheme = "", $schemeUri = "")
+    public function __construct($right, $uri = '', $identifier = '', $identifierScheme = '', $schemeUri = '')
     {
         $this->msl_right = $right;
         $this->msl_right_uri = $uri;
@@ -24,7 +24,7 @@ class Right implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

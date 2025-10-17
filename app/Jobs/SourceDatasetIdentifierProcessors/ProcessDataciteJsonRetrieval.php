@@ -9,24 +9,23 @@ use App\Models\SourceDatasetIdentifier;
 
 class ProcessDataciteJsonRetrieval implements SourceDatasetIdentifierProcessorInterface
 {
-
     public static function process(SourceDatasetIdentifier $sourceDatasetIdentifier): bool
     {
         $datacite = new Datacite;
         $result = $datacite->doisRequest($sourceDatasetIdentifier->identifier, true, false);
 
-        if($result->response_code == 200) {                
+        if ($result->response_code == 200) {
             $SourceDataset = SourceDataset::create([
-                'source_dataset_identifier_id'=> $sourceDatasetIdentifier->id,
+                'source_dataset_identifier_id' => $sourceDatasetIdentifier->id,
                 'import_id' => $sourceDatasetIdentifier->import->id,
                 'source_dataset' => $result->response_body,
             ]);
-            
+
             ProcessSourceDataset::dispatch($SourceDataset);
-            
+
             return true;
         }
-        
-        return false;        
+
+        return false;
     }
 }

@@ -9,38 +9,33 @@ use Maatwebsite\Excel\Concerns\WithMapping;
 
 class LabExport implements FromCollection, WithHeadings, WithMapping
 {
-       
-    public function __construct()
-    {
+    public function __construct() {}
 
-    }
-    
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
         return Laboratory::get();
     }
-    
+
     public function headings(): array
     {
         return [
             'fast_id',
             'name',
             'latitude',
-            'longitude'
+            'longitude',
         ];
     }
-    
+
     public function map($laboratory): array
     {
         return [
             $laboratory->fast_id,
             $laboratory->name,
             $laboratory->latitude,
-            $laboratory->longitude
+            $laboratory->longitude,
         ];
     }
-
 }

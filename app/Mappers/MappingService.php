@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mappers;
 
 use App\Exceptions\MappingException;
@@ -11,26 +12,23 @@ use Illuminate\Support\Facades\Validator;
 
 class MappingService
 {
-
-
     public function map(SourceDataset $sourceDataset, Importer $importer): DataPublication
     {
-        $dataPublication = new DataPublication();
+        $dataPublication = new DataPublication;
         $config = $importer->options;
 
-        switch ($config['sourceDatasetProcessor']['type'])
-        {
+        switch ($config['sourceDatasetProcessor']['type']) {
             case 'datacite':
                 // extract metadata
                 $metadata = json_decode($sourceDataset->source_dataset, true);
 
-                $mapper = new DataciteMapper();
+                $mapper = new DataciteMapper;
                 $dataPublication = $mapper->map($metadata, $dataPublication);
                 break;
         }
 
         // set general fields independend of mapping implementation
-        
+
         // set owner organization for data publication
         $dataPublication->owner_org = $importer->data_repository->ckan_name;
 
@@ -48,21 +46,20 @@ class MappingService
         $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_other', 'msl_description_other_annotated', 'description other');
 
         // run additional mappers based on options
-        if(isset($config['sourceDatasetProcessor']['options']['additionalMappers'])) {
-            foreach($config['sourceDatasetProcessor']['options']['additionalMappers'] as $additionalMapper)
-            {
+        if (isset($config['sourceDatasetProcessor']['options']['additionalMappers'])) {
+            foreach ($config['sourceDatasetProcessor']['options']['additionalMappers'] as $additionalMapper) {
                 $mapper = new $additionalMapper;
                 $dataPublication = $mapper->map($dataPublication, $sourceDataset);
             }
         }
 
         // validate data publication
-        $validator = Validator::make((array)$dataPublication, $dataPublication::$importingRules);
+        $validator = Validator::make((array) $dataPublication, $dataPublication::$importingRules);
 
-        if($validator->fails()) {
+        if ($validator->fails()) {
             throw new MappingException('Datapublication could not be validated');
         }
-        
+
         return $dataPublication;
     }
 }

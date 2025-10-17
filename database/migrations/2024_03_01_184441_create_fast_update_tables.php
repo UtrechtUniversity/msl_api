@@ -17,14 +17,14 @@ class CreateFastUpdateTables extends Migration
             $table->id();
             $table->timestamps();
         });
-        
+
         Schema::create('laboratory_update_fast', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('laboratory_update_group_fast_id');
             $table->unsignedBigInteger('laboratory_id');
             $table->integer('response_code')->nullable();
             $table->longText('source_laboratory_data')->nullable();
-            $table->timestamps();                        
+            $table->timestamps();
         });
     }
 

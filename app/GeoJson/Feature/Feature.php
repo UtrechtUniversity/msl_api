@@ -30,10 +30,10 @@ class Feature implements JsonSerializable
         $return['geometry'] = $this->geometry->jsonSerialize();
         $return['properties'] = $this->properties;
 
-        if(count($return['properties']) === 0) {
+        if (count($return['properties']) === 0) {
             $return['properties'] = new stdClass;
         }
-        
+
         return $return;
     }
 }

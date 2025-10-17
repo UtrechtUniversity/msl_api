@@ -3,11 +3,10 @@
 namespace App\Jobs\ImportProcessors;
 
 use app\Jobs\ImportProcessors\ImportProcessorInterface;
-use App\Jobs\ImportProcessors\ExtraPayloadProvider;
-use App\Models\Import;
-use Illuminate\Support\Facades\Storage;
-use App\Models\SourceDatasetIdentifier;
 use App\Jobs\ProcessSourceDatasetIdentifier;
+use App\Models\Import;
+use App\Models\SourceDatasetIdentifier;
+use Illuminate\Support\Facades\Storage;
 
 class ProcessDirectoryListing implements ImportProcessorInterface
 {
@@ -15,33 +14,33 @@ class ProcessDirectoryListing implements ImportProcessorInterface
     {
         $importer = $import->importer;
 
-        if(!isset($importer->options['importProcessor']['options']['directoryPath'])) {
+        if (! isset($importer->options['importProcessor']['options']['directoryPath'])) {
             throw new \Exception('DirectoryPath setting required for directoryListing importProcessor.');
         }
-        if(!isset($importer->options['importProcessor']['options']['recursive'])) {
+        if (! isset($importer->options['importProcessor']['options']['recursive'])) {
             throw new \Exception('Recursive setting required for directoryListing importProcessor.');
         }
-                
+
         $directoryPath = $importer->options['importProcessor']['options']['directoryPath'];
-        
-        $fileList = Storage::disk()->files($directoryPath, (bool)$importer->options['importProcessor']['options']['recursive']);
-        
+
+        $fileList = Storage::disk()->files($directoryPath, (bool) $importer->options['importProcessor']['options']['recursive']);
+
         $counter = 0;
         foreach ($fileList as $file) {
-            if($limit) {
+            if ($limit) {
                 $counter++;
-                if($counter > $limit) {
+                if ($counter > $limit) {
                     break;
-                } 
+                }
             }
 
-            if($file !== "") {
+            if ($file !== '') {
                 $identifier = SourceDatasetIdentifier::create([
                     'import_id' => $import->id,
-                    'identifier' => (string)$file,
-                    'extra_payload' => ExtraPayloadProvider::getExtraPayload($importer, (string)$file)
+                    'identifier' => (string) $file,
+                    'extra_payload' => ExtraPayloadProvider::getExtraPayload($importer, (string) $file),
                 ]);
-                
+
                 ProcessSourceDatasetIdentifier::dispatch($identifier);
             }
         }

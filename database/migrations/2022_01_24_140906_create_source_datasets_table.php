@@ -14,7 +14,7 @@ class CreateSourceDatasetsTable extends Migration
     public function up()
     {
         Schema::create('source_datasets', function (Blueprint $table) {
-            $table->id();            
+            $table->id();
             $table->unsignedBigInteger('source_dataset_identifier_id');
             $table->string('status')->nullable();
             $table->longText('source_dataset');

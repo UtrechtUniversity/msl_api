@@ -14,11 +14,11 @@ class SeederSeeder extends dbSeeder
      */
     public function run()
     {
-        
-        //organization seeder        
+
+        // organization seeder
         Seeder::updateOrCreate(
             [
-                'name' => 'Organization seeder'
+                'name' => 'Organization seeder',
             ],
             [
                 'name' => 'Organization seeder',
@@ -26,40 +26,40 @@ class SeederSeeder extends dbSeeder
                 'type' => 'organization',
                 'options' => [
                     'type' => 'fileSeeder',
-                    'filePath' => '/seed-data/organizations.json'
-                ]
+                    'filePath' => '/seed-data/organizations.json',
+                ],
             ]
         );
-        
-        //laboratory seeder
+
+        // laboratory seeder
         Seeder::updateOrCreate(
             [
-                'name' => 'Laboratory seeder'
+                'name' => 'Laboratory seeder',
             ],
             [
                 'name' => 'Laboratory seeder',
                 'description' => 'create/update laboratories in ckan',
                 'type' => 'lab',
                 'options' => [
-                    'type' => 'directSeeder'
-                ]
+                    'type' => 'directSeeder',
+                ],
             ]
         );
 
-        //laboratory seeder
+        // laboratory seeder
         Seeder::updateOrCreate(
             [
-                'name' => 'Equipment seeder'
+                'name' => 'Equipment seeder',
             ],
             [
                 'name' => 'Equipment seeder',
                 'description' => 'create/update equipment in ckan',
                 'type' => 'equipment',
                 'options' => [
-                    'type' => 'directSeeder'
-                ]
+                    'type' => 'directSeeder',
+                ],
             ]
         );
-        
-    }       
+
+    }
 }

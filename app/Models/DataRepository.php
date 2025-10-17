@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataRepository extends Model
 {
-    
     protected $fillable = [
         'name',
-        'ckan_name'
+        'ckan_name',
     ];
-    
-    public function importer() {
+
+    public function importer()
+    {
         return $this->belongsToMany(Importer::class);
     }
 }

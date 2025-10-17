@@ -2,9 +2,6 @@
 
 namespace App\Response\V1;
 
-use App\Response\V1\BaseResult;
-use App\Response\V1\FacilitiesResult;
-
 class ResultBlock
 {
     public $count = 0;
@@ -13,26 +10,25 @@ class ResultBlock
 
     public $results = [];
 
-
-    public function setByCkanResponse($response, $context) {
+    public function setByCkanResponse($response, $context)
+    {
         $this->count = $response->getTotalResultsCount();
 
         $results = $response->getResults();
         $this->resultCount = count($results);
 
-        foreach ($results as $result) {     
-                if($context == 'facilities'){
-                    $this->results[] = new FacilitiesResult($result);                
-                } else {
-                    $this->results[] = new BaseResult($result, $context);                
-                }          
-        }   
+        foreach ($results as $result) {
+            if ($context == 'facilities') {
+                $this->results[] = new FacilitiesResult($result);
+            } else {
+                $this->results[] = new BaseResult($result, $context);
+            }
+        }
 
     }
 
-    public function getAsArray() {
-        return (array)$this;
+    public function getAsArray()
+    {
+        return (array) $this;
     }
-    
-        
 }

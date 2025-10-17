@@ -10,14 +10,15 @@ class Seeder extends Model
         'name',
         'description',
         'type',
-        'options'
+        'options',
     ];
-    
+
     protected $casts = [
-        'options' => 'array'
+        'options' => 'array',
     ];
-    
-    public function seeds() {
+
+    public function seeds()
+    {
         return $this->hasMany(Seed::class);
     }
 }

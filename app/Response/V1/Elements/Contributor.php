@@ -3,25 +3,25 @@
 namespace App\Response\V1\Elements;
 
 class Contributor
-{   
-    public $contributorName = "";
+{
+    public $contributorName = '';
 
-    public $contributorOrcid = "";
-    
-    public $contributorScopus = "";
+    public $contributorOrcid = '';
+
+    public $contributorScopus = '';
 
     public $contributorAffiliation = [];
 
-    public $contributorRole = "";
+    public $contributorRole = '';
 
-    public function __construct($data) {
-        if(isset($data['msl_contributor_name'])) {
+    public function __construct($data)
+    {
+        if (isset($data['msl_contributor_name'])) {
             $this->contributorName = $data['msl_contributor_name'];
-        }        
+        }
 
-        if(isset($data['msl_contributor_type'])) {
+        if (isset($data['msl_contributor_type'])) {
             $this->contributorRole = $data['msl_contributor_type'];
         }
     }
-
 }

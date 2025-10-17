@@ -16,34 +16,34 @@ class AdminUserSeeder extends Seeder
     {
         User::updateOrCreate(
             [
-                'name' => 'Laurens'
+                'name' => 'Laurens',
             ],
             [
                 'name' => 'Laurens',
                 'email' => 'l.samshuijzen@uu.nl',
-                'password' => bcrypt('testtest')
+                'password' => bcrypt('testtest'),
             ]
         );
 
         User::updateOrCreate(
             [
-                'name' => 'Maik'
+                'name' => 'Maik',
             ],
             [
                 'name' => 'Maik',
                 'email' => 'm.nothbaum@uu.nl',
-                'password' => bcrypt('testtest')
+                'password' => bcrypt('testtest'),
             ]
         );
 
         User::updateOrCreate(
             [
-                'name' => 'Dionysia'
+                'name' => 'Dionysia',
             ],
             [
                 'name' => 'Dionysia',
                 'email' => 'd.nakou@uu.nl',
-                'password' => bcrypt('testtest')
+                'password' => bcrypt('testtest'),
             ]
         );
     }

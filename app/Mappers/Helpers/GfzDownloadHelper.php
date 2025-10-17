@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mappers\Helpers;
 
 use DOMDocument;
@@ -12,12 +13,13 @@ class GfzDownloadHelper
      * @var GuzzleClient Guzzle HTTP client instance
      */
     private $client;
-    
+
     /**
      * constructs a new GfzDownloadHelper
-     * @param client $client
+     *
+     * @param  client  $client
      */
-    public function __construct($client = new Client()) 
+    public function __construct($client = new Client)
     {
         $this->client = $client;
     }
@@ -44,8 +46,8 @@ class GfzDownloadHelper
     {
         $response = $this->client->request('GET', $url);
 
-        if(isset($response)) {
-            return (string)$response->getBody();
+        if (isset($response)) {
+            return (string) $response->getBody();
         }
 
         throw new Exception('page retrieved empty');
@@ -56,7 +58,7 @@ class GfzDownloadHelper
      */
     private function getDownloadsUrl(string $landingPageSource): string
     {
-        $domDocument = new DOMDocument();
+        $domDocument = new DOMDocument;
         $domDocument->loadHTML($landingPageSource, LIBXML_NOERROR);
 
         $xpath = new DOMXPath($domDocument);
@@ -64,8 +66,9 @@ class GfzDownloadHelper
         $query = '//a[contains(text(), "Download data and description")]';
 
         $matches = $xpath->query($query);
-        if($matches->length > 0) {
+        if ($matches->length > 0) {
             $resultNode = $matches->item(0);
+
             return $resultNode->getAttribute('href');
         }
 
@@ -73,8 +76,9 @@ class GfzDownloadHelper
         $query = '//a[text() = "Download data"]';
 
         $matches = $xpath->query($query);
-        if($matches->length > 0) {
+        if ($matches->length > 0) {
             $resultNode = $matches->item(0);
+
             return $resultNode->getAttribute('href');
         }
 
@@ -86,7 +90,7 @@ class GfzDownloadHelper
      */
     private function getFilesFromPage(string $downsloadPageSource, string $baseUrl): array
     {
-        $domDocument = new DOMDocument();
+        $domDocument = new DOMDocument;
         $domDocument->loadHTML($downsloadPageSource, LIBXML_NOERROR);
 
         $xpath = new DOMXPath($domDocument);
@@ -96,16 +100,16 @@ class GfzDownloadHelper
         $matches = $xpath->query($query);
 
         // first 5 a elements are ui elements
-        if($matches->length > 5) {
-            for($i = 5; $i < $matches->length; $i++) {
+        if ($matches->length > 5) {
+            for ($i = 5; $i < $matches->length; $i++) {
                 $isFolder = false;
-                if(substr($matches->item($i)->getAttribute('href'), -1) == "/") {
+                if (substr($matches->item($i)->getAttribute('href'), -1) == '/') {
                     $isFolder = true;
                 }
 
                 $file = [];
                 $file['fileName'] = $matches->item($i)->nodeValue;
-                $file['downloadLink'] = $baseUrl . $matches->item($i)->getAttribute('href');
+                $file['downloadLink'] = $baseUrl.$matches->item($i)->getAttribute('href');
                 $file['extension'] = $this->extractFileExtension($matches->item($i)->nodeValue);
                 $file['isFolder'] = $isFolder;
 
@@ -115,14 +119,14 @@ class GfzDownloadHelper
 
         return $files;
     }
-    
-    private function extractFileExtension($filename) {
+
+    private function extractFileExtension($filename)
+    {
         $fileInfo = pathinfo($filename);
-        if(isset($fileInfo['extension'])) {
+        if (isset($fileInfo['extension'])) {
             return $fileInfo['extension'];
         }
-        
-        return '';
-    }    
-}
 
+        return '';
+    }
+}

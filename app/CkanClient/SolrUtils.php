@@ -4,7 +4,6 @@ namespace App\CkanClient;
 
 class SolrUtils
 {
-
     private static $search = [
         '\\',
         '+',

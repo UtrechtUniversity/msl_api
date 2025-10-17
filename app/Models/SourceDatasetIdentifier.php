@@ -9,19 +9,20 @@ class SourceDatasetIdentifier extends Model
     protected $fillable = [
         'import_id',
         'identifier',
-        'extra_payload'
+        'extra_payload',
     ];
-    
+
     protected $casts = [
-        'extra_payload' => 'array'
+        'extra_payload' => 'array',
     ];
-    
+
     public function import()
     {
         return $this->belongsTo(Import::class);
     }
-    
-    public function source_dataset() {
+
+    public function source_dataset()
+    {
         return $this->hasOne(SourceDataset::class);
     }
 }

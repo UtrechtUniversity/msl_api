@@ -96,7 +96,7 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
     {
         return [
             [
-                $row['columnName'], $row['columnPurpose'], $row['columnDescription']
+                $row['columnName'], $row['columnPurpose'], $row['columnDescription'],
             ],
         ];
     }

@@ -9,7 +9,6 @@ use App\Models\Ckan\OriginalKeyword;
 use App\Models\Ckan\Tag;
 use PHPUnit\Framework\TestCase;
 
-
 class DataPublicationTest extends TestCase
 {
     /**
@@ -63,7 +62,7 @@ class DataPublicationTest extends TestCase
         $dataPublication = new DataPublication;
 
         $tag = new Tag('test tag1', 'epos-msl', 'epos-msl/testtag', 'epos-msl scheme', '1234');
-        
+
         $dataPublication->addTag($tag);
 
         $dataPublication->addUriToTag('test tag1', 'test/uri');
@@ -138,7 +137,7 @@ class DataPublicationTest extends TestCase
         $this->assertEquals($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_vocab_uri, 'https://epos-msl.uu.nl/voc/materials');
         $this->assertEquals($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains, ['sudomain1']);
         $this->assertEquals($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_locations, ['location1']);
-        $this->assertEquals($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris, ['childUri1']);        
+        $this->assertEquals($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris, ['childUri1']);
     }
 
     /**
@@ -156,7 +155,7 @@ class DataPublicationTest extends TestCase
 
         // a single enriched keyword should be added due to matching uris, associatated subdomains and match child uris should contain new unique values
         $this->assertEquals(count($dataPublication->msl_enriched_keywords), 1);
-        
+
         $this->assertEquals(count($dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains), 2);
         $this->assertContains('sudomain1', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains);
         $this->assertContains('sudomain2', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains);

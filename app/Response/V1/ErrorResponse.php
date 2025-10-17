@@ -8,10 +8,11 @@ class ErrorResponse
 
     public $message = '';
 
-    public function getAsLaravelResponse() {
+    public function getAsLaravelResponse()
+    {
         return response()->json([
             'success' => $this->success,
-            'message' => $this->message
+            'message' => $this->message,
         ], 500);
     }
 }

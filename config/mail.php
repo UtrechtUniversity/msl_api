@@ -115,9 +115,9 @@ return [
     | Addresses used for sending notifications from the application
     |
     */
-    
+
     'notifications' => [
         'address' => env('MAIL_NOTIFICATIONS_ADDRESS', ''),
-    ]
+    ],
 
 ];

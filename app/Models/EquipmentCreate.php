@@ -6,15 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class EquipmentCreate extends Model
 {
-    
     protected $fillable = [
         'equipment_type',
         'equipment',
-        'seed_id'
+        'seed_id',
     ];
-    
+
     protected $casts = [
-        'equipment' => 'array'
+        'equipment' => 'array',
     ];
 
     protected $table = 'equipment_creates';
@@ -23,23 +22,22 @@ class EquipmentCreate extends Model
     {
         return $this->belongsTo(Seed::class);
     }
-    
+
     public function getEquipmentAsJson($pretty = false)
     {
-        if($pretty) {
+        if ($pretty) {
             return json_encode($this->equipment, JSON_PRETTY_PRINT);
         } else {
             return json_encode($this->equipment);
         }
     }
-    
+
     public function getResponseBodyAsJson($pretty = false)
     {
-        if($pretty) {
+        if ($pretty) {
             return json_encode(json_decode($this->response_body), JSON_PRETTY_PRINT);
         } else {
             return json_encode(json_decode($this->response_body));
         }
     }
-    
 }

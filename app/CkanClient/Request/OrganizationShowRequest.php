@@ -1,4 +1,5 @@
 <?php
+
 namespace App\CkanClient\Request;
 
 use App\CkanClient\Response\BaseResponse;
@@ -25,15 +26,12 @@ class OrganizationShowRequest implements RequestInterface
      */
     public $id;
 
-    
-
-
     public function getPayloadAsArray(): array
     {
         return [
             'query' => [
-                'id' => $this->id
-            ]
+                'id' => $this->id,
+            ],
         ];
     }
 

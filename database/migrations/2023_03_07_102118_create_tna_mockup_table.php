@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\TnaMockup;
 
 class CreateTnaMockupTable extends Migration
 {
@@ -29,7 +28,7 @@ class CreateTnaMockupTable extends Migration
             $table->string('tnaStartDate');
             $table->string('tnaEndDate');
             $table->timestamps();
-        });        
+        });
     }
 
     /**

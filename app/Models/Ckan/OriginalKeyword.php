@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class OriginalKeyword implements CkanArrayInterface
@@ -17,7 +18,7 @@ class OriginalKeyword implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

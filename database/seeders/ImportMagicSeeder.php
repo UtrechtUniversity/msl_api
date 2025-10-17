@@ -18,17 +18,17 @@ class ImportMagicSeeder extends Seeder
     {
         $repo = DataRepository::updateOrCreate(
             [
-                'name' => 'MagIC'
+                'name' => 'MagIC',
             ],
             [
                 'name' => 'MagIC',
-                'ckan_name' => 'magic'
+                'ckan_name' => 'magic',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'MagIC'
+                'name' => 'MagIC',
             ],
             [
                 'name' => 'MagIC',
@@ -39,7 +39,7 @@ class ImportMagicSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/magic/converted.json',
-                            'identifierKey' => 'identifier'
+                            'identifierKey' => 'identifier',
                         ],
                         'extra_data_loader' => [
                             'type' => 'jsonLoader',
@@ -47,26 +47,26 @@ class ImportMagicSeeder extends Seeder
                                 'filePath' => '/import-data/magic/converted.json',
                                 'dataKeyMapping' => [
                                     'contentUrl' => 'contentUrl',
-                                    'description' => 'description'
-                                ]
-                            ]
-                        ]
+                                    'description' => 'description',
+                                ],
+                            ],
+                        ],
                     ],
                     'identifierProcessor' => [
                         'type' => 'dataciteJsonRetrieval',
-                        'options' => []
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
                         'type' => 'datacite',
                         'options' => [
                             'additionalMappers' => [
                                 MagicFileMapper::class,
-                            ]
-                        ]
-                    ]
+                            ],
+                        ],
+                    ],
                 ],
-                'data_repository_id' => $repo->id
+                'data_repository_id' => $repo->id,
             ]
-            );
+        );
     }
 }

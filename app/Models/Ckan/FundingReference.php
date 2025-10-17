@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class FundingReference implements CkanArrayInterface
@@ -17,8 +18,7 @@ class FundingReference implements CkanArrayInterface
 
     public string $msl_funding_reference_award_title;
 
-    
-    public function __construct($funderName, $funderIdentifier = "", $funderIdentifierType = "", $schemeUri = "", $awardNumber = "", $awardUri = "", $awardTitle = "")
+    public function __construct($funderName, $funderIdentifier = '', $funderIdentifierType = '', $schemeUri = '', $awardNumber = '', $awardUri = '', $awardTitle = '')
     {
         $this->msl_funding_reference_funder_name = $funderName;
         $this->msl_funding_reference_funder_identifier = $funderIdentifier;
@@ -28,9 +28,9 @@ class FundingReference implements CkanArrayInterface
         $this->msl_funding_reference_award_uri = $awardUri;
         $this->msl_funding_reference_award_title = $awardTitle;
     }
-    
+
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

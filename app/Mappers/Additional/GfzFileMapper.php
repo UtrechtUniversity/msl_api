@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Mappers\Additional;
 
 use App\Mappers\Helpers\GfzDownloadHelper;
@@ -9,12 +10,8 @@ use Exception;
 
 class GfzFileMapper implements AdditionalMapperInterface
 {
- 
     /**
      * Add figshare files associated by DOI
-     * @param DataPublication $dataPublication
-     * @param SourceDataset $sourceDataset
-     * @return DataPublication
      */
     public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
@@ -22,12 +19,11 @@ class GfzFileMapper implements AdditionalMapperInterface
 
         try {
             $filelist = $yodaFileHelper->getFiles($dataPublication->msl_source);
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             return $dataPublication;
         }
 
-        foreach($filelist as $file) {
+        foreach ($filelist as $file) {
             $dataPublication->addFile(
                 new File(
                     $file['fileName'],

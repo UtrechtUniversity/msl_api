@@ -2,7 +2,6 @@
 
 namespace App\GeoJson\Geometry;
 
-use App\GeoJson\Geometry\Geometry;
 use Exception;
 
 class Point extends Geometry
@@ -19,8 +18,9 @@ class Point extends Geometry
 
     /**
      * Constructs new Point object
-     * @param int|float $x
-     * @param int|float $y
+     *
+     * @param  int|float  $x
+     * @param  int|float  $y
      */
     public function __construct($x, $y)
     {
@@ -38,20 +38,20 @@ class Point extends Geometry
 
     /**
      * returns distance between this and provided point
-     * @param Point $point
      */
     public function distanceToPoint(Point $point)
     {
         $dX = $this->x - $point->x;
         $dY = $this->y - $point->y;
+
         return sqrt($dX * $dX + $dY * $dY);
     }
-    
+
     public function jsonSerialize(): array
-    {        
+    {
         return [
-            'type'=> 'Point',
-            'coordinates' => [$this->x, $this->y]
+            'type' => 'Point',
+            'coordinates' => [$this->x, $this->y],
         ];
     }
 }

@@ -4,7 +4,6 @@ namespace App\GeoJson;
 
 class BoundingBox
 {
-
     public float $minX;
 
     public float $minY;

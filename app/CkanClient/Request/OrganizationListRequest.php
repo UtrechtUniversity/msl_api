@@ -1,4 +1,5 @@
 <?php
+
 namespace App\CkanClient\Request;
 
 use App\CkanClient\Response\BaseResponse;
@@ -35,15 +36,14 @@ class OrganizationListRequest implements RequestInterface
      */
     public $sortField = '';
 
-    
     public function getPayloadAsArray(): array
     {
         return [
             'query' => [
                 'all_fields' => $this->allFields,
                 'include_extras' => $this->includeExtras,
-                'sort' => $this->sortField
-            ]
+                'sort' => $this->sortField,
+            ],
         ];
     }
 

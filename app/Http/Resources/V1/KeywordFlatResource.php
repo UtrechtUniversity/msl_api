@@ -16,7 +16,7 @@ class KeywordFlatResource extends JsonResource
     {
         return [
             'name' => $this->value,
-            'uri' => $this->uri            
+            'uri' => $this->uri,
         ];
     }
 }
