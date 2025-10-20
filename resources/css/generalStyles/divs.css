@@ -4,7 +4,7 @@
     /* map and list div */
         /* general page structure used on every template due to the formatting of the landing page */
     .main-content{
-        @apply pb-20 flex  md:justify-center items-start md:items-center p-2 md:p-10
+        @apply pb-20 flex justify-center items-center p-2 md:p-10
         }
     .sub-content{
         @apply md:max-w-2xl
@@ -28,6 +28,9 @@
     .content-divide-y-light-secondary{
       @apply divide-y-2 divide-secondary-300
     }    
+    .content-divide-y-light-neutral{
+      @apply divide-y-2 divide-neutral-300
+    }    
 
     .content-divide-x{
       @apply divide-x-2 divide-primary-700
@@ -41,6 +44,10 @@
     .content-divide-x-light-secondary{
       @apply divide-x-2 divide-secondary-300
     }    
+    .content-divide-x-light-neutral{
+      @apply divide-x-2 divide-neutral-300
+    }    
+
 
 
     /* List view div */
@@ -62,6 +69,7 @@
       bg-primary-200
       hover:rounded-none 
     }
+
     .pagination-button-active-page{
       @apply
       text-primary-900

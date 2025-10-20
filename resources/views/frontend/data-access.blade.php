@@ -5,9 +5,9 @@
             <div class="sub-content-wide flex place-content-center w-full">
                 <div class="drawer lg:drawer-open ">
                     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                    <div class="drawer-content bg-secondary-100 flex">
+                    <div class="drawer-content bg-secondary-100 flex relative ">
                         {{-- content here --}}
-                        <div class="w-10 bg-secondary-200 lg:hidden relative opacity-75 hover:opacity-100">
+                        <div class="p-0  w-10 h-52 fixed inset-y-1/2 left-0 min-[450px]:left-10 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
                             <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center "
                             >
                             <p 
@@ -15,6 +15,7 @@
                             style="writing-mode: sideways-lr;" >
                                 click here to see filters
                               </p>
+                            </label>
                         </div>
                         <div class="w-full min-h-full bg-primary-100 pl-4">
                             {{-- top search div --}}
