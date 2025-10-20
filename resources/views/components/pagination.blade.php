@@ -1,4 +1,4 @@
-<div class="self-center join p-4 rounded-xl ">
+<div class="self-center join p-4 rounded-xl divide-primary-100 divide-x-1">
 
 
     {{-- 
@@ -61,9 +61,9 @@
 
         {{-- if the range is close the first page dont show "..." otherwise show --}}
         @if ( $currentPage - $lowerRange  <  $lowerRange )
-            
-            <button class="pagination-button btn-disabled !bg-primary-200">...</button>
-            
+            <a>
+                <button class="pagination-button btn-disabled !bg-primary-200">...</button>
+            </a> 
         @endif
 
         {{-- show the range --}}
@@ -90,8 +90,9 @@
 
         {{-- if the range is close to the count dont show the "..." otherwise show --}}
         @if ( $currentPage + $RangeUnilateral  <=  $count - $RangeUnilateral )
-            
-            <button class="pagination-button btn-disabled !bg-primary-200">...</button>
+            <a>
+                <button class="pagination-button btn-disabled !bg-primary-200">...</button>
+            </a>
             
         @endif
 
