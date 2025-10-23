@@ -19,7 +19,7 @@
             <div class="absolute">
 
                 @session('data_publication_active_search')
-                    @include('components.tabLinks',[
+                    @include('components.tab-links',[
                         // 'categoryName'  => 'Results',
                         'includeIcon'   => 'goBack',
                         'routes'        => array(
@@ -31,7 +31,7 @@
 
             <div class="tabLinksParent">
  
-                @include('components.tabLinks',[
+                @include('components.tab-links',[
                     // 'categoryName'  => 'Sections',
                     'routes'        => array(
                             'Metadata'  => route("data-publication-detail", ['id' => $data['name']]),
