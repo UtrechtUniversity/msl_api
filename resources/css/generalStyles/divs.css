@@ -84,6 +84,32 @@
       @apply rounded-r-xl hover:rounded-r-xl w-6 min-[500px]:w-18 md:w-24 
     }
 
+
+
+
+    .search-bar-container{
+      @apply 
+      relative flex items-center w-auto h-12 
+      rounded-lg shadow-md overflow-hidden bg-primary-100
+      form-field-text p-0 
+    }
+    .search-bar-container-icon{
+      @apply
+      grid place-items-center h-full w-12 bg-primary-200
+    }
+    .search-bar{
+      @apply
+      h-full w-full 
+      outline-none 
+      text-sm pr-2 pl-2 
+      text-primary-900
+      placeholder-text
+      bg-white
+    }
+
+
+
+
     /* =============== old =============== */
 
 

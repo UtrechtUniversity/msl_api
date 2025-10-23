@@ -99,7 +99,7 @@
     .word-card-parent{
       @apply 
       flex flex-wrap 
-      justify-start
+      justify-center
       /* items-start */
       /* items-stretch */
       content-start
@@ -108,7 +108,10 @@
 
     .word-card{
       @apply 
-      rounded-xl border border-neutral-500
+      rounded-xl 
+      border 
+      border-neutral-400
+      hover:border-neutral-900
       text-base
       p-1 pr-2 pl-2
       bg-neutral-200 text-neutral-900
@@ -130,34 +133,7 @@
 
 
 
-    /*###############
-    forms
-    ###############*/
-    .form-field-text{
-      @apply 
-      shadow-xs text-sm 
-      h-10 p-3 rounded-lg 
-      ring-1
-      ring-primary-500
-      block w-full
-      bg-white
-      outline-hidden
-      focus:ring-2
-      focus:ring-secondary-400
-      active:ring-2
-      active:ring-secondary-400
-    }
 
-    .error-highlight{
-      @apply text-error-700 pl-4
-    }
-    .error-highlight-input{
-      @apply 
-      bg-error-300 
-      text-error-800
-      focus:ring-2
-      focus:ring-secondary-400
-    }
     
     /*###############
     footer
@@ -189,9 +165,7 @@ tippy theme
 
 
 
-::placeholder {
-  color: green
-}
+
 
 
 

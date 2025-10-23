@@ -1,5 +1,5 @@
 .info-icon{
-    @apply size-8 p-1 fill-info-700  rounded-full inline
+    @apply size-8 fill-info-700  rounded-full inline
   }
 
   .close-icon{
@@ -28,4 +28,7 @@
 
   .sad-icon{
     @apply size-20 fill-info-900  rounded-full inline
+  }
+  .search-icon{
+    @apply size-6 fill-primary-900  rounded-full inline
   }
