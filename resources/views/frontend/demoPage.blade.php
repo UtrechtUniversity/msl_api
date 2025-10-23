@@ -55,7 +55,11 @@
                     as a class must be called extra. this results to the desired behaviour that the child is marked interactive when the "a" tagged container is hovered.
                 Try yourself</p>
                 <div class="flex items-center justify-center">
-                    <a href="" class="group">parent ----- <div class="inline-block hover-interactive-group underline">This is the child</div> ----- parent</a>
+                    <a href="" class="group">
+                        parent ----- 
+                        <div class="inline-block hover-interactive-group underline">This is the child</div> 
+                        ----- parent
+                    </a>
                 </div>
                 
                 <h4 class="pt-6">Less preferred</h4>
