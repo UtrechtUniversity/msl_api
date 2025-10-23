@@ -12,12 +12,14 @@ class SelectQuestion extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $sectionName,
-        public string $placeholder,
-        public string $title,
+        public string $sectionName = '',
+        public string $placeholder = '',
+        public string $title = '',
         public array $options,
-        public bool $titleBold,
-
+        public bool $titleBold = false,
+        public string $id = '',
+        public string $selected = '',
+        public string $onChange = '',
     ) {}
 
     /**
