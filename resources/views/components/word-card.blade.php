@@ -10,11 +10,17 @@
     relative
     hover:overflow-visible
 ">
+
     <div class="
         word-card
         truncate
     ">
-    {{  substr($word, 0, 40)  }}</div>
+        @if (isset($closeIcon))
+            <x-ri-close-line class="close-icon"/>        
+        @endif
+    {{  substr($word, 0, 40)  }}
+    </div>
+    
     <div class="
         word-card
         hover-neutral
@@ -27,6 +33,10 @@
         group-hover:left-0
         group-hover:z-10
     ">
+    @if (isset($closeIcon))
+        <x-ri-close-line class="close-icon"/>        
+    @endif
         {{ $word }}
     </div>
+
 </div>
