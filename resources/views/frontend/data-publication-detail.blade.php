@@ -429,69 +429,49 @@
                                     <h4 class="detailEntrySub1">Creators</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
                                         @foreach ( $data['msl_creators'] as $creator)
-                                            <div>
-                                                <p class="text-sm p-0">{{ $creator["msl_creator_family_name"]}} {{ $creator["msl_creator_given_name"] }} </p>
+                                            @php
+                                            $dataList = [];
+                                            
+                                            //names
+                                            if ($creator["msl_creator_family_name"] != '') {
+                                                $dataList[] = $creator["msl_creator_family_name"].' '.$creator["msl_creator_given_name"];
+                                            } else {
+                                                $dataList[] = $creator["msl_creator_name"];
+                                            }
 
-                                                @if(array_key_exists('msl_creator_name_type', $creator))
+                                            //creator type
+                                            if (array_key_exists('msl_creator_name_type', $creator)) {
+                                                $dataList[] = implode(' ', preg_split('/(?=[A-Z])/', $creator['msl_creator_name_type']));
+                                            }
 
-                                                    <p class="text-sm p-0">
-                                                        @php
-                                                            $preppedString = preg_split('/(?=[A-Z])/', $creator['msl_creator_name_type']);
-                                                        @endphp
-                                                        {{ implode(' ', $preppedString) }}
-                                                    </p>
-                                                @endif
+                                            //affilitation
+                                            if (array_key_exists("msl_creator_affiliations_names",$creator)) {
+                                                $preppedString = '';
+                                                foreach ($creator['msl_creator_affiliations_names'] as $key => $affiliation) {
+                                                    $preppedString = $preppedString.$affiliation;
+                                                    if (sizeof($creator['msl_creator_affiliations_names']) -1 != $key ){
+                                                        $preppedString = $preppedString.' | ';
+                                                    }
+                                                }
+                                                $dataList[] = $preppedString;
+                                            }
 
-                                                @if (array_key_exists("msl_creator_affiliations_names",$creator))
-                                                    <p class="text-sm p-0">
-                                                        @foreach ($creator['msl_creator_affiliations_names'] as $key => $affiliation)
-                                                            {{ $affiliation }} 
-                                                            @if (sizeof($creator['msl_creator_affiliations_names']) -1 != $key )
-                                                                |
-                                                            @endif
-                                                        @endforeach
-                                                    </p>    
-                                                @endif
+                                            // name identifiers
+                                            if (array_key_exists("msl_creator_name_identifiers",$creator) && array_key_exists("msl_creator_name_identifiers_schemes",$creator)) {
+                                                foreach ($creator['msl_creator_name_identifiers'] as $key => $value) {
+                                                    if ($creator['msl_creator_name_identifiers_schemes'][$key] == 'https://orcid.org/') {
+                                                        $dataList[] = $creator['msl_creator_name_identifiers_schemes'][$key].$value;
+                                                    }else {
+                                                        $dataList[] = $value;
+                                                    }
+                                                }
+                                            }
+                                        @endphp
 
-                                                @if (array_key_exists("msl_creator_name_identifiers",$creator) && array_key_exists("msl_creator_name_identifiers_schemes",$creator))
-                                                    
-                                                    @foreach ( $creator['msl_creator_name_identifiers'] as $key => $value )
-                                                        <table class="table-auto w-full">
-                                                            <tbody>
-                                                                @if( $creator['msl_creator_name_identifiers_schemes'][$key] == 'https://orcid.org/')
-                                                                    <tr>
-                                                                        <td>
-                                                                            <p class="text-sm p-0">ORCID</p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <a href="{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}{{ $value }}</a>
-                                                                        </td>
-                                                                    </tr>
-                                                                @elseif( $creator['msl_creator_name_identifiers_schemes'][$key]  == 'ORCID')
-                                                                    <tr>
-                                                                        <td>
-                                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}</p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <a class="text-sm p-0" href={{ $value }}>{{ $value }}</a> 
-                                                                        </td>
-                                                                    </tr>
-                                                                @else
-                                                                    <tr>
-                                                                        <td>
-                                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}</p>
-                                                                        </td>
-                                                                        <td>
-                                                                            <p class="text-sm p-0">{{ $value }}</p>
-                                                                        </td>
-                                                                    </tr>
-                                                                @endif
-                                                            </tbody>
-                                                        </table>
-                                                    @endforeach
-                                                @endif
-
-                                            </div>
+                                        @include('components.list-views.table-list',[
+                                                    'entries' => $dataList,
+                                                    'withKeys' => false,
+                                                ])
                                         @endforeach
                                     </div>
                                 </div>
@@ -504,75 +484,49 @@
                                     <h4 class="detailEntrySub1">Contributors</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
                                         @foreach ( $data['msl_contributors'] as $contributor)
-                                            <div>
-                                                @if ($contributor["msl_contributor_family_name"] != '')
-                                                    <p class="text-sm p-0">{{ $contributor["msl_contributor_family_name"]}} {{ $contributor["msl_contributor_given_name"] }} </p>
-                                                @else
-                                                    <p class="text-sm p-0">{{ $contributor["msl_contributor_name"]}} </p>                                               
-                                                @endif
+                                            @php
+                                                $dataList = [];
                                                 
-                                                @if(array_key_exists('msl_contributor_type', $contributor))
+                                                //names
+                                                if ($contributor["msl_contributor_family_name"] != '') {
+                                                    $dataList[] = $contributor["msl_contributor_family_name"].' '.$contributor["msl_contributor_given_name"];
+                                                } else {
+                                                    $dataList[] = $contributor["msl_contributor_name"];
+                                                }
 
-                                                    <p class="text-sm p-0">
-                                                        @php
-                                                            $preppedString = preg_split('/(?=[A-Z])/', $contributor['msl_contributor_type']);
-                                                        @endphp
-                                                        {{ implode(' ', $preppedString) }}
-                                                    </p>
-                                                @endif
+                                                //contributor type
+                                                if (array_key_exists('msl_contributor_type', $contributor)) {
+                                                    $dataList[] = implode(' ', preg_split('/(?=[A-Z])/', $contributor['msl_contributor_type']));
+                                                }
 
+                                                //affilitation
+                                                if (array_key_exists("msl_contributor_affiliations_names",$contributor)) {
+                                                    $preppedString = '';
+                                                    foreach ($contributor['msl_contributor_affiliations_names'] as $key => $affiliation) {
+                                                        $preppedString = $preppedString.$affiliation;
+                                                        if (sizeof($contributor['msl_contributor_affiliations_names']) -1 != $key ){
+                                                            $preppedString = $preppedString.' | ';
+                                                        }
+                                                    }
+                                                    $dataList[] = $preppedString;
+                                                }
 
+                                                // name identifiers
+                                                if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor)) {
+                                                    foreach ($contributor['msl_contributor_name_identifiers'] as $key => $value) {
+                                                        if ($contributor['msl_contributor_name_identifiers_schemes'][$key] == 'https://orcid.org/') {
+                                                            $dataList[] = $contributor['msl_contributor_name_identifiers_schemes'][$key].$value;
+                                                        }else {
+                                                            $dataList[] = $value;
+                                                        }
+                                                    }
+                                                }
+                                            @endphp
 
-                                                @if (array_key_exists("msl_contributor_affiliations_names",$contributor))
-                                                    <p class="text-sm p-0">
-                                                        @foreach ($contributor['msl_contributor_affiliations_names'] as $key => $affiliation)
-                                                            {{ $affiliation }} 
-                                                            @if (sizeof($contributor['msl_contributor_affiliations_names']) -1 != $key )
-                                                                |
-                                                            @endif
-                                                        @endforeach
-                                                    </p>    
-                                                @endif
-
-                                                @if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor))
-
-                                                    @foreach ( $contributor['msl_contributor_name_identifiers'] as $key => $value )
-                                                            <table class="table-auto w-full">
-                                                                <tbody>
-                                                                    @if( $contributor['msl_contributor_name_identifiers_schemes'][$key] == 'https://orcid.org/')
-                                                                        <tr>
-                                                                            <td>
-                                                                                <p class="text-sm p-0">ORCID</p>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}{{ $value }}</a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    @elseif( $contributor['msl_contributor_name_identifiers_schemes'][$key]  == 'ORCID')
-                                                                        <tr>
-                                                                            <td>
-                                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}</p>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a class="text-sm p-0" href={{ $value }}>{{ $value }}</a> 
-                                                                            </td>
-                                                                        </tr>
-                                                                    @else
-                                                                        <tr>
-                                                                            <td>
-                                                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}</p>
-                                                                            </td>
-                                                                            <td>
-                                                                                <p class="text-sm p-0">{{ $value }}</p>
-                                                                            </td>
-                                                                        </tr>
-                                                                    @endif
-                                                                </tbody>
-                                                            </table>
-                                                    @endforeach
-                                                @endif
-
-                                            </div>
+                                            @include('components.list-views.table-list',[
+                                                        'entries' => $dataList,
+                                                        'withKeys' => false,
+                                                    ])
                                         @endforeach
                                     </div>
                                 </div>
@@ -593,20 +547,25 @@
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
                                             @foreach ( $data['msl_related_identifiers'] as $entry)
                                                 <div class="">
+                                                    @php
+                                                        $dataList = [];
+                                                        if ($entry['msl_related_identifier_type'] == 'DOI') {
+                                                            $dataList[] = "https://doi.org/".$entry['msl_related_identifier'];
+                                                        }else {
+                                                            $dataList[] = $entry['msl_related_identifier'];
+                                                            if(array_key_exists( 'msl_related_identifier_type', $entry )){
+                                                                $dataList[] = $entry['msl_related_identifier_type'];
+                                                            }
 
-                                                    @if ($entry['msl_related_identifier_type'] == 'DOI')
-                                                        <a href="https://doi.org/{{ $entry['msl_related_identifier'] }}">https://doi.org/{{ $entry['msl_related_identifier'] }}</a>
-                                                    @else
-                                                        <p class="text-sm p-0">{{ $entry['msl_related_identifier'] }}</p>
-
-                                                        @if(array_key_exists( 'msl_related_identifier_type', $entry ))
-                                                            <p class="text-sm p-0">{{ $entry['msl_related_identifier_type'] }}</p>
-                                                        @endif
-
-                                                        @if(array_key_exists( 'msl_related_identifier_relation_type', $entry ))
-                                                            <p class="text-sm p-0">{{ $entry['msl_related_identifier_relation_type'] }}</p>
-                                                        @endif
-                                                    @endif
+                                                            if(array_key_exists( 'msl_related_identifier_relation_type', $entry )){
+                                                                $dataList[] = $entry['msl_related_identifier_relation_type'];
+                                                            }
+                                                        }
+                                                    @endphp
+                                                    @include('components.list-views.table-list',[
+                                                        'entries' => $dataList,
+                                                        'withKeys' => false,
+                                                    ])
                                                    
                                                 </div>
 
@@ -615,27 +574,22 @@
                                 </div>
                                 @endif
                                 
-                                {{-- include all dates --}}
+
                                 @if (array_key_exists("msl_dates",$data))
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">  
                                     <h4 class="detailEntrySub1">Dates</h4>
-                                    <div class="detailEntrySub2 flex flex-col justify-items-start">
-                                        <table class="table-fixed w-full">
-                                            <tbody>
-                                                @foreach ( $data['msl_dates'] as $value)
-                                                    <tr>
-                                                        <td>
-                                                            <p class="text-sm p-0">{{ $value['msl_date_type']}}</p>
-                                                        </td>
-                                                        <td>
-                                                            <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        @php
+                                            $dataList = [];
+                                            foreach ($data['msl_dates'] as $key => $value) {
+                                                $dataList[$value['msl_date_type']] = $value['msl_date_date'];
+                                            }
+                                        @endphp
+
+                                        @include('components.list-views.table-list',[
+                                            'entries' => $dataList,
+                                            'withKeys' => true,
+                                        ])
                                 </div>
                                 @endif
 
@@ -659,51 +613,45 @@
                                     <div class="detailEntryDiv flex flex-row">
                                         <h4 class="detailEntrySub1">Funding References</h4>
                                         <div class="detailEntrySub2 dividers">
-                                            @foreach ( $data['msl_funding_references'] as $entry)
 
-                                                <div class=" py-3 ">
-                                                    <table class="table-fixed w-full">
-                                                        <tbody>
-                                                            @foreach ($entry as $key => $value)
-                                                                @if ($key != 'msl_funding_reference_funder_identifier_type'
-                                                                    &&
-                                                                    $key != 'msl_funding_reference_award_uri'
-                                                                    &&
-                                                                    $value != ''
-                                                                    )
-                                                                        <tr>
-                                                                            <td class="w-40">
-                                                                                <p class="text-sm p-0">
-                                                                                    @php
-                                                                                        $keys = explode('_', $key);
-                                                                                        unset($keys[0]);
-                                                                                        unset($keys[1]);
-                                                                                        unset($keys[2]);
+                                            @foreach ($data['msl_funding_references'] as $entries)
+                                                @php
+                                                    $dataList = [];
+                                                    foreach ($entries as $key => $value) {
+                                                        if (
+                                                            $key != 'msl_funding_reference_funder_identifier_type'
+                                                            &&
+                                                            $key != 'msl_funding_reference_award_uri'
+                                                            &&
+                                                            $value != ''
+                                                        ) {
+                                                            $keys = explode('_', $key);
+                                                            unset($keys[0]);
+                                                            unset($keys[1]);
+                                                            unset($keys[2]);
+                                                            unset($keys[3]);
 
-                                                                                        foreach ($keys as $pos => $key_s) {
-                                                                                            $keys[$pos] = ucfirst($key_s);
-                                                                                        };
-
-                                                                                        echo implode(' ', $keys);
-                                                                                    @endphp
-                                                                                </p>
-                                                                            </td>
-                                                                            <td>
-                                                                                @if($key != 'msl_funding_reference_funder_identifier')
-                                                                                    <p class="text-sm p-0 ">{{ $value }}</p> 
-                                                                                @else
-                                                                                    <a class="text-sm p-0 " href="{{ $value }}">{{ $value }}</a>
-                                                                                @endif
-                                                                            </td>
-                                                                        </tr>
-                                                                @endif
-                                                            @endforeach   
-                                                                
-                                                        </tbody>
-                                                    </table>
-                                                    
+                                                            foreach ($keys as $pos => $key_s) {
+                                                                $keys[$pos] = ucfirst($key_s);
+                                                            };
+                                                            
+                                                            $key = implode(' ', $keys);
+                                                            if ($key == 'Name') {
+                                                                $dataList = array($key => $value) + $dataList;
+                                                            } else {
+                                                                $dataList[$key] = $value;
+                                                            }
+                                                        }
+                                                    }
+                                                @endphp
+                                                <div class="py-2">
+                                                    @include('components.list-views.table-list',[
+                                                        'entries' => $dataList,
+                                                        'withKeys' => true,
+                                                    ])
                                                 </div>
-                                   
+                                                
+
                                             @endforeach
                                         </div>
                                     </div>
@@ -715,42 +663,32 @@
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Rights</h4>
                                     <div class="detailEntrySub2 dividers">
-                                        @foreach ( $data['msl_rights'] as $entry)
-                                            <div>
-                                                <table class="table-fixed w-full">
-                                                    <tbody>
-                                                        @foreach ($entry as $key => $value)
-                                                            @if ($value != '')
-                                                                <tr>
-                                                                    <td class="w-40">
-                                                                        <p class="text-sm p-0">
-                                                                            @php
-                                                                                $keys = explode('_', $key);
-                                                                                unset($keys[0]);
-                                                                                unset($keys[1]);
-                                                                                if(sizeof($keys) == 0){
-                                                                                    $keys[0] = 'Name';
-                                                                                } 
-    
-                                                                                foreach ($keys as $pos => $key_s) {
-    
-                                                                                    $keys[$pos] = ucfirst($key_s);
-    
-                                                                                };
-    
-                                                                                echo implode(' ', $keys);
-                                                                            @endphp
-                                                                        </p> 
-                                                                    </td>
-                                                                    <td>
-                                                                        <p class="text-sm p-0">{{ $value }}</p> 
-                                                                    </td>
-                                                                </div>
-                                                            @endif
-                                                        @endforeach      
-                                                    </tbody>
-                                                </table>
-                                            </div>                                
+                                        @foreach ($data['msl_rights'] as $entries)
+                                            @php
+                                                $dataList = [];
+
+                                                foreach ($entries as $key => $value) {
+                                                    $keys = explode('_', $key);
+                                                    unset($keys[0]);
+                                                    unset($keys[1]);
+                                                    if(sizeof($keys) == 0){
+                                                        $keys[0] = 'Name';
+                                                    } 
+
+                                                    foreach ($keys as $pos => $key_s) {
+
+                                                        $keys[$pos] = ucfirst($key_s);
+
+                                                    };
+                                                    $dataList[implode(' ', $keys)] = $value;
+                                                }
+                                            
+                                            @endphp
+
+                                            @include('components.list-views.table-list',[
+                                                'entries' => $dataList,
+                                                'withKeys' => true,
+                                            ])
                                         @endforeach
                                     </div>
                                 </div>
