@@ -7,7 +7,7 @@
                     <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                     <div class="drawer-content bg-secondary-100 flex relative ">
                         {{-- content here --}}
-                        <div class="p-0  w-10 h-52 fixed inset-y-1/2 left-0 min-[450px]:left-10 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
+                        <div class="z-10 p-0 w-10 h-52 fixed inset-y-1/2 left-0 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
                             <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center "
                             >
                             <p 
@@ -27,15 +27,18 @@
 
                             {{-- list view --}}    
                             <div class="list-view">
+                                @if (count($result->getResults()) > 0)
+                                    @foreach ($result->getResults() as $dataPublication)
 
-                                {{-- loop list content --}}
-                                @foreach ($result->getResults() as $dataPublication)
+                                        @include('components.list-views.data-publication', [
+                                            'data' => $dataPublication
+                                        ])
 
-                                    @include('components.list-views.data-publication', [
-                                        'data' => $dataPublication
-                                    ])
-
-                                @endforeach                                                
+                                    @endforeach   
+                                @else
+                                <h4 class="italic py-20">- no data publications found -</h4>
+                                @endif
+                                             
                             </div>
                             
 
@@ -50,14 +53,13 @@
                     <div class="drawer-side ">
                         <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                         {{-- side bar --}}
-                        {{-- @include('components.search-div-filters',[
+
+                        <ul class="menu bg-primary-200 min-h-full p-0 w-80 text-primary-900">
+                        <!-- Sidebar content here -->
+                        @include('components.search-div-filters',[
                             'filterDataPath' => 'public/interpreted.json',
                             'pbDetail' =>   true
-                        ]) --}}
-                        <ul class="menu bg-primary-200 min-h-full w-80 p-4 text-primary-900">
-                        <!-- Sidebar content here -->
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
+                        ])
                         </ul>
                     </div>
                 </div>
