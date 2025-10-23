@@ -3,7 +3,7 @@
 		"name": "development",
 		"image_url": "",
 		"organization_display_name": "Development of MSL",
-		"hide": "true",
+		"hide": "false",
 		"url": ""
 	}
 ]
