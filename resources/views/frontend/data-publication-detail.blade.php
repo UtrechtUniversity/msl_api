@@ -100,14 +100,14 @@
 
                                     @if (array_key_exists("msl_tags", $data))
                                         <br>
-                                        <details class="collapse collapse-arrow wordCardCollapser" id="original-keywords-panel">
+                                        <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
                                             <summary class="collapse-title">Originally assigned keywords 
                                                 <x-ri-information-line id="orginal-keywords-popup" class="info-icon"/>
                                             </summary>
-                                            <div class="collapse-content wordCardParent">
+                                            <div class="collapse-content word-card-parent">
                                                 @foreach ( $data['msl_tags'] as $keyword)
                                                     <div 
-                                                        class="wordCard"
+                                                        class="word-card"
                                                         data-highlight="tag"
                                                         data-uris='{!! json_encode($keyword['msl_tag_msl_uris']) !!}'
                                                     >
@@ -127,15 +127,15 @@
 
                                     @if (array_key_exists("msl_original_keywords", $data))
                                         <br>
-                                        <details class="collapse collapse-arrow wordCardCollapser" id="corresponding-keywords-panel">
+                                        <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
 
                                         <summary class="collapse-title">Corresponding MSL vocabulary keywords 
                                             <x-ri-information-line id="corresponding-keywords-popup" class="info-icon"/>
                                         </summary>
-                                        <div class="collapse-content wordCardParent" id="corresponding-keywords-container">
+                                        <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
                                             @foreach ( $data['msl_original_keywords'] as $keyword)
                                                 <div 
-                                                    class="wordCard"
+                                                    class="word-card"
                                                     data-uri="{{ $keyword['msl_original_keyword_uri'] }}"
                                                     data-highlight="text-keyword"
                                                     data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword['msl_original_keyword_uri'] }}"
@@ -153,7 +153,7 @@
                                             });
 
                                             tippy.delegate('#corresponding-keywords-container', {
-                                            target: '.wordCard',
+                                            target: '.word-card',
                                             trigger: 'click',
                                             theme: "msl",
                                             placement: 'right',
@@ -227,14 +227,14 @@
 
                                     @if (array_key_exists("msl_enriched_keywords", $data))
                                     <br>
-                                    <details class="collapse collapse-arrow wordCardCollapser" open>
+                                    <details class="collapse collapse-arrow word-card-collapser" open>
                                     <summary class="collapse-title">MSL enriched keywords 
                                         <x-ri-information-line id="enriched-keywords-popup" class="info-icon"/>
                                     </summary>
-                                    <div class="collapse-content wordCardParent" id="enriched-keywords-container">
+                                    <div class="collapse-content word-card-parent" id="enriched-keywords-container">
                                         @foreach ( $data['msl_enriched_keywords'] as $keyword)
                                             <div
-                                                class="wordCard" 
+                                                class="word-card" 
                                                 data-associated-subdomains='["{{ implode(', ', $keyword['msl_enriched_keyword_associated_subdomains']) }}"]'
                                                 data-uri="{{ $keyword['msl_enriched_keyword_uri'] }}"
                                                 data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword['msl_enriched_keyword_uri'] }}"
@@ -255,7 +255,7 @@
                                         });
 
                                         tippy.delegate('#enriched-keywords-container', {
-                                            target: '.wordCard',
+                                            target: '.word-card',
                                             trigger: 'click',
                                             theme: 'msl',
                                             placement: 'right',
@@ -333,10 +333,10 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">MSL original sub domains</h4>
-                                    <div class="wordCardParent">
+                                    <div class="word-card-parent">
                                         {{-- hover behaviour: highlights all related tags above --}}
                                         @foreach ( $data['msl_subdomains'] as $keyword)
-                                            <div class="wordCard">{{ $keyword['msl_subdomain'] }}</div>
+                                            <div class="word-card">{{ $keyword['msl_subdomain'] }}</div>
                                         @endforeach
                                     </div>
                                 </div>
@@ -348,11 +348,11 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">MSL enriched sub domains <i id="enriched-subdomains-popup">i</i></h4>
-                                    <div class="wordCardParent">
+                                    <div class="word-card-parent">
                                         {{-- hover behaviour: highlights all related tags above --}}
                                         @foreach ( $data['msl_subdomains'] as $keyword)
                                             <div 
-                                                class="wordCard" 
+                                                class="word-card" 
                                                 data-toggle="domain-highlight"
                                                 data-domain="{{ $keyword['msl_subdomain'] }}"                                                                                        
                                             >
@@ -546,7 +546,6 @@
                                     <h4 class="detailEntrySub1">References</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
                                             @foreach ( $data['msl_related_identifiers'] as $entry)
-                                                <div class="">
                                                     @php
                                                         $dataList = [];
                                                         if ($entry['msl_related_identifier_type'] == 'DOI') {
@@ -567,8 +566,6 @@
                                                         'withKeys' => false,
                                                     ])
                                                    
-                                                </div>
-
                                             @endforeach
                                     </div>
                                 </div>
