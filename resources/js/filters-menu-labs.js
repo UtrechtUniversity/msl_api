@@ -22,7 +22,7 @@ URLSearchParams.prototype.remove = function(key, value) {
 
             if(result) {
               node.state.disabled = false;
-                node.text = node.text + ' <span class="badge bg-primary rounded-pill">' + result.count + '</span>';
+                node.text = node.text + ' <span class="badge bg-primary text-primary-900 rounded-pill">' + result.count + '</span>';
             }
           }
         }

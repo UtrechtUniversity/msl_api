@@ -22,7 +22,7 @@
 
             if(result) {
               node.state.disabled = false;
-                node.text = node.text + ' <span class="badge bg-primary rounded-pill">' + result.count + '</span>';
+                node.text = node.text + ' <span class="badge bg-primary text-primary-800 rounded-pill">' + result.count + '</span>';
             }
           }
         }
