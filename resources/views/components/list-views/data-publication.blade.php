@@ -13,14 +13,14 @@
             <h4 class="text-left">{{  $data['title'] }}</h4> 
         @endif
 
-        @if (isset($data['msl_authors']))
+        @if (isset($data['msl_creators']))
             <h5 class="text-left font-medium pt-4">
-                @foreach ( $data['msl_authors'] as $authorKey => $author )
-                    {{ $author["msl_author_name"] }} 
+                @foreach ( $data['msl_creators'] as $authorKey => $author )
+                    {{ $author["msl_creator_family_name"]}} {{ $author["msl_creator_given_name"] }} 
                     {{-- a little divider between names --}}
-                    @if (sizeof($data['msl_authors']) -1 != $authorKey )
-                        |
-                    @endif
+                        @if (sizeof($data['msl_creators']) -1 != $authorKey )
+                            |
+                        @endif
                 @endforeach
             </h5>
         @endif
@@ -30,9 +30,9 @@
         @endif
 
 
-        @if (isset($data['notes']))
+        @if (isset($data['msl_description_abstract_annotated']))
             {{-- https://laravel.com/docs/11.x/strings#method-str-limit --}}
-            <p class="italic ">{{ Str::limit($data['notes'], 295, preserveWords: true) }}</p>
+            <p class="italic ">{{ Str::limit($data['msl_description_abstract_annotated'], 295, preserveWords: true) }}</p>
         @endif
 
         
