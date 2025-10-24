@@ -96,7 +96,7 @@ class Datacite
         return $result;
     }
 
-    public function cursorPageRequest(string $uri, bool $retryOnFailure = false, bool $jsonDecode = true)
+    public function cursorPageRequest(string $uri, bool $retryOnFailure = false, bool $jsonDecode = true): stdClass
     {
         $result = new stdClass;
 
