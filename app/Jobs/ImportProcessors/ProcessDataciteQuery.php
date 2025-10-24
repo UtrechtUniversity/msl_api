@@ -9,6 +9,13 @@ use App\Models\SourceDatasetIdentifier;
 
 class ProcessDataciteQuery implements ImportProcessorInterface
 {
+    /**
+     * The number of seconds the job can run before timing out.
+     *
+     * @var int
+     */
+    public $timeout = 600;
+
     public static function process(Import $import, bool|int $limit = false): bool
     {
         $importer = $import->importer;

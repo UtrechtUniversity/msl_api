@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\MagicFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
@@ -36,21 +35,13 @@ class ImportMagicSeeder extends Seeder
                 'type' => 'datacite',
                 'options' => [
                     'importProcessor' => [
-                        'type' => 'jsonListing',
+                        'type' => 'dataciteQuery',
                         'options' => [
-                            'filePath' => '/import-data/magic/converted.json',
-                            'identifierKey' => 'identifier',
+                            'query' => 'NOT (relatedIdentifiers.relationType:IsPreviousVersionOf) AND types.resourceTypeGeneral:"Dataset"',
+                            'prefix' => '10.7288',
+                            'pageSize' => 1000,
                         ],
-                        'extra_data_loader' => [
-                            'type' => 'jsonLoader',
-                            'options' => [
-                                'filePath' => '/import-data/magic/converted.json',
-                                'dataKeyMapping' => [
-                                    'contentUrl' => 'contentUrl',
-                                    'description' => 'description',
-                                ],
-                            ],
-                        ],
+                        'extra_data_loader' => [],
                     ],
                     'identifierProcessor' => [
                         'type' => 'dataciteJsonRetrieval',
@@ -59,9 +50,7 @@ class ImportMagicSeeder extends Seeder
                     'sourceDatasetProcessor' => [
                         'type' => 'datacite',
                         'options' => [
-                            'additionalMappers' => [
-                                MagicFileMapper::class,
-                            ],
+                            'additionalMappers' => [],
                         ],
                     ],
                 ],
