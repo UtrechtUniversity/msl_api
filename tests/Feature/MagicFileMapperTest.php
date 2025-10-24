@@ -19,18 +19,15 @@ class MagicFileMapperTest extends TestCase
         $sourceDataset = new SourceDataset;
         $sourceDatasetIdentifier = new SourceDatasetIdentifier;
 
-        $sourceDatasetIdentifier->extra_payload = [
-            'contentUrl' => 'https:\/\/earthref.org\/MagIC\/download\/11846\/magic_contribution_11846.txt',
-        ];
-
         $sourceDataset->setRelation('source_dataset_identifier', $sourceDatasetIdentifier);
 
         $magicFileMapper = new MagicFileMapper;
+        $datapublication->msl_source = 'https://earthref.org/MagIC/12020';
 
         $datapublication = $magicFileMapper->map($datapublication, $sourceDataset);
 
-        $this->assertEquals($datapublication->msl_files[0]->msl_file_name, 'magic_contribution_11846.txt');
-        $this->assertEquals($datapublication->msl_files[0]->msl_download_link, 'https:\/\/earthref.org\/MagIC\/download\/11846\/magic_contribution_11846.txt');
+        $this->assertEquals($datapublication->msl_files[0]->msl_file_name, 'magic_contribution_12020.txt');
+        $this->assertEquals($datapublication->msl_files[0]->msl_download_link, 'https://earthref.org/MagIC/download/12020/magic_contribution_12020.txt');
         $this->assertEquals($datapublication->msl_files[0]->msl_extension, 'txt');
         $this->assertEquals($datapublication->msl_files[0]->msl_is_folder, false);
     }

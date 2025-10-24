@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\MagicFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
@@ -41,7 +42,6 @@ class ImportMagicSeeder extends Seeder
                             'prefix' => '10.7288',
                             'pageSize' => 1000,
                         ],
-                        'extra_data_loader' => [],
                     ],
                     'identifierProcessor' => [
                         'type' => 'dataciteJsonRetrieval',
@@ -50,7 +50,9 @@ class ImportMagicSeeder extends Seeder
                     'sourceDatasetProcessor' => [
                         'type' => 'datacite',
                         'options' => [
-                            'additionalMappers' => [],
+                            'additionalMappers' => [
+                                MagicFileMapper::class,
+                            ],
                         ],
                     ],
                 ],
