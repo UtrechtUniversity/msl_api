@@ -93,7 +93,7 @@ class Datacite
             }
         }
 
-        return $result;        
+        return $result;
     }
 
     public function cursorPageRequest(string $uri, bool $retryOnFailure = false, bool $jsonDecode = true)
