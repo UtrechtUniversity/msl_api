@@ -29,7 +29,7 @@ class ImportDevelopmentSeeder extends Seeder
             [
                 'name' => 'Development importer',
                 'description' => 'imports test data using fixed directory list and DataCite files',
-                'type' => 'Development',
+                'type' => 'development',
                 'options' => [
                     'importProcessor' => [
                         'type' => 'directoryListing',
