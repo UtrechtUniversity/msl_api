@@ -43,7 +43,7 @@ class DataPublication
     public string $msl_resource_type_general;
 
     /**
-     * datapackage visability in CKAN
+     * data package visibility in CKAN
      */
     public bool $private = false;
 
@@ -154,7 +154,7 @@ class DataPublication
 
     /**
      * The main researchers involved in producing the data, or the authors of the publication, in priority order.
-     * May be a corporate/institutional or personal name.
+     * Maybe a corporate/institutional or personal name.
      */
     public array $msl_creators = [];
 
@@ -333,8 +333,6 @@ class DataPublication
 
     /**
      * Add Right object to msl_rights
-     *
-     * @param  Rigth  $right
      */
     public function addRight(Right $right): void
     {
@@ -416,7 +414,7 @@ class DataPublication
     /**
      * Add geojson object to specific extras field for processing by spatial plugin
      */
-    public function addLocationToExtras(string $location)
+    public function addLocationToExtras(string $location): void
     {
         $this->extras[] = ['key' => 'spatial', 'value' => $location];
     }
@@ -424,7 +422,7 @@ class DataPublication
     /**
      * Add Tag to msl_tags if no existing tag with same msl_tag_string exists
      */
-    public function addTag(Tag $tag)
+    public function addTag(Tag $tag): void
     {
         $exists = false;
         foreach ($this->msl_tags as $existingTag) {
@@ -759,5 +757,236 @@ class DataPublication
         }
 
         return $arr;
+    }
+
+    public static function fromCkanArray(array $data): self
+    {
+        $datapublication = new self();
+
+        foreach ($data as $key => $value) {
+            if(! is_array($value)) {
+                if (property_exists($datapublication, $key)) {
+                    $datapublication->{$key} = $value;
+                }
+            } else {
+                switch ($key) {
+                    case 'msl_rights':
+                        foreach ($value as $subValue) {
+                            $datapublication->msl_rights[] = new Right(
+                                $subValue['msl_right'],
+                                $subValue['msl_right_uri'],
+                                $subValue['msl_right_identifier'],
+                                $subValue['msl_right_identifier_scheme'],
+                                $subValue['msl_right_uri'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_alternate_identifiers':
+                        foreach ($value as $subValue) {
+                            $datapublication->msl_alternate_identifiers[] = new AlternateIdentifier(
+                                $subValue['msl_alternate_identifier'],
+                                $subValue['msl_alternate_identifier_type'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_related_identifiers':
+                        foreach ($value as $subValue) {
+                            $datapublication->msl_related_identifiers[] = new RelatedIdentifier(
+                                $subValue['msl_related_identifier'],
+                                $subValue['msl_related_identifier_type'],
+                                $subValue['msl_related_identifier_relation_type'],
+                                $subValue['msl_related_identifier_metadata_scheme'],
+                                $subValue['msl_related_identifier_metadata_scheme_uri'],
+                                $subValue['msl_related_identifier_metadata_scheme_type'],
+                                $subValue['msl_related_identifier_resource_type_general'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_funding_references':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_funding_references[] = new FundingReference(
+                                $subValue['msl_funding_reference_funder_name'],
+                                $subValue['msl_funding_reference_funder_identifier'],
+                                $subValue['msl_funding_reference_funder_identifier_type'],
+                                $subValue['msl_funding_reference_scheme_uri'],
+                                $subValue['msl_funding_reference_award_number'],
+                                $subValue['msl_funding_reference_award_uri'],
+                                $subValue['msl_funding_reference_award_title'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_dates':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_dates[] = new Date(
+                                $subValue['msl_date_date'],
+                                $subValue['msl_date_type'],
+                                $subValue['msl_date_information'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_creators':
+                        foreach($value as $subValue) {
+                            $creator = new Creator(
+                                $subValue['msl_creator_name'],
+                                $subValue['msl_creator_given_name'],
+                                $subValue['msl_creator_family_name'],
+                                $subValue['msl_creator_name_type'],
+                            );
+
+                            for($i = 0; $i < count($subValue['msl_creator_name_identifiers']); $i++) {
+                                $creator->addNameIdentifier(
+                                    new NameIdentifier(
+                                        $subValue['msl_creator_name_identifiers'][$i],
+                                        $subValue['msl_creator_name_identifiers_schemes'][$i],
+                                        $subValue['msl_creator_name_identifiers_uris'][$i],
+                                    )
+                                );
+                            }
+
+                            for($i = 0; $i < count($subValue['msl_creator_affiliations_names']); $i++) {
+                                $creator->addAffiliation(
+                                    new Affiliation(
+                                        $subValue['msl_creator_affiliations_names'][$i],
+                                        $subValue['msl_creator_affiliation_identifiers'][$i],
+                                        $subValue['msl_creator_affiliation_identifier_schemes'][$i],
+                                        $subValue['msl_creator_affiliation_scheme_uris'][$i],
+                                    )
+                                );
+                            }
+                            $datapublication->msl_creators[] = $creator;
+                        }
+                        break;
+
+                    case 'msl_contributors':
+                        foreach($value as $subValue) {
+                            $contributor = new Contributor(
+                                $subValue['msl_contributor_name'],
+                                $subValue['msl_contributor_type'],
+                                $subValue['msl_contributor_given_name'],
+                                $subValue['msl_contributor_family_name'],
+                                $subValue['msl_contributor_name_type'],
+                            );
+
+                            for($i = 0; $i < count($subValue['msl_contributor_name_identifiers']); $i++) {
+                                $contributor->addNameIdentifier(
+                                    new NameIdentifier(
+                                        $subValue['msl_contributor_name_identifiers'][$i],
+                                        $subValue['msl_contributor_name_identifiers_schemes'][$i],
+                                        $subValue['msl_contributor_name_identifiers_uris'][$i],
+                                    )
+                                );
+                            }
+
+                            for($i = 0; $i < count($subValue['msl_contributor_affiliations_names']); $i++) {
+                                $contributor->addAffiliation(
+                                    new Affiliation(
+                                        $subValue['msl_contributor_affiliations_names'][$i],
+                                        $subValue['msl_contributor_affiliation_identifiers'][$i],
+                                        $subValue['msl_contributor_affiliation_identifier_schemes'][$i],
+                                        $subValue['msl_contributor_affiliation_scheme_uris'][$i],
+                                    )
+                                );
+                            }
+                            $datapublication->msl_contributors[] = $contributor;
+                        }
+                        break;
+
+                    case 'msl_sizes':
+                        $datapublication->msl_sizes = $value;
+                        break;
+
+                    case 'msl_formats':
+                        $datapublication->msl_formats = $value;
+                        break;
+
+                    case 'msl_laboratories':
+
+                        break;
+
+                    case 'msl_files':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_files[] = new File(
+                                $subValue['msl_file_name'],
+                                $subValue['msl_download_link'],
+                                $subValue['msl_extension'],
+                                $subValue['msl_is_folder'],
+                                $subValue['msl_timestamp'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_spatial_coordinates':
+
+                        break;
+
+                    case 'msl_geolocations':
+                        $datapublication->msl_geolocations = $value;
+                        break;
+
+                    case 'extras':
+                        $datapublication->extras = $value;
+                        break;
+
+                    case 'tag_string':
+
+                        break;
+
+                    case 'msl_tags':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_tags[] = new Tag(
+                                $subValue['msl_tag_string'],
+                                $subValue['msl_tag_scheme_uri'],
+                                $subValue['msl_tag_value_uri'],
+                                $subValue['msl_tag_subject_scheme'],
+                                $subValue['msl_tag_classification_code'],
+                                $subValue['msl_tag_msl_uris'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_subdomains':
+                        $datapublication->msl_subdomains = $value;
+                        break;
+
+                    case 'msl_subdomains_original':
+                        $datapublication->msl_subdomains_original = $value;
+                        break;
+
+                    case 'msl_subdomains_interpreted':
+                        $datapublication->msl_subdomains_interpreted = $value;
+                        break;
+
+                    case 'msl_enriched_keywords':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_enriched_keywords[] = new EnrichedKeyword(
+                                $subValue['msl_enriched_keyword_label'],
+                                $subValue['msl_enriched_keyword_uri'],
+                                $subValue['msl_enriched_keyword_vocab_uri'],
+                                $subValue['msl_enriched_keyword_associated_subdomains'],
+                                $subValue['msl_enriched_keyword_match_locations'],
+                                $subValue['msl_enriched_keyword_match_child_uris'],
+                            );
+                        }
+                        break;
+
+                    case 'msl_original_keywords':
+                        foreach($value as $subValue) {
+                            $datapublication->msl_original_keywords[] = new OriginalKeyword(
+                                $subValue['msl_original_keyword_label'],
+                                $subValue['msl_original_keyword_uri'],
+                                $subValue['msl_original_keyword_vocab_uri'],
+                            );
+                        }
+                        break;
+                }
+            }
+        }
+
+        return $datapublication;
     }
 }
