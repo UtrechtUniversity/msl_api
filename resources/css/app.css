@@ -111,14 +111,21 @@
       rounded-xl 
       border 
       border-neutral-400
+      !hover-neutral
       hover:border-neutral-900
+      hover:cursor-pointer
       text-base
-      p-1 pr-2 pl-2
+      p-1 px-2
       bg-neutral-200 text-neutral-900
       subpixel-antialiased
     }
     .word-card-collapser{
       @apply bg-primary-300 shadow-lg
+    }
+    .word-card-highlighted{
+      @apply 
+      bg-secondary-800 
+      text-secondary-100
     }
 
     /*###############

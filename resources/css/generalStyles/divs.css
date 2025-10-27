@@ -4,7 +4,7 @@
     /* map and list div */
         /* general page structure used on every template due to the formatting of the landing page */
     .main-content{
-        @apply pb-20 flex justify-center items-center p-2 md:p-10
+        @apply pb-20 flex justify-center place-items-center p-2 md:p-10 w-full
         }
     .sub-content{
         @apply md:max-w-2xl
@@ -15,9 +15,44 @@
     }
 
 
+
+    /* main div containing detail-view elements */
+    .detail-div{
+      @apply bg-primary-200 grow w-full 
+      flex flex-col 
+      place-content-center 
+      px-2
+      sm:px-10
+      py-10 
+      max-w-(--breakpoint-lg)
+    }
+    .detail-entry-div{
+      @apply 
+      w-full 
+      px-1 sm:px-5 
+      py-4
+      gap-5 
+      flex flex-col sm:flex-row 
+      text-left 
+    }
+
+    .detail-entry-title{
+      @apply
+      basis-1/3
+      text-center
+      sm:text-left
+    }
+    .detail-entry-content{
+      @apply w-full px-4 sm:px-0 flex flex-col gap-4
+    }
+
+    .tab-links-parent{
+      @apply flex justify-center items-center w-full
+    }
+
     /* dividers */
     .content-divide-y{
-      @apply divide-y-2 divide-primary-700
+      @apply divide-y-1 divide-primary-700/25
     }
     .content-divide-y-secondary{
       @apply divide-y-2 divide-secondary-700
@@ -122,20 +157,13 @@
       /*###############
         detail views
         ###############*/
-      /* main div containing detail-view elements */
-      .detailDiv{
-        @apply bg-primary-200 grow w-full 
-        flex flex-col place-items-center p-10 
-        max-w-(--breakpoint-lg)
-      }
+
       
       /*###############
         Components
         ###############*/
       /* top Map List tabLinks */
-      .tabLinksParent{
-        @apply flex justify-center items-center
-      }
+
 
           /*###############
       general elements
@@ -143,12 +171,8 @@
     /* .dividers{
       @apply divide-y divide-primary-700
     } */
-    .detailEntryDiv{
-        @apply w-full pt-5 pb-5
-      }
-      .detailEntrySub1{
-        @apply w-1/3 text-left
-      }
+
+
       .detailEntrySub2{
         @apply w-full
       }
