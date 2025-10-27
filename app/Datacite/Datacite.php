@@ -28,7 +28,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
-                $this->doisRequest($doi);
+                return $this->doisRequest($doi);
             }
 
             $result->response_code = $e->getCode();
@@ -73,7 +73,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
-                $this->cursorSearchRequest($query, $prefix, $fields);
+                return $this->cursorSearchRequest($query, $prefix, $fields);
             }
 
             $result->response_code = $e->getCode();
@@ -109,7 +109,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
-                $this->cursorPageRequest($uri, false, true);
+                return $this->cursorPageRequest($uri, false, true);
             }
 
             $result->response_code = $e->getCode();
