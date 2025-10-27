@@ -1,8 +1,9 @@
-@props(
-[    'entries' => [],
-    'withKeys' => true,
-    'numericKeys' => false]
-)
+@props([   
+        'entries' => [],
+        'withKeys' => true,
+        'numericKeys' => false,
+        'textSize' => 'sm'
+    ])
 
 <table class="table-fixed w-full">
     <tbody>
@@ -10,7 +11,7 @@
             @if ($value != '')
                 <tr>
                     @if ($withKeys)
-                        <td class="w-40 text-sm p-0">
+                        <td class=" w-20 sm:w-40 text-{{ $textSize }} p-0">
                                 @if (!$numericKeys)
                                     {{ $key }}
                                 @else
@@ -23,7 +24,7 @@
                         </td>
                     @endif
 
-                    <td class="text-sm p-0">
+                    <td class="text-{{ $textSize }} p-0">
                         @if (filter_var($value, FILTER_VALIDATE_URL))
                             <a class='underline hover-interactive' href={{ $value }}>{{ $value }}</a>
                         @else
@@ -32,8 +33,6 @@
                     </td>
                 </tr>
             @endif
-
-            
         @endforeach      
     </tbody>
 </table>    
