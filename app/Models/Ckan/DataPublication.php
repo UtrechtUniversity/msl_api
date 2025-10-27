@@ -23,7 +23,7 @@ class DataPublication
     public string $type = 'data-publication';
 
     /**
-     * link to landingpage
+     * link to landing page
      */
     public string $msl_source = '';
 
@@ -38,7 +38,7 @@ class DataPublication
     public string $msl_resource_type = '';
 
     /**
-     * The general type of a resource
+     * The general type of resource
      */
     public string $msl_resource_type_general = '';
 
@@ -797,7 +797,7 @@ class DataPublication
                                     $subValue['msl_right_uri'],
                                     $subValue['msl_right_identifier'],
                                     $subValue['msl_right_identifier_scheme'],
-                                    $subValue['msl_right_uri'],
+                                    $subValue['msl_right_scheme_uri'],
                                 );
                             }
                             break;
