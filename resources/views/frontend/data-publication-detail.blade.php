@@ -340,8 +340,6 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: MSL original sub domains</h4>
                                 @endif
 
                                 @if (array_key_exists("msl_subdomains",$data))
@@ -368,8 +366,6 @@
                                         });
                                     </script>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: MSL enriched sub domains</h4>
                                 @endif
 
                                 @if (array_key_exists("msl_resource_type",$data))
@@ -387,17 +383,21 @@
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Source</h4>
-                                    <div class="detailEntrySub2">
-                                        <a  href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
-                                        @if (array_key_exists('msl_alternate_identifiers', $data))
-                                            @foreach ( $data['msl_alternate_identifiers'] as $altId)
-                                                @if (filter_var($altId['msl_alternate_identifier'], FILTER_VALIDATE_URL) )
-                                                    <a class="pt-2" href="{{ $altId['msl_alternate_identifier'] }}" target="_blank">{{ $altId['msl_alternate_identifier'] }}</a>
-                                                @else
-                                                    <p class="pt-2 detailEntrySub2">{{ $altId['msl_alternate_identifier'] }}</p>
-                                                @endif 
-                                            @endforeach
-                                        @endif
+                                    <div class="detailEntrySub2 ">
+                                            @php
+                                                $dataList = [];
+                                                $dataList[] = $data['msl_source'];
+                                                if (array_key_exists('msl_alternate_identifiers', $data)) {
+                                                    foreach ($data['msl_alternate_identifiers'] as $altId) {
+                                                        $dataList [] = $altId['msl_alternate_identifier'];
+                                                    }
+                                                }
+                                            @endphp
+                                            @include('components.list-views.table-list',[
+                                                'entries' => $dataList,
+                                                'withKeys' => false,
+                                                'textSize' => 'base'
+                                            ])
                                     </div>
     
                                 </div>

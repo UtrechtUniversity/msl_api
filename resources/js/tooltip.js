@@ -2,9 +2,9 @@ $(document).ready(function() {
 
     $('[data-toggle=domain-highlight]').hover(        
         function() {
-            $("div[data-associated-subdomains*='\"" + this.dataset.domain + "\"']").addClass("wordCardHighlighted");
+            $("div[data-associated-subdomains*='\"" + this.dataset.domain + "\"']").addClass("word-card-highlighted");
         }, function() {
-            $("div[data-associated-subdomains*='\"" + this.dataset.domain + "\"']").removeClass("wordCardHighlighted");
+            $("div[data-associated-subdomains*='\"" + this.dataset.domain + "\"']").removeClass("word-card-highlighted");
         }
     )
 
@@ -14,7 +14,7 @@ $(document).ready(function() {
                 let matchedUris = JSON.parse(this.dataset.uris);
                 if(Array.isArray(matchedUris)) {
                     matchedUris.forEach((uri) => {
-                        $("div[data-uri=\"" + uri + "\"]").addClass("wordCardHighlighted");
+                        $("div[data-uri=\"" + uri + "\"]").addClass("word-card-highlighted");
                     });
                 }
             }
@@ -23,7 +23,7 @@ $(document).ready(function() {
                 let matchedUris = JSON.parse(this.dataset.uris);    
                 if(Array.isArray(matchedUris)) {
                     matchedUris.forEach((uri) => {
-                        $("div[data-uri=\"" + uri + "\"]").removeClass("wordCardHighlighted");
+                        $("div[data-uri=\"" + uri + "\"]").removeClass("word-card-highlighted");
                     });
                 }
             }
@@ -41,15 +41,15 @@ $(document).ready(function() {
                 let tagData = JSON.parse(tag.dataset.uris);
                 tagData.forEach((uri) => {
                     if(uri == this.dataset.uri) {
-                        tag.classList.add('wordCardHighlighted');
+                        tag.classList.add('word-card-highlighted');
                         tagsMatched = true;
                     }
                 });                                
             });
     
-            $("span[data-uris*=\"" + this.dataset.uri + "\"]").addClass("wordCardHighlighted");
+            $("span[data-uris*=\"" + this.dataset.uri + "\"]").addClass("word-card-highlighted");
     
-            $("div[data-uri=\"" + this.dataset.uri + "\"]").addClass("wordCardHighlighted");
+            $("div[data-uri=\"" + this.dataset.uri + "\"]").addClass("word-card-highlighted");
             if($("#corresponding-keywords-panel div[data-uri=\"" + this.dataset.uri + "\"]").length > 0) {
                 originalKeywordsMatched = true;
             }
@@ -59,34 +59,34 @@ $(document).ready(function() {
     
                 if(Array.isArray(matchedChildUris)) {
                     matchedChildUris.forEach((childUri) => {
-                        $("div[data-uri=\"" + childUri + "\"]").addClass("wordCardHighlighted");
+                        $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted");
                         if(!originalKeywordsMatched) {
                             if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
                                 originalKeywordsMatched = true;
                             }
                         }
     
-                        $("div[data-uris*='\"" + childUri + "\"']").addClass("wordCardHighlighted");
+                        $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
                         if(!tagsMatched) {
                             if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                 tagsMatched = true;
                             }
                         }
     
-                        $("span[data-uris*='\"" + childUri + "\"']").addClass("wordCardHighlighted");
+                        $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
                     });
                 }
             }
                 
             if(tagsMatched) {
                 if($('#original-keywords-panel').attr('open') !== 'open') {
-                    $('#original-keywords-panel').addClass("wordCardHighlighted");
+                    $('#original-keywords-panel').addClass("word-card-highlighted");
                 }
             }
 
             if(originalKeywordsMatched) {                        
                 if($('#corresponding-keywords-panel').attr('open') !== 'open') {
-                    $('#corresponding-keywords-panel').addClass("wordCardHighlighted");
+                    $('#corresponding-keywords-panel').addClass("word-card-highlighted");
                 }
             }                            
         }, function() {
@@ -99,15 +99,15 @@ $(document).ready(function() {
                 let tagData = JSON.parse(tag.dataset.uris);
                 tagData.forEach((uri) => {
                     if(uri == this.dataset.uri) {
-                        tag.classList.remove('wordCardHighlighted');
+                        tag.classList.remove('word-card-highlighted');
                         tagsMatched = true;
                     }
                 });                                
             });
     
-            $("span[data-uris*=\"" + this.dataset.uri + "\"]").removeClass("wordCardHighlighted");
+            $("span[data-uris*=\"" + this.dataset.uri + "\"]").removeClass("word-card-highlighted");
     
-            $("div[data-uri=\"" + this.dataset.uri + "\"]").removeClass("wordCardHighlighted");
+            $("div[data-uri=\"" + this.dataset.uri + "\"]").removeClass("word-card-highlighted");
             if($("#corresponding-keywords-panel div[data-uri=\"" + this.dataset.uri + "\"]").length > 0) {
                 originalKeywordsMatched = true;
             }
@@ -117,31 +117,31 @@ $(document).ready(function() {
     
                 if(Array.isArray(matchedChildUris)) {
                     matchedChildUris.forEach((childUri) => {
-                        $("div[data-uri=\"" + childUri + "\"]").removeClass("wordCardHighlighted");
+                        $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted");
                         if(!originalKeywordsMatched) {
                             if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
                                 originalKeywordsMatched = true;
                             }
                         }
     
-                        $("div[data-uris*='\"" + childUri + "\"']").removeClass("wordCardHighlighted");
+                        $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted");
                         if(!tagsMatched) {
                             if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                 tagsMatched = true;
                             }
                         }
     
-                        $("span[data-uris*='\"" + childUri + "\"']").removeClass("wordCardHighlighted");
+                        $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted");
                     });
                 }
             }
     
             if(tagsMatched) {
-                $('#original-keywords-panel').removeClass("wordCardHighlighted");
+                $('#original-keywords-panel').removeClass("word-card-highlighted");
             }
     
             if(originalKeywordsMatched) {
-                $('#corresponding-keywords-panel').removeClass("wordCardHighlighted");
+                $('#corresponding-keywords-panel').removeClass("word-card-highlighted");
             }
         }
       )
