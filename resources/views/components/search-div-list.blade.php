@@ -108,7 +108,7 @@
                         @endforeach
                         <script>
                             tippy.delegate('#active-filter-container', {
-                                target: '.wordCard',
+                                target: '.word-card',
                                 content: "click to remove filter",
                                 theme: "msl",
                                 placement: "right"
