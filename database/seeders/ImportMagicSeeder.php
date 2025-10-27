@@ -36,20 +36,11 @@ class ImportMagicSeeder extends Seeder
                 'type' => 'datacite',
                 'options' => [
                     'importProcessor' => [
-                        'type' => 'jsonListing',
+                        'type' => 'dataciteQuery',
                         'options' => [
-                            'filePath' => '/import-data/magic/converted.json',
-                            'identifierKey' => 'identifier',
-                        ],
-                        'extra_data_loader' => [
-                            'type' => 'jsonLoader',
-                            'options' => [
-                                'filePath' => '/import-data/magic/converted.json',
-                                'dataKeyMapping' => [
-                                    'contentUrl' => 'contentUrl',
-                                    'description' => 'description',
-                                ],
-                            ],
+                            'query' => 'NOT (relatedIdentifiers.relationType:IsPreviousVersionOf) AND types.resourceTypeGeneral:"Dataset"',
+                            'prefix' => '10.7288',
+                            'pageSize' => 1000,
                         ],
                     ],
                     'identifierProcessor' => [

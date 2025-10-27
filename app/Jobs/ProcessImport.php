@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Jobs\ImportProcessors\ProcessDataciteQuery;
 use App\Jobs\ImportProcessors\ProcessDirectoryListing;
 use App\Jobs\ImportProcessors\ProcessJsonListing;
 use App\Jobs\ImportProcessors\ProcessOaiListing;
@@ -48,6 +49,10 @@ class ProcessImport implements ShouldQueue
 
             case 'directoryListing':
                 $processor = ProcessDirectoryListing::class;
+                break;
+
+            case 'dataciteQuery':
+                $processor = ProcessDataciteQuery::class;
                 break;
 
             default:
