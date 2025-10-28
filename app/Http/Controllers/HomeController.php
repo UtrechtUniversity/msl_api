@@ -151,18 +151,6 @@ class HomeController extends Controller
         return view('admin.importer-import-flow', ['sourceDatasetIdentifiers' => $sourceDatasetidentifiers, 'importer_id' => $id, 'import_id' => $importId]);
     }
 
-    public function importerImportsLog($id, $importId)
-    {
-        $logs = MappingLog::where('import_id', $importId)->paginate(50);
-
-        return view('admin.importer-import-log', ['logs' => $logs, 'importer_id' => $id, 'import_id' => $importId]);
-    }
-
-    public function exportImportLog($id, $importId)
-    {
-        return Excel::download(new MappingLogsExport($importId), 'log.xlsx');
-    }
-
     public function importerImportsDetail($importerid, $importId, $sourceDatasetIdentifierId)
     {
         $sourceDatasetIdentifier = SourceDatasetIdentifier::where('id', $sourceDatasetIdentifierId)->first();
