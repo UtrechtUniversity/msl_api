@@ -1,0 +1,250 @@
+{
+    "data": {
+        "id": "10.15129/3da7087a-91a3-40be-9a83-7e412156db59",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.15129/3da7087a-91a3-40be-9a83-7e412156db59",
+            "prefix": "10.15129",
+            "suffix": "3da7087a-91a3-40be-9a83-7e412156db59",
+            "identifiers": [],
+            "alternateIdentifiers": [],
+            "creators": [
+                {
+                    "name": "Herrnsdorf, Johannes",
+                    "nameType": "Personal",
+                    "givenName": "Johannes",
+                    "familyName": "Herrnsdorf",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-3856-5782",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Griffiths, Alexander",
+                    "nameType": "Personal",
+                    "givenName": "Alexander",
+                    "familyName": "Griffiths",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-1124-4751",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Strain, Michael",
+                    "nameType": "Personal",
+                    "givenName": "Michael",
+                    "familyName": "Strain",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-9752-3144",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                }
+            ],
+            "titles": [
+                {
+                    "title": "Geo polygon example dataset in the Development organization."
+                },
+                {
+                    "lang": "en",
+                    "title": "Wireless data transmission at 20 Mb/s over 750 m distance using a single microscopic blue LED and a Single Photon Avalanche Diode detector chip",
+                    "titleType": "AlternativeTitle"
+                }
+            ],
+            "publisher": { "name": "University of Strathclyde" },
+            "container": {},
+            "publicationYear": 2020,
+            "subjects": [],
+            "contributors": [
+                {
+                    "name": "Herrnsdorf, Johannes",
+                    "nameType": "Personal",
+                    "givenName": "Johannes",
+                    "familyName": "Herrnsdorf",
+                    "affiliation": [],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-3856-5782",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "McKendry, Jonathan",
+                    "nameType": "Personal",
+                    "givenName": "Jonathan",
+                    "familyName": "McKendry",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "contributorType": "Other",
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-6379-3955",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Maclure, Daniel",
+                    "nameType": "Personal",
+                    "givenName": "Daniel",
+                    "familyName": "Maclure",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "contributorType": "Other",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Henderson, Robert",
+                    "nameType": "Personal",
+                    "givenName": "Robert",
+                    "familyName": "Henderson",
+                    "affiliation": [],
+                    "contributorType": "Other",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Dawson, Martin",
+                    "nameType": "Personal",
+                    "givenName": "Martin",
+                    "familyName": "Dawson",
+                    "affiliation": [{ "name": "University Of Strathclyde" }],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-6639-2989",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                }
+            ],
+            "dates": [
+                { "date": "2020-02-04", "dateType": "Available" },
+                { "date": "2019-12-09", "dateType": "Collected" },
+                { "date": "2020", "dateType": "Issued" }
+            ],
+            "language": null,
+            "types": {
+                "ris": "DATA",
+                "bibtex": "misc",
+                "citeproc": "dataset",
+                "schemaOrg": "Dataset",
+                "resourceType": "Audiovisual",
+                "resourceTypeGeneral": "Dataset"
+            },
+            "relatedIdentifiers": [],
+            "relatedItems": [],
+            "sizes": ["44MB"],
+            "formats": ["video/mp4"],
+            "version": null,
+            "rightsList": [
+                {
+                    "rights": "CC BY 4.0",
+                    "rightsUri": "http://creativecommons.org/licenses/by/4.0"
+                }
+            ],
+            "descriptions": [
+                {
+                    "lang": "en",
+                    "description": "Video documentation of an optical wireless data transmission experiment between The Lighthouse, Glasgow, and the Livingstone Tower, Glasgow. The transmitter was a blue light-emitting diode (LED) with a digitally interfaced complementary metal-oxide semiconductor (CMOS) driver and placed on the viewing platform of The Lighthouse. The receiver was a CMOS single photon avalanche diode (SPAD) chip located on the top floor of the Livingstone Tower. Both, transmitter and receiver used simple lens optics of approximately 1 inch diameter. Data were transmitted error free (i.e. with a bit error rate below the detection limit of 1e-5) at a data rate of 20 Mb/s. The video contains photographic and video footage of the experiment as well as visualisations of the geographic location created in Google Earth. The background music is from http://www.bensound.com/royalty-free-music Thanks go to The Lighthouse for enabling access to their viewing platform.",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "geoLocations": [
+
+                {   "geoPlace":" example geo location",
+                    "geoLocationPoint": {
+                        "pointLatitude": "55.859623",
+                        "pointLongitude": "-4.25549"
+                    },
+                    "geoLocationPolygon": [
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.859623",
+                                "pointLongitude": "-4.25549"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.86096",
+                                "pointLongitude": "-4.24366"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.86096",
+                                "pointLongitude": "-4.24366"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.859623",
+                                "pointLongitude": "-4.25549"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "fundingReferences": [
+                {
+                    "awardTitle": "Structured illumination and digital lighting at the few-photon level (full proposal)",
+                    "funderName": "EPSRC (Engineering and Physical Sciences Research Council)",
+                    "awardNumber": "EP/S001751/1"
+                }
+            ],
+            "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8cmVzb3VyY2UgeG1sbnM9Imh0dHA6Ly9kYXRhY2l0ZS5vcmcvc2NoZW1hL2tlcm5lbC00IiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6c2NoZW1hTG9jYXRpb249Imh0dHA6Ly9kYXRhY2l0ZS5vcmcvc2NoZW1hL2tlcm5lbC00IGh0dHA6Ly9zY2hlbWEuZGF0YWNpdGUub3JnL21ldGEva2VybmVsLTQvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC4xNTEyOS8zREE3MDg3QS05MUEzLTQwQkUtOUE4My03RTQxMjE1NkRCNTk8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5IZXJybnNkb3JmLCBKb2hhbm5lczwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5Kb2hhbm5lczwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZSB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPkhlcnJuc2RvcmY8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL3d3dy5vcmNpZC5vcmciPjAwMDAtMDAwMi0zODU2LTU3ODI8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24geG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5Vbml2ZXJzaXR5IE9mIFN0cmF0aGNseWRlPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+R3JpZmZpdGhzLCBBbGV4YW5kZXI8L2NyZWF0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+QWxleGFuZGVyPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+R3JpZmZpdGhzPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly93d3cub3JjaWQub3JnIj4wMDAwLTAwMDItMTEyNC00NzUxPC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+VW5pdmVyc2l0eSBPZiBTdHJhdGhjbHlkZTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPlN0cmFpbiwgTWljaGFlbDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5NaWNoYWVsPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+U3RyYWluPC9mYW1pbHlOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9Imh0dHA6Ly93d3cub3JjaWQub3JnIj4wMDAwLTAwMDItOTc1Mi0zMTQ0PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+VW5pdmVyc2l0eSBPZiBTdHJhdGhjbHlkZTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlIHhtbDpsYW5nPSJlbiI+V2lyZWxlc3MgZGF0YSB0cmFuc21pc3Npb24gYXQgMjAgTWIvcyBvdmVyIDc1MCBtIGRpc3RhbmNlIHVzaW5nIGEgc2luZ2xlIG1pY3Jvc2NvcGljIGJsdWUgTEVEIGFuZCBhIFNpbmdsZSBQaG90b24gQXZhbGFuY2hlIERpb2RlIGRldGVjdG9yIGNoaXA8L3RpdGxlPgogIDwvdGl0bGVzPgogIDxwdWJsaXNoZXI+VW5pdmVyc2l0eSBvZiBTdHJhdGhjbHlkZTwvcHVibGlzaGVyPgogIDxwdWJsaWNhdGlvblllYXI+MjAyMDwvcHVibGljYXRpb25ZZWFyPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iRGF0YXNldCI+QXVkaW92aXN1YWw8L3Jlc291cmNlVHlwZT4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iQ29udGFjdFBlcnNvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWU+SGVycm5zZG9yZiwgSm9oYW5uZXM8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZSB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPkpvaGFubmVzPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+SGVycm5zZG9yZjwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vd3d3Lm9yY2lkLm9yZyI+MDAwMC0wMDAyLTM4NTYtNTc4MjwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NvbnRyaWJ1dG9yPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iT3RoZXIiPgogICAgICA8Y29udHJpYnV0b3JOYW1lPk1jS2VuZHJ5LCBKb25hdGhhbjwvY29udHJpYnV0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+Sm9uYXRoYW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5NY0tlbmRyeTwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vd3d3Lm9yY2lkLm9yZyI+MDAwMC0wMDAyLTYzNzktMzk1NTwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbiB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPlVuaXZlcnNpdHkgT2YgU3RyYXRoY2x5ZGU8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ik90aGVyIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZT5NYWNsdXJlLCBEYW5pZWw8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZSB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPkRhbmllbDwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZSB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPk1hY2x1cmU8L2ZhbWlseU5hbWU+CiAgICAgIDxhZmZpbGlhdGlvbiB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPlVuaXZlcnNpdHkgT2YgU3RyYXRoY2x5ZGU8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ik90aGVyIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZT5IZW5kZXJzb24sIFJvYmVydDwvY29udHJpYnV0b3JOYW1lPgogICAgICA8Z2l2ZW5OYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+Um9iZXJ0PC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+SGVuZGVyc29uPC9mYW1pbHlOYW1lPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlN1cGVydmlzb3IiPgogICAgICA8Y29udHJpYnV0b3JOYW1lPkRhd3NvbiwgTWFydGluPC9jb250cmlidXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5NYXJ0aW48L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5EYXdzb248L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iaHR0cDovL3d3dy5vcmNpZC5vcmciPjAwMDAtMDAwMi02NjM5LTI5ODk8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24geG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5Vbml2ZXJzaXR5IE9mIFN0cmF0aGNseWRlPC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgPC9jb250cmlidXRvcnM+CiAgPGRhdGVzPgogICAgPGRhdGUgZGF0ZVR5cGU9IkF2YWlsYWJsZSI+MjAyMC0wMi0wNDwvZGF0ZT4KICAgIDxkYXRlIGRhdGVUeXBlPSJDb2xsZWN0ZWQiPjIwMTktMTItMDk8L2RhdGU+CiAgPC9kYXRlcz4KICA8c2l6ZXM+CiAgICA8c2l6ZT40NE1CPC9zaXplPgogIDwvc2l6ZXM+CiAgPGZvcm1hdHM+CiAgICA8Zm9ybWF0PnZpZGVvL21wNDwvZm9ybWF0PgogIDwvZm9ybWF0cz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS80LjAvIj5DQyBCWSA0LjA8L3JpZ2h0cz4KICA8L3JpZ2h0c0xpc3Q+CiAgPGRlc2NyaXB0aW9ucz4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9IkFic3RyYWN0IiB4bWw6bGFuZz0iZW4iPlZpZGVvIGRvY3VtZW50YXRpb24gb2YgYW4gb3B0aWNhbCB3aXJlbGVzcyBkYXRhIHRyYW5zbWlzc2lvbiBleHBlcmltZW50IGJldHdlZW4gVGhlIExpZ2h0aG91c2UsIEdsYXNnb3csIGFuZCB0aGUgTGl2aW5nc3RvbmUgVG93ZXIsIEdsYXNnb3cuIFRoZSB0cmFuc21pdHRlciB3YXMgYSBibHVlIGxpZ2h0LWVtaXR0aW5nIGRpb2RlIChMRUQpIHdpdGggYSBkaWdpdGFsbHkgaW50ZXJmYWNlZCBjb21wbGVtZW50YXJ5IG1ldGFsLW94aWRlIHNlbWljb25kdWN0b3IgKENNT1MpIGRyaXZlciBhbmQgcGxhY2VkIG9uIHRoZSB2aWV3aW5nIHBsYXRmb3JtIG9mIFRoZSBMaWdodGhvdXNlLiBUaGUgcmVjZWl2ZXIgd2FzIGEgQ01PUyBzaW5nbGUgcGhvdG9uIGF2YWxhbmNoZSBkaW9kZSAoU1BBRCkgY2hpcCBsb2NhdGVkIG9uIHRoZSB0b3AgZmxvb3Igb2YgdGhlIExpdmluZ3N0b25lIFRvd2VyLiBCb3RoLCB0cmFuc21pdHRlciBhbmQgcmVjZWl2ZXIgdXNlZCBzaW1wbGUgbGVucyBvcHRpY3Mgb2YgYXBwcm94aW1hdGVseSAxIGluY2ggZGlhbWV0ZXIuIERhdGEgd2VyZSB0cmFuc21pdHRlZCBlcnJvciBmcmVlIChpLmUuIHdpdGggYSBiaXQgZXJyb3IgcmF0ZSBiZWxvdyB0aGUgZGV0ZWN0aW9uIGxpbWl0IG9mIDFlLTUpIGF0IGEgZGF0YSByYXRlIG9mIDIwIE1iL3MuClRoZSB2aWRlbyBjb250YWlucyBwaG90b2dyYXBoaWMgYW5kIHZpZGVvIGZvb3RhZ2Ugb2YgdGhlIGV4cGVyaW1lbnQgYXMgd2VsbCBhcyB2aXN1YWxpc2F0aW9ucyBvZiB0aGUgZ2VvZ3JhcGhpYyBsb2NhdGlvbiBjcmVhdGVkIGluIEdvb2dsZSBFYXJ0aC4gVGhlIGJhY2tncm91bmQgbXVzaWMgaXMgZnJvbSBodHRwOi8vd3d3LmJlbnNvdW5kLmNvbS9yb3lhbHR5LWZyZWUtbXVzaWMKVGhhbmtzIGdvIHRvIFRoZSBMaWdodGhvdXNlIGZvciBlbmFibGluZyBhY2Nlc3MgdG8gdGhlaXIgdmlld2luZyBwbGF0Zm9ybS48L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgogIDxnZW9Mb2NhdGlvbnM+CiAgICA8Z2VvTG9jYXRpb24+CiAgICAgIDxnZW9Mb2NhdGlvblBvaW50PgogICAgICAgIDxwb2ludExvbmdpdHVkZT4tNC4yNTU0OTwvcG9pbnRMb25naXR1ZGU+CiAgICAgICAgPHBvaW50TGF0aXR1ZGU+NTUuODU5NjIzPC9wb2ludExhdGl0dWRlPgogICAgICA8L2dlb0xvY2F0aW9uUG9pbnQ+CiAgICAgIDxnZW9Mb2NhdGlvblBvbHlnb24+CiAgICAgICAgPHBvbHlnb25Qb2ludD4KICAgICAgICAgIDxwb2ludExvbmdpdHVkZT4tNC4yNTU0OTwvcG9pbnRMb25naXR1ZGU+CiAgICAgICAgICA8cG9pbnRMYXRpdHVkZT41NS44NTk2MjM8L3BvaW50TGF0aXR1ZGU+CiAgICAgICAgPC9wb2x5Z29uUG9pbnQ+CiAgICAgICAgPHBvbHlnb25Qb2ludD4KICAgICAgICAgIDxwb2ludExvbmdpdHVkZT4tNC4yNDM2NjwvcG9pbnRMb25naXR1ZGU+CiAgICAgICAgICA8cG9pbnRMYXRpdHVkZT41NS44NjA5NjwvcG9pbnRMYXRpdHVkZT4KICAgICAgICA8L3BvbHlnb25Qb2ludD4KICAgICAgICA8cG9seWdvblBvaW50PgogICAgICAgICAgPHBvaW50TG9uZ2l0dWRlPi00LjI0MzY2PC9wb2ludExvbmdpdHVkZT4KICAgICAgICAgIDxwb2ludExhdGl0dWRlPjU1Ljg2MDk2PC9wb2ludExhdGl0dWRlPgogICAgICAgIDwvcG9seWdvblBvaW50PgogICAgICAgIDxwb2x5Z29uUG9pbnQ+CiAgICAgICAgICA8cG9pbnRMb25naXR1ZGU+LTQuMjU1NDk8L3BvaW50TG9uZ2l0dWRlPgogICAgICAgICAgPHBvaW50TGF0aXR1ZGU+NTUuODU5NjIzPC9wb2ludExhdGl0dWRlPgogICAgICAgIDwvcG9seWdvblBvaW50PgogICAgICA8L2dlb0xvY2F0aW9uUG9seWdvbj4KICAgIDwvZ2VvTG9jYXRpb24+CiAgPC9nZW9Mb2NhdGlvbnM+CiAgPGZ1bmRpbmdSZWZlcmVuY2VzPgogICAgPGZ1bmRpbmdSZWZlcmVuY2U+CiAgICAgIDxmdW5kZXJOYW1lPkVQU1JDIChFbmdpbmVlcmluZyBhbmQgUGh5c2ljYWwgU2NpZW5jZXMgUmVzZWFyY2ggQ291bmNpbCk8L2Z1bmRlck5hbWU+CiAgICAgIDxhd2FyZE51bWJlcj5FUC9TMDAxNzUxLzE8L2F3YXJkTnVtYmVyPgogICAgICA8YXdhcmRUaXRsZT5TdHJ1Y3R1cmVkIGlsbHVtaW5hdGlvbiBhbmQgZGlnaXRhbCBsaWdodGluZyBhdCB0aGUgZmV3LXBob3RvbiBsZXZlbCAoZnVsbCBwcm9wb3NhbCk8L2F3YXJkVGl0bGU+CiAgICA8L2Z1bmRpbmdSZWZlcmVuY2U+CiAgPC9mdW5kaW5nUmVmZXJlbmNlcz4KPC9yZXNvdXJjZT4=",
+            "url": "https://pureportal.strath.ac.uk/en/datasets/3da7087a-91a3-40be-9a83-7e412156db59",
+            "contentUrl": null,
+            "metadataVersion": 0,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": "mds",
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 0,
+            "citationCount": 0,
+            "citationsOverTime": [],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2020-02-14T09:49:46.000Z",
+            "registered": "2020-02-14T09:49:47.000Z",
+            "published": "2020",
+            "updated": "2020-07-31T07:29:06.000Z"
+        },
+        "relationships": {
+            "client": { "data": { "id": "bl.strath", "type": "clients" } },
+            "provider": { "data": { "id": "vewy", "type": "providers" } },
+            "media": {
+                "data": {
+                    "id": "10.15129/3da7087a-91a3-40be-9a83-7e412156db59",
+                    "type": "media"
+                }
+            },
+            "references": { "data": [] },
+            "citations": { "data": [] },
+            "parts": { "data": [] },
+            "partOf": { "data": [] },
+            "versions": { "data": [] },
+            "versionOf": { "data": [] }
+        }
+    }
+}

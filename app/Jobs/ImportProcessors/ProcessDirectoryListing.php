@@ -2,7 +2,6 @@
 
 namespace App\Jobs\ImportProcessors;
 
-use app\Jobs\ImportProcessors\ImportProcessorInterface;
 use App\Jobs\ProcessSourceDatasetIdentifier;
 use App\Models\Import;
 use App\Models\SourceDatasetIdentifier;

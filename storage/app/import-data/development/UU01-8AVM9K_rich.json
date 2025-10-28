@@ -1,0 +1,1358 @@
+{
+    "data": {
+        "id": "10.24416/uu01-8avm9k",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.24416/uu01-8avm9k",
+            "prefix": "10.24416",
+            "suffix": "uu01-8avm9k",
+            "identifiers": [],
+            "alternateIdentifiers": [],
+            "creators": [
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Ronald",
+                    "familyName": "Pijnenburg",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Suzanne",
+                    "familyName": "Hangx",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "nameType": "Personal",
+                    "givenName": "Christopher James",
+                    "familyName": "Spiers",
+                    "affiliation": ["Utrecht University"],
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                }
+            ],
+            "titles": [
+                {
+                    "title": "Rich example dataset in the Development organization."
+                }
+            ],
+            "publisher": "Utrecht University",
+            "container": {},
+            "publicationYear": 2019,
+            "subjects": [
+                {
+                    "subject": "Natural Sciences - Earth and related environmental sciences (1.5)",
+                    "subjectScheme": "OECD FOS 2007"
+                },
+                {
+                    "subject": "Induced seismicity",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Compaction",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Poroelasticity",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Plasticity",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Sandstone",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Strain partitioning",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Mechanisms",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Clay",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Tectonics \u0026gt; Earthquakes",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Earth Gasses / Liquids",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Rocks / Minerals / Crystals \u0026gt; Sedimentary rocks \u0026gt; Sedimentary rock physical / optical properties \u0026gt; Stability",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Scanning Electrone Microscope",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Triaxial",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Strength",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Thermocouple",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "Strain gauge",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "EPOS",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "multi-scale laboratories",
+                    "subjectScheme": "Keyword"
+                },
+                {
+                    "subject": "rock and melt physics properties",
+                    "subjectScheme": "Keyword"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Pijnenburg, Ronald",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "ContactPerson",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-0653-7565",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Verberne, Berend Antonie",
+                    "nameType": "Personal",
+                    "affiliation": [
+                        "National Institute of Advanced Industrial Science and Technology, Geological Survey of Japan, Tsukuba, Japan"
+                    ],
+                    "contributorType": "Researcher",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "Supervisor",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID"
+                        },
+                        {
+                            "nameIdentifier": "7003318682",
+                            "nameIdentifierScheme": "Author identifier (Scopus)"
+                        }
+                    ]
+                },
+                {
+                    "name": "Experimental rock deformation/HPT-Lab (Utrecht University, The Netherlands)",
+                    "nameType": "Personal",
+                    "affiliation": ["Utrecht University"],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": []
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:07:21",
+                    "dateType": "Updated"
+                },
+                {
+                    "date": "2017-01-01/2019-01-01",
+                    "dateType": "Collected"
+                }
+            ],
+            "language": "en",
+            "types": {
+                "ris": "RPRT",
+                "bibtex": "article",
+                "citeproc": "article-journal",
+                "schemaOrg": "ScholarlyArticle",
+                "resourceType": "Other Document",
+                "resourceTypeGeneral": "Text"
+            },
+            "relatedIdentifiers": [
+                {
+                    "relationType": "IsSupplementTo",
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB018702",
+                    "relatedIdentifierType": "DOI"
+                },
+                {
+                    "relationType": "IsReferencedBy",
+                    "relatedIdentifier": "https://doi.org/10.1093/bioinformatics/btp184",
+                    "relatedIdentifierType": "DOI"
+                }
+            ],
+            "relatedItems": [],
+            "sizes": [],
+            "formats": [],
+            "version": "1.0",
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess"
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode"
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Production of oil and gas from sandstone reservoirs leads to small elastic and inelastic strains in the reservoir, which may induce surface subsidence and seismicity. While the elastic component is easily described, the inelastic component, and any rate-sensitivity thereof remain poorly understood in the relevant small strain range (≤ 1.0%). To address this, we performed a sequence of five stress/strain-cycling plus strain-marker-imaging experiments on a single split-cylinder sample (porosity 20.4%) of Slochteren sandstone from the seismogenic Groningen gas field. The tests were performed under in-situ conditions of effective confining pressure (40 MPa) and temperature (100°C), exploring increasingly large differential stresses (up to 75 MPa) and/or axial strains (up to 4.8%) in consecutive runs. At the small strains relevant to producing reservoirs (≤ 1.0%), inelastic deformation was largely accommodated by deformation of clay-filled grain contacts. High axial strains (\u003e1.4%) led to pervasive intragranular cracking plus intergranular slip within localized, conjugate bands. Using a simplified sandstone model, we show that the magnitude of inelastic deformation produced in our experiments at small strains (≤ 1.0%) and stresses relevant to the Groningen reservoir can indeed be roughly accounted for by clay film deformation. Thus, inelastic compaction of the Groningen reservoir is expected to be largely governed by clay film deformation. Compaction by this mechanism is shown to be rate-insensitive on production time-scales, and is anticipated to halt when gas production stops. However, creep by other processes cannot be eliminated. Similar, clay-bearing sandstone reservoirs occur widespread globally, implying a wide relevance of our results.\n\nThe data is provided in a folder with 3 subfolders for 5 experiments/samples. Detailed information about the files in these subfolders as well as information on how the data is processed is given in the explanatory file Pijnenburg-et-al_2019_data-description.docx. Contact person is Ronald Pijnenburg - Researcher - r.p.j.pijnenburg@uu.nl.",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "geoLocations": [
+                {
+                    "geoLocationPlace": "53.14228274279933, 6.447993994041667, 53.460706452448434, 7.041255712791667"
+                },
+                {
+                    "geoLocationPoint": {
+                        "pointLatitude": "55.859623",
+                        "pointLongitude": "-4.25549"
+                    },
+                    "geoLocationPolygon": [
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.859623",
+                                "pointLongitude": "-4.25549"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.86096",
+                                "pointLongitude": "-4.24366"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.86096",
+                                "pointLongitude": "-4.24366"
+                            }
+                        },
+                        {
+                            "polygonPoint": {
+                                "pointLatitude": "55.859623",
+                                "pointLongitude": "-4.25549"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "geoLocationBox": {
+                        "eastBoundLongitude": "-50.60025200000001",
+                        "northBoundLatitude": "69.35",
+                        "southBoundLatitude": "69.0",
+                        "westBoundLongitude": "-52.0"
+                    }
+                },
+                {
+                    "geoLocationPlace": "West Greenland Margin"
+                }
+            ],
+            "fundingReferences": [],
+            "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00L21ldGFkYXRhLnhzZCI+CiAgPGlkZW50aWZpZXIgaWRlbnRpZmllclR5cGU9IkRPSSI+MTAuMjQ0MTYvVVUwMS04QVZNOUs8L2lkZW50aWZpZXI+CiAgPGNyZWF0b3JzPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlBpam5lbmJ1cmcsIFJvbmFsZDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+Um9uYWxkPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlBpam5lbmJ1cmc8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDMtMDY1My03NTY1PC9uYW1lSWRlbnRpZmllcj4KICAgICAgPGFmZmlsaWF0aW9uPlV0cmVjaHQgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+VmVyYmVybmUsIEJlcmVuZCBBbnRvbmllPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5CZXJlbmQgQW50b25pZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5WZXJiZXJuZTwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi0xMjA4LTYxOTM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+TmF0aW9uYWwgSW5zdGl0dXRlIG9mIEFkdmFuY2VkIEluZHVzdHJpYWwgU2NpZW5jZSBhbmQgVGVjaG5vbG9neSwgR2VvbG9naWNhbCBTdXJ2ZXkgb2YgSmFwYW4sIFRzdWt1YmEsIEphcGFuPC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5IYW5neCwgU3V6YW5uZTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+U3V6YW5uZTwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5IYW5neDwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMy0yMjUzLTMyNzM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5TcGllcnMsIENocmlzdG9waGVyIEphbWVzPC9jcmVhdG9yTmFtZT4KICAgICAgPGdpdmVuTmFtZT5DaHJpc3RvcGhlciBKYW1lczwvZ2l2ZW5OYW1lPgogICAgICA8ZmFtaWx5TmFtZT5TcGllcnM8L2ZhbWlseU5hbWU+CiAgICAgIDxuYW1lSWRlbnRpZmllciBuYW1lSWRlbnRpZmllclNjaGVtZT0iT1JDSUQiIHNjaGVtZVVSST0iIj5odHRwczovL29yY2lkLm9yZy8wMDAwLTAwMDItMzQzNi04OTQxPC9uYW1lSWRlbnRpZmllcj4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJBdXRob3IgaWRlbnRpZmllciAoU2NvcHVzKSIgc2NoZW1lVVJJPSIiPjcwMDMzMTg2ODI8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY3JlYXRvcj4KICA8L2NyZWF0b3JzPgogIDx0aXRsZXM+CiAgICA8dGl0bGU+SW50ZXJncmFudWxhciBjbGF5IGZpbG1zIGNvbnRyb2wgaW5lbGFzdGljIGRlZm9ybWF0aW9uIGluIHRoZSBHcm9uaW5nZW4gZ2FzIHJlc2Vydm9pcjogRXZpZGVuY2UgZnJvbSBzcGxpdC1jeWxpbmRlciBkZWZvcm1hdGlvbiB0ZXN0czwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5VdHJlY2h0IFVuaXZlcnNpdHk8L3B1Ymxpc2hlcj4KICA8cHVibGljYXRpb25ZZWFyPjIwMTk8L3B1YmxpY2F0aW9uWWVhcj4KICA8cmVzb3VyY2VUeXBlIHJlc291cmNlVHlwZUdlbmVyYWw9IlRleHQiPk90aGVyIERvY3VtZW50PC9yZXNvdXJjZVR5cGU+CiAgPHN1YmplY3RzPgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iT0VDRCBGT1MgMjAwNyI+TmF0dXJhbCBTY2llbmNlcyAtIEVhcnRoIGFuZCByZWxhdGVkIGVudmlyb25tZW50YWwgc2NpZW5jZXMgKDEuNSk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5JbmR1Y2VkIHNlaXNtaWNpdHk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5Db21wYWN0aW9uPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+UG9yb2VsYXN0aWNpdHk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5QbGFzdGljaXR5PC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+U2FuZHN0b25lPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+U3RyYWluIHBhcnRpdGlvbmluZzwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPk1lY2hhbmlzbXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5DbGF5PC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+VGVjdG9uaWNzICZndDsgRWFydGhxdWFrZXM8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5FYXJ0aCBHYXNzZXMgLyBMaXF1aWRzPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+Um9ja3MgLyBNaW5lcmFscyAvIENyeXN0YWxzICZndDsgU2VkaW1lbnRhcnkgcm9ja3MgICZndDsgIFNlZGltZW50YXJ5IHJvY2sgcGh5c2ljYWwgLyBvcHRpY2FsIHByb3BlcnRpZXMgJmd0OyBTdGFiaWxpdHk8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TY2FubmluZyBFbGVjdHJvbmUgTWljcm9zY29wZTwvc3ViamVjdD4KICAgIDxzdWJqZWN0IHN1YmplY3RTY2hlbWU9IktleXdvcmQiPlRyaWF4aWFsPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+U3RyZW5ndGg8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5UaGVybW9jb3VwbGU8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5TdHJhaW4gZ2F1Z2U8L3N1YmplY3Q+CiAgICA8c3ViamVjdCBzdWJqZWN0U2NoZW1lPSJLZXl3b3JkIj5FUE9TPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+bXVsdGktc2NhbGUgbGFib3JhdG9yaWVzPC9zdWJqZWN0PgogICAgPHN1YmplY3Qgc3ViamVjdFNjaGVtZT0iS2V5d29yZCI+cm9jayBhbmQgbWVsdCBwaHlzaWNzIHByb3BlcnRpZXM8L3N1YmplY3Q+CiAgPC9zdWJqZWN0cz4KICA8Y29udHJpYnV0b3JzPgogICAgPGNvbnRyaWJ1dG9yIGNvbnRyaWJ1dG9yVHlwZT0iQ29udGFjdFBlcnNvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5QaWpuZW5idXJnLCBSb25hbGQ8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMy0wNjUzLTc1NjU8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJSZXNlYXJjaGVyIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlZlcmJlcm5lLCBCZXJlbmQgQW50b25pZTwvY29udHJpYnV0b3JOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9Ik9SQ0lEIiBzY2hlbWVVUkk9IiI+aHR0cHM6Ly9vcmNpZC5vcmcvMDAwMC0wMDAyLTEyMDgtNjE5MzwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbj5OYXRpb25hbCBJbnN0aXR1dGUgb2YgQWR2YW5jZWQgSW5kdXN0cmlhbCBTY2llbmNlIGFuZCBUZWNobm9sb2d5LCBHZW9sb2dpY2FsIFN1cnZleSBvZiBKYXBhbiwgVHN1a3ViYSwgSmFwYW48L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9IlN1cGVydmlzb3IiPgogICAgICA8Y29udHJpYnV0b3JOYW1lIG5hbWVUeXBlPSJQZXJzb25hbCI+SGFuZ3gsIFN1emFubmU8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMy0yMjUzLTMyNzM8L25hbWVJZGVudGlmaWVyPgogICAgICA8YWZmaWxpYXRpb24+VXRyZWNodCBVbml2ZXJzaXR5PC9hZmZpbGlhdGlvbj4KICAgIDwvY29udHJpYnV0b3I+CiAgICA8Y29udHJpYnV0b3IgY29udHJpYnV0b3JUeXBlPSJTdXBlcnZpc29yIj4KICAgICAgPGNvbnRyaWJ1dG9yTmFtZSBuYW1lVHlwZT0iUGVyc29uYWwiPlNwaWVycywgQ2hyaXN0b3BoZXIgSmFtZXM8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSIiPmh0dHBzOi8vb3JjaWQub3JnLzAwMDAtMDAwMi0zNDM2LTg5NDE8L25hbWVJZGVudGlmaWVyPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9IkF1dGhvciBpZGVudGlmaWVyIChTY29wdXMpIiBzY2hlbWVVUkk9IiI+NzAwMzMxODY4MjwvbmFtZUlkZW50aWZpZXI+CiAgICAgIDxhZmZpbGlhdGlvbj5VdHJlY2h0IFVuaXZlcnNpdHk8L2FmZmlsaWF0aW9uPgogICAgPC9jb250cmlidXRvcj4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWUgbmFtZVR5cGU9IlBlcnNvbmFsIj5FeHBlcmltZW50YWwgcm9jayBkZWZvcm1hdGlvbi9IUFQtTGFiIChVdHJlY2h0IFVuaXZlcnNpdHksIFRoZSBOZXRoZXJsYW5kcyk8L2NvbnRyaWJ1dG9yTmFtZT4KICAgICAgPGFmZmlsaWF0aW9uPlV0cmVjaHQgVW5pdmVyc2l0eTwvYWZmaWxpYXRpb24+CiAgICA8L2NvbnRyaWJ1dG9yPgogIDwvY29udHJpYnV0b3JzPgogIDxkYXRlcz4KICAgIDxkYXRlIGRhdGVUeXBlPSJVcGRhdGVkIj4yMDI0LTA3LTEyVDExOjA3OjIxPC9kYXRlPgogICAgPGRhdGUgZGF0ZVR5cGU9IkNvbGxlY3RlZCI+MjAxNy0wMS0wMS8yMDE5LTAxLTAxPC9kYXRlPgogIDwvZGF0ZXM+CiAgPGxhbmd1YWdlPmVuPC9sYW5ndWFnZT4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IklzU3VwcGxlbWVudFRvIj5odHRwczovL2RvaS5vcmcvMTAuMTAyOS8yMDE5SkIwMTg3MDI8L3JlbGF0ZWRJZGVudGlmaWVyPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIiByZWxhdGlvblR5cGU9IklzUmVmZXJlbmNlZEJ5Ij5odHRwczovL2RvaS5vcmcvMTAuMTA5My9iaW9pbmZvcm1hdGljcy9idHAxODQ8L3JlbGF0ZWRJZGVudGlmaWVyPgogIDwvcmVsYXRlZElkZW50aWZpZXJzPgogIDxzaXplcy8+CiAgPGZvcm1hdHMvPgogIDx2ZXJzaW9uPjEuMDwvdmVyc2lvbj4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJpbmZvOmV1LXJlcG8vc2VtYW50aWNzL29wZW5BY2Nlc3MiPk9wZW4gLSBmcmVlbHkgcmV0cmlldmFibGU8L3JpZ2h0cz4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvNC4wL2xlZ2FsY29kZSI+Q3JlYXRpdmUgQ29tbW9ucyBBdHRyaWJ1dGlvbiA0LjAgSW50ZXJuYXRpb25hbCBQdWJsaWMgTGljZW5zZTwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPlByb2R1Y3Rpb24gb2Ygb2lsIGFuZCBnYXMgZnJvbSBzYW5kc3RvbmUgcmVzZXJ2b2lycyBsZWFkcyB0byBzbWFsbCBlbGFzdGljIGFuZCBpbmVsYXN0aWMgc3RyYWlucyBpbiB0aGUgcmVzZXJ2b2lyLCB3aGljaCBtYXkgaW5kdWNlIHN1cmZhY2Ugc3Vic2lkZW5jZSBhbmQgc2Vpc21pY2l0eS4gV2hpbGUgdGhlIGVsYXN0aWMgY29tcG9uZW50IGlzIGVhc2lseSBkZXNjcmliZWQsIHRoZSBpbmVsYXN0aWMgY29tcG9uZW50LCBhbmQgYW55IHJhdGUtc2Vuc2l0aXZpdHkgdGhlcmVvZiByZW1haW4gcG9vcmx5IHVuZGVyc3Rvb2QgaW4gdGhlIHJlbGV2YW50IHNtYWxsIHN0cmFpbiByYW5nZSAo4omkIDEuMCUpLiBUbyBhZGRyZXNzIHRoaXMsIHdlIHBlcmZvcm1lZCBhIHNlcXVlbmNlIG9mIGZpdmUgc3RyZXNzL3N0cmFpbi1jeWNsaW5nIHBsdXMgc3RyYWluLW1hcmtlci1pbWFnaW5nIGV4cGVyaW1lbnRzIG9uIGEgc2luZ2xlIHNwbGl0LWN5bGluZGVyIHNhbXBsZSAocG9yb3NpdHkgMjAuNCUpIG9mIFNsb2NodGVyZW4gc2FuZHN0b25lIGZyb20gdGhlIHNlaXNtb2dlbmljIEdyb25pbmdlbiBnYXMgZmllbGQuIFRoZSB0ZXN0cyB3ZXJlIHBlcmZvcm1lZCB1bmRlciBpbi1zaXR1IGNvbmRpdGlvbnMgb2YgZWZmZWN0aXZlIGNvbmZpbmluZyBwcmVzc3VyZSAoNDAgTVBhKSBhbmQgdGVtcGVyYXR1cmUgKDEwMMKwQyksIGV4cGxvcmluZyBpbmNyZWFzaW5nbHkgbGFyZ2UgZGlmZmVyZW50aWFsIHN0cmVzc2VzICh1cCB0byA3NSBNUGEpIGFuZC9vciBheGlhbCBzdHJhaW5zICh1cCB0byA0LjglKSBpbiBjb25zZWN1dGl2ZSBydW5zLiBBdCB0aGUgc21hbGwgc3RyYWlucyByZWxldmFudCB0byBwcm9kdWNpbmcgcmVzZXJ2b2lycyAo4omkIDEuMCUpLCBpbmVsYXN0aWMgZGVmb3JtYXRpb24gd2FzIGxhcmdlbHkgYWNjb21tb2RhdGVkIGJ5IGRlZm9ybWF0aW9uIG9mIGNsYXktZmlsbGVkIGdyYWluIGNvbnRhY3RzLiBIaWdoIGF4aWFsIHN0cmFpbnMgKCZndDsxLjQlKSBsZWQgdG8gcGVydmFzaXZlIGludHJhZ3JhbnVsYXIgY3JhY2tpbmcgcGx1cyBpbnRlcmdyYW51bGFyIHNsaXAgd2l0aGluIGxvY2FsaXplZCwgY29uanVnYXRlIGJhbmRzLiBVc2luZyBhIHNpbXBsaWZpZWQgc2FuZHN0b25lIG1vZGVsLCB3ZSBzaG93IHRoYXQgdGhlIG1hZ25pdHVkZSBvZiBpbmVsYXN0aWMgZGVmb3JtYXRpb24gcHJvZHVjZWQgaW4gb3VyIGV4cGVyaW1lbnRzIGF0IHNtYWxsIHN0cmFpbnMgKOKJpCAxLjAlKSBhbmQgc3RyZXNzZXMgcmVsZXZhbnQgdG8gdGhlIEdyb25pbmdlbiByZXNlcnZvaXIgY2FuIGluZGVlZCBiZSByb3VnaGx5IGFjY291bnRlZCBmb3IgYnkgY2xheSBmaWxtIGRlZm9ybWF0aW9uLiBUaHVzLCBpbmVsYXN0aWMgY29tcGFjdGlvbiBvZiB0aGUgR3JvbmluZ2VuIHJlc2Vydm9pciBpcyBleHBlY3RlZCB0byBiZSBsYXJnZWx5IGdvdmVybmVkIGJ5IGNsYXkgZmlsbSBkZWZvcm1hdGlvbi4gQ29tcGFjdGlvbiBieSB0aGlzIG1lY2hhbmlzbSBpcyBzaG93biB0byBiZSByYXRlLWluc2Vuc2l0aXZlIG9uIHByb2R1Y3Rpb24gdGltZS1zY2FsZXMsIGFuZCBpcyBhbnRpY2lwYXRlZCB0byBoYWx0IHdoZW4gZ2FzIHByb2R1Y3Rpb24gc3RvcHMuIEhvd2V2ZXIsIGNyZWVwIGJ5IG90aGVyIHByb2Nlc3NlcyBjYW5ub3QgYmUgZWxpbWluYXRlZC4gU2ltaWxhciwgY2xheS1iZWFyaW5nIHNhbmRzdG9uZSByZXNlcnZvaXJzIG9jY3VyIHdpZGVzcHJlYWQgZ2xvYmFsbHksIGltcGx5aW5nIGEgd2lkZSByZWxldmFuY2Ugb2Ygb3VyIHJlc3VsdHMuCgpUaGUgZGF0YSBpcyBwcm92aWRlZCBpbiBhIGZvbGRlciB3aXRoIDMgc3ViZm9sZGVycyBmb3IgNSBleHBlcmltZW50cy9zYW1wbGVzLiBEZXRhaWxlZCBpbmZvcm1hdGlvbiBhYm91dCB0aGUgZmlsZXMgaW4gdGhlc2Ugc3ViZm9sZGVycyBhcyB3ZWxsIGFzIGluZm9ybWF0aW9uIG9uIGhvdyB0aGUgZGF0YSBpcyBwcm9jZXNzZWQgaXMgZ2l2ZW4gaW4gdGhlIGV4cGxhbmF0b3J5IGZpbGUgUGlqbmVuYnVyZy1ldC1hbF8yMDE5X2RhdGEtZGVzY3JpcHRpb24uZG9jeC4gQ29udGFjdCBwZXJzb24gaXMgUm9uYWxkIFBpam5lbmJ1cmcgLSBSZXNlYXJjaGVyIC0gci5wLmoucGlqbmVuYnVyZ0B1dS5ubC48L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgogIDxnZW9Mb2NhdGlvbnM+CiAgICA8Z2VvTG9jYXRpb24+CiAgICAgIDxnZW9Mb2NhdGlvblBsYWNlPjUzLjE0MjI4Mjc0Mjc5OTMzLCA2LjQ0Nzk5Mzk5NDA0MTY2NywgNTMuNDYwNzA2NDUyNDQ4NDM0LCA3LjA0MTI1NTcxMjc5MTY2NzwvZ2VvTG9jYXRpb25QbGFjZT4KICAgIDwvZ2VvTG9jYXRpb24+CiAgPC9nZW9Mb2NhdGlvbnM+CjwvcmVzb3VyY2U+Cg==",
+            "url": "https://public.yoda.uu.nl/geo/UU01/8AVM9K.html",
+            "contentUrl": null,
+            "metadataVersion": 9,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": "mds",
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 0,
+            "citationCount": 0,
+            "citationsOverTime": [],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2019-11-14T12:10:03.000Z",
+            "registered": "2019-11-14T12:10:07.000Z",
+            "published": "2019",
+            "updated": "2025-10-20T09:41:11.000Z"
+        },
+        "relationships": {
+            "client": {
+                "data": {
+                    "id": "delft.uu",
+                    "type": "clients"
+                }
+            },
+            "provider": {
+                "data": {
+                    "id": "pzax",
+                    "type": "providers"
+                }
+            },
+            "media": {
+                "data": {
+                    "id": "10.24416/uu01-8avm9k",
+                    "type": "media"
+                }
+            },
+            "references": {
+                "data": []
+            },
+            "citations": {
+                "data": []
+            },
+            "parts": {
+                "data": []
+            },
+            "partOf": {
+                "data": []
+            },
+            "versions": {
+                "data": []
+            },
+            "versionOf": {
+                "data": []
+            }
+        }
+    }
+}
