@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportDevelopmentSeeder extends Seeder
 {

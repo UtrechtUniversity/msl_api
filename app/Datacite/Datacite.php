@@ -28,6 +28,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
+
                 return $this->doisRequest($doi);
             }
 
@@ -73,6 +74,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
+
                 return $this->cursorSearchRequest($query, $prefix, $fields);
             }
 
@@ -109,6 +111,7 @@ class Datacite
         } catch (\Exception $e) {
             if ($retryOnFailure) {
                 sleep(1);
+
                 return $this->cursorPageRequest($uri, false, true);
             }
 
