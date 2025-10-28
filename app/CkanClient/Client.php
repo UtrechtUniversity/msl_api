@@ -11,25 +11,25 @@ class Client
     /**
      * @var GuzzleClient Guzzle HTTP client instance
      */
-    private $client;
+    private GuzzleClient $client;
 
     /**
      * @var string CKAN API token
      */
-    private $apiToken;
+    private string $apiToken;
 
     /**
      * @var string CKAN Base path to CKAN API
      */
-    private $ckanApiUrl;
+    private string $ckanApiUrl;
 
     /**
      * @var bool set http_errors option in Guzzle request
      */
-    private $httpErrors = false;
+    private bool $httpErrors = false;
 
     /**
-     * Contructs a new CKAN client
+     * Constructs a new CKAN client
      */
     public function __construct($client = new GuzzleClient)
     {

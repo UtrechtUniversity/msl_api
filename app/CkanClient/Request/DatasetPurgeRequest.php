@@ -9,22 +9,22 @@ class DatasetPurgeRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/dataset_purge';
+    private string $endpoint = 'action/dataset_purge';
 
     /**
      * @var string method of request
      */
-    private $method = 'POST';
+    private string $method = 'POST';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = BaseResponse::class;
+    private string $responseClass = BaseResponse::class;
 
     /**
      * @var string id of dataset to be removed
      */
-    public $id;
+    public string $id;
 
     public function getPayloadAsArray(): array
     {
