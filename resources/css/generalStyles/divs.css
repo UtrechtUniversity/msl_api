@@ -20,7 +20,7 @@
     .detail-div{
       @apply bg-primary-200 grow w-full 
       flex flex-col 
-      place-content-center 
+      place-items-center 
       px-2
       sm:px-10
       py-10 
