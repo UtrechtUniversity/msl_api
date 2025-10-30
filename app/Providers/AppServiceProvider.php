@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Listeners\LogMailSend;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
@@ -28,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-
         Event::listen(
             MessageSent::class,
             LogMailSend::class

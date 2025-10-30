@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\V1\ApiController as V1Controller;
+use App\Http\Controllers\API\V2\DataPublicationController as V2DataPublicationController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -44,4 +46,12 @@ Route::prefix('v1')->group(function () {
     Route::get('/facilities/all', [V1Controller::class, 'facilities']);
 });
 
-Route::prefix('v2')->group(function () {});
+Route::prefix('v2')->group(function () {
+    Route::get('/datapublications/rock_physics', [V2DataPublicationController::class, 'rockPhysics']);
+    Route::get('/datapublications/analogue', [V2DataPublicationController::class, 'analogue']);
+    Route::get('/datapublications/paleo', [V2DataPublicationController::class, 'paleo']);
+    Route::get('/datapublications/microscopy', [V2DataPublicationController::class, 'microscopy']);
+    Route::get('/datapublications/geochemistry', [V2DataPublicationController::class, 'geochemistry']);
+    Route::get('/datapublications/geoenergy', [V2DataPublicationController::class, 'geoenergy']);
+    Route::get('/datapublications/all', [V2DataPublicationController::class, 'all']);
+});

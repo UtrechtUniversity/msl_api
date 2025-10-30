@@ -231,52 +231,6 @@ class HomeController extends Controller
         abort(404, 'DatasetCreate not found');
     }
 
-    public function test()
-    {
-        dd('test');
-
-        $sourceDataset = SourceDataset::where('id', 6361)->first();
-
-        $mapper = new BgsMapper;
-        dd($mapper->map($sourceDataset));
-
-        /*
-        $endPoint = Endpoint::build('https://doidb.wdc-terra.org/oaip/oai');
-        $results = $endPoint->listIdentifiers('datacite', null, null, '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg');
-
-        //dd($results->getTotalRecordCount());
-        foreach($results as $result) {
-            dd($result);
-        }
-
-        $ckanClient = new Client();
-
-        $datasetCreate = DatasetCreate::where('id', 2000)->first();
-        $packageCreateRequest = new PackageUpdateRequest();
-        $packageCreateRequest->payload = $datasetCreate->dataset;
-
-        //dd($packageCreateRequest->payload);
-
-        $response = $ckanClient->get($packageCreateRequest);
-
-        dd($response->responseCode, $response->responseBody);
-
-        //dd('test');
-        */
-
-        $sourceDataset = SourceDataset::where('id', 2374)->first();
-
-        dd($sourceDataset);
-
-        $mappingService = new MappingService;
-        $importer = Importer::where('name', 'GFZ Datacite importer')->first();
-
-        dd($mappingService->map($sourceDataset, $importer));
-
-        dd($sourceDataset);
-
-        dd('test');
-    }
 
     // admin page control
     public function statusSurvey()

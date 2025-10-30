@@ -1,0 +1,13 @@
+{
+  "id": "fglqpyhpjfs",
+  "v": 2,
+  "name": "Local development",
+  "variables": [
+    {
+      "key": "base_url",
+      "secret": false,
+      "initialValue": "localhost:8000",
+      "currentValue": ""
+    }
+  ]
+}

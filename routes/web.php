@@ -88,8 +88,6 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
     Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
-
-    Route::get('/test', [HomeController::class, 'test'])->name('test');
 });
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
