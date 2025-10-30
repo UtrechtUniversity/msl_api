@@ -40,12 +40,12 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var int number of rows to request from solr
      */
-    public int $rows;
+    public int $rows = 10;
 
     /**
      * @var int number to start results from
      */
-    public int $start;
+    public int $start = 0;
 
     /**
      * @var array facets used to contruct the facets part of the solr query
