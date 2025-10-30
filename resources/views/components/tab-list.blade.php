@@ -21,7 +21,7 @@ whitespace-nowrap
 
     @foreach ( $allTabs as $description => $content)
         @if ($content['content']  != '')
-            <input type="radio" name="my_tabs_2" role="tab" class="tab hover-interactive p-2 px-4" 
+            <input type="radio" name="my_tabs_2" role="tab" class="tab hover-interactive p-2 px-4 !text-primary-900" 
             aria-label="{{ $description }}" 
             @if ($content['id'] == $checkedElementId) checked='checked' @endif
             />
