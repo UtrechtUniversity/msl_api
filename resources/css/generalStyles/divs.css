@@ -43,51 +43,17 @@
       sm:text-left
     }
     .detail-entry-content{
-      @apply w-full px-4 sm:px-0 flex flex-col gap-4
+      @apply w-full px-4 sm:px-0 flex flex-col content-divide-y
     }
 
     .tab-links-parent{
       @apply flex justify-center items-center w-full
     }
 
-    /* dividers */
-    .content-divide-y{
-      @apply divide-y-1 divide-primary-700/25
-    }
-    .content-divide-y-secondary{
-      @apply divide-y-2 divide-secondary-700
-    }
-    .content-divide-y-light{
-      @apply divide-y-2 divide-primary-300
-    }
-    .content-divide-y-light-secondary{
-      @apply divide-y-2 divide-secondary-300
-    }    
-    .content-divide-y-light-neutral{
-      @apply divide-y-2 divide-neutral-300
-    }    
-
-    .content-divide-x{
-      @apply divide-x-2 divide-primary-700
-    }
-    .content-divide-x-secondary{
-      @apply divide-x-2 divide-secondary-700
-    }
-    .content-divide-x-light{
-      @apply divide-x-2 divide-primary-300
-    }
-    .content-divide-x-light-secondary{
-      @apply divide-x-2 divide-secondary-300
-    }    
-    .content-divide-x-light-neutral{
-      @apply divide-x-2 divide-neutral-300
-    }    
-
-
 
     /* List view div */
     .list-view{
-      @apply flex flex-col 
+      @apply flex flex-col content-divide-y-light
     }
 
     .pagination-button{
@@ -172,10 +138,6 @@
       @apply divide-y divide-primary-700
     } */
 
-
-      .detailEntrySub2{
-        @apply w-full
-      }
 
     /*###############
     various

@@ -76,3 +76,36 @@ change here the underlying styling to daisy ui native elements
 @utility menu-title{
   @apply text-secondary-900
 }
+
+    /* dividers */
+    @utility content-divide-y{
+      @apply divide-y-1 divide-primary-700/25
+    }
+    @utility content-divide-y-secondary{
+      @apply divide-y-1 divide-secondary-700
+    }
+    @utility content-divide-y-light{
+      @apply divide-y-1 divide-primary-300
+    }
+    @utility content-divide-y-light-secondary{
+      @apply divide-y-1 divide-secondary-300
+    }    
+    @utility content-divide-y-light-neutral{
+      @apply divide-y-1 divide-neutral-300
+    }    
+
+    @utility content-divide-x{
+      @apply divide-x-1 divide-primary-700
+    }
+    @utility content-divide-x-secondary{
+      @apply divide-x-1 divide-secondary-700
+    }
+    @utility content-divide-x-light{
+      @apply divide-x-1 divide-primary-300
+    }
+    @utility content-divide-x-light-secondary{
+      @apply divide-x-1 divide-secondary-300
+    }    
+    @utility content-divide-x-light-neutral{
+      @apply divide-x-1 divide-neutral-300
+    }    
