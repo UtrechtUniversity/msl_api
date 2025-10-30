@@ -1,0 +1,162 @@
+{
+    "data": {
+        "id": "10.1594/pangaea.770250",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.1594/pangaea.770250_2",
+            "prefix": "10.1594",
+            "suffix": "pangaea.770250",
+            "identifiers": [],
+            "alternateIdentifiers": [],
+            "creators": [
+                {
+                    "name": "Schumann, Kai",
+                    "givenName": "Kai",
+                    "familyName": "Schumann",
+                    "affiliation": [],
+                    "nameIdentifiers": []
+                },
+                {
+                    "name": "Völker, David",
+                    "givenName": "David",
+                    "familyName": "Völker",
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://orcid.org",
+                            "nameIdentifier": "https://orcid.org/0000-0002-7237-3987",
+                            "nameIdentifierScheme": "ORCID"
+                        }
+                    ],
+                    "affiliation": []
+                },
+                {
+                    "name": "Weinrebe, Reimer Wilhelm",
+                    "givenName": "Reimer Wilhelm",
+                    "familyName": "Weinrebe",
+                    "affiliation": [],
+                    "nameIdentifiers": []
+                }
+            ],
+            "titles": [
+                {
+                    "lang": "en",
+                    "title": "Geoplace example dataset in the Development organization."
+                },
+                {
+                    "title": "Gridded results of swath bathymetric mapping of Disko Bay, Western Greenland, 2007-2008",
+                    "titleType": "AlternativeTitle"
+                }
+            ],
+            "publisher": { "name": "PANGAEA" },
+            "container": {},
+            "publicationYear": 2011,
+            "subjects": [],
+            "contributors": [
+                {
+                    "name": "IFM-GEOMAR Leibniz-Institute Of Marine Sciences, Kiel University",
+                    "nameType": "Personal",
+                    "givenName": "Kiel University",
+                    "familyName": "IFM-GEOMAR Leibniz-Institute Of Marine Sciences",
+                    "affiliation": [],
+                    "contributorType": "HostingInstitution",
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://ror.org",
+                            "nameIdentifier": "https://ror.org/02h2x0161",
+                            "nameIdentifierScheme": "ROR"
+                        }
+                    ]
+                }
+            ],
+            "dates": [{ "date": "2011", "dateType": "Issued" }],
+            "language": "en",
+            "types": {
+                "ris": "GEN",
+                "bibtex": "misc",
+                "citeproc": "article",
+                "schemaOrg": "Collection",
+                "resourceType": "Supplementary Publication Series of Datasets",
+                "resourceTypeGeneral": "Collection"
+            },
+            "relatedIdentifiers": [
+                {
+                    "relationType": "IsSupplementTo",
+                    "relatedIdentifier": "10.1016/j.quascirev.2012.02.016",
+                    "relatedIdentifierType": "DOI"
+                }
+            ],
+            "relatedItems": [],
+            "sizes": ["4 datasets"],
+            "formats": ["application/zip"],
+            "version": null,
+            "rightsList": [
+                {
+                    "rights": "Creative Commons Attribution 3.0 Unported",
+                    "rightsUri": "https://creativecommons.org/licenses/by/3.0/legalcode",
+                    "schemeUri": "https://spdx.org/licenses/",
+                    "rightsIdentifier": "cc-by-3.0",
+                    "rightsIdentifierScheme": "SPDX"
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "A ship-based acoustic mapping campaign was conducted at the exit of Ilulissat Ice Fjord and in the sedimentary basin of Disko Bay to the west of the fjord mouth. Submarine landscape and sediment distribution patterns are interpreted in terms of glaciomarine facies types that are related to variations in the past position of the glacier front. In particular, asymmetric ridges that form a curved entity and a large sill at the fjord mouth may represent moraines that depict at least two relatively stable positions of the ice front in the Disko Bay and at the fjord mouth. In this respect, Ilulissat Glacier shows prominent differences to the East Greenland Kangerlussuaq Glacier which is comparable in present size and present role for the ice discharge from the inland ice sheet. Two linear clusters of pockmarks in the center of the sedimentary basin seem to be linked to ongoing methane release due to dissociation of gas hydrates, a process fueled by climate warming in the Arctic realm.",
+                    "descriptionType": "Abstract"
+                },
+                {
+                    "description": "Preview maps can be downloaded at hdl:10013/epic.38398.",
+                    "descriptionType": "TechnicalInfo"
+                },
+                {
+                    "description": "Supplement to: Schumann, Kai; Völker, David; Weinrebe, Reimer Wilhelm (2012): Acoustic mapping of the Ilulissat Ice Fjord mouth, West Greenland. Journal of Quaternary Science, 40, 78-88",
+                    "descriptionType": "Other"
+                }
+            ],
+            "geoLocations": [
+                {
+                    "geoLocationPlace": "Disko Bay"
+                }
+            ],
+            "fundingReferences": [],
+            "xml": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHJlc291cmNlIHhtbG5zPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZGF0YWNpdGUub3JnL3NjaGVtYS9rZXJuZWwtNCBodHRwOi8vc2NoZW1hLmRhdGFjaXRlLm9yZy9tZXRhL2tlcm5lbC00LjMvbWV0YWRhdGEueHNkIj4KICA8aWRlbnRpZmllciBpZGVudGlmaWVyVHlwZT0iRE9JIj4xMC4xNTk0L1BBTkdBRUEuNzcwMjUwPC9pZGVudGlmaWVyPgogIDxjcmVhdG9ycz4KICAgIDxjcmVhdG9yPgogICAgICA8Y3JlYXRvck5hbWU+U2NodW1hbm4sIEthaTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+S2FpPC9naXZlbk5hbWU+CiAgICAgIDxmYW1pbHlOYW1lPlNjaHVtYW5uPC9mYW1pbHlOYW1lPgogICAgPC9jcmVhdG9yPgogICAgPGNyZWF0b3I+CiAgICAgIDxjcmVhdG9yTmFtZT5Ww7Zsa2VyLCBEYXZpZDwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+RGF2aWQ8L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+VsO2bGtlcjwvZmFtaWx5TmFtZT4KICAgICAgPG5hbWVJZGVudGlmaWVyIG5hbWVJZGVudGlmaWVyU2NoZW1lPSJPUkNJRCIgc2NoZW1lVVJJPSJodHRwOi8vb3JjaWQub3JnLyI+MDAwMC0wMDAyLTcyMzctMzk4NzwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NyZWF0b3I+CiAgICA8Y3JlYXRvcj4KICAgICAgPGNyZWF0b3JOYW1lPldlaW5yZWJlLCBSZWltZXIgV2lsaGVsbTwvY3JlYXRvck5hbWU+CiAgICAgIDxnaXZlbk5hbWU+UmVpbWVyIFdpbGhlbG08L2dpdmVuTmFtZT4KICAgICAgPGZhbWlseU5hbWU+V2VpbnJlYmU8L2ZhbWlseU5hbWU+CiAgICA8L2NyZWF0b3I+CiAgPC9jcmVhdG9ycz4KICA8dGl0bGVzPgogICAgPHRpdGxlPkdyaWRkZWQgcmVzdWx0cyBvZiBzd2F0aCBiYXRoeW1ldHJpYyBtYXBwaW5nIG9mIERpc2tvIEJheSwgV2VzdGVybiBHcmVlbmxhbmQsIDIwMDctMjAwODwvdGl0bGU+CiAgPC90aXRsZXM+CiAgPHB1Ymxpc2hlcj5QQU5HQUVBPC9wdWJsaXNoZXI+CiAgPHB1YmxpY2F0aW9uWWVhcj4yMDExPC9wdWJsaWNhdGlvblllYXI+CiAgPGNvbnRyaWJ1dG9ycz4KICAgIDxjb250cmlidXRvciBjb250cmlidXRvclR5cGU9Ikhvc3RpbmdJbnN0aXR1dGlvbiI+CiAgICAgIDxjb250cmlidXRvck5hbWU+SUZNLUdFT01BUiBMZWlibml6LUluc3RpdHV0ZSBvZiBNYXJpbmUgU2NpZW5jZXMsIEtpZWwgVW5pdmVyc2l0eTwvY29udHJpYnV0b3JOYW1lPgogICAgICA8bmFtZUlkZW50aWZpZXIgbmFtZUlkZW50aWZpZXJTY2hlbWU9IlJPUiI+aHR0cHM6Ly9yb3Iub3JnLzAyaDJ4MDE2MTwvbmFtZUlkZW50aWZpZXI+CiAgICA8L2NvbnRyaWJ1dG9yPgogIDwvY29udHJpYnV0b3JzPgogIDxyZXNvdXJjZVR5cGUgcmVzb3VyY2VUeXBlR2VuZXJhbD0iQ29sbGVjdGlvbiI+U3VwcGxlbWVudGFyeSBQdWJsaWNhdGlvbiBTZXJpZXMgb2YgRGF0YXNldHM8L3Jlc291cmNlVHlwZT4KICA8cmVsYXRlZElkZW50aWZpZXJzPgogICAgPHJlbGF0ZWRJZGVudGlmaWVyIHJlbGF0aW9uVHlwZT0iSXNTdXBwbGVtZW50VG8iIHJlbGF0ZWRJZGVudGlmaWVyVHlwZT0iRE9JIj4xMC4xMDE2L2oucXVhc2NpcmV2LjIwMTIuMDIuMDE2PC9yZWxhdGVkSWRlbnRpZmllcj4KICA8L3JlbGF0ZWRJZGVudGlmaWVycz4KICA8c2l6ZXM+CiAgICA8c2l6ZT40IGRhdGFzZXRzPC9zaXplPgogIDwvc2l6ZXM+CiAgPGZvcm1hdHM+CiAgICA8Zm9ybWF0PmFwcGxpY2F0aW9uL3ppcDwvZm9ybWF0PgogIDwvZm9ybWF0cz4KICA8cmlnaHRzTGlzdD4KICAgIDxyaWdodHMgcmlnaHRzVVJJPSJodHRwczovL2NyZWF0aXZlY29tbW9ucy5vcmcvbGljZW5zZXMvYnkvMy4wLyIgc2NoZW1lVVJJPSJodHRwczovL3NwZHgub3JnL2xpY2Vuc2VzLyIgcmlnaHRzSWRlbnRpZmllclNjaGVtZT0iU1BEWCIgcmlnaHRzSWRlbnRpZmllcj0iQ0MtQlktMy4wIj5DcmVhdGl2ZSBDb21tb25zIEF0dHJpYnV0aW9uIDMuMCBVbnBvcnRlZDwvcmlnaHRzPgogIDwvcmlnaHRzTGlzdD4KICA8ZGVzY3JpcHRpb25zPgogICAgPGRlc2NyaXB0aW9uIGRlc2NyaXB0aW9uVHlwZT0iQWJzdHJhY3QiPkEgc2hpcC1iYXNlZCBhY291c3RpYyBtYXBwaW5nIGNhbXBhaWduIHdhcyBjb25kdWN0ZWQgYXQgdGhlIGV4aXQgb2YgSWx1bGlzc2F0IEljZSBGam9yZCBhbmQgaW4gdGhlIHNlZGltZW50YXJ5IGJhc2luIG9mIERpc2tvIEJheSB0byB0aGUgd2VzdCBvZiB0aGUgZmpvcmQgbW91dGguIFN1Ym1hcmluZSBsYW5kc2NhcGUgYW5kIHNlZGltZW50IGRpc3RyaWJ1dGlvbiBwYXR0ZXJucyBhcmUgaW50ZXJwcmV0ZWQgaW4gdGVybXMgb2YgZ2xhY2lvbWFyaW5lIGZhY2llcyB0eXBlcyB0aGF0IGFyZSByZWxhdGVkIHRvIHZhcmlhdGlvbnMgaW4gdGhlIHBhc3QgcG9zaXRpb24gb2YgdGhlIGdsYWNpZXIgZnJvbnQuIEluIHBhcnRpY3VsYXIsIGFzeW1tZXRyaWMgcmlkZ2VzIHRoYXQgZm9ybSBhIGN1cnZlZCBlbnRpdHkgYW5kIGEgbGFyZ2Ugc2lsbCBhdCB0aGUgZmpvcmQgbW91dGggbWF5IHJlcHJlc2VudCBtb3JhaW5lcyB0aGF0IGRlcGljdCBhdCBsZWFzdCB0d28gcmVsYXRpdmVseSBzdGFibGUgcG9zaXRpb25zIG9mIHRoZSBpY2UgZnJvbnQgaW4gdGhlIERpc2tvIEJheSBhbmQgYXQgdGhlIGZqb3JkIG1vdXRoLiBJbiB0aGlzIHJlc3BlY3QsIElsdWxpc3NhdCBHbGFjaWVyIHNob3dzIHByb21pbmVudCBkaWZmZXJlbmNlcyB0byB0aGUgRWFzdCBHcmVlbmxhbmQgS2FuZ2VybHVzc3VhcSBHbGFjaWVyIHdoaWNoIGlzIGNvbXBhcmFibGUgaW4gcHJlc2VudCBzaXplIGFuZCBwcmVzZW50IHJvbGUgZm9yIHRoZSBpY2UgZGlzY2hhcmdlIGZyb20gdGhlIGlubGFuZCBpY2Ugc2hlZXQuIFR3byBsaW5lYXIgY2x1c3RlcnMgb2YgcG9ja21hcmtzIGluIHRoZSBjZW50ZXIgb2YgdGhlIHNlZGltZW50YXJ5IGJhc2luIHNlZW0gdG8gYmUgbGlua2VkIHRvIG9uZ29pbmcgbWV0aGFuZSByZWxlYXNlIGR1ZSB0byBkaXNzb2NpYXRpb24gb2YgZ2FzIGh5ZHJhdGVzLCBhIHByb2Nlc3MgZnVlbGVkIGJ5IGNsaW1hdGUgd2FybWluZyBpbiB0aGUgQXJjdGljIHJlYWxtLjwvZGVzY3JpcHRpb24+CiAgICA8ZGVzY3JpcHRpb24gZGVzY3JpcHRpb25UeXBlPSJUZWNobmljYWxJbmZvIj5QcmV2aWV3IG1hcHMgY2FuIGJlIGRvd25sb2FkZWQgYXQgaGRsOjEwMDEzL2VwaWMuMzgzOTguPC9kZXNjcmlwdGlvbj4KICAgIDxkZXNjcmlwdGlvbiBkZXNjcmlwdGlvblR5cGU9Ik90aGVyIj5TdXBwbGVtZW50IHRvOiBTY2h1bWFubiwgS2FpOyBWw7Zsa2VyLCBEYXZpZDsgV2VpbnJlYmUsIFJlaW1lciBXaWxoZWxtICgyMDEyKTogQWNvdXN0aWMgbWFwcGluZyBvZiB0aGUgSWx1bGlzc2F0IEljZSBGam9yZCBtb3V0aCwgV2VzdCBHcmVlbmxhbmQuIEpvdXJuYWwgb2YgUXVhdGVybmFyeSBTY2llbmNlLCA0MCwgNzgtODg8L2Rlc2NyaXB0aW9uPgogIDwvZGVzY3JpcHRpb25zPgogIDxnZW9Mb2NhdGlvbnM+CiAgICA8Z2VvTG9jYXRpb24+CiAgICAgIDxnZW9Mb2NhdGlvbkJveD4KICAgICAgICA8d2VzdEJvdW5kTG9uZ2l0dWRlPi01Mi4wPC93ZXN0Qm91bmRMb25naXR1ZGU+CiAgICAgICAgPGVhc3RCb3VuZExvbmdpdHVkZT4tNTAuNjAwMjUyMDAwMDAwMDE8L2Vhc3RCb3VuZExvbmdpdHVkZT4KICAgICAgICA8c291dGhCb3VuZExhdGl0dWRlPjY5LjA8L3NvdXRoQm91bmRMYXRpdHVkZT4KICAgICAgICA8bm9ydGhCb3VuZExhdGl0dWRlPjY5LjM1PC9ub3J0aEJvdW5kTGF0aXR1ZGU+CiAgICAgIDwvZ2VvTG9jYXRpb25Cb3g+CiAgICA8L2dlb0xvY2F0aW9uPgogICAgPGdlb0xvY2F0aW9uPgogICAgICA8Z2VvTG9jYXRpb25QbGFjZT5XZXN0IEdyZWVubGFuZCBNYXJnaW48L2dlb0xvY2F0aW9uUGxhY2U+CiAgICA8L2dlb0xvY2F0aW9uPgogIDwvZ2VvTG9jYXRpb25zPgo8L3Jlc291cmNlPg==",
+            "url": "https://doi.pangaea.de/10.1594/PANGAEA.770250",
+            "contentUrl": null,
+            "metadataVersion": 16,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": "mds",
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 0,
+            "citationCount": 0,
+            "citationsOverTime": [],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2011-10-28T01:06:30.000Z",
+            "registered": "2011-10-28T01:06:29.000Z",
+            "published": "2011",
+            "updated": "2024-07-21T00:18:00.000Z"
+        },
+        "relationships": {
+            "client": {
+                "data": { "id": "pangaea.repository", "type": "clients" }
+            },
+            "provider": { "data": { "id": "pangaea", "type": "providers" } },
+            "media": {
+                "data": { "id": "10.1594/pangaea.770250", "type": "media" }
+            },
+            "references": { "data": [] },
+            "citations": { "data": [] },
+            "parts": { "data": [] },
+            "partOf": { "data": [] },
+            "versions": { "data": [] },
+            "versionOf": { "data": [] }
+        }
+    }
+}

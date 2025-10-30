@@ -16,6 +16,7 @@ class SeederSeeder extends dbSeeder
     {
 
         // organization seeder
+
         Seeder::updateOrCreate(
             [
                 'name' => 'Organization seeder',

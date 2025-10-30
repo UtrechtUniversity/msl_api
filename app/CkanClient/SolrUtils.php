@@ -4,7 +4,7 @@ namespace App\CkanClient;
 
 class SolrUtils
 {
-    private static $search = [
+    private static array $search = [
         '\\',
         '+',
         '-',
@@ -26,7 +26,7 @@ class SolrUtils
         '/',
     ];
 
-    private static $replace = [
+    private static array $replace = [
         '\\\\',
         '\+',
         '\-',
@@ -48,7 +48,7 @@ class SolrUtils
         '\/',
     ];
 
-    public static function escape($string)
+    public static function escape($string): array|string
     {
         return str_replace(static::$search, static::$replace, $string);
     }

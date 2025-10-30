@@ -9,32 +9,32 @@ class OrganizationListRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/organization_list';
+    private string $endpoint = 'action/organization_list';
 
     /**
      * @var string method of request
      */
-    private $method = 'GET';
+    private string $method = 'GET';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = BaseResponse::class;
+    private string $responseClass = BaseResponse::class;
 
     /**
      * @var bool all fields for organizations should be requested
      */
-    private $allFields = true;
+    private bool $allFields = true;
 
     /**
      * @var bool fields not within the default ckan schema should be returned
      */
-    private $includeExtras = true;
+    private bool $includeExtras = true;
 
     /**
      * @var string sort results
      */
-    public $sortField = '';
+    public string $sortField = '';
 
     public function getPayloadAsArray(): array
     {

@@ -9,22 +9,22 @@ class OrganizationShowRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/organization_show';
+    private string $endpoint = 'action/organization_show';
 
     /**
      * @var string method of request
      */
-    private $method = 'GET';
+    private string $method = 'GET';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = BaseResponse::class;
+    private string $responseClass = BaseResponse::class;
 
     /**
      * @var string ckan package id
      */
-    public $id;
+    public string $id;
 
     public function getPayloadAsArray(): array
     {

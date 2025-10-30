@@ -9,22 +9,22 @@ class PackageCreateRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/package_create';
+    private string $endpoint = 'action/package_create';
 
     /**
      * @var string method of request
      */
-    private $method = 'POST';
+    private string $method = 'POST';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = BaseResponse::class;
+    private string $responseClass = BaseResponse::class;
 
     /**
      * @var array data to store
      */
-    public $payload;
+    public array $payload;
 
     public function getPayloadAsArray(): array
     {

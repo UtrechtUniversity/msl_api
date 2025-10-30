@@ -7,17 +7,17 @@ class BaseResponse
     /**
      * @var int HTTP response code
      */
-    public $responseCode;
+    public int $responseCode;
 
     /**
      * @var bool success status reported by CKAN
      */
-    public $ckanSuccess;
+    public bool $ckanSuccess;
 
     /**
      * @var array full response from CKAN
      */
-    public $responseBody;
+    public array $responseBody;
 
     public function __construct($body, $responseCode)
     {
@@ -75,6 +75,7 @@ class BaseResponse
                 return $this->responseBody['error']['__type'];
             }
         }
+        return '';
     }
 
     /**
@@ -87,5 +88,6 @@ class BaseResponse
                 return $this->responseBody['error']['message'];
             }
         }
+        return '';
     }
 }
