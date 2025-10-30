@@ -29,7 +29,7 @@
     <div class="flex flex-col justify-around pt-6 gap-3">
         <div class="flex max-[470px]:flex-col items-center place-content-center gap-3">
             <div class="basis-1/2">
-                <p class="inline italic"> {{ $amountFound }} found:</p>
+                <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
                 <h5 class="inline">{{ $result->getTotalResultsCount() }}</h5>
             </div>
     
