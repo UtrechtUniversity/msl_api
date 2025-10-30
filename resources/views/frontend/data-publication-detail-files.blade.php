@@ -46,7 +46,7 @@
                         <br>
                         <br>
                         @if (array_key_exists("msl_source",$data))
-                            <a class="detailEntrySub2 text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                            <a class="hover-interactive text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
                         @endif 
                         <br>
                         <br>
