@@ -2,6 +2,8 @@
 
 namespace App\CkanClient\Response;
 
+use App\Models\Ckan\DataPublication;
+
 class PackageSearchResponse extends BaseResponse
 {
     public function __construct($body, $responseCode)
@@ -20,9 +22,25 @@ class PackageSearchResponse extends BaseResponse
     /**
      * returns inner results array
      */
-    public function getResults(): array
+    public function getResults(bool $autoCast = false): array
     {
-        return $this->responseBody['result']['results'];
+        if (! $autoCast) {
+            return $this->responseBody['result']['results'];
+        }
+
+        $results = [];
+        foreach ($this->responseBody['result']['results'] as $result) {
+            switch ($this->responseBody['result']['type']) {
+                case 'data-publication':
+                    $results[] = DataPublication::fromCkanArray($result);
+                    break;
+                default:
+                    $results[] = (object) $result;
+                    break;
+            }
+        }
+
+        return $results;
     }
 
     /**

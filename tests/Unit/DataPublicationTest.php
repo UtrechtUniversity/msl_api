@@ -29,8 +29,7 @@ class DataPublicationTest extends TestCase
 
         $dataPublication = DataPublication::fromCkanArray($dataPublicationArray);
 
-
-        $this->assertEquals("Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone", $dataPublication->title);
+        $this->assertEquals('Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone', $dataPublication->title);
         $this->assertEquals("Micro Computational Tomography, <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>Acoustic Emission</span> and rock temperature data from frost weathering tests on Dachstein <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone\"]'>Limestone</span>", $dataPublication->msl_title_annotated);
         $this->assertEquals('data-publication', $dataPublication->type);
         $this->assertEquals('https://public.yoda.uu.nl/geo/UU01/Q5K96Z.html', $dataPublication->msl_source);
@@ -39,7 +38,7 @@ class DataPublicationTest extends TestCase
         $this->assertEquals('Dataset', $dataPublication->msl_resource_type_general);
         $this->assertFalse($dataPublication->private);
         $this->assertEquals('1d22b8b4-b362-4d37-97ed-4886cdc465b1', $dataPublication->owner_org);
-        $this->assertEquals("We tested the efficacy of frequent diurnal freeze-thaw cycles (FT-1) and sustained freezing cycles (FT-2) on low-porosity Dachstein limestone (0.1 % porosity). For FT-1, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to 20 freeze-thaw cycles between 10 and -10Â°C while monitoring rock temperature and acoustic emission (AE). We scanned the rock samples using micro computational tomography (CT) before the first cycle, after 5, 10, 15 and 20 cycles. For FT-2, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to one sustained freezing cycle with 66 h freezing at -10Â°C while monitoring rock temperature and AE.  We scanned the rock samples using micro CT before the first cycle and after the end of the experiment. The data set comprises all micro CT scans, rock temperature and AE data.", $dataPublication->msl_description_abstract);
+        $this->assertEquals('We tested the efficacy of frequent diurnal freeze-thaw cycles (FT-1) and sustained freezing cycles (FT-2) on low-porosity Dachstein limestone (0.1 % porosity). For FT-1, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to 20 freeze-thaw cycles between 10 and -10Â°C while monitoring rock temperature and acoustic emission (AE). We scanned the rock samples using micro computational tomography (CT) before the first cycle, after 5, 10, 15 and 20 cycles. For FT-2, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to one sustained freezing cycle with 66 h freezing at -10Â°C while monitoring rock temperature and AE.  We scanned the rock samples using micro CT before the first cycle and after the end of the experiment. The data set comprises all micro CT scans, rock temperature and AE data.', $dataPublication->msl_description_abstract);
         $this->assertEquals("We tested the efficacy of frequent diurnal freeze-thaw cycles (FT-1) and sustained freezing cycles (FT-2) on low-<span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity\"]'>porosity</span> Dachstein <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone\"]'>limestone</span> (0.1 % <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity\"]'>porosity</span>). For FT-1, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to 20 freeze-thaw cycles between 10 and -10Â°C while monitoring rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>acoustic emission</span> (<span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span>). We scanned the rock samples using micro computational tomography (CT) before the first cycle, after 5, 10, 15 and 20 cycles. For FT-2, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to one sustained freezing cycle with 66 h freezing at -10Â°C while monitoring rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span>.  We scanned the rock samples using micro CT before the first cycle and after the end of the experiment. The data set comprises all micro <span data-uris='[\"https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography\"]'>CT scans</span>, rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span> data.", $dataPublication->msl_description_abstract_annotated);
         $this->assertEquals('', $dataPublication->msl_description_methods);
         $this->assertEquals('', $dataPublication->msl_description_methods_annotated);
@@ -72,10 +71,10 @@ class DataPublicationTest extends TestCase
         // msl_alternate_identifiers
         $this->assertCount(2, $dataPublication->msl_alternate_identifiers);
         $this->assertInstanceOf(AlternateIdentifier::class, $dataPublication->msl_alternate_identifiers[0]);
-        $this->assertEquals("Mandziak, Anna; Prieto", $dataPublication->msl_alternate_identifiers[0]->msl_alternate_identifier);
+        $this->assertEquals('Mandziak, Anna; Prieto', $dataPublication->msl_alternate_identifiers[0]->msl_alternate_identifier);
         $this->assertEquals('citation', $dataPublication->msl_alternate_identifiers[0]->msl_alternate_identifier_type);
         $this->assertInstanceOf(AlternateIdentifier::class, $dataPublication->msl_alternate_identifiers[1]);
-        $this->assertEquals("http://hdl.handle.net/10261/377278", $dataPublication->msl_alternate_identifiers[1]->msl_alternate_identifier);
+        $this->assertEquals('http://hdl.handle.net/10261/377278', $dataPublication->msl_alternate_identifiers[1]->msl_alternate_identifier);
         $this->assertEquals('uri', $dataPublication->msl_alternate_identifiers[1]->msl_alternate_identifier_type);
 
         // msl_related_identifiers
@@ -193,26 +192,26 @@ class DataPublicationTest extends TestCase
         // msl_files
         $this->assertCount(1, $dataPublication->msl_files);
         $this->assertInstanceOf(File::class, $dataPublication->msl_files[0]);
-        $this->assertEquals('Original data',$dataPublication->msl_files[0]->msl_file_name);
-        $this->assertEquals('https://geo.public.data.uu.nl:443/vault-frost-shared/research-frost-shared[1697635081]/original/Original data/',$dataPublication->msl_files[0]->msl_download_link);
-        $this->assertEquals('',$dataPublication->msl_files[0]->msl_extension);
+        $this->assertEquals('Original data', $dataPublication->msl_files[0]->msl_file_name);
+        $this->assertEquals('https://geo.public.data.uu.nl:443/vault-frost-shared/research-frost-shared[1697635081]/original/Original data/', $dataPublication->msl_files[0]->msl_download_link);
+        $this->assertEquals('', $dataPublication->msl_files[0]->msl_extension);
         $this->assertTrue($dataPublication->msl_files[0]->msl_is_folder);
-        $this->assertEquals('',$dataPublication->msl_files[0]->msl_timestamp);
+        $this->assertEquals('', $dataPublication->msl_files[0]->msl_timestamp);
 
-        $this->assertEquals('Utrecht University',$dataPublication->msl_publisher);
-        $this->assertEquals("Draebing, D. (2023). <i>Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone</i> (Version 1) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-Q5K96Z", $dataPublication->msl_citation);
+        $this->assertEquals('Utrecht University', $dataPublication->msl_publisher);
+        $this->assertEquals('Draebing, D. (2023). <i>Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone</i> (Version 1) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-Q5K96Z', $dataPublication->msl_citation);
         $this->assertCount(0, $dataPublication->msl_spatial_coordinates);
-        $this->assertEquals('{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]},"properties":{"name":""}}]}',$dataPublication->msl_geojson_featurecollection);
+        $this->assertEquals('{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]},"properties":{"name":""}}]}', $dataPublication->msl_geojson_featurecollection);
         $this->assertEquals('', $dataPublication->msl_geojson_featurecollection_points);
         $this->assertEquals(0, $dataPublication->msl_surface_area);
 
         $this->assertCount(2, $dataPublication->msl_geolocations);
         $this->assertArrayHasKey('msl_geolocation', $dataPublication->msl_geolocations[0]);
-        $this->assertEquals('New Haven Falkland Islands',$dataPublication->msl_geolocations[0]['msl_geolocation']);
+        $this->assertEquals('New Haven Falkland Islands', $dataPublication->msl_geolocations[0]['msl_geolocation']);
         $this->assertArrayHasKey('msl_geolocation', $dataPublication->msl_geolocations[1]);
-        $this->assertEquals('Port Stephens Falkland Islands',$dataPublication->msl_geolocations[1]['msl_geolocation']);
+        $this->assertEquals('Port Stephens Falkland Islands', $dataPublication->msl_geolocations[1]['msl_geolocation']);
 
-        $this->assertCount(1,$dataPublication->extras);
+        $this->assertCount(1, $dataPublication->extras);
         $this->assertEquals('spatial', $dataPublication->extras[0]['key']);
         $this->assertEquals('{"type":"Polygon","coordinates":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]}', $dataPublication->extras[0]['value']);
 
@@ -238,33 +237,33 @@ class DataPublicationTest extends TestCase
         $this->assertEquals('https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct', $dataPublication->msl_tags[3]->msl_tag_msl_uris[1]);
 
         // msl_subdomains
-        $this->assertCount(3,$dataPublication->msl_subdomains);
-        $this->assertEquals('microscopy and tomography',$dataPublication->msl_subdomains[0]['msl_subdomain']);
-        $this->assertEquals('rock and melt physics',$dataPublication->msl_subdomains[1]['msl_subdomain']);
-        $this->assertEquals('analogue modelling of geologic processes',$dataPublication->msl_subdomains[2]['msl_subdomain']);
+        $this->assertCount(3, $dataPublication->msl_subdomains);
+        $this->assertEquals('microscopy and tomography', $dataPublication->msl_subdomains[0]['msl_subdomain']);
+        $this->assertEquals('rock and melt physics', $dataPublication->msl_subdomains[1]['msl_subdomain']);
+        $this->assertEquals('analogue modelling of geologic processes', $dataPublication->msl_subdomains[2]['msl_subdomain']);
 
-        $this->assertCount(0,$dataPublication->msl_subdomains_original);
+        $this->assertCount(0, $dataPublication->msl_subdomains_original);
 
         // msl_subdomains_interpreted
-        $this->assertCount(3,$dataPublication->msl_subdomains_interpreted);
-        $this->assertEquals('microscopy and tomography',$dataPublication->msl_subdomains_interpreted[0]['msl_subdomain_interpreted']);
-        $this->assertEquals('rock and melt physics',$dataPublication->msl_subdomains_interpreted[1]['msl_subdomain_interpreted']);
-        $this->assertEquals('analogue modelling of geologic processes',$dataPublication->msl_subdomains_interpreted[2]['msl_subdomain_interpreted']);
+        $this->assertCount(3, $dataPublication->msl_subdomains_interpreted);
+        $this->assertEquals('microscopy and tomography', $dataPublication->msl_subdomains_interpreted[0]['msl_subdomain_interpreted']);
+        $this->assertEquals('rock and melt physics', $dataPublication->msl_subdomains_interpreted[1]['msl_subdomain_interpreted']);
+        $this->assertEquals('analogue modelling of geologic processes', $dataPublication->msl_subdomains_interpreted[2]['msl_subdomain_interpreted']);
 
         // msl_enriched_keywords
-        $this->assertCount(13,$dataPublication->msl_enriched_keywords);
+        $this->assertCount(13, $dataPublication->msl_enriched_keywords);
         $this->assertInstanceOf(EnrichedKeyword::class, $dataPublication->msl_enriched_keywords[0]);
         $this->assertEquals('Apparatus', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_label);
         $this->assertEquals('https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_uri);
         $this->assertEquals('https://epos-msl.uu.nl/voc/microscopy/1.3/', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_vocab_uri);
-        $this->assertCount(0,$dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains);
-        $this->assertCount(1,$dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_locations);
+        $this->assertCount(0, $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_associated_subdomains);
+        $this->assertCount(1, $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_locations);
         $this->assertEquals('parent', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_locations[0]);
-        $this->assertCount(1,$dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
+        $this->assertCount(1, $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris);
         $this->assertEquals('https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography', $dataPublication->msl_enriched_keywords[0]->msl_enriched_keyword_match_child_uris[0]);
 
         // msl_original_keywords
-        $this->assertCount(4,$dataPublication->msl_original_keywords);
+        $this->assertCount(4, $dataPublication->msl_original_keywords);
         $this->assertInstanceOf(OriginalKeyword::class, $dataPublication->msl_original_keywords[0]);
         $this->assertEquals('X-ray tomography', $dataPublication->msl_original_keywords[0]->msl_original_keyword_label);
         $this->assertEquals('https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography', $dataPublication->msl_original_keywords[0]->msl_original_keyword_uri);

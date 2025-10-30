@@ -2,6 +2,8 @@
 
 namespace App\CkanClient\Response;
 
+use App\Models\Ckan\DataPublication;
+
 class BaseResponse
 {
     /**
@@ -52,9 +54,22 @@ class BaseResponse
     /**
      * Returns result element from response body
      */
-    public function getResult(): array
+    public function getResult(bool $autoCast = false): array|object
     {
-        return $this->responseBody['result'];
+        if (! $autoCast) {
+            return $this->responseBody['result'];
+        }
+
+        if ($this->responseBody['result']['type']) {
+            switch ($this->responseBody['result']['type']) {
+                case 'data-publication':
+                    return DataPublication::fromCkanArray($this->responseBody['result']);
+                default:
+                    return (object) $this->responseBody['result'];
+            }
+        }
+
+        return (object) $this->responseBody['result'];
     }
 
     /**
@@ -75,6 +90,7 @@ class BaseResponse
                 return $this->responseBody['error']['__type'];
             }
         }
+
         return '';
     }
 
@@ -88,6 +104,7 @@ class BaseResponse
                 return $this->responseBody['error']['message'];
             }
         }
+
         return '';
     }
 }

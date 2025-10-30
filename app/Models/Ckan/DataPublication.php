@@ -15,7 +15,7 @@ class DataPublication
      * annotated title of the data publication
      * elements used to display matched keywords within the original title are added during keyword detection
      */
-    public string $msl_title_annotated= '';
+    public string $msl_title_annotated = '';
 
     /**
      * data type used in CKAN
@@ -761,23 +761,23 @@ class DataPublication
 
     public static function fromCkanArray(array $data): self
     {
-        $dataPublication = new self();
+        $dataPublication = new self;
 
         foreach ($data as $key => $value) {
             // CKAN sometimes adds the string '{}' for empty repeating fields.
-            if($value === "{}") {
-                $value = "";
+            if ($value === '{}') {
+                $value = '';
             }
 
-            if($value !== "") {
-                if(! is_array($value)) {
+            if ($value !== '') {
+                if (! is_array($value)) {
                     if (property_exists($dataPublication, $key)) {
                         switch (gettype($dataPublication->{$key})) {
                             case 'integer':
-                                $dataPublication->{$key} = (int)$value;
+                                $dataPublication->{$key} = (int) $value;
                                 break;
                             case 'boolean':
-                                if($value === 'true') {
+                                if ($value === 'true') {
                                     $dataPublication->{$key} = true;
                                 } else {
                                     $dataPublication->{$key} = false;
