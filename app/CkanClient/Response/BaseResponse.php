@@ -54,9 +54,9 @@ class BaseResponse
     /**
      * Returns result element from response body
      */
-    public function getResult(bool $autoCast = false): array|object
+    public function getResult(bool $castToObjects = false): array|object
     {
-        if (! $autoCast) {
+        if (! $castToObjects) {
             return $this->responseBody['result'];
         }
 

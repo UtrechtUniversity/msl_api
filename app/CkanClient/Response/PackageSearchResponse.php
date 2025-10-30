@@ -22,9 +22,9 @@ class PackageSearchResponse extends BaseResponse
     /**
      * returns inner results array
      */
-    public function getResults(bool $autoCast = false): array
+    public function getResults(bool $castToObjects = false): array
     {
-        if (! $autoCast) {
+        if (! $castToObjects) {
             return $this->responseBody['result']['results'];
         }
 
