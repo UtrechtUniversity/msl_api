@@ -87,7 +87,7 @@
                     </div >
                     
                     <div class="detail-entry-div !flex-col">
-                        <h4 class="">Keywords</h4>
+                        <h3 class="">Keywords</h3>
 
                         @if (array_key_exists("msl_tags", $data))
                             <br>
@@ -319,12 +319,13 @@
                         @endif
                     </div>
 
+                    <h3 class="border-none py-5 pt-10">Metadata</h3>
                     
                     @if (array_key_exists("msl_subdomains", $data))
                     <br>
                     <div class="detail-entry-div">
                         <h4 class="detail-entry-title">MSL original sub domains</h4>
-                        <div class="word-card-parent">
+                        <div class="word-card-parent justify-start">
                             {{-- hover behaviour: highlights all related tags above --}}
                             @foreach ( $data['msl_subdomains'] as $keyword)
                                 <div class="word-card">{{ $keyword['msl_subdomain'] }}</div>
@@ -337,7 +338,7 @@
                     <br>
                     <div class="detail-entry-div">
                         <h4 class="detail-entry-title">MSL enriched sub domains <i id="enriched-subdomains-popup">i</i></h4>
-                        <div class="word-card-parent">
+                        <div class="word-card-parent justify-start">
                             {{-- hover behaviour: highlights all related tags above --}}
                             @foreach ( $data['msl_subdomains'] as $keyword)
                                 <div 
@@ -402,8 +403,6 @@
                             <p class="">{{ $data['msl_publisher'] }}</p>
                         </div>
                     </div>
-                    @else
-                    <h4 class="detail-entry-title bg-red-500">missing: Source publisher</h4>
                     @endif
 
                     @if (array_key_exists("msl_doi",$data))
@@ -414,8 +413,6 @@
                             <p class="">{{ $data['msl_doi'] }}</p>
                         </div>
                     </div>
-                    @else
-                    <h4 class="detail-entry-title bg-red-500">missing: DOI</h4>
                     @endif
 
                     @if (array_key_exists("msl_creators",$data))
@@ -689,6 +686,8 @@
                         </div>
                     </div>
                 @endif
+
+                <h3 class="border-none py-5 pt-10">Locations</h3>
 
                 @if (array_key_exists("msl_geolocations",$data))
                     <br>
