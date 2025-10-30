@@ -724,7 +724,6 @@ class FrontendController extends Controller
     {
         return view('frontend.themeTest');
     }
-<<<<<<< HEAD
 
         /**
      * Show demo page
@@ -736,6 +735,4 @@ class FrontendController extends Controller
         return view('frontend.demoPage');
     }
     
-=======
->>>>>>> c64c20bbc54ec7f5f9ad065a800bacfd48a8a72e
 }
