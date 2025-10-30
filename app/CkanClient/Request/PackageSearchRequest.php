@@ -25,7 +25,7 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var string query string used in solr
      */
-    public string $query;
+    public string $query = '';
 
     /**
      * @var array filter query parts used to construct the solr filter query
