@@ -24,9 +24,9 @@
         </div>
     </div>
 
-    <div class="main-content ">
+    <div class="main-content">
 
-        <div class="detail-div justify-center">
+        <div class="detail-div justify-center gap-4">
 
                 <h2>Files</h2>
                 <h5 class="pt-10 font-bold">{{ $data['title'] }}</h5>
