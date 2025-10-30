@@ -105,7 +105,7 @@
 
                         @foreach ($allFolders as $key => $download)
 
-                            <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover:bg-secondary-100 h-12"
+                            <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover-interactive h-12"
                                 href="{!! $download['msl_download_link'] !!}" title="download file">
 
                                     <div class='flex justify-left items-center w-full'>
