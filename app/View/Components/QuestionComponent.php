@@ -18,13 +18,13 @@ class QuestionComponent extends Component
         $this->questionConfig = $questionConfig;
     }
 
-    /** 
+    /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.question-component',[
-            'questionConfig' => $this->questionConfig
+        return view('components.question-component', [
+            'questionConfig' => $this->questionConfig,
         ]);
     }
 }

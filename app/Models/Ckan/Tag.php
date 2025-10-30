@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class Tag implements CkanArrayInterface
@@ -15,7 +16,7 @@ class Tag implements CkanArrayInterface
 
     public array $msl_tag_msl_uris;
 
-    public function __construct($tagString, $schemeUri = "", $valueUri = "", $subjectScheme = "", $classificationCode = "", $mslUris = [])
+    public function __construct($tagString, $schemeUri = '', $valueUri = '', $subjectScheme = '', $classificationCode = '', $mslUris = [])
     {
         $this->msl_tag_string = $tagString;
         $this->msl_tag_scheme_uri = $schemeUri;
@@ -26,7 +27,7 @@ class Tag implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

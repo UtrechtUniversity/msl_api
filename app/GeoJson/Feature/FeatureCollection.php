@@ -13,18 +13,18 @@ class FeatureCollection implements JsonSerializable
 
     /**
      * constructs a new FeatureCollection
-     * @param array<Feature> $features
+     *
+     * @param  array<Feature>  $features
      */
-    public function __construct(array $features= [])
+    public function __construct(array $features = [])
     {
-        foreach($features as $feature) {
+        foreach ($features as $feature) {
             $this->addFeature($feature);
-        }            
+        }
     }
 
     /**
      * Add feature to collection
-     * @param Feature $feature
      */
     public function addFeature(Feature $feature)
     {
@@ -34,13 +34,13 @@ class FeatureCollection implements JsonSerializable
     public function jsonSerialize(): array
     {
         $features = [];
-        foreach($this->features as $feature) {
+        foreach ($this->features as $feature) {
             $features[] = $feature->jsonSerialize();
         }
 
         return [
-            "type" => "FeatureCollection",
-            "features" => $features
+            'type' => 'FeatureCollection',
+            'features' => $features,
         ];
     }
 }

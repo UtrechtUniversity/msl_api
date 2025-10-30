@@ -10,27 +10,27 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/package_search';
+    private string $endpoint = 'action/package_search';
 
     /**
      * @var string method of request
      */
-    private $method = 'GET';
+    private string $method = 'GET';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = PackageSearchResponse::class;
+    private string $responseClass = PackageSearchResponse::class;
 
     /**
      * @var string query string used in solr
      */
-    public $query;
+    public string $query;
 
     /**
-     * @var array filter query parts used to contruct the solr filter query
+     * @var array filter query parts used to construct the solr filter query
      */
-    public $filterQueries = [];
+    public array $filterQueries = [];
 
     /**
      * @var string bounding box spatial filter
@@ -40,27 +40,27 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var int number of rows to request from solr
      */
-    public $rows;
+    public int $rows;
 
     /**
      * @var int number to start results from
      */
-    public $start;
+    public int $start;
 
     /**
      * @var array facets used to contruct the facets part of the solr query
      */
-    public $facetFields = [];
+    public array $facetFields = [];
 
     /**
      * @var string sort results
      */
-    public $sortField = '';
+    public string $sortField = '';
 
     /**
      * @var int maximum number of facet values returned by CKAN. Use a negative number for unlimited
      */
-    private $facetLimit = -1;
+    private int $facetLimit = -1;
 
     public function getPayloadAsArray(): array
     {
@@ -87,7 +87,7 @@ class PackageSearchRequest implements RequestInterface
         }
     }
 
-    private function getFilterQueryQuery()
+    private function getFilterQueryQuery(): string
     {
         if (count($this->filterQueries) > 0) {
             $parts = [];
@@ -105,17 +105,17 @@ class PackageSearchRequest implements RequestInterface
         return '';
     }
 
-    public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY)
+    public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY): void
     {
         $this->boundingBox = (string) $minX.','.(string) $minY.','.(string) $maxX.','.(string) $maxY;
     }
 
-    public function addFacetField($facetField)
+    public function addFacetField($facetField): void
     {
         $this->facetFields[] = $facetField;
     }
 
-    public function loadFacetsFromConfig($type)
+    public function loadFacetsFromConfig($type): void
     {
         if ($type == 'data-publications') {
             $facets = config('ckan.facets.data-publications');
@@ -135,7 +135,7 @@ class PackageSearchRequest implements RequestInterface
         }
     }
 
-    private function getFacetFieldQuery()
+    private function getFacetFieldQuery(): string
     {
         if (count($this->facetFields) > 0) {
             $return = '[';

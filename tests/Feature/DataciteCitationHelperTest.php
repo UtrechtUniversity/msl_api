@@ -3,11 +3,11 @@
 namespace Tests\Feature;
 
 use App\Mappers\Helpers\DataciteCitationHelper;
-use Tests\TestCase;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use Tests\TestCase;
 
 class DataciteCitationHelperTest extends TestCase
 {
@@ -17,13 +17,13 @@ class DataciteCitationHelperTest extends TestCase
     public function test_datacite_citation_success(): void
     {
         $response = file_get_contents(base_path('/tests/MockData/DataCiteResponses/citation_response_200.txt'));
-        
+
         $mock = new MockHandler([
-            new Response(200, [], $response)
+            new Response(200, [], $response),
         ]);
-    
+
         $handler = HandlerStack::create($mock);
-        
+
         $citationHelper = new DataciteCitationHelper(new Client(['handler' => $handler]));
 
         $citationString = $citationHelper->getCitationString('j.tecto.2017.11.018');
@@ -37,13 +37,13 @@ class DataciteCitationHelperTest extends TestCase
     public function test_datacite_citation_notfound(): void
     {
         $response = file_get_contents(base_path('/tests/MockData/DataCiteResponses/citation_response_404.txt'));
-        
+
         $mock = new MockHandler([
-            new Response(404, [], $response)
+            new Response(404, [], $response),
         ]);
-    
+
         $handler = HandlerStack::create($mock);
-        
+
         $citationHelper = new DataciteCitationHelper(new Client(['handler' => $handler]));
 
         $citationString = $citationHelper->getCitationString('j.tecto.2017.');

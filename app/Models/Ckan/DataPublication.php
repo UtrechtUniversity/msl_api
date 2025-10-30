@@ -1,17 +1,17 @@
 <?php
+
 namespace App\Models\Ckan;
 
 use Exception;
 
 class DataPublication
 {
-
     /**
      * title of the data publication
      */
     public string $title;
 
-    /** 
+    /**
      * annotated title of the data publication
      * elements used to display matched keywords within the original title are added during keyword detection
      */
@@ -24,7 +24,7 @@ class DataPublication
 
     /**
      * link to landingpage
-     */    
+     */
     public string $msl_source;
 
     /**
@@ -63,7 +63,7 @@ class DataPublication
     public string $msl_description_abstract_annotated;
 
     /**
-     * methods 
+     * methods
      */
     public string $msl_description_methods;
 
@@ -76,7 +76,7 @@ class DataPublication
      * series information
      */
     public string $msl_description_series_information;
-    
+
     /**
      * series information annotated, includes elements to display keyword matches
      */
@@ -177,7 +177,7 @@ class DataPublication
     /**
      * The version number of the resource. Is not definitive information as multiple variants for storing versioning information are available.
      */
-    public string $msl_datacite_version = "";
+    public string $msl_datacite_version = '';
 
     public $msl_laboratories = [];
 
@@ -187,7 +187,7 @@ class DataPublication
     public array $msl_files = [];
 
     /**
-     * The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource. 
+     * The name of the entity that holds, archives, publishes, prints, distributes, releases, issues, or produces the resource.
      * This property will be used to formulate the citation, so consider the prominence of the role.
      */
     public string $msl_publisher;
@@ -205,17 +205,17 @@ class DataPublication
      * Spatial coordinates
      */
     public array $msl_spatial_coordinates = [];
-    
+
     /**
      * Geojson feature collection string containing spatial features
      */
     public $msl_geojson_featurecollection;
-    
+
     /**
      * Geojson feature collection string containing spatial features converted to points
      */
     public $msl_geojson_featurecollection_points;
-    
+
     /**
      * Surface area of feature collection
      * Area calculated is just a rough proximation as projection is not taken into account
@@ -241,7 +241,7 @@ class DataPublication
      * CKAN original keyword/tags field
      */
     public $tag_string = [];
-    
+
     /**
      * Tags/subjects/keywords originally assigned by the author(s)
      */
@@ -270,10 +270,10 @@ class DataPublication
     /**
      * original keywords translated to msl keywords
      */
-    public array $msl_original_keywords = [];    
+    public array $msl_original_keywords = [];
 
     /**
-     * Fields listed below are used to provide top level filtering in the data-access filtertree navigation     
+     * Fields listed below are used to provide top level filtering in the data-access filtertree navigation
      */
     public bool $msl_has_material = false;
 
@@ -318,31 +318,31 @@ class DataPublication
     public bool $msl_has_geoenergy = false;
 
     public bool $msl_has_geoenergy_original = false;
-    
+
     public bool $msl_has_lab = false;
 
     public bool $msl_has_organization = true;
-    
+
     /**
      * Validation rules to be used after mapping stage of importing data. If rules fail processing of this dataset will be stopped.
      */
     public static array $importingRules = [
         'title' => 'required',
-        'msl_creators' => 'required'
+        'msl_creators' => 'required',
     ];
 
     /**
      * Add Right object to msl_rights
-     * @param Rigth $right
+     *
+     * @param  Rigth  $right
      */
     public function addRight(Right $right): void
     {
-        $this->msl_rights[] = $right;            
+        $this->msl_rights[] = $right;
     }
 
     /**
      * Add AlternateIdentifier object to msl_alternate_identifiers
-     * @param AlternateIdentifier $alternateIdentifier
      */
     public function addAlternateIdentifier(AlternateIdentifier $alternateIdentifier): void
     {
@@ -351,7 +351,6 @@ class DataPublication
 
     /**
      * Add RelatedIdentifier object to msl_related_identifiers
-     * @param RelatedIdentifier $relatedIdentifier
      */
     public function addRelatedIdentifier(RelatedIdentifier $relatedIdentifier): void
     {
@@ -360,7 +359,6 @@ class DataPublication
 
     /**
      * Add FundingReference to msl_funding_references
-     * @param FundingReference $fundingReference
      */
     public function addFundingReference(FundingReference $fundingReference): void
     {
@@ -369,7 +367,6 @@ class DataPublication
 
     /**
      * Add Date to msl_dates
-     * @param Date $date
      */
     public function addDate(Date $date): void
     {
@@ -378,7 +375,6 @@ class DataPublication
 
     /**
      * Add Creator to msl_creators
-     * @param Creator $creator
      */
     public function addCreator(Creator $creator): void
     {
@@ -387,7 +383,6 @@ class DataPublication
 
     /**
      * Add Contributor to msl_contributors
-     * @param Contributor $contributor
      */
     public function addContributor(Contributor $contributor): void
     {
@@ -396,7 +391,6 @@ class DataPublication
 
     /**
      * Add size to msl_sizes
-     * @param string $size
      */
     public function addSize(string $size): void
     {
@@ -405,7 +399,6 @@ class DataPublication
 
     /**
      * Add format to msl_formats
-     * @param string $format
      */
     public function addFormat(string $format): void
     {
@@ -414,7 +407,6 @@ class DataPublication
 
     /**
      * Add geolocation to msl_geolocations
-     * @param string $location
      */
     public function addGeolocation(string $location): void
     {
@@ -423,42 +415,38 @@ class DataPublication
 
     /**
      * Add geojson object to specific extras field for processing by spatial plugin
-     * @param string $location
      */
     public function addLocationToExtras(string $location)
     {
-        $this->extras[] = ["key" => "spatial", "value" => $location];
+        $this->extras[] = ['key' => 'spatial', 'value' => $location];
     }
-        
+
     /**
      * Add Tag to msl_tags if no existing tag with same msl_tag_string exists
-     * @param Tag $tag
      */
     public function addTag(Tag $tag)
     {
         $exists = false;
         foreach ($this->msl_tags as $existingTag) {
-            if($existingTag->msl_tag_string == $tag->msl_tag_string) {
+            if ($existingTag->msl_tag_string == $tag->msl_tag_string) {
                 $exists = true;
                 break;
             }
         }
-        
-        if(!$exists) {
+
+        if (! $exists) {
             $this->msl_tags[] = $tag;
         }
     }
-    
+
     /**
      * Add msl uri to Tag by tag string
-     * @param string $tagString
-     * @param string $uri
      */
     public function addUriToTag(string $tagString, string $uri): void
     {
         foreach ($this->msl_tags as &$tag) {
-            if($tag->msl_tag_string == $tagString) {
-                if(! in_array($uri, $tag->msl_tag_msl_uris)) {
+            if ($tag->msl_tag_string == $tagString) {
+                if (! in_array($uri, $tag->msl_tag_msl_uris)) {
                     $tag->msl_tag_msl_uris[] = $uri;
                 }
             }
@@ -467,28 +455,29 @@ class DataPublication
 
     /**
      * Add sub domain to data publication. msl_subdomain will also contain the new value, original/interpreted is indicated by parameter.
-     * @param string $subdomain
-     * @param bool $orginal
+     *
+     * @param  string  $subdomain
+     * @param  bool  $orginal
      */
     public function addSubDomain(string $subDomain, bool $original = true): void
     {
         // add sub domain if it is valid
-        if(in_array($subDomain, config('subdomains.full_names'))) {
+        if (in_array($subDomain, config('subdomains.full_names'))) {
             if (! $this->hasSubDomain($subDomain)) {
                 $this->msl_subdomains[] = [
-                    'msl_subdomain' => $subDomain
+                    'msl_subdomain' => $subDomain,
                 ];
             }
             if ($original) {
                 if (! $this->hasOriginalSubDomain($subDomain)) {
                     $this->msl_subdomains_original[] = [
-                        'msl_subdomain_original' => $subDomain
+                        'msl_subdomain_original' => $subDomain,
                     ];
                 }
             } else {
                 if (! $this->hasInterpretedSubDomain($subDomain)) {
                     $this->msl_subdomains_interpreted[] = [
-                        'msl_subdomain_interpreted' => $subDomain
+                        'msl_subdomain_interpreted' => $subDomain,
                     ];
                 }
             }
@@ -499,7 +488,6 @@ class DataPublication
 
     /**
      * Check if sub domain is included in data publication
-     * @param string $subDomain
      */
     public function hasSubDomain(string $subDomain): bool
     {
@@ -514,7 +502,6 @@ class DataPublication
 
     /**
      * Check if orginal sub domain is included in data publication
-     * @param string $subDomain
      */
     public function hasOriginalSubDomain(string $subDomain): bool
     {
@@ -529,7 +516,6 @@ class DataPublication
 
     /**
      * Check if interpreted sub domain is included in data publication
-     * @param string $subDomain
      */
     public function hasInterpretedSubDomain(string $subDomain): bool
     {
@@ -544,7 +530,6 @@ class DataPublication
 
     /**
      * Add original keyword.
-     * @param OriginalKeyword $keyword
      */
     public function addOriginalKeyword(OriginalKeyword $keyword): void
     {
@@ -556,48 +541,46 @@ class DataPublication
 
     /**
      * Add enriched keyword, if enriched keyword with the same uri exists merge associated subdomains, match locations and match child uris
-     * @param EnrichedKeyword $keyword
      */
     public function addEnrichedKeyword(EnrichedKeyword $keyword): void
     {
         $exists = false;
         foreach ($this->msl_enriched_keywords as &$existingKeyword) {
-            if($existingKeyword->msl_enriched_keyword_uri == $keyword->msl_enriched_keyword_uri) {
-                //add associated subdomain(s)
+            if ($existingKeyword->msl_enriched_keyword_uri == $keyword->msl_enriched_keyword_uri) {
+                // add associated subdomain(s)
                 foreach ($keyword->msl_enriched_keyword_associated_subdomains as $associatedSubDomain) {
-                    if(! in_array($associatedSubDomain, $existingKeyword->msl_enriched_keyword_associated_subdomains)) {
+                    if (! in_array($associatedSubDomain, $existingKeyword->msl_enriched_keyword_associated_subdomains)) {
                         $existingKeyword->msl_enriched_keyword_associated_subdomains[] = $associatedSubDomain;
                     }
                 }
-                                
-                //add matchlocation(s)
+
+                // add matchlocation(s)
                 foreach ($keyword->msl_enriched_keyword_match_locations as $matchLocation) {
-                    if(! in_array($matchLocation, $existingKeyword->msl_enriched_keyword_match_locations)) {
+                    if (! in_array($matchLocation, $existingKeyword->msl_enriched_keyword_match_locations)) {
                         $existingKeyword->msl_enriched_keyword_match_locations[] = $matchLocation;
                     }
                 }
-                
-                //add match child uri(s)
+
+                // add match child uri(s)
                 foreach ($keyword->msl_enriched_keyword_match_child_uris as $matchChildUri) {
-                    if(! in_array($matchChildUri, $existingKeyword->msl_enriched_keyword_match_child_uris)) {
+                    if (! in_array($matchChildUri, $existingKeyword->msl_enriched_keyword_match_child_uris)) {
                         $existingKeyword->msl_enriched_keyword_match_child_uris[] = $matchChildUri;
                     }
                 }
-                
+
                 $exists = true;
                 break;
-            }            
+            }
         }
-        
-        if(!$exists) {            
+
+        if (! $exists) {
             $this->msl_enriched_keywords[] = $keyword;
-            $this->setHasVocabKeyword('enriched', $keyword->msl_enriched_keyword_vocab_uri);            
+            $this->setHasVocabKeyword('enriched', $keyword->msl_enriched_keyword_vocab_uri);
         }
     }
 
     /**
      * Add file object
-     * @param file $file
      */
     public function addFile(File $file): void
     {
@@ -606,7 +589,6 @@ class DataPublication
 
     /**
      * Check if original keyword exists by uri
-     * @param string $uri
      */
     public function hasOriginalKeyword(string $uri): bool
     {
@@ -621,7 +603,8 @@ class DataPublication
 
     /**
      * Check if enriched keyword exists by uri
-     * @param string $uri
+     *
+     * @param  string  $uri
      */
     public function hasEnrichedKeyword($uri): bool
     {
@@ -636,8 +619,6 @@ class DataPublication
 
     /**
      * Set facet fields based upon vocabulary uri
-     * @param string $type
-     * @param string $vocabUri
      */
     private function setHasVocabKeyword(string $type, string $vocabUri): void
     {
@@ -750,18 +731,17 @@ class DataPublication
 
     /**
      * Convert this objects and its internal objects to an array confirming to the data-publication schema in CKAN.
-     * @return array
      */
     public function toCkanArray(): array
     {
         $arr = [];
 
-        foreach($this as $key => $value) {
-            if(is_array($value)) {
+        foreach ($this as $key => $value) {
+            if (is_array($value)) {
                 $subArr = [];
-                foreach($value as $subValue) {
-                    if(is_object($subValue)) {
-                        if(class_implements($subValue, CkanArrayInterface::class)) {
+                foreach ($value as $subValue) {
+                    if (is_object($subValue)) {
+                        if (class_implements($subValue, CkanArrayInterface::class)) {
                             $subArr[] = $subValue->toCkanArray();
                         } else {
                             $subArr[] = (array) $subValue;
@@ -771,11 +751,11 @@ class DataPublication
                     }
                 }
                 $arr[$key] = $subArr;
-            } else if(is_object($value)) {
-                
+            } elseif (is_object($value)) {
+
             } else {
                 $arr[$key] = $value;
-            }            
+            }
         }
 
         return $arr;

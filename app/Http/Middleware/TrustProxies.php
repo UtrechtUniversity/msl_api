@@ -28,6 +28,6 @@ class TrustProxies extends Middleware
 
     public function __construct()
     {
-        $this->proxies = config('proxy.run_behind_proxy')  ? '*' : null;
+        $this->proxies = config('proxy.run_behind_proxy') ? '*' : null;
     }
 }

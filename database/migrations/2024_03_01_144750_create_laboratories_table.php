@@ -38,7 +38,7 @@ class CreateLaboratoriesTable extends Migration
             $table->string('altitude');
             $table->string('external_identifier');
             $table->unsignedBigInteger('fast_domain_id')->nullable();
-            $table->string('fast_domain_name');                        
+            $table->string('fast_domain_name');
             $table->timestamps();
         });
     }

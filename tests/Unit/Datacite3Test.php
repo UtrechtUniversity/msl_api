@@ -12,7 +12,7 @@ class Datacite3Test extends TestCase
     /**
      * test if alternate Identifier is correctly mapped
      */
-    public function test_alternateIdentifier_mapping(): void
+    public function test_alternate_identifier_mapping(): void
     {
         $sourceData = new SourceDataset;
 
@@ -45,7 +45,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier, '12345');
         $this->assertEquals($dataset->msl_alternate_identifiers[0]->msl_alternate_identifier_type, 'Local accession number');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -72,7 +72,7 @@ class Datacite3Test extends TestCase
 
         $this->assertEquals($dataset->msl_alternate_identifiers, []);
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -145,7 +145,7 @@ class Datacite3Test extends TestCase
     /**
      * test if publicationYear is correctly mapped
      */
-    public function test_publicationYear_mapping(): void
+    public function test_publication_year_mapping(): void
     {
         $sourceData = new SourceDataset;
 
@@ -551,7 +551,7 @@ class Datacite3Test extends TestCase
     /**
      * test if related identifier are correctly mapped
      */
-    public function test_relatedIdentifier_mapping(): void
+    public function test_related_identifier_mapping(): void
     {
         $sourceData = new SourceDataset;
 
@@ -1001,7 +1001,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_dates[10]->msl_date_type, 'Other');
         $this->assertEquals($dataset->msl_dates[10]->msl_date_information, 'ExampleDateInformation');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -1033,7 +1033,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_dates[0]->msl_date_date, '2021');
         $this->assertEquals($dataset->msl_dates[0]->msl_date_type, 'Issued');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -1059,7 +1059,7 @@ class Datacite3Test extends TestCase
         $dataset = $dataciteMapper->mapDates($metadata, $dataset);
 
         $this->assertEquals($dataset->msl_dates, []);
-    }    
+    }
 
     /**
      * test if publicationYear is correctly mapped
@@ -1561,7 +1561,7 @@ class Datacite3Test extends TestCase
 
         $this->assertEquals($dataset->msl_datacite_version, '1');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -1587,7 +1587,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_datacite_version, '');
     }
 
-    public function test_ResourceType_mapping(): void
+    public function test_resource_type_mapping(): void
     {
         $sourceData = new SourceDataset;
 
@@ -1755,7 +1755,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_contributors[2]->affiliations[0]->msl_creator_affiliation_identifier_scheme, 'ROR');
         $this->assertEquals($dataset->msl_contributors[2]->affiliations[0]->msl_creator_affiliation_scheme_uri, 'https://ror.org');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -1796,7 +1796,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_contributors[1]->msl_contributor_name, 'Digital.CSIC');
         $this->assertEquals($dataset->msl_contributors[1]->msl_contributor_type, 'HostingInstitution');
 
-        //new test
+        // new test
 
         $sourceData = new SourceDataset;
 
@@ -1822,7 +1822,7 @@ class Datacite3Test extends TestCase
 
         $this->assertEquals($dataset->msl_contributors, []);
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -1932,7 +1932,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_contributors[1]->affiliations[0]->msl_creator_affiliation_scheme_uri, 'https://ror.org');
         $this->assertEquals($dataset->msl_contributors[1]->affiliations[1]->msl_creator_affiliation_name, 'ExampleAffiliation2');
 
-        //new test
+        // new test
         $sourceData = new SourceDataset;
 
         $sourceData->source_dataset = '
@@ -2088,7 +2088,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_formats[0]['msl_format'], 'application/xml');
         $this->assertEquals($dataset->msl_formats[1]['msl_format'], 'text/plain');
 
-        //new test
+        // new test
 
         $sourceData = new SourceDataset;
 
@@ -2289,7 +2289,7 @@ class Datacite3Test extends TestCase
 
         $dataset = $dataciteMapper->mapGeolocations($metadata, $dataset);
 
-        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'Groningen, the Netherlands');        
+        $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'Groningen, the Netherlands');
         $this->assertEquals($dataset->msl_geolocations[1]['msl_geolocation'], 'South Holland, the Netherlands');
         $this->assertEquals($dataset->msl_geolocations[2]['msl_geolocation'], 'Friesland, the Netherlands');
         $this->assertEquals($dataset->msl_geolocations[3]['msl_geolocation'], 'Drenthe, the Netherlands');
@@ -2446,7 +2446,7 @@ class Datacite3Test extends TestCase
         $this->assertEquals($dataset->msl_geolocations[0]['msl_geolocation'], 'North Atlantic Ocean');
         $this->assertEquals($dataset->msl_geolocations[1]['msl_geolocation'], 'Atlantic Ocean');
         $this->assertEquals($dataset->msl_geolocations[2]['msl_geolocation'], 'Northwest Atlantic Ocean (40W)');
-        $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]}]}');        
+        $this->assertEquals($dataset->extras[0]['value'], '{"type":"GeometryCollection","geometries":[{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]}]}');
         $this->assertEquals($dataset->msl_surface_area, 28176.0);
         $this->assertEquals($dataset->msl_geojson_featurecollection, '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-98.6366075146413,66.4746446520277],[-98.6366075146413,-2.02739373666743],[12.191601420124,-2.02739373666743],[12.191601420124,66.4746446520277],[-98.6366075146413,66.4746446520277]]]},"properties":{"name":"North Atlantic Ocean"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-100.88107292377,66.7664772182701],[-100.88107292377,-69.5400225350063],[22.168904630175,-69.5400225350063],[22.168904630175,66.7664772182701],[-100.88107292377,66.7664772182701]]]},"properties":{"name":"Atlantic Ocean"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-98.1619359692944,65.155855274362],[-98.1619359692944,-0.373285122439995],[-40,-0.373285122439995],[-40,65.155855274362],[-98.1619359692944,65.155855274362]]]},"properties":{"name":"Northwest Atlantic Ocean (40W)"}}]}');
 

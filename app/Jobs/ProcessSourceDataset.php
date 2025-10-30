@@ -2,20 +2,20 @@
 
 namespace App\Jobs;
 
+use App\Mappers\MappingService;
+use App\Models\DatasetCreate;
+use App\Models\SourceDataset;
+use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\DatasetCreate;
-use App\Models\SourceDataset;
-use App\Mappers\MappingService;
-use Exception;
 
 class ProcessSourceDataset implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    
+
     protected $sourceDataset;
 
     /**
@@ -27,7 +27,6 @@ class ProcessSourceDataset implements ShouldQueue
     {
         $this->sourceDataset = $sourceDataset;
     }
-    
 
     /**
      * Execute the job.
@@ -41,10 +40,11 @@ class ProcessSourceDataset implements ShouldQueue
 
         try {
             $dataPublication = $mappingService->map($this->sourceDataset, $importer);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             $this->sourceDataset->status = 'error';
             $this->sourceDataset->save();
             $this->fail($e);
+
             return;
         }
 
@@ -53,12 +53,12 @@ class ProcessSourceDataset implements ShouldQueue
             'dataset' => $dataPublication->toCkanArray(),
             'source_dataset_id' => $this->sourceDataset->id,
             'import_id' => $import->id,
-            'response_body' => ''
+            'response_body' => '',
         ]);
-        
-        if($datasetCreate) {
+
+        if ($datasetCreate) {
             ProcessDatasetCreate::dispatch($datasetCreate);
-            
+
             $this->sourceDataset->status = 'succes';
             $this->sourceDataset->save();
         }

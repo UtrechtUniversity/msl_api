@@ -2,22 +2,22 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-use App\Models\SourceDatasetIdentifier;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessDataciteJsonRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessDataciteXmlRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessFileRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessOaiRetrieval;
 use App\Jobs\SourceDatasetIdentifierProcessors\ProcessOaiToDataciteJsonRetrieval;
+use App\Models\SourceDatasetIdentifier;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class ProcessSourceDatasetIdentifier implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    
+
     protected $sourceDatasetIdentifier;
 
     /**
@@ -29,7 +29,7 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
     {
         $this->sourceDatasetIdentifier = $sourceDatasetIdentifier;
     }
-        
+
     /**
      * Execute the job.
      *
@@ -39,7 +39,7 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
     {
         $importer = $this->sourceDatasetIdentifier->import->importer;
 
-        switch($importer->options['identifierProcessor']['type']) {
+        switch ($importer->options['identifierProcessor']['type']) {
             case 'oaiRetrieval':
                 $processor = ProcessOaiRetrieval::class;
                 break;
@@ -64,7 +64,7 @@ class ProcessSourceDatasetIdentifier implements ShouldQueue
                 throw new \Exception('Invalid identifierProcessor definined in importer config.');
         }
 
-        if($processor::process($this->sourceDatasetIdentifier)) {
+        if ($processor::process($this->sourceDatasetIdentifier)) {
             $this->sourceDatasetIdentifier->response_code = 200;
             $this->sourceDatasetIdentifier->save();
         } else {

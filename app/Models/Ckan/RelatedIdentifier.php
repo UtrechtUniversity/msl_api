@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class RelatedIdentifier implements CkanArrayInterface
 {
-
     public string $msl_related_identifier;
 
     public string $msl_related_identifier_type;
@@ -18,7 +18,7 @@ class RelatedIdentifier implements CkanArrayInterface
 
     public string $msl_related_identifier_resource_type_general;
 
-    public function __construct($identifier, $identifierType, $relationType, $metadataScheme = "", $metadataSchemeUri = "", $metadataSchemeType = "", $resourceType = "")
+    public function __construct($identifier, $identifierType, $relationType, $metadataScheme = '', $metadataSchemeUri = '', $metadataSchemeType = '', $resourceType = '')
     {
         $this->msl_related_identifier = $identifier;
         $this->msl_related_identifier_type = $identifierType;
@@ -30,7 +30,7 @@ class RelatedIdentifier implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

@@ -9,20 +9,19 @@ use Illuminate\Support\Facades\Storage;
 
 class ProcessFileRetrieval implements SourceDatasetIdentifierProcessorInterface
 {
-
     public static function process(SourceDatasetIdentifier $sourceDatasetIdentifier): bool
     {
-        if(Storage::disk()->exists($sourceDatasetIdentifier->identifier)) {
+        if (Storage::disk()->exists($sourceDatasetIdentifier->identifier)) {
             $fileContent = Storage::get($sourceDatasetIdentifier->identifier);
-            
+
             $SourceDataset = SourceDataset::create([
-                'source_dataset_identifier_id'=> $sourceDatasetIdentifier->id,
+                'source_dataset_identifier_id' => $sourceDatasetIdentifier->id,
                 'import_id' => $sourceDatasetIdentifier->import->id,
-                'source_dataset' => $fileContent
+                'source_dataset' => $fileContent,
             ]);
-            
+
             ProcessSourceDataset::dispatch($SourceDataset);
-            
+
             return true;
         }
 

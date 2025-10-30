@@ -8,14 +8,14 @@ class KeywordSearch extends Model
 {
     public $fillable = [
         'keyword_id',
-        'value',
-        'is_synonym',
+        'search_value',
+        'isSynonym',
         'exclude_abstract_mapping',
         'version',
     ];
 
     protected $casts = [
-        'is_synonym' => 'boolean',
+        'isSynonym' => 'boolean',
         'exclude_abstract_mapping' => 'boolean',
     ];
 

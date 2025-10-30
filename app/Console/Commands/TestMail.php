@@ -31,7 +31,7 @@ class TestMail extends Command
             Mail::raw('MSL data catalogue test email', function (Message $message) {
                 $message->to($this->argument('to'))->subject('MSL data catalogue test email');
             });
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->line('false');
             exit;
         }

@@ -1,0 +1,55 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\DataRepository;
+use App\Models\Importer;
+use Illuminate\Database\Seeder;
+
+class ImportDevelopmentSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $dev = DataRepository::updateOrCreate(
+            [
+                'name' => 'development',
+            ],
+            [
+                'name' => 'development',
+                'ckan_name' => 'development',
+            ]
+        );
+        Importer::updateOrCreate(
+            [
+                'name' => 'Development importer',
+            ],
+            [
+                'name' => 'Development importer',
+                'description' => 'imports test data using fixed directory list and DataCite files',
+                'type' => 'development',
+                'options' => [
+                    'importProcessor' => [
+                        'type' => 'directoryListing',
+                        'options' => [
+                            'directoryPath' => '/import-data/development/',
+                            'recursive' => 'true',
+                        ],
+                    ],
+                    'identifierProcessor' => [
+                        'type' => 'fileRetrieval',
+                        'options' => [],
+                    ],
+                    'sourceDatasetProcessor' => [
+                        'type' => 'datacite',
+                        'options' => [],
+                    ],
+                ],
+                'data_repository_id' => $dev->id,
+            ]
+        );
+
+    }
+}

@@ -17,7 +17,7 @@ class CreateLabOrganizationsRorUpdateTables extends Migration
             $table->id();
             $table->timestamps();
         });
-            
+
         Schema::create('laboratory_organization_update_ror', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('laboratory_organization_update_group_ror_id');

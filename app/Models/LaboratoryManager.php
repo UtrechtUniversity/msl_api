@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class LaboratoryManager extends Model
 {
     protected $table = 'laboratory_managers';
-    
+
     protected $fillable = [
         'fast_id',
         'email',
@@ -23,10 +23,11 @@ class LaboratoryManager extends Model
         'address_country_name',
         'affiliation_fast_id',
         'nationality_code',
-        'nationality_name'        
+        'nationality_name',
     ];
-    
-    public function laboratories() {
+
+    public function laboratories()
+    {
         return $this->hasMany(Laboratory::class);
     }
 }

@@ -8,5 +8,5 @@ return [
         'paleomagnetism',
         'geochemistry',
         'geo-energy test beds',
-    ]
+    ],
 ];

@@ -1,55 +1,34 @@
 <?php
+
 namespace App\Mappers\Additional;
 
 use App\Models\Ckan\DataPublication;
-use App\Models\SourceDataset;
 use App\Models\Ckan\File;
+use App\Models\SourceDataset;
+use Illuminate\Support\Uri;
 
 class MagicFileMapper implements AdditionalMapperInterface
 {
     /**
-     * Add figshare files associated by landing page/source
-     * @param DataPublication $dataPublication
-     * @param SourceDataset $sourceDataset
-     * @return DataPublication
+     * Add MagIC files associated by identifier used
      */
     public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
-        $sourceIdentifier = $sourceDataset->source_dataset_identifier;
-        $extraPayload = $sourceIdentifier->extra_payload;
+        $uri = Uri::of($dataPublication->msl_source);
 
-        if(isset($extraPayload['contentUrl'])) {
-            if(strlen($extraPayload['contentUrl']) > 1) {
-                $mslFile = new File(
-                    $this->extractFileName((string)$extraPayload['contentUrl']),
-                    (string)$extraPayload['contentUrl'],
-                    $this->extractFileExtension((string)$extraPayload['contentUrl']),
-                    false
-                );
+        if (! $uri->isEmpty()) {
+            $magicIdentifier = $uri->pathSegments()->last();
 
-                $dataPublication->addFile($mslFile);                
-            }
+            $mslFile = new File(
+                'magic_contribution_'.$magicIdentifier.'.txt',
+                'https://earthref.org/MagIC/download/'.$magicIdentifier.'/magic_contribution_'.$magicIdentifier.'.txt',
+                'txt',
+                false
+            );
+
+            $dataPublication->addFile($mslFile);
         }
 
         return $dataPublication;
-    }
-
-    private function extractFileExtension($filename) {
-        $fileInfo = pathinfo($filename);
-        if(isset($fileInfo['extension'])) {
-            return $fileInfo['extension'];
-        }
-        
-        return '';
-    }
-
-    private function extractFilename($filename)
-    {
-        $fileInfo = pathinfo($filename);
-        if(isset($fileInfo['basename'])) {
-            return $fileInfo['basename'];
-        }
-        
-        return '';
     }
 }

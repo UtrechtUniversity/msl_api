@@ -1,13 +1,12 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class AlternateIdentifier implements CkanArrayInterface
 {
-
     public string $msl_alternate_identifier;
 
     public string $msl_alternate_identifier_type;
-
 
     public function __construct($identifier, $type)
     {
@@ -16,7 +15,7 @@ class AlternateIdentifier implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

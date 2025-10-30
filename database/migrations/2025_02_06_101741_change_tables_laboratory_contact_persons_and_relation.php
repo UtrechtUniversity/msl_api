@@ -35,7 +35,7 @@ return new class extends Migration
 
         // Add reference to laboratory
         Schema::table('laboratory_contact_persons', function (Blueprint $table) {
-            $table->unsignedBigInteger('laboratory_id');             
+            $table->unsignedBigInteger('laboratory_id');
         });
     }
 
@@ -60,7 +60,7 @@ return new class extends Migration
             $table->string('address_country_name');
             $table->unsignedBigInteger('affiliation_fast_id');
             $table->string('nationality_code');
-            $table->string('nationality_name');  
+            $table->string('nationality_name');
         });
 
         Schema::table('laboratory_contact_persons', function (Blueprint $table) {

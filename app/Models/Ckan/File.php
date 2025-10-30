@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class File implements CkanArrayInterface
@@ -13,7 +14,7 @@ class File implements CkanArrayInterface
 
     public string $msl_timestamp;
 
-    public function __construct(string $fileName, string $downloadLink, string $extension, bool $isFolder, string $timestamp = "")
+    public function __construct(string $fileName, string $downloadLink, string $extension, bool $isFolder, string $timestamp = '')
     {
         $this->msl_file_name = $fileName;
         $this->msl_download_link = $downloadLink;
@@ -23,7 +24,7 @@ class File implements CkanArrayInterface
     }
 
     public function toCkanArray(): array
-    {        
+    {
         return (array) $this;
     }
 }

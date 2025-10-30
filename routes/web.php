@@ -1,18 +1,30 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LabController;
 use Spatie\Honeypot\ProtectAgainstSpam;
+=======
+>>>>>>> c64c20bbc54ec7f5f9ad065a800bacfd48a8a72e
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\SeederController;
 
 use App\Http\Controllers\SurveyController;
+<<<<<<< HEAD
 use App\Http\Controllers\FrontendController;
  
+=======
+use App\Http\Controllers\ToolsController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
+
+>>>>>>> c64c20bbc54ec7f5f9ad065a800bacfd48a8a72e
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,8 +36,7 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
-
-//Auth::routes(['register' => false]);
+// Auth::routes(['register' => false]);
 
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false]);
@@ -49,7 +60,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('tools/convert-keywords', [ToolsController::class, 'convertKeywords'])->name('convert-keywords');
     Route::post('tools/convert-keywords', [ToolsController::class, 'processFile'])->name('process-file');
-    
+
     Route::get('tools/convert-excel', [ToolsController::class, 'convertExcel'])->name('convert-excel');
     Route::post('tools/convert-excel', [ToolsController::class, 'processExcelToJson'])->name('process-excel-file');
     Route::get('tools/doi-export', [ToolsController::class, 'doiExport'])->name('doi-export');
@@ -91,7 +102,6 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
     Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
-
 
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });

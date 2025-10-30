@@ -2,21 +2,21 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageCreateRequest;
 use App\CkanClient\Request\PackageShowRequest;
 use App\CkanClient\Request\PackageUpdateRequest;
 use App\Models\EquipmentCreate;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class ProcessEquipmentCreate implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    
+
     protected $equipmentCreate;
 
     /**
@@ -28,7 +28,6 @@ class ProcessEquipmentCreate implements ShouldQueue
     {
         $this->equipmentCreate = $equipmentCreate;
     }
-            
 
     /**
      * Execute the job.
@@ -37,24 +36,24 @@ class ProcessEquipmentCreate implements ShouldQueue
      */
     public function handle()
     {
-        $ckanClient = new Client();
-        $packageShowRequest = new PackageShowRequest();
+        $ckanClient = new Client;
+        $packageShowRequest = new PackageShowRequest;
         $packageShowRequest->id = $this->equipmentCreate->equipment['name'];
 
         $response = $ckanClient->get($packageShowRequest);
 
-        if($response->isSuccess()) {
+        if ($response->isSuccess()) {
             $this->updateEquipment($ckanClient);
         } else {
             $this->createEquipment($ckanClient);
-        }                                  
+        }
     }
-    
+
     private function createEquipment(Client $client)
     {
-        $packageCreateRequest = new PackageCreateRequest();
+        $packageCreateRequest = new PackageCreateRequest;
         $packageCreateRequest->payload = $this->equipmentCreate->equipment;
-        
+
         $response = $client->get($packageCreateRequest);
 
         $this->equipmentCreate->response_code = $response->responseCode;
@@ -62,10 +61,10 @@ class ProcessEquipmentCreate implements ShouldQueue
         $this->equipmentCreate->processed = now();
         $this->equipmentCreate->save();
     }
-    
+
     private function updateEquipment(Client $client)
     {
-        $packageUpdateRequest = new PackageUpdateRequest();
+        $packageUpdateRequest = new PackageUpdateRequest;
         $packageUpdateRequest->payload = $this->equipmentCreate->equipment;
 
         $response = $client->get($packageUpdateRequest);
@@ -73,6 +72,6 @@ class ProcessEquipmentCreate implements ShouldQueue
         $this->equipmentCreate->response_code = $response->responseCode;
         $this->equipmentCreate->processed_type = 'update';
         $this->equipmentCreate->processed = now();
-        $this->equipmentCreate->save();        
+        $this->equipmentCreate->save();
     }
 }

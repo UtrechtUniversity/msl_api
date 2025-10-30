@@ -47,7 +47,7 @@ class SurveyTest extends TestCase
                     ],
                 ],
                 'question_type_id' => $questionType->id,
-                'answerable' => true
+                'answerable' => true,
             ]
         );
         $question1->surveys()->attach($survey->id, ['order' => 1]);
@@ -62,7 +62,7 @@ class SurveyTest extends TestCase
                     ],
                 ],
                 'question_type_id' => $questionType->id,
-                'answerable' => true
+                'answerable' => true,
             ]
         );
         $question2->surveys()->attach($survey->id, ['order' => 2]);

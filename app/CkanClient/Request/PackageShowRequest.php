@@ -1,5 +1,6 @@
 <?php
-namespace App\CkanClient\Request; 
+
+namespace App\CkanClient\Request;
 
 use App\CkanClient\Response\BaseResponse;
 
@@ -8,32 +9,29 @@ class PackageShowRequest implements RequestInterface
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private $endpoint = 'action/package_show';
+    private string $endpoint = 'action/package_show';
 
     /**
      * @var string method of request
      */
-    private $method = 'GET';
+    private string $method = 'GET';
 
     /**
      * @var string class for creating result object
      */
-    private $responseClass = BaseResponse::class;
+    private string $responseClass = BaseResponse::class;
 
     /**
      * @var string ckan package id
      */
-    public $id;
-
-    
-
+    public string $id;
 
     public function getPayloadAsArray(): array
     {
         return [
             'query' => [
-                'id' => $this->id
-            ]
+                'id' => $this->id,
+            ],
         ];
     }
 

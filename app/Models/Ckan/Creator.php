@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Models\Ckan;
 
 class Creator implements CkanArrayInterface
 {
-
     public string $msl_creator_name;
 
     public string $msl_creator_given_name;
@@ -16,8 +16,7 @@ class Creator implements CkanArrayInterface
 
     public array $affiliations = [];
 
-
-    public function __construct(string $name, string $givenName = "", string $familyName = "", string $nameType = "")
+    public function __construct(string $name, string $givenName = '', string $familyName = '', string $nameType = '')
     {
         $this->msl_creator_name = $name;
         $this->msl_creator_given_name = $givenName;
@@ -41,7 +40,7 @@ class Creator implements CkanArrayInterface
         $nameIdentifierSchemes = [];
         $nameIdentifierUris = [];
 
-        foreach($this->nameIdentifiers as $nameIdentifier) {
+        foreach ($this->nameIdentifiers as $nameIdentifier) {
             $nameIdentifiers[] = $nameIdentifier->msl_creator_name_identifier;
             $nameIdentifierSchemes[] = $nameIdentifier->msl_creator_name_identifiers_scheme;
             $nameIdentifierUris[] = $nameIdentifier->msl_creator_name_identifiers_uri;
@@ -52,7 +51,7 @@ class Creator implements CkanArrayInterface
         $affiliationIdentifierSchemes = [];
         $affiliationSchemeUris = [];
 
-        foreach($this->affiliations as $affiliation) {
+        foreach ($this->affiliations as $affiliation) {
             $affiliationNames[] = $affiliation->msl_creator_affiliation_name;
             $affiliationIdentifiers[] = $affiliation->msl_creator_affiliation_identifier;
             $affiliationIdentifierSchemes[] = $affiliation->msl_creator_affiliation_identifier_scheme;

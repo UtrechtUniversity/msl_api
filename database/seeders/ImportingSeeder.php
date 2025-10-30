@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\DataRepository;
-use App\Models\Importer;
 
 class ImportingSeeder extends Seeder
 {
@@ -22,7 +20,7 @@ class ImportingSeeder extends Seeder
             Import4TUSeeder::class,
             ImportMagicSeeder::class,
             ImportBgsSeeder::class,
-            ImportGFZDataciteSeeder::class
+            ImportGFZDataciteSeeder::class,
         ]);
     }
 }

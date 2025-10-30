@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Mappers\Helpers;
 
-use Exception;
 use DOMDocument;
 use DOMXPath;
+use Exception;
 use GuzzleHttp\Client;
 
 class FigshareFilesHelper
@@ -12,12 +13,13 @@ class FigshareFilesHelper
      * @var GuzzleClient Guzzle HTTP client instance
      */
     protected $client;
-    
+
     /**
      * Contructs a new FigshareFilesHelper
-     * @param Client $client
+     *
+     * @param  Client  $client
      */
-    public function __construct($client = new Client())
+    public function __construct($client = new Client)
     {
         $this->client = $client;
     }
@@ -38,7 +40,7 @@ class FigshareFilesHelper
 
         return json_decode($roCrate, true);
     }
-    
+
     /**
      * get page content by url
      */
@@ -46,8 +48,8 @@ class FigshareFilesHelper
     {
         $response = $this->client->request('GET', $url);
 
-        if(isset($response)) {
-            return (string)$response->getBody();
+        if (isset($response)) {
+            return (string) $response->getBody();
         }
 
         throw new Exception('page retrieved empty');
@@ -58,18 +60,19 @@ class FigshareFilesHelper
      */
     private function getRoCrateUrl($page)
     {
-        $domDocument = new DOMDocument();
+        $domDocument = new DOMDocument;
         $domDocument->loadHTML($page, LIBXML_NOERROR);
 
         $xpath = new DOMXPath($domDocument);
         $query = '//a[contains(@title, "RO-Crate Metadata")]';
 
         $matches = $xpath->query($query);
-        if($matches->length > 0) {
+        if ($matches->length > 0) {
             $resultNode = $matches->item(0);
-            return 'https://data.4tu.nl/' . $resultNode->getAttribute('href');
+
+            return 'https://data.4tu.nl/'.$resultNode->getAttribute('href');
         }
 
         throw new Exception('ro crate location could not be extracted');
-    }    
+    }
 }

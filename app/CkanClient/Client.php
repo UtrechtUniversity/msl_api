@@ -3,37 +3,35 @@
 namespace App\CkanClient;
 
 use App\CkanClient\Request\RequestInterface;
-use App\CkanClient\Response\BaseResponse;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\TransferException;
 
 class Client
 {
-
     /**
      * @var GuzzleClient Guzzle HTTP client instance
      */
-    private $client;
+    private GuzzleClient $client;
 
     /**
      * @var string CKAN API token
      */
-    private $apiToken;
+    private string $apiToken;
 
     /**
      * @var string CKAN Base path to CKAN API
      */
-    private $ckanApiUrl;
+    private string $ckanApiUrl;
 
     /**
      * @var bool set http_errors option in Guzzle request
      */
-    private $httpErrors = false;
+    private bool $httpErrors = false;
 
     /**
-     * Contructs a new CKAN client
+     * Constructs a new CKAN client
      */
-    public function __construct($client = new GuzzleClient())
+    public function __construct($client = new GuzzleClient)
     {
         $this->client = $client;
         $this->apiToken = config('ckan.ckan_api_token');
@@ -42,47 +40,40 @@ class Client
 
     /**
      * Sends the ckan request and returns the associated response object
-     * 
-     * @param RequestInterface $request
-     * @return mixed
      */
     public function get(RequestInterface $request): mixed
     {
         try {
             $response = $this->client->request(
                 $request->getMethod(),
-                $this->ckanApiUrl . $request->getEndpoint(),
+                $this->ckanApiUrl.$request->getEndpoint(),
                 $this->getPayload($request)
             );
-            
+
             $body = json_decode($response->getBody(), true);
             $statusCode = $response->getStatusCode();
         } catch (TransferException $e) {
-            
+
         }
-        
+
         $responseClassName = $request->getResponseClass();
+
         return new $responseClassName($body, $statusCode);
     }
 
     /**
      * Returns the payload send in the request to ckan. Combines base payload with request specific payload.
-     * 
-     * @param RequestInterface $request
-     * @return array
      */
     private function getPayload(RequestInterface $request): array
     {
         $basePayload = [
             'headers' => [
                 'Authorization' => $this->apiToken,
-                'Accept'        => 'application/json',
+                'Accept' => 'application/json',
             ],
-            'http_errors' => $this->httpErrors
+            'http_errors' => $this->httpErrors,
         ];
 
         return array_merge($basePayload, $request->getPayloadAsArray());
     }
-
-
 }

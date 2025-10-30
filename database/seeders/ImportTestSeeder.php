@@ -17,17 +17,17 @@ class ImportTestSeeder extends Seeder
     {
         $eposMsl = DataRepository::updateOrCreate(
             [
-                'name' => 'epos-msl'
+                'name' => 'epos-msl',
             ],
             [
                 'name' => 'epos-msl',
-                'ckan_name' => 'epos-multi-scale-laboratories-thematic-core-service'
+                'ckan_name' => 'epos-multi-scale-laboratories-thematic-core-service',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'test importer'
+                'name' => 'test importer',
             ],
             [
                 'name' => 'test importer',
@@ -38,19 +38,19 @@ class ImportTestSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/test/converted.json',
-                            'identifierKey' => 'doi'
-                        ]
+                            'identifierKey' => 'doi',
+                        ],
                     ],
                     'identifierProcessor' => [
                         'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
                         'type' => 'TestMapper',
-                        'options' => []
-                    ]
+                        'options' => [],
+                    ],
                 ],
-                'data_repository_id' => $eposMsl->id
+                'data_repository_id' => $eposMsl->id,
             ]
         );
     }
