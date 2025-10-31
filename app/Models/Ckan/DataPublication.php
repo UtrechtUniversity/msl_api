@@ -331,6 +331,48 @@ class DataPublication
         'msl_creators' => 'required',
     ];
 
+    public function getMainDescription(): string
+    {
+        if (strlen($this->msl_description_abstract) > 0) {
+            return $this->msl_description_abstract;
+        }
+        if (strlen($this->msl_description_methods) > 0) {
+            return $this->msl_description_methods;
+        }
+        if (strlen($this->msl_description_other) > 0) {
+            return $this->msl_description_other;
+        }
+        if (strlen($this->msl_description_series_information) > 0) {
+            return $this->msl_description_series_information;
+        }
+        if (strlen($this->msl_description_table_of_contents) > 0) {
+            return $this->msl_description_table_of_contents;
+        }
+
+        return $this->msl_description_technical_info;
+    }
+
+    public function getMainDescriptionAnnotated(): string
+    {
+        if (strlen($this->msl_description_abstract_annotated) > 0) {
+            return $this->msl_description_abstract_annotated;
+        }
+        if (strlen($this->msl_description_methods_annotated) > 0) {
+            return $this->msl_description_methods_annotated;
+        }
+        if (strlen($this->msl_description_other_annotated) > 0) {
+            return $this->msl_description_other_annotated;
+        }
+        if (strlen($this->msl_description_series_information_annotated) > 0) {
+            return $this->msl_description_series_information_annotated;
+        }
+        if (strlen($this->msl_description_table_of_contents_annotated) > 0) {
+            return $this->msl_description_table_of_contents_annotated;
+        }
+
+        return $this->msl_description_technical_info_annotated;
+    }
+
     /**
      * Add Right object to msl_rights
      *
