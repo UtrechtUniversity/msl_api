@@ -75,6 +75,7 @@ class BaseResponse
                 return $this->responseBody['error']['__type'];
             }
         }
+
         return '';
     }
 
@@ -88,6 +89,7 @@ class BaseResponse
                 return $this->responseBody['error']['message'];
             }
         }
+
         return '';
     }
 }
