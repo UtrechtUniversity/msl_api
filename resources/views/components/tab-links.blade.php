@@ -21,9 +21,9 @@ includeIcon    = string - to select which icon
 
             @foreach ($routes as $routeKey => $route)
                     @if (isset($routeActive) && $routeActive == $route)
-                        <a role="tab" href="{{ $route }}" class="tab tab-active w-20 hover-interactive">{{ $routeKey }}</a>
+                        <a role="tab" href="{{ $route }}" class="tab tab-active w-20 hover-interactive !text-primary-900">{{ $routeKey }}</a>
                     @else
-                        <a role="tab" href="{{ $route  }}" class="tab w-20 hover-interactive">{{ $routeKey }}</a>
+                        <a role="tab" href="{{ $route  }}" class="tab w-20 hover-interactive !text-primary-800">{{ $routeKey }}</a>
                     @endif
             @endforeach
 
