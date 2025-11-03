@@ -25,7 +25,7 @@
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content bg-secondary-100 flex relative h-170 ">
                     {{-- content here --}}
-                    <div class="z-40 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
+                    <div class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
                         <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center z-40"
                         >
                         <p 
@@ -46,7 +46,7 @@
                     </div>
 
                 </div>
-                <div class="drawer-side">
+                <div class="drawer-side z-40">
                     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                     {{-- side bar --}}
 
