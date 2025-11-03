@@ -34,8 +34,7 @@ class PackageSearchResponse extends BaseResponse
         $resultTypeFromResponse = $this->responseBody['result']['type'];
 
         foreach ($resultsFromResponse as $result) {
-            if ($resultTypeFromResponse) {
-                switch ($result['type']) {
+                switch ($resultTypeFromResponse) {
                     case 'data-publication':
                         $resultsToReturn[] = DataPublication::fromCkanArray($result);
                         break;
@@ -43,7 +42,6 @@ class PackageSearchResponse extends BaseResponse
                         $resultsToReturn[] = (object) $result;
                         break;
                 }
-            }
         }
         return (object) $resultsToReturn;
     }
