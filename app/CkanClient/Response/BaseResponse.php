@@ -56,20 +56,22 @@ class BaseResponse
      */
     public function getResult(bool $castToObjects = false): array|object
     {
+   
+        $result = $this->responseBody['result'];
         if (! $castToObjects) {
-            return $this->responseBody['result'];
+            return $result;
         }
 
-        if ($this->responseBody['result']['type']) {
-            switch ($this->responseBody['result']['type']) {
+        if ($result['type']) {
+            switch ($result['type']) {
                 case 'data-publication':
-                    return DataPublication::fromCkanArray($this->responseBody['result']);
+                    return DataPublication::fromCkanArray($result);
                 default:
-                    return (object) $this->responseBody['result'];
+                    return (object) $result;
             }
         }
 
-        return (object) $this->responseBody['result'];
+        return (object) $result;
     }
 
     /**
