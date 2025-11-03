@@ -56,7 +56,6 @@ class BaseResponse
      */
     public function getResult(bool $castToObjects = false): array|object
     {
-   
         $result = $this->responseBody['result'];
         if (! $castToObjects) {
             return $result;

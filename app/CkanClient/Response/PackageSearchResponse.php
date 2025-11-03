@@ -22,9 +22,8 @@ class PackageSearchResponse extends BaseResponse
     /**
      * returns inner results array
      */
-    public function getResults(bool $castToObjects = false): array
+    public function getResults(bool $castToObjects = false): array|object
     {
-
         $result = $this->responseBody['result'];
         if (! $castToObjects) {
             return $result;
