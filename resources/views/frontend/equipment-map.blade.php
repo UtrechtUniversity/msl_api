@@ -50,7 +50,7 @@
                     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                     {{-- side bar --}}
 
-                    <ul class="menu bg-primary-200 p-0 w-80 text-primary-900 h-170 ">
+                    <ul class="menu bg-primary-200 p-0 w-80 text-primary-900 h-full lg:h-170 ">
                     <!-- Sidebar content here -->
                         @include('components.search-div-filters',[
                             'filterDataPath' => 'public/equipment.json'
