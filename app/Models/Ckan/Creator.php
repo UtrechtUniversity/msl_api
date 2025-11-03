@@ -24,12 +24,21 @@ class Creator implements CkanArrayInterface
         $this->msl_creator_name_type = $nameType;
     }
 
-    public function addNameIdentifier(NameIdentifier $nameIdentifier)
+    public function getFullName(): string
+    {
+        if (strlen($this->msl_creator_name > 0)) {
+            return $this->msl_creator_name;
+        }
+
+        return $this->msl_creator_given_name.' '.$this->msl_creator_family_name;
+    }
+
+    public function addNameIdentifier(NameIdentifier $nameIdentifier): void
     {
         $this->nameIdentifiers[] = $nameIdentifier;
     }
 
-    public function addAffiliation(Affiliation $affiliation)
+    public function addAffiliation(Affiliation $affiliation): void
     {
         $this->affiliations[] = $affiliation;
     }

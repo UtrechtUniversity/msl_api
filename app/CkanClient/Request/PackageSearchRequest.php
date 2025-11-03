@@ -25,7 +25,7 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var string query string used in solr
      */
-    public string $query;
+    public string $query = '';
 
     /**
      * @var array filter query parts used to construct the solr filter query
@@ -40,12 +40,12 @@ class PackageSearchRequest implements RequestInterface
     /**
      * @var int number of rows to request from solr
      */
-    public int $rows;
+    public int $rows = 10;
 
     /**
      * @var int number to start results from
      */
-    public int $start;
+    public int $start = 0;
 
     /**
      * @var array facets used to contruct the facets part of the solr query

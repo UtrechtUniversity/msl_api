@@ -1,0 +1,663 @@
+{
+    "help": "http://localhost:5000/api/3/action/help_show?name=package_search",
+    "success": true,
+    "result": {
+        "count": 670,
+        "facets": {},
+        "results": [
+            {
+                "author": null,
+                "author_email": null,
+                "creator_user_id": "ff0afeb5-e2da-4683-a54d-8ff1a20585e0",
+                "id": "7fc26a56-8e09-4fc7-831d-055ed415a79b",
+                "isopen": false,
+                "license_id": null,
+                "license_title": null,
+                "maintainer": null,
+                "maintainer_email": null,
+                "extras": [
+                    {
+                        "key": "spatial",
+                        "value": "{\"type\":\"Polygon\",\"coordinates\":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]}"
+                    }
+                ],
+                "metadata_created": "2025-06-20T15:06:17.555349",
+                "metadata_modified": "2025-07-10T11:11:48.438519",
+                "msl_citation": "Draebing, D. (2023). <i>Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone</i> (Version 1) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-Q5K96Z",
+                "msl_datacite_version": "1",
+                "msl_description_abstract": "We tested the efficacy of frequent diurnal freeze-thaw cycles (FT-1) and sustained freezing cycles (FT-2) on low-porosity Dachstein limestone (0.1 % porosity). For FT-1, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to 20 freeze-thaw cycles between 10 and -10Â°C while monitoring rock temperature and acoustic emission (AE). We scanned the rock samples using micro computational tomography (CT) before the first cycle, after 5, 10, 15 and 20 cycles. For FT-2, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to one sustained freezing cycle with 66 h freezing at -10Â°C while monitoring rock temperature and AE.  We scanned the rock samples using micro CT before the first cycle and after the end of the experiment. The data set comprises all micro CT scans, rock temperature and AE data.",
+                "msl_description_abstract_annotated": "We tested the efficacy of frequent diurnal freeze-thaw cycles (FT-1) and sustained freezing cycles (FT-2) on low-<span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity\"]'>porosity</span> Dachstein <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone\"]'>limestone</span> (0.1 % <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity\"]'>porosity</span>). For FT-1, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to 20 freeze-thaw cycles between 10 and -10Â°C while monitoring rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>acoustic emission</span> (<span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span>). We scanned the rock samples using micro computational tomography (CT) before the first cycle, after 5, 10, 15 and 20 cycles. For FT-2, we exposed three rock samples with different saturation regimes (30%, 70%, 100%) to one sustained freezing cycle with 66 h freezing at -10Â°C while monitoring rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span>.  We scanned the rock samples using micro CT before the first cycle and after the end of the experiment. The data set comprises all micro <span data-uris='[\"https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography\"]'>CT scans</span>, rock temperature and <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>AE</span> data.",
+                "msl_description_methods": "",
+                "msl_description_other": "",
+                "msl_description_series_information": "",
+                "msl_description_table_of_contents": "",
+                "msl_description_technical_info": "",
+                "msl_doi": "10.24416/uu01-q5k96z",
+                "msl_formats": [
+                    {
+                        "msl_format": "text\/csv"
+                    }
+                ],
+                "msl_has_analogue": "true",
+                "msl_has_analogue_original": "true",
+                "msl_has_geochemistry": "false",
+                "msl_has_geochemistry_original": "false",
+                "msl_has_geoenergy": "false",
+                "msl_has_geoenergy_original": "false",
+                "msl_has_geologicalage": "false",
+                "msl_has_geologicalage_original": "false",
+                "msl_has_geologicalsetting": "false",
+                "msl_has_geologicalsetting_original": "false",
+                "msl_has_lab": "false",
+                "msl_has_material": "true",
+                "msl_has_material_original": "false",
+                "msl_has_microscopy": "true",
+                "msl_has_microscopy_original": "true",
+                "msl_has_organization": "true",
+                "msl_has_paleomagnetism": "false",
+                "msl_has_paleomagnetism_original": "false",
+                "msl_has_porefluid": "false",
+                "msl_has_porefluid_original": "false",
+                "msl_has_rockphysic": "true",
+                "msl_has_rockphysic_original": "true",
+                "msl_has_subsurface": "false",
+                "msl_has_subsurface_original": "false",
+                "msl_language": "en",
+                "msl_publication_year": "2023",
+                "msl_publisher": "Utrecht University",
+                "msl_resource_type": "Research Data",
+                "msl_resource_type_general": "Dataset",
+                "msl_sizes": [
+                    {
+                        "msl_size": "11 files"
+                    },
+                    {
+                        "msl_size": "113 kB"
+                    }
+                ],
+                "msl_source": "https://public.yoda.uu.nl/geo/UU01/Q5K96Z.html",
+                "msl_surface_area": "0",
+                "msl_title_annotated": "Micro Computational Tomography, <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>Acoustic Emission</span> and rock temperature data from frost weathering tests on Dachstein <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone\"]'>Limestone</span>",
+                "name": "a6434e5f71718999519d775c8239c8a3",
+                "msl_geojson_featurecollection": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]},\"properties\":{\"name\":\"\"}}]}",
+                "notes": null,
+                "num_resources": 0,
+                "num_tags": 0,
+                "organization": {
+                    "id": "1d22b8b4-b362-4d37-97ed-4886cdc465b1",
+                    "name": "yoda-repository",
+                    "title": "",
+                    "type": "organization",
+                    "description": "",
+                    "image_url": "/repositories/Yoda UU.png",
+                    "created": "2025-05-12T13:33:53.716946",
+                    "is_organization": true,
+                    "approval_status": "approved",
+                    "state": "active"
+                },
+                "owner_org": "1d22b8b4-b362-4d37-97ed-4886cdc465b1",
+                "private": false,
+                "state": "active",
+                "title": "Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone",
+                "type": "data-publication",
+                "url": null,
+                "version": null,
+                "msl_alternate_identifiers": [
+                    {
+                        "msl_alternate_identifier": "Mandziak, Anna; Prieto",
+                        "msl_alternate_identifier_type": "citation"
+                    },
+                    {
+                        "msl_alternate_identifier": "http:\/\/hdl.handle.net\/10261\/377278",
+                        "msl_alternate_identifier_type": "uri"
+                    }
+                ],
+                "msl_contributors": [
+                    {
+                        "msl_contributor_affiliation_identifier_schemes": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliation_identifiers": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliation_scheme_uris": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliations_names": [
+                            "University of Bayreuth",
+                            "Technical University of Munich"
+                        ],
+                        "msl_contributor_family_name": "",
+                        "msl_contributor_given_name": "",
+                        "msl_contributor_name": "Mayer, Till",
+                        "msl_contributor_name_identifiers": [
+                            "0000-0001-6677-9166"
+                        ],
+                        "msl_contributor_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_contributor_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_contributor_name_type": "Personal",
+                        "msl_contributor_type": "Researcher"
+                    },
+                    {
+                        "msl_contributor_affiliation_identifier_schemes": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_identifiers": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_scheme_uris": [
+                            ""
+                        ],
+                        "msl_contributor_affiliations_names": [
+                            "Ghent University"
+                        ],
+                        "msl_contributor_family_name": "",
+                        "msl_contributor_given_name": "",
+                        "msl_contributor_name": "Deprez, Maxim",
+                        "msl_contributor_name_identifiers": [
+                            "0000-0001-6356-5293"
+                        ],
+                        "msl_contributor_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_contributor_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_contributor_name_type": "Personal",
+                        "msl_contributor_type": "Researcher"
+                    },
+                    {
+                        "msl_contributor_affiliation_identifier_schemes": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_identifiers": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_scheme_uris": [
+                            ""
+                        ],
+                        "msl_contributor_affiliations_names": [
+                            "Ghent University"
+                        ],
+                        "msl_contributor_family_name": "",
+                        "msl_contributor_given_name": "",
+                        "msl_contributor_name": "Schröer, Laurenz",
+                        "msl_contributor_name_identifiers": [
+                            " 0000-0003-3635-5180 "
+                        ],
+                        "msl_contributor_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_contributor_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_contributor_name_type": "Personal",
+                        "msl_contributor_type": "Researcher"
+                    },
+                    {
+                        "msl_contributor_affiliation_identifier_schemes": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliation_identifiers": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliation_scheme_uris": [
+                            "",
+                            ""
+                        ],
+                        "msl_contributor_affiliations_names": [
+                            "Ghent University",
+                            "Utrecht University"
+                        ],
+                        "msl_contributor_family_name": "",
+                        "msl_contributor_given_name": "",
+                        "msl_contributor_name": "Cnudde, Veerle",
+                        "msl_contributor_name_identifiers": [
+                            "0000-0002-3269-5914"
+                        ],
+                        "msl_contributor_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_contributor_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_contributor_name_type": "Personal",
+                        "msl_contributor_type": "Researcher"
+                    },
+                    {
+                        "msl_contributor_affiliation_identifier_schemes": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_identifiers": [
+                            ""
+                        ],
+                        "msl_contributor_affiliation_scheme_uris": [
+                            ""
+                        ],
+                        "msl_contributor_affiliations_names": [
+                            "Utrecht University"
+                        ],
+                        "msl_contributor_family_name": "",
+                        "msl_contributor_given_name": "",
+                        "msl_contributor_name": "Draebing, Daniel",
+                        "msl_contributor_name_identifiers": [
+                            "0000-0001-6379-4707"
+                        ],
+                        "msl_contributor_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_contributor_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_contributor_name_type": "Personal",
+                        "msl_contributor_type": "Researcher"
+                    }
+                ],
+                "msl_creators": [
+                    {
+                        "msl_creator_affiliation_identifier_schemes": [
+                            ""
+                        ],
+                        "msl_creator_affiliation_identifiers": [
+                            ""
+                        ],
+                        "msl_creator_affiliation_scheme_uris": [
+                            ""
+                        ],
+                        "msl_creator_affiliations_names": [
+                            "Utrecht University"
+                        ],
+                        "msl_creator_family_name": "Draebing",
+                        "msl_creator_given_name": "Daniel",
+                        "msl_creator_name": "",
+                        "msl_creator_name_identifiers": [
+                            "0000-0001-6379-4707"
+                        ],
+                        "msl_creator_name_identifiers_schemes": [
+                            "ORCID"
+                        ],
+                        "msl_creator_name_identifiers_uris": [
+                            ""
+                        ],
+                        "msl_creator_name_type": "Personal"
+                    }
+                ],
+                "msl_dates": [
+                    {
+                        "msl_date_date": "2023-10-30T09:01:06",
+                        "msl_date_information": "",
+                        "msl_date_type": "Updated"
+                    },
+                    {
+                        "msl_date_date": "2022-05-12/2022-12-09",
+                        "msl_date_information": "",
+                        "msl_date_type": "Collected"
+                    }
+                ],
+                "msl_geolocations": [
+                    {
+                        "msl_geolocation": "New Haven Falkland Islands"
+                    },
+                    {
+                        "msl_geolocation": "Port Stephens Falkland Islands"
+                    }
+                ],
+                "msl_enriched_keywords": [
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Apparatus",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "microscopy and tomography"
+                        ],
+                        "msl_enriched_keyword_label": "X-ray tomography",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Technique",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/technique",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "microscopy and tomography"
+                        ],
+                        "msl_enriched_keyword_label": "imaging (3D)",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "microscopy and tomography"
+                        ],
+                        "msl_enriched_keyword_label": "computed tomography (CT)",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae",
+                            "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "acoustic emission (AE)",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "title",
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "Measured property",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae",
+                            "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "acoustic emission (AE)",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "keyword",
+                            "title",
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "sedimentary rock",
+                        "msl_enriched_keyword_match_child_uris": [
+                            "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone"
+                        ],
+                        "msl_enriched_keyword_match_locations": [
+                            "parent"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [],
+                        "msl_enriched_keyword_label": "limestone",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "title",
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/materials/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "rock and melt physics"
+                        ],
+                        "msl_enriched_keyword_label": "porosity",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/"
+                    },
+                    {
+                        "msl_enriched_keyword_associated_subdomains": [
+                            "analogue modelling of geologic processes"
+                        ],
+                        "msl_enriched_keyword_label": "porosity",
+                        "msl_enriched_keyword_match_child_uris": [],
+                        "msl_enriched_keyword_match_locations": [
+                            "description abstract"
+                        ],
+                        "msl_enriched_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-porosity",
+                        "msl_enriched_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/"
+                    }
+                ],
+                "msl_files": [
+                    {
+                        "msl_download_link": "https://geo.public.data.uu.nl:443/vault-frost-shared/research-frost-shared[1697635081]/original/Original data/",
+                        "msl_extension": "",
+                        "msl_file_name": "Original data",
+                        "msl_is_folder": true,
+                        "msl_timestamp": ""
+                    }
+                ],
+                "msl_funding_references": [
+                    {
+                        "msl_funding_reference_award_number": "",
+                        "msl_funding_reference_award_title": "",
+                        "msl_funding_reference_award_uri": "",
+                        "msl_funding_reference_funder_identifier": "",
+                        "msl_funding_reference_funder_identifier_type": "",
+                        "msl_funding_reference_funder_name": "German Research Foundation (DFG)",
+                        "msl_funding_reference_scheme_uri": ""
+                    },
+                    {
+                        "msl_funding_reference_award_number": "",
+                        "msl_funding_reference_award_title": "",
+                        "msl_funding_reference_award_uri": "",
+                        "msl_funding_reference_funder_identifier": "",
+                        "msl_funding_reference_funder_identifier_type": "",
+                        "msl_funding_reference_funder_name": "European Union’s Horizon 2020 Excite grants ",
+                        "msl_funding_reference_scheme_uri": ""
+                    },
+                    {
+                        "msl_funding_reference_award_number": "",
+                        "msl_funding_reference_award_title": "",
+                        "msl_funding_reference_award_uri": "",
+                        "msl_funding_reference_funder_identifier": "",
+                        "msl_funding_reference_funder_identifier_type": "",
+                        "msl_funding_reference_funder_name": "European Union’s Horizon 2020 Excite grants ",
+                        "msl_funding_reference_scheme_uri": ""
+                    }
+                ],
+                "msl_original_keywords": [
+                    {
+                        "msl_original_keyword_label": "X-ray tomography",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_original_keyword_label": "computed tomography (CT)",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/microscopy/1.3/"
+                    },
+                    {
+                        "msl_original_keyword_label": "acoustic emission (AE)",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/rockphysics/1.3/"
+                    },
+                    {
+                        "msl_original_keyword_label": "acoustic emission (AE)",
+                        "msl_original_keyword_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae",
+                        "msl_original_keyword_vocab_uri": "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/"
+                    }
+                ],
+                "msl_related_identifiers": [
+                    {
+                        "msl_related_identifier": "will follow soon",
+                        "msl_related_identifier_metadata_scheme": "",
+                        "msl_related_identifier_metadata_scheme_type": "",
+                        "msl_related_identifier_metadata_scheme_uri": "",
+                        "msl_related_identifier_relation_type": "IsSupplementTo",
+                        "msl_related_identifier_resource_type_general": "",
+                        "msl_related_identifier_type": "DOI"
+                    }
+                ],
+                "msl_rights": [
+                    {
+                        "msl_right": "Open - freely retrievable",
+                        "msl_right_identifier": "",
+                        "msl_right_identifier_scheme": "",
+                        "msl_right_scheme_uri": "",
+                        "msl_right_uri": "info:eu-repo/semantics/openAccess"
+                    },
+                    {
+                        "msl_right": "Creative Commons Attribution 4.0 International Public License",
+                        "msl_right_identifier": "",
+                        "msl_right_identifier_scheme": "",
+                        "msl_right_scheme_uri": "",
+                        "msl_right_uri": "https://creativecommons.org/licenses/by/4.0/legalcode"
+                    }
+                ],
+                "msl_subdomains": [
+                    {
+                        "msl_subdomain": "microscopy and tomography"
+                    },
+                    {
+                        "msl_subdomain": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_subdomains_interpreted": [
+                    {
+                        "msl_subdomain_interpreted": "microscopy and tomography"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "rock and melt physics"
+                    },
+                    {
+                        "msl_subdomain_interpreted": "analogue modelling of geologic processes"
+                    }
+                ],
+                "msl_tags": [
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "Natural Sciences - Earth and related environmental sciences (1.5)",
+                        "msl_tag_subject_scheme": "OECD FOS 2007",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "Frost weathering",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "Periglacial Processes",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [
+                            "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-x-ray_tomography",
+                            "https://epos-msl.uu.nl/voc/microscopy/1.3/technique-imaging_3d-computed_tomography_ct"
+                        ],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "X-ray Tomography",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [
+                            "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae",
+                            "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae"
+                        ],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "Acoustic Emission",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "European Alps",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    },
+                    {
+                        "msl_tag_classification_code": "",
+                        "msl_tag_msl_uris": [],
+                        "msl_tag_scheme_uri": "",
+                        "msl_tag_string": "Northern Calcareous Alps",
+                        "msl_tag_subject_scheme": "Keyword",
+                        "msl_tag_value_uri": ""
+                    }
+                ],
+                "resources": [],
+                "tags": [],
+                "groups": [],
+                "relationships_as_subject": [],
+                "relationships_as_object": []
+            }
+        ],
+        "sort": "score desc, metadata_modified desc",
+        "search_facets": {}
+    }
+}
