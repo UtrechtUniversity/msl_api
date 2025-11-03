@@ -27,8 +27,8 @@
 
                             {{-- list view --}}    
                             <div class="list-view">
-                                @if (count($result->getResults()['results']) > 0)
-                                    @foreach ($result->getResults()['results'] as $dataPublication)
+                                @if (count($result->getResults()) > 0)
+                                    @foreach ($result->getResults() as $dataPublication)
                                         @include('components.list-views.data-publication', [
                                             'data' => $dataPublication
                                         ])
