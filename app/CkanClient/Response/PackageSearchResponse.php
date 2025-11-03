@@ -31,17 +31,16 @@ class PackageSearchResponse extends BaseResponse
         }
 
         $resultsToReturn = [];
-        $resultTypeFromResponse = $this->responseBody['result']['type'];
-
-        foreach ($resultsFromResponse as $result) {
-                switch ($resultTypeFromResponse) {
-                    case 'data-publication':
-                        $resultsToReturn[] = DataPublication::fromCkanArray($result);
-                        break;
-                    default:
-                        $resultsToReturn[] = (object) $result;
-                        break;
-                }
+        
+        foreach ($resultsFromResponse as $result) {            
+            switch ($result['type']) {
+                case 'data-publication':
+                    $resultsToReturn[] = DataPublication::fromCkanArray($result);
+                    break;
+                default:
+                    $resultsToReturn[] = (object) $result;
+                    break;
+            }
         }
         return (object) $resultsToReturn;
     }
