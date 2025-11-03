@@ -766,7 +766,7 @@ class DataPublication
         foreach ($data as $key => $value) {
             // CKAN sometimes adds the string '{}' for empty repeating fields.
             if ($value === '{}') {
-                $value = '';
+                continue;
             }
 
             if ($value !== '') {
