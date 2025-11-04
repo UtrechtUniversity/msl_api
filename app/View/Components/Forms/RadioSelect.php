@@ -12,13 +12,10 @@ class RadioSelect extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $sectionName = '',
-        public string $title = '',
+        public string $sectionName,
+        public string $title,
         public array $options,
-        public array $ids = [],
-        public bool $titleBold = false,
-        public array $infoIconsIds = [],
-        public bool $asCol = false
+        public bool $titleBold
     ) {}
 
     /**
