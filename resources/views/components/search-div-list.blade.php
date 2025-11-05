@@ -28,13 +28,17 @@
 
     <div class="flex flex-col justify-around pt-6 gap-3">
         <div class="flex max-[700px]:flex-col items-center place-content-center gap-3">
-            <div class="">
+            <div class="
+            @if (isset($dpDropdown) && $dpDropdown)
+                basis-1/2
+            @endif
+            ">
                 <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
                 <h5 class="inline">{{ $result->getTotalResultsCount() }}</h5>
             </div>
     
             @if (isset($dpDropdown) && $dpDropdown)
-                <div class="">
+                <div class="basis-1/2">
                     <form 
                         class="w-full flex flex-col min-[700px]:flex-row justify-end items-center place-content-center" 
                         method="get" 
