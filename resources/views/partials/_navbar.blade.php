@@ -1,5 +1,5 @@
 <navbar>
-    <div class="navbar bg-base-200 w-full">
+    <div class="navbar bg-base-200 w-full z-40">
         <div class="navbar-start">
 
           <a href="{{ route('index') }}" class="btn btn-ghost" 
@@ -40,7 +40,7 @@
 
             <ul
               tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-10
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50
               absolute top-9 right-0
               ">
               <li><a class="no-underline" href="{{ route('data-access') }}">Data Access</a></li>
@@ -48,7 +48,7 @@
               <li><a class="no-underline" href="{{ route('data-repositories') }}">Data Repositories</a></li>          
               <li>
                   <summary class="menu-title">How to contribute</summary>
-                  <ul class="bg-base-100 rounded-t-none p-2 z-20">
+                  <ul class="bg-base-100 rounded-t-none p-2 ">
                     <li><a class="no-underline" href="{{ route('contribute-researcher') }}">As a researcher</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-repository') }}">As a repository</a></li>
                     <li><a class="no-underline" href="{{ route('contribute-laboratory') }}">As a laboratory</a></li>
@@ -68,7 +68,7 @@
             </ul>
           </div>
 
-          <div class="hidden xl:flex">
+          <div class="hidden xl:flex z-50">
 
             <div class="flex flex-1 justify-end px-2">
               <div class="flex items-stretch">

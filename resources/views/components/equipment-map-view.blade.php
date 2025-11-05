@@ -1,9 +1,9 @@
-<div id="map" style="height: 700px;"></div>
+<div id="map" style="height: 700px;" class="z-10"></div>
 
 <script>
     function onEachFeature(feature, layer) {
         if (feature.properties) {                                
-            var popupContent = `<h5>${feature.properties.title}</h5>
+            var popupContent = `<h5>${feature.properties.title}</h5>s
             <p>${feature.properties.msl_lab_name}</p>
             <table>
             <tr>
