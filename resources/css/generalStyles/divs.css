@@ -1,0 +1,148 @@
+    /*###############
+      map and list views
+      ###############*/
+    /* map and list div */
+        /* general page structure used on every template due to the formatting of the landing page */
+    .main-content{
+        @apply pb-20 flex justify-center place-items-center p-2 md:p-12 w-full
+        }
+    .sub-content{
+        @apply md:max-w-2xl
+    }
+    
+    .sub-content-wide{
+      @apply max-w-[1400px]
+    }
+
+
+
+    /* main div containing detail-view elements */
+    .detail-div{
+      @apply bg-primary-200 grow w-full 
+      flex flex-col 
+      place-items-center 
+      px-2
+      sm:px-10
+      py-10 
+      max-w-(--breakpoint-lg)
+    }
+    .detail-entry-div{
+      @apply 
+      w-full 
+      px-1 sm:px-5 
+      py-4
+      gap-5 
+      flex flex-col sm:flex-row 
+      text-left 
+    }
+
+    .detail-entry-title{
+      @apply
+      basis-1/3
+      text-center
+      sm:text-left
+    }
+    .detail-entry-content{
+      @apply w-full px-4 sm:px-0 flex flex-col content-divide-y
+    }
+
+    .tab-links-parent{
+      @apply flex justify-center items-center w-full
+    }
+
+
+    /* List view div */
+    .list-view{
+      @apply flex flex-col content-divide-y-light
+    }
+
+    .pagination-button{
+      @apply 
+      join-item /* needed for daisyUI */
+      btn 
+      md:btn-lg
+      btn-md
+      font-semibold
+      lg:w-12
+      md:w-8
+      w-6  
+      text-primary-800
+      bg-primary-200
+      hover:rounded-none 
+    }
+
+    .pagination-button-active-page{
+      @apply
+      text-primary-900
+      font-bold 
+      bg-primary-300
+      min-w-10
+    }
+    .pagination-button-last-left{
+      @apply rounded-l-xl hover:rounded-l-xl w-6 min-[500px]:w-18 md:w-24 
+    }
+    .pagination-button-last-right{
+      @apply rounded-r-xl hover:rounded-r-xl w-6 min-[500px]:w-18 md:w-24 
+    }
+
+
+
+
+    .search-bar-container{
+      @apply 
+      relative flex items-center w-auto h-12 
+      rounded-lg shadow-md overflow-hidden bg-primary-100
+      form-field-text p-0 
+    }
+    .search-bar-container-icon{
+      @apply
+      grid place-items-center h-full w-12 bg-primary-200
+    }
+    .search-bar{
+      @apply
+      h-full w-full 
+      outline-none 
+      text-sm pr-2 pl-2 
+      text-primary-900
+      placeholder-text
+      bg-white  
+    }
+
+
+
+
+    /* =============== old =============== */
+
+
+    .listMapDiv{
+        @apply w-full flex flex-col
+      }
+       
+
+  
+      /*###############
+        detail views
+        ###############*/
+
+      
+      /*###############
+        Components
+        ###############*/
+      /* top Map List tabLinks */
+
+
+          /*###############
+      general elements
+      ###############*/
+    /* .dividers{
+      @apply divide-y divide-primary-700
+    } */
+
+
+    /*###############
+    various
+    ###############*/
+
+      .tabs-div{
+        @apply   p-6 min-h-28 
+      }

@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import tailwindcss from "@tailwindcss/vite";
 // import react from '@vitejs/plugin-react';
 // import vue from '@vitejs/plugin-vue';
 
-import tailwindcss from 'tailwindcss'
+// import tailwindcss from 'tailwindcss'
 import commonjs from 'vite-plugin-commonjs';
 
 export default defineConfig({    
     plugins: [
+        tailwindcss(),
         laravel([
             'resources/css/app.css',
             'resources/css/treejs.css',
@@ -34,10 +36,5 @@ export default defineConfig({
             usePolling: true,
           },
           
-    },
-    css: {
-        postcss: {
-          plugins: [tailwindcss()],
-        }
-    }    
+    }, 
 });

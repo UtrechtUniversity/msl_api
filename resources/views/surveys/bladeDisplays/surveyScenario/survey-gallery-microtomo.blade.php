@@ -12,7 +12,7 @@
             "images/surveys/scenario/microtomo/MicroTomo_8_fine.jpg",
             ),
         'descriptions' => array(
-            "Isaac is a researcher at Cambridge UK. He is currently researching pressure solution in Mesozoic limestones in one specific location and developed a specific understanding of the deformation mechanisms involved. Thit is based on his personal dataset, but has to be tested using a much wider set of data.",
+            "Isaac is a researcher at Cambridge UK. He is currently researching pressure solution in Mesozoic limestones in one specific location and developed a specific understanding of the deformation mechanisms involved. This is based on his personal dataset, but has to be tested using a much wider set of data.",
             "He realizes that he needs good quality data from other locations to validate his hypothesis. He has a few locations in mind which would provide the needed environment for the data.",
             "He checks the map where other locations are, but he is not able to get the funding to travel there, and his time is constrained.",
             "He reaches out to colleagues who did work on the subject, but most don’t have the data anymore and he gets informed that they are partly archived online. In one conversation, he is recommended to visit the EPOS MSL data platform.",

@@ -1,4 +1,4 @@
-<div id="map" style="height: 700px;"></div>
+<div id="map" class="z-0 h-170"></div>
 
 <script>
     function onEachFeature(feature, layer) {

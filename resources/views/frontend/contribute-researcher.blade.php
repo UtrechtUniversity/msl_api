@@ -107,7 +107,7 @@
 
         
 
-        <div class="w-screen sm:max-w-screen-md px-4">
+        <div class="w-screen sm:max-w-(--breakpoint-md) px-4">
             <h2 id='step-1' class="pt-10 pb-4">Step 1: At which repository will you publish your data? 
             </h2>
             <p>Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  

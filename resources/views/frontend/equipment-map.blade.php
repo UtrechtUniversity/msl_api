@@ -1,72 +1,63 @@
 @section('title', 'Equipment map')
 <x-layout_main>
+    <div class="tab-links-parent">
+        @include('components.tab-links',[
+            'categoryName'  => 'Laboratories',
+            'routes'        => array(
+                    'Map'   => route("labs-map"),
+                    'List'  => route("labs-list")
+            ),
+            
+        ])
+        @include('components.tab-links',[
+            'categoryName'  => 'Equipment',
+            'routes'        => array(
+                    'Map'   => route("equipment-map"),
+                    'List'  => route("equipment-list"),
+            ),
+            'routeActive'   => route("equipment-map")
+        ])
+    </div>
 
-    <div class="mainContentDiv">
+    <div class="main-content">
+        <div class="sub-content-wide flex place-content-center w-full">
+            <div class="drawer lg:drawer-open h-170">
+                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content bg-secondary-100 flex relative h-170 ">
+                    {{-- content here --}}
+                    <div class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
+                        <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center z-40"
+                        >
+                        <p 
+                        class=""
+                        style="writing-mode: sideways-lr;" >
+                            click here to see filters
+                          </p>
+                        </label>
+                    </div>
+                    <div class="w-full bg-primary-100">
 
-        {{-- a general no small width view notification --}}
-        @include('components.no_mobile_view')
-
-        {{-- top div --}}
-        <div class="noMobileView_wideScreenDiv">
-
-
-            <div class="tabLinksParent">
-                @include('components.tabLinks',[
-                    'categoryName'  => 'Laboratories',
-                    'routes'        => array(
-                            'Map'   => route("labs-map"),
-                            'List'  => route("labs-list")
-                    ),
-                ])
-                @include('components.tabLinks',[
-                    'categoryName'  => 'Equipment',
-                    'routes'        => array(
-                            'Map'   => route("equipment-map"),
-                            'List'  => route("equipment-list"),
-                    ),
-                    'routeActive'   => route("equipment-map")
-
-                ])
-            </div>
-
-            {{-- content bottom div --}}
-            <div class="listMapDetailDivParent">
-
-
-                {{-- side bar --}}
-                @include('components.search-div-filters',['filterDataPath' => 'public/equipment.json'])
-
-                {{-- main field --}}
-                <div class="listMapDiv">
-
-
-                    {{-- top search div --}}
-                    {{-- @include('components.search-div-list',[
-                        'searchFor'  => 'labs',
-                        'amountFound'   => 'labs' 
-                    ]) --}}
-
-                    {{-- list view --}}    
-                    <div class="listView">
-
-                        {{-- loop list content --}}
-                        @include('components.equipment-map-view')
+                        {{-- list view --}}    
+                        <div class="list-view">
+                            @include('components.equipment-map-view')    
+                        </div>
                         
                         
                     </div>
-                    
-                    {{-- bottom pagination of list --}}
-                    {{-- @include('components.pagination') --}}
-
-
 
                 </div>
+                <div class="drawer-side z-40">
+                    <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+                    {{-- side bar --}}
 
-
+                    <ul class="menu bg-primary-200 p-0 w-80 text-primary-900 h-full lg:h-170 ">
+                    <!-- Sidebar content here -->
+                        @include('components.search-div-filters',[
+                            'filterDataPath' => 'public/equipment.json'
+                        ])
+                    </ul>
+                </div>
             </div>
-
         </div>
-
     </div>
-
 </x-layout_main>

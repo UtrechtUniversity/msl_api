@@ -2,7 +2,7 @@
 <x-layout_main>
 
     <section class="">
-    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-(--breakpoint-md)">
         <h1 class="">Contact Us</h1>
         <p class="mb-8 lg:mb-16 text-center">Do you have questions? Want to contribute and get started? Want to report an error on this page? Please get in touch with us! </p>
         <form method="POST" action="{{ route('contact-us-process') }}" class="space-y-8" novalidate>

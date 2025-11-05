@@ -6,7 +6,7 @@
             How to contribute as a repository
         </p>
 
-        <div class="w-screen sm:max-w-screen-md  flex justify-center items-center flex-col px-4">
+        <div class="w-screen sm:max-w-(--breakpoint-md)  flex justify-center items-center flex-col px-4">
             <p class="text-center">
                 Do you work at a data repository?
             </p>
@@ -21,7 +21,7 @@
             </p>
         </div>
 
-        <div class="w-screen sm:max-w-screen-md  px-4">
+        <div class="w-screen sm:max-w-(--breakpoint-md)  px-4">
             <h2 class="pt-10 pb-4">Identifying data publications relevant to EPOS MSL</h2>
             <p>First, we need to be able to identify which data publications you want to make discoverable within this catalogue. We currently support the following options:</p>
             <ul class="list-disc pt-6 pb-6 pl-10 pr-10">
