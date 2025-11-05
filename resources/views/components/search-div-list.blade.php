@@ -1,16 +1,15 @@
-<div class='mx-auto p-4 w-full'>
-    <div class="relative flex items-center w-full h-12 rounded-lg shadow-lg overflow-hidden">
+<div class='mx-auto sm:p-4 w-full'>
 
-        <div class="grid place-items-center h-full w-12 ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+    <div class="search-bar-container form-field-text p-0">
+
+        <div class="search-bar-container-icon">
+            <x-ri-search-line class="search-icon"/>
         </div>
         
         <form method="get" action="{{ request()->fullUrl() }}" class="w-full h-16">
             <input type="hidden" name="page" value="1" />
             <input 
-                class="peer search-bar pl-2" 
+                class="search-bar" 
                 type="text" 
                 id="search" 
                 placeholder="Search {{ $searchFor }}.." 
@@ -27,15 +26,61 @@
         </form>
     </div>
 
-    <div class="flex justify-between p-4 px-10">
-                                   
-        {{-- styling needs some tuning regarding long filter text elements --}}
-        <div class="flex flex-col text-wrap">            
+    <div class="flex flex-col justify-around pt-6 gap-3">
+        <div class="flex max-[470px]:flex-col items-center place-content-center gap-3">
+            <div class="basis-1/2">
+                <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
+                <h5 class="inline">{{ $result->getTotalResultsCount() }}</h5>
+            </div>
+    
+            @if (isset($dpDropdown) && $dpDropdown)
+                <div class="basis-1/2  ">
+                    <form 
+                        class="w-full flex flex-col sm:flex-row justify-end items-center place-content-center" 
+                        method="get" 
+                        action=""
+                    >
+                        <p class="italic w-30 text-center sm:text-end  pr-2" >Order by:</p>
+                        <div class="min-w-64">
+                            <x-forms.select-question
+                            title=""
+                            sectionName='sort'
+                            placeholder=''
+                            :options="[
+                                'score desc' => 'Relevance',
+                                'msl_citation asc' => 'Author Ascending',
+                                'msl_citation desc' => 'Author Descending',
+                                'msl_publication_date desc' => 'Publication date'
+                            ]"
+                            onChange="this.form.submit()"
+                            :selected="$sort"    
+                        />
+                        </div>
 
-                <h5 class="pb-2">Applied Filters  
+                        <input type="hidden" name="page" value="1" />
+                    </form>
+                </div>
+            @endif
+        </div>      
+
+        <div>
+            <div class="flex flex-col items-center place-content-center gap-2">            
+
+                <div class="w-fit flex flex-row items-center place-content-center gap-3 ">
+                    <h5 class="inline">Applied Filters  </h5>
                     @if ( sizeof($activeFiltersFrontend) > 0 )
-                        <a href="{{ route('data-access') }}">
-                            <x-ri-delete-bin-2-line  class="remove-all-icon" id="remove-all-popup"/>
+                    
+                        <a href="{{ route('data-access') }}" id="remove-all-popup">
+                            <div class="
+                                flex place-content-center 
+                                hover-interactive
+                                p-2
+                                size-fit
+                                ">
+                                <x-ri-delete-bin-2-line  class="remove-all-icon" />
+    
+                            </div>
+    
                             <script>
                                 tippy('#remove-all-popup', {
                                     content: "remove all filters",
@@ -44,54 +89,45 @@
                                 });
                             </script>
                         </a>
+                        
                     @endif
-                </h5>
-
-            @if ( sizeof($activeFiltersFrontend) > 0 )
-                <div class="wordCardParent" id="active-filter-container"> 
-                    @foreach ( $activeFiltersFrontend as $filter )
-                        <a href="{{ $filter['removeUrl'] }}" class="wordCard no-underline">
-                            <x-ri-close-line class="close-icon"/>
-                            {{ $filter['label'] }}
-                        </a>
-                    @endforeach
-                    <script>
-                        tippy.delegate('#active-filter-container', {
-                            target: '.wordCard',
-                            content: "click to remove filter",
-                            theme: "msl",
-                            placement: "right"
-                        });
-                    </script>
                 </div>
-            @endif
-
-        </div>
-
-
-        <div>
-            <h5>{{ $result->getTotalResultsCount() }} {{ $amountFound }} found</h5>
-        </div>
-                                    
-
-        @if (isset($dpDropdown) && $dpDropdown)
-            {{-- worthy to be a component? --}}
-            <div>
-                <form class="min-w-64 mx-auto flex justify-between content-center" method="get" action="">
-                    <label for="sort" class="self-center">
-                    <h5 >Order by</h5>
-                    </label>
-                    <select id="sort" name="sort" onchange="this.form.submit()" class="p-2.5 text-sm rounded-lg">
-                        <option value="score desc" @if ($sort == 'score desc') {{ 'selected' }} @endif>Relevance</option>
-                        <option value="msl_citation asc" @if ($sort == 'msl_citation asc') {{ 'selected' }} @endif>Author Ascending</option>
-                        <option value="msl_citation desc" @if ($sort == 'msl_citation desc') {{ 'selected' }} @endif>Author Descending</option>
-                        <option value="msl_publication_date desc" @if ($sort == 'msl_publication_date desc') {{ 'selected' }} @endif>Publication date</option>
-                    </select>
-                    <input type="hidden" name="page" value="1" />
-                </form>
+                
+                
+                <div class="word-card-parent" id="active-filter-container"> 
+    
+                @if ( sizeof($activeFiltersFrontend) > 0 )
+                        @foreach ( $activeFiltersFrontend as $filter )
+    
+                            <a href="{{ $filter['removeUrl'] }}" class="">
+                                @include('components.word-card',[
+                                    'word' => $filter['label'],
+                                    'closeIcon' => true
+                                ])
+                            </a>
+                        @endforeach
+                        <script>
+                            tippy.delegate('#active-filter-container', {
+                                target: '.word-card',
+                                content: "click to remove filter",
+                                theme: "msl",
+                                placement: "right"
+                            });
+                        </script>
+                @else
+                
+                    <h6 class="italic">- no filter applied -</h6>
+                @endif
             </div>
 
-        @endif
+            <div class="divide-y w-1/2 flex flex-col place-self-center py-3 divide-primary-700 opacity-50">
+                <div></div>
+                <div></div>
+            </div>
+            </div>
+            
+        </div>
+
 
     </div>
 </div>

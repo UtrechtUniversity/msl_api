@@ -4,14 +4,16 @@
     <div class="mainContentDiv">
 
         {{-- a general no small width view notification --}}
-        @include('components.no_mobile_view')
+        @include('components.no_mobile_view', [
+            'breakpoint' => 'md'
+        ])
 
         {{-- top div --}}
         <div class="noMobileView_wideScreenDiv">
 
 
             <div class="tabLinksParent">
-                @include('components.tabLinks',[
+                @include('components.tab-links',[
                     'categoryName'  => 'Laboratories',
                     'routes'        => array(
                             'Map'   => route("labs-map"),
@@ -19,7 +21,7 @@
                     ),
                     'routeActive'   => route("labs-list")
                 ])
-                @include('components.tabLinks',[
+                @include('components.tab-links',[
                     'categoryName'  => 'Equipment',
                     'routes'        => array(
                             'Map'   => route("equipment-map"),

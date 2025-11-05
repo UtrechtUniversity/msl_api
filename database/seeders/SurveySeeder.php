@@ -107,8 +107,9 @@ class SurveySeeder extends Seeder
             'question' => [
                 'title' => 'Which describes your role best?',
                 'options' => [
-                    'Digital Modeler',
+                    'Modeler',
                     'Lab Researcher',
+                    'Technician',
                     'Other',
                 ],
                 'validation' => ['required'],

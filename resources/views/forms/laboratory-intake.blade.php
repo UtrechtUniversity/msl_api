@@ -2,7 +2,7 @@
 <x-layout_main>
 
     <section class="">
-    <div class="px-4 mx-auto max-w-screen-md">
+    <div class="px-4 mx-auto max-w-(--breakpoint-md)">
         <h1 class="">Laboratory intake form</h1>
         <p class="mb-8 lg:mb-16 text-center">  </p>
         <form method="POST" action="{{ route('laboratory-intake-process') }}" class="space-y-4" novalidate>

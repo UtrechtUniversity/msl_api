@@ -20,7 +20,7 @@
             "Andrea visits the rock and melt physics tool on the website and selects “sandstone” with the property category “shear” in the filters.",          
             "The tool suggests a set of properties and conditions for her search. She selects those that are interesting for her.",            
             "With the fine filter feature, she selects ranges in temperature and normal stress to find the friction coefficient of interest. She then proceeds to download the table.",           
-            "She analyzes the data and finds a gap which she can address in her research",            
+            "She analyzes the data and finds a gap which she can address in her research",
             "Based this new data she adapts her experimental protocol accordingly and presents it to her supervisors.",
 ),
         'titleBold' => true

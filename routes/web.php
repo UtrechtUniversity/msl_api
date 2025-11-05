@@ -1,11 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\SeederController;
 use App\Http\Controllers\SurveyController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ToolsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -110,7 +111,11 @@ Route::get('/data-publication/{id}', [FrontendController::class, 'dataPublicatio
 Route::get('/data-publication/{id}/files', [FrontendController::class, 'dataPublicationFiles'])->name('data-publication-detail-files');
 Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])->name('keyword-selector');
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
-Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
+
+if (App::environment('local')) {
+    Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
+    Route::get('/demoPage', [FrontendController::class, 'demoPage'])->name('demoPage');
+}
 
 Route::get('/contribute-select-scenario', [FrontendController::class, 'contributeSelectScenario'])->name('contribute-select-scenario');
 

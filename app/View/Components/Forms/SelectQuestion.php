@@ -17,7 +17,6 @@ class SelectQuestion extends Component
         public string $title,
         public array $options,
         public bool $titleBold,
-
     ) {}
 
     /**

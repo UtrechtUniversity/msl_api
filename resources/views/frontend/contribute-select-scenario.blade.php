@@ -3,7 +3,7 @@
 <div class="mainContentDiv flex-col">
     <h1 class="pt-20">Data Tooling - Survey</h1>
 
-    <div class="max-w-screen-md pt-10 sm:pt-20">
+    <div class="max-w-(--breakpoint-md) pt-10 sm:pt-20">
         <h3 class="pb-2 pt-6">What is this survey about?</h3>
         <p class="inline">Having data findable, centrally, in EPOS, doesn’t necessarily make these easy to re-use.  </p>
         <p class="inline">
@@ -14,7 +14,7 @@
     </div>
 
         <h3 class="pb-2 pt-16">Select your domain!</h3>
-        <div class="sm:max-w-screen-lg flex md:flex-row flex-wrap sm:p-10 py-10 gap-8 justify-center place-items-center">
+        <div class="sm:max-w-(--breakpoint-lg) flex md:flex-row flex-wrap sm:p-10 py-10 gap-8 justify-center place-items-center">
             @foreach ($allDomains as $surveyName => $domainName)
                     <a role="button" 
                     href="{{ route('survey-form', ['surveyName' => $surveyName]) }}"

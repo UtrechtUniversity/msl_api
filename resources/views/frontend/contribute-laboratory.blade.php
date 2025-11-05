@@ -6,7 +6,7 @@
         </p>
 
         <div class="flex justify-center items-center flex-col px-4">
-            <p class="max-w-screen-md px-4">
+            <p class="max-w-(--breakpoint-md) px-4">
               Thank you for your interest in joining the EPOS Multi-Scale Laboratories (MSL) community. Below you will find a brief description of EPOS and MSL, and the application procedure to join our community.
             </p>
 
@@ -127,7 +127,7 @@
           </li>
         </ul>
 
-          <div class="w-screen sm:max-w-screen-md  px-4">
+          <div class="w-screen sm:max-w-(--breakpoint-md)  px-4">
             <h2 class="pt-10 pb-4">Introduction to EPOS and MSL
             </h2>
             <p>The goal of EPOS is to establish a comprehensive multidisciplinary research platform for the Earth sciences in Europe. It aims to facilitate the integrated use of data, models, and laboratories, from both existing and new pan-European Research Infrastructures, allowing open access and transparent use of data. To reach this goal EPOS is thematically subdivided in 10 different communities: so called Thematic Core Services (TCS). One of these is Multi-Scale Laboratories (MSL).</p>
