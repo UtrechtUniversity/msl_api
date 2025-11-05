@@ -27,20 +27,20 @@
     </div>
 
     <div class="flex flex-col justify-around pt-6 gap-3">
-        <div class="flex max-[470px]:flex-col items-center place-content-center gap-3">
-            <div class="basis-1/2">
+        <div class="flex max-[700px]:flex-col items-center place-content-center gap-3">
+            <div class="">
                 <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
                 <h5 class="inline">{{ $result->getTotalResultsCount() }}</h5>
             </div>
     
             @if (isset($dpDropdown) && $dpDropdown)
-                <div class="basis-1/2  ">
+                <div class="">
                     <form 
-                        class="w-full flex flex-col sm:flex-row justify-end items-center place-content-center" 
+                        class="w-full flex flex-col min-[700px]:flex-row justify-end items-center place-content-center" 
                         method="get" 
                         action=""
                     >
-                        <p class="italic w-30 text-center sm:text-end  pr-2" >Order by:</p>
+                        <p class="italic w-30 text-center min-[700px]:text-end  min-[700px]:pr-2" >Order by:</p>
                         <div class="min-w-64">
                             <x-forms.select-question
                             title=""
