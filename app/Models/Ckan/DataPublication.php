@@ -331,6 +331,36 @@ class DataPublication
         'msl_creators' => 'required',
     ];
 
+    /**
+     * limits applied on fields when send to CKAN
+     */
+    public static array $ckanLimits = [
+        'msl_alternate_identifiers' => 150,
+        'msl_creators' => 200,
+        'msl_contributors' => 200,
+        'msl_related_identifiers' => 200,
+        'msl_rights' => 100,
+        'msl_dates' => 100,
+        'msl_sizes' => 50,
+        'msl_formats' => 50,     
+        'msl_geolocations' => 100,
+        'msl_laboratories' => 10,
+        'msl_files' => 1000,
+        'msl_tags' => 200,
+        'msl_subdomains' => 10,
+        'msl_subdomains_original' => 10,
+        'msl_subdomains_interpreted' => 10,
+        'msl_enriched_keywords' => 500,
+        'msl_original_keywords' => 500,
+    ];
+
+    public function applyCkanLimits(): void
+    {
+        foreach($this::$ckanLimits as $property => $limit) {
+            $this->{$property} = array_slice($this->{$property}, 0, $limit);
+        }
+    }
+
     public function getMainDescription(): string
     {
         if (strlen($this->msl_description_abstract) > 0) {
