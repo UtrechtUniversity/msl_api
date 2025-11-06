@@ -22,28 +22,58 @@
             @if (isset($pbDetail) && $pbDetail)
 
                 <div class="bg-primary-100">
-                    @php
-                        $titleBold = true;
-                    @endphp
-                    <x-forms.radio-select
-
-                        title=""
-                        sectionName='selectInterpretation'
-                        titleBold=''
-                        :options="[
-                                'MSL enriched keywords', 
-                                'MSL original keywords'
-                            ]"
-                        :ids="[
-                                'filterTreeToggleInterpreted', 
-                                'filterTreeToggleOriginal'
-                            ]" 
-                        :infoIconsIds="[
-                                'enriched-keywords-popup',
-                                'original-keywords-popup'
-                            ]"
-                        :asCol=true
-                    />
+                    <div class="w-full">
+                        <div class="
+                            form-control 
+                            flex 
+                            flex-col
+                            w-full 
+                            justify-center
+                            w-full
+                            ">
+                            @foreach ([
+                                'filterTreeToggleInterpreted'=>[
+                                    'option' => 'MSL enriched keywords',
+                                    'iconId' => 'enriched-keywords-popup'
+                                ],
+                                'filterTreeToggleOriginal'=>[
+                                    'option' => 'MSL original keywords',
+                                    'iconId' => 'original-keywords-popup'
+                                ]
+                            ] as $id => $details)
+                            <div class="
+                                flex 
+                                place-content-center
+                                items-center
+                                w-full">
+                                <x-ri-information-line id="{{ $details['iconId'] }}" class="info-icon mx-2"/>
+                                <label class="
+                                    label cursor-pointer 
+                                    flex
+                                    w-full
+                                    flex-row
+                                    gap-4 
+                                    p-2
+                                    justify-between
+                                    hover-interactive
+                                    ">
+                                    <span class="label-text text-primary-900 text-center" value={{ $id }}>{{ $details['option'] }}</span>
+                                    <input type="radio" 
+                                        value={{ $id }} 
+                                        name='selectInterpretation'
+                                        id={{ $id }}
+                                        class="
+                                        radio 
+                                        checked:bg-secondary-500 hover:bg-secondary-500
+                                        border
+                                        border-secondary-500
+                                        "
+                                        />
+                                </label>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
 
 
@@ -63,16 +93,43 @@
                     });
                 </script>
 
-
-
                 <div class="bg-primary-100 w-full">
-                    
-                    <x-forms.check-box
-                    title=""
-                    sectionName='EmptyTerms'
-                    :options="['Hide empty terms']"
-                    :ids="['hide_empty_terms']" 
-                    />
+                    <div class="flex flex-col items-center w-full">
+                        <div class="flex flex-col w-full">
+                            <div class="flex-col space-y-2 place-content-center h-full w-full">
+                                @foreach ( ['Hide empty terms'] as $key => $option)
+                                    <div class="form-control w-full">
+                                        <label class="
+                                                w-full
+                                                label p-2 
+                                                text-secondary-900
+                                                hover-interactive">
+                                            <span 
+                                                class="pr-4 text-sm w-full"
+                                                value={{ $key }}
+                                                name={{ 'EmptyTerms'.'[]' }}
+                                                >
+                                                    {{ $option }}
+                                                </span>
+
+                                            <input type="checkbox"
+                                            value={{ $key }} 
+                                            name={{ 'EmptyTerms'.'[]' }}
+                                            id='hide_empty_terms'
+                                            class="checkbox checkbox-secondary checkbox-md rounded-sm border" 
+
+                                            @if (is_array(old( 'EmptyTerms' )) && in_array($key, old( 'EmptyTerms' )) )
+                                                checked="checked"
+                                            @endif
+
+                                            />
+                                            
+                                        </label>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
             @endif
 
