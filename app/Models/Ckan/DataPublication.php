@@ -342,7 +342,7 @@ class DataPublication
         'msl_rights' => 100,
         'msl_dates' => 100,
         'msl_sizes' => 50,
-        'msl_formats' => 50,     
+        'msl_formats' => 50,
         'msl_geolocations' => 100,
         'msl_laboratories' => 10,
         'msl_files' => 1000,
@@ -356,7 +356,7 @@ class DataPublication
 
     public function applyCkanLimits(): void
     {
-        foreach($this::$ckanLimits as $property => $limit) {
+        foreach ($this::$ckanLimits as $property => $limit) {
             $this->{$property} = array_slice($this->{$property}, 0, $limit);
         }
     }

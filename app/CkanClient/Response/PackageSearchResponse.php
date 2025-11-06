@@ -25,14 +25,14 @@ class PackageSearchResponse extends BaseResponse
     public function getResults(bool $castToObjects = false): array|object
     {
         $resultsFromResponse = $this->responseBody['result']['results'];
-        
+
         if (! $castToObjects) {
             return $resultsFromResponse;
         }
 
         $resultsToReturn = [];
-        
-        foreach ($resultsFromResponse as $result) {            
+
+        foreach ($resultsFromResponse as $result) {
             switch ($result['type']) {
                 case 'data-publication':
                     $resultsToReturn[] = DataPublication::fromCkanArray($result);
@@ -42,6 +42,7 @@ class PackageSearchResponse extends BaseResponse
                     break;
             }
         }
+
         return (object) $resultsToReturn;
     }
 
