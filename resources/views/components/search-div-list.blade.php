@@ -42,21 +42,26 @@
                     >
                         <p class="italic w-30 text-center sm:text-end  pr-2" >Order by:</p>
                         <div class="min-w-64">
-                            <x-forms.select-question
-                            title=""
-                            sectionName='sort'
-                            placeholder=''
-                            :options="[
-                                'score desc' => 'Relevance',
-                                'msl_citation asc' => 'Author Ascending',
-                                'msl_citation desc' => 'Author Descending',
-                                'msl_publication_date desc' => 'Publication date'
-                            ]"
-                            onChange="this.form.submit()"
-                            :selected="$sort"    
-                        />
+                            <div class="w-full">
+                                <select 
+                                    name="sort"
+                                    onchange="this.form.submit()"
+                                    class="select form-field-text focus:select-secondary w-full pr-9 bg-white">
+                                        @foreach ([
+                                            'score desc' => 'Relevance',
+                                            'msl_citation asc' => 'Author Ascending',
+                                            'msl_citation desc' => 'Author Descending',
+                                            'msl_publication_date desc' => 'Publication date'
+                                        ] as $key => $option)
+                                            <option 
+                                                value="{{ $key }}" 
+                                            >
+                                                {{ $option }}
+                                            </option>
+                                        @endforeach
+                                </select>
+                            </div>
                         </div>
-
                         <input type="hidden" name="page" value="1" />
                     </form>
                 </div>
