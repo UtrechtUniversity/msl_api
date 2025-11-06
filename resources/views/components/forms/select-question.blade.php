@@ -32,7 +32,7 @@
             {{-- from https://laravel.com/docs/11.x/blade#additional-attributes --}}
                 @foreach ($options as $key => $option)
                     <option value="{{ $key }}" 
-                    @selected(old($sectionName))
+                    @selected(old($sectionName) == $key)
                     >
                         {{ $option }}
                     </option>
