@@ -357,7 +357,9 @@ class DataPublication
     public function applyCkanLimits(): void
     {
         foreach ($this::$ckanLimits as $property => $limit) {
-            $this->{$property} = array_slice($this->{$property}, 0, $limit);
+            if (property_exists($this, $property)) {
+                $this->{$property} = array_slice($this->{$property}, 0, $limit);
+            }
         }
     }
 
