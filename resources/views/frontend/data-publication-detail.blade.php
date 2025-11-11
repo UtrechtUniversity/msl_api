@@ -656,7 +656,6 @@
                         <div class="detail-entry-content">
                             <div id="map" style="height: 300px;"></div>
                         </div>
-
                         <script>
                             function onEachFeature(feature, layer) {
                                 if (feature.properties.name) {                                
@@ -677,9 +676,8 @@
                                                                                                                     
                             L.geoJSON(features, {
                                 onEachFeature: onEachFeature
-                            }).addTo(map);                                                                                                                                                                                
+                            }).addTo(map);                                                                              
                         </script>
-                        
                     </div>
                 @endif
             </div>
