@@ -315,7 +315,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.lab-detail', ['data' => $labData, 'labHasMailContact' => $labHasMailContact]);
+        return view('frontend.lab-detail', ['data' => $result->getResult(true), 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**
