@@ -353,7 +353,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail-equipment', ['data' => $groupedResults, 'ckanLabName' => $id, 'data2' => $Labresult->getResult()]);
+        return view('frontend.lab-detail-equipment', ['data' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipmentData' => $groupedResults]);
     }
 
     /**
