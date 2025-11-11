@@ -47,6 +47,7 @@
                                 $data->msl_website
                             ],
                             'withKeys' => false,
+                            'textSize' => 'base'
                         ])
                     </div>
                 </div>
