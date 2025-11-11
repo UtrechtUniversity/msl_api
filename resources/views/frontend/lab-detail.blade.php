@@ -10,7 +10,7 @@
         ])
     </div>
 
-    <div class="main-content content-divide-y">
+    <div class="main-content">
         <div class="detail-div content-divide-y">
             <div class="detail-entry-div !flex-col">
                 <h2 class="">Laboratory Details</h2>
