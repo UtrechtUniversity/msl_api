@@ -10,8 +10,8 @@
         ])
     </div>
 
-    <div class="main-content">
-        <div class="detail-div">
+    <div class="main-content content-divide-y">
+        <div class="detail-div content-divide-y">
             <div class="detail-entry-div !flex-col">
                 <h2 class="">Laboratory Details</h2>
                 <h1 class="text-lg">{{ $data->title }}</h1>                                    
@@ -19,10 +19,16 @@
             
             @if ($data->msl_description_html != '')
                 <div class="detail-entry-div !flex-col place-items-center">  
-                    <h4>Description</h4>
-                    <div class="max-w-2xl">
-                        {!! $data->msl_description_html !!}
-                    </div>                          
+                    <h3>Description</h3>
+                    @include('components.tab-list',[
+                            'allTabs' => array(
+                                'Description' => [
+                                    'content' => $data->msl_description_html,
+                                    'id' => 'description'
+                                ]
+                            ),
+                            'checkedElementId' => 'description'
+                        ])                
                     
                 </div>
             @else
