@@ -17,7 +17,7 @@ includeIcon    = string - to select which icon
         <h5 class="pb-2">{{ $categoryName }}</h5>
     @endif
     
-    <div role="tablist" class="tabs tabs-box tabs-md flex flex-row bg-primary-200 justify-around">
+    <div role="tablist" class="tabs tabs-box tabs-md flex flex-row bg-primary-200 justify-around gap-1">
 
             @foreach ($routes as $routeKey => $route)
                     @if (isset($routeActive) && $routeActive == $route)
