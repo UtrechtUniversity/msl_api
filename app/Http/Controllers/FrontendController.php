@@ -339,8 +339,8 @@ class FrontendController extends Controller
 
         // group results for display purposes
         $groupedResults = [];
-        foreach ($result->getResults() as $result) {
-            $groupedResults[$result['msl_domain_name']][] = $result;
+        foreach ($result->getResults(true) as $result) {
+            $groupedResults[] = $result;
         }
 
         // get the name of lab
