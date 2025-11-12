@@ -102,13 +102,13 @@
                     ])
                 </div>
             </div>
-
+            
             @if ($data->msl_location != '')
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Location</h4>
                     <div class="">
-                        <div id="map" style="height: 300px;"></div>
+                        <div class="z-30" id="map" style="height: 300px;"></div>
 
                         <script>
                             function onEachFeature(feature, layer) {
@@ -119,7 +119,7 @@
                                 }
                             }
 
-                            var features = <?php echo $data->msl_location; ?>;
+                            var features = <?php echo json_encode([json_decode($data->msl_location)]); ?>;
 
                             if(features.geometry.coordinates) {
                                 var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]], 4);    
