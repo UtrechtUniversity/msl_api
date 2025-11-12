@@ -108,7 +108,7 @@
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Location</h4>
                     <div class="">
-                        <div class="z-30" id="map" style="height: 300px;"></div>
+                        <div id="map" style="height: 300px;"></div>
 
                         <script>
                             function onEachFeature(feature, layer) {
