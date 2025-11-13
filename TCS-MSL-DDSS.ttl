@@ -506,6 +506,49 @@
         dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Dataset/013/Distribution/013> ;
 .
 
+# laboratories/equipment service for facilities section
+
+<https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001" ;
+        dct:title "Multi-Scale Laboratories" ;
+        dct:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics" ;
+        # not sure what to enter for this identifier, currently contains a copy from above service. (adms:identifier)
+		adms:identifier [ a adms:Identifier ;
+            adms:schemeAgency "DDSS-ID" ;
+            skos:notation "WP16-DDSS-013" ;
+
+        ];
+        dct:created "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		dct:issued "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		dct:modified "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+        
+        #Update frequency
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <category:laboratories> ;
+        
+        dcat:keyword "fault and fold behavior", "deformation", "compression", "extension", "shear", "mountain building", "plastic", "brittle", "viscous", "elastic", "earthquake/seismicity", "subsidence", "pressure", "temperature", "tectonics", "flow model", "modelling", "properties", "laboratory", "laboratories", "lab", "core/core measurement", "petrophysics", "injectivity", "permeability", "reservoir", "caprock", "chemistry/geochemistry", "isotope", "element", "mechanics/mechanical", "microscope/microscopes", "geothermal", "oil/gas production", "sustainability", "storage", "apparatus", "directional", "magnetic";
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:99985805/parent>;
+		
+		# This property refers to the quality assurance document URL
+        dqv:hasQualityAnnotation [ a oa:Annotation ;
+       		oa:hasBody "https://github.com/UtrechtUniversity/msl_api/blob/master/data-quality.md"^^xsd:anyURI  ;
+        ];
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001> ;
+.
+
 # *************
 #
 # ApiDocumentation
