@@ -1,9 +1,10 @@
 <?php
+
 namespace App\Exports;
 
 use App\Models\Surveys\Survey;
-use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 
 class SurveyExport implements FromCollection, WithHeadings, WithMapping
@@ -19,16 +20,17 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
     {
         $answers = [];
         foreach ($this->targetSurvey->responses as $response) {
-            foreach ($response->answers as $answer){
+            foreach ($response->answers as $answer) {
                 $answers[] = $answer;
-            } 
+            }
         }
+
         return collect($answers);
     }
 
     public function headings(): array
     {
-        return 
+        return
             [
                 'survey_name',
                 'survey_id',
@@ -49,34 +51,30 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
                 'answer_answer',
                 'answer_raw',
 
-                'downloadDate'
+                'downloadDate',
             ];
     }
 
-
     public function map($answer): array
     {
-        $options='none';
+        $options = 'none';
         $answerString = $answer->answer;
 
-        if(property_exists($answer->question->question, "options")){
-            $options=Implode(" | ", $answer->question->question->options);
-            if(is_array($answer->answer)) {
+        if (property_exists($answer->question->question, 'options')) {
+            $options = implode(' | ', $answer->question->question->options);
+            if (is_array($answer->answer)) {
                 $answerString = [];
                 foreach ($answer->answer as $value) {
                     $answerString[] = $answer->question->question->options[$value];
                 }
-                $answerString = implode(",", $answerString);
+                $answerString = implode(',', $answerString);
             } else {
-                if($answer->answer == null || $answer->answer == "")
-                {
+                if ($answer->answer == null || $answer->answer == '') {
                     $answerString = 'null';
-                } 
-                else 
-                {  
+                } else {
                     $answerString = $answer->question->question->options[$answer->answer];
                 }
-                
+
             }
         }
 
@@ -101,10 +99,7 @@ class SurveyExport implements FromCollection, WithHeadings, WithMapping
                 $answerString,
                 $answer->answer,
 
-                date('Y-m-d H:i:s')
+                date('Y-m-d H:i:s'),
             ];
     }
-
-
-
 }

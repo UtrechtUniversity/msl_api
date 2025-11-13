@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Exports\Vocabs;
 
 use App\Models\Laboratory;
@@ -11,19 +12,19 @@ class LaboratoriesJsonExport
 
         $output = [];
 
-        foreach($laboratories as $laboratory) {
+        foreach ($laboratories as $laboratory) {
             $organization = $laboratory->laboratoryOrganization;
 
             $element = [
                 'identifier' => $laboratory->external_identifier,
                 'name' => mb_convert_encoding($laboratory->name, 'UTF-8'),
                 'affiliation_name' => $organization->name,
-                'affiliation_ror' => $organization->external_identifier
+                'affiliation_ror' => $organization->external_identifier,
             ];
 
-            $output[] = $element;            
+            $output[] = $element;
         }
 
-        return (json_encode($output, JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT));
+        return json_encode($output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportBgsSeeder extends Seeder
 {
@@ -17,17 +17,17 @@ class ImportBgsSeeder extends Seeder
     {
         $bgs = DataRepository::updateOrCreate(
             [
-                'name' => 'bgs'
+                'name' => 'bgs',
             ],
             [
                 'name' => 'bgs',
-                'ckan_name' => 'bgs'
+                'ckan_name' => 'bgs',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'bgs importer'
+                'name' => 'bgs importer',
             ],
             [
                 'name' => 'bgs importer',
@@ -38,19 +38,19 @@ class ImportBgsSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/bgs/converted.json',
-                            'identifierKey' => 'doi'
-                        ]
+                            'identifierKey' => 'doi',
+                        ],
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'type' => 'dataciteJsonRetrieval',
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'BgsMapper',
-                        'options' => []
-                    ]
+                        'type' => 'datacite',
+                        'options' => [],
+                    ],
                 ],
-                'data_repository_id' => $bgs->id
+                'data_repository_id' => $bgs->id,
             ]
         );
     }

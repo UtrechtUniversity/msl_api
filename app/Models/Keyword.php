@@ -145,7 +145,7 @@ class Keyword extends Model
 
         return $string;
     }
-    
+
     public function getAbstractMatchingExcludedSearchKeywordsString($startCharacter = '#')
     {
         $string = '';

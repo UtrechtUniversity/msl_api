@@ -1,50 +1,49 @@
 <?php
+
 namespace App\CkanClient\Response;
+
+use App\Models\Ckan\DataPublication;
 
 class BaseResponse
 {
-
     /**
      * @var int HTTP response code
      */
-    public $responseCode;
+    public int $responseCode;
 
     /**
      * @var bool success status reported by CKAN
      */
-    public $ckanSuccess;
+    public bool $ckanSuccess;
 
     /**
      * @var array full response from CKAN
      */
-    public $responseBody;
+    public array $responseBody;
 
-    
     public function __construct($body, $responseCode)
     {
         $this->responseCode = $responseCode;
 
-        if($responseCode == '200') {
+        if ($responseCode == '200') {
             $this->responseBody = $body;
-            $this->ckanSuccess = (bool)$body['success'];
-        } elseif($responseCode == '404') {
+            $this->ckanSuccess = (bool) $body['success'];
+        } elseif ($responseCode == '404') {
             $this->responseBody = $body;
-            $this->ckanSuccess = (bool)$body['success'];
-        } elseif($responseCode == '409') {
+            $this->ckanSuccess = (bool) $body['success'];
+        } elseif ($responseCode == '409') {
             $this->responseBody = $body;
-            $this->ckanSuccess = (bool)$body['success'];
+            $this->ckanSuccess = (bool) $body['success'];
         }
     }
 
     /**
      * Returns success status of request depending on responscode and ckan response
-     * 
-     * @return bool
      */
     public function isSuccess(): bool
     {
-        if($this->responseCode == 200) {
-            if($this->ckanSuccess) {
+        if ($this->responseCode == 200) {
+            if ($this->ckanSuccess) {
                 return true;
             }
         }
@@ -54,18 +53,28 @@ class BaseResponse
 
     /**
      * Returns result element from response body
-     * 
-     * @return array
      */
-    public function getResult(): array
+    public function getResult(bool $castToObjects = false): array|object
     {
-        return $this->responseBody['result'];
+        $result = $this->responseBody['result'];
+        if (! $castToObjects) {
+            return $result;
+        }
+
+        if ($result['type']) {
+            switch ($result['type']) {
+                case 'data-publication':
+                    return DataPublication::fromCkanArray($result);
+                default:
+                    return (object) $result;
+            }
+        }
+
+        return (object) $result;
     }
 
     /**
      * response body contains error element
-     * 
-     * @return bool
      */
     public function hasError(): bool
     {
@@ -74,31 +83,29 @@ class BaseResponse
 
     /**
      * error type returned by ckan
-     * 
-     * @return string
      */
     public function getErrorType(): string
     {
-        if($this->hasError()) {
-            if(isset($this->responseBody['error']['__type'])) {
+        if ($this->hasError()) {
+            if (isset($this->responseBody['error']['__type'])) {
                 return $this->responseBody['error']['__type'];
             }
         }
+
+        return '';
     }
 
     /**
      * error message returned by ckan
-     * 
-     * @return string
      */
     public function getErrorMessage(): string
     {
-        if($this->hasError()) {
-            if(isset($this->responseBody['error']['message'])) {
+        if ($this->hasError()) {
+            if (isset($this->responseBody['error']['message'])) {
                 return $this->responseBody['error']['message'];
             }
         }
+
+        return '';
     }
-
-
 }

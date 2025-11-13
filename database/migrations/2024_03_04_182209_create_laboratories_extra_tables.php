@@ -20,10 +20,10 @@ class CreateLaboratoriesExtraTables extends Migration
             $table->string('external_identifier');
             $table->timestamps();
         });
-        
+
         Schema::create('laboratory_contact_persons', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('fast_id')->nullable();            
+            $table->unsignedBigInteger('fast_id')->nullable();
             $table->string('email');
             $table->string('first_name');
             $table->string('last_name');
@@ -36,10 +36,10 @@ class CreateLaboratoriesExtraTables extends Migration
             $table->string('address_country_name');
             $table->unsignedBigInteger('affiliation_fast_id');
             $table->string('nationality_code');
-            $table->string('nationality_name');            
+            $table->string('nationality_name');
             $table->timestamps();
         });
-        
+
         Schema::create('laboratory_managers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('fast_id')->nullable();
@@ -55,14 +55,14 @@ class CreateLaboratoriesExtraTables extends Migration
             $table->string('address_country_name');
             $table->unsignedBigInteger('affiliation_fast_id');
             $table->string('nationality_code');
-            $table->string('nationality_name');            
+            $table->string('nationality_name');
             $table->timestamps();
         });
-        
+
         Schema::create('laboratory_equipment', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('fast_id')->nullable();
-            $table->unsignedBigInteger('laboratory_id')->nullable();            
+            $table->unsignedBigInteger('laboratory_id')->nullable();
             $table->text('description');
             $table->text('description_html');
             $table->string('category_name');
@@ -76,7 +76,7 @@ class CreateLaboratoriesExtraTables extends Migration
             $table->string('altitude');
             $table->string('external_identifier');
             $table->timestamps();
-        });        
+        });
     }
 
     /**

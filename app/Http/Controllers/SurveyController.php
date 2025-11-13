@@ -19,10 +19,10 @@ class SurveyController extends Controller
     {
         $survey = Survey::where('name', $surveyName)->first();
 
-        if($survey->active){
+        if ($survey->active) {
             return view('surveys.contribute-survey-scenario', [
                 'allQuestions' => $survey->questions,
-                'surveyName' => $survey->name
+                'surveyName' => $survey->name,
             ]);
         } else {
             return redirect('/')->with('modals', [
@@ -38,7 +38,7 @@ class SurveyController extends Controller
      * @return \Illuminate\Contracts\Support\RedirectResponse
      */
     public function surveyProcess(Request $request, $surveyName): RedirectResponse
-    {   
+    {
         $survey = Survey::where('name', $surveyName)->first();
 
         $request->validate($survey->getValidationRules());
@@ -50,11 +50,11 @@ class SurveyController extends Controller
 
         foreach ($survey->questions as $question) {
             if ($question->answerable) {
-                    Answer::create([
-                        'response_id' => $responseSurvey->id,
-                        'question_id' => $question->id,
-                        'answer' => $request->input($question->question->sectionName)
-                    ]);
+                Answer::create([
+                    'response_id' => $responseSurvey->id,
+                    'question_id' => $question->id,
+                    'answer' => $request->input($question->question->sectionName),
+                ]);
             }
         }
 
@@ -63,5 +63,4 @@ class SurveyController extends Controller
             'message' => 'Thanks for your input!']
         );
     }
-
 }

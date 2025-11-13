@@ -3,11 +3,10 @@
 namespace App\Providers;
 
 use App\Listeners\LogMailSend;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Mail\Events\MessageSent;
-
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -23,14 +23,14 @@ class CreateKeywordTables extends Migration
             $table->string('hyperlink');
             $table->timestamps();
         });
-        
+
         Schema::create('vocabularies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('uri');
             $table->timestamps();
         });
-        
+
         Schema::create('keywords_search', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('keyword_id');

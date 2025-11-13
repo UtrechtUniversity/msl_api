@@ -1,22 +1,20 @@
 <?php
-namespace App\Fast;
 
-use Illuminate\Support\Facades\App;
+namespace App\Fast;
 
 class Fast
 {
-    
     protected $client;
-    
+
     public function __construct()
     {
-        $this->client = new \GuzzleHttp\Client(['verify' => false, 'http_errors' => false]);     
+        $this->client = new \GuzzleHttp\Client(['verify' => false, 'http_errors' => false]);
     }
 
     public function facilityRequest($facilityId)
-    {        
-        $result =  new \stdClass();               
-        
+    {
+        $result = new \stdClass;
+
         try {
             $response = $this->client->request('GET', "https://fast.geo.uu.nl/api/facility/$facilityId", [
                 'headers' => [
@@ -29,18 +27,18 @@ class Fast
 
         $result->response_code = $response->getStatusCode();
         $result->response_body = [];
-        
-        if($result->response_code == 200) {
+
+        if ($result->response_code == 200) {
             $result->response_body = json_decode($response->getBody(), true);
         }
-                
+
         return $result;
     }
 
     public function facilitiesRequest($page = 0)
     {
-        $result =  new \stdClass();               
-        
+        $result = new \stdClass;
+
         try {
             $response = $this->client->request('GET', "https://fast.geo.uu.nl/api/query/facilities?where[tags]=EPOS-MSL&page=$page", [
                 'headers' => [
@@ -53,20 +51,20 @@ class Fast
 
         $result->response_code = $response->getStatusCode();
         $result->response_body = [];
-        
-        if($result->response_code == 200) {
+
+        if ($result->response_code == 200) {
             $result->response_body = json_decode($response->getBody(), true);
         }
-                
+
         return $result;
     }
 
     public function metaTreeRequest()
     {
-        $result =  new \stdClass();               
-        
+        $result = new \stdClass;
+
         try {
-            $response = $this->client->request('GET', "https://fast.geo.uu.nl/api/meta_tree", [
+            $response = $this->client->request('GET', 'https://fast.geo.uu.nl/api/meta_tree', [
                 'headers' => [
                     'Authorization' => config('fast.fast_api_token'),
                 ],
@@ -77,14 +75,11 @@ class Fast
 
         $result->response_code = $response->getStatusCode();
         $result->response_body = [];
-        
-        if($result->response_code == 200) {
+
+        if ($result->response_code == 200) {
             $result->response_body = json_decode($response->getBody(), true);
         }
-                
+
         return $result;
     }
-    
-    
 }
-

@@ -2,21 +2,21 @@
 
 namespace App\Jobs;
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageCreateRequest;
 use App\CkanClient\Request\PackageShowRequest;
 use App\CkanClient\Request\PackageUpdateRequest;
 use App\Models\LaboratoryCreate;
+use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class ProcessLaboratoryCreate implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    
+
     protected $laboratoryCreate;
 
     /**
@@ -28,7 +28,6 @@ class ProcessLaboratoryCreate implements ShouldQueue
     {
         $this->laboratoryCreate = $laboratoryCreate;
     }
-            
 
     /**
      * Execute the job.
@@ -37,24 +36,24 @@ class ProcessLaboratoryCreate implements ShouldQueue
      */
     public function handle()
     {
-        $ckanClient = new Client();
-        $packageShowRequest = new PackageShowRequest();
+        $ckanClient = new Client;
+        $packageShowRequest = new PackageShowRequest;
         $packageShowRequest->id = $this->laboratoryCreate->laboratory['name'];
 
         $response = $ckanClient->get($packageShowRequest);
 
-        if($response->isSuccess()) {
+        if ($response->isSuccess()) {
             $this->updateLaboratory($ckanClient);
         } else {
             $this->createLaboratory($ckanClient);
-        }                                  
+        }
     }
-    
+
     private function createLaboratory(Client $client)
     {
-        $packageCreateRequest = new PackageCreateRequest();
+        $packageCreateRequest = new PackageCreateRequest;
         $packageCreateRequest->payload = $this->laboratoryCreate->laboratory;
-        
+
         $response = $client->get($packageCreateRequest);
 
         $this->laboratoryCreate->response_code = $response->responseCode;
@@ -62,10 +61,10 @@ class ProcessLaboratoryCreate implements ShouldQueue
         $this->laboratoryCreate->processed = now();
         $this->laboratoryCreate->save();
     }
-    
+
     private function updateLaboratory(Client $client)
     {
-        $packageUpdateRequest = new PackageUpdateRequest();
+        $packageUpdateRequest = new PackageUpdateRequest;
         $packageUpdateRequest->payload = $this->laboratoryCreate->laboratory;
 
         $response = $client->get($packageUpdateRequest);
@@ -73,6 +72,6 @@ class ProcessLaboratoryCreate implements ShouldQueue
         $this->laboratoryCreate->response_code = $response->responseCode;
         $this->laboratoryCreate->processed_type = 'update';
         $this->laboratoryCreate->processed = now();
-        $this->laboratoryCreate->save();        
+        $this->laboratoryCreate->save();
     }
 }

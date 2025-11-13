@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use App\Mappers\Additional\YodaFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportYodaSeeder extends Seeder
 {
@@ -17,17 +18,17 @@ class ImportYodaSeeder extends Seeder
     {
         $yoda = DataRepository::updateOrCreate(
             [
-                'name' => 'YoDa'
+                'name' => 'YoDa',
             ],
             [
                 'name' => 'YoDa',
-                'ckan_name' => 'yoda-repository'
+                'ckan_name' => 'yoda-repository',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'YoDa importer'
+                'name' => 'YoDa importer',
             ],
             [
                 'name' => 'YoDa importer',
@@ -38,32 +39,23 @@ class ImportYodaSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/yoda/converted.json',
-                            'identifierKey' => 'DOI'
+                            'identifierKey' => 'DOI',
                         ],
-                        'extra_data_loader' => [
-                            'type' => 'jsonLoader',
-                            'options' => [
-                                'filePath' => '/import-data/yoda/converted.json',
-                                'dataKeyMapping' => [
-                                    'Subdomain' => 'subDomain',
-                                    'Data documentation' => 'dataDocumentation',
-                                    'Data' => 'data',
-                                    'LabIdentifier' => 'labIdentifier',
-                                    'LabName' => 'LabName'
-                                ]                            
-                            ]
-                        ]
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'type' => 'dataciteJsonRetrieval',
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'yodaMapper',
-                        'options' => []
-                    ]
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                YodaFileMapper::class,
+                            ],
+                        ],
+                    ],
                 ],
-                'data_repository_id' => $yoda->id
+                'data_repository_id' => $yoda->id,
             ]
         );
     }

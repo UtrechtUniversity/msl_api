@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
 
 class Laboratory extends Model
@@ -35,29 +37,29 @@ class Laboratory extends Model
         'fast_domain_id',
         'fast_domain_name',
         'laboratory_organization_id',
-        'laboratory_manager_id'
+        'laboratory_manager_id',
     ];
-    
+
     public function laboratoryOrganization()
     {
         return $this->belongsTo(LaboratoryOrganization::class, 'laboratory_organization_id');
     }
-    
+
     public function laboratoryContactPersons()
     {
         return $this->hasMany(LaboratoryContactPerson::class, 'laboratory_id');
     }
-    
+
     public function laboratoryManager()
     {
         return $this->belongsTo(LaboratoryManager::class, 'laboratory_manager_id');
     }
-    
+
     public function laboratoryEquipment()
     {
         return $this->hasMany(LaboratoryEquipment::class, 'laboratory_id');
     }
-    
+
     public function laboratoryKeywords()
     {
         return $this->hasMany(LaboratoryKeyword::class, 'laboratory_id');
@@ -65,7 +67,7 @@ class Laboratory extends Model
 
     /**
      * Convert object to CKAN representation
-     * 
+     *
      * @return array
      */
     public function toCkanArray()
@@ -95,17 +97,15 @@ class Laboratory extends Model
             'msl_has_spatial_data' => $this->hasSpatialData(),
             'msl_laboratory_equipment' => $this->getLimitedEquipment(),
             'extras' => [
-                ["key" => "spatial", "value" => $this->getPointGeoJson()]
-            ]
+                ['key' => 'spatial', 'value' => $this->getPointGeoJson()],
+            ],
         ];
     }
 
     /**
      * Returns a limited set of properties for each equipment belonging to the lab.
-     * This data is used in CKAN to populate the facility API endpoint working around the 
-     * need to combine equipment and laboratory datatypes seperately. 
-     * 
-     * @return array
+     * This data is used in CKAN to populate the facility API endpoint working around the
+     * need to combine equipment and laboratory datatypes seperately.
      */
     private function getLimitedEquipment(): array
     {
@@ -113,7 +113,7 @@ class Laboratory extends Model
 
         $equipmentList = $this->laboratoryEquipment;
 
-        foreach($equipmentList as $equipmentEntry) {
+        foreach ($equipmentList as $equipmentEntry) {
             $equipment[] = [
                 'msl_laboratory_equipment_title' => $equipmentEntry->name,
                 'msl_laboratory_equipment_description' => $equipmentEntry->description,
@@ -122,7 +122,7 @@ class Laboratory extends Model
                 'msl_laboratory_equipment_category' => $equipmentEntry->category_name,
                 'msl_laboratory_equipment_type' => $equipmentEntry->type_name,
                 'msl_laboratory_equipment_group' => $equipmentEntry->group_name,
-                'msl_laboratory_equipment_brand' => $equipmentEntry->brand
+                'msl_laboratory_equipment_brand' => $equipmentEntry->brand,
             ];
         }
 
@@ -131,43 +131,40 @@ class Laboratory extends Model
 
     /**
      * Create point geojson string using latitude and longitude.
-     * 
+     *
      * @return string
      */
     public function getPointGeoJson()
     {
-        if($this->hasSpatialData()) {
-            return json_encode([
-                'type' => 'Point',
-                'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-            ]);
+        if ($this->hasSpatialData()) {
+            return json_encode(
+                new Point((float) $this->longitude, (float) $this->latitude)
+            );
         }
 
         return '';
     }
 
     /**
-     * Get geojson feature object string. 
-     * 
+     * Get geojson feature object string.
+     *
      * @return string
      */
     private function getGeoJsonFeature()
     {
-        if($this->hasSpatialData()) {
-            return json_encode([
-                'type' => 'Feature',
-                'geometry' => [
-                    'type' => 'Point',
-                    'coordinates' => [(float)$this->longitude, (float)$this->latitude]
-                ],
-                'properties' => [
-                    'title' => $this->name,
-                    'name' => $this->msl_identifier,
-                    'msl_id' => $this->id,
-                    'msl_organization_name' => $this->laboratoryOrganization->name,
-                    'msl_domain_name' => $this->fast_domain_name
-                ]
-            ]);
+        if ($this->hasSpatialData()) {
+            return json_encode(
+                new Feature(
+                    new Point((float) $this->longitude, (float) $this->latitude),
+                    [
+                        'title' => $this->name,
+                        'name' => $this->msl_identifier,
+                        'msl_id' => $this->id,
+                        'msl_organization_name' => $this->laboratoryOrganization->name,
+                        'msl_domain_name' => $this->fast_domain_name,
+                    ]
+                )
+            );
         }
 
         return '';
@@ -175,12 +172,12 @@ class Laboratory extends Model
 
     /**
      * check if laboratory has spatial data
-     * 
+     *
      * @return bool
      */
     public function hasSpatialData()
     {
-        if((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
+        if ((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
             return true;
         }
 

@@ -1,17 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LabController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ToolsController;
+use App\Http\Controllers\LabController;
 use App\Http\Controllers\SeederController;
 use App\Http\Controllers\SurveyController;
-use App\Http\Controllers\FrontendController;
-
+use App\Http\Controllers\ToolsController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
- 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,8 +22,7 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 |
 */
 
-
-//Auth::routes(['register' => false]);
+// Auth::routes(['register' => false]);
 
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false]);
@@ -39,8 +37,6 @@ Route::prefix('admin')->group(function () {
     Route::get('/importers', [HomeController::class, 'importers'])->name('importers');
     Route::get('/importer/{id}/imports', [HomeController::class, 'importerImports'])->name('importer-imports');
     Route::get('/importer/{importer_id}/imports/{import_id}/flow', [HomeController::class, 'importerImportsFlow'])->name('importer-imports-flow');
-    Route::get('/importer/{importer_id}/imports/{import_id}/log', [HomeController::class, 'importerImportsLog'])->name('importer-imports-log');
-    Route::get('/importer/{importer_id}/imports/{import_id}/log-export', [HomeController::class, 'exportImportLog'])->name('importer-imports-log-export');
     Route::get('/importer/{importer_id}/imports/{import_id}/detail/{source_dataset_identifier_id}', [HomeController::class, 'importerImportsDetail'])->name('importer-imports-detail');
 
     Route::get('/seeders', [SeederController::class, 'index'])->name('seeders');
@@ -50,7 +46,7 @@ Route::prefix('admin')->group(function () {
 
     Route::get('tools/convert-keywords', [ToolsController::class, 'convertKeywords'])->name('convert-keywords');
     Route::post('tools/convert-keywords', [ToolsController::class, 'processFile'])->name('process-file');
-    
+
     Route::get('tools/convert-excel', [ToolsController::class, 'convertExcel'])->name('convert-excel');
     Route::post('tools/convert-excel', [ToolsController::class, 'processExcelToJson'])->name('process-excel-file');
     Route::get('tools/doi-export', [ToolsController::class, 'doiExport'])->name('doi-export');
@@ -92,7 +88,6 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/download-survey', [HomeController::class, 'downloadSurvey'])->name('download-survey');
     Route::post('/download-survey', [HomeController::class, 'downloadSurveyProcess'])->name('download-survey-process');
-
 
     Route::get('/test', [HomeController::class, 'test'])->name('test');
 });

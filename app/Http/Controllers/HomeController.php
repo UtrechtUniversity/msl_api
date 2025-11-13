@@ -10,6 +10,7 @@ use App\Exports\SurveyExport;
 use App\Jobs\ProcessDatasetDelete;
 use App\Jobs\ProcessImport;
 use App\Mappers\BgsMapper;
+use App\Mappers\MappingService;
 use App\Models\DatasetCreate;
 use App\Models\DatasetDelete;
 use App\Models\Import;
@@ -150,18 +151,6 @@ class HomeController extends Controller
         return view('admin.importer-import-flow', ['sourceDatasetIdentifiers' => $sourceDatasetidentifiers, 'importer_id' => $id, 'import_id' => $importId]);
     }
 
-    public function importerImportsLog($id, $importId)
-    {
-        $logs = MappingLog::where('import_id', $importId)->paginate(50);
-
-        return view('admin.importer-import-log', ['logs' => $logs, 'importer_id' => $id, 'import_id' => $importId]);
-    }
-
-    public function exportImportLog($id, $importId)
-    {
-        return Excel::download(new MappingLogsExport($importId), 'log.xlsx');
-    }
-
     public function importerImportsDetail($importerid, $importId, $sourceDatasetIdentifierId)
     {
         $sourceDatasetIdentifier = SourceDatasetIdentifier::where('id', $sourceDatasetIdentifierId)->first();
@@ -252,6 +241,39 @@ class HomeController extends Controller
 
         $mapper = new BgsMapper;
         dd($mapper->map($sourceDataset));
+
+        /*
+        $endPoint = Endpoint::build('https://doidb.wdc-terra.org/oaip/oai');
+        $results = $endPoint->listIdentifiers('datacite', null, null, '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg');
+
+        //dd($results->getTotalRecordCount());
+        foreach($results as $result) {
+            dd($result);
+        }
+
+        $ckanClient = new Client();
+
+        $datasetCreate = DatasetCreate::where('id', 2000)->first();
+        $packageCreateRequest = new PackageUpdateRequest();
+        $packageCreateRequest->payload = $datasetCreate->dataset;
+
+        //dd($packageCreateRequest->payload);
+
+        $response = $ckanClient->get($packageCreateRequest);
+
+        dd($response->responseCode, $response->responseBody);
+
+        //dd('test');
+        */
+
+        $sourceDataset = SourceDataset::where('id', 2374)->first();
+
+        dd($sourceDataset);
+
+        $mappingService = new MappingService;
+        $importer = Importer::where('name', 'GFZ Datacite importer')->first();
+
+        dd($mappingService->map($sourceDataset, $importer));
 
         dd($sourceDataset);
 

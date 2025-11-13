@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportCsicSeeder extends Seeder
 {
@@ -17,17 +17,17 @@ class ImportCsicSeeder extends Seeder
     {
         $csic = DataRepository::updateOrCreate(
             [
-                'name' => 'CSIC'
+                'name' => 'CSIC',
             ],
             [
                 'name' => 'CSIC',
-                'ckan_name' => 'csic'
+                'ckan_name' => 'csic',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'CSIC importer'
+                'name' => 'CSIC importer',
             ],
             [
                 'name' => 'CSIC importer',
@@ -38,19 +38,19 @@ class ImportCsicSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/csic/converted.json',
-                            'identifierKey' => 'doi'
-                        ]                      
+                            'identifierKey' => 'doi',
+                        ],
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'type' => 'dataciteJsonRetrieval',
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'CsicMapper',
-                        'options' => []
-                    ]
+                        'type' => 'datacite',
+                        'options' => [],
+                    ],
                 ],
-                'data_repository_id' => $csic->id
+                'data_repository_id' => $csic->id,
             ]
         );
     }

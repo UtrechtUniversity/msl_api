@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use App\Mappers\Additional\GfzFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportGFZSeeder extends Seeder
 {
@@ -17,17 +18,17 @@ class ImportGFZSeeder extends Seeder
     {
         $gfz = DataRepository::updateOrCreate(
             [
-                'name' => 'GFZ Potsdam'
+                'name' => 'GFZ Potsdam',
             ],
             [
                 'name' => 'GFZ Potsdam',
-                'ckan_name' => 'gfz-potsdam'
+                'ckan_name' => 'gfz-potsdam',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'GFZ importer'
+                'name' => 'GFZ importer',
             ],
             [
                 'name' => 'GFZ importer',
@@ -38,23 +39,27 @@ class ImportGFZSeeder extends Seeder
                         'type' => 'oaiListing',
                         'options' => [
                             'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'iso19139',
-                            'setDefinition' => '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg'
-                        ]
+                            'metadataPrefix' => 'datacite',
+                            'setDefinition' => '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg',
+                        ],
                     ],
                     'identifierProcessor' => [
-                        'type' => 'oaiRetrieval',
+                        'type' => 'oaiToDataciteRetrieval',
                         'options' => [
                             'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'iso19139',
-                        ]
+                            'metadataPrefix' => 'datacite',
+                        ],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'gfzMapper',
-                        'options' => []
-                    ]      
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                GfzFileMapper::class,
+                            ],
+                        ],
+                    ],
                 ],
-                'data_repository_id' => $gfz->id
+                'data_repository_id' => $gfz->id,
             ]
         );
     }

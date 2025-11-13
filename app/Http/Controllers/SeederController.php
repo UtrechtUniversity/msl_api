@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Jobs\ProcessSeed;
 use App\Models\Seed;
 use App\Models\Seeder;
-use App\Jobs\ProcessSeed;
+use Illuminate\Http\Request;
 
 class SeederController extends Controller
 {
@@ -27,47 +27,48 @@ class SeederController extends Controller
     public function index()
     {
         $seeders = Seeder::all();
-                
+
         return view('admin.seeders', ['seeders' => $seeders]);
     }
-    
+
     public function seederSeeds($id)
     {
         $seeder = Seeder::where('id', $id)->first();
-        
-        if($seeder) {
-            $seeds = $seeder->seeds;        
+
+        if ($seeder) {
+            $seeds = $seeder->seeds;
+
             return view('admin.seeder-seeds', ['seeder' => $seeder, 'seeds' => $seeds]);
         }
         abort(404, 'Invalid data requested');
     }
-    
+
     public function createseed(Request $request)
     {
-        if($request->has('seeder-id')) {
+        if ($request->has('seeder-id')) {
             $seederId = $request->input('seeder-id');
-            
+
             $seed = Seed::create([
-                'seeder_id' => $seederId
+                'seeder_id' => $seederId,
             ]);
-            
-            ProcessSeed::dispatch($seed);           
-            
+
+            ProcessSeed::dispatch($seed);
+
             $request->session()->flash('status', 'Seeder started');
         }
-        
+
         return redirect()->route('seeders');
     }
-    
-    public function seeds($id) 
+
+    public function seeds($id)
     {
         $seed = Seed::where('id', $id)->first();
-        if($seed) {
+        if ($seed) {
             $creates = $seed->creates;
+
             return view('admin.seeds', ['seed' => $seed, 'creates' => $creates]);
         }
-        
+
         abort(404, 'Invalid data requested');
     }
-    
 }

@@ -4,8 +4,6 @@ namespace App\Exports\Vocabs;
 
 use App\Models\Vocabulary;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
-use App\Exports\Vocabs\ExcelSheetInternal;
-use App\Exports\Vocabs\ExcelSheetColumnDescriptions;
 
 class ExcelExportInternal implements WithMultipleSheets
 {

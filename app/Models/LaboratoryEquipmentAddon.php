@@ -11,7 +11,7 @@ class LaboratoryEquipmentAddon extends Model
         'laboratory_equipment_id',
         'keyword_id',
         'type',
-        'group'
+        'group',
     ];
 
     public function laboratory_equipment()

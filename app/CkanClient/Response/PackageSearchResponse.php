@@ -1,18 +1,18 @@
 <?php
+
 namespace App\CkanClient\Response;
+
+use App\Models\Ckan\DataPublication;
 
 class PackageSearchResponse extends BaseResponse
 {
-    
-
-    public function __construct($body, $responseCode) {
+    public function __construct($body, $responseCode)
+    {
         parent::__construct($body, $responseCode);
     }
 
     /**
      * returns total result count returned by ckan search request
-     * 
-     * @return int
      */
     public function getTotalResultsCount(): int
     {
@@ -21,18 +21,33 @@ class PackageSearchResponse extends BaseResponse
 
     /**
      * returns inner results array
-     * 
-     * @return array
      */
-    public function getResults(): array
+    public function getResults(bool $castToObjects = false): array|object
     {
-        return $this->responseBody['result']['results'];
+        $resultsFromResponse = $this->responseBody['result']['results'];
+
+        if (! $castToObjects) {
+            return $resultsFromResponse;
+        }
+
+        $resultsToReturn = [];
+
+        foreach ($resultsFromResponse as $result) {
+            switch ($result['type']) {
+                case 'data-publication':
+                    $resultsToReturn[] = DataPublication::fromCkanArray($result);
+                    break;
+                default:
+                    $resultsToReturn[] = (object) $result;
+                    break;
+            }
+        }
+
+        return (object) $resultsToReturn;
     }
 
     /**
      * returns array containing facet information
-     * 
-     * @return array
      */
     public function getFacets(): array
     {

@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use App\Mappers\Additional\GfzFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
+use Illuminate\Database\Seeder;
 
 class ImportGFZDataciteSeeder extends Seeder
 {
@@ -17,17 +18,17 @@ class ImportGFZDataciteSeeder extends Seeder
     {
         $gfz = DataRepository::updateOrCreate(
             [
-                'name' => 'GFZ Potsdam'
+                'name' => 'GFZ Potsdam',
             ],
             [
                 'name' => 'GFZ Potsdam',
-                'ckan_name' => 'gfz-potsdam'
+                'ckan_name' => 'gfz-potsdam',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => 'GFZ Datacite importer'
+                'name' => 'GFZ Datacite importer',
             ],
             [
                 'name' => 'GFZ Datacite importer',
@@ -38,19 +39,23 @@ class ImportGFZDataciteSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/gfz/converted.json',
-                            'identifierKey' => 'doi'
-                        ]
+                            'identifierKey' => 'doi',
+                        ],
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'type' => 'dataciteJsonRetrieval',
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'GFZDataciteMapper',
-                        'options' => []
-                    ]
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                GfzFileMapper::class,
+                            ],
+                        ],
+                    ],
                 ],
-                'data_repository_id' => $gfz->id
+                'data_repository_id' => $gfz->id,
             ]
         );
     }

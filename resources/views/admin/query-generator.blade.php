@@ -15,7 +15,11 @@
             <div class="card">
                 <div class="card-header">Query generator</div>
                 <div class="card-body">
-                	{{ $query }}	
+                    <h4>Query group 1 ({{ $group1Count }} terms)</h4>
+                    <pre>{{ $queryGroup1 }}</pre>
+
+                    <h4>Query group 2 ({{ $group2Count }} terms)</h4>
+                    <pre>{{ $queryGroup2 }}</pre>
                 </div>
             </div>
         </div>

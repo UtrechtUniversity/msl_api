@@ -15,7 +15,7 @@ class UpdateSearchKeywordsTableAddVocabVersion extends Migration
     {
         Schema::table('keywords_search', function (Blueprint $table) {
             $table->string('version', 10)->default('1.0');
-        });        
+        });
     }
 
     /**

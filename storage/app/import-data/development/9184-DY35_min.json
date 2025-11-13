@@ -1,0 +1,121 @@
+{
+    "data": {
+        "id": "10.82433/9184-dy35",
+        "type": "dois",
+        "attributes": {
+            "doi": "10.82433/9184-dy35",
+            "creators": [
+                {
+                    "name": "National Gallery",
+                    "nameType": "Organizational",
+                    "affiliation": [],
+                    "nameIdentifiers": [
+                        {
+                            "schemeUri": "https://ror.org",
+                            "nameIdentifier": "https://ror.org/043kfff89",
+                            "nameIdentifierScheme": "ROR"
+                        }
+                    ]
+                }
+            ],
+            "titles": [
+                {
+                    "lang": "en",
+                    "title": "Minimum example dataset in the Development organization."
+                }
+            ],
+            "publicationYear": 2022,
+
+            "publisher": {
+                "lang": "en",
+                "name": "National Gallery",
+                "schemeUri": "https://ror.org/",
+                "publisherIdentifier": "https://ror.org/043kfff89",
+                "publisherIdentifierScheme": "ROR"
+            },
+            "types": {
+                "resourceType": "Example ResourceType",
+                "resourceTypeGeneral": "Dataset"
+            },
+            "descriptions": [
+                {
+                    "lang": "en",
+                    "description": "The National Gallery houses one of the greatest ‒ and most visited ‒ collections of Western European painting, often welcoming more than 6 million visitors a year. The Scientific Department researches the history of materials and techniques and their degradation mechanisms (fading, darkening, etc.), through analysis using a range of micro-analytical and imaging methods. It also works in the fields of preventive conservation and environmental management of galleries (monitoring, lighting, vibration), as well as the development of a wide range of new instruments and methods (both analytical and imaging) for technical examination of artworks, most often in collaboration with universities. The examination of the environmental conditions within The National Gallery began soon after it was established in 1824. Early concerns often related to dust and pollution. The first electronic data logger, recording light levels, was introduced in 1975, with the regular logging of temperature and relative humidity followed soon after. Today the Gallery has hundreds of sensors, monitoring the environmental conditions in over hundreds of locations, 24/7. The National Gallery currently archives millions of environmental readings every year, which are used to monitor the Gallery conditions ensuring the on-going care of the collections. These readings are also used to examine long term environmental trends, manage additional events, and within the planning and management of preventive conservation work and research at the National Gallery. The National Gallery Environmental Database is an internal, bespoke system which has been developed, over the last 20 years, to act as an archive for all of these environmental readings. This dataset contains a selected range of the data gathered from a few of the external sensors that have been used to monitor ambient light levels, temperature, relative humidity and air moisture content 24 hours a day, 7 days a week over the last two decades.",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "rightsList": [],
+            "alternateIdentifiers": [],
+            "relatedIdentifiers": [],
+            "fundingReferences": [],
+            "dates": [],
+            "contributors": [],
+            "formats": [],
+            "subjects": [],
+            "geoLocations": [],
+            "sizes": [],
+            "xml": "",
+            "url": "https://research.ng-london.org.uk/scientific/env/External%20Environmental%20Data%202010-2020%20National%20Gallery%20V1.0.json",
+            "contentUrl": null,
+            "metadataVersion": 11,
+            "schemaVersion": "http://datacite.org/schema/kernel-4",
+            "source": "fabricaForm",
+            "isActive": true,
+            "state": "findable",
+            "reason": null,
+            "viewCount": 0,
+            "viewsOverTime": [],
+            "downloadCount": 0,
+            "downloadsOverTime": [],
+            "referenceCount": 0,
+            "citationCount": 0,
+            "citationsOverTime": [],
+            "partCount": 0,
+            "partOfCount": 0,
+            "versionCount": 0,
+            "versionOfCount": 0,
+            "created": "2023-01-05T14:57:34.000Z",
+            "registered": "2023-01-05T15:24:40.000Z",
+            "published": "2022",
+            "updated": "2025-10-17T21:31:10.000Z"
+        },
+        "relationships": {
+            "client": {
+                "data": {
+                    "id": "datacite.mwg",
+                    "type": "clients"
+                }
+            },
+            "provider": {
+                "data": {
+                    "id": "datacite",
+                    "type": "providers"
+                }
+            },
+            "media": {
+                "data": {
+                    "id": "10.82433/9184-dy35",
+                    "type": "media"
+                }
+            },
+            "references": {
+                "data": []
+            },
+            "citations": {
+                "data": []
+            },
+            "parts": {
+                "data": []
+            },
+            "partOf": {
+                "data": []
+            },
+            "versions": {
+                "data": []
+            },
+            "versionOf": {
+                "data": []
+            }
+        }
+    }
+}

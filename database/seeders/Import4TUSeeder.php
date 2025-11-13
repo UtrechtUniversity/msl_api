@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Mappers\Additional\FigshareFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
@@ -17,17 +18,17 @@ class Import4TUSeeder extends Seeder
     {
         $repo = DataRepository::updateOrCreate(
             [
-                'name' => '4TU'
+                'name' => '4TU',
             ],
             [
                 'name' => '4TU',
-                'ckan_name' => '4tu'
+                'ckan_name' => '4tu',
             ]
         );
-        
+
         Importer::updateOrCreate(
             [
-                'name' => '4TU'
+                'name' => '4TU',
             ],
             [
                 'name' => '4TU',
@@ -38,20 +39,24 @@ class Import4TUSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/4tu/converted.json',
-                            'identifierKey' => 'doi'
-                        ]                        
+                            'identifierKey' => 'doi',
+                        ],
                     ],
                     'identifierProcessor' => [
-                        'type' => 'dataciteXmlRetrieval',
-                        'options' => []
+                        'type' => 'dataciteJsonRetrieval',
+                        'options' => [],
                     ],
                     'sourceDatasetProcessor' => [
-                        'type' => 'FourTUMapper',
-                        'options' => []
-                    ]
+                        'type' => 'datacite',
+                        'options' => [
+                            'additionalMappers' => [
+                                FigshareFileMapper::class,
+                            ],
+                        ],
+                    ],
                 ],
-                'data_repository_id' => $repo->id
+                'data_repository_id' => $repo->id,
             ]
-            );
+        );
     }
 }

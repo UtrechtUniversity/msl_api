@@ -3,15 +3,15 @@
 namespace App\View\Components;
 
 use Closure;
-use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
+use Illuminate\View\Component;
 
 class SurveyComponent extends Component
 {
-    
     private $allQuestions;
+
     private $surveyName;
-    
+
     /**
      * Create a new component instance.
      */
@@ -26,9 +26,9 @@ class SurveyComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.survey-component',[
+        return view('components.survey-component', [
             'allQuestions' => $this->allQuestions,
-            'surveyName' => $this->surveyName
+            'surveyName' => $this->surveyName,
         ]);
     }
 }

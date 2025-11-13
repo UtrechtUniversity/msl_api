@@ -8,13 +8,14 @@ use Illuminate\Support\Facades\Validator;
 class LaboratoryContactPerson extends Model
 {
     protected $table = 'laboratory_contact_persons';
-    
+
     protected $fillable = [
         'email',
-        'laboratory_id'        
+        'laboratory_id',
     ];
-    
-    public function laboratory() {
+
+    public function laboratory()
+    {
         return $this->belongsTo(Laboratory::class);
     }
 
@@ -24,8 +25,9 @@ class LaboratoryContactPerson extends Model
      * @return bool
      */
     public function hasValidEmail()
-    {        
-        $validator = Validator::make($this->toArray(), ['email' => ['required', 'email']]);        
-        return !$validator->fails();
+    {
+        $validator = Validator::make($this->toArray(), ['email' => ['required', 'email']]);
+
+        return ! $validator->fails();
     }
 }

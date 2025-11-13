@@ -47,6 +47,12 @@ return [
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 
+        'mapping' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/mapping.log'),
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
+
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
@@ -103,8 +109,8 @@ return [
 
         'mail' => [
             'driver' => 'single',
-            'path' => storage_path('logs/mail.log')
-        ]
+            'path' => storage_path('logs/mail.log'),
+        ],
     ],
 
 ];
