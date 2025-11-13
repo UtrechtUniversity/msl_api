@@ -764,6 +764,34 @@
         dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
 .
 
+# laboratories/equipment service for facilities section ; EPOS-DCAT-AP:DISTRIBUTION definition
+
+<https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001" ;
+        dct:title "Multi-Scale Laboratories" ;
+		dct:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/WebService/014> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://www.epos-eu.org/multi-scale-laboratories/WebService/013/Operation/014> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
 
 # ************
 #
