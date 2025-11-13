@@ -1227,3 +1227,48 @@
 				];
 		] ;
 . 
+
+# laboratories/equipment service for facilities section ; EPOS-DCAT-AP:WEBSERVICE definition
+
+<https://www.epos-eu.org/multi-scale-laboratories/WebService/014> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/014";
+	schema:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics";
+	schema:name "Multi-Scale Laboratories";
+	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/facilities?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2025-11-13T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2025-11-13T00:00:00Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
+	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
+. 
+
+	<https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/webservice/api/all{?facilityQuery, equipmentQuery, rows}"^^xsd:string;				
+                hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "facilityQuery"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search laboratories";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "equipmentQuery"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search equipment";
+					schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];				
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "rows"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Search results (number)";
+					schema:defaultValue "250";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;
+. 
