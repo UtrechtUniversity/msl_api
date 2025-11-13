@@ -235,8 +235,9 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
-		
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent>,  <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98>, <http://isni.org/isni/0000000120976324/parent>  ;
+
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
        		oa:hasBody "https://github.com/UtrechtUniversity/msl_api/blob/master/data-quality.md"^^xsd:anyURI  ;
@@ -278,8 +279,9 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
-		
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent>, <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98> ,<http://isni.org/isni/0000000120976324/parent>;
+
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
        		oa:hasBody "https://github.com/UtrechtUniversity/msl_api/blob/master/data-quality.md"^^xsd:anyURI  ;
@@ -320,7 +322,8 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent> , <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98> ,<http://isni.org/isni/0000000120976324/parent>;
 		
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
@@ -362,7 +365,8 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent> ,<http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98>  ,<http://isni.org/isni/0000000120976324/parent>;
 		
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
@@ -404,7 +408,8 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent> , <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98> ,<http://isni.org/isni/0000000120976324/parent>;
 		
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
@@ -446,7 +451,8 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent> , <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98> ,<http://isni.org/isni/0000000120976324/parent>;
 		
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
@@ -488,7 +494,8 @@
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
 
         # This property refers to an Organisation responsible for making the Dataset available.
-		dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		#dct:publisher <PIC:99985805>, <PIC:999994341> ;
+		dct:publisher <PIC:99985805/parent>, <PIC:999994341/parent> , <http://viaf.org/viaf/136554353/parent>, <https://data.4tu.nl/>, <ROR:https://ror.org/00f89wy98> ,<http://isni.org/isni/0000000120976324/parent>;
 		
 		# This property refers to the quality assurance document URL
         dqv:hasQualityAnnotation [ a oa:Annotation ;
