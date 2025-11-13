@@ -3,6 +3,7 @@
 namespace App\CkanClient\Response;
 
 use App\Models\Ckan\DataPublication;
+use App\Models\Laboratory;
 
 class PackageSearchResponse extends BaseResponse
 {
@@ -36,6 +37,11 @@ class PackageSearchResponse extends BaseResponse
             switch ($result['type']) {
                 case 'data-publication':
                     $resultsToReturn[] = DataPublication::fromCkanArray($result);
+                    break;
+                case 'lab':
+                    if($result['msl_fast_id']) {
+                        $resultsToReturn[] = Laboratory::where('fast_id', $result['msl_fast_id'])->first();
+                    }
                     break;
                 default:
                     $resultsToReturn[] = (object) $result;
