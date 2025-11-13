@@ -12,6 +12,7 @@ use App\Http\Resources\V2\Elements\FundingReferenceResource;
 use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
 use App\Http\Resources\V2\Elements\RightResource;
 use App\Http\Resources\V2\Elements\SubjectResource;
+use App\Http\Resources\V2\Helpers\Descriptions;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 enum VocabularyType: string
@@ -157,6 +158,18 @@ class DataPublicationResource extends JsonResource
         return $researchAspects;
     }
 
+    private function getDescriptions()
+    {
+        return new Descriptions(
+            abstract: $this->msl_description_abstract,
+            methods: $this->msl_description_methods,
+            seriesInformation: $this->msl_description_series_information,
+            tableOfContents: $this->msl_description_table_of_contents,
+            technicalInfo: $this->msl_description_technical_info,
+            other: $this->msl_description_other
+        );
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -173,7 +186,7 @@ class DataPublicationResource extends JsonResource
             'portalLink' => config('app.url').'/data-publication/'.$this->name,
             'name' => $this->name,
             'creators' => CreatorResource::collection($this->msl_creators),
-            'descriptions' => new DescriptionResource($this->resource),
+            'descriptions' => new DescriptionResource($this->getDescriptions()),
             'contributors' => ContributorResource::collection($this->msl_contributors),
             'materials' => $this->getMaterials(),
             'researchAspects' => $this->getResearchAspects(),

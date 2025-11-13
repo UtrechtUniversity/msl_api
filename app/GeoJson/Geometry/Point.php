@@ -17,12 +17,18 @@ class Point extends Geometry
     public float $y;
 
     /**
+     * z coordinate, altitude for geographic coordinate
+     */
+    public ?float $z;
+
+    /**
      * Constructs new Point object
      *
      * @param  int|float  $x
      * @param  int|float  $y
+     * @param  int|float  $z
      */
-    public function __construct($x, $y)
+    public function __construct($x, $y, $z = null)
     {
         if (! is_int($x) && ! is_float($x)) {
             throw new Exception('x coordinate must be integer or float');
@@ -32,8 +38,13 @@ class Point extends Geometry
             throw new Exception('y coordinate must be integer or float');
         }
 
+        if ($z !== null && (! is_int($z) && ! is_float($z))) {
+            throw new Exception('y coordinate must be integer or float');
+        }
+
         $this->x = $x;
         $this->y = $y;
+        $this->z = $z;
     }
 
     /**
@@ -49,9 +60,15 @@ class Point extends Geometry
 
     public function jsonSerialize(): array
     {
+
+        $coordinates = [$this->x, $this->y];
+        if ($this->z !== null) {
+            $coordinates[] = $this->z;
+        }
+
         return [
             'type' => 'Point',
-            'coordinates' => [$this->x, $this->y],
+            'coordinates' => $coordinates,
         ];
     }
 }

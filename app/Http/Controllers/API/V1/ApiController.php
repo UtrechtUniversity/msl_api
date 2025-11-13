@@ -262,9 +262,7 @@ class ApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => 'term not found',
-                'result' => [
-
-                ],
+                'result' => [],
             ], 200);
         }
     }
@@ -346,7 +344,6 @@ class ApiController extends BaseController
                     $evaluatedQuery[2],
                     $evaluatedQuery[3]
                 );
-
             } else {
                 $errorResponse = new ErrorResponse;
                 $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4';
@@ -417,7 +414,6 @@ class ApiController extends BaseController
         } else {
             return [];
         }
-
     }
 
     /**
