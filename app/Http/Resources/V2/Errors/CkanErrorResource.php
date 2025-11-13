@@ -8,7 +8,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class CkanErrorResource extends JsonResource
 {
-
     public static $wrap = null;
 
     /**
@@ -20,9 +19,10 @@ class CkanErrorResource extends JsonResource
     {
         return [
             'success' => false,
-            'messages' => ['Error received from CKAN api.']
+            'messages' => ['Error received from CKAN api.'],
         ];
     }
+
     public function withResponse(Request $request, JsonResponse $response)
     {
         $response         // convert resource to HTTP response

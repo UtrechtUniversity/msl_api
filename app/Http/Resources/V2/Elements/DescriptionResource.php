@@ -21,11 +21,11 @@ class DescriptionResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-
     private function addDescriptions(string $description, string $descriptionType)
     {
         return ['description' => $description, 'descriptionType' => $descriptionType];
     }
+
     public function toArray(Request $request): array
     {
 

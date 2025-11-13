@@ -8,8 +8,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ValidationErrorResource extends JsonResource
 {
-
     public static $wrap = null;
+
     /**
      * Transform the resource into an array.
      *
@@ -19,6 +19,7 @@ class ValidationErrorResource extends JsonResource
     {
         return ['success' => false, 'messages' => collect($this->errors())->flatten()];
     }
+
     public function withResponse(Request $request, JsonResponse $response)
     {
         $response

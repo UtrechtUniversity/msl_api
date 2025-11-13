@@ -8,8 +8,6 @@ use App\CkanClient\Request\PackageSearchRequest;
 use App\Exports\SurveyExport;
 use App\Jobs\ProcessDatasetDelete;
 use App\Jobs\ProcessImport;
-use App\Mappers\BgsMapper;
-use App\Mappers\MappingService;
 use App\Models\DatasetCreate;
 use App\Models\DatasetDelete;
 use App\Models\Import;
@@ -230,7 +228,6 @@ class HomeController extends Controller
 
         abort(404, 'DatasetCreate not found');
     }
-
 
     // admin page control
     public function statusSurvey()

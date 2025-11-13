@@ -18,7 +18,7 @@ class AffiliationResource extends JsonResource
             'name' => $this->msl_creator_affiliation_name,
             'affiliationIdentifier' => $this->msl_creator_affiliation_identifier,
             'affiliationIdentifierScheme' => $this->msl_creator_affiliation_identifier_scheme,
-            'schemeUri' => $this->msl_creator_affiliation_scheme_uri
+            'schemeUri' => $this->msl_creator_affiliation_scheme_uri,
         ];
     }
 }

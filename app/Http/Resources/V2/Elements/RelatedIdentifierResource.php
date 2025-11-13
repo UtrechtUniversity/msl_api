@@ -21,7 +21,7 @@ class RelatedIdentifierResource extends JsonResource
             'relatedMetadataScheme' => $this->msl_related_identifier_metadata_scheme,
             'schemeUri' => $this->msl_related_identifier_metadata_scheme_uri,
             'schemeType' => $this->msl_related_identifier_metadata_scheme_type,
-            'resourceTypeGeneral' => $this->msl_related_identifier_resource_type_general
+            'resourceTypeGeneral' => $this->msl_related_identifier_resource_type_general,
         ];
     }
 }

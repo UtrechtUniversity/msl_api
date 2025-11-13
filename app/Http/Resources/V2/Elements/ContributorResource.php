@@ -22,7 +22,7 @@ class ContributorResource extends JsonResource
             'givenName' => $this->msl_contributor_given_name,
             'familyName' => $this->msl_contributor_family_name,
             'nameIdentifiers' => IdentifierResource::collection($this->nameIdentifiers),
-            'affiliation' => AffiliationResource::collection($this->affiliations)
+            'affiliation' => AffiliationResource::collection($this->affiliations),
         ];
     }
 }

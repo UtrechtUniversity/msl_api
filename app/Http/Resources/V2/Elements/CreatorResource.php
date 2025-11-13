@@ -21,7 +21,7 @@ class CreatorResource extends JsonResource
             'givenName' => $this->msl_creator_given_name,
             'familyName' => $this->msl_creator_family_name,
             'nameIdentifiers' => IdentifierResource::collection($this->nameIdentifiers),
-            'affiliation' => AffiliationResource::collection($this->affiliations)
+            'affiliation' => AffiliationResource::collection($this->affiliations),
         ];
     }
 }

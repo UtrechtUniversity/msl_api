@@ -6,7 +6,6 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class RightResource extends JsonResource
 {
-
     /**
      * Transform the resource into an array.
      *
@@ -20,7 +19,7 @@ class RightResource extends JsonResource
             'rightsUri' => $this->msl_right_uri,
             'rightsIdentifier' => $this->msl_right_identifier,
             'rightsIdentifierScheme' => $this->msl_right_identifier_scheme,
-            'rightsSchemeUri' => $this->msl_right_scheme_uri
+            'rightsSchemeUri' => $this->msl_right_scheme_uri,
 
         ];
     }

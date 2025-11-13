@@ -17,7 +17,7 @@ class AlternateIdentifierResource extends JsonResource
 
         return [
             'alternate_identifier' => $this->msl_alternate_identifier,
-            'alternate_identifier_type' => $this->msl_alternate_identifier_type
+            'alternate_identifier_type' => $this->msl_alternate_identifier_type,
         ];
     }
 }

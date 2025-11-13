@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Listeners\LogMailSend;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;

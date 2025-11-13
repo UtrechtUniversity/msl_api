@@ -15,9 +15,9 @@ class DateResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'date' =>    $this->msl_date_date,
+            'date' => $this->msl_date_date,
             'dateType' => $this->msl_date_type,
-            'dateInformation' => $this->msl_date_information
+            'dateInformation' => $this->msl_date_information,
 
         ];
     }

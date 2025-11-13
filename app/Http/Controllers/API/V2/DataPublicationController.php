@@ -10,15 +10,14 @@ use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Validator;
 
 enum SubDomainType: string
 {
     case ROCK_PHYSICS = 'rock and melt physics';
-    case ANALOGUE =  'analogue modelling of geologic processes';
+    case ANALOGUE = 'analogue modelling of geologic processes';
     case MICROSCOPY = 'microscopy and tomography';
     case PALEO = 'paleomagnetism';
-    case GEO_CHEMISTRY =  'geochemistry';
+    case GEO_CHEMISTRY = 'geochemistry';
     case GEO_ENERGY = 'geo-energy test beds';
 }
 class DataPublicationController extends BaseController
@@ -142,7 +141,7 @@ class DataPublicationController extends BaseController
                 'title' => ['nullable', 'string'],
                 'tags' => ['nullable', 'string'],
                 'hasDownloads' => ['nullable', 'boolean'],
-                'boundingBox' => ['nullable', new GeoRule()],
+                'boundingBox' => ['nullable', new GeoRule],
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return new ValidationErrorResource($e);
@@ -189,21 +188,21 @@ class DataPublicationController extends BaseController
                 break;
         }
         // Set limit
-        $limit = (int)  (($request->get('limit')) ? $request->get('limit') : $packageSearchRequest->rows);
+        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $packageSearchRequest->rows);
         $packageSearchRequest->rows = $limit; // this is the internal to CKAN default value.
 
         // Set offset
-        $offset = (int)  (($request->get('offset')) ? $request->get('offset') : $packageSearchRequest->start);
+        $offset = (int) (($request->get('offset')) ? $request->get('offset') : $packageSearchRequest->start);
         $packageSearchRequest->start = $offset;
 
         // Process search parameters
         $packageSearchRequest->query = ($context == 'all') ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
 
-        $paramBoundingBox =  json_decode($request->get('boundingBox') ?? null);
+        $paramBoundingBox = json_decode($request->get('boundingBox') ?? null);
         if ($paramBoundingBox) {
             $packageSearchRequest->setBoundingBox(
-                (float)  $paramBoundingBox[0],
-                (float)  $paramBoundingBox[1],
+                (float) $paramBoundingBox[0],
+                (float) $paramBoundingBox[1],
                 (float) $paramBoundingBox[2],
                 (float) $paramBoundingBox[3]
             );
@@ -220,11 +219,9 @@ class DataPublicationController extends BaseController
             return new CkanErrorResource([]);
         }
 
-        $dataPublications =  $response->getResults(true);
+        $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
-
-
 
         $responseToReturn = new DataPublicationCollection($dataPublications, $context);
         $responseToReturn->additional([
@@ -232,14 +229,15 @@ class DataPublicationController extends BaseController
             'messages' => [],
             'meta' => [
                 'resultCount' => $currentResultCount,
-                'totalCount' =>  $totalResultCount,
+                'totalCount' => $totalResultCount,
                 'limit' => $limit,
-                'offset' => $offset
+                'offset' => $offset,
             ],
             'links' => [
-                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit])
-            ]
+                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+            ],
         ]);
+
         return $responseToReturn;
     }
 
@@ -256,9 +254,9 @@ class DataPublicationController extends BaseController
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
                 } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
+                    $queryParts[] = $value.':'.$request->get($key);
                 }
             }
         }

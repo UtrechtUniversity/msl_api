@@ -13,6 +13,7 @@ class DataPublicationCollection extends ResourceCollection
         parent::__construct($resource);
         $this->context = $context;
     }
+
     /**
      * Transform the resource into an array.
      *
@@ -22,6 +23,6 @@ class DataPublicationCollection extends ResourceCollection
     public function toArray($request)
     {
 
-        return  $this->collection->map(fn($player) => (new DataPublicationResource($player, $this->context)));
+        return $this->collection->map(fn ($player) => (new DataPublicationResource($player, $this->context)));
     }
 }

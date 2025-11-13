@@ -10,9 +10,9 @@ use App\Http\Resources\V2\Elements\DescriptionResource;
 use App\Http\Resources\V2\Elements\FileResource;
 use App\Http\Resources\V2\Elements\FundingReferenceResource;
 use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
-use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\V2\Elements\RightResource;
 use App\Http\Resources\V2\Elements\SubjectResource;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 enum VocabularyType: string
 {
@@ -25,7 +25,6 @@ enum VocabularyType: string
 }
 class DataPublicationResource extends JsonResource
 {
-
     private $context;
 
     private $uriStartsPerSubject = [];
@@ -37,29 +36,29 @@ class DataPublicationResource extends JsonResource
 
         $this->uriStartsPerSubject = [
             VocabularyType::ROCK_PHYSICS->value => [
-                'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
-                'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/inferred_deformation_behavior-',
+                'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
+                'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/inferred_deformation_behavior-',
             ],
             VocabularyType::ANALOGUE->value => [
-                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_structure-',
-                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_geomorphological_feature-',
-                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/modeled_structure-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/modeled_geomorphological_feature-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
             ],
             VocabularyType::GEOLOGICAL_SETTING->value => [
-                'https://epos-msl.uu.nl/voc/geologicalsetting/' . config('vocabularies.vocabularies_current_version') . '/'
+                'https://epos-msl.uu.nl/voc/geologicalsetting/'.config('vocabularies.vocabularies_current_version').'/',
             ],
             VocabularyType::PALEO->value => [
-                'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
-                'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/inferred_behavior-',
+                'https://epos-msl.uu.nl/voc/paleomagnetism/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
+                'https://epos-msl.uu.nl/voc/paleomagnetism/'.config('vocabularies.vocabularies_current_version').'/inferred_behavior-',
             ],
             VocabularyType::GEO_CHEMISTRY->value => [
-                'https://epos-msl.uu.nl/voc/geochemistry/' . config('vocabularies.vocabularies_current_version') . '/',
+                'https://epos-msl.uu.nl/voc/geochemistry/'.config('vocabularies.vocabularies_current_version').'/',
             ],
             VocabularyType::GEO_ENERGY->value => [
-                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/facility_names-',
-                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/equipment-',
-                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/model-',
-            ]
+                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
+                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/equipment-',
+                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/model-',
+            ],
         ];
     }
 
@@ -71,8 +70,10 @@ class DataPublicationResource extends JsonResource
                 $materials[] = $value->msl_enriched_keyword_label;
             }
         }
+
         return $materials;
     }
+
     private function getResearchAspectsPerSubject(VocabularyType $subject)
     {
         $keywords = [];
@@ -86,7 +87,6 @@ class DataPublicationResource extends JsonResource
 
         return $keywords;
     }
-
 
     private function getResearchAspects()
     {
@@ -153,6 +153,7 @@ class DataPublicationResource extends JsonResource
                 $researchAspects = $keywords;
                 break;
         }
+
         return $researchAspects;
     }
 
@@ -169,7 +170,7 @@ class DataPublicationResource extends JsonResource
             'title' => $this->title,
             'doi' => $this->msl_doi,
             'source' => $this->msl_source,
-            'portalLink' => config('app.url') . '/data-publication/' . $this->name,
+            'portalLink' => config('app.url').'/data-publication/'.$this->name,
             'name' => $this->name,
             'creators' => CreatorResource::collection($this->msl_creators),
             'descriptions' => new DescriptionResource($this->resource),
@@ -185,7 +186,7 @@ class DataPublicationResource extends JsonResource
             'citation' => $this->msl_citation,
             'geojson' => json_decode($this->msl_geojson_featurecollection),
             'surface_area' => $this->msl_surface_area,
-            'rightsList' =>  RightResource::collection($this->msl_rights),
+            'rightsList' => RightResource::collection($this->msl_rights),
             'alternateIdentifier' => AlternateIdentifierResource::collection($this->msl_alternate_identifiers),
             'fundingReferences' => FundingReferenceResource::collection($this->msl_funding_references),
             'dates' => DateResource::collection($this->msl_dates),
@@ -194,7 +195,7 @@ class DataPublicationResource extends JsonResource
             'laboratories' => $this->msl_laboratories,
             'relatedIdentifiers' => RelatedIdentifierResource::collection($this->msl_related_identifiers),
             'subjects' => SubjectResource::collection($this->msl_tags),
-            'subdomains' => array_column($this->msl_subdomains, 'msl_subdomain')
+            'subdomains' => array_column($this->msl_subdomains, 'msl_subdomain'),
         ];
     }
 }

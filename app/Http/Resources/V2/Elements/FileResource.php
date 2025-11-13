@@ -18,7 +18,7 @@ class FileResource extends JsonResource
             'fileName' => $this->msl_file_name,
             'downloadLink' => $this->msl_download_link,
             'extension' => $this->msl_extension,
-            'isFolder' => $this->msl_is_folder
+            'isFolder' => $this->msl_is_folder,
         ];
     }
 }

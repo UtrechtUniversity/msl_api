@@ -343,7 +343,7 @@ class ToolsController extends Controller
             $dois = [];
 
             foreach ($results as $result) {
-                $dois[] = '"' . strtolower($result['msl_doi']) . '"';
+                $dois[] = '"'.strtolower($result['msl_doi']).'"';
             }
         }
 

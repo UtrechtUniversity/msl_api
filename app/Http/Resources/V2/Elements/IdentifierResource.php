@@ -14,10 +14,10 @@ class IdentifierResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return  [
+        return [
             'nameIdentifier' => $this->msl_creator_name_identifier,
             'nameIdentifierScheme' => $this->msl_creator_name_identifiers_scheme,
-            'nameIdentifierUri' => $this->msl_creator_name_identifiers_uri
+            'nameIdentifierUri' => $this->msl_creator_name_identifiers_uri,
         ];
     }
 }
