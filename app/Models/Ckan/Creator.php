@@ -33,6 +33,16 @@ class Creator implements CkanArrayInterface
         return $this->msl_creator_given_name.' '.$this->msl_creator_family_name;
     }
 
+    public function getAffilitationNames(): array
+    {
+        $affiliationNames = [];
+        foreach ($this->affiliations as $affilitation) {
+            $affiliationNames[] = $affilitation->msl_creator_affiliation_name;
+        }
+
+        return $affiliationNames;
+    }
+
     public function addNameIdentifier(NameIdentifier $nameIdentifier): void
     {
         $this->nameIdentifiers[] = $nameIdentifier;
