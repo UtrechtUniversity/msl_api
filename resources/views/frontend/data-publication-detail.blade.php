@@ -17,8 +17,7 @@
             <div class="absolute">
 
                 @session('data_publication_active_search')
-                    @include('components.tabLinks',[
-                        // 'categoryName'  => 'Results',
+                    @include('components.tabLinks', [
                         'includeIcon'   => 'goBack',
                         'routes'        => array(
                                 'Back to search results'   => $value,
@@ -30,35 +29,40 @@
             <div class="tabLinksParent">
  
                 @include('components.tabLinks',[
-                    // 'categoryName'  => 'Sections',
                     'routes'        => array(
-                            'Metadata'  => route("data-publication-detail", ['id' => $data['name']]),
-                            'Files'     => route("data-publication-detail-files", ['id' => $data['name']])
+                            'Metadata'  => route("data-publication-detail", ['id' => $data->name]),
+                            'Files'     => route("data-publication-detail-files", ['id' => $data->name])
                     ),
-                    'routeActive'   => route("data-publication-detail", ['id' => $data['name']])
+                    'routeActive'   => route("data-publication-detail", ['id' => $data->name])
                 ])
             </div>
 
             <div class="listMapDetailDivParent">
                     <div class="detailDiv dividers">
-
                                 <div class="detailEntryDiv">
                                     <h2 class="">Data Publication</h2>
-                                    <h1 class="text-lg">{!! $data['msl_title_annotated'] !!}</h1>
-                                    <p class="italic text-center">                                       
-                                        @foreach ( $data['msl_creators'] as $authorKey => $author )
-                                            {{ $author["msl_creator_family_name"]}} {{ $author["msl_creator_given_name"] }} 
-                                            {{-- a little divider between names --}}
-                                                @if (sizeof($data['msl_creators']) -1 != $authorKey )
-                                                    |
-                                                @endif
-                                        @endforeach 
-                                    </p>
-                                    @if (array_key_exists("msl_publisher", $data))
-                                    <p class="italic text-center">{{ $data['msl_publisher'] }} </p>
+                                    <h1 class="text-lg">{!! $data->msl_title_annotated !!}</h1>
+                                    @if (count($data->msl_creators) > 0)
+                                        <p class="italic text-center">
+                                            @foreach ( $data->msl_creators as $authorKey => $author )
+                                                {{ $author->getFullName() }} 
+                                                    @if (count($data->msl_creators) -1 != $authorKey )
+                                                        |
+                                                    @endif
+                                            @endforeach
+                                        </p>
+                                    @else
+                                        <p class="italic text-center">- no authors found -</p>
                                     @endif
-                                    @if (array_key_exists("msl_publication_year", $data))
-                                    <p class="italic text-center">({{ $data['msl_publication_year'] }})</p>
+                                    @if ($data->msl_publisher != '')
+                                        <p class="italic text-center">{{ $data->msl_publisher }} </p>
+                                    @else
+                                        <p class="italic text-center">- no publisher found -</p>
+                                    @endif
+                                    @if ($data->msl_publication_year != '')
+                                        <p class="italic text-center">({{ $data->msl_publication_year }})</p>
+                                    @else
+                                        <p class="italic text-center">- no publication year found -</p>
                                     @endif
                                 </div>
 
@@ -74,48 +78,48 @@
                                     whitespace-nowrap
                                     ">
 
+                                        @php
+                                            $first = true;
+                                        @endphp
                                         @foreach ([
                                             'msl_description_abstract_annotated' => 'Abstract',
-                                            'msl_description_methods' => 'Methods',
-                                            'msl_description_other' => 'Other',
-                                            'msl_description_series_information' => 'Series Information',
-                                            'msl_description_table_of_contents' => 'Content',
-                                            'msl_description_technical_info' => 'Technical Information',
-                                            ] 
-                                            as $id => $title)
+                                            'msl_description_methods_annotated' => 'Methods',
+                                            'msl_description_other_annotated' => 'Other',
+                                            'msl_description_series_information_annotated' => 'Series Information',
+                                            'msl_description_table_of_contents_annotated' => 'Content',
+                                            'msl_description_technical_info_annotated' => 'Technical Information',
+                                            ] as $property => $title)
 
-                                            @if (array_key_exists( $id , $data) 
-                                            && $data[$id] != ""
-                                            )
-                                            
-                                                <input type="radio" name="my_tabs_2" role="tab" class="tab hover:bg-secondary-100" aria-label="{{ $title }}" @if ($id =='msl_description_abstract_annotated') checked='checked' @endif/>
+                                            @if ($data->{$property} != "")                                            
+                                                <input type="radio" name="my_tabs_2" role="tab" class="tab hover:bg-secondary-100" aria-label="{{ $title }}" @if ($first) checked='checked' @endif/>
                                                 <div role="tabpanel" class="tab-content tabs-div bg-primary-100 whitespace-normal border-primary-300 rounded-box">
-                                                    {!! $data[$id] !!}
+                                                    {!! $data->{$property} !!}
                                                 </div>
+                                                @php 
+                                                    $first = false; 
+                                                @endphp
                                             @endif
-
                                         @endforeach
-
                                     </div>
                                 </div >
                                 
                                 <div class="detailEntryDiv">
                                     <h4 class="text-left">Keywords</h4>
 
-                                    @if (array_key_exists("msl_tags", $data))
+                                    @if (count($data->msl_tags) > 0)
                                         <br>
                                         <details class="collapse collapse-arrow wordCardCollapser" id="original-keywords-panel">
                                             <summary class="collapse-title">Originally assigned keywords 
                                                 <x-ri-information-line id="orginal-keywords-popup" class="info-icon"/>
                                             </summary>
                                             <div class="collapse-content wordCardParent">
-                                                @foreach ( $data['msl_tags'] as $keyword)
+                                                @foreach ( $data->msl_tags as $keyword)
                                                     <div 
                                                         class="wordCard"
                                                         data-highlight="tag"
-                                                        data-uris='{!! json_encode($keyword['msl_tag_msl_uris']) !!}'
+                                                        data-uris='{!! json_encode($keyword->msl_tag_msl_uris) !!}'
                                                     >
-                                                        {{ $keyword['msl_tag_string'] }}
+                                                        {{ $keyword->msl_tag_string }}
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -130,7 +134,7 @@
                                     @endif
 
 
-                                    @if (array_key_exists("msl_original_keywords", $data))
+                                    @if (sizeof($data->msl_original_keywords) > 0)
                                         <br>
                                         <details class="collapse collapse-arrow wordCardCollapser" id="corresponding-keywords-panel">
 
@@ -138,14 +142,14 @@
                                             <x-ri-information-line id="corresponding-keywords-popup" class="info-icon"/>
                                         </summary>
                                         <div class="collapse-content wordCardParent" id="corresponding-keywords-container">
-                                            @foreach ( $data['msl_original_keywords'] as $keyword)
+                                            @foreach ( $data->msl_original_keywords as $keyword)
                                                 <div 
                                                     class="wordCard"
-                                                    data-uri="{{ $keyword['msl_original_keyword_uri'] }}"
+                                                    data-uri="{{ $keyword->msl_original_keyword_uri }}"
                                                     data-highlight="text-keyword"
-                                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword['msl_original_keyword_uri'] }}"
+                                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}"
                                                 >
-                                                    {{ $keyword['msl_original_keyword_label'] }}
+                                                    {{ $keyword->msl_original_keyword_label }}
                                                 </div>
                                             @endforeach
                                         </div>
@@ -230,24 +234,24 @@
                                         </script>
                                     @endif
 
-                                    @if (array_key_exists("msl_enriched_keywords", $data))
+                                    @if (count($data->msl_enriched_keywords) > 0)
                                     <br>
                                     <details class="collapse collapse-arrow wordCardCollapser" open>
                                     <summary class="collapse-title">MSL enriched keywords 
                                         <x-ri-information-line id="enriched-keywords-popup" class="info-icon"/>
                                     </summary>
                                     <div class="collapse-content wordCardParent" id="enriched-keywords-container">
-                                        @foreach ( $data['msl_enriched_keywords'] as $keyword)
+                                        @foreach ( $data->msl_enriched_keywords as $keyword)
                                             <div
                                                 class="wordCard" 
-                                                data-associated-subdomains='["{{ implode(', ', $keyword['msl_enriched_keyword_associated_subdomains']) }}"]'
-                                                data-uri="{{ $keyword['msl_enriched_keyword_uri'] }}"
-                                                data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword['msl_enriched_keyword_uri'] }}"
+                                                data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
+                                                data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
+                                                data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
                                                 data-highlight="text-keyword"
-                                                data-matched-child-uris='{!! json_encode($keyword['msl_enriched_keyword_match_child_uris']) !!}'
-                                                data-sources='{!! json_encode($keyword['msl_enriched_keyword_match_locations']) !!}'
+                                                data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
+                                                data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'
                                             >
-                                                {{ $keyword['msl_enriched_keyword_label'] }}
+                                                {{ $keyword->msl_enriched_keyword_label }}
                                             </div>
                                         @endforeach
                                     </div>
@@ -333,34 +337,32 @@
                                     @endif
                                 </div>
 
-                                @if (array_key_exists("msl_subdomains", $data))
+                                @if (count($data->msl_subdomains_original) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">MSL original sub domains</h4>
                                     <div class="wordCardParent">
                                         {{-- hover behaviour: highlights all related tags above --}}
-                                        @foreach ( $data['msl_subdomains'] as $keyword)
-                                            <div class="wordCard">{{ $keyword['msl_subdomain'] }}</div>
+                                        @foreach ( $data->msl_subdomains_original as $domain)
+                                            <div class="wordCard">{{ $domain['msl_subdomain_original'] }}</div>
                                         @endforeach
                                     </div>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: MSL original sub domains</h4>
                                 @endif
 
-                                @if (array_key_exists("msl_subdomains",$data))
+                                @if (count($data->msl_subdomains_interpreted) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">MSL enriched sub domains <i id="enriched-subdomains-popup">i</i></h4>
                                     <div class="wordCardParent">
                                         {{-- hover behaviour: highlights all related tags above --}}
-                                        @foreach ( $data['msl_subdomains'] as $keyword)
+                                        @foreach ( $data->msl_subdomains_interpreted as $domain)
                                             <div 
                                                 class="wordCard" 
                                                 data-toggle="domain-highlight"
-                                                data-domain="{{ $keyword['msl_subdomain'] }}"                                                                                        
+                                                data-domain="{{ $domain['msl_subdomain_interpreted'] }}"                                                                                        
                                             >
-                                                {{ $keyword['msl_subdomain'] }}
+                                                {{ $domain['msl_subdomain_interpreted'] }}
                                             </div>
                                         @endforeach
                                     </div>
@@ -372,246 +374,210 @@
                                         });
                                     </script>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: MSL enriched sub domains</h4>
                                 @endif
                                 
 
-                                @if (array_key_exists("msl_source",$data))
+                                @if ($data->msl_source != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Source</h4>
-                                    <a class="detailEntrySub2" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                                    <a class="detailEntrySub2" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Source</h4>
                                 @endif
 
-                                @if (array_key_exists("msl_publisher",$data))
+                                @if ($data->msl_publisher != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Source publisher</h4>
-                                    <p class="detailEntrySub2">{{ $data['msl_publisher'] }}</p>
-                                </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Source publisher</h4>
+                                    <p class="detailEntrySub2">{{ $data->msl_publisher }}</p>
+                                </div>                                
                                 @endif
 
-                                @if (array_key_exists("msl_doi",$data))
+                                @if ($data->msl_doi != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">DOI</h4>
-                                    <p class="detailEntrySub2">{{ $data['msl_doi'] }}</p>
+                                    <p class="detailEntrySub2">{{ $data->msl_doi }}</p>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: DOI</h4>
                                 @endif
 
-                                @if (array_key_exists("msl_creators",$data))
+                                @if (count($data->msl_creators) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Creators</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                        @foreach ( $data['msl_creators'] as $creator)
+                                        @foreach ( $data->msl_creators as $creator)
                                             <div>
-                                                <p class="text-sm p-0">{{ $creator["msl_creator_family_name"]}} {{ $creator["msl_creator_given_name"] }} </p>
+                                                <p class="text-sm p-0">{{ $creator->getFullName() }}</p>
 
-                                                @if (array_key_exists("msl_creator_name_identifiers",$creator) && array_key_exists("msl_creator_name_identifiers_schemes",$creator))
+                                                @if (count($creator->affiliations) > 0)
+                                                    <p class="text-sm p-0">
+                                                        {{ implode(' | ', $creator->getAffilitationNames()) }}                                                        
+                                                    </p>
+                                                @endif
 
-                                                    @foreach ( $creator['msl_creator_name_identifiers'] as $key => $value )
+                                                @if (count($creator->nameIdentifiers) > 0)                                            
+                                                    @foreach ( $creator->nameIdentifiers as $nameIdentifier )
                                                         <div class="flex flex-row w-96">
-                                                            <p class="text-sm p-0">{{ $creator['msl_creator_name_identifiers_schemes'][$key] }}:</p>
-                                                            <p class="text-sm p-0">{{ $value }}</p>
+                                                            <p class="text-sm p-0">{{ $nameIdentifier->msl_creator_name_identifiers_scheme }}:</p>
+                                                            <p class="text-sm p-0">{{ $nameIdentifier->msl_creator_name_identifier }}</p>
                                                         </div>
                                                     @endforeach
-
                                                 @endif
 
                                             </div>
                                         @endforeach
                                     </div>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Authors</h4>
                                 @endif
 
-                                @if (array_key_exists("msl_contributors",$data))
+                                @if (count($data->msl_contributors) > 0)
                                 <br>
 
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Contributors</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                        @foreach ( $data['msl_contributors'] as $contributor)
+                                        @foreach ( $data->msl_contributors as $contributor)
                                             <div>
-                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_name'] }}</p>
-                                                <p class="text-sm p-0">{{ $contributor['msl_contributor_type'] }}</p>
-                                                @if (array_key_exists("msl_contributor_affiliations_names",$contributor))
+                                                <p class="text-sm p-0">{{ $contributor->msl_contributor_name }}</p>
+                                                <p class="text-sm p-0">{{ $contributor->msl_contributor_type }}</p>
+
+                                                @if (count($contributor->affiliations) > 0)
                                                     <p class="text-sm p-0">
-                                                        @foreach ($contributor['msl_contributor_affiliations_names'] as $key => $affiliation)
-                                                            {{ $affiliation }} 
-                                                            @if (sizeof($contributor['msl_contributor_affiliations_names']) -1 != $key )
-                                                                |
-                                                            @endif
-                                                        @endforeach
+                                                        {{ implode(' | ', $contributor->getAffilitationNames()) }}                                                        
                                                     </p>
                                                 @endif
 
-                                                @if (array_key_exists("msl_contributor_name_identifiers",$contributor) && array_key_exists("msl_contributor_name_identifiers_schemes",$contributor))
-
-                                                    @foreach ( $contributor['msl_contributor_name_identifiers'] as $key => $value )
-                                                        <div class="flex flex-row justify-between w-1/2">
-                                                            <p class="text-sm p-0">{{ $contributor['msl_contributor_name_identifiers_schemes'][$key] }}:</p>
-                                                            <p class="text-sm p-0">{{ $value }}</p>
+                                                @if (count($contributor->nameIdentifiers) > 0)
+                                                    @foreach ( $contributor->nameIdentifiers as $nameIdentifier )
+                                                        <div class="flex flex-row w-96">
+                                                            <p class="text-sm p-0">{{ $nameIdentifier->msl_creator_name_identifiers_scheme }}:</p>
+                                                            <p class="text-sm p-0">{{ $nameIdentifier->msl_creator_name_identifier }}</p>
                                                         </div>
                                                     @endforeach
-
                                                 @endif
-                                                {{-- <p class="text-sm p-0">{{ $keyword['msl_contributor_orcid'] }}</p> --}}
-                                                {{-- <p class="text-sm p-0">{{ $keyword['msl_contributor_affiliation'] }}</p> --}}
                                             </div>
                                         @endforeach
                                     </div>
                                 </div>
                                 @endif
                                 
-                                @if (array_key_exists( 'msl_related_identifiers', $data ))
+                                @if (count($data->msl_related_identifiers) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">References</h4>
                                     <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                            @foreach ( $data['msl_related_identifiers'] as $keyword)
-                                                <div>
-                                                    <p class="text-sm p-0">{{ $keyword['msl_related_identifier'] }}</p>
-                                                </div>
-                                            @endforeach
-
+                                        @foreach ( $data->msl_related_identifiers as $relatedIdentifier)
+                                            <div>
+                                                <p class="text-sm p-0">{{ $relatedIdentifier->msl_related_identifier }}</p>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                @endif
-
-                                {{-- @if (array_key_exists("msl_contributors",$data))
-                                <br>
-                                    <div class="detailEntryDiv flex flex-row">
-                                        <h4 class="detailEntrySub1">Contact</h4>
-                                        <div class="detailEntrySub2 dividers flex flex-col gap-4">
-                                            @foreach ( $data['msl_contributors'] as $contributor)
-                                                @if ($contributor['msl_contributor_type'] == 'ContactPerson')
-                                                    <div>
-                                                        <p class="text-sm p-0">{{ $contributor['msl_contributor_name'] }}</p>
-
-                                                    </div>
-                                                @endif
-                                            @endforeach
-  
-                                        </div>
-                                    </div>
-                                @endif --}}
+                                @endif                                
                                 
-                                @if (array_key_exists("msl_citation",$data))
+                                @if ($data->msl_citation != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Citation</h4>
-                                    <p class="detailEntrySub2 text-sm">{!! $data['msl_citation'] !!}</p>
+                                    <p class="detailEntrySub2 text-sm">{!! $data->msl_citation !!}</p>
                                 </div>
                                 @endif
 
-                                {{-- include all dates --}}
-                                @if (array_key_exists("msl_dates",$data))
+                                @if (count($data->msl_dates) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Dates</h4>
                                     <div class="detailEntrySub2 flex flex-col justify-items-start">
-                                        @foreach ( $data['msl_dates'] as $value)
+                                        @foreach ( $data->msl_dates as $date)
                                             <div class="flex flex-row justify-between w-3/4">
-                                                <p class="text-sm p-0">{{ $value['msl_date_type'] }}:</p>
-                                                <p class="text-sm p-0">{{ $value['msl_date_date'] }}</p>
+                                                <p class="text-sm p-0">{{ $date->msl_date_type }}:</p>
+                                                <p class="text-sm p-0">{{ $date->msl_date_date }}</p>
                                             </div>                                    
                                         @endforeach
                                     </div>
                                 </div>
                                 @endif
 
-                                @if (array_key_exists("msl_language",$data))
+                                @if ($data->msl_language != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Language</h4>
                                     <div class="detailEntrySub2">
-                                        <p class="text-sm p-0">{{ $data['msl_language'] }}</p>    
+                                        <p class="text-sm p-0">{{ $data->msl_language }}</p>    
                                     </div>
                                 </div>
                                 @endif
 
-                                @if (array_key_exists("msl_funding_references",$data))
+                                @if (count($data->msl_funding_references) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Funding References</h4>
-                                    <div class="detailEntrySub2 ">
-                                        @foreach ( $data['msl_funding_references'] as $entry)
-                                            @foreach ($entry as $key => $value)
-                                                    @if ($value != '')
-                                                        <div class=" flex flex-row justify-between w-3/4">
-                                                            <p class="text-sm p-0">
-                                                                @php
-                                                                    $keys = explode('_', $key);
-                                                                    unset($keys[0]);
-                                                                    unset($keys[1]);
-                                                                    unset($keys[2]);
-                                                                    // $key_done;
-                                                                    foreach ($keys as $pos => $key_s) {
-                                                                        $keys[$pos] = ucfirst($key_s);
-                                                                    };
-
-                                                                    echo implode(' ', $keys);
-                                                                @endphp:
-                                                                </p> 
-                                                            <p class="text-sm p-0">{{ $value }}</p> 
-                                                        </div>
-                                                    @endif
-                                            @endforeach                                      
+                                    <div class="detailEntrySub2 dividers">
+                                        @foreach ( $data->msl_funding_references as $fundingReference)
+                                            <div>
+                                                @if ($fundingReference->msl_funding_reference_funder_name != "")
+                                                    <p class="text-sm p-0">Funder name: {{ $fundingReference->msl_funding_reference_funder_name }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_funder_identifier != "")
+                                                    <p class="text-sm p-0">Funder identifier: {{ $fundingReference->msl_funding_reference_funder_identifier }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_funder_identifier_type != "")
+                                                    <p class="text-sm p-0">Funder identifier type: {{ $fundingReference->msl_funding_reference_funder_identifier_type }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_scheme_uri != "")
+                                                    <p class="text-sm p-0">Funder reference scheme uri: {{ $fundingReference->msl_funding_reference_scheme_uri }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_award_number != "")
+                                                    <p class="text-sm p-0">Award number: {{ $fundingReference->msl_funding_reference_award_number }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_award_uri != "")
+                                                    <p class="text-sm p-0">Award uri: {{ $fundingReference->msl_funding_reference_award_uri }}</p>
+                                                @endif
+                                                @if ($fundingReference->msl_funding_reference_award_title != "")
+                                                    <p class="text-sm p-0">Award title: {{ $fundingReference->msl_funding_reference_award_title }}</p>
+                                                @endif
+                                            </div>
                                         @endforeach
                                     </div>
                                 </div>
                                 @endif
 
-                                @if (array_key_exists("msl_rights",$data))
+                                @if (count($data->msl_rights) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Rights</h4>
                                     <div class="detailEntrySub2">
-                                        @foreach ( $data['msl_rights'] as $value)
-                                            <p class="text-sm p-0">{{ $value['msl_right'] }}</p>                                             
+                                        @foreach ( $data->msl_rights as $right)
+                                            <p class="text-sm p-0">{{ $right->msl_right }}</p>                                             
                                         @endforeach
                                     </div>
                                 </div>
                                 @endif
 
-                                @if (array_key_exists("msl_datacite_version",$data))
+                                @if ($data->msl_datacite_version != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Datacite version</h4>
                                     <div class="detailEntrySub2">
-                                            <p class="text-sm p-0 ">{{ $data['msl_datacite_version'] }}</p>                                             
+                                            <p class="text-sm p-0 ">{{ $data->msl_datacite_version }}</p>                                             
                                     </div>
                                 </div>
                                 @endif
 
-                                @if (array_key_exists("msl_geolocations",$data))
+                                @if (count($data->msl_geolocations) > 0)
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Geo location(s)</h4>
                                     <div class="detailEntrySub2">
-                                        {{-- 
-                                        @foreach ( $data['msl_geolocations'] as $keyword)
-                                            <p class="text-sm">{{ $keyword['msl_geolocation_place'] }}</p>
+                                        @foreach ( $data->msl_geolocations as $geolocation)
+                                            <p class="text-sm">{{ $geolocation['msl_geolocation'] }}</p>
                                         @endforeach
-                                        --}}
                                     </div>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Geo locations</h4>
                                 @endif
 
-                                @if (array_key_exists("msl_geojson_featurecollection",$data))
+                                @if ($data->msl_geojson_featurecollection != "")
                                 <br>
                                 <div class="detailEntryDiv flex flex-row">
                                     <h4 class="detailEntrySub1">Spatial coordinates</h4>
@@ -628,7 +594,7 @@
                                             }
                                         }
                                     
-                                        var features = <?php echo $data['msl_geojson_featurecollection']; ?>;        				
+                                        var features = <?php echo $data->msl_geojson_featurecollection; ?>;        				
                                     
                                         var map = L.map('map').setView([0, 0], 1);
                                         
@@ -642,8 +608,6 @@
                                         }).addTo(map);                                                                                                                                                                                
                                     </script>
                                 </div>
-                                @else
-                                <h4 class="detailEntrySub1 bg-red-500">missing: Spatial coordinates</h4>
                                 @endif
 
 
