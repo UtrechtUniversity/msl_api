@@ -35,7 +35,7 @@
                     <div class="listView">
 
                         {{-- loop list content --}}
-                        @foreach ($result->getResults() as $dataPublication)
+                        @foreach ($result->getResults(true) as $dataPublication)
 
                             @include('components.list-views.data-publication', [
                                 'data' => $dataPublication
