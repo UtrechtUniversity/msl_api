@@ -25,8 +25,6 @@ class UpdateDatasetCreatesTableLongerResponseCode extends Migration
      */
     public function down()
     {
-        Schema::table('dataset_creates', function (Blueprint $table) {
-            $table->text('response_body')->change();
-        });
+
     }
 }
