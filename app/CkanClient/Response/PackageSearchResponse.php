@@ -43,7 +43,7 @@ class PackageSearchResponse extends BaseResponse
             }
         }
 
-        return (object) $resultsToReturn;
+        return $resultsToReturn;
     }
 
     /**

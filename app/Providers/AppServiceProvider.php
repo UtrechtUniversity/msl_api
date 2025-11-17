@@ -28,7 +28,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-
         Event::listen(
             MessageSent::class,
             LogMailSend::class
