@@ -2086,7 +2086,6 @@
         }
       ],
       "headers": [],
-      "method": "GET",
       "auth": {
         "authType": "inherit",
         "authActive": true

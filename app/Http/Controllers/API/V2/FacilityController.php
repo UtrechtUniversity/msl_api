@@ -4,9 +4,12 @@ namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\Http\Resources\V2\Errors\CkanErrorResource;
+use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
 use App\Response\V1\ErrorResponse;
 use App\Response\V1\MainResponse;
+use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 // TODO move this on its own file
@@ -36,6 +39,7 @@ class FacilityController extends BaseController
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
         'facilityQuery' => 'title',
+        //TODO does this work?
         'subDomain' => 'msl_subdomain',
         'equipmentQuery' => 'msl_laboratory_equipment_text',
     ];
@@ -129,6 +133,18 @@ class FacilityController extends BaseController
      */
     private function facilitiesResponse(Request $request, string $context)
     {
+        try {
+            $request->validate([
+                'limit' => ['nullable', 'integer', 'min:0'],
+                'offset' => ['nullable', 'integer', 'min:0'],
+                'facilityQuery' => ['nullable', 'string'],
+                'equipmentQuery' => ['nullable', 'string'],
+                'boundingBox' => ['nullable', new GeoRule],
+            ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            return new ValidationErrorResource($e);
+        }
+
         $this->setRequestToCKAN($request, $context);
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
@@ -137,27 +153,34 @@ class FacilityController extends BaseController
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
         } catch (\Exception $e) {
-            $errorResponse = new ErrorResponse;
-            $errorResponse->message = 'Malformed request to CKAN.';
-
-            return $errorResponse->getAsLaravelResponse();
+            return new CkanErrorResource([]);
         }
 
         // Check if CKAN was succesful
         if (! $response->isSuccess()) {
-            $errorResponse = new ErrorResponse;
-            $errorResponse->message = 'Error received from CKAN api.';
-
-            return $errorResponse->getAsLaravelResponse();
+            return new CkanErrorResource([]);
         }
 
         $facilities = $response->getResults(true);
-        return FacilityResource::collection(collect($facilities));
-        // Create response object
-        // $ApiResponse = new MainResponse;
-        // $ApiResponse->setByCkanResponse($response, $context);
-
-        // return $ApiResponse->getAsLaravelResponse();
+        $totalResultCount = $response->getTotalResultsCount();
+        $currentResultCount = count($facilities);
+        $limit = $this->packageSearchRequest->rows;
+        $offset = $this->packageSearchRequest->start;
+        $responseToReturn = FacilityResource::collection(collect($facilities));
+        $responseToReturn->additional([
+            'success' => 'true',
+            'messages' => [],
+            'meta' => [
+                'resultCount' => $currentResultCount,
+                'totalCount' => $totalResultCount,
+                'limit' => $limit,
+                'offset' =>  $offset,
+            ],
+            'links' => [
+                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+            ],
+        ]);
+        return $responseToReturn;
     }
 
     /**
@@ -178,33 +201,25 @@ class FacilityController extends BaseController
         $this->packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
         // Set rows
-        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $this->packageSearchRequest->rows);
-        $this->packageSearchRequest->rows = $limit;
-
-
+        if (($request->get('limit'))) {
+            $this->packageSearchRequest->rows = $request->get('limit');
+        }
         // Set start
-        $offset = (int) (($request->get('offset')) ? ($request->get('offset')) : $this->packageSearchRequest->start);
-        $this->packageSearchRequest->start = $offset;
-
+        if ($request->get('offset')) {;
+            $this->packageSearchRequest->start = $request->get('offset');
+        };
         // includes facility and equipment query
         $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
         // bounding box
-        $paramBoundingBox = (string) $request->get('boundingBox');
-        if (strlen($paramBoundingBox) > 0) {
-            $evaluatedQuery = $this->boundingboxStringToArray($paramBoundingBox);
-            if (count($evaluatedQuery) == 4) {
-                $this->packageSearchRequest->setBoundingBox(
-                    $evaluatedQuery[0],
-                    $evaluatedQuery[1],
-                    $evaluatedQuery[2],
-                    $evaluatedQuery[3]
-                );
-                // } else {
-                //     $errorResponse = new ErrorResponse;
-                //     $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4';
 
-                //     return $errorResponse->getAsLaravelResponse();
-            }
+        $paramBoundingBox = json_decode($request->get('boundingBox') ?? null);
+        if ($paramBoundingBox) {
+            $this->packageSearchRequest->setBoundingBox(
+                (float) $paramBoundingBox[0],
+                (float) $paramBoundingBox[1],
+                (float) $paramBoundingBox[2],
+                (float) $paramBoundingBox[3]
+            );
         }
     }
 
