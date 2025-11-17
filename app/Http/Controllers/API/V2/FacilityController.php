@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Http\Resources\FacilityResource;
+use App\Http\Resources\V2\FacilityResource;
 use App\Response\V1\ErrorResponse;
 use App\Response\V1\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
-class FacilitiesController extends BaseController
+class FacilityController extends BaseController
 {
     /**
      * @var \GuzzleHttp\Client Guzzle http client instance
@@ -29,6 +29,7 @@ class FacilitiesController extends BaseController
         'subDomain' => 'msl_subdomain',
         'equipmentQuery' => 'msl_laboratory_equipment_text',
     ];
+    private $packageSearchRequest;
 
     /**
      * Constructs a new ApiController
@@ -36,17 +37,77 @@ class FacilitiesController extends BaseController
     public function __construct(\GuzzleHttp\Client $client)
     {
         $this->guzzleClient = $client;
+        $this->packageSearchRequest = new PackageSearchRequest;
     }
-
     /**
-     * facilities API endpoint
+     * Rock physics facilities endpoint
      *
      * @return response
      */
-    public function facilities(Request $request)
+    public function rockPhysics(Request $request)
     {
-        return $this->facilitiesResponse($request);
+        return $this->facilitiesResponse($request, 'rockPhysics');
     }
+
+    /**
+     * Analogue modelling facilities endpoint
+     *
+     * @return response
+     */
+    public function analogue(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'analogue');
+    }
+
+    /**
+     * Paleomagnetism facilities endpoint
+     *
+     * @return response
+     */
+    public function paleo(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'paleo');
+    }
+
+    /**
+     * Microscopy and tomography facilities endpoint
+     *
+     * @return response
+     */
+    public function microscopy(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'microscopy');
+    }
+
+    /**
+     * Geochemistry facilities endpoint
+     *
+     * @return response
+     */
+    public function geochemistry(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'geochemistry');
+    }
+
+    /**
+     * Geo Energy Test Beds facilities endpoint
+     *
+     * @return response
+     */
+    public function geoenergy(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'geoenergy');
+    }
+    /**
+     * All subdomains facilities endpoint
+     *
+     * @return response
+     */
+    public function all(Request $request)
+    {
+        return $this->facilitiesResponse($request, 'all');
+    }
+
 
     /**
      * Creates a API response based upon search parameters provided in request
@@ -56,17 +117,16 @@ class FacilitiesController extends BaseController
      * @param  string  $context
      * @return response
      */
-    private function facilitiesResponse(Request $request)
+    private function facilitiesResponse(Request $request, string $context)
     {
-        $context = 'facilities';
-        $packageSearchRequest = $this->setRequestToCKAN($request);
+        $this->setRequestToCKAN($request);
 
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
         // Attempt to retrieve data from CKAN
         try {
-            $response = $ckanClient->get($packageSearchRequest);
+            $response = $ckanClient->get($this->packageSearchRequest);
         } catch (\Exception $e) {
             $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Malformed request to CKAN.';
@@ -98,37 +158,32 @@ class FacilitiesController extends BaseController
      * @param  Request  $request
      * @return response
      */
-    private function setRequestToCKAN(Request $request): \App\CkanClient\Request\PackageSearchRequest
+    private function setRequestToCKAN(Request $request): void
     {
-        // Create packagesearch request
-        $packageSearchRequest = new PackageSearchRequest();
-        // Create packagesearch request
-        $packageSearchRequest = new PackageSearchRequest;
-
         // Filter on facilities
-        $packageSearchRequest->addFilterQuery('type', 'lab');
+        $this->packageSearchRequest->addFilterQuery('type', 'lab');
 
         // Filter for failities with coordinates
-        $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
-        $packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
+        $this->packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
+        $this->packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
         // Set rows
-        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $packageSearchRequest->rows);
-        $packageSearchRequest->rows = $limit;
+        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $this->packageSearchRequest->rows);
+        $this->packageSearchRequest->rows = $limit;
 
 
         // Set start
-        $offset = (int) (($request->get('offset')) ? ($request->get('offset')) : $packageSearchRequest->start);
-        $packageSearchRequest->start = $offset;
+        $offset = (int) (($request->get('offset')) ? ($request->get('offset')) : $this->packageSearchRequest->start);
+        $this->packageSearchRequest->start = $offset;
 
         // includes facility and equipment query
-        $packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
+        $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
         // bounding box
         $paramBoundingBox = (string) $request->get('boundingBox');
         if (strlen($paramBoundingBox) > 0) {
             $evaluatedQuery = $this->boundingboxStringToArray($paramBoundingBox);
             if (count($evaluatedQuery) == 4) {
-                $packageSearchRequest->setBoundingBox(
+                $this->packageSearchRequest->setBoundingBox(
                     $evaluatedQuery[0],
                     $evaluatedQuery[1],
                     $evaluatedQuery[2],
@@ -141,10 +196,42 @@ class FacilitiesController extends BaseController
                 //     return $errorResponse->getAsLaravelResponse();
             }
         }
-
-        return $packageSearchRequest;
     }
 
+
+
+    private function setSubdomain()
+    {
+
+        dd($this->packageSearchRequest);
+        //   $msl_subdomain = 'msl_subdomain';
+        // // Add subdomain filtering if required
+        // switch ($context) {
+        //     case 'rockPhysics':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ROCK_PHYSICS->value);
+        //         break;
+
+        //     case 'analogue':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ANALOGUE->value);
+        //         break;
+
+        //     case 'paleo':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::PALEO->value);
+        //         break;
+
+        //     case 'microscopy':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::MICROSCOPY->value);
+        //         break;
+
+        //     case 'geochemistry':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_CHEMISTRY->value);
+        //         break;
+
+        //     case 'geoenergy':
+        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_ENERGY->value);
+        //         break;
+        // }
+    }
     /**
      * Convert boundingbox parameter to array
      *

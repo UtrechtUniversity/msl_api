@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\V1\ApiController as V1Controller;
 use App\Http\Controllers\API\V2\DataPublicationController as V2DataPublicationController;
+use App\Http\Controllers\API\V2\FacilityController as V2FacilityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,4 +54,12 @@ Route::prefix('v2')->group(function () {
     Route::get('/datapublications/geochemistry', [V2DataPublicationController::class, 'geochemistry']);
     Route::get('/datapublications/geoenergy', [V2DataPublicationController::class, 'geoenergy']);
     Route::get('/datapublications/all', [V2DataPublicationController::class, 'all']);
+
+    Route::get('/facilities/rock_physics', [V2FacilityController::class, 'rockPhysics']);
+    Route::get('/facilities/analogue', [V2FacilityController::class, 'analogue']);
+    Route::get('/facilities/paleo', [V2FacilityController::class, 'paleo']);
+    Route::get('/facilities/microscopy', [V2FacilityController::class, 'microscopy']);
+    Route::get('/facilities/geochemistry', [V2FacilityController::class, 'geochemistry']);
+    Route::get('/facilities/geoenergy', [V2FacilityController::class, 'geoenergy']);
+    Route::get('/facilities/all', [V2FacilityController::class, 'all']);
 });
