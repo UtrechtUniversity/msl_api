@@ -9,7 +9,16 @@ use App\Response\V1\ErrorResponse;
 use App\Response\V1\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
-
+// TODO move this on its own file
+enum SubDomainType: string
+{
+    case ROCK_PHYSICS = 'rock and melt physics';
+    case ANALOGUE = 'analogue modelling of geologic processes';
+    case MICROSCOPY = 'microscopy and tomography';
+    case PALEO = 'paleomagnetism';
+    case GEO_CHEMISTRY = 'geochemistry';
+    case GEO_ENERGY = 'geo-energy test beds';
+}
 class FacilityController extends BaseController
 {
     /**
@@ -119,7 +128,7 @@ class FacilityController extends BaseController
      */
     private function facilitiesResponse(Request $request, string $context)
     {
-        $this->setRequestToCKAN($request);
+        $this->setRequestToCKAN($request, $context);
 
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
@@ -158,10 +167,11 @@ class FacilityController extends BaseController
      * @param  Request  $request
      * @return response
      */
-    private function setRequestToCKAN(Request $request): void
+    private function setRequestToCKAN(Request $request, string $context): void
     {
         // Filter on facilities
         $this->packageSearchRequest->addFilterQuery('type', 'lab');
+        $this->setSubdomain($context);
 
         // Filter for failities with coordinates
         $this->packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
@@ -199,38 +209,36 @@ class FacilityController extends BaseController
     }
 
 
-
-    private function setSubdomain()
+    //TODO $context also could use a reusable enum
+    private function setSubdomain(string $context): void
     {
+        $msl_subdomain = 'msl_subdomain';
+        // Add subdomain filtering if required
+        switch ($context) {
+            case 'rockPhysics':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ROCK_PHYSICS->value);
+                break;
 
-        dd($this->packageSearchRequest);
-        //   $msl_subdomain = 'msl_subdomain';
-        // // Add subdomain filtering if required
-        // switch ($context) {
-        //     case 'rockPhysics':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ROCK_PHYSICS->value);
-        //         break;
+            case 'analogue':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ANALOGUE->value);
+                break;
 
-        //     case 'analogue':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ANALOGUE->value);
-        //         break;
+            case 'paleo':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::PALEO->value);
+                break;
 
-        //     case 'paleo':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::PALEO->value);
-        //         break;
+            case 'microscopy':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::MICROSCOPY->value);
+                break;
 
-        //     case 'microscopy':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::MICROSCOPY->value);
-        //         break;
+            case 'geochemistry':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_CHEMISTRY->value);
+                break;
 
-        //     case 'geochemistry':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_CHEMISTRY->value);
-        //         break;
-
-        //     case 'geoenergy':
-        //         $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_ENERGY->value);
-        //         break;
-        // }
+            case 'geoenergy':
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_ENERGY->value);
+                break;
+        }
     }
     /**
      * Convert boundingbox parameter to array
