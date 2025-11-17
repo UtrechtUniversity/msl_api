@@ -505,8 +505,9 @@
         },
         {
           "v": "16",
-          "endpoint": "<<base_url>>/api/v1/facilities/all",
           "name": "facilities",
+          "method": "GET",
+          "endpoint": "<<base_url>>/api/v1/facilities/all",
           "params": [
             {
               "key": "rows",
@@ -540,13 +541,12 @@
             }
           ],
           "headers": [],
-          "method": "GET",
+          "preRequestScript": "",
+          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "preRequestScript": "",
-          "testScript": "",
           "body": {
             "contentType": null,
             "body": null
@@ -567,547 +567,731 @@
     {
       "v": 10,
       "name": "v2",
-      "folders": [],
-      "requests": [
+      "folders": [
         {
-          "v": "16",
-          "name": "all",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/all",
-          "params": [
+          "v": 10,
+          "name": "data-publications",
+          "folders": [],
+          "requests": [
             {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
+              "v": "16",
+              "name": "all",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/all",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "subDomain",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) subDomain to filter on"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
+              "v": "16",
+              "name": "rock physics",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/rock_physics",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
+              "v": "16",
+              "name": "analogue modelling",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/analogue",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
+              "v": "16",
+              "name": "paleomagnetism",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/paleo",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
+              "v": "16",
+              "name": "microscopy and tomography",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/microscopy",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
+              "v": "16",
+              "name": "geochemistry",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/geochemistry",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             },
             {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "subDomain",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) subDomain to filter on"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+              "v": "16",
+              "name": "geo-energy test beds",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/datapublications/geoenergy",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return."
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from."
+                },
+                {
+                  "key": "query",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Words to search for."
+                },
+                {
+                  "key": "authorName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Author names to search for"
+                },
+                {
+                  "key": "labName",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Lab names to search for"
+                },
+                {
+                  "key": "title",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Title to search for"
+                },
+                {
+                  "key": "tags",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Tags to search for"
+                },
+                {
+                  "key": "hasDownloads",
+                  "value": "",
+                  "active": true,
+                  "description": "(boolean, optional) Filter results to only include results with download links"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
             }
           ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
+          "headers": [],
+          "variables": [],
+          "_ref_id": "coll_mi31k9te_71b8f3c7-0bfb-4674-bf2b-38feca276ec0"
         },
         {
-          "v": "16",
-          "name": "rock physics",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/rock_physics",
-          "params": [
+          "v": 10,
+          "name": "facilities",
+          "folders": [],
+          "requests": [
             {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
+              "v": "16",
+              "name": "all",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/facilities/all",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return"
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from"
+                },
+                {
+                  "key": "facilityQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using facility information"
+                },
+                {
+                  "key": "equipmentQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using equipment information"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mheon0g8_f31ccc06-fbcc-46dd-a29e-b3ecde0cefb8"
             },
             {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
+              "v": "16",
+              "name": "rock physics",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/facilities/rock_physics",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return"
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from"
+                },
+                {
+                  "key": "facilityQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using facility information"
+                },
+                {
+                  "key": "equipmentQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using equipment information"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mheon0g8_f31ccc06-fbcc-46dd-a29e-b3ecde0cefb8"
             },
             {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+              "v": "16",
+              "name": "microscopy and tomography",
+              "method": "GET",
+              "endpoint": "<<base_url>>/api/v2/facilities/microscopy",
+              "params": [
+                {
+                  "key": "limit",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number of results to return"
+                },
+                {
+                  "key": "offset",
+                  "value": "",
+                  "active": true,
+                  "description": "(number, optional) The number to start results from"
+                },
+                {
+                  "key": "facilityQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using facility information"
+                },
+                {
+                  "key": "equipmentQuery",
+                  "value": "",
+                  "active": true,
+                  "description": "(text, optional) Search query filtering using equipment information"
+                },
+                {
+                  "key": "boundingBox",
+                  "value": "[-123.3, 49.18, -123.0,49.33]",
+                  "active": false,
+                  "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                }
+              ],
+              "headers": [],
+              "preRequestScript": "",
+              "testScript": "",
+              "auth": {
+                "authType": "inherit",
+                "authActive": true
+              },
+              "body": {
+                "contentType": null,
+                "body": null
+              },
+              "requestVariables": [],
+              "responses": {},
+              "_ref_id": "req_mheon0g8_f31ccc06-fbcc-46dd-a29e-b3ecde0cefb8"
             }
           ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
           "auth": {
             "authType": "inherit",
             "authActive": true
           },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
-        },
-        {
-          "v": "16",
-          "name": "analogue modelling",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/analogue",
-          "params": [
-            {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
-            },
-            {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
-            },
-            {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
-            }
-          ],
           "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
-        },
-        {
-          "v": "16",
-          "name": "paleomagnetism",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/paleo",
-          "params": [
-            {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
-            },
-            {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
-            },
-            {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
-            }
-          ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
-        },
-        {
-          "v": "16",
-          "name": "microscopy and tomography",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/microscopy",
-          "params": [
-            {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
-            },
-            {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
-            },
-            {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
-            }
-          ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
-        },
-        {
-          "v": "16",
-          "name": "geochemistry",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/geochemistry",
-          "params": [
-            {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
-            },
-            {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
-            },
-            {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
-            }
-          ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
-        },
-        {
-          "v": "16",
-          "name": "geo-energy test beds",
-          "method": "GET",
-          "endpoint": "<<base_url>>/api/v2/datapublications/geoenergy",
-          "params": [
-            {
-              "key": "limit",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number of results to return."
-            },
-            {
-              "key": "offset",
-              "value": "",
-              "active": true,
-              "description": "(number, optional) The number to start results from."
-            },
-            {
-              "key": "query",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Words to search for."
-            },
-            {
-              "key": "authorName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Author names to search for"
-            },
-            {
-              "key": "labName",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Lab names to search for"
-            },
-            {
-              "key": "title",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Title to search for"
-            },
-            {
-              "key": "tags",
-              "value": "",
-              "active": true,
-              "description": "(text, optional) Tags to search for"
-            },
-            {
-              "key": "hasDownloads",
-              "value": "",
-              "active": true,
-              "description": "(boolean, optional) Filter results to only include results with download links"
-            },
-            {
-              "key": "boundingBox",
-              "value": "[-123.3, 49.18, -123.0,49.33]",
-              "active": false,
-              "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
-            }
-          ],
-          "headers": [],
-          "preRequestScript": "",
-          "testScript": "",
-          "auth": {
-            "authType": "inherit",
-            "authActive": true
-          },
-          "body": {
-            "contentType": null,
-            "body": null
-          },
-          "requestVariables": [],
-          "responses": {},
-          "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
+          "variables": [],
+          "_ref_id": "coll_mi31kt9e_23d80e8c-bcdc-4e8f-9016-b434d0a215b8"
         }
       ],
+      "requests": [],
       "auth": {
         "authType": "inherit",
         "authActive": true
@@ -1125,13 +1309,13 @@
       "endpoint": "<<base_url>>/webservice/api/all",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1207,13 +1391,13 @@
       "endpoint": "<<base_url>>/webservice/api/rock_physics",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1283,13 +1467,13 @@
       "endpoint": "<<base_url>>/webservice/api/analogue",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1359,13 +1543,13 @@
       "endpoint": "<<base_url>>/webservice/api/paleo",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1435,13 +1619,13 @@
       "endpoint": "<<base_url>>/webservice/api/microscopy",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1511,13 +1695,13 @@
       "endpoint": "<<base_url>>/webservice/api/geochemistry",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1587,13 +1771,13 @@
       "endpoint": "<<base_url>>/webservice/api/geoenergy",
       "params": [
         {
-          "key": "limit",
+          "key": "rows",
           "value": "",
           "active": true,
           "description": "(number, optional) The number of results to return."
         },
         {
-          "key": "offset",
+          "key": "start",
           "value": "",
           "active": true,
           "description": "(number, optional) The number to start results from."
@@ -1658,8 +1842,9 @@
     },
     {
       "v": "16",
-      "endpoint": "<<base_url>>/webservice/api/facilities",
       "name": "facilities",
+      "method": "GET",
+      "endpoint": "<<base_url>>/webservice/api/facilities",
       "params": [
         {
           "key": "rows",
