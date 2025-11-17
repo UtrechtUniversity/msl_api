@@ -10,14 +10,15 @@ use App\Response\V1\MainResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 // TODO move this on its own file
+// TODO NOTICE THAT the values are different from the enum in DataPublications!
 enum SubDomainType: string
 {
-    case ROCK_PHYSICS = 'rock and melt physics';
-    case ANALOGUE = 'analogue modelling of geologic processes';
-    case MICROSCOPY = 'microscopy and tomography';
-    case PALEO = 'paleomagnetism';
-    case GEO_CHEMISTRY = 'geochemistry';
-    case GEO_ENERGY = 'geo-energy test beds';
+    case ROCK_PHYSICS = 'Rock and melt physics';
+    case ANALOGUE = 'Analogue modelling of geologic processes';
+    case MICROSCOPY = 'Microscopy and tomography';
+    case PALEO = 'Paleomagnetism';
+    case GEO_CHEMISTRY = 'Geochemistry';
+    case GEO_ENERGY = 'Geo-energy test beds';
 }
 class FacilityController extends BaseController
 {
@@ -129,7 +130,6 @@ class FacilityController extends BaseController
     private function facilitiesResponse(Request $request, string $context)
     {
         $this->setRequestToCKAN($request, $context);
-
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
@@ -212,7 +212,7 @@ class FacilityController extends BaseController
     //TODO $context also could use a reusable enum
     private function setSubdomain(string $context): void
     {
-        $msl_subdomain = 'msl_subdomain';
+        $msl_subdomain = 'msl_domain_name';
         // Add subdomain filtering if required
         switch ($context) {
             case 'rockPhysics':
