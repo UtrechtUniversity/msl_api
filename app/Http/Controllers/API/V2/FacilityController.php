@@ -255,58 +255,7 @@ class FacilityController extends BaseController
                 break;
         }
     }
-    /**
-     * Convert boundingbox parameter to array
-     *
-     * @return array
-     */
-    private function boundingboxStringToArray(string $boundingBoxQuery)
-    {
-        $boundingBoxElements = explode(',', $boundingBoxQuery);
-        $checkedArr = [];
 
-        // must be 4 values. It could be that decimals are indicated with comma instead of dot
-        if (count($boundingBoxElements) == 4) {
-            if ($this->checkBounds((float) $boundingBoxElements[0], 180, -180) && is_numeric($boundingBoxElements[0])) {
-                $checkedArr[] = (float) $boundingBoxElements[0];
-            } else {
-                return [];
-            }
-            if ($this->checkBounds((float) $boundingBoxElements[1], 90, -90) && is_numeric($boundingBoxElements[1])) {
-                $checkedArr[] = (float) $boundingBoxElements[1];
-            } else {
-                return [];
-            }
-            if ($this->checkBounds((float) $boundingBoxElements[2], 180, -180) && is_numeric($boundingBoxElements[2])) {
-                $checkedArr[] = (float) $boundingBoxElements[2];
-            } else {
-                return [];
-            }
-            if ($this->checkBounds((float) $boundingBoxElements[3], 90, -90) && is_numeric($boundingBoxElements[3])) {
-                $checkedArr[] = (float) $boundingBoxElements[3];
-            } else {
-                return [];
-            }
-
-            return $checkedArr;
-        } else {
-            return [];
-        }
-    }
-
-    /**
-     * Check if bounding box component is within limits
-     *
-     * @return bool
-     */
-    private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
-    {
-        if (gettype($toCheck) != 'double') {
-            return false;
-        } else {
-            return $toCheck <= $limitUp && $toCheck >= $limitLow ? true : false;
-        }
-    }
 
     /**
      * Converts search parameters to solr query using field mappings

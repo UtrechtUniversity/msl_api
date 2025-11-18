@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V2;
 
+use App\Http\Resources\V2\Helpers\Descriptions;
 use App\Http\Resources\V2\Elements\AlternateIdentifierResource;
 use App\Http\Resources\V2\Elements\ContributorResource;
 use App\Http\Resources\V2\Elements\CreatorResource;
@@ -36,28 +37,28 @@ class DataPublicationResource extends JsonResource
 
         $this->uriStartsPerSubject = [
             VocabularyType::ROCK_PHYSICS->value => [
-                'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
-                'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/inferred_deformation_behavior-',
+                'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
+                'https://epos-msl.uu.nl/voc/rockphysics/' . config('vocabularies.vocabularies_current_version') . '/inferred_deformation_behavior-',
             ],
             VocabularyType::ANALOGUE->value => [
-                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/modeled_structure-',
-                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/modeled_geomorphological_feature-',
-                'https://epos-msl.uu.nl/voc/analoguemodelling/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_structure-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/modeled_geomorphological_feature-',
+                'https://epos-msl.uu.nl/voc/analoguemodelling/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
             ],
             VocabularyType::GEOLOGICAL_SETTING->value => [
-                'https://epos-msl.uu.nl/voc/geologicalsetting/'.config('vocabularies.vocabularies_current_version').'/',
+                'https://epos-msl.uu.nl/voc/geologicalsetting/' . config('vocabularies.vocabularies_current_version') . '/',
             ],
             VocabularyType::PALEO->value => [
-                'https://epos-msl.uu.nl/voc/paleomagnetism/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
-                'https://epos-msl.uu.nl/voc/paleomagnetism/'.config('vocabularies.vocabularies_current_version').'/inferred_behavior-',
+                'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/measured_property-',
+                'https://epos-msl.uu.nl/voc/paleomagnetism/' . config('vocabularies.vocabularies_current_version') . '/inferred_behavior-',
             ],
             VocabularyType::GEO_CHEMISTRY->value => [
-                'https://epos-msl.uu.nl/voc/geochemistry/'.config('vocabularies.vocabularies_current_version').'/',
+                'https://epos-msl.uu.nl/voc/geochemistry/' . config('vocabularies.vocabularies_current_version') . '/',
             ],
             VocabularyType::GEO_ENERGY->value => [
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/equipment-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/model-',
+                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/facility_names-',
+                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/equipment-',
+                'https://epos-msl.uu.nl/voc/testbeds/' . config('vocabularies.vocabularies_current_version') . '/model-',
             ],
         ];
     }
@@ -157,6 +158,18 @@ class DataPublicationResource extends JsonResource
         return $researchAspects;
     }
 
+    private function getDescriptions()
+    {
+        return new Descriptions(
+            abstract: $this->msl_description_abstract,
+            methods: $this->msl_description_methods,
+            seriesInformation: $this->msl_description_series_information,
+            tableOfContents: $this->msl_description_table_of_contents,
+            technicalInfo: $this->msl_description_technical_info,
+            other: $this->msl_description_other
+        );
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -170,10 +183,10 @@ class DataPublicationResource extends JsonResource
             'title' => $this->title,
             'doi' => $this->msl_doi,
             'source' => $this->msl_source,
-            'portalLink' => config('app.url').'/data-publication/'.$this->name,
+            'portalLink' => config('app.url') . '/data-publication/' . $this->name,
             'name' => $this->name,
             'creators' => CreatorResource::collection($this->msl_creators),
-            'descriptions' => new DescriptionResource($this->resource),
+            'descriptions' => new DescriptionResource($this->getDescriptions()),
             'contributors' => ContributorResource::collection($this->msl_contributors),
             'materials' => $this->getMaterials(),
             'researchAspects' => $this->getResearchAspects(),

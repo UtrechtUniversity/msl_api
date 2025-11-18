@@ -2,11 +2,28 @@
 
 namespace App\Http\Resources\V2;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Geometry\Point;
+use App\Http\Resources\V2\Elements\DescriptionResource;
+use App\Http\Resources\V2\Helpers\Descriptions;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class FacilityResource extends JsonResource
 {
+
+    private function getGeoJsonFromPoint(): null|array
+    {
+
+        // TODO why aren't these numbers in sql floats?
+        $x = is_numeric($this->longitude) ? (float) $this->longitude : null;
+        $y = is_numeric($this->latitude) ? (float) $this->latitude : null;
+        $z = is_numeric($this->altitude) ? (float) $this->altitude : null;
+
+        if (!($x && $y)) return null;
+        $point = new Point($x, $y, $z);
+        return (new Feature($point))->jsonSerialize();
+    }
     /**
      * Transform the resource into an array.
      *
@@ -14,43 +31,18 @@ class FacilityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
-        // dd($this);
+        $genericDescription = $this->description ?? '';
+        $genericDescriptionHtml = $this->description_html ?? '';
         return [
-            'name' => $this->name,
-            'portalLink' => '',
-            'organisation' => '',
+            'title' => $this->name,
+            'portalLink' => route('lab-detail', ['id' => $this->name]),
+            'organisation' => $this->laboratoryOrganization->name,
+            'domain' => $this->msl_domain_name,
+            'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
             // here we want to include the addons
             'equipment' => [],
-            'description' => '',
-            'descriptionHtml' => '',
-            'domain' => '',
-            // do we still want them after including geojson?
-            'latitude' => '',
-            'longitude' => '',
-            'altitude' => '',
-            'geojson' => [],
-            'organization' => '',
-
-            //             public $name = '';
-
-            // public $description = '';
-
-            // public $descriptionHtml = '';
-
-            // public $domain = '';
-
-            // public $latitude = '';
-
-            // public $longitude = '';
-
-            // public $altitude = '';
-
-            // public $portalLink = '';
-
-            // public $organization = '';
-
-            // public $equipment = [];
+            'geojson' => $this->getGeoJsonFromPoint(),
+            'contact' => '',
         ];
     }
 }
