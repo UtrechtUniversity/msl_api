@@ -35,14 +35,14 @@ class FacilityResource extends JsonResource
         $genericDescriptionHtml = $this->description_html ?? '';
         return [
             'title' => $this->name,
-            'portalLink' => route('lab-detail', ['id' => $this->name]),
+            'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
             'organisation' => $this->laboratoryOrganization->name,
             'domain' => $this->msl_domain_name,
             'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
             // here we want to include the addons
             'equipment' => [],
             'geojson' => $this->getGeoJsonFromPoint(),
-            'contact' => '',
+            'contact' => route('laboratory-contact-person', $this->msl_identifier),
         ];
     }
 }
