@@ -5,6 +5,7 @@ namespace App\Http\Resources\V2;
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
 use App\Http\Resources\V2\Elements\DescriptionResource;
+use App\Http\Resources\V2\Elements\EquipmentResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -40,7 +41,7 @@ class FacilityResource extends JsonResource
             'domain' => $this->msl_domain_name,
             'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
             // here we want to include the addons
-            'equipment' => [],
+            'equipment' => EquipmentResource::collection($this->laboratoryEquipment),
             'geojson' => $this->getGeoJsonFromPoint(),
             'contact' => route('laboratory-contact-person', $this->msl_identifier),
         ];
