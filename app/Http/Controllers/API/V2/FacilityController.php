@@ -7,14 +7,13 @@ use App\CkanClient\Request\PackageSearchRequest;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
-use App\Response\V1\ErrorResponse;
-use App\Response\V1\MainResponse;
+use App\Models\Laboratory;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 // TODO move this on its own file
 // TODO NOTICE THAT the values are different from the enum in DataPublications!
-enum SubDomainType: string
+enum SubDomainTypeInCkan: string
 {
     case ROCK_PHYSICS = 'Rock and melt physics';
     case ANALOGUE = 'Analogue modelling of geologic processes';
@@ -44,14 +43,16 @@ class FacilityController extends BaseController
         'equipmentQuery' => 'msl_laboratory_equipment_text',
     ];
     private $packageSearchRequest;
+    private $laboratory;
 
     /**
      * Constructs a new ApiController
      */
-    public function __construct(\GuzzleHttp\Client $client)
+    public function __construct(\GuzzleHttp\Client $client, Laboratory $laboratory)
     {
         $this->guzzleClient = $client;
         $this->packageSearchRequest = new PackageSearchRequest;
+        $this->laboratory = $laboratory;
     }
     /**
      * Rock physics facilities endpoint
@@ -161,7 +162,8 @@ class FacilityController extends BaseController
             return new CkanErrorResource([]);
         }
 
-        $facilities = $response->getResults(true);
+
+        $facilities = $this->getResultsfromCkanArray($response->responseBody);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($facilities);
         $limit = $this->packageSearchRequest->rows;
@@ -181,6 +183,21 @@ class FacilityController extends BaseController
             ],
         ]);
         return $responseToReturn;
+    }
+
+    private function getResultsfromCkanArray($responseBody): array
+    {
+        $resultsFromResponse = $responseBody['result']['results'];
+
+        $resultsToReturn = [];
+
+        foreach ($resultsFromResponse as $result) {
+            if ($result['msl_fast_id']) {
+                $resultsToReturn[] = $this->laboratory->where('fast_id', $result['msl_fast_id'])->first();
+            }
+        }
+
+        return $resultsToReturn;
     }
 
     /**
@@ -231,27 +248,27 @@ class FacilityController extends BaseController
         // Add subdomain filtering if required
         switch ($context) {
             case 'rockPhysics':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ROCK_PHYSICS->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::ROCK_PHYSICS->value);
                 break;
 
             case 'analogue':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ANALOGUE->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::ANALOGUE->value);
                 break;
 
             case 'paleo':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::PALEO->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::PALEO->value);
                 break;
 
             case 'microscopy':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::MICROSCOPY->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::MICROSCOPY->value);
                 break;
 
             case 'geochemistry':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_CHEMISTRY->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::GEO_CHEMISTRY->value);
                 break;
 
             case 'geoenergy':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_ENERGY->value);
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::GEO_ENERGY->value);
                 break;
         }
     }

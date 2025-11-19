@@ -15,6 +15,10 @@ class AddOnResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return ['description' => new DescriptionResource(new Descriptions(genericDescription: $this->description)), 'type' => $this->type, 'group' => $this->group];
+        return [
+            'description' => new DescriptionResource(new Descriptions(genericDescription: $this->description)),
+            'type' => $this->type,
+            'group' => $this->group
+        ];
     }
 }
