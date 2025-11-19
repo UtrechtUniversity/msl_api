@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Api\V2;
 
-use App\Http\Controllers\API\V2\DataPublicationController;
 use App\Http\Controllers\API\V2\FacilityController;
 use App\Models\Laboratory;
 use App\Models\LaboratoryEquipment;
@@ -22,15 +21,211 @@ class FacilityControllerTest extends TestCase
     {
 
 
-        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/package_search_facilities_117.json'));
+        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
 
-        $mock = new MockHandler([
-            new Response(200, [], $response),
-        ]);
+        $guzzleClient = $this->getCkanClientMock($response);
 
-        $handler = HandlerStack::create($mock);
-        $guzzleClient = new Client(['handler' => $handler]);
+        $mockLab = $this->getEloquentModelsMock();
 
+
+        $this->app->instance(Laboratory::class, $mockLab);
+        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
+            return new FacilityController($guzzleClient,  $app->make(Laboratory::class));
+        });
+
+
+
+        $response = $this->get('api/v2/facilities/all?title="HelLabs - Geophysical laboratory"');
+
+        $response->assertStatus(200);
+        // Verify response body contents
+        $response->assertJson(
+            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
+                ->where('meta.totalCount', 117)
+                ->where('meta.resultCount', 1)
+                ->where('meta.limit', 10)
+                ->where('meta.offset', 0)
+                ->where('links.current_url', config('app.url') . '/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
+                ->has(
+                    'data.0',
+                    fn(AssertableJson $json) => $json
+                        ->where('title', "HelLabs - Geophysical laboratory")
+                        ->where('geojson', [
+                            'geometry' => [
+                                'coordinates' => [
+                                    24.963641,
+                                    60.204535,
+                                    23,
+                                ],
+                                'type' => 'Point',
+                            ],
+                            'properties' => [],
+                            'type' => 'Feature',
+                        ])->has(
+                            'equipment.0',
+                            fn(AssertableJson $json) => $json
+                                ->where('category', "Permanent")
+                                ->where(
+                                    'descriptions.0',
+                                    [
+                                        'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
+                                        'descriptionType' => 'Description',
+                                    ]
+                                )->has('addOns.0',  fn(AssertableJson $json) => $json
+                                    ->where('type', "Detector")
+                                    ->where('group', "EDS detector (Energy Dispersive X-ray Spectroscopy)")
+                                    ->where('description.0', [
+                                        'description' => 'Bruker XFlash 6-60',
+                                        'descriptionType' => 'Description',
+                                    ]))->where('name', "2G cryogenic magnetometer")->etc()
+
+                        )->where('organisation', "Universiteit Utrecht (UU)")
+
+
+                        ->etc()
+                )->etc()
+        );
+    }
+
+    public function test_paleo_success_results(): void
+    {
+
+
+        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
+
+        $guzzleClient = $this->getCkanClientMock($response);
+
+        $mockLab = $this->getEloquentModelsMock();
+
+
+        $this->app->instance(Laboratory::class, $mockLab);
+        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
+            return new FacilityController($guzzleClient,  $app->make(Laboratory::class));
+        });
+
+
+
+        $response = $this->get('api/v2/facilities/paleo');
+
+        $response->assertStatus(200);
+        // Verify response body contents
+        $response->assertJson(
+            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
+                ->where('meta.totalCount', 117)
+                ->where('meta.resultCount', 1)
+                ->where('meta.limit', 10)
+                ->where('meta.offset', 0)
+                ->where('links.current_url', config('app.url') . '/api/v2/facilities/paleo?offset=0&limit=10')
+                ->has(
+                    'data.0',
+                    fn(AssertableJson $json) => $json
+                        ->where('title', "HelLabs - Geophysical laboratory")
+                        ->where('geojson', [
+                            'geometry' => [
+                                'coordinates' => [
+                                    24.963641,
+                                    60.204535,
+                                    23,
+                                ],
+                                'type' => 'Point',
+                            ],
+                            'properties' => [],
+                            'type' => 'Feature',
+                        ])->has(
+                            'equipment.0',
+                            fn(AssertableJson $json) => $json
+                                ->where('category', "Permanent")
+                                ->where(
+                                    'descriptions.0',
+                                    [
+                                        'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
+                                        'descriptionType' => 'Description',
+                                    ]
+                                )->has('addOns.0',  fn(AssertableJson $json) => $json
+                                    ->where('type', "Detector")
+                                    ->where('group', "EDS detector (Energy Dispersive X-ray Spectroscopy)")
+                                    ->where('description.0', [
+                                        'description' => 'Bruker XFlash 6-60',
+                                        'descriptionType' => 'Description',
+                                    ]))->where('name', "2G cryogenic magnetometer")->etc()
+
+                        )->where('organisation', "Universiteit Utrecht (UU)")
+
+
+                        ->etc()
+                )->etc()
+        );
+    }
+
+
+    /**
+     * Test /all endpoint with error received from CKAN
+     */
+    public function test_all_error_ckan(): void
+    {
+
+
+        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_error.txt'));
+        $guzzleClient = $this->getCkanClientMock($response);
+        $mockLab = $this->getEloquentModelsMock();
+
+
+        $this->app->instance(Laboratory::class, $mockLab);
+        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
+            return new FacilityController($guzzleClient,  $app->make(Laboratory::class));
+        });
+        // Retrieve response from API
+        $response = $this->get('api/v2/facilities/all');
+
+        // Check for 500 status response
+        $response->assertStatus(500);
+
+        // Verify response body contents
+        $response->assertJson(
+            fn(AssertableJson $json) => $json->has('success')
+                ->where('success', false)
+                ->where('messages', ['Error received from CKAN api.'])
+                ->etc()
+        );
+    }
+
+    /**
+     * Test /all endpoint with validation errors
+     */
+    public function test_all_error_validation(): void
+    {
+        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
+        $guzzleClient = $this->getCkanClientMock($response);
+        $mockLab = $this->getEloquentModelsMock();
+
+
+        $this->app->instance(Laboratory::class, $mockLab);
+        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
+            return new FacilityController($guzzleClient,  $app->make(Laboratory::class));
+        });
+
+        // Retrieve response from API
+        $response = $this->get('api/v2/facilities/all?limit=a&offset=-1');
+
+        // Check for 500 status response
+        $response->assertStatus(422);
+
+        // Verify response body contents
+        $response->assertJson(
+            fn(AssertableJson $json) => $json->has('success')
+                ->where('success', false)
+                ->where('messages', ['The limit must be an integer.', 'The offset must be at least 0.'])
+                ->etc()
+        );
+    }
+
+
+    private function getEloquentModelsMock(): Laboratory
+    {
         $lab =  new Laboratory([
             "id" => 117,
             "laboratory_organization_id" => 64,
@@ -105,73 +300,23 @@ class FacilityControllerTest extends TestCase
         $builder = \Mockery::mock();
         // 2. Mock the ->first() on the returned builder
         $builder->shouldReceive('first')
-            ->once()
             ->andReturn($lab);
 
         // Mock the User model
         $mockLab = Mockery::mock(Laboratory::class);
         $mockLab->shouldReceive('where')
-            ->once()
             ->with('fast_id', 164)
             ->andReturn($builder);
+        return $mockLab;
+    }
 
-        $this->app->instance(Laboratory::class, $mockLab);
-        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
-        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient,  $app->make(Laboratory::class));
-        });
+    private function getCkanClientMock(string $response): Client
+    {
+        $mock = new MockHandler([
+            new Response(200, [], $response),
+        ]);
 
-
-
-        $response = $this->get('api/v2/facilities/all?title="HelLabs - Geophysical laboratory"');
-
-        $response->assertStatus(200);
-        // Verify response body contents
-        $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
-                ->where('meta.totalCount', 117)
-                ->where('meta.resultCount', 1)
-                ->where('meta.limit', 10)
-                ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url') . '/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
-                ->has(
-                    'data.0',
-                    fn(AssertableJson $json) => $json
-                        ->where('title', "HelLabs - Geophysical laboratory")
-                        ->where('geojson', [
-                            'geometry' => [
-                                'coordinates' => [
-                                    24.963641,
-                                    60.204535,
-                                    23,
-                                ],
-                                'type' => 'Point',
-                            ],
-                            'properties' => [],
-                            'type' => 'Feature',
-                        ])->has(
-                            'equipment.0',
-                            fn(AssertableJson $json) => $json
-                                ->where('category', "Permanent")
-                                ->where(
-                                    'descriptions.0',
-                                    [
-                                        'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
-                                        'descriptionType' => 'Description',
-                                    ]
-                                )->has('addOns.0',  fn(AssertableJson $json) => $json
-                                    ->where('type', "Detector")
-                                    ->where('group', "EDS detector (Energy Dispersive X-ray Spectroscopy)")
-                                    ->where('description.0', [
-                                        'description' => 'Bruker XFlash 6-60',
-                                        'descriptionType' => 'Description',
-                                    ]))->where('name', "2G cryogenic magnetometer")->etc()
-
-                        )->where('organisation', "Universiteit Utrecht (UU)")
-
-
-                        ->etc()
-                )->etc()
-        );
+        $handler = HandlerStack::create($mock);
+        return new Client(['handler' => $handler]);
     }
 }
