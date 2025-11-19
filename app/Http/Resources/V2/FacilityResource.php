@@ -37,12 +37,11 @@ class FacilityResource extends JsonResource
     {
         $genericDescription = $this->description ?? '';
         $genericDescriptionHtml = $this->description_html ?? '';
-
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
             'organisation' => $this->laboratoryOrganization->name,
-            'domain' => $this->msl_domain_name,
+            'domain' => $this->fast_domain_name,
             'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
             // here we want to include the addons
             'equipment' => EquipmentResource::collection($this->laboratoryEquipment),

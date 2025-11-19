@@ -47,6 +47,7 @@ class FacilityControllerTest extends TestCase
                     'data.0',
                     fn(AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
+                        ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
                             'geometry' => [
                                 'coordinates' => [
@@ -112,6 +113,7 @@ class FacilityControllerTest extends TestCase
                     'data.0',
                     fn(AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
+                        ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
                             'geometry' => [
                                 'coordinates' => [
