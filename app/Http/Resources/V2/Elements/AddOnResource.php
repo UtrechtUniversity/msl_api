@@ -18,7 +18,7 @@ class AddOnResource extends JsonResource
         return [
             'description' => new DescriptionResource(new Descriptions(genericDescription: $this->description)),
             'type' => $this->type,
-            'group' => $this->group
+            'group' => $this->group,
         ];
     }
 }

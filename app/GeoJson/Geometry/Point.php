@@ -15,17 +15,18 @@ class Point extends Geometry
      * y coordinate, latitude for geographic coordinate
      */
     public float $y;
+
     /**
      * z coordinate, altitude for geographic coordinate
      */
-    public float|null $z;
+    public ?float $z;
+
     /**
      * Constructs new Point object
      *
      * @param  int|float  $x
      * @param  int|float  $y
      * @param  int|float  $z
-
      */
     public function __construct($x, $y, $z = null)
     {
@@ -37,7 +38,7 @@ class Point extends Geometry
             throw new Exception('y coordinate must be integer or float');
         }
 
-        if ($z !== null && (!is_int($z) && ! is_float($z))) {
+        if ($z !== null && (! is_int($z) && ! is_float($z))) {
             throw new Exception('y coordinate must be integer or float');
         }
 
@@ -64,6 +65,7 @@ class Point extends Geometry
         if ($this->z !== null) {
             $coordinates[] = $this->z;
         }
+
         return [
             'type' => 'Point',
             'coordinates' => $coordinates,

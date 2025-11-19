@@ -17,6 +17,7 @@ class EquipmentResource extends JsonResource
     {
         $genericDescription = $this->description ?? '';
         $genericDescriptionHtml = $this->description_html ?? '';
+
         return [
             'name' => $this->name,
             'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
@@ -25,7 +26,7 @@ class EquipmentResource extends JsonResource
             'type' => $this->type_name,
             'group' => $this->group_name,
             'brand' => $this->brand,
-            'addOns' => AddOnResource::collection($this->laboratory_equipment_addons)
+            'addOns' => AddOnResource::collection($this->laboratory_equipment_addons),
         ];
     }
 }

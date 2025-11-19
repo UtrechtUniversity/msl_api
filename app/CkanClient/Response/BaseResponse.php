@@ -67,7 +67,7 @@ class BaseResponse
                 case 'data-publication':
                     return DataPublication::fromCkanArray($result);
                 case 'lab':
-                    if($result['msl_fast_id']) {
+                    if ($result['msl_fast_id']) {
                         return Laboratory::where('fast_id', $result['msl_fast_id'])->first();
                     }
                     break;

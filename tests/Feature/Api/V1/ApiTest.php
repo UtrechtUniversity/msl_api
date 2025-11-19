@@ -40,16 +40,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 670)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone')
                         ->where('name', 'a6434e5f71718999519d775c8239c8a3')
-                        ->where('portalLink', config('app.url') . '/data-publication/a6434e5f71718999519d775c8239c8a3')
+                        ->where('portalLink', config('app.url').'/data-publication/a6434e5f71718999519d775c8239c8a3')
                         ->where('doi', '10.24416/uu01-q5k96z')
                         ->has('license')
                         ->has('version')
@@ -113,16 +113,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 256)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone')
                         ->where('name', 'a6434e5f71718999519d775c8239c8a3')
-                        ->where('portalLink', config('app.url') . '/data-publication/a6434e5f71718999519d775c8239c8a3')
+                        ->where('portalLink', config('app.url').'/data-publication/a6434e5f71718999519d775c8239c8a3')
                         ->where('doi', '10.24416/uu01-q5k96z')
                         ->has('license')
                         ->has('version')
@@ -184,16 +184,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 183)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.1',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Which Ion Dominates Temperature and Pressure Response of Halide Perovskites and Elpasolites?')
                         ->where('name', 'a8dd3f7d8b3b49d39f97316ccb77f70c')
-                        ->where('portalLink', config('app.url') . '/data-publication/a8dd3f7d8b3b49d39f97316ccb77f70c')
+                        ->where('portalLink', config('app.url').'/data-publication/a8dd3f7d8b3b49d39f97316ccb77f70c')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'https://public.yoda.uu.nl/science/UU01/W60H58.html')
@@ -256,16 +256,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 63)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Data supplement to: Local magnetic anomalies in rugged volcanic terrain explain bias in paleomagnetic data: consequences for sampling - UPDATED')
                         ->where('name', '5f8c41071cf366c074a907a23e0b7db3')
-                        ->where('portalLink', config('app.url') . '/data-publication/5f8c41071cf366c074a907a23e0b7db3')
+                        ->where('portalLink', config('app.url').'/data-publication/5f8c41071cf366c074a907a23e0b7db3')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'https://public.yoda.uu.nl/geo/UU01/B6JJC0.html')
@@ -326,16 +326,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 228)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone')
                         ->where('name', 'a6434e5f71718999519d775c8239c8a3')
-                        ->where('portalLink', config('app.url') . '/data-publication/a6434e5f71718999519d775c8239c8a3')
+                        ->where('portalLink', config('app.url').'/data-publication/a6434e5f71718999519d775c8239c8a3')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'https://public.yoda.uu.nl/geo/UU01/Q5K96Z.html')
@@ -392,16 +392,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 273)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'Data supplement to "A Study in Blue: Secondary Copper-rich Minerals and their Associated Bacterial Diversity in Icelandic Lava Tubes"')
                         ->where('name', '40fd65d78aec4ff7ee7231a5c2230ce2')
-                        ->where('portalLink', config('app.url') . '/data-publication/40fd65d78aec4ff7ee7231a5c2230ce2')
+                        ->where('portalLink', config('app.url').'/data-publication/40fd65d78aec4ff7ee7231a5c2230ce2')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'https://public.yoda.uu.nl/geo/UU01/I32Z95.html')
@@ -462,16 +462,16 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 116)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'The database of ground-motion recordings, site profiles and amplification factors used for the development of the Groningen Ground-Motion Prediction Models')
                         ->where('name', 'c244d12fef1aba659598ded01699d46e')
-                        ->where('portalLink', config('app.url') . '/data-publication/c244d12fef1aba659598ded01699d46e')
+                        ->where('portalLink', config('app.url').'/data-publication/c244d12fef1aba659598ded01699d46e')
                         ->has('license')
                         ->has('version')
                         ->where('source', 'https://public.yoda.uu.nl/geo/UU01/KC2ZHQ.html')
@@ -529,7 +529,7 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Error received from CKAN api.')
                 ->etc()
@@ -562,12 +562,12 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->has('message')
                 ->has(
                     'result',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->has('count')
                         ->has('resultCount')
                         ->has('results')
@@ -599,7 +599,7 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN.')
                 ->etc()
@@ -631,13 +631,13 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 117)
                 ->where('result.resultCount', 10)
                 ->has(
                     'result.results.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('name', 'HelLabs - Geophysical laboratory')
                         ->where('description', 'Paleomagnetism, rock magnetism and petrophysics')
                         ->where('descriptionHtml', "<p>Paleomagnetism, rock magnetism and petrophysics</p>\n")
@@ -669,7 +669,7 @@ class ApiTest extends TestCase
         // over the bounds of +/-90 or +/-180
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,-90,180,91');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -678,7 +678,7 @@ class ApiTest extends TestCase
         // comma instead of dot for decimal
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,-90,180,85,5');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -687,7 +687,7 @@ class ApiTest extends TestCase
         // switch first two inputs
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180,85');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -696,7 +696,7 @@ class ApiTest extends TestCase
         // 3 inputs
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -705,7 +705,7 @@ class ApiTest extends TestCase
         // 5 inputs
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=-90,180,180,55');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -714,7 +714,7 @@ class ApiTest extends TestCase
         // string input
         $responseBoundingBox = $this->get('webservice/api/facilities?boundingBox=180,90,180,nine');
         $responseBoundingBox->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('message', 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4')
                 ->etc()
@@ -746,7 +746,7 @@ class ApiTest extends TestCase
 
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', true)
                 ->where('result.count', 2)
                 ->etc()

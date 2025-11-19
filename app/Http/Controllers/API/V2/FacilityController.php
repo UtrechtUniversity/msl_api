@@ -11,6 +11,7 @@ use App\Models\Laboratory;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+
 // TODO move this on its own file
 // TODO NOTICE THAT the values are different from the enum in DataPublications!
 enum SubDomainTypeInCkan: string
@@ -38,11 +39,13 @@ class FacilityController extends BaseController
         'title' => 'title',
         'authorName' => 'msl_author_name_text',
         'facilityQuery' => 'title',
-        //TODO does this work?
+        // TODO does this work?
         'subDomain' => 'msl_subdomain',
         'equipmentQuery' => 'msl_laboratory_equipment_text',
     ];
+
     private $packageSearchRequest;
+
     private $laboratory;
 
     /**
@@ -54,6 +57,7 @@ class FacilityController extends BaseController
         $this->packageSearchRequest = new PackageSearchRequest;
         $this->laboratory = $laboratory;
     }
+
     /**
      * Rock physics facilities endpoint
      *
@@ -113,6 +117,7 @@ class FacilityController extends BaseController
     {
         return $this->facilitiesResponse($request, 'geoenergy');
     }
+
     /**
      * All subdomains facilities endpoint
      *
@@ -123,13 +128,11 @@ class FacilityController extends BaseController
         return $this->facilitiesResponse($request, 'all');
     }
 
-
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
      *
-     * @param  string  $context
      * @return response
      */
     private function facilitiesResponse(Request $request, string $context)
@@ -162,7 +165,6 @@ class FacilityController extends BaseController
             return new CkanErrorResource([]);
         }
 
-
         $facilities = $this->getResultsfromCkanArray($response->responseBody);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($facilities);
@@ -176,12 +178,13 @@ class FacilityController extends BaseController
                 'resultCount' => $currentResultCount,
                 'totalCount' => $totalResultCount,
                 'limit' => $limit,
-                'offset' =>  $offset,
+                'offset' => $offset,
             ],
             'links' => [
                 'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
             ],
         ]);
+
         return $responseToReturn;
     }
 
@@ -204,7 +207,6 @@ class FacilityController extends BaseController
      * Building up the request that we are going to send
      * to CKAN for facilities.
      *
-     * @param  Request  $request
      * @return response
      */
     private function setRequestToCKAN(Request $request, string $context): void
@@ -222,9 +224,9 @@ class FacilityController extends BaseController
             $this->packageSearchRequest->rows = $request->get('limit');
         }
         // Set start
-        if ($request->get('offset')) {;
+        if ($request->get('offset')) {
             $this->packageSearchRequest->start = $request->get('offset');
-        };
+        }
         // includes facility and equipment query
         $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
         // bounding box
@@ -240,8 +242,7 @@ class FacilityController extends BaseController
         }
     }
 
-
-    //TODO $context also could use a reusable enum
+    // TODO $context also could use a reusable enum
     private function setSubdomain(string $context): void
     {
         $msl_subdomain = 'msl_domain_name';
@@ -273,7 +274,6 @@ class FacilityController extends BaseController
         }
     }
 
-
     /**
      * Converts search parameters to solr query using field mappings
      *
@@ -287,9 +287,9 @@ class FacilityController extends BaseController
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
                 } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
+                    $queryParts[] = $value.':'.$request->get($key);
                 }
             }
         }

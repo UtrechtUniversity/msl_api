@@ -12,8 +12,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class FacilityResource extends JsonResource
 {
-
-    private function getGeoJsonFromPoint(): null|array
+    private function getGeoJsonFromPoint(): ?array
     {
 
         // TODO why aren't these numbers in sql floats?
@@ -21,10 +20,14 @@ class FacilityResource extends JsonResource
         $y = is_numeric($this->latitude) ? (float) $this->latitude : null;
         $z = is_numeric($this->altitude) ? (float) $this->altitude : null;
 
-        if (!($x && $y)) return null;
+        if (! ($x && $y)) {
+            return null;
+        }
         $point = new Point($x, $y, $z);
+
         return (new Feature($point))->jsonSerialize();
     }
+
     /**
      * Transform the resource into an array.
      *
@@ -34,6 +37,7 @@ class FacilityResource extends JsonResource
     {
         $genericDescription = $this->description ?? '';
         $genericDescriptionHtml = $this->description_html ?? '';
+
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),

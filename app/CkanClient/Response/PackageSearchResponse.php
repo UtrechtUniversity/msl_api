@@ -3,7 +3,6 @@
 namespace App\CkanClient\Response;
 
 use App\Models\Ckan\DataPublication;
-use App\Models\Laboratory;
 
 class PackageSearchResponse extends BaseResponse
 {

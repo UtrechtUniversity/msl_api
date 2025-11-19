@@ -2,20 +2,25 @@
 
 namespace App\Http\Resources\V2\Helpers;
 
-
-
 class Descriptions
-{   // Descriptions for data-publications
+{
+    // Descriptions for data-publications
     public string $abstract;
+
     public string $methods;
+
     public string $seriesInformation;
+
     public string $tableOfContents;
+
     public string $technicalInfo;
+
     public string $other;
+
     // Descriptions for facilities
     public string $genericDescription;
-    public string $genericDescriptionHtml;
 
+    public string $genericDescriptionHtml;
 
     public function __construct(
         string $abstract = '',
