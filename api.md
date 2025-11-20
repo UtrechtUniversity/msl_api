@@ -3,14 +3,23 @@ The EPOS MSL API offers access to data available within our CKAN portal. This do
  A Hoppscotch collection file is available [here](./docs/api/hoppscotch/collections/MSL%20API.json).
 
 ## Available resources
-The API offers 5 domain specific endpoints and 1 endpoint offering access to all data-publications available. All data is open accessible, no authorization is required.
-+ [rock_physics](#rock_physics)
-+ [analogue](#analogue)
-+ [paleo](#paleo)
-+ [microscopy](#microscopy)
-+ [geochemistry](#geochemistry)
-+ [all](#all)
-+ [facilities](#facilities)
+The API offers 6 domain specific endpoints, per facilities and data-publications information. All data is open accessible, no authorization is required.
++ [Data-publications](#data-publications)
+   + [rock_physics](#dp_rock_physics)
+   + [analogue](#dp_analogue)
+   + [paleo](#dp_paleo)
+   + [microscopy](#dp_microscopy)
+   + [geochemistry](#dp_geochemistry)
+   + [geoenergy](#dp_geochemistry)
+   + [all](#dp_all)
++ [Facilities](#facilities)
+   + [rock_physics](#f_rock_physics)
+   + [analogue](#f_analogue)
+   + [paleo](#f_paleo)
+   + [microscopy](#f_microscopy)
+   + [geochemistry](#f_geochemistry)
+   + [geoenergy](#f_geochemistry)
+   + [all](#f_all)
 
 ## Base url
 
@@ -20,16 +29,18 @@ The base url for the API:
 https://epos-msl.uu.nl/api/v2/datapublications
 ```
 - For facilities:
-//TODO
+```
+https://epos-msl.uu.nl/api/v2/facilities
+```
 
 
 
+- ## Data-Publications {#data-publications}
 
-
-# /rock_physics
+### /rock_physics {#dp_rock_physics}
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
-## Search all rock physics data-publications [GET]
+### Search all rock physics data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -587,10 +598,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /analogue
+### /analogue {#dp_analogue}
 This endpoint gives access to all data-publications available that are marked as belonging to the analogue modelling (sub)domain. 
 
-## Search all analogue modelling data-publications [GET]
+### Search all analogue modelling data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -1118,10 +1129,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /paleo
+### /paleo {#dp_paleo}
 This endpoint gives access to all data-publications available that are marked as belonging to the paleomagnetism (sub)domain. 
 
-## Search all paleomagnetism data-publications [GET]
+### Search all paleomagnetism data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -1473,10 +1484,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /microscopy
+### /microscopy {#dp_microscopy}
 This endpoint gives access to all data-publications available that are marked as belonging to the microscopy and tomography (sub)domain. 
 
-## Search all microscopy and tomography data-publications [GET]
+### Search all microscopy and tomography data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -1787,10 +1798,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /geochemistry
+### /geochemistry {#dp_geochemistry}
 This endpoint gives access to all data-publications available that are marked as belonging to the geochemistry (sub)domain. 
 
-## Search all geochemistry data-publications [GET]
+### Search all geochemistry data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -2102,10 +2113,10 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 
-# /geoenergy
+### /geoenergy {#dp_geoenergy}
 This endpoint gives access to all data-publications available that are marked as belonging to the Geo-energy test beds (sub)domain. 
 
-## Search all Geo-energy test beds data-publications [GET]
+### Search all Geo-energy test beds data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -2398,10 +2409,10 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 
-# /all
+### /all {#dp_all}
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
-## Search all data-publications [GET]
+### Search all data-publications [GET]
 + Parameters
 
     + limit (number, optional) - The number of results to return.
@@ -2756,9 +2767,1062 @@ This endpoint gives access to all data-publications available that are marked as
 ```
 </details>
 
-# Facilities
-//TODO
+- ## Facilities {#facilities}
 
+
+### /rock_physics {#f_rock_physics}
+This endpoint gives access to all facilities available that are marked as belonging to the rock physics (sub)domain. 
+
+### Search all rock physics facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+ {
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/rock_physics?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Core Logging Lab",
+            "portalLink": "http://localhost:8000/lab/66f041e16a60928b05a7e228a89c3799",
+            "organisation": "National Institute of Oceanography and Applied Geophysics (OGS)",
+            "domain": "Rock and melt physics",
+            "descriptions": [
+                {
+                    "description": "Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "Multi Sensor Core Logger",
+                    "descriptions": [
+                        {
+                            "description": "Gamma Density\r\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Gamma Density\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Geotechnical equipment",
+                    "group": "Physical Properties",
+                    "brand": "Geotek®",
+                    "addOns": [
+                        {
+                            "description": [
+                                {
+                                    "description": "Gamma Density (Bulk Density): 137Cs gamma source with 2.5mm or 5mm collimators; density resolution up to 1% (depending upon counting time",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "P-wave velocity: 250-500 kHz piezo-electric ceramic transducers; accurate to about 0.2% (depending on core condition)",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Magnetic Susceptibility: Bartington loop sensor 60-120mm diameter, or point sensor (on split cores) giving 5% calibration accuracy",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Geoscan V linescan Imaging system: Images can be collected over the full core width between 100 and 1000 lines per centimetre, corresponding to 100 and 10 micron pixel sizes, respectively. Pixel sensor: 1x5K CCD ADC resolution: 14 bits per colour channel MAX pixel rate: 3.2M pixel/sec MAX scan rate: 200 lines/sec Down core res: up to 10 microns Output: 48-bit RGB TIFF",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Camera imaging during testing"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Available July 2025 - The CM-700d spectrophotometer uses a diffused illumination, 8 degree viewing angle with a pulsed xenon lamp providing the illumination. The instrument detector collects light in 10 nm increments between 400 nm and 700 nm wavelength ranges.",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Colour Spectrophotometry"
+                        }
+                    ]
+                },
+                {
+                    "name": "Custom-built - X-radiography (μ-CT)",
+                    "descriptions": [
+                        {
+                            "description": "Visually flat images can be created from scanned whole or split cores using software corrections.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Visually flat images can be created from scanned whole or split cores using software corrections. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Microscopy and tomography",
+                    "category": "Permanent",
+                    "type": "X-Ray Tomography",
+                    "group": "X-ray CT (Computed Tomography)",
+                    "brand": "Geotek®",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        13.802235,
+                        45.660068
+                    ]
+                },
+                "properties": {
+                    "city": "Trieste",
+                    "country": "Italy"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/66f041e16a60928b05a7e228a89c3799"
+        }
+    ]
+}
+```
+
+</details>
+
+### /analogue {#f_analogue}
+This endpoint gives access to all facilities available that are marked as belonging to the analogue modelling (sub)domain. 
+
+### Search all analogue modelling facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/analogue?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Core Logging Lab",
+            "portalLink": "http://localhost:8000/lab/66f041e16a60928b05a7e228a89c3799",
+            "organisation": "National Institute of Oceanography and Applied Geophysics (OGS)",
+            "domain": "Analogue modelling of geologic processes",
+            "descriptions": [
+                {
+                    "description": "Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "Multi Sensor Core Logger",
+                    "descriptions": [
+                        {
+                            "description": "Gamma Density\r\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Gamma Density\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Geotechnical equipment",
+                    "group": "Physical Properties",
+                    "brand": "Geotek®",
+                    "addOns": [
+                        {
+                            "description": [
+                                {
+                                    "description": "Gamma Density (Bulk Density): 137Cs gamma source with 2.5mm or 5mm collimators; density resolution up to 1% (depending upon counting time",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "P-wave velocity: 250-500 kHz piezo-electric ceramic transducers; accurate to about 0.2% (depending on core condition)",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Magnetic Susceptibility: Bartington loop sensor 60-120mm diameter, or point sensor (on split cores) giving 5% calibration accuracy",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Geoscan V linescan Imaging system: Images can be collected over the full core width between 100 and 1000 lines per centimetre, corresponding to 100 and 10 micron pixel sizes, respectively. Pixel sensor: 1x5K CCD ADC resolution: 14 bits per colour channel MAX pixel rate: 3.2M pixel/sec MAX scan rate: 200 lines/sec Down core res: up to 10 microns Output: 48-bit RGB TIFF",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Camera imaging during testing"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Available July 2025 - The CM-700d spectrophotometer uses a diffused illumination, 8 degree viewing angle with a pulsed xenon lamp providing the illumination. The instrument detector collects light in 10 nm increments between 400 nm and 700 nm wavelength ranges.",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Colour Spectrophotometry"
+                        }
+                    ]
+                },
+                {
+                    "name": "Custom-built - X-radiography (μ-CT)",
+                    "descriptions": [
+                        {
+                            "description": "Visually flat images can be created from scanned whole or split cores using software corrections.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Visually flat images can be created from scanned whole or split cores using software corrections. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Microscopy and tomography",
+                    "category": "Permanent",
+                    "type": "X-Ray Tomography",
+                    "group": "X-ray CT (Computed Tomography)",
+                    "brand": "Geotek®",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        13.802235,
+                        45.660068
+                    ]
+                },
+                "properties": {
+                    "city": "Trieste",
+                    "country": "Italy"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/66f041e16a60928b05a7e228a89c3799"
+        }
+    ]
+}
+```
+
+</details>
+
+### /paleo {#f_paleo}
+This endpoint gives access to all facilities available that are marked as belonging to the paleomagnetism (sub)domain. 
+
+### Search all paleomagnetism facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/paleo?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Laboratory for Environmental Magnetism",
+            "portalLink": "http://localhost:8000/lab/19ca14e7ea6328a42e0eb13d585e4c22",
+            "organisation": "Royal Meteorological Institute (KMI)",
+            "domain": "Paleomagnetism",
+            "descriptions": [
+                {
+                    "description": "Interpreting magnetic properties of natural samples is a complex challenge.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>Interpreting magnetic properties of natural samples is a complex challenge.",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "2G cryogenic magnetometer",
+                    "descriptions": [
+                        {
+                            "description": "Large sample bore. Measurement of cubes up to 4 cm edge length possible",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Large sample bore. Measurement of cubes up to 4 cm edge length possible</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Paleomagnetism",
+                    "category": "Permanent",
+                    "type": "Magnetometer",
+                    "group": "Cryogenic Magnetometer",
+                    "brand": "",
+                    "addOns": []
+                },
+                {
+                    "name": "MPMS3",
+                    "descriptions": [],
+                    "domain": "Paleomagnetism",
+                    "category": "Permanent",
+                    "type": "Magnetometer",
+                    "group": "Cryogenic Magnetometer",
+                    "brand": "Quantum Design",
+                    "addOns": []
+                },
+                {
+                    "name": "Kappabridge KLY-4",
+                    "descriptions": [
+                        {
+                            "description": "includes: heating unit, cooling unit, field dependence of magnetic low-field susceptibility",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>includes: heating unit, cooling unit, field dependence of magnetic low-field susceptibility</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Paleomagnetism",
+                    "category": "Permanent",
+                    "type": "Susceptometer/Susceptibility Bridge",
+                    "group": "Susceptibility Meter",
+                    "brand": "Agico",
+                    "addOns": []
+                },
+                {
+                    "name": "MS3",
+                    "descriptions": [],
+                    "domain": "Paleomagnetism",
+                    "category": "Permanent",
+                    "type": "Susceptometer/Susceptibility Bridge",
+                    "group": "Susceptibility Meter",
+                    "brand": "Bartington",
+                    "addOns": []
+                },
+                {
+                    "name": "MS3",
+                    "descriptions": [],
+                    "domain": "Paleomagnetism",
+                    "category": "Permanent",
+                    "type": "Field Equipment",
+                    "group": "Portable Susceptibility Meter",
+                    "brand": "Bartington",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        4.58774,
+                        50.09665,
+                        230
+                    ]
+                },
+                "properties": {
+                    "city": "Dourbes (Viroinval)",
+                    "country": "Belgium"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/19ca14e7ea6328a42e0eb13d585e4c22"
+        }
+    ]
+}
+```
+
+</details>
+
+### /microscopy {#f_microscopy}
+This endpoint gives access to all facilities available that are marked as belonging to the microscopy and tomography (sub)domain. 
+
+### Search all microscopy and tomography facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/microscopy?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Delft Petrophysics Lab",
+            "portalLink": "http://localhost:8000/lab/34173cb38f07f89ddbebc2ac9128303f",
+            "organisation": "Technische Universiteit Delft (TU Delft)",
+            "domain": "Microscopy and tomography",
+            "descriptions": [
+                {
+                    "description": "The X-ray Imaging Facility at Delft University of Technology (TUD) has been instrumental over the past ten years for applied earth science and civil engineering research in the Netherlands using X-ray computed tomography (CT).",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>The X-ray Imaging Facility at Delft University of Technology (TUD) has been instrumental over the past ten years for applied earth science and civil engineering research in the Netherlands using X-ray computed tomography (CT).",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "Ultrapyc 5000",
+                    "descriptions": [],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Porosity and density measurement equipment",
+                    "group": "Pycnometer",
+                    "brand": "",
+                    "addOns": []
+                },
+                {
+                    "name": "Thermal conductivity test setup",
+                    "descriptions": [],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Thermal property measurement equipment",
+                    "group": "Thermal conductivity test setup",
+                    "brand": "",
+                    "addOns": []
+                },
+                {
+                    "name": "CoreTOM (μ-CT)",
+                    "descriptions": [
+                        {
+                            "description": "Lab-scale micro computed tomography scanner to characterize microstructures of a wide variation of materials and sample diemensions. Samples with diameters of 1 mm to up to 12 cm can be scanned at with a maximum of 3 micrometer resolution. Large samples (>30 cm in length) can be scanned and the equipment has the capability to perform dynamic imaging.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Lab-scale micro computed tomography scanner to characterize microstructures of a wide variation of materials and sample diemensions. Samples with diameters of 1 mm to up to 12 cm can be scanned at with a maximum of 3 micrometer resolution. Large samples (&gt;30 cm in length) can be scanned and the equipment has the capability to perform dynamic imaging.</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Microscopy and tomography",
+                    "category": "Permanent",
+                    "type": "X-Ray Tomography",
+                    "group": "X-ray CT (Computed Tomography)",
+                    "brand": "Tescan",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        4.375744020366476,
+                        51.99867212334709
+                    ]
+                },
+                "properties": {
+                    "city": "Delft",
+                    "country": "Netherlands"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/34173cb38f07f89ddbebc2ac9128303f"
+        }
+    ]
+}
+```
+
+</details>
+
+### /geochemistry {#f_geochemistry}
+This endpoint gives access to all facilities available that are marked as belonging to the geochemistry (sub)domain. 
+
+### Search all geochemistry facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/geochemistry?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "The Netherlands Isotope Geochemistry Laboratory (NIGeL)",
+            "portalLink": "http://localhost:8000/lab/43ec517d68b6edd3015b3edc9a11367b",
+            "organisation": "Vrije Universiteit Amsterdam",
+            "domain": "Geochemistry",
+            "descriptions": [
+                {
+                    "description": "The Netherlands Isotope Geochemistry Laboratory (NIGeL) is a NWO-Large Infrastructure funded national research facility for geochemical and isotopic analysis serving the Earth & Planetary Science, Archaeology, Forensic and Cultural Heritage research communities within and beyond the Netherlands.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>The Netherlands Isotope Geochemistry Laboratory (NIGeL) is a NWO-Large Infrastructure funded national research facility for geochemical and isotopic analysis serving the Earth &amp; Planetary Science, Archaeology, Forensic and Cultural Heritage research communities within and beyond the Netherlands.",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "TritonXT",
+                    "descriptions": [
+                        {
+                            "description": "Multi-collector TIMS that includes 10>13 Ohm capability for the analysis small sample size",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Multi-collector TIMS that includes 10&gt;13 Ohm capability for the analysis small sample size</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Geochemistry",
+                    "category": "Permanent",
+                    "type": "Mass Spectrometer",
+                    "group": "Thermal ionization-mass spectrometer",
+                    "brand": "ThermoFisher",
+                    "addOns": []
+                },
+                {
+                    "name": "iCAP TQ",
+                    "descriptions": [
+                        {
+                            "description": "for the analysis of dissolved sample solutions or the analysis of solid samples when linked to either nano- or femto-second laser",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>for the analysis of dissolved sample solutions or the analysis of solid samples when linked to either nano- or femto-second laser</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Geochemistry",
+                    "category": "Permanent",
+                    "type": "Mass Spectrometer",
+                    "group": "Inductively coupled plasma mass spectrometer",
+                    "brand": "ThermoFisher",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        4.8627673299627086,
+                        52.33556937356889
+                    ]
+                },
+                "properties": {
+                    "city": "Amsterdam",
+                    "country": "Netherlands"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/43ec517d68b6edd3015b3edc9a11367b"
+        }
+    ]
+}
+```
+</details>
+
+
+### /geoenergy {#f_geoenergy}
+This endpoint gives access to all facilities available that are marked as belonging to the Geo-energy test beds (sub)domain. 
+
+### Search all Geo-energy test beds facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + country (text, optional) - Country to search for. 
+        + Default: ``
+    + city (text, optional) - City to search for. 
+        + Default: ``
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/geoenergy?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Applied Geoscience Hydrogen and CO2 Laboratory",
+            "portalLink": "http://localhost:8000/lab/6974ce5ac660610b44d9b9fed0ff9548",
+            "organisation": "University of Edinburgh (UEDIN)",
+            "domain": "Geo-energy test beds",
+            "descriptions": [
+                {
+                    "description": "The Applied Geoscience Laboratory for Sustainable Energy has a suite of coupled thermal-hydro-mechanical-chemical experimental equipment for research into the secure and sustainable utilisation of the subsurface for low-carbon energy applications.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>The Applied Geoscience Laboratory for Sustainable Energy has a suite of coupled thermal-hydro-mechanical-chemical experimental equipment for research into the secure and sustainable utilisation of the subsurface for low-carbon energy applications.</p>\n",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "high PT Geochemistry reaction vessels",
+                    "descriptions": [
+                        {
+                            "description": "Multi-phase geochemical reactions for hydrogen and CO2 at in-situ elevated temperatures, fluid types, and pressures.\r\nConstant pressure monitoring, with fluid and gas sampling supported by full rock, gas and fluid analysis.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Multi-phase geochemical reactions for hydrogen and CO2 at in-situ elevated temperatures, fluid types, and pressures.\nConstant pressure monitoring, with fluid and gas sampling supported by full rock, gas and fluid analysis.</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Fluid transport apparatus",
+                    "group": "high PT Geochemistry reaction vessels",
+                    "brand": "",
+                    "addOns": []
+                },
+                {
+                    "name": "Multiphase Flow Micromodel",
+                    "descriptions": [
+                        {
+                            "description": "High-Pressure Micromodel Experiments\r\n\r\nGlass micromodels with different pore networks and wettability.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>High-Pressure Micromodel Experiments</p>\n<p>Glass micromodels with different pore networks and wettability.",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Fluid transport apparatus",
+                    "group": "Multiphase Flow Micromodel",
+                    "brand": "",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -3.175,
+                        55.9228
+                    ]
+                },
+                "properties": {
+                    "city": "Edinburgh",
+                    "country": "United Kingdom"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/6974ce5ac660610b44d9b9fed0ff9548"
+        }
+    ]
+}
+```
+
+</details>
+
+
+### /all {#f_all}
+This endpoint gives access to all facilities available that are marked as belonging to the rock physics (sub)domain. 
+
+### Search all facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + subDomain (text, optional) - subDomain to filter on. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/all?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Core Logging Lab",
+            "portalLink": "http://localhost:8000/lab/66f041e16a60928b05a7e228a89c3799",
+            "organisation": "National Institute of Oceanography and Applied Geophysics (OGS)",
+            "domain": "Rock and melt physics",
+            "descriptions": [
+                {
+                    "description": "Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>Continuous centimetric scale measurements of different physical properties of marine sediment and rock samples are at the base of the most of geological and paleoenvironmental studies.",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "Multi Sensor Core Logger",
+                    "descriptions": [
+                        {
+                            "description": "Gamma Density\r\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Gamma Density\nA gamma ray source and detector are mounted across the core on a sensor stand that aligns them with the centre of the core. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Geotechnical equipment",
+                    "group": "Physical Properties",
+                    "brand": "Geotek®",
+                    "addOns": [
+                        {
+                            "description": [
+                                {
+                                    "description": "Gamma Density (Bulk Density): 137Cs gamma source with 2.5mm or 5mm collimators; density resolution up to 1% (depending upon counting time",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "P-wave velocity: 250-500 kHz piezo-electric ceramic transducers; accurate to about 0.2% (depending on core condition)",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Magnetic Susceptibility: Bartington loop sensor 60-120mm diameter, or point sensor (on split cores) giving 5% calibration accuracy",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Acoustic equipment",
+                            "group": "Acoustic emission monitoring equipment"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Geoscan V linescan Imaging system: Images can be collected over the full core width between 100 and 1000 lines per centimetre, corresponding to 100 and 10 micron pixel sizes, respectively. Pixel sensor: 1x5K CCD ADC resolution: 14 bits per colour channel MAX pixel rate: 3.2M pixel/sec MAX scan rate: 200 lines/sec Down core res: up to 10 microns Output: 48-bit RGB TIFF",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Camera imaging during testing"
+                        },
+                        {
+                            "description": [
+                                {
+                                    "description": "Available July 2025 - The CM-700d spectrophotometer uses a diffused illumination, 8 degree viewing angle with a pulsed xenon lamp providing the illumination. The instrument detector collects light in 10 nm increments between 400 nm and 700 nm wavelength ranges.",
+                                    "descriptionType": "Description"
+                                }
+                            ],
+                            "type": "Syn-deformation imaging equipment",
+                            "group": "Colour Spectrophotometry"
+                        }
+                    ]
+                },
+                {
+                    "name": "Custom-built - X-radiography (μ-CT)",
+                    "descriptions": [
+                        {
+                            "description": "Visually flat images can be created from scanned whole or split cores using software corrections.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Visually flat images can be created from scanned whole or split cores using software corrections. ",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Microscopy and tomography",
+                    "category": "Permanent",
+                    "type": "X-Ray Tomography",
+                    "group": "X-ray CT (Computed Tomography)",
+                    "brand": "Geotek®",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        13.802235,
+                        45.660068
+                    ]
+                },
+                "properties": {
+                    "city": "Trieste",
+                    "country": "Italy"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/66f041e16a60928b05a7e228a89c3799"
+        }
+    ]
+}
+```
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------
 ### Deprecated API endpoints
 
 There is another API available offering access to data through our CKAN portal. Nevertheless, this API contain less data and it is deprecated. Please make sure you use the above mentioned v2 API for your application or switch as soon as possible.

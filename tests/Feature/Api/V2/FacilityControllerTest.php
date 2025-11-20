@@ -37,15 +37,15 @@ class FacilityControllerTest extends TestCase
         $response->assertStatus(200);
 
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
+            fn (AssertableJson $json) => $json->has('success')->where('messages', [])
                 ->where('meta.totalCount', 117)
                 ->where('meta.resultCount', 1)
                 ->where('meta.limit', 10)
                 ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url') . '/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
+                ->where('links.current_url', config('app.url').'/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
                 ->has(
                     'data.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
                         ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
@@ -61,7 +61,7 @@ class FacilityControllerTest extends TestCase
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',
-                            fn(AssertableJson $json) => $json
+                            fn (AssertableJson $json) => $json
                                 ->where('category', 'Permanent')
                                 ->where(
                                     'descriptions.0',
@@ -69,14 +69,13 @@ class FacilityControllerTest extends TestCase
                                         'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
                                         'descriptionType' => 'Description',
                                     ]
-                                )->has('addOns.0', fn(AssertableJson $json) => $json
-                                    ->where('type', 'Detector')
-                                    ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
-                                    ->where('description.0', [
-                                        'description' => 'Bruker XFlash 6-60',
-                                        'descriptionType' => 'Description',
-                                    ]))->where('name', '2G cryogenic magnetometer')->etc()
-
+                                )->has('addOns.0', fn (AssertableJson $json) => $json
+                                ->where('type', 'Detector')
+                                ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
+                                ->where('description.0', [
+                                    'description' => 'Bruker XFlash 6-60',
+                                    'descriptionType' => 'Description',
+                                ]))->where('name', '2G cryogenic magnetometer')->etc()
                         )->where('organisation', 'Universiteit Utrecht (UU)')
 
                         ->etc()
@@ -103,15 +102,15 @@ class FacilityControllerTest extends TestCase
         $response->assertStatus(200);
         // Verify response body contents
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
+            fn (AssertableJson $json) => $json->has('success')->where('messages', [])
                 ->where('meta.totalCount', 117)
                 ->where('meta.resultCount', 1)
                 ->where('meta.limit', 10)
                 ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url') . '/api/v2/facilities/paleo?offset=0&limit=10')
+                ->where('links.current_url', config('app.url').'/api/v2/facilities/paleo?offset=0&limit=10')
                 ->has(
                     'data.0',
-                    fn(AssertableJson $json) => $json
+                    fn (AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
                         ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
@@ -127,7 +126,7 @@ class FacilityControllerTest extends TestCase
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',
-                            fn(AssertableJson $json) => $json
+                            fn (AssertableJson $json) => $json
                                 ->where('category', 'Permanent')
                                 ->where(
                                     'descriptions.0',
@@ -135,13 +134,13 @@ class FacilityControllerTest extends TestCase
                                         'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
                                         'descriptionType' => 'Description',
                                     ]
-                                )->has('addOns.0', fn(AssertableJson $json) => $json
-                                    ->where('type', 'Detector')
-                                    ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
-                                    ->where('description.0', [
-                                        'description' => 'Bruker XFlash 6-60',
-                                        'descriptionType' => 'Description',
-                                    ]))->where('name', '2G cryogenic magnetometer')->etc()
+                                )->has('addOns.0', fn (AssertableJson $json) => $json
+                                ->where('type', 'Detector')
+                                ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
+                                ->where('description.0', [
+                                    'description' => 'Bruker XFlash 6-60',
+                                    'descriptionType' => 'Description',
+                                ]))->where('name', '2G cryogenic magnetometer')->etc()
 
                         )->where('organisation', 'Universiteit Utrecht (UU)')
 
@@ -170,7 +169,7 @@ class FacilityControllerTest extends TestCase
         $response->assertStatus(500);
 
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('messages', ['Error received from CKAN api.'])
                 ->etc()
@@ -197,7 +196,7 @@ class FacilityControllerTest extends TestCase
         $response->assertStatus(422);
 
         $response->assertJson(
-            fn(AssertableJson $json) => $json->has('success')
+            fn (AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('messages', ['The limit must be an integer.', 'The offset must be at least 0.'])
                 ->etc()

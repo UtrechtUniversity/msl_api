@@ -38,7 +38,7 @@ class FacilityController extends BaseController
         'tags' => 'tags',
         'title' => 'title',
         'country' => 'msl_address_country_name',
-        'city' => 'msl_address_city'
+        'city' => 'msl_address_city',
     ];
 
     private $packageSearchRequest;
@@ -186,6 +186,7 @@ class FacilityController extends BaseController
 
         return $responseToReturn;
     }
+
     /**
      * Building up the request that we are going to send
      * to CKAN for facilities.

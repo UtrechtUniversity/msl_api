@@ -35,6 +35,7 @@ class FacilityResource extends JsonResource
     {
         $genericDescription = $this->description ?? '';
         $genericDescriptionHtml = $this->description_html ?? '';
+
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
