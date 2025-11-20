@@ -102,7 +102,7 @@
                     ])
                 </div>
             </div>
-            
+
             @if ($data->msl_location != '')
                 <br>
                 <div class="detail-entry-div flex flex-row">
@@ -144,13 +144,12 @@
         @if($labHasMailContact)
             <div class="p-20 w-full flex justify-around">
                 <a href="{{ route('laboratory-contact-person', [
-                    'id'          => $data['name']
+                    'id'          => $data->name
                 ]) }}">
                     <button class="btn btn-primary btn-lg btn-wide ">Contact Laboratory</button>
                 </a>
             </div>
         @endif
-       
     </div>
 
 </x-layout_main>
