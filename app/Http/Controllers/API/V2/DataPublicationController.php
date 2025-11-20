@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\Enums\DataPublicationSubDomain;
+use App\Enums\EndpointContext;
 use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
@@ -11,15 +13,6 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
-enum SubDomainType: string
-{
-    case ROCK_PHYSICS = 'rock and melt physics';
-    case ANALOGUE = 'analogue modelling of geologic processes';
-    case MICROSCOPY = 'microscopy and tomography';
-    case PALEO = 'paleomagnetism';
-    case GEO_CHEMISTRY = 'geochemistry';
-    case GEO_ENERGY = 'geo-energy test beds';
-}
 class DataPublicationController extends BaseController
 {
     /**
@@ -59,7 +52,7 @@ class DataPublicationController extends BaseController
      */
     public function rockPhysics(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'rockPhysics');
+        return $this->dataPublicationResponse($request, EndpointContext::ROCK_PHYSICS);
     }
 
     /**
@@ -69,7 +62,7 @@ class DataPublicationController extends BaseController
      */
     public function analogue(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'analogue');
+        return $this->dataPublicationResponse($request, EndpointContext::ANALOGUE);
     }
 
     /**
@@ -79,7 +72,7 @@ class DataPublicationController extends BaseController
      */
     public function paleo(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'paleo');
+        return $this->dataPublicationResponse($request, EndpointContext::PALEO);
     }
 
     /**
@@ -89,7 +82,7 @@ class DataPublicationController extends BaseController
      */
     public function microscopy(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'microscopy');
+        return $this->dataPublicationResponse($request, EndpointContext::MICROSCOPY);
     }
 
     /**
@@ -99,7 +92,7 @@ class DataPublicationController extends BaseController
      */
     public function geochemistry(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'geochemistry');
+        return $this->dataPublicationResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
 
     /**
@@ -109,7 +102,7 @@ class DataPublicationController extends BaseController
      */
     public function geoenergy(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'geoenergy');
+        return $this->dataPublicationResponse($request, EndpointContext::GEO_ENERGY);
     }
 
     /**
@@ -119,7 +112,7 @@ class DataPublicationController extends BaseController
      */
     public function all(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'all');
+        return $this->dataPublicationResponse($request, EndpointContext::ALL);
     }
 
     /**
@@ -129,7 +122,7 @@ class DataPublicationController extends BaseController
      * @param  string  $context
      * @return response
      */
-    private function dataPublicationResponse(Request $request, $context)
+    private function dataPublicationResponse(Request $request, EndpointContext $context)
     {
         try {
             $request->validate([
@@ -163,28 +156,28 @@ class DataPublicationController extends BaseController
         $msl_subdomain = 'msl_subdomain';
         // Add subdomain filtering if required
         switch ($context) {
-            case 'rockPhysics':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ROCK_PHYSICS->value);
+            case EndpointContext::ROCK_PHYSICS:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
                 break;
 
-            case 'analogue':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::ANALOGUE->value);
+            case EndpointContext::ANALOGUE:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
                 break;
 
-            case 'paleo':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::PALEO->value);
+            case EndpointContext::PALEO:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
                 break;
 
-            case 'microscopy':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::MICROSCOPY->value);
+            case EndpointContext::MICROSCOPY:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
                 break;
 
-            case 'geochemistry':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_CHEMISTRY->value);
+            case EndpointContext::GEO_CHEMISTRY:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
                 break;
 
-            case 'geoenergy':
-                $packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainType::GEO_ENERGY->value);
+            case EndpointContext::GEO_ENERGY:
+                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
                 break;
         }
         // Set limit
@@ -254,9 +247,9 @@ class DataPublicationController extends BaseController
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value.':"'.$request->get($key).'"';
+                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
                 } else {
-                    $queryParts[] = $value.':'.$request->get($key);
+                    $queryParts[] = $value . ':' . $request->get($key);
                 }
             }
         }

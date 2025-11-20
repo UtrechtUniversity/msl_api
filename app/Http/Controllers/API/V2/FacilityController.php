@@ -4,6 +4,9 @@ namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\Enums\EndpointContext;
+use App\Enums\LabDomain;
+use App\Enums\LabDomains;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
@@ -12,17 +15,7 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
-// TODO move this on its own file
-// TODO NOTICE THAT the values are different from the enum in DataPublications!
-enum SubDomainTypeInCkan: string
-{
-    case ROCK_PHYSICS = 'Rock and melt physics';
-    case ANALOGUE = 'Analogue modelling of geologic processes';
-    case MICROSCOPY = 'Microscopy and tomography';
-    case PALEO = 'Paleomagnetism';
-    case GEO_CHEMISTRY = 'Geochemistry';
-    case GEO_ENERGY = 'Geo-energy test beds';
-}
+
 class FacilityController extends BaseController
 {
     /**
@@ -62,7 +55,7 @@ class FacilityController extends BaseController
      */
     public function rockPhysics(Request $request)
     {
-        return $this->facilitiesResponse($request, 'rockPhysics');
+        return $this->facilitiesResponse($request, EndpointContext::ROCK_PHYSICS);
     }
 
     /**
@@ -72,7 +65,7 @@ class FacilityController extends BaseController
      */
     public function analogue(Request $request)
     {
-        return $this->facilitiesResponse($request, 'analogue');
+        return $this->facilitiesResponse($request, EndpointContext::ANALOGUE);
     }
 
     /**
@@ -82,7 +75,7 @@ class FacilityController extends BaseController
      */
     public function paleo(Request $request)
     {
-        return $this->facilitiesResponse($request, 'paleo');
+        return $this->facilitiesResponse($request, EndpointContext::PALEO);
     }
 
     /**
@@ -92,7 +85,7 @@ class FacilityController extends BaseController
      */
     public function microscopy(Request $request)
     {
-        return $this->facilitiesResponse($request, 'microscopy');
+        return $this->facilitiesResponse($request, EndpointContext::MICROSCOPY);
     }
 
     /**
@@ -102,7 +95,7 @@ class FacilityController extends BaseController
      */
     public function geochemistry(Request $request)
     {
-        return $this->facilitiesResponse($request, 'geochemistry');
+        return $this->facilitiesResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
 
     /**
@@ -112,7 +105,7 @@ class FacilityController extends BaseController
      */
     public function geoenergy(Request $request)
     {
-        return $this->facilitiesResponse($request, 'geoenergy');
+        return $this->facilitiesResponse($request, EndpointContext::GEO_ENERGY);
     }
 
     /**
@@ -122,7 +115,7 @@ class FacilityController extends BaseController
      */
     public function all(Request $request)
     {
-        return $this->facilitiesResponse($request, 'all');
+        return $this->facilitiesResponse($request, EndpointContext::ALL);
     }
 
     /**
@@ -132,7 +125,7 @@ class FacilityController extends BaseController
      *
      * @return response
      */
-    private function facilitiesResponse(Request $request, string $context)
+    private function facilitiesResponse(Request $request, EndpointContext $context)
     {
         try {
             $request->validate([
@@ -214,11 +207,11 @@ class FacilityController extends BaseController
      *
      * @return response
      */
-    private function setRequestToCKAN(Request $request, string $context): void
+    private function setRequestToCKAN(Request $request, EndpointContext $context): void
     {
         // Filter on facilities
         $this->packageSearchRequest->addFilterQuery('type', 'lab');
-        $this->setSubdomain($context);
+        $this->getDomain($context);
 
         // Filter for failities with coordinates
         $this->packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
@@ -248,33 +241,33 @@ class FacilityController extends BaseController
     }
 
     // TODO $context also could use a reusable enum
-    private function setSubdomain(string $context): void
+    private function getDomain(EndpointContext $context): void
     {
         $msl_subdomain = 'msl_domain_name';
         // Add subdomain filtering if required
         switch ($context) {
-            case 'rockPhysics':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::ROCK_PHYSICS->value);
+            case EndpointContext::ROCK_PHYSICS:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::ROCK_PHYSICS->value);
                 break;
 
-            case 'analogue':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::ANALOGUE->value);
+            case EndpointContext::ROCK_PHYSICS:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::ANALOGUE->value);
                 break;
 
-            case 'paleo':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::PALEO->value);
+            case EndpointContext::PALEO:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::PALEO->value);
                 break;
 
-            case 'microscopy':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::MICROSCOPY->value);
+            case EndpointContext::MICROSCOPY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::MICROSCOPY->value);
                 break;
 
-            case 'geochemistry':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::GEO_CHEMISTRY->value);
+            case EndpointContext::GEO_CHEMISTRY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_CHEMISTRY->value);
                 break;
 
-            case 'geoenergy':
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, SubDomainTypeInCkan::GEO_ENERGY->value);
+            case EndpointContext::GEO_ENERGY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_ENERGY->value);
                 break;
         }
     }
