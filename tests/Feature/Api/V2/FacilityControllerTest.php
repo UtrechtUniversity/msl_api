@@ -57,7 +57,7 @@ class FacilityControllerTest extends TestCase
                                 ],
                                 'type' => 'Point',
                             ],
-                            'properties' => [],
+                            'properties' => ['city' => '', 'country' => 'Finland'],
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',
@@ -123,7 +123,7 @@ class FacilityControllerTest extends TestCase
                                 ],
                                 'type' => 'Point',
                             ],
-                            'properties' => [],
+                            'properties' => ['city' => '', 'country' => 'Finland'],
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',

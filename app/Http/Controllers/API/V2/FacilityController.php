@@ -37,11 +37,8 @@ class FacilityController extends BaseController
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
-        'authorName' => 'msl_author_name_text',
-        'facilityQuery' => 'title',
-        // TODO does this work?
-        'subDomain' => 'msl_subdomain',
-        'equipmentQuery' => 'msl_laboratory_equipment_text',
+        'country' => 'msl_address_country_name',
+        'city' => 'msl_address_city'
     ];
 
     private $packageSearchRequest;
@@ -49,7 +46,7 @@ class FacilityController extends BaseController
     private $laboratory;
 
     /**
-     * Constructs a new ApiController
+     * Constructs the controller
      */
     public function __construct(\GuzzleHttp\Client $client, Laboratory $laboratory)
     {
@@ -141,8 +138,9 @@ class FacilityController extends BaseController
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
                 'offset' => ['nullable', 'integer', 'min:0'],
-                'facilityQuery' => ['nullable', 'string'],
-                'equipmentQuery' => ['nullable', 'string'],
+                'title' => ['nullable', 'string'],
+                'country' => ['nullable', 'string'],
+                'city' => ['nullable', 'string'],
                 'boundingBox' => ['nullable', new GeoRule],
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
@@ -165,8 +163,9 @@ class FacilityController extends BaseController
             return new CkanErrorResource([]);
         }
 
-        $facilities = $this->getResultsfromCkanArray($response->responseBody);
         $totalResultCount = $response->getTotalResultsCount();
+
+        $facilities = $this->getResultsfromCkanArray($response->responseBody);
         $currentResultCount = count($facilities);
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
@@ -187,7 +186,12 @@ class FacilityController extends BaseController
 
         return $responseToReturn;
     }
-
+    /**
+     * Building up the request that we are going to send
+     * to CKAN for facilities.
+     *
+     * @return response
+     */
     private function getResultsfromCkanArray($responseBody): array
     {
         $resultsFromResponse = $responseBody['result']['results'];

@@ -14,8 +14,6 @@ class FacilityResource extends JsonResource
 {
     private function getGeoJsonFromPoint(): ?array
     {
-
-        // TODO why aren't these numbers in sql floats?
         $x = is_numeric($this->longitude) ? (float) $this->longitude : null;
         $y = is_numeric($this->latitude) ? (float) $this->latitude : null;
         $z = is_numeric($this->altitude) ? (float) $this->altitude : null;
@@ -25,7 +23,7 @@ class FacilityResource extends JsonResource
         }
         $point = new Point($x, $y, $z);
 
-        return (new Feature($point))->jsonSerialize();
+        return (new Feature(geometry: $point, properties: ['city' => $this->address_city, 'country' => $this->address_country_name]))->jsonSerialize();
     }
 
     /**
@@ -43,7 +41,6 @@ class FacilityResource extends JsonResource
             'organisation' => $this->laboratoryOrganization->name,
             'domain' => $this->fast_domain_name,
             'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
-            // here we want to include the addons
             'equipment' => EquipmentResource::collection($this->laboratoryEquipment),
             'geojson' => $this->getGeoJsonFromPoint(),
             'contact' => route('laboratory-contact-person', $this->msl_identifier),
