@@ -1,0 +1,147 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix epos: <https://www.epos-eu.org/epos-dcat-ap#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix cnt: <http://www.w3.org/2011/content#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix http: <http://www.w3.org/2006/http#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/#term_> .
+
+
+
+# laboratories/equipment service for facilities section
+
+<https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001> a dcat:Dataset ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001" ;
+        dct:title "Multi-Scale Laboratories" ;
+        dct:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics" ;
+        dct:created "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		dct:issued "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		dct:modified "2025-11-13T00:00:00Z"^^xsd:dateTime ;
+		owl:versionInfo "1.0.0" ;
+
+        # This property refers to the type of the Dataset. 
+        # Example of frequency using a controlled vocabulary http://dublincore.org/2012/06/14/dctype
+        
+        #Update frequency
+        dct:accrualPeriodicity "http://purl.org/cld/freq/irregular"^^xsd:anyURI;
+
+		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
+		
+		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
+        dcat:theme <category:laboratories_msl_conc> ;
+        
+        dcat:keyword "fault and fold behavior", "deformation", "compression", "extension", "shear", "mountain building", "plastic", "brittle", "viscous", "elastic", "earthquake/seismicity", "subsidence", "pressure", "temperature", "tectonics", "flow model", "modelling", "properties", "laboratory", "laboratories", "lab", "core/core measurement", "petrophysics", "injectivity", "permeability", "reservoir", "caprock", "chemistry/geochemistry", "isotope", "element", "mechanics/mechanical", "microscope/microscopes", "geothermal", "oil/gas production", "sustainability", "storage", "apparatus", "directional", "magnetic";
+        dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
+
+        # This property refers to an Organisation responsible for making the Dataset available.
+		dct:publisher <PIC:99985805/parent>;
+		
+		# This property refers to the quality assurance document URL
+        dqv:hasQualityAnnotation [ a oa:Annotation ;
+       		oa:hasBody "https://github.com/UtrechtUniversity/msl_api/blob/master/data-quality.md"^^xsd:anyURI  ;
+        ];
+
+		dct:spatial [ a dct:Location ;
+			locn:geometry "POLYGON((-31.0 34.0, 39.0 34.0, 39.0 72.0, -31.0 72.0, -31.0 34.0))"^^gsp:wktLiteral ;
+		];
+		
+		# This property links the Dataset to an available Distribution.
+        dcat:distribution <https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001> ;
+.
+
+
+# laboratories/equipment service for facilities section ; EPOS-DCAT-AP:DISTRIBUTION definition
+
+<https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001> a dcat:Distribution ;
+        dct:identifier "https://www.epos-eu.org/multi-scale-laboratories/laboratory_data/Facilities/001/Distribution/001" ;
+        dct:title "Multi-Scale Laboratories" ;
+		dct:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics" ;
+
+        # This property refers to the type of the Distribution. The possible types are
+        # (http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE
+        # OR
+        # http://publications.europa.eu/resource/authority/distribution-type/DOWNLOADABLE_FILE)
+		dct:type "http://publications.europa.eu/resource/authority/distribution-type/WEB_SERVICE"^^xsd:anyURI ;
+
+        # If the type of Distribution is WEB SERVICE, this property refers to the Web Service that gives access to a Distribution of the Dataset. Otherwise, this property is optional.
+		dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/WebService/014> ;
+
+        # This property contains a URL that gives access to a Distribution of the Dataset. The resource at the access URL may contain # information about how to get the Dataset.
+        # If the type of Distribution is WEB SERVICE, this property refers to the Operation of the Web Service to which the Distribution conforms.
+        dcat:accessURL <https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014> ;
+
+        # This property refers to the file format of the Distribution. 
+        # The possible types are here: http://publications.europa.eu/mdr/resource/authority/file-type/html/filetypes-eng.html
+        dct:format "http://publications.europa.eu/resource/authority/file-type/JSON"^^xsd:anyURI ;
+
+        # This property refers to the licence under which the Distribution is made available.
+        dct:license "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+.
+
+# laboratories/equipment service for facilities section ; EPOS-DCAT-AP:WEBSERVICE definition
+
+<https://www.epos-eu.org/multi-scale-laboratories/WebService/014> a epos:WebService;
+	schema:identifier "https://www.epos-eu.org/multi-scale-laboratories/WebService/014";
+	schema:description "EPOS Multi-Scale Laboratories (MSL) includes a wide range of world-class laboratories, aimed at studying the properties and processes controlling rock system behavior. The length scales addressed by these infrastructures cover the nano- and micrometer levels (electron microscopy and micro-beam analysis) to the scale of experiments on centimeter and decimeter sized samples, to analogue model experiments simulating the reservoir scale, the basin scale and the plate scale. Research enabled by the EPOS Multi-Scale Laboratories are crucial to serving society’s needs for geo-resources exploration and for protection against geo-hazards. Indeed, to model Earth system behavior during human or tectonic forcing, we need to understand the governing processes and properties from the molecule scale to the scale of the operating system. MSL is categorized in the following six domains: Analogue modelling of geological processes, Geo-energy test beds, Geochemistry, Microscopy and Tomography, Magnetism and paleomagnetism, Rock and melt physics";
+	schema:name "Multi-Scale Laboratories";
+	hydra:entrypoint "https://epos-msl.uu.nl/webservice/api/facilities?"^^xsd:anyURI; 
+	schema:provider <PIC:99985805>;
+	schema:datePublished "2025-11-13T00:00:00Z"^^xsd:dateTime;
+	schema:dateModified "2025-11-13T00:00:00Z"^^xsd:dateTime;
+	hydra:supportedOperation <https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014>;
+	dct:license "https://www.fsf.org/licensing/licenses/agpl-3.0.html"^^xsd:anyURI;
+	dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint>;
+	dct:conformsTo <https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices>;
+. 
+
+<https://www.epos-eu.org/multi-scale-laboratories/doc/general-webservices> a hydra:ApiDocumentation ;
+	hydra:title "EPOS MSL webservice" ;
+	hydra:description "EPOS MSL webservice providing access to data.";
+	hydra:entrypoint "https://github.com/UtrechtUniversity/msl_api/blob/master/api.md"^^xsd:anyURI;
+.
+
+
+<https://www.epos-eu.org/multi-scale-laboratories/WebService/014/Operation/014> a hydra:Operation;
+		hydra:method "GET"^^xsd:string;
+		hydra:returns "application/json";
+		hydra:property[ a hydra:IriTemplate;
+			hydra:template "https://epos-msl.uu.nl/webservice/api/all{?facilityQuery, equipmentQuery, rows}"^^xsd:string;				
+                hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "facilityQuery"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search laboratories";
+					#schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "equipmentQuery"^^xsd:string;
+					rdfs:range "xsd:string";
+					rdfs:label "Search equipment";
+					#schema:defaultValue "";
+					hydra:required "false"^^xsd:boolean;
+				];				
+				hydra:mapping[ a hydra:IriTemplateMapping;
+					hydra:variable "rows"^^xsd:string;
+					rdfs:range "xsd:integer";
+					rdfs:label "Search results (number)";
+					schema:defaultValue "250";
+					http:paramValue "250";
+					http:paramValue "100";
+					http:paramValue "50";
+					http:paramValue "10";
+					hydra:required "false"^^xsd:boolean;
+				];
+		] ;	
