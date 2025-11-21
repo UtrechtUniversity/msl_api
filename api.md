@@ -35,9 +35,9 @@ https://epos-msl.uu.nl/api/v2/facilities
 
 
 
-- ## Data-Publications<a name="data-publications"></a>
+- ## Data-Publications <a name="data-publications"></a>
 
-### /rock_physics {#dp_rock_physics}
+### /rock_physics <a name="dp_rock_physics"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
 ### Search all rock physics data-publications [GET]
@@ -598,7 +598,7 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-### /analogue {#dp_analogue}
+### /analogue <a name="dp_analogue"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the analogue modelling (sub)domain. 
 
 ### Search all analogue modelling data-publications [GET]
@@ -1129,7 +1129,7 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-### /paleo {#dp_paleo}
+### /paleo <a name="dp_paleo"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the paleomagnetism (sub)domain. 
 
 ### Search all paleomagnetism data-publications [GET]
@@ -1484,7 +1484,7 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-### /microscopy {#dp_microscopy}
+### /microscopy <a name="dp_microscopy"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the microscopy and tomography (sub)domain. 
 
 ### Search all microscopy and tomography data-publications [GET]
@@ -1798,7 +1798,7 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-### /geochemistry {#dp_geochemistry}
+### /geochemistry <a name="dp_geochemistry"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the geochemistry (sub)domain. 
 
 ### Search all geochemistry data-publications [GET]
@@ -2113,7 +2113,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 
-### /geoenergy {#dp_geoenergy}
+### /geoenergy <a name="dp_geoenergy"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the Geo-energy test beds (sub)domain. 
 
 ### Search all Geo-energy test beds data-publications [GET]
@@ -2409,7 +2409,7 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 
-### /all {#dp_all}
+### /all <a name="dp_all"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
 ### Search all data-publications [GET]
@@ -2767,10 +2767,10 @@ This endpoint gives access to all data-publications available that are marked as
 ```
 </details>
 
-- ## Facilities {#facilities}
+- ## Facilities <a name="facilities"></a>
 
 
-### /rock_physics {#f_rock_physics}
+### /rock_physics <a name="f_rock_physics"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the rock physics (sub)domain. 
 
 ### Search all rock physics facilities [GET]
@@ -2941,7 +2941,7 @@ This endpoint gives access to all facilities available that are marked as belong
 
 </details>
 
-### /analogue {#f_analogue}
+### /analogue <a name="f_analogue"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the analogue modelling (sub)domain. 
 
 ### Search all analogue modelling facilities [GET]
@@ -3112,7 +3112,7 @@ This endpoint gives access to all facilities available that are marked as belong
 
 </details>
 
-### /paleo {#f_paleo}
+### /paleo <a name="f_paleo"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the paleomagnetism (sub)domain. 
 
 ### Search all paleomagnetism facilities [GET]
@@ -3263,7 +3263,7 @@ This endpoint gives access to all facilities available that are marked as belong
 
 </details>
 
-### /microscopy {#f_microscopy}
+### /microscopy <a name="f_microscopy"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the microscopy and tomography (sub)domain. 
 
 ### Search all microscopy and tomography facilities [GET]
@@ -3384,7 +3384,7 @@ This endpoint gives access to all facilities available that are marked as belong
 
 </details>
 
-### /geochemistry {#f_geochemistry}
+### /geochemistry <a name="f_geochemistry"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the geochemistry (sub)domain. 
 
 ### Search all geochemistry facilities [GET]
@@ -3505,7 +3505,7 @@ This endpoint gives access to all facilities available that are marked as belong
 </details>
 
 
-### /geoenergy {#f_geoenergy}
+### /geoenergy <a name="f_geoenergy"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the Geo-energy test beds (sub)domain. 
 
 ### Search all Geo-energy test beds facilities [GET]
@@ -3626,7 +3626,7 @@ This endpoint gives access to all facilities available that are marked as belong
 </details>
 
 
-### /all {#f_all}
+### /all <a name="f_all"></a>
 This endpoint gives access to all facilities available that are marked as belonging to the rock physics (sub)domain. 
 
 ### Search all facilities [GET]
