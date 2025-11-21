@@ -20,17 +20,7 @@ class FacilityControllerTest extends TestCase
     public function test_all_success_results(): void
     {
 
-        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
-
-        $guzzleClient = $this->getCkanClientMock($response);
-
-        $mockLab = $this->getEloquentModelsMock();
-
-        $this->app->instance(Laboratory::class, $mockLab);
-
-        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
-        });
+        $this->prepareApp();
 
         $response = $this->get('api/v2/facilities/all?title="HelLabs - Geophysical laboratory"');
 
@@ -86,17 +76,7 @@ class FacilityControllerTest extends TestCase
     public function test_paleo_success_results(): void
     {
 
-        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
-
-        $guzzleClient = $this->getCkanClientMock($response);
-
-        $mockLab = $this->getEloquentModelsMock();
-
-        $this->app->instance(Laboratory::class, $mockLab);
-        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
-        });
-
+        $this->prepareApp();
         $response = $this->get('api/v2/facilities/paleo');
 
         $response->assertStatus(200);
@@ -155,14 +135,8 @@ class FacilityControllerTest extends TestCase
     public function test_all_error_ckan(): void
     {
 
-        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_error.txt'));
-        $guzzleClient = $this->getCkanClientMock($response);
-        $mockLab = $this->getEloquentModelsMock();
-
-        $this->app->instance(Laboratory::class, $mockLab);
-        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
-        });
+        $fileContents = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.json'));
+        $this->prepareApp(fileContents: $fileContents);
         $response = $this->get('api/v2/facilities/all');
 
         // Check for 500 status response
@@ -181,18 +155,11 @@ class FacilityControllerTest extends TestCase
      */
     public function test_all_error_validation(): void
     {
-        $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json'));
-        $guzzleClient = $this->getCkanClientMock($response);
-        $mockLab = $this->getEloquentModelsMock();
-
-        $this->app->instance(Laboratory::class, $mockLab);
-        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
-        });
+        $this->prepareApp();
 
         $response = $this->get('api/v2/facilities/all?limit=a&offset=-1');
 
-        // Check for 500 status response
+        // Check for 422 status response
         $response->assertStatus(422);
 
         $response->assertJson(
@@ -201,6 +168,23 @@ class FacilityControllerTest extends TestCase
                 ->where('messages', ['The limit must be an integer.', 'The offset must be at least 0.'])
                 ->etc()
         );
+    }
+
+    private function prepareApp(?string $fileContents = null)
+    {
+        // Set mock response from CKAN
+        $response = (! $fileContents) ? file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json')) : $fileContents;
+        // Get mock ckan client
+        $guzzleClient = $this->getCkanClientMock($response);
+        // Get mock eloquent model Laboratory instance
+        $mockLab = $this->getEloquentModelsMock();
+        // Replace real Laboratory instance with our mock one in the application
+        $this->app->instance(Laboratory::class, $mockLab);
+        // Bind calling our mock controller instead of the real controller of interest
+        // in the app
+        $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
+            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
+        });
     }
 
     private function getEloquentModelsMock(): Laboratory

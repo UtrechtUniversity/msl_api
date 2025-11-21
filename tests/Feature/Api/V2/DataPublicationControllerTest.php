@@ -220,7 +220,7 @@ class DataPublicationControllerTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(DataPublicationController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_error.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.json'));
 
             $mock = new MockHandler([
                 new Response(400, [], $response),
