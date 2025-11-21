@@ -51,7 +51,7 @@ class DataPublicationController extends BaseApiController
      * @param  string  $context
      * @return JsonResource | ResourceCollection
      */
-    function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -128,7 +128,7 @@ class DataPublicationController extends BaseApiController
         return $responseToReturn;
     }
 
-    function getDomain(EndpointContext $context): void
+    protected function getDomain(EndpointContext $context): void
     {
         $msl_subdomain = 'msl_subdomain';
         // Add subdomain filtering if required

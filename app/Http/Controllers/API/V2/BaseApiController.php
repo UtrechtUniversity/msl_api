@@ -100,10 +100,10 @@ abstract class BaseApiController extends Controller
      *
      * @return JsonResource | ResourceCollection
      */
-    abstract function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection;
+    abstract protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection;
 
 
-    abstract function getDomain(EndpointContext $context): void;
+    abstract protected function getDomain(EndpointContext $context): void;
 
 
     protected function getBoundingBox(string|null $boundingBox): void

@@ -52,7 +52,7 @@ class FacilityController extends BaseApiController
      *
      * @return JsonResource | ResourceCollection
      */
-    function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -159,7 +159,7 @@ class FacilityController extends BaseApiController
         $this->getBoundingBox($boundingBox);
     }
 
-    function getDomain(EndpointContext $context): void
+    protected function getDomain(EndpointContext $context): void
     {
         $msl_subdomain = 'msl_domain_name';
         // Add subdomain filtering if required
