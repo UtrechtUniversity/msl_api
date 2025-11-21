@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
 use App\Enums\DataPublicationSubDomain;
 use App\Enums\EndpointContext;
 use App\Http\Resources\V2\DataPublicationCollection;
@@ -13,11 +12,9 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use Illuminate\Routing\Controller as BaseController;
 
 class DataPublicationController extends BaseApiController
 {
-
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
      */
@@ -43,15 +40,13 @@ class DataPublicationController extends BaseApiController
         $this->queryMappingsAll = array_merge($this->queryMappings, ['subDomain' => 'msl_subdomain']);
     }
 
-
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      *
      * @param  string  $context
-     * @return JsonResource | ResourceCollection
      */
-    protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
     {
         try {
             $request->validate([

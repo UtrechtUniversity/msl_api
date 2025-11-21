@@ -3,7 +3,7 @@
 namespace App\Enums;
 
 /**
- * Endpoint context categories relevant 
+ * Endpoint context categories relevant
  * to the 6 domains of facilities and data-publications.
  */
 enum EndpointContext

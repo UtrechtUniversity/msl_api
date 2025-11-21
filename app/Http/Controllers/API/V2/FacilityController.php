@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
 use App\Enums\EndpointContext;
 use App\Enums\LabDomain;
-use App\Enums\LabDomains;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
@@ -15,12 +13,9 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
-use Illuminate\Routing\Controller as BaseController;
-
 
 class FacilityController extends BaseApiController
 {
-
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
@@ -43,16 +38,12 @@ class FacilityController extends BaseApiController
         $this->laboratory = $laboratory;
     }
 
-
-
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
-     *
-     * @return JsonResource | ResourceCollection
      */
-    protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
     {
         try {
             $request->validate([
@@ -109,9 +100,7 @@ class FacilityController extends BaseApiController
 
     /**
      * From the CKAN records, it retrieves
-     * the corresponding instances from the SQL database. 
-     *
-     * @return array
+     * the corresponding instances from the SQL database.
      */
     private function getResultsfromCkanArray($responseBody): array
     {
@@ -131,8 +120,6 @@ class FacilityController extends BaseApiController
     /**
      * Building up the request that we are going to send
      * to CKAN for facilities.
-     *
-     * @return void
      */
     private function setRequestToCKAN(Request $request, EndpointContext $context): void
     {

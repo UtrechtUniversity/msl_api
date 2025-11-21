@@ -17,6 +17,7 @@ abstract class BaseApiController extends Controller
      * @var \GuzzleHttp\Client Guzzle http client instance
      */
     protected $guzzleClient;
+
     public function __construct(\GuzzleHttp\Client $client)
     {
         $this->guzzleClient = $client;
@@ -25,70 +26,56 @@ abstract class BaseApiController extends Controller
 
     /**
      * Rock physics facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function rockPhysics(Request $request): JsonResource | ResourceCollection
+    public function rockPhysics(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::ROCK_PHYSICS);
     }
 
     /**
      * Analogue modelling facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function analogue(Request $request): JsonResource | ResourceCollection
+    public function analogue(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::ANALOGUE);
     }
 
     /**
      * Paleomagnetism facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function paleo(Request $request): JsonResource | ResourceCollection
+    public function paleo(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::PALEO);
     }
 
     /**
      * Microscopy and tomography facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function microscopy(Request $request): JsonResource | ResourceCollection
+    public function microscopy(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::MICROSCOPY);
     }
 
     /**
      * Geochemistry facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function geochemistry(Request $request): JsonResource | ResourceCollection
+    public function geochemistry(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
 
     /**
      * Geo Energy Test Beds facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function geoenergy(Request $request): JsonResource | ResourceCollection
+    public function geoenergy(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::GEO_ENERGY);
     }
 
     /**
      * All subdomains facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
      */
-    public function all(Request $request): JsonResource | ResourceCollection
+    public function all(Request $request): JsonResource|ResourceCollection
     {
         return $this->domainResponse($request, EndpointContext::ALL);
     }
@@ -97,16 +84,12 @@ abstract class BaseApiController extends Controller
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
-     *
-     * @return JsonResource | ResourceCollection
      */
-    abstract protected function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection;
-
+    abstract protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection;
 
     abstract protected function getDomain(EndpointContext $context): void;
 
-
-    protected function getBoundingBox(string|null $boundingBox): void
+    protected function getBoundingBox(?string $boundingBox): void
     {
         $paramBoundingBox = json_decode($boundingBox);
         if ($paramBoundingBox) {
@@ -118,11 +101,11 @@ abstract class BaseApiController extends Controller
             );
         }
     }
+
     /**
      * Converts search parameters to solr query using field mappings
      *
      * @param  array  $querymappings
-     * @return string
      */
     protected function buildQuery(Request $request, $queryMappings): string
     {
@@ -131,9 +114,9 @@ abstract class BaseApiController extends Controller
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
                 } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
+                    $queryParts[] = $value.':'.$request->get($key);
                 }
             }
         }
