@@ -13,6 +13,8 @@ use App\Http\Resources\V2\FacilityResource;
 use App\Models\Laboratory;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Routing\Controller as BaseController;
 
 
@@ -51,9 +53,9 @@ class FacilityController extends BaseController
     /**
      * Rock physics facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function rockPhysics(Request $request)
+    public function rockPhysics(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::ROCK_PHYSICS);
     }
@@ -61,9 +63,9 @@ class FacilityController extends BaseController
     /**
      * Analogue modelling facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function analogue(Request $request)
+    public function analogue(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::ANALOGUE);
     }
@@ -71,9 +73,9 @@ class FacilityController extends BaseController
     /**
      * Paleomagnetism facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function paleo(Request $request)
+    public function paleo(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::PALEO);
     }
@@ -81,9 +83,9 @@ class FacilityController extends BaseController
     /**
      * Microscopy and tomography facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function microscopy(Request $request)
+    public function microscopy(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::MICROSCOPY);
     }
@@ -91,9 +93,9 @@ class FacilityController extends BaseController
     /**
      * Geochemistry facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function geochemistry(Request $request)
+    public function geochemistry(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
@@ -101,9 +103,9 @@ class FacilityController extends BaseController
     /**
      * Geo Energy Test Beds facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function geoenergy(Request $request)
+    public function geoenergy(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::GEO_ENERGY);
     }
@@ -111,9 +113,9 @@ class FacilityController extends BaseController
     /**
      * All subdomains facilities endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function all(Request $request)
+    public function all(Request $request): JsonResource | ResourceCollection
     {
         return $this->facilitiesResponse($request, EndpointContext::ALL);
     }
@@ -123,9 +125,9 @@ class FacilityController extends BaseController
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    private function facilitiesResponse(Request $request, EndpointContext $context)
+    private function facilitiesResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -181,10 +183,10 @@ class FacilityController extends BaseController
     }
 
     /**
-     * Building up the request that we are going to send
-     * to CKAN for facilities.
+     * From the CKAN records, it retrieves
+     * the corresponding instances from the SQL database. 
      *
-     * @return response
+     * @return array
      */
     private function getResultsfromCkanArray($responseBody): array
     {
@@ -205,7 +207,7 @@ class FacilityController extends BaseController
      * Building up the request that we are going to send
      * to CKAN for facilities.
      *
-     * @return response
+     * @return void
      */
     private function setRequestToCKAN(Request $request, EndpointContext $context): void
     {
@@ -240,7 +242,6 @@ class FacilityController extends BaseController
         }
     }
 
-    // TODO $context also could use a reusable enum
     private function getDomain(EndpointContext $context): void
     {
         $msl_subdomain = 'msl_domain_name';
@@ -278,16 +279,16 @@ class FacilityController extends BaseController
      * @param  array  $querymappings
      * @return string
      */
-    private function buildQuery(Request $request, $queryMappings)
+    private function buildQuery(Request $request, $queryMappings): string
     {
         $queryParts = [];
 
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value.':"'.$request->get($key).'"';
+                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
                 } else {
-                    $queryParts[] = $value.':'.$request->get($key);
+                    $queryParts[] = $value . ':' . $request->get($key);
                 }
             }
         }

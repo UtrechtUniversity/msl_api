@@ -3,7 +3,7 @@
 namespace App\Enums;
 
 /**
- * Subdomain categories for filtering data-publications in CKAN
+ * Subdomain categories for filtering data-publications in CKAN.
  */
 enum DataPublicationSubDomain: string
 {

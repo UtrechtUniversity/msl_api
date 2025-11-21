@@ -11,6 +11,8 @@ use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Routing\Controller as BaseController;
 
 class DataPublicationController extends BaseController
@@ -48,9 +50,9 @@ class DataPublicationController extends BaseController
     /**
      * Rock physics API endpoint
      *
-     * @return response
+     * @return  JsonResource | ResourceCollection
      */
-    public function rockPhysics(Request $request)
+    public function rockPhysics(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::ROCK_PHYSICS);
     }
@@ -58,9 +60,9 @@ class DataPublicationController extends BaseController
     /**
      * Analogue modelling API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function analogue(Request $request)
+    public function analogue(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::ANALOGUE);
     }
@@ -68,9 +70,9 @@ class DataPublicationController extends BaseController
     /**
      * Paleomagnetism API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function paleo(Request $request)
+    public function paleo(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::PALEO);
     }
@@ -78,9 +80,9 @@ class DataPublicationController extends BaseController
     /**
      * Microscopy and tomography API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function microscopy(Request $request)
+    public function microscopy(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::MICROSCOPY);
     }
@@ -88,9 +90,9 @@ class DataPublicationController extends BaseController
     /**
      * Geochemistry API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function geochemistry(Request $request)
+    public function geochemistry(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
@@ -98,9 +100,9 @@ class DataPublicationController extends BaseController
     /**
      * Geo Energy Test Beds API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function geoenergy(Request $request)
+    public function geoenergy(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::GEO_ENERGY);
     }
@@ -108,9 +110,9 @@ class DataPublicationController extends BaseController
     /**
      * All subdomains API endpoint
      *
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    public function all(Request $request)
+    public function all(Request $request): JsonResource | ResourceCollection
     {
         return $this->dataPublicationResponse($request, EndpointContext::ALL);
     }
@@ -120,9 +122,9 @@ class DataPublicationController extends BaseController
      * Context is used to provide subdomain specific processing
      *
      * @param  string  $context
-     * @return response
+     * @return JsonResource | ResourceCollection
      */
-    private function dataPublicationResponse(Request $request, EndpointContext $context)
+    private function dataPublicationResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -240,7 +242,7 @@ class DataPublicationController extends BaseController
      * @param  array  $querymappings
      * @return string
      */
-    private function buildQuery(Request $request, $queryMappings)
+    private function buildQuery(Request $request, $queryMappings): string
     {
         $queryParts = [];
 
