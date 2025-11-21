@@ -15,12 +15,12 @@ class EquipmentResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $genericDescription = $this->description ?? '';
-        $genericDescriptionHtml = $this->description_html ?? '';
-
         return [
             'name' => $this->name,
-            'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
+            'descriptions' => new DescriptionResource(new Descriptions(
+                genericDescription: $this->description ?? '',
+                genericDescriptionHtml: $this->description_html ?? ''
+            )),
             'domain' => $this->domain_name,
             'category' => $this->category_name,
             'type' => $this->type_name,

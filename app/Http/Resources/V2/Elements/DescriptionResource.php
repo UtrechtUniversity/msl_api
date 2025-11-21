@@ -14,7 +14,7 @@ enum DescriptionType: string
     case TECHNICAL_INFO = 'TechnicalInfo';
     case OTHER = 'Other';
     case GENERIC = 'Description';
-    case GENERICHTML = 'Description in HTML';
+    case GENERIC_HTML = 'Description in HTML';
 }
 class DescriptionResource extends JsonResource
 {
@@ -64,7 +64,7 @@ class DescriptionResource extends JsonResource
 
         $genericHTML = $this->genericDescriptionHtml;
         if ($genericHTML) {
-            $descriptions[] = $this->addDescriptions($genericHTML, DescriptionType::GENERICHTML->value);
+            $descriptions[] = $this->addDescriptions($genericHTML, DescriptionType::GENERIC_HTML->value);
         }
 
         return $descriptions;

@@ -33,15 +33,16 @@ class FacilityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $genericDescription = $this->description ?? '';
-        $genericDescriptionHtml = $this->description_html ?? '';
 
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
             'organisation' => $this->laboratoryOrganization->name,
             'domain' => $this->fast_domain_name,
-            'descriptions' => new DescriptionResource(new Descriptions(genericDescription: $genericDescription, genericDescriptionHtml: $genericDescriptionHtml)),
+            'descriptions' => new DescriptionResource(new Descriptions(
+                genericDescription: $this->description ?? '',
+                genericDescriptionHtml: $this->description_html ?? ''
+            )),
             'equipment' => EquipmentResource::collection($this->laboratoryEquipment),
             'geojson' => $this->getGeoJsonFromPoint(),
             'contact' => route('laboratory-contact-person', $this->msl_identifier),
