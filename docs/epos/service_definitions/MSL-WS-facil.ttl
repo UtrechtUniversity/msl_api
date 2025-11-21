@@ -41,7 +41,7 @@
 		dct:type "http://purl.org/dc/dcmitype/Collection"^^xsd:anyURI ;
 		
 		# This property refers to a category of the Dataset. A Dataset may be associated with multiple themes.
-        dcat:theme <category:laboratories_msl_conc> ;
+        #dcat:theme <category:laboratories_msl_conc> ;
         
         dcat:keyword "fault and fold behavior", "deformation", "compression", "extension", "shear", "mountain building", "plastic", "brittle", "viscous", "elastic", "earthquake/seismicity", "subsidence", "pressure", "temperature", "tectonics", "flow model", "modelling", "properties", "laboratory", "laboratories", "lab", "core/core measurement", "petrophysics", "injectivity", "permeability", "reservoir", "caprock", "chemistry/geochemistry", "isotope", "element", "mechanics/mechanical", "microscope/microscopes", "geothermal", "oil/gas production", "sustainability", "storage", "apparatus", "directional", "magnetic";
         dcat:contactPoint <http://orcid.org/0000-0002-9205-190X/contactPoint> ;
@@ -118,7 +118,7 @@
 		hydra:method "GET"^^xsd:string;
 		hydra:returns "application/json";
 		hydra:property[ a hydra:IriTemplate;
-			hydra:template "https://epos-msl.uu.nl/webservice/api/all{?facilityQuery, equipmentQuery, rows}"^^xsd:string;				
+			hydra:template "https://epos-msl.uu.nl/webservice/api/facilities{?facilityQuery, equipmentQuery, rows}"^^xsd:string;				
                 hydra:mapping[ a hydra:IriTemplateMapping;
 					hydra:variable "facilityQuery"^^xsd:string;
 					rdfs:range "xsd:string";
