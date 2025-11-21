@@ -15,12 +15,8 @@ use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Routing\Controller as BaseController;
 
-class DataPublicationController extends BaseController
+class DataPublicationController extends BaseApiController
 {
-    /**
-     * @var \GuzzleHttp\Client Guzzle http client instance
-     */
-    private $guzzleClient;
 
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
@@ -43,79 +39,10 @@ class DataPublicationController extends BaseController
      */
     public function __construct(\GuzzleHttp\Client $client)
     {
-        $this->guzzleClient = $client;
+        parent::__construct($client); // Call parent constructor
         $this->queryMappingsAll = array_merge($this->queryMappings, ['subDomain' => 'msl_subdomain']);
     }
 
-    /**
-     * Rock physics API endpoint
-     *
-     * @return  JsonResource | ResourceCollection
-     */
-    public function rockPhysics(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::ROCK_PHYSICS);
-    }
-
-    /**
-     * Analogue modelling API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function analogue(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::ANALOGUE);
-    }
-
-    /**
-     * Paleomagnetism API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function paleo(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::PALEO);
-    }
-
-    /**
-     * Microscopy and tomography API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function microscopy(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::MICROSCOPY);
-    }
-
-    /**
-     * Geochemistry API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function geochemistry(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::GEO_CHEMISTRY);
-    }
-
-    /**
-     * Geo Energy Test Beds API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function geoenergy(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::GEO_ENERGY);
-    }
-
-    /**
-     * All subdomains API endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function all(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::ALL);
-    }
 
     /**
      * Creates a API response based upon search parameters provided in request
@@ -124,7 +51,7 @@ class DataPublicationController extends BaseController
      * @param  string  $context
      * @return JsonResource | ResourceCollection
      */
-    private function dataPublicationResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -145,66 +72,31 @@ class DataPublicationController extends BaseController
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
-        // Create packagesearch request
-        $packageSearchRequest = new PackageSearchRequest;
-
         // Filter on data-publications
-        $packageSearchRequest->addFilterQuery('type', 'data-publication');
+        $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
+        $this->getDomain($context);
 
         // Filter for data-publications with files depending on request
         if ($request->get('hasDownloads')) {
-            $packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
+            $this->packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
         }
-        $msl_subdomain = 'msl_subdomain';
-        // Add subdomain filtering if required
-        switch ($context) {
-            case EndpointContext::ROCK_PHYSICS:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
-                break;
 
-            case EndpointContext::ANALOGUE:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
-                break;
-
-            case EndpointContext::PALEO:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
-                break;
-
-            case EndpointContext::MICROSCOPY:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
-                break;
-
-            case EndpointContext::GEO_CHEMISTRY:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
-                break;
-
-            case EndpointContext::GEO_ENERGY:
-                $packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
-                break;
-        }
         // Set limit
-        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $packageSearchRequest->rows);
-        $packageSearchRequest->rows = $limit; // this is the internal to CKAN default value.
+        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $this->packageSearchRequest->rows);
+        $this->packageSearchRequest->rows = $limit; // this is the internal to CKAN default value.
 
         // Set offset
-        $offset = (int) (($request->get('offset')) ? $request->get('offset') : $packageSearchRequest->start);
-        $packageSearchRequest->start = $offset;
+        $offset = (int) (($request->get('offset')) ? $request->get('offset') : $this->packageSearchRequest->start);
+        $this->packageSearchRequest->start = $offset;
 
         // Process search parameters
-        $packageSearchRequest->query = ($context == 'all') ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
+        $this->packageSearchRequest->query = ($context == 'all') ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
 
-        $paramBoundingBox = json_decode($request->get('boundingBox') ?? null);
-        if ($paramBoundingBox) {
-            $packageSearchRequest->setBoundingBox(
-                (float) $paramBoundingBox[0],
-                (float) $paramBoundingBox[1],
-                (float) $paramBoundingBox[2],
-                (float) $paramBoundingBox[3]
-            );
-        }
+        $boundingBox = $request->get('boundingBox') ?? null;
+        $this->getBoundingBox($boundingBox);
         // Attempt to retrieve data from CKAN
         try {
-            $response = $ckanClient->get($packageSearchRequest);
+            $response = $ckanClient->get($this->packageSearchRequest);
         } catch (\Exception $e) {
             return new CkanErrorResource([]);
         }
@@ -236,30 +128,34 @@ class DataPublicationController extends BaseController
         return $responseToReturn;
     }
 
-    /**
-     * Converts search parameters to solr query using field mappings
-     *
-     * @param  array  $querymappings
-     * @return string
-     */
-    private function buildQuery(Request $request, $queryMappings): string
+    function getDomain(EndpointContext $context): void
     {
-        $queryParts = [];
+        $msl_subdomain = 'msl_subdomain';
+        // Add subdomain filtering if required
+        switch ($context) {
+            case EndpointContext::ROCK_PHYSICS:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
+                break;
 
-        foreach ($queryMappings as $key => $value) {
-            if ($request->filled($key)) {
-                if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
-                } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
-                }
-            }
+            case EndpointContext::ANALOGUE:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
+                break;
+
+            case EndpointContext::PALEO:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
+                break;
+
+            case EndpointContext::MICROSCOPY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
+                break;
+
+            case EndpointContext::GEO_CHEMISTRY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
+                break;
+
+            case EndpointContext::GEO_ENERGY:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
+                break;
         }
-
-        if (count($queryParts) > 0) {
-            return implode(' AND ', $queryParts);
-        }
-
-        return '';
     }
 }

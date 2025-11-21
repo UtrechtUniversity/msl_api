@@ -18,12 +18,8 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Routing\Controller as BaseController;
 
 
-class FacilityController extends BaseController
+class FacilityController extends BaseApiController
 {
-    /**
-     * @var \GuzzleHttp\Client Guzzle http client instance
-     */
-    private $guzzleClient;
 
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
@@ -36,8 +32,6 @@ class FacilityController extends BaseController
         'city' => 'msl_address_city',
     ];
 
-    private $packageSearchRequest;
-
     private $laboratory;
 
     /**
@@ -45,80 +39,11 @@ class FacilityController extends BaseController
      */
     public function __construct(\GuzzleHttp\Client $client, Laboratory $laboratory)
     {
-        $this->guzzleClient = $client;
-        $this->packageSearchRequest = new PackageSearchRequest;
+        parent::__construct($client); // Call parent constructor
         $this->laboratory = $laboratory;
     }
 
-    /**
-     * Rock physics facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function rockPhysics(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::ROCK_PHYSICS);
-    }
 
-    /**
-     * Analogue modelling facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function analogue(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::ANALOGUE);
-    }
-
-    /**
-     * Paleomagnetism facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function paleo(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::PALEO);
-    }
-
-    /**
-     * Microscopy and tomography facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function microscopy(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::MICROSCOPY);
-    }
-
-    /**
-     * Geochemistry facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function geochemistry(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::GEO_CHEMISTRY);
-    }
-
-    /**
-     * Geo Energy Test Beds facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function geoenergy(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::GEO_ENERGY);
-    }
-
-    /**
-     * All subdomains facilities endpoint
-     *
-     * @return JsonResource | ResourceCollection
-     */
-    public function all(Request $request): JsonResource | ResourceCollection
-    {
-        return $this->facilitiesResponse($request, EndpointContext::ALL);
-    }
 
     /**
      * Creates a API response based upon search parameters provided in request
@@ -127,7 +52,7 @@ class FacilityController extends BaseController
      *
      * @return JsonResource | ResourceCollection
      */
-    private function facilitiesResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
+    function domainResponse(Request $request, EndpointContext $context): JsonResource | ResourceCollection
     {
         try {
             $request->validate([
@@ -230,19 +155,11 @@ class FacilityController extends BaseController
         // includes facility and equipment query
         $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsFacilities);
         // bounding box
-
-        $paramBoundingBox = json_decode($request->get('boundingBox') ?? null);
-        if ($paramBoundingBox) {
-            $this->packageSearchRequest->setBoundingBox(
-                (float) $paramBoundingBox[0],
-                (float) $paramBoundingBox[1],
-                (float) $paramBoundingBox[2],
-                (float) $paramBoundingBox[3]
-            );
-        }
+        $boundingBox = $request->get('boundingBox') ?? null;
+        $this->getBoundingBox($boundingBox);
     }
 
-    private function getDomain(EndpointContext $context): void
+    function getDomain(EndpointContext $context): void
     {
         $msl_subdomain = 'msl_domain_name';
         // Add subdomain filtering if required
@@ -271,32 +188,5 @@ class FacilityController extends BaseController
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_ENERGY->value);
                 break;
         }
-    }
-
-    /**
-     * Converts search parameters to solr query using field mappings
-     *
-     * @param  array  $querymappings
-     * @return string
-     */
-    private function buildQuery(Request $request, $queryMappings): string
-    {
-        $queryParts = [];
-
-        foreach ($queryMappings as $key => $value) {
-            if ($request->filled($key)) {
-                if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
-                } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
-                }
-            }
-        }
-
-        if (count($queryParts) > 0) {
-            return implode(' AND ', $queryParts);
-        }
-
-        return '';
     }
 }
