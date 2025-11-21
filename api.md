@@ -5591,7 +5591,7 @@ This endpoint gives access to all data-publications available that are marked as
 
 
 
-#### /facilities
+#### /facilities <a name="facilities_depr"></a>
 This endpoint gives access to all facilities and the equipment pieces on site.  
 
 ##### Search all facilities including equipment [GET]
