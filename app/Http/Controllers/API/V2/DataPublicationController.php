@@ -43,8 +43,6 @@ class DataPublicationController extends BaseApiController
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
-     *
-     * @param  string  $context
      */
     protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
     {
@@ -85,7 +83,7 @@ class DataPublicationController extends BaseApiController
         $this->packageSearchRequest->start = $offset;
 
         // Process search parameters
-        $this->packageSearchRequest->query = ($context == 'all') ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
+        $this->packageSearchRequest->query = ($context == EndpointContext::ALL) ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
 
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->getBoundingBox($boundingBox);
