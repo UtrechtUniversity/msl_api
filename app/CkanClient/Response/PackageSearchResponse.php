@@ -37,7 +37,6 @@ class PackageSearchResponse extends BaseResponse
                 case 'data-publication':
                     $resultsToReturn[] = DataPublication::fromCkanArray($result);
                     break;
-
                 default:
                     $resultsToReturn[] = (object) $result;
                     break;
