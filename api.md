@@ -3,7 +3,7 @@ The EPOS MSL API offers access to data available within our CKAN portal. This do
  A Hoppscotch collection file is available [here](./docs/api/hoppscotch/collections/MSL%20API.json).
 
 ## Available resources
-The API offers 6 domain specific endpoints, per facilities and data-publications information. All data is open accessible, no authorization is required.
+The API offers 14 endpoints, 7 for accessing facilities and  and 7 for accessing data-publications information, based on their domain. All data is open accessible, no authorization is required.
 + [Data-publications](#data-publications)
    + [rock_physics](#dp_rock_physics)
    + [analogue](#dp_analogue)
@@ -35,7 +35,7 @@ https://epos-msl.uu.nl/api/v2/facilities
 
 
 
-- ## Data-Publications {#data-publications}
+- ## Data-Publications<a name="data-publications"></a>
 
 ### /rock_physics {#dp_rock_physics}
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
