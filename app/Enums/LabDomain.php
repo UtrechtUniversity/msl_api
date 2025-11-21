@@ -2,6 +2,9 @@
 
 namespace App\Enums;
 
+/**
+ * Domain categories for filtering laboratories in CKAN.
+ */
 enum LabDomain: string
 {
     case ROCK_PHYSICS = 'Rock and melt physics';

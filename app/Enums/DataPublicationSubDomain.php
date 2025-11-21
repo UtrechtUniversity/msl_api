@@ -2,6 +2,9 @@
 
 namespace App\Enums;
 
+/**
+ * Subdomain categories for filtering data-publications in CKAN
+ */
 enum DataPublicationSubDomain: string
 {
     case ROCK_PHYSICS = 'rock and melt physics';
