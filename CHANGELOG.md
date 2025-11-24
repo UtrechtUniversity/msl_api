@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [1.8.0] - 2025-11-13
+- Change application to work with new data publication schema that is more aligned with Datacite
+- Rewrite all importers to work with new schema
+- Change importers to use generic DataCite importer
+- Add versioned API endpoints
+- New Development seeder to ease testing importing pipeline
+- Laravel update to latest version
+- New MagIC harvester using DataCite queries instead of custom implementation using static files
+- several minor bugfixes and improvements
+
 ## [1.7.5] - 2025-10-01
 - Add contribute with a proposal/project
 - bugfix: minor changes to survey information

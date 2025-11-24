@@ -1,6 +1,6 @@
 <navbar>
-    <div class="navbar bg-base-200 w-full  ">
-        <div class="navbar-start w-fit">
+    <div class="navbar bg-base-200 w-full z-40">
+        <div class="navbar-start">
 
           <a href="{{ route('index') }}" class="btn btn-ghost " 
           >

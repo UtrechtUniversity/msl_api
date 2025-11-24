@@ -345,8 +345,6 @@ class ToolsController extends Controller
             foreach ($results as $result) {
                 $dois[] = '"'.strtolower($result['msl_doi']).'"';
             }
-
-            dd(implode(', ', $dois));
         }
 
         return view('admin.export-dois', ['organizations' => $organizations]);

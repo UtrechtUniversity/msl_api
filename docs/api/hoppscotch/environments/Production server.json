@@ -1,0 +1,13 @@
+{
+  "id": "yct5gzuobnr",
+  "v": 2,
+  "name": "Production server",
+  "variables": [
+    {
+      "key": "base_url",
+      "secret": false,
+      "initialValue": "https://epos-msl.uu.nl/",
+      "currentValue": ""
+    }
+  ]
+}

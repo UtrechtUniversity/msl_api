@@ -22,7 +22,7 @@ class DataPublicationTest extends TestCase
 {
     public function test_from_ckan_array(): void
     {
-        $ckanResponse = file_get_contents('./tests/MockData/CkanResponses/package_search_single_full_datapublication.txt');
+        $ckanResponse = file_get_contents('./tests/MockData/CkanResponses/V2/package_search_single_full_datapublication.json');
         $ckanResponse = json_decode($ckanResponse, true);
 
         $dataPublicationArray = $ckanResponse['result']['results'][0];

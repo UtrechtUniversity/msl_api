@@ -48,6 +48,8 @@ class ProcessSourceDataset implements ShouldQueue
             return;
         }
 
+        $dataPublication->applyCkanLimits();
+
         $datasetCreate = DatasetCreate::create([
             'dataset_type' => $dataPublication::class,
             'dataset' => $dataPublication->toCkanArray(),
