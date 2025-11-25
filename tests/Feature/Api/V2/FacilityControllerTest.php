@@ -13,7 +13,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\Fluent\AssertableJson;
-use Mockery;
 use Tests\TestCase;
 
 class FacilityControllerTest extends TestCase
@@ -21,6 +20,7 @@ class FacilityControllerTest extends TestCase
     // Opens a transaction and we perform testing here
     // Then tear down
     use RefreshDatabase;
+
     public function test_all_success_results(): void
     {
 
