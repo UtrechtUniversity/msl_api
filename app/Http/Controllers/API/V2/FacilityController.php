@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class FacilityController extends BaseApiController
+class FacilityController extends BaseDomainApiController
 {
     /**
      * @var array mappings from all endpoint search parameters to ckan fields

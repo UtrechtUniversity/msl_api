@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-abstract class BaseApiController extends Controller
+abstract class BaseDomainApiController extends Controller
 {
     protected $packageSearchRequest;
 
@@ -114,9 +114,9 @@ abstract class BaseApiController extends Controller
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value.':"'.$request->get($key).'"';
+                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
                 } else {
-                    $queryParts[] = $value.':'.$request->get($key);
+                    $queryParts[] = $value . ':' . $request->get($key);
                 }
             }
         }

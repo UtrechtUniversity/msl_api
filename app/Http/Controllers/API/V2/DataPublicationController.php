@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class DataPublicationController extends BaseApiController
+class DataPublicationController extends BaseDomainApiController
 {
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
