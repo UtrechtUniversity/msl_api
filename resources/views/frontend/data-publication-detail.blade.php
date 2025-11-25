@@ -485,8 +485,22 @@
                     <h4 class="detail-entry-title">References</h4>
                     <div class="detail-entry-content">
                         @foreach ( $data->msl_related_identifiers as $entry)
+                        @php
+                            $dataList = [];
+                            if ($entry->getRelatedIdentifierType() =='DOI') {
+                                    $dataList[] = "https://doi.org/".$entry->getRelatedIdentifierType();
+                            } else {
+                                if($entry->getRelatedIdentifierType() != ''){
+                                    $dataList[] = $entry->getRelatedIdentifierType();
+                                }
+
+                                if($entry->getRelatedIdentifierRelationType() != ''){
+                                    $dataList[] = $entry->getRelatedIdentifierRelationType();
+                                }
+                            }
+                        @endphp
                             @include('components.list-views.table-list',[
-                                'entries' => $entry->getDisplayInformation(),
+                                'entries' => $dataList,
                                 'withKeys' => false,
                             ])
                         @endforeach
