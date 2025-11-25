@@ -65,28 +65,7 @@ class DataPublicationController extends BaseDomainApiController
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
-        // Filter on data-publications
-        $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
-        $this->getDomain($context);
-
-        // Filter for data-publications with files depending on request
-        if ($request->get('hasDownloads')) {
-            $this->packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
-        }
-
-        // Set limit
-        $limit = (int) (($request->get('limit')) ? $request->get('limit') : $this->packageSearchRequest->rows);
-        $this->packageSearchRequest->rows = $limit; // this is the internal to CKAN default value.
-
-        // Set offset
-        $offset = (int) (($request->get('offset')) ? $request->get('offset') : $this->packageSearchRequest->start);
-        $this->packageSearchRequest->start = $offset;
-
-        // Process search parameters
-        $this->packageSearchRequest->query = ($context == EndpointContext::ALL) ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
-
-        $boundingBox = $request->get('boundingBox') ?? null;
-        $this->getBoundingBox($boundingBox);
+        $this->setRequestToCKAN($request, $context);
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
@@ -102,7 +81,8 @@ class DataPublicationController extends BaseDomainApiController
         $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
-
+        $limit = $this->packageSearchRequest->rows;
+        $offset = $this->packageSearchRequest->start;
         $responseToReturn = new DataPublicationCollection($dataPublications, $context);
         $responseToReturn->additional([
             'success' => 'true',
@@ -119,6 +99,32 @@ class DataPublicationController extends BaseDomainApiController
         ]);
 
         return $responseToReturn;
+    }
+
+    protected function setRequestToCKAN(Request $request, EndpointContext $context): void
+    {
+        // Filter on data-publications
+        $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
+        $this->getDomain($context);
+
+        // Filter for data-publications with files depending on request
+        if ($request->get('hasDownloads')) {
+            $this->packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
+        }
+
+        // Set rows
+        if (($request->get('limit'))) {
+            $this->packageSearchRequest->rows = $request->get('limit');
+        }
+        // Set start
+        if ($request->get('offset')) {
+            $this->packageSearchRequest->start = $request->get('offset');
+        }
+        // Process search parameters
+        $this->packageSearchRequest->query = ($context == EndpointContext::ALL) ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
+
+        $boundingBox = $request->get('boundingBox') ?? null;
+        $this->getBoundingBox($boundingBox);
     }
 
     protected function getDomain(EndpointContext $context): void

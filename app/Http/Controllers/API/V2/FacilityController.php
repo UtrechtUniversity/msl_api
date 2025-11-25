@@ -98,11 +98,8 @@ class FacilityController extends BaseDomainApiController
     }
 
 
-    /**
-     * Building up the request that we are going to send
-     * to CKAN for facilities.
-     */
-    private function setRequestToCKAN(Request $request, EndpointContext $context): void
+
+    protected function setRequestToCKAN(Request $request, EndpointContext $context): void
     {
         // Filter on facilities
         $this->packageSearchRequest->addFilterQuery('type', 'lab');
