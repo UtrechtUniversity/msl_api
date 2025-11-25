@@ -17,7 +17,7 @@ class EquipmentResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'descriptions' => new DescriptionResource(new Descriptions(
+            'descriptions' => new DescriptionForFacilitiesResource(new Descriptions(
                 genericDescription: $this->description ?? '',
                 genericDescriptionHtml: $this->description_html ?? ''
             )),

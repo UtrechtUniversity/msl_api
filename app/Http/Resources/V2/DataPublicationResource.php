@@ -6,7 +6,7 @@ use App\Http\Resources\V2\Elements\AlternateIdentifierResource;
 use App\Http\Resources\V2\Elements\ContributorResource;
 use App\Http\Resources\V2\Elements\CreatorResource;
 use App\Http\Resources\V2\Elements\DateResource;
-use App\Http\Resources\V2\Elements\DescriptionResource;
+use App\Http\Resources\V2\Elements\DataPublicationsDescriptionResource;
 use App\Http\Resources\V2\Elements\FileResource;
 use App\Http\Resources\V2\Elements\FundingReferenceResource;
 use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
@@ -186,7 +186,7 @@ class DataPublicationResource extends JsonResource
             'portalLink' => config('app.url').'/data-publication/'.$this->name,
             'name' => $this->name,
             'creators' => CreatorResource::collection($this->msl_creators),
-            'descriptions' => new DescriptionResource($this->getDescriptions()),
+            'descriptions' => new DataPublicationsDescriptionResource($this->getDescriptions()),
             'contributors' => ContributorResource::collection($this->msl_contributors),
             'materials' => $this->getMaterials(),
             'researchAspects' => $this->getResearchAspects(),

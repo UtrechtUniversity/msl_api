@@ -4,7 +4,7 @@ namespace App\Http\Resources\V2;
 
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
-use App\Http\Resources\V2\Elements\DescriptionResource;
+use App\Http\Resources\V2\Elements\DescriptionForFacilitiesResource;
 use App\Http\Resources\V2\Elements\EquipmentResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
 use Illuminate\Http\Request;
@@ -39,7 +39,7 @@ class FacilityResource extends JsonResource
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
             'organisation' => $this->laboratoryOrganization->name,
             'domain' => $this->fast_domain_name,
-            'descriptions' => new DescriptionResource(new Descriptions(
+            'descriptions' => new DescriptionForFacilitiesResource(new Descriptions(
                 genericDescription: $this->description ?? '',
                 genericDescriptionHtml: $this->description_html ?? ''
             )),
