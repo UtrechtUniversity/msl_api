@@ -7,7 +7,6 @@ use App\GeoJson\Geometry\Point;
 use App\Http\Resources\V2\Elements\DescriptionForFacilitiesResource;
 use App\Http\Resources\V2\Elements\EquipmentResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
-use App\Models\LaboratoryOrganization;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 

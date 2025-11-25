@@ -8,7 +8,6 @@ use App\Enums\LabDomain;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
-use App\Models\Laboratory;
 use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -26,8 +25,6 @@ class FacilityController extends BaseDomainApiController
         'country' => 'msl_address_country_name',
         'city' => 'msl_address_city',
     ];
-
-    private $laboratory;
 
     /**
      * Constructs the controller
@@ -96,8 +93,6 @@ class FacilityController extends BaseDomainApiController
 
         return $responseToReturn;
     }
-
-
 
     protected function setRequestToCKAN(Request $request, EndpointContext $context): void
     {
