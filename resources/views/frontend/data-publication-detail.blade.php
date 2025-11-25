@@ -427,7 +427,7 @@
                     </div>
                 </div>
             @endif
-
+            
             @if (sizeof($data->msl_creators) > 0)
                 <br>
                 <div class="detail-entry-div">
