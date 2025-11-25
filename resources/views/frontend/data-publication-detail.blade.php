@@ -67,9 +67,8 @@
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Descriptions</h3>
 
-
                 @include('components.tab-list',[
-                    'allTabs' => array(
+                    'allTabs' => [
                         'Abstract' => [
                             'content' => $data->msl_description_abstract_annotated,
                             'id' => 'msl_description_abstract_annotated'
@@ -94,8 +93,8 @@
                             'content' => $data->msl_description_technical_info_annotated,
                             'id' => 'msl_description_technical_info_annotated'
                         ],
-                    ),
-                    'checkedElementId' => 'msl_description_abstract_annotated'
+                    ],
+                    'checkedElementId' => ''
                 ])
 
             </div >
