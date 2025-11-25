@@ -438,8 +438,8 @@
                                         'entries' => [
                                             $creator->getFullName(),
                                             implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
-                                            implode(' | ', $creator->getAllAffilitationNames()),
-                                            implode(' | ', $creator->getAllNameIdentifiers()),
+                                            implode(' | ', $creator->getAffilitationNames()),
+                                            implode(' | ', $creator->getNameIdentifiers()),
                                         ],
                                         'withKeys' => false,
                                     ])
@@ -459,8 +459,8 @@
                                         'entries' => [
                                             $contributor->getFullName(),
                                             implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
-                                            implode(' | ', $contributor->getAllAffilitationNames()),
-                                            implode(' | ', $contributor->getAllNameIdentifiers()),
+                                            implode(' | ', $contributor->getAffilitationNames()),
+                                            implode(' | ', $contributor->getNameIdentifiers()),
                                         ],
                                         'withKeys' => false,
                                     ])
