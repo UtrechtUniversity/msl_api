@@ -114,9 +114,9 @@ abstract class BaseDomainApiController extends Controller
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
                 } else {
-                    $queryParts[] = $value . ':' . $request->get($key);
+                    $queryParts[] = $value.':'.$request->get($key);
                 }
             }
         }

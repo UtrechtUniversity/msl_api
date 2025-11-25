@@ -32,10 +32,9 @@ class FacilityController extends BaseDomainApiController
     /**
      * Constructs the controller
      */
-    public function __construct(\GuzzleHttp\Client $client, Laboratory $laboratory)
+    public function __construct(\GuzzleHttp\Client $client)
     {
         parent::__construct($client); // Call parent constructor
-        $this->laboratory = $laboratory;
     }
 
     /**
@@ -76,7 +75,7 @@ class FacilityController extends BaseDomainApiController
 
         $totalResultCount = $response->getTotalResultsCount();
 
-        $facilities = $this->getResultsfromCkanArray($response->responseBody);
+        $facilities = $response->getResults(true);
         $currentResultCount = count($facilities);
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
@@ -98,24 +97,6 @@ class FacilityController extends BaseDomainApiController
         return $responseToReturn;
     }
 
-    /**
-     * From the CKAN records, it retrieves
-     * the corresponding instances from the SQL database.
-     */
-    private function getResultsfromCkanArray($responseBody): array
-    {
-        $resultsFromResponse = $responseBody['result']['results'];
-
-        $resultsToReturn = [];
-
-        foreach ($resultsFromResponse as $result) {
-            if ($result['msl_fast_id']) {
-                $resultsToReturn[] = $this->laboratory->where('fast_id', $result['msl_fast_id'])->first();
-            }
-        }
-
-        return $resultsToReturn;
-    }
 
     /**
      * Building up the request that we are going to send

@@ -7,6 +7,7 @@ use App\GeoJson\Geometry\Point;
 use App\Http\Resources\V2\Elements\DescriptionForFacilitiesResource;
 use App\Http\Resources\V2\Elements\EquipmentResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
+use App\Models\LaboratoryOrganization;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -33,7 +34,6 @@ class FacilityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
