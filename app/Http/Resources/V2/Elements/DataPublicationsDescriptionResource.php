@@ -3,7 +3,6 @@
 namespace App\Http\Resources\V2\Elements;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 enum DataPublicationsDescriptionType: string
 {
@@ -16,7 +15,6 @@ enum DataPublicationsDescriptionType: string
 }
 class DataPublicationsDescriptionResource extends DescriptionResource
 {
-
     public function toArray(Request $request): array
     {
 
@@ -44,7 +42,7 @@ class DataPublicationsDescriptionResource extends DescriptionResource
         $other = $this->other;
         if ($other) {
             $descriptions[] = $this->addDescriptions($other, DataPublicationsDescriptionType::OTHER->value);
-        };
+        }
 
         return $descriptions;
     }

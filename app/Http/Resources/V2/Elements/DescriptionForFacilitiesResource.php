@@ -12,8 +12,6 @@ enum FacilitiesDescriptionType: string
 
 class DescriptionForFacilitiesResource extends DescriptionResource
 {
-
-
     public function toArray(Request $request): array
     {
 

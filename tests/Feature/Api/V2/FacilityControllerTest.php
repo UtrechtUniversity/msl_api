@@ -11,31 +11,35 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Mockery;
 use Tests\TestCase;
 
 class FacilityControllerTest extends TestCase
 {
+    // Opens a transaction and we perform testing here
+    // Then tear down
+    use RefreshDatabase;
     public function test_all_success_results(): void
     {
 
-        $this->prepareApp();
+        $this->bindControllerToApp();
 
         $response = $this->get('api/v2/facilities/all?title="HelLabs - Geophysical laboratory"');
 
         $response->assertStatus(200);
 
         $response->assertJson(
-            fn (AssertableJson $json) => $json->has('success')->where('messages', [])
+            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
                 ->where('meta.totalCount', 117)
                 ->where('meta.resultCount', 1)
                 ->where('meta.limit', 10)
                 ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url').'/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
+                ->where('links.current_url', config('app.url') . '/api/v2/facilities/all?title=%22HelLabs%20-%20Geophysical%20laboratory%22&offset=0&limit=10')
                 ->has(
                     'data.0',
-                    fn (AssertableJson $json) => $json
+                    fn(AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
                         ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
@@ -51,7 +55,7 @@ class FacilityControllerTest extends TestCase
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',
-                            fn (AssertableJson $json) => $json
+                            fn(AssertableJson $json) => $json
                                 ->where('category', 'Permanent')
                                 ->where(
                                     'descriptions.0',
@@ -59,13 +63,13 @@ class FacilityControllerTest extends TestCase
                                         'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
                                         'descriptionType' => 'Description',
                                     ]
-                                )->has('addOns.0', fn (AssertableJson $json) => $json
-                                ->where('type', 'Detector')
-                                ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
-                                ->where('description.0', [
-                                    'description' => 'Bruker XFlash 6-60',
-                                    'descriptionType' => 'Description',
-                                ]))->where('name', '2G cryogenic magnetometer')->etc()
+                                )->has('addOns.0', fn(AssertableJson $json) => $json
+                                    ->where('type', 'Detector')
+                                    ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
+                                    ->where('description.0', [
+                                        'description' => 'Bruker XFlash 6-60',
+                                        'descriptionType' => 'Description',
+                                    ]))->where('name', '2G cryogenic magnetometer')->etc()
                         )->where('organisation', 'Universiteit Utrecht (UU)')
 
                         ->etc()
@@ -76,21 +80,21 @@ class FacilityControllerTest extends TestCase
     public function test_paleo_success_results(): void
     {
 
-        $this->prepareApp();
+        $this->bindControllerToApp();
         $response = $this->get('api/v2/facilities/paleo');
 
         $response->assertStatus(200);
         // Verify response body contents
         $response->assertJson(
-            fn (AssertableJson $json) => $json->has('success')->where('messages', [])
+            fn(AssertableJson $json) => $json->has('success')->where('messages', [])
                 ->where('meta.totalCount', 117)
                 ->where('meta.resultCount', 1)
                 ->where('meta.limit', 10)
                 ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url').'/api/v2/facilities/paleo?offset=0&limit=10')
+                ->where('links.current_url', config('app.url') . '/api/v2/facilities/paleo?offset=0&limit=10')
                 ->has(
                     'data.0',
-                    fn (AssertableJson $json) => $json
+                    fn(AssertableJson $json) => $json
                         ->where('title', 'HelLabs - Geophysical laboratory')
                         ->where('domain', 'Paleomagnetism')
                         ->where('geojson', [
@@ -106,7 +110,7 @@ class FacilityControllerTest extends TestCase
                             'type' => 'Feature',
                         ])->has(
                             'equipment.0',
-                            fn (AssertableJson $json) => $json
+                            fn(AssertableJson $json) => $json
                                 ->where('category', 'Permanent')
                                 ->where(
                                     'descriptions.0',
@@ -114,13 +118,13 @@ class FacilityControllerTest extends TestCase
                                         'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
                                         'descriptionType' => 'Description',
                                     ]
-                                )->has('addOns.0', fn (AssertableJson $json) => $json
-                                ->where('type', 'Detector')
-                                ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
-                                ->where('description.0', [
-                                    'description' => 'Bruker XFlash 6-60',
-                                    'descriptionType' => 'Description',
-                                ]))->where('name', '2G cryogenic magnetometer')->etc()
+                                )->has('addOns.0', fn(AssertableJson $json) => $json
+                                    ->where('type', 'Detector')
+                                    ->where('group', 'EDS detector (Energy Dispersive X-ray Spectroscopy)')
+                                    ->where('description.0', [
+                                        'description' => 'Bruker XFlash 6-60',
+                                        'descriptionType' => 'Description',
+                                    ]))->where('name', '2G cryogenic magnetometer')->etc()
 
                         )->where('organisation', 'Universiteit Utrecht (UU)')
 
@@ -136,14 +140,14 @@ class FacilityControllerTest extends TestCase
     {
 
         $fileContents = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.json'));
-        $this->prepareApp(fileContents: $fileContents);
+        $this->bindControllerToApp(fileContents: $fileContents);
         $response = $this->get('api/v2/facilities/all');
 
         // Check for 500 status response
         $response->assertStatus(500);
 
         $response->assertJson(
-            fn (AssertableJson $json) => $json->has('success')
+            fn(AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('messages', ['Error received from CKAN api.'])
                 ->etc()
@@ -155,7 +159,7 @@ class FacilityControllerTest extends TestCase
      */
     public function test_all_error_validation(): void
     {
-        $this->prepareApp();
+        $this->bindControllerToApp();
 
         $response = $this->get('api/v2/facilities/all?limit=a&offset=-1');
 
@@ -163,35 +167,50 @@ class FacilityControllerTest extends TestCase
         $response->assertStatus(422);
 
         $response->assertJson(
-            fn (AssertableJson $json) => $json->has('success')
+            fn(AssertableJson $json) => $json->has('success')
                 ->where('success', false)
                 ->where('messages', ['The limit must be an integer.', 'The offset must be at least 0.'])
                 ->etc()
         );
     }
 
-    private function prepareApp(?string $fileContents = null)
+    private function bindControllerToApp(?string $fileContents = null)
     {
         // Set mock response from CKAN
         $response = (! $fileContents) ? file_get_contents(base_path('/tests/MockData/CkanResponses/V2/facilities.json')) : $fileContents;
         // Get mock ckan client
         $guzzleClient = $this->getCkanClientMock($response);
-        // Get mock eloquent model Laboratory instance
-        $mockLab = $this->getEloquentModelsMock();
-        // Replace real Laboratory instance with our mock one in the application
-        $this->app->instance(Laboratory::class, $mockLab);
         // Bind calling our mock controller instead of the real controller of interest
         // in the app
         $this->app->bind(FacilityController::class, function ($app) use ($guzzleClient) {
-            return new FacilityController($guzzleClient, $app->make(Laboratory::class));
+            return new FacilityController($guzzleClient);
         });
     }
 
-    private function getEloquentModelsMock(): Laboratory
+    private function getCkanClientMock(string $response): Client
     {
-        $lab = new Laboratory([
-            'id' => 117,
-            'laboratory_organization_id' => 64,
+        $mock = new MockHandler([
+            new Response(200, [], $response),
+        ]);
+        $handler = HandlerStack::create($mock);
+
+        return new Client(['handler' => $handler]);
+    }
+
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $org = LaboratoryOrganization::create([
+            'fast_id' => 1,
+            'name' => 'Universiteit Utrecht (UU)',
+            'external_identifier' => 'https://ror.org/04pp8hn57',
+            'ror_country' => null,
+            'ror_country_code' => null,
+            'ror_website' => null,
+        ]);
+        $lab = Laboratory::create([
+            'laboratory_organization_id' => $org->id,
             'laboratory_manager_id' => null,
             'fast_id' => 164,
             'msl_identifier' => 'fa7cdfad1a5aaf8370ebeda47a1ff1c3',
@@ -217,10 +236,10 @@ class FacilityControllerTest extends TestCase
             'address_country_name' => 'Finland',
         ]);
 
-        $equipment = new LaboratoryEquipment([
+        $equipment = LaboratoryEquipment::create([
             'id' => 370,
             'fast_id' => 529,
-            'laboratory_id' => 117,
+            'laboratory_id' => $lab->id,
             'description' => 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,',
             'description_html' => "<p>cryogenic magnetometer for discrete samples, 2G Model 755 DC,</p>\n",
             'category_name' => 'Permanent',
@@ -235,49 +254,19 @@ class FacilityControllerTest extends TestCase
             'external_identifier' => '',
             'name' => '2G cryogenic magnetometer',
             'keyword_id' => 12947,
+
         ]);
-        $org = new LaboratoryOrganization([
-            'id' => 64,
-            'fast_id' => 1,
-            'name' => 'Universiteit Utrecht (UU)',
-            'external_identifier' => 'https://ror.org/04pp8hn57',
-            'ror_country' => null,
-            'ror_country_code' => null,
-            'ror_website' => null,
-        ]);
-        $addon = new LaboratoryEquipmentAddon([
+
+
+        $addon = LaboratoryEquipmentAddon::create([
             'id' => 1,
             'description' => 'Bruker XFlash 6-60',
-            'laboratory_equipment_id' => 1,
+            'laboratory_equipment_id' => $equipment->id,
             'keyword_id' => 12841,
             'type' => 'Detector',
             'group' => 'EDS detector (Energy Dispersive X-ray Spectroscopy)',
             'created_at' => '2025-10-09 12:31:15',
             'updated_at' => '2025-10-09 12:31:15',
         ]);
-        $equipment->setRelation('laboratory_equipment_addons', collect([$addon]));
-        $lab->setRelation('laboratoryOrganization', $org);
-
-        $lab->setRelation('laboratoryEquipment', collect([$equipment]));
-        $builder = \Mockery::mock();
-        $builder->shouldReceive('first')
-            ->andReturn($lab);
-
-        $mockLab = Mockery::mock(Laboratory::class);
-        $mockLab->shouldReceive('where')
-            ->with('fast_id', 164)
-            ->andReturn($builder);
-
-        return $mockLab;
-    }
-
-    private function getCkanClientMock(string $response): Client
-    {
-        $mock = new MockHandler([
-            new Response(200, [], $response),
-        ]);
-        $handler = HandlerStack::create($mock);
-
-        return new Client(['handler' => $handler]);
     }
 }
