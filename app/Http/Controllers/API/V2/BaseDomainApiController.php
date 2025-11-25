@@ -89,6 +89,12 @@ abstract class BaseDomainApiController extends Controller
 
     abstract protected function getDomain(EndpointContext $context): void;
 
+
+    /**
+     * Building up the request that we are going to send.
+     */
+    abstract  protected function setRequestToCKAN(Request $request, EndpointContext $context): void;
+
     protected function getBoundingBox(?string $boundingBox): void
     {
         $paramBoundingBox = json_decode($boundingBox);
