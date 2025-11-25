@@ -155,7 +155,6 @@
             <div></div>
         </div>
 
-
         <div class="pb-10">
             
             @if (isset($pbDetail) && $pbDetail)
@@ -164,7 +163,7 @@
                 <script>
                     var dataInterpreted = @php echo File::get(base_path($filterDataPath)) @endphp;                    
                     var dataOriginal = @php echo File::get(base_path('public/original.json')) @endphp;
-                    var facets = @php echo json_encode($result->getFacets()); @endphp;
+                    var facets = @php echo json_encode($facets); @endphp;
                     var activeFilters = @php echo json_encode($activeFilters); @endphp;
                     var activeNodes = [];
                 </script>
@@ -175,7 +174,7 @@
                 <div id="jstree-laboratories" class="text-wrap pt-4"></div>
                 <script>
                     var dataLaboratories = @php echo File::get(base_path( $filterDataPath )) @endphp;
-                    var facets = @php echo json_encode($result->getFacets()); @endphp;
+                    var facets = @php echo json_encode($facets); @endphp;
                     var activeFilters = @php echo json_encode($activeFilters); @endphp;
                     var activeNodes = [];
             
