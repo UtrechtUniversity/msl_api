@@ -30,7 +30,7 @@
         <div class="flex max-[470px]:flex-col items-center place-content-center gap-3">
             <div class="basis-1/2">
                 <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
-                <h5 class="inline">{{ $result->getTotalResultsCount() }}</h5>
+                <h5 class="inline">{{ count($result) }}</h5>
             </div>
     
             @if (isset($dpDropdown) && $dpDropdown)
