@@ -4,7 +4,7 @@
     /* map and list div */
         /* general page structure used on every template due to the formatting of the landing page */
     .main-content{
-        @apply pb-20 flex justify-center place-items-center p-2 md:p-10 w-full
+        @apply pb-20 flex justify-center place-items-center p-2 md:p-12 w-full
         }
     .sub-content{
         @apply md:max-w-2xl
