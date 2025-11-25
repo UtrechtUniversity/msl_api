@@ -14,12 +14,11 @@
         @endsession
         <div class="tab-links-parent ">
             @include('components.tab-links',[
-                // 'categoryName'  => 'Sections',
-                'routes'        => array(
-                        'Metadata'  => route("data-publication-detail", ['id' => $data['name']]),
-                        'Files'     => route("data-publication-detail-files", ['id' => $data['name']])
-                ),
-                'routeActive'   => route("data-publication-detail-files", ['id' => $data['name']])
+                'routes'        => [
+                        'Metadata'  => route("data-publication-detail", ['id' => $data->name]),
+                        'Files'     => route("data-publication-detail-files", ['id' => $data->name])
+                ],
+                'routeActive'   => route("data-publication-detail-files", ['id' => $data->name])
             ])
         </div>
     </div>
@@ -29,9 +28,9 @@
         <div class="detail-div justify-center gap-4">
 
                 <h2>Files</h2>
-                <h5 class="pt-10 font-bold">{{ $data['title'] }}</h5>
-                @if (array_key_exists("msl_publisher", $data))
-                <h6 class="pb-10 italic"> {{ $data['msl_publisher'] }}</h6>
+                <h5 class="pt-10 font-bold">{{ $data->title }}</h5>
+                @if ($data->msl_publisher != '')
+                <h6 class="pb-10 italic"> {{ $data->msl_publisher }}</h6>
                 @endif
                 <div class="bg-warning-300 rounded-lg 
                 flex flex-col place-items-center w-2/3
@@ -45,8 +44,8 @@
                         as originally published at the source repository: 
                         <br>
                         <br>
-                        @if (array_key_exists("msl_source",$data))
-                            <a class="hover-interactive text-center" href="{{ $data['msl_source'] }}" target="_blank">{{ $data['msl_source'] }}</a>
+                        @if ($data->msl_source != '')
+                            <a class="hover-interactive text-center" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
                         @endif 
                         <br>
                         <br>
@@ -56,17 +55,17 @@
                 </div>
 
 
-                @if (array_key_exists("msl_files", $data))
+                @if (count($data->msl_files) > 0)
 
                     @php
                         $allFolders = [];
                         $allFiles = [];
                         $allExtensions = [];
-                        foreach ($data['msl_files'] as $download) {
-                            if (! in_array($download['msl_extension'], $allExtensions) && $download['msl_extension'] != '' ) {
-                                $allExtensions [] = $download['msl_extension'];
+                        foreach ($data->msl_files as $download) {
+                            if (! in_array($download->msl_extension, $allExtensions) && $download->msl_extension != '' ) {
+                                $allExtensions [] = $download->msl_extension;
                             }
-                            if ($download['msl_is_folder']) {
+                            if ($download->msl_is_folder) {
                                 $allFolders[] = $download;
 
                             } else {
@@ -122,14 +121,14 @@
                         @foreach ($allFiles as $key => $download)
 
                             <a class=" bg-base-300 shadow-md flex justify-around flex-row px-4 w-full hover:bg-secondary-100 h-12"
-                                href="{!! $download['msl_download_link'] !!}" title="download file">
+                                href="{!! $download->msl_download_link !!}" title="download file">
 
                                     <div class='flex flex-row justify-left items-center w-full'>
                                         <div> <p class="no-underline py-0 px-4 w-20">{{ $key + 1 }}</p> </div>
                                         <div> <x-ri-file-3-fill class="file-icon mr-6"/> </div>
                                         <div class="overflow-hidden py-0 px-4">                                                
                                             <p class='no-underline '>
-                                            {{ $download['msl_file_name'] }}
+                                            {{ $download->msl_file_name }}
                                         </p></div>
                                     </div>
                             </a>
