@@ -29,23 +29,15 @@ class RelatedIdentifier implements CkanArrayInterface
         $this->msl_related_identifier_resource_type_general = $resourceType;
     }
 
-    public function getDisplayInformation(): array{
-        $dataList = [];
-        if ($this->msl_related_identifier_type == 'DOI') {
-            $dataList[] = "https://doi.org/".$this->msl_related_identifier;
-        }else {
-            $dataList[] = $this->msl_related_identifier;
+    public function getRelatedIdentifierType(){
 
-            if($this->msl_related_identifier_type != ''){
-                $dataList[] = $this->msl_related_identifier_type;
-            }
-
-            if($this->msl_related_identifier_relation_type != ''){
-                $dataList[] = $this->msl_related_identifier_relation_type;
-            }
-        }
-        return $dataList;
+        return $this->msl_related_identifier_type;
     }
+
+    public function getRelatedIdentifierRelationType(){
+        return $this->msl_related_identifier_relation_type;
+    }
+
 
     public function toCkanArray(): array
     {
