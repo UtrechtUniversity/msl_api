@@ -105,7 +105,7 @@ class FacilityController extends BaseDomainApiController
         $this->packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
         // Set rows
-        if (($request->get('limit'))) {
+        if ($request->get('limit')) {
             $this->packageSearchRequest->rows = $request->get('limit');
         }
         // Set start
@@ -128,7 +128,7 @@ class FacilityController extends BaseDomainApiController
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::ROCK_PHYSICS->value);
                 break;
 
-            case EndpointContext::ROCK_PHYSICS:
+            case EndpointContext::ANALOGUE:
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::ANALOGUE->value);
                 break;
 

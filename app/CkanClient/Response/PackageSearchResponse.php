@@ -39,7 +39,6 @@ class PackageSearchResponse extends BaseResponse
                     $resultsToReturn[] = DataPublication::fromCkanArray($result);
                     break;
                 case 'lab':
-                    $resultsToReturn = [];
                     if ($result['msl_fast_id']) {
                         $resultsToReturn[] = Laboratory::where('fast_id', $result['msl_fast_id'])->first();
                     }
