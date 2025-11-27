@@ -103,11 +103,11 @@
                 </div>
             </div>
 
-            @if ($data->msl_location != '')
+            @if (array_key_exists("msl_location", $data))
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Location</h4>
-                    <div class="">
+                    <div class="detail-entry-content">
                         <div id="map" style="height: 300px;"></div>
 
                         <script>
@@ -119,14 +119,14 @@
                                 }
                             }
 
-                            var features = <?php echo json_encode([json_decode($data->msl_location)]); ?>;
+                            var features = <?php echo $data['msl_location']; ?>;
 
                             if(features.geometry.coordinates) {
                                 var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]], 4);    
                             }
                             else {
                                 var map = L.map('map').setView([51.505, -0.09], 4);
-                            }                                        
+                            }
                             
                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
@@ -135,7 +135,7 @@
                                                                                                                     
                             L.geoJSON(features, {
                                 onEachFeature: onEachFeature
-                            }).addTo(map);                                                                                                                                                                                
+                            }).addTo(map);
                         </script>
                     </div>
                 </div>
