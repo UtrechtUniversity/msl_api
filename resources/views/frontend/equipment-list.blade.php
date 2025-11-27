@@ -44,8 +44,8 @@
 
                         {{-- list view --}}    
                         <div class="list-view">
-                            @if (count($result->getResults()) > 0)
-                                @foreach ($result->getResults() as $equipment)
+                            @if (count($result) > 0)
+                                @foreach ($result as $equipment)
                                     @include('components.list-views.equipment', [
                                         'data' => $equipment
                                     ])

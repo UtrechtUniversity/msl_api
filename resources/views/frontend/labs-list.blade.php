@@ -44,8 +44,8 @@
 
                         {{-- list view --}}    
                         <div class="list-view">
-                            @if (count($result->getResults()) > 0)
-                                @foreach ($result->getResults() as $laboratory)
+                            @if (count($result) > 0)
+                                @foreach ($result as $laboratory)
                                     @include('components.list-views.lab', [
                                         'data' => $laboratory
                                     ])
