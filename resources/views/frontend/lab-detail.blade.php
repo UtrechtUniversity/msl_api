@@ -3,10 +3,10 @@
     <div class="tab-links-parent">
         @include('components.tab-links',[
             'routes'        => array(
-                    'Laboratory'   => route('lab-detail', ['id' => $data->name]),
-                    'Equipment'  => route('lab-detail-equipment', ['id' => $data->name])
+                    'Laboratory'   => route('lab-detail', ['id' => $data['name']]),
+                    'Equipment'  => route('lab-detail-equipment', ['id' => $data['name']])
             ),
-            'routeActive'   => route('lab-detail', ['id' => $data->name])
+            'routeActive'   => route('lab-detail', ['id' => $data['name']])
         ])
     </div>
 
@@ -14,16 +14,16 @@
         <div class="detail-div content-divide-y">
             <div class="detail-entry-div !flex-col">
                 <h2 class="">Laboratory Details</h2>
-                <h1 class="text-lg">{{ $data->title }}</h1>                                    
+                <h1 class="text-lg">{{ $data['title'] }}</h1>                                    
             </div>
             
-            @if ($data->msl_description_html != '')
+            @if (array_key_exists("msl_description_html", $data))
                 <div class="detail-entry-div !flex-col place-items-center">  
                     <h3>Description</h3>
                     @include('components.tab-list',[
                             'allTabs' => array(
                                 'Description' => [
-                                    'content' => $data->msl_description_html,
+                                    'content' => $data['msl_description_html'],
                                     'id' => 'description'
                                 ]
                             ),
@@ -36,7 +36,7 @@
             @endif
 
             {{-- report dead link? --}}
-            @if ($data->msl_website != '')
+            @if (array_key_exists("msl_website", $data))
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Website</h4>
@@ -44,7 +44,7 @@
                     <div class="detail-entry-content">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_website
+                                $data['msl_website']
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -53,14 +53,14 @@
                 </div>
             @endif
 
-            @if ($data->msl_domain_name != '')
+            @if (array_key_exists("msl_domain_name", $data))
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Domain</h4>
                     <div class="detail-entry-content">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_domain_name
+                                $data['msl_domain_name']
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -69,14 +69,14 @@
                 </div>
             @endif
 
-            @if ($data->msl_organization_name != '')
+            @if (array_key_exists("msl_organization_name", $data))
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Organization name</h4>
                     <div class="detail-entry-content">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_organization_name
+                                $data['msl_organization_name']
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -91,11 +91,11 @@
                 <div class="detail-entry-content">
                     @include('components.list-views.table-list',[
                         'entries' => [
-                            $data->msl_address_street_1,
-                            $data->msl_address_street_2,
-                            $data->msl_address_postalcode,
-                            $data->msl_address_city,
-                            $data->msl_address_country_name
+                            $data['msl_address_street_1'],
+                            $data['msl_address_street_2'],
+                            $data['msl_address_postalcode'],
+                            $data['msl_address_city'],
+                            $data['msl_address_country_name']
                         ],
                         'withKeys' => false,
                         'textSize' => 'base'
@@ -144,7 +144,7 @@
         @if($labHasMailContact)
             <div class="p-20 w-full flex justify-around">
                 <a href="{{ route('laboratory-contact-person', [
-                    'id'          => $data->name
+                    'id'          => $data['name']
                 ]) }}">
                     <button class="btn btn-primary btn-lg btn-wide ">Contact Laboratory</button>
                 </a>
