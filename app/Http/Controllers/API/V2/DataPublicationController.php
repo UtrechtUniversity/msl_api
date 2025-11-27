@@ -5,10 +5,10 @@ namespace App\Http\Controllers\API\V2;
 use App\CkanClient\Client;
 use App\Enums\DataPublicationSubDomain;
 use App\Enums\EndpointContext;
-use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
+use App\Services\DataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -40,12 +40,30 @@ class DataPublicationController extends BaseDomainApiController
         $this->queryMappingsAll = array_merge($this->queryMappings, ['subDomain' => 'msl_subdomain']);
     }
 
+    // TODO have a different endpoint for geojson
+    // todo Maybe also a different controller.
+    // todo Might want to return regular json response rather than pure geojson.
+
     /**
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      */
     protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
     {
+        // TODO I would like a different endpoint
+        // Geo json and json are the same content type
+        $preferredType = $request->prefers(['application/json', 'application/geojson']);
+        // For now, we want always a bounding box set if we are asking for geojson
+        if ($preferredType === 'application/geojson') {
+            try {
+                $request->validate([
+                    'boundingBox' => ['required', new GeoRule],
+                ]);
+            } catch (\Illuminate\Validation\ValidationException $e) {
+                return new ValidationErrorResource($e);
+            }
+        }
+
         try {
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
@@ -78,27 +96,27 @@ class DataPublicationController extends BaseDomainApiController
             return new CkanErrorResource([]);
         }
 
-        $dataPublications = $response->getResults(true);
-        $totalResultCount = $response->getTotalResultsCount();
-        $currentResultCount = count($dataPublications);
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
-        $responseToReturn = new DataPublicationCollection($dataPublications, $context);
-        $responseToReturn->additional([
-            'success' => 'true',
-            'messages' => [],
-            'meta' => [
-                'resultCount' => $currentResultCount,
-                'totalCount' => $totalResultCount,
-                'limit' => $limit,
-                'offset' => $offset,
-            ],
-            'links' => [
-                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
-            ],
-        ]);
+        $dpService = new DataPublicationService;
 
-        return $responseToReturn;
+        if ($preferredType === 'application/geojson') {
+            return $dpService->getGeoJsonResponse(
+                response: $response,
+                limit: $limit,
+                offset: $offset,
+                currentUrl: $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+                context: $context
+            );
+        } else {
+            return $dpService->getResponse(
+                response: $response,
+                limit: $limit,
+                offset: $offset,
+                currentUrl: $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+                context: $context
+            );
+        }
     }
 
     protected function setRequestToCKAN(Request $request, EndpointContext $context): void

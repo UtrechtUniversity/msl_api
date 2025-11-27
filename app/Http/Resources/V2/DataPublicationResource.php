@@ -30,11 +30,13 @@ class DataPublicationResource extends JsonResource
 
     private $uriStartsPerSubject = [];
 
-    public function __construct($resource, $context = '')
+    private bool $hasGeoJson;
+
+    public function __construct($resource, $context = '', $hasGeoJson = true)
     {
         parent::__construct($resource);
         $this->context = $context;
-
+        $this->hasGeoJson = $hasGeoJson;
         $this->uriStartsPerSubject = [
             VocabularyType::ROCK_PHYSICS->value => [
                 'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
@@ -178,8 +180,7 @@ class DataPublicationResource extends JsonResource
      */
     public function toArray($request)
     {
-
-        return [
+        $genericResource = [
             'title' => $this->title,
             'doi' => $this->msl_doi,
             'source' => $this->msl_source,
@@ -197,7 +198,6 @@ class DataPublicationResource extends JsonResource
             'language' => $this->msl_language,
             'publisher' => $this->msl_publisher,
             'citation' => $this->msl_citation,
-            'geojson' => json_decode($this->msl_geojson_featurecollection),
             'surface_area' => $this->msl_surface_area,
             'rightsList' => RightResource::collection($this->msl_rights),
             'alternateIdentifier' => AlternateIdentifierResource::collection($this->msl_alternate_identifiers),
@@ -210,5 +210,10 @@ class DataPublicationResource extends JsonResource
             'subjects' => SubjectResource::collection($this->msl_tags),
             'subdomains' => array_column($this->msl_subdomains, 'msl_subdomain'),
         ];
+        if ($this->hasGeoJson) {
+            $genericResource += ['geojson' => json_decode($this->msl_geojson_featurecollection)];
+        }
+
+        return $genericResource;
     }
 }

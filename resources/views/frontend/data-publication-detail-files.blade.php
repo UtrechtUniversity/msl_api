@@ -135,9 +135,10 @@
 
                     </div>
                 </div>
-            @endif
-
         </div>
+        @endif
+
+    </div>
     </div>
 
     @push('vite')

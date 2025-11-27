@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataAccessController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
@@ -126,3 +127,5 @@ Route::post('/laboratory-contact-person', [FormController::class, 'labContactFor
 
 Route::get('/survey-form/{surveyName}', [SurveyController::class, 'surveyForm'])->name('survey-form');
 Route::post('/survey-form/{surveyName}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');
+
+Route::get('/data-publication-map-test', [DataAccessController::class, 'index'])->name('data-publication-map-test');
