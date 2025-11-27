@@ -178,7 +178,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.labs-map', ['locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('frontend.labs-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
@@ -388,7 +388,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.equipment-map', ['locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('frontend.equipment-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
