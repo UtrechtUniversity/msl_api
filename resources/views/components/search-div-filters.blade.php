@@ -1,6 +1,6 @@
 
  
-<div class="w-80 bg-base-200 flex flex-col place-items-center justify-self-center">
+<div class="w-80 bg-base-200 flex flex-col place-items-center justify-self-center overflow-auto">
 
     <h2 class="py-4">Filters</h1>
 
@@ -131,23 +131,22 @@
                         </div>
                     </div>
                 </div>
-            @endif
 
-
-            <div class="px-2 py-3 w-full">
-                <div class="w-full flex place-content-evenly">
-                    <a href="#" id="expand_all" title="expand all nodes">
-                        <button class="btn btn-sm w-20">
-                            expand all
-                        </button>
-                    </a>
-                    <a href="#" id="close_all" title="close all nodes">
-                        <button class="btn btn-sm w-20">
-                            close all
-                        </button>
-                    </a>
+                <div class="px-2 py-3 w-full">
+                    <div class="w-full flex place-content-evenly">
+                        <a href="#" id="expand_all" title="expand all nodes">
+                            <button class="btn btn-sm w-20">
+                                expand all
+                            </button>
+                        </a>
+                        <a href="#" id="close_all" title="close all nodes">
+                            <button class="btn btn-sm w-20">
+                                close all
+                            </button>
+                        </a>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
 
         <div class="divide-y w-1/2 flex flex-col place-self-center py-3 divide-primary-700 opacity-50">

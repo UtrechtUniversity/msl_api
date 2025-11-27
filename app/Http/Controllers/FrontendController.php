@@ -315,7 +315,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.lab-detail', ['data' => $labData, 'labHasMailContact' => $labHasMailContact]);
+        return view('frontend.lab-detail', ['data' => $result->getResult(true), 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**
@@ -339,8 +339,8 @@ class FrontendController extends Controller
 
         // group results for display purposes
         $groupedResults = [];
-        foreach ($result->getResults() as $result) {
-            $groupedResults[$result['msl_domain_name']][] = $result;
+        foreach ($result->getResults(true) as $result) {
+            $groupedResults[] = $result;
         }
 
         // get the name of lab
@@ -353,7 +353,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail-equipment', ['data' => $groupedResults, 'ckanLabName' => $id, 'data2' => $Labresult->getResult()]);
+        return view('frontend.lab-detail-equipment', ['data' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipmentData' => $groupedResults]);
     }
 
     /**
