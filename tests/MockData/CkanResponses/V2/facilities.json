@@ -1,0 +1,97 @@
+{
+  "help": "http://localhost:5000/api/3/action/help_show?name=package_search",
+  "success": true,
+  "result": {
+    "count": 117,
+    "facets": {},
+    "results": [
+      {
+        "author": null,
+        "author_email": null,
+        "creator_user_id": "140ce95c-b175-4b47-bd29-f4e49d333b09",
+        "id": "ace88b1c-7746-4d58-9d88-9ad9110e9558",
+        "isopen": false,
+        "license_id": null,
+        "license_title": null,
+        "maintainer": null,
+        "maintainer_email": null,
+        "metadata_created": "2025-03-26T10:03:10.343347",
+        "metadata_modified": "2025-03-26T10:03:10.343351",
+        "msl_address_city": "",
+        "msl_address_country_name": "Finland",
+        "msl_address_postalcode": "",
+        "msl_address_street_1": "",
+        "msl_address_street_2": "",
+        "msl_altitude": "",
+        "msl_description": "Paleomagnetism, rock magnetism and petrophysics",
+        "msl_description_html": "<p>Paleomagnetism, rock magnetism and petrophysics</p>\n",
+        "msl_domain_name": "Paleomagnetism",
+        "msl_fast_id": "164",
+        "msl_has_spatial_data": "true",
+        "msl_latitude": "60.2026",
+        "msl_location": "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[24.9576,60.2026]},\"properties\":{\"title\":\"HelLabs - Geophysical laboratory\",\"name\":\"fa7cdfad1a5aaf8370ebeda47a1ff1c3\",\"msl_id\":117,\"msl_organization_name\":\"University of Helsinki\",\"msl_domain_name\":\"Paleomagnetism\"}}",
+        "msl_longitude": "24.9576",
+        "msl_organization_name": "University of Helsinki",
+        "msl_website": "",
+        "name": "fa7cdfad1a5aaf8370ebeda47a1ff1c3",
+        "notes": null,
+        "num_resources": 0,
+        "num_tags": 0,
+        "organization": {
+          "id": "a39136d3-2010-49cf-b662-9c9a7cb5fbd9",
+          "name": "epos-multi-scale-laboratories-thematic-core-service",
+          "title": "",
+          "type": "organization",
+          "description": "",
+          "image_url": "",
+          "created": "2024-10-08T12:37:26.184180",
+          "is_organization": true,
+          "approval_status": "approved",
+          "state": "active"
+        },
+        "owner_org": "a39136d3-2010-49cf-b662-9c9a7cb5fbd9",
+        "private": false,
+        "state": "active",
+        "title": "HelLabs - Geophysical laboratory",
+        "type": "lab",
+        "url": null,
+        "version": null,
+        "extras": [
+          {
+            "key": "spatial",
+            "value": "{\"type\":\"Point\",\"coordinates\":[24.9576,60.2026]}"
+          }
+        ],
+        "msl_laboratory_equipment": [
+          {
+            "msl_laboratory_equipment_brand": "2G",
+            "msl_laboratory_equipment_category": "Permanent",
+            "msl_laboratory_equipment_description": "cryogenic magnetometer for discrete samples, 2G Model 755 DC,",
+            "msl_laboratory_equipment_description_html": "<p>cryogenic magnetometer for discrete samples, 2G Model 755 DC,</p>\n",
+            "msl_laboratory_equipment_domain": "Paleomagnetism",
+            "msl_laboratory_equipment_group": "Cryogenic Magnetometer",
+            "msl_laboratory_equipment_title": "2G cryogenic magnetometer",
+            "msl_laboratory_equipment_type": "Magnetometer"
+          },
+          {
+            "msl_laboratory_equipment_brand": "AGICO LDA-3A",
+            "msl_laboratory_equipment_category": "Permanent",
+            "msl_laboratory_equipment_description": "AGICO LDA-3A",
+            "msl_laboratory_equipment_description_html": "<p>AGICO LDA-3A</p>\n",
+            "msl_laboratory_equipment_domain": "Paleomagnetism",
+            "msl_laboratory_equipment_group": "Anhysteretic Remanence Magnetiser (ARM)",
+            "msl_laboratory_equipment_title": "AGICO LDA-3A",
+            "msl_laboratory_equipment_type": "(De)magnetiser"
+          }
+        ],
+        "resources": [],
+        "tags": [],
+        "groups": [],
+        "relationships_as_subject": [],
+        "relationships_as_object": []
+      }
+    ],
+    "sort": "score desc, metadata_modified desc",
+    "search_facets": {}
+  }
+}

@@ -510,7 +510,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_error.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/package_search_error.json'));
 
             $mock = new MockHandler([
                 new Response(400, [], $response),
@@ -613,7 +613,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_facilities_117.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_facilities_117.json'));
             $mock = new MockHandler([
                 new Response(200, [], $response),
             ]);
@@ -728,7 +728,7 @@ class ApiTest extends TestCase
     {
         // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
         $this->app->bind(ApiController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_facilities_boundingbox.txt'));
+            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_facilities_boundingbox.json'));
             $mock = new MockHandler([
                 new Response(200, [], $response),
             ]);

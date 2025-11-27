@@ -14,18 +14,7 @@ class DataPublicationControllerTest extends TestCase
 {
     public function test_all_success_results(): void
     {
-        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
-        $this->app->bind(DataPublicationController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/datapublications_all.json'));
-
-            $mock = new MockHandler([
-                new Response(200, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new DataPublicationController(new Client(['handler' => $handler]));
-        });
+        $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_all.json');
 
         // Retrieve response from API
         $response = $this->get('api/v2/datapublications/all');
@@ -126,18 +115,8 @@ class DataPublicationControllerTest extends TestCase
 
     public function test_paleos_success_results(): void
     {
-        // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
-        $this->app->bind(DataPublicationController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/datapublications_paleo.json'));
 
-            $mock = new MockHandler([
-                new Response(200, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new DataPublicationController(new Client(['handler' => $handler]));
-        });
+        $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_paleo.json');
 
         // Retrieve response from API
         $response = $this->get('api/v2/datapublications/paleo?offset=2&limit=8');
@@ -218,18 +197,7 @@ class DataPublicationControllerTest extends TestCase
      */
     public function test_all_error_ckan(): void
     {
-        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(DataPublicationController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V1/package_search_error.txt'));
-
-            $mock = new MockHandler([
-                new Response(400, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new DataPublicationController(new Client(['handler' => $handler]));
-        });
+        $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/package_search_error.json');
 
         // Retrieve response from API
         $response = $this->get('api/v2/datapublications/all');
@@ -251,18 +219,7 @@ class DataPublicationControllerTest extends TestCase
      */
     public function test_all_error_validation(): void
     {
-        // Inject GuzzleCLient with Mockhandler into APIController constructor to work with mocked results from CKAN
-        $this->app->bind(DataPublicationController::class, function ($app) {
-            $response = file_get_contents(base_path('/tests/MockData/CkanResponses/V2/datapublications_all.json'));
-
-            $mock = new MockHandler([
-                new Response(200, [], $response),
-            ]);
-
-            $handler = HandlerStack::create($mock);
-
-            return new DataPublicationController(new Client(['handler' => $handler]));
-        });
+        $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_all.json');
 
         // Retrieve response from API
         $response = $this->get('api/v2/datapublications/all?limit=a&offset=-1');
@@ -277,5 +234,25 @@ class DataPublicationControllerTest extends TestCase
                 ->where('messages', ['The limit must be an integer.', 'The offset must be at least 0.'])
                 ->etc()
         );
+    }
+
+    /**
+     *  // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+     */
+    private function bindControllerToApp(string $fileContents): void
+    {
+
+        $path = base_path($fileContents);
+        $this->app->bind(DataPublicationController::class, function () use ($path) {
+            $response = file_get_contents($path);
+
+            $mock = new MockHandler([
+                new Response(200, [], $response),
+            ]);
+
+            $handler = HandlerStack::create($mock);
+
+            return new DataPublicationController(new Client(['handler' => $handler]));
+        });
     }
 }
