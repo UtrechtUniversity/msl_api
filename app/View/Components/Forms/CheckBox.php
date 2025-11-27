@@ -13,11 +13,9 @@ class CheckBox extends Component
      */
     public function __construct(
         public string $sectionName,
-        public string $title = '',
+        public string $title,
         public array $options,
-        public array $ids = [],
-        public bool $titleBold = false,
-
+        public bool $titleBold
     ) {}
 
     /**

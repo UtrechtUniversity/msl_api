@@ -18,6 +18,15 @@ text-sm
 sm:text-base
 whitespace-nowrap
 ">
+    @php
+        if ($checkedElementId == '') {
+            foreach (array_reverse($allTabs) as $description => $content) {
+                if ($content['content']  != '') {
+                    $checkedElementId = $content['id'];
+                }
+            }
+        }
+    @endphp
 
     @foreach ( $allTabs as $description => $content)
         @if ($content['content']  != '')

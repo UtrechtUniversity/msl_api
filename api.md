@@ -1,6 +1,6 @@
 # EPOS MSL API
 The EPOS MSL API offers access to data available within our CKAN portal. This document describes the API per available endpoint.
-A Postman collection file is available [here](../master/MSL%20API.postman_collection.json).
+ A Hoppscotch collection file is available [here](./docs/api/hoppscotch/collections/MSL%20API.json).
 
 ## Available resources
 The API offers 5 domain specific endpoints and 1 endpoint offering access to all data-publications available. All data is open accessible, no authorization is required.
@@ -15,15 +15,2766 @@ The API offers 5 domain specific endpoints and 1 endpoint offering access to all
 ## Base url
 
 The base url for the API:
+- For data-publications:
+```
+https://epos-msl.uu.nl/api/v2/datapublications
+```
+- For facilities:
+//TODO
 
-```
-https://epos-msl.uu.nl/webservice/api
-```
+
+
+
 
 # /rock_physics
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
 ## Search all rock physics data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+ {
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/rock_physics?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”",
+            "doi": "10.24416/uu01-575ewu",
+            "source": "https://public.yoda.uu.nl/geo/UU01/575EWU.html",
+            "portalLink": "http://localhost/data-publication/ad60ac76a738f696d9de7acc1506d491",
+            "name": "ad60ac76a738f696d9de7acc1506d491",
+            "creators": [
+                {
+                    "name": "Mohammad Hadi Mehranpour",
+                    "nameType": "Personal",
+                    "givenName": "Mohammad Hadi",
+                    "familyName": "Mehranpour",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Reservoir compaction, surface subsidence and induced seismicity are often associated with prolonged hydrocarbon production. Recent experiments conducted on the Groningen gas field’s Slochteren sandstone reservoir rock, at in-situ conditions, have shown that compaction involves both poro-elastic strain and time-independent, permanent strain caused by consolidation and shear of clay films coating the sandstone grains, with grain failure occurring at higher stresses. To model compaction of the reservoir in space and time, numerical approaches, such as the Discrete Element Method (DEM) , populated with realistic grain-scale mechanisms are needed. We developed a new particle-interaction law (contact model) for the classic DEM to explicitly account for the experimentally observed mechanisms of non-linear elasticity, intergranular clay film deformation, and grain breakage. It was calibrated against both hydrostatic and conventional triaxial compression experiments and validated against an independent set of pore pressure depletion experiments conducted under uniaxial strain conditions, using a range of sample porosities, grain size distributions and clay contents. The model obtained was used to predict compaction of the Groningen reservoir. These results were compared with field measurements of in-situ compaction and matched favorably, within field measurement uncertainties. The new model allows systematic investigation of the effects of mineralogy, microstructure, boundary conditions and loading path on compaction behavior of the reservoir. It also offers a means of generating a data bank suitable for developing generalized constitutive models and for predicting reservoir response to different scenarios of gas extraction, or of fluid injection for stabilization or storage purposes.\n\nThe data provided in this dataset include the contact model (source codes and the contact model library) developed for the Particle Flow Code (PFC) software, Fish code package for running PFC models, numerical modeling results (tabulated) obtained in the calibration procedure and uniaxial compaction prediction.\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Mehranpour, Mohammad Hadi",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne J.T.",
+                    "contributorType": "ProjectManager",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "contributorType": "ProjectLeader",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "wacke",
+                "Slochteren sandstone",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay"
+            ],
+            "researchAspects": [
+                "deformation behaviour",
+                "inelastic deformation",
+                "strain",
+                "microphysical deformation mechanism",
+                "intragranular cracking",
+                "mechanical strength",
+                "triaxial compressive strength (s1>s2=s3)",
+                "elasticity",
+                "bulk modulus",
+                "poroelastic deformation",
+                "elastic strain",
+                "inelastic strain",
+                "pore fluid pressure"
+            ],
+            "files": [
+                {
+                    "fileName": "calibration",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/calibration/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "contact model",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/contact model/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "PFC code",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/PFC code/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "uniaxial compaction",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/uniaxial compaction/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "Mehranpour_et-al_2021-description.docx",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/Mehranpour_et-al_2021-description.docx",
+                    "extension": "docx"
+                },
+                {
+                    "fileName": "yoda-metadata.json",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/yoda-metadata.json",
+                    "extension": "json"
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2021",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Mehranpour, M. H. (2021). <i>Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”</i> (Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-575EWU",
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {
+                            "name": "Groningen gas field’s Slochteren sandstone reservoir rock"
+                        }
+                    }
+                ]
+            },
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Netherlands Research Council (NWO)",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2021-05-18T11:05:08",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2019-06-01/2020-01-01",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB018702",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Rock and melt physical properties",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Discrete Element Method (DEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Particle Flow Code (PFC)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Inelastic deformation",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-inelastic_deformation"
+                    ]
+                },
+                {
+                    "subject": "Compaction",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-strain"
+                    ]
+                },
+                {
+                    "subject": "Sandstone",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-sandstone"
+                    ]
+                },
+                {
+                    "subject": "EPOS",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Multi-scale laboratories",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Clay film",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Quartz",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/minerals-silicate_minerals-tectosilicates-quartz"
+                    ]
+                },
+                {
+                    "subject": "Gas reservoir",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/subsurface_energy_production-hydrocarbon_energy_production-gas_field"
+                    ]
+                },
+                {
+                    "subject": "Subsidence",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/surface_subsidence"
+                    ]
+                },
+                {
+                    "subject": "Induced seismicity",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/induced_seismicity"
+                    ]
+                },
+                {
+                    "subject": "Contact model",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Nonlinear elasticity",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "permanent time-independent deformation",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Intragranular failure",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking",
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack"
+                    ]
+                },
+                {
+                    "subject": "Numerical modeling",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Grain failure",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking",
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack"
+                    ]
+                },
+                {
+                    "subject": "sandstone",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Material",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-sandstone"
+                    ]
+                },
+                {
+                    "subject": "Triaxial",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Apparatus",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Strain gauge",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Monitoring",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Triaxial Compressive Strength",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-triaxial_compressive_strength_s1-s2s3"
+                    ]
+                },
+                {
+                    "subject": "Young’s Modulus",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Bulk Modulus",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-bulk_modulus",
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-poroelastic_deformation",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-elasticity-bulk_modulus"
+                    ]
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography"
+            ]
+        }
+    ]
+}
+```
+
+</details>
+
+# /analogue
+This endpoint gives access to all data-publications available that are marked as belonging to the analogue modelling (sub)domain. 
+
+## Search all analogue modelling data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/analogue?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”",
+            "doi": "10.24416/uu01-575ewu",
+            "source": "https://public.yoda.uu.nl/geo/UU01/575EWU.html",
+            "portalLink": "http://localhost/data-publication/ad60ac76a738f696d9de7acc1506d491",
+            "name": "ad60ac76a738f696d9de7acc1506d491",
+            "creators": [
+                {
+                    "name": "Mohammad Hadi Mehranpour",
+                    "nameType": "Personal",
+                    "givenName": "Mohammad Hadi",
+                    "familyName": "Mehranpour",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Reservoir compaction, surface subsidence and induced seismicity are often associated with prolonged hydrocarbon production. Recent experiments conducted on the Groningen gas field’s Slochteren sandstone reservoir rock, at in-situ conditions, have shown that compaction involves both poro-elastic strain and time-independent, permanent strain caused by consolidation and shear of clay films coating the sandstone grains, with grain failure occurring at higher stresses. To model compaction of the reservoir in space and time, numerical approaches, such as the Discrete Element Method (DEM) , populated with realistic grain-scale mechanisms are needed. We developed a new particle-interaction law (contact model) for the classic DEM to explicitly account for the experimentally observed mechanisms of non-linear elasticity, intergranular clay film deformation, and grain breakage. It was calibrated against both hydrostatic and conventional triaxial compression experiments and validated against an independent set of pore pressure depletion experiments conducted under uniaxial strain conditions, using a range of sample porosities, grain size distributions and clay contents. The model obtained was used to predict compaction of the Groningen reservoir. These results were compared with field measurements of in-situ compaction and matched favorably, within field measurement uncertainties. The new model allows systematic investigation of the effects of mineralogy, microstructure, boundary conditions and loading path on compaction behavior of the reservoir. It also offers a means of generating a data bank suitable for developing generalized constitutive models and for predicting reservoir response to different scenarios of gas extraction, or of fluid injection for stabilization or storage purposes.\n\nThe data provided in this dataset include the contact model (source codes and the contact model library) developed for the Particle Flow Code (PFC) software, Fish code package for running PFC models, numerical modeling results (tabulated) obtained in the calibration procedure and uniaxial compaction prediction.\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Mehranpour, Mohammad Hadi",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne J.T.",
+                    "contributorType": "ProjectManager",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+            ],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "wacke",
+                "Slochteren sandstone",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay"
+            ],
+            "researchAspects": [
+                "strain",
+                "elasticity",
+                "bulk modulus",
+                "elastic strain",
+                "inelastic strain"
+            ],
+            "files": [
+                {
+                    "fileName": "calibration",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/calibration/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "contact model",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/contact model/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "PFC code",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/PFC code/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "uniaxial compaction",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/uniaxial compaction/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "Mehranpour_et-al_2021-description.docx",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/Mehranpour_et-al_2021-description.docx",
+                    "extension": "docx"
+                },
+                {
+                    "fileName": "yoda-metadata.json",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/yoda-metadata.json",
+                    "extension": "json"
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2021",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Mehranpour, M. H. (2021). <i>Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”</i> (Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-575EWU",
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {
+                            "name": "Groningen gas field’s Slochteren sandstone reservoir rock"
+                        }
+                    }
+                ]
+            },
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Netherlands Research Council (NWO)",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2021-05-18T11:05:08",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2019-06-01/2020-01-01",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB018702",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Rock and melt physical properties",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Discrete Element Method (DEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Particle Flow Code (PFC)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Inelastic deformation",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-inelastic_deformation"
+                    ]
+                },
+                {
+                    "subject": "Compaction",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-strain"
+                    ]
+                },
+                {
+                    "subject": "Sandstone",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-sandstone"
+                    ]
+                },
+                {
+                    "subject": "EPOS",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Multi-scale laboratories",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Clay film",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Quartz",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/minerals-silicate_minerals-tectosilicates-quartz"
+                    ]
+                },
+                {
+                    "subject": "Gas reservoir",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/subsurface_energy_production-hydrocarbon_energy_production-gas_field"
+                    ]
+                },
+                {
+                    "subject": "Subsidence",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/surface_subsidence"
+                    ]
+                },
+                {
+                    "subject": "Induced seismicity",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/induced_seismicity"
+                    ]
+                },
+                {
+                    "subject": "Contact model",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Nonlinear elasticity",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "permanent time-independent deformation",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Intragranular failure",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking",
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack"
+                    ]
+                },
+                {
+                    "subject": "Numerical modeling",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Grain failure",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking",
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack"
+                    ]
+                },
+                {
+                    "subject": "sandstone",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Material",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-sandstone"
+                    ]
+                },
+                {
+                    "subject": "Triaxial",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Apparatus",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Strain gauge",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Monitoring",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Triaxial Compressive Strength",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-triaxial_compressive_strength_s1-s2s3"
+                    ]
+                },
+                {
+                    "subject": "Young’s Modulus",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Bulk Modulus",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Measured_Property",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-bulk_modulus",
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-poroelastic_deformation",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-elasticity-bulk_modulus"
+                    ]
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography"
+            ]
+        },
+    ]
+}
+```
+
+</details>
+
+# /paleo
+This endpoint gives access to all data-publications available that are marked as belonging to the paleomagnetism (sub)domain. 
+
+## Search all paleomagnetism data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/paleo?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Rock magnetic properties, IODP Site U1518, depth interval 250-400 mbsf",
+            "doi": "10.24416/uu01-xzskhp",
+            "source": "https://public.yoda.uu.nl/geo/UU01/XZSKHP.html",
+            "portalLink": "http://localhost/data-publication/516d47a85bc036c0b6b1c569138cccca",
+            "name": "516d47a85bc036c0b6b1c569138cccca",
+            "creators": [
+                {
+                    "name": "Annika Greve",
+                    "nameType": "Personal",
+                    "givenName": "Annika",
+                    "familyName": "Greve",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0001-8670-8242",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Rock magnetic properties for hemipelagic sediments sampled at Site U1518 of IODP Expedition 375 (depth interval: 250-400 mbsf). \n\nData and file information:\n ‘hysteresis_parameters_curated.txt’ summarizes composition specific parameters from hysteresis and backfield curves.\n‘suceptibility_remanence_curated.txt’ summarizes curational information for each sample, susceptibility and remanence data measured on 7cc sample cubes.\n\nData Curation\nDepth: CSF-A and CSF-B refer to core depth scales of International Ocean Discovery Program (see pdf file “IODP Depth Scales Terminology” on https://www.iodp.org/policies-and-guidelines)\nCSF: core depth below sea floor, in this study, top depth CSF-B is used as sample depth in meters below sea floor (mbsf).\nSection Type: R for Rotary Core Barrel\n\nSusceptibility and Remanence data\nKm is the mean susceptibility extracted from anisotropy of magnetic susceptibility datafiles. These data are presented in Greve et al., 2020, https://doi.org/10.1016/j.epsl.2020.116322\nNRM: Natural Remanent Magnetization in emu\nARM: Anhysteretic Remanent Magnetization in emu. \nSIRM: Saturation Isothermal Remanent Magnetization imparted at 1.2 T in emu. \n\nHysteresis parameters\nAll hysteresis parameters were determined following mass normalization and automated slope correction. \nMs: mass-normalized saturation magnetization in Am²/kg \nMr: mass-normalized saturation remanent magnetization in Am²/kg \nBc: coercivity in mT\nBcr: remanent coercivity field in mT\n\nContact person: A. Greve - Researcher - a.greve@uu.nl",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Greve, Annika",
+                    "contributorType": "ProjectLeader",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0001-8670-8242",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Kars, Myriam",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-4984-1412",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Kochi University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Dekkers, Mark. J.",
+                    "contributorType": "Supervisor",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-4156-3841",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Paleomagnetic Laboratory Fort Hoofddijk  (Utrecht University, The Netherlands)",
+                    "contributorType": "HostingInstitution",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "materials": [],
+            "researchAspects": [
+                "remanent magnetisation",
+                "backfield remanence coercivity (BRC)",
+                "magnetic hysteresis curves",
+                "hysteresis parameters",
+                "magnetic susceptibility",
+                "bulk magnetic susceptibility",
+                "anhysteretic remanent magnetisation (ARM)",
+                "isothermal remanent magnetisation (IRM)",
+                "natural remanent magnetisation (NRM)",
+                "anisotropy of magnetic susceptibility and remanence",
+                "natural remanent magnetisation (NRM) orientation"
+            ],
+            "files": [
+                {
+                    "fileName": "raw-data",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-papaku-rockmagnetism/Greve_et_al_2021[1611243312]/original/raw-data/",
+                    "extension": ""
+                }
+            ],
+            "resource_type": "Other Document",
+            "resource_type_general": "Text",
+            "publication_year": "2021",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Greve, A. (2021). Rock magnetic properties, IODP Site U1518, depth interval 250-400 mbsf. <i>Utrecht University</i>. https://doi.org/10.24416/UU01-XZSKHP",
+            "geojson": null,
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "NWO DeepNL",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                },
+                {
+                    "funderName": "Korea Institute of Energy Technology Evaluation and Planning (KETEP) and the Ministry of Trade, Industry & Energy (MOTIE) of the Republic of Korea",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:08:15",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2017-03-17/2017-03-20",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1016/j.epsl.2020.116322",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "https://www.iodp.org/policies-and-guidelines",
+                    "relatedIdentifierType": "URL",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Natural Sciences - Earth and related environmental sciences (1.5)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "backfield remanent coercivity",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-remanent_magnetisation-backfield_remanence_coercivity_brc"
+                    ]
+                },
+                {
+                    "subject": "rock magnetic parameters",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "hemipelagic sediments",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "EPOS",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "multi-scale laboratories",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Paleomagnetic and magnetic data",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "hysteresis parameters",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters"
+                    ]
+                },
+                {
+                    "subject": "bulk magnetic susceptibility",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_susceptibility-bulk_magnetic_susceptibility"
+                    ]
+                }
+            ],
+            "subdomains": [
+                "paleomagnetism"
+            ]
+        },
+    ]
+}
+```
+
+</details>
+
+# /microscopy
+This endpoint gives access to all data-publications available that are marked as belonging to the microscopy and tomography (sub)domain. 
+
+## Search all microscopy and tomography data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/microscopy?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”",
+            "doi": "10.24416/uu01-575ewu",
+            "source": "https://public.yoda.uu.nl/geo/UU01/575EWU.html",
+            "portalLink": "http://localhost/data-publication/ad60ac76a738f696d9de7acc1506d491",
+            "name": "ad60ac76a738f696d9de7acc1506d491",
+            "creators": [
+                {
+                    "name": "Mohammad Hadi Mehranpour",
+                    "nameType": "Personal",
+                    "givenName": "Mohammad Hadi",
+                    "familyName": "Mehranpour",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Reservoir compaction, surface subsidence and induced seismicity are often associated with prolonged hydrocarbon production. Recent experiments conducted on the Groningen gas field’s Slochteren sandstone reservoir rock, at in-situ conditions, have shown that compaction involves both poro-elastic strain and time-independent, permanent strain caused by consolidation and shear of clay films coating the sandstone grains, with grain failure occurring at higher stresses. To model compaction of the reservoir in space and time, numerical approaches, such as the Discrete Element Method (DEM) , populated with realistic grain-scale mechanisms are needed. We developed a new particle-interaction law (contact model) for the classic DEM to explicitly account for the experimentally observed mechanisms of non-linear elasticity, intergranular clay film deformation, and grain breakage. It was calibrated against both hydrostatic and conventional triaxial compression experiments and validated against an independent set of pore pressure depletion experiments conducted under uniaxial strain conditions, using a range of sample porosities, grain size distributions and clay contents. The model obtained was used to predict compaction of the Groningen reservoir. These results were compared with field measurements of in-situ compaction and matched favorably, within field measurement uncertainties. The new model allows systematic investigation of the effects of mineralogy, microstructure, boundary conditions and loading path on compaction behavior of the reservoir. It also offers a means of generating a data bank suitable for developing generalized constitutive models and for predicting reservoir response to different scenarios of gas extraction, or of fluid injection for stabilization or storage purposes.\n\nThe data provided in this dataset include the contact model (source codes and the contact model library) developed for the Particle Flow Code (PFC) software, Fish code package for running PFC models, numerical modeling results (tabulated) obtained in the calibration procedure and uniaxial compaction prediction.\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Mehranpour, Mohammad Hadi",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne J.T.",
+                    "contributorType": "ProjectManager",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "contributorType": "ProjectLeader",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "wacke",
+                "Slochteren sandstone",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay"
+            ],
+            "researchAspects": [],
+            "files": [
+                {
+                    "fileName": "calibration",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/calibration/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "contact model",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/contact model/",
+                    "extension": ""
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2021",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Mehranpour, M. H. (2021). <i>Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”</i> (Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-575EWU",
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {
+                            "name": "Groningen gas field’s Slochteren sandstone reservoir rock"
+                        }
+                    }
+                ]
+            },
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Netherlands Research Council (NWO)",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2021-05-18T11:05:08",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2019-06-01/2020-01-01",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB018702",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Rock and melt physical properties",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Discrete Element Method (DEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography"
+            ]
+        },
+    ]
+}
+```
+
+</details>
+
+# /geochemistry
+This endpoint gives access to all data-publications available that are marked as belonging to the geochemistry (sub)domain. 
+
+## Search all geochemistry data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/geochemistry?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Frictional slip weakening and shear-enhanced crystallinity in simulated coal fault gouges at subseismic slip rates",
+            "doi": "10.24416/uu01-48i5da",
+            "source": "https://public.yoda.uu.nl/geo/UU01/48I5DA.html",
+            "portalLink": "http://localhost/data-publication/f6b4a6bf74c39951c13f5299931b494e",
+            "name": "f6b4a6bf74c39951c13f5299931b494e",
+            "creators": [
+                {
+                    "name": "Jinfeng Liu",
+                    "nameType": "Personal",
+                    "givenName": "Jinfeng",
+                    "familyName": "Liu",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-6444-9427",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        },
+                        {
+                            "nameIdentifier": "56974027400",
+                            "nameIdentifierScheme": "Author identifier (Scopus)",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "School of Earth Sciences and Engineering, Sun Yat-Sen University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        },
+                        {
+                            "name": "Guangdong Provincial Key Lab of Geodynamics and Geohazards, Sun Yat-Sen University, Zhuhai, China",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        },
+                        {
+                            "name": "Southern Marine Science and Engineering Guangdong Laboratory, Zhuhai, China",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Luuk Bernd Hunfeld",
+                    "nameType": "Personal",
+                    "givenName": "Luuk Bernd",
+                    "familyName": "Hunfeld",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0001-9250-414X",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        },
+                        {
+                            "nameIdentifier": "57197828301",
+                            "nameIdentifierScheme": "Author identifier (Scopus)",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "We report seven velocity stepping (VS) and one slide-hold-slide (SHS) friction experiments performed on simulated fault gouges prepared from bituminous coal, collected from the upper Silesian Basin of Poland. These experiments were performed at 25-45 MPa effective normal stress and 100 ℃, employing sliding velocities of 0.1-100 μm/s, using a conventional triaxial apparatus plus direct shear assembly. All samples showed marked slip weakening behaviour at shear displacements beyond ~1-2 mm, from a peak friction coefficient approaching ~0.5 to (near) steady state values of ~0.3, regardless of effective normal stress or whether vacuum dry flooded with distilled (DI) water at 15 MPa pore fluid pressure. Analysis of both unsheared and sheared samples by means of microstructural observation, micro-area X-ray diffraction (XRD) and Raman spectroscopy suggests that the marked slip weakening behaviour can be attributed to the development of R-, B- and Y- shear bands, with internal shear-enhanced coal crystallinity development. The SHS experiment performed showed a transient peak healing (restrengthening) effect that increased with the logarithm of hold time at a linearized rate of ~0.006. We also determined the rate-dependence of steady state friction for all VS samples using a full rate and state friction approach. This showed a transition from velocity strengthening to velocity weakening at slip velocities >1 μm/s in the coal sample under vacuum dry conditions, but at >10 μm/s in coal samples exposed to DI water at 15 MPa pore pressure. This may be controlled by competition between dilatant granular flow and compaction enhanced by presence of water. Together with our previous work on frictional properties of coal-shale mixtures, our results imply that the presence of a weak, coal-dominated patch on faults that cut or smear-out coal seams may promote unstable, seismogenic slip behaviour, though the importance of this in enhancing either induced or natural seismicity depends on local conditions. The data is provided in a folder with 10 subfolders for 10 experiments/samples, including friction, XRD and Raman data. Detailed information about the files in these subfolders as well as information on how the data is processed is given in the explanatory file Fan-et-al-2020-Data-Description.pdf. Contact person is Dr. Jinfeng Liu - Sun Yat-Sen University- liujinf5@mail.sysu.edu.cn",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Fan, Caiyuan",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-0413-8467",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "School of Earth Sciences and Engineering, Sun Yat-Sen University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Fan, Caiyuan",
+                    "contributorType": "Researcher",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-0413-8467",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "School of Earth Sciences and Engineering, Sun Yat-Sen University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "materials": [
+                "sedimentary rock",
+                "coal",
+                "fault rock",
+                "fault gouge",
+                "mudstone",
+                "shale",
+                "bituminous coal",
+                "simulated fault gouge"
+            ],
+            "researchAspects": [
+                "equipment",
+                "x-ray diffractometer",
+                "tectonic deformation structure",
+                "tectonic fault"
+            ],
+            "files": [
+                {
+                    "fileName": "S0",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-coal-friction-data/Liu_et_al_2020_Solid_Earth[1585573908]/original/S0/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "S1",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-coal-friction-data/Liu_et_al_2020_Solid_Earth[1585573908]/original/S1/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "S2",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-coal-friction-data/Liu_et_al_2020_Solid_Earth[1585573908]/original/S2/",
+                    "extension": ""
+                }
+            ],
+            "resource_type": "Other Document",
+            "resource_type_general": "Text",
+            "publication_year": "2020",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Liu, J., &amp; Hunfeld, L. B. (2020). Frictional slip weakening and shear-enhanced crystallinity in simulated coal fault gouges at subseismic slip rates. <i>Utrecht University</i>. https://doi.org/10.24416/UU01-48I5DA",
+            "geojson": null,
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "National Natural Science Foundation of China",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:07:34",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2016-10-01/2020-01-31",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1002/2017JB014876",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Natural Sciences - Earth and related environmental sciences (1.5)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "rate-dependent friction",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "frictional healing",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-frictional_strength_recovery",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-frictional_strength_recovery"
+                    ]
+                },
+                {
+                    "subject": "slip-weakening",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography",
+                "geochemistry"
+            ]
+        }
+    ]
+}
+```
+</details>
+
+
+# /geoenergy
+This endpoint gives access to all data-publications available that are marked as belonging to the Geo-energy test beds (sub)domain. 
+
+## Search all Geo-energy test beds data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/geoenergy?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Microstructural data used in “Drill core from seismically active sandstone gas reservoir yields clues to internal deformation mechanisms”",
+            "doi": "10.24416/uu01-kew4xn",
+            "source": "https://public.yoda.uu.nl/geo/UU01/KEW4XN.html",
+            "portalLink": "http://localhost/data-publication/859e6299397bc6dea8d9ce86648c8ce2",
+            "name": "859e6299397bc6dea8d9ce86648c8ce2",
+            "creators": [
+                {
+                    "name": "Berend Antonie Verberne",
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Shell Global Solutions",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Europe’s largest gas field, the Groningen field (the Netherlands), is widely known for induced subsidence and seismicity caused by gas pressure depletion and associated compaction of the sandstone reservoir. Whether compaction is elastic or partly inelastic, as implied by recent experiments, is a key factor in forecasting system behavior and seismic hazard. We sought evidence for inelastic deformation through comparative microstructural analysis of unique drill core recovered from the seismogenic center of the field in 2015, 50 yr after gas production started, versus core recovered before production (1965). \nMicrostructural data were collected from: i) a suite of 1965 and 2015 core samples, and ii) a lab-deformed sample from the 1965 core and of its virgin counterpart sample. The data include section-scale, back-scattered electron (BSE) image mosaics, phase maps prepared using electron dispersive X-ray (EDX) mapping, electron backscatter diffraction (EBSD) maps, and cathodoluminescence (CL) micrographs. Further, we include maps of intragranular crack distributions in the form of manually drawn overlays to BSE mosaics. Crack map data are stored either as shapefiles (.shp) (used in ESRI ArcGIS) or as zip-files (.zip) comprising crack polygon (.roi) overlays (used in ImageJ – Schindelin et al., 2012). The data is provided in 1 zip-file (Data_Verberne_et_al_2020.zip). Detailed information about the files in these zip-file and how the data are processed is described in the research paper (https://doi.org/10.1130/G48243.1), plus accompanying supplementary material, and an additional explanation file, which are also all included in this data publication. Contact person is Suzanne Hangx – s.j.t.hangx@uu.nl. The work was funded by the Dutch Oil Company (Nederlandse Aardolie Maatschappij BV, NAM).\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "wacke",
+                "Slochteren sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay",
+                "clay - kaolinite",
+                "kaolinite",
+                "illite",
+                "clay - smectite"
+            ],
+            "researchAspects": [
+                "borehole drilling",
+                "drill core"
+            ],
+            "files": [
+                {
+                    "fileName": "Additional_explanation_to_the_data.pdf",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Additional_explanation_to_the_data.pdf",
+                    "extension": "pdf"
+                },
+                {
+                    "fileName": "Data_Verberne_et_al_2020.zip",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Data_Verberne_et_al_2020.zip",
+                    "extension": "zip"
+                },
+                {
+                    "fileName": "Supplementary material to Verberne et al., 2020.pdf",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Supplementary material to Verberne et al., 2020.pdf",
+                    "extension": "pdf"
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2022",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Verberne, B. A., Hangx, S. J. T., Pijnenburg, R. P. J., Hamers, M. F., Drury, M. R., &amp; Spiers, C. J. (2022). <i>Microstructural data used in “Drill core from seismically active sandstone gas reservoir yields clues to internal deformation mechanisms” </i>(Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-KEW4XN",
+            "geojson": null,
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Nederlandse Aardolie Maatschappij",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:10:17",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2015-07-01/2018-12-31",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "10.1130/G48243.1",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementTo",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1109/TSMC.1979.4310076",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1007/s00603-020-02215-y",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1093/bioinformatics/btp184",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1038/nmeth.2019",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "deformation mechanism",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism"
+                    ]
+                },
+                {
+                    "subject": "subsidence",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/surface_subsidence"
+                    ]
+                },
+                {
+                    "subject": "compaction",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-strain"
+                    ]
+                },
+                {
+                    "subject": "electron microscopy",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-electron_microscopy"
+                    ]
+                },
+                {
+                    "subject": "scanning electron microscope (SEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-electron_microscopy-scanning_electron_microscope_sem"
+                    ]
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography",
+                "geo-energy test beds",
+                "geochemistry"
+            ]
+        }
+    ]
+}
+```
+
+</details>
+
+
+# /all
+This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+
+## Search all data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from. 
+        + Default: `0`
+    + query (text, optional) - Words to search for. 
+        + Default: ``
+    + subDomain (text, optional) - subDomain to filter on. 
+        + Default: ``
+    + authorName (text, optional) - Author names to search for. 
+        + Default: ``
+    + labName (text, optional) - Lab names to search for. 
+        + Default: ``
+    + title (text, optional) - Title to search for. 
+        + Default: ``
+    + tags (text, optional) - Tags to search for. 
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+
+
+        
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+  
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "http://localhost:8000/api/v2/datapublications/all?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”",
+            "doi": "10.24416/uu01-575ewu",
+            "source": "https://public.yoda.uu.nl/geo/UU01/575EWU.html",
+            "portalLink": "http://localhost/data-publication/ad60ac76a738f696d9de7acc1506d491",
+            "name": "ad60ac76a738f696d9de7acc1506d491",
+            "creators": [
+                {
+                    "name": "Mohammad Hadi Mehranpour",
+                    "nameType": "Personal",
+                    "givenName": "Mohammad Hadi",
+                    "familyName": "Mehranpour",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Reservoir compaction, surface subsidence and induced seismicity are often associated with prolonged hydrocarbon production. Recent experiments conducted on the Groningen gas field’s Slochteren sandstone reservoir rock, at in-situ conditions, have shown that compaction involves both poro-elastic strain and time-independent, permanent strain caused by consolidation and shear of clay films coating the sandstone grains, with grain failure occurring at higher stresses. To model compaction of the reservoir in space and time, numerical approaches, such as the Discrete Element Method (DEM) , populated with realistic grain-scale mechanisms are needed. We developed a new particle-interaction law (contact model) for the classic DEM to explicitly account for the experimentally observed mechanisms of non-linear elasticity, intergranular clay film deformation, and grain breakage. It was calibrated against both hydrostatic and conventional triaxial compression experiments and validated against an independent set of pore pressure depletion experiments conducted under uniaxial strain conditions, using a range of sample porosities, grain size distributions and clay contents. The model obtained was used to predict compaction of the Groningen reservoir. These results were compared with field measurements of in-situ compaction and matched favorably, within field measurement uncertainties. The new model allows systematic investigation of the effects of mineralogy, microstructure, boundary conditions and loading path on compaction behavior of the reservoir. It also offers a means of generating a data bank suitable for developing generalized constitutive models and for predicting reservoir response to different scenarios of gas extraction, or of fluid injection for stabilization or storage purposes.\n\nThe data provided in this dataset include the contact model (source codes and the contact model library) developed for the Particle Flow Code (PFC) software, Fish code package for running PFC models, numerical modeling results (tabulated) obtained in the calibration procedure and uniaxial compaction prediction.\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [
+                {
+                    "name": "Mehranpour, Mohammad Hadi",
+                    "contributorType": "DataCollector",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0001-7336-0435",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Hangx, Suzanne J.T.",
+                    "contributorType": "ProjectManager",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0003-2253-3273",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Spiers, Christopher James",
+                    "contributorType": "ProjectLeader",
+                    "nameType": "Personal",
+                    "givenName": "",
+                    "familyName": "",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "0000-0002-3436-8941",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Utrecht University",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "wacke",
+                "Slochteren sandstone",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay"
+            ],
+            "researchAspects": [
+                "deformation behaviour",
+                "inelastic deformation",
+                "strain",
+                "microphysical deformation mechanism",
+                "intragranular cracking",
+                "mechanical strength",
+                "triaxial compressive strength (s1>s2=s3)",
+                "elasticity",
+                "bulk modulus",
+                "poroelastic deformation",
+                "elastic strain",
+                "inelastic strain",
+                "pore fluid pressure"
+            ],
+            "files": [
+                {
+                    "fileName": "calibration",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/calibration/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "contact model",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/contact model/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "PFC code",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/PFC code/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "uniaxial compaction",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/uniaxial compaction/",
+                    "extension": ""
+                },
+                {
+                    "fileName": "Mehranpour_et-al_2021-description.docx",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/Mehranpour_et-al_2021-description.docx",
+                    "extension": "docx"
+                },
+                {
+                    "fileName": "yoda-metadata.json",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-sandstone-compaction/Mehranpour_et_al_2021_DEModeling[1621322230]/original/yoda-metadata.json",
+                    "extension": "json"
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2021",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Mehranpour, M. H. (2021). <i>Contact model and numerical modelling results: “Compaction of the Groningen Gas Reservoir Sandstone: Discrete Element Modelling Using Microphysically Based Grain-Scale Interaction Laws”</i> (Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-575EWU",
+            "geojson": {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "geometry": {
+                            "type": "Polygon",
+                            "coordinates": [
+                                [
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3504181107
+                                    ],
+                                    [
+                                        6.76068433733,
+                                        53.3471390085
+                                    ],
+                                    [
+                                        6.76325824029,
+                                        53.3471390085
+                                    ]
+                                ]
+                            ]
+                        },
+                        "properties": {
+                            "name": "Groningen gas field’s Slochteren sandstone reservoir rock"
+                        }
+                    }
+                ]
+            },
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Netherlands Research Council (NWO)",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2021-05-18T11:05:08",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2019-06-01/2020-01-01",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB018702",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "https://doi.org/10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementedBy",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "Rock and melt physical properties",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "OECD FOS 2007",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Discrete Element Method (DEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                },
+                {
+                    "subject": "Particle Flow Code (PFC)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": []
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography"
+            ]
+        }
+    ]
+}
+```
+</details>
+
+# Facilities
+//TODO
+
+### Deprecated API endpoints
+
+There is another API available offering access to data through our CKAN portal. Nevertheless, this API contain less data and it is deprecated. Please make sure you use the above mentioned v2 API for your application or switch as soon as possible.
+
+#### Base url
+
+The base url for the API:
+
+```
+https://epos-msl.uu.nl/webservice/api
+```
+
+#### /rock_physics
+This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
+
+##### Search all rock physics data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -271,10 +3022,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /analogue
+#### /analogue
 This endpoint gives access to all data-publications available that are marked as belonging to the analogue modelling (sub)domain. 
 
-## Search all analogue modelling data-publications [GET]
+##### Search all analogue modelling data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -849,10 +3600,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /paleo
+#### /paleo
 This endpoint gives access to all data-publications available that are marked as belonging to the paleomagnetism (sub)domain. 
 
-## Search all paleomagnetism data-publications [GET]
+##### Search all paleomagnetism data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -976,10 +3727,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /microscopy
+#### /microscopy
 This endpoint gives access to all data-publications available that are marked as belonging to the microscopy and tomography (sub)domain. 
 
-## Search all microscopy and tomography data-publications [GET]
+##### Search all microscopy and tomography data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -1201,10 +3952,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
-# /geochemistry
+#### /geochemistry
 This endpoint gives access to all data-publications available that are marked as belonging to the geochemistry (sub)domain. 
 
-## Search all geochemistry data-publications [GET]
+##### Search all geochemistry data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -1397,10 +4148,10 @@ This endpoint gives access to all data-publications available that are marked as
 </details>
 
 
-# /geoenergy
+#### /geoenergy
 This endpoint gives access to all data-publications available that are marked as belonging to the Geo-energy test beds (sub)domain. 
 
-## Search all Geo-energy test beds data-publications [GET]
+##### Search all Geo-energy test beds data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -1520,10 +4271,10 @@ This endpoint gives access to all data-publications available that are marked as
 ```
 </details>
 
-# /all
+#### /all
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
 
-## Search all data-publications [GET]
+##### Search all data-publications [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -1776,10 +4527,10 @@ This endpoint gives access to all data-publications available that are marked as
 
 
 
-# /facilities
+#### /facilities
 This endpoint gives access to all facilities and the equipment pieces on site.  
 
-## Search all facilities including equipment [GET]
+##### Search all facilities including equipment [GET]
 + Parameters
 
     + rows (number, optional) - The number of results to return.
@@ -1916,4 +4667,3 @@ This endpoint gives access to all facilities and the equipment pieces on site.
 ```
 
 </details>
-

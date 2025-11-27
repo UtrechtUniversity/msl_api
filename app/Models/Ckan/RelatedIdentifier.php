@@ -29,6 +29,16 @@ class RelatedIdentifier implements CkanArrayInterface
         $this->msl_related_identifier_resource_type_general = $resourceType;
     }
 
+    public function getRelatedIdentifierType(){
+
+        return $this->msl_related_identifier_type;
+    }
+
+    public function getRelatedIdentifierRelationType(){
+        return $this->msl_related_identifier_relation_type;
+    }
+
+
     public function toCkanArray(): array
     {
         return (array) $this;

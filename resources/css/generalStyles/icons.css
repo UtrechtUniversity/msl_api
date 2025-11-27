@@ -1,5 +1,5 @@
 .info-icon{
-    @apply size-8 fill-info-700  rounded-full inline
+    @apply size-8 fill-info-700  rounded-full inline hover:cursor-pointer
   }
 
   .close-icon{
