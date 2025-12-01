@@ -278,7 +278,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'allResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -490,7 +490,7 @@ class FrontendController extends Controller
 
         $result = $client->get($SearchRequest);
 
-        return view('frontend.equipment-list', ['facets' => $result->getFacets(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('frontend.equipment-list', ['facets' => $result->getFacets(), 'allResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
