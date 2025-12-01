@@ -45,7 +45,7 @@
                         <br>
                         <br>
                         @if ($data->msl_source != '')
-                            <a class="hover-interactive text-center" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
+                            <a class="hover-interactive text-center underline" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
                         @endif 
                         <br>
                         <br>
