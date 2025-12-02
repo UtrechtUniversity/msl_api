@@ -3,7 +3,7 @@
 
     <div class="main-content ">
 
-        <div class="detail-div !bg-primary-100 content-divide-y">
+        <div class="detail-div !bg-primary-100">
 
             <div class="detail-entry-div place-items-center !flex-col">
                 <h1 class="">About MSL</h1>
