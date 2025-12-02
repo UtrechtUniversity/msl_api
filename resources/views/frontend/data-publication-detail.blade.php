@@ -589,52 +589,53 @@
             
             @if (count($data->msl_geolocations) == 0 && $data->msl_geojson_featurecollection == '')
                 <p class="italic text-center w-full">- no geo-locations found -</p>
-            @endif
+            @else
 
-            @if (count($data->msl_geolocations) > 0)
-                <br>
-                <div class="detail-entry-div">
-                    <h4 class="detail-entry-title">Geo location(s)</h4>
-                    <div class="detail-entry-content">
-                        @foreach ( $data->msl_geolocations as $locationPackage)
-                            @foreach ($locationPackage as $location)
-                                <p class="text-sm">{{ $location }}</p>
+                @if (count($data->msl_geolocations) > 0)
+                    <br>
+                    <div class="detail-entry-div">
+                        <h4 class="detail-entry-title">Geo location(s)</h4>
+                        <div class="detail-entry-content">
+                            @foreach ( $data->msl_geolocations as $locationPackage)
+                                @foreach ($locationPackage as $location)
+                                    <p class="text-sm">{{ $location }}</p>
+                                @endforeach
                             @endforeach
-                        @endforeach
+                        </div>
                     </div>
-                </div>
-            @endif
+                @endif
 
-            @if ($data->msl_geojson_featurecollection != '')
-                <br>
-                <div class="detail-entry-div">
-                    <h4 class="detail-entry-title">Spatial coordinates</h4>
-                    <div class="detail-entry-content">
-                        <div id="map" style="height: 300px;"></div>
-                    </div>
-                    <script>
-                        function onEachFeature(feature, layer) {
-                            if (feature.properties.name) {                                
-                                var popupContent = `<h5>${feature.properties.name}</h5>`;
+                @if ($data->msl_geojson_featurecollection != '')
+                    <br>
+                    <div class="detail-entry-div">
+                        <h4 class="detail-entry-title">Spatial coordinates</h4>
+                        <div class="detail-entry-content">
+                            <div id="map" style="height: 300px;"></div>
+                        </div>
+                        <script>
+                            function onEachFeature(feature, layer) {
+                                if (feature.properties.name) {                                
+                                    var popupContent = `<h5>${feature.properties.name}</h5>`;
 
-                                layer.bindPopup(popupContent);
+                                    layer.bindPopup(popupContent);
+                                }
                             }
-                        }
-                    
-                        var features = <?php echo $data->msl_geojson_featurecollection; ?>;        				
-                    
-                        var map = L.map('map').setView([0, 0], 1);
                         
-                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            maxZoom: 19,
-                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                        }).addTo(map);
-                                                                                                                
-                        L.geoJSON(features, {
-                            onEachFeature: onEachFeature
-                        }).addTo(map);                                                                              
-                    </script>
-                </div>
+                            var features = <?php echo $data->msl_geojson_featurecollection; ?>;        				
+                        
+                            var map = L.map('map').setView([0, 0], 1);
+                            
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 19,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                                                                                                                    
+                            L.geoJSON(features, {
+                                onEachFeature: onEachFeature
+                            }).addTo(map);                                                                              
+                        </script>
+                    </div>
+                @endif
             @endif
         </div>
     </div>
