@@ -229,7 +229,7 @@
                     </script>
                 @endif
 
-                @if (count($data->msl_enriched_keywords))
+                @if (count($data->msl_enriched_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" open>
                     <summary class="collapse-title">MSL enriched keywords 
@@ -379,7 +379,7 @@
                 </div>
             @endif
 
-            @if ($data->msl_source)
+            @if ($data->msl_source != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source</h4>
@@ -411,7 +411,7 @@
                 </div>
             @endif
 
-            @if ($data->msl_doi)
+            @if ($data->msl_doi != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">DOI</h4>
@@ -433,15 +433,15 @@
                     <h4 class="detail-entry-title">Creators</h4>
                     <div class="detail-entry-content">
                         @foreach ( $data->msl_creators as $creator)
-                            @include('components.list-views.table-list',[
-                                        'entries' => [
-                                            $creator->getFullName(),
-                                            implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
-                                            implode(' | ', $creator->getAffilitationNames()),
-                                            implode(' | ', $creator->getNameIdentifiers()),
-                                        ],
-                                        'withKeys' => false,
-                                    ])
+                            @include('components.list-views.table-list', [
+                                'entries' => [
+                                    $creator->getFullName(),
+                                    implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
+                                    implode(' | ', $creator->getAffilitationNames()),
+                                    implode(' | ', $creator->getNameIdentifiers()),
+                                ],
+                                'withKeys' => false,
+                            ])
                         @endforeach
                     </div>
                 </div>
@@ -449,20 +449,19 @@
 
             @if (count($data->msl_contributors) > 0)
             <br>
-
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Contributors</h4>
                     <div class="detail-entry-content">
                         @foreach ( $data->msl_contributors as $contributor)
                             @include('components.list-views.table-list',[
-                                        'entries' => [
-                                            $contributor->getFullName(),
-                                            implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
-                                            implode(' | ', $contributor->getAffilitationNames()),
-                                            implode(' | ', $contributor->getNameIdentifiers()),
-                                        ],
-                                        'withKeys' => false,
-                                    ])
+                                'entries' => [
+                                    $contributor->getFullName(),
+                                    implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
+                                    implode(' | ', $contributor->getAffilitationNames()),
+                                    implode(' | ', $contributor->getNameIdentifiers()),
+                                ],
+                                'withKeys' => false,
+                            ])
                         @endforeach
                     </div>
                 </div>
@@ -486,15 +485,15 @@
                         @foreach ($data->msl_related_identifiers as $relatedidentifier)
                         @php
                             $dataList = [];
-                            if ($relatedidentifier->msl_related_identifier_type =='DOI') {
+                            if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
                                     $dataList[] = "https://doi.org/".$relatedidentifier->msl_related_identifier_type;
                             } else {
                                 if($relatedidentifier->msl_related_identifier_type != '') {
                                     $dataList[] = $relatedidentifier->msl_related_identifier_type;
                                 }
 
-                                if($relatedidentifier->msl_related_identifier_type != '') {
-                                    $dataList[] = $relatedidentifier->msl_related_identifier_type;
+                                if($relatedidentifier->msl_related_identifier_relation_type != '') {
+                                    $dataList[] = $relatedidentifier->msl_related_identifier_relation_type;
                                 }
                             }
                         @endphp
@@ -508,15 +507,15 @@
             @endif
             
 
-            @if ($data->msl_dates)
+            @if (count($data->msl_dates) > 0)
                 <br>
                 <div class="detail-entry-div">  
                     <h4 class="detail-entry-title">Dates</h4>
                     <div class="detail-entry-content">
                         @php
                             $dataList = [];
-                            foreach ($data->msl_dates as $key => $value) {
-                                $dataList[$value->msl_date_type] = $value->msl_date_date;
+                            foreach ($data->msl_dates as $date) {
+                                $dataList[$date->msl_date_type] = $date->msl_date_date;
                             }
                         @endphp
 
