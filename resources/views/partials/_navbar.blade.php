@@ -26,6 +26,7 @@
                 'As a Researcher' => route('contribute-researcher'),
                 'As a Repository' => route('contribute-repository'),
                 'As a Laboratory' => route('contribute-laboratory'),
+                'With a proposal/project' => route('contribute-project'),
                 'Surveys' => 'divider',
                 'Data Tooling - Survey' => route('contribute-select-scenario')
               ],
