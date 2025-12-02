@@ -484,18 +484,18 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">References</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $data->msl_related_identifiers as $entry)
+                        @foreach ($data->msl_related_identifiers as $relatedidentifier)
                         @php
                             $dataList = [];
-                            if ($entry->getRelatedIdentifierType() =='DOI') {
-                                    $dataList[] = "https://doi.org/".$entry->getRelatedIdentifierType();
+                            if ($relatedidentifier->msl_related_identifier_type =='DOI') {
+                                    $dataList[] = "https://doi.org/".$relatedidentifier->msl_related_identifier_type;
                             } else {
-                                if($entry->getRelatedIdentifierType() != ''){
-                                    $dataList[] = $entry->getRelatedIdentifierType();
+                                if($relatedidentifier->msl_related_identifier_type != '') {
+                                    $dataList[] = $relatedidentifier->msl_related_identifier_type;
                                 }
 
-                                if($entry->getRelatedIdentifierRelationType() != ''){
-                                    $dataList[] = $entry->getRelatedIdentifierRelationType();
+                                if($relatedidentifier->msl_related_identifier_type != '') {
+                                    $dataList[] = $relatedidentifier->msl_related_identifier_type;
                                 }
                             }
                         @endphp
