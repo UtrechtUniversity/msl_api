@@ -407,24 +407,23 @@ class DataPublication
 
     public function getFiles(bool|string $filter): array
     {
-        if(!$filter) {
+        if (! $filter) {
             return $this->msl_files;
         }
 
         $list = [];
-        foreach($this->msl_files as $file) {
-            if($filter === 'files') {
-                if(!$file->msl_is_folder) {
+        foreach ($this->msl_files as $file) {
+            if ($filter === 'files') {
+                if (! $file->msl_is_folder) {
                     $list[] = $file;
                 }
-            } 
-            else if($filter === 'folders') {
-                if($file->msl_is_folder) {
+            } elseif ($filter === 'folders') {
+                if ($file->msl_is_folder) {
                     $list[] = $file;
                 }
-            }            
+            }
         }
-        
+
         return $list;
     }
 
@@ -432,7 +431,6 @@ class DataPublication
     {
         return array_unique(array_column($this->getFiles('files'), 'msl_extension'));
     }
-
 
     /**
      * Add Right object to msl_rights

@@ -143,7 +143,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.data-access', ['facets' => $result->getFacets(),'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
+        return view('frontend.data-access', ['facets' => $result->getFacets(), 'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -725,14 +725,13 @@ class FrontendController extends Controller
         return view('frontend.themeTest');
     }
 
-        /**
+    /**
      * Show demo page
-     * 
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function demoPage()
     {
         return view('frontend.demoPage');
     }
-    
 }
