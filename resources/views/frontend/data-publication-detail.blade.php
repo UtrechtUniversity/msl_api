@@ -333,29 +333,33 @@
             </div>
 
             <h3 class="border-none py-5 pt-10">Metadata</h3>
-            
-            @if ($data->msl_subdomains != '')
+
+            @if (count($data->msl_subdomains_original) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">MSL original sub domains</h4>
                     <div class="word-card-parent justify-start">
-                        @foreach ( $data->msl_subdomains as $keyword)
-                            <div class="word-card">{{ $keyword['msl_subdomain'] }}</div>
+                        {{-- hover behaviour: highlights all related tags above --}}
+                        @foreach ( $data->msl_subdomains_original as $domain)
+                            <div class="word-card">{{ $domain['msl_subdomain_original'] }}</div>
                         @endforeach
                     </div>
                 </div>
+            @endif
+
+            @if (count($data->msl_subdomains_interpreted) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">MSL enriched sub domains <x-ri-information-line id="enriched-subdomains-popup" class="info-icon"/></h4>
-                    
                     <div class="word-card-parent justify-start">
-                        @foreach ( $data->msl_subdomains as $keyword)
+                        {{-- hover behaviour: highlights all related tags above --}}
+                        @foreach ( $data->msl_subdomains_interpreted as $domain)
                             <div 
                                 class="word-card" 
                                 data-toggle="domain-highlight"
-                                data-domain="{{ $keyword['msl_subdomain'] }}"                                                                                        
+                                data-domain="{{ $domain['msl_subdomain_interpreted'] }}"                                                                                        
                             >
-                                {{ $keyword['msl_subdomain'] }}
+                                {{ $domain['msl_subdomain_interpreted'] }}
                             </div>
                         @endforeach
                     </div>
