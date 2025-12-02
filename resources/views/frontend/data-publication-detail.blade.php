@@ -14,12 +14,11 @@
             </div>
         @endsession
         <div class="tab-links-parent ">
-            @include('components.tab-links',[
-                // 'categoryName'  => 'Sections',
-                'routes'        => array(
-                        'Metadata'  => route("data-publication-detail", ['id' => $data->name]),
-                        'Files'     => route("data-publication-detail-files", ['id' => $data->name])
-                ),
+            @include('components.tab-links', [
+                'routes'        => [
+                    'Metadata' => route("data-publication-detail", ['id' => $data->name]),
+                    'Files' => route("data-publication-detail-files", ['id' => $data->name])
+                ],
                 'routeActive'   => route("data-publication-detail", ['id' => $data->name])
             ])
         </div>

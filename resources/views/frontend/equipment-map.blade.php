@@ -3,18 +3,17 @@
     <div class="tab-links-parent">
         @include('components.tab-links',[
             'categoryName'  => 'Laboratories',
-            'routes'        => array(
+            'routes'        => [
                     'Map'   => route("labs-map"),
                     'List'  => route("labs-list")
-            ),
-            
+            ],            
         ])
         @include('components.tab-links',[
             'categoryName'  => 'Equipment',
-            'routes'        => array(
+            'routes'        => [
                     'Map'   => route("equipment-map"),
                     'List'  => route("equipment-list"),
-            ),
+            ],
             'routeActive'   => route("equipment-map")
         ])
     </div>

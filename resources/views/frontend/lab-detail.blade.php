@@ -2,10 +2,10 @@
 <x-layout_main>
     <div class="tab-links-parent">
         @include('components.tab-links',[
-            'routes'        => array(
+            'routes'        => [
                     'Laboratory'   => route('lab-detail', ['id' => $data['name']]),
                     'Equipment'  => route('lab-detail-equipment', ['id' => $data['name']])
-            ),
+            ],
             'routeActive'   => route('lab-detail', ['id' => $data['name']])
         ])
     </div>
@@ -21,12 +21,12 @@
                 <div class="detail-entry-div !flex-col place-items-center">  
                     <h3>Description</h3>
                     @include('components.tab-list',[
-                            'allTabs' => array(
+                            'allTabs' => [
                                 'Description' => [
                                     'content' => $data['msl_description_html'],
                                     'id' => 'description'
                                 ]
-                            ),
+                            ],
                             'checkedElementId' => 'description'
                         ])                
                     
