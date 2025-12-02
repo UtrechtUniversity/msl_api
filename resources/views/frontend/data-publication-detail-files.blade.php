@@ -90,7 +90,7 @@
                     <div class="text-center pt-0 flex">
                         @foreach ($allExtensions as $key => $extension)
                                 <p class="font-bold">.{{ $extension }}</p>
-                            @if (sizeof($allExtensions) -1 != $key )
+                            @if (count($allExtensions) -1 != $key )
                             <p class="px-2"> | </p> 
                             @endif
                         @endforeach

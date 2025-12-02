@@ -77,7 +77,7 @@
 
                 <div class="w-fit flex flex-row items-center place-content-center gap-3 ">
                     <h5 class="inline">Applied Filters  </h5>
-                    @if ( sizeof($activeFiltersFrontend) > 0 )
+                    @if ( count($activeFiltersFrontend) > 0 )
                     
                         <a href="{{ route('data-access') }}" id="remove-all-popup">
                             <div class="
@@ -105,7 +105,7 @@
                 
                 <div class="word-card-parent" id="active-filter-container"> 
     
-                @if ( sizeof($activeFiltersFrontend) > 0 )
+                @if ( count($activeFiltersFrontend) > 0 )
                         @foreach ( $activeFiltersFrontend as $filter )
     
                             <a href="{{ $filter['removeUrl'] }}" class="">

@@ -10,11 +10,11 @@
         <h4 class="text-left italic">- no title found -</h4> 
     @endif
 
-    @if (sizeof($data->msl_creators) > 0)
+    @if (count($data->msl_creators) > 0)
         <h5 class="text-left font-medium pt-4">
             @foreach ( $data->msl_creators as $authorKey => $author )
                 {{ $author->getFullName() }} 
-                    @if (sizeof($data->msl_creators) -1 != $authorKey )
+                    @if (count($data->msl_creators) -1 != $authorKey )
                         |
                     @endif
             @endforeach
