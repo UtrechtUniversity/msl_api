@@ -92,7 +92,7 @@
                                         <div class=""> <x-ri-folder-3-fill class="folder-icon mx-6"/></div>
                                         <div class="overflow-hidden ">                                                
                                             <p class='no-underline py-0 px-4 '>
-                                            {{ $folder->msl_file_name }}.{{ $folder->msl_extension }}
+                                            {{ $folder->msl_file_name }}
                                         </p></div>
                                     </div>
                             </a>
