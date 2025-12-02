@@ -15,10 +15,10 @@
         <div class="tab-links-parent ">
             @include('components.tab-links',[
                 'routes'        => [
-                        'Metadata'  => route("data-publication-detail", ['id' => $data->name]),
-                        'Files'     => route("data-publication-detail-files", ['id' => $data->name])
+                        'Metadata'  => route("data-publication-detail", ['id' => $dataPublication->name]),
+                        'Files'     => route("data-publication-detail-files", ['id' => $dataPublication->name])
                 ],
-                'routeActive'   => route("data-publication-detail-files", ['id' => $data->name])
+                'routeActive'   => route("data-publication-detail-files", ['id' => $dataPublication->name])
             ])
         </div>
     </div>
@@ -28,9 +28,9 @@
         <div class="detail-div justify-center gap-4">
 
                 <h2>Files</h2>
-                <h5 class="pt-10 font-bold">{{ $data->title }}</h5>
-                @if ($data->msl_publisher != '')
-                <h6 class="pb-10 italic"> {{ $data->msl_publisher }}</h6>
+                <h5 class="pt-10 font-bold">{{ $dataPublication->title }}</h5>
+                @if ($dataPublication->msl_publisher != '')
+                <h6 class="pb-10 italic"> {{ $dataPublication->msl_publisher }}</h6>
                 @endif
                 <div class="bg-warning-300 rounded-lg 
                 flex flex-col place-items-center w-2/3
@@ -44,8 +44,8 @@
                         as originally published at the source repository: 
                         <br>
                         <br>
-                        @if ($data->msl_source != '')
-                            <a class="hover-interactive text-center" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
+                        @if ($dataPublication->msl_source != '')
+                            <a class="hover-interactive text-center" href="{{ $dataPublication->msl_source }}" target="_blank">{{ $dataPublication->msl_source }}</a>
                         @endif 
                         <br>
                         <br>
@@ -55,22 +55,22 @@
                 </div>
 
 
-                @if (count($data->msl_files) > 0)                   
-                    @if (count($data->getFiles('folders')) != 0)
+                @if (count($dataPublication->msl_files) > 0)                   
+                    @if (count($dataPublication->getFiles('folders')) != 0)
                         <h3 class="text-center py-2 pt-20">
-                            {{ count($data->getFiles('folders')) }} folders
+                            {{ count($dataPublication->getFiles('folders')) }} folders
                         </h3>
                     @endif
 
-                    @if ( count($data->getFiles('files')) != 0)
+                    @if ( count($dataPublication->getFiles('files')) != 0)
                         <h3 class="text-center py-2">
-                            {{ count($data->getFiles('files')) }} files
+                            {{ count($dataPublication->getFiles('files')) }} files
                         </h3>
                     @endif
 
                     <p class="text-center pb-0">available file types</p>
                     <div class="text-center pt-0 flex">                        
-                        @foreach ($data->getFileExtensions() as $extension)
+                        @foreach ($dataPublication->getFileExtensions() as $extension)
                             <p class="font-bold">.{{ $extension }}</p>
                             @if(!$loop->last)
                                 <p class="px-2"> | </p> 
@@ -84,7 +84,7 @@
                     <div class='bg-primary-100 flex flex-wrap overflow-auto gap-5 w-1/2 max-h-96 p-4 rounded-md content-start'>
                         
 
-                        @foreach ($data->getFiles('folders') as $folder)
+                        @foreach ($dataPublication->getFiles('folders') as $folder)
                             <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover-interactive h-12"
                                 href="{!! $folder->msl_download_link !!}" title="download file">
 
@@ -98,7 +98,7 @@
                             </a>
                         @endforeach
 
-                        @foreach ($data->getFiles('files') as $file)
+                        @foreach ($dataPublication->getFiles('files') as $file)
                             <a class=" bg-base-300 shadow-md flex justify-around flex-row px-4 w-full hover:bg-secondary-100 h-12"
                                 href="{!! $file->msl_download_link !!}" title="download file">
 
