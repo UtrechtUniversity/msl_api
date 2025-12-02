@@ -119,6 +119,12 @@
     .text-block{
       @apply
       sm:max-w-(--breakpoint-md)
+      w-full
+    }
+
+    .limited-max-width-md{
+      @apply
+      sm:max-w-(--breakpoint-md)
     }
 
 
