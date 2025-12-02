@@ -430,7 +430,7 @@ class DataPublication
 
     public function getFileExtensions(): array
     {
-        return array_unique(array_column($this->msl_files, 'msl_extension'));
+        return array_unique(array_column($this->getFiles('files'), 'msl_extension'));
     }
 
 
