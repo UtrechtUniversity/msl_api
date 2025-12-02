@@ -38,11 +38,11 @@
                     <h1 class="text-lg italic">- no title found -</h1>
                 @endif
 
-                @if (sizeof($data->msl_creators) > 0)
+                @if (count($data->msl_creators) > 0)
                     <p class="italic text-center">
                         @foreach ( $data->msl_creators as $authorKey => $author )
                             {{ $author->getFullName() }} 
-                                @if (sizeof($data->msl_creators) -1 != $authorKey )
+                                @if (count($data->msl_creators) -1 != $authorKey )
                                     |
                                 @endif
                         @endforeach
@@ -102,7 +102,7 @@
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Keywords</h3>
 
-                @if (sizeof($data->msl_tags) > 0)
+                @if (count($data->msl_tags) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
                         <summary class="collapse-title">Originally assigned keywords 
@@ -130,7 +130,7 @@
                 @endif
 
 
-                @if (sizeof($data->msl_original_keywords) > 0)
+                @if (count($data->msl_original_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
 
@@ -230,7 +230,7 @@
                     </script>
                 @endif
 
-                @if (sizeof($data->msl_enriched_keywords))
+                @if (count($data->msl_enriched_keywords))
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" open>
                     <summary class="collapse-title">MSL enriched keywords 
@@ -428,7 +428,7 @@
                 </div>
             @endif
             
-            @if (sizeof($data->msl_creators) > 0)
+            @if (count($data->msl_creators) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Creators</h4>
@@ -448,7 +448,7 @@
                 </div>
             @endif
 
-            @if (sizeof($data->msl_contributors) > 0)
+            @if (count($data->msl_contributors) > 0)
             <br>
 
                 <div class="detail-entry-div">
@@ -479,7 +479,7 @@
                 </div>
             @endif
 
-            @if (sizeof($data->msl_related_identifiers) > 0)
+            @if (count($data->msl_related_identifiers) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">References</h4>
@@ -543,7 +543,7 @@
 
 
             <br>
-            @if (sizeof($data->msl_funding_references) > 0)                                 
+            @if (count($data->msl_funding_references) > 0)                                 
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Funding References</h4>
                     <div class="detail-entry-content">
@@ -566,7 +566,7 @@
             @endif
                     
 
-            @if (sizeof($data->msl_rights) > 0)
+            @if (count($data->msl_rights) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Rights</h4>
@@ -589,11 +589,11 @@
 
             <h3 class="border-none py-5 pt-10">Locations</h3>
             
-            @if (sizeof($data->msl_geolocations) > 0 && $data->msl_geojson_featurecollection != '')
+            @if (count($data->msl_geolocations) > 0 && $data->msl_geojson_featurecollection != '')
                 <p class="italic text-center w-full">- no geo-locations found -</p>
             @endif
 
-            @if (sizeof($data->msl_geolocations) > 0)
+            @if (count($data->msl_geolocations) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Geo location(s)</h4>
