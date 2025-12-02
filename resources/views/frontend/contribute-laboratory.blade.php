@@ -1,7 +1,7 @@
 @section('title', 'Contribute as a researcher')
 <x-layout_main>
   <div class="main-content ">
-    <div class="detail-div !bg-primary-100">
+    <div class="detail-div !bg-primary-100 limited-max-width-md">
       <h1>How to contribute as a laboratory</h1>
       
       <p class="max-w-(--breakpoint-md) px-4 pt-20">
@@ -129,11 +129,11 @@
       {{-- timeline end --}}
       <h2 class="pt-10 pb-4 ">Introduction to EPOS and MSL
       </h2>
-      <p class="text-block">The goal of EPOS is to establish a comprehensive multidisciplinary research platform for the Earth sciences in Europe. It aims to facilitate the integrated use of data, models, and laboratories, from both existing and new pan-European Research Infrastructures, allowing open access and transparent use of data. To reach this goal EPOS is thematically subdivided in 10 different communities: so called Thematic Core Services (TCS). One of these is Multi-Scale Laboratories (MSL).</p>
-      <p class="text-block text-block text-left w-full">
+      <p class="">The goal of EPOS is to establish a comprehensive multidisciplinary research platform for the Earth sciences in Europe. It aims to facilitate the integrated use of data, models, and laboratories, from both existing and new pan-European Research Infrastructures, allowing open access and transparent use of data. To reach this goal EPOS is thematically subdivided in 10 different communities: so called Thematic Core Services (TCS). One of these is Multi-Scale Laboratories (MSL).</p>
+      <p class="  text-left w-full">
         MSL research facilities, and the data that these generate, are currently grouped into 6 domains:
       </p>
-      <div class="flex place-content-center text-block">
+      <div class="flex place-content-center ">
         <ul class="list-decimal list-inside">
           <li>Analogue modelling of geological processes</li>
           <li>Geochemistry</li>
@@ -147,19 +147,19 @@
 
       <h2 class="pt-10 pb-4">How does your laboratory benefit from EPOS MSL?
       </h2>
-      <p class="text-block">By becoming part of our network, your lab is offered a platform to showcase its research data output (example), facility equipment and information, and, the opportunity to present your lab as accessible to potential visitors.</p>
+      <p class="">By becoming part of our network, your lab is offered a platform to showcase its research data output (example), facility equipment and information, and, the opportunity to present your lab as accessible to potential visitors.</p>
       
       
       <h2 class="pt-10 pb-4">What’s in it for the researchers?</h2>
-      <p class="text-block">
+      <p class="">
         Researchers are increasingly asked to publish their research data 
         <a href="https://www.doi.org/">(incl. a DOI)</a>, 
         for example when publishing a research article. While a publication makes data openly accessible by others in principle, in practice data are available fragmented across Europe and difficult to find. EPOS MSL provides tools and assistance in making published data of above MSL disciplines centrally discoverable in MSL and EPOS data portals. This makes the research data more Findable and Accessible. MSL also works actively with the community to collect and further develop best practices and standards, on how data is best shared. This makes data more Interoperable and easier to Reuse for future research. In turn, this increases the citation index and ensures that researchers are compliant with the (increasingly more common) requirement by funders and publication agencies to publish data in an open and FAIR manner.</p>
 
       <h2 class="pt-10 pb-4">What do we expect from you?</h2>
-      <p class="text-block">A healthy research community requires active engagement of its partners. As an EPOS MSL laboratory you:
+      <p class="">A healthy research community requires active engagement of its partners. As an EPOS MSL laboratory you:
         </p>
-      <div class="flex place-content-center text-block">
+      <div class="flex place-content-center ">
         <ul class="list-disc list-outside w-4/5">
           <li class="p-1">Are engaged in at least one of the domains within MSL (see above)</li>
           <li class="p-1">Publish research data in a FAIR manner, at a reputable data repository. In doing so, you use MSL vocabulary terms in assigning metadata/keywords, and follow best practices, as far as these are developed for your field: <a href="{{ route('contribute-researcher') }}">look here</a></li>
