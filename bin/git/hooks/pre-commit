@@ -1,0 +1,45 @@
+#!/bin/sh
+
+spinner() {
+    # PID of the background Pint process
+    pid="$1"
+    # How long the spinner should wait between frames
+    delay=0.1
+    # Characters for spinner animation
+    spin='-\|/'
+#   Wait while the process is processing
+    while kill -0 "$pid" 2>/dev/null; do
+    # Spinner animation
+        c=$(printf "%s" "$spin" | cut -c1)   # take first character
+        printf "\r%s Running Pint..." "$c"
+        # Spinner animation
+        spin=$(printf "%s" "$spin" | cut -c2-)"$(printf "%s" "$spin" | cut -c1)"
+
+        sleep "$delay"
+    done
+
+    printf "\rDone.                     \n"
+}
+#  TODO do I check only for updated files?
+# if not do this.
+echo "Checking PHP code style…"
+
+# Run Pint in background
+vendor/bin/pint --quiet &
+# $! is the PID of the most recent background process.
+spinner $!
+# Statis of spinner which is the status of pint
+STATUS=$?
+
+if [ $STATUS -eq 0 ]; then
+    
+    printf "\r✔ Pint completed successfully!\n"
+    
+    echo "Adding linted changes to Git…"
+    git add -u   # Stages updated files only
+
+    printf "✔ Changes have been staged.\n"
+else
+    printf "\r✖ Pint found issues. Fixing needed.\n"
+    exit 1
+fi
