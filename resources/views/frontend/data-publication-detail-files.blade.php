@@ -55,43 +55,25 @@
                 </div>
 
 
-                @if (count($data->msl_files) > 0)
-
-                    @php
-                        $allFolders = [];
-                        $allFiles = [];
-                        $allExtensions = [];
-                        foreach ($data->msl_files as $download) {
-                            if (! in_array($download->msl_extension, $allExtensions) && $download->msl_extension != '' ) {
-                                $allExtensions [] = $download->msl_extension;
-                            }
-                            if ($download->msl_is_folder) {
-                                $allFolders[] = $download;
-
-                            } else {
-                                $allFiles[] = $download;
-                            }
-                        }
-                    @endphp
-
-                    @if (count($allFolders) != 0)
+                @if (count($data->msl_files) > 0)                   
+                    @if (count($data->getFiles('folders')) != 0)
                         <h3 class="text-center py-2 pt-20">
-                            {{ count($allFolders) }} folders
+                            {{ count($data->getFiles('folders')) }} folders
                         </h3>
                     @endif
 
-                    @if ( count($allFiles) != 0)
+                    @if ( count($data->getFiles('files')) != 0)
                         <h3 class="text-center py-2">
-                            {{ count($allFiles) }} files
+                            {{ count($data->getFiles('files')) }} files
                         </h3>
                     @endif
 
                     <p class="text-center pb-0">available file types</p>
-                    <div class="text-center pt-0 flex">
-                        @foreach ($allExtensions as $key => $extension)
-                                <p class="font-bold">.{{ $extension }}</p>
-                            @if (count($allExtensions) -1 != $key )
-                            <p class="px-2"> | </p> 
+                    <div class="text-center pt-0 flex">                        
+                        @foreach ($data->getFileExtensions() as $extension)
+                            <p class="font-bold">.{{ $extension }}</p>
+                            @if(!$loop->last)
+                                <p class="px-2"> | </p> 
                             @endif
                         @endforeach
                     </div>
@@ -102,37 +84,33 @@
                     <div class='bg-primary-100 flex flex-wrap overflow-auto gap-5 w-1/2 max-h-96 p-4 rounded-md content-start'>
                         
 
-                        @foreach ($allFolders as $key => $download)
-
+                        @foreach ($data->getFiles('folders') as $folder)
                             <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover-interactive h-12"
-                                href="{!! $download['msl_download_link'] !!}" title="download file">
+                                href="{!! $folder['msl_download_link'] !!}" title="download file">
 
                                     <div class='flex justify-left items-center w-full'>
                                         <div class=""> <x-ri-folder-3-fill class="folder-icon mx-6"/></div>
                                         <div class="overflow-hidden ">                                                
                                             <p class='no-underline py-0 px-4 '>
-                                            {{ $download['msl_file_name'] }}.{{ $download['msl_extension'] }}
+                                            {{ $folder['msl_file_name'] }}.{{ $folder['msl_extension'] }}
                                         </p></div>
                                     </div>
                             </a>
-
                         @endforeach
 
-                        @foreach ($allFiles as $key => $download)
-
+                        @foreach ($data->getFiles('files') as $file)
                             <a class=" bg-base-300 shadow-md flex justify-around flex-row px-4 w-full hover:bg-secondary-100 h-12"
-                                href="{!! $download->msl_download_link !!}" title="download file">
+                                href="{!! $file->msl_download_link !!}" title="download file">
 
                                     <div class='flex flex-row justify-left items-center w-full'>
-                                        <div> <p class="no-underline py-0 px-4 w-20">{{ $key + 1 }}</p> </div>
+                                        <div> <p class="no-underline py-0 px-4 w-20">{{ $loop->iteration }}</p> </div>
                                         <div> <x-ri-file-3-fill class="file-icon mr-6"/> </div>
                                         <div class="overflow-hidden py-0 px-4">                                                
                                             <p class='no-underline '>
-                                            {{ $download->msl_file_name }}
+                                            {{ $file->msl_file_name }}
                                         </p></div>
                                     </div>
                             </a>
-
                         @endforeach
                     </div>
 
