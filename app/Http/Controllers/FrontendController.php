@@ -624,7 +624,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail', ['data' => $result->getResult(true)]);
+        return view('frontend.data-publication-detail', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
