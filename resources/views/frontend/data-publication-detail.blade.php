@@ -39,11 +39,11 @@
 
                 @if (count($data->msl_creators) > 0)
                     <p class="italic text-center">
-                        @foreach ( $data->msl_creators as $authorKey => $author )
-                            {{ $author->getFullName() }} 
-                                @if (count($data->msl_creators) -1 != $authorKey )
-                                    |
-                                @endif
+                        @foreach ( $data->msl_creators as $author )
+                            {{ $author->getFullName() }}
+                            @if(!$loop->last)
+                                |
+                            @endif
                         @endforeach
                     </p>
                 @else
