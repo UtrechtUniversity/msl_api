@@ -587,7 +587,7 @@
 
             <h3 class="border-none py-5 pt-10">Locations</h3>
             
-            @if (count($data->msl_geolocations) > 0 && $data->msl_geojson_featurecollection != '')
+            @if (count($data->msl_geolocations) == 0 && $data->msl_geojson_featurecollection == '')
                 <p class="italic text-center w-full">- no geo-locations found -</p>
             @endif
 
