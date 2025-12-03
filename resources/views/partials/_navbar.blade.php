@@ -33,7 +33,10 @@
               'Vocabularies' => [
                 'Keyword Selector' => route('keyword-selector')
               ],
-              'About MSL' => route('about'),
+              'About' => [
+                'About MSL' => route('about'),
+                'Contact us' => route('contact-us'),
+              ],
               'EPOS Portal' => "https://www.epos-eu.org/dataportal"
             ]
         @endphp

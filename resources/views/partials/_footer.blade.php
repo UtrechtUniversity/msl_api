@@ -27,6 +27,7 @@
       ],
       'About' => [
         'About MSL' => route('about'),
+        'Contact us' => route('contact-us'),
         'EPOS Portal' => "https://www.epos-eu.org/dataportal"
       ],
 
