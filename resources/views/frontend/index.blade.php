@@ -32,7 +32,7 @@
           ">
               
             <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
-            href="{{ route('labs-map') }}">
+            href="{{ route('data-access') }}">
               <h2 class="font-bold ">{{ $datasetsCount }}</h2>
               <h5 >Datasets</h5>
             </a>
