@@ -111,11 +111,11 @@
 
       <h2 id='step-1' class="pt-10 pb-4">Step 1: At which repository will you publish your data? 
       </h2>
-      <p class="">Key is that you publish your data at a repository that can generate <a href="https://www.doi.org/">DOI</a>.  
+      <p class="">Key is that you publish your data at a repository that can generate <a class="hover-interactive underline" href="https://www.doi.org/">DOI</a>.  
       </p>
       <p class="">
-          EPOS MSL currently provides access to data at these <a href="{{ route('data-repositories') }}">data repositories</a>. The fastest route to make your data discoverable by MSL, 
-          is to publish your data at one of these. Would you like to publish elsewhere? <a href="{{ route('contact-us') }}">Let us know!</a>
+          EPOS MSL currently provides access to data at these <a class="hover-interactive underline" href="{{ route('data-repositories') }}">data repositories</a>. The fastest route to make your data discoverable by MSL, 
+          is to publish your data at one of these. Would you like to publish elsewhere? <a class="hover-interactive underline" href="{{ route('contact-us') }}">Let us know!</a>
           We can then start working towards including data from your repository too. 
       </p>
 
@@ -128,7 +128,7 @@
           These can help you optimize the re-usability of your data by others, and therefore increase the impact of your data publication.
       </p>
       <p class="pb-8 ">
-          Do you know about a best practice relevant for MSL data and models, not listed here? <a href="{{ route('contact-us') }}">Let us know!</a>
+          Do you know about a best practice relevant for MSL data and models, not listed here? <a class="hover-interactive underline" href="{{ route('contact-us') }}">Let us know!</a>
       </p>
       <div class="">
         @include('components.tab-list',[
@@ -171,11 +171,11 @@
       </div>
 
       <p class="">Would you like to embed MSL vocabularies, or the above keyword selector in the data repository you’re affiliated to? You can - it’s all open access and open source. 
-        Have a look <a href="{{ route('contribute-repository') }}">here</a> on how to approach this.  </p>
+        Have a look <a class="hover-interactive underline" href="{{ route('contribute-repository') }}">here</a> on how to approach this.  </p>
       
       <h2 class="pt-10 pb-4" id="step-4">Step 4: Publish your work
       </h2>
-      <p class="">When you publish your data, make sure you do so with an open access license (e.g. <a href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> ). 
+      <p class="">When you publish your data, make sure you do so with an open access license (e.g. <a class="hover-interactive underline" href="https://creativecommons.org/licenses/by/4.0/deed.en">CC BY 4.0</a> ). 
           Most repositories provide clear guidance on which licenses are useful to provide your data openly, and promote citing. 
       </p>
       <p class="">Congratulations! Your data is now open access. Your job is done… </p>
@@ -190,7 +190,7 @@
           <li>A facility name from the Geo-Energy Test Beds. In this case, we know it concerns a GETB data publication.</li>
       </ul>
 
-      <p class="">Note that we renew this search once or twice per year, meaning that the data you just published may not be harvested by MSL for several months. In doubt? Or do you feel we missed your data publication?<a href="{{ route('contact-us') }}">Let us know!</a></p>
+      <p class="">Note that we renew this search once or twice per year, meaning that the data you just published may not be harvested by MSL for several months. In doubt? Or do you feel we missed your data publication?<a class="hover-interactive underline" href="{{ route('contact-us') }}">Let us know!</a></p>
 
 
     </div>

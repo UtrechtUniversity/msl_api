@@ -108,7 +108,7 @@
         <li>
           <hr />
           <div class="timeline-end timeline-box timeline-additional-styling">Interested in how you can make your data publications discoverable in EPOS? 
-            <a href="{{ route('contribute-researcher') }}">
+            <a class="hover-interactive underline" href="{{ route('contribute-researcher') }}">
               Look here 
             </a>
 
@@ -153,7 +153,7 @@
       <h2 class="pt-10 pb-4">What’s in it for the researchers?</h2>
       <p class="">
         Researchers are increasingly asked to publish their research data 
-        <a href="https://www.doi.org/">(incl. a DOI)</a>, 
+        <a class="hover-interactive underline" href="https://www.doi.org/">(incl. a DOI)</a>, 
         for example when publishing a research article. While a publication makes data openly accessible by others in principle, in practice data are available fragmented across Europe and difficult to find. EPOS MSL provides tools and assistance in making published data of above MSL disciplines centrally discoverable in MSL and EPOS data portals. This makes the research data more Findable and Accessible. MSL also works actively with the community to collect and further develop best practices and standards, on how data is best shared. This makes data more Interoperable and easier to Reuse for future research. In turn, this increases the citation index and ensures that researchers are compliant with the (increasingly more common) requirement by funders and publication agencies to publish data in an open and FAIR manner.</p>
 
       <h2 class="pt-10 pb-4">What do we expect from you?</h2>
@@ -162,7 +162,7 @@
       <div class="flex place-content-center ">
         <ul class="list-disc list-outside w-4/5">
           <li class="p-1">Are engaged in at least one of the domains within MSL (see above)</li>
-          <li class="p-1">Publish research data in a FAIR manner, at a reputable data repository. In doing so, you use MSL vocabulary terms in assigning metadata/keywords, and follow best practices, as far as these are developed for your field: <a href="{{ route('contribute-researcher') }}">look here</a></li>
+          <li class="p-1">Publish research data in a FAIR manner, at a reputable data repository. In doing so, you use MSL vocabulary terms in assigning metadata/keywords, and follow best practices, as far as these are developed for your field: <a class="hover-interactive underline" href="{{ route('contribute-researcher') }}">look here</a></li>
           <li class="p-1">Pro-actively let us know which repository you use, when publishing data. Only then we can make your data findable in EPOS!</li>
           <li class="p-1">Share laboratory information (location, equipment, contact details) with us, for hosting on the EPOS portal. </li>
           <li class="p-1">Are strongly encouraged to take part in community initiatives. These can relate, for example, to improving FAIR data practices and tools, funding proposals or lab accessibility. Most of the community initiatives are online (video meetings), but occasionally take place in person (e.g. at EGU, EPOS days, or other).</li>

@@ -28,7 +28,7 @@
             <p class="">It might not be possible for us to exclusively filter your repository on MSL-relevant data publications. In that case we can filter the retrieved DOIs for MSL-relevancy by checking the metadata, as follows:</p>
             <ul class="list-disc pt-6 pb-6 pl-10 pr-10 ">
                 <li>either the metadata of a data publication contains A) one term reflecting Earth scientific research (e.g. Earth material, or geological setting) and B) a term reflecting laboratory research (e.g. lab apparatus; measured/modeled properties or behavior).</li>
-                <li>or the metadata of a data publication contains the name of a geo-energy test bed facility that is part of the <a href="{{ route('labs-map') }}">EPOS MSL community</a>.</li>
+                <li>or the metadata of a data publication contains the name of a geo-energy test bed facility that is part of the <a class="hover-interactive underline" href="{{ route('labs-map') }}">EPOS MSL community</a>.</li>
             </ul>
             <p class="">With that in mind, you make it a lot easier for us to find MSL-relevant data, if researchers publishing at your repository know what terms to add, to optimize data findability. See the below metadata recommendations on how to possibly go about that.</p>
 

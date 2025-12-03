@@ -11,7 +11,7 @@
         </li>
 
         <li class="py-4">
-          Including an ERIC (European Research Infrastructure Consortium, like <a href="https://www.epos-eu.org/epos-eric">EPOS-ERIC</a>) can be a requirement for European (Horizon) calls. We can help you make this connection.
+          Including an ERIC (European Research Infrastructure Consortium, like <a class="hover-interactive underline" href="https://www.epos-eu.org/epos-eric">EPOS-ERIC</a>) can be a requirement for European (Horizon) calls. We can help you make this connection.
         </li>
 
         <li class="py-4">
@@ -112,7 +112,7 @@
         <p>
           With the user research and the design step finished, you now have the right ingredients in your hand to confidently start developing, or improving a data sharing service. Such a service could be in the form of a tool, a workflow, a (standardized) data collection, vocabularies, or other. 
           Depending on what you develop, this can have impact on how you would like researchers, from your own community or beyond, to share their data. You can capture this by developing or updating the best practices for sharing data. 
-          Current best practices for sharing data from MSL domains are listed <a href="{{ route('contribute-researcher') }}">here</a>. You can help develop these further!
+          Current best practices for sharing data from MSL domains are listed <a class="hover-interactive underline" href="{{ route('contribute-researcher') }}">here</a>. You can help develop these further!
         </p>
         <p>
           Estimated time investment: this can vary, but a best practice generally takes 1-5 days to draft or update, by 1-2 persons.
@@ -128,7 +128,7 @@
         <p>
           While the above steps typically require limited input from researchers involved in your project (where needed supported by us), this last step often requires a dedicated software or data engineer on your end, 
           who closely interacts with MSL developers. A data service can be a tool for data exploration, analysis, or processing, a workflow, a (standardized) data collection, harmonized metadata standards, or other. 
-          Whatever it is you wish to develop, we can help each other most if it can ultimately fit in the MSL data infrastructure, and/or services provided to the <a href="https://www.epos-eu.org/dataportal">EPOS data portal</a>. That way, we can make sure that we can durably host your new development, even after your project ends.
+          Whatever it is you wish to develop, we can help each other most if it can ultimately fit in the MSL data infrastructure, and/or services provided to the <a class="hover-interactive underline" href="https://www.epos-eu.org/dataportal">EPOS data portal</a>. That way, we can make sure that we can durably host your new development, even after your project ends.
         </p>
 
         <p>
