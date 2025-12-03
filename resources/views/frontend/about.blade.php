@@ -129,7 +129,7 @@
                 <div class="max-w-(--breakpoint-lg) flex flex-col md:flex-row sm:p-10 gap-6 justify-center">
                     <div class="w-full card bg-base-200 shadow-xl p-4 flex flex-col justify-center md:w-2/3">
                         <h4>EPOS central data portal</h4>
-                        <p class="sm:px-10">MSL data can be found in the MSL data catalogue on this dedicated website, and in the <a href="https://www.epos-eu.org/dataportal">EPOS data portal</a>, 
+                        <p class="sm:px-10">MSL data can be found in the MSL data catalogue on this dedicated website, and in the <a class="hover-interactive underline" href="https://www.epos-eu.org/dataportal">EPOS data portal</a>, 
                             where these can be explored alongside other solid Earth scientific data, 
                             from seismology, geology, volcanology, satellite observations and other disciplines. </p>
                     </div>            
