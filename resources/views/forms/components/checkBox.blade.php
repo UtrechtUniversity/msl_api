@@ -25,7 +25,7 @@
                 <span class="label-text text-primary-900 text-center">{{ $element }}</span>
                 <input type="checkbox" 
                 name="{{ $sectionName }}"
-                class="     radio 
+                class="     checkbox 
                             checked:bg-secondary-500 hover:bg-secondary-500
                             border
                             border-secondary-500
