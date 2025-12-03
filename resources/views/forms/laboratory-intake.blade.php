@@ -112,7 +112,7 @@
                                 error-highlight bg-error-300 text-error-700 rounded-md
                             @endif
                         ">
-                            <div class="w-1/2 self-center">
+                            <div class="w-1/2 self-center bg-primary-100 rounded">
                                 @include('forms.components.checkBox',[
                                     'sectionName'   => 'dataSharing-facilityAccess',
                                     'showErrMess'   => true,
