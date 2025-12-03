@@ -69,7 +69,7 @@
                 <div class="collapse-content">
                 Assigning keywords to your data publications greatly improves their findability. To maximize its impact it is important to understand 
                 the origin of the keyword. This can be done by assigning terms from controlled vocabularies. To store this context we recommend to assign 
-                the URI of the term and vocabulary to keywords. For more information about the vocabularies developed by the MSL community click here. 
+                the URI of the term and vocabulary to keywords. For more information about the vocabularies developed by the MSL community click <a href="{{ route('keyword-selector') }}">here</a>. 
                 Information about storing this information within the DataCite schema click <a title="DataCite subjects metadata" target="_blank" href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/subject/">here</a>.
                 </div>
             </details>
