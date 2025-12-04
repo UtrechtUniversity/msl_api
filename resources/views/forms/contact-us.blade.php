@@ -55,6 +55,7 @@
                         "Contribute as a repository",
                         "Contribute as a laboratory",
                         "Contribute as a researcher",
+                        "Contribute with a project/proposal",
                         "Other"
                     )
                 ])

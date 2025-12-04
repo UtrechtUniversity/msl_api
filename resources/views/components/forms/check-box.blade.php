@@ -29,18 +29,25 @@
   
       @foreach ( $options as $key => $option)
           <div class="form-control">
-              <label class="cursor-pointer label p-2
-               hover:bg-secondary-100 hover:rounded-lg hover:text-secondary-900">
-                  <span class=" pr-4 text-sm" 
+              <label class="label cursor-pointer 
+                            flex
+                            w-full
+                            flex-row
+                            gap-4 
+                            p-2
+                            justify-between
+                            hover-interactive">
+                  <span class="label-text text-primary-900 text-left text-wrap" 
                     value={{ $key }}
                     name={{ $sectionName.'[]' }}
                     >{{ $option }}</span>
                   <input type="checkbox"
                   value={{ $key }} 
                   name={{ $sectionName.'[]' }}
-                  class="checkbox checkbox-secondary checkbox-md
-
-                  " 
+                  class="checkbox 
+                        checked:bg-secondary-500 hover:bg-secondary-500
+                        border
+                        border-secondary-500" 
                   @if (is_array(old( $sectionName )) && in_array($key, old( $sectionName )) )
                       checked="checked"
                   @endif

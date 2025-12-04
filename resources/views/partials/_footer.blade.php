@@ -20,6 +20,7 @@
         'As a Researcher' => route('contribute-researcher'),
         'As a Repository' => route('contribute-repository'),
         'As a Laboratory' => route('contribute-laboratory'),
+        'With a proposal/project' => route('contribute-project'),
         'Surveys' => 'divider',
         'Data Tooling - Survey' => route('contribute-select-scenario'),
         'Forms' => 'divider',
@@ -27,6 +28,7 @@
       ],
       'About' => [
         'About MSL' => route('about'),
+        'Contact us' => route('contact-us'),
         'EPOS Portal' => "https://www.epos-eu.org/dataportal"
       ],
 
