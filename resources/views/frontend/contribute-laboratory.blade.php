@@ -55,9 +55,6 @@
 
         <li>
           <hr />
-          {{-- <div class="absolute left-1/3  md:-right-4 p-2 -z-10"> --}}
-
-          {{-- </div> --}}
           <div class="timeline-end timeline-box timeline-additional-styling">
             Once approved by the MSL Consortium Board, you are officially part of the MSL community!
             
