@@ -581,10 +581,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.contribute-select-scenario',
-            [
-                'allDomains' => $allDomains,
-            ]);
+        return view('frontend.contribute-select-scenario', ['allDomains' => $allDomains]);
     }
 
     /**
