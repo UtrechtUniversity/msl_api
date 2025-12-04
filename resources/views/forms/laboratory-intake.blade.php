@@ -91,14 +91,14 @@
                         @include('forms.components.dropDownSelect',[
                             'sectionName'   => 'subdomain',
                             'placeholder'   => 'Select Subdomain',
-                            'ElementsArray'=>    array(
+                            'ElementsArray'=> [
                                 'Analogue modelling of geological processes',
                                 'Geochemistry',
                                 'Microscopy & tomography',
                                 'Paleomagnetic and magnetic data',
                                 'Rock and melt physical properties',
                                 'Geo-energy test beds.',
-                            )
+                            ]
                         ])
                     </div>
         
@@ -116,9 +116,9 @@
                                 @include('forms.components.checkBox',[
                                     'sectionName'   => 'dataSharing-facilityAccess',
                                     'showErrMess'   => true,
-                                    'ElementsArray'=>    array(
+                                    'ElementsArray'=> [
                                         'Facility Access and Data sharing'
-                                    )
+                                    ]
                                 ])
                             </div>
 
