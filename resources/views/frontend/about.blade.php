@@ -55,54 +55,54 @@
                 </div>
         
                 @php
-                $infoList = [
-                    [
-                        "name" => "Analogue modelling of geological processes", 
-                        "listItems" => [
-                            "From reservoir (km) to tectonic plate (global) scale",
-                            "To study and visualize the fundamental processes underlying crustal and mantle deformation processes, including fault formation, mountain building and sedimentary basin evolution"
-                        ]
-                    ],
-                    [
-                        "name" => "Geochemistry", 
-                        "listItems"=> [
-                            "Volcanic ash from explosive eruptions",
-                            "Magmas in the context of eruption and lava-flow hazard evaluation",
-                            "Rock systems of key importance in mineral exploration and mining operations",
-                            "Soil and rock chemistry or mineralogy"
-                        ]
-                    ],
-                    [
-                        "name" => "Geo-energy test beds", 
-                        "listItems" => [
-                            "The latest addition to Multi-Scale Labs",
-                            "Testing or monitoring field-scale subsurface applications aimed at curbing CO2 emissions. Such applications include subsurface storage of fluids (H, N, CO2, hot water), or geothermal energy production.",
-                            "Data are often (but not always) site-specific, and can include a.o. fiber optics sensing data (DAS, DSS, DTS), seismological data, electromagnetics, geological models, microscopy and tomography and rock physics data."
-                        ]
-                    ],
-                    [
-                        "name" => "Rock and melt physics", 
-                        "listItems" => [
-                            "Rock and fault properties of importance for modelling and forecasting natural and induced subsidence, seismicity and associated hazards",
-                            "Crustal and upper mantle rheology as needed for modelling sedimentary basin formation and crustal stress distributions",
-                            "The composition, porosity and permeability of reservoir rocks of interest in relation to unconventional resources, fluid storage and geothermal energy"
-                        ]
-                    ],
-                    [
-                        "name" => "Magnetism and paleomagnetism", 
-                        "listItems"=> [
-                            "Understanding the evolution of sedimentary basins and associated resources",
-                            "Charting geo-hazard frequency",
-                        ]
-                    ],
-                    [
-                        "name" => "Microscopy and tomography", 
-                        "listItems" => [
-                            "Image data of Earth materials obtained with a wide variety in techniques",
-                            "Aimed at analyzing the process, often occurring at nano- to micrometer scale, governing the physical, chemical and transport behavior of Earth materials"
-                        ]
-                    ],
-                ]
+                    $infoList = [
+                        [
+                            "name" => "Analogue modelling of geological processes", 
+                            "items" => [
+                                "From reservoir (km) to tectonic plate (global) scale",
+                                "To study and visualize the fundamental processes underlying crustal and mantle deformation processes, including fault formation, mountain building and sedimentary basin evolution"
+                            ]
+                        ],
+                        [
+                            "name" => "Geochemistry", 
+                            "items"=> [
+                                "Volcanic ash from explosive eruptions",
+                                "Magmas in the context of eruption and lava-flow hazard evaluation",
+                                "Rock systems of key importance in mineral exploration and mining operations",
+                                "Soil and rock chemistry or mineralogy"
+                            ]
+                        ],
+                        [
+                            "name" => "Geo-energy test beds", 
+                            "items" => [
+                                "The latest addition to Multi-Scale Labs",
+                                "Testing or monitoring field-scale subsurface applications aimed at curbing CO2 emissions. Such applications include subsurface storage of fluids (H, N, CO2, hot water), or geothermal energy production.",
+                                "Data are often (but not always) site-specific, and can include a.o. fiber optics sensing data (DAS, DSS, DTS), seismological data, electromagnetics, geological models, microscopy and tomography and rock physics data."
+                            ]
+                        ],
+                        [
+                            "name" => "Rock and melt physics", 
+                            "items" => [
+                                "Rock and fault properties of importance for modelling and forecasting natural and induced subsidence, seismicity and associated hazards",
+                                "Crustal and upper mantle rheology as needed for modelling sedimentary basin formation and crustal stress distributions",
+                                "The composition, porosity and permeability of reservoir rocks of interest in relation to unconventional resources, fluid storage and geothermal energy"
+                            ]
+                        ],
+                        [
+                            "name" => "Magnetism and paleomagnetism", 
+                            "items"=> [
+                                "Understanding the evolution of sedimentary basins and associated resources",
+                                "Charting geo-hazard frequency",
+                            ]
+                        ],
+                        [
+                            "name" => "Microscopy and tomography", 
+                            "items" => [
+                                "Image data of Earth materials obtained with a wide variety in techniques",
+                                "Aimed at analyzing the process, often occurring at nano- to micrometer scale, governing the physical, chemical and transport behavior of Earth materials"
+                            ]
+                        ],
+                    ]
                 @endphp
                     
                 
@@ -117,8 +117,8 @@
                             </div>
         
                             <ul tabindex="0" class="dropdown-content menu bg-info-200 text-info-900 rounded-box z-1 p-2 shadow-xl w-64 list-disc">
-                                @foreach ( $infoElement["listItems"] as $listItem)
-                                    <li class="p-1">{{ $listItem }}</li> 
+                                @foreach ( $infoElement["items"] as $item)
+                                    <li class="p-1">{{ $item }}</li> 
                                 @endforeach
                             </ul>
                         </div>
