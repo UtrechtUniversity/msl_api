@@ -56,11 +56,9 @@
                                             'msl_citation asc' => 'Author Ascending',
                                             'msl_citation desc' => 'Author Descending',
                                             'msl_publication_date desc' => 'Publication date'
-                                        ] as $key => $option)
-                                            <option 
-                                                value="{{ $key }}" 
-                                            >
-                                                {{ $option }}
+                                        ] as $value => $label)
+                                            <option value="{{ $value }}">
+                                                {{ $label }}
                                             </option>
                                         @endforeach
                                 </select>
