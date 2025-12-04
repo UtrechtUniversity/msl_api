@@ -49,7 +49,7 @@
                     'sectionName'   => 'subject',
                     'title'         => 'Subject *',
                     'placeholder'   => 'Select subject',
-                    'ElementsArray' =>    array(
+                    'ElementsArray' => [
                         "Report an issue on the page",
                         "Give feedback or suggestions",
                         "Contribute as a repository",
@@ -57,12 +57,12 @@
                         "Contribute as a researcher",
                         "Contribute with a project/proposal",
                         "Other"
-                    )
+                    ]
                 ])
             </div>
 
             <div class="w-full">
-                @include('forms.components.freeText',[
+                @include('forms.components.freeText', [
                     'sectionName'   => 'message',
                     'title'         => 'Message *',
                     'placeholder'   => 'Your message',

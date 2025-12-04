@@ -1,5 +1,3 @@
-
- 
 <div class="w-80 bg-base-200 flex flex-col place-items-center justify-self-center overflow-auto">
 
     <h2 class="py-4">Filters</h1>
