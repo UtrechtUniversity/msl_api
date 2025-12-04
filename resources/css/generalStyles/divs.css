@@ -109,6 +109,23 @@
     }
 
 
+    .timeline-additional-styling{
+      @apply
+      border-1 
+      border-primary-500
+      text-sm
+    }
+
+    .text-block{
+      @apply
+      sm:max-w-(--breakpoint-md)
+      w-full
+    }
+
+    .limited-max-width-md{
+      @apply
+      sm:max-w-(--breakpoint-md)
+    }
 
 
     /* =============== old =============== */

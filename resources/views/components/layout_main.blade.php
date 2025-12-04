@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <title>{{ config('app.name') }} - @yield('title')</title>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen text-primary-900">
     
     <x-notifications.modals/>
 

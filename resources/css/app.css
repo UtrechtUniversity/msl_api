@@ -64,9 +64,12 @@
     }
 
     p {
-      @apply pt-2 pb-2 text-justify;
+      @apply pt-2 pb-2 text-justify w-full;
     }
 
+    ul {
+      @apply w-full
+    }
 
 
     /* nav */
