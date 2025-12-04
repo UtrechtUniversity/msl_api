@@ -278,7 +278,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'laboratories' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**

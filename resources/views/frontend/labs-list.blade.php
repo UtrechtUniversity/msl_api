@@ -44,10 +44,10 @@
 
                         {{-- list view --}}    
                         <div class="list-view">
-                            @if (count($result) > 0)
-                                @foreach ($result as $laboratory)
+                            @if (count($laboratories) > 0)
+                                @foreach ($laboratories as $laboratory)
                                     @include('components.list-views.lab', [
-                                        'data' => $laboratory
+                                        'laboratory' => $laboratory
                                     ])
                                 @endforeach     
                             @else
