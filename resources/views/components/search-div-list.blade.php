@@ -57,7 +57,7 @@
                                             'msl_citation desc' => 'Author Descending',
                                             'msl_publication_date desc' => 'Publication date'
                                         ] as $value => $label)
-                                            <option value="{{ $value }}">
+                                            <option value="{{ $value }}" @if ($value == $sort) {{ 'selected' }} @endif>
                                                 {{ $label }}
                                             </option>
                                         @endforeach

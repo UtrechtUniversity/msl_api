@@ -20,9 +20,10 @@
                         <div class="w-full min-h-full bg-primary-100 pl-4">
                             {{-- top search div --}}
                             @include('components.search-div-list', [
-                                'searchFor'     => 'data publications',
-                                'amountFoundLabel'   => 'data publications',
-                                'sortingDropdown'    => true
+                                'searchFor' => 'data publications',
+                                'amountFoundLabel' => 'data publications',
+                                'sortingDropdown' => true,
+                                'activeSort' => $sort,
                             ])
 
                             {{-- list view --}}    
