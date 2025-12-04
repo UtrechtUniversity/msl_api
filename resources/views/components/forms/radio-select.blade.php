@@ -21,14 +21,17 @@
         form-control flex flex-col sm:flex-row w-full justify-center
         h-full
         p-6
+        
         ">   
         @foreach ($options as $key => $option)
             <label class="
                 label cursor-pointer flex flex-col justify-between 
                 gap-4 p-2 mx-2 sm:w-28 
+                hover-interactive
+                rounded-xl
                 @if ($errors->has($sectionName))
                     error-highlight-input
-                    rounded-xl
+                    
                 @endif
                 ">
                 <span class="label-text text-center text-wrap" value={{ $key }}>{{ $option }}</span>
