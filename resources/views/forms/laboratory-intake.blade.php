@@ -3,7 +3,7 @@
 
     <section class="">
     <div class="px-4 mx-auto max-w-(--breakpoint-md)">
-        <h1 class="">Laboratory intake form</h1>
+        <h1 class="pt-20">Laboratory intake form</h1>
         <p class="mb-8 lg:mb-16 text-center">  </p>
         <form method="POST" action="{{ route('laboratory-intake-process') }}" class="space-y-4" novalidate>
             @csrf
