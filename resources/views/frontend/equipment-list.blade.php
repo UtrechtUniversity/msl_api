@@ -47,7 +47,7 @@
                             @if (count($result) > 0)
                                 @foreach ($result as $equipment)
                                     @include('components.list-views.equipment', [
-                                        'data' => $equipment
+                                        'equipment' => $equipment
                                     ])
                                 @endforeach     
                             @else
