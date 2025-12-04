@@ -64,9 +64,6 @@
                 </div>
 
             </div>
-            {{-- <div class="list-view block md:hidden">
-                @include('components.pagination')
-            </div> --}}
     </div>
 
 </x-layout_main>

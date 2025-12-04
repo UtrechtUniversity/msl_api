@@ -80,17 +80,17 @@
         <div class="tabLinksParent">
             @include('components.tab-links',[
                 'categoryName'  => 'Laboratories',
-                'routes'        => array(
+                'routes'        => [
                         'Map'   => route("labs-map"),
                         'List'  => route("labs-list")
-                ),
+                ],
             ])
             @include('components.tab-links',[
                 'categoryName'  => 'Equipment',
-                'routes'        => array(
+                'routes'        => [
                         'Map'   => route("equipment-map"),
                         'List'  => route("equipment-list"),
-                ),
+                ],
                 'routeActive'   => route("equipment-map")
 
             ])
@@ -311,7 +311,7 @@
         <div class="sub-content">
             <p>here an example on how to condense more information into a tab list. Also allows html tags</p>
             @include('components.tab-list',[
-                'allTabs' => array(
+                'allTabs' => [
                     'First Tab' => [
                         'content' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem harum perspiciatis eum laboriosam nostrum ipsam perferendis quae aspernatur itaque recusandae aut, totam ea sit sapiente numquam voluptatem molestiae ducimus unde.',
                         'id' => 'id1'
@@ -328,7 +328,7 @@
                                         odio quibusdam vitae enim doloremque!</p>',
                         'id' => 'id3'
                     ]
-                ),
+                ],
                 'checkedElementId' => 'id1'
             ])
 

@@ -1,13 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\App;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LabController;
 use App\Http\Controllers\SeederController;
 use App\Http\Controllers\SurveyController;
-use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ToolsController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;

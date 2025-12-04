@@ -20,20 +20,18 @@
   
        <div class="hidden size-20 gap-0"></div>
   
-      @php
-          $bgTest = 
-            array(
+     @php
+          $bgTest = [
               "gap"=>"0", 
               "size"=>"20", 
-              "bg-c"=>array(
+              "bg-c"=> [
                   "bg-base-100",
                   "bg-neutral",
                   "bg-primary",
                   "bg-secondary",
-              )
-            )
-        
-        @endphp
+               ]
+          ];
+     @endphp
   <div class="flex flex-wrap w-full">
        @foreach ($bgTest["bg-c"] as $bgc)
        <div class="flex flex-row p-20 {{ $bgc }}">

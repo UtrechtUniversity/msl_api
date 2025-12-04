@@ -624,7 +624,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail', ['data' => $result->getResult(true)]);
+        return view('frontend.data-publication-detail', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -644,7 +644,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail-files', ['data' => $result->getResult(true)]);
+        return view('frontend.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -725,14 +725,13 @@ class FrontendController extends Controller
         return view('frontend.themeTest');
     }
 
-        /**
+    /**
      * Show demo page
-     * 
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function demoPage()
     {
         return view('frontend.demoPage');
     }
-    
 }

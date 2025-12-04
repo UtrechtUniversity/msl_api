@@ -14,13 +14,12 @@
             </div>
         @endsession
         <div class="tab-links-parent ">
-            @include('components.tab-links',[
-                // 'categoryName'  => 'Sections',
-                'routes'        => array(
-                        'Metadata'  => route("data-publication-detail", ['id' => $data->name]),
-                        'Files'     => route("data-publication-detail-files", ['id' => $data->name])
-                ),
-                'routeActive'   => route("data-publication-detail", ['id' => $data->name])
+            @include('components.tab-links', [
+                'routes'        => [
+                    'Metadata' => route("data-publication-detail", ['id' => $dataPublication->name]),
+                    'Files' => route("data-publication-detail-files", ['id' => $dataPublication->name])
+                ],
+                'routeActive'   => route("data-publication-detail", ['id' => $dataPublication->name])
             ])
         </div>
     </div>
@@ -32,33 +31,33 @@
 
             <div class="detail-entry-div !flex-col">
                 <h2 class="">Data Publication</h2>
-                @if ($data->msl_title_annotated != '')
-                    <h1 class="text-lg">{!! $data->msl_title_annotated !!}</h1>
+                @if ($dataPublication->msl_title_annotated != '')
+                    <h1 class="text-lg">{!! $dataPublication->msl_title_annotated !!}</h1>
                 @else
                     <h1 class="text-lg italic">- no title found -</h1>
                 @endif
 
-                @if (sizeof($data->msl_creators) > 0)
+                @if (count($dataPublication->msl_creators) > 0)
                     <p class="italic text-center">
-                        @foreach ( $data->msl_creators as $authorKey => $author )
-                            {{ $author->getFullName() }} 
-                                @if (sizeof($data->msl_creators) -1 != $authorKey )
-                                    |
-                                @endif
+                        @foreach ( $dataPublication->msl_creators as $author )
+                            {{ $author->getFullName() }}
+                            @if(!$loop->last)
+                                |
+                            @endif
                         @endforeach
                     </p>
                 @else
                     <p class="italic text-center">- no authors found -</p>
                 @endif
 
-                @if ($data->msl_publisher != '')
-                    <p class="italic text-center">{{ $data->msl_publisher }} </p>
+                @if ($dataPublication->msl_publisher != '')
+                    <p class="italic text-center">{{ $dataPublication->msl_publisher }} </p>
                 @else
                     <p class="italic text-center">- no publisher found -</p>
                 @endif
 
-                @if ($data->msl_publication_year != '')
-                    <p class="italic text-center">({{ $data->msl_publication_year }})</p>
+                @if ($dataPublication->msl_publication_year != '')
+                    <p class="italic text-center">({{ $dataPublication->msl_publication_year }})</p>
                 @else
                     <p class="italic text-center">- no publication year found -</p>
                 @endif
@@ -70,27 +69,27 @@
                 @include('components.tab-list',[
                     'allTabs' => [
                         'Abstract' => [
-                            'content' => $data->msl_description_abstract_annotated,
+                            'content' => $dataPublication->msl_description_abstract_annotated,
                             'id' => 'msl_description_abstract_annotated'
                         ],
                         'Methods' => [
-                            'content' => $data->msl_description_methods_annotated,
+                            'content' => $dataPublication->msl_description_methods_annotated,
                             'id' => 'msl_description_methods_annotated'
                         ],
                         'Other' => [
-                            'content' => $data->msl_description_other_annotated,
+                            'content' => $dataPublication->msl_description_other_annotated,
                             'id' => 'msl_description_other_annotated'
                         ],
                         'Series Information' => [
-                            'content' => $data->msl_description_series_information_annotated,
+                            'content' => $dataPublication->msl_description_series_information_annotated,
                             'id' => 'msl_description_series_information_annotated'
                         ],
                         'Content' => [
-                            'content' => $data->msl_description_table_of_contents_annotated,
+                            'content' => $dataPublication->msl_description_table_of_contents_annotated,
                             'id' => 'msl_description_table_of_contents_annotated'
                         ],
                         'Technical Information' => [
-                            'content' => $data->msl_description_technical_info_annotated,
+                            'content' => $dataPublication->msl_description_technical_info_annotated,
                             'id' => 'msl_description_technical_info_annotated'
                         ],
                     ],
@@ -102,14 +101,14 @@
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Keywords</h3>
 
-                @if (sizeof($data->msl_tags) > 0)
+                @if (count($dataPublication->msl_tags) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
                         <summary class="collapse-title">Originally assigned keywords 
                             <x-ri-information-line id="orginal-keywords-popup" class="info-icon"/>
                         </summary>
                         <div class="collapse-content word-card-parent">
-                            @foreach ( $data->msl_tags as $keyword)
+                            @foreach ( $dataPublication->msl_tags as $keyword)
                                 <div 
                                     class="word-card"
                                     data-highlight="tag"
@@ -130,7 +129,7 @@
                 @endif
 
 
-                @if (sizeof($data->msl_original_keywords) > 0)
+                @if (count($dataPublication->msl_original_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
 
@@ -138,7 +137,7 @@
                         <x-ri-information-line id="corresponding-keywords-popup" class="info-icon"/>
                     </summary>
                     <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
-                        @foreach ( $data->msl_original_keywords as $keyword)
+                        @foreach ( $dataPublication->msl_original_keywords as $keyword)
                             <div 
                                 class="word-card"
                                 data-uri="{{ $keyword->msl_original_keyword_uri }}"
@@ -230,14 +229,14 @@
                     </script>
                 @endif
 
-                @if (sizeof($data->msl_enriched_keywords))
+                @if (count($dataPublication->msl_enriched_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" open>
                     <summary class="collapse-title">MSL enriched keywords 
                         <x-ri-information-line id="enriched-keywords-popup" class="info-icon"/>
                     </summary>
                     <div class="collapse-content word-card-parent" id="enriched-keywords-container">
-                        @foreach ( $data->msl_enriched_keywords as $keyword)
+                        @foreach ( $dataPublication->msl_enriched_keywords as $keyword)
                             <div
                                 class="word-card" 
                                 data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
@@ -334,29 +333,33 @@
             </div>
 
             <h3 class="border-none py-5 pt-10">Metadata</h3>
-            
-            @if ($data->msl_subdomains != '')
+
+            @if (count($dataPublication->msl_subdomains_original) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">MSL original sub domains</h4>
                     <div class="word-card-parent justify-start">
-                        @foreach ( $data->msl_subdomains as $keyword)
-                            <div class="word-card">{{ $keyword['msl_subdomain'] }}</div>
+                        {{-- hover behaviour: highlights all related tags above --}}
+                        @foreach ( $dataPublication->msl_subdomains_original as $domain)
+                            <div class="word-card">{{ $domain['msl_subdomain_original'] }}</div>
                         @endforeach
                     </div>
                 </div>
+            @endif
+
+            @if (count($dataPublication->msl_subdomains_interpreted) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">MSL enriched sub domains <x-ri-information-line id="enriched-subdomains-popup" class="info-icon"/></h4>
-                    
                     <div class="word-card-parent justify-start">
-                        @foreach ( $data->msl_subdomains as $keyword)
+                        {{-- hover behaviour: highlights all related tags above --}}
+                        @foreach ( $dataPublication->msl_subdomains_interpreted as $domain)
                             <div 
                                 class="word-card" 
                                 data-toggle="domain-highlight"
-                                data-domain="{{ $keyword['msl_subdomain'] }}"                                                                                        
+                                data-domain="{{ $domain['msl_subdomain_interpreted'] }}"                                                                                        
                             >
-                                {{ $keyword['msl_subdomain'] }}
+                                {{ $domain['msl_subdomain_interpreted'] }}
                             </div>
                         @endforeach
                     </div>
@@ -370,24 +373,24 @@
                 </div>
             @endif
 
-            @if ($data->msl_resource_type != '')
+            @if ($dataPublication->msl_resource_type != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Resource Type</h4>
                     <div class="detail-entry-content">
-                        <p class="">{{ $data->msl_resource_type }}</p>
+                        <p class="">{{ $dataPublication->msl_resource_type }}</p>
                     </div>
                 </div>
             @endif
 
-            @if ($data->msl_source)
+            @if ($dataPublication->msl_source != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source</h4>
                     <div class="detail-entry-content ">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_source
+                                $dataPublication->msl_source
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -396,14 +399,14 @@
                 </div>
             @endif
 
-            @if ($data->msl_publisher != '')
+            @if ($dataPublication->msl_publisher != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source publisher</h4>
                     <div class="detail-entry-content">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_publisher
+                                $dataPublication->msl_publisher
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -412,14 +415,14 @@
                 </div>
             @endif
 
-            @if ($data->msl_doi)
+            @if ($dataPublication->msl_doi != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">DOI</h4>
                     <div class="detail-entry-content">
                         @include('components.list-views.table-list',[
                             'entries' => [
-                                $data->msl_doi
+                                $dataPublication->msl_doi
                             ],
                             'withKeys' => false,
                             'textSize' => 'base'
@@ -428,79 +431,78 @@
                 </div>
             @endif
             
-            @if (sizeof($data->msl_creators) > 0)
+            @if (count($dataPublication->msl_creators) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Creators</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $data->msl_creators as $creator)
-                            @include('components.list-views.table-list',[
-                                        'entries' => [
-                                            $creator->getFullName(),
-                                            implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
-                                            implode(' | ', $creator->getAffilitationNames()),
-                                            implode(' | ', $creator->getNameIdentifiers()),
-                                        ],
-                                        'withKeys' => false,
-                                    ])
+                        @foreach ( $dataPublication->msl_creators as $creator)
+                            @include('components.list-views.table-list', [
+                                'entries' => [
+                                    $creator->getFullName(),
+                                    implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
+                                    implode(' | ', $creator->getAffilitationNames()),
+                                    implode(' | ', $creator->getNameIdentifiers()),
+                                ],
+                                'withKeys' => false,
+                            ])
                         @endforeach
                     </div>
                 </div>
             @endif
 
-            @if (sizeof($data->msl_contributors) > 0)
+            @if (count($dataPublication->msl_contributors) > 0)
             <br>
-
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Contributors</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $data->msl_contributors as $contributor)
+                        @foreach ( $dataPublication->msl_contributors as $contributor)
                             @include('components.list-views.table-list',[
-                                        'entries' => [
-                                            $contributor->getFullName(),
-                                            implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
-                                            implode(' | ', $contributor->getAffilitationNames()),
-                                            implode(' | ', $contributor->getNameIdentifiers()),
-                                        ],
-                                        'withKeys' => false,
-                                    ])
+                                'entries' => [
+                                    $contributor->getFullName(),
+                                    implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
+                                    implode(' | ', $contributor->getAffilitationNames()),
+                                    implode(' | ', $contributor->getNameIdentifiers()),
+                                ],
+                                'withKeys' => false,
+                            ])
                         @endforeach
                     </div>
                 </div>
             @endif
             
-            @if ($data->msl_citation != '')
+            @if ($dataPublication->msl_citation != '')
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Citation</h4>
                     <div class="detail-entry-content">
-                        <p class="text-sm">{!! $data->msl_citation !!}</p>
+                        <p class="text-sm">{!! $dataPublication->msl_citation !!}</p>
                     </div>
                 </div>
             @endif
 
-            @if (sizeof($data->msl_related_identifiers) > 0)
+            @if (count($dataPublication->msl_related_identifiers) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">References</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $data->msl_related_identifiers as $entry)
+                        @foreach ($dataPublication->msl_related_identifiers as $relatedidentifier)
                         @php
-                            $dataList = [];
-                            if ($entry->getRelatedIdentifierType() =='DOI') {
-                                    $dataList[] = "https://doi.org/".$entry->getRelatedIdentifierType();
+                            $dataPublicationList = [];
+                            if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
+                                    $dataPublicationList[] = "https://doi.org/".$relatedidentifier->msl_related_identifier_type;
                             } else {
-                                if($entry->getRelatedIdentifierType() != ''){
-                                    $dataList[] = $entry->getRelatedIdentifierType();
+                                if($relatedidentifier->msl_related_identifier_type != '') {
+                                    $dataPublicationList[] = $relatedidentifier->msl_related_identifier_type;
                                 }
 
-                                if($entry->getRelatedIdentifierRelationType() != ''){
-                                    $dataList[] = $entry->getRelatedIdentifierRelationType();
+                                if($relatedidentifier->msl_related_identifier_relation_type != '') {
+                                    $dataPublicationList[] = $relatedidentifier->msl_related_identifier_relation_type;
                                 }
                             }
                         @endphp
                             @include('components.list-views.table-list',[
-                                'entries' => $dataList,
+                                'entries' => $dataPublicationList,
                                 'withKeys' => false,
                             ])
                         @endforeach
@@ -509,20 +511,20 @@
             @endif
             
 
-            @if ($data->msl_dates)
+            @if (count($dataPublication->msl_dates) > 0)
                 <br>
                 <div class="detail-entry-div">  
                     <h4 class="detail-entry-title">Dates</h4>
                     <div class="detail-entry-content">
                         @php
-                            $dataList = [];
-                            foreach ($data->msl_dates as $key => $value) {
-                                $dataList[$value->msl_date_type] = $value->msl_date_date;
+                            $dataPublicationList = [];
+                            foreach ($dataPublication->msl_dates as $date) {
+                                $dataPublicationList[$date->msl_date_type] = $date->msl_date_date;
                             }
                         @endphp
 
                         @include('components.list-views.table-list',[
-                            'entries' => $dataList,
+                            'entries' => $dataPublicationList,
                             'withKeys' => true,
                         ])
                     </div>
@@ -533,8 +535,8 @@
             <div class="detail-entry-div">
                 <h4 class="detail-entry-title">Language</h4>
                 <div class="detail-entry-content">
-                    @if ($data->msl_language != '')
-                        <p class="text-sm p-0">{{ $data->msl_language }}</p>                                        
+                    @if ($dataPublication->msl_language != '')
+                        <p class="text-sm p-0">{{ $dataPublication->msl_language }}</p>                                        
                     @else
                         <p class="text-sm p-0 italic">- no language entry found -</p>                                        
                     @endif
@@ -543,11 +545,11 @@
 
 
             <br>
-            @if (sizeof($data->msl_funding_references) > 0)                                 
+            @if (count($dataPublication->msl_funding_references) > 0)                                 
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Funding References</h4>
                     <div class="detail-entry-content">
-                        @foreach ($data->msl_funding_references as $fundingReference)
+                        @foreach ($dataPublication->msl_funding_references as $fundingReference)
                             <div class="py-2">
                                 @include('components.list-views.table-list',[
                                     'entries' => [
@@ -566,12 +568,12 @@
             @endif
                     
 
-            @if (sizeof($data->msl_rights) > 0)
+            @if (count($dataPublication->msl_rights) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Rights</h4>
                     <div class="detail-entry-content">
-                        @foreach ($data->msl_rights as $right)
+                        @foreach ($dataPublication->msl_rights as $right)
                             @include('components.list-views.table-list',[
                                 'entries' => [
                                     "Name" => $right->msl_right,
@@ -589,54 +591,55 @@
 
             <h3 class="border-none py-5 pt-10">Locations</h3>
             
-            @if (sizeof($data->msl_geolocations) > 0 && $data->msl_geojson_featurecollection != '')
+            @if (count($dataPublication->msl_geolocations) == 0 && $dataPublication->msl_geojson_featurecollection == '')
                 <p class="italic text-center w-full">- no geo-locations found -</p>
-            @endif
+            @else
 
-            @if (sizeof($data->msl_geolocations) > 0)
-                <br>
-                <div class="detail-entry-div">
-                    <h4 class="detail-entry-title">Geo location(s)</h4>
-                    <div class="detail-entry-content">
-                        @foreach ( $data->msl_geolocations as $locationPackage)
-                            @foreach ($locationPackage as $location)
-                                <p class="text-sm">{{ $location }}</p>
+                @if (count($dataPublication->msl_geolocations) > 0)
+                    <br>
+                    <div class="detail-entry-div">
+                        <h4 class="detail-entry-title">Geo location(s)</h4>
+                        <div class="detail-entry-content">
+                            @foreach ( $dataPublication->msl_geolocations as $locationPackage)
+                                @foreach ($locationPackage as $location)
+                                    <p class="text-sm">{{ $location }}</p>
+                                @endforeach
                             @endforeach
-                        @endforeach
+                        </div>
                     </div>
-                </div>
-            @endif
+                @endif
 
-            @if ($data->msl_geojson_featurecollection != '')
-                <br>
-                <div class="detail-entry-div">
-                    <h4 class="detail-entry-title">Spatial coordinates</h4>
-                    <div class="detail-entry-content">
-                        <div id="map" style="height: 300px;"></div>
-                    </div>
-                    <script>
-                        function onEachFeature(feature, layer) {
-                            if (feature.properties.name) {                                
-                                var popupContent = `<h5>${feature.properties.name}</h5>`;
+                @if ($dataPublication->msl_geojson_featurecollection != '')
+                    <br>
+                    <div class="detail-entry-div">
+                        <h4 class="detail-entry-title">Spatial coordinates</h4>
+                        <div class="detail-entry-content">
+                            <div id="map" style="height: 300px;"></div>
+                        </div>
+                        <script>
+                            function onEachFeature(feature, layer) {
+                                if (feature.properties.name) {                                
+                                    var popupContent = `<h5>${feature.properties.name}</h5>`;
 
-                                layer.bindPopup(popupContent);
+                                    layer.bindPopup(popupContent);
+                                }
                             }
-                        }
-                    
-                        var features = <?php echo $data->msl_geojson_featurecollection; ?>;        				
-                    
-                        var map = L.map('map').setView([0, 0], 1);
                         
-                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            maxZoom: 19,
-                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                        }).addTo(map);
-                                                                                                                
-                        L.geoJSON(features, {
-                            onEachFeature: onEachFeature
-                        }).addTo(map);                                                                              
-                    </script>
-                </div>
+                            var features = <?php echo $dataPublication->msl_geojson_featurecollection; ?>;        				
+                        
+                            var map = L.map('map').setView([0, 0], 1);
+                            
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                maxZoom: 19,
+                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                            }).addTo(map);
+                                                                                                                    
+                            L.geoJSON(features, {
+                                onEachFeature: onEachFeature
+                            }).addTo(map);                                                                              
+                        </script>
+                    </div>
+                @endif
             @endif
         </div>
     </div>
