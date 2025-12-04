@@ -56,54 +56,54 @@
         
                 @php
                 $infoList = [
-                  array(
-                    "name"=>"Analogue modelling of geological processes", 
-                    "listItems"=>array(
-                        "From reservoir (km) to tectonic plate (global) scale",
-                        "To study and visualize the fundamental processes underlying crustal and mantle deformation processes, including fault formation, mountain building and sedimentary basin evolution"
-                    )
-                  ),
-                  array(
-                    "name"=>"Geochemistry", 
-                    "listItems"=>array(
-                        "Volcanic ash from explosive eruptions",
-                        "Magmas in the context of eruption and lava-flow hazard evaluation",
-                        "Rock systems of key importance in mineral exploration and mining operations",
-                        "Soil and rock chemistry or mineralogy"
-                    )
-                  ),
-                  array(
-                    "name"=>"Geo-energy test beds", 
-                    "listItems"=>array(
-                        "The latest addition to Multi-Scale Labs",
-                        "Testing or monitoring field-scale subsurface applications aimed at curbing CO2 emissions. Such applications include subsurface storage of fluids (H, N, CO2, hot water), or geothermal energy production.",
-                        "Data are often (but not always) site-specific, and can include a.o. fiber optics sensing data (DAS, DSS, DTS), seismological data, electromagnetics, geological models, microscopy and tomography and rock physics data."
-                    )
-                  ),
-                  array(
-                    "name"=>"Rock and melt physics", 
-                    "listItems"=>array(
-                        "Rock and fault properties of importance for modelling and forecasting natural and induced subsidence, seismicity and associated hazards",
-                        "Crustal and upper mantle rheology as needed for modelling sedimentary basin formation and crustal stress distributions",
-                        "The composition, porosity and permeability of reservoir rocks of interest in relation to unconventional resources, fluid storage and geothermal energy"
-                    )
-                  ),
-                  array(
-                    "name"=>"Magnetism and paleomagnetism", 
-                    "listItems"=>array(
-                        "Understanding the evolution of sedimentary basins and associated resources",
-                        "Charting geo-hazard frequency",
-                    )
-                  ),
-                  array(
-                    "name"=>"Microscopy and tomography", 
-                    "listItems"=>array(
-                        "Image data of Earth materials obtained with a wide variety in techniques",
-                        "Aimed at analyzing the process, often occurring at nano- to micrometer scale, governing the physical, chemical and transport behavior of Earth materials"
-                    )
-                  ),
+                    [
+                        "name" => "Analogue modelling of geological processes", 
+                        "listItems" => [
+                            "From reservoir (km) to tectonic plate (global) scale",
+                            "To study and visualize the fundamental processes underlying crustal and mantle deformation processes, including fault formation, mountain building and sedimentary basin evolution"
+                        ]
+                    ],
+                    [
+                        "name" => "Geochemistry", 
+                        "listItems"=> [
+                            "Volcanic ash from explosive eruptions",
+                            "Magmas in the context of eruption and lava-flow hazard evaluation",
+                            "Rock systems of key importance in mineral exploration and mining operations",
+                            "Soil and rock chemistry or mineralogy"
+                        ]
+                    ],
+                    [
+                        "name" => "Geo-energy test beds", 
+                        "listItems" => [
+                            "The latest addition to Multi-Scale Labs",
+                            "Testing or monitoring field-scale subsurface applications aimed at curbing CO2 emissions. Such applications include subsurface storage of fluids (H, N, CO2, hot water), or geothermal energy production.",
+                            "Data are often (but not always) site-specific, and can include a.o. fiber optics sensing data (DAS, DSS, DTS), seismological data, electromagnetics, geological models, microscopy and tomography and rock physics data."
+                        ]
+                    ],
+                    [
+                        "name" => "Rock and melt physics", 
+                        "listItems" => [
+                            "Rock and fault properties of importance for modelling and forecasting natural and induced subsidence, seismicity and associated hazards",
+                            "Crustal and upper mantle rheology as needed for modelling sedimentary basin formation and crustal stress distributions",
+                            "The composition, porosity and permeability of reservoir rocks of interest in relation to unconventional resources, fluid storage and geothermal energy"
+                        ]
+                    ],
+                    [
+                        "name" => "Magnetism and paleomagnetism", 
+                        "listItems"=> [
+                            "Understanding the evolution of sedimentary basins and associated resources",
+                            "Charting geo-hazard frequency",
+                        ]
+                    ],
+                    [
+                        "name" => "Microscopy and tomography", 
+                        "listItems" => [
+                            "Image data of Earth materials obtained with a wide variety in techniques",
+                            "Aimed at analyzing the process, often occurring at nano- to micrometer scale, governing the physical, chemical and transport behavior of Earth materials"
+                        ]
+                    ],
                 ]
-              @endphp
+                @endphp
                     
                 
                 <h3 class="pt-20">The MSL subdomains</h3>
