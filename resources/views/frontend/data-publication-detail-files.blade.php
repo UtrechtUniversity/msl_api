@@ -44,8 +44,8 @@
                         as originally published at the source repository: 
                         <br>
                         <br>
-                        @if ($data->msl_source != '')
-                            <a class="hover-interactive text-center underline" href="{{ $data->msl_source }}" target="_blank">{{ $data->msl_source }}</a>
+                        @if ($dataPublication->msl_source != '')
+                            <a class="hover-interactive text-center underline" href="{{ $dataPublication->msl_source }}" target="_blank">{{ $dataPublication->msl_source }}</a>
                         @endif 
                         <br>
                         <br>
