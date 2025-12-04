@@ -35,10 +35,6 @@ $title => title for the text-field
         >
     @endif
 
-    {{-- @error('{{ $sectionName  }}')
-        <p class="error-highlight"> {{ $message }} </p>
-    @enderror --}}
-
     {{-- why like this
     https://github.com/laravel/framework/issues/31975 --}}
     @if ($errors->has($sectionName))
