@@ -50,7 +50,7 @@
             </ul>
 
             @php
-                $contentList =[
+                $contentList = [
                     'File information' => 'Using the general metadata description we can improve the findability of your data publications however this 
                                             does not include the actual related files! Researchers will need to know what actual data is available to 
                                             understand their value. At a minimum we try to provide a list of files and download links. By providing machine 
@@ -70,6 +70,7 @@
                                         Data can be displayed on maps and be found using spatial queries. How to describe this within the DataCite schema can be found <a class="hover-interactive underline" href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/geolocation/" target="_blank" title="DataCite versioning">here</a>.',
                 ]
             @endphp
+
             <div class="flex flex-col gap-6 w-full ">
                 @foreach ($contentList as $title => $text)
                     <details class="collapse collapse-arrow wordCardCollapser bg-primary-200">
