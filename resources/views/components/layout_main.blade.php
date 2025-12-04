@@ -18,20 +18,14 @@
     
     <x-notifications.modals/>
 
-    {{-- @include('notifications.flash-messages') --}}
-
     <nav>
         @include('partials._navbar')
     </nav>
 
     {{-- no general class attached due to landing page --}}
     <main class="">
-
-        {{-- @yield('content') --}}
         {{ $slot }}
-
-    </main>
-    
+    </main>    
 
     @include('partials._footer')
     @stack('vite')
