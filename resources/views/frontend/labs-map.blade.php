@@ -25,23 +25,17 @@
                 <div class="drawer-content bg-secondary-100 flex relative h-170">
                     {{-- content here --}}
                     <div class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
-                        <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center z-40"
-                        >
-                        <p 
-                        class=""
-                        style="writing-mode: sideways-lr;" >
-                            click here to see filters
-                          </p>
+                        <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center z-40">
+                            <p style="writing-mode: sideways-lr;">
+                                click here to see filters
+                            </p>
                         </label>
                     </div>
                     <div class="w-full bg-primary-100">
-
                         {{-- list view --}}    
                         <div class="list-view">
                             @include('components.lab-map-view')    
-                        </div>
-                        
-                        
+                        </div>                                                
                     </div>
 
                 </div>
