@@ -21,7 +21,7 @@
                             {{-- top search div --}}
                             @include('components.search-div-list',[
                                 'searchFor'     => 'data publications',
-                                'amountFound'   => 'data publications',
+                                'amountFoundLabel'   => 'data publications',
                                 'dpDropdown'    => true
                             ])
 

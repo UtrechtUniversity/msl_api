@@ -39,7 +39,7 @@
                         {{-- top search div --}}
                         @include('components.search-div-list',[
                             'searchFor'     => 'lab',
-                            'amountFound'   => 'Laboratories'
+                            'amountFoundLabel'   => 'Laboratories'
                         ])
 
                         {{-- list view --}}    

@@ -33,7 +33,7 @@
                 basis-1/2
             @endif
             ">
-                <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
+                <p class="inline italic"> {{ ucfirst($amountFoundLabel) }} found:</p>
                 <h5 class="inline">{{ $totalResultsCount }}</h5>
             </div>
     
