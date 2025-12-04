@@ -4,10 +4,10 @@
         <div class="tab-links-parent">
             @include('components.tab-links',[
                 'routes'        => [
-                    'Laboratory' => route('lab-detail', ['id' => $data->name]),
-                    'Equipment' => route('lab-detail-equipment', ['id' => $data->name])
+                    'Laboratory' => route('lab-detail', ['id' => $laboratory->name]),
+                    'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->name])
                 ],
-                'routeActive'   => route('lab-detail-equipment', ['id' => $data->name])
+                'routeActive'   => route('lab-detail-equipment', ['id' => $laboratory->name])
             ])
         </div>
         <div class="main-content">
@@ -15,14 +15,14 @@
 
                 <div class="detailEntryDiv">
                     <h2 class="">Laboratory Equipment</h2>
-                    <h1 class="text-lg">{{ $data->title }}</h1>
+                    <h1 class="text-lg">{{ $laboratory->title }}</h1>
                 </div>
 
                 <div class="flex flex-wrap justify-center place-content-center gap-10 max-w-2xl py-10">
                     <h5 class="italic">- click on equipment pieces to view details -</h5>
-                    @if (count($equipmentData) > 0)
+                    @if (count($equipment) > 0)
 
-                        @foreach ($equipmentData as $equipmentPiece)
+                        @foreach ($equipment as $equipmentPiece)
 
                             
                             <details class="collapse collapse-arrow wordCardCollapser bg-primary-100 ">

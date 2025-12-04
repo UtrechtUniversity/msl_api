@@ -337,11 +337,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        // group results for display purposes
-        $groupedResults = [];
-        foreach ($result->getResults(true) as $result) {
-            $groupedResults[] = $result;
-        }
+        $equipment = $result->getResults(true);
 
         // get the name of lab
         $Labrequest = new PackageShowRequest;
@@ -353,7 +349,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail-equipment', ['data' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipmentData' => $groupedResults]);
+        return view('frontend.lab-detail-equipment', ['laboratory' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipment' => $equipment]);
     }
 
     /**
