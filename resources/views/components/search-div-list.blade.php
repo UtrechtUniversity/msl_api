@@ -29,7 +29,7 @@
     <div class="flex flex-col justify-around pt-6 gap-3">
         <div class="flex max-[700px]:flex-col items-center place-content-center gap-3">
             <div class="
-            @if (isset($dpDropdown) && $dpDropdown)
+            @if (isset($sortingDropdown) && $sortingDropdown)
                 basis-1/2
             @endif
             ">
@@ -37,7 +37,7 @@
                 <h5 class="inline">{{ $totalResultsCount }}</h5>
             </div>
     
-            @if (isset($dpDropdown) && $dpDropdown)
+            @if (isset($sortingDropdown) && $sortingDropdown)
                 <div class="basis-1/2">
                     <form 
                         class="w-full flex flex-col min-[700px]:flex-row justify-end items-center place-content-center" 
