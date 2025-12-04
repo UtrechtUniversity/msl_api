@@ -34,7 +34,7 @@
             @endif
             ">
                 <p class="inline italic"> {{ ucfirst($amountFound) }} found:</p>
-                <h5 class="inline">{{ $allResultsCount }}</h5>
+                <h5 class="inline">{{ $totalResultsCount }}</h5>
             </div>
     
             @if (isset($dpDropdown) && $dpDropdown)
