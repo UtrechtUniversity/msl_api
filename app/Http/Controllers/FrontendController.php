@@ -143,7 +143,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.data-access', ['result' => $result, 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
+        return view('frontend.data-access', ['facets' => $result->getFacets(),'totalResultsCount' => $result->getTotalResultsCount(),'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -178,7 +178,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.labs-map', ['locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('frontend.labs-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
@@ -278,7 +278,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.labs-list', ['result' => $result, 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'laboratories' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -315,7 +315,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.lab-detail', ['data' => $labData, 'labHasMailContact' => $labHasMailContact]);
+        return view('frontend.lab-detail', ['laboratory' => $result->getResult(), 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**
@@ -337,11 +337,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        // group results for display purposes
-        $groupedResults = [];
-        foreach ($result->getResults() as $result) {
-            $groupedResults[$result['msl_domain_name']][] = $result;
-        }
+        $equipment = $result->getResults(true);
 
         // get the name of lab
         $Labrequest = new PackageShowRequest;
@@ -353,7 +349,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail-equipment', ['data' => $groupedResults, 'ckanLabName' => $id, 'data2' => $Labresult->getResult()]);
+        return view('frontend.lab-detail-equipment', ['laboratory' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipment' => $equipment]);
     }
 
     /**
@@ -388,7 +384,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.equipment-map', ['locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('frontend.equipment-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
@@ -490,7 +486,7 @@ class FrontendController extends Controller
 
         $result = $client->get($SearchRequest);
 
-        return view('frontend.equipment-list', ['result' => $result, 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('frontend.equipment-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -581,10 +577,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.contribute-select-scenario',
-            [
-                'allDomains' => $allDomains,
-            ]);
+        return view('frontend.contribute-select-scenario', ['allDomains' => $allDomains]);
     }
 
     /**
@@ -624,7 +617,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail', ['data' => $result->getResult(true)]);
+        return view('frontend.data-publication-detail', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -644,7 +637,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail-files', ['data' => $result->getResult()]);
+        return view('frontend.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -723,5 +716,15 @@ class FrontendController extends Controller
     public function themeTest()
     {
         return view('frontend.themeTest');
+    }
+
+    /**
+     * Show demo page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function demoPage()
+    {
+        return view('frontend.demoPage');
     }
 }

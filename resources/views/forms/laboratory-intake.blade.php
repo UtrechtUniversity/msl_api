@@ -2,8 +2,8 @@
 <x-layout_main>
 
     <section class="">
-    <div class="px-4 mx-auto max-w-screen-md">
-        <h1 class="">Laboratory intake form</h1>
+    <div class="px-4 mx-auto max-w-(--breakpoint-md)">
+        <h1 class="pt-20">Laboratory intake form</h1>
         <p class="mb-8 lg:mb-16 text-center">  </p>
         <form method="POST" action="{{ route('laboratory-intake-process') }}" class="space-y-4" novalidate>
             @csrf
@@ -91,14 +91,14 @@
                         @include('forms.components.dropDownSelect',[
                             'sectionName'   => 'subdomain',
                             'placeholder'   => 'Select Subdomain',
-                            'ElementsArray'=>    array(
+                            'ElementsArray'=> [
                                 'Analogue modelling of geological processes',
                                 'Geochemistry',
                                 'Microscopy & tomography',
                                 'Paleomagnetic and magnetic data',
                                 'Rock and melt physical properties',
                                 'Geo-energy test beds.',
-                            )
+                            ]
                         ])
                     </div>
         
@@ -112,13 +112,13 @@
                                 error-highlight bg-error-300 text-error-700 rounded-md
                             @endif
                         ">
-                            <div class="w-1/2 self-center">
+                            <div class="w-1/2 self-center bg-primary-100 rounded">
                                 @include('forms.components.checkBox',[
                                     'sectionName'   => 'dataSharing-facilityAccess',
                                     'showErrMess'   => true,
-                                    'ElementsArray'=>    array(
+                                    'ElementsArray'=> [
                                         'Facility Access and Data sharing'
-                                    )
+                                    ]
                                 ])
                             </div>
 

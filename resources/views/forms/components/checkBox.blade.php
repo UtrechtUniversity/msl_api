@@ -14,12 +14,21 @@
 
     @foreach ( $ElementsArray as $element)
         <div class="form-control">
-            <label class="cursor-pointer label p-2
-             hover:bg-secondary-100 hover:rounded-lg hover:text-secondary-900">
-                <span class=" pr-4 text-sm">{{ $element }}</span>
+            <label class="  label cursor-pointer 
+                            flex
+                            w-full
+                            flex-row
+                            gap-4 
+                            p-2
+                            justify-between
+                            hover-interactive">
+                <span class="label-text text-primary-900 text-center">{{ $element }}</span>
                 <input type="checkbox" 
                 name="{{ $sectionName }}"
-                class="checkbox checkbox-secondary checkbox-md
+                class="     checkbox 
+                            checked:bg-secondary-500 hover:bg-secondary-500
+                            border
+                            border-secondary-500
                         @if ($errors->has($sectionName))
                             error-highlight-input
                         @endif 
@@ -36,5 +45,4 @@
         </div>
     @endforeach
 </div>
-
 

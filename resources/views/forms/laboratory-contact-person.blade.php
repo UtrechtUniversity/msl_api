@@ -10,7 +10,7 @@
 <x-layout_main>
 
     <section class="">
-        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-(--breakpoint-md)">
             <h1 class="">Contact Laboratory</h1>
             <p class="mb-8 lg:mb-16 text-center">Do you have questions? Want to use their facilities? </p>
 

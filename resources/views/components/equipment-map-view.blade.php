@@ -1,4 +1,4 @@
-<div id="map" style="height: 700px;" class="z-10"></div>
+<div id="map" class="z-0 h-170"></div>
 
 <script>
     function onEachFeature(feature, layer) {
@@ -27,7 +27,7 @@
 
     var features = <?php echo json_encode($locations); ?>;        				
 
-    var map = L.map('map').setView([51.505, -0.09], 4);
+    var map = L.map('map').setView([53.505, 29.09], 4);
     
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,

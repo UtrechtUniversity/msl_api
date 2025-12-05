@@ -1,32 +1,29 @@
 @section('title', 'How to contribute with your proposal or project?')
 <x-layout_main>
-<div class="mainContentDiv flex-col">
-        <p class="text-4xl p-20">
-          How to contribute with your proposal or project?
-        </p>
+  <div class="main-content ">
+    <div class="detail-div !bg-primary-100 limited-max-width-md">
+      <h1>How to contribute with your proposal or project?</h1>
 
-        <div class="flex justify-center items-center flex-col py-10 max-w-2xl px-4">
-          <h3 class=" ">There is so much to be gained!</h3>
-            <ul class="list-disc">
-                <li class="py-4">
-                  For you: By involving EPOS Multi-Scale Laboratories in your proposal or project, you can ensure a sustainable improvement on data sharing services for solid Earth scientific laboratories, as we can take care of hosting your service beyond the time-span of your project.
-                </li>
+      <h2 class="pt-20 ">There is so much to be gained!</h2>
+      <ul class="list-disc pt-6 pb-6 pl-10 pr-10">
+        <li class="py-4">
+          For you: By involving EPOS Multi-Scale Laboratories in your proposal or project, you can ensure a sustainable improvement on data sharing services for solid Earth scientific laboratories, as we can take care of hosting your service beyond the time-span of your project.
+        </li>
 
-                <li class="py-4">
-                  Including an ERIC (European Research Infrastructure Consortium, like <a href="https://www.epos-eu.org/epos-eric">EPOS-ERIC</a>) can be a requirement for European (Horizon) calls. We can help you make this connection.
-                </li>
+        <li class="py-4">
+          Including an ERIC (European Research Infrastructure Consortium, like <a class="hover-interactive underline" href="https://www.epos-eu.org/epos-eric">EPOS-ERIC</a>) can be a requirement for European (Horizon) calls. We can help you make this connection.
+        </li>
 
-                <li class="py-4">
-                  For you and us: When you allocate resources in your project to collaborate with us, you help us develop further, in turn improving the services we offer to others in your field and to the wider solid Earth sciences community.
-                </li>
-            </ul>
-        </div>
+        <li class="py-4">
+          For you and us: When you allocate resources in your project to collaborate with us, you help us develop further, in turn improving the services we offer to others in your field and to the wider solid Earth sciences community.
+        </li>
+      </ul>
 
-        <h3>Our process</h3>
+      <h3 class="pt-10">Our process</h3>
         <ul class="timeline timeline-vertical pb-10 max-w-2xl">
           <li>
             <a href="{{ route('contribute-project') }}#step-1"
-            class="timeline-end timeline-box no-underline hover:bg-secondary-200">
+            class="timeline-end timeline-box timeline-additional-styling no-underline hover:bg-secondary-200">
               <div id='nextStep' >User research and design</div>
             </a>
             
@@ -55,7 +52,7 @@
               </svg>
             </div>
             <a href="{{ route('contribute-project') }}#step-2"
-              class="timeline-start timeline-box no-underline hover:bg-secondary-200">
+              class="timeline-start timeline-box timeline-additional-styling no-underline hover:bg-secondary-200">
               <div id='nextStep' >Establishing or updating best practices</div>
               
 
@@ -67,7 +64,7 @@
           <li>
             <hr class="timeline-line-element"/>
             <a href="{{ route('contribute-project') }}#step-3"
-            class="timeline-end timeline-box no-underline hover:bg-secondary-200">
+            class="timeline-end timeline-box timeline-additional-styling no-underline hover:bg-secondary-200">
               <div id='nextStep'>Data service development and integration in EPOS</div>
             </a>
 
@@ -87,66 +84,63 @@
 
         </ul>
 
-        
+        <h2 id='step-1' class="pt-10 pb-4">Step 1: User research and design 
+        </h2>
+        <p>
+          This step is often overlooked, but is key for optimizing the impact of what you ultimately aim to develop. Here, our staff interacts with you and/or other researchers from your community, through workshops and surveys, to make sure that: 
+        </p>
+        <ul class="list-none pt-6 pb-6 pl-10 pr-10">
+          <li>
+            A) The right problem is identified
+          </li>
+          <li>
+            B) Researchers can relate to it
+          </li>
+          <li>
+            C) The way we plan to address it (e.g. through tools or workflows) really makes an impact.
+          </li>
+        </ul>
+        <p>
+          Estimated time investment: typically in the order of 10 hours for 4-5 involved people, with a wider group more sporadically involved (e.g. by answering a survey)
+        </p>
+        <p>
+          Products at the of this step can include: Scenario’s, Mockup’s, Mapped-out workflows, Surveys
+        </p>
 
-        <div class="w-screen sm:max-w-screen-md px-4">
-            <h2 id='step-1' class="pt-10 pb-4">Step 1: User research and design 
-            </h2>
-            <p>
-              This step is often overlooked, but is key for optimizing the impact of what you ultimately aim to develop. Here, our staff interacts with you and/or other researchers from your community, through workshops and surveys, to make sure that: 
-            </p>
-            <ul class="list-none">
-              <li>
-                A) The right problem is identified
-              </li>
-              <li>
-                B) Researchers can relate to it
-              </li>
-              <li>
-                C) The way we plan to address it (e.g. through tools or workflows) really makes an impact.
-              </li>
-            </ul>
-            <p>
-              Estimated time investment: typically in the order of 10 hours for 4-5 involved people, with a wider group more sporadically involved (e.g. by answering a survey)
-            </p>
-            <p>
-              Products at the of this step can include: Scenario’s, Mockup’s, Mapped-out workflows, Surveys
-            </p>
-    
-            <h2 class="pt-10 pb-4" id="step-2">Step 2: Establishing or updating best practices
-            </h2>
-            <p>
-              With the user research and the design step finished, you now have the right ingredients in your hand to confidently start developing, or improving a data sharing service. Such a service could be in the form of a tool, a workflow, a (standardized) data collection, vocabularies, or other. 
-              Depending on what you develop, this can have impact on how you would like researchers, from your own community or beyond, to share their data. You can capture this by developing or updating the best practices for sharing data. 
-              Current best practices for sharing data from MSL domains are listed <a href="{{ route('contribute-researcher') }}">here</a>. You can help develop these further!
-            </p>
-            <p>
-              Estimated time investment: this can vary, but a best practice generally takes 1-5 days to draft or update, by 1-2 persons.
-            </p>
-            <p>
-              Product at the end of this step: (updated) best practice for data sharing, (of which the key ingredients are) published on the MSL data catalogue
-            </p>
-    
-    
-            <h2 class="pt-10 pb-4" id="step-3">Step 3: Data service development and integration in EPOS    
-            </h2>
+        <h2 class="pt-10 pb-4" id="step-2">Step 2: Establishing or updating best practices
+        </h2>
+        <p>
+          With the user research and the design step finished, you now have the right ingredients in your hand to confidently start developing, or improving a data sharing service. Such a service could be in the form of a tool, a workflow, a (standardized) data collection, vocabularies, or other. 
+          Depending on what you develop, this can have impact on how you would like researchers, from your own community or beyond, to share their data. You can capture this by developing or updating the best practices for sharing data. 
+          Current best practices for sharing data from MSL domains are listed <a class="hover-interactive underline" href="{{ route('contribute-researcher') }}">here</a>. You can help develop these further!
+        </p>
+        <p>
+          Estimated time investment: this can vary, but a best practice generally takes 1-5 days to draft or update, by 1-2 persons.
+        </p>
+        <p>
+          Product at the end of this step: (updated) best practice for data sharing, (of which the key ingredients are) published on the MSL data catalogue
+        </p>
 
-            <p>
-              While the above steps typically require limited input from researchers involved in your project (where needed supported by us), this last step often requires a dedicated software or data engineer on your end, 
-              who closely interacts with MSL developers. A data service can be a tool for data exploration, analysis, or processing, a workflow, a (standardized) data collection, harmonized metadata standards, or other. 
-              Whatever it is you wish to develop, we can help each other most if it can ultimately fit in the MSL data infrastructure, and/or services provided to the <a href="https://www.epos-eu.org/dataportal">EPOS data portal</a>. That way, we can make sure that we can durably host your new development, even after your project ends.
-            </p>
 
-            <p>
-              Estimated time investment: obviously will depend on what needs to be developed, but typically in the range of 0.5 to 3 years, at 1 FTE.
-            </p>
+        <h2 class="pt-10 pb-4" id="step-3">Step 3: Data service development and integration in EPOS    
+        </h2>
 
-            <p>
-              Products at the end of this step: a new data service, ideally integrated directly within the EPOS infrastructure, but at minimum referred to in EPOS.
-            </p>
-        </div>
-        
-</div>
+        <p>
+          While the above steps typically require limited input from researchers involved in your project (where needed supported by us), this last step often requires a dedicated software or data engineer on your end, 
+          who closely interacts with MSL developers. A data service can be a tool for data exploration, analysis, or processing, a workflow, a (standardized) data collection, harmonized metadata standards, or other. 
+          Whatever it is you wish to develop, we can help each other most if it can ultimately fit in the MSL data infrastructure, and/or services provided to the <a class="hover-interactive underline" href="https://www.epos-eu.org/dataportal">EPOS data portal</a>. That way, we can make sure that we can durably host your new development, even after your project ends.
+        </p>
+
+        <p>
+          Estimated time investment: obviously will depend on what needs to be developed, but typically in the range of 0.5 to 3 years, at 1 FTE.
+        </p>
+
+        <p>
+          Products at the end of this step: a new data service, ideally integrated directly within the EPOS infrastructure, but at minimum referred to in EPOS.
+        </p>
+
+    </div>
+  </div>
 
 
 </x-layout_main>

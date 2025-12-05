@@ -14,11 +14,9 @@
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <title>{{ config('app.name') }} - @yield('title')</title>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen text-primary-900">
     
     <x-notifications.modals/>
-
-    {{-- @include('notifications.flash-messages') --}}
 
     <nav>
         @include('partials._navbar')
@@ -26,12 +24,8 @@
 
     {{-- no general class attached due to landing page --}}
     <main class="">
-
-        {{-- @yield('content') --}}
         {{ $slot }}
-
-    </main>
-    
+    </main>    
 
     @include('partials._footer')
     @stack('vite')
