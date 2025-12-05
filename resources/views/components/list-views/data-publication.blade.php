@@ -5,7 +5,7 @@
 
 <a class="hover-interactive self-center w-9/12 no-underline p-4" href="{{ route('data-publication-detail', ['id' => $dataPublication->name]) }}">
     @if ($dataPublication->title != '')
-        <h4 class="text-left">{{  $data->title }}</h4> 
+        <h4 class="text-left">{{  $dataPublication->title }}</h4> 
     @else
         <h4 class="text-left italic">- no title found -</h4> 
     @endif
