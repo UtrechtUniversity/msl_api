@@ -1,29 +1,27 @@
 @section('title', 'Data publication')
 <x-layout_main>
 
-
     <div class="flex flex-col sm:flex-row pt-10 sm:pt-0 justify-center items-center w-full relative">
         @session('data_publication_active_search')
             <div class="px-2 md:px-10 sm:absolute left-0 ">
-                    <a href="{{ $value }}">
-                        <div class="btn btn-primary btn-wide bg-primary-200">
-                            <x-ri-arrow-left-line id="" class="goBack-icon inline"/>
-                            Back to search results
-                        </div>
-                    </a>
+                <a href="{{ $value }}">
+                    <div class="btn btn-primary btn-wide bg-primary-200">
+                        <x-ri-arrow-left-line id="" class="goBack-icon inline" />
+                        Back to search results
+                    </div>
+                </a>
             </div>
         @endsession
         <div class="tab-links-parent ">
             @include('components.tab-links', [
-                'routes'        => [
-                    'Metadata' => route("data-publication-detail", ['id' => $dataPublication->name]),
-                    'Files' => route("data-publication-detail-files", ['id' => $dataPublication->name])
+                'routes' => [
+                    'Metadata' => route('data-publication-detail', ['id' => $dataPublication->name]),
+                    'Files' => route('data-publication-detail-files', ['id' => $dataPublication->name]),
                 ],
-                'routeActive'   => route("data-publication-detail", ['id' => $dataPublication->name])
+                'routeActive' => route('data-publication-detail', ['id' => $dataPublication->name]),
             ])
         </div>
     </div>
-
 
     <div class="main-content">
 
@@ -39,9 +37,9 @@
 
                 @if (count($dataPublication->msl_creators) > 0)
                     <p class="italic text-center">
-                        @foreach ( $dataPublication->msl_creators as $author )
+                        @foreach ($dataPublication->msl_creators as $author)
                             {{ $author->getFullName() }}
-                            @if(!$loop->last)
+                            @if (!$loop->last)
                                 |
                             @endif
                         @endforeach
@@ -66,54 +64,50 @@
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Descriptions</h3>
 
-                @include('components.tab-list',[
+                @include('components.tab-list', [
                     'allTabs' => [
                         'Abstract' => [
                             'content' => $dataPublication->msl_description_abstract_annotated,
-                            'id' => 'msl_description_abstract_annotated'
+                            'id' => 'msl_description_abstract_annotated',
                         ],
                         'Methods' => [
                             'content' => $dataPublication->msl_description_methods_annotated,
-                            'id' => 'msl_description_methods_annotated'
+                            'id' => 'msl_description_methods_annotated',
                         ],
                         'Other' => [
                             'content' => $dataPublication->msl_description_other_annotated,
-                            'id' => 'msl_description_other_annotated'
+                            'id' => 'msl_description_other_annotated',
                         ],
                         'Series Information' => [
                             'content' => $dataPublication->msl_description_series_information_annotated,
-                            'id' => 'msl_description_series_information_annotated'
+                            'id' => 'msl_description_series_information_annotated',
                         ],
                         'Content' => [
                             'content' => $dataPublication->msl_description_table_of_contents_annotated,
-                            'id' => 'msl_description_table_of_contents_annotated'
+                            'id' => 'msl_description_table_of_contents_annotated',
                         ],
                         'Technical Information' => [
                             'content' => $dataPublication->msl_description_technical_info_annotated,
-                            'id' => 'msl_description_technical_info_annotated'
+                            'id' => 'msl_description_technical_info_annotated',
                         ],
                     ],
-                    'checkedElementId' => ''
+                    'checkedElementId' => '',
                 ])
 
-            </div >
-            
+            </div>
+
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Keywords</h3>
 
                 @if (count($dataPublication->msl_tags) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
-                        <summary class="collapse-title">Originally assigned keywords 
-                            <x-ri-information-line id="orginal-keywords-popup" class="info-icon"/>
+                        <summary class="collapse-title">Originally assigned keywords
+                            <x-ri-information-line id="orginal-keywords-popup" class="info-icon" />
                         </summary>
                         <div class="collapse-content word-card-parent">
-                            @foreach ( $dataPublication->msl_tags as $keyword)
-                                <div 
-                                    class="word-card"
-                                    data-highlight="tag"
-                                    data-uris='{!! json_encode($keyword->msl_tag_msl_uris) !!}'
-                                >
+                            @foreach ($dataPublication->msl_tags as $keyword)
+                                <div class="word-card" data-highlight="tag" data-uris='{!! json_encode($keyword->msl_tag_msl_uris) !!}'>
                                     {{ $keyword->msl_tag_string }}
                                 </div>
                             @endforeach
@@ -124,30 +118,26 @@
                             content: "lists only keywords originally assigned by the authors",
                             placement: "right",
                             theme: "msl"
-                        });                                    
+                        });
                     </script>
                 @endif
-
 
                 @if (count($dataPublication->msl_original_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
 
-                    <summary class="collapse-title">Corresponding MSL vocabulary keywords 
-                        <x-ri-information-line id="corresponding-keywords-popup" class="info-icon"/>
-                    </summary>
-                    <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
-                        @foreach ( $dataPublication->msl_original_keywords as $keyword)
-                            <div 
-                                class="word-card"
-                                data-uri="{{ $keyword->msl_original_keyword_uri }}"
-                                data-highlight="text-keyword"
-                                data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}"
-                            >
-                                {{ $keyword->msl_original_keyword_label }}
-                            </div>
-                        @endforeach
-                    </div>
+                        <summary class="collapse-title">Corresponding MSL vocabulary keywords
+                            <x-ri-information-line id="corresponding-keywords-popup" class="info-icon" />
+                        </summary>
+                        <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
+                            @foreach ($dataPublication->msl_original_keywords as $keyword)
+                                <div class="word-card" data-uri="{{ $keyword->msl_original_keyword_uri }}"
+                                    data-highlight="text-keyword"
+                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}">
+                                    {{ $keyword->msl_original_keyword_label }}
+                                </div>
+                            @endforeach
+                        </div>
                     </details>
                     <script>
                         tippy('#corresponding-keywords-popup', {
@@ -157,100 +147,100 @@
                         });
 
                         tippy.delegate('#corresponding-keywords-container', {
-                        target: '.word-card',
-                        trigger: 'click',
-                        theme: "msl",
-                        placement: 'right',
-                        interactive: true,
-                        allowHTML: true,
-                        appendTo: document.body,
-                        maxWidth: 600,
-                        onShow(instance) {
-                            if (instance.state.ajax === undefined) {
-                                instance.state.ajax = {
-                                    isFetching: false,
-                                    canFetch: true,
-                                }
-                            }
-
-                            if (instance.state.ajax.isFetching || !instance.state.ajax.canFetch) {
-                                return
-                            }
-
-                            $.ajax({
-                                url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
-                                type: 'GET',
-                                dataType: 'json',
-                                dataset: instance.reference.dataset,
-                                async: true,
-                                beforeSend: function () {
-                                    instance.state.ajax.isFetching = true;
-                                },
-                                success: function(res) {        
-                                    content = "<div>";
-                                    content += "<table>";
-                                    content += "<tr><td class=\"\">name</td><td>" + res.name + "</td></tr>";
-                                    content += "<tr><td class=\"\">indicators</td><td>";
-                                    res.synonyms.forEach((synonym) => {
-                                    content += '"' + synonym.name + '" ';
-                                    });
-                                    content += "</td></tr>";
-                                    content += "<tr><td class=\"\">parent term</td><td>";
-                                    if(res.parent) {
-                                    content += res.parent.name;
-                                    } else {
-                                    content += 'none';
+                            target: '.word-card',
+                            trigger: 'click',
+                            theme: "msl",
+                            placement: 'right',
+                            interactive: true,
+                            allowHTML: true,
+                            appendTo: document.body,
+                            maxWidth: 600,
+                            onShow(instance) {
+                                if (instance.state.ajax === undefined) {
+                                    instance.state.ajax = {
+                                        isFetching: false,
+                                        canFetch: true,
                                     }
-                                    content += "</td></tr>";
-                                    content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary.display_name + "</td></tr>";
-                                    content += "<tr><td class=\"\">uri</td><td>" + res.uri + "</td></tr>";
+                                }
 
-                                    if(this.dataset.sources) {
-                                        matchSources = JSON.parse(this.dataset.sources);
-                                        if(matchSources.length > 0) {
-                                            content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(", ") + "</td></tr>";
+                                if (instance.state.ajax.isFetching || !instance.state.ajax.canFetch) {
+                                    return
+                                }
+
+                                $.ajax({
+                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                    type: 'GET',
+                                    dataType: 'json',
+                                    dataset: instance.reference.dataset,
+                                    async: true,
+                                    beforeSend: function() {
+                                        instance.state.ajax.isFetching = true;
+                                    },
+                                    success: function(res) {
+                                        content = "<div>";
+                                        content += "<table>";
+                                        content += "<tr><td class=\"\">name</td><td>" + res.name + "</td></tr>";
+                                        content += "<tr><td class=\"\">indicators</td><td>";
+                                        res.synonyms.forEach((synonym) => {
+                                            content += '"' + synonym.name + '" ';
+                                        });
+                                        content += "</td></tr>";
+                                        content += "<tr><td class=\"\">parent term</td><td>";
+                                        if (res.parent) {
+                                            content += res.parent.name;
+                                        } else {
+                                            content += 'none';
                                         }
+                                        content += "</td></tr>";
+                                        content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary
+                                            .display_name + "</td></tr>";
+                                        content += "<tr><td class=\"\">uri</td><td>" + res.uri + "</td></tr>";
+
+                                        if (this.dataset.sources) {
+                                            matchSources = JSON.parse(this.dataset.sources);
+                                            if (matchSources.length > 0) {
+                                                content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(
+                                                    ", ") + "</td></tr>";
+                                            }
+                                        }
+
+                                        content += "</table>";
+                                        content += "<a href=\"" + this.dataset.filterLink +
+                                            "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
+                                        content += "</div>";
+
+                                        instance.setContent(content);
+                                        instance.state.ajax.isFetching = false;
                                     }
-
-                                    content += "</table>";
-                                    content += "<a href=\"" + this.dataset.filterLink + "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
-                                    content += "</div>";
-
-                                    instance.setContent(content);
-                                    instance.state.ajax.isFetching = false;
-                                }
-                            });
-                        },
-                        onHidden(instance) {
-                            instance.setContent('Loading...')
-                            instance.state.ajax.canFetch = true
-                        },
-                    });
+                                });
+                            },
+                            onHidden(instance) {
+                                instance.setContent('Loading...')
+                                instance.state.ajax.canFetch = true
+                            },
+                        });
                     </script>
                 @endif
 
                 @if (count($dataPublication->msl_enriched_keywords) > 0)
                     <br>
                     <details class="collapse collapse-arrow word-card-collapser" open>
-                    <summary class="collapse-title">MSL enriched keywords 
-                        <x-ri-information-line id="enriched-keywords-popup" class="info-icon"/>
-                    </summary>
-                    <div class="collapse-content word-card-parent" id="enriched-keywords-container">
-                        @foreach ( $dataPublication->msl_enriched_keywords as $keyword)
-                            <div
-                                class="word-card" 
-                                data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
-                                data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
-                                data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
-                                data-highlight="text-keyword"
-                                data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
-                                data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'
-                            >
-                                {{ $keyword->msl_enriched_keyword_label }}
-                            </div>
-                        @endforeach
-                    </div>
-                    </details> 
+                        <summary class="collapse-title">MSL enriched keywords
+                            <x-ri-information-line id="enriched-keywords-popup" class="info-icon" />
+                        </summary>
+                        <div class="collapse-content word-card-parent" id="enriched-keywords-container">
+                            @foreach ($dataPublication->msl_enriched_keywords as $keyword)
+                                <div class="word-card"
+                                    data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
+                                    data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
+                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
+                                    data-highlight="text-keyword" data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
+                                    data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'>
+                                    {{ $keyword->msl_enriched_keyword_label }}
+                                </div>
+                            @endforeach
+                        </div>
+                    </details>
                     <script>
                         tippy('#enriched-keywords-popup', {
                             content: "MSL enriched keywords include MSL vocabulary terms corresponding to the keywords originally assigned by the authors, parent terms, and MSL vocabulary terms corresponding to words used in the data publication title and abstract. In enriching keyword sets like this, MSL strives to make datasets more findable. See anything odd? Contact us at epos.msl.data@uu.nl. MSL vocabularies available on GitHub - see top tab ‘vocabularies'.",
@@ -285,37 +275,40 @@
                                     dataType: 'json',
                                     dataset: instance.reference.dataset,
                                     async: true,
-                                    beforeSend: function () {
+                                    beforeSend: function() {
                                         instance.state.ajax.isFetching = true;
                                     },
-                                    success: function(res) {        
+                                    success: function(res) {
                                         content = "<div>";
                                         content += "<table>";
                                         content += "<tr><td class=\"\">name</td><td>" + res.name + "</td></tr>";
                                         content += "<tr><td class=\"\">indicators</td><td>";
                                         res.synonyms.forEach((synonym) => {
-                                        content += '"' + synonym.name + '" ';
+                                            content += '"' + synonym.name + '" ';
                                         });
                                         content += "</td></tr>";
                                         content += "<tr><td class=\"\">parent term</td><td>";
-                                        if(res.parent) {
-                                        content += res.parent.name;
+                                        if (res.parent) {
+                                            content += res.parent.name;
                                         } else {
-                                        content += 'none';
+                                            content += 'none';
                                         }
                                         content += "</td></tr>";
-                                        content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary.display_name + "</td></tr>";
+                                        content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary
+                                            .display_name + "</td></tr>";
                                         content += "<tr><td class=\"\">uri</td><td>" + res.uri + "</td></tr>";
 
-                                        if(this.dataset.sources) {
+                                        if (this.dataset.sources) {
                                             matchSources = JSON.parse(this.dataset.sources);
-                                            if(matchSources.length > 0) {
-                                                content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(", ") + "</td></tr>";
+                                            if (matchSources.length > 0) {
+                                                content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(
+                                                    ", ") + "</td></tr>";
                                             }
                                         }
 
                                         content += "</table>";
-                                        content += "<a href=\"" + this.dataset.filterLink + "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
+                                        content += "<a href=\"" + this.dataset.filterLink +
+                                            "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
                                         content += "</div>";
 
                                         instance.setContent(content);
@@ -340,7 +333,7 @@
                     <h4 class="detail-entry-title">MSL original sub domains</h4>
                     <div class="word-card-parent justify-start">
                         {{-- hover behaviour: highlights all related tags above --}}
-                        @foreach ( $dataPublication->msl_subdomains_original as $domain)
+                        @foreach ($dataPublication->msl_subdomains_original as $domain)
                             <div class="word-card">{{ $domain['msl_subdomain_original'] }}</div>
                         @endforeach
                     </div>
@@ -350,15 +343,13 @@
             @if (count($dataPublication->msl_subdomains_interpreted) > 0)
                 <br>
                 <div class="detail-entry-div">
-                    <h4 class="detail-entry-title">MSL enriched sub domains <x-ri-information-line id="enriched-subdomains-popup" class="info-icon"/></h4>
+                    <h4 class="detail-entry-title">MSL enriched sub domains <x-ri-information-line
+                            id="enriched-subdomains-popup" class="info-icon" /></h4>
                     <div class="word-card-parent justify-start">
                         {{-- hover behaviour: highlights all related tags above --}}
-                        @foreach ( $dataPublication->msl_subdomains_interpreted as $domain)
-                            <div 
-                                class="word-card" 
-                                data-toggle="domain-highlight"
-                                data-domain="{{ $domain['msl_subdomain_interpreted'] }}"                                                                                        
-                            >
+                        @foreach ($dataPublication->msl_subdomains_interpreted as $domain)
+                            <div class="word-card" data-toggle="domain-highlight"
+                                data-domain="{{ $domain['msl_subdomain_interpreted'] }}">
                                 {{ $domain['msl_subdomain_interpreted'] }}
                             </div>
                         @endforeach
@@ -388,12 +379,10 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source</h4>
                     <div class="detail-entry-content ">
-                        @include('components.list-views.table-list',[
-                            'entries' => [
-                                $dataPublication->msl_source
-                            ],
+                        @include('components.list-views.table-list', [
+                            'entries' => [$dataPublication->msl_source],
                             'withKeys' => false,
-                            'textSize' => 'base'
+                            'textSize' => 'base',
                         ])
                     </div>
                 </div>
@@ -404,12 +393,10 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source publisher</h4>
                     <div class="detail-entry-content">
-                        @include('components.list-views.table-list',[
-                            'entries' => [
-                                $dataPublication->msl_publisher
-                            ],
+                        @include('components.list-views.table-list', [
+                            'entries' => [$dataPublication->msl_publisher],
                             'withKeys' => false,
-                            'textSize' => 'base'
+                            'textSize' => 'base',
                         ])
                     </div>
                 </div>
@@ -420,23 +407,21 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">DOI</h4>
                     <div class="detail-entry-content">
-                        @include('components.list-views.table-list',[
-                            'entries' => [
-                                $dataPublication->msl_doi
-                            ],
+                        @include('components.list-views.table-list', [
+                            'entries' => [$dataPublication->msl_doi],
                             'withKeys' => false,
-                            'textSize' => 'base'
+                            'textSize' => 'base',
                         ])
                     </div>
                 </div>
             @endif
-            
+
             @if (count($dataPublication->msl_creators) > 0)
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Creators</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $dataPublication->msl_creators as $creator)
+                        @foreach ($dataPublication->msl_creators as $creator)
                             @include('components.list-views.table-list', [
                                 'entries' => [
                                     $creator->getFullName(),
@@ -452,15 +437,17 @@
             @endif
 
             @if (count($dataPublication->msl_contributors) > 0)
-            <br>
+                <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Contributors</h4>
                     <div class="detail-entry-content">
-                        @foreach ( $dataPublication->msl_contributors as $contributor)
-                            @include('components.list-views.table-list',[
+                        @foreach ($dataPublication->msl_contributors as $contributor)
+                            @include('components.list-views.table-list', [
                                 'entries' => [
                                     $contributor->getFullName(),
-                                    implode(' ', preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
+                                    implode(
+                                        ' ',
+                                        preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
                                     implode(' | ', $contributor->getAffilitationNames()),
                                     implode(' | ', $contributor->getNameIdentifiers()),
                                 ],
@@ -470,7 +457,7 @@
                     </div>
                 </div>
             @endif
-            
+
             @if ($dataPublication->msl_citation != '')
                 <br>
                 <div class="detail-entry-div">
@@ -487,21 +474,23 @@
                     <h4 class="detail-entry-title">References</h4>
                     <div class="detail-entry-content">
                         @foreach ($dataPublication->msl_related_identifiers as $relatedidentifier)
-                        @php
-                            $dataPublicationList = [];
-                            if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
-                                    $dataPublicationList[] = "https://doi.org/".$relatedidentifier->msl_related_identifier_type;
-                            } else {
-                                if($relatedidentifier->msl_related_identifier_type != '') {
-                                    $dataPublicationList[] = $relatedidentifier->msl_related_identifier_type;
-                                }
+                            @php
+                                $dataPublicationList = [];
+                                if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
+                                    $dataPublicationList[] =
+                                        'https://doi.org/' . $relatedidentifier->msl_related_identifier_type;
+                                } else {
+                                    if ($relatedidentifier->msl_related_identifier_type != '') {
+                                        $dataPublicationList[] = $relatedidentifier->msl_related_identifier_type;
+                                    }
 
-                                if($relatedidentifier->msl_related_identifier_relation_type != '') {
-                                    $dataPublicationList[] = $relatedidentifier->msl_related_identifier_relation_type;
+                                    if ($relatedidentifier->msl_related_identifier_relation_type != '') {
+                                        $dataPublicationList[] =
+                                            $relatedidentifier->msl_related_identifier_relation_type;
+                                    }
                                 }
-                            }
-                        @endphp
-                            @include('components.list-views.table-list',[
+                            @endphp
+                            @include('components.list-views.table-list', [
                                 'entries' => $dataPublicationList,
                                 'withKeys' => false,
                             ])
@@ -509,11 +498,10 @@
                     </div>
                 </div>
             @endif
-            
 
             @if (count($dataPublication->msl_dates) > 0)
                 <br>
-                <div class="detail-entry-div">  
+                <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Dates</h4>
                     <div class="detail-entry-content">
                         @php
@@ -523,7 +511,7 @@
                             }
                         @endphp
 
-                        @include('components.list-views.table-list',[
+                        @include('components.list-views.table-list', [
                             'entries' => $dataPublicationList,
                             'withKeys' => true,
                         ])
@@ -536,28 +524,28 @@
                 <h4 class="detail-entry-title">Language</h4>
                 <div class="detail-entry-content">
                     @if ($dataPublication->msl_language != '')
-                        <p class="text-sm p-0">{{ $dataPublication->msl_language }}</p>                                        
+                        <p class="text-sm p-0">{{ $dataPublication->msl_language }}</p>
                     @else
-                        <p class="text-sm p-0 italic">- no language entry found -</p>                                        
+                        <p class="text-sm p-0 italic">- no language entry found -</p>
                     @endif
                 </div>
             </div>
 
-
             <br>
-            @if (count($dataPublication->msl_funding_references) > 0)                                 
+            @if (count($dataPublication->msl_funding_references) > 0)
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Funding References</h4>
                     <div class="detail-entry-content">
                         @foreach ($dataPublication->msl_funding_references as $fundingReference)
                             <div class="py-2">
-                                @include('components.list-views.table-list',[
+                                @include('components.list-views.table-list', [
                                     'entries' => [
-                                        "Funder Name" => $fundingReference->msl_funding_reference_funder_name,
-                                        "Funder Identifier" => $fundingReference->msl_funding_reference_funder_identifier,
-                                        "Scheme URI" => $fundingReference->msl_funding_reference_scheme_uri,
-                                        "Award Number" => $fundingReference->msl_funding_reference_award_number,
-                                        "Award Title" => $fundingReference->msl_funding_reference_award_title,
+                                        'Funder Name' => $fundingReference->msl_funding_reference_funder_name,
+                                        'Funder Identifier' =>
+                                            $fundingReference->msl_funding_reference_funder_identifier,
+                                        'Scheme URI' => $fundingReference->msl_funding_reference_scheme_uri,
+                                        'Award Number' => $fundingReference->msl_funding_reference_award_number,
+                                        'Award Title' => $fundingReference->msl_funding_reference_award_title,
                                     ],
                                     'withKeys' => true,
                                 ])
@@ -566,7 +554,6 @@
                     </div>
                 </div>
             @endif
-                    
 
             @if (count($dataPublication->msl_rights) > 0)
                 <br>
@@ -574,13 +561,13 @@
                     <h4 class="detail-entry-title">Rights</h4>
                     <div class="detail-entry-content">
                         @foreach ($dataPublication->msl_rights as $right)
-                            @include('components.list-views.table-list',[
+                            @include('components.list-views.table-list', [
                                 'entries' => [
-                                    "Name" => $right->msl_right,
-                                    "URI" => $right->msl_right_uri,
-                                    "Identifier" => $right->msl_right_identifier,
-                                    "Identifier Scheme" => $right->msl_right_identifier_scheme,
-                                    "Scheme URI" => $right->msl_right_scheme_uri,
+                                    'Name' => $right->msl_right,
+                                    'URI' => $right->msl_right_uri,
+                                    'Identifier' => $right->msl_right_identifier,
+                                    'Identifier Scheme' => $right->msl_right_identifier_scheme,
+                                    'Scheme URI' => $right->msl_right_scheme_uri,
                                 ],
                                 'withKeys' => true,
                             ])
@@ -590,17 +577,16 @@
             @endif
 
             <h3 class="border-none py-5 pt-10">Locations</h3>
-            
+
             @if (count($dataPublication->msl_geolocations) == 0 && $dataPublication->msl_geojson_featurecollection == '')
                 <p class="italic text-center w-full">- no geo-locations found -</p>
             @else
-
                 @if (count($dataPublication->msl_geolocations) > 0)
                     <br>
                     <div class="detail-entry-div">
                         <h4 class="detail-entry-title">Geo location(s)</h4>
                         <div class="detail-entry-content">
-                            @foreach ( $dataPublication->msl_geolocations as $locationPackage)
+                            @foreach ($dataPublication->msl_geolocations as $locationPackage)
                                 @foreach ($locationPackage as $location)
                                     <p class="text-sm">{{ $location }}</p>
                                 @endforeach
@@ -618,25 +604,25 @@
                         </div>
                         <script>
                             function onEachFeature(feature, layer) {
-                                if (feature.properties.name) {                                
+                                if (feature.properties.name) {
                                     var popupContent = `<h5>${feature.properties.name}</h5>`;
 
                                     layer.bindPopup(popupContent);
                                 }
                             }
-                        
-                            var features = <?php echo $dataPublication->msl_geojson_featurecollection; ?>;        				
-                        
+
+                            var features = <?php echo $dataPublication->msl_geojson_featurecollection; ?>;
+
                             var map = L.map('map').setView([0, 0], 1);
-                            
+
                             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
                                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
-                                                                                                                    
+
                             L.geoJSON(features, {
                                 onEachFeature: onEachFeature
-                            }).addTo(map);                                                                              
+                            }).addTo(map);
                         </script>
                     </div>
                 @endif
@@ -644,8 +630,8 @@
         </div>
     </div>
 
-@push('vite')
-    @vite(['resources/js/tooltip.js'])
-@endpush
+    @push('vite')
+        @vite(['resources/js/tooltip.js'])
+    @endpush
 
 </x-layout_main>

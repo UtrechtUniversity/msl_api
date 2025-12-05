@@ -1,4 +1,3 @@
-
 {{-- 
     
     $allTabs = [
@@ -21,21 +20,18 @@ whitespace-nowrap
     @php
         if ($checkedElementId == '') {
             foreach (array_reverse($allTabs) as $description => $content) {
-                if ($content['content']  != '') {
+                if ($content['content'] != '') {
                     $checkedElementId = $content['id'];
                 }
             }
         }
     @endphp
 
-    @foreach ( $allTabs as $description => $content)
-        @if ($content['content']  != '')
-            <input type="radio" name="my_tabs_2" role="tab" class="tab hover-interactive p-2 px-4 !text-primary-900" 
-            aria-label="{{ $description }}" 
-            @if ($content['id'] == $checkedElementId) checked='checked' @endif
-            />
-            <div role="tabpanel" 
-                class="tab-content tabs-div bg-primary-100 
+    @foreach ($allTabs as $description => $content)
+        @if ($content['content'] != '')
+            <input type="radio" name="my_tabs_2" role="tab" class="tab hover-interactive p-2 px-4 !text-primary-900"
+                aria-label="{{ $description }}" @if ($content['id'] == $checkedElementId) checked='checked' @endif />
+            <div role="tabpanel" class="tab-content tabs-div bg-primary-100 
                 whitespace-normal">
                 <p>{!! $content['content'] !!}</p>
             </div>

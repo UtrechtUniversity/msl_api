@@ -1,11 +1,10 @@
 <x-mail::message>
-# Dear {{ $formData['firstName'] }}!
-Thanks for reaching out
+    # Dear {{ $formData['firstName'] }}!
+    Thanks for reaching out
 
-We will come back to you soon.
+    We will come back to you soon.
 
+    With kind regards,
 
-With kind regards,
-
-{{ config('app.name') }}
+    {{ config('app.name') }}
 </x-mail::message>

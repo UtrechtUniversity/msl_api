@@ -127,22 +127,23 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                            	<a id="navbarDropdownTools" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdownTools" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Surveys
                                 </a>
-                                
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownTools">
-                                    <a class="dropdown-item" href="{{ route('status-survey') }}">                                                                              
+                                    <a class="dropdown-item" href="{{ route('status-survey') }}">
                                         Change status of survey
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('download-survey') }}">                                                                              
+                                    <a class="dropdown-item" href="{{ route('download-survey') }}">
                                         Download survey
                                     </a>
-                                    
+
                                 </div>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('seeders') }}">{{ __('Seeders') }}</a>
                             </li>
@@ -152,8 +153,9 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdownActions" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdownActions" class="nav-link dropdown-toggle" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
                                     Labs
                                 </a>
 
@@ -198,10 +200,10 @@
                             </li>
 
                             <!--
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('queues') }}">{{ __('Queue') }}</a>
-                                    </li>
-                                    -->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ route('queues') }}">{{ __('Queue') }}</a>
+                                        </li>
+                                        -->
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

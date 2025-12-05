@@ -2,12 +2,12 @@
 <x-layout_main>
     <div class="mainContentDiv ">
         <div class="tab-links-parent">
-            @include('components.tab-links',[
-                'routes'        => [
+            @include('components.tab-links', [
+                'routes' => [
                     'Laboratory' => route('lab-detail', ['id' => $laboratory->name]),
-                    'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->name])
+                    'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->name]),
                 ],
-                'routeActive'   => route('lab-detail-equipment', ['id' => $laboratory->name])
+                'routeActive' => route('lab-detail-equipment', ['id' => $laboratory->name]),
             ])
         </div>
         <div class="main-content">
@@ -23,10 +23,9 @@
                     @if (count($equipment) > 0)
 
                         @foreach ($equipment as $equipmentPiece)
-
-                            
                             <details class="collapse collapse-arrow wordCardCollapser bg-primary-100 ">
-                                <summary class="collapse-title font-bold hover-interactive">{{ $equipmentPiece->title }}</summary>
+                                <summary class="collapse-title font-bold hover-interactive">{{ $equipmentPiece->title }}
+                                </summary>
                                 <div class="collapse-content">
                                     @if (strlen($equipmentPiece->msl_description_html) > 0)
                                         <div class="p-4">
@@ -38,60 +37,62 @@
 
                                     <div class="flex flex-col w-full p-2 justify-center items-center">
 
-
                                         <div class="w-3/4 max-w-96 flex flex-row">
                                             <p class="w-1/2 place-content-center text-left font-bold">
-                                            Category
+                                                Category
                                             </p>
                                             <p class="w-1/2 text-left">{{ $equipmentPiece->msl_category_name }}</p>
                                         </div>
 
                                         <div class="w-3/4 max-w-96 flex flex-row">
                                             <p class="w-1/2 place-content-center text-left font-bold">
-                                            Group
+                                                Group
                                             </p>
                                             <p class="w-1/2 text-left">{{ $equipmentPiece->msl_group_name }}</p>
                                         </div>
 
                                         <div class="w-3/4 max-w-96 flex flex-row">
                                             <p class="w-1/2 place-content-center text-left font-bold">
-                                            Type
+                                                Type
                                             </p>
                                             <p class="w-1/2 text-left">{{ $equipmentPiece->msl_type_name }}</p>
                                         </div>
-                        
-                                    @if(isset($equipmentPiece->msl_equipment_addons))                                            
-                                        <div class="w-full flex flex-row p-2">
-                                            <p class="w-1/2 place-content-center text-left font-bold">
-                                            Addons
-                                            </p>
-                                        </div>
-                                        @foreach ($equipmentPiece->msl_equipment_addons as $addon)
-                                            <div class="bg-base-300 mb-4">
-                                            <div class="w-full flex flex-row p-2">
-                                                <p class="w-1/2 place-content-center text-left font-bold">
-                                                Type
-                                                </p>
-                                                <p class="w-1/2 text-left">{{ $addon->msl_equipment_addon_type }}</p>
-                                            </div>
 
+                                        @if (isset($equipmentPiece->msl_equipment_addons))
                                             <div class="w-full flex flex-row p-2">
                                                 <p class="w-1/2 place-content-center text-left font-bold">
-                                                Group
+                                                    Addons
                                                 </p>
-                                                <p class="w-1/2 text-left">{{ $addon->msl_equipment_addon_group }}</p>
                                             </div>
+                                            @foreach ($equipmentPiece->msl_equipment_addons as $addon)
+                                                <div class="bg-base-300 mb-4">
+                                                    <div class="w-full flex flex-row p-2">
+                                                        <p class="w-1/2 place-content-center text-left font-bold">
+                                                            Type
+                                                        </p>
+                                                        <p class="w-1/2 text-left">
+                                                            {{ $addon->msl_equipment_addon_type }}</p>
+                                                    </div>
 
-                                            <div class="w-full flex flex-row p-2">
-                                                <p class="w-1/2 place-content-center text-left font-bold">
-                                                Description
-                                                </p>
-                                                <p class="w-1/2 text-left">{{ $addon->msl_equipment_addon_description }}</p>
-                                            </div>
-                                            </div>
-                                        @endforeach
-                                    @endif
-                                </div>
+                                                    <div class="w-full flex flex-row p-2">
+                                                        <p class="w-1/2 place-content-center text-left font-bold">
+                                                            Group
+                                                        </p>
+                                                        <p class="w-1/2 text-left">
+                                                            {{ $addon->msl_equipment_addon_group }}</p>
+                                                    </div>
+
+                                                    <div class="w-full flex flex-row p-2">
+                                                        <p class="w-1/2 place-content-center text-left font-bold">
+                                                            Description
+                                                        </p>
+                                                        <p class="w-1/2 text-left">
+                                                            {{ $addon->msl_equipment_addon_description }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
                             </details>
                         @endforeach
                     @else
@@ -100,6 +101,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </x-layout_main>

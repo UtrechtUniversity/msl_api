@@ -2,7 +2,6 @@
 
 --}}
 
-
 <div class="
     group
     h-fit
@@ -16,12 +15,13 @@
         truncate
     ">
         @if (isset($closeIcon))
-            <x-ri-close-line class="close-icon"/>        
+            <x-ri-close-line class="close-icon" />
         @endif
-    {{  substr($word, 0, 40)  }}
+        {{ substr($word, 0, 40) }}
     </div>
-    
-    <div class="
+
+    <div
+        class="
         word-card
         hover-neutral
         hidden
@@ -33,9 +33,9 @@
         group-hover:left-0
         group-hover:z-10
     ">
-    @if (isset($closeIcon))
-        <x-ri-close-line class="close-icon"/>        
-    @endif
+        @if (isset($closeIcon))
+            <x-ri-close-line class="close-icon" />
+        @endif
         {{ $word }}
     </div>
 
