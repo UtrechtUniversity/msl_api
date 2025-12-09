@@ -9,7 +9,6 @@
 @import './generalStyles/icons.css';
 @import './generalStyles/daisyUI.css';
 @import './generalStyles/utilities.css';
-@import './generalStyles/pages.css';
 @import './generalStyles/divs.css';
 @custom-variant hover (&:hover);
 
@@ -97,14 +96,10 @@
 
 
     /* all the word cards including the parent */
-
-
     .word-card-parent{
       @apply 
       flex flex-wrap 
       justify-center
-      /* items-start */
-      /* items-stretch */
       content-start
       gap-2 w-full
     }
@@ -140,10 +135,6 @@
     .index-opacity-child{
       @apply opacity-100
     }
-
-
-
-
     
     /*###############
     footer
