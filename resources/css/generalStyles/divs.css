@@ -79,10 +79,10 @@
       min-w-10
     }
     .pagination-button-last-left{
-      @apply rounded-l-xl hover:rounded-l-xl w-6 min-[500px]:w-18 md:w-24 
+      @apply rounded-l-xl hover:rounded-l-xl w-6 p-1 min-[500px]:w-18 md:w-24 
     }
     .pagination-button-last-right{
-      @apply rounded-r-xl hover:rounded-r-xl w-6 min-[500px]:w-18 md:w-24 
+      @apply rounded-r-xl hover:rounded-r-xl w-6 p-1 min-[500px]:w-18 md:w-24 
     }
 
 
