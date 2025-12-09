@@ -62,13 +62,13 @@
                                     @if ($link == 'divider')
                                         <summary class="menu-title">{{ $name }}</summary>
                                     @else
-                                        <li><a class="nav-button-sub" href="{{ $link }}">{{ $name }}</a>
+                                        <li><a class="nav-button-sub hover-interactive" href="{{ $link }}">{{ $name }}</a>
                                         </li>
                                     @endif
                                 @endforeach
                             </ul>
                         @else
-                            <li><a class="nav-button-sub" href="{{ $linkOrArray }}">{{ $name }}</a></li>
+                            <li><a class="nav-button-sub hover-interactive" href="{{ $linkOrArray }}">{{ $name }}</a></li>
                         @endif
                     @endforeach
                 </ul>
@@ -94,7 +94,7 @@
                                         @if ($link == 'divider')
                                             <summary class="menu-title">{{ $name }}</summary>
                                         @else
-                                            <li><a class="nav-button-sub"
+                                            <li><a class="nav-button-sub  hover-interactive"
                                                     href="{{ $link }}">{{ $name }}</a></li>
                                         @endif
                                     @endforeach
@@ -102,7 +102,7 @@
 
                             </div>
                         @else
-                            <a class="nav-button" href="{{ $linkOrArray }}">{{ $name }}</a>
+                            <a class="nav-button hover-interactive" href="{{ $linkOrArray }}">{{ $name }}</a>
                         @endif
                     @endforeach
                 </div>
