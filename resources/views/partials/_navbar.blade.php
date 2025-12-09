@@ -39,7 +39,7 @@
         <div class="navbar-end w-full">
 
             {{-- min nav --}}
-            <div class="dropdown dropdown-hover relative px-4">
+            <div class="dropdown relative px-4">
 
                 <div tabindex="0" role="button" class="btn btn-ghost min-[810px]:hidden hover-interactive">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 " fill="none" viewBox="0 0 24 24"
@@ -50,7 +50,7 @@
                     <h3 class="align-top text-primary-900">Menu</h3>
                 </div>
 
-                <ul tabindex="0"
+                <ul tabindex="-1"
                     class="menu menu-md dropdown-content bg-base-100 rounded-box mt-3 w-52 px-2 shadow z-10
               absolute top-6 right-0
               ">
