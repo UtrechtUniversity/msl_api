@@ -85,7 +85,7 @@
                 <p class="text-center pt-0 italic">for folders: click opens new tab</p>
 
                 <div
-                    class='bg-primary-100 flex flex-wrap overflow-auto gap-5 w-1/2 max-h-96 p-4 rounded-md content-start'>
+                    class='bg-primary-100 flex flex-wrap overflow-auto gap-5 w-11/12 md:w-2/3 max-h-96 p-4 rounded-md content-start'>
 
                     @foreach ($dataPublication->getFiles('folders') as $folder)
                         <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover-interactive h-12"
@@ -93,8 +93,8 @@
 
                             <div class='flex justify-left items-center w-full'>
                                 <div class=""> <x-ri-folder-3-fill class="folder-icon mx-6" /></div>
-                                <div class="overflow-hidden ">
-                                    <p class='no-underline py-0 px-4 '>
+                                <div class="overflow-hidden">
+                                    <p class='truncate py-0 px-4 '>
                                         {{ $folder->msl_file_name }}
                                     </p>
                                 </div>
@@ -111,8 +111,8 @@
                                     <p class="no-underline py-0 px-4 w-20">{{ $loop->iteration }}</p>
                                 </div>
                                 <div> <x-ri-file-3-fill class="file-icon mr-6" /> </div>
-                                <div class="overflow-hidden py-0 px-4">
-                                    <p class='no-underline '>
+                                <div class="overflow-hidden text-wrap py-0 px-4">
+                                    <p class='truncate'>
                                         {{ $file->msl_file_name }}
                                     </p>
                                 </div>
