@@ -41,6 +41,11 @@ class Contributor implements CkanArrayInterface
         return array_column($this->affiliations, 'msl_creator_affiliation_name');
     }
 
+    public function getNameIdentifiers(): array
+    {
+        return array_column($this->affiliations, 'msl_creator_name_identifier');
+    }
+
     public function addNameIdentifier(NameIdentifier $nameIdentifier): void
     {
         $this->nameIdentifiers[] = $nameIdentifier;

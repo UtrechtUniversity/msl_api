@@ -8,27 +8,30 @@
 
 --}}
 
-
 <div class="w-full flex-col space-y-2 
     place-content-center h-full">
 
-    @foreach ( $ElementsArray as $element)
+    @foreach ($ElementsArray as $element)
         <div class="form-control">
-            <label class="cursor-pointer label p-2
-             hover:bg-secondary-100 hover:rounded-lg hover:text-secondary-900">
-                <span class=" pr-4 text-sm">{{ $element }}</span>
-                <input type="checkbox" 
-                name="{{ $sectionName }}"
-                class="checkbox checkbox-secondary checkbox-md
-                        @if ($errors->has($sectionName))
-                            error-highlight-input
-                        @endif 
-                " 
-                @if (isset($checked) && $checked || old( $sectionName ) )
-                    checked="checked"
-                @endif
-                />
-                
+            <label
+                class="  label cursor-pointer 
+                            flex
+                            w-full
+                            flex-row
+                            gap-4 
+                            p-2
+                            justify-between
+                            hover-interactive">
+                <span class="label-text text-primary-900 text-center">{{ $element }}</span>
+                <input type="checkbox" name="{{ $sectionName }}"
+                    class="     checkbox 
+                            checked:bg-secondary-500 hover:bg-secondary-500
+                            border
+                            border-secondary-500
+                        @if ($errors->has($sectionName)) error-highlight-input @endif 
+                "
+                    @if ((isset($checked) && $checked) || old($sectionName)) checked="checked" @endif />
+
             </label>
             @if ($errors->has($sectionName) && isset($showErrMess) && $showErrMess)
                 <p class="error-highlight"> {{ $errors->first($sectionName) }} </p>
@@ -36,5 +39,3 @@
         </div>
     @endforeach
 </div>
-
-
