@@ -342,10 +342,10 @@
                     ],
                     'Third Tab html tags' => [
                         'content' => '<h2>This is a title</h2> 
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                                                    Doloremque reprehenderit ex a, corrupti totam aspernatur porro 
-                                                    assumenda modi aut labore! Qui vel corporis debitis, nesciunt 
-                                                    odio quibusdam vitae enim doloremque!</p>',
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                                                Doloremque reprehenderit ex a, corrupti totam aspernatur porro 
+                                                                assumenda modi aut labore! Qui vel corporis debitis, nesciunt 
+                                                                odio quibusdam vitae enim doloremque!</p>',
                         'id' => 'id3',
                     ],
                 ],

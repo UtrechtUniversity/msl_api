@@ -143,7 +143,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.data-access', ['facets' => $result->getFacets(),'totalResultsCount' => $result->getTotalResultsCount(),'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
+        return view('frontend.data-access', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
     }
 
     /**

@@ -128,19 +128,19 @@
                     'allTabs' => [
                         'Paleomagnetism' => [
                             'content' => 'For paleomagnetic data, publish your data at MagIC, 
-                                                and use their data standards 
-                                                <a class="hover-interactive underline" href="www2.earthref.org/MagIC">www2.earthref.org/MagIC</a>',
+                                                                and use their data standards 
+                                                                <a class="hover-interactive underline" href="www2.earthref.org/MagIC">www2.earthref.org/MagIC</a>',
                             'id' => 'paleoMag',
                         ],
                         'Microscopy ' => [
                             'content' => 'Structure 2D micrographs using StraboMicro, 
-                                                and include the exported .smz file in your data publication 
-                                                <a class="hover-interactive underline" href="Strabospot.org/whatisStrabomicro">Strabospot.org/whatisStrabomicro</a>',
+                                                                and include the exported .smz file in your data publication 
+                                                                <a class="hover-interactive underline" href="Strabospot.org/whatisStrabomicro">Strabospot.org/whatisStrabomicro</a>',
                             'id' => 'microTomo',
                         ],
                         'Geochemistry ' => [
                             'content' => 'Geochemistry: For Geochemistry data, publish your data at EarthChem, and follow their data standards: 
-                                  <a class="hover-interactive underline" href="https://www.earthchem.org/ecl/submission-guidelines/">https://www.earthchem.org/ecl/submission-guidelines/</a>',
+                                                  <a class="hover-interactive underline" href="https://www.earthchem.org/ecl/submission-guidelines/">https://www.earthchem.org/ecl/submission-guidelines/</a>',
                             'id' => 'geochem',
                         ],
                     ],
