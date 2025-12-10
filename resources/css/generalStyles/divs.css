@@ -14,8 +14,6 @@
       @apply max-w-[1400px]
     }
 
-
-
     /* main div containing detail-view elements */
     .detail-div{
       @apply bg-primary-200 grow w-full 
@@ -85,9 +83,6 @@
       @apply rounded-r-xl hover:rounded-r-xl w-6 p-1 min-[500px]:w-18 md:w-24 
     }
 
-
-
-
     .search-bar-container{
       @apply 
       relative flex items-center w-auto h-12 
@@ -108,7 +103,6 @@
       bg-white  
     }
 
-
     .timeline-additional-styling{
       @apply
       border-1 
@@ -126,35 +120,6 @@
       @apply
       sm:max-w-(--breakpoint-md)
     }
-
-
-    /* =============== old =============== */
-
-
-    .listMapDiv{
-        @apply w-full flex flex-col
-      }
-       
-
-  
-      /*###############
-        detail views
-        ###############*/
-
-      
-      /*###############
-        Components
-        ###############*/
-      /* top Map List tabLinks */
-
-
-          /*###############
-      general elements
-      ###############*/
-    /* .dividers{
-      @apply divide-y divide-primary-700
-    } */
-
 
     /*###############
     various
