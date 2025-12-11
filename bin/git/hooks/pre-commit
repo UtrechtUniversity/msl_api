@@ -74,5 +74,4 @@ if [ $PHP_STATUS -ne 0 ] || [ $BLADE_STATUS -ne 0 ]; then
 fi
 # Else success`!
 echo ""
-echo "✔ All staged PHP and Blade files are correctly formatted!"
 exit 0
