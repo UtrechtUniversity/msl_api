@@ -73,5 +73,4 @@ if [ $PHP_STATUS -ne 0 ] || [ $BLADE_STATUS -ne 0 ]; then
     exit 1
 fi
 # Else success`!
-echo ""
 exit 0
