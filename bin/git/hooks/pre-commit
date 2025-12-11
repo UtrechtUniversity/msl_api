@@ -20,26 +20,59 @@ spinner() {
 
     printf "\rDone.                     \n"
 }
-#  TODO do I check only for updated files?
-# if not do this.
-echo "Checking PHP code style…"
 
-# Run Pint in background
-vendor/bin/pint --quiet &
-# $! is the PID of the most recent background process.
-spinner $!
-# Statis of spinner which is the status of pint
-STATUS=$?
 
-if [ $STATUS -eq 0 ]; then
-    
-    printf "\r✔ Pint completed successfully!\n"
-    
-    echo "Adding linted changes to Git…"
-    git add -u   # Stages updated files only
+echo "Checking PHP and Blade code style…"
 
-    printf "✔ Changes have been staged.\n"
+
+# Get relevant staged files 
+BLADE_FILES=$(git diff --cached --name-only -- '*.blade.php')
+PHP_FILES=$(git diff --cached --name-only -- '*.php' ':!*.blade.php')
+
+PHP_STATUS=0
+BLADE_STATUS=0
+
+if [ -z "$PHP_FILES" ]; then
+    echo "No staged PHP files to check."
 else
-    printf "\r✖ Pint found issues. Fixing needed.\n"
+    # Run Pint in background
+    vendor/bin/pint --quiet $PHP_FILES &
+    # $! is the PID of the most recent background process.
+    spinner $!
+    # Status of spinner which is the status of pint
+    PHP_STATUS=$?
+
+    if [ $PHP_STATUS -eq 0 ]; then
+        printf "\r✔ Pint passed for PHP files!\n"
+        git add $PHP_FILES
+    else
+        printf "\r✖ Pint failed for PHP files.\n"
+    fi
+fi
+
+# Similar procedure for blade files
+if [ -z "$BLADE_FILES" ]; then
+    echo "No staged Blade files to check."
+else
+    ./node_modules/.bin/prettier --write $BLADE_FILES &
+    spinner $!
+    BLADE_STATUS=$?
+
+    if [ $BLADE_STATUS -eq 0 ]; then
+        printf "\r✔ Prettier passed for Blade files!\n"
+        git add $BLADE_FILES
+    else
+        printf "\r✖ Prettier failed for Blade files.\n"
+    fi
+fi
+
+# if one check failed then exit
+if [ $PHP_STATUS -ne 0 ] || [ $BLADE_STATUS -ne 0 ]; then
+    echo ""
+    echo "✖ Some staged files did not pass formatting checks."
     exit 1
 fi
+# Else success`!
+echo ""
+echo "✔ All staged PHP and Blade files are correctly formatted!"
+exit 0
