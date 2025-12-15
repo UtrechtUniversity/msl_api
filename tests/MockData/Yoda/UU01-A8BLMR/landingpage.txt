@@ -22,7 +22,7 @@
         a.leaflet-control-zoom-in, a.leaflet-control-zoom-out {text-decoration: none ! important;}
         .indented {padding-left: 10px;}
     </style>
-    <script src="/static/ts/leaflet-1.5.1.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="></script>
+    <script src="/static/js/leaflet-1.5.1.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="></script>
     <script>
         let bounds = [
             [1.0, 1.0],
