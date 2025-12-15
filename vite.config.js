@@ -23,15 +23,6 @@ export default defineConfig({
         ]),
         commonjs()
     ],
-    // define: {
-    //     'process.env.APP_URL': process.env.APP_URL
-
-    // },
-    // // resolve: {
-    //     alias: {
-    //         leaflet: path.resolve(__dirname, 'node_modules/leaflet'),
-    // },
-    //   },
     build: {
         modulePreload: false
     },
