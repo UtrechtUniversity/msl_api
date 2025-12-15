@@ -16,22 +16,6 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class GeoJsonDataPublicationsController extends Controller
 {
-    /**
-     * @var array mappings from subdomain endpoint search parameters to ckan fields
-     */
-    private $queryMappings = [
-        'query' => 'text',
-        'tags' => 'tags',
-        'title' => 'title',
-        'authorName' => 'msl_creator_name_text',
-        'labName' => 'msl_lab_name_text',
-    ];
-
-    /**
-     * @var array mappings from all endpoint search parameters to ckan fields
-     */
-    private $queryMappingsAll;
-
     protected $packageSearchRequest;
 
     /**
@@ -46,12 +30,7 @@ class GeoJsonDataPublicationsController extends Controller
     {
         $this->guzzleClient = $client;
         $this->packageSearchRequest = new PackageSearchRequest;
-        $this->queryMappingsAll = array_merge($this->queryMappings, ['subDomain' => 'msl_subdomain']);
     }
-
-    // TODO have a different endpoint for geojson
-    // todo Maybe also a different controller.
-    // todo Might want to return regular json response rather than pure geojson.
 
     /**
      * Creates a API response based upon search parameters provided in request
@@ -105,11 +84,6 @@ class GeoJsonDataPublicationsController extends Controller
         // Filter on data-publications
         $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
 
-        // Filter for data-publications with files depending on request
-        if ($request->get('hasDownloads')) {
-            $this->packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
-        }
-
         // Set rows
         if (($request->get('limit'))) {
             $this->packageSearchRequest->rows = $request->get('limit');
@@ -118,8 +92,6 @@ class GeoJsonDataPublicationsController extends Controller
         if ($request->get('offset')) {
             $this->packageSearchRequest->start = $request->get('offset');
         }
-        // Process search parameters
-        $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
 
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->getBoundingBox($boundingBox);
@@ -137,31 +109,5 @@ class GeoJsonDataPublicationsController extends Controller
                 (float) $paramBoundingBox[3]
             );
         }
-    }
-
-    /**
-     * Converts search parameters to solr query using field mappings
-     *
-     * @param  array  $querymappings
-     */
-    protected function buildQuery(Request $request, $queryMappings): string
-    {
-        $queryParts = [];
-
-        foreach ($queryMappings as $key => $value) {
-            if ($request->filled($key)) {
-                if ($key == 'subDomain') {
-                    $queryParts[] = $value.':"'.$request->get($key).'"';
-                } else {
-                    $queryParts[] = $value.':'.$request->get($key);
-                }
-            }
-        }
-
-        if (count($queryParts) > 0) {
-            return implode(' AND ', $queryParts);
-        }
-
-        return '';
     }
 }
