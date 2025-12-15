@@ -57,7 +57,7 @@ Route::prefix('v2')->group(function () {
         Route::get('/microscopy', [V2DataPublicationController::class, 'microscopy']);
         Route::get('/geochemistry', [V2DataPublicationController::class, 'geochemistry']);
         Route::get('/geoenergy', [V2DataPublicationController::class, 'geoenergy']);
-        Route::get('/all', [V2DataPublicationController::class, 'all'])->name('v2-dp-all');
+        Route::get('/all', [V2DataPublicationController::class, 'all']);
     });
     Route::prefix('facilities')->group(function () {
         Route::get('/rock_physics', [V2FacilityController::class, 'rockPhysics']);
