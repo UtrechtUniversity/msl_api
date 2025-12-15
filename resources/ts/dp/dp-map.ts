@@ -39,14 +39,13 @@ class MapApp {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
 
-        const route = '/api/v2/datapublications/all?' + params;
+        const route = '/api/geoJsonDataPublications?' + params;
 
 
         let response: Response | undefined;
         try {
             response = await fetch(route, {
                 method: "GET",
-                headers: { "Accept": "application/geojson" },
             });
         } catch (e) {
             throw new Error("Something went wrong internally. Please contact MSL.");

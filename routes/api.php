@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\V1\ApiController as V1Controller;
 use App\Http\Controllers\API\V2\DataPublicationController as V2DataPublicationController;
 use App\Http\Controllers\API\V2\FacilityController as V2FacilityController;
+use App\Http\Controllers\Console\GeoJsonDataPublicationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -68,3 +69,5 @@ Route::prefix('v2')->group(function () {
         Route::get('/all', [V2FacilityController::class, 'all']);
     });
 });
+
+Route::get('/geoJsonDataPublications', [GeoJsonDataPublicationsController::class, 'index']);

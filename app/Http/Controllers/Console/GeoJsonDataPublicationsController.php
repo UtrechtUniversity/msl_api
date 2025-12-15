@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\API\V2;
+namespace App\Http\Controllers\Console;
 
 use App\CkanClient\Client;
-use App\Enums\DataPublicationSubDomain;
+use App\CkanClient\Request\PackageSearchRequest;
 use App\Enums\EndpointContext;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
@@ -13,7 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class DataPublicationController extends BaseDomainApiController
+class GeoJsonDataPublicationsController extends Controller
 {
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
@@ -31,12 +32,20 @@ class DataPublicationController extends BaseDomainApiController
      */
     private $queryMappingsAll;
 
+    protected $packageSearchRequest;
+
+    /**
+     * @var \GuzzleHttp\Client Guzzle http client instance
+     */
+    protected $guzzleClient;
+
     /**
      * Constructs a new controller
      */
     public function __construct(\GuzzleHttp\Client $client)
     {
-        parent::__construct($client); // Call parent constructor
+        $this->guzzleClient = $client;
+        $this->packageSearchRequest = new PackageSearchRequest;
         $this->queryMappingsAll = array_merge($this->queryMappings, ['subDomain' => 'msl_subdomain']);
     }
 
@@ -48,33 +57,13 @@ class DataPublicationController extends BaseDomainApiController
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      */
-    protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
+    protected function index(Request $request): JsonResource|ResourceCollection
     {
-
-        // TODO I would like a different endpoint
-        // Geo json and json are the same content type
-        $preferredType = $request->prefers(['application/json', 'application/geojson']);
-        // For now, we want always a bounding box set if we are asking for geojson
-        if ($preferredType === 'application/geojson') {
-            try {
-                $request->validate([
-                    'boundingBox' => ['required', new GeoRule],
-                ]);
-            } catch (\Illuminate\Validation\ValidationException $e) {
-                return new ValidationErrorResource($e);
-            }
-        }
-
+        $context = EndpointContext::ALL;
         try {
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
                 'offset' => ['nullable', 'integer', 'min:0'],
-                'query' => ['nullable', 'string'],
-                'authorName' => ['nullable', 'string'],
-                'labName' => ['nullable', 'string'],
-                'title' => ['nullable', 'string'],
-                'tags' => ['nullable', 'string'],
-                'hasDownloads' => ['nullable', 'boolean'],
                 'boundingBox' => ['nullable', new GeoRule],
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
@@ -84,7 +73,7 @@ class DataPublicationController extends BaseDomainApiController
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
-        $this->setRequestToCKAN($request, $context);
+        $this->setRequestToCKAN($request);
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
@@ -99,10 +88,9 @@ class DataPublicationController extends BaseDomainApiController
 
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
-        // TODO change name?
         $dpService = new DataPublicationService;
 
-        return $dpService->getResponse(
+        return $dpService->getGeoJsonResponse(
             response: $response,
             limit: $limit,
             offset: $offset,
@@ -112,11 +100,10 @@ class DataPublicationController extends BaseDomainApiController
 
     }
 
-    protected function setRequestToCKAN(Request $request, EndpointContext $context): void
+    protected function setRequestToCKAN(Request $request): void
     {
         // Filter on data-publications
         $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
-        $this->getDomain($context);
 
         // Filter for data-publications with files depending on request
         if ($request->get('hasDownloads')) {
@@ -132,40 +119,49 @@ class DataPublicationController extends BaseDomainApiController
             $this->packageSearchRequest->start = $request->get('offset');
         }
         // Process search parameters
-        $this->packageSearchRequest->query = ($context == EndpointContext::ALL) ? $this->buildQuery($request, $this->queryMappingsAll) : $this->buildQuery($request, $this->queryMappings);
+        $this->packageSearchRequest->query = $this->buildQuery($request, $this->queryMappingsAll);
 
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->getBoundingBox($boundingBox);
     }
 
-    protected function getDomain(EndpointContext $context): void
+    // TODO Can I make a service out of it? Or maybe an action?
+    protected function getBoundingBox(?string $boundingBox): void
     {
-        $msl_subdomain = 'msl_subdomain';
-        // Add subdomain filtering if required
-        switch ($context) {
-            case EndpointContext::ROCK_PHYSICS:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
-                break;
-
-            case EndpointContext::ANALOGUE:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
-                break;
-
-            case EndpointContext::PALEO:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
-                break;
-
-            case EndpointContext::MICROSCOPY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
-                break;
-
-            case EndpointContext::GEO_CHEMISTRY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
-                break;
-
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
-                break;
+        $paramBoundingBox = json_decode($boundingBox);
+        if ($paramBoundingBox) {
+            $this->packageSearchRequest->setBoundingBox(
+                (float) $paramBoundingBox[0],
+                (float) $paramBoundingBox[1],
+                (float) $paramBoundingBox[2],
+                (float) $paramBoundingBox[3]
+            );
         }
+    }
+
+    /**
+     * Converts search parameters to solr query using field mappings
+     *
+     * @param  array  $querymappings
+     */
+    protected function buildQuery(Request $request, $queryMappings): string
+    {
+        $queryParts = [];
+
+        foreach ($queryMappings as $key => $value) {
+            if ($request->filled($key)) {
+                if ($key == 'subDomain') {
+                    $queryParts[] = $value.':"'.$request->get($key).'"';
+                } else {
+                    $queryParts[] = $value.':'.$request->get($key);
+                }
+            }
+        }
+
+        if (count($queryParts) > 0) {
+            return implode(' AND ', $queryParts);
+        }
+
+        return '';
     }
 }
