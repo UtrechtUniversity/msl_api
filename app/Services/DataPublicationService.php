@@ -46,7 +46,6 @@ class DataPublicationService
     public function getGeoJsonResponse(PackageSearchResponse $response, int $limit, int $offset, string $currentUrl, EndpointContext $context): JsonResource|ResourceCollection
     {
 
-        // TODO filter in only datapublications that have coordinates
         $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);

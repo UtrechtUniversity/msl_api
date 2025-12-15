@@ -12,18 +12,6 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 window.L = L;
 import 'leaflet.markercluster';
 
-// // Import marker images via Vite ?url so they become assets
-// import iconUrl from 'leaflet/dist/images/marker-icon.png?url';
-// import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png?url';
-// import shadowUrl from 'leaflet/dist/images/marker-shadow.png?url';
-
-// L.Icon.Default.prototype.options = {
-//   ...L.Icon.Default.prototype.options,
-//   iconUrl,
-//   iconRetinaUrl,
-//   shadowUrl,
-// };
-
 
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
 import markerIconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
