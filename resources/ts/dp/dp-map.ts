@@ -1,6 +1,6 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, LeafletMouseEvent, Layer } from "leaflet";
 import { Feature } from 'geojson'
-import { GeoJsonDataPublication } from "../types/geojson";
+import { DataPublication, GeoJsonDataPublication } from "../types/geojson";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -59,19 +59,19 @@ class MapApp {
         return data;
     }
 
-    async getAndDrawResponse(geo: GeoJsonDataPublication) {
-
-        const getOnEachFeature = (datapublication: any) =>
+    async getAndDrawResponse(geoList: GeoJsonDataPublication) {
+        // We want to be able to pass information of the publication inside each feature of the geo collection
+        const getOnEachFeaturePerPublication = (datapublication: DataPublication) =>
             (feature: Feature, layer: Layer) => {
                 const popupContent = `<h5>${datapublication.title}</h5>`;
                 layer.bindPopup(popupContent);
             };
 
-        geo.forEach(el => {
-            const features = el.geojson;
+        geoList.forEach(geoElement => {
+            const features = geoElement.geojson;
             for (const feature of features.features) {
                 L.geoJSON(feature, {
-                    onEachFeature: getOnEachFeature(el["data_publication"])
+                    onEachFeature: getOnEachFeaturePerPublication(geoElement["data_publication"])
                 }).addTo(this.markers);
             }
         });
@@ -89,6 +89,7 @@ class MapApp {
 
         this.map.getContainer().addEventListener("contextmenu", (e: MouseEvent) => {
             if (e.shiftKey) {
+                // TODO fix this. it doesn't see to work
                 e.preventDefault(); // Only prevent default if Shift is held
             }
         });
