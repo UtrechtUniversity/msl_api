@@ -4,7 +4,7 @@
     window.addEventListener("DOMContentLoaded", () => {
         function onEachFeature(feature, layer) {
             if (feature.properties) {
-                var popupContent =
+                const popupContent =
                     `<h5>${feature.properties.title}</h5>
             <p>${feature.properties.msl_organization_name}</p>
             <p>${feature.properties.msl_domain_name}</p>
@@ -16,7 +16,7 @@
 
         const features = <?php echo json_encode($locations); ?>;
 
-        const map = window.L.map('map').setView([53.505, 29.09], 4);
+        const map = L.map('map').setView([53.505, 29.09], 4);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -25,7 +25,7 @@
 
 
 
-        var markers = L.markerClusterGroup({
+        const markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
         });

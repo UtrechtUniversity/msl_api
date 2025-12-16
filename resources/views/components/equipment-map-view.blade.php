@@ -4,7 +4,7 @@
     window.addEventListener("DOMContentLoaded", () => {
         function onEachFeature(feature, layer) {
             if (feature.properties) {
-                var popupContent =
+                const popupContent =
                     `<h5>${feature.properties.title}</h5>
             <p>${feature.properties.msl_lab_name}</p>
             <table>
@@ -27,23 +27,23 @@
             }
         }
 
-        var features = <?php echo json_encode($locations); ?>;
+        const features = <?php echo json_encode($locations); ?>;
 
-        var map = L.map('map').setView([53.505, 29.09], 4);
+        const map = L.map('map').setView([53.505, 29.09], 4);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
-        var markers = L.markerClusterGroup({
+        const markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
         });
 
-        var geoJsonLayer = L.layerGroup();
+        const geoJsonLayer = L.layerGroup();
 
-        var extraPopupLayer = L.layerGroup();
+        const extraPopupLayer = L.layerGroup();
 
         for (feature of features) {
             L.geoJSON(feature, {
