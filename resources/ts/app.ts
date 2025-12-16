@@ -1,7 +1,5 @@
 import $ from 'jquery';
-// TODO this breaks type safety
-// Import jquery later
-(window as any).$ = $;
+window.$ = $;
 //  Import Leaflet and CSS
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
