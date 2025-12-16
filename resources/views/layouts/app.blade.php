@@ -68,47 +68,42 @@
                                         Convert keyword file
                                     </a>
 
-                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownTools">
-                                        <a class="dropdown-item" href="{{ route('convert-keywords') }}">
-                                            Convert keyword file
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('convert-excel') }}">
+                                        Convert excel file
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('convert-excel') }}">
-                                            Convert excel file
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('filter-tree') }}">
+                                        Download filter tree export
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('filter-tree') }}">
-                                            Download filter tree export
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('uri-labels') }}">
+                                        Download uri-labels export
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('uri-labels') }}">
-                                            Download uri-labels export
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('view-unmatched-keywords') }}">
+                                        View unmatched keywords
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('view-unmatched-keywords') }}">
-                                            View unmatched keywords
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('abstract-matching') }}">
+                                        Abstract matching
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('abstract-matching') }}">
-                                            Abstract matching
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('query-generator') }}">
+                                        Query generator
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('query-generator') }}">
-                                            Query generator
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('doi-export') }}">
+                                        DOI export
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('doi-export') }}">
-                                            DOI export
-                                        </a>
+                                    <a class="dropdown-item" href="{{ route('geoview') }}">
+                                        Geoview
+                                    </a>
 
-                                        <a class="dropdown-item" href="{{ route('geoview') }}">
-                                            Geoview
-                                        </a>
-
-                                        <a class="dropdown-item" href="{{ route('geoview-labs') }}">
-                                            Geoview Labs
-                                        </a>
-                                    </div>
+                                    <a class="dropdown-item" href="{{ route('geoview-labs') }}">
+                                        Geoview Labs
+                                    </a>
+                                </div>
                             </li>
 
                             <li class="nav-item">
@@ -145,34 +140,49 @@
                                 <a id="navbarDropdownActions" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Labs
-
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('filter-tree') }}">
-                                    Download filter tree export
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownActions">
+                                    <a class="dropdown-item" href="{{ route('import-labdata') }}">
+                                        Import labdata
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('view-labdata') }}">
+                                        View labdata
+                                    </a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdownActions" class="nav-link dropdown-toggle" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    v-pre>
+                                    All actions
                                 </a>
 
-                                <a class="dropdown-item" href="{{ route('uri-labels') }}">
-                                    Download uri-labels export
-                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownActions">
+                                    <a class="dropdown-item" href="{{ route('delete-actions') }}">
+                                        Deletes
+                                    </a>
 
-                                <a class="dropdown-item" href="{{ route('view-unmatched-keywords') }}">
-                                    View unmatched keywords
-                                </a>
+                                    <a class="dropdown-item" href="{{ route('imports') }}">
+                                        Imports
+                                    </a>
 
-                                <a class="dropdown-item" href="{{ route('abstract-matching') }}">
-                                    Abstract matching
-                                </a>
+                                    <a class="dropdown-item" href="{{ route('source-dataset-identifiers') }}">
+                                        Source dataset identifiers
+                                    </a>
 
-                                <a class="dropdown-item" href="{{ route('query-generator') }}">
-                                    Query generator
-                                </a>
+                                    <a class="dropdown-item" href="{{ route('source-datasets') }}">
+                                        Source datasets
+                                    </a>
 
-                                <a class="dropdown-item" href="{{ route('doi-export') }}">
-                                    DOI export
-                                </a>
+                                    <a class="dropdown-item" href="{{ route('create-actions') }}">
+                                        Creates
+                                    </a>
+                                </div>
+                            </li>
 
-                                <!--
+                            <!--
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="{{ route('queues') }}">{{ __('Queue') }}</a>
                                                     </li>
