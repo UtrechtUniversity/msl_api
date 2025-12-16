@@ -1,6 +1,6 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, LeafletMouseEvent, Layer } from "leaflet";
 import { Feature } from 'geojson'
-import { DataPublication, GeoJsonDataPublication } from "../types/geojson";
+import { DataPublication, GeoJsonDataPublication } from "../types/datapublication";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
