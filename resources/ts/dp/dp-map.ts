@@ -93,7 +93,8 @@ class MapApp {
                 e.preventDefault(); // Only prevent default if Shift is held
             }
         });
-        this.map.on("mousedown", async (e: any) => {
+        // On pressing a button on the mouse
+        this.map.on("mousedown", async (e: LeafletMouseEvent) => {
             // This is about the browser
             const { shiftKey, button } = e.originalEvent;
             // This is about the leaflet event
@@ -140,11 +141,12 @@ class MapApp {
                 const bounds = L.latLngBounds(startPoint, ev.latlng);
                 rectangle = L.rectangle(bounds, { color: "red" }).addTo(this.map);
             };
-
+            // On releasing the button of the mouse
             const onMouseUp = async (ev: LeafletMouseEvent) => {
                 if (!drawing) return;
+                // We stop drawing
                 drawing = false;
-
+                // Remove listeners
                 this.map.off("mousemove", onMouseMove);
                 this.map.off("mouseup", onMouseUp);
                 this.map.dragging.enable();
