@@ -107,7 +107,6 @@ class GeoJsonDataPublicationsController extends Controller
         $this->getBoundingBox($boundingBox);
     }
 
-    // TODO Can I make a service out of it? Or maybe an action?
     protected function getBoundingBox(?string $boundingBox): void
     {
         $paramBoundingBox = json_decode($boundingBox);
