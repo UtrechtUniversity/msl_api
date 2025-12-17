@@ -26,8 +26,11 @@ echo "Checking PHP and Blade code style…"
 
 
 # Get relevant staged files 
-BLADE_FILES=$(git diff --cached --name-only -- '*.blade.php')
-PHP_FILES=$(git diff --cached --name-only -- '*.php' ':!*.blade.php')
+# --Cached for seeing the next commit
+# --name-only for gathering only the path of the file and not the code.
+# 
+BLADE_FILES=$(git diff --cached --diff-filter=AM --name-only -- '*.blade.php')
+PHP_FILES=$(git diff --cached --diff-filter=AM --name-only -- '*.php' ':!*.blade.php')
 
 PHP_STATUS=0
 BLADE_STATUS=0
