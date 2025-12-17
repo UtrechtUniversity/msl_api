@@ -87,21 +87,30 @@ class MapApp {
         let startPoint: LatLng;
         let drawing = false;
 
-        this.map.getContainer().addEventListener("contextmenu", (e: MouseEvent) => {
-            if (e.shiftKey) {
-                // TODO fix this. it doesn't see to work
-                e.preventDefault(); // Only prevent default if Shift is held
-            }
-        });
+        const container = this.map.getContainer();
+
+        container.addEventListener(
+            'contextmenu',
+            (e: MouseEvent) => {
+                if (!e.ctrlKey) {
+                    return;
+                }
+
+                e.preventDefault();
+                e.stopPropagation();
+            },
+        );
+
         // On pressing a button on the mouse
         this.map.on("mousedown", async (e: LeafletMouseEvent) => {
+
             // This is about the browser
-            const { shiftKey, button } = e.originalEvent;
+            const { ctrlKey, button } = e.originalEvent;
             // This is about the leaflet event
             const latlng = e.latlng;
 
-            // Only proceed if Shift is held
-            if (!shiftKey) return;
+            // Only proceed if ctrl is held
+            if (!ctrlKey) return;
 
             // If the click is on the right button,
             // reset the map and remove layers.
@@ -161,7 +170,7 @@ class MapApp {
                     ne.lng,
                     ne.lat
                 ]);
-
+                this.map.fitBounds(bounds);
                 // Clear markers
                 this.markers.clearLayers();
 
