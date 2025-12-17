@@ -57,7 +57,7 @@ fi
 if [ -z "$BLADE_FILES" ]; then
     echo "No staged Blade files to check."
 else
-    ./node_modules/.bin/prettier --write $BLADE_FILES &
+    ./node_modules/.bin/prettier --write $BLADE_FILES  --log-level warn &
     spinner $!
     BLADE_STATUS=$?
 
