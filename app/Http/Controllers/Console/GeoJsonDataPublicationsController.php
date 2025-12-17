@@ -6,10 +6,10 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Enums\EndpointContext;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\GeoFeatureResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
-use App\Services\DataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -67,16 +67,26 @@ class GeoJsonDataPublicationsController extends Controller
 
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
-        $dpService = new DataPublicationService;
 
-        return $dpService->getGeoJsonResponse(
-            response: $response,
-            limit: $limit,
-            offset: $offset,
-            currentUrl: $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
-            context: $context
-        );
+        $dataPublications = $response->getResults(true);
+        $totalResultCount = $response->getTotalResultsCount();
+        $currentResultCount = count($dataPublications);
+        $responseToReturn = GeoFeatureResource::collection($dataPublications);
+        $responseToReturn->additional([
+            'success' => 'true',
+            'messages' => [],
+            'meta' => [
+                'resultCount' => $currentResultCount,
+                'totalCount' => $totalResultCount,
+                'limit' => $limit,
+                'offset' => $offset,
+            ],
+            'links' => [
+                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+            ],
+        ]);
 
+        return $responseToReturn;
     }
 
     protected function setRequestToCKAN(Request $request): void

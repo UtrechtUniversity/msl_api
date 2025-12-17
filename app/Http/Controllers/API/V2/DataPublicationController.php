@@ -5,10 +5,10 @@ namespace App\Http\Controllers\API\V2;
 use App\CkanClient\Client;
 use App\Enums\DataPublicationSubDomain;
 use App\Enums\EndpointContext;
+use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
-use App\Services\DataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -81,16 +81,27 @@ class DataPublicationController extends BaseDomainApiController
 
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
-        // TODO change name?
-        $dpService = new DataPublicationService;
 
-        return $dpService->getResponse(
-            response: $response,
-            limit: $limit,
-            offset: $offset,
-            currentUrl: $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
-            context: $context
-        );
+        $dataPublications = $response->getResults(true);
+        $totalResultCount = $response->getTotalResultsCount();
+        $currentResultCount = count($dataPublications);
+
+        $responseToReturn = new DataPublicationCollection($dataPublications, $context);
+        $responseToReturn->additional([
+            'success' => 'true',
+            'messages' => [],
+            'meta' => [
+                'resultCount' => $currentResultCount,
+                'totalCount' => $totalResultCount,
+                'limit' => $limit,
+                'offset' => $offset,
+            ],
+            'links' => [
+                'current_url' => $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]),
+            ],
+        ]);
+
+        return $responseToReturn;
 
     }
 
