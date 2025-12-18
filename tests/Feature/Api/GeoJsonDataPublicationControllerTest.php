@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Console;
 
-use App\Http\Controllers\Console\GeoJsonDataPublicationsController;
+use App\Http\Controllers\API\GeoJsonDataPublicationsController;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

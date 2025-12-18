@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\API\GeoJsonDataPublicationsController;
 use App\Http\Controllers\API\V1\ApiController as V1Controller;
 use App\Http\Controllers\API\V2\DataPublicationController as V2DataPublicationController;
 use App\Http\Controllers\API\V2\FacilityController as V2FacilityController;
-use App\Http\Controllers\Console\GeoJsonDataPublicationsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 

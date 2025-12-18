@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Console;
+namespace App\Http\Controllers\API;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
