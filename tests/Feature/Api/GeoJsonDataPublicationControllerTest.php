@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Console;
+namespace Tests\Feature\Api;
 
 use App\Http\Controllers\API\GeoJsonDataPublicationsController;
 use GuzzleHttp\Client;

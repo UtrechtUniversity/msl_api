@@ -35,26 +35,19 @@ class MapApp {
     }
 
 
-    async getResponse(boundingBox: string): Promise<GeoJsonDataPublication> {
+    async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublication> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
 
         const route = '/api/geoJsonDataPublications?' + params;
 
-
-        let response: Response | undefined;
-        try {
-            response = await fetch(route, {
-                method: "GET",
-            });
-        } catch (e) {
-            throw new Error("Something went wrong internally. Please contact MSL.");
-        }
-        if (!response || response.status !== 200) {
-            throw new Error("Something went wrong internally. Please contact MSL.");
+        const response: Response = await fetch(route, {
+            method: "GET",
+        });
+        if (!response.ok) {
+            throw new Error('The response failed with status: ' + response.status + ' - ' + response.statusText);
         }
         const data = (await response.json()).data
-
 
         return data;
     }
@@ -174,7 +167,7 @@ class MapApp {
                 // Clear markers
                 this.markers.clearLayers();
 
-                const geo = await this.getResponse(boundingBox);
+                const geo = await this.getJsonFromRequest(boundingBox);
                 await this.getAndDrawResponse(geo);
             };
 
