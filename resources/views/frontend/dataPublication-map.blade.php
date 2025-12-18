@@ -19,7 +19,7 @@
                     <div class="w-full bg-primary-100">
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('components.dp-map-view')
+                            @include('components.dataPublication-map-view')
                         </div>
                     </div>
 

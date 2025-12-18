@@ -16,7 +16,7 @@ export default defineConfig({
             'resources/ts/filters-menu.ts',
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
-            'resources/ts/dp/dp-map.ts'
+            'resources/ts/dataPublication/dataPublication-map.ts'
         ]),
         commonjs()
     ],
