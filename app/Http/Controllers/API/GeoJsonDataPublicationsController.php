@@ -6,7 +6,7 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Enums\EndpointContext;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\GeoFeatureResource;
+use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
@@ -71,7 +71,7 @@ class GeoJsonDataPublicationsController extends Controller
         $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
-        $responseToReturn = GeoFeatureResource::collection($dataPublications);
+        $responseToReturn = GeoJsonDataPublicationResource::collection($dataPublications);
         $responseToReturn->additional([
             'success' => 'true',
             'messages' => [],

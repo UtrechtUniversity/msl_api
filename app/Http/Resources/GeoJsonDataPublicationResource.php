@@ -6,7 +6,7 @@ use App\Http\Resources\V2\DataPublicationResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class GeoFeatureResource extends JsonResource
+class GeoJsonDataPublicationResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,7 +20,7 @@ class GeoFeatureResource extends JsonResource
         $geoJsonInfo += [
             'data_publication' => new DataPublicationResource(
                 resource: $this,
-                hasGeoJson: false
+                includesGeoJson: false
             ),
         ];
 
