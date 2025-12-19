@@ -46,6 +46,7 @@ class DataPublicationController extends BaseDomainApiController
      */
     protected function domainResponse(Request $request, EndpointContext $context): JsonResource|ResourceCollection
     {
+
         try {
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
@@ -78,11 +79,13 @@ class DataPublicationController extends BaseDomainApiController
             return new CkanErrorResource([]);
         }
 
+        $limit = $this->packageSearchRequest->rows;
+        $offset = $this->packageSearchRequest->start;
+
         $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
-        $limit = $this->packageSearchRequest->rows;
-        $offset = $this->packageSearchRequest->start;
+
         $responseToReturn = new DataPublicationCollection($dataPublications, $context);
         $responseToReturn->additional([
             'success' => 'true',
@@ -99,6 +102,7 @@ class DataPublicationController extends BaseDomainApiController
         ]);
 
         return $responseToReturn;
+
     }
 
     protected function setRequestToCKAN(Request $request, EndpointContext $context): void

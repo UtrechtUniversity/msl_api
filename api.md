@@ -1,6 +1,6 @@
 # EPOS MSL API
 The EPOS MSL API offers access to data available within our CKAN portal. This document describes the API per available endpoint.
- A Hoppscotch collection file is available [here](./docs/api/hoppscotch/collections/MSL%20API.json).
+ A Hoppscotch collection file is available [here](./docs/api/hoppscotch/collections/EPOS%20MSL%20API.json).
 
 ## Available resources
 The API offers 14 endpoints, 7 for accessing facilities  and 7 for accessing data-publications information, based on their domain. All data is open accessible, no authorization is required.

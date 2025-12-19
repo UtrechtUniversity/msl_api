@@ -237,7 +237,7 @@ class DataPublicationControllerTest extends TestCase
     }
 
     /**
-     *  // Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
+     *   Inject GuzzleCLient with Mockhandler into DataPublicationController constructor to work with mocked results from CKAN
      */
     private function bindControllerToApp(string $fileContents): void
     {

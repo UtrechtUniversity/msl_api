@@ -151,7 +151,7 @@
                         var activeNodes = [];
                     </script>
                     @push('vite')
-                        @vite(['resources/js/jstree.js', 'resources/js/filters-menu.js'])
+                        @vite(['resources/ts/jstree.ts', 'resources/ts/filters-menu.ts'])
                     @endpush
                 @else
                     <div id="jstree-laboratories" class="text-wrap pt-4"></div>
@@ -162,7 +162,7 @@
                         var activeNodes = [];
                     </script>
                     @push('vite')
-                        @vite(['resources/js/jstree.js', 'resources/js/filters-menu-labs.js'])
+                        @vite(['resources/ts/jstree.ts', 'resources/ts/filters-menu-labs.ts'])
                     @endpush
                 @endif
 

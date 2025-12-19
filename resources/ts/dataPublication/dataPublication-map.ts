@@ -1,0 +1,185 @@
+import { LatLng, Rectangle, Map, MarkerClusterGroup, LeafletMouseEvent, Layer } from "leaflet";
+import { Feature } from 'geojson'
+import { DataPublication, GeoJsonDataPublication } from "../types/datapublication";
+
+// If we dont assign L, typescript is complaining about using a UMD global in a module.
+const L = window.L;
+
+class MapApp {
+    map: Map;
+    markers: MarkerClusterGroup;
+
+    constructor() {
+        this.map = L.map('map')
+        this.markers = L.markerClusterGroup({
+            zoomToBoundsOnClick: true,
+            showCoverageOnHover: false
+        });
+        this.drawMap();
+
+    }
+    // Create the map in the beginning
+    async init() {
+        await this.mouseEventHandling();
+    }
+
+
+    drawMap() {
+        this.resetMapView()
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(this.map);
+        this.resetMapView()
+        return;
+    }
+
+
+    async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublication> {
+        const parameters = { boundingBox, limit: '10' }
+        const params = new URLSearchParams(parameters);
+
+        const route = '/api/geoJsonDataPublications?' + params;
+
+        const response: Response = await fetch(route, {
+            method: "GET",
+        });
+        if (!response.ok) {
+            throw new Error('The response failed with status: ' + response.status + ' - ' + response.statusText);
+        }
+        const data = (await response.json()).data
+
+        return data;
+    }
+
+    async getAndDrawResponse(geoList: GeoJsonDataPublication) {
+        // We want to be able to pass information of the publication inside each feature of the geo collection
+        const getOnEachFeaturePerPublication = (datapublication: DataPublication) =>
+            (feature: Feature, layer: Layer) => {
+                const popupContent = `<h5>${datapublication.title}</h5>`;
+                layer.bindPopup(popupContent);
+            };
+
+        geoList.forEach(geoElement => {
+            const features = geoElement.geojson;
+            for (const feature of features.features) {
+                L.geoJSON(feature, {
+                    onEachFeature: getOnEachFeaturePerPublication(geoElement["data_publication"])
+                }).addTo(this.markers);
+            }
+        });
+
+        this.map.addLayer(this.markers);
+    }
+
+    resetMapView() {
+        this.map.setView([51.505, -0.09], 4);
+    }
+    async mouseEventHandling() {
+        let rectangle: Rectangle | null = null;
+        let startPoint: LatLng;
+        let drawing = false;
+
+        const container = this.map.getContainer();
+
+        container.addEventListener(
+            'contextmenu',
+            (e: MouseEvent) => {
+                if (!e.ctrlKey) {
+                    return;
+                }
+
+                e.preventDefault();
+                e.stopPropagation();
+            },
+        );
+
+        // On pressing a button on the mouse
+        this.map.on("mousedown", async (e: LeafletMouseEvent) => {
+
+            // This is about the browser
+            const { ctrlKey, button } = e.originalEvent;
+            // This is about the leaflet event
+            const latlng = e.latlng;
+
+            // Only proceed if ctrl is held
+            if (!ctrlKey) return;
+
+            // If the click is on the right button,
+            // reset the map and remove layers.
+            if (button === 2) {
+                if (rectangle) {
+                    this.map.removeLayer(rectangle);
+                    rectangle = null;
+                }
+                if (this.markers) {
+                    this.markers.clearLayers();
+                }
+                this.resetMapView();
+                return;
+            }
+
+            // If the click is on the middle button,
+            // then do nothing
+            if (button !== 0) return;
+
+
+            drawing = true;
+            startPoint = latlng;
+
+            // If a rectangle already existed,
+            // clear the layers, and start again
+            if (rectangle) {
+                this.map.removeLayer(rectangle);
+                this.map.removeLayer(this.markers)
+                rectangle = null;
+            }
+
+            this.map.dragging.disable();
+
+            const onMouseMove = (ev: LeafletMouseEvent) => {
+                if (rectangle) this.map.removeLayer(rectangle);
+
+                const bounds = L.latLngBounds(startPoint, ev.latlng);
+                rectangle = L.rectangle(bounds, { color: "red" }).addTo(this.map);
+            };
+            // On releasing the button of the mouse
+            const onMouseUp = async (ev: LeafletMouseEvent) => {
+                if (!drawing) return;
+                // We stop drawing
+                drawing = false;
+                // Remove listeners
+                this.map.off("mousemove", onMouseMove);
+                this.map.off("mouseup", onMouseUp);
+                this.map.dragging.enable();
+
+                const bounds = L.latLngBounds(startPoint, ev.latlng);
+
+                const sw = bounds.getSouthWest();
+                const ne = bounds.getNorthEast();
+                const boundingBox = JSON.stringify([
+                    sw.lng,
+                    sw.lat,
+                    ne.lng,
+                    ne.lat
+                ]);
+                this.map.fitBounds(bounds);
+                // Clear markers
+                this.markers.clearLayers();
+
+                const geo = await this.getJsonFromRequest(boundingBox);
+                await this.getAndDrawResponse(geo);
+            };
+
+            this.map.on("mousemove", onMouseMove);
+            this.map.on("mouseup", onMouseUp);
+        });
+    }
+}
+
+
+
+
+
+const app = new MapApp();
+app.init();

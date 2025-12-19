@@ -74,6 +74,6 @@
 
     </div>
     @push('vite')
-        @vite(['resources/js/jstree.js', 'resources/js/keyword-form.js'])
+        @vite(['resources/ts/jstree.ts', 'resources/ts/keyword-form.ts'])
     @endpush
 </x-layout_main>

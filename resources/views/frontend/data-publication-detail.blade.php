@@ -10,6 +10,7 @@
                         Back to search results
                     </div>
                 </a>
+
             </div>
         @endsession
         <div class="tab-links-parent ">
@@ -631,7 +632,7 @@
     </div>
 
     @push('vite')
-        @vite(['resources/js/tooltip.js'])
+        @vite(['resources/ts/tooltip.ts'])
     @endpush
 
 </x-layout_main>
