@@ -1,0 +1,46 @@
+{
+  "v": 10,
+  "name": "MSL internal API",
+  "requests": [
+    {
+      "v": "16",
+      "name": "geoJson datapublications",
+      "method": "GET",
+      "endpoint": "<<base_url>>/api/geoJsonDataPublications",
+      "params": [
+        {
+          "key": "limit",
+          "value": "",
+          "active": true,
+          "description": "(number, optional) The number of results to return."
+        },
+        {
+          "key": "offset",
+          "value": "",
+          "active": true,
+          "description": "(number, optional) The number to start results from."
+        },
+        {
+          "key": "boundingBox",
+          "value": "[-123.3, 49.18, -123.0,49.33]",
+          "active": false,
+          "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+        }
+      ],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {},
+      "_ref_id": "req_mhdfmu1i_8337bc95-9f51-4e34-8e00-fe78ae09a190"
+    }
+  ]
+}
