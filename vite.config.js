@@ -16,8 +16,11 @@ export default defineConfig({
             'resources/ts/filters-menu.ts',
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
-            'resources/ts/dataPublication/dataPublication-map.ts',
-            'resources/ts/tracker.ts'
+            'resources/ts/tracker.ts',
+            'resources/ts/dataPublication/map.ts',
+            'resources/ts/dataPublication/sidebar.ts',
+            'resources/css/leaflet-sidebar.css',
+            'resources/css/datapublications-list.css'
         ]),
         commonjs()
     ],

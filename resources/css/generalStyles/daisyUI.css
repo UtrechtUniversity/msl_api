@@ -88,7 +88,6 @@
   @plugin "daisyui/theme" {
     name: "theme1";
     default: true;
-    
     --color-base-100: #f7f4ef;
     --color-base-200: #ede3d4;
     --color-base-300: #eed3ad;
@@ -105,7 +104,7 @@
     --color-primary-800: #583706;
     --color-primary-900: #160f04;
     --color-primary-content: #000000;
-  
+
     --color-secondary: #18dbdb;
     --color-secondary-100: #dff2f2;
     --color-secondary-200: #abf5f5;
