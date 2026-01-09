@@ -141,7 +141,7 @@
     </div>
 
     @push('vite')
-        @vite(['resources/js/tooltip.js'])
+        @vite(['resources/ts/tooltip.ts'])
     @endpush
 
 </x-layout_main>
