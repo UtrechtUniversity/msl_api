@@ -6,7 +6,7 @@ if(import.meta.env.VITE_TRACKING_ENABLED === 'true') {
     (function() {
         var u="//" + import.meta.env.VITE_MATOMO_HOST + "/";
         _paq.push(['setTrackerUrl', 'https:' + u + 'matomo.php']);
-        _paq.push(['setSiteId', '2']);
+        _paq.push(['setSiteId', import.meta.env.VITE_MATOMO_SITE_ID]);
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
         g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
     })();
