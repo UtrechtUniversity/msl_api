@@ -1,3 +1,8 @@
+/**
+ * Base code supplied by Matomo, adjustments made:
+ * - use env variables to enable tracking, connection details
+ * - forced https use trackerUrl
+ */
 if(import.meta.env.VITE_TRACKING_ENABLED === 'true') {
     var _paq = window._paq = window._paq || [];
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
