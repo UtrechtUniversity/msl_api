@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/css/app.css', 'resources/ts/app.ts', 'resources/css/treejs.css', 'resources/css/treejs-custom.css'])
+    @vite(['resources/css/app.css', 'resources/ts/app.ts', 'resources/ts/tracker.ts', 'resources/css/treejs.css', 'resources/css/treejs-custom.css'])
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <title>{{ config('app.name') }} - @yield('title')</title>
