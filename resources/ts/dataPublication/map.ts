@@ -14,7 +14,7 @@ interface SidebarHoverEvent extends LeafletEvent {
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
-const bounds = L.latLngBounds(
+const maxBounds = L.latLngBounds(
     [COORDINATE_BOUNDARIES.MIN_LAT, COORDINATE_BOUNDARIES.MIN_LNG],
     [COORDINATE_BOUNDARIES.MAX_LAT, COORDINATE_BOUNDARIES.MAX_LNG]
 );
@@ -28,7 +28,7 @@ class MapApp {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
-        this.map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 0.1 })
+        this.map = L.map('map', { maxBounds })
         this.markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
