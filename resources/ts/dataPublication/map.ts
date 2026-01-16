@@ -2,20 +2,15 @@ import { LatLng, Rectangle, Map, MarkerClusterGroup, LeafletMouseEvent, Layer } 
 import { Feature } from 'geojson'
 import { DataPublication, GeoJsonDataPublication } from "../types/datapublication";
 
-
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
-const bounds = L.latLngBounds(
-    [-90, -180],
-    [90, 180]
-);
+
 class MapApp {
     map: Map;
     markers: MarkerClusterGroup;
 
     constructor() {
-
-        this.map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 0.1 })
+        this.map = L.map('map')
         this.markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
@@ -33,11 +28,9 @@ class MapApp {
         this.resetMapView()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            noWrap: true,
             attribution: '&copy; OpenStreetMap'
         }).addTo(this.map);
         this.resetMapView()
-
         return;
     }
 
@@ -161,15 +154,15 @@ class MapApp {
                 this.map.dragging.enable();
 
                 const bounds = L.latLngBounds(startPoint, ev.latlng);
+
                 const sw = bounds.getSouthWest();
                 const ne = bounds.getNorthEast();
                 const boundingBox = JSON.stringify([
-                    restrictLng(sw.lng),
-                    restrictLat(sw.lat),
-                    restrictLng(ne.lng),
-                    restrictLat(ne.lat)
+                    sw.lng,
+                    sw.lat,
+                    ne.lng,
+                    ne.lat
                 ]);
-
                 this.map.fitBounds(bounds);
                 // Clear markers
                 this.markers.clearLayers();
@@ -181,22 +174,11 @@ class MapApp {
             this.map.on("mousemove", onMouseMove);
             this.map.on("mouseup", onMouseUp);
         });
-
     }
 }
 
 
-function restrictLat(lat: number) {
-    if (lat < -90) return -90;
-    if (lat > 90) return 90
-    return lat
-}
 
-function restrictLng(lng: number) {
-    if (lng < -180) return -180;
-    if (lng > 180) return 180
-    return lng
-}
 
 
 const app = new MapApp();
