@@ -5,7 +5,7 @@ import type { DataPublication, GeoJsonDataPublications } from "../types/datapubl
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotNull } from "../helpers.js";
+import { assertNotNull, COORDINATE_BOUNDARIES } from "../helpers.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
@@ -13,6 +13,11 @@ interface SidebarHoverEvent extends LeafletEvent {
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
+
+const bounds = L.latLngBounds(
+    [COORDINATE_BOUNDARIES.MIN_LAT, COORDINATE_BOUNDARIES.MIN_LNG],
+    [COORDINATE_BOUNDARIES.MAX_LAT, COORDINATE_BOUNDARIES.MAX_LNG]
+);
 type GroupedLayer = { [groupedId: string]: Layer[] }
 class MapApp {
     map: Map;
@@ -23,7 +28,7 @@ class MapApp {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
-        this.map = L.map('map')
+        this.map = L.map('map', { maxBounds: bounds, maxBoundsViscosity: 0.1 })
         this.markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
@@ -51,6 +56,7 @@ class MapApp {
         this.resetMapView()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
+            noWrap: true,
             attribution: '&copy; OpenStreetMap'
         }).addTo(this.map);
         this.resetMapView()
@@ -233,10 +239,10 @@ class MapApp {
                 const sw = bounds.getSouthWest();
                 const ne = bounds.getNorthEast();
                 const boundingBox = JSON.stringify([
-                    sw.lng,
-                    sw.lat,
-                    ne.lng,
-                    ne.lat
+                    restrictLng(sw.lng),
+                    restrictLat(sw.lat),
+                    restrictLng(ne.lng),
+                    restrictLat(ne.lat)
                 ]);
                 this.map.fitBounds(bounds);
                 // Clear markers
@@ -257,7 +263,17 @@ class MapApp {
 }
 
 
+function restrictLat(lat: number) {
+    if (lat < COORDINATE_BOUNDARIES.MIN_LAT) return COORDINATE_BOUNDARIES.MIN_LAT;
+    if (lat > COORDINATE_BOUNDARIES.MAX_LAT) return COORDINATE_BOUNDARIES.MAX_LAT;
+    return lat
+}
 
+function restrictLng(lng: number) {
+    if (lng < COORDINATE_BOUNDARIES.MIN_LNG) return COORDINATE_BOUNDARIES.MIN_LNG;
+    if (lng > COORDINATE_BOUNDARIES.MAX_LNG) return COORDINATE_BOUNDARIES.MAX_LNG;
+    return lng
+}
 
 
 const app = new MapApp();
