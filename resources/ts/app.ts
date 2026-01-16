@@ -20,4 +20,6 @@ import markerShadowUrl from "leaflet/dist/images/marker-shadow.png";
 L.Icon.Default.prototype.options.iconUrl = markerIconUrl;
 L.Icon.Default.prototype.options.iconRetinaUrl = markerIconRetinaUrl;
 L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
-L.Icon.Default.imagePath = ""; 
+L.Icon.Default.imagePath = "";
+
+import '@fortawesome/fontawesome-free/css/all.css';

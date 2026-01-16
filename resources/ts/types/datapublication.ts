@@ -1,19 +1,22 @@
 
-import { FeatureCollection } from 'geojson'
+import type { FeatureCollection } from 'geojson'
 
-export type GeoJsonDataPublication = {
+export type GeoJsonDataPublications = {
     'geojson': FeatureCollection,
     'data_publication': DataPublication
 }[]
 
-
+export type GeoJsonDataPublication = {
+    'geojson': FeatureCollection,
+    'data_publication': DataPublication
+}
 export type DataPublication = {
     'title': string,
     'doi': string,
     'source': string,
     'portalLink': string,
     'name': string,
-    'creators': Creator[],
+    'creators': [Creator, ...Creator[]],
     'descriptions': { description: string, descriptionType: string }[],
     'contributors': Contributor[],
     'materials': string[],

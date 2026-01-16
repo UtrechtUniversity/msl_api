@@ -1,14 +1,27 @@
-import { LatLng, Rectangle, Map, MarkerClusterGroup, LeafletMouseEvent, Layer } from "leaflet";
-import { Feature } from 'geojson'
-import { DataPublication, GeoJsonDataPublication } from "../types/datapublication";
+import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
+import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { Feature } from 'geojson'
+import type { DataPublication, GeoJsonDataPublications } from "../types/datapublication.js";
+import { sideBar } from './sidebar.js'
+import type { Sidebar } from "../types/sidebar.js";
+import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
+import { assertNotNull } from "../helpers.js";
+
+interface SidebarHoverEvent extends LeafletEvent {
+    id: string;
+}
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
-
+type GroupedLayer = { [groupedId: string]: Layer[] }
 class MapApp {
     map: Map;
     markers: MarkerClusterGroup;
-
+    sideBar: Sidebar;
+    groupedMarkers: GroupedLayer = {};
+    defaultOptions = DEFAULT_MARKER_OPTIONS
+    circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
+    highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
         this.map = L.map('map')
         this.markers = L.markerClusterGroup({
@@ -16,12 +29,22 @@ class MapApp {
             showCoverageOnHover: false
         });
         this.drawMap();
+        this.sideBar = new sideBar().addTo(this.map);
+
 
     }
+
+
+
     // Create the map in the beginning
     async init() {
         await this.mouseEventHandling();
+        this.sideBarEventHandling();
+
+
     }
+
+
 
 
     drawMap() {
@@ -34,8 +57,25 @@ class MapApp {
         return;
     }
 
+    private highLightMarkersFromADataPublication(doi: string) {
+        const geoFeatures = this.groupedMarkers[doi]
+        assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        geoFeatures.forEach(l => {
+            if (!isPath(l)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`)
+            l.setStyle(this.highlightedOptions);
 
-    async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublication> {
+        })
+    }
+
+    private removeHighLightMarkersFromADataPublication(doi: string) {
+        const geoFeatures = this.groupedMarkers[doi]
+        if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        geoFeatures.forEach(l => {
+            if (!isPath(l)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`)
+            l.setStyle(this.defaultOptions);
+        })
+    }
+    async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
 
@@ -52,19 +92,37 @@ class MapApp {
         return data;
     }
 
-    async getAndDrawResponse(geoList: GeoJsonDataPublication) {
+    async getAndDrawResponse(geoList: GeoJsonDataPublications) {
+
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (datapublication: DataPublication) =>
             (feature: Feature, layer: Layer) => {
                 const popupContent = `<h5>${datapublication.title}</h5>`;
                 layer.bindPopup(popupContent);
-            };
 
+                // Store reference
+                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[datapublication.doi]
+                this.groupedMarkers[datapublication.doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
+                // When hover over a geo feature
+                layer.on("mouseover", () => {
+                    this.highLightMarkersFromADataPublication(datapublication.doi)
+                    this.sideBar.highlight(datapublication.doi)
+                });
+                layer.on("mouseout", () => {
+                    this.removeHighLightMarkersFromADataPublication(datapublication.doi)
+                    this.sideBar.removeHighlight(datapublication.doi)
+                });
+            };
+        const pointToLayer = (feature: Feature, latlng: LatLng) => {
+            return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
+        }
         geoList.forEach(geoElement => {
             const features = geoElement.geojson;
             for (const feature of features.features) {
                 L.geoJSON(feature, {
-                    onEachFeature: getOnEachFeaturePerPublication(geoElement["data_publication"])
+                    pointToLayer,
+                    onEachFeature: getOnEachFeaturePerPublication(geoElement["data_publication"]),
+                    style: this.defaultOptions
                 }).addTo(this.markers);
             }
         });
@@ -74,6 +132,21 @@ class MapApp {
 
     resetMapView() {
         this.map.setView([51.505, -0.09], 4);
+    }
+
+    sideBarEventHandling() {
+
+        this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
+            this.highLightMarkersFromADataPublication(e.id);
+            this.sideBar.highlight(e.id)
+        }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
+
+
+        this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
+            this.removeHighLightMarkersFromADataPublication(e.id)
+            this.sideBar.removeHighlight(e.id)
+        }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
+
     }
     async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
@@ -116,6 +189,8 @@ class MapApp {
                     this.markers.clearLayers();
                 }
                 this.resetMapView();
+
+                this.sideBar.resetList()
                 return;
             }
 
@@ -169,10 +244,14 @@ class MapApp {
 
                 const geo = await this.getJsonFromRequest(boundingBox);
                 await this.getAndDrawResponse(geo);
+                this.sideBar.populate(geo);
+
             };
 
             this.map.on("mousemove", onMouseMove);
             this.map.on("mouseup", onMouseUp);
+
+
         });
     }
 }
@@ -183,3 +262,11 @@ class MapApp {
 
 const app = new MapApp();
 app.init();
+
+
+// Path: An abstract class that contains options and constants shared between vector overlays 
+function isPath(layer: Layer): layer is Path {
+    return layer instanceof Path;
+
+}
+
