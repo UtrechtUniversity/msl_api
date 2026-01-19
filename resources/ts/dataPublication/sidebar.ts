@@ -64,7 +64,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _initPane() {
         assertElementNotNull(this._container, { name: '_container' })
         const mainPane = DomUtil.create('div', 'sidebar-pane', this._container);
-        mainPane.id = 'home';
+        mainPane.id = 'main';
 
         const header = DomUtil.create('h1', 'sidebar-header', mainPane);
         header.textContent = 'Data publications';
