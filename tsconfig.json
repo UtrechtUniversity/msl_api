@@ -6,6 +6,7 @@
         // Environment Settings
         "module": "nodenext",
         "target": "esnext",
+        "useDefineForClassFields": true,
         // Other Outputs
         "sourceMap": true,
         "declaration": true,
@@ -15,7 +16,6 @@
         "exactOptionalPropertyTypes": true,
         // Recommended Options
         "strict": true,
-        "jsx": "react-jsx",
         "verbatimModuleSyntax": true,
         "isolatedModules": true,
         "noUncheckedSideEffectImports": true,
