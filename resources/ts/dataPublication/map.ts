@@ -28,7 +28,7 @@ class MapApp {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
-        this.map = L.map('map', { maxBounds })
+        this.map = L.map('map', { worldCopyJump: true, })
         this.markers = L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
@@ -56,7 +56,6 @@ class MapApp {
         this.resetMapView()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            noWrap: true,
             attribution: '&copy; OpenStreetMap'
         }).addTo(this.map);
         this.resetMapView()
@@ -84,7 +83,6 @@ class MapApp {
     async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
-
         const route = '/api/geoJsonDataPublications?' + params;
 
         const response: Response = await fetch(route, {
@@ -236,13 +234,15 @@ class MapApp {
 
                 const bounds = L.latLngBounds(startPoint, ev.latlng);
 
-                const sw = bounds.getSouthWest();
-                const ne = bounds.getNorthEast();
+                const sw = bounds.getSouthWest().wrap();
+                const ne = bounds.getNorthEast().wrap();
+
+
                 const boundingBox = JSON.stringify([
-                    restrictLng(sw.lng),
-                    restrictLat(sw.lat),
-                    restrictLng(ne.lng),
-                    restrictLat(ne.lat)
+                    sw.lng,
+                    sw.lat,
+                    ne.lng,
+                    ne.lat
                 ]);
                 this.map.fitBounds(bounds);
                 // Clear markers

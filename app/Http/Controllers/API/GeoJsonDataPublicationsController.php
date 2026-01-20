@@ -9,7 +9,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
-use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -43,7 +42,7 @@ class GeoJsonDataPublicationsController extends Controller
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
                 'offset' => ['nullable', 'integer', 'min:0'],
-                'boundingBox' => ['nullable', new GeoRule],
+                'boundingBox' => ['nullable'],
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return new ValidationErrorResource($e);
