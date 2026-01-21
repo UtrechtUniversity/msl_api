@@ -263,17 +263,6 @@ class MapApp {
 }
 
 
-function restrictLat(lat: number) {
-    if (lat < COORDINATE_BOUNDARIES.MIN_LAT) return COORDINATE_BOUNDARIES.MIN_LAT;
-    if (lat > COORDINATE_BOUNDARIES.MAX_LAT) return COORDINATE_BOUNDARIES.MAX_LAT;
-    return lat
-}
-
-function restrictLng(lng: number) {
-    if (lng < COORDINATE_BOUNDARIES.MIN_LNG) return COORDINATE_BOUNDARIES.MIN_LNG;
-    if (lng > COORDINATE_BOUNDARIES.MAX_LNG) return COORDINATE_BOUNDARIES.MAX_LNG;
-    return lng
-}
 
 
 const app = new MapApp();
