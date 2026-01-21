@@ -67,7 +67,7 @@ class GeoJsonDataPublicationsController extends Controller
 
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
-
+        //
         $dataPublications = $response->getResults(true);
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
