@@ -244,6 +244,8 @@ class MapApp {
                     ne.lng,
                     ne.lat
                 ]);
+                //TODO
+                // const boundingBox = "[-123.3, 49.18, -179, 49.33]"
                 this.map.fitBounds(bounds);
                 // Clear markers
                 this.markers.clearLayers();
