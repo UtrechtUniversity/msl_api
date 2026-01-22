@@ -1494,6 +1494,15 @@
                         "synonyms": [
                             {
                                 "value": "xrf"
+                            },
+                            {
+                                "value": "(xrf)"
+                            },
+                            {
+                                "value": "x-ray fluorescence"
+                            },
+                            {
+                                "value": "x-ray fluoresence"
                             }
                         ],
                         "children": []

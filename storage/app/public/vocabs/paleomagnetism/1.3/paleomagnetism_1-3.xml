@@ -904,8 +904,50 @@
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters">
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-bias_exchange_field</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-coercive_force</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-high-field_susceptibility</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-hysteresis_shape_parameter</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-remanent_coercive_force</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_magnetisation</skos:narrower>
+    <skos:narrower>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_remanence</skos:narrower>
     <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves</skos:broader>
     <rdfs:label>hysteresis parameters</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-coercive_force">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>coercive force</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-bias_exchange_field">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>bias exchange field</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-remanent_coercive_force">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>remanent coercive force</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_magnetisation">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>saturation magnetisation</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_remanence">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>saturation remanence</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-high-field_susceptibility">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>high-field susceptibility</rdfs:label>
+  </skos:Concept>
+
+  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-hysteresis_shape_parameter">
+    <skos:broader>https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters</skos:broader>
+    <rdfs:label>hysteresis shape parameter</rdfs:label>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-first_order_reversal_curve_forc">

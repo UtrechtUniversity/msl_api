@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Exports\Vocabs\CombinedRdfExport;
 use App\Exports\Vocabs\ExcelExport;
 use App\Exports\Vocabs\JsonExport;
 use App\Exports\Vocabs\RdfExport;
@@ -68,6 +69,16 @@ class GenerateVocabExports extends Command
             $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.xml';
             Storage::disk('public')->put($path, $exporter->export('rdfxml'));
         }
+
+        $this->line('processing combined exports...');
+        $basePath = 'vocabs/combined/'.$vocabulary->version.'/';
+        $exporter = new CombinedRdfExport($this->argument('version'));
+
+        $path = $basePath.'combined_'.$this->versionFileName($vocabulary->version).'.ttl';
+        Storage::disk('public')->put($path, $exporter->export('turtle'));
+
+        $path = $basePath.'combined_'.$this->versionFileName($vocabulary->version).'.xml';
+        Storage::disk('public')->put($path, $exporter->export('rdfxml'));
 
         $this->line('Finished exporting vocabularies.');
 
