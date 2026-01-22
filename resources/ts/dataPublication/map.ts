@@ -216,7 +216,16 @@ class MapApp {
                 if (rectangle) this.map.removeLayer(rectangle);
 
                 const bounds = L.latLngBounds(startPoint, ev.latlng);
-                rectangle = L.rectangle(bounds, { color: "red" }).addTo(this.map);
+                // Create a new pane and add the bounding box layer there, 
+                // so that the bbox is drawn always on top of geo layers but below 
+                // pop ups
+                //See https://leafletjs.com/examples/map-panes/
+                const bboxPane = this.map.createPane('bboxPane');
+                // > 'Looking at the defaults ( https://github.com/Leaflet/Leaflet/blob/v1.0.0/dist/leaflet.css#L87_),
+                // > a value of 650 will make the TileLayer
+                // > with the labels show on top of markers but below pop-ups.'
+                bboxPane.style.zIndex = '650';
+                rectangle = L.rectangle(bounds, { color: "red", interactive: false, pane: 'bboxPane' }).addTo(this.map);
             };
             // On releasing the button of the mouse
             const onMouseUp = async (ev: LeafletMouseEvent) => {

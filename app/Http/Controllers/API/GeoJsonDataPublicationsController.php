@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Enums\EndpointContext;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
@@ -38,7 +37,6 @@ class GeoJsonDataPublicationsController extends Controller
      */
     protected function index(Request $request): JsonResource|ResourceCollection
     {
-        $context = EndpointContext::ALL;
         try {
             $request->validate([
                 'limit' => ['nullable', 'integer', 'min:0'],
