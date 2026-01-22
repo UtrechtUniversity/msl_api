@@ -5,10 +5,9 @@ namespace App\Http\Controllers\API;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GeoJsonDataPublicationRequest;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
-use App\Http\Resources\V2\Errors\ValidationErrorResource;
-use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -35,17 +34,8 @@ class GeoJsonDataPublicationsController extends Controller
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      */
-    protected function index(Request $request): JsonResource|ResourceCollection
+    protected function index(GeoJsonDataPublicationRequest $request): JsonResource|ResourceCollection
     {
-        try {
-            $request->validate([
-                'limit' => ['nullable', 'integer', 'min:0'],
-                'offset' => ['nullable', 'integer', 'min:0'],
-                'boundingBox' => ['nullable', new GeoRule],
-            ]);
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            return new ValidationErrorResource($e);
-        }
 
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
