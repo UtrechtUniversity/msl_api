@@ -786,8 +786,44 @@
 
 <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters>
   a skos:Concept ;
+  skos:narrower "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-bias_exchange_field", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-coercive_force", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-high-field_susceptibility", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-hysteresis_shape_parameter", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-remanent_coercive_force", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_magnetisation", "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_remanence" ;
   skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves" ;
   rdfs:label "hysteresis parameters" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-coercive_force>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "coercive force" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-bias_exchange_field>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "bias exchange field" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-remanent_coercive_force>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "remanent coercive force" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_magnetisation>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "saturation magnetisation" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_remanence>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "saturation remanence" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-high-field_susceptibility>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "high-field susceptibility" .
+
+<https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-hysteresis_shape_parameter>
+  a skos:Concept ;
+  skos:broader "https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-magnetic_hysteresis_curves-hysteresis_parameters" ;
+  rdfs:label "hysteresis shape parameter" .
 
 <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property-first_order_reversal_curve_forc>
   a skos:Concept ;

@@ -181,6 +181,27 @@
                     },
                     {
                         "value": "dapwell"
+                    },
+                    {
+                        "value": "tu delft campus geothermal project"
+                    },
+                    {
+                        "value": "geothermie delft"
+                    },
+                    {
+                        "value": "geothermal project on tu delft campus"
+                    },
+                    {
+                        "value": "del-gt-01"
+                    },
+                    {
+                        "value": "del-gt-02"
+                    },
+                    {
+                        "value": "del-gt-02-s1"
+                    },
+                    {
+                        "value": "del-gt-02-s2"
                     }
                 ],
                 "children": []
@@ -360,6 +381,18 @@
                     },
                     {
                         "value": "cheshire observatory"
+                    },
+                    {
+                        "value": "uk geoenergy observatories"
+                    },
+                    {
+                        "value": "ukgeos"
+                    },
+                    {
+                        "value": "glasgow observatories"
+                    },
+                    {
+                        "value": "cheshire observatories"
                     }
                 ],
                 "children": []
