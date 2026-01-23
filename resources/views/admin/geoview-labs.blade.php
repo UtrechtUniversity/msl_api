@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -20,7 +20,7 @@
 
                             var features = {!! $features !!};
 
-                            //console.log(features);        				        				
+                            //console.log(features);
 
                             var map = L.map('map').setView([51.505, -0.09], 3);
 

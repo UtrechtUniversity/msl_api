@@ -41,7 +41,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.index', ['datasetsCount' => $datasetCount, 'labCount' => $labCount, 'reposCount' => $reposCount]);
+        return view('public.index', ['datasetsCount' => $datasetCount, 'labCount' => $labCount, 'reposCount' => $reposCount]);
     }
 
     /**
@@ -145,7 +145,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.data-access', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
+        return view('public.data-access', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(true), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'sort' => $sort, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -180,7 +180,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.labs-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('public.labs-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
@@ -280,7 +280,7 @@ class FrontendController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('frontend.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'laboratories' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('public.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'laboratories' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -317,7 +317,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.lab-detail', ['laboratory' => $result->getResult(), 'labHasMailContact' => $labHasMailContact]);
+        return view('public.lab-detail', ['laboratory' => $result->getResult(), 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**
@@ -351,7 +351,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.lab-detail-equipment', ['laboratory' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipment' => $equipment]);
+        return view('public.lab-detail-equipment', ['laboratory' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipment' => $equipment]);
     }
 
     /**
@@ -386,7 +386,7 @@ class FrontendController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('frontend.equipment-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('public.equipment-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
     }
 
     /**
@@ -488,7 +488,7 @@ class FrontendController extends Controller
 
         $result = $client->get($SearchRequest);
 
-        return view('frontend.equipment-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('public.equipment-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'result' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
     }
 
     /**
@@ -509,7 +509,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-repositories', ['repositories' => $result->getResult()]);
+        return view('public.data-repositories', ['repositories' => $result->getResult()]);
     }
 
     /**
@@ -519,7 +519,7 @@ class FrontendController extends Controller
      */
     public function contributeResearcher()
     {
-        return view('frontend.contribute-researcher');
+        return view('public.contribute-researcher');
     }
 
     /**
@@ -529,7 +529,7 @@ class FrontendController extends Controller
      */
     public function contributeRepository()
     {
-        return view('frontend.contribute-repository');
+        return view('public.contribute-repository');
     }
 
     /**
@@ -539,7 +539,7 @@ class FrontendController extends Controller
      */
     public function contributeLaboratory()
     {
-        return view('frontend.contribute-laboratory');
+        return view('public.contribute-laboratory');
     }
 
     /**
@@ -549,7 +549,7 @@ class FrontendController extends Controller
      */
     public function contributeProject()
     {
-        return view('frontend.contribute-project');
+        return view('public.contribute-project');
     }
 
     /**
@@ -579,7 +579,7 @@ class FrontendController extends Controller
             }
         }
 
-        return view('frontend.contribute-select-scenario', ['allDomains' => $allDomains]);
+        return view('public.contribute-select-scenario', ['allDomains' => $allDomains]);
     }
 
     /**
@@ -589,7 +589,7 @@ class FrontendController extends Controller
      */
     public function contactUs()
     {
-        return view('frontend.contact-us');
+        return view('public.contact-us');
     }
 
     /**
@@ -599,7 +599,7 @@ class FrontendController extends Controller
      */
     public function about()
     {
-        return view('frontend.about');
+        return view('public.about');
     }
 
     /**
@@ -619,7 +619,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail', ['dataPublication' => $result->getResult(true)]);
+        return view('public.data-publication-detail', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -639,7 +639,7 @@ class FrontendController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('frontend.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
+        return view('public.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
     }
 
     /**
@@ -649,7 +649,7 @@ class FrontendController extends Controller
      */
     public function keywordSelector()
     {
-        return view('frontend.keyword-selector');
+        return view('public.keyword-selector');
     }
 
     /**
@@ -717,7 +717,7 @@ class FrontendController extends Controller
      */
     public function themeTest()
     {
-        return view('frontend.themeTest');
+        return view('public.themeTest');
     }
 
     /**
@@ -727,6 +727,6 @@ class FrontendController extends Controller
      */
     public function demoPage()
     {
-        return view('frontend.demoPage');
+        return view('public.demoPage');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -20,7 +20,8 @@
                             <button type="submit" class="btn btn-primary">Update data from FAST</button>
                             <a class="btn btn-primary" href="{{ route('update-lab-organizations-data') }}">Update
                                 organizations using ROR</a>
-                            <a class="btn btn-primary" href="{{ route('update-laboratory-keywords') }}">Update laboratory
+                            <a class="btn btn-primary" href="{{ route('update-laboratory-keywords') }}">Update
+                                laboratory
                                 keywords</a>
                             <a class="btn btn-primary" href="{{ route('registry-turtle') }}">Registry turtle file</a>
                         </form>

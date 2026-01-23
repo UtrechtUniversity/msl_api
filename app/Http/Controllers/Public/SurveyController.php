@@ -21,7 +21,7 @@ class SurveyController extends Controller
         $survey = Survey::where('name', $surveyName)->first();
 
         if ($survey->active) {
-            return view('surveys.contribute-survey-scenario', [
+            return view('public.surveys.contribute-survey-scenario', [
                 'allQuestions' => $survey->questions,
                 'surveyName' => $survey->name,
             ]);

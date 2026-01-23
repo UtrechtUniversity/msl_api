@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -18,21 +18,21 @@
                                 @csrf
                                 <table class="table">
                                     <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>title</th>
-                                        </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>title</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($results as $result)
-                                            <tr>
-                                                <td>
-                                                    {{ $loop->iteration }}
-                                                    <input type="hidden" name="names[]" value="{{ $result['name'] }}">
-                                                </td>
-                                                <td>{{ $result['title'] }}</td>
-                                            </tr>
-                                        @endforeach
+                                    @foreach ($results as $result)
+                                        <tr>
+                                            <td>
+                                                {{ $loop->iteration }}
+                                                <input type="hidden" name="names[]" value="{{ $result['name'] }}">
+                                            </td>
+                                            <td>{{ $result['title'] }}</td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
 

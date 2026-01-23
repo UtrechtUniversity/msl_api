@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -56,12 +56,12 @@
                                 // does this feature have a property named popupContent?
                                 if (feature.properties && feature.properties.name) {
                                     var popup = layer.bindPopup(feature.properties.name);
-                                    popup.on("popupopen", function(e) {
+                                    popup.on("popupopen", function (e) {
                                         extraPopupLayer = L.layerGroup();
                                         L.geoJSON(JSON.parse(feature.properties.area_geojson)).addTo(extraPopupLayer);
                                         map.addLayer(extraPopupLayer);
                                     });
-                                    popup.on("popupclose", function(e) {
+                                    popup.on("popupclose", function (e) {
                                         map.removeLayer(extraPopupLayer);
                                     });
 
@@ -103,7 +103,7 @@
 
                             var popupContentFooter = '</div>';
 
-                            markers.on('clusterclick', function(a) {
+                            markers.on('clusterclick', function (a) {
                                 var childMarkers = a.layer.getAllChildMarkers();
                                 var popupContent = popupContentHeader;
                                 var first = true;
@@ -167,7 +167,7 @@
                                     .openOn(map);
                             });
 
-                            map.on('popupclose', function(e) {
+                            map.on('popupclose', function (e) {
                                 map.removeLayer(extraPopupLayer);
                                 curPage = 0;
                                 first = true;

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,24 +11,24 @@
                         @if ($laboratories->count() > 0)
                             <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th>fast id</th>
-                                        <th>fast name</th>
-                                        <th>latitude</th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
+                                <tr>
+                                    <th>fast id</th>
+                                    <th>fast name</th>
+                                    <th>latitude</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($laboratories as $laboratory)
-                                        <tr>
-                                            <td>{{ $laboratory->fast_id }}</td>
-                                            <td>{{ $laboratory->name }}</td>
-                                            <td>{{ $laboratory->latitude }}</td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    @endforeach
+                                @foreach ($laboratories as $laboratory)
+                                    <tr>
+                                        <td>{{ $laboratory->fast_id }}</td>
+                                        <td>{{ $laboratory->name }}</td>
+                                        <td>{{ $laboratory->latitude }}</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center">

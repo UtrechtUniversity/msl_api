@@ -24,6 +24,6 @@ class SelectQuestion extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.forms.select-question');
+        return view('public.components.forms.select-question');
     }
 }

@@ -11,6 +11,6 @@ class DataPublicationAccessController extends Controller
     public function index(Request $request): View
     {
 
-        return view('frontend.dataPublication-map');
+        return view('public.dataPublication-map');
     }
 }

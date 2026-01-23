@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,21 +11,21 @@
                         @if ($seeds->count() > 0)
                             <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>created_at</th>
-                                        <th>actions</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>created_at</th>
+                                    <th>actions</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($seeds as $seed)
-                                        <tr>
-                                            <td>{{ $seed->id }}</td>
-                                            <td>{{ $seed->created_at }}</td>
-                                            <td><a href="{{ route('seeds', ['id' => $seed->id]) }}" title="view details">View
-                                                    details</a></td>
-                                        </tr>
-                                    @endforeach
+                                @foreach ($seeds as $seed)
+                                    <tr>
+                                        <td>{{ $seed->id }}</td>
+                                        <td>{{ $seed->created_at }}</td>
+                                        <td><a href="{{ route('seeds', ['id' => $seed->id]) }}" title="view details">View
+                                                details</a></td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         @else

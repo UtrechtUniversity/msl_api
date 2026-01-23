@@ -27,7 +27,7 @@ class FormController extends Controller
      */
     public function contactForm(): View
     {
-        return view('forms.contact-us');
+        return view('public.forms.contact-us');
     }
 
     /**
@@ -89,7 +89,7 @@ class FormController extends Controller
      */
     public function labIntakeForm(): View
     {
-        return view('forms.laboratory-intake');
+        return view('public.forms.laboratory-intake');
     }
 
     /**
@@ -191,7 +191,7 @@ class FormController extends Controller
             }
         }
 
-        return view('forms.laboratory-contact-person', ['data' => $result->getResult()]);
+        return view('public.forms.laboratory-contact-person', ['data' => $result->getResult()]);
     }
 
     /**

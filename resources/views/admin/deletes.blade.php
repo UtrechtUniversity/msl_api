@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,41 +11,41 @@
                         @if ($deletes->count() > 0)
                             <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>ckan_id</th>
-                                        <th>response_code</th>
-                                        <th>created_at</th>
-                                    </tr>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ckan_id</th>
+                                    <th>response_code</th>
+                                    <th>created_at</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($deletes as $delete)
-                                        <tr
+                                @foreach ($deletes as $delete)
+                                    <tr
                                             @switch($delete->response_code)
-									@case(null)
-										class="table-primary"
-										@break
-										
-									@case(200)
-										class="table-success"
-										@break
-										
-									@case(404)
-										class="table-danger"
-										@break
-								@endswitch>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $delete->ckan_id }}</td>
-                                            <td>
-                                                @if ($delete->response_code == '')
-                                                    in queue
-                                                @else
-                                                    {{ $delete->response_code }}
-                                                @endif
-                                            </td>
-                                            <td>{{ $delete->created_at }}</td>
-                                        </tr>
-                                    @endforeach
+                                                @case(null)
+                                                    class="table-primary"
+                                            @break
+
+                                            @case(200)
+                                                class="table-success"
+                                            @break
+
+                                            @case(404)
+                                                class="table-danger"
+                                            @break
+                                            @endswitch>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $delete->ckan_id }}</td>
+                                        <td>
+                                            @if ($delete->response_code == '')
+                                                in queue
+                                            @else
+                                                {{ $delete->response_code }}
+                                            @endif
+                                        </td>
+                                        <td>{{ $delete->created_at }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <div class="d-flex justify-content-center">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -14,37 +14,37 @@
 
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>id:</td>
-                                        <td>{{ $datasetCreate->id }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>response_code:</td>
-                                        <td>
-                                            {{ $datasetCreate->response_code }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>importer:</td>
-                                        <td>{{ $datasetCreate->source_dataset->source_dataset_identifier->import->importer->name }}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>dataset type (class):</td>
-                                        <td>{{ $datasetCreate->dataset_type }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>created:</td>
-                                        <td>{{ $datasetCreate->created_at }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>processed:</td>
-                                        <td>{{ $datasetCreate->processed }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>processed_type:</td>
-                                        <td>{{ $datasetCreate->processed_type }}</td>
-                                    </tr>
+                                <tr>
+                                    <td>id:</td>
+                                    <td>{{ $datasetCreate->id }}</td>
+                                </tr>
+                                <tr>
+                                    <td>response_code:</td>
+                                    <td>
+                                        {{ $datasetCreate->response_code }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>importer:</td>
+                                    <td>{{ $datasetCreate->source_dataset->source_dataset_identifier->import->importer->name }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>dataset type (class):</td>
+                                    <td>{{ $datasetCreate->dataset_type }}</td>
+                                </tr>
+                                <tr>
+                                    <td>created:</td>
+                                    <td>{{ $datasetCreate->created_at }}</td>
+                                </tr>
+                                <tr>
+                                    <td>processed:</td>
+                                    <td>{{ $datasetCreate->processed }}</td>
+                                </tr>
+                                <tr>
+                                    <td>processed_type:</td>
+                                    <td>{{ $datasetCreate->processed_type }}</td>
+                                </tr>
                                 </tbody>
                             </table>
 

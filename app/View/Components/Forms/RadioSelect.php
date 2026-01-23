@@ -23,6 +23,6 @@ class RadioSelect extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.forms.radio-select');
+        return view('public.components.forms.radio-select');
     }
 }
