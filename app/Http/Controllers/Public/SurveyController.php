@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Public;
 
+use App\Http\Controllers\Controller;
 use App\Models\Surveys\Answer;
 use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;

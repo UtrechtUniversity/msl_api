@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Public;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\CkanClient\Request\PackageShowRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\voic;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Surveys\Survey;

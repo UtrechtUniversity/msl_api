@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Exports\epos\RegistryExport;
 use App\Exports\LabExport;
+use App\Http\Controllers\Controller;
 use App\Jobs\ProcessFastVocabularyUpdate;
 use App\Jobs\ProcessLaboratoryKeywordUpdateGroup;
 use App\Jobs\ProcessLaboratoryOrganizationUpdateGroupRor;

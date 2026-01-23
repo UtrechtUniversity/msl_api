@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Public;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
+use App\Http\Controllers\Controller;
 use App\Mail\ContactLabConfirmation;
 use App\Mail\ContactLabSubmission;
 use App\Mail\ContactUsConfirmation;

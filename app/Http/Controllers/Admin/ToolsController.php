@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\OrganizationListRequest;
@@ -11,6 +11,7 @@ use App\Exports\AbstractMatchingExport;
 use App\Exports\FilterTreeExport;
 use App\Exports\UnmatchedKeywordsExport;
 use App\Exports\UriLabelExport;
+use App\Http\Controllers\Controller;
 use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Keyword;
 use App\Models\Laboratory;

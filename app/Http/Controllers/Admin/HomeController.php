@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Exports\SurveyExport;
+use App\Http\Controllers\Controller;
 use App\Jobs\ProcessDatasetDelete;
 use App\Jobs\ProcessImport;
 use App\Models\DatasetCreate;
