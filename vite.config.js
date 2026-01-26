@@ -10,7 +10,6 @@ export default defineConfig({
             'resources/css/app.css',
             'resources/css/treejs.css',
             'resources/css/treejs-custom.css',
-            'resources/css/treejs-custom-keyword-selector.css',
             'resources/ts/app.ts',
             'resources/ts/tooltip.ts',
             'resources/ts/jstree.ts',
