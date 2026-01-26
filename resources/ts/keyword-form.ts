@@ -66,13 +66,17 @@ vocabData = (function() {
 $.jstree.defaults.core.themes.responsive = true;
 $('#sampleKeywords-tree').jstree({
     plugins: ["checkbox", "search"],
-    "types": {
-        "file": {
-            "icon": "jstree-file"
+    types: {
+        file: {
+            icon: "jstree-file"
         }
     },
-    'core': {
-        'data': vocabData
+    core: {
+        data: vocabData,
+        themes: {
+            dots: false,
+            icons: false
+        }
     },
     checkbox: {
         three_state : false, // to avoid that fact that checking a node also check others
@@ -80,9 +84,9 @@ $('#sampleKeywords-tree').jstree({
         tie_selection : false, // for checking without selecting and selecting without checking
         cascade: ''
     },
-    "search": {
-        "case_sensitive": false,
-        "show_only_matches": true
+    search: {
+        case_sensitive: false,
+        show_only_matches: true
     }
 })
 .on("check_node.jstree uncheck_node.jstree", function(e, data) {
