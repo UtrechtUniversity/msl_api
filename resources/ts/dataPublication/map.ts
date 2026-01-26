@@ -5,7 +5,7 @@ import type { DataPublication, GeoJsonDataPublications } from "../types/datapubl
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotNull, COORDINATE_BOUNDARIES } from "../helpers.js";
+import { assertNotNull } from "../helpers.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
@@ -14,10 +14,7 @@ interface SidebarHoverEvent extends LeafletEvent {
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
-const maxBounds = L.latLngBounds(
-    [COORDINATE_BOUNDARIES.MIN_LAT, COORDINATE_BOUNDARIES.MIN_LNG],
-    [COORDINATE_BOUNDARIES.MAX_LAT, COORDINATE_BOUNDARIES.MAX_LNG]
-);
+
 type GroupedLayer = { [groupedId: string]: Layer[] }
 class MapApp {
     map: Map;
