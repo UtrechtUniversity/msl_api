@@ -74,6 +74,6 @@
 
     </div>
     @push('vite')
-        @vite(['resources/ts/jstree.ts', 'resources/ts/keyword-form.ts'])
+        @vite(['resources/ts/jstree.ts', 'resources/ts/keyword-form.ts', 'resources/css/treejs-custom-keyword-selector.css'])
     @endpush
 </x-layout_main>
