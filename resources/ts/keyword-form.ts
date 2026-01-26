@@ -65,7 +65,7 @@ vocabData = (function() {
 
 $.jstree.defaults.core.themes.responsive = true;
 $('#sampleKeywords-tree').jstree({
-    plugins: ["checkbox", "wholerow", "search"],
+    plugins: ["checkbox", "search"],
     "types": {
         "file": {
             "icon": "jstree-file"
