@@ -13,7 +13,6 @@
 
                         <script type="text/javascript">
                             window.addEventListener("DOMContentLoaded", () => {
-                                console.log('heheheheheh')
                                 var features = {!! $features !!};
 
                                 var map = L.map('map').setView([51.505, -0.09], 3);
@@ -25,7 +24,6 @@
 
                                 for (feature of features) {
                                     parsedFeature = JSON.parse(feature);
-                                    //console.log(JSON.parse(feature));
                                     L.geoJSON(parsedFeature).addTo(map);
                                 }
                             })
@@ -48,7 +46,6 @@
 
                                 for (feature of features) {
                                     parsedFeature = JSON.parse(feature);
-                                    //console.log(JSON.parse(feature));
                                     L.geoJSON(parsedFeature).addTo(map);
                                 }
                             })
@@ -61,7 +58,7 @@
                             window.addEventListener("DOMContentLoaded", () => {
 
                                 function onEachFeature(feature, layer) {
-                                    // does this feature have a property named popupContent?
+
                                     if (feature.properties && feature.properties.name) {
                                         var popup = layer.bindPopup(feature.properties.name);
                                         popup.on("popupopen", function(e) {
@@ -98,7 +95,7 @@
 
                                 for (feature of features) {
                                     parsedFeature = JSON.parse(feature);
-                                    //L.geoJSON(parsedFeature).addTo(geoJsonLayer);
+
 
                                     L.geoJSON(parsedFeature, {
                                         onEachFeature: onEachFeature
@@ -119,7 +116,6 @@
                                     var i = 0;
                                     for (childmarker of childMarkers) {
                                         if (first) {
-                                            //console.log(childMarkers.length);
 
                                             childContent = '<div class="innerPopupContent" id="innerPopupContent-' + i + '">' +
                                                 childmarker._popup._content +
