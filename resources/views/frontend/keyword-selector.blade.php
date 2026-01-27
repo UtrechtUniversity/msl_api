@@ -42,10 +42,10 @@
                             </div>
 
                             <div class="flex p-6 w-full bg-primary-100">
-                                <div class="w-1/2 flex">
+                                <div class="w-1/2 flex overflow-hidden">
                                     <div id="sampleKeywords-tree"></div>
                                 </div>
-                                <div class="w-1/2 flex">
+                                <div class="w-1/2 flex overflow-auto">
                                     <ul class="list-none" id="sampleKeywords-modal-list-group"></ul>
                                 </div>
                             </div>
