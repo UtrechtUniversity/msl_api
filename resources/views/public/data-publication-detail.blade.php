@@ -604,26 +604,29 @@
                             <div id="map" style="height: 300px;"></div>
                         </div>
                         <script>
-                            function onEachFeature(feature, layer) {
-                                if (feature.properties.name) {
-                                    var popupContent = `<h5>${feature.properties.name}</h5>`;
+                            window.addEventListener("DOMContentLoaded", () => {
 
-                                    layer.bindPopup(popupContent);
+                                function onEachFeature(feature, layer) {
+                                    if (feature.properties.name) {
+                                        var popupContent = `<h5>${feature.properties.name}</h5>`;
+
+                                        layer.bindPopup(popupContent);
+                                    }
                                 }
-                            }
 
-                            var features = <?php echo $dataPublication->msl_geojson_featurecollection; ?>;
+                                var features = <?php echo $dataPublication->msl_geojson_featurecollection; ?>;
 
-                            var map = L.map('map').setView([0, 0], 1);
+                                var map = L.map('map').setView([0, 0], 1);
 
-                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                            }).addTo(map);
+                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    maxZoom: 19,
+                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                }).addTo(map);
 
-                            L.geoJSON(features, {
-                                onEachFeature: onEachFeature
-                            }).addTo(map);
+                                L.geoJSON(features, {
+                                    onEachFeature: onEachFeature
+                                }).addTo(map);
+                            })
                         </script>
                     </div>
                 @endif
