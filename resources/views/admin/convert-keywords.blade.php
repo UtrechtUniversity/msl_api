@@ -1,5 +1,5 @@
-@extends('layouts.app')
-{{-- 
+@extends('admin.layouts.app')
+{{--
     Input Variables needed:
     $displayNames (Array) -> contains all domain names as string to be listed in the dropdown menu
 

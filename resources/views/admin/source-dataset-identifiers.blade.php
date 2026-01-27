@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -11,43 +11,43 @@
                         @if ($identifiers->count() > 0)
                             <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Source identifier</th>
-                                        <th>Importer</th>
-                                        <th>response code</th>
-                                        <th>created_at</th>
-                                    </tr>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Source identifier</th>
+                                    <th>Importer</th>
+                                    <th>response code</th>
+                                    <th>created_at</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($identifiers as $identifier)
-                                        <tr
+                                @foreach ($identifiers as $identifier)
+                                    <tr
                                             @switch($identifier->response_code)
-									@case(null)
-										class="table-primary"
-										@break
-										
-									@case(200)
-										class="table-success"
-										@break
-										
-									@case(404)
-										class="table-danger"
-										@break
-								@endswitch>
-                                            <td>{{ $identifier->id }}</td>
-                                            <td>{{ $identifier->identifier }}</td>
-                                            <td>{{ $identifier->import->importer->name }}</td>
-                                            <td>
-                                                @if ($identifier->response_code == '')
-                                                    in queue
-                                                @else
-                                                    {{ $identifier->response_code }}
-                                                @endif
-                                            </td>
-                                            <td>{{ $identifier->created_at }}</td>
-                                        </tr>
-                                    @endforeach
+                                                @case(null)
+                                                    class="table-primary"
+                                            @break
+
+                                            @case(200)
+                                                class="table-success"
+                                            @break
+
+                                            @case(404)
+                                                class="table-danger"
+                                            @break
+                                            @endswitch>
+                                        <td>{{ $identifier->id }}</td>
+                                        <td>{{ $identifier->identifier }}</td>
+                                        <td>{{ $identifier->import->importer->name }}</td>
+                                        <td>
+                                            @if ($identifier->response_code == '')
+                                                in queue
+                                            @else
+                                                {{ $identifier->response_code }}
+                                            @endif
+                                        </td>
+                                        <td>{{ $identifier->created_at }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
 

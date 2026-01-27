@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('content')
     <div class="container">
@@ -21,7 +21,7 @@
                                     <select class="form-select" aria-label="select organization" name="datasetSource">
                                         @foreach ($organizations as $organization)
                                             <option value="{{ $organization['id'] }}"
-                                                @if ($selected == $organization['id']) selected="selected" @endif>
+                                                    @if ($selected == $organization['id']) selected="selected" @endif>
                                                 {{ $organization['name'] }}</option>
                                         @endforeach
                                     </select>
@@ -37,7 +37,7 @@
                         @if (count($data) > 0)
                             <p>Download Excel file containing abstract keyword matching results</p>
                             <a class="btn btn-primary"
-                                href="{{ route('abstract-matching-download', ['data_repo' => $selected]) }}">Download</a>
+                               href="{{ route('abstract-matching-download', ['data_repo' => $selected]) }}">Download</a>
                             <hr>
                         @endif
 
