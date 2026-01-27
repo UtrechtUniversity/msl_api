@@ -6,6 +6,7 @@ use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Rules\GeoRule;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class GeoJsonDataPublicationRequest extends FormRequest
 {
@@ -26,7 +27,10 @@ class GeoJsonDataPublicationRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         $exception = $validator->getException();
-
-        return new ValidationErrorResource(new $exception($validator));
+        throw new HttpResponseException((
+            new ValidationErrorResource(
+                new $exception($validator)
+            )
+        )->response());
     }
 }
