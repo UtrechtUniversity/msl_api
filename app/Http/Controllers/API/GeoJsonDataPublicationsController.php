@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GeoJsonDataPublicationRequest;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
+use App\Services\GeoJsonDataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -34,24 +35,26 @@ class GeoJsonDataPublicationsController extends Controller
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      */
-    protected function index(GeoJsonDataPublicationRequest $request): JsonResource|ResourceCollection
+    protected function index(GeoJsonDataPublicationRequest $request, GeoJsonDataPublicationService $geoJsonDataPublicationService): JsonResource|ResourceCollection
     {
 
-        // Create CKAN client
-        $ckanClient = new Client($this->guzzleClient);
+        [$response, $packageSearchRequest] = $geoJsonDataPublicationService->getResponseFromCKAN($this->guzzleClient, $request);
 
-        $this->setRequestToCKAN($request);
-        // Attempt to retrieve data from CKAN
-        try {
-            $response = $ckanClient->get($this->packageSearchRequest);
-        } catch (\Exception $e) {
-            return new CkanErrorResource([]);
-        }
+        // // Create CKAN client
+        // $ckanClient = new Client($this->guzzleClient);
 
-        // Check if CKAN was succesful
-        if (! $response->isSuccess()) {
-            return new CkanErrorResource([]);
-        }
+        // $this->setRequestToCKAN($request);
+        // // Attempt to retrieve data from CKAN
+        // try {
+        //     $response = $ckanClient->get($this->packageSearchRequest);
+        // } catch (\Exception $e) {
+        //     return new CkanErrorResource([]);
+        // }
+
+        // // Check if CKAN was succesful
+        // if (! $response->isSuccess()) {
+        //     return new CkanErrorResource([]);
+        // }
 
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
