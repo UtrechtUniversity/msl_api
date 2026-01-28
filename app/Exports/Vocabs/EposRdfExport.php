@@ -43,7 +43,7 @@ class EposRdfExport
                 $graph->add($keyword->uri, 'skos:broader', $parent->uri);
             }
 
-            $graph->add($keyword->uri, 'rdfs:label', $keyword->label);
+            $graph->add($keyword->uri, 'skos:prefLabel', $keyword->label);
         }
 
         return $graph->serialise($type);
