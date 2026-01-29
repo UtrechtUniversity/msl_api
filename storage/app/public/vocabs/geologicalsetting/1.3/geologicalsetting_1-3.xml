@@ -1,930 +1,1055 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:narrower>
-    <rdfs:label>tectonic plate boundary</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+    <skos:prefLabel>tectonic plate boundary</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary</skos:broader>
-    <rdfs:label>convergent tectonic plate boundary</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary"/>
+    <skos:prefLabel>convergent tectonic plate boundary</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-continental_subduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-fold-and-thrust_belt</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-foreland_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-high_pressure_metamorphism</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-lithosphere_folding</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-metamorphic_core</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-orogen</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-peripheral_bulge_-_continental_collision</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-piggy-back_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-post-orogenic_collapse</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-pro-wedge</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-shear</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-wedge</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-rock_exhumation</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-surface_uplift</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-suture_zone</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>continental collision</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-continental_subduction">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>continental subduction</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-orogen">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>orogen</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-fold-and-thrust_belt">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>fold-and-thrust belt</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-continental_subduction">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>continental subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-foreland_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>foreland basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-fold-and-thrust_belt">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>fold-and-thrust belt</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-high_pressure_metamorphism">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>high pressure metamorphism</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-suture_zone">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>suture zone</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-lithosphere_folding">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>lithosphere folding</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-foreland_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>foreland basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-metamorphic_core">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>metamorphic core</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-piggy-back_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>piggy-back basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-orogen">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>orogen</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-metamorphic_core">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>metamorphic core</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-peripheral_bulge_-_continental_collision">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>peripheral bulge - continental collision</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-high_pressure_metamorphism">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>high pressure metamorphism</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-piggy-back_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>piggy-back basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-peripheral_bulge_-_continental_collision">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>peripheral bulge - continental collision</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-post-orogenic_collapse">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>post-orogenic collapse</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-post-orogenic_collapse">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>post-orogenic collapse</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-pro-wedge">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>pro-wedge</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-wedge">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>retro-wedge</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-shear">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>retro-shear</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-pro-wedge">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>pro-wedge</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-wedge">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>retro-wedge</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-shear">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>retro-shear</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-rock_exhumation">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>rock exhumation</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-surface_uplift">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>surface uplift</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-surface_uplift">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>surface uplift</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-rock_exhumation">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>rock exhumation</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-suture_zone">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision"/>
+        <skos:prefLabel>suture zone</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-lithosphere_folding">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision</skos:broader>
-    <rdfs:label>lithosphere folding</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary"/>
+    <skos:prefLabel>continental collision</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-accretionary_wedge</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-back-arc_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-continent-continent_subduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-high_pressure_metamorphism</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-intra-arc_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-continent_subduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-ocean_subduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-peripheral_bulge_-_subduction</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-shallow-dipping_slab</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-slab_roll-back</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-steeply_dipping_slab</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subducting_plate_interface</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_erosion</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_initiation</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_zone_topography</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_advancement</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_retreat</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-volcanic_arc</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-accretionary_wedge">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>accretionary wedge</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-ocean_subduction">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>ocean-ocean subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-back-arc_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>back-arc basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-continent_subduction">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>ocean-continent subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-continent-continent_subduction">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>continent-continent subduction</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-continent-continent_subduction">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>continent-continent subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>forearc basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-volcanic_arc">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>volcanic arc</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-high_pressure_metamorphism">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>high pressure metamorphism</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>forearc basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-intra-arc_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>intra-arc fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>trench</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-continent_subduction">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>ocean-continent subduction</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-accretionary_wedge">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>accretionary wedge</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-ocean_subduction">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>ocean-ocean subduction</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-back-arc_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>back-arc basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-peripheral_bulge_-_subduction">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>peripheral bulge - subduction</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subducting_plate_interface">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>subducting plate interface</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-shallow-dipping_slab">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>shallow-dipping slab</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-steeply_dipping_slab">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>steeply dipping slab</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-slab_roll-back">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>slab roll-back</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-shallow-dipping_slab">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>shallow-dipping slab</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-steeply_dipping_slab">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>steeply dipping slab</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-slab_roll-back">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>slab roll-back</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subducting_plate_interface">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>subducting plate interface</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-intra-arc_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>intra-arc fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_erosion">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>subduction erosion</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_retreat">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>trench retreat</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_initiation">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>subduction initiation</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_advancement">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>trench advancement</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_zone_topography">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>subduction zone topography</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-peripheral_bulge_-_subduction">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>peripheral bulge - subduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>trench</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-high_pressure_metamorphism">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>high pressure metamorphism</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_advancement">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>trench advancement</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_initiation">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>subduction initiation</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_retreat">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>trench retreat</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_zone_topography">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>subduction zone topography</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-volcanic_arc">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction"/>
+        <skos:prefLabel>volcanic arc</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_erosion">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction</skos:broader>
-    <rdfs:label>subduction erosion</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary"/>
+    <skos:prefLabel>subduction</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-metamorphic_sole</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-ophiolite</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>obduction</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-metamorphic_sole">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction"/>
+        <skos:prefLabel>metamorphic sole</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-ophiolite">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction</skos:broader>
-    <rdfs:label>ophiolite</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-ophiolite">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction"/>
+        <skos:prefLabel>ophiolite</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-metamorphic_sole">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction</skos:broader>
-    <rdfs:label>metamorphic sole</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-convergent_tectonic_plate_boundary"/>
+    <skos:prefLabel>obduction</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary</skos:broader>
-    <rdfs:label>divergent tectonic plate boundary</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary"/>
+    <skos:prefLabel>divergent tectonic plate boundary</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-asymmetric_rifting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-boundary_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-break-up_unconmformity</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-continental_core_complex</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-horst-and-graben</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-mantle_exhumation</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-narrow_rift</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-non-volcanic_rifted_margin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-oceanic_core_complex</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-rift_volcanism</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-symmetric_rifting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-tilted_block_faulting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-volcanic_rifted_margin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-wide_rift</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>rifting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-asymmetric_rifting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>asymmetric rifting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-narrow_rift">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>narrow rift</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-boundary_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>boundary fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-wide_rift">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>wide rift</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-break-up_unconmformity">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>break-up unconmformity</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-horst-and-graben">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>horst-and-graben</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-continental_core_complex">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>continental core complex</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-tilted_block_faulting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>tilted block faulting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-horst-and-graben">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>horst-and-graben</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-mantle_exhumation">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>mantle exhumation</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-mantle_exhumation">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>mantle exhumation</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-oceanic_core_complex">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>oceanic core complex</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-narrow_rift">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>narrow rift</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-continental_core_complex">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>continental core complex</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-non-volcanic_rifted_margin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>non-volcanic rifted margin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-asymmetric_rifting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>asymmetric rifting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-oceanic_core_complex">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>oceanic core complex</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-symmetric_rifting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>symmetric rifting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-rift_volcanism">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>rift volcanism</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-boundary_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>boundary fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-symmetric_rifting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>symmetric rifting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-rift_volcanism">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>rift volcanism</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-tilted_block_faulting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>tilted block faulting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-volcanic_rifted_margin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>volcanic rifted margin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-volcanic_rifted_margin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>volcanic rifted margin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-non-volcanic_rifted_margin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>non-volcanic rifted margin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-wide_rift">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting"/>
+        <skos:prefLabel>wide rift</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-break-up_unconmformity">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting</skos:broader>
-    <rdfs:label>break-up unconmformity</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary"/>
+    <skos:prefLabel>rifting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-fracture_zone</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-mid-ocean_ridge</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-nodal_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-transform_fault</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>plate spreading</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-fracture_zone">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading"/>
+        <skos:prefLabel>fracture zone</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-mid-ocean_ridge">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading</skos:broader>
-    <rdfs:label>mid-ocean ridge</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-mid-ocean_ridge">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading"/>
+        <skos:prefLabel>mid-ocean ridge</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-transform_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading</skos:broader>
-    <rdfs:label>transform fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-nodal_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading"/>
+        <skos:prefLabel>nodal basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-fracture_zone">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading</skos:broader>
-    <rdfs:label>fracture zone</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-transform_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading"/>
+        <skos:prefLabel>transform fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-nodal_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading</skos:broader>
-    <rdfs:label>nodal basin</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-divergent_tectonic_plate_boundary"/>
+    <skos:prefLabel>plate spreading</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-contractional_bend</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-pull-apart_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-releasing_and_restraining_bend</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-stepover_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-transpressional_basin</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary</skos:broader>
-    <rdfs:label>transcurrent tectonic plate boundary</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-contractional_bend">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+        <skos:prefLabel>contractional bend</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-pull-apart_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>pull-apart basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-pull-apart_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+        <skos:prefLabel>pull-apart basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-stepover_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>stepover basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-releasing_and_restraining_bend">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+        <skos:prefLabel>releasing and restraining bend</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-transpressional_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>transpressional basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-stepover_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+        <skos:prefLabel>stepover basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-contractional_bend">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>contractional bend</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-transpressional_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary"/>
+        <skos:prefLabel>transpressional basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-releasing_and_restraining_bend">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary</skos:broader>
-    <rdfs:label>releasing and restraining bend</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary"/>
+    <skos:prefLabel>transcurrent tectonic plate boundary</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin</skos:narrower>
-    <rdfs:label>intraplate setting</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin"/>
+    <skos:prefLabel>intraplate setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-large_igneous_province_lip</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-mantle_plume</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-volcanic_island</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting</skos:broader>
-    <rdfs:label>hot spot magmatism</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-large_igneous_province_lip">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism"/>
+        <skos:prefLabel>large igneous province (LIP)</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-volcanic_island">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism</skos:broader>
-    <rdfs:label>volcanic island</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-mantle_plume">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism"/>
+        <skos:prefLabel>mantle plume</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-mantle_plume">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism</skos:broader>
-    <rdfs:label>mantle plume</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-volcanic_island">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism"/>
+        <skos:prefLabel>volcanic island</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism-large_igneous_province_lip">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-hot_spot_magmatism</skos:broader>
-    <rdfs:label>large igneous province (LIP)</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting"/>
+    <skos:prefLabel>hot spot magmatism</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-dynamic_topography</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-flexural_basin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_loading</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_rebound</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting</skos:broader>
-    <rdfs:label>isostasy</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-dynamic_topography">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy"/>
+        <skos:prefLabel>dynamic topography</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_loading">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy</skos:broader>
-    <rdfs:label>isostatic loading</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-flexural_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy"/>
+        <skos:prefLabel>flexural basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_rebound">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy</skos:broader>
-    <rdfs:label>isostatic rebound</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_loading">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy"/>
+        <skos:prefLabel>isostatic loading</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-flexural_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy</skos:broader>
-    <rdfs:label>flexural basin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-isostatic_rebound">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy"/>
+        <skos:prefLabel>isostatic rebound</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy-dynamic_topography">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-isostasy</skos:broader>
-    <rdfs:label>dynamic topography</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting"/>
+    <skos:prefLabel>isostasy</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-craton</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-cratonic_basin</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting</skos:broader>
-    <rdfs:label>cratonisation</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-craton">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation"/>
+        <skos:prefLabel>craton</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-craton">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation</skos:broader>
-    <rdfs:label>craton</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-cratonic_basin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation"/>
+        <skos:prefLabel>cratonic basin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation-cratonic_basin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-cratonisation</skos:broader>
-    <rdfs:label>cratonic basin</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting"/>
+    <skos:prefLabel>cratonisation</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-continent-ocean_transition</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-non-volcanic_rifted_margin</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-seaward-dipping_reflectors</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-volcanic_rifted_margin</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting</skos:broader>
-    <rdfs:label>passive continental margin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-continent-ocean_transition">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin"/>
+        <skos:prefLabel>continent-ocean transition</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-continent-ocean_transition">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin</skos:broader>
-    <rdfs:label>continent-ocean transition</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-non-volcanic_rifted_margin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin"/>
+        <skos:prefLabel>non-volcanic rifted margin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-seaward-dipping_reflectors">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin</skos:broader>
-    <rdfs:label>seaward-dipping reflectors</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-seaward-dipping_reflectors">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin"/>
+        <skos:prefLabel>seaward-dipping reflectors</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-non-volcanic_rifted_margin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin</skos:broader>
-    <rdfs:label>non-volcanic rifted margin</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-volcanic_rifted_margin">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin"/>
+        <skos:prefLabel>volcanic rifted margin</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin-volcanic_rifted_margin">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting-passive_continental_margin</skos:broader>
-    <rdfs:label>volcanic rifted margin</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting"/>
+    <skos:prefLabel>passive continental margin</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-asthenosphere</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-mohorovicic_discontinuity</skos:narrower>
-    <rdfs:label>Earth&#039;s structure</rdfs:label>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-asthenosphere">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+        <skos:prefLabel>asthenosphere</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-mohorovicic_discontinuity">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+        <skos:prefLabel>Mohorovicic discontinuity</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
+
+    <skos:prefLabel>Earth&#039;s structure</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-continental_crust</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-lower_crust</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-middle_crust</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-ocean_continent_transition_oct</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-oceanic_crust</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-upper_crust</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>Earth crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-continental_crust">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>continental crust</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-upper_crust">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>upper crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-lower_crust">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>lower crust</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-middle_crust">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>middle crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-middle_crust">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>middle crust</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-lower_crust">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>lower crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-ocean_continent_transition_oct">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>ocean continent transition (OCT)</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-oceanic_crust">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>oceanic crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-oceanic_crust">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>oceanic crust</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-continental_crust">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>continental crust</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-upper_crust">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust"/>
+        <skos:prefLabel>upper crust</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust-ocean_continent_transition_oct">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_crust</skos:broader>
-    <rdfs:label>ocean continent transition (OCT)</rdfs:label>
-  </skos:Concept>
-
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-mohorovicic_discontinuity">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>Mohorovicic discontinuity</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+    <skos:prefLabel>Earth crust</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-410_km_discontinuity</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-660_km_discontinuity</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-core-mantle_boundary</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-d_layer</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lithosphere-asthenosphere_boundary</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lower_mantle</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-upper_mantle</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>Earth mantle</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-410_km_discontinuity">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>410 km discontinuity</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-upper_mantle">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>upper mantle</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-660_km_discontinuity">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>660 km discontinuity</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lower_mantle">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>lower mantle</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-core-mantle_boundary">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>core-mantle boundary</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lithosphere-asthenosphere_boundary">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>lithosphere-asthenosphere boundary</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-d_layer">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>D&#039;&#039; layer</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-410_km_discontinuity">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>410 km discontinuity</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lithosphere-asthenosphere_boundary">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>lithosphere-asthenosphere boundary</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-660_km_discontinuity">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>660 km discontinuity</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-lower_mantle">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>lower mantle</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-d_layer">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>D&#039;&#039; layer</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-upper_mantle">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle"/>
+        <skos:prefLabel>upper mantle</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle-core-mantle_boundary">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_mantle</skos:broader>
-    <rdfs:label>core-mantle boundary</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+    <skos:prefLabel>Earth mantle</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-inner_core</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-outer_core</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>Earth core</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-inner_core">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core"/>
+        <skos:prefLabel>inner core</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-inner_core">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core</skos:broader>
-    <rdfs:label>inner core</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-outer_core">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core"/>
+        <skos:prefLabel>outer core</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core-outer_core">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-earth_core</skos:broader>
-    <rdfs:label>outer core</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+    <skos:prefLabel>Earth core</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-cratonic_lithosphere</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-oceanic_lithosphere</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-continental_lithospheric_mantle</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-oceanic_lithospheric_mantle</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>lithosphere</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-cratonic_lithosphere">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere"/>
+        <skos:prefLabel>cratonic lithosphere</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-cratonic_lithosphere">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere</skos:broader>
-    <rdfs:label>cratonic lithosphere</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-oceanic_lithosphere">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere"/>
+        <skos:prefLabel>oceanic lithosphere</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-oceanic_lithosphere">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere</skos:broader>
-    <rdfs:label>oceanic lithosphere</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-continental_lithospheric_mantle">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere"/>
+        <skos:prefLabel>sub-continental lithospheric mantle</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-continental_lithospheric_mantle">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere</skos:broader>
-    <rdfs:label>sub-continental lithospheric mantle</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-oceanic_lithospheric_mantle">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere"/>
+        <skos:prefLabel>sub-oceanic lithospheric mantle</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere-sub-oceanic_lithospheric_mantle">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-lithosphere</skos:broader>
-    <rdfs:label>sub-oceanic lithospheric mantle</rdfs:label>
-  </skos:Concept>
-
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure-asthenosphere">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure</skos:broader>
-    <rdfs:label>asthenosphere</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure"/>
+    <skos:prefLabel>lithosphere</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone</skos:narrower>
-    <rdfs:label>tectonic deformation structure</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone"/>
+    <skos:prefLabel>tectonic deformation structure</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-detachment_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-normal_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-oblique-slip_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-reverse_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-scissor_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-strike-slip_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-thrust_fault</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-wrench_fault</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure</skos:broader>
-    <rdfs:label>tectonic fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-detachment_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>detachment fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-oblique-slip_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>oblique-slip fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-normal_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>normal fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-reverse_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>reverse fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-oblique-slip_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>oblique-slip fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-scissor_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>scissor fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-reverse_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>reverse fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-strike-slip_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>strike-slip fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-scissor_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>scissor fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-normal_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>normal fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-strike-slip_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>strike-slip fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-thrust_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>thrust fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-thrust_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>thrust fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-wrench_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>wrench fault</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-wrench_fault">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault"/>
+        <skos:prefLabel>wrench fault</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault-detachment_fault">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fault</skos:broader>
-    <rdfs:label>detachment fault</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure"/>
+    <skos:prefLabel>tectonic fault</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-anticline</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-antiform</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-syncline</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-synform</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure</skos:broader>
-    <rdfs:label>tectonic fold</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-anticline">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold"/>
+        <skos:prefLabel>anticline</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-anticline">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold</skos:broader>
-    <rdfs:label>anticline</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-antiform">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold"/>
+        <skos:prefLabel>antiform</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-antiform">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold</skos:broader>
-    <rdfs:label>antiform</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-syncline">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold"/>
+        <skos:prefLabel>syncline</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-syncline">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold</skos:broader>
-    <rdfs:label>syncline</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-synform">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold"/>
+        <skos:prefLabel>synform</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold-synform">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_fold</skos:broader>
-    <rdfs:label>synform</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure"/>
+    <skos:prefLabel>tectonic fold</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone-riedel_shear</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure</skos:broader>
-    <rdfs:label>tectonic shear zone</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone-riedel_shear">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone"/>
+        <skos:prefLabel>Riedel shear</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone-riedel_shear">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure-tectonic_shear_zone</skos:broader>
-    <rdfs:label>Riedel shear</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure"/>
+    <skos:prefLabel>tectonic shear zone</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/extra-terrestrial_setting">
-    <rdfs:label>extra-terrestrial setting</rdfs:label>
+    <skos:prefLabel>extra-terrestrial setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-glacier_related_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:narrower>
-    <rdfs:label>surface morphological setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting"/>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-glacier_related_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting"/>
+        <skos:prefLabel>glacier related setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-glacier_related_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting</skos:broader>
-    <rdfs:label>glacier related setting</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting"/>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+    <skos:prefLabel>surface morphological setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-beach_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-estuary_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-lagoonal_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-rocky_coast_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-tidal_setting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting</skos:broader>
-    <rdfs:label>shoreline setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>barrier island coastline setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-beach_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>beach setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-beach_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>beach setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-estuary_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>estuary setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-estuary_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>estuary setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-lagoonal_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>lagoonal setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-lagoonal_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>lagoonal setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-tidal_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>tidal setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-rocky_coast_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>rocky coast setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-rocky_coast_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>rocky coast setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-tidal_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting"/>
+        <skos:prefLabel>tidal setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-shoreline_setting</skos:broader>
-    <rdfs:label>barrier island coastline setting</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting"/>
+    <skos:prefLabel>shoreline setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-floodplain_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting</skos:broader>
-    <rdfs:label>river plain system setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-floodplain_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting"/>
+        <skos:prefLabel>floodplain setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-floodplain_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting</skos:broader>
-    <rdfs:label>floodplain setting</rdfs:label>
+    <skos:narrower rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting"/>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting"/>
+    <skos:prefLabel>river plain system setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting</skos:broader>
-    <rdfs:label>river channel setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting"/>
+        <skos:prefLabel>braided river channel setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting</skos:broader>
-    <rdfs:label>braided river channel setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting"/>
+        <skos:prefLabel>meandering river channel setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting-river_channel_setting</skos:broader>
-    <rdfs:label>meandering river channel setting</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-river_plain_system_setting"/>
+    <skos:prefLabel>river channel setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting</skos:broader>
-    <rdfs:label>deltaic system setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting"/>
+        <skos:prefLabel>estuarine delta setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting</skos:broader>
-    <rdfs:label>estuarine delta setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting"/>
+        <skos:prefLabel>lacustrine delta setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-deltaic_system_setting</skos:broader>
-    <rdfs:label>lacustrine delta setting</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting"/>
+    <skos:prefLabel>deltaic system setting</skos:prefLabel>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting">
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-abyssal_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-basin_plain_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-continental_shelf</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-deep_sea_trench_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-slope-rise_setting</skos:narrower>
-    <skos:narrower>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-submarine_fan_setting</skos:narrower>
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting</skos:broader>
-    <rdfs:label>marine setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-abyssal_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>abyssal setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-continental_shelf">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>continental shelf</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-basin_plain_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>basin plain setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-slope-rise_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>slope-rise setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-continental_shelf">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>continental shelf</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-submarine_fan_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>submarine fan setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-deep_sea_trench_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>deep sea trench setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-basin_plain_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>basin plain setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-slope-rise_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>slope-rise setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-deep_sea_trench_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>deep sea trench setting</rdfs:label>
-  </skos:Concept>
+    <skos:narrower>
+      <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-submarine_fan_setting">
+        <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting"/>
+        <skos:prefLabel>submarine fan setting</skos:prefLabel>
+      </skos:Concept>
+    </skos:narrower>
 
-  <skos:Concept rdf:about="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting-abyssal_setting">
-    <skos:broader>https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting-marine_setting</skos:broader>
-    <rdfs:label>abyssal setting</rdfs:label>
+    <skos:broader rdf:resource="https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting"/>
+    <skos:prefLabel>marine setting</skos:prefLabel>
   </skos:Concept>
 
 </rdf:RDF>
