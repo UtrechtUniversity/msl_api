@@ -1,4 +1,4 @@
-import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
+import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path, Polygon } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { DataPublication, GeoJsonDataPublications } from "../types/datapublication.js";
@@ -265,8 +265,8 @@ app.init();
 
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
-function isPath(layer: Layer): layer is Path {
-    return layer instanceof Path;
+function isPath(layer: Layer): layer is L.Path {
+    return layer instanceof L.Path;
 
 }
 
