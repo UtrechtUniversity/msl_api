@@ -25,7 +25,7 @@ class EposRdfExport
 
         $topLevelKeywords = Keyword::where('vocabulary_id', $this->vocabulary->id)->where('level', 1)->get();
         foreach ($topLevelKeywords as $topLevelKeyword) {
-            $graph->add($this->vocabulary->uri, 'skos:hasTopConcept', $topLevelKeyword->uri);
+            $graph->addResource($this->vocabulary->uri, 'skos:hasTopConcept', $topLevelKeyword->uri);
         }
 
         $keywords = $this->vocabulary->keywords;
@@ -35,12 +35,12 @@ class EposRdfExport
 
             $children = $keyword->getChildren();
             foreach ($children as $child) {
-                $graph->add($keyword->uri, 'skos:narrower', $child->uri);
+                $graph->addResource($keyword->uri, 'skos:narrower', $child->uri);
             }
 
             $parent = $keyword->parent;
             if ($parent) {
-                $graph->add($keyword->uri, 'skos:broader', $parent->uri);
+                $graph->addResource($keyword->uri, 'skos:broader', $parent->uri);
             }
 
             $graph->add($keyword->uri, 'skos:prefLabel', $keyword->label);
