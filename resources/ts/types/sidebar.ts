@@ -1,6 +1,6 @@
 import { Evented } from "leaflet";
 import type * as Leaflet from 'leaflet';
-import type { GeoJsonDataPublication, GeoJsonDataPublications } from "./datapublication.ts";
+import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "./datapublication.ts";
 
 export interface Sidebar {
     // private methods
@@ -12,7 +12,6 @@ export interface Sidebar {
     _listView: HTMLDivElement | null,
     _map: Leaflet.Map | null,
     _tabLink: null | HTMLAnchorElement,
-    _features: GeoJsonDataPublications
     _initSideBarElement(id: string): void,
     _initTab(): void,
     _initContent(): void,
@@ -20,7 +19,7 @@ export interface Sidebar {
     _onOpenClick(): void,
     _onCloseClick(): void
     _options: { position: "left" },
-    _createListItem(feature: GeoJsonDataPublication): HTMLDivElement,
+    _createListItem(feature: DataPublication): HTMLDivElement,
     // public methods
 
     open(): this,
@@ -30,7 +29,7 @@ export interface Sidebar {
     highlight(id: string): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
-    populate(features: GeoJsonDataPublications): void,
+    populate(features: DataPublication[]): void,
     resetList(): void,
 
 }

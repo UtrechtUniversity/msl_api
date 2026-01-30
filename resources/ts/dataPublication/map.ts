@@ -1,7 +1,7 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { DataPublication, GeoJsonDataPublications } from "../types/datapublication.js";
+import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
@@ -95,37 +95,36 @@ class MapApp {
     async getAndDrawResponse(geoList: GeoJsonDataPublications) {
 
         // We want to be able to pass information of the publication inside each feature of the geo collection
-        const getOnEachFeaturePerPublication = (datapublication: DataPublication) =>
+        const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
             (_: Feature, layer: Layer) => {
-                const popupContent = `<h5>${datapublication.title}</h5>`;
+                const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
                 layer.bindPopup(popupContent);
 
                 // Store reference
-                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[datapublication.doi]
-                this.groupedMarkers[datapublication.doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
+                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[geoFeatureWithInfo.data_publication_doi]
+                this.groupedMarkers[geoFeatureWithInfo.data_publication_doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
                 // When hover over a geo feature
                 layer.on("mouseover", () => {
-                    this.highLightMarkersFromADataPublication(datapublication.doi)
-                    this.sideBar.highlight(datapublication.doi)
+                    this.highLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi)
+                    this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
                 });
                 layer.on("mouseout", () => {
-                    this.removeHighLightMarkersFromADataPublication(datapublication.doi)
-                    this.sideBar.removeHighlight(datapublication.doi)
+                    this.removeHighLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi)
+                    this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
                 });
             };
         const pointToLayer = (_: Feature, latlng: LatLng) => {
             return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
         }
-        geoList.forEach(geoElement => {
-            const features = geoElement.geojson;
-            for (const feature of features.features) {
-                L.geoJSON(feature, {
-                    pointToLayer,
-                    onEachFeature: getOnEachFeaturePerPublication(geoElement["data_publication"]),
-                    style: this.defaultOptions
-                }).addTo(this.markers);
-            }
-        });
+        const featuresWithInfo = geoList.geojson;
+        for (const featureWithInfo of featuresWithInfo) {
+
+            L.geoJSON(featureWithInfo.feature, {
+                pointToLayer,
+                onEachFeature: getOnEachFeaturePerPublication(featureWithInfo),
+                style: this.defaultOptions
+            }).addTo(this.markers);
+        }
 
         this.map.addLayer(this.markers);
     }
@@ -253,7 +252,7 @@ class MapApp {
 
                 const geo = await this.getJsonFromRequest(boundingBox);
                 await this.getAndDrawResponse(geo);
-                this.sideBar.populate(geo);
+                this.sideBar.populate(geo.data_publications);
 
             };
 
