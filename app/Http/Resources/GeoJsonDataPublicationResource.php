@@ -15,13 +15,13 @@ class GeoJsonDataPublicationResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $geoJsonInfo = ['geojson' => json_decode($this->msl_geojson_featurecollection)];
+        // $geoJsonInfo = ['geojson' => json_decode($this->msl_geojson_featurecollection)];
 
-        $geoJsonInfo += [
-            'data_publication' => new DataPublicationResource(
-                resource: $this,
+        $geoJsonInfo = [
+            'data_publications' => $this->collection->map(fn ($resource) => (new DataPublicationResource(
+                resource: $resource,
                 includesGeoJson: false
-            ),
+            ))),
         ];
 
         return $geoJsonInfo;

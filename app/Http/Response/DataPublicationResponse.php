@@ -38,7 +38,7 @@ class DataPublicationResponse
 
     public function getResponse(): JsonResource|ResourceCollection
     {
-        $dataPublicationResource = GeoJsonDataPublicationResource::collection($this->dataPublications);
+        $dataPublicationResource = new GeoJsonDataPublicationResource($this->dataPublications);
 
         return $dataPublicationResource->additional([
             'success' => 'true',

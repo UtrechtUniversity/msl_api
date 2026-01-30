@@ -61,7 +61,7 @@ class MapApp {
         const geoFeatures = this.groupedMarkers[doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(l => {
-            if (!isPath(l)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`)
+            assertIsPath(l)
             l.setStyle(this.highlightedOptions);
 
         })
@@ -71,7 +71,7 @@ class MapApp {
         const geoFeatures = this.groupedMarkers[doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(l => {
-            if (!isPath(l)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`)
+            assertIsPath(l)
             l.setStyle(this.defaultOptions);
         })
     }
@@ -96,7 +96,7 @@ class MapApp {
 
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (datapublication: DataPublication) =>
-            (feature: Feature, layer: Layer) => {
+            (_: Feature, layer: Layer) => {
                 const popupContent = `<h5>${datapublication.title}</h5>`;
                 layer.bindPopup(popupContent);
 
@@ -113,7 +113,7 @@ class MapApp {
                     this.sideBar.removeHighlight(datapublication.doi)
                 });
             };
-        const pointToLayer = (feature: Feature, latlng: LatLng) => {
+        const pointToLayer = (_: Feature, latlng: LatLng) => {
             return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
         }
         geoList.forEach(geoElement => {
@@ -274,8 +274,8 @@ app.init();
 
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
-function isPath(layer: Layer): layer is Path {
-    return layer instanceof Path;
+function assertIsPath(layer: Layer): asserts layer is Path {
+    if (!(layer instanceof Path)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`);
 
 }
 
