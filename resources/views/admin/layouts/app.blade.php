@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -20,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- So that map works --}}
+    @vite(['resources/ts/app.ts'])
 
 </head>
 
@@ -184,10 +185,10 @@
                             </li>
 
                             <!--
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('queues') }}">{{ __('Queue') }}</a>
-                                                    </li>
-                                                    -->
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link" href="{{ route('queues') }}">{{ __('Queue') }}</a>
+                                                                        </li>
+                                                                        -->
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

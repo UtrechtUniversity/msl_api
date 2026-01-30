@@ -105,30 +105,35 @@
                         <div id="map" style="height: 300px;"></div>
 
                         <script>
-                            function onEachFeature(feature, layer) {
-                                if (feature.properties) {
-                                    var popupContent = `<h5>${feature.properties.title}</h5><p>${feature.properties.msl_organization_name}</p>`;
+                            window.addEventListener("DOMContentLoaded", () => {
 
-                                    layer.bindPopup(popupContent);
+                                function onEachFeature(feature, layer) {
+                                    if (feature.properties) {
+                                        var popupContent =
+                                            `<h5>${feature.properties.title}</h5><p>${feature.properties.msl_organization_name}</p>`;
+
+                                        layer.bindPopup(popupContent);
+                                    }
                                 }
-                            }
 
-                            var features = <?php echo $laboratory['msl_location']; ?>;
+                                var features = <?php echo $laboratory['msl_location']; ?>;
 
-                            if (features.geometry.coordinates) {
-                                var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]], 4);
-                            } else {
-                                var map = L.map('map').setView([51.505, -0.09], 4);
-                            }
+                                if (features.geometry.coordinates) {
+                                    var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]],
+                                        4);
+                                } else {
+                                    var map = L.map('map').setView([51.505, -0.09], 4);
+                                }
 
-                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                            }).addTo(map);
+                                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                    maxZoom: 19,
+                                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                }).addTo(map);
 
-                            L.geoJSON(features, {
-                                onEachFeature: onEachFeature
-                            }).addTo(map);
+                                L.geoJSON(features, {
+                                    onEachFeature: onEachFeature
+                                }).addTo(map);
+                            })
                         </script>
                     </div>
                 </div>
