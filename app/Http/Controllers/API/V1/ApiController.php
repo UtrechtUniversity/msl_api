@@ -226,7 +226,6 @@ class ApiController extends BaseController
 
     public function term(Request $request)
     {
-
         $validator = Validator::make(request()->all(), [
             'uri' => 'required',
         ]);
