@@ -1,13 +1,10 @@
 import $ from 'jquery';
 window.$ = $;
 //  Import Leaflet and CSS
-import 'leaflet/dist/leaflet.css';
+import * as L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet.markercluster/dist/MarkerCluster.css';
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
-
-import * as L from 'leaflet';
-//  Import MarkerCluster AFTER exposing window.L
 import 'leaflet.markercluster';
 
 import markerIconUrl from "leaflet/dist/images/marker-icon.png";
@@ -21,4 +18,3 @@ L.Icon.Default.prototype.options.shadowUrl = markerShadowUrl;
 L.Icon.Default.imagePath = "";
 
 import '@fortawesome/fontawesome-free/css/all.css';
-export default L
