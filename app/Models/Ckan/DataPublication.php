@@ -214,6 +214,8 @@ class DataPublication
 
     /**
      * Geojson feature collection object containing spatial features
+     *
+     * @var string | FeatureCollection
      */
     public $geojson_featurecollection = '';
 

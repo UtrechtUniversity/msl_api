@@ -12,7 +12,7 @@ class FeatureCollection implements JsonSerializable
     /**
      * @var array<Feature>
      */
-    public array $features;
+    public array $features = [];
 
     /**
      * constructs a new FeatureCollection
