@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use MatomoTracker;
 
-class ProcessMatomoTrackingJob implements ShouldQueue
+class ProcessMatomoPageTrackingJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
