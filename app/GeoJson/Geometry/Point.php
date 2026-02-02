@@ -47,6 +47,13 @@ class Point extends Geometry
         $this->z = $z;
     }
 
+    public static function fromJson($geometryFromJson)
+    {
+        $coordinates = $geometryFromJson['coordinates'];
+
+        return new self((float) $coordinates[0], (float) $coordinates[1]);
+    }
+
     /**
      * returns distance between this and provided point
      */

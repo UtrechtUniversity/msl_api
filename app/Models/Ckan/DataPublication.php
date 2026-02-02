@@ -2,6 +2,7 @@
 
 namespace App\Models\Ckan;
 
+use App\GeoJson\Feature\FeatureCollection;
 use Exception;
 
 class DataPublication
@@ -210,6 +211,11 @@ class DataPublication
      * Geojson feature collection string containing spatial features
      */
     public $msl_geojson_featurecollection = '';
+
+    /**
+     * Geojson feature collection object containing spatial features
+     */
+    public $geojson_featurecollection = '';
 
     /**
      * Geojson feature collection string containing spatial features converted to points
@@ -836,6 +842,10 @@ class DataPublication
         $arr = [];
 
         foreach ($this as $key => $value) {
+            // TODO ??
+            if ($key === 'geojson_featurecollection') {
+                continue;
+            }
             if (is_array($value)) {
                 $subArr = [];
                 foreach ($value as $subValue) {
@@ -851,7 +861,6 @@ class DataPublication
                 }
                 $arr[$key] = $subArr;
             } elseif (is_object($value)) {
-
             } else {
                 $arr[$key] = $value;
             }
@@ -863,7 +872,6 @@ class DataPublication
     public static function fromCkanArray(array $data): self
     {
         $dataPublication = new self;
-
         foreach ($data as $key => $value) {
             // CKAN sometimes adds the string '{}' for empty repeating fields.
             if ($value === '{}') {
@@ -873,6 +881,7 @@ class DataPublication
             if ($value !== '') {
                 if (! is_array($value)) {
                     if (property_exists($dataPublication, $key)) {
+                        // echo $key;
                         switch (gettype($dataPublication->{$key})) {
                             case 'integer':
                                 $dataPublication->{$key} = (int) $value;
@@ -891,6 +900,7 @@ class DataPublication
                     }
                 } else {
                     switch ($key) {
+
                         case 'msl_rights':
                             foreach ($value as $subValue) {
                                 $dataPublication->msl_rights[] = new Right(
@@ -1016,7 +1026,6 @@ class DataPublication
                                 $dataPublication->msl_contributors[] = $contributor;
                             }
                             break;
-
                         case 'msl_sizes':
                             $dataPublication->msl_sizes = $value;
                             break;
@@ -1108,6 +1117,8 @@ class DataPublication
                 }
             }
         }
+
+        $dataPublication->geojson_featurecollection = FeatureCollection::fromString($dataPublication->msl_geojson_featurecollection);
 
         return $dataPublication;
     }

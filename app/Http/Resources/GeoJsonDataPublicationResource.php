@@ -26,9 +26,36 @@ class GeoJsonDataPublicationResource extends JsonResource
                 array_push($allFeatures, ['feature' => $feature, 'title' => $dataPublication->title, 'data_publication_doi' => $dataPublication->msl_doi]);
             }
         }
-        // order
 
+        // order
         return $allFeatures;
+        // function compare($a, $b)
+        // {
+        //     // If first argument is a point
+        //     if ($a['type'] === 'Point') return -1;
+        //     // If second argument is a point
+
+        //     // if ()
+        //     // $points = [];
+
+        //     // foreach ($value as $point) {
+        //     //     $points[] = new Point(
+        //     //         (float) $point['polygonPoint']['pointLongitude'],
+        //     //         (float) $point['polygonPoint']['pointLatitude']
+        //     //     );
+        //     // }
+
+        //     // $polygon = new Polygon($points);
+        //     // $geometries[] = $polygon;
+
+        //     // $features[] = new Feature(
+        //     //     $polygon,
+        //     //     ['name' => $locationName]
+        //     // );
+        //     // $area += $polygon->area();
+        //     // return $allFeatures;
+        // }
+        // return usort($allFeatures, 'compare');
     }
 
     /**

@@ -2,6 +2,10 @@
 
 namespace Tests\Unit;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Feature\FeatureCollection;
+use App\GeoJson\Geometry\Point;
+use App\GeoJson\Geometry\Polygon;
 use App\Models\Ckan\Affiliation;
 use App\Models\Ckan\AlternateIdentifier;
 use App\Models\Ckan\Contributor;
@@ -202,6 +206,9 @@ class DataPublicationTest extends TestCase
         $this->assertEquals('Draebing, D. (2023). <i>Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone</i> (Version 1) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-Q5K96Z', $dataPublication->msl_citation);
         $this->assertCount(0, $dataPublication->msl_spatial_coordinates);
         $this->assertEquals('{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-60.83408,-51.68212],[-60.83408,-52.13647],[-59.37044,-52.13647],[-59.37044,-51.68212],[-60.83408,-51.68212]]]},"properties":{"name":""}}]}', $dataPublication->msl_geojson_featurecollection);
+        $collection = new FeatureCollection([new Feature(new Polygon([new Point(-60.83408, -51.68212), new Point(-60.83408, -52.13647), new Point(-59.37044, -52.13647), new Point(-59.37044, -51.68212),  new Point(-60.83408, -51.68212)]), [])]);
+        $this->assertEquals($collection, $dataPublication->geojson_featurecollection);
+
         $this->assertEquals('', $dataPublication->msl_geojson_featurecollection_points);
         $this->assertEquals(0, $dataPublication->msl_surface_area);
 

@@ -39,6 +39,19 @@ class Polygon extends Geometry
         }
     }
 
+    public static function fromJson($geometryFromJson)
+    {
+        $listOfCoordinates = $geometryFromJson['coordinates'];
+
+        $points = [];
+        foreach ($listOfCoordinates[0] as $coordinates) {
+            $point = new Point((float) $coordinates[0], (float) $coordinates[1]);
+            array_push($points, $point);
+        }
+
+        return new self($points);
+    }
+
     /**
      * Calculate area of polygon
      */
