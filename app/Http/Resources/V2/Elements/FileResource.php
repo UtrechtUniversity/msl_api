@@ -7,6 +7,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class FileResource extends JsonResource
 {
+    protected string $dataPublicationName;
+
+    public function __construct($resource, string $dataPublicationName)
+    {
+        parent::__construct($resource);
+        $this->dataPublicationName = $dataPublicationName;
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -16,7 +24,7 @@ class FileResource extends JsonResource
     {
         return [
             'fileName' => $this->msl_file_name,
-            'downloadLink' => $this->msl_download_link,
+            'downloadLink' => route('file-download', ['id' => $this->dataPublicationName, 'url' => base64_encode($this->msl_download_link)]),
             'extension' => $this->msl_extension,
             'isFolder' => $this->msl_is_folder,
         ];

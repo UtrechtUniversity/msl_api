@@ -7,6 +7,7 @@ use App\Http\Resources\V2\Elements\ContributorResource;
 use App\Http\Resources\V2\Elements\CreatorResource;
 use App\Http\Resources\V2\Elements\DataPublicationsDescriptionResource;
 use App\Http\Resources\V2\Elements\DateResource;
+use App\Http\Resources\V2\Elements\FileCollection;
 use App\Http\Resources\V2\Elements\FileResource;
 use App\Http\Resources\V2\Elements\FundingReferenceResource;
 use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
@@ -195,7 +196,7 @@ class DataPublicationResource extends JsonResource
             'contributors' => ContributorResource::collection($this->msl_contributors),
             'materials' => $this->getMaterials(),
             'researchAspects' => $this->getResearchAspects(),
-            'files' => FileResource::collection(array_slice($this->msl_files, 0, 25)),
+            'files' => new FileCollection(array_slice($this->msl_files, 0, 25), $this->name),
             'resource_type' => $this->msl_resource_type,
             'resource_type_general' => $this->msl_resource_type_general,
             'publication_year' => $this->msl_publication_year,
