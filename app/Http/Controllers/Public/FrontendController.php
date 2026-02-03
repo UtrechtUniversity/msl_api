@@ -11,8 +11,10 @@ use App\Http\Controllers\voic;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Surveys\Survey;
+use App\Services\DataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontendController extends Controller
 {
@@ -640,6 +642,21 @@ class FrontendController extends Controller
         }
 
         return view('public.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
+    }
+
+    public function fileDownload(string $id, string $encodedUrl)
+    {
+        $service = new DataPublicationService();
+        $dataPublication = $service->getById($id);
+
+        if($dataPublication) {
+            $url = base64_decode($encodedUrl, true);
+            if($dataPublication->hasFileWithUrl($url)) {
+                return Redirect::to($url);
+            }
+        }
+
+        abort(404, 'File not found');
     }
 
     /**

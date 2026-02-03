@@ -432,6 +432,17 @@ class DataPublication
         return array_unique(array_column($this->getFiles('files'), 'msl_extension'));
     }
 
+    public function hasFileWithUrl(string $url): bool
+    {
+        foreach ($this->msl_files as $file) {
+            if ($file->msl_download_link === $url) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     /**
      * Add Right object to msl_rights
      */
