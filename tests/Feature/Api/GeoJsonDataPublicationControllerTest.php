@@ -46,8 +46,8 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                 ->where('meta.offset', 0)
                 ->where('links.current_url', config('app.url').'/api/geoJsonDataPublications?offset=0&limit=10')
                 ->has(
-                    'data.9',
-                    fn (AssertableJson $json) => $json->has('data_publication', fn (AssertableJson $json) => $json->where('title', 'Paleomagnetic evidence for the existence of the geomagnetic field 3.5 Ga ago (Dataset)')
+                    'data.data_publications.9',
+                    fn (AssertableJson $json) => $json->where('title', 'Paleomagnetic evidence for the existence of the geomagnetic field 3.5 Ga ago (Dataset)')
                         ->where('name', '86dcccf60dc76092265994e2c6b50470')
                         ->where('portalLink', config('app.url').'/data-publication/86dcccf60dc76092265994e2c6b50470')
                         ->where('doi', '10.7288/v4/magic/20541')
@@ -117,12 +117,23 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                                 'subject',
                                 'Basalt',
                             )->count('EPOS_Uris', 1)->etc()
-                        )->etc())->has('geojson', fn (AssertableJson $json) => $json->where(
-                            'type',
-                            'FeatureCollection',
-                        )->count('features', 51)->etc()
-                        )
+                        )->etc()
+                )->has(
+                    'data.geojson.0',
+                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
+                )->count('data.geojson', 68)->has(
+                    'data.geojson.9',
+                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
                 )
+                ->has(
+                    'data.geojson.10',
+                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
+                )
+                ->has(
+                    'data.geojson.67',
+                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
+                )
+
         );
     }
 }

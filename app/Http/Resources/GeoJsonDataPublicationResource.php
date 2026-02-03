@@ -47,7 +47,7 @@ class GeoJsonDataPublicationResource extends JsonResource
                 }
                 // If second argument is a point
                 if ($b->feature->geometry instanceof Point) {
-                    return 1;
+                    return -1;
                 }
                 if (
                     ! ($b->feature->geometry instanceof Polygon &&
