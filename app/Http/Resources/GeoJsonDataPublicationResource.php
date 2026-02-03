@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\GeoJson\Feature\FeatureCollection;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
 use App\Http\Resources\V2\DataPublicationResource;
@@ -24,20 +23,12 @@ class GeoJsonDataPublicationResource extends JsonResource
         $allFeatures = [];
         foreach ($dataPublications as $dataPublication) {
             $featuresCollection = $dataPublication->geojson_featurecollection;
-            if (! ($featuresCollection instanceof FeatureCollection)) {
-                throw new Exception("Collection is not an instance of the 'FeatureCollection' class. This is a bug.");
-            }
-            if (count($featuresCollection->features) < 1) {
-                continue;
-            }
 
             foreach ($featuresCollection->features as $feature) {
-                // TODO can I do this a resource?
-                array_push($allFeatures, new GeoJsonFeatureResource($feature, $dataPublication));
+                $allFeatures[] = new GeoJsonFeatureResource($feature, $dataPublication);
             }
         }
-        // order
-
+        // Descending order based on the area of the feature
         usort(
             $allFeatures,
             function (GeoJsonFeatureResource $a, GeoJsonFeatureResource $b) {
@@ -45,10 +36,11 @@ class GeoJsonDataPublicationResource extends JsonResource
                 if ($a->feature->geometry instanceof Point) {
                     return 1;
                 }
-                // If second argument is a point
+                // If first argument is a polygon and the second argument is a point
                 if ($b->feature->geometry instanceof Point) {
                     return -1;
                 }
+
                 if (
                     ! ($b->feature->geometry instanceof Polygon &&
                         $a->feature->geometry instanceof Polygon
@@ -76,14 +68,15 @@ class GeoJsonDataPublicationResource extends JsonResource
     {
         $dataPublications = collect($this->resource);
         $geo = $this->getOrderedFeatures($dataPublications);
-        // Adding the array of resources on its own won't work
-        // We have to use the `collection` method to use the `toArray`
-        $geoJsonInfo = ['geojson' => GeoJsonFeatureResource::collection($geo)];
-        $geoJsonInfo += [
-            'data_publications' => $dataPublications->map(fn ($resource) => (new DataPublicationResource(
-                resource: $resource,
+
+        $geoJsonInfo = [
+            'data_publications' => $dataPublications->map(fn ($dataPublication) => (new DataPublicationResource(
+                resource: $dataPublication,
                 includesGeoJson: false
             ))),
+            // Adding the array of resources on its own won't work
+            // We have to use the `collection` method to use the `toArray`
+            'geojson' => GeoJsonFeatureResource::collection($geo),
         ];
 
         return $geoJsonInfo;
