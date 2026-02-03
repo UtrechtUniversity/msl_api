@@ -32,10 +32,10 @@ class EposRdfExport
             $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'skos:hasTopConcept', $this->convertTermUriToEposUri($topLevelKeyword->uri));
         }
 
-        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'reg:inverseMembershipPredicate', 'skos:inScheme');
-        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyChildProperty', 'skos:narrower');
-        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
-        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ldp:isMemberOfRelation', 'skos:inScheme');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'reg:inverseMembershipPredicate', 'skos:inScheme');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyChildProperty', 'skos:narrower');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ldp:isMemberOfRelation', 'skos:inScheme');
 
 
         $keywords = $this->vocabulary->keywords;
