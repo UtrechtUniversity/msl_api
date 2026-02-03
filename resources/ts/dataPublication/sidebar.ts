@@ -149,8 +149,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         return this;
     },
 
-    _createListItem(feature: DataPublication) {
-        const dataPublication = feature;
+    _createListItem(dataPublication: DataPublication) {
 
         const item = document.createElement('div');
         item.className = 'data-publication-item';
@@ -162,16 +161,15 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             `;
         return item
     },
-    populate: function (dp: DataPublication[]) {
+    populate: function (dataPublications: DataPublication[]) {
 
         assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
         const list = this._listView
 
         list.innerHTML = '';
-        dp.forEach(dpp => {
-            const dataPublication = dpp;
+        dataPublications.forEach(dataPublication => {
 
-            const item = this._createListItem(dpp)
+            const item = this._createListItem(dataPublication)
 
             item.addEventListener('mouseenter', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)

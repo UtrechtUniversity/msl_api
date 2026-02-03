@@ -19,7 +19,7 @@ export interface Sidebar {
     _onOpenClick(): void,
     _onCloseClick(): void
     _options: { position: "left" },
-    _createListItem(feature: DataPublication): HTMLDivElement,
+    _createListItem(dataPublication: DataPublication): HTMLDivElement,
     // public methods
 
     open(): this,
@@ -29,7 +29,7 @@ export interface Sidebar {
     highlight(id: string): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
-    populate(features: DataPublication[]): void,
+    populate(dataPublications: DataPublication[]): void,
     resetList(): void,
 
 }
