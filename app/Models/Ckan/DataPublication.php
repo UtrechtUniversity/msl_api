@@ -215,9 +215,9 @@ class DataPublication
     /**
      * Geojson feature collection object containing spatial features
      *
-     * @var string | FeatureCollection
+     * @var FeatureCollection|null
      */
-    public $geojson_featurecollection = '';
+    public $geojson_featurecollection = null;
 
     /**
      * Geojson feature collection string containing spatial features converted to points
@@ -844,10 +844,7 @@ class DataPublication
         $arr = [];
 
         foreach ($this as $key => $value) {
-            // TODO ??
-            if ($key === 'geojson_featurecollection') {
-                continue;
-            }
+
             if (is_array($value)) {
                 $subArr = [];
                 foreach ($value as $subValue) {
@@ -883,7 +880,7 @@ class DataPublication
             if ($value !== '') {
                 if (! is_array($value)) {
                     if (property_exists($dataPublication, $key)) {
-                        // echo $key;
+
                         switch (gettype($dataPublication->{$key})) {
                             case 'integer':
                                 $dataPublication->{$key} = (int) $value;
