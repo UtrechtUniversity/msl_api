@@ -1,14 +1,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/materials>
   a skos:ConceptScheme ;
   skos:prefLabel "Material" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/impact_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/impact_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-breccia>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-coal>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-conglomerate>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-dolomite>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-evaporite>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-limestone>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-marl>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-mudstone>, <https://registry.epos-eu.org/ncl/FAIR/materials/sedimentary_rock-sandstone> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "sedimentary rock" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -644,6 +652,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive-acidic_intrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive-basic_intrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive-intermediate_intrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive-magma>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_intrusive-ultrabasic_intrusive> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "igneous rock - intrusive" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/igneous_rock_-_intrusive> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1019,6 +1028,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-acidic_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-basic_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-intermediate_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-lava>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-pyroclastic_rock>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-ultrabasic_extrusive>, <https://registry.epos-eu.org/ncl/FAIR/materials/igneous_rock_-_extrusive-volcanic_glass> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "igneous rock - extrusive" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/igneous_rock_-_extrusive> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1308,6 +1318,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-amphibolite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-eclogite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-gneiss>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-granofels>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-granulite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-hornfels>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-marble>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-migmatite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-mylonite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-phyllite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-quartzite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-schist>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-serpentinite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metamorphic_rock-slate> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "metamorphic rock" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/metamorphic_rock> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1550,6 +1561,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock-breccia_-_fault_related>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock-cataclasite>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock-fault_gouge>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock-mylonite>, <https://registry.epos-eu.org/ncl/FAIR/materials/fault_rock-pseudotachylite> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "fault rock" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/fault_rock> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1600,6 +1612,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-aceite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-adinole>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-argillisite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-beresite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-charoitite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-chloritolite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-fenite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-greisen>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-gumberite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-listvenite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-propylite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-rodingite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-secondary-quartzite>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-skarn>, <https://registry.epos-eu.org/ncl/FAIR/materials/metasomatic_rock-unakite> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "metasomatic rock" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/metasomatic_rock> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1712,6 +1725,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-chondrite_meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-differentiated_achondrite_meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-iron_meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-primitive_achondrite_meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-relict_meteorite>, <https://registry.epos-eu.org/ncl/FAIR/materials/meteorite-stony-iron_meteorite> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "meteorite" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/meteorite> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1782,6 +1796,7 @@
 
 <https://registry.epos-eu.org/ncl/FAIR/materials/impact_rock>
   a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "impact rock" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/impact_rock> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -1789,6 +1804,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/minerals>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-borates>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-carbonate_minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-chemical_elements>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-halide_minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-oxide_mineral>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-phosphate_minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-silicate_minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-sulfate_minerals>, <https://registry.epos-eu.org/ncl/FAIR/materials/minerals-sulfide_minerals> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "minerals" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/minerals> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -3928,6 +3944,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment-biogenic_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment-carbonate_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment-clastic_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment-organic_rich_sediment>, <https://registry.epos-eu.org/ncl/FAIR/materials/unconsolidated_sediment-tephra> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "unconsolidated sediment" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/unconsolidated_sediment> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -4137,6 +4154,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material-elastic_modelling_material>, <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material-granular_modelling_material>, <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material-plastic_modelling_material>, <https://registry.epos-eu.org/ncl/FAIR/materials/analogue_modelling_material-viscous_modelling_material> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "analogue modelling material" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/analogue_modelling_material> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .
@@ -4909,6 +4927,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material-3d_printed>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material-casing_cement>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material-concrete_construction>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material-construction_cement>, <https://registry.epos-eu.org/ncl/FAIR/materials/synthesized_material-fabricated_glass> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/materials> ;
   skos:prefLabel "synthesized material" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.3/synthesized_material> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/materials> .

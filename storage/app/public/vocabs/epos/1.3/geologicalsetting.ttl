@@ -1,14 +1,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting>
   a skos:ConceptScheme ;
   skos:prefLabel "Geological setting" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/extra-terrestrial_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/extra-terrestrial_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary-divergent_tectonic_plate_boundary>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "tectonic plate boundary" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_plate_boundary> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .
@@ -507,6 +515,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting-cratonisation>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting-hot_spot_magmatism>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting-isostasy>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/intraplate_setting-passive_continental_margin> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "intraplate setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/intraplate_setting> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .
@@ -637,6 +646,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-asthenosphere>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-earth_core>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-earth_crust>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-earth_mantle>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-lithosphere>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/earths_structure-mohorovicic_discontinuity> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "Earth's structure" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/earths_structure> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .
@@ -823,6 +833,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure-tectonic_fault>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure-tectonic_fold>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/tectonic_deformation_structure-tectonic_shear_zone> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "tectonic deformation structure" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/tectonic_deformation_structure> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .
@@ -944,6 +955,7 @@
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/extra-terrestrial_setting>
   a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "extra-terrestrial setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/extra-terrestrial_setting> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .
@@ -951,6 +963,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting-deltaic_system_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting-glacier_related_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting-marine_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting-river_plain_system_setting>, <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> ;
   skos:prefLabel "surface morphological setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.3/surface_morphological_setting> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalsetting> .

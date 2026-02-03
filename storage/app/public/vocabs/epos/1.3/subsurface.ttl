@@ -1,14 +1,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/subsurface>
   a skos:ConceptScheme ;
   skos:prefLabel "(sub)surface utilization setting" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/ore_mine>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/induced_seismicity>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/surface_subsidence> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/ore_mine>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/induced_seismicity>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/surface_subsidence> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-co2_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-compressed_air_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-gas_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-hydrogen_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-nitrogen_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-oil_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-storage_in_depleted_oil_reservoir>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_storage-waste_storage_in_the_subsurface> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "subsurface storage" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/subsurface_storage> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .
@@ -144,6 +152,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production-geothermal_energy_extraction>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production-hydrocarbon_energy_production>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "subsurface energy production" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/subsurface_energy_production> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .
@@ -315,6 +324,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/ore_mine>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/subsurface/ore_mine-mine_tailing> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "ore mine" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/ore_mine> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .
@@ -329,6 +339,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting-building_foundation>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting-dam_construction_-_geological_aspects>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting-road_construction_-_geotechnical_aspects>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting-tunnel>, <https://registry.epos-eu.org/ncl/FAIR/subsurface/civil_engineered_setting-underground_research_facility> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "civil engineered setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/civil_engineered_setting> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .
@@ -370,6 +381,7 @@
 
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/induced_seismicity>
   a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "induced seismicity" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/induced_seismicity> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .
@@ -377,6 +389,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/subsurface/surface_subsidence>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/subsurface/surface_subsidence-sinkhole> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/subsurface> ;
   skos:prefLabel "surface subsidence" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.3/surface_subsidence> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/subsurface> .

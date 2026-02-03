@@ -1,13 +1,21 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalage>
   a skos:ConceptScheme ;
   skos:prefLabel "Geological age" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/geologicalage/present-day>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/formationofearth> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/geologicalage/present-day>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/formationofearth> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalage/present-day>
   a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalage> ;
   skos:prefLabel "present-day" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalage/1.3/present-day> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalage> .
@@ -15,6 +23,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-cenozoic>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-mesozoic>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-paleozoic> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalage> ;
   skos:prefLabel "Phanerozoic" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalage/1.3/phanerozoic> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalage> .
@@ -1146,6 +1155,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian-archean>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian-hadean>, <https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian-proterozoic> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalage> ;
   skos:prefLabel "Precambrian" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalage/1.3/precambrian> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalage> .
@@ -1297,6 +1307,7 @@
 
 <https://registry.epos-eu.org/ncl/FAIR/geologicalage/formationofearth>
   a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/geologicalage> ;
   skos:prefLabel "FormationOfEarth" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalage/1.3/formationofearth> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/geologicalage> .

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#">
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:reg="http://purl.org/linked-data/registry#"
+         xmlns:ui="http://purl.org/linked-data/registry-ui#"
+         xmlns:ldp="http://www.w3.org/ns/ldp#">
 
   <skos:ConceptScheme rdf:about="https://registry.epos-eu.org/ncl/FAIR/porefluids">
     <skos:prefLabel>Pore fluid</skos:prefLabel>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/porefluids/vacuum">
+        <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
         <skos:prefLabel>vacuum</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/porefluids/1.3/vacuum"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
@@ -16,6 +20,10 @@
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids/solid_phase"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids/liquid_phase"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids/gas_phase"/>
+    <reg:inverseMembershipPredicate rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    <ui:hierarchyChildProperty rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+    <ui:hierarchyRootProperty rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+    <ldp:isMemberOfRelation rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/porefluids/solid_phase">
@@ -28,6 +36,7 @@
       </skos:Concept>
     </skos:narrower>
 
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
     <skos:prefLabel>solid phase</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/porefluids/1.3/solid_phase"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
@@ -54,6 +63,7 @@
     </skos:narrower>
 
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids/liquid_phase-water_in_pores"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
     <skos:prefLabel>liquid phase</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/porefluids/1.3/liquid_phase"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
@@ -191,6 +201,7 @@
       </skos:Concept>
     </skos:narrower>
 
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>
     <skos:prefLabel>gas phase</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/porefluids/1.3/gas_phase"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/porefluids"/>

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#">
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:reg="http://purl.org/linked-data/registry#"
+         xmlns:ui="http://purl.org/linked-data/registry-ui#"
+         xmlns:ldp="http://www.w3.org/ns/ldp#">
 
   <skos:ConceptScheme rdf:about="https://registry.epos-eu.org/ncl/FAIR/geologicalage">
     <skos:prefLabel>Geological age</skos:prefLabel>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/geologicalage/present-day">
+        <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
         <skos:prefLabel>present-day</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.3/present-day"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
@@ -17,18 +21,24 @@
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian"/>
     <skos:hasTopConcept>
       <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/geologicalage/formationofearth">
+        <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
         <skos:prefLabel>FormationOfEarth</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.3/formationofearth"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
       </skos:Concept>
     </skos:hasTopConcept>
 
+    <reg:inverseMembershipPredicate rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    <ui:hierarchyChildProperty rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+    <ui:hierarchyRootProperty rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+    <ldp:isMemberOfRelation rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic">
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-cenozoic"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-mesozoic"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage/phanerozoic-paleozoic"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
     <skos:prefLabel>Phanerozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.3/phanerozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
@@ -1367,6 +1377,7 @@
     </skos:narrower>
 
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage/precambrian-proterozoic"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
     <skos:prefLabel>Precambrian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.3/precambrian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geologicalage"/>
