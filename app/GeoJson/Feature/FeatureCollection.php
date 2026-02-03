@@ -5,8 +5,6 @@ namespace App\GeoJson\Feature;
 use Exception;
 use JsonSerializable;
 
-use function PHPUnit\Framework\isArray;
-
 class FeatureCollection implements JsonSerializable
 {
     /**
@@ -28,12 +26,17 @@ class FeatureCollection implements JsonSerializable
 
     public static function fromString(string $geoJsonString)
     {
-        $json = json_decode($geoJsonString, true);
+        $json = json_decode($geoJsonString, associative: true);
         $features = [];
 
         if (! $json) {
             return new self($features);
         }
+        // Expected json:
+        // {
+        //   "type": "FeatureCollection",
+        //   "features": [...]
+        // }
         $type = $json['type'];
         if ($type !== 'FeatureCollection') {
             throw new Exception(
@@ -41,12 +44,12 @@ class FeatureCollection implements JsonSerializable
             );
         }
         $featuresFromJson = $json['features'];
-        if (! isArray($featuresFromJson)) {
+        if (! is_array($featuresFromJson)) {
             throw new Exception("The 'features' property in the feature collection string is not an array. This is a bug.");
         }
 
         foreach ($featuresFromJson as $featureFromJson) {
-            array_push($features, Feature::fromJson($featureFromJson));
+            $features[] = Feature::fromJson($featureFromJson);
         }
 
         return new self($features);
