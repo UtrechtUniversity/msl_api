@@ -28,7 +28,6 @@ class GeoJsonFeatureResource extends JsonResource
 
     public function toArray(Request $request): array
     {
-        // create an array
         return ['feature' => $this->feature, 'title' => $this->title, 'data_publication_doi' => $this->doi];
     }
 }

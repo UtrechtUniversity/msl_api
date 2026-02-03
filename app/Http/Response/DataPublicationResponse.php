@@ -2,6 +2,7 @@
 
 namespace App\Http\Response;
 
+use App\CkanClient\Response\PackageSearchResponse;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -25,7 +26,7 @@ class DataPublicationResponse
     /**
      * Create a new class instance.
      */
-    public function __construct($response, int $limit, int $offset, string $currentUrl)
+    public function __construct(PackageSearchResponse $response, int $limit, int $offset, string $currentUrl)
     {
 
         $this->limit = $limit;
