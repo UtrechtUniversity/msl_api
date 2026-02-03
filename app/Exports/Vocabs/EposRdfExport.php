@@ -5,6 +5,7 @@ namespace App\Exports\Vocabs;
 use App\Models\Keyword;
 use App\Models\Vocabulary;
 use EasyRdf\Graph;
+use EasyRdf\RdfNamespace;
 
 class EposRdfExport
 {
@@ -19,6 +20,9 @@ class EposRdfExport
     {
         $graph = new Graph;
 
+        RdfNamespace::set('reg', 'http://purl.org/linked-data/registry#');
+        RdfNamespace::set('ui', 'http://purl.org/linked-data/registry-ui#');
+
         // Create concept scheme top level class
         $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'rdf:type', 'skos:ConceptScheme');
         $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'skos:prefLabel', $this->vocabulary->display_name);
@@ -27,6 +31,12 @@ class EposRdfExport
         foreach ($topLevelKeywords as $topLevelKeyword) {
             $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'skos:hasTopConcept', $this->convertTermUriToEposUri($topLevelKeyword->uri));
         }
+
+        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'reg:inverseMembershipPredicate', 'skos:inScheme');
+        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyChildProperty', 'skos:narrower');
+        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
+        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ldp:isMemberOfRelation', 'skos:inScheme');
+
 
         $keywords = $this->vocabulary->keywords;
 
