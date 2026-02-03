@@ -22,8 +22,23 @@ class GeoJsonDataPublicationService
         $this->packageSearchRequest = new PackageSearchRequest;
     }
 
-    // Set request to ckan: protected
-    protected function setRequestToCKAN(Request $request): void
+    /**
+     * Make request to CKAN and get back the cleaned-up data publication response
+     */
+    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): JsonResource|ResourceCollection
+    {
+        $responseFromCkan = $this->getResponseFromCKAN($client, $request);
+        $limit = $this->packageSearchRequest->rows;
+        $offset = $this->packageSearchRequest->start;
+        $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
+
+        return (new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl))->getResponse();
+    }
+
+    /**
+     * Create the request to send to CKAN
+     */
+    private function setRequestToCKAN(Request $request): void
     {
 
         // Filter on data-publications
@@ -42,8 +57,10 @@ class GeoJsonDataPublicationService
         $this->getBoundingBox($boundingBox, $this->packageSearchRequest);
     }
 
-    // make request and handle:public
-    protected function getResponseFromCKAN(\GuzzleHttp\Client $client, Request $request)
+    /**
+     * Send the request to CKAN and error handling
+     */
+    private function getResponseFromCKAN(\GuzzleHttp\Client $client, Request $request)
     {
         $ckanClient = new Client($client);
 
@@ -62,19 +79,8 @@ class GeoJsonDataPublicationService
 
         return $response;
     }
-    // Create response and return: public
 
-    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): JsonResource|ResourceCollection
-    {
-        $responseFromCkan = $this->getResponseFromCKAN($client, $request);
-        $limit = $this->packageSearchRequest->rows;
-        $offset = $this->packageSearchRequest->start;
-        $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
-
-        return (new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl))->getResponse();
-    }
-
-    protected function getBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
+    private function getBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
     {
         $paramBoundingBox = json_decode($boundingBox);
         if ($paramBoundingBox) {
