@@ -43,6 +43,10 @@ class EposRdfExport
                 $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:broader', $this->convertTermUriToEposUri($parent->uri));
             }
 
+            if($keyword->level == 1) {
+                $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:topConceptOf', $this->convertVocabUriToEposUri($this->vocabulary->uri));
+            }
+
             $graph->add($this->convertTermUriToEposUri($keyword->uri), 'skos:prefLabel', $keyword->label);
             $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'owl:sameAs', $keyword->uri);
             $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:inScheme', $this->convertVocabUriToEposUri($this->vocabulary->uri));
