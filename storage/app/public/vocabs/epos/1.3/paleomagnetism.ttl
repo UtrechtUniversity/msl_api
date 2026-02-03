@@ -1,14 +1,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism>
   a skos:ConceptScheme ;
   skos:prefLabel "Paleomagnetism" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-demagnetiser>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-laboratory_induced_remanent_magnetisation_measurement>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-magnetic_susceptibility_measurements>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-natural_remanent_magnetisation_measurement>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-on-site_measurement>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/apparatus-sampling_and_preparation> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> ;
   skos:prefLabel "Apparatus" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/apparatus> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> .
@@ -717,6 +725,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control-atmosphere_control_system>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control-contolled_magnetic_field_area>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/environment_control-temperature_control> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> ;
   skos:prefLabel "Environment control" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/environment_control> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> .
@@ -884,6 +893,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-demagnetisation>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-first_order_reversal_curve_forc>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-magnetic_anisotropy>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-magnetic_hysteresis_curves>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-magnetic_remanence_demagnetisation_curves>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-magnetic_susceptibility>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-magnetisation_acquisition_curves>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-paleointensity>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-remanent_magnetisation>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/measured_property-thermomagnetic_magnetisation_curves> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> ;
   skos:prefLabel "Measured property" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/measured_property> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> .
@@ -1249,6 +1259,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior-anisotropy_of_magnetic_susceptibility_and_remanence>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior-magnetic_mineralogy_analyses>, <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism/inferred_behavior-natural_remanent_magnetisation_processing> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> ;
   skos:prefLabel "Inferred behavior" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/paleomagnetism/1.3/inferred_behavior> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/paleomagnetism> .

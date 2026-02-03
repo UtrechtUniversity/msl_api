@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:reg="http://purl.org/linked-data/registry#"
+         xmlns:ui="http://purl.org/linked-data/registry-ui#"
+         xmlns:ldp="http://www.w3.org/ns/ldp#"
          xmlns:owl="http://www.w3.org/2002/07/owl#">
 
   <skos:ConceptScheme rdf:about="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling">
@@ -11,11 +14,16 @@
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/ancillary_equipment"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/measured_property"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/software"/>
+    <reg:inverseMembershipPredicate rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    <ui:hierarchyChildProperty rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+    <ui:hierarchyRootProperty rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+    <ldp:isMemberOfRelation rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_structure">
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_structure-modelled_deformation_structure"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_structure-modelled_magmatic_structure"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Modeled structure</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/modeled_structure"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
@@ -323,6 +331,7 @@
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_geomorphological_feature-tectonic_landforms"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_geomorphological_feature-volcanic_landforms"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/modeled_geomorphological_feature-weathering_landforms"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Modeled geomorphological feature</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/modeled_geomorphological_feature"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
@@ -3591,6 +3600,7 @@
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/apparatus">
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/apparatus-analogue_modelling"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/apparatus-characterization_of_modelling_material"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Apparatus</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/apparatus"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
@@ -4228,6 +4238,7 @@
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/ancillary_equipment-measurement_of_temperature"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/ancillary_equipment-model_structure_monitoring_3d"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling/ancillary_equipment-model_surface_monitoring_2d"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Ancillary equipment</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/ancillary_equipment"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
@@ -4689,6 +4700,7 @@
       </skos:Concept>
     </skos:narrower>
 
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Measured property</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
@@ -5778,6 +5790,7 @@
       </skos:Concept>
     </skos:narrower>
 
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>
     <skos:prefLabel>Software</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.3/software"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/analoguemodelling"/>

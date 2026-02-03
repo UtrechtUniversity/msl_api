@@ -1,14 +1,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 <https://registry.epos-eu.org/ncl/FAIR/rockphysics>
   a skos:ConceptScheme ;
   skos:prefLabel "Rock and melt physics" ;
-  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior> .
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
 
 <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus-deformation_testing>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus-environmental_control>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus-fluid_transport_testing>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/apparatus-general_sample_characterization> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/rockphysics> ;
   skos:prefLabel "Apparatus" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/rockphysics> .
@@ -623,6 +631,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment-acoustic_measurement_-_passive>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment-distributed_fibre_sensing>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment-in-line_fluid_property_measurement>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/rockphysics> ;
   skos:prefLabel "Ancillary equipment" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/rockphysics> .
@@ -833,6 +842,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-acoustic_emission_ae>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-anisotropy_petrophysical>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-coupled_mechanical-chemical_effects>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-coupled_mechanical-hydrological_effects>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-elastic_wave_velocity>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-elasticity>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-electrical_properties>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-fracture_and_crack_toughness>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-friction_-_controlled_slip_rate>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-friction_-_controlled_stress>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-grain_size_distribution>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-mechanical_strength>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-permeability>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-pore_fluid_pressure>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-porosity>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-slake_durability>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-strain>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-strain_rate_-_creep_constant_stress>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-stress_relaxation>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-surface_roughness>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-temperature_change>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-thermal_properties>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/measured_property-viscosity> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/rockphysics> ;
   skos:prefLabel "Measured property" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/rockphysics> .
@@ -1564,6 +1574,7 @@
 <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior>
   a skos:Concept ;
   skos:narrower <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior-deformation_behaviour>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior-energy_partitioning>, <https://registry.epos-eu.org/ncl/FAIR/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR/rockphysics> ;
   skos:prefLabel "Inferred deformation behavior" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR/rockphysics> .

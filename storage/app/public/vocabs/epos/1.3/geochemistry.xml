@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:reg="http://purl.org/linked-data/registry#"
+         xmlns:ui="http://purl.org/linked-data/registry-ui#"
+         xmlns:ldp="http://www.w3.org/ns/ldp#"
          xmlns:owl="http://www.w3.org/2002/07/owl#">
 
   <skos:ConceptScheme rdf:about="https://registry.epos-eu.org/ncl/FAIR/geochemistry">
@@ -8,6 +11,10 @@
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/analysis"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/equipment"/>
     <skos:hasTopConcept rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/measured_property"/>
+    <reg:inverseMembershipPredicate rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+    <ui:hierarchyChildProperty rdf:resource="http://www.w3.org/2004/02/skos/core#narrower"/>
+    <ui:hierarchyRootProperty rdf:resource="http://www.w3.org/2004/02/skos/core#topConceptOf"/>
+    <ldp:isMemberOfRelation rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
   </skos:ConceptScheme>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR/geochemistry/analysis">
@@ -36,6 +43,7 @@
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/analysis-mineralogical_analysis"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/analysis-sample_preparation_for_geochemical_analysis"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/analysis-whole_rock_analysis"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
     <skos:prefLabel>analysis</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geochemistry/1.3/analysis"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
@@ -599,6 +607,7 @@
     </skos:narrower>
 
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/equipment-x-ray_spectrometer"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
     <skos:prefLabel>equipment</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geochemistry/1.3/equipment"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
@@ -1231,6 +1240,7 @@
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/measured_property-yttrium"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/measured_property-zinc"/>
     <skos:narrower rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry/measured_property-zirconium"/>
+    <skos:topConceptOf rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
     <skos:prefLabel>measured property</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geochemistry/1.3/measured_property"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR/geochemistry"/>
