@@ -29,7 +29,7 @@ class Feature implements JsonSerializable
 
     public static function fromJson(array $featureFromJson)
     {
-        $properties = ['geometry']['properties'] ?? [];
+        $properties = $featureFromJson['properties'];
         if (! is_array($properties)) {
             throw new Exception('The geometry properties should have been an array. This is a bug.');
         }
