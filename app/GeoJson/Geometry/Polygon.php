@@ -39,13 +39,30 @@ class Polygon extends Geometry
         }
     }
 
-    public static function fromJson($geometryFromJson)
+    public static function fromJson(array $geometryFromJson)
     {
-        $listOfCoordinates = $geometryFromJson['coordinates'];
+
+        // Expected Json:
+        // {
+        // "type":"Point",
+        // "coordinates":[[<float><float>]..[...]]
+        // }
+        $geometryType = $geometryFromJson['type'];
+        if ($geometryType !== 'Polygon') {
+            throw new Exception("The geometry should be of type 'Polygon', but it was '$geometryType'. This is a bug.");
+        }
+
+        $listOfCoordinates = $geometryFromJson['coordinates'][0];
+        if (! is_array($listOfCoordinates)) {
+            throw new Exception('Coordinates of a point should have been an array. This is a bug.');
+        }
 
         $points = [];
-        foreach ($listOfCoordinates[0] as $coordinates) {
-            $point = new Point((float) $coordinates[0], (float) $coordinates[1]);
+        foreach ($listOfCoordinates as $coordinates) {
+            $x = (float) $coordinates[0];
+            $y = (float) $coordinates[1];
+            $z = (count($coordinates) === 3) ? (float) $coordinates[2] : null;
+            $point = new Point($x, $y, $z);
             array_push($points, $point);
         }
 

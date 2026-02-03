@@ -27,17 +27,16 @@ class Feature implements JsonSerializable
         $this->properties = $properties;
     }
 
-    public static function fromJson($featureFromJson)
+    public static function fromJson(array $featureFromJson)
     {
-        $geometry = null;
         $properties = ['geometry']['properties'] ?? [];
         if (! is_array($properties)) {
             throw new Exception('The geometry properties should have been an array. This is a bug.');
         }
-        // TODO throw?
-        $geometryFromJson = $featureFromJson['geometry'];
 
-        switch ($geometryFromJson['type']) {
+        $geometryFromJson = $featureFromJson['geometry'];
+        $geometryType = $geometryFromJson['type'];
+        switch ($geometryType) {
             case 'Point':
                 $geometry = Point::fromJson($geometryFromJson);
                 break;
@@ -45,7 +44,7 @@ class Feature implements JsonSerializable
                 $geometry = Polygon::fromJson($geometryFromJson);
                 break;
             default:
-                throw new Exception('The geometry is incorrect. This is a bug.');
+                throw new Exception("The geometry is should have been either 'Point' or 'Polygon', but it was '$geometryType'. This is a bug.");
         }
 
         return new self($geometry, $properties);
