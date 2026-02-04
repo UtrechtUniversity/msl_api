@@ -332,6 +332,11 @@ class DataPublication
     public bool $msl_has_organization = true;
 
     /**
+     * We want to exclude these properties from importing to CKAN.
+     */
+    private array $propertiesExcludedFromCkan = ['geojson_featurecollection'];
+
+    /**
      * Validation rules to be used after mapping stage of importing data. If rules fail processing of this dataset will be stopped.
      */
     public static array $importingRules = [
@@ -842,27 +847,37 @@ class DataPublication
     public function toCkanArray(): array
     {
         $arr = [];
-
         foreach ($this as $key => $value) {
 
-            if (is_array($value)) {
-                $subArr = [];
-                foreach ($value as $subValue) {
-                    if (is_object($subValue)) {
-                        if (class_implements($subValue, CkanArrayInterface::class)) {
-                            $subArr[] = $subValue->toCkanArray();
-                        } else {
-                            $subArr[] = (array) $subValue;
-                        }
-                    } else {
-                        $subArr[] = $subValue;
-                    }
-                }
-                $arr[$key] = $subArr;
-            } elseif (is_object($value)) {
-            } else {
-                $arr[$key] = $value;
+            if (in_array($key, $this->propertiesExcludedFromCkan)) {
+                continue;
             }
+
+            if (is_object($value)) {
+                continue;
+            }
+
+            if (! is_array($value)) {
+                $arr[$key] = $value;
+
+                continue;
+            }
+
+            $subArr = [];
+            foreach ($value as $subValue) {
+                if (is_object($subValue)) {
+                    if (class_implements($subValue, CkanArrayInterface::class)) {
+                        $subArr[] = $subValue->toCkanArray();
+                    } else {
+                        $subArr[] = (array) $subValue;
+                    }
+                } else {
+                    $subArr[] = $subValue;
+                }
+            }
+            $arr[$key] = $subArr;
+
+            continue;
         }
 
         return $arr;

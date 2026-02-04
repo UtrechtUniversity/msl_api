@@ -313,6 +313,24 @@ class DataPublicationTest extends TestCase
         $this->assertTrue($dataPublication->msl_has_organization);
     }
 
+    public function test_excluding_properties_in_to_ckan_array(): void
+    {
+        $ckanResponse = file_get_contents('./tests/MockData/CkanResponses/V2/package_search_single_full_datapublication.json');
+        $ckanResponse = json_decode($ckanResponse, true);
+
+        $dataPublicationArray = $ckanResponse['result']['results'][0];
+
+        $dataPublication = (DataPublication::fromCkanArray($dataPublicationArray))->toCkanArray();
+        $excludedFromCKAN = 'geojson_featurecollection';
+        $this->assertEquals('Micro Computational Tomography, Acoustic Emission and rock temperature data from frost weathering tests on Dachstein Limestone', $dataPublication['title']);
+        $this->assertEquals("Micro Computational Tomography, <span data-uris='[\"https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae\", \"https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-acoustic_emission_ae\"]'>Acoustic Emission</span> and rock temperature data from frost weathering tests on Dachstein <span data-uris='[\"https://epos-msl.uu.nl/voc/materials/1.3/sedimentary_rock-limestone\"]'>Limestone</span>", $dataPublication['msl_title_annotated']);
+        $this->assertEquals('data-publication', $dataPublication['type']);
+        $this->assertFalse(array_key_exists($excludedFromCKAN, $dataPublication));
+
+        $emptyDataPublication = (new DataPublication)->toCkanArray();
+        $this->assertFalse(array_key_exists($excludedFromCKAN, $emptyDataPublication));
+    }
+
     /**
      * test adding a tag
      */
