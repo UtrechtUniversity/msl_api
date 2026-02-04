@@ -2,6 +2,7 @@
 
 namespace App\Models\Ckan;
 
+use App\GeoJson\Feature\FeatureCollection;
 use Exception;
 
 class DataPublication
@@ -212,6 +213,13 @@ class DataPublication
     public $msl_geojson_featurecollection = '';
 
     /**
+     * Geojson feature collection object containing spatial features
+     *
+     * @var FeatureCollection|null
+     */
+    public $geojson_featurecollection = null;
+
+    /**
      * Geojson feature collection string containing spatial features converted to points
      */
     public $msl_geojson_featurecollection_points = '';
@@ -322,6 +330,11 @@ class DataPublication
     public bool $msl_has_lab = false;
 
     public bool $msl_has_organization = true;
+
+    /**
+     * We want to exclude these properties from importing to CKAN.
+     */
+    private array $propertiesExcludedFromCkan = ['geojson_featurecollection'];
 
     /**
      * Validation rules to be used after mapping stage of importing data. If rules fail processing of this dataset will be stopped.
@@ -834,27 +847,37 @@ class DataPublication
     public function toCkanArray(): array
     {
         $arr = [];
-
         foreach ($this as $key => $value) {
-            if (is_array($value)) {
-                $subArr = [];
-                foreach ($value as $subValue) {
-                    if (is_object($subValue)) {
-                        if (class_implements($subValue, CkanArrayInterface::class)) {
-                            $subArr[] = $subValue->toCkanArray();
-                        } else {
-                            $subArr[] = (array) $subValue;
-                        }
-                    } else {
-                        $subArr[] = $subValue;
-                    }
-                }
-                $arr[$key] = $subArr;
-            } elseif (is_object($value)) {
 
-            } else {
-                $arr[$key] = $value;
+            if (in_array($key, $this->propertiesExcludedFromCkan)) {
+                continue;
             }
+
+            if (is_object($value)) {
+                continue;
+            }
+
+            if (! is_array($value)) {
+                $arr[$key] = $value;
+
+                continue;
+            }
+
+            $subArr = [];
+            foreach ($value as $subValue) {
+                if (is_object($subValue)) {
+                    if (class_implements($subValue, CkanArrayInterface::class)) {
+                        $subArr[] = $subValue->toCkanArray();
+                    } else {
+                        $subArr[] = (array) $subValue;
+                    }
+                } else {
+                    $subArr[] = $subValue;
+                }
+            }
+            $arr[$key] = $subArr;
+
+            continue;
         }
 
         return $arr;
@@ -863,7 +886,6 @@ class DataPublication
     public static function fromCkanArray(array $data): self
     {
         $dataPublication = new self;
-
         foreach ($data as $key => $value) {
             // CKAN sometimes adds the string '{}' for empty repeating fields.
             if ($value === '{}') {
@@ -873,6 +895,7 @@ class DataPublication
             if ($value !== '') {
                 if (! is_array($value)) {
                     if (property_exists($dataPublication, $key)) {
+
                         switch (gettype($dataPublication->{$key})) {
                             case 'integer':
                                 $dataPublication->{$key} = (int) $value;
@@ -891,6 +914,7 @@ class DataPublication
                     }
                 } else {
                     switch ($key) {
+
                         case 'msl_rights':
                             foreach ($value as $subValue) {
                                 $dataPublication->msl_rights[] = new Right(
@@ -1016,7 +1040,6 @@ class DataPublication
                                 $dataPublication->msl_contributors[] = $contributor;
                             }
                             break;
-
                         case 'msl_sizes':
                             $dataPublication->msl_sizes = $value;
                             break;
@@ -1108,6 +1131,8 @@ class DataPublication
                 }
             }
         }
+
+        $dataPublication->geojson_featurecollection = FeatureCollection::fromString($dataPublication->msl_geojson_featurecollection);
 
         return $dataPublication;
     }

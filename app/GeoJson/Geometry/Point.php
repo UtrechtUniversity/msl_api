@@ -47,6 +47,26 @@ class Point extends Geometry
         $this->z = $z;
     }
 
+    public static function fromJson(array $geometryFromJson)
+    {
+        // Expected Json:
+        // {
+        // "type":"Point",
+        // "coordinates":[<float>,<float>]
+        // }
+        $geometryType = $geometryFromJson['type'];
+        if ($geometryType !== 'Point') {
+            throw new Exception("The geometry should be of type 'Point', but it was '$geometryType'. This is a bug.");
+        }
+
+        $coordinates = $geometryFromJson['coordinates'];
+        if (! is_array($coordinates)) {
+            throw new Exception('Coordinates of a point should have been an array. This is a bug.');
+        }
+
+        return new self((float) $coordinates[0], (float) $coordinates[1]);
+    }
+
     /**
      * returns distance between this and provided point
      */

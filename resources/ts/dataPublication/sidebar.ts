@@ -1,7 +1,7 @@
 /* global L */
 
 import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { GeoJsonDataPublication, GeoJsonDataPublications } from "../types/datapublication.ts";
+import type { DataPublication } from "../types/datapublication.ts";
 import type { Sidebar } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
 
@@ -20,7 +20,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _container: null,
     _map: null,
     _listView: null,
-    _features: [],
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -150,8 +149,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         return this;
     },
 
-    _createListItem(feature: GeoJsonDataPublication) {
-        const dataPublication = feature.data_publication;
+    _createListItem(dataPublication: DataPublication) {
 
         const item = document.createElement('div');
         item.className = 'data-publication-item';
@@ -163,17 +161,15 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             `;
         return item
     },
-    populate: function (features: GeoJsonDataPublications) {
+    populate: function (dataPublications: DataPublication[]) {
 
         assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
         const list = this._listView
 
         list.innerHTML = '';
-        this._features = features
-        features.forEach(feature => {
-            const dataPublication = feature.data_publication;
+        dataPublications.forEach(dataPublication => {
 
-            const item = this._createListItem(feature)
+            const item = this._createListItem(dataPublication)
 
             item.addEventListener('mouseenter', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)

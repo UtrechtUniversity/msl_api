@@ -23,6 +23,6 @@ class DataPublicationCollection extends ResourceCollection
     public function toArray($request)
     {
 
-        return $this->collection->map(fn ($player) => (new DataPublicationResource($player, $this->context)));
+        return $this->collection->map(fn ($resource) => (new DataPublicationResource($resource, $this->context)));
     }
 }
