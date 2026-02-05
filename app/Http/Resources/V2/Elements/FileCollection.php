@@ -24,6 +24,6 @@ class FileCollection extends ResourceCollection
     public function toArray($request)
     {
 
-        return $this->collection->map(fn ($player) => (new FileResource($player, $this->dataPublicationName)));
+        return $this->collection->map(fn ($file) => (new FileResource($file, $this->dataPublicationName)));
     }
 }
