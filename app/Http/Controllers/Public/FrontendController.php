@@ -646,9 +646,8 @@ class FrontendController extends Controller
         return view('public.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
     }
 
-    public function fileDownload(Request $request, string $id, string $encodedUrl)
+    public function fileDownload(Request $request, string $id, string $encodedUrl, DataPublicationService $service)
     {
-        $service = new DataPublicationService();
         $dataPublication = $service->getById($id);
 
         if($dataPublication) {
