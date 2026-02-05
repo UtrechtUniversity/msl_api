@@ -75,7 +75,7 @@ class DataPublicationControllerTest extends TestCase
                             fn (AssertableJson $json) => $json->where(
                                 'fileName',
                                 'magic_contribution_20541.txt',
-                            )->where('downloadLink', 'https://earthref.org/MagIC/download/20541/magic_contribution_20541.txt')->where('isFolder', false)->etc()
+                            )->where('downloadLink', route('file-download', ['id' => '86dcccf60dc76092265994e2c6b50470', 'url' => base64_encode('https://earthref.org/MagIC/download/20541/magic_contribution_20541.txt')]))->where('isFolder', false)->etc()
                         )
                         ->where('resource_type_general', 'Dataset')
                         ->has('publication_year')
