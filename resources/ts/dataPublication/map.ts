@@ -11,7 +11,6 @@ interface SidebarHoverEvent extends LeafletEvent {
     id: string;
 }
 
-
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 type GroupedLayer = { [groupedId: string]: Layer[] }
