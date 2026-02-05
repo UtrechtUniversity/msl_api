@@ -42,6 +42,14 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         assertSideBarNotNull(this._sidebar)
 
         this._container = DomUtil.create('div', 'sidebar-content', this._sidebar);
+
+        // Make sure scrolling in sidebar doesn't end up scrolling the page.
+        this._container.addEventListener('mouseenter', () => {
+            document.body.style.overflow = 'hidden';
+        });
+        this._container.addEventListener('mouseleave', () => {
+            document.body.style.overflow = '';
+        });
     },
     _initTab() {
         assertSideBarNotNull(this._sidebar)
