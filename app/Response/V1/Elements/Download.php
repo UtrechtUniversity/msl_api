@@ -8,14 +8,14 @@ class Download
 
     public $downloadLink = '';
 
-    public function __construct($data)
+    public function __construct($fileData, $dataPublication)
     {
-        if (isset($data['msl_file_name'])) {
-            $this->fileName = $data['msl_file_name'];
+        if (isset($fileData['msl_file_name'])) {
+            $this->fileName = $fileData['msl_file_name'];
         }
 
-        if (isset($data['msl_download_link'])) {
-            $this->downloadLink = $data['msl_download_link'];
+        if (isset($fileData['msl_download_link'])) {
+            $this->downloadLink = route('file-download', ['id' => $dataPublication['name'], 'url' => base64_encode($fileData['msl_download_link'])]);
         }
     }
 }

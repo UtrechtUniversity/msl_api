@@ -89,7 +89,7 @@
 
                     @foreach ($dataPublication->getFiles('folders') as $folder)
                         <a class=" bg-base-300 shadow-md flex justify-around flex-row p-1 w-full hover-interactive h-12"
-                            href="{!! $folder->msl_download_link !!}" title="download file">
+                            href="{{ route('file-download', ['id' => $dataPublication->name, 'url' => base64_encode($folder->msl_download_link)]) }}" title="download file">
 
                             <div class='flex justify-left items-center w-full'>
                                 <div class=""> <x-ri-folder-3-fill class="folder-icon mx-6" /></div>
@@ -104,7 +104,7 @@
 
                     @foreach ($dataPublication->getFiles('files') as $file)
                         <a class=" bg-base-300 shadow-md flex justify-around flex-row px-4 w-full hover:bg-secondary-100 h-12"
-                            href="{!! $file->msl_download_link !!}" title="download file">
+                           href="{{ route('file-download', ['id' => $dataPublication->name, 'url' => base64_encode($file->msl_download_link)]) }}" title="download file">
 
                             <div class='flex flex-row justify-left items-center w-full'>
                                 <div>

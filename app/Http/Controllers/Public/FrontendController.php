@@ -8,11 +8,15 @@ use App\CkanClient\Request\PackageSearchRequest;
 use App\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\voic;
+use App\Jobs\ProcessMatomoDownloadTrackingJob;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Surveys\Survey;
+use App\Services\DataPublicationService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Redirect;
 
 class FrontendController extends Controller
 {
@@ -640,6 +644,23 @@ class FrontendController extends Controller
         }
 
         return view('public.data-publication-detail-files', ['dataPublication' => $result->getResult(true)]);
+    }
+
+    public function fileDownload(Request $request, string $id, string $encodedUrl, DataPublicationService $service)
+    {
+        $dataPublication = $service->getById($id);
+
+        if($dataPublication) {
+            $url = base64_decode($encodedUrl, true);
+            if($dataPublication->hasFileWithUrl($url)) {
+                if(Config::boolean('matomo.enabled')) {
+                    ProcessMatomoDownloadTrackingJob::dispatch($request->getClientIp(), $url);
+                }
+                return Redirect::to($url);
+            }
+        }
+
+        abort(404, 'File not found');
     }
 
     /**

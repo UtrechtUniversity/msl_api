@@ -37,6 +37,8 @@ Route::get('/data-publication/{id}', [FrontendController::class, 'dataPublicatio
 Route::get('/data-publication/{id}/files', [FrontendController::class, 'dataPublicationFiles'])->name('data-publication-detail-files');
 Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])->name('keyword-selector');
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
+Route::get('/data-publication/{id}/download/{url}', [FrontendController::class, 'fileDownload'])->name('file-download');
+
 
 if (App::environment('local')) {
     Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
