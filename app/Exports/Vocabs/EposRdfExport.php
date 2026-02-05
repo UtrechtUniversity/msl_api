@@ -70,7 +70,7 @@ class EposRdfExport
         $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/1.3/([^"]+)~';
 
         preg_match_all($regex, $uri, $matches);
-        return 'https://registry.epos-eu.org/ncl/FAIR/'.$matches[1][0].'/'.$matches[2][0];
+        return 'https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/'.$matches[1][0].'/'.$matches[2][0];
     }
 
     private function convertVocabUriToEposUri($uri): string
@@ -78,6 +78,6 @@ class EposRdfExport
         $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/1.3/~';
 
         preg_match_all($regex, $uri, $matches);
-        return 'https://registry.epos-eu.org/ncl/FAIR/'.$matches[1][0];
+        return 'https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/'.$matches[1][0];
     }
 }
