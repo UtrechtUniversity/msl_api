@@ -32,7 +32,8 @@ class GeoJsonDataPublicationsController extends Controller
     protected function index(GeoJsonDataPublicationRequest $request, GeoJsonDataPublicationService $geoJsonDataPublicationService): JsonResource|ResourceCollection
     {
 
-        $responseToReturn = $geoJsonDataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
+        $dataPublicationResponse = $geoJsonDataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
+        $responseToReturn = $dataPublicationResponse->getGeoJsonResponse();
 
         return $responseToReturn;
     }

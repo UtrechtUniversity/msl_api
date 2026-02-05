@@ -37,7 +37,7 @@ class DataPublicationResponse
         $this->currentUrl = $currentUrl;
     }
 
-    public function getResponse(): JsonResource|ResourceCollection
+    public function getGeoJsonResponse(): JsonResource|ResourceCollection
     {
         $dataPublicationResource = new GeoJsonDataPublicationResource($this->dataPublications);
 

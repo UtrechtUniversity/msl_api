@@ -7,8 +7,6 @@ use App\CkanClient\Request\PackageSearchRequest;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Response\DataPublicationResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class GeoJsonDataPublicationService
 {
@@ -25,14 +23,14 @@ class GeoJsonDataPublicationService
     /**
      * Make request to CKAN and get back the cleaned-up data publication response
      */
-    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): JsonResource|ResourceCollection
+    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): DataPublicationResponse
     {
         $responseFromCkan = $this->getResponseFromCKAN($client, $request);
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
         $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
 
-        return (new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl))->getResponse();
+        return new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl);
     }
 
     /**
