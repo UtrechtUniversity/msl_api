@@ -119,19 +119,23 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                             )->count('EPOS_Uris', 1)->etc()
                         )->etc()
                 )->has(
-                    'data.geojson.0',
-                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
-                )->count('data.geojson', 68)->has(
-                    'data.geojson.9',
-                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
-                )
-                ->has(
-                    'data.geojson.10',
-                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
-                )
-                ->has(
-                    'data.geojson.67',
-                    fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
+                    'data.geojson',
+                    fn (AssertableJson $json) => $json->has(
+                        'exclusive.0',
+                        fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
+                    )->count('exclusive', 68)->has(
+                        'exclusive.9',
+                        fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->etc()
+                    )
+                        ->has(
+                            'exclusive.10',
+                            fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
+                        )
+                        ->has(
+                            'exclusive.67',
+                            fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
+                        )
+                        ->has('inclusive')
                 )
 
         );
