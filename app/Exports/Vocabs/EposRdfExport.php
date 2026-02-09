@@ -24,50 +24,50 @@ class EposRdfExport
         RdfNamespace::set('ui', 'http://purl.org/linked-data/registry-ui#');
 
         // Create concept scheme top level class
-        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'rdf:type', 'skos:ConceptScheme');
-        $graph->add($this->convertVocabUriToEposUri($this->vocabulary->uri), 'skos:prefLabel', $this->vocabulary->display_name);
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'rdf:type', 'skos:ConceptScheme');
+        $graph->add($this->convertVocabUriToEposUri($this->vocabulary), 'skos:prefLabel', $this->vocabulary->display_name);
 
         $topLevelKeywords = Keyword::where('vocabulary_id', $this->vocabulary->id)->where('level', 1)->get();
         foreach ($topLevelKeywords as $topLevelKeyword) {
-            $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'skos:hasTopConcept', $this->convertTermUriToEposUri($topLevelKeyword->uri));
+            $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'skos:hasTopConcept', $this->convertTermUriToEposUri($topLevelKeyword->uri, $this->vocabulary));
         }
 
-        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'reg:inverseMembershipPredicate', 'skos:inScheme');
-        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyChildProperty', 'skos:narrower');
-        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
-        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary->uri), 'ldp:isMemberOfRelation', 'skos:inScheme');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'reg:inverseMembershipPredicate', 'skos:inScheme');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'ui:hierarchyChildProperty', 'skos:narrower');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
+        $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'ldp:isMemberOfRelation', 'skos:inScheme');
 
 
         $keywords = $this->vocabulary->keywords;
 
         foreach ($keywords as $keyword) {
-            $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'rdf:type', 'skos:Concept');
+            $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'rdf:type', 'skos:Concept');
 
             $children = $keyword->getChildren();
             foreach ($children as $child) {
-                $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:narrower', $this->convertTermUriToEposUri($child->uri));
+                $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:narrower', $this->convertTermUriToEposUri($child->uri, $this->vocabulary));
             }
 
             $parent = $keyword->parent;
             if ($parent) {
-                $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:broader', $this->convertTermUriToEposUri($parent->uri));
+                $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:broader', $this->convertTermUriToEposUri($parent->uri, $this->vocabulary));
             }
 
             if($keyword->level == 1) {
-                $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:topConceptOf', $this->convertVocabUriToEposUri($this->vocabulary->uri));
+                $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:topConceptOf', $this->convertVocabUriToEposUri($this->vocabulary));
             }
 
-            $graph->add($this->convertTermUriToEposUri($keyword->uri), 'skos:prefLabel', $keyword->label);
-            $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'owl:sameAs', $keyword->uri);
-            $graph->addResource($this->convertTermUriToEposUri($keyword->uri), 'skos:inScheme', $this->convertVocabUriToEposUri($this->vocabulary->uri));
+            $graph->add($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:prefLabel', $keyword->label);
+            $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'owl:sameAs', $keyword->uri);
+            $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:inScheme', $this->convertVocabUriToEposUri($this->vocabulary));
         }
 
         return $graph->serialise($type);
     }
 
-    private function convertTermUriToEposUri($uri): string
+    private function convertTermUriToEposUri(string $uri, Vocabulary $vocabulary): string
     {
-        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/1.3/([^"]+)~';
+        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/' . $vocabulary->version . '/([^"]+)~';
 
         if(preg_match_all($regex, $uri, $matches))
         {
@@ -77,14 +77,14 @@ class EposRdfExport
         return $uri;
     }
 
-    private function convertVocabUriToEposUri($uri): string
+    private function convertVocabUriToEposUri(Vocabulary $vocabulary): string
     {
-        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/1.3/~';
+        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/' . $vocabulary->version . '/~';
 
-        if(preg_match_all($regex, $uri, $matches)) {
+        if(preg_match_all($regex, $vocabulary->uri, $matches)) {
             return 'https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/'.$matches[1][0];
         }
 
-        return $uri;
+        return $vocabulary->uri;
     }
 }
