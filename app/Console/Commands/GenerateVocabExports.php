@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Exports\Vocabs\CombinedRdfExport;
 use App\Exports\Vocabs\EposRdfExport;
 use App\Exports\Vocabs\ExcelExport;
 use App\Exports\Vocabs\JsonExport;
