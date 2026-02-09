@@ -56,30 +56,30 @@ class GenerateVocabExports extends Command
             Excel::store(new ExcelExport($vocabulary), $path, 'public');
 
             // store json export
-            $exporter = new JsonExport($vocabulary);
+            $JsonExporter = new JsonExport($vocabulary);
             $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.json';
-            Storage::disk('public')->put($path, $exporter->export());
+            Storage::disk('public')->put($path, $JsonExporter->export());
 
             // store turtle export
-            $exporter = new RdfExport($vocabulary);
+            $RdfExporter = new RdfExport($vocabulary);
             $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.ttl';
-            Storage::disk('public')->put($path, $exporter->export('turtle'));
+            Storage::disk('public')->put($path, $RdfExporter->export('turtle'));
 
             // store rdfxml export
             $path = $basePath.$vocabulary->name.'_'.$this->versionFileName($vocabulary->version).'.xml';
-            Storage::disk('public')->put($path, $exporter->export('rdfxml'));
+            Storage::disk('public')->put($path, $RdfExporter->export('rdfxml'));
 
             // store EPOS specific exports
-            $exporter = new EposRdfExport($vocabulary);
+            $EposRdfExporter = new EposRdfExport($vocabulary);
             $basePath = 'vocabs/epos/'.$vocabulary->version.'/';
 
             // store turtle export
             $path = $basePath.$vocabulary->name.'.ttl';
-            Storage::disk('public')->put($path, $exporter->export('turtle'));
+            Storage::disk('public')->put($path, $EposRdfExporter->export('turtle'));
 
             // store rdfxml export
             $path = $basePath.$vocabulary->name.'.xml';
-            Storage::disk('public')->put($path, $exporter->export('rdfxml'));
+            Storage::disk('public')->put($path, $EposRdfExporter->export('rdfxml'));
         }
         $this->line('Finished exporting vocabularies.');
 
