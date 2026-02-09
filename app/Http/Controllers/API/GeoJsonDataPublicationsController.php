@@ -33,8 +33,7 @@ class GeoJsonDataPublicationsController extends Controller
     {
 
         $dataPublicationResponse = $geoJsonDataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
-        $responseToReturn = $dataPublicationResponse->getGeoJsonResponse();
 
-        return $responseToReturn;
+        return $dataPublicationResponse->getGeoJsonResponse();
     }
 }
