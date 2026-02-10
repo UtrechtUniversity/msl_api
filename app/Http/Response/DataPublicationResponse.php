@@ -3,6 +3,7 @@
 namespace App\Http\Response;
 
 use App\CkanClient\Response\PackageSearchResponse;
+use App\GeoJson\BoundingBox;
 use App\Http\Resources\GeoJsonDataPublicationResource;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -37,9 +38,9 @@ class DataPublicationResponse
         $this->currentUrl = $currentUrl;
     }
 
-    public function getGeoJsonResponse(): JsonResource|ResourceCollection
+    public function getGeoJsonResponse(BoundingBox $bbox): JsonResource|ResourceCollection
     {
-        $dataPublicationResource = new GeoJsonDataPublicationResource($this->dataPublications);
+        $dataPublicationResource = new GeoJsonDataPublicationResource($this->dataPublications, $bbox);
 
         return $dataPublicationResource->additional([
             'success' => 'true',

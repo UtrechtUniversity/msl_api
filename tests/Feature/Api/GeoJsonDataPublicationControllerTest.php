@@ -34,7 +34,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
         $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_all.json');
 
         // Retrieve response from API
-        $response = $this->get('/api/geoJsonDataPublications');
+        $response = $this->get('/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D');
         // Check for 200 status response
         $response->assertStatus(200);
         // Verify response body contents
@@ -44,7 +44,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                 ->where('meta.resultCount', 10)
                 ->where('meta.limit', 10)
                 ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url').'/api/geoJsonDataPublications?offset=0&limit=10')
+                ->where('links.current_url', config('app.url').'/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D&offset=0&limit=10')
                 ->has(
                     'data.data_publications.9',
                     fn (AssertableJson $json) => $json->where('title', 'Paleomagnetic evidence for the existence of the geomagnetic field 3.5 Ga ago (Dataset)')

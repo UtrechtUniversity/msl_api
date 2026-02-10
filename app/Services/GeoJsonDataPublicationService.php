@@ -4,8 +4,10 @@ namespace App\Services;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\GeoJson\BoundingBox;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Response\DataPublicationResponse;
+use Exception;
 use Illuminate\Http\Request;
 
 class GeoJsonDataPublicationService
@@ -33,6 +35,16 @@ class GeoJsonDataPublicationService
         return new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl);
     }
 
+    public function getBoundingBoxFromRequest(Request $request)
+    {
+        $boundingBox = json_decode($request->get('boundingBox'));
+        if (! ((bool) $boundingBox & is_array($boundingBox) & count($boundingBox) === 4)) {
+            throw new Exception('Bounding box is not defined correctly. This is a bug.');
+        }
+
+        return new BoundingBox($boundingBox[0], $boundingBox[1], $boundingBox[2], $boundingBox[3]);
+    }
+
     /**
      * Create the request to send to CKAN
      */
@@ -52,7 +64,7 @@ class GeoJsonDataPublicationService
         }
 
         $boundingBox = $request->get('boundingBox') ?? null;
-        $this->getBoundingBox($boundingBox, $this->packageSearchRequest);
+        $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
     }
 
     /**
@@ -78,7 +90,7 @@ class GeoJsonDataPublicationService
         return $response;
     }
 
-    private function getBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
+    private function setBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
     {
         $paramBoundingBox = json_decode($boundingBox);
         if ($paramBoundingBox) {

@@ -2,12 +2,21 @@
 
 namespace App\Http\Resources;
 
+use App\GeoJson\BoundingBox;
 use App\Http\Resources\V2\DataPublicationResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class GeoJsonDataPublicationResource extends JsonResource
 {
+    private BoundingBox $bbox;
+
+    public function __construct($resource, BoundingBox $bbox)
+    {
+        parent::__construct($resource);
+        $this->bbox = $bbox;
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -23,7 +32,7 @@ class GeoJsonDataPublicationResource extends JsonResource
                 includesGeoJson: false
             ))),
 
-            'geojson' => new InclusiveExclusiveGeoJsonFeaturesResource($dataPublications),
+            'geojson' => new InclusiveExclusiveGeoJsonFeaturesResource($dataPublications, $this->bbox),
         ];
 
         return $geoJsonInfo;

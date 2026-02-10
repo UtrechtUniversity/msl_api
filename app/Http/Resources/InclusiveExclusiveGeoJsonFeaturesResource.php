@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
 use Exception;
@@ -11,9 +12,17 @@ use Illuminate\Support\Collection;
 
 class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
 {
+    private BoundingBox $bbox;
+
+    public function __construct($resource, BoundingBox $bbox)
+    {
+        parent::__construct($resource);
+        $this->bbox = $bbox;
+    }
+
     /**
      * @param  Collection<int, DataPublication>  $dataPublications
-     * @return array<Feature>
+     * @return array<GeoJsonFeatureResource>
      */
     private function getOrderedFeatures(Collection $dataPublications)
     {
@@ -58,19 +67,38 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
     }
 
     /**
+     * @param   array<GeoJsonFeatureResource>
+     * @return array<GeoJsonFeatureResource>
+     */
+    public function getInclusiveFeatures(array $features): array
+    {
+        $inclusiveFeatures = [];
+        foreach ($features as $feature) {
+            if (! $this->bbox->contains($feature->feature->geometry)) {
+                continue;
+            }
+            $inclusiveFeatures[] = $feature;
+        }
+
+        return $inclusiveFeatures;
+    }
+
+    /**
      * Transform the resource into an array.
      *
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
     {
-        $geo = $this->getOrderedFeatures($this->resource);
+
+        $orderedFeatures = $this->getOrderedFeatures($this->resource);
+        $inclusiveFeatures = $this->getInclusiveFeatures($orderedFeatures);
 
         return [
             // Adding the array of resources on its own won't work
             // We have to use the `collection` method to use the `toArray`
-            'exclusive' => GeoJsonFeatureResource::collection($geo),
-            'inclusive' => [],
+            'exclusive' => GeoJsonFeatureResource::collection($orderedFeatures),
+            'inclusive' => GeoJsonFeatureResource::collection($inclusiveFeatures),
         ];
     }
 }
