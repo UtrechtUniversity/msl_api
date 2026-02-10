@@ -25,15 +25,15 @@ class BoundingBoxTest extends TestCase
 
     public function test_contains_polygon(): void
     {
-        $bbox = new BoundingBox(minX: 1, maxX: 4, minY: 1, maxY: 4);
-        $pointContained = new Polygon(points: []);
+        $bbox = new BoundingBox(minX: 0, maxX: 10, minY: 0, maxY: 10);
+        $pointContained = new Polygon(points: [new Point(3, 3), new Point(7, 3), new Point(5, 7), new Point(3, 3)]);
         $this->assertTrue($bbox->contains($pointContained));
     }
 
     public function test_does_not_contain_polygon(): void
     {
         $bbox = new BoundingBox(minX: 1, maxX: 4, minY: 1, maxY: 4);
-        $pointNotContained = new Polygon(points: []);
+        $pointNotContained = new Polygon(points: [new Point(3, 3), new Point(11, 3), new Point(5, 7), new Point(3, 3)]);
         $this->assertFalse($bbox->contains($pointNotContained));
     }
 }
