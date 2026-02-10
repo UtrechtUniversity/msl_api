@@ -80,6 +80,21 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         DomUtil.create('i', 'fa fa-caret-left', closeButton);
         DomEvent.on(closeButton, 'click', this._onCloseClick, this);
 
+
+        // Tabs container
+        const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
+
+        const tabList = DomUtil.create('ul', 'tab-list', tabs);
+
+        const exclusiveTab = DomUtil.create('li', 'tab active', tabList);
+        exclusiveTab.textContent = 'Exclusive results';
+
+        const inclusiveTab = DomUtil.create('li', 'tab', tabList);
+        inclusiveTab.textContent = 'Inclusive results';
+
+
+
+        //List for datapublications
         const listView = DomUtil.create('div', 'list-view', mainPane);
         listView.id = 'data_publications_list';
 

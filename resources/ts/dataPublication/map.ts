@@ -92,7 +92,7 @@ class MapApp {
         return data;
     }
 
-    async getAndDrawResponse(geoList: GeoJsonDataPublications) {
+    async drawResponse(geoList: GeoJsonDataPublications) {
 
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
@@ -117,7 +117,7 @@ class MapApp {
             return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
         }
         const featuresWithInfo = geoList.geojson;
-        for (const featureWithInfo of featuresWithInfo) {
+        for (const featureWithInfo of featuresWithInfo.exclusive) {
 
             L.geoJSON(featureWithInfo.feature, {
                 pointToLayer,
@@ -250,9 +250,7 @@ class MapApp {
                 // Clear markers
                 this.markers.clearLayers();
 
-                const geo = await this.getJsonFromRequest(boundingBox);
-                await this.getAndDrawResponse(geo);
-                this.sideBar.populate(geo.data_publications);
+                this.addFeaturesAndSidebarInMap(boundingBox)
 
             };
 
@@ -261,6 +259,14 @@ class MapApp {
 
 
         });
+    }
+
+    private async addFeaturesAndSidebarInMap(boundingBox: string) {
+
+        const geo = await this.getJsonFromRequest(boundingBox);
+        await this.drawResponse(geo);
+        this.sideBar.populate(geo.data_publications);
+
     }
 }
 
