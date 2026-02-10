@@ -28,16 +28,16 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
     {
 
         // create array of features
-        $allFeatures = [];
+        $allFeatureResources = [];
         foreach ($dataPublications as $dataPublication) {
             $featuresCollection = $dataPublication->geojson_featurecollection;
             foreach ($featuresCollection->features as $feature) {
-                $allFeatures[] = new GeoJsonFeatureResource($feature, $dataPublication);
+                $allFeatureResources[] = new GeoJsonFeatureResource($feature, $dataPublication);
             }
         }
         // Descending order based on the area of the feature
         usort(
-            $allFeatures,
+            $allFeatureResources,
             function (GeoJsonFeatureResource $a, GeoJsonFeatureResource $b) {
                 // If first argument is a point
                 if ($a->feature->geometry instanceof Point) {
@@ -63,21 +63,21 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
             }
         );
 
-        return $allFeatures;
+        return $allFeatureResources;
     }
 
     /**
      * @param   array<GeoJsonFeatureResource>
      * @return array<GeoJsonFeatureResource>
      */
-    public function getInclusiveFeatures(array $features): array
+    public function getInclusiveFeatures(array $geoFeatureResources): array
     {
         $inclusiveFeatures = [];
-        foreach ($features as $feature) {
-            if (! $this->bbox->contains($feature->feature->geometry)) {
+        foreach ($geoFeatureResources as $geoFeatureResource) {
+            if (! $this->bbox->contains($geoFeatureResource->feature->geometry)) {
                 continue;
             }
-            $inclusiveFeatures[] = $feature;
+            $inclusiveFeatures[] = $geoFeatureResource;
         }
 
         return $inclusiveFeatures;
