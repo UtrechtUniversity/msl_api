@@ -31,6 +31,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
 
     public function test_all_geojson_success_results(): void
     {
+        // TODO add inclusive results
         $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_all.json');
 
         // Retrieve response from API
