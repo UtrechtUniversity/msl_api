@@ -1,0 +1,1874 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics>
+  a skos:ConceptScheme ;
+  skos:prefLabel "Rock and melt physics" ;
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> ;
+  skos:prefLabel "Apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus> ;
+  skos:prefLabel "deformation testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-biaxial_compression_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-brazilian_testing_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-chevron-notch_test_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-confining_pressure_vessel>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-deformation-dia>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-diamond_anvil_cell>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-flexural_testing_machine>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-load_stamp>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-microcantilever>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-micropillar>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-multi-anvil>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-nanoindenter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-plate_bearing_test_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-point_load_test_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-split_hopkinson_pressure_bar_-_compression>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-vickers_hardness_test_setup> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing> ;
+  skos:prefLabel "compression testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-confining_pressure_vessel>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "confining pressure vessel" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-confining_pressure_vessel> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_oedometer_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_unconfined_apparatus_-_compression> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "uniaxial compression apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_oedometer_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus> ;
+  skos:prefLabel "uniaxial (oedometer) apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_oedometer_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_unconfined_apparatus_-_compression>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus> ;
+  skos:prefLabel "uniaxial (unconfined) apparatus - compression" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-uniaxial_compression_apparatus-uniaxial_unconfined_apparatus_-_compression> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-biaxial_compression_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "biaxial compression apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-biaxial_compression_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-conventional_triaxial_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-true_triaxial_apparatus> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "triaxial compression apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-conventional_triaxial_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus> ;
+  skos:prefLabel "conventional triaxial apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-conventional_triaxial_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-true_triaxial_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus> ;
+  skos:prefLabel "true triaxial apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-triaxial_compression_apparatus-true_triaxial_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-diamond_anvil_cell>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "diamond anvil cell" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-diamond_anvil_cell> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-deformation-dia>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "deformation-DIA" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-deformation-dia> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-multi-anvil>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "multi-anvil" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-multi-anvil> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-brazilian_testing_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "Brazilian testing setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-brazilian_testing_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-flexural_testing_machine>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "flexural testing machine" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-flexural_testing_machine> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-load_stamp>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "load stamp" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-load_stamp> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-chevron-notch_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "Chevron-notch test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-chevron-notch_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-nanoindenter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "nanoindenter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-nanoindenter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-micropillar>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "micropillar" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-micropillar> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-microcantilever>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "microcantilever" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-microcantilever> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-vickers_hardness_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "Vickers hardness test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-vickers_hardness_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-plate_bearing_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "plate bearing test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-plate_bearing_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-point_load_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "point load test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-point_load_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing-split_hopkinson_pressure_bar_-_compression>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-compression_testing> ;
+  skos:prefLabel "split Hopkinson pressure bar - compression" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-compression_testing-split_hopkinson_pressure_bar_-_compression> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-conventional_triaxial_apparatus_-_extension>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-dilatometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-direct_tension_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-pull_test_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-split_hopkinson_pressure_bar_-_extension>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-uniaxial_unconfined_apparatus_-_extension> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing> ;
+  skos:prefLabel "extension testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-conventional_triaxial_apparatus_-_extension>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "conventional triaxial apparatus - extension" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-conventional_triaxial_apparatus_-_extension> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-uniaxial_unconfined_apparatus_-_extension>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "uniaxial (unconfined) apparatus - extension" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-uniaxial_unconfined_apparatus_-_extension> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-direct_tension_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "direct tension apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-direct_tension_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-pull_test_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "pull test apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-pull_test_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-split_hopkinson_pressure_bar_-_extension>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "split Hopkinson pressure bar - extension" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-split_hopkinson_pressure_bar_-_extension> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing-dilatometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-extension_testing> ;
+  skos:prefLabel "dilatometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-extension_testing-dilatometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-biaxial_apparatus_direct_shear>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_direct_shear>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_saw-cut>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-rotary_shear_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-true_triaxial_apparatus_shear> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing> ;
+  skos:prefLabel "shear testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-biaxial_apparatus_direct_shear>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing> ;
+  skos:prefLabel "biaxial apparatus: direct shear" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing-biaxial_apparatus_direct_shear> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-rotary_shear_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing> ;
+  skos:prefLabel "rotary shear apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing-rotary_shear_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_direct_shear>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing> ;
+  skos:prefLabel "conventional triaxial apparatus: direct shear" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_direct_shear> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_saw-cut>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing> ;
+  skos:prefLabel "conventional triaxial apparatus: saw-cut" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing-conventional_triaxial_apparatus_saw-cut> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing-true_triaxial_apparatus_shear>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-shear_testing> ;
+  skos:prefLabel "true triaxial apparatus shear" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-shear_testing-true_triaxial_apparatus_shear> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-conventional_triaxial_apparatus_-_torsion>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-double_torsion_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-split_hopkinson_pressure_bar_-_torsion>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-uniaxial_unconfined_apparatus_-_torsion> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing> ;
+  skos:prefLabel "torsion testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-torsion_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-conventional_triaxial_apparatus_-_torsion>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing> ;
+  skos:prefLabel "conventional triaxial apparatus - torsion" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-torsion_testing-conventional_triaxial_apparatus_-_torsion> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-uniaxial_unconfined_apparatus_-_torsion>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing> ;
+  skos:prefLabel "uniaxial (unconfined) apparatus - torsion" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-torsion_testing-uniaxial_unconfined_apparatus_-_torsion> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-double_torsion_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing> ;
+  skos:prefLabel "double torsion apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-torsion_testing-double_torsion_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing-split_hopkinson_pressure_bar_-_torsion>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-deformation_testing-torsion_testing> ;
+  skos:prefLabel "split Hopkinson pressure bar - torsion" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-deformation_testing-torsion_testing-split_hopkinson_pressure_bar_-_torsion> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus> ;
+  skos:prefLabel "fluid transport testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_pore_pressure_oscillation_method>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_pressure_transient_pulse_decay_method>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_steady_state_flow_method> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing> ;
+  skos:prefLabel "permeameter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-permeameter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_steady_state_flow_method>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter> ;
+  skos:prefLabel "permeameter - steady state flow method" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-permeameter-permeameter_-_steady_state_flow_method> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_pore_pressure_oscillation_method>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter> ;
+  skos:prefLabel "permeameter - pore pressure oscillation method" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-permeameter-permeameter_-_pore_pressure_oscillation_method> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter-permeameter_-_pressure_transient_pulse_decay_method>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-permeameter> ;
+  skos:prefLabel "permeameter - pressure transient pulse decay method" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-permeameter-permeameter_-_pressure_transient_pulse_decay_method> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-multi-phase_flow_test_apparatus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-rheometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-viscometer> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing> ;
+  skos:prefLabel "fluid rheology testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-fluid_rheology_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-rheometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing> ;
+  skos:prefLabel "rheometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-fluid_rheology_testing-rheometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-viscometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing> ;
+  skos:prefLabel "viscometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-fluid_rheology_testing-viscometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing-multi-phase_flow_test_apparatus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-fluid_transport_testing-fluid_rheology_testing> ;
+  skos:prefLabel "multi-phase flow test apparatus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-fluid_transport_testing-fluid_rheology_testing-multi-phase_flow_test_apparatus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-humidity_control>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus> ;
+  skos:prefLabel "environmental control" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-cryostat>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-furnace>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-incubator> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control> ;
+  skos:prefLabel "temperature control" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-temperature_control> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-cryostat>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control> ;
+  skos:prefLabel "cryostat" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-temperature_control-cryostat> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-furnace>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control> ;
+  skos:prefLabel "furnace" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-temperature_control-furnace> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control-incubator>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-temperature_control> ;
+  skos:prefLabel "incubator" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-temperature_control-incubator> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-humidity_control>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-humidity_control-humidity_controlled_chamber> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control> ;
+  skos:prefLabel "humidity control" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-humidity_control> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-humidity_control-humidity_controlled_chamber>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-environmental_control-humidity_control> ;
+  skos:prefLabel "humidity controlled chamber" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-environmental_control-humidity_control-humidity_controlled_chamber> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus> ;
+  skos:prefLabel "general sample characterization" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-densimeter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_archimedes_method>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_mercury_porosimeter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-pycnometer> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:prefLabel "porosity and density determination" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-porosity_and_density_determination> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-densimeter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination> ;
+  skos:prefLabel "densimeter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-porosity_and_density_determination-densimeter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_archimedes_method>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination> ;
+  skos:prefLabel "porosity meter: Archimedes method" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_archimedes_method> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_mercury_porosimeter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination> ;
+  skos:prefLabel "porosity meter: mercury porosimeter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-porosity_and_density_determination-porosity_meter_mercury_porosimeter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination-pycnometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-porosity_and_density_determination> ;
+  skos:prefLabel "pycnometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-porosity_and_density_determination-pycnometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-particle_analyser>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-profilometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-roughness_testing_equipment> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:prefLabel "size and shape analysis" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-size_and_shape_analysis> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-particle_analyser>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis> ;
+  skos:prefLabel "particle analyser" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-size_and_shape_analysis-particle_analyser> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-profilometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis> ;
+  skos:prefLabel "profilometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-size_and_shape_analysis-profilometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis-roughness_testing_equipment>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-size_and_shape_analysis> ;
+  skos:prefLabel "roughness testing equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-size_and_shape_analysis-roughness_testing_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-conductivity_cell>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-contact_resistivity_cell>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-electric_resistivity_meter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-tensiometer> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:prefLabel "electrical property determination" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-electrical_property_determination> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-conductivity_cell>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination> ;
+  skos:prefLabel "conductivity cell" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-electrical_property_determination-conductivity_cell> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-contact_resistivity_cell>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination> ;
+  skos:prefLabel "contact resistivity cell" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-electrical_property_determination-contact_resistivity_cell> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-electric_resistivity_meter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination> ;
+  skos:prefLabel "electric resistivity meter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-electrical_property_determination-electric_resistivity_meter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination-tensiometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-electrical_property_determination> ;
+  skos:prefLabel "tensiometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-electrical_property_determination-tensiometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-calorimeter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-differential_thermal_analysis_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-thermal_conductivity_test_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-thermal_diffusivity_test_setup> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:prefLabel "thermal property determination" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-calorimeter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:prefLabel "calorimeter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-thermal_property_determination-calorimeter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-differential_thermal_analysis_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:prefLabel "differential thermal analysis setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-thermal_property_determination-differential_thermal_analysis_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-thermal_conductivity_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:prefLabel "thermal conductivity test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-thermal_property_determination-thermal_conductivity_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination-thermal_diffusivity_test_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-thermal_property_determination> ;
+  skos:prefLabel "thermal diffusivity test setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-thermal_property_determination-thermal_diffusivity_test_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-cherchar_equipment>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-core_scratcher>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-schmidt_hammer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-sclerometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-slake_durability_setup> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization> ;
+  skos:prefLabel "mechanical property determination" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-cherchar_equipment>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:prefLabel "Cherchar equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination-cherchar_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-core_scratcher>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:prefLabel "core scratcher" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination-core_scratcher> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-schmidt_hammer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:prefLabel "Schmidt hammer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination-schmidt_hammer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-sclerometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:prefLabel "sclerometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination-sclerometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination-slake_durability_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/apparatus-general_sample_characterization-mechanical_property_determination> ;
+  skos:prefLabel "Slake durability setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/apparatus-general_sample_characterization-mechanical_property_determination-slake_durability_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> ;
+  skos:prefLabel "Ancillary equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-camera_imaging_during_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-infrared_camera>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-infrared_spectroscope>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-photoelastic_setup>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment> ;
+  skos:prefLabel "syn-deformation imaging" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-camera_imaging_during_testing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "camera imaging during testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-camera_imaging_during_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-infrared_camera>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "infrared camera" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-infrared_camera> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_fluid_transport> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "X-ray imaging during testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_fluid_transport>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing> ;
+  skos:prefLabel "X-ray imaging of fluid transport" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_fluid_transport> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing> ;
+  skos:prefLabel "X-ray imaging of deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-x-ray_imaging_during_testing-x-ray_imaging_of_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_fluid_transport> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "neutron imaging during testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_fluid_transport>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing> ;
+  skos:prefLabel "neutron imaging of fluid transport" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_fluid_transport> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing> ;
+  skos:prefLabel "neutron imaging of deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-neutron_imaging_during_testing-neutron_imaging_of_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-infrared_spectroscope>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "infrared spectroscope" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-infrared_spectroscope> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging-photoelastic_setup>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-syn-deformation_imaging> ;
+  skos:prefLabel "photoelastic setup" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-syn-deformation_imaging-photoelastic_setup> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-accelerometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-laser_vibrometer>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-ultrasonic_imaging_equipment>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-ultrasound_monitoring_equipment> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment> ;
+  skos:prefLabel "acoustic measurement - active source" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_active_source> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-accelerometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source> ;
+  skos:prefLabel "accelerometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_active_source-accelerometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-laser_vibrometer>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source> ;
+  skos:prefLabel "laser vibrometer" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_active_source-laser_vibrometer> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-ultrasonic_imaging_equipment>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source> ;
+  skos:prefLabel "ultrasonic imaging equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_active_source-ultrasonic_imaging_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source-ultrasound_monitoring_equipment>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_active_source> ;
+  skos:prefLabel "ultrasound monitoring equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_active_source-ultrasound_monitoring_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_continuous>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_triggered> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment> ;
+  skos:prefLabel "acoustic measurement - passive" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_passive> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_triggered>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive> ;
+  skos:prefLabel "acoustic emission (AE) monitoring equipment - triggered" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_triggered> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_continuous>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-acoustic_measurement_-_passive> ;
+  skos:prefLabel "acoustic emission (AE) monitoring equipment - continuous" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-acoustic_measurement_-_passive-acoustic_emission_ae_monitoring_equipment_-_continuous> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_acoustic_sensing_das_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_strain_sensing_dss_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_temperature_sensing_dts_system> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment> ;
+  skos:prefLabel "distributed fibre sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-distributed_fibre_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_acoustic_sensing_das_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing> ;
+  skos:prefLabel "distributed acoustic sensing (DAS) system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-distributed_fibre_sensing-distributed_acoustic_sensing_das_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_strain_sensing_dss_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing> ;
+  skos:prefLabel "distributed strain sensing (DSS) system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-distributed_fibre_sensing-distributed_strain_sensing_dss_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing-distributed_temperature_sensing_dts_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-distributed_fibre_sensing> ;
+  skos:prefLabel "distributed temperature sensing (DTS) system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-distributed_fibre_sensing-distributed_temperature_sensing_dts_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-coriolis_meter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-flow_meter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-in-line_ph_meter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-relative_humidity_meter> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment> ;
+  skos:prefLabel "in-line fluid property measurement" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-in-line_fluid_property_measurement> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-in-line_ph_meter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement> ;
+  skos:prefLabel "in-line pH meter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-in-line_fluid_property_measurement-in-line_ph_meter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-flow_meter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement> ;
+  skos:prefLabel "flow meter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-in-line_fluid_property_measurement-flow_meter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-coriolis_meter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement> ;
+  skos:prefLabel "Coriolis meter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-in-line_fluid_property_measurement-coriolis_meter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement-relative_humidity_meter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/ancillary_equipment-in-line_fluid_property_measurement> ;
+  skos:prefLabel "relative humidity meter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/ancillary_equipment-in-line_fluid_property_measurement-relative_humidity_meter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-hydrological_effects>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_stress>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-grain_size_distribution>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-pore_fluid_pressure>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-porosity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-slake_durability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain_rate_-_creep_constant_stress>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-stress_relaxation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-viscosity> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> ;
+  skos:prefLabel "Measured property" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-hydrostatic_compressive_strength_s1s2s3>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-plastic_flow_stress>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-residual_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-shear_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-tensile_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-torsion_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-triaxial_compressive_strength_s1-s2s3>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-true_tension_strength>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-true_triaxial_strength_s1-s2-s3>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-unconfined_compressive_strength_ucs>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-yield_strength> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "mechanical strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-unconfined_compressive_strength_ucs>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "unconfined compressive strength (UCS)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-unconfined_compressive_strength_ucs> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-tensile_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "tensile strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-tensile_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-true_tension_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "true tension strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-true_tension_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-hydrostatic_compressive_strength_s1s2s3>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "hydrostatic compressive strength (s1=s2=s3)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-hydrostatic_compressive_strength_s1s2s3> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-triaxial_compressive_strength_s1-s2s3>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "triaxial compressive strength (s1>s2=s3)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-triaxial_compressive_strength_s1-s2s3> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-true_triaxial_strength_s1-s2-s3>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "true triaxial strength (s1>s2>s3)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-true_triaxial_strength_s1-s2-s3> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-yield_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "yield strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-yield_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-shear_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "shear strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-shear_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-torsion_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "torsion strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-torsion_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-residual_strength>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "residual strength" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-residual_strength> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-plastic_flow_stress>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-plastic_flow_stress-plastic_flow_law_stress_exponent> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength> ;
+  skos:prefLabel "plastic flow stress" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-plastic_flow_stress> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-plastic_flow_stress-plastic_flow_law_stress_exponent>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-mechanical_strength-plastic_flow_stress> ;
+  skos:prefLabel "plastic flow law stress exponent" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-mechanical_strength-plastic_flow_stress-plastic_flow_law_stress_exponent> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness-linear-elastic_critical_stress_intensity_factor_kic>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness-plastic-elastic_fracture_toughness_jic> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "fracture and crack toughness" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-fracture_and_crack_toughness> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness-linear-elastic_critical_stress_intensity_factor_kic>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness> ;
+  skos:prefLabel "linear-elastic (critical stress intensity factor KIC)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-fracture_and_crack_toughness-linear-elastic_critical_stress_intensity_factor_kic> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness-plastic-elastic_fracture_toughness_jic>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-fracture_and_crack_toughness> ;
+  skos:prefLabel "plastic-elastic fracture toughness (JIC)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-fracture_and_crack_toughness-plastic-elastic_fracture_toughness_jic> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-cohesion>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-dilatancy_parameter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-linker-dieterich_parameter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-rate_and_state_friction_rsf_parameters>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-slip_weakening_parameters>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-stress_drop> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "friction - controlled slip rate" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-frictional_strength_recovery>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-kinetic_friction_coefficient>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-peak_friction_coefficient>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-reactivation_friction_coefficient>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-steady_state_friction_coefficient> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "friction coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-peak_friction_coefficient>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:prefLabel "peak friction coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-peak_friction_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-kinetic_friction_coefficient>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:prefLabel "kinetic friction coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-kinetic_friction_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-steady_state_friction_coefficient>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:prefLabel "steady state friction coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-steady_state_friction_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-reactivation_friction_coefficient>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:prefLabel "reactivation friction coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-reactivation_friction_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient-frictional_strength_recovery>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-friction_coefficient> ;
+  skos:prefLabel "frictional strength recovery" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-friction_coefficient-frictional_strength_recovery> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-rate_and_state_friction_rsf_parameters>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "rate and state friction (RSF) parameters" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-rate_and_state_friction_rsf_parameters> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-slip_weakening_parameters>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "slip weakening parameters" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-slip_weakening_parameters> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-stress_drop>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "stress drop" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-stress_drop> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-cohesion>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "cohesion" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-cohesion> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-dilatancy_parameter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "dilatancy parameter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-dilatancy_parameter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate-linker-dieterich_parameter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_slip_rate> ;
+  skos:prefLabel "Linker-Dieterich parameter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_slip_rate-linker-dieterich_parameter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_stress>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_stress-slip_rate> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "friction - controlled stress" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_stress> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_stress-slip_rate>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-friction_-_controlled_stress> ;
+  skos:prefLabel "slip rate" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-friction_-_controlled_stress-slip_rate> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-anelastic_strain>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-elastic_strain>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-inelastic_strain>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-strain_partitioning> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "strain" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-elastic_strain>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain> ;
+  skos:prefLabel "elastic strain" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain-elastic_strain> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-anelastic_strain>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain> ;
+  skos:prefLabel "anelastic strain" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain-anelastic_strain> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-inelastic_strain>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain> ;
+  skos:prefLabel "inelastic strain" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain-inelastic_strain> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain-strain_partitioning>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain> ;
+  skos:prefLabel "strain partitioning" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain-strain_partitioning> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-strain_rate_-_creep_constant_stress>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "strain rate - creep (constant stress)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain_rate_-_creep_constant_stress> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-stress_relaxation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "stress relaxation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-stress_relaxation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-pore_fluid_pressure>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "pore fluid pressure" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-pore_fluid_pressure> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-force_of_crystallization_foc>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-pore_fluid_composition>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-rate_of_crack_growth>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-rate_of_pressure_solution> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "coupled  mechanical-chemical effects" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-chemical_effects> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-force_of_crystallization_foc>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects> ;
+  skos:prefLabel "force of crystallization (FOC)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-chemical_effects-force_of_crystallization_foc> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-rate_of_crack_growth>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects> ;
+  skos:prefLabel "rate of crack growth" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-chemical_effects-rate_of_crack_growth> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-rate_of_pressure_solution>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects> ;
+  skos:prefLabel "rate of pressure solution" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-chemical_effects-rate_of_pressure_solution> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects-pore_fluid_composition>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-chemical_effects> ;
+  skos:prefLabel "pore fluid composition" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-chemical_effects-pore_fluid_composition> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-coupled_mechanical-hydrological_effects>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "coupled mechanical-hydrological effects" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-coupled_mechanical-hydrological_effects> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-endothermic_reaction>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-exothermic_reaction>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-frictional_heating> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "temperature change" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-temperature_change> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-endothermic_reaction>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change> ;
+  skos:prefLabel "endothermic reaction" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-temperature_change-endothermic_reaction> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-exothermic_reaction>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change> ;
+  skos:prefLabel "exothermic reaction" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-temperature_change-exothermic_reaction> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change-frictional_heating>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-temperature_change> ;
+  skos:prefLabel "frictional heating" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-temperature_change-frictional_heating> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-axial_compressibility>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-biot_coefficient>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-bulk_compressibility>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-bulk_modulus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-indentation_modulus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-lame_parameter>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-modulus_attenuation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-modulus_dispersion>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-poisson_ratio>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-shear_modulus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-storageloss_modulus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-youngs_modulus> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "elasticity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-youngs_modulus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "Young's modulus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-youngs_modulus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-bulk_modulus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "bulk modulus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-bulk_modulus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-shear_modulus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "shear modulus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-shear_modulus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-poisson_ratio>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "Poisson ratio" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-poisson_ratio> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-biot_coefficient>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "Biot coefficient" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-biot_coefficient> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-axial_compressibility>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "axial compressibility" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-axial_compressibility> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-bulk_compressibility>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "bulk compressibility" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-bulk_compressibility> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-lame_parameter>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "Lamé parameter" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-lame_parameter> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-indentation_modulus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "indentation modulus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-indentation_modulus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-modulus_dispersion>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "modulus dispersion" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-modulus_dispersion> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-modulus_attenuation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "modulus attenuation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-modulus_attenuation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity-storageloss_modulus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elasticity> ;
+  skos:prefLabel "storage/loss modulus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elasticity-storageloss_modulus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-p-wave>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s-wave>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s1-wave>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s2-wave>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-wave_attenuation> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "elastic wave velocity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-p-wave>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity> ;
+  skos:prefLabel "P-wave" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity-p-wave> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s-wave>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity> ;
+  skos:prefLabel "S-wave" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity-s-wave> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s1-wave>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity> ;
+  skos:prefLabel "S1-wave" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity-s1-wave> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-s2-wave>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity> ;
+  skos:prefLabel "S2-wave" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity-s2-wave> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity-wave_attenuation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-elastic_wave_velocity> ;
+  skos:prefLabel "wave attenuation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-elastic_wave_velocity-wave_attenuation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_count>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_energy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_location> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "acoustic emission (AE)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae> ;
+  skos:prefLabel "acoustic emission (AE) energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae-acoustic_emission_ae_energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_count>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae> ;
+  skos:prefLabel "acoustic emission (AE) count" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae-acoustic_emission_ae_count> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae-acoustic_emission_ae_location>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-acoustic_emission_ae> ;
+  skos:prefLabel "acoustic emission (AE) location" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-acoustic_emission_ae-acoustic_emission_ae_location> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-porosity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "porosity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-porosity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-absolute_permeability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-bulk_sample_permeability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-capillary_effects>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-fluid_hold-up>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-fracture_permeability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-klinkenberg_constant>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-relative_permeability>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-storativity> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "permeability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-absolute_permeability>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "absolute permeability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-absolute_permeability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-relative_permeability>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "relative permeability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-relative_permeability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-fracture_permeability>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "fracture permeability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-fracture_permeability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-bulk_sample_permeability>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "bulk sample permeability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-bulk_sample_permeability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-storativity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "storativity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-storativity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-klinkenberg_constant>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "Klinkenberg constant" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-klinkenberg_constant> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-capillary_effects>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "capillary effects" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-capillary_effects> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability-fluid_hold-up>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-permeability> ;
+  skos:prefLabel "fluid hold-up" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-permeability-fluid_hold-up> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties-heat_capacity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties-thermal_conductivity> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "thermal properties" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-thermal_properties> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties-heat_capacity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties> ;
+  skos:prefLabel "heat capacity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-thermal_properties-heat_capacity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties-thermal_conductivity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-thermal_properties> ;
+  skos:prefLabel "thermal conductivity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-thermal_properties-thermal_conductivity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_capacity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_conductivity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_resistivity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-frequency_dependent_conductivity> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "electrical properties" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_conductivity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties> ;
+  skos:prefLabel "electrical conductivity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties-electrical_conductivity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_resistivity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties> ;
+  skos:prefLabel "electrical resistivity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties-electrical_resistivity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-electrical_capacity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties> ;
+  skos:prefLabel "electrical capacity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties-electrical_capacity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties-frequency_dependent_conductivity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-electrical_properties> ;
+  skos:prefLabel "frequency dependent conductivity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-electrical_properties-frequency_dependent_conductivity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-elastic_anisotropy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-permeability_anisotropy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-seismic_anisotropy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-strength_anisotropy> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "anisotropy (petrophysical)" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-anisotropy_petrophysical> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-strength_anisotropy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical> ;
+  skos:prefLabel "strength anisotropy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-anisotropy_petrophysical-strength_anisotropy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-elastic_anisotropy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical> ;
+  skos:prefLabel "elastic anisotropy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-anisotropy_petrophysical-elastic_anisotropy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-permeability_anisotropy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical> ;
+  skos:prefLabel "permeability anisotropy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-anisotropy_petrophysical-permeability_anisotropy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical-seismic_anisotropy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-anisotropy_petrophysical> ;
+  skos:prefLabel "seismic anisotropy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-anisotropy_petrophysical-seismic_anisotropy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness-grain_surface_roughness>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness-rock_surface_roughness> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "surface roughness" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-surface_roughness> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness-grain_surface_roughness>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness> ;
+  skos:prefLabel "grain surface roughness" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-surface_roughness-grain_surface_roughness> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness-rock_surface_roughness>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-surface_roughness> ;
+  skos:prefLabel "rock surface roughness" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-surface_roughness-rock_surface_roughness> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-slake_durability>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "Slake durability" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-slake_durability> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-viscosity>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "viscosity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-viscosity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property-grain_size_distribution>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/measured_property> ;
+  skos:prefLabel "grain size distribution" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-grain_size_distribution> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-energy_partitioning>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> ;
+  skos:prefLabel "Inferred deformation behavior" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-anelastic_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle-ductile_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle-viscous_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-ductile_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-frictional_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-hysteretic_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-inelastic_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-poroelastic_deformation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-viscous_deformation> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior> ;
+  skos:prefLabel "deformation behaviour" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-poroelastic_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "poroelastic deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-poroelastic_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-anelastic_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "anelastic deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-anelastic_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-inelastic_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "inelastic deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-inelastic_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-hysteretic_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "hysteretic deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-hysteretic_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "brittle deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-brittle_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-frictional_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "frictional deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-frictional_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-ductile_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "ductile deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-ductile_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle-ductile_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "brittle-ductile deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-brittle-ductile_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-brittle-viscous_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "brittle-viscous deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-brittle-viscous_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-viscous_deformation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "viscous deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-viscous_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-deviatoric_strain_tensor>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-elastic_strain_tensor>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-inelastic_strain_tensor>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-mean_strain_tensor> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "strain tensor" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-strain_tensor> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-mean_strain_tensor>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor> ;
+  skos:prefLabel "mean strain tensor" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-strain_tensor-mean_strain_tensor> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-deviatoric_strain_tensor>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor> ;
+  skos:prefLabel "deviatoric strain tensor" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-strain_tensor-deviatoric_strain_tensor> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-elastic_strain_tensor>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor> ;
+  skos:prefLabel "elastic strain tensor" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-strain_tensor-elastic_strain_tensor> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor-inelastic_strain_tensor>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-strain_tensor> ;
+  skos:prefLabel "inelastic strain tensor" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-strain_tensor-inelastic_strain_tensor> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law-associated_flow>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law-nonassociated_flow> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "flow law" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-flow_law> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law-associated_flow>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law> ;
+  skos:prefLabel "associated flow" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-flow_law-associated_flow> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law-nonassociated_flow>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-flow_law> ;
+  skos:prefLabel "nonassociated flow" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-flow_law-nonassociated_flow> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-compaction_band>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-dilation_band>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-riedel_shear>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_band>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_failure> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour> ;
+  skos:prefLabel "localized deformation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_failure>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:prefLabel "shear failure" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_failure> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-compaction_band>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:prefLabel "compaction band" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation-compaction_band> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-dilation_band>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:prefLabel "dilation band" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation-dilation_band> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_band>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:prefLabel "shear band" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation-shear_band> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation-riedel_shear>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-deformation_behaviour-localized_deformation> ;
+  skos:prefLabel "Riedel shear" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-deformation_behaviour-localized_deformation-riedel_shear> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_absorption>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_adsorption>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-frictional_heating>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_cracking>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_slip>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-transgranular_cracking> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior> ;
+  skos:prefLabel "microphysical deformation mechanism" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "intragranular cracking" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intragranular_cracking> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_cracking>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "intergranular cracking" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_cracking> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-transgranular_cracking>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "transgranular cracking" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-transgranular_cracking> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_slip>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "intergranular slip" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-intergranular_slip> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "fluid desorption" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_desorption> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_diffusion_creep>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_dislocation_creep>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-pressure_solution>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-stress_corrosion_cracking>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-sub-critical_crack_growth> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "time-dependent mechanism" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-pressure_solution>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:prefLabel "pressure solution" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-pressure_solution> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-sub-critical_crack_growth>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:prefLabel "sub-critical crack growth" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-sub-critical_crack_growth> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-stress_corrosion_cracking>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:prefLabel "stress corrosion cracking" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-stress_corrosion_cracking> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_dislocation_creep>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:prefLabel "crystal plasticity - dislocation creep" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_dislocation_creep> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_diffusion_creep>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism> ;
+  skos:prefLabel "crystal plasticity - diffusion creep" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-time-dependent_mechanism-crystal_plasticity_-_diffusion_creep> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_adsorption>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "fluid adsorption" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_adsorption> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_absorption>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "fluid absorption" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-fluid_absorption> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism-frictional_heating>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-microphysical_deformation_mechanism> ;
+  skos:prefLabel "frictional heating" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism-frictional_heating> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior-energy_partitioning>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics/inferred_deformation_behavior> ;
+  skos:prefLabel "energy partitioning" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-energy_partitioning> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/rockphysics> .
+
