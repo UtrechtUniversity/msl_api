@@ -9,7 +9,10 @@ export interface Sidebar {
     _closeButton: HTMLSpanElement | null,
     _tab: HTMLElement | null,
     _container: HTMLElement | null,
-    _listView: HTMLDivElement | null,
+    _exclusiveTab: HTMLLIElement | null,
+    _inclusiveTab: HTMLLIElement | null,
+    _inclusiveListView: HTMLElement | null,
+    _exclusiveListView: HTMLDivElement | null
     _map: Leaflet.Map | null,
     _tabLink: null | HTMLAnchorElement,
     _initSideBarElement(id: string): void,

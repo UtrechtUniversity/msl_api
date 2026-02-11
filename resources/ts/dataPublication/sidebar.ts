@@ -19,7 +19,11 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    _listView: null,
+    //TODO can I make them a list?
+    _exclusiveTab: null,
+    _inclusiveTab: null,
+    _inclusiveListView: null,
+    _exclusiveListView: null,
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -86,19 +90,28 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         const tabList = DomUtil.create('ul', 'tab-list', tabs);
 
-        const exclusiveTab = DomUtil.create('li', 'tab active', tabList);
-        exclusiveTab.textContent = 'Exclusive results';
+        this._exclusiveTab = DomUtil.create('li', 'tab active', tabList);
+        this._exclusiveTab.textContent = 'Exclusive results';
 
-        const inclusiveTab = DomUtil.create('li', 'tab', tabList);
-        inclusiveTab.textContent = 'Inclusive results';
+        this._inclusiveTab = DomUtil.create('li', 'tab', tabList);
+        this._inclusiveTab.textContent = 'Inclusive results';
+
+        // const listView = DomUtil.create('div', 'list-view active', mainPane);
+        // listView.id = 'data_publications_list';
+
+        // const favoritesView = DomUtil.create('div', 'list-view', mainPane);
+        // favoritesView.id = 'favorites_list';
 
 
 
         //List for datapublications
-        const listView = DomUtil.create('div', 'list-view', mainPane);
-        listView.id = 'data_publications_list';
+        this._exclusiveListView = DomUtil.create('div', 'list-view', mainPane);
+        this._exclusiveListView.id = 'exclusive_data_publications_list';
 
-        this._listView = listView
+        //List for datapublications
+        this._inclusiveListView = DomUtil.create('div', 'list-view hidden', mainPane);
+        this._inclusiveListView.id = 'inclusive_data_publications_list';
+
         this._pane = mainPane
         this._closeButton = closeButton;
     },
@@ -186,8 +199,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     },
     populate: function (dataPublications: DataPublication[]) {
 
-        assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
-        const list = this._listView
+        assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
+        const list = this._exclusiveListView
 
         list.innerHTML = '';
         dataPublications.forEach(dataPublication => {
@@ -211,13 +224,28 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
             list.appendChild(item);
         });
+
+
+        DomEvent.on(this._exclusiveTab!, 'click', () => {
+            this._exclusiveTab!.classList.add('active');
+            this._inclusiveTab!.classList.remove('active');
+            // listView.classList.add('active');
+            // favoritesView.classList.remove('active');
+        });
+
+        DomEvent.on(this._inclusiveTab!, 'click', () => {
+            this._inclusiveTab!.classList.add('active');
+            this._exclusiveTab!.classList.remove('active');
+            // favoritesView.classList.add('active');
+            // listView.classList.remove('active');
+        });
         this.open();
 
     },
     resetList: function () {
-        assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
+        assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
 
-        const parent = this._listView
+        const parent = this._exclusiveListView
         while (parent.firstChild) {
             parent.firstChild.remove()
         }
