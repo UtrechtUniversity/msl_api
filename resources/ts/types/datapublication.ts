@@ -1,20 +1,20 @@
 
 import type { Feature } from 'geojson'
 
+export type InclusiveExclusiveGeoJsonDataPublications = {
+    'exclusive': GeoJsonDataPublications,
+    'inclusive': GeoJsonDataPublications
+}
 export type GeoJsonDataPublications = {
-    'geojson': InclusiveExclusiveGeoJsonFeatures,
+    'geojson': GeoFeature[],
     'data_publications': DataPublication[]
 }
-
 export type GeoFeature = {
     'feature': Feature,
     'title': string
     'data_publication_doi': string;
 }
-export type InclusiveExclusiveGeoJsonFeatures = {
-    'inclusive': GeoFeature[],
-    'exclusive': GeoFeature[]
-}
+
 export type DataPublication = {
     'title': string,
     'doi': string,

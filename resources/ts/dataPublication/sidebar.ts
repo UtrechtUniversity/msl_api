@@ -1,7 +1,7 @@
 /* global L */
 
 import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { DataPublication } from "../types/datapublication.ts";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
 import type { Sidebar } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
 
@@ -197,13 +197,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             `;
         return item
     },
-    populate: function (dataPublications: DataPublication[]) {
+    populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
         assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
         const list = this._exclusiveListView
 
         list.innerHTML = '';
-        dataPublications.forEach(dataPublication => {
+        dataPublications.exclusive.data_publications.forEach(dataPublication => {
 
             const item = this._createListItem(dataPublication)
 

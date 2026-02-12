@@ -1,6 +1,6 @@
 import { Evented } from "leaflet";
 import type * as Leaflet from 'leaflet';
-import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "./datapublication.ts";
+import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "./datapublication.ts";
 
 export interface Sidebar {
     // private methods
@@ -32,7 +32,7 @@ export interface Sidebar {
     highlight(id: string): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
-    populate(dataPublications: DataPublication[]): void,
+    populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
     resetList(): void,
 
 }

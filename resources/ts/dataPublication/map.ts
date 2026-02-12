@@ -1,7 +1,7 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "../types/datapublication.js";
+import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
@@ -75,7 +75,7 @@ class MapApp {
             l.setStyle(this.defaultOptions);
         })
     }
-    async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublications> {
+    async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
 
@@ -92,7 +92,7 @@ class MapApp {
         return data;
     }
 
-    async drawResponse(geoList: GeoJsonDataPublications) {
+    async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
@@ -116,8 +116,9 @@ class MapApp {
         const pointToLayer = (_: Feature, latlng: LatLng) => {
             return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
         }
-        const featuresWithInfo = geoList.geojson;
-        for (const featureWithInfo of featuresWithInfo.exclusive) {
+        //TODO change
+        const featuresWithInfo = geoList.exclusive.geojson;
+        for (const featureWithInfo of featuresWithInfo) {
 
             L.geoJSON(featureWithInfo.feature, {
                 pointToLayer,
@@ -265,7 +266,7 @@ class MapApp {
 
         const geo = await this.getJsonFromRequest(boundingBox);
         await this.drawResponse(geo);
-        this.sideBar.populate(geo.data_publications);
+        this.sideBar.populate(geo);
 
     }
 }
