@@ -89,32 +89,28 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
 
         const tabList = DomUtil.create('ul', 'tab-list', tabs);
-
+        //Tab for exclusive datapublications
         this._exclusiveTab = DomUtil.create('li', 'tab active', tabList);
         this._exclusiveTab.textContent = 'Exclusive results';
 
+        //Tab for inclusive datapublications
         this._inclusiveTab = DomUtil.create('li', 'tab', tabList);
         this._inclusiveTab.textContent = 'Inclusive results';
 
-        // const listView = DomUtil.create('div', 'list-view active', mainPane);
-        // listView.id = 'data_publications_list';
 
-        // const favoritesView = DomUtil.create('div', 'list-view', mainPane);
-        // favoritesView.id = 'favorites_list';
-
-
-
-        //List for datapublications
+        //List for exclusive datapublications
         this._exclusiveListView = DomUtil.create('div', 'list-view', mainPane);
         this._exclusiveListView.id = 'exclusive_data_publications_list';
 
-        //List for datapublications
+        //List for inclusive datapublications, hidden!!
         this._inclusiveListView = DomUtil.create('div', 'list-view hidden', mainPane);
         this._inclusiveListView.id = 'inclusive_data_publications_list';
 
         this._pane = mainPane
         this._closeButton = closeButton;
     },
+
+
     /**
         * Add this sidebar to the specified map.
         *
@@ -198,11 +194,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         return item
     },
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
+        //TODO can I reuse a function here?
+        assertElementNotNull(this._exclusiveListView, { name: 'exclusive_data_publications_list', id: true })
+        assertElementNotNull(this._inclusiveListView, { name: 'inclusive_data_publications_list', id: true })
 
-        assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
-        const list = this._exclusiveListView
+        const excList = this._exclusiveListView
 
-        list.innerHTML = '';
+        excList.innerHTML = '';
         dataPublications.exclusive.data_publications.forEach(dataPublication => {
 
             const item = this._createListItem(dataPublication)
@@ -222,26 +220,74 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
             });
 
-            list.appendChild(item);
+            excList.appendChild(item);
+        });
+
+        const incList = this._inclusiveListView
+
+        incList.innerHTML = '';
+        dataPublications.inclusive.data_publications.forEach(dataPublication => {
+
+            const item = this._createListItem(dataPublication)
+
+            item.addEventListener('mouseenter', () => {
+                assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                this._map.fire('sidebar-hover', {
+                    id: dataPublication.doi
+                });
+
+            });
+
+            item.addEventListener('mouseleave', () => {
+                assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                this._map.fire('sidebar-leave',
+                    { id: dataPublication.doi })
+
+            });
+
+            incList.appendChild(item);
         });
 
 
         DomEvent.on(this._exclusiveTab!, 'click', () => {
             this._exclusiveTab!.classList.add('active');
             this._inclusiveTab!.classList.remove('active');
-            // listView.classList.add('active');
-            // favoritesView.classList.remove('active');
+            this._exclusiveListView!.hidden = false;
+            this._inclusiveListView!.hidden = true;
+            this._map!.fire('tab-click', { id: 'exclusive' }
+            );
         });
 
         DomEvent.on(this._inclusiveTab!, 'click', () => {
             this._inclusiveTab!.classList.add('active');
             this._exclusiveTab!.classList.remove('active');
-            // favoritesView.classList.add('active');
-            // listView.classList.remove('active');
+            this._exclusiveListView!.hidden = true;
+            this._inclusiveListView!.hidden = false;
+            this._map!.fire('tab-click', { id: 'inclusive' }
+            );
         });
         this.open();
 
     },
+
+
+    // _handleActivationOfTab(tabName: 'inclusive' | 'exclusive') {
+    //     return tabName === 'exclusive' ? () => {
+    //         this._exclusiveTab!.classList.add('active');
+    //         this._inclusiveTab!.classList.remove('active');
+    //         this._exclusiveListView!.hidden = false;
+    //         this._inclusiveListView!.hidden = true;
+    //         this._map!.fire('tab-click', { id: 'exclusive' }
+    //         ): () => {
+    //             this._inclusiveTab!.classList.add('active');
+    //             this._exclusiveTab!.classList.remove('active');
+    //             this._exclusiveListView!.hidden = true;
+    //             this._inclusiveListView!.hidden = false;
+    //             this._map!.fire('tab-click', { id: 'inclusive' }
+    //             );
+    //         }
+
+    //     }
     resetList: function () {
         assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
 

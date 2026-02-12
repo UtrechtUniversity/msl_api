@@ -10,6 +10,9 @@ import { assertNotNull } from "../helpers.js";
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
 }
+interface SidebarTabClickEvent extends LeafletEvent {
+    id: 'exclusive' | 'inclusive'
+}
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -147,6 +150,13 @@ class MapApp {
             this.sideBar.removeHighlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
+
+
+        this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
+            this.removeHighLightMarkersFromADataPublication(e.id)
+            this.sideBar.removeHighlight(e.id)
+        }) as LeafletEventHandlerFn);
+
     }
     async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
@@ -199,6 +209,9 @@ class MapApp {
             if (button !== 0) return;
 
 
+            // If the click is on the left button,
+            // then do nothing
+
             drawing = true;
             startPoint = latlng;
 
@@ -227,6 +240,8 @@ class MapApp {
                 bboxPane.style.zIndex = '650';
                 rectangle = L.rectangle(bounds, { color: "red", interactive: false, pane: 'bboxPane' }).addTo(this.map);
             };
+
+
             // On releasing the button of the mouse
             const onMouseUp = async (ev: LeafletMouseEvent) => {
                 if (!drawing) return;
@@ -254,6 +269,7 @@ class MapApp {
                 this.addFeaturesAndSidebarInMap(boundingBox)
 
             };
+
 
             this.map.on("mousemove", onMouseMove);
             this.map.on("mouseup", onMouseUp);
