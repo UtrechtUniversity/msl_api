@@ -4,7 +4,7 @@ namespace App\Http\Response;
 
 use App\CkanClient\Response\PackageSearchResponse;
 use App\GeoJson\BoundingBox;
-use App\Http\Resources\InclusiveExclusiveGeoJsonFeaturesResource;
+use App\Http\Resources\InclusiveExclusiveGeoJsonDataPublicationsResource;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -40,7 +40,7 @@ class DataPublicationResponse
 
     public function getGeoJsonResponse(BoundingBox $bbox): JsonResource|ResourceCollection
     {
-        $dataPublicationResource = new InclusiveExclusiveGeoJsonFeaturesResource($this->dataPublications, $bbox);
+        $dataPublicationResource = new InclusiveExclusiveGeoJsonDataPublicationsResource($this->dataPublications, $bbox);
 
         return $dataPublicationResource->additional([
             'success' => 'true',

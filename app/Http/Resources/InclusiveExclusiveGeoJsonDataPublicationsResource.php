@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Collection;
 
-class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
+class InclusiveExclusiveGeoJsonDataPublicationsResource extends JsonResource
 {
     private BoundingBox $bbox;
 
