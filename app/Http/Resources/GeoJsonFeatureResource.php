@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use App\GeoJson\Feature\Feature;
+use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -14,11 +15,14 @@ class GeoJsonFeatureResource extends JsonResource
 
     private string $doi;
 
-    public function __construct(Feature $feature, $dataPublication)
+    public DataPublication $dataPublication;
+
+    public function __construct(Feature $feature, DataPublication $dataPublication)
     {
         $this->title = $dataPublication->title;
         $this->doi = $dataPublication->msl_doi;
         $this->feature = $feature;
+        $this->dataPublication = $dataPublication;
     }
 
     public function toArray(Request $request): array

@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
+use App\Models\Ckan\DataPublication;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -21,10 +22,10 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
     }
 
     /**
-     * @param  Collection<int, DataPublication>  $dataPublications
+     * @param  array<int, DataPublication>  $dataPublications
      * @return array<GeoJsonFeatureResource>
      */
-    private function getOrderedFeatures(Collection $dataPublications)
+    private function getOrderedFeatures(array $dataPublications)
     {
 
         // create array of features
@@ -32,6 +33,7 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
         foreach ($dataPublications as $dataPublication) {
             $featuresCollection = $dataPublication->geojson_featurecollection;
             foreach ($featuresCollection->features as $feature) {
+                // Create a feature which includes the datapublication as it gets out of CKAN
                 $allFeatureResources[] = new GeoJsonFeatureResource($feature, $dataPublication);
             }
         }
@@ -68,19 +70,24 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
 
     /**
      * @param   array<GeoJsonFeatureResource>
-     * @return array<GeoJsonFeatureResource>
      */
-    public function getInclusiveFeatures(array $geoFeatureResources): array
+    public function getInclusiveFeaturesResource(array $geoFeatureResources): GeoJsonDataPublicationResource
     {
         $inclusiveFeatures = [];
+        $inclusiveDataPublications = [];
         foreach ($geoFeatureResources as $geoFeatureResource) {
             if (! $this->bbox->contains($geoFeatureResource->feature->geometry)) {
+                // TODO make a check if the area is too big, if yes then  break;
                 continue;
             }
             $inclusiveFeatures[] = $geoFeatureResource;
+            $inclusiveDataPublications[] = $geoFeatureResource->dataPublication;
         }
+        // Find unique data publications based on their dois
+        $uniqueDois = array_unique(array_column($inclusiveDataPublications, 'msl_doi'));
+        $uniqueInclusiveDataPublications = array_values(array_intersect_key($inclusiveDataPublications, $uniqueDois));
 
-        return $inclusiveFeatures;
+        return new GeoJsonDataPublicationResource($uniqueInclusiveDataPublications, $inclusiveFeatures);
     }
 
     /**
@@ -92,13 +99,12 @@ class InclusiveExclusiveGeoJsonFeaturesResource extends JsonResource
     {
 
         $orderedFeatures = $this->getOrderedFeatures($this->resource);
-        $inclusiveFeatures = $this->getInclusiveFeatures($orderedFeatures);
 
         return [
             // Adding the array of resources on its own won't work
             // We have to use the `collection` method to use the `toArray`
-            'exclusive' => GeoJsonFeatureResource::collection($orderedFeatures),
-            'inclusive' => GeoJsonFeatureResource::collection($inclusiveFeatures),
+            'exclusive' => new GeoJsonDataPublicationResource($this->resource, $orderedFeatures),
+            'inclusive' => $this->getInclusiveFeaturesResource($orderedFeatures),
         ];
     }
 }
