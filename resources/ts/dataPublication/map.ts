@@ -153,8 +153,12 @@ class MapApp {
 
 
         this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
-            this.removeHighLightMarkersFromADataPublication(e.id)
-            this.sideBar.removeHighlight(e.id)
+            if (e.id === 'exclusive') {
+                this.sideBar.handleActivationOfTab('exclusive')
+                return;
+            }
+            this.sideBar.handleActivationOfTab('inclusive')
+
         }) as LeafletEventHandlerFn);
 
     }

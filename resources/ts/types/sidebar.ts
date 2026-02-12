@@ -33,6 +33,7 @@ export interface Sidebar {
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
+    handleActivationOfTab(tabName: 'inclusive' | 'exclusive'): () => void
     resetList(): void,
 
 }

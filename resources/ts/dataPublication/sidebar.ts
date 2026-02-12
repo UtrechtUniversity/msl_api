@@ -249,45 +249,33 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         });
 
 
-        DomEvent.on(this._exclusiveTab!, 'click', () => {
-            this._exclusiveTab!.classList.add('active');
-            this._inclusiveTab!.classList.remove('active');
-            this._exclusiveListView!.hidden = false;
-            this._inclusiveListView!.hidden = true;
-            this._map!.fire('tab-click', { id: 'exclusive' }
-            );
-        });
+        DomEvent.on(this._exclusiveTab!, 'click', this.handleActivationOfTab('exclusive'));
 
-        DomEvent.on(this._inclusiveTab!, 'click', () => {
-            this._inclusiveTab!.classList.add('active');
-            this._exclusiveTab!.classList.remove('active');
-            this._exclusiveListView!.hidden = true;
-            this._inclusiveListView!.hidden = false;
-            this._map!.fire('tab-click', { id: 'inclusive' }
-            );
-        });
+        DomEvent.on(this._inclusiveTab!, 'click', this.handleActivationOfTab('inclusive'));
         this.open();
 
     },
 
 
-    // _handleActivationOfTab(tabName: 'inclusive' | 'exclusive') {
-    //     return tabName === 'exclusive' ? () => {
-    //         this._exclusiveTab!.classList.add('active');
-    //         this._inclusiveTab!.classList.remove('active');
-    //         this._exclusiveListView!.hidden = false;
-    //         this._inclusiveListView!.hidden = true;
-    //         this._map!.fire('tab-click', { id: 'exclusive' }
-    //         ): () => {
-    //             this._inclusiveTab!.classList.add('active');
-    //             this._exclusiveTab!.classList.remove('active');
-    //             this._exclusiveListView!.hidden = true;
-    //             this._inclusiveListView!.hidden = false;
-    //             this._map!.fire('tab-click', { id: 'inclusive' }
-    //             );
-    //         }
+    handleActivationOfTab: function (tabName: 'inclusive' | 'exclusive') {
+        return (tabName === 'exclusive') ? () => {
+            this._exclusiveTab!.classList.add('active');
+            this._inclusiveTab!.classList.remove('active');
+            this._exclusiveListView!.hidden = false;
+            this._inclusiveListView!.hidden = true;
+            this._map!.fire('tab-click', { id: 'exclusive' }
+            )
+        } :
+            () => {
+                this._inclusiveTab!.classList.add('active');
+                this._exclusiveTab!.classList.remove('active');
+                this._exclusiveListView!.hidden = true;
+                this._inclusiveListView!.hidden = false;
+                this._map!.fire('tab-click', { id: 'inclusive' }
+                );
+            }
 
-    //     }
+    },
     resetList: function () {
         assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
 
