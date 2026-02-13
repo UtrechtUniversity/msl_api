@@ -217,7 +217,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             item.addEventListener('mouseleave', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)
                 this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi, exclusiveOrInclusive: 'inclusive' })
+                    { id: dataPublication.doi, exclusiveOrInclusive: 'exclusive' })
 
             });
 
@@ -234,7 +234,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             item.addEventListener('mouseenter', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)
                 this._map.fire('sidebar-hover', {
-                    id: dataPublication.doi
+                    id: dataPublication.doi, exclusiveOrInclusive: 'inclusive'
                 });
 
             });
@@ -242,7 +242,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             item.addEventListener('mouseleave', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)
                 this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi })
+                    { id: dataPublication.doi, exclusiveOrInclusive: 'inclusive' })
 
             });
 

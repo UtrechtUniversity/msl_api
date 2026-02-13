@@ -24,7 +24,7 @@ type InclusiveExclusiveGroupedLayer = {
 }
 class MapApp {
     map: Map;
-    markers: MarkerClusterGroup;
+    markers: { 'exclusive': MarkerClusterGroup, 'inclusive': MarkerClusterGroup };
     sideBar: Sidebar;
     groupedMarkers: InclusiveExclusiveGroupedLayer = {
         'exclusive': {},
@@ -35,14 +35,27 @@ class MapApp {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
-        this.map = L.map('map')
-        this.markers = L.markerClusterGroup({
-            zoomToBoundsOnClick: true,
-            showCoverageOnHover: false
-        });
-        this.layerControl = L.control.layers(this.createInitialsLayers()).addTo(this.map)
-        this.createInitialsLayers();
-        // this.drawMap();
+        this.markers = {
+            'exclusive': L.markerClusterGroup({
+                zoomToBoundsOnClick: true,
+                showCoverageOnHover: false
+            }), 'inclusive': L.markerClusterGroup({
+                zoomToBoundsOnClick: true,
+                showCoverageOnHover: false
+            })
+        };
+
+        const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        })
+        const baseMaps = {
+            "OpenStreetMap": osm,
+        };
+        this.map = L.map('map', { layers: [osm] })
+        this.resetMapView()
+        this.layerControl = L.control.layers(baseMaps).addTo(this.map)
+
         this.sideBar = new sideBar().addTo(this.map);
 
 
@@ -59,27 +72,22 @@ class MapApp {
     }
 
 
-    createInitialsLayers(): Control.LayersObject {
-        const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
-        })
-        const baseMaps = {
-            "OpenStreetMap": osm,
-        };
-        return baseMaps
-    }
+    // createInitialsLayers(): Control.LayersObject {
+    //     const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //         maxZoom: 19,
+    //         attribution: '&copy; OpenStreetMap'
+    //     })
+    //     const baseMaps = {
+    //         "OpenStreetMap": osm,
+    //     };
+    //     return baseMaps
+    // }
 
-    drawMap() {
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
-        }).addTo(this.map);
-        this.resetMapView()
-        return;
-    }
+
 
     private highLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
+
+
         const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
@@ -90,6 +98,7 @@ class MapApp {
     }
 
     private removeHighLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
+
         const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
@@ -139,29 +148,35 @@ class MapApp {
             return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
         }
         //TODO change
-        const featuresWithInfo = geoList.exclusive.geojson;
-        const bla = L.markerClusterGroup({
-            zoomToBoundsOnClick: true,
-            showCoverageOnHover: false
-        });
-        for (const featureWithInfo of featuresWithInfo) {
+        const exclusiveFeatures = geoList.exclusive.geojson;
 
-            L.geoJSON(featureWithInfo.feature, {
+        for (const excl of exclusiveFeatures) {
+
+            L.geoJSON(excl.feature, {
                 pointToLayer,
-                onEachFeature: getOnEachFeaturePerPublication(featureWithInfo, 'exclusive'),
+                onEachFeature: getOnEachFeaturePerPublication(excl, 'exclusive'),
                 style: this.defaultOptions
-            }).addTo(bla);
+            }).addTo(this.markers['exclusive']);
         }
 
 
+        const inclusiveFeatures = geoList.inclusive.geojson;
+
+        for (const incl of inclusiveFeatures) {
+
+            L.geoJSON(incl.feature, {
+                pointToLayer,
+                onEachFeature: getOnEachFeaturePerPublication(incl, 'inclusive'),
+                style: this.defaultOptions
+            }).addTo(this.markers['inclusive']);
+        }
+
         //TODO
-        this.map.addLayer(bla);
+        this.map.addLayer(this.markers['exclusive']);
     }
 
 
-    _addMarkersToMap() {
 
-    }
     resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
@@ -184,9 +199,14 @@ class MapApp {
         this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
             if (e.id === 'exclusive') {
                 this.sideBar.handleActivationOfTab('exclusive')
+                this.map.removeLayer(this.markers['inclusive'])
+                this.map.addLayer(this.markers['exclusive'])
+
                 return;
             }
             this.sideBar.handleActivationOfTab('inclusive')
+            this.map.removeLayer(this.markers['exclusive'])
+            this.map.addLayer(this.markers['inclusive'])
 
         }) as LeafletEventHandlerFn);
 
@@ -228,9 +248,9 @@ class MapApp {
                     this.map.removeLayer(rectangle);
                     rectangle = null;
                 }
-                if (this.markers) {
-                    this.markers.clearLayers();
-                }
+                // todo are they never not populated?
+                Object.values(this.markers).forEach((layer) => layer.clearLayers());
+
                 this.resetMapView();
 
                 this.sideBar.resetList()
@@ -252,7 +272,7 @@ class MapApp {
             // clear the layers, and start again
             if (rectangle) {
                 this.map.removeLayer(rectangle);
-                this.map.removeLayer(this.markers)
+                Object.values(this.markers).forEach((layer) => this.map.removeLayer(layer))
                 rectangle = null;
             }
 
@@ -297,7 +317,9 @@ class MapApp {
                 ]);
                 this.map.fitBounds(bounds);
                 // Clear markers
-                this.markers.clearLayers();
+                // todo are they never not populated? 
+                // todo does that mean that we delete clustering???
+                Object.values(this.markers).forEach((layer) => layer.clearLayers());
 
                 this.addFeaturesAndSidebarInMap(boundingBox)
 
