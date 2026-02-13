@@ -1,5 +1,5 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn, Control } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
@@ -9,6 +9,7 @@ import { assertNotNull } from "../helpers.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
+    exclusiveOrInclusive: 'exclusive' | 'inclusive'
 }
 interface SidebarTabClickEvent extends LeafletEvent {
     id: 'exclusive' | 'inclusive'
@@ -17,11 +18,19 @@ interface SidebarTabClickEvent extends LeafletEvent {
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 type GroupedLayer = { [groupedId: string]: Layer[] }
+type InclusiveExclusiveGroupedLayer = {
+    'exclusive': GroupedLayer,
+    'inclusive': GroupedLayer
+}
 class MapApp {
     map: Map;
     markers: MarkerClusterGroup;
     sideBar: Sidebar;
-    groupedMarkers: GroupedLayer = {};
+    groupedMarkers: InclusiveExclusiveGroupedLayer = {
+        'exclusive': {},
+        'inclusive': {}
+    }
+    layerControl: Control.Layers
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
@@ -31,7 +40,9 @@ class MapApp {
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
         });
-        this.drawMap();
+        this.layerControl = L.control.layers(this.createInitialsLayers()).addTo(this.map)
+        this.createInitialsLayers();
+        // this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
 
 
@@ -48,10 +59,18 @@ class MapApp {
     }
 
 
-
+    createInitialsLayers(): Control.LayersObject {
+        const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        })
+        const baseMaps = {
+            "OpenStreetMap": osm,
+        };
+        return baseMaps
+    }
 
     drawMap() {
-        this.resetMapView()
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap'
@@ -60,22 +79,22 @@ class MapApp {
         return;
     }
 
-    private highLightMarkersFromADataPublication(doi: string) {
-        const geoFeatures = this.groupedMarkers[doi]
+    private highLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
+        const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
-        geoFeatures.forEach(l => {
-            assertIsPath(l)
-            l.setStyle(this.highlightedOptions);
+        geoFeatures.forEach(geoFeature => {
+            assertIsPath(geoFeature)
+            geoFeature.setStyle(this.highlightedOptions);
 
         })
     }
 
-    private removeHighLightMarkersFromADataPublication(doi: string) {
-        const geoFeatures = this.groupedMarkers[doi]
+    private removeHighLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
+        const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
-        geoFeatures.forEach(l => {
-            assertIsPath(l)
-            l.setStyle(this.defaultOptions);
+        geoFeatures.forEach(geoFeature => {
+            assertIsPath(geoFeature)
+            geoFeature.setStyle(this.defaultOptions);
         })
     }
     async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
@@ -98,21 +117,21 @@ class MapApp {
     async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
         // We want to be able to pass information of the publication inside each feature of the geo collection
-        const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
+        const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: 'inclusive' | 'exclusive') =>
             (_: Feature, layer: Layer) => {
                 const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
                 layer.bindPopup(popupContent);
 
                 // Store reference
-                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[geoFeatureWithInfo.data_publication_doi]
-                this.groupedMarkers[geoFeatureWithInfo.data_publication_doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
+                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi]
+                this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
                 // When hover over a geo feature
                 layer.on("mouseover", () => {
-                    this.highLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi)
+                    this.highLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi, exclusiveOrInclusive)
                     this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
                 });
                 layer.on("mouseout", () => {
-                    this.removeHighLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi)
+                    this.removeHighLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi, exclusiveOrInclusive)
                     this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
                 });
             };
@@ -121,18 +140,28 @@ class MapApp {
         }
         //TODO change
         const featuresWithInfo = geoList.exclusive.geojson;
+        const bla = L.markerClusterGroup({
+            zoomToBoundsOnClick: true,
+            showCoverageOnHover: false
+        });
         for (const featureWithInfo of featuresWithInfo) {
 
             L.geoJSON(featureWithInfo.feature, {
                 pointToLayer,
-                onEachFeature: getOnEachFeaturePerPublication(featureWithInfo),
+                onEachFeature: getOnEachFeaturePerPublication(featureWithInfo, 'exclusive'),
                 style: this.defaultOptions
-            }).addTo(this.markers);
+            }).addTo(bla);
         }
 
-        this.map.addLayer(this.markers);
+
+        //TODO
+        this.map.addLayer(bla);
     }
 
+
+    _addMarkersToMap() {
+
+    }
     resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
@@ -140,13 +169,13 @@ class MapApp {
     sideBarEventHandling() {
 
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
-            this.highLightMarkersFromADataPublication(e.id);
+            this.highLightMarkersFromADataPublication(e.id, e.exclusiveOrInclusive);
             this.sideBar.highlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
-            this.removeHighLightMarkersFromADataPublication(e.id)
+            this.removeHighLightMarkersFromADataPublication(e.id, e.exclusiveOrInclusive)
             this.sideBar.removeHighlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
