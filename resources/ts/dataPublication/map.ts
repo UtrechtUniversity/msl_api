@@ -33,6 +33,7 @@ class MapApp {
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
+
     constructor() {
         this.map = L.map('map')
         this.markers = {
@@ -67,27 +68,19 @@ class MapApp {
         return;
     }
 
-    private highLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
-
-
+    private setMarkersStyle(
+        { doi, exclusiveOrInclusive, highlightOrReset }:
+            { doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive', highlightOrReset: 'highlight' | 'reset' }) {
         const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
-            geoFeature.setStyle(this.highlightedOptions);
+            geoFeature.setStyle(
+                (highlightOrReset === 'highlight') ? this.highlightedOptions : this.defaultOptions);
 
         })
     }
 
-    private removeHighLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
-
-        const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
-        if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
-        geoFeatures.forEach(geoFeature => {
-            assertIsPath(geoFeature)
-            geoFeature.setStyle(this.defaultOptions);
-        })
-    }
     async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
@@ -118,11 +111,19 @@ class MapApp {
                 this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
                 // When hover over a geo feature
                 layer.on("mouseover", () => {
-                    this.highLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi, exclusiveOrInclusive)
+                    this.setMarkersStyle({
+                        doi: geoFeatureWithInfo.data_publication_doi,
+                        exclusiveOrInclusive,
+                        highlightOrReset: 'highlight'
+                    })
                     this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
                 });
                 layer.on("mouseout", () => {
-                    this.removeHighLightMarkersFromADataPublication(geoFeatureWithInfo.data_publication_doi, exclusiveOrInclusive)
+                    this.setMarkersStyle({
+                        doi: geoFeatureWithInfo.data_publication_doi,
+                        exclusiveOrInclusive,
+                        highlightOrReset: 'reset'
+                    })
                     this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
                 });
             };
@@ -166,13 +167,21 @@ class MapApp {
     sideBarEventHandling() {
 
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
-            this.highLightMarkersFromADataPublication(e.id, e.exclusiveOrInclusive);
+            this.setMarkersStyle({
+                doi: e.id,
+                exclusiveOrInclusive: e.exclusiveOrInclusive,
+                highlightOrReset: 'highlight'
+            });
             this.sideBar.highlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
-            this.removeHighLightMarkersFromADataPublication(e.id, e.exclusiveOrInclusive)
+            this.setMarkersStyle({
+                doi: e.id,
+                exclusiveOrInclusive: e.exclusiveOrInclusive,
+                highlightOrReset: 'reset'
+            })
             this.sideBar.removeHighlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
