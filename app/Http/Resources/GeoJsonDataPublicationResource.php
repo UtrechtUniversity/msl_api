@@ -9,32 +9,20 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class GeoJsonDataPublicationResource extends JsonResource
 {
     /**
-     * @var array<GeoJsonFeatureResource>
-     */
-    private array $geoJsonFeatures;
-
-    public function __construct($resource, array $geoJsonFeatures)
-    {
-        parent::__construct($resource);
-        $this->geoJsonFeatures = $geoJsonFeatures;
-    }
-
-    /**
      * Transform the resource into an array.
      *
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
     {
-        $dataPublications = collect($this->resource);
-
+        $dataPublications = collect($this->resource->dataPublications);
         $geoJsonInfo = [
             'data_publications' => $dataPublications->map(fn ($dataPublication) => (new DataPublicationResource(
                 resource: $dataPublication,
                 includesGeoJson: false
             ))),
 
-            'geojson' => GeoJsonFeatureResource::collection($this->geoJsonFeatures),
+            'geojson' => GeoJsonFeatureResource::collection($this->resource->features),
         ];
 
         return $geoJsonInfo;
