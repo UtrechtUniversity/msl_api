@@ -30,11 +30,11 @@ class MapApp {
         'exclusive': {},
         'inclusive': {}
     }
-    layerControl: Control.Layers
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
+        this.map = L.map('map')
         this.markers = {
             'exclusive': L.markerClusterGroup({
                 zoomToBoundsOnClick: true,
@@ -44,23 +44,9 @@ class MapApp {
                 showCoverageOnHover: false
             })
         };
-
-        const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
-        })
-        const baseMaps = {
-            "OpenStreetMap": osm,
-        };
-        this.map = L.map('map', { layers: [osm] })
-        this.resetMapView()
-        this.layerControl = L.control.layers(baseMaps).addTo(this.map)
-
+        this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
-
-
     }
-
 
 
     // Create the map in the beginning
@@ -72,18 +58,14 @@ class MapApp {
     }
 
 
-    // createInitialsLayers(): Control.LayersObject {
-    //     const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //         maxZoom: 19,
-    //         attribution: '&copy; OpenStreetMap'
-    //     })
-    //     const baseMaps = {
-    //         "OpenStreetMap": osm,
-    //     };
-    //     return baseMaps
-    // }
-
-
+    private drawMap() {
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(this.map);
+        this.resetMapView()
+        return;
+    }
 
     private highLightMarkersFromADataPublication(doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive') {
 
