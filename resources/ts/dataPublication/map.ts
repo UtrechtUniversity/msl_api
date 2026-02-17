@@ -239,11 +239,9 @@ class DataPublicationMap {
                     this.map.removeLayer(rectangle);
                     rectangle = null;
                 }
-                // todo are they never not populated?
-                Object.values(this.markers).forEach((layer) => layer.clearLayers());
 
+                this.removeLayers();
                 this.resetMapView();
-
                 this.sideBar.resetList()
                 return;
             }
@@ -254,7 +252,6 @@ class DataPublicationMap {
 
 
             // If the click is on the left button,
-            // then do nothing
 
             drawing = true;
             startPoint = latlng;
@@ -263,10 +260,10 @@ class DataPublicationMap {
             // clear the layers, and start again
             if (rectangle) {
                 this.map.removeLayer(rectangle);
-                Object.values(this.markers).forEach((layer) => this.map.removeLayer(layer))
                 rectangle = null;
-            }
+                this.removeLayers()
 
+            }
             this.map.dragging.disable();
 
             const onMouseMove = (ev: LeafletMouseEvent) => {
@@ -307,10 +304,6 @@ class DataPublicationMap {
                     ne.lat
                 ]);
                 this.map.fitBounds(bounds);
-                // Clear markers
-                // todo are they never not populated? 
-                // todo does that mean that we delete clustering???
-                Object.values(this.markers).forEach((layer) => layer.clearLayers());
 
                 this.addFeaturesAndSidebarInMap(boundingBox)
 
@@ -324,6 +317,12 @@ class DataPublicationMap {
         });
     }
 
+    private removeLayers() {
+        Object.values(this.markers).forEach((layer) => {
+            layer.clearLayers()
+            this.map.removeLayer(layer)
+        })
+    }
     private async addFeaturesAndSidebarInMap(boundingBox: string) {
 
         const geo = await this.getJsonFromRequest(boundingBox);
