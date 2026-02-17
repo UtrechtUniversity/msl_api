@@ -1,34 +1,38 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn, Control } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
+import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
+import type { Exclusive, Inclusive, InclusiveOrExclusive } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
+
+
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
-    exclusiveOrInclusive: 'exclusive' | 'inclusive'
+    exclusiveOrInclusive: Exclusive | Inclusive
 }
 interface SidebarTabClickEvent extends LeafletEvent {
-    id: 'exclusive' | 'inclusive'
+    id: Exclusive | Inclusive
 }
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 type GroupedLayer = { [groupedId: string]: Layer[] }
 type InclusiveExclusiveGroupedLayer = {
-    'exclusive': GroupedLayer,
-    'inclusive': GroupedLayer
+    [EXCLUSIVE]: GroupedLayer,
+    [INCLUSIVE]: GroupedLayer
 }
-class MapApp {
+class DataPublicationMap {
     map: Map;
-    markers: { 'exclusive': MarkerClusterGroup, 'inclusive': MarkerClusterGroup };
+    markers: { [EXCLUSIVE]: MarkerClusterGroup, [INCLUSIVE]: MarkerClusterGroup };
     sideBar: Sidebar;
     groupedMarkers: InclusiveExclusiveGroupedLayer = {
-        'exclusive': {},
-        'inclusive': {}
+        [EXCLUSIVE]: {},
+        [INCLUSIVE]: {}
     }
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
@@ -37,10 +41,10 @@ class MapApp {
     constructor() {
         this.map = L.map('map')
         this.markers = {
-            'exclusive': L.markerClusterGroup({
+            [EXCLUSIVE]: L.markerClusterGroup({
                 zoomToBoundsOnClick: true,
                 showCoverageOnHover: false
-            }), 'inclusive': L.markerClusterGroup({
+            }), [INCLUSIVE]: L.markerClusterGroup({
                 zoomToBoundsOnClick: true,
                 showCoverageOnHover: false
             })
@@ -51,7 +55,7 @@ class MapApp {
 
 
     // Create the map in the beginning
-    async init() {
+    public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
 
@@ -70,7 +74,7 @@ class MapApp {
 
     private setMarkersStyle(
         { doi, exclusiveOrInclusive, highlightOrReset }:
-            { doi: string, exclusiveOrInclusive: 'inclusive' | 'exclusive', highlightOrReset: 'highlight' | 'reset' }) {
+            { doi: string, exclusiveOrInclusive: InclusiveOrExclusive, highlightOrReset: 'highlight' | 'reset' }) {
         const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
@@ -81,7 +85,7 @@ class MapApp {
         })
     }
 
-    async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
+    private async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
 
@@ -99,17 +103,17 @@ class MapApp {
     }
 
 
-    async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
+    private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: 'inclusive' })
-        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: 'exclusive' })
+        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: INCLUSIVE })
+        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: EXCLUSIVE })
 
         //TODO have one place for defaults?
-        this.map.addLayer(this.markers['exclusive']);
+        this.map.addLayer(this.markers[EXCLUSIVE]);
     }
 
     private addFeaturesInMarkers(geoList: InclusiveExclusiveGeoJsonDataPublications,
-        { inclusiveOrExclusive }: { inclusiveOrExclusive: 'inclusive' | 'exclusive' }) {
+        { inclusiveOrExclusive }: { inclusiveOrExclusive: InclusiveOrExclusive }) {
 
         const features = geoList[inclusiveOrExclusive].geojson;
 
@@ -123,11 +127,11 @@ class MapApp {
         }
     }
 
-    pointToLayer = (_: Feature, latlng: LatLng) => {
+    private pointToLayer = (_: Feature, latlng: LatLng) => {
         return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
     }
     // We want to be able to pass information of the publication inside each feature of the geo collection
-    getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: 'inclusive' | 'exclusive') =>
+    private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: InclusiveOrExclusive) =>
         (_: Feature, layer: Layer) => {
             const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
             layer.bindPopup(popupContent);
@@ -159,11 +163,11 @@ class MapApp {
             });
         };
 
-    resetMapView() {
+    private resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
 
-    sideBarEventHandling() {
+    private sideBarEventHandling() {
 
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
@@ -187,21 +191,19 @@ class MapApp {
 
 
         this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
-            if (e.id === 'exclusive') {
-                this.sideBar.handleActivationOfTab('exclusive')
-                this.map.removeLayer(this.markers['inclusive'])
-                this.map.addLayer(this.markers['exclusive'])
-
-                return;
-            }
-            this.sideBar.handleActivationOfTab('inclusive')
-            this.map.removeLayer(this.markers['exclusive'])
-            this.map.addLayer(this.markers['inclusive'])
-
+            this.handleSidebarTab(e.id)
         }) as LeafletEventHandlerFn);
 
     }
-    async mouseEventHandling() {
+
+    private handleSidebarTab(activatedTab: InclusiveOrExclusive) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        this.sideBar.handleActivationOfTab(activatedTab)
+        this.map.addLayer(this.markers[activatedTab])
+
+        this.map.removeLayer(this.markers[deactivateTab])
+    }
+    private async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
         let startPoint: LatLng;
         let drawing = false;
@@ -336,7 +338,7 @@ class MapApp {
 
 
 
-const app = new MapApp();
+const app = new DataPublicationMap();
 app.init();
 
 

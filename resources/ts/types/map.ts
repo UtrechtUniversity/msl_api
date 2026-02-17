@@ -1,0 +1,7 @@
+export const EXCLUSIVE = 'exclusive'
+export type Exclusive = typeof EXCLUSIVE
+
+export const INCLUSIVE = 'inclusive'
+export type Inclusive = typeof INCLUSIVE
+
+export type InclusiveOrExclusive = Exclusive | Inclusive
