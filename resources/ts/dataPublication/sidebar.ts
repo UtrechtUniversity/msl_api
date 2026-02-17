@@ -110,9 +110,10 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             createdTab.textContent = tabInfo.label
 
             //TODO fix how we hide
-            const hiddenList = (!tabInfo.active) ? 'hidden' : ''
-            const createdListView = DomUtil.create('div', 'list-view' + hiddenList, mainPane)
+
+            const createdListView = DomUtil.create('div', 'list-view', mainPane)
             createdListView.id = tabName + '_data_publications_list'
+            createdListView.hidden = !tabInfo.active
 
             this._tabViews[tabName] = { _tab: createdTab, _listView: createdListView }
 
