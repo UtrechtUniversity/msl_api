@@ -1,6 +1,7 @@
 import { Evented } from "leaflet";
 import type * as Leaflet from 'leaflet';
 import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "./datapublication.ts";
+import type { InclusiveOrExclusive } from "./map.js";
 
 export interface Sidebar {
     // private methods
@@ -20,7 +21,8 @@ export interface Sidebar {
     _initContent(): void,
     _initPane: () => void,
     _onOpenClick(): void,
-    _onCloseClick(): void
+    _onCloseClick(): void,
+    _activateAndDeactiveTabs(activated: InclusiveOrExclusive): void,
     _options: { position: "left" },
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
     // public methods

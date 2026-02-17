@@ -4,6 +4,7 @@ import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
 import type { Sidebar } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
+import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
 
 
 export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prototype */ {
@@ -89,6 +90,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
 
         const tabList = DomUtil.create('ul', 'tab-list', tabs);
+        // TODO can I do some reuse?
+
         //Tab for exclusive datapublications
         this._exclusiveTab = DomUtil.create('li', 'tab active', tabList);
         this._exclusiveTab.textContent = 'Exclusive results';
@@ -275,6 +278,12 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 this._map!.fire('tab-click', { id: 'inclusive' }
                 );
             }
+
+    },
+
+    _activateAndDeactiveTabs: function (activated: InclusiveOrExclusive) {
+        const deactivateTab = (EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE;
+
 
     },
     resetList: function () {
