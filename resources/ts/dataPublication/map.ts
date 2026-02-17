@@ -262,11 +262,14 @@ class DataPublicationMap {
                 this.map.removeLayer(rectangle);
                 rectangle = null;
                 this.removeLayers()
-
+                this.sideBar.resetList()
             }
             this.map.dragging.disable();
 
             const onMouseMove = (ev: LeafletMouseEvent) => {
+                // We need the line below, because, as the user draws,
+                // they create a lot of small rectangles
+                // from which we want to keep only the last one.
                 if (rectangle) this.map.removeLayer(rectangle);
 
                 const bounds = L.latLngBounds(startPoint, ev.latlng);

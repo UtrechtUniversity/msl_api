@@ -109,7 +109,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             const createdTab = DomUtil.create('li', 'tab ' + activeClass, tabList);
             createdTab.textContent = tabInfo.label
 
-            //TODO fix how we hide
 
             const createdListView = DomUtil.create('div', 'list-view', mainPane)
             createdListView.id = tabName + '_data_publications_list'
@@ -207,9 +206,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         return item
     },
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
-        // //TODO can I reuse a function here?
-        // assertElementNotNull(this._exclusiveListView, { name: 'exclusive_data_publications_list', id: true })
-        // assertElementNotNull(this._inclusiveListView, { name: 'inclusive_data_publications_list', id: true })
+
 
         for (const tabName of Object.keys(TabConfig) as Array<keyof typeof TabConfig>) {
             assertNotNull(this._tabViews[tabName],
@@ -256,6 +253,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
     handleActivationOfTab: function (activatedTab: InclusiveOrExclusive) {
+        return () => {
+            this._activateTab(activatedTab)
+
+        }
+    },
+
+    _activateTab: function (activatedTab: InclusiveOrExclusive) {
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
         const activatedTabElements = this._tabViews[activatedTab]
         const deactivatedTabElements = this._tabViews[deactivateTab]
@@ -266,32 +270,30 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         assertNotNull(deactivatedTabElements,
             'The property of tabViews was not populated properlym for the deactivated tab. This is a bug.'
         )
+        assertNotNull(this._map, `Map is undefined. This is a bug.`)
 
-
-        return () => {
-            assertNotNull(this._map, `Map is undefined. This is a bug.`)
-
-            activatedTabElements._tab.classList.add('active')
-            activatedTabElements._listView.hidden = false;
-            deactivatedTabElements._tab.classList.remove('active')
-            deactivatedTabElements._listView.hidden = true;
-            this._map.fire('tab-click', { id: activatedTab }
-            )
-
-        }
+        activatedTabElements._tab.classList.add('active')
+        activatedTabElements._listView.hidden = false;
+        deactivatedTabElements._tab.classList.remove('active')
+        deactivatedTabElements._listView.hidden = true;
+        this._map.fire('tab-click', { id: activatedTab }
+        )
 
     },
-
     resetList: function () {
 
-        const tabElements = this._tabViews[EXCLUSIVE]
-        assertNotNull(tabElements,
-            'The property of tabViews was not populated properlym for the default tab. This is a bug.'
-        )
-        const listView = tabElements._listView
-        while (listView.firstChild) {
-            listView.firstChild.remove()
+        for (const tabName of Object.keys(TabConfig) as Array<keyof typeof TabConfig>) {
+
+            const tabElements = this._tabViews[tabName]
+            assertNotNull(tabElements,
+                'The property of tabViews was not populated properlym for the default tab. This is a bug.'
+            )
+            const listView = tabElements._listView
+            while (listView.firstChild) {
+                listView.firstChild.remove()
+            }
         }
+        this._activateTab(EXCLUSIVE)
         this.close()
     },
 
