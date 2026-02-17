@@ -1,8 +1,10 @@
 import { Evented } from "leaflet";
 import type * as Leaflet from 'leaflet';
 import type { DataPublication, GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "./datapublication.ts";
-import type { InclusiveOrExclusive } from "./map.js";
+import { EXCLUSIVE, type INCLUSIVE, type InclusiveOrExclusive } from "./map.js";
 
+
+type ViewPerTab = { _tab: HTMLLIElement, _listView: HTMLElement }
 export interface Sidebar {
     // private methods
     _sidebar: HTMLElement | null
@@ -10,10 +12,7 @@ export interface Sidebar {
     _closeButton: HTMLSpanElement | null,
     _tab: HTMLElement | null,
     _container: HTMLElement | null,
-    _exclusiveTab: HTMLLIElement | null,
-    _inclusiveTab: HTMLLIElement | null,
-    _inclusiveListView: HTMLElement | null,
-    _exclusiveListView: HTMLDivElement | null
+    _tabViews: Partial<Record<InclusiveOrExclusive, ViewPerTab>>,
     _map: Leaflet.Map | null,
     _tabLink: null | HTMLAnchorElement,
     _initSideBarElement(id: string): void,
@@ -22,7 +21,6 @@ export interface Sidebar {
     _initPane: () => void,
     _onOpenClick(): void,
     _onCloseClick(): void,
-    _activateAndDeactiveTabs(activated: InclusiveOrExclusive): void,
     _options: { position: "left" },
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
     // public methods
@@ -35,7 +33,7 @@ export interface Sidebar {
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
-    handleActivationOfTab(tabName: 'inclusive' | 'exclusive'): () => void
+    handleActivationOfTab(activatedTab: InclusiveOrExclusive): () => void
     resetList(): void,
 
 }

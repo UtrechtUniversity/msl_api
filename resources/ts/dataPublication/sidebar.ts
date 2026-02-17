@@ -7,6 +7,20 @@ import { assertNotNull } from "../helpers.js";
 import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
 
 
+const TabConfig =
+{
+    [EXCLUSIVE]: { label: 'Exclusive results', active: true },
+    [INCLUSIVE]: { label: 'Inclusive results', active: false }
+}
+
+
+type Entries<T> = Array<
+    {
+        [K in keyof T]: [K, T[K]]
+    }[keyof T]>
+
+
+
 export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prototype */ {
     includes: (Evented.prototype || Mixin.Events),
 
@@ -20,11 +34,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    //TODO can I make them a list?
-    _exclusiveTab: null,
-    _inclusiveTab: null,
-    _inclusiveListView: null,
-    _exclusiveListView: null,
+    _tabViews: {},
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -90,24 +100,23 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
 
         const tabList = DomUtil.create('ul', 'tab-list', tabs);
-        // TODO can I do some reuse?
-
-        //Tab for exclusive datapublications
-        this._exclusiveTab = DomUtil.create('li', 'tab active', tabList);
-        this._exclusiveTab.textContent = 'Exclusive results';
-
-        //Tab for inclusive datapublications
-        this._inclusiveTab = DomUtil.create('li', 'tab', tabList);
-        this._inclusiveTab.textContent = 'Inclusive results';
 
 
-        //List for exclusive datapublications
-        this._exclusiveListView = DomUtil.create('div', 'list-view', mainPane);
-        this._exclusiveListView.id = 'exclusive_data_publications_list';
+        //  Populate tabs
+        for (const [tabName, tabInfo] of Object.entries(TabConfig) as Entries<typeof TabConfig>) {
 
-        //List for inclusive datapublications, hidden!!
-        this._inclusiveListView = DomUtil.create('div', 'list-view hidden', mainPane);
-        this._inclusiveListView.id = 'inclusive_data_publications_list';
+            const activeClass = (tabInfo.active) ? 'active' : ''
+            const createdTab = DomUtil.create('li', 'tab ' + activeClass, tabList);
+            createdTab.textContent = tabInfo.label
+
+            //TODO fix how we hide
+            const hiddenList = (!tabInfo.active) ? 'hidden' : ''
+            const createdListView = DomUtil.create('div', 'list-view' + hiddenList, mainPane)
+            createdListView.id = tabName + '_data_publications_list'
+
+            this._tabViews[tabName] = { _tab: createdTab, _listView: createdListView }
+
+        }
 
         this._pane = mainPane
         this._closeButton = closeButton;
@@ -197,101 +206,90 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         return item
     },
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
-        //TODO can I reuse a function here?
-        assertElementNotNull(this._exclusiveListView, { name: 'exclusive_data_publications_list', id: true })
-        assertElementNotNull(this._inclusiveListView, { name: 'inclusive_data_publications_list', id: true })
+        // //TODO can I reuse a function here?
+        // assertElementNotNull(this._exclusiveListView, { name: 'exclusive_data_publications_list', id: true })
+        // assertElementNotNull(this._inclusiveListView, { name: 'inclusive_data_publications_list', id: true })
 
-        const excList = this._exclusiveListView
+        for (const tabName of Object.keys(TabConfig) as Array<keyof typeof TabConfig>) {
+            assertNotNull(this._tabViews[tabName],
+                'The property of tabViews was not populated properly. This is a bug.'
+            )
+            const { _tab, _listView } = this._tabViews[tabName]
 
-        excList.innerHTML = '';
-        dataPublications.exclusive.data_publications.forEach(dataPublication => {
+            _listView.innerHTML = '';
+            dataPublications[tabName].data_publications.forEach(dataPublication => {
 
-            const item = this._createListItem(dataPublication)
+                const item = this._createListItem(dataPublication)
 
-            item.addEventListener('mouseenter', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-hover', {
-                    id: dataPublication.doi,
-                    exclusiveOrInclusive: 'exclusive'
+                item.addEventListener('mouseenter', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-hover', {
+                        id: dataPublication.doi,
+                        exclusiveOrInclusive: tabName
+                    });
+
                 });
 
-            });
+                item.addEventListener('mouseleave', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-leave',
+                        { id: dataPublication.doi, exclusiveOrInclusive: tabName })
 
-            item.addEventListener('mouseleave', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi, exclusiveOrInclusive: 'exclusive' })
-
-            });
-
-            excList.appendChild(item);
-        });
-
-        const incList = this._inclusiveListView
-
-        incList.innerHTML = '';
-        dataPublications.inclusive.data_publications.forEach(dataPublication => {
-
-            const item = this._createListItem(dataPublication)
-
-            item.addEventListener('mouseenter', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-hover', {
-                    id: dataPublication.doi, exclusiveOrInclusive: 'inclusive'
                 });
 
+
+                //TODO make sure this gets populated properly
+
+                _listView.appendChild(item);
             });
 
-            item.addEventListener('mouseleave', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi, exclusiveOrInclusive: 'inclusive' })
-
-            });
-
-            incList.appendChild(item);
-        });
+            DomEvent.on(_tab, 'click', this.handleActivationOfTab(tabName));
 
 
-        DomEvent.on(this._exclusiveTab!, 'click', this.handleActivationOfTab('exclusive'));
 
-        DomEvent.on(this._inclusiveTab!, 'click', this.handleActivationOfTab('inclusive'));
+        }
+
         this.open();
 
     },
 
 
-    handleActivationOfTab: function (tabName: 'inclusive' | 'exclusive') {
-        return (tabName === 'exclusive') ? () => {
-            this._exclusiveTab!.classList.add('active');
-            this._inclusiveTab!.classList.remove('active');
-            this._exclusiveListView!.hidden = false;
-            this._inclusiveListView!.hidden = true;
-            this._map!.fire('tab-click', { id: 'exclusive' }
+    handleActivationOfTab: function (activatedTab: InclusiveOrExclusive) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        const activatedTabElements = this._tabViews[activatedTab]
+        const deactivatedTabElements = this._tabViews[deactivateTab]
+
+        assertNotNull(activatedTabElements,
+            'The property of tabViews was not populated properlym for the activated tab. This is a bug.'
+        )
+        assertNotNull(deactivatedTabElements,
+            'The property of tabViews was not populated properlym for the deactivated tab. This is a bug.'
+        )
+
+
+        return () => {
+            assertNotNull(this._map, `Map is undefined. This is a bug.`)
+
+            activatedTabElements._tab.classList.add('active')
+            activatedTabElements._listView.hidden = false;
+            deactivatedTabElements._tab.classList.remove('active')
+            deactivatedTabElements._listView.hidden = true;
+            this._map.fire('tab-click', { id: activatedTab }
             )
-        } :
-            () => {
-                this._inclusiveTab!.classList.add('active');
-                this._exclusiveTab!.classList.remove('active');
-                this._exclusiveListView!.hidden = true;
-                this._inclusiveListView!.hidden = false;
-                this._map!.fire('tab-click', { id: 'inclusive' }
-                );
-            }
+
+        }
 
     },
 
-    _activateAndDeactiveTabs: function (activated: InclusiveOrExclusive) {
-        const deactivateTab = (EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE;
-
-
-    },
     resetList: function () {
-        assertElementNotNull(this._exclusiveListView, { name: 'data_publications_list', id: true })
 
-        const parent = this._exclusiveListView
-        while (parent.firstChild) {
-            parent.firstChild.remove()
+        const tabElements = this._tabViews[EXCLUSIVE]
+        assertNotNull(tabElements,
+            'The property of tabViews was not populated properlym for the default tab. This is a bug.'
+        )
+        const listView = tabElements._listView
+        while (listView.firstChild) {
+            listView.firstChild.remove()
         }
         this.close()
     },

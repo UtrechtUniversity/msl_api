@@ -200,7 +200,6 @@ class DataPublicationMap {
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
         this.sideBar.handleActivationOfTab(activatedTab)
         this.map.addLayer(this.markers[activatedTab])
-
         this.map.removeLayer(this.markers[deactivateTab])
     }
     private async mouseEventHandling() {
