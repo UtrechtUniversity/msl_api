@@ -98,67 +98,66 @@ class MapApp {
         return data;
     }
 
+
     async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-        // We want to be able to pass information of the publication inside each feature of the geo collection
-        const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: 'inclusive' | 'exclusive') =>
-            (_: Feature, layer: Layer) => {
-                const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
-                layer.bindPopup(popupContent);
+        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: 'inclusive' })
+        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: 'exclusive' })
 
-                // Store reference
-                const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi]
-                this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi] = geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
-                // When hover over a geo feature
-                layer.on("mouseover", () => {
-                    this.setMarkersStyle({
-                        doi: geoFeatureWithInfo.data_publication_doi,
-                        exclusiveOrInclusive,
-                        highlightOrReset: 'highlight'
-                    })
-                    this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
-                });
-                layer.on("mouseout", () => {
-                    this.setMarkersStyle({
-                        doi: geoFeatureWithInfo.data_publication_doi,
-                        exclusiveOrInclusive,
-                        highlightOrReset: 'reset'
-                    })
-                    this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
-                });
-            };
-        const pointToLayer = (_: Feature, latlng: LatLng) => {
-            return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
-        }
-        //TODO change
-        const exclusiveFeatures = geoList.exclusive.geojson;
-
-        for (const excl of exclusiveFeatures) {
-
-            L.geoJSON(excl.feature, {
-                pointToLayer,
-                onEachFeature: getOnEachFeaturePerPublication(excl, 'exclusive'),
-                style: this.defaultOptions
-            }).addTo(this.markers['exclusive']);
-        }
-
-
-        const inclusiveFeatures = geoList.inclusive.geojson;
-
-        for (const incl of inclusiveFeatures) {
-
-            L.geoJSON(incl.feature, {
-                pointToLayer,
-                onEachFeature: getOnEachFeaturePerPublication(incl, 'inclusive'),
-                style: this.defaultOptions
-            }).addTo(this.markers['inclusive']);
-        }
-
-        //TODO
+        //TODO have one place for defaults?
         this.map.addLayer(this.markers['exclusive']);
     }
 
+    private addFeaturesInMarkers(geoList: InclusiveExclusiveGeoJsonDataPublications,
+        { inclusiveOrExclusive }: { inclusiveOrExclusive: 'inclusive' | 'exclusive' }) {
 
+        const features = geoList[inclusiveOrExclusive].geojson;
+
+        for (const feature of features) {
+
+            L.geoJSON(feature.feature, {
+                pointToLayer: this.pointToLayer,
+                onEachFeature: this.getOnEachFeaturePerPublication(feature, inclusiveOrExclusive),
+                style: this.defaultOptions
+            }).addTo(this.markers[inclusiveOrExclusive]);
+        }
+    }
+
+    pointToLayer = (_: Feature, latlng: LatLng) => {
+        return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
+    }
+    // We want to be able to pass information of the publication inside each feature of the geo collection
+    getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: 'inclusive' | 'exclusive') =>
+        (_: Feature, layer: Layer) => {
+            const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
+            layer.bindPopup(popupContent);
+
+            // Store reference
+            const geoFeaturesForDoi: Layer[] | undefined =
+                this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi]
+
+            this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi] =
+                geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
+
+
+            // When hover over a geo feature
+            layer.on("mouseover", () => {
+                this.setMarkersStyle({
+                    doi: geoFeatureWithInfo.data_publication_doi,
+                    exclusiveOrInclusive,
+                    highlightOrReset: 'highlight'
+                })
+                this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
+            });
+            layer.on("mouseout", () => {
+                this.setMarkersStyle({
+                    doi: geoFeatureWithInfo.data_publication_doi,
+                    exclusiveOrInclusive,
+                    highlightOrReset: 'reset'
+                })
+                this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
+            });
+        };
 
     resetMapView() {
         this.map.setView([51.505, -0.09], 4);
