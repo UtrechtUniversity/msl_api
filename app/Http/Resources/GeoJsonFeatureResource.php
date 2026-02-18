@@ -14,15 +14,23 @@ class GeoJsonFeatureResource extends JsonResource
 
     private string $doi;
 
+    private string $portalLink;
+
     public function __construct(Feature $feature, $dataPublication)
     {
         $this->title = $dataPublication->title;
         $this->doi = $dataPublication->msl_doi;
         $this->feature = $feature;
+        $this->portalLink = route('data-publication-detail', ['id' => $dataPublication->name]);
     }
 
     public function toArray(Request $request): array
     {
-        return ['feature' => $this->feature, 'title' => $this->title, 'data_publication_doi' => $this->doi];
+        return [
+            'feature' => $this->feature, 
+            'title' => $this->title, 
+            'data_publication_doi' => $this->doi,
+            'portalLink' => $this->portalLink,
+        ];
     }
 }

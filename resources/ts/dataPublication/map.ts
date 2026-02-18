@@ -1,11 +1,12 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
+import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
@@ -21,7 +22,9 @@ class MapApp {
     groupedMarkers: GroupedLayer = {};
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
-    highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
+    highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
+    popupOptions = DEFAULT_POPUP_OPTIONS
+
     constructor() {
         this.map = L.map('map')
         this.markers = L.markerClusterGroup({
@@ -30,22 +33,13 @@ class MapApp {
         });
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
-
-
     }
-
-
 
     // Create the map in the beginning
     async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
-
     }
-
-
-
 
     drawMap() {
         this.resetMapView()
@@ -60,21 +54,33 @@ class MapApp {
     private highLightMarkersFromADataPublication(doi: string) {
         const geoFeatures = this.groupedMarkers[doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        
         geoFeatures.forEach(l => {
             assertIsPath(l)
-            l.setStyle(this.highlightedOptions);
-
+            const element = l.getElement();
+            assertIsPathElement(
+                element,
+                `Geofeature element for datapublication '${doi}' should have been an element. This is a bug.`
+            );
+            element.classList.toggle(this.highlightedOptions.className, true);
         })
     }
 
     private removeHighLightMarkersFromADataPublication(doi: string) {
         const geoFeatures = this.groupedMarkers[doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        
         geoFeatures.forEach(l => {
             assertIsPath(l)
-            l.setStyle(this.defaultOptions);
+            const element = l.getElement();
+            assertIsPathElement(
+                element,
+                `Geofeature element for datapublication '${doi}' should have been an element. This is a bug.`
+            );
+            element.classList.toggle(this.highlightedOptions.className, false);
         })
     }
+
     async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
@@ -97,7 +103,14 @@ class MapApp {
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
             (_: Feature, layer: Layer) => {
-                const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
+                const popupContent = `
+                <div class="${this.popupOptions.classNameContent}">
+                    <h6 class="${this.popupOptions.classNameTitle}">${geoFeatureWithInfo.title}</h6>
+                    <a href="${geoFeatureWithInfo.portalLink}" target="_blank">
+                    <button class="btn btn-primary">View Publication</button>
+                    </a>
+                </div>
+                `;
                 layer.bindPopup(popupContent);
 
                 // Store reference
@@ -224,7 +237,9 @@ class MapApp {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(bounds, { color: "red", interactive: false, pane: 'bboxPane' }).addTo(this.map);
+                rectangle = L.rectangle(bounds, { 
+                    className: "bbox-selection", interactive: false, pane: 'bboxPane'  })
+                    .addTo(this.map);
             };
             // On releasing the button of the mouse
             const onMouseUp = async (ev: LeafletMouseEvent) => {
@@ -264,17 +279,17 @@ class MapApp {
     }
 }
 
-
-
-
-
 const app = new MapApp();
 app.init();
-
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`);
-
 }
 
+function assertIsPathElement(
+    element: Element | undefined,
+    doi: string
+): asserts element is Element {
+    if (!element) throw new Error(`Geofeature element for datapublication '${doi}' should not have been undefined. This is a bug.`);
+}
