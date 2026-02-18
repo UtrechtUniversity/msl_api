@@ -24,8 +24,9 @@ export interface Sidebar {
     _options: { position: "left" },
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
     _activateTab(activatedTab: InclusiveOrExclusive): void,
-    // public methods
+    _setDefaultTab(): void,
 
+    // public methods
     open(): this,
     close(): this,
     includes: Evented,
@@ -35,7 +36,6 @@ export interface Sidebar {
     addTo(map: Leaflet.Map): this,
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
     handleActivationOfTab(activatedTab: InclusiveOrExclusive): () => void
-    setDefaultTab(): void,
     resetList(): void,
 
 }

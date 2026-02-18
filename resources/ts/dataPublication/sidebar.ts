@@ -276,7 +276,16 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         )
 
     },
-    setDefaultTab: function () {
+    _setDefaultTab: function () {
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+            if (tabInfo.active) {
+                this._activateTab(tabName)
+                break;
+            }
+
+        }
+
+
 
     },
     resetList: function () {
@@ -292,7 +301,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 listView.firstChild.remove()
             }
         }
-        this._activateTab(EXCLUSIVE)
+        this.setDefaultTab();
         this.close()
     },
 
