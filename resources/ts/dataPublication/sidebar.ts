@@ -232,8 +232,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 });
 
 
-                //TODO make sure this gets populated properly
-
                 _listView.appendChild(item);
             });
 
