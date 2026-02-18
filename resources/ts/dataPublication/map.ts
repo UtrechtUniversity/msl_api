@@ -8,7 +8,7 @@ import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER
 import { assertNotNull } from "../helpers.js";
 import type { InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
-import { getMappingOnTabsObj } from "./utils.js";
+import { getMappingOnTabsObj, TAB_CONFIG } from "./utils.js";
 
 
 
@@ -99,9 +99,10 @@ class DataPublicationMap {
 
     private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: INCLUSIVE })
-        this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: EXCLUSIVE })
 
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+            this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: tabName })
+        }
         //TODO have one place for defaults?
         this.map.addLayer(this.markers[EXCLUSIVE]);
     }
