@@ -6,17 +6,17 @@ import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
-import type { Exclusive, Inclusive, InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
+import type { InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 
 
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
-    exclusiveOrInclusive: Exclusive | Inclusive
+    exclusiveOrInclusive: InclusiveOrExclusive
 }
 interface SidebarTabClickEvent extends LeafletEvent {
-    id: Exclusive | Inclusive
+    id: InclusiveOrExclusive
 }
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
