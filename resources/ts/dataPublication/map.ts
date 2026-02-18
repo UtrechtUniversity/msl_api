@@ -31,14 +31,14 @@ class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
     sideBar: Sidebar;
-    groupedMarkers: GroupedLayerMapping = getMappingOnTabsObj<GroupedLayer>({})
+    groupedMarkers: GroupedLayerMapping = getMappingOnTabsObj<GroupedLayer>(() => { return {} })
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
 
     constructor() {
         this.map = L.map('map')
-        this.markers = getMappingOnTabsObj(L.markerClusterGroup({
+        this.markers = getMappingOnTabsObj(() => L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
         }));

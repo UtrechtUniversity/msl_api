@@ -31,7 +31,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    _tabViews: getMappingOnTabsObj({ _tab: null, _listView: null }),
+    _tabViews: getMappingOnTabsObj(() => { return { _tab: null, _listView: null } }),
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
