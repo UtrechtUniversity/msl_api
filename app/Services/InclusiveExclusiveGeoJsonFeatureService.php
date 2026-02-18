@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\DataPublications\GeoJsonFeature;
+use App\DataPublications\GeoJsonFeaturePerDataPublication;
 use App\DataPublications\GeoJsonFeaturesWithDataPublications;
 use App\DataPublications\InclusiveExclusiveGeoJson;
 use App\GeoJson\BoundingBox;
@@ -38,7 +38,7 @@ class InclusiveExclusiveGeoJsonFeatureService
 
     /**
      * @param  array<int, DataPublication>  $dataPublications
-     * @return GeoJsonFeatureDataPublication[]
+     * @return GeoJsonFeaturePerDataPublication[]
      */
     private function sortFeatures($dataPublications): array
     {
@@ -48,7 +48,7 @@ class InclusiveExclusiveGeoJsonFeatureService
         // sort
         usort(
             $features,
-            function (GeoJsonFeature $a, GeoJsonFeature $b) {
+            function (GeoJsonFeaturePerDataPublication $a, GeoJsonFeaturePerDataPublication $b) {
                 // If first argument is a point
                 if ($a->feature->geometry instanceof Point) {
                     return 1;
@@ -78,7 +78,7 @@ class InclusiveExclusiveGeoJsonFeatureService
 
     /**
      * @param  DataPublication[]  $dataPublications
-     * @return GeoJsonFeature[]
+     * @return GeoJsonFeaturePerDataPublication[]
      */
     private function extractFeatures(array $dataPublications)
     {
@@ -88,7 +88,7 @@ class InclusiveExclusiveGeoJsonFeatureService
             $featuresCollection = $dataPublication->geojson_featurecollection;
             foreach ($featuresCollection->features as $feature) {
                 // Create a feature which includes the datapublication as it gets out of CKAN
-                $features[] = new GeoJsonFeature($feature, $dataPublication);
+                $features[] = new GeoJsonFeaturePerDataPublication($feature, $dataPublication);
             }
         }
 
@@ -96,8 +96,8 @@ class InclusiveExclusiveGeoJsonFeatureService
     }
 
     /**
-     * @param  GeoJsonFeature[]  $features
-     * @return array{0: DataPublication[], 1: GeoJsonFeature[]
+     * @param  GeoJsonFeaturePerDataPublication[]  $features
+     * @return array{0: DataPublication[], 1: GeoJsonFeaturePerDataPublication[]
      */
     private function filterInclusive(array $features, BoundingBox $bbox): array
     {

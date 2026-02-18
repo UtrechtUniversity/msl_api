@@ -22,7 +22,7 @@ class GeoJsonDataPublicationResource extends JsonResource
                 includesGeoJson: false
             ))),
 
-            'geojson' => GeoJsonFeatureResource::collection($this->resource->features),
+            'geojson' => GeoJsonFeaturePerDataPublicationResource::collection($this->resource->features),
         ];
 
         return $geoJsonInfo;
