@@ -32,18 +32,17 @@ class GeoJsonDataPublicationsController extends Controller
      */
     protected function index(
         GeoJsonDataPublicationRequest $request,
-        GeoJsonDataPublicationService $geoJsonDataPublicationService,
+        GeoJsonDataPublicationService $dataPublicationService,
+        InclusiveExclusiveGeoJsonFeatureService $inclusiveExclusiveGeoJsonService,
     ): JsonResource|ResourceCollection {
 
-        // TODO pass it as a service?
-        $service = new InclusiveExclusiveGeoJsonFeatureService;
-
         // Get bounding box
-        $bbox = $geoJsonDataPublicationService->getBoundingBoxFromRequest($request);
+        $bbox = $dataPublicationService->getBoundingBoxFromRequest($request);
         // Get response from ckan
-        $dataPublicationResponse = $geoJsonDataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
-        // Create instance of an intermediate class
-        $inclusiveExclusiveGeoJson = $service->createInclusiveExclusiveGeoJson($dataPublicationResponse->dataPublications, $bbox);
+        $dataPublicationResponse = $dataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
+        // Create instance of an intermediate class,
+        // where filtering and restructure is done.
+        $inclusiveExclusiveGeoJson = $inclusiveExclusiveGeoJsonService->createInclusiveExclusiveGeoJson($dataPublicationResponse->dataPublications, $bbox);
 
         $resource = new InclusiveExclusiveGeoJsonDataPublicationsResource($inclusiveExclusiveGeoJson);
 
