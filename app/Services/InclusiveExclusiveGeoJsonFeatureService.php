@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\DataPublications\GeoJsonFeatureDataPublication;
 use App\DataPublications\GeoJsonFeaturePerDataPublication;
-use App\DataPublications\InclusiveExclusiveGeoJson;
+use App\DataPublications\InclusiveExclusiveGeoJsonFeatureDataPublication;
 use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
@@ -16,7 +16,7 @@ class InclusiveExclusiveGeoJsonFeatureService
     /**
      * @param  array<int, DataPublication>  $dataPublications
      */
-    public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJson
+    public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJsonFeatureDataPublication
     {
 
         //  split + sort
@@ -24,7 +24,7 @@ class InclusiveExclusiveGeoJsonFeatureService
         // inclusive
         [$inclusivePublications, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
 
-        return new InclusiveExclusiveGeoJson(
+        return new InclusiveExclusiveGeoJsonFeatureDataPublication(
             exclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
                 dataPublications: $dataPublications,
                 features: $sortedFeatures

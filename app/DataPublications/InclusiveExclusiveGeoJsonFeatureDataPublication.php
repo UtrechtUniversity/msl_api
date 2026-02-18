@@ -2,7 +2,7 @@
 
 namespace App\DataPublications;
 
-class InclusiveExclusiveGeoJson
+class InclusiveExclusiveGeoJsonFeatureDataPublication
 {
     public function __construct(
         public readonly GeoJsonFeatureDataPublication $exclusiveFeaturesWithDataPublications,
