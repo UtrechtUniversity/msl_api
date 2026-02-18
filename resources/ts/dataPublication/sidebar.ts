@@ -4,14 +4,10 @@ import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
 import type { Sidebar } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
-import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE, TAB_CONFIG, type InclusiveOrExclusive } from "../types/map.js";
 
 
-const TabConfig =
-{
-    [EXCLUSIVE]: { label: 'Exclusive results', active: true },
-    [INCLUSIVE]: { label: 'Inclusive results', active: false }
-}
+
 
 
 type Entries<T> = Array<
@@ -103,7 +99,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
         //  Populate tabs
-        for (const [tabName, tabInfo] of Object.entries(TabConfig) as Entries<typeof TabConfig>) {
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
 
             const activeClass = (tabInfo.active) ? 'active' : ''
             const createdTab = DomUtil.create('li', 'tab ' + activeClass, tabList);
@@ -208,7 +204,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
 
-        for (const tabName of Object.keys(TabConfig) as Array<keyof typeof TabConfig>) {
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
             assertNotNull(this._tabViews[tabName],
                 'The property of tabViews was not populated properly. This is a bug.'
             )
@@ -280,9 +276,12 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         )
 
     },
+    setDefaultTab: function () {
+
+    },
     resetList: function () {
 
-        for (const tabName of Object.keys(TabConfig) as Array<keyof typeof TabConfig>) {
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
 
             const tabElements = this._tabViews[tabName]
             assertNotNull(tabElements,

@@ -1,12 +1,12 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn, Control } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
-import type { Exclusive, Inclusive, InclusiveOrExclusive } from "../types/map.js";
+import type { Exclusive, Inclusive, InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 
 
@@ -21,16 +21,16 @@ interface SidebarTabClickEvent extends LeafletEvent {
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
+
 type GroupedLayer = { [groupedId: string]: Layer[] }
-type InclusiveExclusiveGroupedLayer = {
-    [EXCLUSIVE]: GroupedLayer,
-    [INCLUSIVE]: GroupedLayer
-}
+type GroupedLayerMapping = MappingOnTabs<GroupedLayer>
+
+type MarkerMapping = MappingOnTabs<MarkerClusterGroup>
 class DataPublicationMap {
     map: Map;
-    markers: { [EXCLUSIVE]: MarkerClusterGroup, [INCLUSIVE]: MarkerClusterGroup };
+    markers: MarkerMapping;
     sideBar: Sidebar;
-    groupedMarkers: InclusiveExclusiveGroupedLayer = {
+    groupedMarkers: GroupedLayerMapping = {
         [EXCLUSIVE]: {},
         [INCLUSIVE]: {}
     }
@@ -75,6 +75,7 @@ class DataPublicationMap {
     private setMarkersStyle(
         { doi, exclusiveOrInclusive, highlightOrReset }:
             { doi: string, exclusiveOrInclusive: InclusiveOrExclusive, highlightOrReset: 'highlight' | 'reset' }) {
+
         const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
