@@ -5,16 +5,13 @@ import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from 
 import type { Sidebar, ViewPerTab } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
 import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
-import { getMappingOnTabsObj, TAB_CONFIG } from "./utils.js";
+import { getMappingOnTabsObj, TAB_CONFIG, type Entries } from "./utils.js";
 
 
 
 
 
-type Entries<T> = Array<
-    {
-        [K in keyof T]: [K, T[K]]
-    }[keyof T]>
+
 
 
 
