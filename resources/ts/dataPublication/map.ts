@@ -8,6 +8,7 @@ import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER
 import { assertNotNull } from "../helpers.js";
 import type { InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
+import { getMappingOnTabsObj } from "./utils.js";
 
 
 
@@ -30,25 +31,17 @@ class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
     sideBar: Sidebar;
-    groupedMarkers: GroupedLayerMapping = {
-        [EXCLUSIVE]: {},
-        [INCLUSIVE]: {}
-    }
+    groupedMarkers: GroupedLayerMapping = getMappingOnTabsObj<GroupedLayer>({})
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
 
     constructor() {
         this.map = L.map('map')
-        this.markers = {
-            [EXCLUSIVE]: L.markerClusterGroup({
-                zoomToBoundsOnClick: true,
-                showCoverageOnHover: false
-            }), [INCLUSIVE]: L.markerClusterGroup({
-                zoomToBoundsOnClick: true,
-                showCoverageOnHover: false
-            })
-        };
+        this.markers = getMappingOnTabsObj(L.markerClusterGroup({
+            zoomToBoundsOnClick: true,
+            showCoverageOnHover: false
+        }));
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
     }

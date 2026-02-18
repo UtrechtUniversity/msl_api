@@ -17,3 +17,7 @@ export type MappingOnTabs<T> = {
     [EXCLUSIVE]: T,
     [INCLUSIVE]: T
 }
+
+export function getMappingOnTabsObj<T>(t: T): MappingOnTabs<T> {
+    return { [EXCLUSIVE]: t, [INCLUSIVE]: t }
+}

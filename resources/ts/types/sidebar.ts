@@ -4,7 +4,7 @@ import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from 
 import { type InclusiveOrExclusive, type MappingOnTabs } from "./map.js";
 
 
-type ViewPerTab = { _tab: HTMLLIElement, _listView: HTMLElement }
+export type ViewPerTab = { _tab: HTMLLIElement | null, _listView: HTMLElement | null }
 export interface Sidebar {
     // private methods
     _sidebar: HTMLElement | null
@@ -12,7 +12,7 @@ export interface Sidebar {
     _closeButton: HTMLSpanElement | null,
     _tab: HTMLElement | null,
     _container: HTMLElement | null,
-    _tabViews: Partial<MappingOnTabs<ViewPerTab>>,
+    _tabViews: MappingOnTabs<ViewPerTab>,
     _map: Leaflet.Map | null,
     _tabLink: null | HTMLAnchorElement,
     _initSideBarElement(id: string): void,

@@ -2,9 +2,10 @@
 
 import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
-import type { Sidebar } from "../types/sidebar.ts";
+import type { Sidebar, ViewPerTab } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
-import { EXCLUSIVE, INCLUSIVE, TAB_CONFIG, type InclusiveOrExclusive } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
+import { getMappingOnTabsObj, TAB_CONFIG } from "./utils.js";
 
 
 
@@ -30,7 +31,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    _tabViews: {},
+    _tabViews: getMappingOnTabsObj({ _tab: null, _listView: null }),
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -205,9 +206,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            assertNotNull(this._tabViews[tabName],
-                'The property of tabViews was not populated properly. This is a bug.'
-            )
+            assertTabElementsNotNull(this._tabViews[tabName])
             const { _tab, _listView } = this._tabViews[tabName]
 
             _listView.innerHTML = '';
@@ -258,13 +257,10 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const activatedTabElements = this._tabViews[activatedTab]
         const deactivatedTabElements = this._tabViews[deactivateTab]
 
-        assertNotNull(activatedTabElements,
-            'The property of tabViews was not populated properlym for the activated tab. This is a bug.'
-        )
-        assertNotNull(deactivatedTabElements,
-            'The property of tabViews was not populated properlym for the deactivated tab. This is a bug.'
-        )
+
         assertNotNull(this._map, `Map is undefined. This is a bug.`)
+        assertTabElementsNotNull(activatedTabElements);
+        assertTabElementsNotNull(deactivatedTabElements);
 
         activatedTabElements._tab.classList.add('active')
         activatedTabElements._listView.hidden = false;
@@ -291,8 +287,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
 
             const tabElements = this._tabViews[tabName]
-            assertNotNull(tabElements,
-                'The property of tabViews was not populated properlym for the default tab. This is a bug.'
+            assertNotNull(tabElements._listView,
+                'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
             )
             const listView = tabElements._listView
             while (listView.firstChild) {
@@ -333,4 +329,12 @@ function assertElementNotNull(element: HTMLElement | null, { name, id }: { name:
         return assertNotNull(sideBar, ` The element '${name}' should be set by now.This is a bug.`)
     return assertNotNull(sideBar, ` The element with id '${name}' should be set by now.This is a bug.`)
 
+}
+
+function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is { [K in keyof ViewPerTab]: NonNullable<ViewPerTab[K]> } {
+    for (const [key, value] of Object.entries(viewPerTab)) {
+        if (value == null) {
+            throw new Error(`viewPerTab.${key} is null. This is a bug.`);
+        }
+    }
 }
