@@ -301,7 +301,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 listView.firstChild.remove()
             }
         }
-        this.setDefaultTab();
+        this._setDefaultTab();
         this.close()
     },
 
