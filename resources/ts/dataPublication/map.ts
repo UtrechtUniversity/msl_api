@@ -40,7 +40,7 @@ class MapApp {
     async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
+        this.sideBar.open();
 
     }
 
