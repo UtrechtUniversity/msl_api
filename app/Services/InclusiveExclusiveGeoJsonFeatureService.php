@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
+use App\DataPublications\GeoJsonFeatureDataPublication;
 use App\DataPublications\GeoJsonFeaturePerDataPublication;
-use App\DataPublications\GeoJsonFeaturesWithDataPublications;
 use App\DataPublications\InclusiveExclusiveGeoJson;
 use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Point;
@@ -25,11 +25,11 @@ class InclusiveExclusiveGeoJsonFeatureService
         [$inclusivePublications, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
 
         return new InclusiveExclusiveGeoJson(
-            exclusiveFeaturesWithDataPublications: new GeoJsonFeaturesWithDataPublications(
+            exclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
                 dataPublications: $dataPublications,
                 features: $sortedFeatures
             ),
-            inclusiveFeaturesWithDataPublications: new GeoJsonFeaturesWithDataPublications(
+            inclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
                 dataPublications: $inclusivePublications,
                 features: $inclusiveFeatures
             )
