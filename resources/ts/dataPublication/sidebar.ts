@@ -161,12 +161,14 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         const item = document.createElement('div');
         const authors = dataPublication.creators.length > 0 ? dataPublication.creators.map(creator => creator.fullName).join(' | ') : '- no authors found -';
+        
+        
         item.className = 'data-publication-item';
         item.setAttribute('data-id', dataPublication.doi)
         item.innerHTML = `
-                <div class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</div>
-                <div class="data-publication-authors"> ${authors}</div>
-                <div class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </div>
+                <p class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</p>
+                <p class="data-publication-authors"> ${authors}</p>
+                <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>
             `;
         return item
     },
