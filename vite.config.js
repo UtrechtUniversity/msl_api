@@ -19,8 +19,8 @@ export default defineConfig({
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/map.ts',
             'resources/ts/dataPublication/sidebar.ts',
-            'resources/css/leaflet-sidebar.css',
-            'resources/css/datapublications-list.css'
+            'resources/css/leafletMapStyles/leaflet-sidebar.css',
+            'resources/css/leafletMapStyles/datapublications-list.css'
         ]),
         commonjs()
     ],
