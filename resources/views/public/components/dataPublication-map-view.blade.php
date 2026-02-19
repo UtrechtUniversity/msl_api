@@ -2,7 +2,7 @@
     @vite([
         'resources/css/leafletMapStyles/leaflet-sidebar.css', 
         'resources/css/leafletMapStyles/datapublications-list.css',
-        'resources/css/leafletMapStyles/inMapStyles.css'])
+        'resources/css/leafletMapStyles/in-map-styles.css'])
 </head>
 
 <body>
