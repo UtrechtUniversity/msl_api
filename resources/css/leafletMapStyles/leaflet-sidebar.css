@@ -64,7 +64,7 @@
   top: 0;
   bottom: 0;
   height: 100%;
-  background-color:  var(--color-primary-300); 
+  background-color:  var(--color-primary-100); 
 }
   
 .sidebar-left .sidebar-tabs {
@@ -187,7 +187,7 @@
   line-height: 40px;
   font-size: 14.4pt;
   color:var(--color-primary-900);
-  background-color: var(--color-primary-300); 
+  background-color: var(--color-primary-100); 
 }
 
 .sidebar-right .sidebar-header {
