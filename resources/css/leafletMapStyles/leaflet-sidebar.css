@@ -97,7 +97,7 @@
 
 .sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
   color: #fff;
-  background-color: #0074d9; 
+  background-color: var(--color-primary-600); 
 }
 
 .sidebar-tabs > li.disabled, .sidebar-tabs > ul > li.disabled {
@@ -201,6 +201,10 @@
   height: 40px;
   text-align: center;
   cursor: pointer; 
+}
+.sidebar-close:hover {
+  background-color: var(--color-secondary-200);
+  color: var(--color-secondary-900);
 }
 
 .sidebar-left .sidebar-close {
