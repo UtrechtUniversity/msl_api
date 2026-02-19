@@ -60,9 +60,16 @@ class MapApp {
     private highLightMarkersFromADataPublication(doi: string) {
         const geoFeatures = this.groupedMarkers[doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        
+        // get the class name from the highlightedOptions and check if empty
+        const highlightClass = this.highlightedOptions.className;
+        if (!highlightClass) return;
+        
         geoFeatures.forEach(l => {
             assertIsPath(l)
-            l.setStyle(this.highlightedOptions);
+            const element = l.getElement();
+            if (!element) return;
+            element.classList.toggle(highlightClass, true);
 
         })
     }
@@ -70,11 +77,19 @@ class MapApp {
     private removeHighLightMarkersFromADataPublication(doi: string) {
         const geoFeatures = this.groupedMarkers[doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        
+        // We get the class name from the highlightedOptions
+            const highlightClass = this.highlightedOptions.className;
+        if (!highlightClass) return;
+        
         geoFeatures.forEach(l => {
             assertIsPath(l)
-            l.setStyle(this.defaultOptions);
+            const element = l.getElement();
+            if (!element) return;
+            element.classList.toggle(highlightClass, false);
         })
     }
+
     async getJsonFromRequest(boundingBox: string): Promise<GeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
