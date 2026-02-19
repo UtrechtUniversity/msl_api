@@ -20,7 +20,8 @@ export default defineConfig({
             'resources/ts/dataPublication/map.ts',
             'resources/ts/dataPublication/sidebar.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
-            'resources/css/leafletMapStyles/datapublications-list.css'
+            'resources/css/leafletMapStyles/datapublications-list.css',
+            'resources/css/leafletMapStyles/inMapStyles.css'
         ]),
         commonjs()
     ],

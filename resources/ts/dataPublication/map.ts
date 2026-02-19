@@ -224,7 +224,9 @@ class MapApp {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(bounds, { color: "red", interactive: false, pane: 'bboxPane' }).addTo(this.map);
+                rectangle = L.rectangle(bounds, { 
+                    className: "bbox-selection", interactive: false, pane: 'bboxPane'  })
+                    .addTo(this.map);
             };
             // On releasing the button of the mouse
             const onMouseUp = async (ev: LeafletMouseEvent) => {
