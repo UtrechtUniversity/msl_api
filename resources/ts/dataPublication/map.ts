@@ -6,6 +6,7 @@ import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
+import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
@@ -22,6 +23,8 @@ class MapApp {
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
+    popupOptions = DEFAULT_POPUP_OPTIONS
+
     constructor() {
         this.map = L.map('map')
         this.markers = L.markerClusterGroup({
@@ -101,7 +104,11 @@ class MapApp {
         // We want to be able to pass information of the publication inside each feature of the geo collection
         const getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature) =>
             (_: Feature, layer: Layer) => {
-                const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
+                const popupContent = `
+                <div class="${this.popupOptions.classNameContent}">
+                    <h6 class="${this.popupOptions.classNameTitle}">${geoFeatureWithInfo.title}</h6>
+                </div>
+                `;
                 layer.bindPopup(popupContent);
 
                 // Store reference
