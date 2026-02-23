@@ -1,5 +1,5 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
@@ -21,7 +21,7 @@ class MapApp {
     groupedMarkers: GroupedLayer = {};
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
-    highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
+    highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     constructor() {
         this.map = L.map('map')
         this.markers = L.markerClusterGroup({
@@ -61,16 +61,11 @@ class MapApp {
         const geoFeatures = this.groupedMarkers[doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         
-        // get the class name from the highlightedOptions and check if empty
-        const highlightClass = this.highlightedOptions.className;
-        if (!highlightClass) return;
-        
         geoFeatures.forEach(l => {
             assertIsPath(l)
             const element = l.getElement();
             if (!element) return;
-            element.classList.toggle(highlightClass, true);
-
+            element.classList.toggle(this.highlightedOptions.className, true);
         })
     }
 
@@ -78,15 +73,11 @@ class MapApp {
         const geoFeatures = this.groupedMarkers[doi]
         if (!geoFeatures) throw new Error(`Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         
-        // We get the class name from the highlightedOptions
-            const highlightClass = this.highlightedOptions.className;
-        if (!highlightClass) return;
-        
         geoFeatures.forEach(l => {
             assertIsPath(l)
             const element = l.getElement();
             if (!element) return;
-            element.classList.toggle(highlightClass, false);
+            element.classList.toggle(this.highlightedOptions.className, false);
         })
     }
 

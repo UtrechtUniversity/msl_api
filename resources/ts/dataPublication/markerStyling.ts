@@ -1,8 +1,12 @@
-import type { CircleMarkerOptions, PathOptions } from "leaflet"
+import type { CircleMarkerOptions } from "leaflet"
+
+type MarkerOptions = {
+    className: string
+}
 
 // Base style options for all non-point regions drawn on the map.
 // The visual appearance is defined in CSS by the `.map-region` class.
-export const DEFAULT_MARKER_OPTIONS: PathOptions = {
+export const DEFAULT_MARKER_OPTIONS: MarkerOptions = {
     className: "map-region",
 }
 
@@ -15,6 +19,6 @@ export const DEFAULT_CIRCLE_MARKER_OPTIONS: CircleMarkerOptions = {
 
 // Style options used when a region is highlighted on hover.
 // The visual appearance is defined in CSS by the `.map-region-highlight` class.
-export const HIGHLIGHT_MARKER_OPTIONS: PathOptions = {
+export const HIGHLIGHT_MARKER_OPTIONS: MarkerOptions = {
     className: "map-region-highlight",
 }
