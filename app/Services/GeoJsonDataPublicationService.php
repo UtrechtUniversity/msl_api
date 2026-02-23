@@ -14,9 +14,6 @@ class GeoJsonDataPublicationService
 {
     protected $packageSearchRequest;
 
-    /**
-     * Create a new class instance.
-     */
     public function __construct()
     {
         $this->packageSearchRequest = new PackageSearchRequest;
@@ -32,7 +29,12 @@ class GeoJsonDataPublicationService
         $offset = $this->packageSearchRequest->start;
         $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
 
-        return new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl);
+        return new DataPublicationResponse(
+            response: $responseFromCkan,
+            limit: $limit,
+            offset: $offset,
+            currentUrl: $currentUrl
+        );
     }
 
     public function getBoundingBoxFromRequest(Request $request)

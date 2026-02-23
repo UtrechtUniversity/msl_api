@@ -16,8 +16,10 @@ class InclusiveExclusiveGeoJsonFeatureService
     /**
      * @param  array<int, DataPublication>  $dataPublications
      */
-    public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJsonFeatureDataPublication
-    {
+    public function createInclusiveExclusiveGeoJson(
+        array $dataPublications,
+        BoundingBox $bbox
+    ): InclusiveExclusiveGeoJsonFeatureDataPublication {
 
         //  split + sort
         $sortedFeatures = $this->sortFeatures($dataPublications);
@@ -38,7 +40,7 @@ class InclusiveExclusiveGeoJsonFeatureService
 
     /**
      * @param  array<int, DataPublication>  $dataPublications
-     * @return GeoJsonFeaturePerDataPublication[]
+     * @return array<int,GeoJsonFeaturePerDataPublication>
      */
     private function sortFeatures($dataPublications): array
     {
@@ -77,8 +79,10 @@ class InclusiveExclusiveGeoJsonFeatureService
     }
 
     /**
-     * @param  DataPublication[]  $dataPublications
-     * @return GeoJsonFeaturePerDataPublication[]
+     * Extract features from geo collections in datapublications
+     *
+     * @param  array<int,DataPublication>  $dataPublications
+     * @return array<int,GeoJsonFeaturePerDataPublication>
      */
     private function extractFeatures(array $dataPublications)
     {
@@ -96,8 +100,8 @@ class InclusiveExclusiveGeoJsonFeatureService
     }
 
     /**
-     * @param  GeoJsonFeaturePerDataPublication[]  $features
-     * @return array{0: DataPublication[], 1: GeoJsonFeaturePerDataPublication[]
+     * @param  array<int,GeoJsonFeaturePerDataPublication>  $features
+     * @return array{0: <int,DataPublication>, 1: <int,GeoJsonFeaturePerDataPublication>}
      */
     private function filterInclusive(array $features, BoundingBox $bbox): array
     {
