@@ -4,11 +4,11 @@ export type Exclusive = typeof EXCLUSIVE
 export const INCLUSIVE = 'inclusive'
 export type Inclusive = typeof INCLUSIVE
 
-export type InclusiveOrExclusive = Exclusive | Inclusive
+export type ResultSet = Exclusive | Inclusive
 
 
 
-export type MappingOnTabs<T> = {
+export type ResultSetMapping<T> = {
     [EXCLUSIVE]: T,
     [INCLUSIVE]: T
 }

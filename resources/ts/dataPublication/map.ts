@@ -6,39 +6,39 @@ import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotNull } from "../helpers.js";
-import type { InclusiveOrExclusive, MappingOnTabs } from "../types/map.js";
+import type { ResultSet, ResultSetMapping } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
-import { getMappingOnTabsObj, TAB_CONFIG, type Entries } from "./utils.js";
+import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
 
 
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
-    exclusiveOrInclusive: InclusiveOrExclusive
+    resultSet: ResultSet
 }
 interface SidebarTabClickEvent extends LeafletEvent {
-    id: InclusiveOrExclusive
+    id: ResultSet
 }
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
 type GroupedLayer = { [groupedId: string]: Layer[] }
-type GroupedLayerMapping = MappingOnTabs<GroupedLayer>
+type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 
-type MarkerMapping = MappingOnTabs<MarkerClusterGroup>
+type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
     sideBar: Sidebar;
-    groupedMarkers: GroupedLayerMapping = getMappingOnTabsObj<GroupedLayer>(() => { return {} })
+    groupedMarkers: GroupedLayerMapping = getResultSetMappingObj<GroupedLayer>(() => { return {} })
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
 
     constructor() {
         this.map = L.map('map')
-        this.markers = getMappingOnTabsObj(() => L.markerClusterGroup({
+        this.markers = getResultSetMappingObj(() => L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
         }));
@@ -66,10 +66,10 @@ class DataPublicationMap {
     }
 
     private setMarkersStyle(
-        { doi, exclusiveOrInclusive, highlightOrReset }:
-            { doi: string, exclusiveOrInclusive: InclusiveOrExclusive, highlightOrReset: 'highlight' | 'reset' }) {
+        { doi, resultSet, highlightOrReset }:
+            { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
 
-        const geoFeatures = this.groupedMarkers[exclusiveOrInclusive][doi]
+        const geoFeatures = this.groupedMarkers[resultSet][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
@@ -101,7 +101,7 @@ class DataPublicationMap {
 
 
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            this.addFeaturesInMarkers(geoList, { inclusiveOrExclusive: tabName })
+            this.addFeaturesInMarkers(geoList, { resultSet: tabName })
             if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
 
         }
@@ -110,17 +110,17 @@ class DataPublicationMap {
 
 
     private addFeaturesInMarkers(geoList: InclusiveExclusiveGeoJsonDataPublications,
-        { inclusiveOrExclusive }: { inclusiveOrExclusive: InclusiveOrExclusive }) {
+        { resultSet }: { resultSet: ResultSet }) {
 
-        const features = geoList[inclusiveOrExclusive].geojson;
+        const features = geoList[resultSet].geojson;
 
         for (const feature of features) {
 
             L.geoJSON(feature.feature, {
                 pointToLayer: this.pointToLayer,
-                onEachFeature: this.getOnEachFeaturePerPublication(feature, inclusiveOrExclusive),
+                onEachFeature: this.getOnEachFeaturePerPublication(feature, resultSet),
                 style: this.defaultOptions
-            }).addTo(this.markers[inclusiveOrExclusive]);
+            }).addTo(this.markers[resultSet]);
         }
     }
 
@@ -128,16 +128,16 @@ class DataPublicationMap {
         return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
     }
     // We want to be able to pass information of the publication inside each feature of the geo collection
-    private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, exclusiveOrInclusive: InclusiveOrExclusive) =>
+    private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, resultSet: ResultSet) =>
         (_: Feature, layer: Layer) => {
             const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
             layer.bindPopup(popupContent);
 
             // Store reference
             const geoFeaturesForDoi: Layer[] | undefined =
-                this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi]
+                this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi]
 
-            this.groupedMarkers[exclusiveOrInclusive][geoFeatureWithInfo.data_publication_doi] =
+            this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi] =
                 geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
 
 
@@ -145,7 +145,7 @@ class DataPublicationMap {
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
                     doi: geoFeatureWithInfo.data_publication_doi,
-                    exclusiveOrInclusive,
+                    resultSet: resultSet,
                     highlightOrReset: 'highlight'
                 })
                 this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
@@ -153,7 +153,7 @@ class DataPublicationMap {
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
                     doi: geoFeatureWithInfo.data_publication_doi,
-                    exclusiveOrInclusive,
+                    resultSet: resultSet,
                     highlightOrReset: 'reset'
                 })
                 this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
@@ -169,7 +169,7 @@ class DataPublicationMap {
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                exclusiveOrInclusive: e.exclusiveOrInclusive,
+                resultSet: e.resultSet,
                 highlightOrReset: 'highlight'
             });
             this.sideBar.highlight(e.id)
@@ -179,7 +179,7 @@ class DataPublicationMap {
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                exclusiveOrInclusive: e.exclusiveOrInclusive,
+                resultSet: e.resultSet,
                 highlightOrReset: 'reset'
             })
             this.sideBar.removeHighlight(e.id)
@@ -193,7 +193,7 @@ class DataPublicationMap {
 
     }
 
-    private handleSidebarTab(activatedTab: InclusiveOrExclusive) {
+    private handleSidebarTab(activatedTab: ResultSet) {
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
         this.sideBar.handleActivationOfTab(activatedTab)
         this.map.addLayer(this.markers[activatedTab])

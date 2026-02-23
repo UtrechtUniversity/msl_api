@@ -1,8 +1,8 @@
 
 import type { Feature } from 'geojson'
-import type { MappingOnTabs } from './map.js'
+import type { ResultSetMapping } from './map.js'
 
-export type InclusiveExclusiveGeoJsonDataPublications = MappingOnTabs<GeoJsonDataPublications>
+export type InclusiveExclusiveGeoJsonDataPublications = ResultSetMapping<GeoJsonDataPublications>
 export type GeoJsonDataPublications = {
     'geojson': GeoFeature[],
     'data_publications': DataPublication[]

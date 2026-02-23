@@ -4,8 +4,8 @@ import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
 import type { Sidebar, ViewPerTab } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
-import { EXCLUSIVE, INCLUSIVE, type InclusiveOrExclusive } from "../types/map.js";
-import { getMappingOnTabsObj, TAB_CONFIG, type Entries } from "./utils.js";
+import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map.js";
+import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
 
 
 
@@ -28,7 +28,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    _tabViews: getMappingOnTabsObj(() => { return { _tab: null, _listView: null } }),
+    _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -215,7 +215,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                     assertNotNull(this._map, `Map is undefined. This is a bug.`)
                     this._map.fire('sidebar-hover', {
                         id: dataPublication.doi,
-                        exclusiveOrInclusive: tabName
+                        resultSet: tabName
                     });
 
                 });
@@ -223,7 +223,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 item.addEventListener('mouseleave', () => {
                     assertNotNull(this._map, `Map is undefined. This is a bug.`)
                     this._map.fire('sidebar-leave',
-                        { id: dataPublication.doi, exclusiveOrInclusive: tabName })
+                        { id: dataPublication.doi, resultSet: tabName })
 
                 });
 
@@ -242,14 +242,14 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     },
 
 
-    handleActivationOfTab: function (activatedTab: InclusiveOrExclusive) {
+    handleActivationOfTab: function (activatedTab: ResultSet) {
         return () => {
             this._activateTab(activatedTab)
 
         }
     },
 
-    _activateTab: function (activatedTab: InclusiveOrExclusive) {
+    _activateTab: function (activatedTab: ResultSet) {
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
         const activatedTabElements = this._tabViews[activatedTab]
         const deactivatedTabElements = this._tabViews[deactivateTab]

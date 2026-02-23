@@ -1,9 +1,8 @@
-import { EXCLUSIVE, INCLUSIVE, type MappingOnTabs } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE, type ResultSetMapping } from "../types/map.js";
 
-export function getMappingOnTabsObj<T>(factory: () => T): MappingOnTabs<T> {
+export function getResultSetMappingObj<T>(factory: () => T): ResultSetMapping<T> {
     return { [EXCLUSIVE]: factory(), [INCLUSIVE]: factory() }
 }
-
 
 
 export const TAB_CONFIG =
