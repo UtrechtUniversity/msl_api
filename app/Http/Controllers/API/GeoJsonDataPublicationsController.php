@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\CkanClient\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeoJsonDataPublicationRequest;
 use App\Http\Resources\InclusiveExclusiveGeoJsonDataPublicationsResource;
@@ -26,10 +25,6 @@ class GeoJsonDataPublicationsController extends Controller
         $this->guzzleClient = $client;
     }
 
-    /**
-     * Creates a API response based upon search parameters provided in request
-     * Context is used to provide subdomain specific processing
-     */
     protected function index(
         GeoJsonDataPublicationRequest $request,
         GeoJsonDataPublicationService $dataPublicationService,
