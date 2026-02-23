@@ -30,22 +30,14 @@ class MapApp {
         });
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
-
-
     }
-
-
 
     // Create the map in the beginning
     async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
         this.sideBar.open();
-
     }
-
-
-
 
     drawMap() {
         this.resetMapView()
@@ -64,7 +56,10 @@ class MapApp {
         geoFeatures.forEach(l => {
             assertIsPath(l)
             const element = l.getElement();
-            if (!element) return;
+            assertIsElement(
+                element,
+                `Geofeature element for datapublication '${doi}' should have been an element. This is a bug.`
+            );
             element.classList.toggle(this.highlightedOptions.className, true);
         })
     }
@@ -76,7 +71,10 @@ class MapApp {
         geoFeatures.forEach(l => {
             assertIsPath(l)
             const element = l.getElement();
-            if (!element) return;
+            assertIsElement(
+                element,
+                `Geofeature element for datapublication '${doi}' should have been an element. This is a bug.`
+            );
             element.classList.toggle(this.highlightedOptions.className, false);
         })
     }
@@ -272,17 +270,17 @@ class MapApp {
     }
 }
 
-
-
-
-
 const app = new MapApp();
 app.init();
-
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path)) throw new Error(`Geofeature should be instance of a path, but it is not. This is a bug.`);
-
 }
 
+function assertIsElement(
+    element: ReturnType<Path["getElement"]>,
+    message: string
+    ): asserts element is NonNullable<ReturnType<Path["getElement"]>> {
+        assertNotNull(element, message);
+    }
