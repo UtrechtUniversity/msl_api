@@ -1,23 +1,39 @@
 .map-region {
-  stroke: var(--color-primary-500);
-  stroke-width: 2;
-  stroke-opacity: 1;
-  fill: var(--color-primary-500);
-  fill-opacity: 0.2;
+  @apply 
+  stroke-color-primary-500 
+  stroke-2 
+  opacity-100 
+  fill-primary-500 
+  fill-opacity-20;
 }
 
 .map-region-highlight {
-  stroke: var(--color-secondary-800);
-  stroke-width: 4;
-  stroke-opacity: 1;
-  fill: var(--color-secondary-200);
-  fill-opacity: 0.8;
+  @apply 
+  stroke-color-secondary-800 
+  stroke-4 
+  opacity-100 
+  fill-secondary-200 
+  fill-opacity-80;
 }
 
 .bbox-selection {
-  stroke: var(--color-neutral-800);
-  stroke-width: 2;
-  stroke-opacity: 1;
-  fill: var(--color-neutral-100);
-  fill-opacity: 0.3;
+  @apply 
+  stroke--neutral-800 
+  stroke-2 
+  opacity-100 
+  fill-neutral-100 
+  fill-opacity-30;
+}
+
+.popup-content {
+  @apply 
+  text-sm 
+  font-medium 
+  text-neutral-800;
+}
+
+.popup-title {
+  @apply 
+  text-base
+  text-left;
 }
