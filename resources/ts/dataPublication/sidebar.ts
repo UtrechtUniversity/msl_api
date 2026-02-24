@@ -162,7 +162,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const item = document.createElement('div');
         const authors = dataPublication.creators.length > 0 ? dataPublication.creators.map(creator => creator.fullName).join(' | ') : '- no authors found -';
         
-        
         item.className = 'data-publication-item';
         item.setAttribute('data-id', dataPublication.doi)
         item.innerHTML = `
