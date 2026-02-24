@@ -13,13 +13,8 @@ use Exception;
 
 class InclusiveExclusiveGeoJsonFeatureService
 {
-    /**
-     * @param  array<int, DataPublication>  $dataPublications
-     */
-    public function createInclusiveExclusiveGeoJson(
-        array $dataPublications,
-        BoundingBox $bbox
-    ): InclusiveExclusiveGeoJsonFeatureDataPublication {
+    public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJsonFeatureDataPublication
+    {
 
         //  split + sort
         $sortedFeatures = $this->sortFeatures($dataPublications);
