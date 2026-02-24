@@ -1,7 +1,10 @@
 import { Evented } from "leaflet";
 import type * as Leaflet from 'leaflet';
-import type { DataPublication, GeoFeature, GeoJsonDataPublications } from "./datapublication.ts";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "./datapublication.ts";
+import { type ResultSet, type ResultSetMapping } from "./map.js";
 
+
+export type ViewPerTab = { _tab: HTMLLIElement | null, _listView: HTMLElement | null }
 export interface Sidebar {
     // private methods
     _sidebar: HTMLElement | null
@@ -9,7 +12,7 @@ export interface Sidebar {
     _closeButton: HTMLSpanElement | null,
     _tab: HTMLElement | null,
     _container: HTMLElement | null,
-    _listView: HTMLDivElement | null,
+    _tabViews: ResultSetMapping<ViewPerTab>,
     _map: Leaflet.Map | null,
     _tabLink: null | HTMLAnchorElement,
     _initSideBarElement(id: string): void,
@@ -17,11 +20,13 @@ export interface Sidebar {
     _initContent(): void,
     _initPane: () => void,
     _onOpenClick(): void,
-    _onCloseClick(): void
+    _onCloseClick(): void,
     _options: { position: "left" },
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
-    // public methods
+    _activateTab(activatedTab: ResultSet): void,
+    _setDefaultTab(): void,
 
+    // public methods
     open(): this,
     close(): this,
     includes: Evented,
@@ -29,7 +34,8 @@ export interface Sidebar {
     highlight(id: string): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
-    populate(dataPublications: DataPublication[]): void,
+    populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
+    handleActivationOfTab(activatedTab: ResultSet): () => void
     resetList(): void,
 
 }

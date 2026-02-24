@@ -4,19 +4,16 @@ namespace App\Services;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\GeoJson\BoundingBox;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Response\DataPublicationResponse;
+use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class GeoJsonDataPublicationService
 {
     protected $packageSearchRequest;
 
-    /**
-     * Create a new class instance.
-     */
     public function __construct()
     {
         $this->packageSearchRequest = new PackageSearchRequest;
@@ -25,14 +22,29 @@ class GeoJsonDataPublicationService
     /**
      * Make request to CKAN and get back the cleaned-up data publication response
      */
-    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): JsonResource|ResourceCollection
+    public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): DataPublicationResponse
     {
         $responseFromCkan = $this->getResponseFromCKAN($client, $request);
         $limit = $this->packageSearchRequest->rows;
         $offset = $this->packageSearchRequest->start;
         $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
 
-        return (new DataPublicationResponse(response: $responseFromCkan, limit: $limit, offset: $offset, currentUrl: $currentUrl))->getResponse();
+        return new DataPublicationResponse(
+            response: $responseFromCkan,
+            limit: $limit,
+            offset: $offset,
+            currentUrl: $currentUrl
+        );
+    }
+
+    public function getBoundingBoxFromRequest(Request $request)
+    {
+        $boundingBox = json_decode($request->get('boundingBox'));
+        if (! ((bool) $boundingBox & is_array($boundingBox) & count($boundingBox) === 4)) {
+            throw new Exception('Bounding box is not defined correctly. This is a bug.');
+        }
+
+        return new BoundingBox($boundingBox[0], $boundingBox[1], $boundingBox[2], $boundingBox[3]);
     }
 
     /**
@@ -54,7 +66,7 @@ class GeoJsonDataPublicationService
         }
 
         $boundingBox = $request->get('boundingBox') ?? null;
-        $this->getBoundingBox($boundingBox, $this->packageSearchRequest);
+        $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
     }
 
     /**
@@ -80,7 +92,7 @@ class GeoJsonDataPublicationService
         return $response;
     }
 
-    private function getBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
+    private function setBoundingBox(?string $boundingBox, PackageSearchRequest $packageSearchRequest): void
     {
         $paramBoundingBox = json_decode($boundingBox);
         if ($paramBoundingBox) {

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\CkanClient\Client;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeoJsonDataPublicationRequest;
+use App\Http\Resources\InclusiveExclusiveGeoJsonDataPublicationsResource;
 use App\Services\GeoJsonDataPublicationService;
-use Illuminate\Http\Request;
+use App\Services\InclusiveExclusiveGeoJsonFeatureService;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
@@ -25,15 +25,22 @@ class GeoJsonDataPublicationsController extends Controller
         $this->guzzleClient = $client;
     }
 
-    /**
-     * Creates a API response based upon search parameters provided in request
-     * Context is used to provide subdomain specific processing
-     */
-    protected function index(GeoJsonDataPublicationRequest $request, GeoJsonDataPublicationService $geoJsonDataPublicationService): JsonResource|ResourceCollection
-    {
+    protected function index(
+        GeoJsonDataPublicationRequest $request,
+        GeoJsonDataPublicationService $dataPublicationService,
+        InclusiveExclusiveGeoJsonFeatureService $inclusiveExclusiveGeoJsonService,
+    ): JsonResource|ResourceCollection {
 
-        $responseToReturn = $geoJsonDataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
+        // Get bounding box
+        $bbox = $dataPublicationService->getBoundingBoxFromRequest($request);
+        // Get response from ckan
+        $dataPublicationResponse = $dataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
+        // Create instance of an intermediate class,
+        // where filtering and restructure is done.
+        $inclusiveExclusiveGeoJson = $inclusiveExclusiveGeoJsonService->createInclusiveExclusiveGeoJson($dataPublicationResponse->dataPublications, $bbox);
 
-        return $responseToReturn;
+        $resource = new InclusiveExclusiveGeoJsonDataPublicationsResource($inclusiveExclusiveGeoJson);
+
+        return $dataPublicationResponse->getJsonResponse($resource);
     }
 }

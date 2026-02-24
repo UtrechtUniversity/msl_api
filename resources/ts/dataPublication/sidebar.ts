@@ -1,9 +1,18 @@
 /* global L */
 
 import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { DataPublication } from "../types/datapublication.ts";
-import type { Sidebar } from "../types/sidebar.ts";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
+import type { Sidebar, ViewPerTab } from "../types/sidebar.ts";
 import { assertNotNull } from "../helpers.js";
+import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map.js";
+import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
+
+
+
+
+
+
+
 
 
 export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prototype */ {
@@ -19,7 +28,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _tabLink: null,
     _container: null,
     _map: null,
-    _listView: null,
+    _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
     initialize: function () {
         // Sidebar element
         this._initSideBarElement('sidebar')
@@ -80,13 +89,34 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         DomUtil.create('i', 'fa fa-caret-left', closeButton);
         DomEvent.on(closeButton, 'click', this._onCloseClick, this);
 
-        const listView = DomUtil.create('div', 'list-view', mainPane);
-        listView.id = 'data_publications_list';
 
-        this._listView = listView
+        // Tabs container
+        const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
+
+        const tabList = DomUtil.create('ul', 'tab-list', tabs);
+
+
+        //  Populate tabs
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+
+            const activeClass = (tabInfo.active) ? 'active' : ''
+            const createdTab = DomUtil.create('li', 'tab ' + activeClass, tabList);
+            createdTab.textContent = tabInfo.label
+
+
+            const createdListView = DomUtil.create('div', 'list-view', mainPane)
+            createdListView.id = tabName + '_data_publications_list'
+            createdListView.hidden = !tabInfo.active
+
+            this._tabViews[tabName] = { _tab: createdTab, _listView: createdListView }
+
+        }
+
         this._pane = mainPane
         this._closeButton = closeButton;
     },
+
+
     /**
         * Add this sidebar to the specified map.
         *
@@ -169,43 +199,100 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             `;
         return item
     },
-    populate: function (dataPublications: DataPublication[]) {
+    populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
-        assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
-        const list = this._listView
 
-        list.innerHTML = '';
-        dataPublications.forEach(dataPublication => {
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+            assertTabElementsNotNull(this._tabViews[tabName])
+            const { _tab, _listView } = this._tabViews[tabName]
 
-            const item = this._createListItem(dataPublication)
+            _listView.innerHTML = '';
+            dataPublications[tabName].data_publications.forEach(dataPublication => {
 
-            item.addEventListener('mouseenter', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-hover', {
-                    id: dataPublication.doi
+                const item = this._createListItem(dataPublication)
+
+                item.addEventListener('mouseenter', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-hover', {
+                        id: dataPublication.doi,
+                        resultSet: tabName
+                    });
+
                 });
 
+                item.addEventListener('mouseleave', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-leave',
+                        { id: dataPublication.doi, resultSet: tabName })
+
+                });
+
+
+                _listView.appendChild(item);
             });
 
-            item.addEventListener('mouseleave', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi })
+            DomEvent.on(_tab, 'click', this.handleActivationOfTab(tabName));
 
-            });
 
-            list.appendChild(item);
-        });
+
+        }
+
         this.open();
 
     },
-    resetList: function () {
-        assertElementNotNull(this._listView, { name: 'data_publications_list', id: true })
 
-        const parent = this._listView
-        while (parent.firstChild) {
-            parent.firstChild.remove()
+
+    handleActivationOfTab: function (activatedTab: ResultSet) {
+        return () => {
+            this._activateTab(activatedTab)
+
         }
+    },
+
+    _activateTab: function (activatedTab: ResultSet) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        const activatedTabElements = this._tabViews[activatedTab]
+        const deactivatedTabElements = this._tabViews[deactivateTab]
+
+
+        assertNotNull(this._map, `Map is undefined. This is a bug.`)
+        assertTabElementsNotNull(activatedTabElements);
+        assertTabElementsNotNull(deactivatedTabElements);
+
+        activatedTabElements._tab.classList.add('active')
+        activatedTabElements._listView.hidden = false;
+        deactivatedTabElements._tab.classList.remove('active')
+        deactivatedTabElements._listView.hidden = true;
+        this._map.fire('tab-click', { id: activatedTab }
+        )
+
+    },
+    _setDefaultTab: function () {
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+            if (tabInfo.active) {
+                this._activateTab(tabName)
+                break;
+            }
+
+        }
+
+
+
+    },
+    resetList: function () {
+
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+
+            const tabElements = this._tabViews[tabName]
+            assertNotNull(tabElements._listView,
+                'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
+            )
+            const listView = tabElements._listView
+            while (listView.firstChild) {
+                listView.firstChild.remove()
+            }
+        }
+        this._setDefaultTab();
         this.close()
     },
 
@@ -239,4 +326,12 @@ function assertElementNotNull(element: HTMLElement | null, { name, id }: { name:
         return assertNotNull(sideBar, ` The element '${name}' should be set by now.This is a bug.`)
     return assertNotNull(sideBar, ` The element with id '${name}' should be set by now.This is a bug.`)
 
+}
+
+function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is { [K in keyof ViewPerTab]: NonNullable<ViewPerTab[K]> } {
+    for (const [key, value] of Object.entries(viewPerTab)) {
+        if (value == null) {
+            throw new Error(`viewPerTab.${key} is null. This is a bug.`);
+        }
+    }
 }
