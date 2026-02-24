@@ -2,29 +2,19 @@
 <x-layout_main>
 
     <div class="main-content">
-        <div class="sub-content-wide flex place-content-center w-full">
-            <div class="drawer lg:drawer-open h-170">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content bg-secondary-100 flex relative h-170">
-                    {{-- content here --}}
-                    <div
-                        class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
-                        <label for="my-drawer-2"
-                            class="btn drawer-button w-full h-full flex flex-col justify-center z-40">
-                            <p style="writing-mode: sideways-lr;">
-                                click here to see filters
-                            </p>
-                        </label>
-                    </div>
-                    <div class="w-full bg-primary-100">
-                        {{-- list view --}}
-                        <div class="list-view">
-                            @include('public.components.dataPublication-map-view')
-                        </div>
-                    </div>
+        
+        <div class="sub-content-wide flex place-content-center w-full h-full">
+            
+            @include('public.components.no_mobile_view', [
+                'breakpoint' => 'md',
+            ])
 
+            <div class="hidden md:block m-4 w-full h-full">
+                <div class="relative w-full h-[60vh] min-h-[420px] max-h-[85vh] lg:h-[800px] xl:h-[900px]">
+                    @include('public.components.dataPublication-map-view')
                 </div>
             </div>
+
         </div>
     </div>
 </x-layout_main>

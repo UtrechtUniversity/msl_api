@@ -5,13 +5,13 @@
         'resources/css/leafletMapStyles/in-map-styles.css'])
 </head>
 
-<body>
+<div class="w-full h-full">
     <div id="sidebar" class="sidebar collapsed">
 
     </div>
 
-    <div id="map" class="z-0 h-170"></div>
+    <div id="map" class="z-0 h-full w-full"></div>
 
     @vite(['resources/ts/dataPublication/map.ts'])
 
-</body>
+</div>
