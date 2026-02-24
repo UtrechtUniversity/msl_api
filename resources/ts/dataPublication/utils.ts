@@ -7,8 +7,8 @@ export function getResultSetMappingObj<T>(factory: () => T): ResultSetMapping<T>
 
 export const TAB_CONFIG =
     {
-        [EXCLUSIVE]: { label: 'Exclusive results', active: true },
-        [INCLUSIVE]: { label: 'Inclusive results', active: false }
+        [EXCLUSIVE]: { label: 'Overlapping with filter', active: true },
+        [INCLUSIVE]: { label: 'Inside filter', active: false }
     } as const
 
 export type Entries<T> = Array<
