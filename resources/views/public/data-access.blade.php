@@ -5,7 +5,7 @@
             'categoryName' => 'Data Publications',
             'routes' => [
                 'List' => route('data-access'),
-                'Locations' => route('data-access-map'),
+                'Map' => route('data-access-map'),
             ],
             'routeActive' => route('data-access'),
         ])
