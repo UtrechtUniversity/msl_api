@@ -2,51 +2,56 @@
 .data-publication-item.highlight .data-publication-title,
 .data-publication-item.highlight .data-publication-authors,
 .data-publication-item.highlight .data-publication-date {
-  @apply whitespace-normal overflow-visible text-clip;
+  @apply
+  whitespace-normal
+  overflow-visible
+  text-clip;
 }
 
 .data-publication-item {
-    background: var(--color-primary-100);
-    padding-block: calc(var(--spacing) * 2);
+  @apply
+  bg-primary-100
+  py-2;
 }
 
 .data-publication-title {
-    font-size: var(--text-base); /* 1rem (16px) */ 
-    line-height: var(--text-base--line-height); /* calc(1.5 / 1) */
-    font-weight: 600;
-    color: var(--color-primary-900);
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;   
+  @apply
+  text-base
+  font-semibold
+  text-primary-900
+  text-left
+  w-full
+  overflow-hidden
+  text-ellipsis
+  whitespace-nowrap;
 }
 
 .data-publication-authors {
-    font-size: var(--text-sm); /* 0.875rem (14px) */ 
-    line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
-    color: var(--color-primary-900);
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  @apply
+  text-sm
+  text-primary-900
+  text-left
+  w-full
+  overflow-hidden
+  text-ellipsis
+  whitespace-nowrap;
 }
 
 .data-publication-date {
-    font-size: var(--text-sm); /* 0.875rem (14px) */ 
-    line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
-    color:var(--color-primary-900);
-    font-style: italic;
-    text-align: left;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  @apply
+  text-sm
+  text-primary-900
+  italic
+  text-left
+  w-full
+  overflow-hidden
+  text-ellipsis
+  whitespace-nowrap;
 }
 
 .data-publication-item.highlight{   
-    background-color: var(--color-secondary-200);
-    cursor: pointer;
-    color: var(--color-secondary-900);
+  @apply
+  bg-secondary-200
+  cursor-pointer
+  text-secondary-900;
 }
