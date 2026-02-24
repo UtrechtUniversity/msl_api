@@ -234,7 +234,7 @@ class MapApp {
                 // > 'Looking at the defaults ( https://github.com/Leaflet/Leaflet/blob/v1.0.0/dist/leaflet.css#L87_),
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
-                bboxPane.style.zIndex = '650';
+                bboxPane.style.zIndex = '350';
                 rectangle = L.rectangle(bounds, { 
                     className: "bbox-selection", interactive: false, pane: 'bboxPane'  })
                     .addTo(this.map);
