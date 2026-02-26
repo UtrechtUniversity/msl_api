@@ -33,6 +33,7 @@ class FacilityResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
         return [
             'title' => $this->name,
             'portalLink' => route('lab-detail', ['id' => $this->msl_identifier]),
