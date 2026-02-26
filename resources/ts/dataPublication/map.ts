@@ -57,11 +57,14 @@ class DataPublicationMap {
 
     }
 
+    // Define the bounding box [Southwest, Northeast]
+
 
     private drawMap() {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
+            attribution: '&copy; OpenStreetMap',
+            noWrap: true,
         }).addTo(this.map);
         this.resetMapView()
         return;
