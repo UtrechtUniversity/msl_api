@@ -1,5 +1,5 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, PathOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
@@ -9,7 +9,7 @@ import { assertNotNull } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
-
+import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 
 
 interface SidebarHoverEvent extends LeafletEvent {
@@ -34,7 +34,9 @@ class DataPublicationMap {
     groupedMarkers: GroupedLayerMapping = getResultSetMappingObj<GroupedLayer>(() => { return {} })
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
-    highlightedOptions: PathOptions = HIGHLIGHT_MARKER_OPTIONS
+    highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
+    popupOptions = DEFAULT_POPUP_OPTIONS
+
 
     constructor() {
         this.map = L.map('map')
@@ -73,8 +75,12 @@ class DataPublicationMap {
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
-            geoFeature.setStyle(
-                (highlightOrReset === 'highlight') ? this.highlightedOptions : this.defaultOptions);
+            const element = geoFeature.getElement();
+            assertIsPathElement(
+                element,
+                doi
+            );
+            element.classList.toggle(this.highlightedOptions.className, (highlightOrReset === 'highlight'));
 
         })
     }
@@ -130,7 +136,14 @@ class DataPublicationMap {
     // We want to be able to pass information of the publication inside each feature of the geo collection
     private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, resultSet: ResultSet) =>
         (_: Feature, layer: Layer) => {
-            const popupContent = `<h5>${geoFeatureWithInfo.title}</h5>`;
+            const popupContent = `
+                <div class="${this.popupOptions.classNameContent}">
+                    <h6 class="${this.popupOptions.classNameTitle}">${geoFeatureWithInfo.title}</h6>
+                    <a href="${geoFeatureWithInfo.portalLink}" target="_blank">
+                    <button class="btn btn-primary">View Publication</button>
+                    </a>
+                </div>
+                `;
             layer.bindPopup(popupContent);
 
             // Store reference
@@ -279,7 +292,7 @@ class DataPublicationMap {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(bounds, { color: "red", interactive: false, pane: 'bboxPane' }).addTo(this.map);
+                rectangle = L.rectangle(bounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' }).addTo(this.map);
             };
 
 
@@ -346,3 +359,10 @@ function assertIsPath(layer: Layer): asserts layer is Path {
 
 }
 
+
+function assertIsPathElement(
+    element: Element | undefined,
+    doi: string
+): asserts element is Element {
+    if (!element) throw new Error(`Geofeature element for datapublication '${doi}' should not have been undefined. This is a bug.`);
+}
