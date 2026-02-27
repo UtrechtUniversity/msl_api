@@ -27,6 +27,10 @@ type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
+
+const southWest = L.latLng(-90, -180)
+const northEast = L.latLng(90, 180)
+const bounds = L.latLngBounds(southWest, northEast);
 class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
@@ -39,7 +43,9 @@ class DataPublicationMap {
 
 
     constructor() {
-        this.map = L.map('map')
+        this.map = L.map('map', {
+            maxBounds: bounds, maxBoundsViscosity: 1.0
+        })
         this.markers = getResultSetMappingObj(() => L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
