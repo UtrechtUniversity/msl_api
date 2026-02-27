@@ -1,0 +1,40 @@
+@reference "../app.css";
+
+.map-region {
+  @apply 
+  stroke-primary-500 
+  stroke-2 
+  opacity-100 
+  fill-primary-500;
+}
+
+.map-region-highlight {
+  @apply 
+  stroke-secondary-800 
+  stroke-4 
+  opacity-100 
+  fill-secondary-200;
+}
+
+.bbox-selection {
+  @apply 
+  stroke-red-700 
+  stroke-2 
+  fill-red-100;
+}
+
+.popup-content {
+  @apply 
+  text-sm 
+  font-medium 
+  text-neutral-800;
+}
+
+.popup-title {
+  @apply
+  text-sm
+  font-semibold
+  text-primary-900
+  text-left
+  w-full;
+}

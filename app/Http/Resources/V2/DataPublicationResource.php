@@ -8,7 +8,6 @@ use App\Http\Resources\V2\Elements\CreatorResource;
 use App\Http\Resources\V2\Elements\DataPublicationsDescriptionResource;
 use App\Http\Resources\V2\Elements\DateResource;
 use App\Http\Resources\V2\Elements\FileCollection;
-use App\Http\Resources\V2\Elements\FileResource;
 use App\Http\Resources\V2\Elements\FundingReferenceResource;
 use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
 use App\Http\Resources\V2\Elements\RightResource;
@@ -189,7 +188,7 @@ class DataPublicationResource extends JsonResource
             'title' => $this->title,
             'doi' => $this->msl_doi,
             'source' => $this->msl_source,
-            'portalLink' => config('app.url').'/data-publication/'.$this->name,
+            'portalLink' => route('data-publication-detail', ['id' => $this->name]),
             'name' => $this->name,
             'creators' => CreatorResource::collection($this->msl_creators),
             'descriptions' => new DataPublicationsDescriptionResource($this->getDescriptions()),

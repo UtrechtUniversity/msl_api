@@ -9,8 +9,9 @@ export type GeoJsonDataPublications = {
 }
 export type GeoFeature = {
     'feature': Feature,
-    'title': string
-    'data_publication_doi': string;
+    'title': string,
+    'data_publication_doi': string,
+    'portalLink': string
 }
 
 export type DataPublication = {
