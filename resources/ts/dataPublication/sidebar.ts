@@ -192,10 +192,15 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const item = document.createElement('div');
         item.className = 'data-publication-item';
         item.setAttribute('data-id', dataPublication.doi)
+
+        const authors = dataPublication.creators.length > 0 ? dataPublication.creators.map(creator => creator.fullName).join(' | ') : '- no authors found -';
+
         item.innerHTML = `
-                <div class="data-publication-title"> Title: ${dataPublication.title}</div>
-                <div class="data-publication-authors"> Authors: ${dataPublication.creators[0].fullName} etc.</div>
-                <div class="data-publication-date"> Date: ${dataPublication.dates[0]?.date ?? ''} </div>
+                <a href="${dataPublication.portalLink}" target="_blank">
+                <p class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</p>
+                <p class="data-publication-authors"> ${authors}</p>
+                <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>
+            </a>
             `;
         return item
     },
