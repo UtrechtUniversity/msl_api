@@ -65,6 +65,7 @@ class DataPublicationMap {
             maxZoom: 19,
             attribution: '&copy; OpenStreetMap',
             noWrap: true,
+            minZoom: 2
         }).addTo(this.map);
         this.resetMapView()
         return;
