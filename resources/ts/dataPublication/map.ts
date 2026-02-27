@@ -8,7 +8,7 @@ import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER
 import { assertNotNull } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
-import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
+import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 
 
@@ -28,8 +28,8 @@ type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 
-const southWest = L.latLng(-90, -180)
-const northEast = L.latLng(90, 180)
+const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
+const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
 const bounds = L.latLngBounds(southWest, northEast);
 class DataPublicationMap {
     map: Map;
