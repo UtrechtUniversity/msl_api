@@ -63,7 +63,6 @@ class DataPublicationMap {
 
     }
 
-    // Define the bounding box [Southwest, Northeast]
 
 
     private drawMap() {
