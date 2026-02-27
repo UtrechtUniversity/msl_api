@@ -156,29 +156,29 @@ class DataPublicationMap {
             layer.bindPopup(popupContent);
 
             // Store reference
-            const geoFeaturesForDoi: Layer[] | undefined =
-                this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi]
+            const doi = geoFeatureWithInfo.data_publication_doi
+            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[resultSet][doi]
 
-            this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi] =
+            this.groupedMarkers[resultSet][doi] =
                 geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
 
 
             // When hover over a geo feature
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
-                    doi: geoFeatureWithInfo.data_publication_doi,
-                    resultSet: resultSet,
+                    doi,
+                    resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
+                this.sideBar.highlight(doi)
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
-                    doi: geoFeatureWithInfo.data_publication_doi,
-                    resultSet: resultSet,
+                    doi,
+                    resultSet,
                     highlightOrReset: 'reset'
                 })
-                this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
+                this.sideBar.removeHighlight(doi)
             });
         };
 
