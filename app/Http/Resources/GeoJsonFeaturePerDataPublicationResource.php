@@ -26,6 +26,7 @@ class GeoJsonFeaturePerDataPublicationResource extends JsonResource
             'feature' => $this->feature,
             'title' => $this->dataPublication->title,
             'data_publication_doi' => $this->dataPublication->msl_doi,
+            'portalLink' => route('data-publication-detail', ['id' => $this->dataPublication->name]),
         ];
     }
 }

@@ -51,7 +51,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                         'data_publications.9',
                         fn (AssertableJson $json) => $json->where('title', 'Paleomagnetic evidence for the existence of the geomagnetic field 3.5 Ga ago (Dataset)')
                             ->where('name', '86dcccf60dc76092265994e2c6b50470')
-                            ->where('portalLink', config('app.url').'/data-publication/86dcccf60dc76092265994e2c6b50470')
+                            ->where('portalLink', route('data-publication-detail', ['id' => '86dcccf60dc76092265994e2c6b50470']))
                             ->where('doi', '10.7288/v4/magic/20541')
                             ->where('source', 'https://earthref.org/MagIC/20541')
                             ->where('publisher', 'Magnetics Information Consortium (MagIC)')
