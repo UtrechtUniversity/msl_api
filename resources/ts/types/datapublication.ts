@@ -11,6 +11,7 @@ export type GeoFeature = {
     'feature': Feature,
     'title': string
     'data_publication_doi': string;
+    'portalLink': string,
 }
 
 export type DataPublication = {
