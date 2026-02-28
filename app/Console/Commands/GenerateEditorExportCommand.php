@@ -7,7 +7,7 @@ use App\Models\Vocabulary;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
-class GenerateEditorExport extends Command
+class GenerateEditorExportCommand extends Command
 {
     /**
      * The name and signature of the console command.

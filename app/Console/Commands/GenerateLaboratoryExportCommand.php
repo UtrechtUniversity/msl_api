@@ -6,7 +6,7 @@ use App\Exports\Vocabs\LaboratoriesJsonExport;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
-class GenerateLaboratoryExport extends Command
+class GenerateLaboratoryExportCommand extends Command
 {
     /**
      * The name and signature of the console command.
