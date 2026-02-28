@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class ContactUsConfirmation extends Mailable
+class ContactLabSubmissionMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -28,7 +28,7 @@ class ContactUsConfirmation extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact MSL',
+            subject: 'MSL lab contact',
         );
     }
 
@@ -38,7 +38,7 @@ class ContactUsConfirmation extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.contactUsConfirmation',
+            markdown: 'mail.contactLabSubmission',
         );
     }
 

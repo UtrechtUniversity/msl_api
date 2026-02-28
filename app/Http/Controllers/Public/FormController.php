@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Public;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
-use App\Mail\ContactLabConfirmation;
-use App\Mail\ContactLabSubmission;
-use App\Mail\ContactUsConfirmation;
-use App\Mail\ContactUsSubmission;
-use App\Mail\LabIntakeConfirmation;
-use App\Mail\LabIntakeSubmission;
+use App\Mail\ContactLabConfirmationMail;
+use App\Mail\ContactLabSubmissionMail;
+use App\Mail\ContactUsConfirmationMail;
+use App\Mail\ContactUsSubmissionMail;
+use App\Mail\LabIntakeConfirmationMail;
+use App\Mail\LabIntakeSubmissionMail;
 use App\Models\Laboratory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -47,7 +47,7 @@ class FormController extends Controller
 
         // send e-mail to notification address containing form submission
         try {
-            Mail::to(config('mail.notifications.address'))->send(new ContactUsSubmission($formFields));
+            Mail::to(config('mail.notifications.address'))->send(new ContactUsSubmissionMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
@@ -62,7 +62,7 @@ class FormController extends Controller
 
         // send e-mail to form submitter to confirm form submission
         try {
-            Mail::to($formFields['email'])->send(new ContactUsConfirmation($formFields));
+            Mail::to($formFields['email'])->send(new ContactUsConfirmationMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
@@ -123,7 +123,7 @@ class FormController extends Controller
 
         // send e-mail to notification address containing form submission
         try {
-            Mail::to(config('mail.notifications.address'))->send(new LabIntakeSubmission($formFields));
+            Mail::to(config('mail.notifications.address'))->send(new LabIntakeSubmissionMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
@@ -138,7 +138,7 @@ class FormController extends Controller
 
         // send e-mail to form submitter to confirm form submission
         try {
-            Mail::to($formFields['contact-email'])->send(new LabIntakeConfirmation($formFields));
+            Mail::to($formFields['contact-email'])->send(new LabIntakeConfirmationMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
@@ -151,7 +151,7 @@ class FormController extends Controller
             );
         }
 
-        // redirects to contribute-laboratory with the additonal elements located in components/notifications
+        // redirects to contribute-laboratory with the additional elements located in components/notifications
         return redirect('/contribute-laboratory#nextStep')->with('modals', [
             'type' => 'success',
             'message' => 'contact request sent. You will receive a confirmation email soon, please check your spam as well']
@@ -227,7 +227,7 @@ class FormController extends Controller
         // send e-mail to lab contact person address containing form submission
         try {
             $pluckedEmails = $labDatabase->laboratoryContactPersons->pluck('email');
-            Mail::to($pluckedEmails->all())->send(new ContactLabSubmission($formFields));
+            Mail::to($pluckedEmails->all())->send(new ContactLabSubmissionMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
@@ -242,7 +242,7 @@ class FormController extends Controller
 
         // send e-mail to form submitter to confirm form submission
         try {
-            Mail::to($formFields['email'])->send(new ContactLabConfirmation($formFields));
+            Mail::to($formFields['email'])->send(new ContactLabConfirmationMail($formFields));
         } catch (\Exception $e) {
             Log::error($e);
 
