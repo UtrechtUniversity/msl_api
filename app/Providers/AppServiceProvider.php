@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Listeners\LogMailSend;
+use App\Listeners\LogMailSendListener;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::anonymousComponentPath(resource_path('views/public/components/'));
         Event::listen(
             MessageSent::class,
-            LogMailSend::class
+            LogMailSendListener::class
         );
     }
 }
