@@ -283,7 +283,7 @@ class DataPublicationMap {
             }
 
             drawing = true;
-            startPoint = latlng;
+            startPoint = restrictLatLng(latlng);
 
             this.map.dragging.disable();
 
