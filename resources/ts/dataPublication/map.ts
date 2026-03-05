@@ -30,7 +30,7 @@ type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
-const maxBounds = L.latLngBounds(southWest, northEast);
+
 class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
@@ -40,11 +40,12 @@ class DataPublicationMap {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     popupOptions = DEFAULT_POPUP_OPTIONS
+    maxBounds = L.latLngBounds(southWest, northEast);
 
 
     constructor() {
         this.map = L.map('map', {
-            maxBounds: maxBounds, maxBoundsViscosity: 1
+            maxBounds: this.maxBounds, maxBoundsViscosity: 1
         })
 
         this.markers = getResultSetMappingObj(() => L.markerClusterGroup({
@@ -288,11 +289,7 @@ class DataPublicationMap {
             this.map.dragging.disable();
 
 
-            function restrictLatLng(latlng: LatLng) {
-                const lat = Math.max(maxBounds.getSouth(), Math.min(maxBounds.getNorth(), latlng.lat));
-                const lng = Math.max(maxBounds.getWest(), Math.min(maxBounds.getEast(), latlng.lng));
-                return L.latLng(lat, lng);
-            }
+
             const onMouseMove = (ev: LeafletMouseEvent) => {
                 assertNotUndefined(startPoint, 'StartPoint should have a value. This is a bug.')
                 // We need the line below, because, as the user draws,
@@ -349,7 +346,11 @@ class DataPublicationMap {
 
         });
     }
-
+    private restrictLatLng(latlng: LatLng) {
+        const lat = Math.max(maxBounds.getSouth(), Math.min(maxBounds.getNorth(), latlng.lat));
+        const lng = Math.max(maxBounds.getWest(), Math.min(maxBounds.getEast(), latlng.lng));
+        return L.latLng(lat, lng);
+    }
     private removeLayers() {
         Object.values(this.markers).forEach((layer) => {
             layer.clearLayers()
