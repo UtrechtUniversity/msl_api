@@ -225,9 +225,9 @@ class DataPublicationMap {
     }
     private async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
-        let startPoint: LatLng | undefined;
+        let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
-        let lastDrawingBounds: LatLngBounds | undefined = undefined
+        let drawingBounds: LatLngBounds | undefined = undefined
 
         const container = this.map.getContainer();
 
@@ -284,7 +284,7 @@ class DataPublicationMap {
             }
 
             drawing = true;
-            startPoint = restrictLatLng(latlng);
+            startPoint = this.restrictLatLng(latlng);
 
             this.map.dragging.disable();
 
@@ -297,7 +297,7 @@ class DataPublicationMap {
                 // from which we want to keep only the last one.
                 if (rectangle) this.map.removeLayer(rectangle);
 
-                lastDrawingBounds = L.latLngBounds(startPoint, restrictLatLng(ev.latlng));
+                drawingBounds = L.latLngBounds(startPoint, this.restrictLatLng(ev.latlng));
                 // Create a new pane and add the bounding box layer there, 
                 // so that the bbox is drawn always on top of geo layers but below 
                 // pop ups
@@ -307,7 +307,7 @@ class DataPublicationMap {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(lastDrawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
+                rectangle = L.rectangle(drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
                 rectangle.addTo(this.map);
             };
 
@@ -323,16 +323,16 @@ class DataPublicationMap {
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);
                 this.map.dragging.enable();
-                assertNotUndefined(lastDrawingBounds, 'Bounds should not have been undefined. This is a bug.')
-                const sw = lastDrawingBounds.getSouthWest();
-                const ne = lastDrawingBounds.getNorthEast();
+                assertNotUndefined(drawingBounds, 'Bounds should not have been undefined. This is a bug.')
+                const sw = drawingBounds.getSouthWest();
+                const ne = drawingBounds.getNorthEast();
                 const boundingBox = JSON.stringify([
                     sw.lng,
                     sw.lat,
                     ne.lng,
                     ne.lat
                 ]);
-                this.map.fitBounds(lastDrawingBounds);
+                this.map.fitBounds(drawingBounds);
 
                 this.addFeaturesAndSidebarInMap(boundingBox)
 
@@ -347,8 +347,8 @@ class DataPublicationMap {
         });
     }
     private restrictLatLng(latlng: LatLng) {
-        const lat = Math.max(maxBounds.getSouth(), Math.min(maxBounds.getNorth(), latlng.lat));
-        const lng = Math.max(maxBounds.getWest(), Math.min(maxBounds.getEast(), latlng.lng));
+        const lat = Math.max(this.maxBounds.getSouth(), Math.min(this.maxBounds.getNorth(), latlng.lat));
+        const lng = Math.max(this.maxBounds.getWest(), Math.min(this.maxBounds.getEast(), latlng.lng));
         return L.latLng(lat, lng);
     }
     private removeLayers() {
