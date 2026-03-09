@@ -328,6 +328,7 @@ class DataPublicationMap {
 
 
         });
+        
     }
 
     private removeLayers() {
@@ -335,6 +336,7 @@ class DataPublicationMap {
             layer.clearLayers()
             this.map.removeLayer(layer)
         })
+        this.resetGroupedMarkers()
     }
     private async addFeaturesAndSidebarInMap(boundingBox: string) {
 
@@ -342,6 +344,9 @@ class DataPublicationMap {
         await this.drawResponse(geo);
         this.sideBar.populate(geo);
 
+    }
+    private resetGroupedMarkers() {
+        this.groupedMarkers = getResultSetMappingObj<GroupedLayer>(() => ({}));
     }
 }
 
