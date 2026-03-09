@@ -77,6 +77,7 @@ class DataPublicationMap {
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
             const element = geoFeature.getElement();
+            if (!element) return;
             assertIsPathElement(
                 element,
                 doi
