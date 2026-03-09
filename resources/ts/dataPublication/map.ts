@@ -72,6 +72,7 @@ class DataPublicationMap {
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
 
         const geoFeatures = this.groupedMarkers[resultSet][doi]
+        if (!geoFeatures) return;
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
