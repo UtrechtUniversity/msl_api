@@ -56,7 +56,7 @@ class SurveySeeder extends Seeder
             'microtomo' => 'Microscopy and Tomography',
             // 'paleomag' => 'Magnetism and Paleomagnetism',
             'rockmelt' => 'Rock and Melt Physics',
-            'testbeds' => 'Geo-Energy Test Beds',
+            'fieldscalelabs' => 'Field Scale Laboratories',
         ];
 
         foreach ($allDomains as $key => $value) {
