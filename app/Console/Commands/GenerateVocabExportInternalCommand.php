@@ -7,7 +7,7 @@ use App\Models\Vocabulary;
 use Illuminate\Console\Command;
 use Maatwebsite\Excel\Facades\Excel;
 
-class GenerateVocabExportInternal extends Command
+class GenerateVocabExportInternalCommand extends Command
 {
     /**
      * The name and signature of the console command.

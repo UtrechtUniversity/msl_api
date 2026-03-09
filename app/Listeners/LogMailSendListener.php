@@ -5,7 +5,7 @@ namespace App\Listeners;
 use Illuminate\Mail\Events\MessageSent;
 use Illuminate\Support\Facades\Log;
 
-class LogMailSend
+class LogMailSendListener
 {
     /**
      * Create the event listener.

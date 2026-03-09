@@ -11,7 +11,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
-class GenerateVocabExports extends Command
+class GenerateVocabExportsCommand extends Command
 {
     /**
      * The name and signature of the console command.
