@@ -75,13 +75,13 @@ class DataPublicationMap {
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
+            if (!this.map.hasLayer(geoFeature)) return;
             const element = geoFeature.getElement();
             assertIsPathElement(
                 element,
                 doi
             );
             element.classList.toggle(this.highlightedOptions.className, (highlightOrReset === 'highlight'));
-
         })
     }
 
