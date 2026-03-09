@@ -1,14 +1,14 @@
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebar.js'
 import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotNull } from "../helpers.js";
+import { assertNotUndefined } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
 import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
-import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
+import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 
 
@@ -27,6 +27,10 @@ type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
+
+const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
+const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
+
 class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
@@ -36,10 +40,14 @@ class DataPublicationMap {
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     popupOptions = DEFAULT_POPUP_OPTIONS
+    maxBounds = L.latLngBounds(southWest, northEast);
 
 
     constructor() {
-        this.map = L.map('map')
+        this.map = L.map('map', {
+            maxBounds: this.maxBounds, maxBoundsViscosity: 1
+        })
+
         this.markers = getResultSetMappingObj(() => L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
@@ -58,10 +66,13 @@ class DataPublicationMap {
     }
 
 
+
     private drawMap() {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '&copy; OpenStreetMap'
+            attribution: '&copy; OpenStreetMap',
+            noWrap: true,
+            minZoom: 2
         }).addTo(this.map);
         this.resetMapView()
         return;
@@ -72,7 +83,7 @@ class DataPublicationMap {
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
 
         const geoFeatures = this.groupedMarkers[resultSet][doi]
-        assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
             const element = geoFeature.getElement();
@@ -147,29 +158,29 @@ class DataPublicationMap {
             layer.bindPopup(popupContent);
 
             // Store reference
-            const geoFeaturesForDoi: Layer[] | undefined =
-                this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi]
+            const doi = geoFeatureWithInfo.data_publication_doi
+            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[resultSet][doi]
 
-            this.groupedMarkers[resultSet][geoFeatureWithInfo.data_publication_doi] =
+            this.groupedMarkers[resultSet][doi] =
                 geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
 
 
             // When hover over a geo feature
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
-                    doi: geoFeatureWithInfo.data_publication_doi,
-                    resultSet: resultSet,
+                    doi,
+                    resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(geoFeatureWithInfo.data_publication_doi)
+                this.sideBar.highlight(doi)
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
-                    doi: geoFeatureWithInfo.data_publication_doi,
-                    resultSet: resultSet,
+                    doi,
+                    resultSet,
                     highlightOrReset: 'reset'
                 })
-                this.sideBar.removeHighlight(geoFeatureWithInfo.data_publication_doi)
+                this.sideBar.removeHighlight(doi)
             });
         };
 
@@ -214,8 +225,9 @@ class DataPublicationMap {
     }
     private async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
-        let startPoint: LatLng;
-        let drawing = false;
+        let startPoint: LatLng | undefined = undefined;
+        let drawing: boolean = false;
+        let drawingBounds: LatLngBounds | undefined = undefined
 
         const container = this.map.getContainer();
 
@@ -230,7 +242,6 @@ class DataPublicationMap {
                 e.stopPropagation();
             },
         );
-
         // On pressing a button on the mouse
         this.map.on("mousedown", async (e: LeafletMouseEvent) => {
 
@@ -248,11 +259,10 @@ class DataPublicationMap {
                 if (rectangle) {
                     this.map.removeLayer(rectangle);
                     rectangle = null;
+                    this.removeLayers();
+                    this.resetMapView();
+                    this.sideBar.resetList()
                 }
-
-                this.removeLayers();
-                this.resetMapView();
-                this.sideBar.resetList()
                 return;
             }
 
@@ -263,8 +273,6 @@ class DataPublicationMap {
 
             // If the click is on the left button,
 
-            drawing = true;
-            startPoint = latlng;
 
             // If a rectangle already existed,
             // clear the layers, and start again
@@ -274,15 +282,22 @@ class DataPublicationMap {
                 this.removeLayers()
                 this.sideBar.resetList()
             }
+
+            drawing = true;
+            startPoint = this.restrictLatLng(latlng);
+
             this.map.dragging.disable();
 
+
+
             const onMouseMove = (ev: LeafletMouseEvent) => {
+                assertNotUndefined(startPoint, 'StartPoint should have a value. This is a bug.')
                 // We need the line below, because, as the user draws,
                 // they create a lot of small rectangles
                 // from which we want to keep only the last one.
                 if (rectangle) this.map.removeLayer(rectangle);
 
-                const bounds = L.latLngBounds(startPoint, ev.latlng);
+                drawingBounds = L.latLngBounds(startPoint, this.restrictLatLng(ev.latlng));
                 // Create a new pane and add the bounding box layer there, 
                 // so that the bbox is drawn always on top of geo layers but below 
                 // pop ups
@@ -292,31 +307,32 @@ class DataPublicationMap {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(bounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' }).addTo(this.map);
+                rectangle = L.rectangle(drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
+                rectangle.addTo(this.map);
             };
 
 
+
             // On releasing the button of the mouse
-            const onMouseUp = async (ev: LeafletMouseEvent) => {
+            const onMouseUp = async (e: Event) => {
+
                 if (!drawing) return;
                 // We stop drawing
                 drawing = false;
                 // Remove listeners
                 this.map.off("mousemove", onMouseMove);
-                this.map.off("mouseup", onMouseUp);
+                document.removeEventListener("mouseup", onMouseUp);
                 this.map.dragging.enable();
-
-                const bounds = L.latLngBounds(startPoint, ev.latlng);
-
-                const sw = bounds.getSouthWest();
-                const ne = bounds.getNorthEast();
+                assertNotUndefined(drawingBounds, 'Bounds should not have been undefined. This is a bug.')
+                const sw = drawingBounds.getSouthWest();
+                const ne = drawingBounds.getNorthEast();
                 const boundingBox = JSON.stringify([
                     sw.lng,
                     sw.lat,
                     ne.lng,
                     ne.lat
                 ]);
-                this.map.fitBounds(bounds);
+                this.map.fitBounds(drawingBounds);
 
                 this.addFeaturesAndSidebarInMap(boundingBox)
 
@@ -324,12 +340,17 @@ class DataPublicationMap {
 
 
             this.map.on("mousemove", onMouseMove);
-            this.map.on("mouseup", onMouseUp);
-
+            // Use document event rather than leaflet mouse event,
+            // since the later seems to go into a weird state in some cases.
+            document.addEventListener("mouseup", onMouseUp);
 
         });
     }
-
+    private restrictLatLng(latlng: LatLng) {
+        const lat = Math.max(this.maxBounds.getSouth(), Math.min(this.maxBounds.getNorth(), latlng.lat));
+        const lng = Math.max(this.maxBounds.getWest(), Math.min(this.maxBounds.getEast(), latlng.lng));
+        return L.latLng(lat, lng);
+    }
     private removeLayers() {
         Object.values(this.markers).forEach((layer) => {
             layer.clearLayers()
