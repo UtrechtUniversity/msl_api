@@ -56,7 +56,8 @@ class SurveySeeder extends Seeder
             'microtomo' => 'Microscopy and Tomography',
             // 'paleomag' => 'Magnetism and Paleomagnetism',
             'rockmelt' => 'Rock and Melt Physics',
-            'fieldscalelabs' => 'Field Scale Laboratories',
+            'testbeds' => 'Geo-Energy Test Beds', //set to inactive below, but created to keep previous answers
+            'fieldscalelabs' => 'Field Scale Laboratories'
         ];
 
         foreach ($allDomains as $key => $value) {
@@ -70,7 +71,7 @@ class SurveySeeder extends Seeder
             );
         }
 
-        // single domains - no conent
+        // single domains - no content
         Survey::updateOrCreate([
             'name' => 'scenarioSurvey-paleomag',
             'active' => true,
@@ -80,6 +81,13 @@ class SurveySeeder extends Seeder
             'name' => 'scenarioSurvey-geochemistry',
             'active' => true,
         ]);
+
+        // domains with existing answers on production
+        Survey::updateOrCreate(
+            ['name' => 'scenarioSurvey-testbeds'],
+            ['active' => false]
+        );
+
 
     }
 
