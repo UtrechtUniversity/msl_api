@@ -51,17 +51,40 @@ class SurveySeeder extends Seeder
         ]);
 
         $allDomains = [
-            'analogue' => 'Analogue Modelling of Geological Processes',
-            // 'geochemistry' => 'Geochemistry',
-            'microtomo' => 'Microscopy and Tomography',
-            // 'paleomag' => 'Magnetism and Paleomagnetism',
-            'rockmelt' => 'Rock and Melt Physics',
-            'testbeds' => 'Geo-Energy Test Beds',
+            'analogue' => [
+                'active' => true,
+                'empty' => false,
+            ],
+            'geochemistry' => [ //set to active, but empty
+                'active' => true,
+                'empty' => true,
+            ],
+            'microtomo' => [
+                'active' => true,
+                'empty' => false,
+            ],
+            'paleomag' => [ //set to active, but empty
+                'active' => true,
+                'empty' => true,
+            ],
+            'rockmelt' => [
+                'active' => true,
+                'empty' => false,
+            ],
+            'testbeds' => [ //set to inactive, but created to keep previous answers
+                'active' => false,
+                'empty' => false,
+            ],
+            'fieldscalelabs' => [ //testbeds replacement domain
+                'active' => true,
+                'empty' => false,
+            ]
         ];
 
-        foreach ($allDomains as $key => $value) {
+        foreach ($allDomains as $domainName => $surveyDetails) {
             $this->scenarioSurveySeeding(
-                $key,
+                $domainName,
+                $surveyDetails,
                 $textQuestionType,
                 $selectQuestionType,
                 $radioSelectType,
@@ -70,21 +93,11 @@ class SurveySeeder extends Seeder
             );
         }
 
-        // single domains - no conent
-        Survey::updateOrCreate([
-            'name' => 'scenarioSurvey-paleomag',
-            'active' => true,
-        ]);
-
-        Survey::updateOrCreate([
-            'name' => 'scenarioSurvey-geochemistry',
-            'active' => true,
-        ]);
-
     }
 
     private function scenarioSurveySeeding(
         $domainName,
+        $surveyDetails,
         $textQuestionType,
         $selectQuestionType,
         $radioSelectType,
@@ -93,229 +106,233 @@ class SurveySeeder extends Seeder
     ) {
 
         // survey
-        $survey = Survey::updateOrCreate([
-            'name' => 'scenarioSurvey-'.$domainName,
-            'active' => true,
-        ]);
+        $survey = Survey::updateOrCreate(
+            ['name' => 'scenarioSurvey-'.$domainName],
+            ['active' => $surveyDetails['active']],
+        );
 
-        $order = 0;
-        // seed questions
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $selectQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Which describes your role best?',
-                'options' => [
-                    'Modeler',
-                    'Lab Researcher',
-                    'Technician',
-                    'Other',
+        if(!$surveyDetails['empty']) {
+            $order = 0;
+
+            // seed questions
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $selectQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Which describes your role best?',
+                    'options' => [
+                        'Modeler',
+                        'Lab Researcher',
+                        'Technician',
+                        'Other',
+                    ],
+                    'validation' => ['required'],
+                    'sectionName' => 'WhichRoleDescribesYouBest',
+                    'placeholder' => 'Select an option from this list',
+                    'titleBold' => true,
                 ],
-                'validation' => ['required'],
-                'sectionName' => 'WhichRoleDescribesYouBest',
-                'placeholder' => 'Select an option from this list',
-                'titleBold' => true,
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $selectQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'In which sector is your role?',
-                'options' => [
-                    'Industry',
-                    'Academia',
-                    'Government',
-                    'Nonprofit / NGO',
-                    'Consultancy',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $selectQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'In which sector is your role?',
+                    'options' => [
+                        'Industry',
+                        'Academia',
+                        'Government',
+                        'Nonprofit / NGO',
+                        'Consultancy',
+                    ],
+                    'validation' => ['required'],
+                    'sectionName' => 'WhichSectorIsYourRole',
+                    'placeholder' => 'Select an option from this list',
+                    'titleBold' => true,
+    
                 ],
-                'validation' => ['required'],
-                'sectionName' => 'WhichSectorIsYourRole',
-                'placeholder' => 'Select an option from this list',
-                'titleBold' => true,
-
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $displayBladeType->id,
-            'answerable' => false,
-            'question' => [
-                'bladeName' => 'surveys.bladeDisplays.surveyScenario.survey-gallery-'.$domainName,
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $radioSelectType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Do you recognize the challenge portrayed in this scenario in your work?',
-                'titleBold' => true,
-                'sectionName' => 'AgreementChallengeScenario',
-                'validation' => ['required'],
-                'options' => [
-                    'Strongly disagree',
-                    'Disagree',
-                    'Somewhat disagree',
-                    'Somewhat agree',
-                    'Agree',
-                    'Strongly Agree',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $displayBladeType->id,
+                'answerable' => false,
+                'question' => [
+                    'bladeName' => 'surveys.bladeDisplays.surveyScenario.survey-gallery-'.$domainName,
                 ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => "Please list examples of such challenges or explain why you don't recognize any",
-                'titleBold' => true,
-                'sectionName' => 'ChallengesExamples',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'How do you approach a similar challenge in your work?',
-                'titleBold' => true,
-                'sectionName' => 'SimilarChallengeApproach',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Please describe briefly what function the software tool fulfills in the scenario?',
-                'titleBold' => true,
-                'sectionName' => 'FunctionalDescription',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $radioSelectType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Would you see yourself using the tool shown in the scenario?',
-                'titleBold' => true,
-                'sectionName' => 'UsingTool',
-                'validation' => ['required'],
-                'options' => [
-                    'Definitely Not',
-                    'Probably Not',
-                    'Possibly',
-                    'Probably',
-                    'Very Probably',
-                    'Definitely',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $radioSelectType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Do you recognize the challenge portrayed in this scenario in your work?',
+                    'titleBold' => true,
+                    'sectionName' => 'AgreementChallengeScenario',
+                    'validation' => ['required'],
+                    'options' => [
+                        'Strongly disagree',
+                        'Disagree',
+                        'Somewhat disagree',
+                        'Somewhat agree',
+                        'Agree',
+                        'Strongly Agree',
+                    ],
                 ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $radioSelectType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'How often would you use the software tool described in the scenario?',
-                'titleBold' => true,
-                'sectionName' => 'UsingToolHowOften',
-                'validation' => ['required'],
-                'options' => [
-                    'Daily',
-                    'Weekly',
-                    'Bi-Weekly',
-                    'Monthly',
-                    'Quarterly',
-                    'Yearly',
-                    'Never',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $textQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => "Please list examples of such challenges or explain why you don't recognize any",
+                    'titleBold' => true,
+                    'sectionName' => 'ChallengesExamples',
+                    'textBlock' => true,
+                    'placeholder' => 'Please type your answer here',
+                    'validation' => ['required', 'min:20'],
                 ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $checkBoxType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'When would you see this data tool being beneficial in your process?',
-                'titleBold' => true,
-                'sectionName' => 'PhaseSelect',
-                'validation' => ['required'],
-                'options' => [
-                    'Problem Identification',
-                    'Literature Review',
-                    'Setting Research Questions, Objectives, and Hypothesis',
-                    'Choosing the Design Study',
-                    'Deciding on the Sample Design',
-                    'Collecting Data',
-                    'Processing and Analyzing Data',
-                    'Writing the Report',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $textQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'How do you approach a similar challenge in your work?',
+                    'titleBold' => true,
+                    'sectionName' => 'SimilarChallengeApproach',
+                    'textBlock' => true,
+                    'placeholder' => 'Please type your answer here',
+                    'validation' => ['required', 'min:20'],
                 ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'How would you change the software tool as shown in the scenario to make it useful for your work?',
-                'titleBold' => true,
-                'sectionName' => 'ChangeScenario',
-                'textBlock' => true,
-                'placeholder' => 'Please type your answer here',
-                'validation' => ['required', 'min:20'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $checkBoxType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Do you want to be contacted to stay up to date with further contributions? By providing your email address, you consent to us storing and using it to contact you regarding updates and other activites for MSL. Your data will be stored securely and not shared with third parties. You can withdraw your consent at any time by reaching out to us via our contact form.',
-                'titleBold' => true,
-                'sectionName' => 'gdprAgreement',
-                'validation' => ['required_with:EmailContact', 'nullable'],
-                'options' => [
-                    'I agree',
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $textQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Please describe briefly what function the software tool fulfills in the scenario?',
+                    'titleBold' => true,
+                    'sectionName' => 'FunctionalDescription',
+                    'textBlock' => true,
+                    'placeholder' => 'Please type your answer here',
+                    'validation' => ['required', 'min:20'],
                 ],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
-        $order++;
-        Question::updateOrCreate([
-            'question_type_id' => $textQuestionType->id,
-            'answerable' => true,
-            'question' => [
-                'title' => 'Leave your email in the box below:',
-                'titleBold' => false,
-                'sectionName' => 'EmailContact',
-                'textBlock' => false,
-                'placeholder' => 'your@email.domain',
-                'validation' => ['required_with:gdprAgreement', 'email:rfc,filter', 'nullable'],
-            ],
-        ])->surveys()->attach($survey->id, ['order' => $order]);
-
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $radioSelectType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Would you see yourself using the tool shown in the scenario?',
+                    'titleBold' => true,
+                    'sectionName' => 'UsingTool',
+                    'validation' => ['required'],
+                    'options' => [
+                        'Definitely Not',
+                        'Probably Not',
+                        'Possibly',
+                        'Probably',
+                        'Very Probably',
+                        'Definitely',
+                    ],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $radioSelectType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'How often would you use the software tool described in the scenario?',
+                    'titleBold' => true,
+                    'sectionName' => 'UsingToolHowOften',
+                    'validation' => ['required'],
+                    'options' => [
+                        'Daily',
+                        'Weekly',
+                        'Bi-Weekly',
+                        'Monthly',
+                        'Quarterly',
+                        'Yearly',
+                        'Never',
+                    ],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $checkBoxType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'When would you see this data tool being beneficial in your process?',
+                    'titleBold' => true,
+                    'sectionName' => 'PhaseSelect',
+                    'validation' => ['required'],
+                    'options' => [
+                        'Problem Identification',
+                        'Literature Review',
+                        'Setting Research Questions, Objectives, and Hypothesis',
+                        'Choosing the Design Study',
+                        'Deciding on the Sample Design',
+                        'Collecting Data',
+                        'Processing and Analyzing Data',
+                        'Writing the Report',
+                    ],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $textQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'How would you change the software tool as shown in the scenario to make it useful for your work?',
+                    'titleBold' => true,
+                    'sectionName' => 'ChangeScenario',
+                    'textBlock' => true,
+                    'placeholder' => 'Please type your answer here',
+                    'validation' => ['required', 'min:20'],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $checkBoxType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Do you want to be contacted to stay up to date with further contributions? By providing your email address, you consent to us storing and using it to contact you regarding updates and other activites for MSL. Your data will be stored securely and not shared with third parties. You can withdraw your consent at any time by reaching out to us via our contact form.',
+                    'titleBold' => true,
+                    'sectionName' => 'gdprAgreement',
+                    'validation' => ['required_with:EmailContact', 'nullable'],
+                    'options' => [
+                        'I agree',
+                    ],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+            $order++;
+            Question::updateOrCreate([
+                'question_type_id' => $textQuestionType->id,
+                'answerable' => true,
+                'question' => [
+                    'title' => 'Leave your email in the box below:',
+                    'titleBold' => false,
+                    'sectionName' => 'EmailContact',
+                    'textBlock' => false,
+                    'placeholder' => 'your@email.domain',
+                    'validation' => ['required_with:gdprAgreement', 'email:rfc,filter', 'nullable'],
+                ],
+            ])->surveys()->attach($survey->id, ['order' => $order]);
+    
+        }
+        
     }
 }
