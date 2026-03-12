@@ -8,6 +8,7 @@ use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Importer;
 use App\Models\SourceDataset;
+use Exception;
 use Illuminate\Support\Facades\Validator;
 
 class MappingService
@@ -46,9 +47,17 @@ class MappingService
         $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_other', 'msl_description_other_annotated', 'description other');
 
         // run additional mappers based on options
-        if (isset($config['sourceDatasetProcessor']['options']['additionalMappers'])) {
-            foreach ($config['sourceDatasetProcessor']['options']['additionalMappers'] as $additionalMapper) {
-                $mapper = new $additionalMapper;
+        $additionalMappers = $config['sourceDatasetProcessor']['options']['additionalMappers'];
+        if (isset($additionalMappers)) {
+            foreach ($additionalMappers as $additionalMapper) {
+
+                $mapperType = $additionalMapper['type'];
+                $mapperOptions = $additionalMapper['options'];
+
+                if (! is_array($mapperOptions)) {
+                    throw new Exception(`Options property for "$mapperType" should have been an array. This is a bug.`);
+                }
+                $mapper = (count($mapperOptions) === 0) ? new $mapperType : new $mapperType($mapperOptions);
                 $dataPublication = $mapper->map($dataPublication, $sourceDataset);
             }
         }

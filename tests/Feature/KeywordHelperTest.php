@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Enums\DataPublicationSubDomain;
 use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\Tag;
@@ -476,11 +477,11 @@ class KeywordHelperTest extends TestCase
         $this->assertContains('https://epos-msl.uu.nl/voc/microscopy/1.3/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack', $dataPublication->msl_tags[0]->msl_tag_msl_uris);
 
         // check that the correct subdomains have been added to the data publication
-        $this->assertTrue($dataPublication->hasSubDomain('rock and melt physics'));
-        $this->assertTrue($dataPublication->hasSubDomain('microscopy and tomography'));
+        $this->assertTrue($dataPublication->hasSubDomain(DataPublicationSubDomain::ROCK_PHYSICS));
+        $this->assertTrue($dataPublication->hasSubDomain(DataPublicationSubDomain::MICROSCOPY));
 
-        $this->assertTrue($dataPublication->hasInterpretedSubDomain('rock and melt physics'));
-        $this->assertTrue($dataPublication->hasInterpretedSubDomain('microscopy and tomography'));
+        $this->assertTrue($dataPublication->hasInterpretedSubDomain(DataPublicationSubDomain::ROCK_PHYSICS));
+        $this->assertTrue($dataPublication->hasInterpretedSubDomain(DataPublicationSubDomain::MICROSCOPY));
 
         // check the original keywords
         $this->assertEquals('intragranular cracking', $dataPublication->msl_original_keywords[0]->msl_original_keyword_label);

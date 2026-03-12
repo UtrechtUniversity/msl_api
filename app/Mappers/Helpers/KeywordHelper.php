@@ -2,6 +2,7 @@
 
 namespace App\Mappers\Helpers;
 
+use App\Enums\VocabularySubDomain;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\EnrichedKeyword;
 use App\Models\Ckan\OriginalKeyword;
@@ -11,15 +12,6 @@ use Exception;
 
 class KeywordHelper
 {
-    private $vocabularySubDomainMapping = [
-        'rockphysics' => 'rock and melt physics',
-        'analogue' => 'analogue modelling of geologic processes',
-        'paleomagnetism' => 'paleomagnetism',
-        'geochemistry' => 'geochemistry',
-        'microscopy' => 'microscopy and tomography',
-        'testbeds' => 'geo-energy test beds',
-    ];
-
     /**
      * Add original and enriched keywords to the data publication by finding matching keywords using the vocabularies
      */
@@ -56,9 +48,12 @@ class KeywordHelper
 
                     // add subdomain information if the keyword is not excluded
                     if (! $relatedKeyword->exclude_domain_mapping) {
-                        if (isset($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name])) {
-                            $dataPublication->addSubDomain($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name], false);
-                            $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$this->vocabularySubDomainMapping[$keyword->vocabulary->name]];
+                        $vocabSubDomain = VocabularySubDomain::tryFrom($relatedKeyword->vocabulary->name);
+                        if (isset($vocabSubDomain)) {
+                            $dataPublicationVocab = $vocabSubDomain->dataPublicationSubDomain();
+
+                            $dataPublication->addSubDomain($dataPublicationVocab, false);
+                            $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$dataPublicationVocab->value];
                         }
                     }
 
@@ -118,9 +113,12 @@ class KeywordHelper
 
                         // add subdomain information if the keyword is not excluded
                         if (! $relatedKeyword->exclude_domain_mapping) {
-                            if (isset($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name])) {
-                                $dataPublication->addSubDomain($this->vocabularySubDomainMapping[$relatedKeyword->vocabulary->name], false);
-                                $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$this->vocabularySubDomainMapping[$keyword->vocabulary->name]];
+                            $vocabSubDomain = VocabularySubDomain::tryFrom($relatedKeyword->vocabulary->name);
+                            if (isset($vocabSubDomain)) {
+                                $dataPublicationVocab = $vocabSubDomain->dataPublicationSubDomain();
+
+                                $dataPublication->addSubDomain($dataPublicationVocab, false);
+                                $enrichedKeyword->msl_enriched_keyword_associated_subdomains = [$dataPublicationVocab->value];
                             }
                         }
 

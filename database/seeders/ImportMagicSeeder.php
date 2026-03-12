@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Enums\DataPublicationSubDomain;
+use App\Mappers\Additional\AddSubdomainMapper;
 use App\Mappers\Additional\MagicFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
@@ -51,7 +53,14 @@ class ImportMagicSeeder extends Seeder
                         'type' => 'datacite',
                         'options' => [
                             'additionalMappers' => [
-                                MagicFileMapper::class,
+                                [
+                                    'type' => MagicFileMapper::class,
+                                    'options' => [],
+                                ],
+                                [
+                                    'type' => AddSubdomainMapper::class,
+                                    'options' => ['subdomains' => [DataPublicationSubDomain::PALEO->value]],
+                                ],
                             ],
                         ],
                     ],
