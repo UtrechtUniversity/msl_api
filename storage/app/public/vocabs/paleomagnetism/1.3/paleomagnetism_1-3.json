@@ -1680,7 +1680,68 @@
                         "value": "hysteresis parameters",
                         "label": "hysteresis parameters",
                         "synonyms": [],
-                        "children": []
+                        "children": [
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-bias_exchange_field",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "bias exchange field",
+                                "label": "bias exchange field",
+                                "synonyms": [],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-coercive_force",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "coercive force",
+                                "label": "coercive force",
+                                "synonyms": [],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-high-field_susceptibility",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "high-field susceptibility",
+                                "label": "high-field susceptibility",
+                                "synonyms": [
+                                    {
+                                        "value": "high field susceptibility"
+                                    }
+                                ],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-hysteresis_shape_parameter",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "hysteresis shape parameter",
+                                "label": "hysteresis shape parameter",
+                                "synonyms": [],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-remanent_coercive_force",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "remanent coercive force",
+                                "label": "remanent coercive force",
+                                "synonyms": [],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_magnetisation",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "saturation magnetisation",
+                                "label": "saturation magnetisation",
+                                "synonyms": [],
+                                "children": []
+                            },
+                            {
+                                "uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/measured_property-magnetic_hysteresis_curves-hysteresis_parameters-saturation_remanence",
+                                "vocab_uri": "https:\/\/epos-msl.uu.nl\/voc\/paleomagnetism\/1.3\/",
+                                "value": "saturation remanence",
+                                "label": "saturation remanence",
+                                "synonyms": [],
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             },

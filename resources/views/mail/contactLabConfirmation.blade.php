@@ -1,10 +1,9 @@
 <x-mail::message>
-# Dear {{ $formData['firstName'] }}!
+    # Dear {{ $formData['firstName'] }}!
 
-Thank you for using the lab contact page at MSL. Your message will be forwarded to the laboratory contact person.
+    Thank you for using the lab contact page at MSL. Your message will be forwarded to the laboratory contact person.
 
+    With kind regards,
 
-With kind regards,
-
-{{ config('app.name') }}
+    {{ config('app.name') }}
 </x-mail::message>

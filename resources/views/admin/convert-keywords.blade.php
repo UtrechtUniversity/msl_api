@@ -1,5 +1,5 @@
-@extends('layouts.app')
-{{-- 
+@extends('admin.layouts.app')
+{{--
     Input Variables needed:
     $displayNames (Array) -> contains all domain names as string to be listed in the dropdown menu
 
@@ -30,12 +30,12 @@
                             <div class="row mb-3">
                                 <div>
                                     <select class="form-select" aria-label="domain-selection" name="domain-selection">
-                                        @foreach($displayNames as $displayName)
-                                            <option value="{{ $displayName }}">{{ $displayName }}</option>    								
+                                        @foreach ($displayNames as $displayName)
+                                            <option value="{{ $displayName }}">{{ $displayName }}</option>
                                         @endforeach
-                                    </select>    					
+                                    </select>
                                 </div>
-                            </div>                       
+                            </div>
 
                             <div>
                                 <input class="form-control" type="file" id="formFile" name="uploaded-file">

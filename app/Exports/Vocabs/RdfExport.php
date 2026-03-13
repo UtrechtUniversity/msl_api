@@ -24,15 +24,15 @@ class RdfExport
 
             $children = $keyword->getChildren();
             foreach ($children as $child) {
-                $graph->add($keyword->uri, 'skos:narrower', $child->uri);
+                $graph->addResource($keyword->uri, 'skos:narrower', $child->uri);
             }
 
             $parent = $keyword->parent;
             if ($parent) {
-                $graph->add($keyword->uri, 'skos:broader', $parent->uri);
+                $graph->addResource($keyword->uri, 'skos:broader', $parent->uri);
             }
 
-            $graph->add($keyword->uri, 'rdfs:label', $keyword->label);
+            $graph->add($keyword->uri, 'skos:prefLabel', $keyword->label);
         }
 
         return $graph->serialise($type);

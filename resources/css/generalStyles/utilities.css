@@ -1,0 +1,111 @@
+/* 
+general utility
+*/
+
+/* interaction: change together */
+@utility hover-interactive-group {
+    @apply
+    group-hover:text-secondary-900 
+    group-hover:bg-secondary-200 
+    group-hover:rounded 
+    group-hover:cursor-pointer
+  }
+
+  @utility hover-interactive {
+    @apply
+    hover:text-secondary-900
+    hover:bg-secondary-200 
+    hover:rounded 
+    hover:cursor-pointer
+  }
+  @utility hover-neutral{
+    @apply 
+    hover:bg-neutral-900 
+    hover:text-neutral-100
+    cursor-pointer
+  }
+
+    /*###############
+  forms
+  ###############*/
+  @utility placeholder-text{
+    @apply
+    placeholder:text-gray-500
+    placeholder:italic
+  }
+  @utility form-field-text{
+    @apply 
+    shadow-xs text-sm 
+    h-10 p-3 rounded-lg 
+    ring-1
+    ring-primary-500
+    block w-full
+    bg-white
+    outline-hidden
+    focus:ring-2
+    focus:ring-secondary-400
+    active:ring-2
+    active:ring-secondary-400
+    hover:ring-2
+    hover:ring-secondary-400
+  }
+  @utility error-highlight{
+    @apply text-error-700 pl-4
+  }
+  @utility error-highlight-input{
+    @apply 
+    bg-error-300 
+    text-error-800
+    focus:ring-2
+    focus:ring-secondary-400
+  }
+/* 
+change here the underlying styling to daisy ui native elements 
+*/
+@utility btn{
+    @apply btn-primary 
+    hover-interactive;
+  }
+
+  @utility tab-active{
+    @apply bg-primary-300;
+  }
+
+
+/* nav */
+@utility menu-title{
+  @apply text-secondary-900
+}
+
+    /* dividers */
+    @utility content-divide-y{
+      @apply divide-y-1 divide-primary-700/25
+    }
+    @utility content-divide-y-secondary{
+      @apply divide-y-1 divide-secondary-700
+    }
+    @utility content-divide-y-light{
+      @apply divide-y-1 divide-primary-300
+    }
+    @utility content-divide-y-light-secondary{
+      @apply divide-y-1 divide-secondary-300
+    }    
+    @utility content-divide-y-light-neutral{
+      @apply divide-y-1 divide-neutral-300
+    }    
+
+    @utility content-divide-x{
+      @apply divide-x-1 divide-primary-700
+    }
+    @utility content-divide-x-secondary{
+      @apply divide-x-1 divide-secondary-700
+    }
+    @utility content-divide-x-light{
+      @apply divide-x-1 divide-primary-300
+    }
+    @utility content-divide-x-light-secondary{
+      @apply divide-x-1 divide-secondary-300
+    }    
+    @utility content-divide-x-light-neutral{
+      @apply divide-x-1 divide-neutral-300
+    }    

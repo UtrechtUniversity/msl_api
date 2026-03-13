@@ -1,43 +1,40 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-// import react from '@vitejs/plugin-react';
-// import vue from '@vitejs/plugin-vue';
+import tailwindcss from "@tailwindcss/vite";
 
-import tailwindcss from 'tailwindcss'
 import commonjs from 'vite-plugin-commonjs';
-
-export default defineConfig({    
+export default defineConfig({
     plugins: [
+        tailwindcss(),
         laravel([
             'resources/css/app.css',
             'resources/css/treejs.css',
             'resources/css/treejs-custom.css',
-            'resources/css/leaflet.css',
-            'resources/js/app.js',
-            'resources/js/leaflet-src.js',            
-            'resources/js/tooltip.js',
-            'resources/js/jstree.js',
-            'resources/js/filters-menu.js',
-            'resources/js/filters-menu-labs.js',
-            'resources/js/keyword-form.js'
+            'resources/ts/app.ts',
+            'resources/ts/tooltip.ts',
+            'resources/ts/jstree.ts',
+            'resources/ts/filters-menu.ts',
+            'resources/ts/filters-menu-labs.ts',
+            'resources/ts/keyword-form.ts',
+            'resources/ts/tracker.ts',
+            'resources/ts/dataPublication/map.ts',
+            'resources/ts/dataPublication/sidebar.ts',
+            'resources/css/leafletMapStyles/leaflet-sidebar.css',
+            'resources/css/leafletMapStyles/datapublications-list.css',
+            'resources/css/leafletMapStyles/in-map-styles.css'
         ]),
         commonjs()
     ],
     build: {
         modulePreload: false
     },
-    server: { 
+    server: {
         hmr: {
             host: 'localhost'
         },
         watch: {
             usePolling: true,
-          },
-          
+        },
+
     },
-    css: {
-        postcss: {
-          plugins: [tailwindcss()],
-        }
-    }    
 });

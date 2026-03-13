@@ -8,6 +8,7 @@ use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;
 use App\Response\V1\ErrorResponse;
 use App\Response\V1\MainResponse;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Validator;
@@ -17,12 +18,12 @@ class ApiController extends BaseController
     /**
      * @var \GuzzleHttp\Client Guzzle http client instance
      */
-    private $guzzleClient;
+    private \GuzzleHttp\Client $guzzleClient;
 
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
      */
-    private $queryMappings = [
+    private array $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
@@ -33,7 +34,7 @@ class ApiController extends BaseController
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
-    private $queryMappingsAll = [
+    private array $queryMappingsAll = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
@@ -45,7 +46,7 @@ class ApiController extends BaseController
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
-    private $queryMappingsFacilities = [
+    private array $queryMappingsFacilities = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
@@ -65,8 +66,6 @@ class ApiController extends BaseController
 
     /**
      * Rock physics API endpoint
-     *
-     * @return response
      */
     public function rockPhysics(Request $request)
     {
@@ -75,8 +74,6 @@ class ApiController extends BaseController
 
     /**
      * Analogue modelling API endpoint
-     *
-     * @return response
      */
     public function analogue(Request $request)
     {
@@ -85,8 +82,6 @@ class ApiController extends BaseController
 
     /**
      * Paleomagnetism API endpoint
-     *
-     * @return response
      */
     public function paleo(Request $request)
     {
@@ -95,8 +90,6 @@ class ApiController extends BaseController
 
     /**
      * Microscopy and tomography API endpoint
-     *
-     * @return response
      */
     public function microscopy(Request $request)
     {
@@ -105,8 +98,6 @@ class ApiController extends BaseController
 
     /**
      * Geochemistry API endpoint
-     *
-     * @return response
      */
     public function geochemistry(Request $request)
     {
@@ -115,8 +106,6 @@ class ApiController extends BaseController
 
     /**
      * Geo Energy Test Beds API endpoint
-     *
-     * @return response
      */
     public function geoenergy(Request $request)
     {
@@ -125,8 +114,6 @@ class ApiController extends BaseController
 
     /**
      * All subdomains API endpoint
-     *
-     * @return response
      */
     public function all(Request $request)
     {
@@ -135,8 +122,6 @@ class ApiController extends BaseController
 
     /**
      * facilities API endpoint
-     *
-     * @return response
      */
     public function facilities(Request $request)
     {
@@ -147,10 +132,9 @@ class ApiController extends BaseController
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      *
-     * @param  string  $context
-     * @return response
+     * @return JsonResponse
      */
-    private function dataPublicationResponse(Request $request, $context)
+    private function dataPublicationResponse(Request $request, string $context)
     {
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
@@ -222,7 +206,7 @@ class ApiController extends BaseController
             return $errorResponse->getAsLaravelResponse();
         }
 
-        // Check if CKAN was succesful
+        // Check if CKAN was successful
         if (! $response->isSuccess()) {
             $errorResponse = new ErrorResponse;
             $errorResponse->message = 'Error received from CKAN api.';
@@ -240,7 +224,6 @@ class ApiController extends BaseController
 
     public function term(Request $request)
     {
-
         $validator = Validator::make(request()->all(), [
             'uri' => 'required',
         ]);
@@ -262,9 +245,7 @@ class ApiController extends BaseController
             return response()->json([
                 'success' => false,
                 'message' => 'term not found',
-                'result' => [
-
-                ],
+                'result' => [],
             ], 200);
         }
     }
@@ -272,10 +253,9 @@ class ApiController extends BaseController
     /**
      * Converts search parameters to solr query using field mappings
      *
-     * @param  array  $querymappings
      * @return string
      */
-    private function buildQuery(Request $request, $queryMappings)
+    private function buildQuery(Request $request, array $queryMappings)
     {
         $queryParts = [];
 
@@ -301,8 +281,7 @@ class ApiController extends BaseController
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
      *
-     * @param  string  $context
-     * @return response
+     * @return JsonResponse
      */
     private function facilitiesResponse(Request $request)
     {
@@ -310,13 +289,13 @@ class ApiController extends BaseController
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
 
-        // Create packagesearch request
+        // Create package search request
         $packageSearchRequest = new PackageSearchRequest;
 
         // Filter on facilities
         $packageSearchRequest->addFilterQuery('type', 'lab');
 
-        // Filter for failities with coordinates
+        // Filter for facilities with coordinates
         $packageSearchRequest->addFilterQuery('msl_latitude', '*', false);
         $packageSearchRequest->addFilterQuery('msl_longitude', '*', false);
 
@@ -346,7 +325,6 @@ class ApiController extends BaseController
                     $evaluatedQuery[2],
                     $evaluatedQuery[3]
                 );
-
             } else {
                 $errorResponse = new ErrorResponse;
                 $errorResponse->message = 'Malformed request to CKAN. "boundingBox" not in correct format or values exceeding bounds. Use "." for decimals. E.g: 12.4 instead of 12,4';
@@ -381,11 +359,9 @@ class ApiController extends BaseController
     }
 
     /**
-     * Convert boundingbox parameter to array
-     *
-     * @return array
+     * Convert bounding box parameter to array
      */
-    private function boundingboxStringToArray(string $boundingBoxQuery)
+    private function boundingboxStringToArray(string $boundingBoxQuery): array
     {
         $boundingBoxElements = explode(',', $boundingBoxQuery);
         $checkedArr = [];
@@ -417,15 +393,12 @@ class ApiController extends BaseController
         } else {
             return [];
         }
-
     }
 
     /**
      * Check if bounding box component is within limits
-     *
-     * @return bool
      */
-    private function checkBounds(float $toCheck, float $limitUp, float $limitLow)
+    private function checkBounds(float $toCheck, float $limitUp, float $limitLow): bool
     {
         if (gettype($toCheck) != 'double') {
             return false;
