@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+## [1.8.1] - 2025-12-03
+- Add missing link to contribute as repository page
+
 ## [1.8.0] - 2025-11-13
 - Change application to work with new data publication schema that is more aligned with Datacite
 - Rewrite all importers to work with new schema
