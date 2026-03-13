@@ -37,7 +37,6 @@ class EposRdfExport
         $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'ui:hierarchyRootProperty', 'skos:topConceptOf');
         $graph->addResource($this->convertVocabUriToEposUri($this->vocabulary), 'ldp:isMemberOfRelation', 'skos:inScheme');
 
-
         $keywords = $this->vocabulary->keywords;
 
         foreach ($keywords as $keyword) {
@@ -53,7 +52,7 @@ class EposRdfExport
                 $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:broader', $this->convertTermUriToEposUri($parent->uri, $this->vocabulary));
             }
 
-            if($keyword->level == 1) {
+            if ($keyword->level == 1) {
                 $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:topConceptOf', $this->convertVocabUriToEposUri($this->vocabulary));
             }
 
@@ -67,10 +66,9 @@ class EposRdfExport
 
     private function convertTermUriToEposUri(string $uri, Vocabulary $vocabulary): string
     {
-        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/' . $vocabulary->version . '/([^"]+)~';
+        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/'.$vocabulary->version.'/([^"]+)~';
 
-        if(preg_match_all($regex, $uri, $matches))
-        {
+        if (preg_match_all($regex, $uri, $matches)) {
             return 'https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/'.$matches[1][0].'/'.$matches[2][0];
         }
 
@@ -79,9 +77,9 @@ class EposRdfExport
 
     private function convertVocabUriToEposUri(Vocabulary $vocabulary): string
     {
-        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/' . $vocabulary->version . '/~';
+        $regex = '~https://epos-msl.uu.nl/voc/([^/]+)/'.$vocabulary->version.'/~';
 
-        if(preg_match_all($regex, $vocabulary->uri, $matches)) {
+        if (preg_match_all($regex, $vocabulary->uri, $matches)) {
             return 'https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/'.$matches[1][0];
         }
 

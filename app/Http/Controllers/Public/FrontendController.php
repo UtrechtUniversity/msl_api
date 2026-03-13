@@ -650,12 +650,13 @@ class FrontendController extends Controller
     {
         $dataPublication = $service->getById($id);
 
-        if($dataPublication) {
+        if ($dataPublication) {
             $url = base64_decode($encodedUrl, true);
-            if($dataPublication->hasFileWithUrl($url)) {
-                if(Config::boolean('matomo.enabled')) {
+            if ($dataPublication->hasFileWithUrl($url)) {
+                if (Config::boolean('matomo.enabled')) {
                     ProcessMatomoDownloadTrackingJob::dispatch($request->getClientIp(), $url);
                 }
+
                 return Redirect::to($url);
             }
         }

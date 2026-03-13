@@ -5,7 +5,6 @@ namespace App\Jobs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use MatomoTracker;
@@ -26,7 +25,7 @@ class ProcessMatomoPageTrackingJob implements ShouldQueue
 
     public function handle(): void
     {
-        $matomo = new MatomoTracker((int)config('matomo.site_id'), config('matomo.host'));
+        $matomo = new MatomoTracker((int) config('matomo.site_id'), config('matomo.host'));
         $matomo->setTokenAuth(config('matomo.token'));
         $matomo->setIp($this->ip);
         $matomo->doTrackPageView($this->uri);

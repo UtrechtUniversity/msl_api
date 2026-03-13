@@ -55,7 +55,7 @@ class SurveySeeder extends Seeder
                 'active' => true,
                 'empty' => false,
             ],
-            'geochemistry' => [ //set to active, but empty
+            'geochemistry' => [ // set to active, but empty
                 'active' => true,
                 'empty' => true,
             ],
@@ -63,7 +63,7 @@ class SurveySeeder extends Seeder
                 'active' => true,
                 'empty' => false,
             ],
-            'paleomag' => [ //set to active, but empty
+            'paleomag' => [ // set to active, but empty
                 'active' => true,
                 'empty' => true,
             ],
@@ -71,14 +71,14 @@ class SurveySeeder extends Seeder
                 'active' => true,
                 'empty' => false,
             ],
-            'testbeds' => [ //set to inactive, but created to keep previous answers
+            'testbeds' => [ // set to inactive, but created to keep previous answers
                 'active' => false,
                 'empty' => false,
             ],
-            'fieldscalelabs' => [ //testbeds replacement domain
+            'fieldscalelabs' => [ // testbeds replacement domain
                 'active' => true,
                 'empty' => false,
-            ]
+            ],
         ];
 
         foreach ($allDomains as $domainName => $surveyDetails) {
@@ -111,7 +111,7 @@ class SurveySeeder extends Seeder
             ['active' => $surveyDetails['active']],
         );
 
-        if(!$surveyDetails['empty']) {
+        if (! $surveyDetails['empty']) {
             $order = 0;
 
             // seed questions
@@ -133,7 +133,7 @@ class SurveySeeder extends Seeder
                     'titleBold' => true,
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $selectQuestionType->id,
@@ -151,10 +151,10 @@ class SurveySeeder extends Seeder
                     'sectionName' => 'WhichSectorIsYourRole',
                     'placeholder' => 'Select an option from this list',
                     'titleBold' => true,
-    
+
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $displayBladeType->id,
@@ -163,7 +163,7 @@ class SurveySeeder extends Seeder
                     'bladeName' => 'surveys.bladeDisplays.surveyScenario.survey-gallery-'.$domainName,
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $radioSelectType->id,
@@ -183,7 +183,7 @@ class SurveySeeder extends Seeder
                     ],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $textQuestionType->id,
@@ -197,7 +197,7 @@ class SurveySeeder extends Seeder
                     'validation' => ['required', 'min:20'],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $textQuestionType->id,
@@ -211,7 +211,7 @@ class SurveySeeder extends Seeder
                     'validation' => ['required', 'min:20'],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $textQuestionType->id,
@@ -225,7 +225,7 @@ class SurveySeeder extends Seeder
                     'validation' => ['required', 'min:20'],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $radioSelectType->id,
@@ -245,7 +245,7 @@ class SurveySeeder extends Seeder
                     ],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $radioSelectType->id,
@@ -266,7 +266,7 @@ class SurveySeeder extends Seeder
                     ],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $checkBoxType->id,
@@ -288,7 +288,7 @@ class SurveySeeder extends Seeder
                     ],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $textQuestionType->id,
@@ -302,7 +302,7 @@ class SurveySeeder extends Seeder
                     'validation' => ['required', 'min:20'],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $checkBoxType->id,
@@ -317,7 +317,7 @@ class SurveySeeder extends Seeder
                     ],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
             $order++;
             Question::updateOrCreate([
                 'question_type_id' => $textQuestionType->id,
@@ -331,8 +331,8 @@ class SurveySeeder extends Seeder
                     'validation' => ['required_with:gdprAgreement', 'email:rfc,filter', 'nullable'],
                 ],
             ])->surveys()->attach($survey->id, ['order' => $order]);
-    
+
         }
-        
+
     }
 }

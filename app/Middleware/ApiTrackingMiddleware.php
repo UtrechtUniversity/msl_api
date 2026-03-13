@@ -11,7 +11,7 @@ class ApiTrackingMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if(Config::boolean('matomo.enabled')) {
+        if (Config::boolean('matomo.enabled')) {
             ProcessMatomoPageTrackingJob::dispatch($request->getClientIp(), $request->getRequestUri());
         }
 

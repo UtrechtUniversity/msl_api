@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\V2\Elements;
 
-use App\Http\Resources\V2\DataPublicationResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class FileCollection extends ResourceCollection

@@ -8,7 +8,6 @@ use App\Models\Ckan\DataPublication;
 
 class DataPublicationService
 {
-
     public function getById(string $id): ?DataPublication
     {
         $client = new Client;

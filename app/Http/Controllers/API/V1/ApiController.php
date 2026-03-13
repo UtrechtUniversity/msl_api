@@ -132,8 +132,6 @@ class ApiController extends BaseController
      * Creates a API response based upon search parameters provided in request
      * Context is used to provide subdomain specific processing
      *
-     * @param Request $request
-     * @param string $context
      * @return JsonResponse
      */
     private function dataPublicationResponse(Request $request, string $context)
@@ -255,8 +253,6 @@ class ApiController extends BaseController
     /**
      * Converts search parameters to solr query using field mappings
      *
-     * @param Request $request
-     * @param array $queryMappings
      * @return string
      */
     private function buildQuery(Request $request, array $queryMappings)
@@ -285,7 +281,6 @@ class ApiController extends BaseController
      * Context is used to provide facility specific processing
      * only facilities with location data are returned
      *
-     * @param Request $request
      * @return JsonResponse
      */
     private function facilitiesResponse(Request $request)
@@ -365,9 +360,6 @@ class ApiController extends BaseController
 
     /**
      * Convert bounding box parameter to array
-     *
-     * @param string $boundingBoxQuery
-     * @return array
      */
     private function boundingboxStringToArray(string $boundingBoxQuery): array
     {
@@ -405,11 +397,6 @@ class ApiController extends BaseController
 
     /**
      * Check if bounding box component is within limits
-     *
-     * @param float $toCheck
-     * @param float $limitUp
-     * @param float $limitLow
-     * @return bool
      */
     private function checkBounds(float $toCheck, float $limitUp, float $limitLow): bool
     {
