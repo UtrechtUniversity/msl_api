@@ -11,17 +11,17 @@
                         @if ($identifiers->count() > 0)
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Source identifier</th>
-                                    <th>Importer</th>
-                                    <th>response code</th>
-                                    <th>created_at</th>
-                                </tr>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Source identifier</th>
+                                        <th>Importer</th>
+                                        <th>response code</th>
+                                        <th>created_at</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($identifiers as $identifier)
-                                    <tr
+                                    @foreach ($identifiers as $identifier)
+                                        <tr
                                             @switch($identifier->response_code)
                                                 @case(null)
                                                     class="table-primary"
@@ -35,19 +35,19 @@
                                                 class="table-danger"
                                             @break
                                             @endswitch>
-                                        <td>{{ $identifier->id }}</td>
-                                        <td>{{ $identifier->identifier }}</td>
-                                        <td>{{ $identifier->import->importer->name }}</td>
-                                        <td>
-                                            @if ($identifier->response_code == '')
-                                                in queue
-                                            @else
-                                                {{ $identifier->response_code }}
-                                            @endif
-                                        </td>
-                                        <td>{{ $identifier->created_at }}</td>
-                                    </tr>
-                                @endforeach
+                                            <td>{{ $identifier->id }}</td>
+                                            <td>{{ $identifier->identifier }}</td>
+                                            <td>{{ $identifier->import->importer->name }}</td>
+                                            <td>
+                                                @if ($identifier->response_code == '')
+                                                    in queue
+                                                @else
+                                                    {{ $identifier->response_code }}
+                                                @endif
+                                            </td>
+                                            <td>{{ $identifier->created_at }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

@@ -23,7 +23,7 @@
             'The button redirects her to another page. She selects the types of sensors and instruments she is interested in and provides a time frame in which the data has been collected.',
             'She then downloads all relevant datasets as indicated in the tool.',
             'She uses software on her computer to analyze the data.',
-            'Based on her analysis she finishes a major step in her research and stays motivated to share her data back on MSL.'
+            'Based on her analysis she finishes a major step in her research and stays motivated to share her data back on MSL.',
         ],
         'titleBold' => true,
     ])

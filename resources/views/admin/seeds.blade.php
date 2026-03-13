@@ -11,22 +11,22 @@
                         @if ($creates->count() > 0)
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>created_at</th>
-                                    <th>type</th>
-                                    <th>response code</th>
-                                </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>created_at</th>
+                                        <th>type</th>
+                                        <th>response code</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($creates as $create)
-                                    <tr>
-                                        <td>{{ $create->id }}</td>
-                                        <td>{{ $create->created_at }}</td>
-                                        <td>{{ $create->processed_type }}</td>
-                                        <td>{{ $create->response_code }}</td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($creates as $create)
+                                        <tr>
+                                            <td>{{ $create->id }}</td>
+                                            <td>{{ $create->created_at }}</td>
+                                            <td>{{ $create->processed_type }}</td>
+                                            <td>{{ $create->response_code }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         @else

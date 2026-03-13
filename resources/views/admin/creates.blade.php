@@ -11,18 +11,18 @@
                         @if ($createActions->count() > 0)
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Importer</th>
-                                    <th>status</th>
-                                    <th>type</th>
-                                    <th>created_at</th>
-                                    <th></th>
-                                </tr>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Importer</th>
+                                        <th>status</th>
+                                        <th>type</th>
+                                        <th>created_at</th>
+                                        <th></th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($createActions as $createAction)
-                                    <tr
+                                    @foreach ($createActions as $createAction)
+                                        <tr
                                             @switch($createAction->response_code)
                                                 @case(null)
                                                     class="table-primary"
@@ -40,22 +40,22 @@
                                                 class="table-warning"
                                             @break
                                             @endswitch>
-                                        <td>{{ $createAction->id }}</td>
-                                        <td>{{ $createAction->source_dataset->source_dataset_identifier->import->importer->name }}
-                                        </td>
-                                        <td>
-                                            @if ($createAction->response_code == '')
-                                                in queue
-                                            @else
-                                                {{ $createAction->response_code }}
-                                            @endif
-                                        </td>
-                                        <td>{{ $createAction->processed_type }}</td>
-                                        <td>{{ $createAction->created_at }}</td>
-                                        <td><a href="{{ route('create-action', ['id' => $createAction->id]) }}">view
-                                                details</a></td>
-                                    </tr>
-                                @endforeach
+                                            <td>{{ $createAction->id }}</td>
+                                            <td>{{ $createAction->source_dataset->source_dataset_identifier->import->importer->name }}
+                                            </td>
+                                            <td>
+                                                @if ($createAction->response_code == '')
+                                                    in queue
+                                                @else
+                                                    {{ $createAction->response_code }}
+                                                @endif
+                                            </td>
+                                            <td>{{ $createAction->processed_type }}</td>
+                                            <td>{{ $createAction->created_at }}</td>
+                                            <td><a href="{{ route('create-action', ['id' => $createAction->id]) }}">view
+                                                    details</a></td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

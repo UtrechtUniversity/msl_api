@@ -11,20 +11,20 @@
                         @if ($deletes->count() > 0)
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>ckan_id</th>
-                                    <th>created_at</th>
-                                </tr>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>ckan_id</th>
+                                        <th>created_at</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($deletes as $delete)
-                                    <tr>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $delete->ckan_id }}</td>
-                                        <td>{{ $delete->created_at }}</td>
-                                    </tr>
-                                @endforeach
+                                    @foreach ($deletes as $delete)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $delete->ckan_id }}</td>
+                                            <td>{{ $delete->created_at }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         @else

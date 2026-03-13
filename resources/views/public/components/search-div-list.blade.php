@@ -3,13 +3,13 @@
     <div class="search-bar-container form-field-text p-0">
 
         <div class="search-bar-container-icon">
-            <x-ri-search-line class="search-icon"/>
+            <x-ri-search-line class="search-icon" />
         </div>
 
         <form method="get" action="{{ request()->fullUrl() }}" class="w-full h-16">
-            <input type="hidden" name="page" value="1"/>
+            <input type="hidden" name="page" value="1" />
             <input class="search-bar" type="text" id="search" placeholder="Search {{ $searchFor }}.."
-                   name="query[]"/>
+                name="query[]" />
             @if (true)
                 @foreach ($queryParams as $param => $values)
                     @if (is_array($values))
@@ -34,13 +34,13 @@
             @if (isset($sortingDropdown) && $sortingDropdown)
                 <div class="basis-1/2">
                     <form
-                            class="w-full flex flex-col min-[700px]:flex-row justify-end items-center place-content-center"
-                            method="get" action="">
+                        class="w-full flex flex-col min-[700px]:flex-row justify-end items-center place-content-center"
+                        method="get" action="">
                         <p class="italic w-30 text-center min-[700px]:text-end  min-[700px]:pr-2">Order by:</p>
                         <div class="min-w-64">
                             <div class="w-full">
                                 <select name="sort" onchange="this.form.submit()"
-                                        class="select form-field-text focus:select-secondary w-full pr-9 bg-white">
+                                    class="select form-field-text focus:select-secondary w-full pr-9 bg-white">
                                     @foreach ([
         'score desc' => 'Relevance',
         'msl_citation asc' => 'Author Ascending',
@@ -48,16 +48,14 @@
         'msl_publication_date desc' => 'Publication date',
     ] as $value => $label)
                                         <option value="{{ $value }}"
-                                        @if ($value == $sort)
-                                            {{ 'selected' }}
-                                                @endif>
+                                            @if ($value == $sort) {{ 'selected' }} @endif>
                                             {{ $label }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
-                        <input type="hidden" name="page" value="1"/>
+                        <input type="hidden" name="page" value="1" />
                     </form>
                 </div>
             @endif
@@ -71,13 +69,13 @@
                     @if (count($activeFiltersFrontend) > 0)
                         <a href="{{ route('data-access') }}" id="remove-all-popup">
                             <div
-                                    class="
+                                class="
                                 flex place-content-center
                                 hover-interactive
                                 p-2
                                 size-fit
                                 ">
-                                <x-ri-delete-bin-2-line class="remove-all-icon"/>
+                                <x-ri-delete-bin-2-line class="remove-all-icon" />
 
                             </div>
 

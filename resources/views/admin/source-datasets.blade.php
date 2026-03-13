@@ -11,17 +11,17 @@
                         @if ($sourceDatasets->count() > 0)
                             <table class="table">
                                 <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Importer</th>
-                                    <th>status</th>
-                                    <th>created_at</th>
-                                    <th></th>
-                                </tr>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Importer</th>
+                                        <th>status</th>
+                                        <th>created_at</th>
+                                        <th></th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($sourceDatasets as $sourceDataset)
-                                    <tr
+                                    @foreach ($sourceDatasets as $sourceDataset)
+                                        <tr
                                             @switch($sourceDataset->status)
                                                 @case(null)
                                                     class="table-primary"
@@ -35,28 +35,28 @@
                                                 class="table-danger"
                                             @break
                                             @endswitch>
-                                        <td>{{ $sourceDataset->id }}</td>
-                                        <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
-                                        <td>
-                                            @switch($sourceDataset->status)
-                                                @case(null)
-                                                    in queue
+                                            <td>{{ $sourceDataset->id }}</td>
+                                            <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
+                                            <td>
+                                                @switch($sourceDataset->status)
+                                                    @case(null)
+                                                        in queue
                                                     @break
 
-                                                @case('succes')
-                                                    succes
+                                                    @case('succes')
+                                                        succes
                                                     @break
 
-                                                @case('error')
-                                                    error
+                                                    @case('error')
+                                                        error
                                                     @break
-                                            @endswitch
-                                        </td>
-                                        <td>{{ $sourceDataset->created_at }}</td>
-                                        <td><a href="{{ route('source-dataset', ['id' => $sourceDataset->id]) }}">view
-                                                details</a></td>
-                                    </tr>
-                                @endforeach
+                                                @endswitch
+                                            </td>
+                                            <td>{{ $sourceDataset->created_at }}</td>
+                                            <td><a href="{{ route('source-dataset', ['id' => $sourceDataset->id]) }}">view
+                                                    details</a></td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
 

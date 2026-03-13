@@ -13,19 +13,19 @@
 
 <body class="flex flex-col min-h-screen text-primary-900">
 
-<x-notifications.modals/>
+    <x-notifications.modals />
 
-<nav>
-    @include('public.partials._navbar')
-</nav>
+    <nav>
+        @include('public.partials._navbar')
+    </nav>
 
-{{-- no general class attached due to landing page --}}
-<main class="">
-    {{ $slot }}
-</main>
+    {{-- no general class attached due to landing page --}}
+    <main class="">
+        {{ $slot }}
+    </main>
 
-@include('public.partials._footer')
-@stack('vite')
+    @include('public.partials._footer')
+    @stack('vite')
 </body>
 
 </html>

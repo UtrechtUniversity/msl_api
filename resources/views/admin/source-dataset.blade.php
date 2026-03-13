@@ -14,36 +14,36 @@
 
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>id:</td>
-                                    <td>{{ $sourceDataset->id }}</td>
-                                </tr>
-                                <tr>
-                                    <td>source dataset identifier:</td>
-                                    <td>{{ $sourceDataset->source_dataset_identifier->identifier }}</td>
-                                </tr>
-                                <tr>
-                                    <td>status:</td>
-                                    <td>
-                                        @switch($sourceDataset->status)
-                                            @case(null)
-                                                in queue
+                                    <tr>
+                                        <td>id:</td>
+                                        <td>{{ $sourceDataset->id }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>source dataset identifier:</td>
+                                        <td>{{ $sourceDataset->source_dataset_identifier->identifier }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>status:</td>
+                                        <td>
+                                            @switch($sourceDataset->status)
+                                                @case(null)
+                                                    in queue
                                                 @break
 
-                                            @case('succes')
-                                                succes
+                                                @case('succes')
+                                                    succes
                                                 @break
 
-                                            @case('error')
-                                                error
+                                                @case('error')
+                                                    error
                                                 @break
-                                        @endswitch
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>importer:</td>
-                                    <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
-                                </tr>
+                                            @endswitch
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>importer:</td>
+                                        <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <p>Source data:</p>
