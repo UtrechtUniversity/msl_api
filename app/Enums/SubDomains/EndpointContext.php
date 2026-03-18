@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace App\Enums\SubDomains;
 
 /**
  * Endpoint context categories relevant

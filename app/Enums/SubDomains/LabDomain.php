@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace App\Enums\SubDomains;
 
 /**
  * Domain categories for filtering laboratories in CKAN.

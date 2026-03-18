@@ -8,7 +8,14 @@
                 {
                     "name": "National Gallery",
                     "nameType": "Organizational",
-                    "affiliation": [],
+                    "affiliation": [
+                        {
+                            "affiliationIdentifier": "https://ror.org/03efmqc40",
+                            "affiliationIdentifierScheme": "ROR",
+                            "name": "Arizona State University",
+                            "schemeUri": "https://ror.org/"
+                        }
+                    ],
                     "nameIdentifiers": [
                         {
                             "schemeUri": "https://ror.org",
@@ -25,7 +32,6 @@
                 }
             ],
             "publicationYear": 2022,
-
             "publisher": {
                 "lang": "en",
                 "name": "National Gallery",

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace App\Enums\SubDomains;
 
 /**
  * Subdomain categories for filtering data-publications in CKAN.

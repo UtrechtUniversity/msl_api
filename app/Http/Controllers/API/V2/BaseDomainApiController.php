@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Enums\EndpointContext;
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

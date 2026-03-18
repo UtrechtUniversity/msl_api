@@ -422,15 +422,10 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Creators</h4>
                     <div class="detail-entry-content">
+
                         @foreach ($dataPublication->msl_creators as $creator)
-                            @include('public.components.list-views.table-list', [
-                                'entries' => [
-                                    $creator->getFullName(),
-                                    implode(' ', preg_split('/(?=[A-Z])/', $creator->msl_creator_name_type)),
-                                    implode(' | ', $creator->getAffilitationNames()),
-                                    implode(' | ', $creator->getNameIdentifiers()),
-                                ],
-                                'withKeys' => false,
+                            @include('public.components.list-views.person-table-list', [
+                                'entry' => $creator->getCreatorInfo(),
                             ])
                         @endforeach
                     </div>
@@ -443,16 +438,8 @@
                     <h4 class="detail-entry-title">Contributors</h4>
                     <div class="detail-entry-content">
                         @foreach ($dataPublication->msl_contributors as $contributor)
-                            @include('public.components.list-views.table-list', [
-                                'entries' => [
-                                    $contributor->getFullName(),
-                                    implode(
-                                        ' ',
-                                        preg_split('/(?=[A-Z])/', $contributor->msl_contributor_name_type)),
-                                    implode(' | ', $contributor->getAffilitationNames()),
-                                    implode(' | ', $contributor->getNameIdentifiers()),
-                                ],
-                                'withKeys' => false,
+                            @include('public.components.list-views.person-table-list', [
+                                'entry' => $contributor->getContributorInfo(),
                             ])
                         @endforeach
                     </div>
