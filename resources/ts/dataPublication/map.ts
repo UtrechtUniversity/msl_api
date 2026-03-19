@@ -356,7 +356,13 @@ class DataPublicationMap {
             layer.clearLayers()
             this.map.removeLayer(layer)
         })
+        this.resetGroupedMarkers()
     }
+
+    private resetGroupedMarkers() {
+        this.groupedMarkers = getResultSetMappingObj<GroupedLayer>(() => ({}));
+    }
+
     private async addFeaturesAndSidebarInMap(boundingBox: string) {
 
         const geo = await this.getJsonFromRequest(boundingBox);
