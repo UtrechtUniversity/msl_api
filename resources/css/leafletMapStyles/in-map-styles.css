@@ -1,5 +1,13 @@
 @reference "../app.css";
 
+.marker-cluster.map-region-highlight div {
+  @apply
+  bg-secondary-200
+  text-secondary-900
+  ring-4
+  ring-secondary-800;
+}
+
 .map-region {
   @apply 
   stroke-primary-500 
