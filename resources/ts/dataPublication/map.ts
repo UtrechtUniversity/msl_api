@@ -27,6 +27,13 @@ type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
+type ElementLayer = Layer & {
+    getElement?: () => Element | undefined
+}
+type MarkerClusterGroupWithVisibleParent = MarkerClusterGroup & {
+    getVisibleParent(layer: Layer): Layer | undefined
+}
+
 class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
