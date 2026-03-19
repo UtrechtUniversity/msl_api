@@ -80,16 +80,36 @@ class DataPublicationMap {
 
         const geoFeatures = this.groupedMarkers[resultSet][doi]
         assertNotNull(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
+        
+        const targets = this.getHighlightTargets(geoFeatures, resultSet, doi)
+        targets.forEach(element => {
+            element.classList.toggle(this.highlightedOptions.className, (highlightOrReset === 'highlight'));
+        })
+    }
+    private getHighlightTargets(geoFeatures: Layer[], resultSet: ResultSet, doi: string): Element[] {
+        const targets = new globalThis.Map<string, Element>()
+
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
-            if (!this.map.hasLayer(geoFeature)) return;
-            const element = geoFeature.getElement();
+            const visibleLayer = this.getVisibleHighlightLayer(geoFeature, resultSet)
+            const element = this.getLayerElement(visibleLayer)
             assertIsPathElement(
                 element,
                 doi
             );
-            element.classList.toggle(this.highlightedOptions.className, (highlightOrReset === 'highlight'));
+            targets.set(String(L.stamp(visibleLayer)), element)
         })
+
+        return Array.from(targets.values())
+    }
+
+    private getVisibleHighlightLayer(layer: Layer, resultSet: ResultSet): Layer {
+        const markerGroup = this.markers[resultSet] as MarkerClusterGroupWithVisibleParent
+        return markerGroup.getVisibleParent(layer) ?? layer
+    }
+
+    private getLayerElement(layer: Layer): Element | undefined {
+        return (layer as ElementLayer).getElement?.()
     }
 
     private async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
