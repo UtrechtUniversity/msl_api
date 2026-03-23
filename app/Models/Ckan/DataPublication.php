@@ -679,7 +679,6 @@ class DataPublication
     public function hasOriginalSubDomain(DataPublicationSubDomain $subDomain): bool
     {
         foreach ($this->msl_subdomains_original as $key => $value) {
-            // TODO a helper function?
             if ($value['msl_subdomain_original'] == $subDomain->value) {
                 return true;
             }
