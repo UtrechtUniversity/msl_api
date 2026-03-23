@@ -16,8 +16,8 @@ export const DEFAULT_CIRCLE_MARKER_OPTIONS: CircleMarkerOptions = {
     ...DEFAULT_MARKER_OPTIONS
 }
 export const HIGHLIGHT_MARKER_OPTIONS: PathOptions = {
-    color: getCssVar('--color-primary-700'),
-    fillColor: getCssVar('--color-primary-600'),
+    color: getCssVar('--color-secondary-800'),
+    fillColor: getCssVar('--color-secondary-200'),
     weight: 4,
     fillOpacity: 0.4
 }
