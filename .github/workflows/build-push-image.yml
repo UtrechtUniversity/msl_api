@@ -4,7 +4,7 @@ name: "Build MSL-API image and push it to registry"
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
 
 jobs:
   push-image:
