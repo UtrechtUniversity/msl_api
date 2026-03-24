@@ -57,7 +57,7 @@ class AddSubdomainMapper implements AdditionalMapperInterface
     /**
      * Add original subdomains
      */
-    public function map(DataPublication $dataPublication, SourceDataset $_): DataPublication
+    public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
         foreach ($this->subdomains as $subdomain) {
 
