@@ -9,6 +9,8 @@ use Illuminate\Support\Uri;
 
 class MagicFileMapper implements AdditionalMapperInterface
 {
+    public function __construct(array $args) {}
+
     /**
      * Add MagIC files associated by identifier used
      */

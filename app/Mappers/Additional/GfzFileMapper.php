@@ -10,6 +10,8 @@ use Exception;
 
 class GfzFileMapper implements AdditionalMapperInterface
 {
+    public function __construct(array $args) {}
+
     /**
      * Add figshare files associated by DOI
      */

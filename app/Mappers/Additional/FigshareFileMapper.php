@@ -11,6 +11,8 @@ use Exception;
 
 class FigshareFileMapper implements AdditionalMapperInterface
 {
+    public function __construct(array $args) {}
+
     /**
      * Add figshare files associated by landing page/source
      */
