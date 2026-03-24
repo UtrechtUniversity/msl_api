@@ -28,6 +28,7 @@ class ProcessMatomoPageTrackingJob implements ShouldQueue
         $matomo = new MatomoTracker((int) config('matomo.site_id'), config('matomo.host'));
         $matomo->setTokenAuth(config('matomo.token'));
         $matomo->setIp($this->ip);
+        $matomo->setUrl($this->uri);
         $matomo->doTrackPageView($this->uri);
     }
 }
