@@ -23,6 +23,6 @@ class TextQuestion extends Component
      */
     public function render(): View
     {
-        return view('components.forms.text-question');
+        return view('public.components.forms.text-question');
     }
 }

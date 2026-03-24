@@ -1,0 +1,13 @@
+{
+  "id": "yct5gzuobnr",
+  "v": 2,
+  "name": "Acceptation server",
+  "variables": [
+    {
+      "key": "base_url",
+      "secret": false,
+      "initialValue": "https://acc.epos-msl.uu.nl/",
+      "currentValue": ""
+    }
+  ]
+}

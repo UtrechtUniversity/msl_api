@@ -26,7 +26,7 @@ class SurveyComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.survey-component', [
+        return view('public.components.survey-component', [
             'allQuestions' => $this->allQuestions,
             'surveyName' => $this->surveyName,
         ]);

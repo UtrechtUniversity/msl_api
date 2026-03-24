@@ -1,0 +1,629 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds>
+  a skos:ConceptScheme ;
+  skos:prefLabel "Geo-energy test beds" ;
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-bochum_research_and_exploration_drilling_rig>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-brgms_geothermal_testing_facility>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-catenoy_experimental_site>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-eccsel_svelvik_co2_field_lab>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-energy_technology_fraunhofer_ieg>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geotechnology_laboratory_fraunhofer_ieg>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geothermal_project_on_tu_delft_campus>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geothermal_research_platform_gros_schonebeck>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-krafla_magma_testbed>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-pilot_site_for_geological_storage_of_co2_ketzin>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-pitop_borehole_geophysical_test_site>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-reallabore_weisweiler>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-rijswijk_centre_for_sustainable_geo-energy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-sotacarbo_fault_laboratory>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-trudi_underground_laboratory>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-uk_geoenergy_research_centre>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-uk_geos>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-underground_research_laboratory_andra> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> ;
+  skos:prefLabel "Facility names" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geothermal_research_platform_gros_schonebeck>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Geothermal research platform Groß Schönebeck" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-geothermal_research_platform_gros_schonebeck> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-pilot_site_for_geological_storage_of_co2_ketzin>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Pilot site for geological storage of CO2 Ketzin" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-pilot_site_for_geological_storage_of_co2_ketzin> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geotechnology_laboratory_fraunhofer_ieg>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Geotechnology Laboratory Fraunhofer IEG" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-geotechnology_laboratory_fraunhofer_ieg> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-bochum_research_and_exploration_drilling_rig>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Bochum Research and Exploration Drilling Rig" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-bochum_research_and_exploration_drilling_rig> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-energy_technology_fraunhofer_ieg>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Energy Technology Fraunhofer IEG" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-energy_technology_fraunhofer_ieg> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-trudi_underground_laboratory>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "TRUDI underground laboratory" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-trudi_underground_laboratory> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-reallabore_weisweiler>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Reallabore Weisweiler" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-reallabore_weisweiler> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-geothermal_project_on_tu_delft_campus>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Geothermal Project on TU Delft campus" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-geothermal_project_on_tu_delft_campus> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-uk_geos>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "UK Geos" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-uk_geos> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-uk_geoenergy_research_centre>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "UK GeoEnergy Research Centre" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-uk_geoenergy_research_centre> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Bedretto Underground Laboratory for Geosciences and Geoenergies" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-rijswijk_centre_for_sustainable_geo-energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Rijswijk Centre for Sustainable Geo-energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-rijswijk_centre_for_sustainable_geo-energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-eccsel_svelvik_co2_field_lab>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "ECCSEL Svelvik CO2 Field Lab" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-eccsel_svelvik_co2_field_lab> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-brgms_geothermal_testing_facility>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "BRGM’s Geothermal Testing Facility" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-brgms_geothermal_testing_facility> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-sotacarbo_fault_laboratory>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Sotacarbo Fault Laboratory" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-sotacarbo_fault_laboratory> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-underground_research_laboratory_andra>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Underground research laboratory Andra" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-underground_research_laboratory_andra> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-catenoy_experimental_site>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "CATenoy experimental site" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-catenoy_experimental_site> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-pitop_borehole_geophysical_test_site>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "PITOP Borehole Geophysical Test Site" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-pitop_borehole_geophysical_test_site> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names-krafla_magma_testbed>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_names> ;
+  skos:prefLabel "Krafla Magma Testbed" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_names-krafla_magma_testbed> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-field-scale_laboratory_-_active_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-field-scale_observatory_-_passive_monitoring>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-geo-energy_testbed>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-in-situ_laboratory>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-monitoring_borehole> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> ;
+  skos:prefLabel "Facility types" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-geo-energy_testbed>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types> ;
+  skos:prefLabel "geo-energy testbed" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types-geo-energy_testbed> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-in-situ_laboratory>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types> ;
+  skos:prefLabel "in-situ laboratory" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types-in-situ_laboratory> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-field-scale_laboratory_-_active_testing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types> ;
+  skos:prefLabel "field-scale laboratory - active testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types-field-scale_laboratory_-_active_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-field-scale_observatory_-_passive_monitoring>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types> ;
+  skos:prefLabel "field-scale observatory - passive monitoring" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types-field-scale_observatory_-_passive_monitoring> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types-monitoring_borehole>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/facility_types> ;
+  skos:prefLabel "monitoring borehole" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/facility_types-monitoring_borehole> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_logging>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> ;
+  skos:prefLabel "Equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring-three-component_seismic_station>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring-tilt_strain_gauge> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "seismic monitoring" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-seismic_monitoring> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring-three-component_seismic_station>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring> ;
+  skos:prefLabel "three-component seismic station" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-seismic_monitoring-three-component_seismic_station> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring-tilt_strain_gauge>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-seismic_monitoring> ;
+  skos:prefLabel "tilt strain gauge" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-seismic_monitoring-tilt_strain_gauge> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_acoustic_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_pressure_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "distributed fibre optic sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-distributed_fibre_optic_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_acoustic_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing> ;
+  skos:prefLabel "distributed acoustic sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-distributed_fibre_optic_sensing-distributed_acoustic_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing> ;
+  skos:prefLabel "distributed strain sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing> ;
+  skos:prefLabel "distributed temperature sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing-distributed_pressure_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-distributed_fibre_optic_sensing> ;
+  skos:prefLabel "distributed pressure sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-distributed_fibre_optic_sensing-distributed_pressure_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-borehole_geophone>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_electric_conductivity_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_electromagnetic_sensing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_soil_gas_probe> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "borehole monitoring" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_monitoring> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-borehole_geophone>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring> ;
+  skos:prefLabel "borehole geophone" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_monitoring-borehole_geophone> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_electromagnetic_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring> ;
+  skos:prefLabel "downhole electromagnetic sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_monitoring-downhole_electromagnetic_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_electric_conductivity_sensing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring> ;
+  skos:prefLabel "downhole electric conductivity sensing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_monitoring-downhole_electric_conductivity_sensing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring-downhole_soil_gas_probe>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_monitoring> ;
+  skos:prefLabel "downhole soil gas probe" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_monitoring-downhole_soil_gas_probe> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-formation_integrity_test>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-heat_pump_mobile_unit>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-heat_pump_test_rig>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-injection_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-intervention_and_stimulation_equipment>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-pressure_performance_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-production_testing>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-thermal_response_testing> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "borehole testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-formation_integrity_test>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "formation integrity test" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-formation_integrity_test> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-production_testing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "production testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-production_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-injection_testing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "injection testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-injection_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-intervention_and_stimulation_equipment>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "intervention and stimulation equipment" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-intervention_and_stimulation_equipment> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-pressure_performance_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "pressure performance system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-pressure_performance_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-heat_pump_test_rig>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "heat pump test rig" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-heat_pump_test_rig> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-heat_pump_mobile_unit>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "heat pump mobile unit" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-heat_pump_mobile_unit> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing-thermal_response_testing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_testing> ;
+  skos:prefLabel "thermal response testing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_testing-thermal_response_testing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-borehole_and_geofluid_simulator>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-drill_core>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-drilling_test_rig>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-measurement_while_drilling>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-mud_logging> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "borehole drilling" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-measurement_while_drilling>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling> ;
+  skos:prefLabel "measurement while drilling" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling-measurement_while_drilling> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-mud_logging>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling> ;
+  skos:prefLabel "mud logging" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling-mud_logging> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-drilling_test_rig>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling> ;
+  skos:prefLabel "drilling test rig" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling-drilling_test_rig> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-borehole_and_geofluid_simulator>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling> ;
+  skos:prefLabel "borehole and geofluid simulator" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling-borehole_and_geofluid_simulator> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling-drill_core>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_drilling> ;
+  skos:prefLabel "drill core" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_drilling-drill_core> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_logging>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_logging-open_hole_logging> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment> ;
+  skos:prefLabel "borehole logging" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_logging> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_logging-open_hole_logging>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/equipment-borehole_logging> ;
+  skos:prefLabel "open hole logging" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/equipment-borehole_logging-open_hole_logging> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_digital_twin>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> ;
+  skos:prefLabel "Models" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_digital_twin>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models> ;
+  skos:prefLabel "subsurface digital twin" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_digital_twin> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-fluid_composition_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-formation_stress_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-geochemistry_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-geomechanical_property_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-gravity_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-magnetic_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-pore_pressure_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-porosity-permeability_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-reservoir_structural_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-seismic_velocity_field_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-temperature_field_model> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models> ;
+  skos:prefLabel "subsurface property modelling" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-reservoir_structural_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "reservoir structural model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-reservoir_structural_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-temperature_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "temperature field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-temperature_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-pore_pressure_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "pore pressure field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-pore_pressure_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-fluid_composition_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "fluid composition field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-fluid_composition_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-gravity_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "gravity field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-gravity_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-magnetic_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "magnetic field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-magnetic_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-formation_stress_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "formation stress model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-formation_stress_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-seismic_velocity_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "seismic velocity field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-seismic_velocity_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-porosity-permeability_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "porosity-permeability field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-porosity-permeability_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-geomechanical_property_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "geomechanical property field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-geomechanical_property_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling-geochemistry_field_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-subsurface_property_modelling> ;
+  skos:prefLabel "geochemistry field model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-subsurface_property_modelling-geochemistry_field_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-borehole_heat_exchanger_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-chemical_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-coupled_thermo-hydraulic-mechanical_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-flow_and_thermal_transport_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-flow_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-geothermal_reservoir_simulation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-geothermal_well_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-hydrocarbon_reservoir_simulation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-hydrogen_reservoir_simulation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-induced_seismicity_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-pore_pressure_diffusion_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-reactive_transport_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-storage_model>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-thermal_transport_model> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models> ;
+  skos:prefLabel "field system model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-flow_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "flow model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-flow_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-flow_and_thermal_transport_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "flow and thermal transport model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-flow_and_thermal_transport_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-coupled_thermo-hydraulic-mechanical_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "coupled thermo-hydraulic-mechanical model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-coupled_thermo-hydraulic-mechanical_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-pore_pressure_diffusion_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "pore pressure diffusion model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-pore_pressure_diffusion_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-thermal_transport_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "thermal transport model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-thermal_transport_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-chemical_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "chemical model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-chemical_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-reactive_transport_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "reactive transport model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-reactive_transport_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-borehole_heat_exchanger_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "borehole heat exchanger model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-borehole_heat_exchanger_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-geothermal_reservoir_simulation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "geothermal reservoir simulation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-geothermal_reservoir_simulation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-hydrocarbon_reservoir_simulation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "hydrocarbon reservoir simulation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-hydrocarbon_reservoir_simulation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-hydrogen_reservoir_simulation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "hydrogen reservoir simulation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-hydrogen_reservoir_simulation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-storage_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "storage model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-storage_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-induced_seismicity_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "induced seismicity model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-induced_seismicity_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model-geothermal_well_model>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds/models-field_system_model> ;
+  skos:prefLabel "geothermal well model" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/testbeds/1.3/models-field_system_model-geothermal_well_model> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/testbeds> .
+

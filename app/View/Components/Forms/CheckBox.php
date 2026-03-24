@@ -23,6 +23,6 @@ class CheckBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.forms.check-box');
+        return view('public.components.forms.check-box');
     }
 }

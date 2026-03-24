@@ -197,7 +197,7 @@ class BaseResult
         if (isset($data['msl_files'])) {
             if (count($data['msl_files']) > 0) {
                 foreach ($data['msl_files'] as $downloadData) {
-                    $this->downloads[] = new Download($downloadData);
+                    $this->downloads[] = new Download($downloadData, $data);
                 }
             }
         }

@@ -18,6 +18,6 @@ class DisplayBladeContent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.forms.display-blade-content');
+        return view('public.components.forms.display-blade-content');
     }
 }

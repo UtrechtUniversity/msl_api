@@ -14,6 +14,7 @@ use Tests\TestCase;
 
 class KeywordHelperTest extends TestCase
 {
+    // Open a database transaction
     use RefreshDatabase;
 
     protected function setUp(): void
