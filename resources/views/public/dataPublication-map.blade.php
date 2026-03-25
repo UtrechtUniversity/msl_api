@@ -1,5 +1,15 @@
 @section('title', 'Datapublications map')
 <x-layout_main>
+    <div class="tab-links-parent">
+        @include('public.components.tab-links', [
+            'categoryName' => 'Data Publications',
+            'routes' => [
+                'List' => route('data-access'),
+                'Map' => route('data-access-map'),
+            ],
+            'routeActive' => route('data-access-map'),
+        ])
+    </div>
 
     <div class="main-content">
         <div class="sub-content-wide flex place-content-center w-full">
