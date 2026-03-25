@@ -21,6 +21,7 @@ use Spatie\Honeypot\ProtectAgainstSpam;
 
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/data-access', [FrontendController::class, 'dataPublications'])->name('data-access');
+Route::get('/data-access-map', [DataPublicationAccessController::class, 'index'])->name('data-access-map');
 Route::get('/labs/map', [FrontendController::class, 'labsMap'])->name('labs-map');
 Route::get('/labs/list', [FrontendController::class, 'labsList'])->name('labs-list');
 Route::get('/lab/{id}', [FrontendController::class, 'lab'])->name('lab-detail');
@@ -39,6 +40,7 @@ Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])-
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
 Route::get('/data-publication/{id}/download/{url}', [FrontendController::class, 'fileDownload'])->name('file-download');
 
+
 if (App::environment('local')) {
     Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
     Route::get('/demoPage', [FrontendController::class, 'demoPage'])->name('demoPage');
@@ -55,5 +57,3 @@ Route::post('/laboratory-contact-person', [FormController::class, 'labContactFor
 
 Route::get('/survey-form/{surveyName}', [SurveyController::class, 'surveyForm'])->name('survey-form');
 Route::post('/survey-form/{surveyName}', [SurveyController::class, 'surveyProcess'])->name('survey-form-process');
-
-Route::get('/data-publication-map-test', [DataPublicationAccessController::class, 'index'])->name('data-publication-map-test');
