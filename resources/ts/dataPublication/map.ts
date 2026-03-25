@@ -86,13 +86,8 @@ class DataPublicationMap {
         assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
-            const element = geoFeature.getElement();
-            assertIsPathElement(
-                element,
-                doi
-            );
-            element.classList.toggle(this.highlightedOptions.className, (highlightOrReset === 'highlight'));
-
+            geoFeature.setStyle(
+                (highlightOrReset === 'highlight') ? this.highlightedOptions : this.defaultOptions);
         })
     }
 
@@ -356,7 +351,13 @@ class DataPublicationMap {
             layer.clearLayers()
             this.map.removeLayer(layer)
         })
+        this.resetGroupedMarkers()
     }
+
+    private resetGroupedMarkers() {
+        this.groupedMarkers = getResultSetMappingObj<GroupedLayer>(() => ({}));
+    }
+
     private async addFeaturesAndSidebarInMap(boundingBox: string) {
 
         const geo = await this.getJsonFromRequest(boundingBox);
