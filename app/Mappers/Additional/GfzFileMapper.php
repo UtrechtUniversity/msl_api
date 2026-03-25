@@ -8,9 +8,14 @@ use App\Models\Ckan\File;
 use App\Models\SourceDataset;
 use Exception;
 
-class GfzFileMapper implements AdditionalMapperInterface
+class GfzFileMapper extends AdditionalMapper
 {
-    public function __construct(array $args) {}
+    protected function validateInput(array $args): array
+    {
+        return [];
+    }
+
+    protected function initialize(array $args): void {}
 
     /**
      * Add figshare files associated by DOI

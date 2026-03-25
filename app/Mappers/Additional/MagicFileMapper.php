@@ -7,9 +7,14 @@ use App\Models\Ckan\File;
 use App\Models\SourceDataset;
 use Illuminate\Support\Uri;
 
-class MagicFileMapper implements AdditionalMapperInterface
+class MagicFileMapper extends AdditionalMapper
 {
-    public function __construct(array $args) {}
+    protected function validateInput(array $args): array
+    {
+        return [];
+    }
+
+    protected function initialize(array $args): void {}
 
     /**
      * Add MagIC files associated by identifier used

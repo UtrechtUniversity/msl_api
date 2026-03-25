@@ -9,9 +9,14 @@ use App\Models\Ckan\File;
 use App\Models\SourceDataset;
 use Exception;
 
-class FigshareFileMapper implements AdditionalMapperInterface
+class FigshareFileMapper extends AdditionalMapper
 {
-    public function __construct(array $args) {}
+    protected function validateInput(array $args): array
+    {
+        return [];
+    }
+
+    protected function initialize(array $args): void {}
 
     /**
      * Add figshare files associated by landing page/source

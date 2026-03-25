@@ -57,7 +57,7 @@ class MappingService
                 if (! is_array($mapperOptions)) {
                     throw new Exception(`Options property for "$mapperType" should have been an array. This is a bug.`);
                 }
-                $mapper = (count($mapperOptions) === 0) ? new $mapperType : new $mapperType($mapperOptions);
+                $mapper = new $mapperType($mapperOptions);
                 $dataPublication = $mapper->map($dataPublication, $sourceDataset);
             }
         }

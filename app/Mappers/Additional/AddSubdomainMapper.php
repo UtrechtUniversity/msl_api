@@ -7,21 +7,15 @@ use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Exception;
 
-class AddSubdomainMapper implements AdditionalMapperInterface
+class AddSubdomainMapper extends AdditionalMapper
 {
     /**
      * @var array<int, DataPublicationSubDomain>
      */
     public readonly array $subdomains;
 
-    /**
-     * @param array<string, string>
-     * @return void
-     */
-    public function __construct(array $args)
+    protected function initialize(array $subdomains): void
     {
-
-        $subdomains = $this->validateInput($args);
         $this->subdomains = $subdomains;
     }
 
@@ -29,7 +23,7 @@ class AddSubdomainMapper implements AdditionalMapperInterface
      * @param  array<string, string>  $args
      * @return array<int,DataPublicationSubDomain>
      */
-    private function validateInput(array $args): array
+    protected function validateInput(array $args): array
     {
         $subDomainsString = 'subdomains';
         $className = get_class($this);
