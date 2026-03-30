@@ -268,6 +268,7 @@ class DataPublication
 
     /**
      * interpreted sub domains
+     * Includes all subdomains, original or not.
      */
     public array $msl_subdomains_interpreted = [];
 
