@@ -20,6 +20,7 @@ class AddSubdomainMapperTest extends TestCase
 
         $this->assertEquals($datapublication->msl_subdomains[0]['msl_subdomain'], DataPublicationSubDomain::ROCK_PHYSICS->value);
         $this->assertEquals($datapublication->msl_subdomains_original[1]['msl_subdomain_original'], DataPublicationSubDomain::MICROSCOPY->value);
+        $this->assertEquals($datapublication->msl_subdomains_interpreted[1]['msl_subdomain_interpreted'], DataPublicationSubDomain::MICROSCOPY->value);
 
         $this->assertTrue($datapublication->msl_has_microscopy_original);
         $this->assertTrue($datapublication->msl_has_microscopy);

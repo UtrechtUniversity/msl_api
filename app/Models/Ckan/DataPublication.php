@@ -590,16 +590,18 @@ class DataPublication
                 'msl_subdomain' => $subDomain->value,
             ];
         }
+        // Even if it is original, we want it also to be included in the enriched/interpreted list,
+        // which is a superset of the original set.
+        if (! $this->hasInterpretedSubDomain($subDomain)) {
+            $this->msl_subdomains_interpreted[] = [
+                'msl_subdomain_interpreted' => $subDomain->value,
+            ];
+        }
+
         if ($original) {
             if (! $this->hasOriginalSubDomain($subDomain)) {
                 $this->msl_subdomains_original[] = [
                     'msl_subdomain_original' => $subDomain->value,
-                ];
-            }
-        } else {
-            if (! $this->hasInterpretedSubDomain($subDomain)) {
-                $this->msl_subdomains_interpreted[] = [
-                    'msl_subdomain_interpreted' => $subDomain->value,
                 ];
             }
         }
