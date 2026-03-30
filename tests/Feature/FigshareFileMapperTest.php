@@ -48,7 +48,7 @@ class FigshareFileMapperTest extends TestCase
                 );
         });
 
-        $figshareMapper = new FigshareFileMapper;
+        $figshareMapper = new FigshareFileMapper([]);
         $dataPublication = $figshareMapper->map($dataPublication, $sourceDataset);
 
         $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'DATA True Triax.zip');

@@ -8,8 +8,15 @@ use App\Models\Ckan\File;
 use App\Models\SourceDataset;
 use Exception;
 
-class YodaFileMapper implements AdditionalMapperInterface
+class YodaFileMapper extends AdditionalMapper
 {
+    protected function validateInput(array $args): array
+    {
+        return [];
+    }
+
+    protected function initialize(array $args): void {}
+
     /**
      * Add figshare files associated by DOI
      */

@@ -50,7 +50,10 @@ class Import4TUSeeder extends Seeder
                         'type' => 'datacite',
                         'options' => [
                             'additionalMappers' => [
-                                FigshareFileMapper::class,
+                                [
+                                    'type' => FigshareFileMapper::class,
+                                    'options' => [],
+                                ],
                             ],
                         ],
                     ],

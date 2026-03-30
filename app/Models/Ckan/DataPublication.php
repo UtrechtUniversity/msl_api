@@ -2,6 +2,7 @@
 
 namespace App\Models\Ckan;
 
+use App\Enums\DataPublicationSubDomain;
 use App\GeoJson\Feature\FeatureCollection;
 use Exception;
 
@@ -267,6 +268,7 @@ class DataPublication
 
     /**
      * interpreted sub domains
+     * Includes all subdomains, original or not.
      */
     public array $msl_subdomains_interpreted = [];
 
@@ -580,42 +582,93 @@ class DataPublication
      * Add sub domain to data publication. msl_subdomain will also contain the new value, original/interpreted is indicated by parameter.
      *
      * @param  string  $subdomain
-     * @param  bool  $orginal
      */
-    public function addSubDomain(string $subDomain, bool $original = true): void
+    public function addSubDomain(DataPublicationSubDomain $subDomain, bool $original = true): void
     {
         // add sub domain if it is valid
-        if (in_array($subDomain, config('subdomains.full_names'))) {
-            if (! $this->hasSubDomain($subDomain)) {
-                $this->msl_subdomains[] = [
-                    'msl_subdomain' => $subDomain,
+        if (! $this->hasSubDomain($subDomain)) {
+            $this->msl_subdomains[] = [
+                'msl_subdomain' => $subDomain->value,
+            ];
+        }
+        // Even if the subdomain is original, we want it also to be included in the interpreted list,
+        // which is a superset of the 'original' set.
+        if (! $this->hasInterpretedSubDomain($subDomain)) {
+            $this->msl_subdomains_interpreted[] = [
+                'msl_subdomain_interpreted' => $subDomain->value,
+            ];
+        }
+
+        if ($original) {
+            if (! $this->hasOriginalSubDomain($subDomain)) {
+                $this->msl_subdomains_original[] = [
+                    'msl_subdomain_original' => $subDomain->value,
                 ];
             }
-            if ($original) {
-                if (! $this->hasOriginalSubDomain($subDomain)) {
-                    $this->msl_subdomains_original[] = [
-                        'msl_subdomain_original' => $subDomain,
-                    ];
+        }
+        $this->setHasSubdomain($subDomain, $original);
+    }
+
+    private function setHasSubdomain(DataPublicationSubDomain $subDomain, bool $original = true)
+    {
+        switch ($subDomain) {
+            case DataPublicationSubDomain::ROCK_PHYSICS:
+                $this->msl_has_rockphysic = true;
+                if ($original) {
+                    $this->msl_has_rockphysic_original = true;
                 }
-            } else {
-                if (! $this->hasInterpretedSubDomain($subDomain)) {
-                    $this->msl_subdomains_interpreted[] = [
-                        'msl_subdomain_interpreted' => $subDomain,
-                    ];
+
+                return;
+
+            case DataPublicationSubDomain::ANALOGUE:
+                $this->msl_has_analogue = true;
+                if ($original) {
+                    $this->msl_has_analogue_original = true;
                 }
-            }
-        } else {
-            throw new Exception('attempt to add invalid subdomain');
+
+                return;
+
+            case DataPublicationSubDomain::MICROSCOPY:
+                $this->msl_has_microscopy = true;
+                if ($original) {
+                    $this->msl_has_microscopy_original = true;
+                }
+
+                return;
+
+            case DataPublicationSubDomain::GEO_CHEMISTRY:
+                $this->msl_has_geochemistry = true;
+                if ($original) {
+                    $this->msl_has_geochemistry_original = true;
+                }
+
+                return;
+
+            case DataPublicationSubDomain::GEO_ENERGY:
+                $this->msl_has_geoenergy = true;
+                if ($original) {
+                    $this->msl_has_geoenergy_original = true;
+                }
+
+                return;
+
+            case DataPublicationSubDomain::PALEO:
+                $this->msl_has_paleomagnetism = true;
+                if ($original) {
+                    $this->msl_has_paleomagnetism_original = true;
+                }
+
+                return;
         }
     }
 
     /**
      * Check if sub domain is included in data publication
      */
-    public function hasSubDomain(string $subDomain): bool
+    public function hasSubDomain(DataPublicationSubDomain $subDomain): bool
     {
         foreach ($this->msl_subdomains as $key => $value) {
-            if ($value['msl_subdomain'] == $subDomain) {
+            if ($value['msl_subdomain'] == $subDomain->value) {
                 return true;
             }
         }
@@ -626,10 +679,10 @@ class DataPublication
     /**
      * Check if orginal sub domain is included in data publication
      */
-    public function hasOriginalSubDomain(string $subDomain): bool
+    public function hasOriginalSubDomain(DataPublicationSubDomain $subDomain): bool
     {
         foreach ($this->msl_subdomains_original as $key => $value) {
-            if ($value['msl_subdomain_original'] == $subDomain) {
+            if ($value['msl_subdomain_original'] == $subDomain->value) {
                 return true;
             }
         }
@@ -640,10 +693,10 @@ class DataPublication
     /**
      * Check if interpreted sub domain is included in data publication
      */
-    public function hasInterpretedSubDomain(string $subDomain): bool
+    public function hasInterpretedSubDomain(DataPublicationSubDomain $subDomain): bool
     {
         foreach ($this->msl_subdomains_interpreted as $key => $value) {
-            if ($value['msl_subdomain_interpreted'] == $subDomain) {
+            if ($value['msl_subdomain_interpreted'] == $subDomain->value) {
                 return true;
             }
         }

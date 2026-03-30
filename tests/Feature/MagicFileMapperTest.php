@@ -21,7 +21,7 @@ class MagicFileMapperTest extends TestCase
 
         $sourceDataset->setRelation('source_dataset_identifier', $sourceDatasetIdentifier);
 
-        $magicFileMapper = new MagicFileMapper;
+        $magicFileMapper = new MagicFileMapper([]);
         $datapublication->msl_source = 'https://earthref.org/MagIC/12020';
 
         $datapublication = $magicFileMapper->map($datapublication, $sourceDataset);
