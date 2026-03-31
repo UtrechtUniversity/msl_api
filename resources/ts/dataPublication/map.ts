@@ -91,6 +91,8 @@ class DataPublicationMap {
         })
     }
 
+    //
+
     private async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
         const params = new URLSearchParams(parameters);
