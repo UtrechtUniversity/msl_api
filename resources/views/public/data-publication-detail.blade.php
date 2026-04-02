@@ -479,7 +479,7 @@
                                 $dataPublicationList = [];
                                 if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
                                     $dataPublicationList[] =
-                                        'https://doi.org/' . $relatedidentifier->msl_related_identifier_type;
+                                        'https://doi.org/' . $relatedidentifier->msl_related_identifier;
                                 } else {
                                     if ($relatedidentifier->msl_related_identifier_type != '') {
                                         $dataPublicationList[] = $relatedidentifier->msl_related_identifier_type;
