@@ -35,17 +35,17 @@
                     <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('data-access') }}">
                         <h2 class="font-bold ">{{ $datasetsCount }}</h2>
-                        <h5>Datasets</h5>
+                        <h6>Datasets</h6>
                     </a>
                     <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('labs-map') }}">
                         <h2 class="font-bold ">{{ $labCount }}</h2>
-                        <h5>Labs</h5>
+                        <h6>Labs</h6>
                     </a>
                     <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('data-repositories') }}">
                         <h2 class="font-bold ">{{ $reposCount }}</h2>
-                        <h5 class="">Repos</h5>
+                        <h6>Repositories</h6>
                     </a>
                 </div>
 
