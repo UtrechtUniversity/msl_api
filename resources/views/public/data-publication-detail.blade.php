@@ -571,6 +571,7 @@
                                     'Scheme URI' => $right->msl_right_scheme_uri,
                                 ],
                                 'withKeys' => true,
+                                'wordBreakContent' => true,
                             ])
                         @endforeach
                     </div>
