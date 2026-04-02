@@ -71,7 +71,7 @@
                                                             Type
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon->msl_equipment_addon_type }}</p>
+                                                            {{ $addon['msl_equipment_addon_type'] }}</p>
                                                     </div>
 
                                                     <div class="w-full flex flex-row p-2">
@@ -79,7 +79,7 @@
                                                             Group
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon->msl_equipment_addon_group }}</p>
+                                                            {{ $addon['msl_equipment_addon_group'] }}</p>
                                                     </div>
 
                                                     <div class="w-full flex flex-row p-2">
@@ -87,7 +87,7 @@
                                                             Description
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon->msl_equipment_addon_description }}</p>
+                                                            {{ $addon['msl_equipment_addon_description'] }}</p>
                                                     </div>
                                                 </div>
                                             @endforeach
