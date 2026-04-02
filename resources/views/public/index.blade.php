@@ -2,12 +2,12 @@
 <x-layout_main>
     <div class="hero h-dvh" style="background-image: url('images/heros/7.jpg');">
 
-        <div class="text-neutral-content relative w-96 rounded rounded-xl">
+        <div class="text-neutral-content relative sm:w-[470px] w-fit sm:m-0 m-4 rounded rounded-xl">
             <div class="w-full h-full bg-primary-100 opacity-75 absolute inset-0 rounded rounded-xl">
 
             </div>
             <div
-                class="w-96 backdrop-blur-sm flex flex-col place-items-center gap-8 p-6 text-primary-900 rounded rounded-xl">
+                class="sm:w-[470px] w-fit  backdrop-blur-sm flex flex-col place-items-center gap-8 p-6 text-primary-900 rounded rounded-xl">
 
                 <h1 class="p-2">Welcome </h1>
 
@@ -24,28 +24,29 @@
                 </a>
 
                 <div
-                    class="w-full
-           text-primary-900
-           place-items-center pt-4
-          flex flex-row
-          text-left
-          gap-4
-          ">
+                    class="sm:w-full w-fit
+                        text-primary-900
+                        place-items-center pt-4
+                        justify-between
+                        flex flex-row sm:flex-nowrap flex-wrap
+                        text-left
+                        gap-4
+                        ">
 
-                    <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+                    <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('data-access') }}">
                         <h2 class="font-bold ">{{ $datasetsCount }}</h2>
-                        <h5>Datasets</h5>
+                        <h5 >Datasets</h5>
                     </a>
-                    <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+                    <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('labs-map') }}">
                         <h2 class="font-bold ">{{ $labCount }}</h2>
-                        <h5>Labs</h5>
+                        <h5 >Laboratories</h5>
                     </a>
-                    <a class="flex flex-col justify-between w-1/3 hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
+                    <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
                         href="{{ route('data-repositories') }}">
                         <h2 class="font-bold ">{{ $reposCount }}</h2>
-                        <h5 class="">Repos</h5>
+                        <h5 >Repositories</h5>
                     </a>
                 </div>
 
