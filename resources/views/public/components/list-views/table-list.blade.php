@@ -3,6 +3,7 @@
     'withKeys' => true,
     'numericKeys' => false,
     'textSize' => 'sm',
+    'wordBreakContent' => false,
 ])
 <div class="w-full py-2">
     <table class="table-fixed w-full">
@@ -24,7 +25,11 @@
                             </td>
                         @endif
 
-                        <td class="text-{{ $textSize }} p-0">
+                        @if ($wordBreakContent)
+                            <td class="text-{{ $textSize }} p-0 wrap-break-word">
+                        @else
+                            <td class="text-{{ $textSize }} p-0">
+                        @endif
                             @if (filter_var($value, FILTER_VALIDATE_URL))
                                 <a class='underline hover-interactive' href={{ $value }}>{{ $value }}</a>
                             @else

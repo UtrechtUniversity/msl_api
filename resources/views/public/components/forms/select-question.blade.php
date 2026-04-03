@@ -16,10 +16,9 @@
                 bg-white @endif
             
             ">
-            <option disabled @if (old($sectionName) === null) selected @endif>{{ $placeholder }}</option>
-            {{-- from https://laravel.com/docs/11.x/blade#additional-attributes --}}
+            <option disabled @if (old($sectionName, '') === '') selected @endif>{{ $placeholder }}</option>
             @foreach ($options as $key => $option)
-                <option value="{{ $key }}" @selected(old($sectionName) == $key)>
+                <option value="{{ $key }}" @selected(old($sectionName, '') === (string) $key)>
                     {{ $option }}
                 </option>
             @endforeach
@@ -27,5 +26,7 @@
         @if ($errors->has($sectionName))
             <p class="error-highlight"> {{ $errors->first($sectionName) }} </p>
         @endif
+
+
     </div>
 </div>
