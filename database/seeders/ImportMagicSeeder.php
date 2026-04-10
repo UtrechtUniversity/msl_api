@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Enums\DataPublicationSubDomain;
+use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Mappers\Additional\AddSubdomainMapper;
 use App\Mappers\Additional\MagicFileMapper;
 use App\Models\DataRepository;

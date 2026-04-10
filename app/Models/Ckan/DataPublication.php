@@ -2,7 +2,7 @@
 
 namespace App\Models\Ckan;
 
-use App\Enums\DataPublicationSubDomain;
+use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\GeoJson\Feature\FeatureCollection;
 use Exception;
 

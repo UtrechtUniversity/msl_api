@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\Enums\EndpointContext;
-use App\Enums\LabDomain;
+use App\Enums\SubDomains\EndpointContext;
+use App\Enums\SubDomains\LabDomain;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;

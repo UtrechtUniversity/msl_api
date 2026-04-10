@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\Enums\DataPublicationSubDomain;
-use App\Enums\EndpointContext;
+use App\Enums\SubDomains\DataPublicationSubDomain;
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
@@ -102,7 +102,6 @@ class DataPublicationController extends BaseDomainApiController
         ]);
 
         return $responseToReturn;
-
     }
 
     protected function setRequestToCKAN(Request $request, EndpointContext $context): void

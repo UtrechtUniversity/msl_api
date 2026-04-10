@@ -14,8 +14,14 @@ class Contributor implements CkanArrayInterface
 
     public string $msl_contributor_name_type;
 
+    /**
+     * @var array<int,NameIdentifier>
+     */
     public array $nameIdentifiers = [];
 
+    /**
+     * @var array<int,Affiliation>
+     */
     public array $affiliations = [];
 
     public function __construct(string $name, string $type, string $givenName = '', string $familyName = '', string $nameType = '')
@@ -41,9 +47,42 @@ class Contributor implements CkanArrayInterface
         return array_column($this->affiliations, 'msl_creator_affiliation_name');
     }
 
-    public function getNameIdentifiers(): array
+    /**
+     * @return array<int,array{isURL:bool, value:string}>
+     */
+    public function getNameIdentifiersWithMetaData(): array
     {
-        return array_column($this->affiliations, 'msl_creator_name_identifier');
+
+        $nameIdentifiersWithMetadata = array_map(fn ($nameIdentifier) => (
+            $nameIdentifier->getCreatorIdentifierWithMetadata()), $this->nameIdentifiers);
+
+        return $nameIdentifiersWithMetadata;
+    }
+
+    /**
+     * @return array{
+     *      name: string,
+     *      nameType: string,
+     *      nameidentifiers: array<int,array{isURL:bool, value:string}>,
+     *      affiliations: array{
+     *          name:string,
+     *          identifier:array{
+     *              isURL:booelean,
+     *              value:string
+     *              }
+     *          }
+     *      }
+     */
+    public function getContributorInfo(): array
+    {
+        return [
+            'name' => $this->getFullName(),
+            'nameType' => $this->msl_contributor_name_type,
+            'nameIdentifiers' => $this->getNameIdentifiersWithMetaData(),
+            'affiliations' => array_map(function (Affiliation $affiliation) {
+                return ['name' => $affiliation->msl_creator_affiliation_name, 'identifier' => $affiliation->getAffilitiationIdentifierWithMetadata()];
+            }, $this->affiliations),
+        ];
     }
 
     public function addNameIdentifier(NameIdentifier $nameIdentifier): void
