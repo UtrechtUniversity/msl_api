@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace App\Enums\SubDomains;
 
 /**
  * Names of subdomains used in the Vocabulary Model.

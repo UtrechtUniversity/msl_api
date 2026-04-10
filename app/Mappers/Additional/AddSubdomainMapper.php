@@ -2,7 +2,7 @@
 
 namespace App\Mappers\Additional;
 
-use App\Enums\DataPublicationSubDomain;
+use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Exception;

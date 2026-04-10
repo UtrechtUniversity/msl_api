@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Enums\DataPublicationSubDomain;
+use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Mappers\Additional\AddSubdomainMapper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;

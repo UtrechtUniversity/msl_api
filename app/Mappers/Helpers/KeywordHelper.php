@@ -2,7 +2,7 @@
 
 namespace App\Mappers\Helpers;
 
-use App\Enums\VocabularySubDomain;
+use App\Enums\SubDomains\VocabularySubDomain;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\EnrichedKeyword;
 use App\Models\Ckan\OriginalKeyword;
