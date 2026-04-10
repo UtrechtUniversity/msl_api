@@ -38,7 +38,7 @@ class NameIdentifier
     /**
      * @return array{isURL:bool, value:string}
      */
-    public function getCreatorIdentifierWithMetadata()
+    public function getCreatorIdentifierWithMetadata(): array
     {
         $creatorNameIdentifier = $this->normalizeCreatorIdentifier();
 
