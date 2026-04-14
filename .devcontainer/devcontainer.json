@@ -1,11 +1,12 @@
-// https://aka.ms/devcontainer.json
+// // https://aka.ms/devcontainer.json
 {
 	"name": "Existing Docker Compose (Extend)",
 	"dockerComposeFile": [
-		"../docker-compose.yml"
+		"./../../epos-msl/docker/docker-compose.dev.yml"
 	],
-	"service": "laravel.test",
-	"workspaceFolder": "/var/www/html",
+	"service": "mslapi_webserver",
+	"workspaceFolder": "/var/www/msl_api",
+
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -17,10 +18,12 @@
 			],
 			"settings": {}
 		}
-	},
-	"remoteUser": "sail",
-	"postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
+	}
+	// "remoteUser": "sail",
+	// "postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
 	// "forwardPorts": [],
 	// "runServices": [],
 	// "shutdownAction": "none",
 }
+
+
