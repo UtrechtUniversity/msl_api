@@ -8,12 +8,12 @@ enum VocabSchemes: string
     case MINDAT = 'mindat';
     case INSPIRE = 'inspire';
 
-    public function getUrlPrefix(bool $isHttpProtocol = false)
+    public function getUrlPrefix(bool $isHttpsProtocol = false)
     {
         return match ($this) {
             self::GEOSCIML => 'http://resource.geosciml.org',
             self::MINDAT => 'https://www.mindat.org',
-            self::INSPIRE => ($isHttpProtocol) ? 'http://inspire.ec.europa.eu' : 'https://inspire.ec.europa.eu',
+            self::INSPIRE => (! $isHttpsProtocol) ? 'http://inspire.ec.europa.eu' : 'https://inspire.ec.europa.eu',
         };
     }
 }

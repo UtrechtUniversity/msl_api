@@ -24,7 +24,14 @@ class ExtractExternalRefsSeeder extends Seeder
         return false;
     }
 
-    // private function (){}
+    private function processForScheme(Keyword $keyword, string $definitionLink, string $definition, VocabSchemes $vocabScheme)
+    {
+        $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => $vocabScheme->value]);
+        // TODO do I need more accurate checks?
+        if ($definition) {
+            $keyword->update(['notes' => $definition]);
+        }
+    }
 
     /**
      * Run the database seeds.
@@ -43,11 +50,12 @@ class ExtractExternalRefsSeeder extends Seeder
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::GEOSCIML->value]);
-                // TODO do I need more accurate checks?
-                if ($definition) {
-                    $keyword->update(['notes' => $definition]);
-                }
+                $this->processForScheme(
+                    keyword: $keyword,
+                    definition: $definition,
+                    definitionLink: $definitionLink,
+                    vocabScheme: VocabSchemes::GEOSCIML
+                );
 
                 continue;
             }
@@ -57,19 +65,22 @@ class ExtractExternalRefsSeeder extends Seeder
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::MINDAT->value]);
-                if ($definition) {
-                    $keyword->update(['notes' => $definition]);
-                }
+                $this->processForScheme(
+                    keyword: $keyword,
+                    definition: $definition,
+                    definitionLink: $definitionLink,
+                    vocabScheme: VocabSchemes::MINDAT
+                );
 
                 continue;
             }
-            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix())) {
+            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix(isHttpsProtocol: true))) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
                     $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
 
                     continue;
                 }
+                // TODO we should change links even when they exist in externaluri
                 // Find and replace the first occurence of https
                 $pos = strpos($definitionLink, 'https');
                 if ($pos === false) {
@@ -77,28 +88,32 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
                 $cleanedDefinitionLink = substr_replace($definitionLink, 'http', $pos, strlen('https'));
 
-                $keyword->update(['external_uri' => $cleanedDefinitionLink, 'external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
-                if ($definition) {
-                    $keyword->update(['notes' => $definition]);
-                }
+                $this->processForScheme(
+                    keyword: $keyword,
+                    definition: $definition,
+                    definitionLink: $cleanedDefinitionLink,
+                    vocabScheme: VocabSchemes::INSPIRE
+                );
 
                 continue;
             }
 
-            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix(isHttpProtocol: true))) {
+            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix())) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
                     $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
-                if ($definition) {
-                    $keyword->update(['notes' => $definition]);
-                }
+                $this->processForScheme(
+                    keyword: $keyword,
+                    definition: $definition,
+                    definitionLink: $definitionLink,
+                    vocabScheme: VocabSchemes::INSPIRE
+                );
 
                 continue;
             }
-
+            // If not any relevant vocabulary links have been found, we should still populate 'notes' field
             $notes = implode(' ', array_filter([$definition, $definitionLink], fn ($v) => $v));
             if ($notes) {
                 $keyword->update(['notes' => $notes]);
