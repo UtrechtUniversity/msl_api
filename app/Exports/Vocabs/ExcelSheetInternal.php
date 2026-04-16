@@ -53,6 +53,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 'terms_exclude_abstract_mapping',
                 'selection_group_1',
                 'selection_group_2',
+                'contributor_notes',
             ]
         );
     }
@@ -74,6 +75,7 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->getAbstractMatchingExcludedSearchKeywordsString(),
                 $keyword->selection_group_1 ? 'yes' : 'no',
                 $keyword->selection_group_2 ? 'yes' : 'no',
+                $keyword->notes,
             ]
         );
     }

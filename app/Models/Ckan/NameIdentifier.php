@@ -2,7 +2,7 @@
 
 namespace App\Models\Ckan;
 
-use App\Enums\IdSchemes\PersonalIdScheme;
+use App\Enums\Schemes\IdSchemes\PersonalIdScheme;
 
 class NameIdentifier
 {

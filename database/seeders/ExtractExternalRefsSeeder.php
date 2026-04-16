@@ -13,12 +13,17 @@ class ExtractExternalRefsSeeder extends Seeder
 
         $externalUri = $keyword->external_uri;
         if ($externalUri) {
-            // if ($externalUri !== $definitionLink) throw new Exception("There is already a value for external_uri in {$keyword->uri}: $externalUri.\nBut definition link is: {$definitionLink}");
+            if ($externalUri !== $definitionLink) {
+                throw new Exception("There is already a value for external_uri in {$keyword->uri}: $externalUri.\nBut definition link is: {$definitionLink}");
+            }
+
             return true;
         }
 
         return false;
     }
+
+    // private function (){}
 
     /**
      * Run the database seeds.
@@ -44,7 +49,8 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
 
                 continue;
-            } elseif (str_starts_with($definitionLink, 'https://www.mindat.org')) {
+            }
+            if (str_starts_with($definitionLink, 'https://www.mindat.org')) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
                     $keyword->update(['external_vocab_scheme' => 'mindat']);
 
@@ -56,7 +62,8 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
 
                 continue;
-            } elseif (str_starts_with($definitionLink, 'https://inspire.ec.europa.eu')) {
+            }
+            if (str_starts_with($definitionLink, 'https://inspire.ec.europa.eu')) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
                     $keyword->update(['external_vocab_scheme' => 'inspire']);
 
@@ -75,15 +82,22 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
 
                 continue;
-            } elseif (str_starts_with($definitionLink, 'http://inspire.ec.europa.eu')) {
-                $keyword->update(['external_vocab_scheme' => 'inspire']);
-                $notes = $definition ?? '';
-                if ($notes) {
-                    $keyword->update(['notes' => $notes]);
+            }
+
+            if (str_starts_with($definitionLink, 'http://inspire.ec.europa.eu')) {
+                if ($this->doesExternalUriExist($keyword, $definitionLink)) {
+                    $keyword->update(['external_vocab_scheme' => 'inspire']);
+
+                    continue;
+                }
+                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => 'inspire']);
+                if ($definition) {
+                    $keyword->update(['notes' => $definition]);
                 }
 
                 continue;
             }
+
             $notes = implode(' ', array_filter([$definition, $definitionLink], fn ($v) => $v));
             if ($notes) {
                 $keyword->update(['notes' => $notes]);
