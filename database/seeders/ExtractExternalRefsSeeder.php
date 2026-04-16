@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Schemes\VocabSchemes;
 use App\Models\Keyword;
 use Exception;
 use Illuminate\Database\Seeder;
@@ -35,14 +36,14 @@ class ExtractExternalRefsSeeder extends Seeder
         foreach ($keywordEntries as $keyword) {
             $definitionLink = $keyword->extracted_definition_link;
             $definition = $keyword->extracted_definition;
-            if (str_starts_with($definitionLink, 'http://resource.geosciml.org')) {
+            if (str_starts_with($definitionLink, VocabSchemes::GEOSCIML->getUrlPrefix())) {
 
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => 'geosciml']);
+                    $keyword->update(['external_vocab_scheme' => VocabSchemes::GEOSCIML->value]);
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => 'geosciml']);
+                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::GEOSCIML->value]);
                 // TODO do I need more accurate checks?
                 if ($definition) {
                     $keyword->update(['notes' => $definition]);
@@ -50,22 +51,22 @@ class ExtractExternalRefsSeeder extends Seeder
 
                 continue;
             }
-            if (str_starts_with($definitionLink, 'https://www.mindat.org')) {
+            if (str_starts_with($definitionLink, VocabSchemes::MINDAT->getUrlPrefix())) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => 'mindat']);
+                    $keyword->update(['external_vocab_scheme' => VocabSchemes::MINDAT->value]);
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => 'mindat']);
+                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::MINDAT->value]);
                 if ($definition) {
                     $keyword->update(['notes' => $definition]);
                 }
 
                 continue;
             }
-            if (str_starts_with($definitionLink, 'https://inspire.ec.europa.eu')) {
+            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix())) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => 'inspire']);
+                    $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
 
                     continue;
                 }
@@ -76,7 +77,7 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
                 $cleanedDefinitionLink = substr_replace($definitionLink, 'http', $pos, strlen('https'));
 
-                $keyword->update(['external_uri' => $cleanedDefinitionLink, 'external_vocab_scheme' => 'inspire']);
+                $keyword->update(['external_uri' => $cleanedDefinitionLink, 'external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
                 if ($definition) {
                     $keyword->update(['notes' => $definition]);
                 }
@@ -84,13 +85,13 @@ class ExtractExternalRefsSeeder extends Seeder
                 continue;
             }
 
-            if (str_starts_with($definitionLink, 'http://inspire.ec.europa.eu')) {
+            if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix(isHttpProtocol: true))) {
                 if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => 'inspire']);
+                    $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
 
                     continue;
                 }
-                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => 'inspire']);
+                $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
                 if ($definition) {
                     $keyword->update(['notes' => $definition]);
                 }
