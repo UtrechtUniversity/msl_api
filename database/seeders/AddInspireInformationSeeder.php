@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Keyword;
-use Error;
+use Exception;
 use Illuminate\Database\Seeder;
 
 class AddInspireInformationSeeder extends Seeder
@@ -21,14 +21,15 @@ class AddInspireInformationSeeder extends Seeder
                 $uriInEntry = $entry['uri'];
                 $keyword = Keyword::where('uri', $uriInEntry)->first();
                 if (! $keyword) {
-                    throw new Error('Not keyword found with uri '.$uriInEntry);
+                    throw new Exception('Not keyword found with uri '.$uriInEntry);
                 }
                 $extractedDefLink = $keyword->extracted_definition_link;
                 if ($extractedDefLink) {
-                    if ($extractedDefLink === $hyperLinkInEntry) {
-                        continue;
+                    if ($extractedDefLink !== $hyperLinkInEntry) {
+                        throw new Exception('Two values were found for the same uri " '.$uriInEntry.'" : '.$extractedDefLink.' and '.$hyperLinkInEntry);
                     }
-                    throw new Error('Two values were found for the same uri " '.$uriInEntry.'" : '.$extractedDefLink.' and '.$hyperLinkInEntry);
+
+                    continue;
                 }
                 $keyword->extracted_definition_link = $hyperLinkInEntry;
                 $keyword->save();
