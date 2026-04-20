@@ -10,7 +10,6 @@ class VocabularyToJsonConverter
 {
     public function excelToJson($filepath, $selectedDomain)
     {
-        dd($filepath);
         $spreadsheet = IOFactory::load($filepath);
 
         $dbSheetNameOptions = Vocabulary::where('name', $selectedDomain)->where('version', config('vocabularies.vocabularies_current_version'))->get();
