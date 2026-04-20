@@ -90,7 +90,6 @@ class DataPublicationMap {
                 (highlightOrReset === 'highlight') ? this.highlightedOptions : this.defaultOptions);
         })
     }
-    //
 
     private async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
