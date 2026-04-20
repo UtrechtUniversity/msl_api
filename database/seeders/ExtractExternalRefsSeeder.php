@@ -24,13 +24,28 @@ class ExtractExternalRefsSeeder extends Seeder
         return false;
     }
 
-    private function processForScheme(Keyword $keyword, string $definitionLink, string $definition, VocabSchemes $vocabScheme)
+    private function updateExternalFields(Keyword $keyword, string $definitionLink, string $definition, VocabSchemes $vocabScheme): void
     {
         $keyword->update(['external_uri' => $definitionLink, 'external_vocab_scheme' => $vocabScheme->value]);
-        // TODO do I need more accurate checks?
         if ($definition) {
             $keyword->update(['notes' => $definition]);
         }
+    }
+
+    private function processPerScheme(Keyword $keyword, string $definitionLink, string $definition, VocabSchemes $vocabScheme): void
+    {
+        if ($this->doesExternalUriExist($keyword, $definitionLink)) {
+            $keyword->update(['external_vocab_scheme' => $vocabScheme]);
+
+            return;
+        }
+        $this->updateExternalFields(
+            keyword: $keyword,
+            definition: $definition,
+            definitionLink: $definitionLink,
+            vocabScheme: $vocabScheme
+        );
+
     }
 
     /**
@@ -43,14 +58,9 @@ class ExtractExternalRefsSeeder extends Seeder
         foreach ($keywordEntries as $keyword) {
             $definitionLink = $keyword->extracted_definition_link;
             $definition = $keyword->extracted_definition;
+
             if (str_starts_with($definitionLink, VocabSchemes::GEOSCIML->getUrlPrefix())) {
-
-                if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => VocabSchemes::GEOSCIML->value]);
-
-                    continue;
-                }
-                $this->processForScheme(
+                $this->processPerScheme(
                     keyword: $keyword,
                     definition: $definition,
                     definitionLink: $definitionLink,
@@ -60,12 +70,7 @@ class ExtractExternalRefsSeeder extends Seeder
                 continue;
             }
             if (str_starts_with($definitionLink, VocabSchemes::MINDAT->getUrlPrefix())) {
-                if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => VocabSchemes::MINDAT->value]);
-
-                    continue;
-                }
-                $this->processForScheme(
+                $this->processPerScheme(
                     keyword: $keyword,
                     definition: $definition,
                     definitionLink: $definitionLink,
@@ -75,20 +80,16 @@ class ExtractExternalRefsSeeder extends Seeder
                 continue;
             }
             if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix(isHttpsProtocol: true))) {
-                if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
+                // We should update links even when they exist in external_uri!
+                $this->doesExternalUriExist($keyword, $definitionLink);
 
-                    continue;
-                }
-                // TODO we should change links even when they exist in externaluri
-                // Find and replace the first occurence of https
                 $pos = strpos($definitionLink, 'https');
                 if ($pos === false) {
                     throw new Exception("Position of 'https' could not be found. This is a bug.");
                 }
                 $cleanedDefinitionLink = substr_replace($definitionLink, 'http', $pos, strlen('https'));
 
-                $this->processForScheme(
+                $this->updateExternalFields(
                     keyword: $keyword,
                     definition: $definition,
                     definitionLink: $cleanedDefinitionLink,
@@ -99,12 +100,7 @@ class ExtractExternalRefsSeeder extends Seeder
             }
 
             if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix())) {
-                if ($this->doesExternalUriExist($keyword, $definitionLink)) {
-                    $keyword->update(['external_vocab_scheme' => VocabSchemes::INSPIRE->value]);
-
-                    continue;
-                }
-                $this->processForScheme(
+                $this->processPerScheme(
                     keyword: $keyword,
                     definition: $definition,
                     definitionLink: $definitionLink,
