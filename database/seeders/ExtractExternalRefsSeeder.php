@@ -45,7 +45,6 @@ class ExtractExternalRefsSeeder extends Seeder
             definitionLink: $definitionLink,
             vocabScheme: $vocabScheme
         );
-
     }
 
     /**
@@ -89,6 +88,8 @@ class ExtractExternalRefsSeeder extends Seeder
                 }
                 $cleanedDefinitionLink = substr_replace($definitionLink, 'http', $pos, strlen('https'));
 
+                // We have to update the extracted definition link with the correct http url
+                $keyword->update(['extracted_definition_link' => $cleanedDefinitionLink]);
                 $this->updateExternalFields(
                     keyword: $keyword,
                     definition: $definition,
