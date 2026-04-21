@@ -16,4 +16,15 @@ enum VocabSchemes: string
             self::INSPIRE => (! $isHttpsProtocol) ? 'http://inspire.ec.europa.eu' : 'https://inspire.ec.europa.eu',
         };
     }
+
+    public static function fromPrefix(string $input): ?self
+    {
+        foreach (self::cases() as $vocabScheme) {
+            if (str_starts_with($input, $vocabScheme->getUrlPrefix())) {
+                return $vocabScheme;
+            }
+        }
+
+        return null;
+    }
 }
