@@ -820,7 +820,7 @@ class VocabularySeeder extends Seeder
             'extracted_definition_link' => isset($node->extracted_definition_link) ? $node->extracted_definition_link : '',
             'selection_group_1' => $node->selection_group_1,
             'selection_group_2' => $node->selection_group_2,
-            'notes' => $node->notes,
+            'notes' => isset($node->notes) ? $node->notes : '',
             'external_vocab_scheme' => $node->external_vocab_scheme,
         ]);
 
