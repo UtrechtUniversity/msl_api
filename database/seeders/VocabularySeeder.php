@@ -21,7 +21,6 @@ class VocabularySeeder extends Seeder
         Keyword::truncate();
         KeywordSearch::truncate();
 
-        // vocabularies version 1.3
         $allFileDomains = [
             [
                 'displayName' => 'Material',
