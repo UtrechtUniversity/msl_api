@@ -79,29 +79,29 @@ class VocabularySeeder extends Seeder
             ],
         ];
 
-        // foreach ($allFileDomains as $domain) {
-        //     $vocabulary = Vocabulary::updateOrCreate(
-        //         [
-        //             'name' => $domain['name'],
-        //             'version' => '1.4',
-        //         ],
-        //         [
-        //             'name' => $domain['name'],
-        //             'display_name' => $domain['displayName'],
-        //             'version' => '1.4',
-        //             'uri' => 'https://epos-msl.uu.nl/voc/'.$domain['uri-name'].'/1.4/',
-        //         ]
-        //     );
+        foreach ($allFileDomains as $domain) {
+            $vocabulary = Vocabulary::updateOrCreate(
+                [
+                    'name' => $domain['name'],
+                    'version' => '1.4',
+                ],
+                [
+                    'name' => $domain['name'],
+                    'display_name' => $domain['displayName'],
+                    'version' => '1.4',
+                    'uri' => 'https://epos-msl.uu.nl/voc/'.$domain['uri-name'].'/1.4/',
+                ]
+            );
 
-        //     // load jsonData from file
-        //     $fileString = file_get_contents(base_path('database/seeders/datafiles/vocabularies/1-4/'.$domain['name'].'.json'));
-        //     $vocabData = json_decode($fileString);
+            // load jsonData from file
+            $fileString = file_get_contents(base_path('database/seeders/datafiles/vocabularies/1-4/'.$domain['name'].'.json'));
+            $vocabData = json_decode($fileString);
 
-        //     // loop over top nodes and add sub-nodes
-        //     foreach ($vocabData as $topNode) {
-        //         $this->processNode($topNode, $vocabulary, null);
-        //     }
-        // }
+            // loop over top nodes and add sub-nodes
+            foreach ($vocabData as $topNode) {
+                $this->processNode($topNode, $vocabulary, null);
+            }
+        }
 
         foreach ($allFileDomains as $domain) {
             $vocabulary = Vocabulary::updateOrCreate(
