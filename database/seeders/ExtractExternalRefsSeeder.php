@@ -9,13 +9,19 @@ use Illuminate\Database\Seeder;
 
 class ExtractExternalRefsSeeder extends Seeder
 {
+    private function throwExternalUriConflictError(string $keywordUri, string $externalUri, string $definitionLink)
+    {
+
+        throw new Exception("There is already a value for external_uri in {$keywordUri}: $externalUri.\nBut definition link is: {$definitionLink}");
+    }
+
     private function doesExternalUriExist(Keyword $keyword, string $definitionLink): bool
     {
 
         $externalUri = $keyword->external_uri;
         if ($externalUri) {
             if ($externalUri !== $definitionLink) {
-                throw new Exception("There is already a value for external_uri in {$keyword->uri}: $externalUri.\nBut definition link is: {$definitionLink}");
+                $this->throwExternalUriConflictError(keywordUri: $keyword->uri, externalUri: $externalUri, definitionLink: $definitionLink);
             }
 
             return true;
@@ -80,7 +86,10 @@ class ExtractExternalRefsSeeder extends Seeder
             }
             if (str_starts_with($definitionLink, VocabSchemes::INSPIRE->getUrlPrefix(isHttpsProtocol: true))) {
                 // We should update links even when they exist in external_uri!
-                $this->doesExternalUriExist($keyword, $definitionLink);
+                $externalUri = $keyword->external_uri;
+                if ($externalUri && $externalUri !== $definitionLink) {
+                    $this->throwExternalUriConflictError(keywordUri: $keyword->uri, externalUri: $externalUri, definitionLink: $definitionLink);
+                }
 
                 $pos = strpos($definitionLink, 'https');
                 if ($pos === false) {
