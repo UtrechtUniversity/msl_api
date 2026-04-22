@@ -27,12 +27,7 @@
                     </div>
                     <div class="w-full min-h-full bg-primary-100 pl-4">
                         {{-- top search div --}}
-                        @include('public.components.search-div-list-map', [
-                            'searchFor' => 'data publications',
-                            'amountFoundLabel' => 'data publications',
-                            'sortingDropdown' => true,
-                            'activeSort' => '',
-                        ])
+                        @include('public.components.search-div-list-map')
                         {{-- list view --}}
                         <div class="list-view">
                             @include('public.components.dataPublication-map-view')
