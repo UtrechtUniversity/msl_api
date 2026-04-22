@@ -2,7 +2,7 @@
 
 namespace App\Models\Ckan;
 
-use App\Enums\IdSchemes\OrganizationIdScheme;
+use App\Enums\Schemes\IdSchemes\OrganizationIdScheme;
 
 class Affiliation
 {

@@ -29,7 +29,6 @@ class VocabularyToJsonConverter
         $data = $this->retrieveData($worksheet);
 
         return json_encode($data, JSON_PRETTY_PRINT);
-
     }
 
     private function retrieveData($worksheet): array
@@ -58,7 +57,6 @@ class VocabularyToJsonConverter
                         $node['value'] = $cell->getValue();
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['rowNr'] = $cell->getRow();
-
                     } elseif ($currentColumn == $this->checkColumnByName('indicator terms', $allColNames)) {
                         $node['synonyms'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_domain_mapping', $allColNames)) {
@@ -79,10 +77,8 @@ class VocabularyToJsonConverter
                         $node['external_vocab_scheme'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_description', $allColNames)) {
                         $node['external_description'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition', $allColNames)) {
-                        $node['extracted_definition'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition_link', $allColNames)) {
-                        $node['extracted_definition_link'] = $cell->getValue();
+                    } elseif ($currentColumn == $this->checkColumnByName('contributor_notes', $allColNames)) {
+                        $node['notes'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('terms_exclude_abstract_mapping', $allColNames)) {
                         $node['terms_exclude_abstract_mapping'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_1', $allColNames)) {
@@ -207,8 +203,7 @@ class VocabularyToJsonConverter
             'external_uri' => '',
             'external_vocab_scheme' => '',
             'external_description' => '',
-            'extracted_definition' => '',
-            'extracted_definition_link' => '',
+            'notes' => '',
             'terms_exclude_abstract_mapping' => [],
             'selection_group_1' => '',
             'selection_group_2' => '',

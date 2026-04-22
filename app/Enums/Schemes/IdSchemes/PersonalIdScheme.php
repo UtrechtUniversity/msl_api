@@ -1,21 +1,25 @@
 <?php
 
-namespace App\Enums\IdSchemes;
+namespace App\Enums\Schemes\IdSchemes;
 
-enum OrganizationIdScheme: string
+enum PersonalIdScheme: string
 {
-    case ROR = 'ror';
+    case ORCID = 'orcid';
     case ISNI = 'isni';
+    case SCOPUS_ID = 'scopusid';
 
     public static function tryFromScheme(string $value): ?static
     {
 
         $lowerCaseValue = trim(strtolower($value));
         switch ($lowerCaseValue) {
-            case self::ROR->value:
-                return self::ROR;
+            case self::ORCID->value:
+                return self::ORCID;
             case self::ISNI->value:
                 return self::ISNI;
+            case self::SCOPUS_ID->value:
+            case 'author identifier (scopus)':
+                return self::SCOPUS_ID;
             default:
                 return null;
         }
@@ -24,8 +28,9 @@ enum OrganizationIdScheme: string
     public function getUrlPrefix(): string
     {
         return match ($this) {
-            self::ROR => 'https://ror.org/',
+            self::ORCID => 'https://orcid.org/',
             self::ISNI => 'https://isni.org/isni',
+            self::SCOPUS_ID => 'https://www.scopus.com/authid/detail.uri?authorId=',
         };
     }
 }

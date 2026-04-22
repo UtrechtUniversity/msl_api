@@ -46,16 +46,6 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
             'columnDescription' => 'The description found on the "external_uri" of external vocabulary',
         ],
         [
-            'columnName' => 'contributor_definition',
-            'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
-        ],
-        [
-            'columnName' => 'contributor_definition_link',
-            'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: External link provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
-        ],
-        [
             'columnName' => 'exclude_domain_mapping',
             'columnPurpose' => 'For use by MSL. Details how the term is used by EPOS-MSL',
             'columnDescription' => 'Indicates if the term is being used in mapping the associated data publication to one or more scientific domain(s) in MSL ("yes"/"no")',
@@ -74,6 +64,11 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
             'columnName' => 'selection_group_2',
             'columnPurpose' => 'For use by MSL. Details how the term is used by EPOS-MSL',
             'columnDescription' => 'Indicates if this term should be included in the group 2 words determining if data publications are relevant to MSL (“yes”/”no”). Group 2 indicates relevance to Laboratory studies, by matching to terms used in e.g. "apparatus", "measured property", sections of domain-specific vocabularies used in EPOS-MSL. Relevant data publications have a combination of at least 1 group 1 and 1 group 2 word.',
+        ],
+        [
+            'columnName' => 'contributor_notes',
+            'columnPurpose' => 'For continued vocabulary development',
+            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
         ],
     ];
 
@@ -96,7 +91,9 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
     {
         return [
             [
-                $row['columnName'], $row['columnPurpose'], $row['columnDescription'],
+                $row['columnName'],
+                $row['columnPurpose'],
+                $row['columnDescription'],
             ],
         ];
     }

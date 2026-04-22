@@ -47,12 +47,11 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 'external_uri',
                 'external_vocab_scheme',
                 'external_description',
-                'contributor_definition',
-                'contributor_definition_link',
                 'exclude_domain_mapping',
                 'terms_exclude_abstract_mapping',
                 'selection_group_1',
                 'selection_group_2',
+                'contributor_notes',
             ]
         );
     }
@@ -68,12 +67,11 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
                 $keyword->external_uri,
                 $keyword->external_vocab_scheme,
                 $keyword->external_description,
-                $keyword->extracted_definition,
-                $keyword->extracted_definition_link,
                 $keyword->exclude_domain_mapping ? 'yes' : 'no',
                 $keyword->getAbstractMatchingExcludedSearchKeywordsString(),
                 $keyword->selection_group_1 ? 'yes' : 'no',
                 $keyword->selection_group_2 ? 'yes' : 'no',
+                $keyword->notes,
             ]
         );
     }
