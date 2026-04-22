@@ -77,10 +77,6 @@ class VocabularyToJsonConverter
                         $node['external_vocab_scheme'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_description', $allColNames)) {
                         $node['external_description'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition', $allColNames)) {
-                        $node['extracted_definition'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition_link', $allColNames)) {
-                        $node['extracted_definition_link'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('contributor_notes', $allColNames)) {
                         $node['notes'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('terms_exclude_abstract_mapping', $allColNames)) {
@@ -207,9 +203,7 @@ class VocabularyToJsonConverter
             'external_uri' => '',
             'external_vocab_scheme' => '',
             'external_description' => '',
-            'extracted_definition' => '',
             'notes' => '',
-            'extracted_definition_link' => '',
             'terms_exclude_abstract_mapping' => [],
             'selection_group_1' => '',
             'selection_group_2' => '',

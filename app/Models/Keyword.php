@@ -15,8 +15,6 @@ class Keyword extends Model
         'hyperlink',
         'exclude_domain_mapping',
         'label',
-        'extracted_definition',
-        'extracted_definition_link',
         'external_vocab_scheme',
         'external_description',
         'selection_group_1',

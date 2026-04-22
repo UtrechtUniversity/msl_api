@@ -46,16 +46,6 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
             'columnDescription' => 'The description found on the "external_uri" of external vocabulary',
         ],
         [
-            'columnName' => 'contributor_definition',
-            'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
-        ],
-        [
-            'columnName' => 'contributor_definition_link',
-            'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: External link provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
-        ],
-        [
             'columnName' => 'exclude_domain_mapping',
             'columnPurpose' => 'For use by MSL. Details how the term is used by EPOS-MSL',
             'columnDescription' => 'Indicates if the term is being used in mapping the associated data publication to one or more scientific domain(s) in MSL ("yes"/"no")',

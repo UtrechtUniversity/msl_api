@@ -815,8 +815,6 @@ class VocabularySeeder extends Seeder
             'hyperlink' => $node->hyperlink,
             'label' => $node->value,
             'exclude_domain_mapping' => $node->exclude_domain_mapping,
-            'extracted_definition' => isset($node->extracted_definition) ? $node->extracted_definition : '',
-            'extracted_definition_link' => isset($node->extracted_definition_link) ? $node->extracted_definition_link : '',
             'selection_group_1' => $node->selection_group_1,
             'selection_group_2' => $node->selection_group_2,
             'notes' => isset($node->notes) ? $node->notes : '',
@@ -870,8 +868,7 @@ class VocabularySeeder extends Seeder
             'hyperlink' => $node->hyperlink,
             'label' => $node->value,
             'exclude_domain_mapping' => $excludeSubdomainMapping,
-            'extracted_definition' => '',
-            'extracted_definition_link' => '',
+
         ]);
 
         $this->generateURI($keyword, $vocabulary);
