@@ -23,6 +23,11 @@ class DatasetCreate extends Model
         return $this->belongsTo(SourceDataset::class);
     }
 
+    public function import()
+    {
+        return $this->belongsTo(Import::class);
+    }
+
     public function getDatasetAsJson($pretty = false)
     {
         if ($pretty) {
