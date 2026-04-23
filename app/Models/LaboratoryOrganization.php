@@ -18,4 +18,9 @@ class LaboratoryOrganization extends Model
     {
         return $this->hasMany(Laboratory::class);
     }
+
+    public function laboratoryOrganizationUpdateRors()
+    {
+        return $this->hasMany(LaboratoryOrganizationUpdateRor::class);
+    }
 }
