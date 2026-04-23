@@ -65,6 +65,11 @@ class Laboratory extends Model
         return $this->hasMany(LaboratoryKeyword::class, 'laboratory_id');
     }
 
+    public function laboratoryUpdatesFast()
+    {
+        return $this->hasMany(LaboratoryUpdateFast::class, 'laboratory_id');
+    }
+
     /**
      * Convert object to CKAN representation
      *
