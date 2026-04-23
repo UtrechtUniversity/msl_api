@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\DB;
 
 class Import extends Model
@@ -11,22 +13,22 @@ class Import extends Model
         'importer_id',
     ];
 
-    public function importer()
+    public function importer(): BelongsTo
     {
         return $this->belongsTo(Importer::class);
     }
 
-    public function source_dataset_identifiers()
+    public function source_dataset_identifiers(): HasMany
     {
         return $this->hasMany(SourceDatasetIdentifier::class);
     }
 
-    public function source_datasets()
+    public function source_datasets(): HasMany
     {
         return $this->hasMany(SourceDataset::class);
     }
 
-    public function dataset_creates()
+    public function dataset_creates(): HasMany
     {
         return $this->hasMany(DatasetCreate::class);
     }
