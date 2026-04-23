@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LaboratoryCreate extends Model
 {
@@ -16,7 +17,7 @@ class LaboratoryCreate extends Model
         'laboratory' => 'array',
     ];
 
-    public function seed()
+    public function seed(): BelongsTo
     {
         return $this->belongsTo(Seed::class);
     }
