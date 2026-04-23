@@ -11,8 +11,8 @@ class DataRepository extends Model
         'ckan_name',
     ];
 
-    public function importer()
+    public function importers()
     {
-        return $this->belongsToMany(Importer::class);
+        return $this->hasMany(Importer::class);
     }
 }
