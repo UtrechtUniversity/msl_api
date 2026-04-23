@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LaboratoryUpdateFast extends Model
 {
@@ -15,12 +16,12 @@ class LaboratoryUpdateFast extends Model
 
     protected $table = 'laboratory_update_fast';
 
-    public function laboratoryUpdateGroupFast()
+    public function laboratoryUpdateGroupFast(): BelongsTo
     {
         return $this->belongsTo(LaboratoryUpdateGroupFast::class);
     }
 
-    public function laboratory()
+    public function laboratory(): BelongsTo
     {
         return $this->belongsTo(Laboratory::class);
     }
