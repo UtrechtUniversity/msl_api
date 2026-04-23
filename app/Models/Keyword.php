@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Keyword extends Model
 {
@@ -28,7 +30,7 @@ class Keyword extends Model
         'selection_group_2' => 'boolean',
     ];
 
-    public function parent()
+    public function parent(): BelongsTo
     {
         return $this->belongsTo(Keyword::class, 'parent_id');
     }
@@ -42,12 +44,12 @@ class Keyword extends Model
         return false;
     }
 
-    public function vocabulary()
+    public function vocabulary(): BelongsTo
     {
         return $this->belongsTo(Vocabulary::class, 'vocabulary_id');
     }
 
-    public function keyword_search()
+    public function keyword_search(): HasMany
     {
         return $this->hasMany(KeywordSearch::class, 'keyword_id');
     }
