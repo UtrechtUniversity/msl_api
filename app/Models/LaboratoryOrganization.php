@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LaboratoryOrganization extends Model
 {
@@ -14,12 +15,12 @@ class LaboratoryOrganization extends Model
         'external_identifier',
     ];
 
-    public function laboratories()
+    public function laboratories(): HasMany
     {
         return $this->hasMany(Laboratory::class);
     }
 
-    public function laboratoryOrganizationUpdateRors()
+    public function laboratoryOrganizationUpdateRors(): HasMany
     {
         return $this->hasMany(LaboratoryOrganizationUpdateRor::class);
     }
