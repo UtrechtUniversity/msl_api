@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class SourceDatasetIdentifier extends Model
 {
@@ -16,12 +18,12 @@ class SourceDatasetIdentifier extends Model
         'extra_payload' => 'array',
     ];
 
-    public function import()
+    public function import(): BelongsTo
     {
         return $this->belongsTo(Import::class);
     }
 
-    public function source_dataset()
+    public function source_dataset(): HasOne
     {
         return $this->hasOne(SourceDataset::class);
     }
