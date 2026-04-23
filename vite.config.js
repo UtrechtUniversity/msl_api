@@ -17,6 +17,7 @@ export default defineConfig({
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
+            'resources/ts/dataPublication/mapDeprecated.ts',
             'resources/ts/dataPublication/map.ts',
             'resources/ts/dataPublication/sidebar.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
