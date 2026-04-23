@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Seeder extends Model
 {
@@ -17,7 +18,7 @@ class Seeder extends Model
         'options' => 'array',
     ];
 
-    public function seeds()
+    public function seeds(): HasMany
     {
         return $this->hasMany(Seed::class);
     }
