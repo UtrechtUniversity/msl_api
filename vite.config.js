@@ -18,6 +18,7 @@ export default defineConfig({
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/map.ts',
+            'resources/ts/dataPublication/map_v2.ts',
             'resources/ts/dataPublication/sidebar.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
             'resources/css/leafletMapStyles/datapublications-list.css',

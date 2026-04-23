@@ -30,7 +30,7 @@
                         @include('public.components.search-div-list-map')
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('public.components.dataPublication-map-view')
+                            @include('public.components.dataPublication-map-view_v2')
                         </div>
                     </div>
 
@@ -41,10 +41,7 @@
 
                     <ul class="menu bg-primary-200 min-h-full p-0 w-80 text-primary-900">
                         <!-- Sidebar content here -->
-                        @include('public.components.search-div-filters-map', [
-                            'filterDataPath' => 'public/interpreted.json',
-                            'pbDetail' => true,
-                        ])
+                        @include('public.components.sidebar-map')
                     </ul>
                 </div>
             </div>

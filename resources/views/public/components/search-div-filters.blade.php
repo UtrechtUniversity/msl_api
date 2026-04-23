@@ -5,9 +5,9 @@
         <div class='w-full flex flex-col px-6'>
 
             <div class="search-bar-container form-field-text p-0 m-0 ">
-                <div class="search-bar-container-icon">
+                {{-- <div class="search-bar-container-icon">
                     <x-ri-search-line class="search-icon" />
-                </div>
+                </div> --}}
                 <input class="search-bar" type="text" id="search-filters" placeholder="Search Filters..." />
             </div>
 
