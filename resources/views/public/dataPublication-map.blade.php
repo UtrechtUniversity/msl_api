@@ -30,7 +30,7 @@
                         @include('public.components.search-div-list-map')
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('public.components.dataPublication-map-view_v2')
+                            @include('public.components.dataPublication-map-view')
                         </div>
                     </div>
 
