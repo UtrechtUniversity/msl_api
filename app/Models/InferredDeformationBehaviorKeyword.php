@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class InferredDeformationBehaviorKeyword extends Model
 {
@@ -12,7 +13,7 @@ class InferredDeformationBehaviorKeyword extends Model
         'searchvalue',
     ];
 
-    public function parent()
+    public function parent(): BelongsTo
     {
         return $this->belongsTo(InferredDeformationBehaviorKeyword::class, 'parent_id');
     }
