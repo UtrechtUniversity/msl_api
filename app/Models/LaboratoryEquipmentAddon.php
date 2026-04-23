@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LaboratoryEquipmentAddon extends Model
 {
@@ -14,12 +15,12 @@ class LaboratoryEquipmentAddon extends Model
         'group',
     ];
 
-    public function laboratory_equipment()
+    public function laboratory_equipment(): BelongsTo
     {
         return $this->belongsTo(LaboratoryEquipment::class);
     }
 
-    public function keyword()
+    public function keyword(): BelongsTo
     {
         return $this->belongsTo(Keyword::class);
     }
