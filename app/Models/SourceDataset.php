@@ -18,6 +18,11 @@ class SourceDataset extends Model
         return $this->belongsTo(SourceDatasetIdentifier::class);
     }
 
+    public function import()
+    {
+        return $this->belongsTo(Import::class);
+    }
+
     public function dataset_create()
     {
         return $this->hasOne(DatasetCreate::class);
