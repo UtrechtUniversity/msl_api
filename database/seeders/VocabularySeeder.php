@@ -21,7 +21,91 @@ class VocabularySeeder extends Seeder
         Keyword::truncate();
         KeywordSearch::truncate();
 
+        // Current domain names for version 1.4+
         $allFileDomains = [
+            [
+                'displayName' => 'Material',
+                'name' => 'materials',
+                'uri-name' => 'materials',
+            ],
+            [
+                'displayName' => 'Pore fluid',
+                'name' => 'porefluids',
+                'uri-name' => 'porefluids',
+            ],
+            [
+                'displayName' => 'Rock and melt physics',
+                'name' => 'rockphysics',
+                'uri-name' => 'rockphysics',
+            ],
+            [
+                'displayName' => 'Analogue modelling of geological processes',
+                'name' => 'analogue',
+                'uri-name' => 'analoguemodelling',
+            ],
+            [
+                'displayName' => 'Geological age',
+                'name' => 'geologicalage',
+                'uri-name' => 'geologicalage',
+            ],
+            [
+                'displayName' => 'Geological setting',
+                'name' => 'geologicalsetting',
+                'uri-name' => 'geologicalsetting',
+            ],
+            [
+                'displayName' => 'Paleomagnetism',
+                'name' => 'paleomagnetism',
+                'uri-name' => 'paleomagnetism',
+            ],
+            [
+                'displayName' => 'Geochemistry',
+                'name' => 'geochemistry',
+                'uri-name' => 'geochemistry',
+            ],
+            [
+                'displayName' => 'Microscopy and tomography',
+                'name' => 'microscopy',
+                'uri-name' => 'microscopy',
+            ],
+            [
+                'displayName' => '(sub)surface utilization setting',
+                'name' => 'subsurface',
+                'uri-name' => 'subsurface',
+            ],
+            [
+                'displayName' => 'Field-Scale Laboratories',
+                'name' => 'fieldscale',
+                'uri-name' => 'fieldscale',
+            ],
+        ];
+
+        foreach ($allFileDomains as $domain) {
+            $vocabulary = Vocabulary::updateOrCreate(
+                [
+                    'name' => $domain['name'],
+                    'version' => '1.4',
+                ],
+                [
+                    'name' => $domain['name'],
+                    'display_name' => $domain['displayName'],
+                    'version' => '1.4',
+                    'uri' => 'https://epos-msl.uu.nl/voc/'.$domain['uri-name'].'/1.4/',
+                ]
+            );
+
+            // load jsonData from file
+            $fileString = file_get_contents(base_path('database/seeders/datafiles/vocabularies/1-4/'.$domain['name'].'.json'));
+            $vocabData = json_decode($fileString);
+
+            // loop over top nodes and add sub-nodes
+            foreach ($vocabData as $topNode) {
+                $this->processNode($topNode, $vocabulary, null);
+            }
+        }
+
+        // domain names for version 1.3
+        $allFileDomains1_3 = [
             [
                 'displayName' => 'Material',
                 'name' => 'materials',
@@ -79,31 +163,7 @@ class VocabularySeeder extends Seeder
             ],
         ];
 
-        foreach ($allFileDomains as $domain) {
-            $vocabulary = Vocabulary::updateOrCreate(
-                [
-                    'name' => $domain['name'],
-                    'version' => '1.4',
-                ],
-                [
-                    'name' => $domain['name'],
-                    'display_name' => $domain['displayName'],
-                    'version' => '1.4',
-                    'uri' => 'https://epos-msl.uu.nl/voc/'.$domain['uri-name'].'/1.4/',
-                ]
-            );
-
-            // load jsonData from file
-            $fileString = file_get_contents(base_path('database/seeders/datafiles/vocabularies/1-4/'.$domain['name'].'.json'));
-            $vocabData = json_decode($fileString);
-
-            // loop over top nodes and add sub-nodes
-            foreach ($vocabData as $topNode) {
-                $this->processNode($topNode, $vocabulary, null);
-            }
-        }
-
-        foreach ($allFileDomains as $domain) {
+        foreach ($allFileDomains1_3 as $domain) {
             $vocabulary = Vocabulary::updateOrCreate(
                 [
                     'name' => $domain['name'],
