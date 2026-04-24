@@ -35,7 +35,7 @@
                 <li>either the metadata of a data publication contains A) one term reflecting Earth scientific research
                     (e.g. Earth material, or geological setting) and B) a term reflecting laboratory research (e.g. lab
                     apparatus; measured/modeled properties or behavior).</li>
-                <li>or the metadata of a data publication contains the name of a geo-energy test bed facility that is
+                <li>or the metadata of a data publication contains the name of a field-scale laboratory that is
                     part of the <a class="hover-interactive underline" href="{{ route('labs-map') }}">EPOS MSL
                         community</a>.</li>
             </ul>
@@ -65,22 +65,22 @@
 
             @php
                 $contentList = [
-                    'File information' => 'Using the general metadata description we can improve the findability of your data publications however this 
-                                            does not include the actual related files! Researchers will need to know what actual data is available to 
-                                            understand their value. At a minimum we try to provide a list of files and download links. By providing machine 
-                                            readable metadata about the actual files we can offer more sophisticated insights in the value of and contents of the data files. 
+                    'File information' => 'Using the general metadata description we can improve the findability of your data publications however this
+                                            does not include the actual related files! Researchers will need to know what actual data is available to
+                                            understand their value. At a minimum we try to provide a list of files and download links. By providing machine
+                                            readable metadata about the actual files we can offer more sophisticated insights in the value of and contents of the data files.
                                             ',
-                    'Keywords and vocabularies' => 'Assigning keywords to your data publications greatly improves their findability. To maximize its impact it is important to understand 
-                                            the origin of the keyword. This can be done by assigning terms from controlled vocabularies. To store this context we recommend to assign 
-                                            the URI of the term and vocabulary to keywords. For more information about the vocabularies developed by the MSL community click here. 
+                    'Keywords and vocabularies' => 'Assigning keywords to your data publications greatly improves their findability. To maximize its impact it is important to understand
+                                            the origin of the keyword. This can be done by assigning terms from controlled vocabularies. To store this context we recommend to assign
+                                            the URI of the term and vocabulary to keywords. For more information about the vocabularies developed by the MSL community click here.
                                             Information about storing this information within the DataCite schema click <a class="hover-interactive underline" title="DataCite subjects metadata" target="_blank" href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/subject/">here</a>.
                                             ',
-                    'Versioning' => 'Data publications might be published as several versions over the course of time. It is 
-                                        important to understand from the metadata if we are looking at the latest version as we do not 
-                                        want to show users several versions of the same data publication. For more information about the options 
+                    'Versioning' => 'Data publications might be published as several versions over the course of time. It is
+                                        important to understand from the metadata if we are looking at the latest version as we do not
+                                        want to show users several versions of the same data publication. For more information about the options
                                         available in the DataCite schema please see <a class="hover-interactive underline" href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/version/" target="_blank" title="DataCite versioning">here</a>.
                                     ',
-                    'Location data' => 'By providing information about the geolocations associated with your data publication we can greatly improve the findability. 
+                    'Location data' => 'By providing information about the geolocations associated with your data publication we can greatly improve the findability.
                                         Data can be displayed on maps and be found using spatial queries. How to describe this within the DataCite schema can be found <a class="hover-interactive underline" href="https://datacite-metadata-schema.readthedocs.io/en/4.5/properties/geolocation/" target="_blank" title="DataCite versioning">here</a>.',
                 ];
             @endphp

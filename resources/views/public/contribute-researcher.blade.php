@@ -191,7 +191,7 @@
                     subdomain vocabularies: analogue modelling, geochemistry, paleomagnetism, microscopy and tomography
                     and rock and melt physics), or</li>
                 </li>
-                <li>A facility name from the Geo-Energy Test Beds. In this case, we know it concerns a GETB data
+                <li>A facility name from the Field-Scale Laboratories. In this case, we know it concerns a GETB data
                     publication.</li>
             </ul>
 

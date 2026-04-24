@@ -40,7 +40,6 @@ Route::get('/keyword-selector', [FrontendController::class, 'keywordSelector'])-
 Route::post('/keyword-export', [FrontendController::class, 'keywordExport'])->name('keyword-export');
 Route::get('/data-publication/{id}/download/{url}', [FrontendController::class, 'fileDownload'])->name('file-download');
 
-
 if (App::environment('local')) {
     Route::get('/themeTest', [FrontendController::class, 'themeTest'])->name('themeTest');
     Route::get('/demoPage', [FrontendController::class, 'demoPage'])->name('demoPage');

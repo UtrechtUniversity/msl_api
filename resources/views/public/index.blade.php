@@ -16,7 +16,7 @@
                     data in Europe.
                     Here you can find data, labs and lab equipment from rock and melt physics, paleomagnetism,
                     geochemistry, microscopy,
-                    tomography, geo-energy test beds and analogue modelling of geological processes.
+                    tomography, field-scale laboratories and analogue modelling of geological processes.
                 </p>
 
                 <a href="{{ route('data-access') }}" class="w-full flex justify-center">
