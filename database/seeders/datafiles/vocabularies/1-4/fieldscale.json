@@ -30,8 +30,7 @@
                     "geothermal lab gross schoenebeck",
                     "geothermal research gross schoenebeck",
                     "geothermal research platform gross sch\u00f6nebeck",
-                    "geothermal laboratory gross sch\u00f6nebeck",
-                    "geothermal"
+                    "geothermal laboratory gross sch\u00f6nebeck"
                 ],
                 "exclude_domain_mapping": 0,
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geothermal_research_platform_gros_schonebeck",
