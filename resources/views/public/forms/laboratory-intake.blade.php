@@ -101,7 +101,7 @@
                                 'Microscopy & tomography',
                                 'Paleomagnetic and magnetic data',
                                 'Rock and melt physical properties',
-                                'Geo-energy test beds.',
+                                'Field-Scale Laboratories',
                             ],
                         ])
                     </div>

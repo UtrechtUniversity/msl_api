@@ -82,11 +82,18 @@
                             ],
                         ],
                         [
-                            'name' => 'Geo-energy test beds',
+                            'name' => 'Field-Scale Laboratories',
                             'items' => [
-                                'The latest addition to Multi-Scale Labs',
-                                'Testing or monitoring field-scale subsurface applications aimed at curbing CO2 emissions. Such applications include subsurface storage of fluids (H, N, CO2, hot water), or geothermal energy production.',
-                                'Data are often (but not always) site-specific, and can include a.o. fiber optics sensing data (DAS, DSS, DTS), seismological data, electromagnetics, geological models, microscopy and tomography and rock physics data.',
+                                'Field-Scale Laboratories are large-scale, experimental test beds and monitoring facilities
+                                developed to understand both earth-surface and subsurface processes that are associated
+                                with ground instabilities, landslides and power generation technologies, such as renewable
+                                geothermal energy, carbon capture and storage (CCS), development of shale gas, storage of
+                                nuclear waste, and underground hydrogen storage. Data produced at these research infrastructures
+                                includes seismic waveforms, borehole drilling and logging data, geomechanical and hydrological
+                                and chemical data but also data from optical fibres (such as distributed acoustic sensing (DAS),
+                                distributed temperature sensing (DTS), distributed strain sensing (DSS)), distributed pressure gauges,
+                                meteo-climatic stations, in-rock temperature devices and acoustic emission sensors. Several
+                                of the FSL facilities are also part of the ECCSEL ERIC for CCUS and subsurface use.',
                             ],
                         ],
                         [
