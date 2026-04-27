@@ -12,6 +12,5 @@ enum DataPublicationSubDomain: string
     case MICROSCOPY = 'microscopy and tomography';
     case PALEO = 'paleomagnetism';
     case GEO_CHEMISTRY = 'geochemistry';
-    case GEO_ENERGY = 'geo-energy test beds';
     case FIELD_SCALE = 'field-scale laboratories';
 }

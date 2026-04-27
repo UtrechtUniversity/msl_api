@@ -23,7 +23,6 @@ enum VocabularySubDomain: string
             self::MICROSCOPY => DataPublicationSubDomain::MICROSCOPY,
             self::PALEO => DataPublicationSubDomain::PALEO,
             self::GEO_CHEMISTRY => DataPublicationSubDomain::GEO_CHEMISTRY,
-            self::GEO_ENERGY => DataPublicationSubDomain::GEO_ENERGY,
             self::FIELD_SCALE => DataPublicationSubDomain::FIELD_SCALE
         };
     }
