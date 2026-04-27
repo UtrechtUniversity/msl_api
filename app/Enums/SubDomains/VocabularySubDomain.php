@@ -12,7 +12,6 @@ enum VocabularySubDomain: string
     case MICROSCOPY = 'microscopy';
     case PALEO = 'paleomagnetism';
     case GEO_CHEMISTRY = 'geochemistry';
-    case GEO_ENERGY = 'testbeds';
     case FIELD_SCALE = 'fieldscale';
 
     public function dataPublicationSubDomain(): DataPublicationSubDomain
