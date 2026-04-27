@@ -13,4 +13,5 @@ enum LabDomain: string
     case PALEO = 'Paleomagnetism';
     case GEO_CHEMISTRY = 'Geochemistry';
     case GEO_ENERGY = 'Geo-energy test beds';
+    case FIELD_SCALE = 'Field-Scale Laboratories';
 }
