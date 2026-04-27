@@ -173,7 +173,7 @@ class ApiController extends BaseController
                 break;
 
             case 'geoenergy':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'geo-energy test beds');
+                $packageSearchRequest->addFilterQuery('msl_subdomain', 'field-scale laboratories');
                 break;
         }
 
