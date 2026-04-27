@@ -14,5 +14,6 @@ enum EndpointContext
     case PALEO;
     case GEO_CHEMISTRY;
     case GEO_ENERGY;
+    case FIELD_SCALE;
     case ALL;
 }
