@@ -20,7 +20,7 @@ class Importer extends Model
         'options' => 'array',
     ];
 
-    public function data_repository(): BelongsTo
+    public function dataRepository(): BelongsTo
     {
         return $this->belongsTo(DataRepository::class);
     }
