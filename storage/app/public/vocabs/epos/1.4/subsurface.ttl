@@ -1,0 +1,403 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix ui: <http://purl.org/linked-data/registry-ui#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface>
+  a skos:ConceptScheme ;
+  skos:prefLabel "(sub)surface utilization setting" ;
+  skos:hasTopConcept <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/ore_mine>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/induced_seismicity>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/surface_subsidence> ;
+  reg:inverseMembershipPredicate skos:inScheme ;
+  ui:hierarchyChildProperty skos:narrower ;
+  ui:hierarchyRootProperty skos:topConceptOf ;
+  ldp:isMemberOfRelation skos:inScheme .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-co2_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-compressed_air_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-gas_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-hydrogen_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-nitrogen_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-oil_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-storage_in_depleted_oil_reservoir>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "subsurface storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-storage_in_depleted_oil_reservoir>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "storage in depleted oil reservoir" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-storage_in_depleted_oil_reservoir> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-gas_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "gas storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-gas_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-co2_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "CO2 storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-co2_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-oil_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "oil storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-oil_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-nitrogen_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "nitrogen storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-nitrogen_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-hydrogen_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "hydrogen storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-hydrogen_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-compressed_air_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "compressed air storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-compressed_air_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface-radioactive_waste_disposal_in_the_subsurface>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface-wastewater_storage_in_the_subsurface> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "waste storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-waste_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface-wastewater_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface> ;
+  skos:prefLabel "wastewater storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-waste_storage_in_the_subsurface-wastewater_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface-radioactive_waste_disposal_in_the_subsurface>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-waste_storage_in_the_subsurface> ;
+  skos:prefLabel "radioactive waste disposal in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-waste_storage_in_the_subsurface-radioactive_waste_disposal_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-aquifer_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-borehole_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-cavern_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-high-temperature_aquifer_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-low-temperature_aquifer_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-medium-temperature_aquifer_thermal_energy_storage>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-mine_thermal_energy_storage> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage> ;
+  skos:prefLabel "thermal energy storage in the subsurface" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-mine_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "mine thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-mine_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-aquifer_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "aquifer thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-aquifer_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-high-temperature_aquifer_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "high-temperature aquifer thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-high-temperature_aquifer_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-medium-temperature_aquifer_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "medium-temperature aquifer thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-medium-temperature_aquifer_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-low-temperature_aquifer_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "low-temperature aquifer thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-low-temperature_aquifer_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-borehole_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "borehole thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-borehole_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface-cavern_thermal_energy_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_storage-thermal_energy_storage_in_the_subsurface> ;
+  skos:prefLabel "cavern thermal energy storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_storage-thermal_energy_storage_in_the_subsurface-cavern_thermal_energy_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "subsurface energy production" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-advanced_geothermal_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-closed_loop_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-deep_geothermal_energy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-enhanced_geothermal_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_doublet>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir_temperature>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-high_enthalpy_geothermal_energy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-hydrothermal_reservoir>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-low_enthalpy_geothermal_energy>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-mine_geothermal_energy_provision>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-open_loop_system>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-shallow_geothermal_energy> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production> ;
+  skos:prefLabel "geothermal energy extraction" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-advanced_geothermal_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "advanced geothermal system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-advanced_geothermal_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-enhanced_geothermal_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "enhanced geothermal system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-enhanced_geothermal_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_doublet>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "geothermal doublet" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-geothermal_doublet> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-low_enthalpy_geothermal_energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "low enthalpy geothermal energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-low_enthalpy_geothermal_energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-high_enthalpy_geothermal_energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "high enthalpy geothermal energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-high_enthalpy_geothermal_energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-deep_geothermal_energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "deep geothermal energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-deep_geothermal_energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-shallow_geothermal_energy>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "shallow geothermal energy" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-shallow_geothermal_energy> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "geothermal reservoir" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-hydrothermal_reservoir>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "hydrothermal reservoir" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-hydrothermal_reservoir> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir_temperature>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "geothermal reservoir temperature" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir_temperature> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-closed_loop_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "closed loop system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-closed_loop_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-open_loop_system>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "open loop system" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-open_loop_system> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction-mine_geothermal_energy_provision>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-geothermal_energy_extraction> ;
+  skos:prefLabel "mine geothermal energy provision" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-geothermal_energy_extraction-mine_geothermal_energy_provision> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-methane_pyrolysis>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-native_hydrogen>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-polymer_electrolyte_membrane_electrolysis>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming_with_carbon_capture_and_storage> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production> ;
+  skos:prefLabel "hydrogen energy production" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-native_hydrogen>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:prefLabel "native hydrogen" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production-native_hydrogen> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:prefLabel "steam methane reforming" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming_with_carbon_capture_and_storage>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:prefLabel "steam methane reforming with carbon capture and storage" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming_with_carbon_capture_and_storage> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-methane_pyrolysis>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:prefLabel "methane pyrolysis" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production-methane_pyrolysis> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production-polymer_electrolyte_membrane_electrolysis>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrogen_energy_production> ;
+  skos:prefLabel "polymer electrolyte membrane electrolysis" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrogen_energy_production-polymer_electrolyte_membrane_electrolysis> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production-gas_field>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production-oil_field> ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production> ;
+  skos:prefLabel "hydrocarbon energy production" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrocarbon_energy_production> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production-gas_field>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production> ;
+  skos:prefLabel "gas field" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrocarbon_energy_production-gas_field> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production-oil_field>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/subsurface_energy_production-hydrocarbon_energy_production> ;
+  skos:prefLabel "oil field" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/subsurface_energy_production-hydrocarbon_energy_production-oil_field> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/ore_mine>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/ore_mine-mine_tailing> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "ore mine" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/ore_mine> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/ore_mine-mine_tailing>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/ore_mine> ;
+  skos:prefLabel "mine tailing" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/ore_mine-mine_tailing> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-building_foundation>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-dam_construction_-_geological_aspects>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-road_construction_-_geotechnical_aspects>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-tunnel>, <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-underground_research_facility> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "civil engineered setting" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-underground_research_facility>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting> ;
+  skos:prefLabel "underground research facility" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting-underground_research_facility> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-tunnel>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting> ;
+  skos:prefLabel "tunnel" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting-tunnel> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-dam_construction_-_geological_aspects>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting> ;
+  skos:prefLabel "dam construction - geological aspects" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting-dam_construction_-_geological_aspects> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-road_construction_-_geotechnical_aspects>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting> ;
+  skos:prefLabel "road construction - geotechnical aspects" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting-road_construction_-_geotechnical_aspects> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting-building_foundation>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/civil_engineered_setting> ;
+  skos:prefLabel "building foundation" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/civil_engineered_setting-building_foundation> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/induced_seismicity>
+  a skos:Concept ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "induced seismicity" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/induced_seismicity> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/surface_subsidence>
+  a skos:Concept ;
+  skos:narrower <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/surface_subsidence-sinkhole> ;
+  skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> ;
+  skos:prefLabel "surface subsidence" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/surface_subsidence> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+
+<https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/surface_subsidence-sinkhole>
+  a skos:Concept ;
+  skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface/surface_subsidence> ;
+  skos:prefLabel "sinkhole" ;
+  owl:sameAs <https://epos-msl.uu.nl/voc/subsurface/1.4/surface_subsidence-sinkhole> ;
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/subsurface> .
+

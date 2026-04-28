@@ -1,0 +1,113 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/vacuum>
+  a skos:Concept ;
+  skos:prefLabel "vacuum" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/solid_phase>
+  a skos:Concept ;
+  skos:narrower <https://epos-msl.uu.nl/voc/porefluids/1.4/solid_phase-ice_in_pores> ;
+  skos:prefLabel "solid phase" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/solid_phase-ice_in_pores>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/solid_phase> ;
+  skos:prefLabel "ice in pores" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase>
+  a skos:Concept ;
+  skos:narrower <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-decane>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-salt_brine>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores> ;
+  skos:prefLabel "liquid phase" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores>
+  a skos:Concept ;
+  skos:narrower <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-de-ionized_water>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-demineralized_water>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-tap_water_in_pores> ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase> ;
+  skos:prefLabel "water in pores" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-tap_water_in_pores>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores> ;
+  skos:prefLabel "tap water in pores" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-demineralized_water>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores> ;
+  skos:prefLabel "demineralized water" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores-de-ionized_water>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-water_in_pores> ;
+  skos:prefLabel "de-ionized water" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-salt_brine>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase> ;
+  skos:prefLabel "salt brine" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores>
+  a skos:Concept ;
+  skos:narrower <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-hydrocarbon_oil>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-mineral_oil>, <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-silicon_oil> ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase> ;
+  skos:prefLabel "oil in pores" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-hydrocarbon_oil>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores> ;
+  skos:prefLabel "hydrocarbon oil" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-silicon_oil>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores> ;
+  skos:prefLabel "silicon oil" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores-mineral_oil>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-oil_in_pores> ;
+  skos:prefLabel "mineral oil" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase-decane>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/liquid_phase> ;
+  skos:prefLabel "decane" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase>
+  a skos:Concept ;
+  skos:narrower <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-ambient_air>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-argon_ar>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-carbon_dioxide_co2>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-hydrogen_h2>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-methane_ch4>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-nitrogen_n2>, <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-oxygen_o2> ;
+  skos:prefLabel "gas phase" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-ambient_air>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "ambient air" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-hydrogen_h2>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "hydrogen (H2)" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-oxygen_o2>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "oxygen (O2)" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-methane_ch4>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "methane (CH4)" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-carbon_dioxide_co2>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "carbon dioxide (CO2)" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-nitrogen_n2>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "nitrogen (N2)" .
+
+<https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase-argon_ar>
+  a skos:Concept ;
+  skos:broader <https://epos-msl.uu.nl/voc/porefluids/1.4/gas_phase> ;
+  skos:prefLabel "argon (Ar)" .
+
