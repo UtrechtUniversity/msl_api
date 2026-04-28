@@ -28,6 +28,6 @@ class DataRepositoryImporterRelationTest extends TestCase
 
         $this->assertCount(1, $repository->importers);
         $this->assertTrue($repository->importers->contains($importer));
-        $this->assertSame($repository->id, $importer->data_repository->id);
+        $this->assertSame($repository->id, $importer->dataRepository->id);
     }
 }
