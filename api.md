@@ -11,6 +11,7 @@ The API offers 14 endpoints, 7 for accessing facilities  and 7 for accessing dat
    + [microscopy](#dp_microscopy)
    + [geochemistry](#dp_geochemistry)
    + [geoenergy](#dp_geochemistry)
+   + [fieldscale](#dp_field_scale)
    + [all](#dp_all)
 + [Facilities](#facilities)
    + [rock_physics](#f_rock_physics)
@@ -19,6 +20,7 @@ The API offers 14 endpoints, 7 for accessing facilities  and 7 for accessing dat
    + [microscopy](#f_microscopy)
    + [geochemistry](#f_geochemistry)
    + [geoenergy](#f_geochemistry)
+   + [fieldscale](#f_field_scale)
    + [all](#f_all)
 
 ## Base url
@@ -2408,6 +2410,301 @@ This endpoint gives access to all data-publications available that are marked as
 
 </details>
 
+### /field_scale <a name="dp_field_scale"></a>
+This endpoint gives access to all data-publications available that are marked as belonging to the Field-scale laboratories (sub)domain.
+
+### Search all Field-scale laboratories data-publications [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from.
+        + Default: `0`
+    + query (text, optional) - Words to search for.
+        + Default: ``
+    + authorName (text, optional) - Author names to search for.
+        + Default: ``
+    + labName (text, optional) - Lab names to search for.
+        + Default: ``
+    + title (text, optional) - Title to search for.
+        + Default: ``
+    + tags (text, optional) - Tags to search for.
+        + Default: ``
+    + hasDownloads (boolean, optional) - Filter results to only include results with download links.
+        + Default: `false`
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90).
+        + Default: ``
+
+
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 10,
+        "totalCount": 321,
+        "limit": 10,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/datapublications/fieldscale?offset=0&limit=10"
+    },
+    "data": [
+        {
+            "title": "Microstructural data used in “Drill core from seismically active sandstone gas reservoir yields clues to internal deformation mechanisms”",
+            "doi": "10.24416/uu01-kew4xn",
+            "source": "https://public.yoda.uu.nl/geo/UU01/KEW4XN.html",
+            "portalLink": "http://localhost/data-publication/859e6299397bc6dea8d9ce86648c8ce2",
+            "name": "859e6299397bc6dea8d9ce86648c8ce2",
+            "creators": [
+                {
+                    "name": "Berend Antonie Verberne",
+                    "nameType": "Personal",
+                    "givenName": "Berend Antonie",
+                    "familyName": "Verberne",
+                    "nameIdentifiers": [
+                        {
+                            "nameIdentifier": "https://orcid.org/0000-0002-1208-6193",
+                            "nameIdentifierScheme": "ORCID",
+                            "nameIdentifierUri": ""
+                        }
+                    ],
+                    "affiliation": [
+                        {
+                            "name": "Shell Global Solutions",
+                            "affiliationIdentifier": "",
+                            "affiliationIdentifierScheme": "",
+                            "schemeUri": ""
+                        }
+                    ]
+                }
+            ],
+            "descriptions": [
+                {
+                    "description": "Europe’s largest gas field, the Groningen field (the Netherlands), is widely known for induced subsidence and seismicity caused by gas pressure depletion and associated compaction of the sandstone reservoir. Whether compaction is elastic or partly inelastic, as implied by recent experiments, is a key factor in forecasting system behavior and seismic hazard. We sought evidence for inelastic deformation through comparative microstructural analysis of unique drill core recovered from the seismogenic center of the field in 2015, 50 yr after gas production started, versus core recovered before production (1965). \nMicrostructural data were collected from: i) a suite of 1965 and 2015 core samples, and ii) a lab-deformed sample from the 1965 core and of its virgin counterpart sample. The data include section-scale, back-scattered electron (BSE) image mosaics, phase maps prepared using electron dispersive X-ray (EDX) mapping, electron backscatter diffraction (EBSD) maps, and cathodoluminescence (CL) micrographs. Further, we include maps of intragranular crack distributions in the form of manually drawn overlays to BSE mosaics. Crack map data are stored either as shapefiles (.shp) (used in ESRI ArcGIS) or as zip-files (.zip) comprising crack polygon (.roi) overlays (used in ImageJ – Schindelin et al., 2012). The data is provided in 1 zip-file (Data_Verberne_et_al_2020.zip). Detailed information about the files in these zip-file and how the data are processed is described in the research paper (https://doi.org/10.1130/G48243.1), plus accompanying supplementary material, and an additional explanation file, which are also all included in this data publication. Contact person is Suzanne Hangx – s.j.t.hangx@uu.nl. The work was funded by the Dutch Oil Company (Nederlandse Aardolie Maatschappij BV, NAM).\n",
+                    "descriptionType": "Abstract"
+                }
+            ],
+            "contributors": [],
+            "materials": [
+                "sedimentary rock",
+                "sandstone",
+                "wacke",
+                "Slochteren sandstone",
+                "minerals",
+                "silicate minerals",
+                "tectosilicates",
+                "quartz",
+                "phyllosilicates",
+                "clay",
+                "unconsolidated sediment",
+                "clastic sediment",
+                "clay",
+                "clay - kaolinite",
+                "kaolinite",
+                "illite",
+                "clay - smectite"
+            ],
+            "researchAspects": [
+                "borehole drilling",
+                "drill core"
+            ],
+            "files": [
+                {
+                    "fileName": "Additional_explanation_to_the_data.pdf",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Additional_explanation_to_the_data.pdf",
+                    "extension": "pdf"
+                },
+                {
+                    "fileName": "Data_Verberne_et_al_2020.zip",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Data_Verberne_et_al_2020.zip",
+                    "extension": "zip"
+                },
+                {
+                    "fileName": "Supplementary material to Verberne et al., 2020.pdf",
+                    "downloadLink": "https://geo.public.data.uu.nl:443/vault-groningen-zandsteencompactie/research-groningen-zandsteencompactie[1667459035]/original/Supplementary material to Verberne et al., 2020.pdf",
+                    "extension": "pdf"
+                }
+            ],
+            "resource_type": "Research Data",
+            "resource_type_general": "Dataset",
+            "publication_year": "2022",
+            "language": "en",
+            "publisher": "Utrecht University",
+            "citation": "Verberne, B. A., Hangx, S. J. T., Pijnenburg, R. P. J., Hamers, M. F., Drury, M. R., &amp; Spiers, C. J. (2022). <i>Microstructural data used in “Drill core from seismically active sandstone gas reservoir yields clues to internal deformation mechanisms” </i>(Version 1.0) [Data set]. Utrecht University. https://doi.org/10.24416/UU01-KEW4XN",
+            "geojson": null,
+            "surface_area": 0,
+            "rightsList": [
+                {
+                    "rights": "Open - freely retrievable",
+                    "rightsUri": "info:eu-repo/semantics/openAccess",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                },
+                {
+                    "rights": "Creative Commons Attribution 4.0 International Public License",
+                    "rightsUri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+                    "rightsIdentifier": "",
+                    "rightsIdentifierScheme": "",
+                    "rightsSchemeUri": ""
+                }
+            ],
+            "alternateIdentifier": [],
+            "fundingReferences": [
+                {
+                    "funderName": "Nederlandse Aardolie Maatschappij",
+                    "funderIdentifier": "",
+                    "funderIdentifierType": "",
+                    "schemeUri": "",
+                    "awardNumber": "",
+                    "awardUri": "",
+                    "awardTitle": ""
+                }
+            ],
+            "dates": [
+                {
+                    "date": "2024-07-12T11:10:17",
+                    "dateType": "Updated",
+                    "dateInformation": ""
+                },
+                {
+                    "date": "2015-07-01/2018-12-31",
+                    "dateType": "Collected",
+                    "dateInformation": ""
+                }
+            ],
+            "sizes": [],
+            "formats": [],
+            "laboratories": [],
+            "relatedIdentifiers": [
+                {
+                    "relatedIdentifier": "10.1130/G48243.1",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "IsSupplementTo",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1109/TSMC.1979.4310076",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1007/s00603-020-02215-y",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1029/2019JB017366",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1093/bioinformatics/btp184",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                },
+                {
+                    "relatedIdentifier": "10.1038/nmeth.2019",
+                    "relatedIdentifierType": "DOI",
+                    "relationType": "References",
+                    "relatedMetadataScheme": "",
+                    "schemeUri": "",
+                    "schemeType": "",
+                    "resourceTypeGeneral": ""
+                }
+            ],
+            "subjects": [
+                {
+                    "subject": "deformation mechanism",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/inferred_deformation_behavior-microphysical_deformation_mechanism"
+                    ]
+                },
+                {
+                    "subject": "subsidence",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/subsurface/1.3/surface_subsidence"
+                    ]
+                },
+                {
+                    "subject": "compaction",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/rockphysics/1.3/measured_property-strain",
+                        "https://epos-msl.uu.nl/voc/analoguemodelling/1.3/measured_property-strain"
+                    ]
+                },
+                {
+                    "subject": "electron microscopy",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-electron_microscopy"
+                    ]
+                },
+                {
+                    "subject": "scanning electron microscope (SEM)",
+                    "schemeUri": "",
+                    "valueUri": "",
+                    "subjectScheme": "Keyword",
+                    "classificationCode": "",
+                    "EPOS_Uris": [
+                        "https://epos-msl.uu.nl/voc/microscopy/1.3/apparatus-electron_microscopy-scanning_electron_microscope_sem"
+                    ]
+                }
+            ],
+            "subdomains": [
+                "rock and melt physics",
+                "analogue modelling of geologic processes",
+                "microscopy and tomography",
+                "geo-energy test beds",
+                "geochemistry"
+            ]
+        }
+    ]
+}
+```
+
+</details>
+
 
 ### /all <a name="dp_all"></a>
 This endpoint gives access to all data-publications available that are marked as belonging to the rock physics (sub)domain. 
@@ -3546,6 +3843,126 @@ This endpoint gives access to all facilities available that are marked as belong
     },
     "links": {
         "current_url": "https://epos-msl.uu.nl/api/v2/facilities/geoenergy?offset=0&limit=1"
+    },
+    "data": [
+        {
+            "title": "Applied Geoscience Hydrogen and CO2 Laboratory",
+            "portalLink": "http://localhost:8000/lab/6974ce5ac660610b44d9b9fed0ff9548",
+            "organisation": "University of Edinburgh (UEDIN)",
+            "domain": "Geo-energy test beds",
+            "descriptions": [
+                {
+                    "description": "The Applied Geoscience Laboratory for Sustainable Energy has a suite of coupled thermal-hydro-mechanical-chemical experimental equipment for research into the secure and sustainable utilisation of the subsurface for low-carbon energy applications.",
+                    "descriptionType": "Description"
+                },
+                {
+                    "description": "<p>The Applied Geoscience Laboratory for Sustainable Energy has a suite of coupled thermal-hydro-mechanical-chemical experimental equipment for research into the secure and sustainable utilisation of the subsurface for low-carbon energy applications.</p>\n",
+                    "descriptionType": "Description in HTML"
+                }
+            ],
+            "equipment": [
+                {
+                    "name": "high PT Geochemistry reaction vessels",
+                    "descriptions": [
+                        {
+                            "description": "Multi-phase geochemical reactions for hydrogen and CO2 at in-situ elevated temperatures, fluid types, and pressures.\r\nConstant pressure monitoring, with fluid and gas sampling supported by full rock, gas and fluid analysis.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>Multi-phase geochemical reactions for hydrogen and CO2 at in-situ elevated temperatures, fluid types, and pressures.\nConstant pressure monitoring, with fluid and gas sampling supported by full rock, gas and fluid analysis.</p>\n",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Fluid transport apparatus",
+                    "group": "high PT Geochemistry reaction vessels",
+                    "brand": "",
+                    "addOns": []
+                },
+                {
+                    "name": "Multiphase Flow Micromodel",
+                    "descriptions": [
+                        {
+                            "description": "High-Pressure Micromodel Experiments\r\n\r\nGlass micromodels with different pore networks and wettability.",
+                            "descriptionType": "Description"
+                        },
+                        {
+                            "description": "<p>High-Pressure Micromodel Experiments</p>\n<p>Glass micromodels with different pore networks and wettability.",
+                            "descriptionType": "Description in HTML"
+                        }
+                    ],
+                    "domain": "Rock and melt physics",
+                    "category": "Permanent",
+                    "type": "Fluid transport apparatus",
+                    "group": "Multiphase Flow Micromodel",
+                    "brand": "",
+                    "addOns": []
+                }
+            ],
+            "geojson": {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -3.175,
+                        55.9228
+                    ]
+                },
+                "properties": {
+                    "city": "Edinburgh",
+                    "country": "United Kingdom"
+                }
+            },
+            "contact": "http://localhost:8000/laboratory-contact-person/6974ce5ac660610b44d9b9fed0ff9548"
+        }
+    ]
+}
+```
+
+</details>
+
+### /field_scale <a name="f_field_scale"></a>
+This endpoint gives access to all facilities available that are marked as belonging to the Field-scale laboratories (sub)domain.
+
+### Search all Field-scale facilities [GET]
++ Parameters
+
+    + limit (number, optional) - The number of results to return.
+        + Default: `10`
+    + offset (number, optional) - The number to start results from.
+        + Default: `0`
+    + tags (text, optional) - Tags to search for.
+        + Default: ``
+    + query (text, optional) - Words to search for.
+        + Default: ``
+    + title (text, optional) - Title to search for.
+        + Default: ``
+    + country (text, optional) - Country to search for.
+        + Default: ``
+    + city (text, optional) - City to search for.
+        + Default: ``
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90).
+        + Default: ``
+
+
++ Response 200 (application/json)
+
+<details>
+  <summary>view response</summary>
+
+```json
+{
+    "success": "true",
+    "messages": [],
+    "meta": {
+        "resultCount": 1,
+        "totalCount": 321,
+        "limit": 1,
+        "offset": 0
+    },
+    "links": {
+        "current_url": "https://epos-msl.uu.nl/api/v2/facilities/field_scale?offset=0&limit=1"
     },
     "data": [
         {

@@ -54,7 +54,7 @@ vocabData = (function() {
     $.ajax({
     'async': false,
     'global': false,
-    'url': "https://raw.githubusercontent.com/UtrechtUniversity/msl_vocabularies/main/vocabularies/combined/editor/1.3/editor_1-3.json",
+    'url': "https://raw.githubusercontent.com/UtrechtUniversity/msl_vocabularies/main/vocabularies/combined/editor/1.4/editor_1-4.json",
     'dataType': "json",
     'success': function(data) {
         vocabData = data;

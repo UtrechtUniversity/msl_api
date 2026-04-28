@@ -325,9 +325,9 @@ class DataPublication
 
     public bool $msl_has_subsurface_original = false;
 
-    public bool $msl_has_geoenergy = false;
+    public bool $msl_has_fieldscale = false;
 
-    public bool $msl_has_geoenergy_original = false;
+    public bool $msl_has_fieldscale_original = false;
 
     public bool $msl_has_lab = false;
 
@@ -644,10 +644,10 @@ class DataPublication
 
                 return;
 
-            case DataPublicationSubDomain::GEO_ENERGY:
-                $this->msl_has_geoenergy = true;
+            case DataPublicationSubDomain::FIELD_SCALE:
+                $this->msl_has_fieldscale = true;
                 if ($original) {
-                    $this->msl_has_geoenergy_original = true;
+                    $this->msl_has_fieldscale_original = true;
                 }
 
                 return;
@@ -840,8 +840,8 @@ class DataPublication
                     $this->msl_has_subsurface = true;
                     break;
 
-                case str_starts_with($vocabUri, 'https://epos-msl.uu.nl/voc/testbeds'):
-                    $this->msl_has_geoenergy = true;
+                case str_starts_with($vocabUri, 'https://epos-msl.uu.nl/voc/fieldscale'):
+                    $this->msl_has_fieldscale = true;
                     break;
 
                 default:
@@ -889,8 +889,8 @@ class DataPublication
                     $this->msl_has_subsurface_original = true;
                     break;
 
-                case str_starts_with($vocabUri, 'https://epos-msl.uu.nl/voc/testbeds'):
-                    $this->msl_has_geoenergy_original = true;
+                case str_starts_with($vocabUri, 'https://epos-msl.uu.nl/voc/fieldscale'):
+                    $this->msl_has_fieldscale_original = true;
                     break;
 
                 default:

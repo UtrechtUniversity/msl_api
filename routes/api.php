@@ -58,7 +58,8 @@ Route::middleware('api_tracking')->group(function () {
             Route::get('/paleo', [V2DataPublicationController::class, 'paleo']);
             Route::get('/microscopy', [V2DataPublicationController::class, 'microscopy']);
             Route::get('/geochemistry', [V2DataPublicationController::class, 'geochemistry']);
-            Route::get('/geoenergy', [V2DataPublicationController::class, 'geoenergy']);
+            Route::get('/geoenergy', [V2DataPublicationController::class, 'fieldScale']);
+            Route::get('/field_scale', [V2DataPublicationController::class, 'fieldScale']);
             Route::get('/all', [V2DataPublicationController::class, 'all']);
         });
         Route::prefix('facilities')->group(function () {
@@ -67,7 +68,8 @@ Route::middleware('api_tracking')->group(function () {
             Route::get('/paleo', [V2FacilityController::class, 'paleo']);
             Route::get('/microscopy', [V2FacilityController::class, 'microscopy']);
             Route::get('/geochemistry', [V2FacilityController::class, 'geochemistry']);
-            Route::get('/geoenergy', [V2FacilityController::class, 'geoenergy']);
+            Route::get('/geoenergy', [V2FacilityController::class, 'fieldScale']);
+            Route::get('/field_scale', [V2FacilityController::class, 'fieldScale']);
             Route::get('/all', [V2FacilityController::class, 'all']);
         });
     });

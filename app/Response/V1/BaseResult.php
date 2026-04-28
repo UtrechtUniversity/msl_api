@@ -395,9 +395,9 @@ class BaseResult
     private function getGeoenergyKeywords($data)
     {
         $uriStarts = [
-            'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
-            'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/equipment-',
-            'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/model-',
+            'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
+            'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/equipment-',
+            'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/models-',
         ];
         $keywords = [];
 

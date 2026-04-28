@@ -4,14 +4,12 @@
         "level": 1,
         "synonyms": [],
         "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names",
         "hyperlink": "",
         "external_uri": "",
         "external_vocab_scheme": "",
         "external_description": "",
-        "extracted_definition": "",
         "notes": "",
-        "extracted_definition_link": "",
         "terms_exclude_abstract_mapping": [
             "facility names"
         ],
@@ -28,24 +26,19 @@
                     "geothermal research gro\u00df sch\u00f6nebeck",
                     "geothermal research platform gross schoenebeck",
                     "geothermal laboratory gross schoenebeck",
-                    "geothermal gross schoenebeck",
+                    "geothermal gross schoenebec",
                     "geothermal lab gross schoenebeck",
                     "geothermal research gross schoenebeck",
                     "geothermal research platform gross sch\u00f6nebeck",
-                    "geothermal laboratory gross sch\u00f6nebeck",
-                    "geothermal gross sch\u00f6nebeck",
-                    "geothermal lab gross sch\u00f6nebeck",
-                    "geothermal research gross sch\u00f6nebeck"
+                    "geothermal laboratory gross sch\u00f6nebeck"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-geothermal_research_platform_gros_schonebeck",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geothermal_research_platform_gros_schonebeck",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -59,14 +52,12 @@
                     "pilot site ketzin"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-pilot_site_for_geological_storage_of_co2_ketzin",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-pilot_site_for_geological_storage_of_co2_ketzin",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -85,14 +76,12 @@
                     "fluid.bogs"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-geotechnology_laboratory_fraunhofer_ieg",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geotechnology_laboratory_fraunhofer_ieg",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -107,14 +96,12 @@
                     "bo.rex"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-bochum_research_and_exploration_drilling_rig",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-bochum_research_and_exploration_drilling_rig",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -129,14 +116,12 @@
                     "energy technology fraunhofer"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-energy_technology_fraunhofer_ieg",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-energy_technology_fraunhofer_ieg",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -152,38 +137,17 @@
                     "field-scale laboratory fraunhofer"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-trudi_underground_laboratory",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-trudi_underground_laboratory",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
                 "rowNr": 8
-            },
-            {
-                "value": "Reallabore Weisweiler",
-                "level": 2,
-                "synonyms": [],
-                "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-reallabore_weisweiler",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "notes": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 0,
-                "selection_group_2": 0,
-                "subTerms": [],
-                "rowNr": 9
             },
             {
                 "value": "Geothermal Project on TU Delft campus",
@@ -201,29 +165,20 @@
                     "dapgeo-04",
                     "dapgeo-05",
                     "geothermal delft",
-                    "dapwell",
-                    "tu delft campus geothermal project",
-                    "geothermie delft",
-                    "geothermal project on tu delft campus",
-                    "del-gt-01",
-                    "del-gt-02",
-                    "del-gt-02-s1",
-                    "del-gt-02-s2"
+                    "dapwell"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-geothermal_project_on_tu_delft_campus",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geothermal_project_on_tu_delft_campus",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 10
+                "rowNr": 9
             },
             {
                 "value": "UK Geos",
@@ -231,26 +186,20 @@
                 "synonyms": [
                     "uk geoenergy observatory",
                     "glasgow observatory",
-                    "cheshire observatory",
-                    "uk geoenergy observatories",
-                    "ukgeos",
-                    "glasgow observatories",
-                    "cheshire observatories"
+                    "cheshire observatory"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-uk_geos",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-uk_geos",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 11
+                "rowNr": 10
             },
             {
                 "value": "UK GeoEnergy Research Centre",
@@ -260,19 +209,17 @@
                     "geoenergy test bed nottingham"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-uk_geoenergy_research_centre",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-uk_geoenergy_research_centre",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 12
+                "rowNr": 11
             },
             {
                 "value": "Bedretto Underground Laboratory for Geosciences and Geoenergies",
@@ -281,22 +228,21 @@
                     "bedrettolab",
                     "bedretto underground",
                     "bedretto laboratory",
-                    "bedretto lab"
+                    "bedretto lab",
+                    "bulgg"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 13
+                "rowNr": 12
             },
             {
                 "value": "Rijswijk Centre for Sustainable Geo-energy",
@@ -305,19 +251,17 @@
                     "rcsg"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-rijswijk_centre_for_sustainable_geo-energy",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-rijswijk_centre_for_sustainable_geo-energy",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 14
+                "rowNr": 13
             },
             {
                 "value": "ECCSEL Svelvik CO2 Field Lab",
@@ -330,38 +274,34 @@
                     "svelvik co2 field laboratory"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-eccsel_svelvik_co2_field_lab",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-eccsel_svelvik_co2_field_lab",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 15
+                "rowNr": 14
             },
             {
                 "value": "BRGM\u2019s Geothermal Testing Facility",
                 "level": 2,
                 "synonyms": [],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-brgms_geothermal_testing_facility",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-brgms_geothermal_testing_facility",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 16
+                "rowNr": 15
             },
             {
                 "value": "Sotacarbo Fault Laboratory",
@@ -372,19 +312,17 @@
                     "satocarbo fault lab"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-sotacarbo_fault_laboratory",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-sotacarbo_fault_laboratory",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 17
+                "rowNr": 16
             },
             {
                 "value": "Underground research laboratory Andra",
@@ -397,19 +335,17 @@
                     "andra underground research lab"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-underground_research_laboratory_andra",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-underground_research_laboratory_andra",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 18
+                "rowNr": 17
             },
             {
                 "value": "CATenoy experimental site",
@@ -421,19 +357,17 @@
                     "catenoy laboratory"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-catenoy_experimental_site",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-catenoy_experimental_site",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 19
+                "rowNr": 18
             },
             {
                 "value": "PITOP Borehole Geophysical Test Site",
@@ -443,14 +377,31 @@
                     "ogs geophysical drilling"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-pitop_borehole_geophysical_test_site",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-pitop_borehole_geophysical_test_site",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [],
+                "rowNr": 19
+            },
+            {
+                "value": "Krafla Magma Testbed",
+                "level": 2,
+                "synonyms": [
+                    "krafla testbed"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-krafla_magma_testbed",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -458,25 +409,67 @@
                 "rowNr": 20
             },
             {
-                "value": "Krafla Magma Testbed",
+                "value": "Acuto Field Laboratory",
                 "level": 2,
                 "synonyms": [
-                    "krafla"
+                    "acutofieldlaboratory",
+                    "acutofieldlab",
+                    "acuto field lab"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_names-krafla_magma_testbed",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-acuto_field_laboratory",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
                 "rowNr": 21
+            },
+            {
+                "value": "Ventotene Field Laboratory",
+                "level": 2,
+                "synonyms": [
+                    "ventotenefieldlaboratory",
+                    "ventotenefieldlab",
+                    "ventotene field lab"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-ventotene_field_laboratory",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [],
+                "rowNr": 22
+            },
+            {
+                "value": "Poggio Baldi Landslide",
+                "level": 2,
+                "synonyms": [
+                    "poggiobaldilandslide",
+                    "poggiobaldi",
+                    "poggiobaldilandslide"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-poggio_baldi_landslide",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [],
+                "rowNr": 23
             }
         ],
         "rowNr": 2
@@ -486,14 +479,12 @@
         "level": 1,
         "synonyms": [],
         "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types",
         "hyperlink": "",
         "external_uri": "",
         "external_vocab_scheme": "",
         "external_description": "",
-        "extracted_definition": "",
         "notes": "",
-        "extracted_definition_link": "",
         "terms_exclude_abstract_mapping": [
             "facility types"
         ],
@@ -506,25 +497,20 @@
                 "synonyms": [
                     "geoenergy testbed",
                     "geoenergy test bed",
-                    "geo-energy test bed",
-                    "krafla",
-                    "magma testbed",
-                    "magma test bed"
+                    "geo-energy test bed"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types-geo-energy_testbed",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-geo-energy_testbed",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 23
+                "rowNr": 25
             },
             {
                 "value": "in-situ laboratory",
@@ -534,26 +520,24 @@
                     "underground laboratory",
                     "subsurface laboratory",
                     "subsurface infrastructure",
-                    "bedrottolab",
+                    "bedrettolab",
                     "insitu lab",
                     "in situ lab",
-                    "nsitu laboratory",
+                    "insitu laboratory",
                     "in situ laboratory"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types-in-situ_laboratory",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-in-situ_laboratory",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 24
+                "rowNr": 26
             },
             {
                 "value": "field-scale laboratory - active testing",
@@ -564,19 +548,17 @@
                     "testing at full-scale"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types-field-scale_laboratory_-_active_testing",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-field-scale_laboratory_-_active_testing",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 25
+                "rowNr": 27
             },
             {
                 "value": "field-scale observatory - passive monitoring",
@@ -584,22 +566,26 @@
                 "synonyms": [
                     "field-scale monitoring",
                     "seismic network",
-                    "seismic monitoring network"
+                    "seismic monitoring network",
+                    "natural field laboratory",
+                    "natural field lab",
+                    "natural fieldlab",
+                    "surface laboratory",
+                    "field laboratory",
+                    "rockfall monitoring"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types-field-scale_observatory_-_passive_monitoring",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-field-scale_observatory_-_passive_monitoring",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 26
+                "rowNr": 28
             },
             {
                 "value": "monitoring borehole",
@@ -609,36 +595,32 @@
                     "monitoring well"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/facility_types-monitoring_borehole",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-monitoring_borehole",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 27
+                "rowNr": 29
             }
         ],
-        "rowNr": 22
+        "rowNr": 24
     },
     {
         "value": "Equipment",
         "level": 1,
         "synonyms": [],
         "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment",
         "hyperlink": "",
         "external_uri": "",
         "external_vocab_scheme": "",
         "external_description": "",
-        "extracted_definition": "",
         "notes": "",
-        "extracted_definition_link": "",
         "terms_exclude_abstract_mapping": [
             "equipment"
         ],
@@ -649,18 +631,16 @@
                 "value": "seismic monitoring",
                 "level": 2,
                 "synonyms": [
-                    "seismic borehole",
+                    "background monitoring",
                     "seismic station"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-seismic_monitoring",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "TCS Seismology",
                 "notes": "TCS Seismology",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -670,24 +650,20 @@
                         "level": 3,
                         "synonyms": [
                             "seismic borehole",
-                            "seismic monitoring borehole",
-                            "three-component seismometer",
-                            "three component seismometer"
+                            "seismic monitoring borehole"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-seismic_monitoring-three-component_seismic_station",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-three-component_seismic_station",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 30
+                        "rowNr": 32
                     },
                     {
                         "value": "tilt strain gauge",
@@ -696,25 +672,76 @@
                             "tilt gauge",
                             "tiltmeter",
                             "tilt meter",
-                            "tilt-strain gauge"
+                            "strainmeter"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-seismic_monitoring-tilt_strain_gauge",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-tilt_strain_gauge",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 31
+                        "rowNr": 33
+                    },
+                    {
+                        "value": "EpiSensor force balance accelerometer",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-episensor_force_balance_accelerometer",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 34
+                    },
+                    {
+                        "value": "high-performance portable broadband triaxial seismometer",
+                        "level": 3,
+                        "synonyms": [
+                            "(sts-2)"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-high-performance_portable_broadband_triaxial_seismometer",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 35
+                    },
+                    {
+                        "value": "microaccelerometers",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-microaccelerometers",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 36
                     }
                 ],
-                "rowNr": 29
+                "rowNr": 31
             },
             {
                 "value": "distributed fibre optic sensing",
@@ -728,14 +755,12 @@
                     "fiber optics sensing"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-distributed_fibre_optic_sensing",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "MSL - Rock Mechanics Vocab",
                 "notes": "MSL - Rock Mechanics Vocab",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -747,42 +772,37 @@
                             "(das)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-distributed_fibre_optic_sensing-distributed_acoustic_sensing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_acoustic_sensing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 33
+                        "rowNr": 38
                     },
                     {
                         "value": "distributed strain sensing",
                         "level": 3,
                         "synonyms": [
                             "(dss)",
-                            "distributed strain and temperature sensor",
-                            "(dsts)"
+                            "brusens strain sensing cable"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 34
+                        "rowNr": 39
                     },
                     {
                         "value": "distributed temperature sensing",
@@ -791,143 +811,12 @@
                             "(dts)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 0,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 35
-                    },
-                    {
-                        "value": "distributed pressure sensing",
-                        "level": 3,
-                        "synonyms": [
-                            "(dps)"
-                        ],
-                        "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-distributed_fibre_optic_sensing-distributed_pressure_sensing",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "notes": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 0,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 36
-                    }
-                ],
-                "rowNr": 32
-            },
-            {
-                "value": "borehole monitoring",
-                "level": 2,
-                "synonyms": [
-                    "downhole monitoring",
-                    "monitoring well",
-                    "monitoring borehole"
-                ],
-                "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_monitoring",
-                "hyperlink": "",
-                "external_uri": "",
-                "external_vocab_scheme": "",
-                "external_description": "",
-                "extracted_definition": "",
-                "notes": "",
-                "extracted_definition_link": "",
-                "terms_exclude_abstract_mapping": [],
-                "selection_group_1": 0,
-                "selection_group_2": 0,
-                "subTerms": [
-                    {
-                        "value": "borehole geophone",
-                        "level": 3,
-                        "synonyms": [
-                            "downhole geophone",
-                            "borehole triaxial geophone"
-                        ],
-                        "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_monitoring-borehole_geophone",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "notes": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 0,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 38
-                    },
-                    {
-                        "value": "downhole electromagnetic sensing",
-                        "level": 3,
-                        "synonyms": [
-                            "downhole electromagnetic sensors",
-                            "borehole electromagnetic sensing",
-                            "borehole electromagnetic sensor",
-                            "downhole em sensing",
-                            "downhole em sensors",
-                            "borehole em sensing",
-                            "borehole em sensor",
-                            "downhole magnetoelastic sensing",
-                            "borehole magnetoelastic sensing",
-                            "downhole magnetoelastic sensor",
-                            "borehole magnetoelastic sensor"
-                        ],
-                        "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_monitoring-downhole_electromagnetic_sensing",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "notes": "",
-                        "extracted_definition_link": "",
-                        "terms_exclude_abstract_mapping": [],
-                        "selection_group_1": 0,
-                        "selection_group_2": 0,
-                        "subTerms": [],
-                        "rowNr": 39
-                    },
-                    {
-                        "value": "downhole electric conductivity sensing",
-                        "level": 3,
-                        "synonyms": [
-                            "downhole electric conductivity sensor",
-                            "borehole electric conductivity sensing",
-                            "borehole electric conductivity sensor",
-                            "downhole specific conductance sensing",
-                            "downhole specific conductance sensor",
-                            "borehole specific conductance sensing",
-                            "borehole specific conductance sensor",
-                            "downhole ec sensing",
-                            "downhole ec sensor",
-                            "borehole ec sensing",
-                            "borehole ec sensor"
-                        ],
-                        "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_monitoring-downhole_electric_conductivity_sensing",
-                        "hyperlink": "",
-                        "external_uri": "",
-                        "external_vocab_scheme": "",
-                        "external_description": "",
-                        "extracted_definition": "",
-                        "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
@@ -935,49 +824,332 @@
                         "rowNr": 40
                     },
                     {
-                        "value": "downhole soil gas probe",
+                        "value": "distributed pressure and temperature sensing",
                         "level": 3,
                         "synonyms": [
-                            "downhole soil gas monitoring",
-                            "downhole soil gas sensor",
-                            "borehole soil gas probe",
-                            "borehole soil gas monitoring",
-                            "borehole soil gas sensor"
+                            "(dpts)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_monitoring-downhole_soil_gas_probe",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_pressure_and_temperature_sensing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
                         "rowNr": 41
+                    },
+                    {
+                        "value": "fibre braag grating sensor",
+                        "level": 3,
+                        "synonyms": [
+                            "(fbg)"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-fibre_braag_grating_sensor",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 42
+                    },
+                    {
+                        "value": "FBG interrogator",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-fbg_interrogator",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "https:\/\/www.smartfibres.com\/products",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 43
+                    },
+                    {
+                        "value": "optoelectronics interrogator",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-optoelectronics_interrogator",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 44
+                    },
+                    {
+                        "value": "Silixa DAS interrogator",
+                        "level": 3,
+                        "synonyms": [
+                            "(idas)",
+                            "xt-dts"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-silixa_das_interrogator",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 45
+                    },
+                    {
+                        "value": "HYPERION Optical Sensing Instrument",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-hyperion_optical_sensing_instrument",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 46
                     }
                 ],
                 "rowNr": 37
             },
             {
-                "value": "borehole testing",
+                "value": "borehole monitoring",
                 "level": 2,
                 "synonyms": [
-                    "well testing",
-                    "wellbore testing"
+                    "downhole monitoring",
+                    "monitoring well",
+                    "borehole monitoring acquisition system",
+                    "(mbas)",
+                    "borehole sensor",
+                    "wellbore sensor",
+                    "monitoring borehole",
+                    "monitoring wellbore",
+                    "wellbore monitoring"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [
+                    {
+                        "value": "multistation borehole acquisition system",
+                        "level": 3,
+                        "synonyms": [
+                            "mbas-single station",
+                            "3c borehole acquisition system"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-multistation_borehole_acquisition_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 48
+                    },
+                    {
+                        "value": "downhole electromagnetic sensing",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_electromagnetic_sensing",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 49
+                    },
+                    {
+                        "value": "downhole electric conductivity sensing",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_electric_conductivity_sensing",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 50
+                    },
+                    {
+                        "value": "downhole probe",
+                        "level": 3,
+                        "synonyms": [
+                            "downhole soil gas probe"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_probe",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 51
+                    },
+                    {
+                        "value": "impulse generator",
+                        "level": 3,
+                        "synonyms": [
+                            "(ipg) downhole sparker"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-impulse_generator",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 52
+                    },
+                    {
+                        "value": "borehole acoustic emission monitoring system",
+                        "level": 3,
+                        "synonyms": [
+                            "borehole ae sensor",
+                            "wellbore ae sensor",
+                            "wellbore acoustic emission",
+                            "borehole acoustic emission"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-borehole_acoustic_emission_monitoring_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 53
+                    },
+                    {
+                        "value": "step-rate injection method for fracture in-situ properties",
+                        "level": 3,
+                        "synonyms": [
+                            "(simfip)"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-step-rate_injection_method_for_fracture_in-situ_properties",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 54
+                    },
+                    {
+                        "value": "borehole strainmeter",
+                        "level": 3,
+                        "synonyms": [
+                            "borehole strain meter",
+                            "borehole strain meter"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-borehole_strainmeter",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 55
+                    },
+                    {
+                        "value": "cementable tube pore-pressure sensor",
+                        "level": 3,
+                        "synonyms": [
+                            "(ctpp)",
+                            "cementable tube pore pressure",
+                            "cementable tube fluid pressure"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-cementable_tube_pore-pressure_sensor",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 56
+                    }
+                ],
+                "rowNr": 47
+            },
+            {
+                "value": "well testing",
+                "level": 2,
+                "synonyms": [
+                    "wellbore testing"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -991,147 +1163,127 @@
                             "(lot)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-formation_integrity_test",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-formation_integrity_test",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "https:\/\/petrowiki.spe.org\/Formation_integrity_test#FITs_vs_LOTs",
-                        "extracted_definition_link": "https:\/\/petrowiki.spe.org\/Formation_integrity_test#FITs_vs_LOTs",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 43
+                        "rowNr": 58
                     },
                     {
                         "value": "production testing",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-production_testing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-production_testing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 44
+                        "rowNr": 59
                     },
                     {
                         "value": "injection testing",
                         "level": 3,
-                        "synonyms": [],
+                        "synonyms": [
+                            "injection experiment",
+                            "stimulation test",
+                            "stimulation experiment"
+                        ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-injection_testing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-injection_testing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 45
+                        "rowNr": 60
                     },
                     {
                         "value": "intervention and stimulation equipment",
                         "level": 3,
                         "synonyms": [
-                            "(ise)",
-                            "intervention and stimulation solutions",
-                            "intervention and stimulation solution",
-                            "well intervention",
-                            "well stimulation",
-                            "borehole ntervention",
-                            "borehole stimulation",
-                            "wellbore ntervention",
-                            "wellbore stimulation"
+                            "(ise)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-intervention_and_stimulation_equipment",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-intervention_and_stimulation_equipment",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 46
+                        "rowNr": 61
                     },
                     {
                         "value": "pressure performance system",
                         "level": 3,
                         "synonyms": [
-                            "(pps)",
-                            "pressure transient testing",
-                            "pressure performance"
+                            "(pps)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-pressure_performance_system",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-pressure_performance_system",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "https:\/\/geoera.eu\/themes\/geo-energy\/",
-                        "extracted_definition_link": "https:\/\/geoera.eu\/themes\/geo-energy\/",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 47
+                        "rowNr": 62
                     },
                     {
                         "value": "heat pump test rig",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-heat_pump_test_rig",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-heat_pump_test_rig",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 48
+                        "rowNr": 63
                     },
                     {
                         "value": "heat pump mobile unit",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-heat_pump_mobile_unit",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-heat_pump_mobile_unit",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 49
+                        "rowNr": 64
                     },
                     {
                         "value": "thermal response testing",
@@ -1140,22 +1292,20 @@
                             "(trt)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_testing-thermal_response_testing",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-thermal_response_testing",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 50
+                        "rowNr": 65
                     }
                 ],
-                "rowNr": 42
+                "rowNr": 57
             },
             {
                 "value": "borehole drilling",
@@ -1165,14 +1315,12 @@
                     "well drilling"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "https:\/\/voc.europe-geology.eu\/?uri=https:\/\/voc.europe-geology.eu\/muse\/category\/8675&lang=en",
-                "extracted_definition_link": "https:\/\/voc.europe-geology.eu\/?uri=https:\/\/voc.europe-geology.eu\/muse\/category\/8675&lang=en",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -1186,88 +1334,68 @@
                             "(lwd)"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling-measurement_while_drilling",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-measurement_while_drilling",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "https:\/\/www.energy.gov\/energysaver\/geothermal-heat-pumps",
-                        "extracted_definition_link": "https:\/\/www.energy.gov\/energysaver\/geothermal-heat-pumps",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 52
+                        "rowNr": 67
                     },
                     {
                         "value": "mud logging",
                         "level": 3,
-                        "synonyms": [
-                            "mud logger",
-                            "mud log",
-                            "mudlog",
-                            "mudlogging"
-                        ],
+                        "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling-mud_logging",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-mud_logging",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 53
+                        "rowNr": 68
                     },
                     {
                         "value": "drilling test rig",
                         "level": 3,
-                        "synonyms": [
-                            "drill test rig",
-                            "drill testrig",
-                            "drilling testrig"
-                        ],
+                        "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling-drilling_test_rig",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-drilling_test_rig",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "https:\/\/www.energy.gov\/eere\/geothermal\/geothermal-glossary",
-                        "extracted_definition_link": "https:\/\/www.energy.gov\/eere\/geothermal\/geothermal-glossary",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 54
+                        "rowNr": 69
                     },
                     {
                         "value": "borehole and geofluid simulator",
                         "level": 3,
-                        "synonyms": [
-                            "borehole simulator",
-                            "geofluid simulator"
-                        ],
+                        "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling-borehole_and_geofluid_simulator",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-borehole_and_geofluid_simulator",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 55
+                        "rowNr": 70
                     },
                     {
                         "value": "drill core",
@@ -1277,28 +1405,23 @@
                             "core scanning",
                             "cutting samples",
                             "drillcore",
-                            "core samples",
-                            "downhole coring",
-                            "wellbore coring",
-                            "well coring"
+                            "core samples"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_drilling-drill_core",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-drill_core",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 56
+                        "rowNr": 71
                     }
                 ],
-                "rowNr": 51
+                "rowNr": 66
             },
             {
                 "value": "borehole logging",
@@ -1309,14 +1432,12 @@
                     "wireline logging"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_logging",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -1331,39 +1452,409 @@
                             "open-hole logging"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/equipment-borehole_logging-open_hole_logging",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging-open_hole_logging",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 58
+                        "rowNr": 73
+                    },
+                    {
+                        "value": "optical borehole scanner",
+                        "level": 3,
+                        "synonyms": [
+                            "ql40 obi-2g-uv",
+                            "ql40 cal",
+                            "ql40 sgr",
+                            "ql40 abi",
+                            "optical borehole imaging",
+                            "optical borehole imager",
+                            "optical borehole televiewer",
+                            "optical borehole televiewing",
+                            "optical borehole televiewers"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging-optical_borehole_scanner",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 74
+                    },
+                    {
+                        "value": "borehole inspection system",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging-borehole_inspection_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 75
                     }
                 ],
-                "rowNr": 57
+                "rowNr": 72
+            },
+            {
+                "value": "hydrologic instrumentation",
+                "level": 2,
+                "synonyms": [
+                    "groundwater multi-level monitoring system",
+                    "hydrological instrumentation",
+                    "hydrogeological instrumentation",
+                    "hydro-geological instrumentation",
+                    "hydrogeological instrument",
+                    "hydro-geological instrument",
+                    "hydrologic instrument"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [
+                    {
+                        "value": "groundwater multi-packer system",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-groundwater_multi-packer_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 77
+                    },
+                    {
+                        "value": "stand-pipe multi-packer system",
+                        "level": 3,
+                        "synonyms": [
+                            "(spmp)"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-stand-pipe_multi-packer_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 78
+                    },
+                    {
+                        "value": "hybrid multi-packer system",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-hybrid_multi-packer_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 79
+                    },
+                    {
+                        "value": "pump multi-packer system",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-pump_multi-packer_system",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 80
+                    },
+                    {
+                        "value": "multi-packer piezometer",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-multi-packer_piezometer",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 81
+                    }
+                ],
+                "rowNr": 76
+            },
+            {
+                "value": "Environmental monitoring",
+                "level": 2,
+                "synonyms": [
+                    "environment monitoring",
+                    "meteorological monitoring",
+                    "sea waves monitoring",
+                    "sea wave monitoring"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [
+                    {
+                        "value": "weather station",
+                        "level": 3,
+                        "synonyms": [
+                            "fully equipped weather station"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-weather_station",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 83
+                    },
+                    {
+                        "value": "acoustic wave and current profiler",
+                        "level": 3,
+                        "synonyms": [
+                            "mareographic station",
+                            "submerged wave-measurement"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-acoustic_wave_and_current_profiler",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "https:\/\/www.nortekgroup.com\/products\/awac2-1-mhz",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 84
+                    },
+                    {
+                        "value": "sea wave pressure transducer",
+                        "level": 3,
+                        "synonyms": [
+                            "pressiometer",
+                            "dynamic pressure transducer"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-sea_wave_pressure_transducer",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "https:\/\/keller-pressure.com\/en\/products\/pressure-transmitters\/front-flush-pressure-transmitters\/series-25y",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 85
+                    },
+                    {
+                        "value": "heat flux cell",
+                        "level": 3,
+                        "synonyms": [
+                            "heat flux sensor"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-heat_flux_cell",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 86
+                    },
+                    {
+                        "value": "leaf wetness sensor",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-leaf_wetness_sensor",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 87
+                    }
+                ],
+                "rowNr": 82
+            },
+            {
+                "value": "Slope surface monitoring",
+                "level": 2,
+                "synonyms": [
+                    "slope surface stability monitoring",
+                    "landslide monitoring",
+                    "scarp monitoring",
+                    "fault plane monitoring",
+                    "rock fall monitoring",
+                    "rockfall monitoring",
+                    "avelanche monitoring"
+                ],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [
+                    {
+                        "value": "joint gauges",
+                        "level": 3,
+                        "synonyms": [
+                            "joint strain gauges"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-joint_gauges",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 89
+                    },
+                    {
+                        "value": "optical camera for surface monitoring",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-optical_camera_for_surface_monitoring",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 90
+                    },
+                    {
+                        "value": "thermal imaging camera",
+                        "level": 3,
+                        "synonyms": [
+                            "thermal imager",
+                            "thermal imaging"
+                        ],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-thermal_imaging_camera",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 91
+                    },
+                    {
+                        "value": "doppler radar",
+                        "level": 3,
+                        "synonyms": [],
+                        "exclude_domain_mapping": 0,
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-doppler_radar",
+                        "hyperlink": "",
+                        "external_uri": "",
+                        "external_vocab_scheme": "",
+                        "external_description": "",
+                        "notes": "",
+                        "terms_exclude_abstract_mapping": [],
+                        "selection_group_1": 0,
+                        "selection_group_2": 0,
+                        "subTerms": [],
+                        "rowNr": 92
+                    }
+                ],
+                "rowNr": 88
             }
         ],
-        "rowNr": 28
+        "rowNr": 30
     },
     {
         "value": "Models",
         "level": 1,
         "synonyms": [],
         "exclude_domain_mapping": 1,
-        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models",
         "hyperlink": "",
         "external_uri": "",
         "external_vocab_scheme": "",
         "external_description": "",
-        "extracted_definition": "",
         "notes": "",
-        "extracted_definition_link": "",
         "terms_exclude_abstract_mapping": [
             "models"
         ],
@@ -1371,25 +1862,40 @@
         "selection_group_2": 0,
         "subTerms": [
             {
+                "value": "surface digital twin",
+                "level": 2,
+                "synonyms": [],
+                "exclude_domain_mapping": 0,
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-surface_digital_twin",
+                "hyperlink": "",
+                "external_uri": "",
+                "external_vocab_scheme": "",
+                "external_description": "",
+                "notes": "",
+                "terms_exclude_abstract_mapping": [],
+                "selection_group_1": 0,
+                "selection_group_2": 0,
+                "subTerms": [],
+                "rowNr": 94
+            },
+            {
                 "value": "subsurface digital twin",
                 "level": 2,
                 "synonyms": [
                     "digital twin for the subsurface"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_digital_twin",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_digital_twin",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
                 "subTerms": [],
-                "rowNr": 60
+                "rowNr": 95
             },
             {
                 "value": "subsurface property modelling",
@@ -1398,14 +1904,12 @@
                     "static subsurface model"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -1417,19 +1921,17 @@
                             "reservoir structural modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-reservoir_structural_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-reservoir_structural_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 62
+                        "rowNr": 97
                     },
                     {
                         "value": "temperature field model",
@@ -1438,19 +1940,17 @@
                             "temperature field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-temperature_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-temperature_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 63
+                        "rowNr": 98
                     },
                     {
                         "value": "pore pressure field model",
@@ -1459,19 +1959,17 @@
                             "pore pressure field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-pore_pressure_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-pore_pressure_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 64
+                        "rowNr": 99
                     },
                     {
                         "value": "fluid composition field model",
@@ -1480,19 +1978,17 @@
                             "fluid composition field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-fluid_composition_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-fluid_composition_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 65
+                        "rowNr": 100
                     },
                     {
                         "value": "gravity field model",
@@ -1501,19 +1997,17 @@
                             "gravity field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-gravity_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-gravity_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 66
+                        "rowNr": 101
                     },
                     {
                         "value": "magnetic field model",
@@ -1522,19 +2016,17 @@
                             "magnetic field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-magnetic_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-magnetic_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 67
+                        "rowNr": 102
                     },
                     {
                         "value": "formation stress model",
@@ -1545,19 +2037,17 @@
                             "subsurface stress modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-formation_stress_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-formation_stress_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 68
+                        "rowNr": 103
                     },
                     {
                         "value": "seismic velocity field model",
@@ -1568,19 +2058,17 @@
                             "velocity modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-seismic_velocity_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-seismic_velocity_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 69
+                        "rowNr": 104
                     },
                     {
                         "value": "porosity-permeability field model",
@@ -1595,19 +2083,17 @@
                             "porperm modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-porosity-permeability_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-porosity-permeability_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 70
+                        "rowNr": 105
                     },
                     {
                         "value": "geomechanical property field model",
@@ -1620,19 +2106,17 @@
                             "geomechanical field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-geomechanical_property_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-geomechanical_property_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 71
+                        "rowNr": 106
                     },
                     {
                         "value": "geochemistry field model",
@@ -1641,22 +2125,20 @@
                             "geochemistry field modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-subsurface_property_modelling-geochemistry_field_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-geochemistry_field_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 72
+                        "rowNr": 107
                     }
                 ],
-                "rowNr": 61
+                "rowNr": 96
             },
             {
                 "value": "field system model",
@@ -1665,14 +2147,12 @@
                     "dynamic field model"
                 ],
                 "exclude_domain_mapping": 0,
-                "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model",
+                "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model",
                 "hyperlink": "",
                 "external_uri": "",
                 "external_vocab_scheme": "",
                 "external_description": "",
-                "extracted_definition": "",
                 "notes": "",
-                "extracted_definition_link": "",
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
@@ -1686,57 +2166,51 @@
                             "multiphase flow modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-flow_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-flow_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 74
+                        "rowNr": 109
                     },
                     {
                         "value": "flow and thermal transport model",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-flow_and_thermal_transport_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-flow_and_thermal_transport_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 75
+                        "rowNr": 110
                     },
                     {
                         "value": "coupled thermo-hydraulic-mechanical model",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-coupled_thermo-hydraulic-mechanical_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-coupled_thermo-hydraulic-mechanical_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 76
+                        "rowNr": 111
                     },
                     {
                         "value": "pore pressure diffusion model",
@@ -1745,19 +2219,17 @@
                             "hydraulic model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-pore_pressure_diffusion_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-pore_pressure_diffusion_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 77
+                        "rowNr": 112
                     },
                     {
                         "value": "thermal transport model",
@@ -1767,19 +2239,17 @@
                             "temperature model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-thermal_transport_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-thermal_transport_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 78
+                        "rowNr": 113
                     },
                     {
                         "value": "chemical model",
@@ -1790,19 +2260,17 @@
                             "geochemistry model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-chemical_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-chemical_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 79
+                        "rowNr": 114
                     },
                     {
                         "value": "reactive transport model",
@@ -1811,38 +2279,34 @@
                             "reactive transport modelling"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-reactive_transport_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-reactive_transport_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 80
+                        "rowNr": 115
                     },
                     {
                         "value": "borehole heat exchanger model",
                         "level": 3,
                         "synonyms": [],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-borehole_heat_exchanger_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-borehole_heat_exchanger_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 81
+                        "rowNr": 116
                     },
                     {
                         "value": "geothermal reservoir simulation",
@@ -1851,19 +2315,17 @@
                             "geothermal reservoir model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-geothermal_reservoir_simulation",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-geothermal_reservoir_simulation",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 82
+                        "rowNr": 117
                     },
                     {
                         "value": "hydrocarbon reservoir simulation",
@@ -1872,19 +2334,17 @@
                             "hydrocarbon reservoir model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-hydrocarbon_reservoir_simulation",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-hydrocarbon_reservoir_simulation",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 83
+                        "rowNr": 118
                     },
                     {
                         "value": "hydrogen reservoir simulation",
@@ -1893,19 +2353,17 @@
                             "hydrogen reservoir model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-hydrogen_reservoir_simulation",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-hydrogen_reservoir_simulation",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 84
+                        "rowNr": 119
                     },
                     {
                         "value": "storage model",
@@ -1916,19 +2374,17 @@
                             "gas storage model"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-storage_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-storage_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 85
+                        "rowNr": 120
                     },
                     {
                         "value": "induced seismicity model",
@@ -1939,19 +2395,17 @@
                             "induced seismicity due to geothermal"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-induced_seismicity_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-induced_seismicity_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 86
+                        "rowNr": 121
                     },
                     {
                         "value": "geothermal well model",
@@ -1960,24 +2414,22 @@
                             "well model for geothermal reservoir"
                         ],
                         "exclude_domain_mapping": 0,
-                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/testbeds\/1.3\/models-field_system_model-geothermal_well_model",
+                        "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-geothermal_well_model",
                         "hyperlink": "",
                         "external_uri": "",
                         "external_vocab_scheme": "",
                         "external_description": "",
-                        "extracted_definition": "",
                         "notes": "",
-                        "extracted_definition_link": "",
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
                         "subTerms": [],
-                        "rowNr": 87
+                        "rowNr": 122
                     }
                 ],
-                "rowNr": 73
+                "rowNr": 108
             }
         ],
-        "rowNr": 59
+        "rowNr": 93
     }
 ]
