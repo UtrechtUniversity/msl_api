@@ -25,7 +25,7 @@ class SourceDataset extends Model
         return $this->belongsTo(Import::class);
     }
 
-    public function dataset_create(): HasOne
+    public function datasetCreate(): HasOne
     {
         return $this->hasOne(DatasetCreate::class);
     }
