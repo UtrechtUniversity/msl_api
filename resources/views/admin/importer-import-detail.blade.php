@@ -148,7 +148,7 @@
                                             </tr>
                                             <tr>
                                                 <td>importer:</td>
-                                                <td>{{ $datasetCreate->source_dataset->source_dataset_identifier->import->importer->name }}
+                                                <td>{{ $datasetCreate->sourceDataset->source_dataset_identifier->import->importer->name }}
                                                 </td>
                                             </tr>
                                             <tr>
