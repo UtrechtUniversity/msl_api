@@ -122,7 +122,7 @@ class SurveyTest extends TestCase
         $questions = Question::all();
         $this->assertInstanceOf(Collection::class, $questions);
         $this->assertEquals(2, $questions->count());
-        $this->assertInstanceOf(QuestionType::class, $questions->first()->question_type);
+        $this->assertInstanceOf(QuestionType::class, $questions->first()->questionType);
     }
 
     public function test_relation_answers_to_question(): void
