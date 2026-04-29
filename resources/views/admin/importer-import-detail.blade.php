@@ -76,7 +76,7 @@
                                             </tr>
                                             <tr>
                                                 <td>source dataset identifier:</td>
-                                                <td>{{ $sourceDataset->source_dataset_identifier->identifier }}</td>
+                                                <td>{{ $sourceDataset->sourceDatasetIdentifier->identifier }}</td>
                                             </tr>
                                             <tr>
                                                 <td>status:</td>
@@ -98,7 +98,7 @@
                                             </tr>
                                             <tr>
                                                 <td>importer:</td>
-                                                <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}
+                                                <td>{{ $sourceDataset->sourceDatasetIdentifier->import->importer->name }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -148,7 +148,7 @@
                                             </tr>
                                             <tr>
                                                 <td>importer:</td>
-                                                <td>{{ $datasetCreate->sourceDataset->source_dataset_identifier->import->importer->name }}
+                                                <td>{{ $datasetCreate->sourceDataset->sourceDatasetIdentifier->import->importer->name }}
                                                 </td>
                                             </tr>
                                             <tr>
