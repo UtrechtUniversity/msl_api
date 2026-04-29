@@ -41,7 +41,7 @@
                                             @break
                                             @endswitch>
                                             <td>{{ $createAction->id }}</td>
-                                            <td>{{ $createAction->source_dataset->source_dataset_identifier->import->importer->name }}
+                                            <td>{{ $createAction->sourceDataset->source_dataset_identifier->import->importer->name }}
                                             </td>
                                             <td>
                                                 @if ($createAction->response_code == '')
