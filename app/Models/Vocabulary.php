@@ -19,7 +19,7 @@ class Vocabulary extends Model
         return $this->hasMany(Keyword::class);
     }
 
-    public function search_keywords(): HasManyThrough
+    public function searchKeywords(): HasManyThrough
     {
         return $this->hasManyThrough(KeywordSearch::class, Keyword::class);
     }
