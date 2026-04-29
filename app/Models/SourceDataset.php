@@ -15,7 +15,7 @@ class SourceDataset extends Model
         'source_dataset',
     ];
 
-    public function source_dataset_identifier(): BelongsTo
+    public function sourceDatasetIdentifier(): BelongsTo
     {
         return $this->belongsTo(SourceDatasetIdentifier::class);
     }
