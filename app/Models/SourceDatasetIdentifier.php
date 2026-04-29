@@ -23,7 +23,7 @@ class SourceDatasetIdentifier extends Model
         return $this->belongsTo(Import::class);
     }
 
-    public function source_dataset(): HasOne
+    public function sourceDataset(): HasOne
     {
         return $this->hasOne(SourceDataset::class);
     }
