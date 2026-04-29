@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <?php $sourceDataset = $sourceDatasetIdentifier->source_dataset; ?>
+                    <?php $sourceDataset = $sourceDatasetIdentifier->sourceDataset; ?>
                     @if ($sourceDataset)
                         <div class="card mt-3">
                             <div class="card-header">
