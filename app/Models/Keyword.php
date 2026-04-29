@@ -49,7 +49,7 @@ class Keyword extends Model
         return $this->belongsTo(Vocabulary::class, 'vocabulary_id');
     }
 
-    public function keyword_search(): HasMany
+    public function keywordSearch(): HasMany
     {
         return $this->hasMany(KeywordSearch::class, 'keyword_id');
     }
