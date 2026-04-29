@@ -19,7 +19,7 @@ class DatasetCreate extends Model
         'dataset' => 'array',
     ];
 
-    public function source_dataset(): BelongsTo
+    public function sourceDataset(): BelongsTo
     {
         return $this->belongsTo(SourceDataset::class);
     }
