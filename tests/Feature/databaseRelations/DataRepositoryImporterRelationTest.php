@@ -3,7 +3,6 @@
 namespace Tests\Feature\databaseRelations;
 
 use App\Models\DataRepository;
-use App\Models\Importer;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -18,12 +17,11 @@ class DataRepositoryImporterRelationTest extends TestCase
             'ckan_name' => 'repository',
         ]);
 
-        $importer = Importer::create([
+        $importer = $repository->importers()->create([
             'name' => 'Importer',
             'description' => 'Importer description',
             'type' => 'oai',
             'options' => ['identifierProcessor' => ['type' => 'oai']],
-            'data_repository_id' => $repository->id,
         ]);
 
         $this->assertCount(1, $repository->importers);
