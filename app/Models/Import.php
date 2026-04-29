@@ -40,7 +40,7 @@ class Import extends Model
             'step_1_total' => DB::table('source_dataset_identifiers')->where('import_id', $this->id)->count(),
             'step_2_success' => DB::table('source_datasets')->where('import_id', $this->id)->where('status', '=', 'succes')->count(),
             'step_2_total' => DB::table('source_datasets')->where('import_id', $this->id)->count(),
-            'step_3_success' => $this->dataset_creates->where('response_code', '=', 200)->where('response_code', '=', 200)->count(),
+            'step_3_success' => $this->datasetCreates->where('response_code', '=', 200)->where('response_code', '=', 200)->count(),
             'step_3_total' => DB::table('dataset_creates')->where('import_id', $this->id)->count(),
         ];
 
