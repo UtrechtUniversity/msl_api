@@ -15,7 +15,7 @@ class LaboratoryEquipmentAddon extends Model
         'group',
     ];
 
-    public function laboratory_equipment(): BelongsTo
+    public function laboratoryEquipment(): BelongsTo
     {
         return $this->belongsTo(LaboratoryEquipment::class);
     }
