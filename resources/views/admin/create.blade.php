@@ -26,7 +26,7 @@
                                     </tr>
                                     <tr>
                                         <td>importer:</td>
-                                        <td>{{ $datasetCreate->sourceDataset->source_dataset_identifier->import->importer->name }}
+                                        <td>{{ $datasetCreate->sourceDataset->sourceDatasetIdentifier->import->importer->name }}
                                         </td>
                                     </tr>
                                     <tr>
