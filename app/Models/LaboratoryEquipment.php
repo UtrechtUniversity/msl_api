@@ -94,7 +94,7 @@ class LaboratoryEquipment extends Model
     private function getCkanAddons()
     {
         $addons = [];
-        foreach ($this->laboratory_equipment_addons as $addon) {
+        foreach ($this->laboratoryEquipmentAddons as $addon) {
             $addons[] = [
                 'msl_equipment_addon_description' => $addon->description,
                 'msl_equipment_addon_type' => $addon->type,
@@ -135,7 +135,7 @@ class LaboratoryEquipment extends Model
             }
         }
 
-        $addons = $this->laboratory_equipment_addons;
+        $addons = $this->laboratoryEquipmentAddons;
 
         foreach ($addons as $addon) {
             $keyword = $addon->keyword;
