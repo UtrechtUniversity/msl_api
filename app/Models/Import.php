@@ -18,7 +18,7 @@ class Import extends Model
         return $this->belongsTo(Importer::class);
     }
 
-    public function source_dataset_identifiers(): HasMany
+    public function sourceDatasetIdentifiers(): HasMany
     {
         return $this->hasMany(SourceDatasetIdentifier::class);
     }
