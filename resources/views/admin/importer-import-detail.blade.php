@@ -113,7 +113,7 @@
                     @endif
 
                     <?php if ($sourceDataset) {
-                        $datasetCreate = $sourceDataset->dataset_create;
+                        $datasetCreate = $sourceDataset->datasetCreate;
                     } else {
                         $datasetCreate = null;
                     } ?>
