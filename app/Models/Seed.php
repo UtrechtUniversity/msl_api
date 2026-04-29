@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Seed extends Model
 {
@@ -10,12 +12,12 @@ class Seed extends Model
         'seeder_id',
     ];
 
-    public function seeder()
+    public function seeder(): BelongsTo
     {
         return $this->belongsTo(Seeder::class);
     }
 
-    public function creates()
+    public function creates(): HasMany
     {
         if ($this->seeder->type == 'organization') {
             return $this->hasMany(OrganizationCreate::class);

@@ -50,7 +50,7 @@
                         </div>
                     </div>
 
-                    <?php $sourceDataset = $sourceDatasetIdentifier->source_dataset; ?>
+                    <?php $sourceDataset = $sourceDatasetIdentifier->sourceDataset; ?>
                     @if ($sourceDataset)
                         <div class="card mt-3">
                             <div class="card-header">
@@ -76,7 +76,7 @@
                                             </tr>
                                             <tr>
                                                 <td>source dataset identifier:</td>
-                                                <td>{{ $sourceDataset->source_dataset_identifier->identifier }}</td>
+                                                <td>{{ $sourceDataset->sourceDatasetIdentifier->identifier }}</td>
                                             </tr>
                                             <tr>
                                                 <td>status:</td>
@@ -98,7 +98,7 @@
                                             </tr>
                                             <tr>
                                                 <td>importer:</td>
-                                                <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}
+                                                <td>{{ $sourceDataset->sourceDatasetIdentifier->import->importer->name }}
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -113,7 +113,7 @@
                     @endif
 
                     <?php if ($sourceDataset) {
-                        $datasetCreate = $sourceDataset->dataset_create;
+                        $datasetCreate = $sourceDataset->datasetCreate;
                     } else {
                         $datasetCreate = null;
                     } ?>
@@ -148,7 +148,7 @@
                                             </tr>
                                             <tr>
                                                 <td>importer:</td>
-                                                <td>{{ $datasetCreate->source_dataset->source_dataset_identifier->import->importer->name }}
+                                                <td>{{ $datasetCreate->sourceDataset->sourceDatasetIdentifier->import->importer->name }}
                                                 </td>
                                             </tr>
                                             <tr>

@@ -362,7 +362,7 @@ class ToolsController extends Controller
             $keywordsGroup1 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_1', true)->get();
 
             foreach ($keywordsGroup1 as $keywordGroup1) {
-                foreach ($keywordGroup1->keyword_search as $keywordSearch) {
+                foreach ($keywordGroup1->keywordSearch as $keywordSearch) {
                     if (! $keywordSearch->exclude_abstract_mapping) {
                         $group1[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
                     }
@@ -372,7 +372,7 @@ class ToolsController extends Controller
             $keywordsGroup2 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_2', true)->get();
 
             foreach ($keywordsGroup2 as $keywordGroup2) {
-                foreach ($keywordGroup2->keyword_search as $keywordSearch) {
+                foreach ($keywordGroup2->keywordSearch as $keywordSearch) {
                     if (! $keywordSearch->exclude_abstract_mapping) {
                         $group2[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
                     }

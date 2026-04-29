@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Importer extends Model
 {
@@ -18,12 +20,12 @@ class Importer extends Model
         'options' => 'array',
     ];
 
-    public function data_repository()
+    public function dataRepository(): BelongsTo
     {
         return $this->belongsTo(DataRepository::class);
     }
 
-    public function imports()
+    public function imports(): HasMany
     {
         return $this->hasMany(Import::class);
     }

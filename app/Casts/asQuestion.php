@@ -14,7 +14,7 @@ class asQuestion implements CastsAttributes
      */
     public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
-        $className = $model->question_type->class;
+        $className = $model->questionType->class;
 
         $questionArray = json_decode(
             json: $value,

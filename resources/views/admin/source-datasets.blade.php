@@ -36,7 +36,7 @@
                                             @break
                                             @endswitch>
                                             <td>{{ $sourceDataset->id }}</td>
-                                            <td>{{ $sourceDataset->source_dataset_identifier->import->importer->name }}</td>
+                                            <td>{{ $sourceDataset->sourceDatasetIdentifier->import->importer->name }}</td>
                                             <td>
                                                 @switch($sourceDataset->status)
                                                     @case(null)

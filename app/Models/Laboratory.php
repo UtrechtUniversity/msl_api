@@ -5,6 +5,8 @@ namespace App\Models;
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Laboratory extends Model
 {
@@ -40,29 +42,34 @@ class Laboratory extends Model
         'laboratory_manager_id',
     ];
 
-    public function laboratoryOrganization()
+    public function laboratoryOrganization(): BelongsTo
     {
         return $this->belongsTo(LaboratoryOrganization::class, 'laboratory_organization_id');
     }
 
-    public function laboratoryContactPersons()
+    public function laboratoryContactPersons(): HasMany
     {
         return $this->hasMany(LaboratoryContactPerson::class, 'laboratory_id');
     }
 
-    public function laboratoryManager()
+    public function laboratoryManager(): BelongsTo
     {
         return $this->belongsTo(LaboratoryManager::class, 'laboratory_manager_id');
     }
 
-    public function laboratoryEquipment()
+    public function laboratoryEquipment(): HasMany
     {
         return $this->hasMany(LaboratoryEquipment::class, 'laboratory_id');
     }
 
-    public function laboratoryKeywords()
+    public function laboratoryKeywords(): HasMany
     {
         return $this->hasMany(LaboratoryKeyword::class, 'laboratory_id');
+    }
+
+    public function laboratoryUpdatesFast(): HasMany
+    {
+        return $this->hasMany(LaboratoryUpdateFast::class, 'laboratory_id');
     }
 
     /**
