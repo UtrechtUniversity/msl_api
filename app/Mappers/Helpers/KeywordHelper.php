@@ -177,7 +177,7 @@ class KeywordHelper
             $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->whereIn('name', ['rockphysics', 'analogue', 'paleomagnetism', 'geochemistry', 'microscopy', 'testbeds'])->get();
             $searchKeywords = collect([]);
             foreach ($vocabularies as $vocabulary) {
-                $searchKeywords = $searchKeywords->merge($vocabulary->search_keywords()->where('exclude_abstract_mapping', false)->get());
+                $searchKeywords = $searchKeywords->merge($vocabulary->searchKeywords()->where('exclude_abstract_mapping', false)->get());
             }
         } else {
             $searchKeywords = KeywordSearch::where('exclude_abstract_mapping', false)->where('version', config('vocabularies.vocabularies_current_version'))->get();
