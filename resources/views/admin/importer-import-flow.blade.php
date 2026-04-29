@@ -47,7 +47,7 @@
                                                 @endif
                                             </td>
 
-                                            <?php $sourceDataset = $sourceDatasetIdentifier->source_dataset; ?>
+                                            <?php $sourceDataset = $sourceDatasetIdentifier->sourceDataset; ?>
                                             <td>
                                                 @if ($sourceDataset)
                                                     @if ($sourceDataset->status == 'succes')
