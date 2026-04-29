@@ -26,7 +26,7 @@ class EquipmentResource extends JsonResource
             'type' => $this->type_name,
             'group' => $this->group_name,
             'brand' => $this->brand,
-            'addOns' => AddOnResource::collection($this->laboratory_equipment_addons),
+            'addOns' => AddOnResource::collection($this->laboratoryEquipmentAddons),
         ];
     }
 }
