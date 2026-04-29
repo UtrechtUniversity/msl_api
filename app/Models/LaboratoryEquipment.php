@@ -46,7 +46,7 @@ class LaboratoryEquipment extends Model
         return $this->belongsTo(Keyword::class);
     }
 
-    public function laboratory_equipment_addons(): HasMany
+    public function laboratoryEquipmentAddons(): HasMany
     {
         return $this->hasMany(LaboratoryEquipmentAddon::class, 'laboratory_equipment_id', 'id');
     }
