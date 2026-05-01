@@ -16,7 +16,7 @@
             </div>
 
             <p>
-                Unfortunatly, a survey for this domain does not exist due to a lack of volunteers to complete the
+                Unfortunately, a survey for this domain does not exist due to a lack of volunteers to complete the
                 process to produce a mockup and scenario.
                 If you are interested to participate, please <a class="link link-hover underline"
                     href="{{ route('contact-us') }}">contact us</a>!!!
