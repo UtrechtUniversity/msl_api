@@ -17,14 +17,7 @@
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content bg-secondary-100 flex h-full ">
                     {{-- content here --}}
-                    <div
-                        class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
-                        <label for="my-drawer-2" class="btn drawer-button w-full h-full flex flex-col justify-center ">
-                            <p class="" style="writing-mode: sideways-lr;">
-                                click here to see filters
-                            </p>
-                        </label>
-                    </div>
+
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
                         @include('public.components.datapublication-map-search-div')
