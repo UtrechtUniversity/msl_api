@@ -15,7 +15,7 @@
         <div class="sub-content-wide flex place-content-center w-full">
             <div class="drawer lg:drawer-open ">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content bg-secondary-100 flex relative ">
+                <div class="drawer-content bg-secondary-100 flex relative h-150 ">
                     {{-- content here --}}
                     <div
                         class="z-30 p-0 w-10 h-52 fixed inset-y-1/2 left-0 -translate-y-26 bg-secondary-200 lg:hidden  opacity-75 hover:opacity-100">
