@@ -50,5 +50,3 @@
     </div>
 
 </x-layout_main>
-
-{{-- @include('public.components.dataPublication-map-view') --}}
