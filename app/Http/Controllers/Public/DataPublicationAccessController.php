@@ -17,6 +17,6 @@ class DataPublicationAccessController extends Controller
     public function indexDeprecated(Request $request): View
     {
 
-        return view('public.dataPublication-map_DEPRECATED');
+        return view('public.dataPublication-map-DEPRECATED');
     }
 }
