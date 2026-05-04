@@ -27,7 +27,7 @@
                     </div>
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
-                        @include('public.components.search-div-list-map')
+                        @include('public.components.datapublication-map-search-div')
                         {{-- list view --}}
                         <div class="list-view">
                             @include('public.components.dataPublication-map-view')
