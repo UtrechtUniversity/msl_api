@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
@@ -132,32 +131,10 @@ class DataPublicationController extends BaseDomainApiController
 
     protected function getDomain(EndpointContext $context): void
     {
-        $msl_subdomain = 'msl_subdomain';
         // Add subdomain filtering if required
-        switch ($context) {
-            case EndpointContext::ROCK_PHYSICS:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
-                break;
-
-            case EndpointContext::ANALOGUE:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
-                break;
-
-            case EndpointContext::PALEO:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
-                break;
-
-            case EndpointContext::MICROSCOPY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
-                break;
-
-            case EndpointContext::GEO_CHEMISTRY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
-                break;
-
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
-                break;
+        $dataPublicationSubdomain = $context->getDataPublicationSubdomainValue();
+        if ($dataPublicationSubdomain !== null) {
+            $this->packageSearchRequest->addFilterQuery('msl_subdomain', $dataPublicationSubdomain);
         }
     }
 }

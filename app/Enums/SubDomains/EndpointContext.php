@@ -15,4 +15,17 @@ enum EndpointContext
     case GEO_CHEMISTRY;
     case GEO_ENERGY;
     case ALL;
+
+    public function getDataPublicationSubdomainValue(): ?string
+    {
+        return match ($this) {
+            self::ROCK_PHYSICS => DataPublicationSubDomain::ROCK_PHYSICS->value,
+            self::ANALOGUE => DataPublicationSubDomain::ANALOGUE->value,
+            self::MICROSCOPY => DataPublicationSubDomain::MICROSCOPY->value,
+            self::PALEO => DataPublicationSubDomain::PALEO->value,
+            self::GEO_CHEMISTRY => DataPublicationSubDomain::GEO_CHEMISTRY->value,
+            self::GEO_ENERGY => DataPublicationSubDomain::GEO_ENERGY->value,
+            self::ALL => null
+        };
+    }
 }
