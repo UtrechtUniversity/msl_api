@@ -124,7 +124,7 @@
                 <ul class="list-decimal list-inside">
                     <li>Analogue modelling of geological processes</li>
                     <li>Geochemistry</li>
-                    <li>Geo-energy test beds</li>
+                    <li>Field-Scale Laboratories</li>
                     <li>Microscopy & tomography</li>
                     <li>Paleomagnetic and magnetic data</li>
                     <li>Rock and melt physical properties</li>
