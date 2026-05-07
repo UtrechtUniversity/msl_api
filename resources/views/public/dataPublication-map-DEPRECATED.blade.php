@@ -19,7 +19,7 @@
                     <div class="w-full bg-primary-100">
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('public.components.dataPublication-map-view-DEPRECATED')
+                            @include('public.components.datapublication-map.map-view-DEPRECATED')
                         </div>
                     </div>
 

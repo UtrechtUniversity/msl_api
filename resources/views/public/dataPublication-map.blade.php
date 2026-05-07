@@ -20,10 +20,10 @@
 
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
-                        @include('public.components.datapublication-map-search-div')
+                        @include('public.components.datapublication-map.search-div')
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('public.components.dataPublication-map-view')
+                            @include('public.components.datapublication-map.map-view')
                         </div>
                     </div>
 
@@ -34,7 +34,7 @@
 
                     <ul class="menu bg-primary-200 min-h-full p-0 w-80 text-primary-900">
                         <!-- Sidebar content here -->
-                        @include('public.components.datapublication-map-search-div-filters')
+                        @include('public.components.datapublication-map.search-div-filters')
                     </ul>
                 </div>
             </div>
