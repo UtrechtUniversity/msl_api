@@ -15,6 +15,7 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
+        "selection_group_3": 0,
         "subTerms": [
             {
                 "value": "Geothermal research platform Gro\u00df Sch\u00f6nebeck",
@@ -42,6 +43,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 3
             },
@@ -61,6 +63,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 4
             },
@@ -85,6 +88,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 5
             },
@@ -105,6 +109,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 6
             },
@@ -125,6 +130,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 7
             },
@@ -146,6 +152,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 8
             },
@@ -177,6 +184,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 9
             },
@@ -198,6 +206,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 10
             },
@@ -218,6 +227,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 11
             },
@@ -241,6 +251,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 12
             },
@@ -260,6 +271,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 13
             },
@@ -283,6 +295,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 14
             },
@@ -300,6 +313,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 15
             },
@@ -321,6 +335,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 16
             },
@@ -344,6 +359,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 17
             },
@@ -366,6 +382,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 18
             },
@@ -386,6 +403,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 19
             },
@@ -405,6 +423,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 20
             },
@@ -426,6 +445,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 21
             },
@@ -447,6 +467,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 22
             },
@@ -468,6 +489,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 1,
                 "subTerms": [],
                 "rowNr": 23
             }
@@ -490,6 +512,7 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
+        "selection_group_3": 0,
         "subTerms": [
             {
                 "value": "geo-energy testbed",
@@ -509,6 +532,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 25
             },
@@ -536,6 +560,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 26
             },
@@ -557,6 +582,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 27
             },
@@ -584,6 +610,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 28
             },
@@ -604,6 +631,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 29
             }
@@ -626,6 +654,7 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
+        "selection_group_3": 0,
         "subTerms": [
             {
                 "value": "seismic monitoring",
@@ -644,6 +673,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "three-component seismic station",
@@ -662,6 +692,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 32
                     },
@@ -684,6 +715,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 33
                     },
@@ -701,6 +733,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 34
                     },
@@ -720,6 +753,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 35
                     },
@@ -737,6 +771,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 36
                     }
@@ -764,6 +799,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "distributed acoustic sensing",
@@ -781,6 +817,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 38
                     },
@@ -801,6 +838,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 39
                     },
@@ -820,6 +858,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 40
                     },
@@ -839,6 +878,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 41
                     },
@@ -858,6 +898,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 42
                     },
@@ -875,6 +916,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 43
                     },
@@ -892,6 +934,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 44
                     },
@@ -912,6 +955,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 45
                     },
@@ -929,6 +973,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 46
                     }
@@ -959,6 +1004,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "multistation borehole acquisition system",
@@ -977,6 +1023,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 48
                     },
@@ -994,6 +1041,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 49
                     },
@@ -1011,6 +1059,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 50
                     },
@@ -1030,6 +1079,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 51
                     },
@@ -1049,6 +1099,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 52
                     },
@@ -1071,6 +1122,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 53
                     },
@@ -1090,6 +1142,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 54
                     },
@@ -1110,6 +1163,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 55
                     },
@@ -1131,6 +1185,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 56
                     }
@@ -1153,6 +1208,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "formation integrity test",
@@ -1172,6 +1228,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 58
                     },
@@ -1189,6 +1246,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 59
                     },
@@ -1210,6 +1268,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 60
                     },
@@ -1229,6 +1288,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 61
                     },
@@ -1248,6 +1308,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 62
                     },
@@ -1265,6 +1326,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 63
                     },
@@ -1282,6 +1344,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 64
                     },
@@ -1301,6 +1364,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 65
                     }
@@ -1324,6 +1388,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "measurement while drilling",
@@ -1343,6 +1408,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 67
                     },
@@ -1360,6 +1426,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 68
                     },
@@ -1377,6 +1444,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 69
                     },
@@ -1394,6 +1462,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 70
                     },
@@ -1417,6 +1486,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 71
                     }
@@ -1441,6 +1511,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "open hole logging",
@@ -1461,6 +1532,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 73
                     },
@@ -1488,6 +1560,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 74
                     },
@@ -1505,6 +1578,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 75
                     }
@@ -1533,6 +1607,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "groundwater multi-packer system",
@@ -1548,6 +1623,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 77
                     },
@@ -1567,6 +1643,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 78
                     },
@@ -1584,6 +1661,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 79
                     },
@@ -1601,6 +1679,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 80
                     },
@@ -1618,6 +1697,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 81
                     }
@@ -1643,6 +1723,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "weather station",
@@ -1660,6 +1741,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 83
                     },
@@ -1680,6 +1762,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 84
                     },
@@ -1700,6 +1783,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 85
                     },
@@ -1719,6 +1803,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 86
                     },
@@ -1736,6 +1821,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 87
                     }
@@ -1764,6 +1850,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "joint gauges",
@@ -1781,6 +1868,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 89
                     },
@@ -1798,6 +1886,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 90
                     },
@@ -1818,6 +1907,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 91
                     },
@@ -1835,6 +1925,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 92
                     }
@@ -1860,6 +1951,7 @@
         ],
         "selection_group_1": 0,
         "selection_group_2": 0,
+        "selection_group_3": 0,
         "subTerms": [
             {
                 "value": "surface digital twin",
@@ -1875,6 +1967,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 94
             },
@@ -1894,6 +1987,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [],
                 "rowNr": 95
             },
@@ -1913,6 +2007,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "reservoir structural model",
@@ -1930,6 +2025,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 97
                     },
@@ -1949,6 +2045,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 98
                     },
@@ -1968,6 +2065,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 99
                     },
@@ -1987,6 +2085,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 100
                     },
@@ -2006,6 +2105,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 101
                     },
@@ -2025,6 +2125,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 102
                     },
@@ -2046,6 +2147,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 103
                     },
@@ -2067,6 +2169,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 104
                     },
@@ -2092,6 +2195,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 105
                     },
@@ -2115,6 +2219,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 106
                     },
@@ -2134,6 +2239,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 107
                     }
@@ -2156,6 +2262,7 @@
                 "terms_exclude_abstract_mapping": [],
                 "selection_group_1": 0,
                 "selection_group_2": 0,
+                "selection_group_3": 0,
                 "subTerms": [
                     {
                         "value": "flow model",
@@ -2175,6 +2282,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 109
                     },
@@ -2192,6 +2300,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 110
                     },
@@ -2209,6 +2318,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 111
                     },
@@ -2228,6 +2338,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 112
                     },
@@ -2248,6 +2359,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 113
                     },
@@ -2269,6 +2381,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 114
                     },
@@ -2288,6 +2401,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 115
                     },
@@ -2305,6 +2419,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 116
                     },
@@ -2324,6 +2439,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 117
                     },
@@ -2343,6 +2459,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 118
                     },
@@ -2362,6 +2479,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 119
                     },
@@ -2383,6 +2501,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 120
                     },
@@ -2404,6 +2523,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 121
                     },
@@ -2423,6 +2543,7 @@
                         "terms_exclude_abstract_mapping": [],
                         "selection_group_1": 0,
                         "selection_group_2": 0,
+                        "selection_group_3": 0,
                         "subTerms": [],
                         "rowNr": 122
                     }
