@@ -20,6 +20,9 @@
 
                         <h4>Query group 2 ({{ $group2Count }} terms)</h4>
                         <pre>{{ $queryGroup2 }}</pre>
+
+                        <h4>Query group 3 ({{ $group3Count }} terms)</h4>
+                        <pre>{{ $queryGroup3 }}</pre>
                     </div>
                 </div>
             </div>

@@ -355,6 +355,7 @@ class ToolsController extends Controller
     {
         $group1 = [];
         $group2 = [];
+        $group3 = [];
 
         $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->get();
 
@@ -378,12 +379,31 @@ class ToolsController extends Controller
                     }
                 }
             }
+
+            $keywordsGroup3 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_3', true)->get();
+
+            foreach ($keywordsGroup3 as $keywordGroup3) {
+                foreach ($keywordGroup3->keyword_search as $keywordSearch) {
+                    if (! $keywordSearch->exclude_abstract_mapping) {
+                        $group3[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
+                    }
+                }
+            }
         }
 
         $query1 = implode(',', array_unique($group1));
         $query2 = implode(',', array_unique($group2));
+        $query3 = implode(',', array_unique($group3));
 
-        return view('admin.query-generator', ['queryGroup1' => $query1, 'group1Count' => count(array_unique($group1)), 'queryGroup2' => $query2, 'group2Count' => count(array_unique($group2))]);
+        return view('admin.query-generator',
+            [
+                'queryGroup1' => $query1,
+                'group1Count' => count(array_unique($group1)),
+                'queryGroup2' => $query2,
+                'group2Count' => count(array_unique($group2)),
+                'queryGroup3' => $query3,
+                'group3Count' => count(array_unique($group3))
+            ]);
     }
 
     private function createKeywordSearchRegex($searchValue)
