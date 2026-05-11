@@ -877,7 +877,8 @@ class VocabularySeeder extends Seeder
             'exclude_domain_mapping' => $node->exclude_domain_mapping,
             'selection_group_1' => $node->selection_group_1,
             'selection_group_2' => $node->selection_group_2,
-            'notes' => isset($node->notes) ? $node->notes : '',
+            'selection_group_3' => $node->selection_group_3 ?? false,
+            'notes' => $node->notes ?? '',
             'external_vocab_scheme' => $node->external_vocab_scheme,
         ]);
 
