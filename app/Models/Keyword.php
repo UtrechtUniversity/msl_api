@@ -19,6 +19,7 @@ class Keyword extends Model
         'external_description',
         'selection_group_1',
         'selection_group_2',
+        'selection_group_3',
         'notes',
     ];
 
