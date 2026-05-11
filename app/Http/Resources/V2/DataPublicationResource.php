@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V2;
 
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V2\Elements\AlternateIdentifierResource;
 use App\Http\Resources\V2\Elements\ContributorResource;
 use App\Http\Resources\V2\Elements\CreatorResource;
@@ -22,7 +23,7 @@ enum VocabularyType: string
     case GEOLOGICAL_SETTING = 'geologicalSetting';
     case PALEO = 'paleo';
     case GEO_CHEMISTRY = 'geoChemistry';
-    case GEO_ENERGY = 'geoEnergy';
+    case FIELD_SCALE = 'fieldScale';
 }
 class DataPublicationResource extends JsonResource
 {
@@ -61,10 +62,10 @@ class DataPublicationResource extends JsonResource
             VocabularyType::GEO_CHEMISTRY->value => [
                 'https://epos-msl.uu.nl/voc/geochemistry/'.config('vocabularies.vocabularies_current_version').'/',
             ],
-            VocabularyType::GEO_ENERGY->value => [
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/equipment-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/model-',
+            VocabularyType::FIELD_SCALE->value => [
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/equipment-',
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/models-',
             ],
         ];
     }
@@ -95,11 +96,11 @@ class DataPublicationResource extends JsonResource
         return $keywords;
     }
 
-    private function getResearchAspects()
+    private function getResearchAspects(): array
     {
         $researchAspects = [];
         switch ($this->context) {
-            case 'rockPhysics':
+            case EndpointContext::ROCK_PHYSICS;
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ROCK_PHYSICS));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -107,7 +108,7 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'analogue':
+            case EndpointContext::ANALOGUE:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ANALOGUE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -115,7 +116,7 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'paleo':
+            case EndpointContext::PALEO:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::PALEO));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -123,14 +124,14 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'microscopy':
+            case EndpointContext::MICROSCOPY:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 
                 $researchAspects = $keywords;
                 break;
-            case 'geochemistry':
+            case EndpointContext::GEO_CHEMISTRY:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_CHEMISTRY));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -138,22 +139,22 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'geoenergy':
+            case EndpointContext::FIELD_SCALE:
                 $keywords = [];
-                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_ENERGY));
+                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::FIELD_SCALE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 
                 $researchAspects = $keywords;
                 break;
-            case 'all':
+            case EndpointContext::ALL:
                 $keywords = [];
 
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ROCK_PHYSICS));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ANALOGUE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::PALEO));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_CHEMISTRY));
-                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_ENERGY));
+                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::FIELD_SCALE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 

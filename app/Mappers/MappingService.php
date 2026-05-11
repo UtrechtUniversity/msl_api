@@ -47,10 +47,10 @@ class MappingService
         $dataPublication = $keywordHelper->mapTextToKeywordsAnnotated($dataPublication, 'msl_description_other', 'msl_description_other_annotated', 'description other');
 
         // run additional mappers based on options
-        $additionalMappers = $config['sourceDatasetProcessor']['options']['additionalMappers'];
-        if (isset($additionalMappers)) {
-            foreach ($additionalMappers as $additionalMapper) {
+        $additionalMappers = $config['sourceDatasetProcessor']['options']['additionalMappers'] ?? null;
 
+        if ($additionalMappers !== null) {
+            foreach ($additionalMappers as $additionalMapper) {
                 $mapperType = $additionalMapper['type'];
                 $mapperOptions = $additionalMapper['options'];
 

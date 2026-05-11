@@ -65,11 +65,11 @@ abstract class BaseDomainApiController extends Controller
     }
 
     /**
-     * Geo Energy Test Beds facilities endpoint
+     * Field-scale laboratories endpoint
      */
-    public function geoenergy(Request $request): JsonResource|ResourceCollection
+    public function fieldScale(Request $request): JsonResource|ResourceCollection
     {
-        return $this->domainResponse($request, EndpointContext::GEO_ENERGY);
+        return $this->domainResponse($request, EndpointContext::FIELD_SCALE);
     }
 
     /**

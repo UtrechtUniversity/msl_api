@@ -155,8 +155,8 @@ class DataPublicationController extends BaseDomainApiController
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
                 break;
 
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
+            case EndpointContext::FIELD_SCALE:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::FIELD_SCALE->value);
                 break;
         }
     }

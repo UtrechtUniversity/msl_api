@@ -174,7 +174,7 @@ class KeywordHelper
     public function extractFromText(string $text, $domainVocabulariesOnly = false): array
     {
         if ($domainVocabulariesOnly) {
-            $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->whereIn('name', ['rockphysics', 'analogue', 'paleomagnetism', 'geochemistry', 'microscopy', 'testbeds'])->get();
+            $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->whereIn('name', ['rockphysics', 'analogue', 'paleomagnetism', 'geochemistry', 'microscopy', 'fieldscale'])->get();
             $searchKeywords = collect([]);
             foreach ($vocabularies as $vocabulary) {
                 $searchKeywords = $searchKeywords->merge($vocabulary->search_keywords()->where('exclude_abstract_mapping', false)->get());
