@@ -97,6 +97,14 @@ class VocabularyToJsonConverter
                         } else {
                             throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
                         }
+                    } elseif ($currentColumn == $this->checkColumnByName('selection_group_3', $allColNames)) {
+                        if ($cell->getValue() == 'yes') {
+                            $node['selection_group_3'] = 1;
+                        } elseif ($cell->getValue() == 'no') {
+                            $node['selection_group_3'] = 0;
+                        } else {
+                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
+                        }
                     }
                 }
             }
@@ -207,6 +215,7 @@ class VocabularyToJsonConverter
             'terms_exclude_abstract_mapping' => [],
             'selection_group_1' => '',
             'selection_group_2' => '',
+            'selection_group_3' => '',
             'subTerms' => [],
         ];
 
