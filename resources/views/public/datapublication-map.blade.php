@@ -10,7 +10,7 @@
             'routeActive' => route('data-access-map'),
         ])
     </div>
-
+    {{--  --}}
     <div class="main-content flex-col h-full">
         <div class="sub-content-wide flex place-content-center w-full h-full">
             <div class="drawer lg:drawer-open w-full h-full">
