@@ -34,7 +34,7 @@
 
                     <ul class="menu bg-primary-200 min-h-full p-0 w-80 text-primary-900">
                         <!-- Sidebar content here -->
-                        @include('public.components.datapublication-map.search-div-filters')
+                        @include('public.components.datapublication-map.sidebar')
                     </ul>
                 </div>
             </div>
