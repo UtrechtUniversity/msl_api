@@ -51,22 +51,14 @@ class VocabularyToJsonConverter
                 $currentColumn = $cell->getColumn();
 
                 if ($cell->getValue() && $cell->getValue() !== '') {
-
                     if (in_array($currentColumn, range('A', $lastColumnLetter))) {
-
                         $node['value'] = $cell->getValue();
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['rowNr'] = $cell->getRow();
                     } elseif ($currentColumn == $this->checkColumnByName('indicator terms', $allColNames)) {
                         $node['synonyms'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_domain_mapping', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['exclude_domain_mapping'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['exclude_domain_mapping'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['exclude_domain_mapping'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('uri', $allColNames)) {
                         $node['uri'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('hyperlink', $allColNames)) {
@@ -82,29 +74,11 @@ class VocabularyToJsonConverter
                     } elseif ($currentColumn == $this->checkColumnByName('terms_exclude_abstract_mapping', $allColNames)) {
                         $node['terms_exclude_abstract_mapping'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_1', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['selection_group_1'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['selection_group_1'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['selection_group_1'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_2', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['selection_group_2'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['selection_group_2'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['selection_group_2'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_3', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['selection_group_3'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['selection_group_3'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['selection_group_3'] = $this->stringToIntBool($cell->getValue());
                     }
                 }
             }
@@ -123,6 +97,17 @@ class VocabularyToJsonConverter
         }
 
         return $nestedNodes;
+    }
+
+    private function stringToIntBool($string): int
+    {
+        if ($string == 'yes') {
+            return 1;
+        } elseif ($string == 'no') {
+            return 0;
+        } else {
+            throw new \Exception('Cannot convert string to boolean int: '.$string);
+        }
     }
 
     private function checkColumnByName($columnName, $allColNames)
