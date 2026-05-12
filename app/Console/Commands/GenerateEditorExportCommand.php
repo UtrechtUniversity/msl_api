@@ -91,51 +91,43 @@ class GenerateEditorExportCommand extends Command
     private function getTopNodes(Vocabulary $vocabulary): array
     {
         $topKeywords = $vocabulary->keywords->where('level', 1);
+        return $this->getTree($topKeywords);
+    }
+
+    private function getChildren(Keyword $keyword): array
+    {
+        $children = $keyword->getChildren();
+        return $this->getTree($children);
+    }
+
+    private function versionFileName($version): array|string
+    {
+        return str_replace('.', '-', $version);
+    }
+
+    /**
+     * @param iterable<int, Keyword> $keywords
+     * @return array
+     */
+    private function getTree(iterable $keywords): array
+    {
         $tree = [];
 
-        foreach ($topKeywords as $topKeyword) {
+        foreach ($keywords as $keyword) {
             $element = [
-                'text' => $topKeyword->label,
+                'text' => $keyword->label,
                 'extra' => [
-                    'uri' => $topKeyword->uri,
-                    'vocab_uri' => $topKeyword->vocabulary->uri,
-                    'external_uri' => $topKeyword->external_uri,
-                    'external_vocab_scheme' => $topKeyword->external_vocab_scheme,
+                    'uri' => $keyword->uri,
+                    'vocab_uri' => $keyword->vocabulary->uri,
+                    'external_uri' => $keyword->external_uri,
+                    'external_vocab_scheme' => $keyword->external_vocab_scheme,
                 ],
-                'children' => $this->getChildren($topKeyword),
+                'children' => $this->getChildren($keyword),
             ];
 
             $tree[] = $element;
         }
 
         return $tree;
-    }
-
-    private function getChildren(Keyword $keyword): array
-    {
-        $children = $keyword->getChildren();
-        $tree = [];
-
-        foreach ($children as $child) {
-            $childTree = [
-                'text' => $child->label,
-                'extra' => [
-                    'uri' => $child->uri,
-                    'vocab_uri' => $child->vocabulary->uri,
-                    'external_uri' => $child->external_uri,
-                    'external_vocab_scheme' => $child->external_vocab_scheme,
-                ],
-                'children' => $this->getChildren($child),
-            ];
-
-            $tree[] = $childTree;
-        }
-
-        return $tree;
-    }
-
-    private function versionFileName($version): array|string
-    {
-        return str_replace('.', '-', $version);
     }
 }
