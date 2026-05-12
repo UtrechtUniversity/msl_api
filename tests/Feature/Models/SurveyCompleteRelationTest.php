@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Models;
 
 use App\Models\Surveys\Answer;
 use App\Models\Surveys\Question;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class SurveyTest extends TestCase
+class SurveyCompleteRelationTest extends TestCase
 {
     use RefreshDatabase;
 

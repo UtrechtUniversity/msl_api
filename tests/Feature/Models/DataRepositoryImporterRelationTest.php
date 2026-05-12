@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\databaseRelations;
+namespace Tests\Feature\Models;
 
 use App\Models\DataRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
