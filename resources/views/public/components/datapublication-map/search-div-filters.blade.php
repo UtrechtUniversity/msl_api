@@ -1,4 +1,4 @@
-   <div class='flex flex-col '>
+   <div class='flex flex-col'>
 
        <div class='w-full flex flex-col px-6'>
 
