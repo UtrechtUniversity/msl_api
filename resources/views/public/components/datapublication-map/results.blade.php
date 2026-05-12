@@ -1,1 +1,3 @@
-<div> Results placeholder</div>
+<div class='flex'>
+    <p class='text-center'>Results placeholder</p>
+</div>
