@@ -1,0 +1,1 @@
+<div> Results placeholder</div>

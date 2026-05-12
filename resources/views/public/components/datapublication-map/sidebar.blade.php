@@ -2,8 +2,16 @@
     <div class="bg-primary-100 w-full">
         @include('public.components.datapublication-map.tabs', [
             'tabs' => [
-                ['name' => 'Keywords', 'component' => 'bli', 'default' => true],
-                ['name' => 'Results', 'component' => 'bla', 'default' => false],
+                [
+                    'name' => 'Keywords',
+                    'component' => 'public.components.datapublication-map.keyword-tree',
+                    'default' => true,
+                ],
+                [
+                    'name' => 'Results',
+                    'component' => 'public.components.datapublication-map.results',
+                    'default' => false,
+                ],
             ],
         ])
     </div>
