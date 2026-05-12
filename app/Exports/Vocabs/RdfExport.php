@@ -2,6 +2,7 @@
 
 namespace App\Exports\Vocabs;
 
+use App\Models\Keyword;
 use App\Models\Vocabulary;
 use EasyRdf\Graph;
 
@@ -19,6 +20,14 @@ class RdfExport
         $keywords = $this->vocabulary->keywords;
         $graph = new Graph;
 
+        $graph->addResource($this->vocabulary->uri, 'rdf:type', 'skos:ConceptScheme');
+        $graph->add($this->vocabulary->uri, 'skos:prefLabel', $this->vocabulary->display_name);
+
+        $topLevelKeywords = Keyword::where('vocabulary_id', $this->vocabulary->id)->where('level', 1)->get();
+        foreach ($topLevelKeywords as $topLevelKeyword) {
+            $graph->addResource($this->vocabulary->uri, 'skos:hasTopConcept', $topLevelKeyword->uri);
+        }
+
         foreach ($keywords as $keyword) {
             $graph->addResource($keyword->uri, 'rdf:type', 'skos:Concept');
 
@@ -30,6 +39,10 @@ class RdfExport
             $parent = $keyword->parent;
             if ($parent) {
                 $graph->addResource($keyword->uri, 'skos:broader', $parent->uri);
+            }
+
+            if ($keyword->level == 1) {
+                $graph->addResource($keyword->uri, 'skos:topConceptOf', $this->vocabulary->uri);
             }
 
             $graph->add($keyword->uri, 'skos:prefLabel', $keyword->label);
