@@ -32,7 +32,7 @@
                     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                     {{-- side bar --}}
 
-                    <ul class="menu bg-primary-200 min-h-full p-0 w-80 text-primary-900">
+                    <ul class="menu h-full w-80 p-0  text-primary-900 bg-primary-200 flex flex-col ">
                         <!-- Sidebar content here -->
                         @include('public.components.datapublication-map.sidebar')
                     </ul>
