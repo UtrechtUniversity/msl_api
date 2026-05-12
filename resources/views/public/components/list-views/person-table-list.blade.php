@@ -20,7 +20,7 @@
                                 {{ $idWithMetadata['value'] }}
                             </a>
                         @else
-                            {{ $idWithMetadata }}
+                            {{ $idWithMetadata['value'] }}
                         @endif
                         @if ($index + 1 < count($entry['nameIdentifiers']))
                             <span class="mx-1">|</span>
