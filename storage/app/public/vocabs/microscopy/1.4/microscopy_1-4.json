@@ -16,7 +16,9 @@
                         "value": "atomic force microscope (afm) magnetic scanning"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-electron_microscopy",
@@ -51,7 +53,9 @@
                                 "value": "(fibsem)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-electron_microscopy-scanning_electron_microscope_sem",
@@ -69,7 +73,9 @@
                                 "value": "sem images"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-electron_microscopy-scanning_transmission_electron_microscope_stem",
@@ -81,7 +87,9 @@
                                 "value": "scanning transmission electron microscope"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-electron_microscopy-transmission_electron_microscope_tem",
@@ -93,9 +101,13 @@
                                 "value": "transmission electron microscope"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-microchemical_analysis",
@@ -129,9 +141,13 @@
                                 "value": "electron probe micro-analyser"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-neutron_tomography",
@@ -152,7 +168,9 @@
                         "value": "neutron imaging during testing"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-optical_microscopy",
@@ -177,7 +195,9 @@
                         "value": "reflected light microscope",
                         "label": "reflected light microscope",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-optical_microscopy-slide_scanner_microscope",
@@ -185,7 +205,9 @@
                         "value": "slide scanner microscope",
                         "label": "slide scanner microscope",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-optical_microscopy-transmitted_light_microscope",
@@ -193,9 +215,13 @@
                         "value": "transmitted light microscope",
                         "label": "transmitted light microscope",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/apparatus-x-ray_tomography",
@@ -261,9 +287,13 @@
                         "value": "ct-scanning"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment",
@@ -289,7 +319,9 @@
                         "value": "analyser grating",
                         "label": "analyser grating",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-beam_interferometry-phase_grating",
@@ -297,7 +329,9 @@
                         "value": "phase grating",
                         "label": "phase grating",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-beam_interferometry-source_grating",
@@ -305,9 +339,13 @@
                         "value": "source grating",
                         "label": "source grating",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-detector",
@@ -322,7 +360,9 @@
                         "value": "charge coupled device (CCD) detector",
                         "label": "charge coupled device (CCD) detector",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-detector-complementary_metal_oxide_semiconductor_cmos_detector",
@@ -330,7 +370,9 @@
                         "value": "complementary metal oxide semiconductor (CMOS) detector",
                         "label": "complementary metal oxide semiconductor (CMOS) detector",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-detector-energy_resolving_detector",
@@ -338,7 +380,9 @@
                         "value": "energy resolving detector",
                         "label": "energy resolving detector",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-detector-flat_panel",
@@ -346,7 +390,9 @@
                         "value": "flat panel",
                         "label": "flat panel",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-detector-photon_counting_detector",
@@ -354,9 +400,13 @@
                         "value": "photon counting detector",
                         "label": "photon counting detector",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering",
@@ -371,7 +421,9 @@
                         "value": "1\/4 lambda plate",
                         "label": "1\/4 lambda plate",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-bertrand_lense",
@@ -379,7 +431,9 @@
                         "value": "Bertrand lense",
                         "label": "Bertrand lense",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-collimator",
@@ -387,7 +441,9 @@
                         "value": "collimator",
                         "label": "collimator",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-cross_polarizer",
@@ -395,7 +451,9 @@
                         "value": "cross polarizer",
                         "label": "cross polarizer",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-gypsum_plate",
@@ -403,7 +461,9 @@
                         "value": "gypsum plate",
                         "label": "gypsum plate",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-light_condensor",
@@ -411,7 +471,9 @@
                         "value": "light condensor",
                         "label": "light condensor",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-light_filter",
@@ -419,7 +481,9 @@
                         "value": "light filter",
                         "label": "light filter",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-plane_polarizer",
@@ -427,7 +491,9 @@
                         "value": "plane polarizer",
                         "label": "plane polarizer",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-hardware_filtering-quartz_plate",
@@ -435,9 +501,13 @@
                         "value": "quartz plate",
                         "label": "quartz plate",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-syn-deformation_imaging",
@@ -456,7 +526,9 @@
                                 "value": "micro-cantilever"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-syn-deformation_imaging-micropillar",
@@ -468,7 +540,9 @@
                                 "value": "micro-pillar"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-syn-deformation_imaging-nanoindenter",
@@ -480,7 +554,9 @@
                                 "value": "nano-indenter"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-syn-deformation_imaging-neutron_transparent_cell",
@@ -492,7 +568,9 @@
                                 "value": "neutron imaging during testing"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/ancillary_equipment-syn-deformation_imaging-x-ray_transparent_cell",
@@ -507,11 +585,17 @@
                                 "value": "x-ray imaging during testing"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique",
@@ -540,7 +624,9 @@
                                 "value": "cl spectroscopy"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-electron_energy_loss_spectroscopy_eels",
@@ -558,7 +644,9 @@
                                 "value": "(eels)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-energy_dispersive_x-ray_spectroscopy_eds_edx",
@@ -581,7 +669,9 @@
                                         "value": "edx in 2d"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-energy_dispersive_x-ray_spectroscopy_eds_edx-eds_in_3d",
@@ -599,9 +689,13 @@
                                         "value": "edx tomography"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-infrared_spectroscopy",
@@ -620,9 +714,13 @@
                                         "value": "fourier transform infrared spectroscopy"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-raman_spectrometry_-_chemistry_and_mineralogy",
@@ -637,7 +735,9 @@
                                 "value": "raman"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-chemical_and_mineralogical_analysis-wavelength-dispersive_x-ray_spectroscopy_wds",
@@ -649,9 +749,13 @@
                                 "value": "wavelength-dispersive x-ray spectroscopy"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis",
@@ -670,7 +774,9 @@
                                 "value": "automated crystal orientation mapping"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction",
@@ -689,7 +795,9 @@
                                         "value": "convergent beam electron diffraction"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction-electron_backscatter_diffraction_ebsd",
@@ -710,7 +818,9 @@
                                         "value": "(ebsd)"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction-large_area_convergent_beam_electron_diffraction_lacbed",
@@ -728,7 +838,9 @@
                                         "value": "(lacbed)"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction-nano_beam_diffraction_nbd",
@@ -740,7 +852,9 @@
                                         "value": "nano beam diffraction"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction-selected_area_electron_diffraction_saed",
@@ -752,7 +866,9 @@
                                         "value": "selected area electron diffraction"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-electron_diffraction-transmission_kikuchi_diffraction_tkd",
@@ -764,9 +880,13 @@
                                         "value": "transmission kikuchi diffraction"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-crystal_structure_analysis-raman_spectrometry_-_crystal_lattice",
@@ -781,9 +901,13 @@
                                 "value": "raman"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d",
@@ -802,7 +926,9 @@
                                 "value": "annular dark field"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-backscatter_electron_bse_imaging",
@@ -817,7 +943,9 @@
                                 "value": "backscattered electron microscopy"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-bright_field_bf_imaging",
@@ -829,7 +957,9 @@
                                 "value": "bright field"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-cathodoluminescence_cl_imaging",
@@ -855,7 +985,9 @@
                                         "value": "panchromatic cathodoluminescence"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-cathodoluminescence_cl_imaging-wavelength_filtered_cl_image",
@@ -863,9 +995,13 @@
                                 "value": "wavelength filtered CL image",
                                 "label": "wavelength filtered CL image",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-dark_field_df_imaging",
@@ -877,7 +1013,9 @@
                                 "value": "dark field"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-electron_channeling_contrast_imaging_ecci",
@@ -895,7 +1033,9 @@
                                 "value": "(ecci)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-forescatter_electron_fse",
@@ -907,7 +1047,9 @@
                                 "value": "forescatter electron"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-high-angle_annular_dark-field_haadf",
@@ -925,7 +1067,9 @@
                                 "value": "(haadf)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-radiography",
@@ -933,7 +1077,9 @@
                         "value": "radiography",
                         "label": "radiography",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-radioscopy",
@@ -941,7 +1087,9 @@
                         "value": "radioscopy",
                         "label": "radioscopy",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_2d-secondary_electron_se_imaging",
@@ -953,9 +1101,13 @@
                                 "value": "secondary electron"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d",
@@ -987,7 +1139,9 @@
                                 "value": "absorption contrast tomography",
                                 "label": "absorption contrast tomography",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-cone_beam_ct",
@@ -995,7 +1149,9 @@
                                 "value": "cone beam CT",
                                 "label": "cone beam CT",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-dark_field_tomography",
@@ -1003,7 +1159,9 @@
                                 "value": "dark field tomography",
                                 "label": "dark field tomography",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-dual_energy_ct",
@@ -1011,7 +1169,9 @@
                                 "value": "dual energy CT",
                                 "label": "dual energy CT",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-fan_beam_ct",
@@ -1019,7 +1179,9 @@
                                 "value": "fan beam CT",
                                 "label": "fan beam CT",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-parallel_beam_ct",
@@ -1027,7 +1189,9 @@
                                 "value": "parallel beam CT",
                                 "label": "parallel beam CT",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-phase_contrast_tomography",
@@ -1035,7 +1199,9 @@
                                 "value": "phase contrast tomography",
                                 "label": "phase contrast tomography",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-region_of_interest_ct",
@@ -1047,7 +1213,9 @@
                                         "value": "local tomography"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-spectral_ct",
@@ -1055,7 +1223,9 @@
                                 "value": "spectral CT",
                                 "label": "spectral CT",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-computed_tomography_ct-x-ray_diffraction",
@@ -1076,9 +1246,13 @@
                                         "value": "xrd"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-dual_mode_scan",
@@ -1086,7 +1260,9 @@
                         "value": "dual mode scan",
                         "label": "dual mode scan",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-dual_resolution_scan",
@@ -1094,7 +1270,9 @@
                         "value": "dual resolution scan",
                         "label": "dual resolution scan",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-ghost_imaging",
@@ -1102,7 +1280,9 @@
                         "value": "ghost imaging",
                         "label": "ghost imaging",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-holotomography",
@@ -1110,7 +1290,9 @@
                         "value": "holotomography",
                         "label": "holotomography",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-laminography",
@@ -1118,7 +1300,9 @@
                         "value": "laminography",
                         "label": "laminography",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-monochromotic_beam",
@@ -1126,7 +1310,9 @@
                         "value": "monochromotic beam",
                         "label": "monochromotic beam",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-multi-pass_scan",
@@ -1134,7 +1320,9 @@
                         "value": "multi-pass scan",
                         "label": "multi-pass scan",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-pink_beam",
@@ -1142,7 +1330,9 @@
                         "value": "pink beam",
                         "label": "pink beam",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-rheography",
@@ -1150,7 +1340,9 @@
                         "value": "rheography",
                         "label": "rheography",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-tomoscopy",
@@ -1165,7 +1357,9 @@
                                 "value": "4d ct"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-imaging_3d-white_beam",
@@ -1177,9 +1371,13 @@
                                 "value": "polychromatic"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation",
@@ -1205,7 +1403,9 @@
                                         "value": "carbon coated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_coating-gold-platinum_coating",
@@ -1223,7 +1423,9 @@
                                         "value": "gold-platinum coated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_coating-iridium_coating",
@@ -1235,7 +1437,9 @@
                                         "value": "iridium coated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_coating-osmium_coating",
@@ -1247,7 +1451,9 @@
                                         "value": "osmium coated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_coating-platinum-palladium_coating",
@@ -1265,9 +1471,13 @@
                                         "value": "platinum palladium coated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_etching",
@@ -1275,7 +1485,9 @@
                         "value": "section etching",
                         "label": "section etching",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_polishing",
@@ -1290,7 +1502,9 @@
                                 "value": "chemical polishing",
                                 "label": "chemical polishing",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_polishing-ion_polishing",
@@ -1309,7 +1523,9 @@
                                         "value": "broad ion beam (BIB) milling",
                                         "label": "broad ion beam (BIB) milling",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_polishing-ion_polishing-focussed_ion_beam_fib_milling",
@@ -1317,9 +1533,13 @@
                                         "value": "focussed ion beam (FIB) milling",
                                         "label": "focussed ion beam (FIB) milling",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_polishing-mechanical_polishing",
@@ -1327,9 +1547,13 @@
                                 "value": "mechanical polishing",
                                 "label": "mechanical polishing",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/technique-section_preperation-section_staining",
@@ -1337,11 +1561,17 @@
                         "value": "section staining",
                         "label": "section staining",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature",
@@ -1370,7 +1600,9 @@
                                 "value": "breccia microstructure",
                                 "label": "breccia microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-fault_gouge_microstructure",
@@ -1385,7 +1617,9 @@
                                         "value": "P-foliation",
                                         "label": "P-foliation",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-fault_gouge_microstructure-r1_shear",
@@ -1403,7 +1637,9 @@
                                                 "value": "r' shears"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-fault_gouge_microstructure-riedel_shear_microstructure",
@@ -1411,7 +1647,9 @@
                                         "value": "Riedel shear microstructure",
                                         "label": "Riedel shear microstructure",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-fault_gouge_microstructure-y_shear",
@@ -1426,9 +1664,13 @@
                                                 "value": "boundary shear"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-fault_microstructure",
@@ -1436,7 +1678,9 @@
                                 "value": "fault microstructure",
                                 "label": "fault microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-intergranular_crack",
@@ -1448,7 +1692,9 @@
                                         "value": "intergranular fracture"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-intergranular_slip",
@@ -1463,7 +1709,9 @@
                                         "value": "intergranular shear"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack",
@@ -1504,7 +1752,9 @@
                                                 "value": "crack density"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack-intragranular_crack_distribution",
@@ -1512,7 +1762,9 @@
                                         "value": "intragranular crack distribution",
                                         "label": "intragranular crack distribution",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-intragranular_crack-intragranular_crack_orientation",
@@ -1520,9 +1772,13 @@
                                         "value": "intragranular crack orientation",
                                         "label": "intragranular crack orientation",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-joint_microstructure",
@@ -1530,7 +1786,9 @@
                                 "value": "joint microstructure",
                                 "label": "joint microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-pseudotachylite_microstructure",
@@ -1538,7 +1796,9 @@
                                 "value": "pseudotachylite microstructure",
                                 "label": "pseudotachylite microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-shear_fracture_microstructure",
@@ -1546,7 +1806,9 @@
                                 "value": "shear fracture microstructure",
                                 "label": "shear fracture microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-slickenline",
@@ -1554,7 +1816,9 @@
                                 "value": "slickenline",
                                 "label": "slickenline",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-slickenside",
@@ -1562,7 +1826,9 @@
                                 "value": "slickenside",
                                 "label": "slickenside",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-brittle_microstructure-transgranular_crack",
@@ -1570,9 +1836,13 @@
                                 "value": "transgranular crack",
                                 "label": "transgranular crack",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure",
@@ -1613,7 +1883,9 @@
                                         "value": "fine extinction band (FEB) width sub-5 micron",
                                         "label": "fine extinction band (FEB) width sub-5 micron",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-deformation_lamellae-short-wavelength_undulatory_extinction",
@@ -1621,9 +1893,13 @@
                                         "value": "short-wavelength undulatory extinction",
                                         "label": "short-wavelength undulatory extinction",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-deformation_twin",
@@ -1635,7 +1911,9 @@
                                         "value": "deformation twins"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-lattice_dislocation",
@@ -1667,7 +1945,9 @@
                                                 "value": "burger vector"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-lattice_dislocation-dislocation_density",
@@ -1675,7 +1955,9 @@
                                         "value": "dislocation density",
                                         "label": "dislocation density",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-lattice_dislocation-glide_plane",
@@ -1683,9 +1965,13 @@
                                         "value": "glide plane",
                                         "label": "glide plane",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-localized_extinction_band_leb",
@@ -1697,7 +1983,9 @@
                                         "value": "intragranular shear band"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-stacking_fault",
@@ -1709,7 +1997,9 @@
                                         "value": "stacking faults"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-subgrains",
@@ -1741,7 +2031,9 @@
                                                 "value": "subgrain mantle"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-subgrains-subgrain_boundary_orientations",
@@ -1749,7 +2041,9 @@
                                         "value": "subgrain boundary orientations",
                                         "label": "subgrain boundary orientations",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-subgrains-subgrain_misorientations",
@@ -1757,7 +2051,9 @@
                                         "value": "subgrain misorientations",
                                         "label": "subgrain misorientations",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-subgrains-subgrain_size",
@@ -1765,7 +2061,9 @@
                                         "value": "subgrain size",
                                         "label": "subgrain size",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-subgrains-subgrain_size_hierarchy",
@@ -1773,9 +2071,13 @@
                                         "value": "subgrain size hierarchy",
                                         "label": "subgrain size hierarchy",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-undulose_extinction",
@@ -1783,7 +2085,9 @@
                                 "value": "undulose extinction",
                                 "label": "undulose extinction",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-wide_extinction_band_web",
@@ -1798,7 +2102,9 @@
                                         "value": "intragranular deformation band",
                                         "label": "intragranular deformation band",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-crystal_plastic_microstructure-wide_extinction_band_web-intragranular_kink_band",
@@ -1806,11 +2112,17 @@
                                         "value": "intragranular kink band",
                                         "label": "intragranular kink band",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure",
@@ -1832,7 +2144,9 @@
                                         "value": "pinch-and-swell microstructure"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-cleavage",
@@ -1840,7 +2154,9 @@
                                 "value": "cleavage",
                                 "label": "cleavage",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-crenulation_cleavage",
@@ -1848,7 +2164,9 @@
                                 "value": "crenulation cleavage",
                                 "label": "crenulation cleavage",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band",
@@ -1874,7 +2192,9 @@
                                                 "value": "cataclastic deformation bands"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band-compaction_band_microstructure",
@@ -1882,7 +2202,9 @@
                                         "value": "compaction band microstructure",
                                         "label": "compaction band microstructure",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band-dilation_band_microstructure",
@@ -1900,7 +2222,9 @@
                                                 "value": "dissagregation band microstructure"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band-phyllosilicate_deformation_band_microstructure",
@@ -1908,7 +2232,9 @@
                                         "value": "phyllosilicate deformation band microstructure",
                                         "label": "phyllosilicate deformation band microstructure",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band-shear_band_microstructure",
@@ -1920,7 +2246,9 @@
                                                 "value": "shear deformation band microstructure"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformation_band-solution_and_cementation_band_microstructure",
@@ -1935,9 +2263,13 @@
                                                 "value": "pressure solution band"
                                             }
                                         ],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-deformed_porphyroclast",
@@ -1952,7 +2284,9 @@
                                         "value": "relic deformed grain"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-foliation",
@@ -1960,7 +2294,9 @@
                                 "value": "foliation",
                                 "label": "foliation",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-mantled_porphyroclasts",
@@ -1975,7 +2311,9 @@
                                         "value": "complex porphyroclasts",
                                         "label": "complex porphyroclasts",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-mantled_porphyroclasts-delta_type_porphyroclasts",
@@ -1983,7 +2321,9 @@
                                         "value": "delta type porphyroclasts",
                                         "label": "delta type porphyroclasts",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-mantled_porphyroclasts-phi_type_porphyroclasts",
@@ -1991,7 +2331,9 @@
                                         "value": "phi type porphyroclasts",
                                         "label": "phi type porphyroclasts",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-mantled_porphyroclasts-sigma_type_porphyroclasts",
@@ -1999,9 +2341,13 @@
                                         "value": "sigma type porphyroclasts",
                                         "label": "sigma type porphyroclasts",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-mica_fish",
@@ -2013,7 +2359,9 @@
                                         "value": "micafish"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-microfold",
@@ -2031,7 +2379,9 @@
                                         "value": "micro-folding"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-s-c_foliation",
@@ -2052,7 +2402,9 @@
                                         "value": "s-c foliated"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-schistosity",
@@ -2060,7 +2412,9 @@
                                 "value": "schistosity",
                                 "label": "schistosity",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-generic_deformation_microstructure-shear_band_foliation",
@@ -2075,9 +2429,13 @@
                                         "value": "extensional crenulation cleavage"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure",
@@ -2106,7 +2464,9 @@
                                         "value": "fluid inclusion plane"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-grain_indentation",
@@ -2118,7 +2478,9 @@
                                         "value": "grain truncation"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-microstylolites",
@@ -2130,7 +2492,9 @@
                                         "value": "stylolite"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-overgrowths",
@@ -2151,7 +2515,9 @@
                                         "value": "pore clogging"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-sealed_fracture",
@@ -2159,7 +2525,9 @@
                                 "value": "sealed fracture",
                                 "label": "sealed fracture",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-solution_cleavage",
@@ -2167,7 +2535,9 @@
                                 "value": "solution cleavage",
                                 "label": "solution cleavage",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-solution_seam",
@@ -2175,7 +2545,9 @@
                                 "value": "solution seam",
                                 "label": "solution seam",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-strain_cap",
@@ -2183,7 +2555,9 @@
                                 "value": "strain cap",
                                 "label": "strain cap",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-strain_or_pressure_shadow",
@@ -2201,7 +2575,9 @@
                                         "value": "pressure shadow"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-surface_dissolution_and_precipitation_features",
@@ -2229,7 +2605,9 @@
                                         "value": "growth features",
                                         "label": "growth features",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     },
                                     {
                                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-surface_dissolution_and_precipitation_features-solution_pits_and_ledges",
@@ -2237,9 +2615,13 @@
                                         "value": "solution pits and ledges",
                                         "label": "solution pits and ledges",
                                         "synonyms": [],
-                                        "children": []
+                                        "children": [],
+                                        "external_uri": "",
+                                        "external_vocab_scheme": ""
                                     }
-                                ]
+                                ],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-deformation_microstructure-pressure_solution_microstructure-vein",
@@ -2260,11 +2642,17 @@
                                         "value": "transgranular vein"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure",
@@ -2283,7 +2671,9 @@
                         "value": "amoeboid microstructure",
                         "label": "amoeboid microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-decussate_microstructure",
@@ -2291,7 +2681,9 @@
                         "value": "decussate microstructure",
                         "label": "decussate microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-diamond_grain_microstructure",
@@ -2299,7 +2691,9 @@
                         "value": "diamond grain microstructure",
                         "label": "diamond grain microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-foam_microstructure",
@@ -2307,7 +2701,9 @@
                         "value": "foam microstructure",
                         "label": "foam microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_defect",
@@ -2322,7 +2718,9 @@
                                 "value": "disclination microstructure",
                                 "label": "disclination microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_defect-disconnection_microstructure",
@@ -2330,7 +2728,9 @@
                                 "value": "disconnection microstructure",
                                 "label": "disconnection microstructure",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_defect-grain_boundary_dislocations",
@@ -2338,9 +2738,13 @@
                                 "value": "grain boundary dislocations",
                                 "label": "grain boundary dislocations",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_features",
@@ -2355,7 +2759,9 @@
                                 "value": "four-grain junctions",
                                 "label": "four-grain junctions",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_features-grain_boundary_alignments",
@@ -2363,7 +2769,9 @@
                                 "value": "grain boundary alignments",
                                 "label": "grain boundary alignments",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_features-grain_boundary_triple_junctions",
@@ -2371,7 +2779,9 @@
                                 "value": "grain boundary triple junctions",
                                 "label": "grain boundary triple junctions",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_features-grain_boundary_voids_and_openings",
@@ -2379,9 +2789,13 @@
                                 "value": "grain boundary voids and openings",
                                 "label": "grain boundary voids and openings",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-grain_boundary_geometry",
@@ -2389,7 +2803,9 @@
                         "value": "grain boundary geometry",
                         "label": "grain boundary geometry",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-growth_twins",
@@ -2397,7 +2813,9 @@
                         "value": "growth twins",
                         "label": "growth twins",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-interlobate_microstructure",
@@ -2405,7 +2823,9 @@
                         "value": "interlobate microstructure",
                         "label": "interlobate microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-recrystallized_grains",
@@ -2413,7 +2833,9 @@
                         "value": "recrystallized grains",
                         "label": "recrystallized grains",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_aggregate_microstructure-ribbon_microstructure",
@@ -2421,9 +2843,13 @@
                         "value": "ribbon microstructure",
                         "label": "ribbon microstructure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration",
@@ -2445,7 +2871,9 @@
                                 "value": "crystallographic preferred orientation"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration-grain_size",
@@ -2464,9 +2892,13 @@
                                         "value": "particle size distribution"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration-misorientation_analysis",
@@ -2474,7 +2906,9 @@
                         "value": "misorientation analysis",
                         "label": "misorientation analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration-shape_preferred_orientation_spo",
@@ -2489,7 +2923,9 @@
                                 "value": "shape preferred orientation"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration-spatial_distribution_clustering",
@@ -2504,7 +2940,9 @@
                                 "value": "grain clustering"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-grain_size_and_configuration-spatial_frequency_analysis_sfa",
@@ -2516,9 +2954,13 @@
                                 "value": "spatial frequency analysis"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-igneous_microstructure",
@@ -2533,7 +2975,9 @@
                         "value": "igneous lamination",
                         "label": "igneous lamination",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-igneous_microstructure-igneous_vesicle_lineation",
@@ -2541,7 +2985,9 @@
                         "value": "igneous vesicle lineation",
                         "label": "igneous vesicle lineation",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-igneous_microstructure-lava_flow_banding",
@@ -2549,7 +2995,9 @@
                         "value": "lava flow banding",
                         "label": "lava flow banding",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-igneous_microstructure-phenocryst",
@@ -2557,7 +3005,9 @@
                         "value": "phenocryst",
                         "label": "phenocryst",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-igneous_microstructure-schlieren",
@@ -2565,9 +3015,13 @@
                         "value": "Schlieren",
                         "label": "Schlieren",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies",
@@ -2582,7 +3036,9 @@
                         "value": "amphibolite metamorphic facies",
                         "label": "amphibolite metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-eclogite_metamorphic_facies",
@@ -2590,7 +3046,9 @@
                         "value": "eclogite metamorphic facies",
                         "label": "eclogite metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-epidote_amphibolite_metamorphic_facies",
@@ -2598,7 +3056,9 @@
                         "value": "epidote amphibolite metamorphic facies",
                         "label": "epidote amphibolite metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-glaucophane_schist_facies",
@@ -2610,7 +3070,9 @@
                                 "value": "blueschist facies"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-granulite_facies",
@@ -2618,7 +3080,9 @@
                         "value": "granulite facies",
                         "label": "granulite facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-greenschist_metamorphic_facies",
@@ -2626,7 +3090,9 @@
                         "value": "greenschist metamorphic facies",
                         "label": "greenschist metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-pyroxene_hornfels_metamorphic_facies",
@@ -2634,7 +3100,9 @@
                         "value": "pyroxene hornfels metamorphic facies",
                         "label": "pyroxene hornfels metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-sanidinite_metamorphic_facies",
@@ -2642,7 +3110,9 @@
                         "value": "sanidinite metamorphic facies",
                         "label": "sanidinite metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-subgreenschist_metamorphic_facies",
@@ -2650,7 +3120,9 @@
                         "value": "subgreenschist metamorphic facies",
                         "label": "subgreenschist metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_facies-zeolite_metamorphic_facies",
@@ -2658,9 +3130,13 @@
                         "value": "zeolite metamorphic facies",
                         "label": "zeolite metamorphic facies",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure",
@@ -2675,7 +3151,9 @@
                         "value": "mineral polymorphism",
                         "label": "mineral polymorphism",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-oxidation_lamellae",
@@ -2683,7 +3161,9 @@
                         "value": "oxidation lamellae",
                         "label": "oxidation lamellae",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-oxide_exsolution",
@@ -2695,7 +3175,9 @@
                                 "value": "oxy-exsolution"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-porphyroblast",
@@ -2718,7 +3200,9 @@
                                         "value": "growth twins"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-porphyroblast-inclusion_trail",
@@ -2730,7 +3214,9 @@
                                         "value": "inclusion trails"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-porphyroblast-porphyroblast_zoning",
@@ -2738,7 +3224,9 @@
                                 "value": "porphyroblast zoning",
                                 "label": "porphyroblast zoning",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-porphyroblast-truncation_surface",
@@ -2750,9 +3238,13 @@
                                         "value": "truncation surfaces"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-porphyroclast",
@@ -2764,7 +3256,9 @@
                                 "value": "porphyroclasts"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-reaction_rim",
@@ -2772,7 +3266,9 @@
                         "value": "reaction rim",
                         "label": "reaction rim",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-spinodal_decomposition",
@@ -2784,7 +3280,9 @@
                                 "value": "true exsolution"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-metamorphic_microstructure-symplectite_and_exsolution",
@@ -2802,9 +3300,13 @@
                                 "value": "symplectites"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition",
@@ -2819,7 +3321,9 @@
                         "value": "fluid inclusion",
                         "label": "fluid inclusion",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-qualitative_mineralogy",
@@ -2827,7 +3331,9 @@
                         "value": "qualitative mineralogy",
                         "label": "qualitative mineralogy",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-qualitative_rock_classification",
@@ -2842,7 +3348,9 @@
                                 "value": "igneous classification",
                                 "label": "igneous classification",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-qualitative_rock_classification-metamorphic_classification",
@@ -2850,7 +3358,9 @@
                                 "value": "metamorphic classification",
                                 "label": "metamorphic classification",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-qualitative_rock_classification-sedimentary_classification",
@@ -2858,7 +3368,9 @@
                                 "value": "sedimentary classification",
                                 "label": "sedimentary classification",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-qualitative_rock_classification-structural_classification",
@@ -2866,9 +3378,13 @@
                                 "value": "structural classification",
                                 "label": "structural classification",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-quantitative_mineralogy",
@@ -2903,7 +3419,9 @@
                                         "value": "microchemistry map"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-quantitative_mineralogy-mineral_map",
@@ -2911,7 +3429,9 @@
                                 "value": "mineral map",
                                 "label": "mineral map",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-mineralogy_and_composition-quantitative_mineralogy-phase_map",
@@ -2919,11 +3439,17 @@
                                 "value": "phase map",
                                 "label": "phase map",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-pore_structure_and_distribution",
@@ -2938,7 +3464,9 @@
                         "value": "pore shape",
                         "label": "pore shape",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-pore_structure_and_distribution-pore_size",
@@ -2946,7 +3474,9 @@
                         "value": "pore size",
                         "label": "pore size",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-pore_structure_and_distribution-pore_size_distribution",
@@ -2954,9 +3484,13 @@
                         "value": "pore size distribution",
                         "label": "pore size distribution",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure",
@@ -2975,7 +3509,9 @@
                                 "value": "ballen structure"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure-diaplectic_glass",
@@ -2983,7 +3519,9 @@
                         "value": "diaplectic glass",
                         "label": "diaplectic glass",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure-feather_structure",
@@ -2995,7 +3533,9 @@
                                 "value": "feather structure"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure-mosaicism",
@@ -3003,7 +3543,9 @@
                         "value": "mosaicism",
                         "label": "mosaicism",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure-planar_deformation_feature_pdf",
@@ -3032,9 +3574,13 @@
                                         "value": "pdf orientations"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/analyzed_feature-shock_microstructure-shock_microfracture",
@@ -3046,11 +3592,17 @@
                                 "value": "shock microfracture"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter",
@@ -3079,7 +3631,9 @@
                         "value": "inferred finite strain",
                         "label": "inferred finite strain",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_deformation_conditions-inferred_shear_sense",
@@ -3087,7 +3641,9 @@
                         "value": "inferred shear sense",
                         "label": "inferred shear sense",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_deformation_conditions-inferred_strain_history",
@@ -3095,7 +3651,9 @@
                         "value": "inferred strain history",
                         "label": "inferred strain history",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_deformation_conditions-inferred_strain_rate",
@@ -3103,7 +3661,9 @@
                         "value": "inferred strain rate",
                         "label": "inferred strain rate",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_deformation_conditions-inferred_stress",
@@ -3111,7 +3671,9 @@
                         "value": "inferred stress",
                         "label": "inferred stress",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_deformation_conditions-inferred_vorticity_axis",
@@ -3119,9 +3681,13 @@
                         "value": "inferred vorticity axis",
                         "label": "inferred vorticity axis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_mechanisms",
@@ -3136,7 +3702,9 @@
                         "value": "inferred deformation mechanisms",
                         "label": "inferred deformation mechanisms",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_mechanisms-inferred_recrystallization_mechanisms",
@@ -3151,7 +3719,9 @@
                                 "value": "geometric dynamic recrystallization",
                                 "label": "geometric dynamic recrystallization",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_mechanisms-inferred_recrystallization_mechanisms-grain_boundary_bulging",
@@ -3159,7 +3729,9 @@
                                 "value": "grain boundary bulging",
                                 "label": "grain boundary bulging",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_mechanisms-inferred_recrystallization_mechanisms-grain_boundary_migration",
@@ -3167,7 +3739,9 @@
                                 "value": "grain boundary migration",
                                 "label": "grain boundary migration",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_mechanisms-inferred_recrystallization_mechanisms-subgrain_rotation",
@@ -3175,11 +3749,17 @@
                                 "value": "subgrain rotation",
                                 "label": "subgrain rotation",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_metamorphic_conditions",
@@ -3198,7 +3778,9 @@
                         "value": "inferred fluid pressure",
                         "label": "inferred fluid pressure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_metamorphic_conditions-inferred_lithostatic_pressure",
@@ -3206,7 +3788,9 @@
                         "value": "inferred lithostatic pressure",
                         "label": "inferred lithostatic pressure",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_metamorphic_conditions-inferred_shock_pressure_and_temperature",
@@ -3214,7 +3798,9 @@
                         "value": "inferred shock pressure and temperature",
                         "label": "inferred shock pressure and temperature",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_metamorphic_conditions-inferred_temperature",
@@ -3222,9 +3808,13 @@
                         "value": "inferred temperature",
                         "label": "inferred temperature",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_properties",
@@ -3246,9 +3836,13 @@
                                 "value": "dislocation slip systems",
                                 "label": "dislocation slip systems",
                                 "synonyms": [],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_properties-inferred_internal_stored_stress",
@@ -3256,7 +3850,9 @@
                         "value": "inferred Internal stored stress",
                         "label": "inferred Internal stored stress",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_properties-inferred_permeability",
@@ -3264,7 +3860,9 @@
                         "value": "inferred permeability",
                         "label": "inferred permeability",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_properties-inferred_rheology",
@@ -3276,7 +3874,9 @@
                                 "value": "inferred mechanical properties"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/microscopy\/1.4\/inferred_parameter-inferred_properties-inferred_sesimic_anisotropy",
@@ -3284,10 +3884,16 @@
                         "value": "inferred sesimic anisotropy",
                         "label": "inferred sesimic anisotropy",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     }
 ]

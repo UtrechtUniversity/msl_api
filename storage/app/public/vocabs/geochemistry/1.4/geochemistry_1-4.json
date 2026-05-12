@@ -19,7 +19,9 @@
                         "value": "coal analysis",
                         "label": "coal analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-commodities_analysis-ore_analysis",
@@ -31,9 +33,13 @@
                                 "value": "ore assay"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-gas_geochemistry",
@@ -41,7 +47,9 @@
                 "value": "gas geochemistry",
                 "label": "gas geochemistry",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology",
@@ -115,7 +123,9 @@
                                 "value": "ar_ar"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-carbon-14_dating",
@@ -154,7 +164,9 @@
                                 "value": "14c"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-lead-lead_dating",
@@ -178,7 +190,9 @@
                                 "value": "pb-pb"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-lutetium-hafnium_dating",
@@ -226,7 +240,9 @@
                                 "value": "lu-hf"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-potassium-argon_dating",
@@ -265,7 +281,9 @@
                                 "value": "k-ar"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-radium-thorium_dating",
@@ -310,7 +328,9 @@
                                 "value": "ra-th"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-rhenium-osmium_dating",
@@ -355,7 +375,9 @@
                                 "value": "re-os"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-rubidium-strontium_dating",
@@ -385,7 +407,9 @@
                                 "value": "rb-sr"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-samarium-neodymium_dating",
@@ -430,7 +454,9 @@
                                 "value": "sm-nd"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-thorium-lead_dating",
@@ -472,7 +498,9 @@
                                 "value": "th_pb"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-uranium_dating",
@@ -528,7 +556,9 @@
                                         "value": "u-pb"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-uranium_dating-uranium-paladium_dating",
@@ -576,7 +606,9 @@
                                         "value": "u_pa"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-uranium_dating-uranium-thorium_dating",
@@ -624,7 +656,9 @@
                                         "value": "u_th"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-geochronology-uranium_dating-uranium-thorium-helium_dating",
@@ -645,11 +679,17 @@
                                         "value": "u_th_he"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-hydrogeochemistry",
@@ -664,7 +704,9 @@
                         "value": "hydro-geochemistry"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis",
@@ -683,7 +725,9 @@
                         "value": "delta 11B",
                         "label": "delta 11B",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-delta_13c",
@@ -691,7 +735,9 @@
                         "value": "delta 13C",
                         "label": "delta 13C",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-delta_18o",
@@ -699,7 +745,9 @@
                         "value": "delta 18O",
                         "label": "delta 18O",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-delta_34s",
@@ -707,7 +755,9 @@
                         "value": "delta 34S",
                         "label": "delta 34S",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-hydrogen_isotopic_analysis",
@@ -715,7 +765,9 @@
                         "value": "hydrogen isotopic analysis",
                         "label": "hydrogen isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-lead_isotopic_analysis",
@@ -723,7 +775,9 @@
                         "value": "lead isotopic analysis",
                         "label": "lead isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-mercury_isotopic_analysis",
@@ -731,7 +785,9 @@
                         "value": "mercury isotopic analysis",
                         "label": "mercury isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-neodymium_isotopic_analysis",
@@ -739,7 +795,9 @@
                         "value": "neodymium isotopic analysis",
                         "label": "neodymium isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-nitrogen_isotopic_analysis",
@@ -747,7 +805,9 @@
                         "value": "nitrogen isotopic analysis",
                         "label": "nitrogen isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-rubidium_isotopic_analysis",
@@ -755,7 +815,9 @@
                         "value": "rubidium isotopic analysis",
                         "label": "rubidium isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-samarium_isotopic_analysis",
@@ -763,7 +825,9 @@
                         "value": "samarium isotopic analysis",
                         "label": "samarium isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-isotopic_analysis-strontium_isotopic_analysis",
@@ -771,9 +835,13 @@
                         "value": "strontium isotopic analysis",
                         "label": "strontium isotopic analysis",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-microchemical_analysis",
@@ -804,7 +872,9 @@
                                 "value": "microchemistry map"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-microchemical_analysis-3d_microchemical_map",
@@ -812,7 +882,9 @@
                         "value": "3D microchemical map",
                         "label": "3D microchemical map",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-microchemical_analysis-major_elements",
@@ -824,7 +896,9 @@
                                 "value": "major oxides"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-microchemical_analysis-trace_elements",
@@ -832,9 +906,13 @@
                         "value": "trace elements",
                         "label": "trace elements",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-mineralogical_analysis",
@@ -859,7 +937,9 @@
                         "value": "qualitative mineral identification",
                         "label": "qualitative mineral identification",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-mineralogical_analysis-quantitative_mineral_identification",
@@ -871,9 +951,13 @@
                                 "value": "modal analysis"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis",
@@ -892,7 +976,9 @@
                                 "value": "molten bead"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-mineral_separation",
@@ -900,7 +986,9 @@
                         "value": "mineral separation",
                         "label": "mineral separation",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-partial_sample_digestion",
@@ -908,7 +996,9 @@
                         "value": "partial sample digestion",
                         "label": "partial sample digestion",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-sample_crushing",
@@ -916,7 +1006,9 @@
                         "value": "sample crushing",
                         "label": "sample crushing",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-sample_drying",
@@ -924,7 +1016,9 @@
                         "value": "sample drying",
                         "label": "sample drying",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-sample_pressed_pellet",
@@ -932,7 +1026,9 @@
                         "value": "sample pressed pellet",
                         "label": "sample pressed pellet",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-sample_pulverization",
@@ -940,7 +1036,9 @@
                         "value": "sample pulverization",
                         "label": "sample pulverization",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-sample_splitting",
@@ -948,7 +1046,9 @@
                         "value": "sample splitting",
                         "label": "sample splitting",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-selective_sample_extraction",
@@ -956,7 +1056,9 @@
                         "value": "selective sample extraction",
                         "label": "selective sample extraction",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-sample_preparation_for_geochemical_analysis-total_sample_digestion",
@@ -964,9 +1066,13 @@
                         "value": "total sample digestion",
                         "label": "total sample digestion",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-whole_rock_analysis",
@@ -985,7 +1091,9 @@
                         "value": "loss on ignition",
                         "label": "loss on ignition",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-whole_rock_analysis-major_elements",
@@ -997,7 +1105,9 @@
                                 "value": "major oxides"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/analysis-whole_rock_analysis-trace_elements",
@@ -1005,11 +1115,17 @@
                         "value": "trace elements",
                         "label": "trace elements",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment",
@@ -1031,7 +1147,9 @@
                 "value": "alpha spectrometer",
                 "label": "alpha spectrometer",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-atomic_absorption_spectrometer",
@@ -1063,9 +1181,13 @@
                                 "value": "(gfaas)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-atomic_emission_spectrometer",
@@ -1115,9 +1237,13 @@
                                 "value": "(icpaes)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-electron_probe_micro-analyzer",
@@ -1138,7 +1264,9 @@
                         "value": "electron probe micro analyzer"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-elemental_analyzer",
@@ -1146,7 +1274,9 @@
                 "value": "elemental analyzer",
                 "label": "elemental analyzer",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-gamma-ray_spectrometer",
@@ -1154,7 +1284,9 @@
                 "value": "gamma-ray spectrometer",
                 "label": "gamma-ray spectrometer",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-instrumental_neutron_activation_analysis_system",
@@ -1166,7 +1298,9 @@
                         "value": "inaa"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-ion_chromatograph",
@@ -1178,7 +1312,9 @@
                         "value": "ion-exchange chromatograph"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer",
@@ -1200,7 +1336,9 @@
                                 "value": "(ams)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-gas_chromatograph-mass_spectrometer",
@@ -1218,7 +1356,9 @@
                                 "value": "(gcms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-inductively_coupled_plasma-mass_spectrometer",
@@ -1236,7 +1376,9 @@
                                 "value": "(icpms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-isotope_ratio_mass_spectrometer",
@@ -1251,7 +1393,9 @@
                                 "value": "(irms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-laser_ablation-inductively_coupled_plasma-mass_spectrometry",
@@ -1281,7 +1425,9 @@
                                 "value": "(la-icp-ms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-laser_ablation-multicollector_inductively_coupled_plasma-mass_spectrometry",
@@ -1302,7 +1448,9 @@
                                 "value": "(lamc-icpms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-laser_ablation-single_collector-inductively_coupled_plasma-mass_spectrometry",
@@ -1323,7 +1471,9 @@
                                 "value": "(lahr-icpms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-multicollector-inductively_coupled_plasma-mass_spectrometer",
@@ -1341,7 +1491,9 @@
                                 "value": "(mc-icpms)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-secondary_ionization_mass_spectrometer",
@@ -1356,7 +1508,9 @@
                                 "value": "nanosims"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-single_collector-inductively_coupled_plasma-mass_spectrometer",
@@ -1374,7 +1528,9 @@
                                 "value": "high-resolution-inductively coupled plasma mass"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-mass_spectrometer-thermal_ionization-mass_spectrometer",
@@ -1386,9 +1542,13 @@
                                 "value": "tims"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-spectrophotometer",
@@ -1411,7 +1571,9 @@
                                 "value": "(ftir)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-spectrophotometer-uv-vis_spectrophotometer",
@@ -1419,9 +1581,13 @@
                         "value": "UV-Vis spectrophotometer",
                         "label": "UV-Vis spectrophotometer",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-titrator",
@@ -1429,7 +1595,9 @@
                 "value": "titrator",
                 "label": "titrator",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-x-ray_diffractometer",
@@ -1437,7 +1605,9 @@
                 "value": "x-ray diffractometer",
                 "label": "x-ray diffractometer",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-x-ray_spectrometer",
@@ -1472,7 +1642,9 @@
                                 "value": "(edx)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-x-ray_spectrometer-x-ray_absorption_near-edge_structure_spectrometer",
@@ -1484,7 +1656,9 @@
                                 "value": "xanes"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/equipment-x-ray_spectrometer-x-ray_fluorescence_spectrometer",
@@ -1505,11 +1679,17 @@
                                 "value": "x-ray fluoresence"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property",
@@ -1528,7 +1708,9 @@
                         "value": "acetate"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample",
@@ -1602,7 +1784,9 @@
                                 "value": "ar_ar"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-carbon-14_age",
@@ -1641,7 +1825,9 @@
                                 "value": "14c"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-lead-lead_age",
@@ -1665,7 +1851,9 @@
                                 "value": "pb-pb"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-lutetium-hafnium_age",
@@ -1713,7 +1901,9 @@
                                 "value": "lu-hf"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-potassium-argon_age",
@@ -1752,7 +1942,9 @@
                                 "value": "k-ar"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-radium-thorium_age",
@@ -1797,7 +1989,9 @@
                                 "value": "ra-th"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-rhenium-osmium_age",
@@ -1842,7 +2036,9 @@
                                 "value": "re-os"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-rubidium-strontium_age",
@@ -1872,7 +2068,9 @@
                                 "value": "rb-sr"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-samarium-neodymium_age",
@@ -1917,7 +2115,9 @@
                                 "value": "sm-nd"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-thorium-lead_age",
@@ -1959,7 +2159,9 @@
                                 "value": "th_pb"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-uranium_age",
@@ -2015,7 +2217,9 @@
                                         "value": "u-pb"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-uranium_age-uranium-paladium_age",
@@ -2063,7 +2267,9 @@
                                         "value": "u_pa"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-uranium_age-uranium-thorium_age",
@@ -2111,7 +2317,9 @@
                                         "value": "u_th"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-age_of_sample-uranium_age-uranium-thorium-helium_age",
@@ -2132,11 +2340,17 @@
                                         "value": "u_th_he"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-aluminium",
@@ -2151,7 +2365,9 @@
                         "value": "aluminum"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-ammonia",
@@ -2163,7 +2379,9 @@
                         "value": "nh3,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-ammonium",
@@ -2175,7 +2393,9 @@
                         "value": "nh4,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-antimony",
@@ -2187,7 +2407,9 @@
                         "value": "sb,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-argon_ar",
@@ -2199,7 +2421,9 @@
                         "value": "ar,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-arsenic",
@@ -2207,7 +2431,9 @@
                 "value": "arsenic",
                 "label": "arsenic",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-barium",
@@ -2219,7 +2445,9 @@
                         "value": "ba,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-beryllium",
@@ -2231,7 +2459,9 @@
                         "value": "be,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-bismuth",
@@ -2243,7 +2473,9 @@
                         "value": "bi,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-boron",
@@ -2262,9 +2494,13 @@
                                 "value": "delta_b11"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-bromide",
@@ -2276,7 +2512,9 @@
                         "value": "br-,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-bromium",
@@ -2288,7 +2526,9 @@
                         "value": "br,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-cadmium",
@@ -2300,7 +2540,9 @@
                         "value": "cd,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-calcium",
@@ -2323,7 +2565,9 @@
                                 "value": "caco3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-calcium-calcium_oxide",
@@ -2335,7 +2579,9 @@
                                 "value": "cao,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-calcium-calcium_sulfate",
@@ -2347,7 +2593,9 @@
                                 "value": "caso4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-calcium-delta_44ca",
@@ -2359,9 +2607,13 @@
                                 "value": "delta_ca44"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c",
@@ -2380,7 +2632,9 @@
                                 "value": "hco3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-carbon_dioxide",
@@ -2392,7 +2646,9 @@
                                 "value": "co2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-carbon_monoxide",
@@ -2404,7 +2660,9 @@
                                 "value": "co,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-delta_13c",
@@ -2412,7 +2670,9 @@
                         "value": "delta 13C",
                         "label": "delta 13C",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-dissolved_inorganic_carbon",
@@ -2420,7 +2680,9 @@
                         "value": "dissolved inorganic carbon",
                         "label": "dissolved inorganic carbon",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-inorganic_carbon",
@@ -2432,7 +2694,9 @@
                                 "value": "c(inorg)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-methane",
@@ -2444,7 +2708,9 @@
                                 "value": "ch4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-non-carbonate_carbon",
@@ -2456,7 +2722,9 @@
                                 "value": "c(non-carb)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-organic_carbon",
@@ -2468,7 +2736,9 @@
                                 "value": "c(org)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-total_carbon",
@@ -2480,7 +2750,9 @@
                                 "value": "c(tot)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-total_inorganic_carbon",
@@ -2488,7 +2760,9 @@
                         "value": "total inorganic carbon",
                         "label": "total inorganic carbon",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-carbon_c-total_organic_carbon",
@@ -2496,9 +2770,13 @@
                         "value": "total organic carbon",
                         "label": "total organic carbon",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-cerium",
@@ -2521,7 +2799,9 @@
                                 "value": "ceo2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-cerium-cerium_oxide",
@@ -2533,9 +2813,13 @@
                                 "value": "ce2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-cesium",
@@ -2547,7 +2831,9 @@
                         "value": "cs,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-chlorine",
@@ -2566,7 +2852,9 @@
                         "value": "chloride",
                         "label": "chloride",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-chlorine-delta_37cl",
@@ -2578,9 +2866,13 @@
                                 "value": "delta_cl37"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-chromium",
@@ -2603,9 +2895,13 @@
                                 "value": "cr2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-cobalt",
@@ -2628,9 +2924,13 @@
                                 "value": "coo,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-copper",
@@ -2653,7 +2953,9 @@
                                 "value": "cuo,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-copper-cuprous_oxide",
@@ -2668,7 +2970,9 @@
                                 "value": "copper(i) oxide"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-copper-delta_65cu",
@@ -2680,9 +2984,13 @@
                                 "value": "delta_cu65"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-dysprosium",
@@ -2705,9 +3013,13 @@
                                 "value": "dy2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-erbium",
@@ -2730,9 +3042,13 @@
                                 "value": "er2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-europium",
@@ -2755,9 +3071,13 @@
                                 "value": "eu2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-fluorine",
@@ -2765,7 +3085,9 @@
                 "value": "fluorine",
                 "label": "fluorine",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-francium",
@@ -2777,7 +3099,9 @@
                         "value": "fr,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-gadolinium",
@@ -2800,9 +3124,13 @@
                                 "value": "gd2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-gallium",
@@ -2814,7 +3142,9 @@
                         "value": "ga,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-germanium",
@@ -2826,7 +3156,9 @@
                         "value": "ge,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-gold_au",
@@ -2838,7 +3170,9 @@
                         "value": "au,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-hafnium",
@@ -2861,7 +3195,9 @@
                                 "value": "hfo,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-hafnium-hafnium_oxide",
@@ -2873,9 +3209,13 @@
                                 "value": "hfo2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-helium",
@@ -2887,7 +3227,9 @@
                         "value": "he,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-holmium",
@@ -2910,9 +3252,13 @@
                                 "value": "ho2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-hydrogen_h",
@@ -2938,7 +3284,9 @@
                                 "value": "delta_d"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-hydrogen_h-hydrogen_sulfide",
@@ -2950,7 +3298,9 @@
                                 "value": "h2s,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-hydrogen_h-water_h2o",
@@ -2962,9 +3312,13 @@
                                 "value": "h2o,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-indium",
@@ -2972,7 +3326,9 @@
                 "value": "indium",
                 "label": "indium",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iodine",
@@ -2980,7 +3336,9 @@
                 "value": "iodine",
                 "label": "iodine",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iridium_ir",
@@ -2992,7 +3350,9 @@
                         "value": "ir,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron",
@@ -3015,7 +3375,9 @@
                                 "value": "delta_fe56"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-ferric_iron_oxide_tri-valent_iron",
@@ -3027,7 +3389,9 @@
                                 "value": "fe2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-ferrosoferric_oxide_iron_iiiii_oxide",
@@ -3039,7 +3403,9 @@
                                 "value": "fe3o4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-ferrous_iron_oxide_di-valent",
@@ -3062,9 +3428,13 @@
                                         "value": "feot,"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-ferrous_sulfide_di-valent",
@@ -3076,7 +3446,9 @@
                                 "value": "fes,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-iron_ferrite_fefe2o4",
@@ -3088,7 +3460,9 @@
                                 "value": "fe-fe"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-iron_sulfide",
@@ -3100,7 +3474,9 @@
                                 "value": "fes2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-ratio_of_feric_iron_to_total_iron",
@@ -3112,7 +3488,9 @@
                                 "value": "fe3\/fet,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-siderite",
@@ -3124,7 +3502,9 @@
                                 "value": "feco3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-iron-total_iron_oxide_content_reported_as_ferric_tri-valent_iron",
@@ -3136,9 +3516,13 @@
                                 "value": "fe2o3t,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-krypton",
@@ -3150,7 +3534,9 @@
                         "value": "kr,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-lanthanum",
@@ -3173,9 +3559,13 @@
                                 "value": "la2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-lead_pb",
@@ -3198,9 +3588,13 @@
                                 "value": "pbo,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-lithium",
@@ -3223,7 +3617,9 @@
                                 "value": "delta_li7"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-lithium-delta_li6",
@@ -3235,9 +3631,13 @@
                                 "value": "delta_li6"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-lutetium",
@@ -3260,9 +3660,13 @@
                                 "value": "lu2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-magnesium",
@@ -3285,9 +3689,13 @@
                                 "value": "mgo,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-manganese",
@@ -3310,7 +3718,9 @@
                                 "value": "mnco3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-manganese-manganese_oxide",
@@ -3322,7 +3732,9 @@
                                 "value": "mno,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-manganese-manganese_tetroxide",
@@ -3334,9 +3746,13 @@
                                 "value": "mn3o4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-mercury",
@@ -3348,7 +3764,9 @@
                         "value": "hg,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-molybdenum",
@@ -3371,9 +3789,13 @@
                                 "value": "delta_mo98"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-neodymium",
@@ -3396,9 +3818,13 @@
                                 "value": "nd2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-neon",
@@ -3410,7 +3836,9 @@
                         "value": "ne,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nickel",
@@ -3433,7 +3861,9 @@
                                 "value": "delta_ni60"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nickel-nickel_oxide",
@@ -3445,9 +3875,13 @@
                                 "value": "nio,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-niobium",
@@ -3470,7 +3904,9 @@
                                 "value": "nb2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-niobium-niobium_pentoxide",
@@ -3482,9 +3918,13 @@
                                 "value": "nb2o5,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nitrogen",
@@ -3503,7 +3943,9 @@
                                 "value": "delta_n15"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nitrogen-nitrate",
@@ -3515,7 +3957,9 @@
                                 "value": "no3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nitrogen-nitrogen_dioxide",
@@ -3527,7 +3971,9 @@
                                 "value": "no2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nitrogen-organic_nitrogen",
@@ -3539,7 +3985,9 @@
                                 "value": "n(org)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-nitrogen-total_nitrogen",
@@ -3551,9 +3999,13 @@
                                 "value": "n(tot)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-osmium",
@@ -3565,7 +4017,9 @@
                         "value": "os,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-oxygen",
@@ -3584,7 +4038,9 @@
                                 "value": "delta_o17"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-oxygen-delta_18o",
@@ -3596,9 +4052,13 @@
                                 "value": "delta_o18"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-palladium_pd",
@@ -3610,7 +4070,9 @@
                         "value": "pd,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-ph",
@@ -3618,7 +4080,9 @@
                 "value": "pH",
                 "label": "pH",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-phosphorus",
@@ -3637,7 +4101,9 @@
                                 "value": "po4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-phosphorus-phosphorous_organic",
@@ -3649,7 +4115,9 @@
                                 "value": "p(org)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-phosphorus-phosphorus_oxide",
@@ -3661,7 +4129,9 @@
                                 "value": "p2o5,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-phosphorus-phosphorus_trioxide",
@@ -3673,9 +4143,13 @@
                                 "value": "p2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-platinum_pt",
@@ -3698,9 +4172,13 @@
                                 "value": "pt190\/os188"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-polonium",
@@ -3723,7 +4201,9 @@
                                 "value": "po210_activity"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-polonium-ratio_of_polonium_isotope_po210_to_lead_isotope_pb210",
@@ -3735,9 +4215,13 @@
                                 "value": "po210\/pb210"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-potassium",
@@ -3756,9 +4240,13 @@
                                 "value": "k2o,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-praseodymium",
@@ -3770,7 +4258,9 @@
                         "value": "pr,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-protactinium",
@@ -3778,7 +4268,9 @@
                 "value": "protactinium",
                 "label": "protactinium",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-radium",
@@ -3790,7 +4282,9 @@
                         "value": "ra,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-rhenium",
@@ -3802,7 +4296,9 @@
                         "value": "re,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-rhodium",
@@ -3814,7 +4310,9 @@
                         "value": "rh,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-rubidium",
@@ -3826,7 +4324,9 @@
                         "value": "rb,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-ruthenium",
@@ -3838,7 +4338,9 @@
                         "value": "ru,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-samarium",
@@ -3861,9 +4363,13 @@
                                 "value": "sm2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-scandium",
@@ -3886,9 +4392,13 @@
                                 "value": "sc2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-selenium",
@@ -3900,7 +4410,9 @@
                         "value": "se,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silicon",
@@ -3919,7 +4431,9 @@
                                 "value": "delta_si29"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silicon-delta_30si",
@@ -3931,7 +4445,9 @@
                                 "value": "delta_si30"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silicon-silicic_acid",
@@ -3943,7 +4459,9 @@
                                 "value": "h4sio4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silicon-silicon_dioxide",
@@ -3969,7 +4487,9 @@
                                         "value": "si(amorph),"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             },
                             {
                                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silicon-silicon_dioxide-sio2_high_pressure",
@@ -3981,11 +4501,17 @@
                                         "value": "sioh,"
                                     }
                                 ],
-                                "children": []
+                                "children": [],
+                                "external_uri": "",
+                                "external_vocab_scheme": ""
                             }
-                        ]
+                        ],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-silver_ag",
@@ -3997,7 +4523,9 @@
                         "value": "ag,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sodium",
@@ -4020,9 +4548,13 @@
                                 "value": "na2o,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-strontium",
@@ -4045,9 +4577,13 @@
                                 "value": "sro,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur",
@@ -4079,7 +4615,9 @@
                                 "value": "delta_s33"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-delta_34s",
@@ -4091,7 +4629,9 @@
                                 "value": "delta_s34"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-delta_36s",
@@ -4103,7 +4643,9 @@
                                 "value": "delta_s36"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-sulphate",
@@ -4118,7 +4660,9 @@
                                 "value": "so4,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-sulphur_dioxide",
@@ -4133,7 +4677,9 @@
                                 "value": "so2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-sulphur_present_as_sulphide",
@@ -4148,7 +4694,9 @@
                                 "value": "s_(slfi)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-sulphur_present_in_pyrite_form",
@@ -4163,7 +4711,9 @@
                                 "value": "s_py"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-sulphur-sulphur_trioxide",
@@ -4178,9 +4728,13 @@
                                 "value": "so3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-tantalum",
@@ -4203,9 +4757,13 @@
                                 "value": "ta2o5,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-tellurium",
@@ -4217,7 +4775,9 @@
                         "value": "te,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-terbium",
@@ -4240,9 +4800,13 @@
                                 "value": "tb2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-thallium",
@@ -4254,7 +4818,9 @@
                         "value": "tl,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-thorium",
@@ -4277,7 +4843,9 @@
                                 "value": "tho2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-thorium-thorium_monoxide",
@@ -4289,9 +4857,13 @@
                                 "value": "tho,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-thulium",
@@ -4314,9 +4886,13 @@
                                 "value": "tm2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-tin",
@@ -4328,7 +4904,9 @@
                         "value": "sn,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-titanium",
@@ -4351,7 +4929,9 @@
                                 "value": "delta_ti49"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-titanium-titanium_oxide",
@@ -4363,7 +4943,9 @@
                                 "value": "tio2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-titanium-titanium_ii_oxide",
@@ -4375,7 +4957,9 @@
                                 "value": "tio,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-titanium-titanium_iii_oxide",
@@ -4387,9 +4971,13 @@
                                 "value": "ti2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-tungsten",
@@ -4408,9 +4996,13 @@
                                 "value": "wo3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-uranium",
@@ -4429,7 +5021,9 @@
                                 "value": "delta_u234"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-uranium-delta_238u",
@@ -4441,7 +5035,9 @@
                                 "value": "delta_u238"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-uranium-uranium_oxide",
@@ -4453,9 +5049,13 @@
                                 "value": "uo2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-vanadium",
@@ -4474,7 +5074,9 @@
                                 "value": "delta_v51"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-vanadium-vanadium_pentoxide",
@@ -4486,7 +5088,9 @@
                                 "value": "v2o5,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-vanadium-vanadium_sesquioxide",
@@ -4498,9 +5102,13 @@
                                 "value": "v2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-xenon",
@@ -4512,7 +5120,9 @@
                         "value": "xe,"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-ytterbium",
@@ -4535,9 +5145,13 @@
                                 "value": "yb2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-yttrium",
@@ -4556,7 +5170,9 @@
                                 "value": "yo2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-yttrium-yttrium_iii_oxide",
@@ -4568,9 +5184,13 @@
                                 "value": "y2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-zinc",
@@ -4593,7 +5213,9 @@
                                 "value": "delta_zn66"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-zinc-delta_68zn",
@@ -4605,7 +5227,9 @@
                                 "value": "delta_zn68"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-zinc-zinc_oxide",
@@ -4617,9 +5241,13 @@
                                 "value": "zno,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-zirconium",
@@ -4642,7 +5270,9 @@
                                 "value": "zro2,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/geochemistry\/1.4\/measured_property-zirconium-zirconium_pentoxide",
@@ -4654,10 +5284,16 @@
                                 "value": "zr2o3,"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     }
 ]

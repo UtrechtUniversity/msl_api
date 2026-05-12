@@ -4,7 +4,9 @@
          xmlns:reg="http://purl.org/linked-data/registry#"
          xmlns:ui="http://purl.org/linked-data/registry-ui#"
          xmlns:ldp="http://www.w3.org/ns/ldp#"
-         xmlns:owl="http://www.w3.org/2002/07/owl#">
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/terms/">
 
   <skos:ConceptScheme rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling">
     <skos:prefLabel>Analogue modelling of geological processes</skos:prefLabel>
@@ -257,6 +259,9 @@
         <skos:prefLabel>modelled anticline</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_anticline"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling"/>
+        <rdfs:seeAlso rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/anticline"/>
+        <skos:exactMatch rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/anticline"/>
+        <dc:source>inspire</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -266,6 +271,9 @@
         <skos:prefLabel>modelled antiform</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_antiform"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling"/>
+        <rdfs:seeAlso rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/antiform"/>
+        <skos:exactMatch rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/antiform"/>
+        <dc:source>inspire</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -275,6 +283,9 @@
         <skos:prefLabel>modelled syncline</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_syncline"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling"/>
+        <rdfs:seeAlso rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/syncline"/>
+        <skos:exactMatch rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/syncline"/>
+        <dc:source>inspire</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -284,6 +295,9 @@
         <skos:prefLabel>modelled synform</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_synform"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling"/>
+        <rdfs:seeAlso rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/synform"/>
+        <skos:exactMatch rdf:resource="http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/synform"/>
+        <dc:source>inspire</dc:source>
       </skos:Concept>
     </skos:narrower>
 

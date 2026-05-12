@@ -2,6 +2,8 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:dc="http://purl.org/dc/terms/"
          xmlns:reg="http://purl.org/linked-data/registry#"
          xmlns:ui="http://purl.org/linked-data/registry-ui#"
          xmlns:ldp="http://www.w3.org/ns/ldp#">
@@ -14,6 +16,9 @@
         <skos:prefLabel>present-day</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/present-day"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Present"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Present"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:hasTopConcept>
 
@@ -25,6 +30,9 @@
         <skos:prefLabel>FormationOfEarth</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/formationofearth"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/FormationOfEarth"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/FormationOfEarth"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:hasTopConcept>
 
@@ -42,6 +50,9 @@
     <skos:prefLabel>Phanerozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Phanerozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic">
@@ -52,6 +63,9 @@
     <skos:prefLabel>Cenozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-quaternary">
@@ -61,6 +75,9 @@
         <skos:prefLabel>Holocene</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-holocene"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Holocene"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -69,6 +86,9 @@
     <skos:prefLabel>Quaternary</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Quaternary"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-quaternary-pleistocene">
@@ -78,6 +98,9 @@
         <skos:prefLabel>Calabrian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-pleistocene-calabrian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calabrian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calabrian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -87,6 +110,9 @@
         <skos:prefLabel>Gelasian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-pleistocene-gelasian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gelasian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gelasian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -96,6 +122,9 @@
         <skos:prefLabel>MiddlePleistocene</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-pleistocene-middlepleistocene"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePleistocene"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePleistocene"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -105,6 +134,9 @@
         <skos:prefLabel>Upper/LatePleistocene</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-pleistocene-upperlatepleistocene"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LatePleistocene"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LatePleistocene"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -112,6 +144,9 @@
     <skos:prefLabel>Pleistocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-quaternary-pleistocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pleistocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-neogene">
@@ -121,6 +156,9 @@
     <skos:prefLabel>Neogene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neogene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neogene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-neogene-pliocene">
@@ -130,6 +168,9 @@
         <skos:prefLabel>Piacenzian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-pliocene-piacenzian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Piacenzian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Piacenzian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -139,6 +180,9 @@
         <skos:prefLabel>Zanclean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-pliocene-zanclean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Zanclean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Zanclean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -146,6 +190,9 @@
     <skos:prefLabel>Pliocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-pliocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-neogene-miocene">
@@ -155,6 +202,9 @@
         <skos:prefLabel>Aquitanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-aquitanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aquitanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aquitanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -164,6 +214,9 @@
         <skos:prefLabel>Burdigalian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-burdigalian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Burdigalian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Burdigalian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -173,6 +226,9 @@
         <skos:prefLabel>Langhian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-langhian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Langhian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Langhian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -182,6 +238,9 @@
         <skos:prefLabel>Messinian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-messinian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Messinian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Messinian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -191,6 +250,9 @@
         <skos:prefLabel>Serravallian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-serravallian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serravallian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serravallian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -200,6 +262,9 @@
         <skos:prefLabel>Tortonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene-tortonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tortonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tortonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -207,6 +272,9 @@
     <skos:prefLabel>Miocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-neogene-miocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Miocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-paleogene">
@@ -217,6 +285,9 @@
     <skos:prefLabel>Paleogene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleogene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-paleogene-oligocene">
@@ -226,6 +297,9 @@
         <skos:prefLabel>Chattian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-oligocene-chattian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Chattian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Chattian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -235,6 +309,9 @@
         <skos:prefLabel>Rupelian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-oligocene-rupelian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rupelian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rupelian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -242,6 +319,9 @@
     <skos:prefLabel>Oligocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-oligocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oligocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oligocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-paleogene-eocene">
@@ -251,6 +331,9 @@
         <skos:prefLabel>Bartonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-eocene-bartonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bartonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bartonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -260,6 +343,9 @@
         <skos:prefLabel>Lutetian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-eocene-lutetian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lutetian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lutetian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -269,6 +355,9 @@
         <skos:prefLabel>Priabonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-eocene-priabonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Priabonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Priabonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -278,6 +367,9 @@
         <skos:prefLabel>Ypresian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-eocene-ypresian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ypresian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ypresian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -285,6 +377,9 @@
     <skos:prefLabel>Eocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-eocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-cenozoic-paleogene-paleocene">
@@ -294,6 +389,9 @@
         <skos:prefLabel>Danian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-paleocene-danian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Danian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Danian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -303,6 +401,9 @@
         <skos:prefLabel>Selandian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-paleocene-selandian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Selandian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Selandian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -312,6 +413,9 @@
         <skos:prefLabel>Thanetian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-paleocene-thanetian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Thanetian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Thanetian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -319,6 +423,9 @@
     <skos:prefLabel>Paleocene</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-cenozoic-paleogene-paleocene"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleocene"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic">
@@ -329,6 +436,9 @@
     <skos:prefLabel>Mesozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-cretaceous">
@@ -338,6 +448,9 @@
     <skos:prefLabel>Cretaceous</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cretaceous"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-cretaceous-upperlatecretaceous">
@@ -347,6 +460,9 @@
         <skos:prefLabel>Campanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-campanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Campanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Campanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -356,6 +472,9 @@
         <skos:prefLabel>Cenomanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-cenomanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenomanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cenomanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -365,6 +484,9 @@
         <skos:prefLabel>Coniacian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-coniacian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Coniacian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Coniacian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -374,6 +496,9 @@
         <skos:prefLabel>Maastrichtian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-maastrichtian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Maastrichtian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Maastrichtian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -383,6 +508,9 @@
         <skos:prefLabel>Santonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-santonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Santonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Santonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -392,6 +520,9 @@
         <skos:prefLabel>Turonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous-turonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Turonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Turonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -399,6 +530,9 @@
     <skos:prefLabel>Upper/LateCretaceous</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-upperlatecretaceous"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateCretaceous"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateCretaceous"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous">
@@ -408,6 +542,9 @@
         <skos:prefLabel>Albian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-albian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Albian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Albian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -417,6 +554,9 @@
         <skos:prefLabel>Aptian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-aptian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aptian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aptian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -426,6 +566,9 @@
         <skos:prefLabel>Barremian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-barremian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Barremian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Barremian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -435,6 +578,9 @@
         <skos:prefLabel>Berriasian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-berriasian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Berriasian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Berriasian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -444,6 +590,9 @@
         <skos:prefLabel>Hauterivian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-hauterivian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hauterivian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hauterivian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -453,6 +602,9 @@
         <skos:prefLabel>Valanginian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous-valanginian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Valanginian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Valanginian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -460,6 +612,9 @@
     <skos:prefLabel>Lower/EarlyCretaceous</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-cretaceous-lowerearlycretaceous"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyCretaceous"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyCretaceous"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-jurassic">
@@ -470,6 +625,9 @@
     <skos:prefLabel>Jurassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jurassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-jurassic-upperlatejurassic">
@@ -479,6 +637,9 @@
         <skos:prefLabel>Kimmeridgian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-upperlatejurassic-kimmeridgian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kimmeridgian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kimmeridgian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -488,6 +649,9 @@
         <skos:prefLabel>Oxfordian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-upperlatejurassic-oxfordian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oxfordian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Oxfordian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -497,6 +661,9 @@
         <skos:prefLabel>Tithonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-upperlatejurassic-tithonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tithonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tithonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -504,6 +671,9 @@
     <skos:prefLabel>Upper/LateJurassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-upperlatejurassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateJurassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateJurassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-jurassic-middlejurassic">
@@ -513,6 +683,9 @@
         <skos:prefLabel>Aalenian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-middlejurassic-aalenian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aalenian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aalenian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -522,6 +695,9 @@
         <skos:prefLabel>Bajocian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-middlejurassic-bajocian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bajocian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bajocian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -531,6 +707,9 @@
         <skos:prefLabel>Bathonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-middlejurassic-bathonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bathonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bathonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -540,6 +719,9 @@
         <skos:prefLabel>Callovian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-middlejurassic-callovian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Callovian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Callovian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -547,6 +729,9 @@
     <skos:prefLabel>MiddleJurassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-middlejurassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleJurassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-jurassic-lowerearlyjurassic">
@@ -556,6 +741,9 @@
         <skos:prefLabel>Hettangian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-lowerearlyjurassic-hettangian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hettangian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hettangian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -565,6 +753,9 @@
         <skos:prefLabel>Pliensbachian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-lowerearlyjurassic-pliensbachian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pliensbachian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -574,6 +765,9 @@
         <skos:prefLabel>Sinemurian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-lowerearlyjurassic-sinemurian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sinemurian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sinemurian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -583,6 +777,9 @@
         <skos:prefLabel>Toarcian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-lowerearlyjurassic-toarcian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Toarcian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Toarcian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -590,6 +787,9 @@
     <skos:prefLabel>Lower/EarlyJurassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-jurassic-lowerearlyjurassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyJurassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyJurassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-triassic">
@@ -600,6 +800,9 @@
     <skos:prefLabel>Triassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Triassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-triassic-upperlatetriassic">
@@ -609,6 +812,9 @@
         <skos:prefLabel>Carnian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-upperlatetriassic-carnian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carnian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carnian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -618,6 +824,9 @@
         <skos:prefLabel>Norian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-upperlatetriassic-norian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Norian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Norian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -627,6 +836,9 @@
         <skos:prefLabel>Rhaetian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-upperlatetriassic-rhaetian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhaetian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhaetian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -634,6 +846,9 @@
     <skos:prefLabel>Upper/LateTriassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-upperlatetriassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateTriassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateTriassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-triassic-middletriassic">
@@ -643,6 +858,9 @@
         <skos:prefLabel>Anisian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-middletriassic-anisian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Anisian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Anisian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -652,6 +870,9 @@
         <skos:prefLabel>Ladinian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-middletriassic-ladinian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ladinian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ladinian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -659,6 +880,9 @@
     <skos:prefLabel>MiddleTriassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-middletriassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleTriassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-mesozoic-triassic-lowerearlytriassic">
@@ -668,6 +892,9 @@
         <skos:prefLabel>Induan</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-lowerearlytriassic-induan"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Induan"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Induan"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -677,6 +904,9 @@
         <skos:prefLabel>Olenekian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-lowerearlytriassic-olenekian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Olenekian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Olenekian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -684,6 +914,9 @@
     <skos:prefLabel>Lower/EarlyTriassic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-mesozoic-triassic-lowerearlytriassic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyTriassic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyTriassic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic">
@@ -697,6 +930,9 @@
     <skos:prefLabel>Paleozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-permian">
@@ -707,6 +943,9 @@
     <skos:prefLabel>Permian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Permian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-permian-lopingian">
@@ -716,6 +955,9 @@
         <skos:prefLabel>Changhsingian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-lopingian-changhsingian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Changhsingian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Changhsingian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -725,6 +967,9 @@
         <skos:prefLabel>Wuchiapingian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-lopingian-wuchiapingian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wuchiapingian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wuchiapingian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -732,6 +977,9 @@
     <skos:prefLabel>Lopingian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-lopingian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lopingian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lopingian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-permian-guadalupian">
@@ -741,6 +989,9 @@
         <skos:prefLabel>Capitanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-guadalupian-capitanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Capitanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Capitanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -750,6 +1001,9 @@
         <skos:prefLabel>Roadian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-guadalupian-roadian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Roadian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Roadian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -759,6 +1013,9 @@
         <skos:prefLabel>Wordian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-guadalupian-wordian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wordian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wordian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -766,6 +1023,9 @@
     <skos:prefLabel>Guadalupian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-guadalupian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guadalupian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-permian-cisuralian">
@@ -775,6 +1035,9 @@
         <skos:prefLabel>Artinskian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-cisuralian-artinskian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Artinskian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Artinskian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -784,6 +1047,9 @@
         <skos:prefLabel>Asselian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-cisuralian-asselian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Asselian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Asselian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -793,6 +1059,9 @@
         <skos:prefLabel>Kungurian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-cisuralian-kungurian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kungurian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kungurian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -802,6 +1071,9 @@
         <skos:prefLabel>Sakmarian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-cisuralian-sakmarian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sakmarian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sakmarian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -809,6 +1081,9 @@
     <skos:prefLabel>Cisuralian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-permian-cisuralian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cisuralian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous">
@@ -818,6 +1093,9 @@
     <skos:prefLabel>Carboniferous</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Carboniferous"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-pennsylvanian">
@@ -828,6 +1106,9 @@
     <skos:prefLabel>Pennsylvanian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pennsylvanian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-pennsylvanian-upperlatepennsylvanian">
@@ -837,6 +1118,9 @@
         <skos:prefLabel>Gzhelian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-upperlatepennsylvanian-gzhelian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gzhelian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gzhelian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -846,6 +1130,9 @@
         <skos:prefLabel>Kasimovian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-upperlatepennsylvanian-kasimovian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kasimovian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Kasimovian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -853,6 +1140,9 @@
     <skos:prefLabel>Upper/LatePennsylvanian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-upperlatepennsylvanian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LatePennsylvanian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LatePennsylvanian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-pennsylvanian-middlepennsylvanian">
@@ -862,6 +1152,9 @@
         <skos:prefLabel>Moscovian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-middlepennsylvanian-moscovian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Moscovian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Moscovian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -869,6 +1162,9 @@
     <skos:prefLabel>MiddlePennsylvanian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-middlepennsylvanian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddlePennsylvanian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-pennsylvanian-lowerearlypennsylvanian">
@@ -878,6 +1174,9 @@
         <skos:prefLabel>Bashkirian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-lowerearlypennsylvanian-bashkirian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bashkirian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Bashkirian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -885,6 +1184,9 @@
     <skos:prefLabel>Lower/EarlyPennsylvanian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-pennsylvanian-lowerearlypennsylvanian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyPennsylvanian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyPennsylvanian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-mississippian">
@@ -895,6 +1197,9 @@
     <skos:prefLabel>Mississippian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mississippian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-mississippian-upperlatemississippian">
@@ -904,6 +1209,9 @@
         <skos:prefLabel>Serpukhovian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-upperlatemississippian-serpukhovian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Serpukhovian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -911,6 +1219,9 @@
     <skos:prefLabel>Upper/LateMississippian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-upperlatemississippian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateMississippian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateMississippian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-mississippian-middlemississippian">
@@ -920,6 +1231,9 @@
         <skos:prefLabel>Visean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-middlemississippian-visean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Visean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Visean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -927,6 +1241,9 @@
     <skos:prefLabel>MiddleMississippian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-middlemississippian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleMississippian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-carboniferous-mississippian-lowerearlymississippian">
@@ -936,6 +1253,9 @@
         <skos:prefLabel>Tournaisian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-lowerearlymississippian-tournaisian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tournaisian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -943,6 +1263,9 @@
     <skos:prefLabel>Lower/EarlyMississippian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-carboniferous-mississippian-lowerearlymississippian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyMississippian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyMississippian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-devonian">
@@ -953,6 +1276,9 @@
     <skos:prefLabel>Devonian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Devonian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-devonian-upperlatedevonian">
@@ -962,6 +1288,9 @@
         <skos:prefLabel>Famennian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-upperlatedevonian-famennian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Famennian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Famennian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -971,6 +1300,9 @@
         <skos:prefLabel>Frasnian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-upperlatedevonian-frasnian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Frasnian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Frasnian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -978,6 +1310,9 @@
     <skos:prefLabel>Upper/LateDevonian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-upperlatedevonian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateDevonian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateDevonian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-devonian-middledevonian">
@@ -987,6 +1322,9 @@
         <skos:prefLabel>Eifelian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-middledevonian-eifelian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eifelian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eifelian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -996,6 +1334,9 @@
         <skos:prefLabel>Givetian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-middledevonian-givetian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Givetian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Givetian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1003,6 +1344,9 @@
     <skos:prefLabel>MiddleDevonian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-middledevonian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleDevonian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-devonian-lowerearlydevonian">
@@ -1012,6 +1356,9 @@
         <skos:prefLabel>Emsian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-lowerearlydevonian-emsian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Emsian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Emsian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1021,6 +1368,9 @@
         <skos:prefLabel>Lochkovian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-lowerearlydevonian-lochkovian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lochkovian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lochkovian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1030,6 +1380,9 @@
         <skos:prefLabel>Pragian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-lowerearlydevonian-pragian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pragian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pragian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1037,6 +1390,9 @@
     <skos:prefLabel>Lower/EarlyDevonian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-devonian-lowerearlydevonian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyDevonian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyDevonian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-silurian">
@@ -1048,6 +1404,9 @@
         <skos:prefLabel>Pridoli</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-pridoli"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pridoli"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Pridoli"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1056,6 +1415,9 @@
     <skos:prefLabel>Silurian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Silurian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-silurian-ludlow">
@@ -1065,6 +1427,9 @@
         <skos:prefLabel>Gorstian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-ludlow-gorstian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gorstian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Gorstian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1074,6 +1439,9 @@
         <skos:prefLabel>Ludfordian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-ludlow-ludfordian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludfordian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludfordian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1081,6 +1449,9 @@
     <skos:prefLabel>Ludlow</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-ludlow"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludlow"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ludlow"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-silurian-wenlock">
@@ -1090,6 +1461,9 @@
         <skos:prefLabel>Homerian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-wenlock-homerian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Homerian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Homerian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1099,6 +1473,9 @@
         <skos:prefLabel>Sheinwoodian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-wenlock-sheinwoodian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sheinwoodian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sheinwoodian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1106,6 +1483,9 @@
     <skos:prefLabel>Wenlock</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-wenlock"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wenlock"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Wenlock"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-silurian-llandovery">
@@ -1115,6 +1495,9 @@
         <skos:prefLabel>Aeronian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-llandovery-aeronian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aeronian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Aeronian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1124,6 +1507,9 @@
         <skos:prefLabel>Rhuddanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-llandovery-rhuddanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhuddanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhuddanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1133,6 +1519,9 @@
         <skos:prefLabel>Telychian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-llandovery-telychian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Telychian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Telychian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1140,6 +1529,9 @@
     <skos:prefLabel>Llandovery</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-silurian-llandovery"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Llandovery"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-ordovician">
@@ -1150,6 +1542,9 @@
     <skos:prefLabel>Ordovician</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ordovician"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-ordovician-upperlateordovician">
@@ -1159,6 +1554,9 @@
         <skos:prefLabel>Hirnantian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-upperlateordovician-hirnantian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hirnantian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hirnantian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1168,6 +1566,9 @@
         <skos:prefLabel>Katian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-upperlateordovician-katian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Katian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Katian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1177,6 +1578,9 @@
         <skos:prefLabel>Sandbian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-upperlateordovician-sandbian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sandbian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Sandbian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1184,6 +1588,9 @@
     <skos:prefLabel>Upper/LateOrdovician</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-upperlateordovician"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateOrdovician"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Upper/LateOrdovician"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-ordovician-middleordovician">
@@ -1193,6 +1600,9 @@
         <skos:prefLabel>Dapingian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-middleordovician-dapingian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Dapingian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Dapingian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1202,6 +1612,9 @@
         <skos:prefLabel>Darriwilian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-middleordovician-darriwilian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Darriwilian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Darriwilian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1209,6 +1622,9 @@
     <skos:prefLabel>MiddleOrdovician</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-middleordovician"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/MiddleOrdovician"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-ordovician-lowerearlyordovician">
@@ -1218,6 +1634,9 @@
         <skos:prefLabel>Floian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-lowerearlyordovician-floian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Floian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Floian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1227,6 +1646,9 @@
         <skos:prefLabel>Tremadocian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-lowerearlyordovician-tremadocian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tremadocian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tremadocian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1234,6 +1656,9 @@
     <skos:prefLabel>Lower/EarlyOrdovician</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-ordovician-lowerearlyordovician"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyOrdovician"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Lower/EarlyOrdovician"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-cambrian">
@@ -1245,6 +1670,9 @@
     <skos:prefLabel>Cambrian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cambrian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-cambrian-furongian">
@@ -1254,6 +1682,9 @@
         <skos:prefLabel>CambrianStage10</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-furongian-cambrianstage10"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage10"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage10"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1263,6 +1694,9 @@
         <skos:prefLabel>Jiangshanian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-furongian-jiangshanian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jiangshanian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Jiangshanian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1272,6 +1706,9 @@
         <skos:prefLabel>Paibian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-furongian-paibian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paibian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paibian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1279,6 +1716,9 @@
     <skos:prefLabel>Furongian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-furongian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Furongian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-cambrian-cambrianseries3">
@@ -1288,6 +1728,9 @@
         <skos:prefLabel>CambrianStage5</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries3-cambrianstage5"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage5"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage5"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1297,6 +1740,9 @@
         <skos:prefLabel>Drumian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries3-drumian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Drumian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Drumian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1306,6 +1752,9 @@
         <skos:prefLabel>Guzhangian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries3-guzhangian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guzhangian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Guzhangian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1313,6 +1762,9 @@
     <skos:prefLabel>CambrianSeries3</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries3"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries3"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries3"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-cambrian-cambrianseries2">
@@ -1322,6 +1774,9 @@
         <skos:prefLabel>CambrianStage3</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries2-cambrianstage3"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage3"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage3"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1331,6 +1786,9 @@
         <skos:prefLabel>CambrianStage4</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries2-cambrianstage4"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage4"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage4"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1338,6 +1796,9 @@
     <skos:prefLabel>CambrianSeries2</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-cambrianseries2"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianSeries2"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/phanerozoic-paleozoic-cambrian-terreneuvian">
@@ -1347,6 +1808,9 @@
         <skos:prefLabel>CambrianStage2</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-terreneuvian-cambrianstage2"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage2"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/CambrianStage2"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1356,6 +1820,9 @@
         <skos:prefLabel>Fortunian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-terreneuvian-fortunian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Fortunian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Fortunian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1363,6 +1830,9 @@
     <skos:prefLabel>Terreneuvian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/phanerozoic-paleozoic-cambrian-terreneuvian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Terreneuvian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian">
@@ -1373,6 +1843,9 @@
         <skos:prefLabel>Hadean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-hadean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hadean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Hadean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1381,6 +1854,9 @@
     <skos:prefLabel>Precambrian</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Precambrian"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian-proterozoic">
@@ -1391,6 +1867,9 @@
     <skos:prefLabel>Proterozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Proterozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian-proterozoic-neoproterozoic">
@@ -1400,6 +1879,9 @@
         <skos:prefLabel>Cryogenian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-neoproterozoic-cryogenian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cryogenian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Cryogenian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1409,6 +1891,9 @@
         <skos:prefLabel>Ediacaran</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-neoproterozoic-ediacaran"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ediacaran"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ediacaran"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1418,6 +1903,9 @@
         <skos:prefLabel>Tonian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-neoproterozoic-tonian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tonian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Tonian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1425,6 +1913,9 @@
     <skos:prefLabel>Neoproterozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-neoproterozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoproterozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian-proterozoic-mesoproterozoic">
@@ -1434,6 +1925,9 @@
         <skos:prefLabel>Calymmian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-mesoproterozoic-calymmian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calymmian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Calymmian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1443,6 +1937,9 @@
         <skos:prefLabel>Ectasian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-mesoproterozoic-ectasian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ectasian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Ectasian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1452,6 +1949,9 @@
         <skos:prefLabel>Stenian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-mesoproterozoic-stenian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Stenian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Stenian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1459,6 +1959,9 @@
     <skos:prefLabel>Mesoproterozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-mesoproterozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoproterozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian-proterozoic-paleoproterozoic">
@@ -1468,6 +1971,9 @@
         <skos:prefLabel>Orosirian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-paleoproterozoic-orosirian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Orosirian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Orosirian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1477,6 +1983,9 @@
         <skos:prefLabel>Rhyacian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-paleoproterozoic-rhyacian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhyacian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Rhyacian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1486,6 +1995,9 @@
         <skos:prefLabel>Siderian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-paleoproterozoic-siderian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Siderian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Siderian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1495,6 +2007,9 @@
         <skos:prefLabel>Statherian</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-paleoproterozoic-statherian"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Statherian"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Statherian"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1502,6 +2017,9 @@
     <skos:prefLabel>Paleoproterozoic</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-proterozoic-paleoproterozoic"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoproterozoic"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
   <skos:Concept rdf:about="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage/precambrian-archean">
@@ -1511,6 +2029,9 @@
         <skos:prefLabel>Eoarchean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-archean-eoarchean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eoarchean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Eoarchean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1520,6 +2041,9 @@
         <skos:prefLabel>Mesoarchean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-archean-mesoarchean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoarchean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Mesoarchean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1529,6 +2053,9 @@
         <skos:prefLabel>Neoarchean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-archean-neoarchean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoarchean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Neoarchean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1538,6 +2065,9 @@
         <skos:prefLabel>Paleoarchean</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-archean-paleoarchean"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoarchean"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Paleoarchean"/>
+        <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
 
@@ -1545,6 +2075,9 @@
     <skos:prefLabel>Archean</skos:prefLabel>
     <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/geologicalage/1.4/precambrian-archean"/>
     <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalage"/>
+    <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/ics/ischart/Archean"/>
+    <dc:source>geosciml</dc:source>
   </skos:Concept>
 
 </rdf:RDF>
