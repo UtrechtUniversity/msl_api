@@ -46,6 +46,16 @@ class RdfExport
             }
 
             $graph->add($keyword->uri, 'skos:prefLabel', $keyword->label);
+
+            if($keyword->external_uri !== "") {
+                $graph->addResource($keyword->uri, 'rdfs:seeAlso', $keyword->external_uri);
+                $graph->addResource($keyword->uri, 'skos:exactMatch', $keyword->external_uri);
+                if($keyword->external_vocab_scheme !== "") {
+                    $graph->addResource($keyword->uri, 'dc:source', $keyword->external_vocab_scheme);
+                }
+            }
+
+            $graph->addResource($keyword->uri, 'skos:inScheme', $this->vocabulary->uri);
         }
 
         return $graph->serialise($type);
