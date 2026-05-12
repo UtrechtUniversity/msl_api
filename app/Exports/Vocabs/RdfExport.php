@@ -51,7 +51,7 @@ class RdfExport
                 $graph->addResource($keyword->uri, 'rdfs:seeAlso', $keyword->external_uri);
                 $graph->addResource($keyword->uri, 'skos:exactMatch', $keyword->external_uri);
                 if($keyword->external_vocab_scheme !== "") {
-                    $graph->addResource($keyword->uri, 'dc:source', $keyword->external_vocab_scheme);
+                    $graph->add($keyword->uri, 'dc:source', $keyword->external_vocab_scheme);
                 }
             }
 
