@@ -38,7 +38,7 @@ class GenerateEditorExportCommand extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(): int
     {
         $vocabularies = Vocabulary::where('version', $this->argument('version'))->get();
         $this->line($vocabularies->count().' vocabularies found.');
@@ -51,7 +51,7 @@ class GenerateEditorExportCommand extends Command
         return 0;
     }
 
-    private function export($vocabularies)
+    private function export($vocabularies): false|string
     {
         $sortPriority = [
             'materials',
@@ -88,7 +88,7 @@ class GenerateEditorExportCommand extends Command
         return json_encode($tree, JSON_PRETTY_PRINT);
     }
 
-    private function getTopNodes(Vocabulary $vocabulary)
+    private function getTopNodes(Vocabulary $vocabulary): array
     {
         $topKeywords = $vocabulary->keywords->where('level', 1);
         $tree = [];
@@ -99,6 +99,8 @@ class GenerateEditorExportCommand extends Command
                 'extra' => [
                     'uri' => $topKeyword->uri,
                     'vocab_uri' => $topKeyword->vocabulary->uri,
+                    'external_uri' => $topKeyword->external_uri,
+                    'external_vocab_scheme' => $topKeyword->external_vocab_scheme,
                 ],
                 'children' => $this->getChildren($topKeyword),
             ];
@@ -109,7 +111,7 @@ class GenerateEditorExportCommand extends Command
         return $tree;
     }
 
-    private function getChildren(Keyword $keyword)
+    private function getChildren(Keyword $keyword): array
     {
         $children = $keyword->getChildren();
         $tree = [];
@@ -120,6 +122,8 @@ class GenerateEditorExportCommand extends Command
                 'extra' => [
                     'uri' => $child->uri,
                     'vocab_uri' => $child->vocabulary->uri,
+                    'external_uri' => $child->external_uri,
+                    'external_vocab_scheme' => $child->external_vocab_scheme,
                 ],
                 'children' => $this->getChildren($child),
             ];
@@ -130,7 +134,7 @@ class GenerateEditorExportCommand extends Command
         return $tree;
     }
 
-    private function versionFileName($version)
+    private function versionFileName($version): array|string
     {
         return str_replace('.', '-', $version);
     }
