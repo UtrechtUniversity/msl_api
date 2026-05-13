@@ -3,6 +3,7 @@
     "compilerOptions": {
         // File Layout
         "types": ["vite/client"],
+        "lib": ["DOM", "es2020"],
         // Environment Settings
         "module": "nodenext",
         "target": "esnext",

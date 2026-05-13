@@ -2,12 +2,10 @@
 
 namespace App\DataPublications;
 
-use App\Models\Ckan\DataPublication;
-
 class GeoJsonFeatureDataPublication
 {
     /**
-     * @param  array<int, DataPublication>  $dataPublications
+     * @param  array<int, InclusiveOrNotDataPublication>  $dataPublications
      * @param  array<int, GeoJsonFeaturePerDataPublication>  $features
      * @return void
      */

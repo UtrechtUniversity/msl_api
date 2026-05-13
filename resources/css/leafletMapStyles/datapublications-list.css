@@ -1,8 +1,16 @@
 @reference "../app.css";
 
-.data-publication-item.highlight .data-publication-title,
-.data-publication-item.highlight .data-publication-authors,
-.data-publication-item.highlight .data-publication-date {
+.publication-link{
+    
+    position: relative;
+    display: block;
+
+}
+
+
+.data-publication-content.highlight .data-publication-title,
+.data-publication-content.highlight .data-publication-authors,
+.data-publication-content.highlight .data-publication-date {
   @apply whitespace-normal overflow-visible text-clip;
 }
 
@@ -52,4 +60,12 @@
     color: var(--color-secondary-900);
 }
 
+.publication-icon {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    color: #666;
+}
 

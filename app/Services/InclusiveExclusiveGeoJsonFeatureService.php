@@ -5,6 +5,7 @@ namespace App\Services;
 use App\DataPublications\GeoJsonFeatureDataPublication;
 use App\DataPublications\GeoJsonFeaturePerDataPublication;
 use App\DataPublications\InclusiveExclusiveGeoJsonFeatureDataPublication;
+use App\DataPublications\InclusiveOrNotDataPublication;
 use App\GeoJson\BoundingBox;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
@@ -13,17 +14,25 @@ use Exception;
 
 class InclusiveExclusiveGeoJsonFeatureService
 {
+    /**
+     * @param  array<int, DataPublication>  $dataPublications
+     */
     public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJsonFeatureDataPublication
     {
 
         //  split + sort
         $sortedFeatures = $this->sortFeatures($dataPublications);
         // inclusive
-        [$inclusivePublications, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
+        [$inclusivePublicationsWithDois, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
+
+        $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusivePublicationsWithDois);
+        $inclusivePublications = array_map(function (DataPublication $dp) {
+            return new InclusiveOrNotDataPublication($dp, inclusiveOrNot: true);
+        }, array_values($inclusivePublicationsWithDois));
 
         return new InclusiveExclusiveGeoJsonFeatureDataPublication(
             exclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
-                dataPublications: $dataPublications,
+                dataPublications: $exclusiveDataPublications,
                 features: $sortedFeatures
             ),
             inclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
@@ -96,12 +105,12 @@ class InclusiveExclusiveGeoJsonFeatureService
 
     /**
      * @param  array<int,GeoJsonFeaturePerDataPublication>  $features
-     * @return array{0: <int,DataPublication>, 1: <int,GeoJsonFeaturePerDataPublication>}
+     * @return array{0: array<string,DataPublication>, 1: array<int,GeoJsonFeaturePerDataPublication>}
      */
     private function filterInclusive(array $features, BoundingBox $bbox): array
     {
         $inclusiveFeatures = [];
-        $inclusivePublications = [];
+        $inclusivePublicationsWithDois = [];
 
         foreach ($features as $feature) {
             if (! $bbox->contains($feature->feature->geometry)) {
@@ -109,9 +118,27 @@ class InclusiveExclusiveGeoJsonFeatureService
             }
 
             $inclusiveFeatures[] = $feature;
-            $inclusivePublications[$feature->dataPublication->msl_doi] = $feature->dataPublication;
+            $inclusivePublicationsWithDois[$feature->dataPublication->msl_doi] = $feature->dataPublication;
         }
 
-        return [array_values($inclusivePublications), $inclusiveFeatures];
+        return [$inclusivePublicationsWithDois, $inclusiveFeatures];
+    }
+
+    /**
+     * @param  array<int,DataPublication>  $dataPublications
+     * @param  array<string,DataPublication>  $inclusiveDataPublications
+     * @return array<int, InclusiveOrNotDataPublication>
+     */
+    private function getDataPublicationsWithInclusiveInformation(array $dataPublications, array $inclusiveDataPublications): array
+    {
+        $dataPublicationsToReturn = [];
+        foreach ($dataPublications as $dataPublication) {
+            array_push($dataPublicationsToReturn, new InclusiveOrNotDataPublication(
+                $dataPublication,
+                inclusiveOrNot: array_key_exists($dataPublication->msl_doi, $inclusiveDataPublications)
+            ));
+        }
+
+        return $dataPublicationsToReturn;
     }
 }
