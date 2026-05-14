@@ -14,6 +14,7 @@ use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
 use App\Http\Resources\V2\Elements\RightResource;
 use App\Http\Resources\V2\Elements\SubjectResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
+use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 enum VocabularyType: string
@@ -25,6 +26,7 @@ enum VocabularyType: string
     case GEO_CHEMISTRY = 'geoChemistry';
     case FIELD_SCALE = 'fieldScale';
 }
+/** @mixin DataPublication */
 class DataPublicationResource extends JsonResource
 {
     private ?EndpointContext $context = null;
