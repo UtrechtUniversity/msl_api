@@ -29,7 +29,7 @@ class DataPublicationResource extends JsonResource
 {
     private ?EndpointContext $context = null;
 
-    private $uriStartsPerSubject = [];
+    private array $uriStartsPerSubject = [];
 
     /**
      * We set whether the data-publication results should
@@ -82,7 +82,7 @@ class DataPublicationResource extends JsonResource
         ];
     }
 
-    private function getMaterials()
+    private function getMaterials(): array
     {
         $materials = [];
         foreach ($this->msl_enriched_keywords as $value) {
@@ -94,7 +94,7 @@ class DataPublicationResource extends JsonResource
         return $materials;
     }
 
-    private function getResearchAspectsPerSubject(VocabularyType $subject)
+    private function getResearchAspectsPerSubject(VocabularyType $subject): array
     {
         $keywords = [];
         foreach ($this->msl_enriched_keywords as $enrichedKeyword) {
@@ -177,7 +177,7 @@ class DataPublicationResource extends JsonResource
         return $researchAspects;
     }
 
-    private function getDescriptions()
+    private function getDescriptions(): Descriptions
     {
         return new Descriptions(
             abstract: $this->msl_description_abstract,
