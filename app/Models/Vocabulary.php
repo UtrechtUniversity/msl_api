@@ -10,6 +10,7 @@ class Vocabulary extends Model
         'name',
         'uri',
         'display_name',
+        'version'
     ];
 
     public function keywords()
