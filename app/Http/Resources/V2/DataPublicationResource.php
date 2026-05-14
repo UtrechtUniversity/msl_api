@@ -27,7 +27,7 @@ enum VocabularyType: string
 }
 class DataPublicationResource extends JsonResource
 {
-    private $context;
+    private EndpointContext $context;
 
     private $uriStartsPerSubject = [];
 
@@ -35,13 +35,25 @@ class DataPublicationResource extends JsonResource
      * We set whether the data-publication results should
      * include the geoJson information included or not.
      */
-    private bool $includesGeoJson;
+    private bool $includesGeoJson = true;
 
-    public function __construct($resource, $context = '', $includesGeoJson = true)
+    public function setContext(EndpointContext $context): self
+    {
+        $this->context = $context;
+
+        return $this;
+    }
+
+    public function setIncludesGeoJson(bool $includesGeoJson): self
+    {
+        $this->includesGeoJson = $includesGeoJson;
+
+        return $this;
+    }
+
+    public function __construct($resource)
     {
         parent::__construct($resource);
-        $this->context = $context;
-        $this->includesGeoJson = $includesGeoJson;
         $this->uriStartsPerSubject = [
             VocabularyType::ROCK_PHYSICS->value => [
                 'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/measured_property-',

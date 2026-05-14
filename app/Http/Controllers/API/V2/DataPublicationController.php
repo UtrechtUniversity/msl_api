@@ -86,7 +86,8 @@ class DataPublicationController extends BaseDomainApiController
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
 
-        $responseToReturn = new DataPublicationCollection($dataPublications, $context);
+        $responseToReturn = new DataPublicationCollection($dataPublications);
+        $responseToReturn->setContext($context);
         $responseToReturn->additional([
             'success' => 'true',
             'messages' => [],
