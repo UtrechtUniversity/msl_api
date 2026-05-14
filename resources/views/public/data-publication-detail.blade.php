@@ -193,9 +193,6 @@
                                             content += 'none';
                                         }
                                         content += "</td></tr>";
-                                        content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary
-                                            .display_name + "</td></tr>";
-                                        content += "<tr><td class=\"\">uri</td><td>" + res.uri + "</td></tr>";
 
                                         if (this.dataset.sources) {
                                             matchSources = JSON.parse(this.dataset.sources);
@@ -204,6 +201,13 @@
                                                     ", ") + "</td></tr>";
                                             }
                                         }
+
+                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
+                                            .display_name + "</td></tr>";
+                                        content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
+
+                                        content += "<tr><td class=\"\">external uri</td><td><a href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
+                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
                                         content += "<a href=\"" + this.dataset.filterLink +
@@ -295,9 +299,6 @@
                                             content += 'none';
                                         }
                                         content += "</td></tr>";
-                                        content += "<tr><td class=\"\">occurs in vocabulary</td><td>" + res.vocabulary
-                                            .display_name + "</td></tr>";
-                                        content += "<tr><td class=\"\">uri</td><td>" + res.uri + "</td></tr>";
 
                                         if (this.dataset.sources) {
                                             matchSources = JSON.parse(this.dataset.sources);
@@ -306,6 +307,13 @@
                                                     ", ") + "</td></tr>";
                                             }
                                         }
+
+                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
+                                            .display_name + "</td></tr>";
+                                        content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
+
+                                        content += "<tr><td class=\"\">external uri</td><td><a href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
+                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
                                         content += "<a href=\"" + this.dataset.filterLink +
