@@ -61,7 +61,9 @@ This endpoint gives access to all data-publications available that are marked as
         + Default: ``
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
         + Default: `false`
-   + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+    + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
         + Default: ``
 
         
@@ -624,6 +626,8 @@ This endpoint gives access to all data-publications available that are marked as
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
         + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
+        + Default: ``
 
         
 + Response 200 (application/json)
@@ -1155,6 +1159,8 @@ This endpoint gives access to all data-publications available that are marked as
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
         + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
+        + Default: ``
 
         
 + Response 200 (application/json)
@@ -1510,6 +1516,8 @@ This endpoint gives access to all data-publications available that are marked as
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
         + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
+        + Default: ``
 
         
 + Response 200 (application/json)
@@ -1823,6 +1831,8 @@ This endpoint gives access to all data-publications available that are marked as
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
         + Default: ``
 
         
@@ -2139,6 +2149,8 @@ This endpoint gives access to all data-publications available that are marked as
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
         + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
+        + Default: ``
 
         
 + Response 200 (application/json)
@@ -2433,6 +2445,8 @@ This endpoint gives access to all data-publications available that are marked as
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90).
+        + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
         + Default: ``
 
 
@@ -2731,6 +2745,8 @@ This endpoint gives access to all data-publications available that are marked as
     + hasDownloads (boolean, optional) - Filter results to only include results with download links.
         + Default: `false`
     + boundingBox 	(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results. If provided the bounding box must be valid. bounds: (-180, -90, 180, 90). 
+        + Default: ``
+    + maxArea (number, optional) - Maximum area of the results.
         + Default: ``
 
 
