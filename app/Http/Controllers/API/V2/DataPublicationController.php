@@ -24,6 +24,7 @@ class DataPublicationController extends BaseDomainApiController
         'title' => 'title',
         'authorName' => 'msl_creator_name_text',
         'labName' => 'msl_lab_name_text',
+        'maxArea' => 'msl_surface_area',
     ];
 
     /**
@@ -58,6 +59,7 @@ class DataPublicationController extends BaseDomainApiController
                 'tags' => ['nullable', 'string'],
                 'hasDownloads' => ['nullable', 'boolean'],
                 'boundingBox' => ['nullable', new GeoRule],
+                'maxArea' => ['nullable', 'integer', 'min:0'],
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             return new ValidationErrorResource($e);
@@ -67,6 +69,7 @@ class DataPublicationController extends BaseDomainApiController
         $ckanClient = new Client($this->guzzleClient);
 
         $this->setRequestToCKAN($request, $context);
+
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
