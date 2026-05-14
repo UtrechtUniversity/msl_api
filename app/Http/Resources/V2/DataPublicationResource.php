@@ -27,7 +27,7 @@ enum VocabularyType: string
 }
 class DataPublicationResource extends JsonResource
 {
-    private EndpointContext $context;
+    private ?EndpointContext $context = null;
 
     private $uriStartsPerSubject = [];
 

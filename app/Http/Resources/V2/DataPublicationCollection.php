@@ -25,7 +25,7 @@ class DataPublicationCollection extends ResourceCollection
     public function toArray($request)
     {
         return $this->collection->map(fn ($resource) =>
-            ((new DataPublicationResource($resource))->setContext($this->context)->setIncludesGeoJson(false))
+            ((new DataPublicationResource($resource))->setContext($this->context)->setIncludesGeoJson(true))
         );
     }
 }

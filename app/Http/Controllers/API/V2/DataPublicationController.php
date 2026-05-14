@@ -88,6 +88,7 @@ class DataPublicationController extends BaseDomainApiController
 
         $responseToReturn = new DataPublicationCollection($dataPublications);
         $responseToReturn->setContext($context);
+
         $responseToReturn->additional([
             'success' => 'true',
             'messages' => [],

@@ -7,20 +7,21 @@ use App\Http\Requests\GeoJsonDataPublicationRequest;
 use App\Http\Resources\InclusiveExclusiveGeoJsonDataPublicationsResource;
 use App\Services\GeoJsonDataPublicationService;
 use App\Services\InclusiveExclusiveGeoJsonFeatureService;
+use GuzzleHttp\Client;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class GeoJsonDataPublicationsController extends Controller
 {
     /**
-     * @var \GuzzleHttp\Client Guzzle http client instance
+     * @var Client Guzzle http client instance
      */
     protected $guzzleClient;
 
     /**
      * Constructs a new controller
      */
-    public function __construct(\GuzzleHttp\Client $client)
+    public function __construct(Client $client)
     {
         $this->guzzleClient = $client;
     }
