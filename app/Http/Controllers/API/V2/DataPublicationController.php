@@ -12,13 +12,14 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Validation\ValidationException;
 
 class DataPublicationController extends BaseDomainApiController
 {
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
      */
-    private $queryMappings = [
+    private array $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
@@ -30,7 +31,7 @@ class DataPublicationController extends BaseDomainApiController
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
-    private $queryMappingsAll;
+    private array $queryMappingsAll;
 
     /**
      * Constructs a new controller
@@ -61,7 +62,7 @@ class DataPublicationController extends BaseDomainApiController
                 'boundingBox' => ['nullable', new GeoRule],
                 'maxArea' => ['nullable', 'integer', 'min:0'],
             ]);
-        } catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (ValidationException $e) {
             return new ValidationErrorResource($e);
         }
 
