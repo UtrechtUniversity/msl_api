@@ -206,7 +206,7 @@
                                             .display_name + "</td></tr>";
                                         content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
 
-                                        content += "<tr><td class=\"\">external uri</td><td><a href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
+                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
                                         content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
@@ -312,7 +312,7 @@
                                             .display_name + "</td></tr>";
                                         content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
 
-                                        content += "<tr><td class=\"\">external uri</td><td><a href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
+                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
                                         content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
