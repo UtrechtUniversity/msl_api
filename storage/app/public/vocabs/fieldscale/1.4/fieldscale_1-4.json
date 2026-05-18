@@ -22,7 +22,9 @@
                         "value": "acuto field lab"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-bedretto_underground_laboratory_for_geosciences_and_geoenergies",
@@ -46,7 +48,9 @@
                         "value": "bulgg"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-bochum_research_and_exploration_drilling_rig",
@@ -61,7 +65,9 @@
                         "value": "bo.rex"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-brgms_geothermal_testing_facility",
@@ -69,7 +75,9 @@
                 "value": "BRGM\u2019s Geothermal Testing Facility",
                 "label": "BRGM\u2019s Geothermal Testing Facility",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-catenoy_experimental_site",
@@ -90,7 +98,9 @@
                         "value": "catenoy laboratory"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-eccsel_svelvik_co2_field_lab",
@@ -114,7 +124,9 @@
                         "value": "svelvik co2 field laboratory"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-energy_technology_fraunhofer_ieg",
@@ -129,7 +141,9 @@
                         "value": "energy technology fraunhofer"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geotechnology_laboratory_fraunhofer_ieg",
@@ -156,7 +170,9 @@
                         "value": "fluid.bogs"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geothermal_project_on_tu_delft_campus",
@@ -204,7 +220,9 @@
                         "value": "dapwell"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-geothermal_research_platform_gros_schonebeck",
@@ -246,7 +264,9 @@
                         "value": "geothermal laboratory gross sch\u00f6nebeck"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-krafla_magma_testbed",
@@ -258,7 +278,9 @@
                         "value": "krafla testbed"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-pilot_site_for_geological_storage_of_co2_ketzin",
@@ -270,7 +292,9 @@
                         "value": "pilot site ketzin"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-pitop_borehole_geophysical_test_site",
@@ -285,7 +309,9 @@
                         "value": "ogs geophysical drilling"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-poggio_baldi_landslide",
@@ -303,7 +329,9 @@
                         "value": "poggiobaldilandslide"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-rijswijk_centre_for_sustainable_geo-energy",
@@ -315,7 +343,9 @@
                         "value": "rcsg"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-sotacarbo_fault_laboratory",
@@ -333,7 +363,9 @@
                         "value": "satocarbo fault lab"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-trudi_underground_laboratory",
@@ -351,7 +383,9 @@
                         "value": "field-scale laboratory fraunhofer"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-uk_geoenergy_research_centre",
@@ -366,7 +400,9 @@
                         "value": "geoenergy test bed nottingham"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-uk_geos",
@@ -384,7 +420,9 @@
                         "value": "cheshire observatory"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-underground_research_laboratory_andra",
@@ -408,7 +446,9 @@
                         "value": "andra underground research lab"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_names-ventotene_field_laboratory",
@@ -426,9 +466,13 @@
                         "value": "ventotene field lab"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types",
@@ -453,7 +497,9 @@
                         "value": "testing at full-scale"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-field-scale_observatory_-_passive_monitoring",
@@ -489,7 +535,9 @@
                         "value": "rockfall monitoring"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-geo-energy_testbed",
@@ -507,7 +555,9 @@
                         "value": "geo-energy test bed"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-in-situ_laboratory",
@@ -543,7 +593,9 @@
                         "value": "in situ laboratory"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/facility_types-monitoring_borehole",
@@ -558,9 +610,13 @@
                         "value": "monitoring well"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment",
@@ -589,7 +645,9 @@
                         "value": "borehole and geofluid simulator",
                         "label": "borehole and geofluid simulator",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-drill_core",
@@ -613,7 +671,9 @@
                                 "value": "core samples"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-drilling_test_rig",
@@ -621,7 +681,9 @@
                         "value": "drilling test rig",
                         "label": "drilling test rig",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-measurement_while_drilling",
@@ -639,7 +701,9 @@
                                 "value": "(lwd)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_drilling-mud_logging",
@@ -647,9 +711,13 @@
                         "value": "mud logging",
                         "label": "mud logging",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging",
@@ -674,7 +742,9 @@
                         "value": "borehole inspection system",
                         "label": "borehole inspection system",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging-open_hole_logging",
@@ -695,7 +765,9 @@
                                 "value": "open-hole logging"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_logging-optical_borehole_scanner",
@@ -731,9 +803,13 @@
                                 "value": "optical borehole televiewers"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring",
@@ -789,7 +865,9 @@
                                 "value": "borehole acoustic emission"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-borehole_strainmeter",
@@ -804,7 +882,9 @@
                                 "value": "borehole strain meter"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-cementable_tube_pore-pressure_sensor",
@@ -822,7 +902,9 @@
                                 "value": "cementable tube fluid pressure"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_electric_conductivity_sensing",
@@ -830,7 +912,9 @@
                         "value": "downhole electric conductivity sensing",
                         "label": "downhole electric conductivity sensing",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_electromagnetic_sensing",
@@ -838,7 +922,9 @@
                         "value": "downhole electromagnetic sensing",
                         "label": "downhole electromagnetic sensing",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-downhole_probe",
@@ -850,7 +936,9 @@
                                 "value": "downhole soil gas probe"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-impulse_generator",
@@ -862,7 +950,9 @@
                                 "value": "(ipg) downhole sparker"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-multistation_borehole_acquisition_system",
@@ -877,7 +967,9 @@
                                 "value": "3c borehole acquisition system"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-borehole_monitoring-step-rate_injection_method_for_fracture_in-situ_properties",
@@ -889,9 +981,13 @@
                                 "value": "(simfip)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing",
@@ -929,7 +1025,9 @@
                                 "value": "(das)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_pressure_and_temperature_sensing",
@@ -941,7 +1039,9 @@
                                 "value": "(dpts)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_strain_sensing",
@@ -956,7 +1056,9 @@
                                 "value": "brusens strain sensing cable"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-distributed_temperature_sensing",
@@ -968,7 +1070,9 @@
                                 "value": "(dts)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-fbg_interrogator",
@@ -976,7 +1080,9 @@
                         "value": "FBG interrogator",
                         "label": "FBG interrogator",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-fibre_braag_grating_sensor",
@@ -988,7 +1094,9 @@
                                 "value": "(fbg)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-hyperion_optical_sensing_instrument",
@@ -996,7 +1104,9 @@
                         "value": "HYPERION Optical Sensing Instrument",
                         "label": "HYPERION Optical Sensing Instrument",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-optoelectronics_interrogator",
@@ -1004,7 +1114,9 @@
                         "value": "optoelectronics interrogator",
                         "label": "optoelectronics interrogator",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-distributed_fibre_optic_sensing-silixa_das_interrogator",
@@ -1019,9 +1131,13 @@
                                 "value": "xt-dts"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring",
@@ -1056,7 +1172,9 @@
                                 "value": "submerged wave-measurement"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-heat_flux_cell",
@@ -1068,7 +1186,9 @@
                                 "value": "heat flux sensor"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-leaf_wetness_sensor",
@@ -1076,7 +1196,9 @@
                         "value": "leaf wetness sensor",
                         "label": "leaf wetness sensor",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-sea_wave_pressure_transducer",
@@ -1091,7 +1213,9 @@
                                 "value": "dynamic pressure transducer"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-environmental_monitoring-weather_station",
@@ -1103,9 +1227,13 @@
                                 "value": "fully equipped weather station"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation",
@@ -1142,7 +1270,9 @@
                         "value": "groundwater multi-packer system",
                         "label": "groundwater multi-packer system",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-hybrid_multi-packer_system",
@@ -1150,7 +1280,9 @@
                         "value": "hybrid multi-packer system",
                         "label": "hybrid multi-packer system",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-multi-packer_piezometer",
@@ -1158,7 +1290,9 @@
                         "value": "multi-packer piezometer",
                         "label": "multi-packer piezometer",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-pump_multi-packer_system",
@@ -1166,7 +1300,9 @@
                         "value": "pump multi-packer system",
                         "label": "pump multi-packer system",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-hydrologic_instrumentation-stand-pipe_multi-packer_system",
@@ -1178,9 +1314,13 @@
                                 "value": "(spmp)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring",
@@ -1202,7 +1342,9 @@
                         "value": "EpiSensor force balance accelerometer",
                         "label": "EpiSensor force balance accelerometer",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-high-performance_portable_broadband_triaxial_seismometer",
@@ -1214,7 +1356,9 @@
                                 "value": "(sts-2)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-microaccelerometers",
@@ -1222,7 +1366,9 @@
                         "value": "microaccelerometers",
                         "label": "microaccelerometers",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-three-component_seismic_station",
@@ -1237,7 +1383,9 @@
                                 "value": "seismic monitoring borehole"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-seismic_monitoring-tilt_strain_gauge",
@@ -1258,9 +1406,13 @@
                                 "value": "strainmeter"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring",
@@ -1297,7 +1449,9 @@
                         "value": "doppler radar",
                         "label": "doppler radar",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-joint_gauges",
@@ -1309,7 +1463,9 @@
                                 "value": "joint strain gauges"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-optical_camera_for_surface_monitoring",
@@ -1317,7 +1473,9 @@
                         "value": "optical camera for surface monitoring",
                         "label": "optical camera for surface monitoring",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-slope_surface_monitoring-thermal_imaging_camera",
@@ -1332,9 +1490,13 @@
                                 "value": "thermal imaging"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing",
@@ -1363,7 +1525,9 @@
                                 "value": "(lot)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-heat_pump_mobile_unit",
@@ -1371,7 +1535,9 @@
                         "value": "heat pump mobile unit",
                         "label": "heat pump mobile unit",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-heat_pump_test_rig",
@@ -1379,7 +1545,9 @@
                         "value": "heat pump test rig",
                         "label": "heat pump test rig",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-injection_testing",
@@ -1397,7 +1565,9 @@
                                 "value": "stimulation experiment"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-intervention_and_stimulation_equipment",
@@ -1409,7 +1579,9 @@
                                 "value": "(ise)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-pressure_performance_system",
@@ -1421,7 +1593,9 @@
                                 "value": "(pps)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-production_testing",
@@ -1429,7 +1603,9 @@
                         "value": "production testing",
                         "label": "production testing",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/equipment-well_testing-thermal_response_testing",
@@ -1441,11 +1617,17 @@
                                 "value": "(trt)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models",
@@ -1471,7 +1653,9 @@
                         "value": "borehole heat exchanger model",
                         "label": "borehole heat exchanger model",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-chemical_model",
@@ -1489,7 +1673,9 @@
                                 "value": "geochemistry model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-coupled_thermo-hydraulic-mechanical_model",
@@ -1497,7 +1683,9 @@
                         "value": "coupled thermo-hydraulic-mechanical model",
                         "label": "coupled thermo-hydraulic-mechanical model",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-flow_and_thermal_transport_model",
@@ -1505,7 +1693,9 @@
                         "value": "flow and thermal transport model",
                         "label": "flow and thermal transport model",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-flow_model",
@@ -1523,7 +1713,9 @@
                                 "value": "multiphase flow modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-geothermal_reservoir_simulation",
@@ -1535,7 +1727,9 @@
                                 "value": "geothermal reservoir model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-geothermal_well_model",
@@ -1547,7 +1741,9 @@
                                 "value": "well model for geothermal reservoir"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-hydrocarbon_reservoir_simulation",
@@ -1559,7 +1755,9 @@
                                 "value": "hydrocarbon reservoir model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-hydrogen_reservoir_simulation",
@@ -1571,7 +1769,9 @@
                                 "value": "hydrogen reservoir model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-induced_seismicity_model",
@@ -1589,7 +1789,9 @@
                                 "value": "induced seismicity due to geothermal"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-pore_pressure_diffusion_model",
@@ -1601,7 +1803,9 @@
                                 "value": "hydraulic model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-reactive_transport_model",
@@ -1613,7 +1817,9 @@
                                 "value": "reactive transport modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-storage_model",
@@ -1631,7 +1837,9 @@
                                 "value": "gas storage model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-field_system_model-thermal_transport_model",
@@ -1646,9 +1854,13 @@
                                 "value": "temperature model"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_digital_twin",
@@ -1660,7 +1872,9 @@
                         "value": "digital twin for the subsurface"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling",
@@ -1683,7 +1897,9 @@
                                 "value": "fluid composition field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-formation_stress_model",
@@ -1701,7 +1917,9 @@
                                 "value": "subsurface stress modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-geochemistry_field_model",
@@ -1713,7 +1931,9 @@
                                 "value": "geochemistry field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-geomechanical_property_field_model",
@@ -1737,7 +1957,9 @@
                                 "value": "geomechanical field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-gravity_field_model",
@@ -1749,7 +1971,9 @@
                                 "value": "gravity field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-magnetic_field_model",
@@ -1761,7 +1985,9 @@
                                 "value": "magnetic field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-pore_pressure_field_model",
@@ -1773,7 +1999,9 @@
                                 "value": "pore pressure field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-porosity-permeability_field_model",
@@ -1803,7 +2031,9 @@
                                 "value": "porperm modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-reservoir_structural_model",
@@ -1815,7 +2045,9 @@
                                 "value": "reservoir structural modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-seismic_velocity_field_model",
@@ -1833,7 +2065,9 @@
                                 "value": "velocity modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-subsurface_property_modelling-temperature_field_model",
@@ -1845,9 +2079,13 @@
                                 "value": "temperature field modelling"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/fieldscale\/1.4\/models-surface_digital_twin",
@@ -1855,8 +2093,12 @@
                 "value": "surface digital twin",
                 "label": "surface digital twin",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     }
 ]

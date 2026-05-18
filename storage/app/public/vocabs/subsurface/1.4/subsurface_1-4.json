@@ -47,7 +47,9 @@
                         "value": "geological storage of co2"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-compressed_air_storage_in_the_subsurface",
@@ -68,7 +70,9 @@
                         "value": "underground storage of compressed air"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-gas_storage_in_the_subsurface",
@@ -89,7 +93,9 @@
                         "value": "subsurface storage of gas"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-hydrogen_storage_in_the_subsurface",
@@ -107,7 +113,9 @@
                         "value": "(uhs)"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-nitrogen_storage_in_the_subsurface",
@@ -131,7 +139,9 @@
                         "value": "underground n2 storage"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-oil_storage_in_the_subsurface",
@@ -146,7 +156,9 @@
                         "value": "subsurface hydrocarbon storage"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-storage_in_depleted_oil_reservoir",
@@ -158,7 +170,9 @@
                         "value": "storage in depleted hydrocarbon reservoir"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface",
@@ -187,7 +201,9 @@
                                 "value": "(ates)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-borehole_thermal_energy_storage",
@@ -214,7 +230,9 @@
                                 "value": "geothermal probe"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-cavern_thermal_energy_storage",
@@ -226,7 +244,9 @@
                                 "value": "(ctes)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-high-temperature_aquifer_thermal_energy_storage",
@@ -238,7 +258,9 @@
                                 "value": "(ht-ates)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-low-temperature_aquifer_thermal_energy_storage",
@@ -250,7 +272,9 @@
                                 "value": "(lt-ates)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-medium-temperature_aquifer_thermal_energy_storage",
@@ -262,7 +286,9 @@
                                 "value": "(mt-ates)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-thermal_energy_storage_in_the_subsurface-mine_thermal_energy_storage",
@@ -274,9 +300,13 @@
                                 "value": "(mtes)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-waste_storage_in_the_subsurface",
@@ -323,7 +353,9 @@
                                 "value": "nuclear waste storage in the subsurface"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_storage-waste_storage_in_the_subsurface-wastewater_storage_in_the_subsurface",
@@ -341,11 +373,17 @@
                                 "value": "underground wastewater disposal"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production",
@@ -400,7 +438,9 @@
                                 "value": "(ags)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-closed_loop_system",
@@ -418,7 +458,9 @@
                                 "value": "(bhe)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-deep_geothermal_energy",
@@ -426,7 +468,9 @@
                         "value": "deep geothermal energy",
                         "label": "deep geothermal energy",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-enhanced_geothermal_system",
@@ -438,7 +482,9 @@
                                 "value": "(egs)"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-geothermal_doublet",
@@ -450,7 +496,9 @@
                                 "value": "hydrothermal doublet"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir",
@@ -458,7 +506,9 @@
                         "value": "geothermal reservoir",
                         "label": "geothermal reservoir",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-geothermal_reservoir_temperature",
@@ -466,7 +516,9 @@
                         "value": "geothermal reservoir temperature",
                         "label": "geothermal reservoir temperature",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-high_enthalpy_geothermal_energy",
@@ -481,7 +533,9 @@
                                 "value": "high enthalphy reservoir"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-hydrothermal_reservoir",
@@ -489,7 +543,9 @@
                         "value": "hydrothermal reservoir",
                         "label": "hydrothermal reservoir",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-low_enthalpy_geothermal_energy",
@@ -507,7 +563,9 @@
                                 "value": "dugs"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-mine_geothermal_energy_provision",
@@ -522,7 +580,9 @@
                                 "value": "mine tailings"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-open_loop_system",
@@ -534,7 +594,9 @@
                                 "value": "open-loop system"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-geothermal_energy_extraction-shallow_geothermal_energy",
@@ -542,9 +604,13 @@
                         "value": "shallow geothermal energy",
                         "label": "shallow geothermal energy",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrocarbon_energy_production",
@@ -569,7 +635,9 @@
                                 "value": "hydrocarbon reservoir"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrocarbon_energy_production-oil_field",
@@ -587,9 +655,13 @@
                                 "value": "hydrocarbon reservoir"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrogen_energy_production",
@@ -608,7 +680,9 @@
                                 "value": "turquoise hydrogen production"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrogen_energy_production-native_hydrogen",
@@ -616,7 +690,9 @@
                         "value": "native hydrogen",
                         "label": "native hydrogen",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrogen_energy_production-polymer_electrolyte_membrane_electrolysis",
@@ -628,7 +704,9 @@
                                 "value": "green hydrogen production"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming",
@@ -640,7 +718,9 @@
                                 "value": "grey hydrogen production"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/subsurface_energy_production-hydrogen_energy_production-steam_methane_reforming_with_carbon_capture_and_storage",
@@ -652,11 +732,17 @@
                                 "value": "blue hydrogen production"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/ore_mine",
@@ -691,9 +777,13 @@
                         "value": "mine disposal"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/civil_engineered_setting",
@@ -715,7 +805,9 @@
                 "value": "building foundation",
                 "label": "building foundation",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/civil_engineered_setting-dam_construction_-_geological_aspects",
@@ -723,7 +815,9 @@
                 "value": "dam construction - geological aspects",
                 "label": "dam construction - geological aspects",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/civil_engineered_setting-road_construction_-_geotechnical_aspects",
@@ -731,7 +825,9 @@
                 "value": "road construction - geotechnical aspects",
                 "label": "road construction - geotechnical aspects",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/civil_engineered_setting-tunnel",
@@ -746,7 +842,9 @@
                         "value": "road tunnel"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/civil_engineered_setting-underground_research_facility",
@@ -758,9 +856,13 @@
                         "value": "underground science lab"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/induced_seismicity",
@@ -790,7 +892,9 @@
                 "value": "bedrotto laboratory"
             }
         ],
-        "children": []
+        "children": [],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/subsurface\/1.4\/surface_subsidence",
@@ -813,8 +917,12 @@
                         "value": "sink hole"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     }
 ]

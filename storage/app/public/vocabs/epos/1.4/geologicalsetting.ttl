@@ -3,6 +3,8 @@
 @prefix ui: <http://purl.org/linked-data/registry-ui#> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting>
   a skos:ConceptScheme ;
@@ -19,7 +21,10 @@
   skos:topConceptOf <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
   skos:prefLabel "tectonic plate boundary" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/plateMarginSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/plateMarginSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary>
   a skos:Concept ;
@@ -35,7 +40,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary> ;
   skos:prefLabel "continental collision" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/collisionalSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/collisionalSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-orogen>
   a skos:Concept ;
@@ -155,7 +163,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary> ;
   skos:prefLabel "subduction" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/subductionZoneSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/subductionZoneSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-ocean_subduction>
   a skos:Concept ;
@@ -183,21 +194,30 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction> ;
   skos:prefLabel "volcanic arc" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-volcanic_arc> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/volcanicArcSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/volcanicArcSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction> ;
   skos:prefLabel "forearc basin" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/forearcSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/forearcSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction> ;
   skos:prefLabel "trench" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deepSeaTrenchSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deepSeaTrenchSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-accretionary_wedge>
   a skos:Concept ;
@@ -211,7 +231,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction> ;
   skos:prefLabel "back-arc basin" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-back-arc_basin> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/backArcSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/backArcSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subducting_plate_interface>
   a skos:Concept ;
@@ -333,7 +356,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-divergent_tectonic_plate_boundary> ;
   skos:prefLabel "rifting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/continentalRiftSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/continentalRiftSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-narrow_rift>
   a skos:Concept ;
@@ -439,7 +465,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-divergent_tectonic_plate_boundary> ;
   skos:prefLabel "plate spreading" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/activeSpreadingCenterSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/activeSpreadingCenterSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-mid-ocean_ridge>
   a skos:Concept ;
@@ -475,7 +504,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary> ;
   skos:prefLabel "transcurrent tectonic plate boundary" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/transformPlateBoundarySetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/transformPlateBoundarySetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-pull-apart_basin>
   a skos:Concept ;
@@ -526,7 +558,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting> ;
   skos:prefLabel "hot spot magmatism" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/intraplate_setting-hot_spot_magmatism> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/hotSpotSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/hotSpotSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting-hot_spot_magmatism-volcanic_island>
   a skos:Concept ;
@@ -598,7 +633,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting-cratonisation> ;
   skos:prefLabel "craton" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/intraplate_setting-cratonisation-craton> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/intracratonicSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/intracratonicSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting-cratonisation-cratonic_basin>
   a skos:Concept ;
@@ -613,7 +651,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting> ;
   skos:prefLabel "passive continental margin" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/intraplate_setting-passive_continental_margin> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/passiveContinentalMarginSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/passiveContinentalMarginSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/intraplate_setting-passive_continental_margin-continent-ocean_transition>
   a skos:Concept ;
@@ -714,21 +755,30 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure> ;
   skos:prefLabel "Earth mantle" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/earths_structure-earth_mantle> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/mantleSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/mantleSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure-earth_mantle-upper_mantle>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure-earth_mantle> ;
   skos:prefLabel "upper mantle" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/earths_structure-earth_mantle-upper_mantle> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/upperMantleSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/upperMantleSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure-earth_mantle-lower_mantle>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure-earth_mantle> ;
   skos:prefLabel "lower mantle" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/earths_structure-earth_mantle-lower_mantle> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lowerMantleSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lowerMantleSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/earths_structure-earth_mantle-lithosphere-asthenosphere_boundary>
   a skos:Concept ;
@@ -973,7 +1023,10 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting> ;
   skos:prefLabel "glacier related setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-glacier_related_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/glacierRelatedSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/glacierRelatedSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting>
   a skos:Concept ;
@@ -981,49 +1034,70 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting> ;
   skos:prefLabel "shoreline setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/shorelineSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/shorelineSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-beach_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "beach setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-beach_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/beachSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/beachSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-estuary_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "estuary setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-estuary_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/estuarySetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/estuarySetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-lagoonal_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "lagoonal setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-lagoonal_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lagoonalSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lagoonalSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-tidal_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "tidal setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-tidal_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/tidalSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/tidalSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-rocky_coast_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "rocky coast setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-rocky_coast_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/rockyCoastSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/rockyCoastSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-shoreline_setting> ;
   skos:prefLabel "barrier island coastline setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/barrierIslandCoastlineSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/barrierIslandCoastlineSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting>
   a skos:Concept ;
@@ -1031,14 +1105,20 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting> ;
   skos:prefLabel "river plain system setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-river_plain_system_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverPlainSystemSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverPlainSystemSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-floodplain_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting> ;
   skos:prefLabel "floodplain setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-river_plain_system_setting-floodplain_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/floodplainSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/floodplainSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-river_channel_setting>
   a skos:Concept ;
@@ -1046,21 +1126,30 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting> ;
   skos:prefLabel "river channel setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-river_plain_system_setting-river_channel_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverChannelSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/riverChannelSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-river_channel_setting> ;
   skos:prefLabel "braided river channel setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/braidedRiverChannelSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/braidedRiverChannelSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-river_plain_system_setting-river_channel_setting> ;
   skos:prefLabel "meandering river channel setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/meanderingRiverChannelSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/meanderingRiverChannelSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-deltaic_system_setting>
   a skos:Concept ;
@@ -1068,21 +1157,30 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting> ;
   skos:prefLabel "deltaic system setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-deltaic_system_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deltaicSystemSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deltaicSystemSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-deltaic_system_setting> ;
   skos:prefLabel "estuarine delta setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/estuarineDeltaSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/estuarineDeltaSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-deltaic_system_setting> ;
   skos:prefLabel "lacustrine delta setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lacustrineDeltaSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/lacustrineDeltaSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting>
   a skos:Concept ;
@@ -1090,47 +1188,68 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting> ;
   skos:prefLabel "marine setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/marineSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/marineSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-continental_shelf>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "continental shelf" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-continental_shelf> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/continentalShelfSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/continentalShelfSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-slope-rise_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "slope-rise setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-slope-rise_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/slopeRiseSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/slopeRiseSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-submarine_fan_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "submarine fan setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-submarine_fan_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/submarineFanSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/submarineFanSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-basin_plain_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "basin plain setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-basin_plain_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/basinPlainSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/basinPlainSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-deep_sea_trench_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "deep sea trench setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-deep_sea_trench_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deepSeaTrenchSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/deepSeaTrenchSetting> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting-abyssal_setting>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting/surface_morphological_setting-marine_setting> ;
   skos:prefLabel "abyssal setting" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/geologicalsetting/1.4/surface_morphological_setting-marine_setting-abyssal_setting> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/geologicalsetting> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/abyssalSetting> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/EventEnvironmentValue/abyssalSetting> ;
+  dc:source "inspire" .
 

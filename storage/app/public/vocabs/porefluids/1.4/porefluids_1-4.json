@@ -5,7 +5,9 @@
         "value": "vacuum",
         "label": "vacuum",
         "synonyms": [],
-        "children": []
+        "children": [],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/solid_phase",
@@ -20,9 +22,13 @@
                 "value": "ice in pores",
                 "label": "ice in pores",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase",
@@ -37,7 +43,9 @@
                 "value": "decane",
                 "label": "decane",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-oil_in_pores",
@@ -52,7 +60,9 @@
                         "value": "hydrocarbon oil",
                         "label": "hydrocarbon oil",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-oil_in_pores-mineral_oil",
@@ -60,7 +70,9 @@
                         "value": "mineral oil",
                         "label": "mineral oil",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-oil_in_pores-silicon_oil",
@@ -68,9 +80,13 @@
                         "value": "silicon oil",
                         "label": "silicon oil",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-salt_brine",
@@ -82,7 +98,9 @@
                         "value": "brine"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-water_in_pores",
@@ -110,7 +128,9 @@
                                 "value": "di-water"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-water_in_pores-demineralized_water",
@@ -125,7 +145,9 @@
                                 "value": "demiwater"
                             }
                         ],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     },
                     {
                         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/liquid_phase-water_in_pores-tap_water_in_pores",
@@ -133,11 +155,17 @@
                         "value": "tap water in pores",
                         "label": "tap water in pores",
                         "synonyms": [],
-                        "children": []
+                        "children": [],
+                        "external_uri": "",
+                        "external_vocab_scheme": ""
                     }
-                ]
+                ],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     },
     {
         "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase",
@@ -159,7 +187,9 @@
                         "value": "roomdry"
                     }
                 ],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-argon_ar",
@@ -167,7 +197,9 @@
                 "value": "argon (Ar)",
                 "label": "argon (Ar)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-carbon_dioxide_co2",
@@ -175,7 +207,9 @@
                 "value": "carbon dioxide (CO2)",
                 "label": "carbon dioxide (CO2)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-hydrogen_h2",
@@ -183,7 +217,9 @@
                 "value": "hydrogen (H2)",
                 "label": "hydrogen (H2)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-methane_ch4",
@@ -191,7 +227,9 @@
                 "value": "methane (CH4)",
                 "label": "methane (CH4)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-nitrogen_n2",
@@ -199,7 +237,9 @@
                 "value": "nitrogen (N2)",
                 "label": "nitrogen (N2)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             },
             {
                 "uri": "https:\/\/epos-msl.uu.nl\/voc\/porefluids\/1.4\/gas_phase-oxygen_o2",
@@ -207,8 +247,12 @@
                 "value": "oxygen (O2)",
                 "label": "oxygen (O2)",
                 "synonyms": [],
-                "children": []
+                "children": [],
+                "external_uri": "",
+                "external_vocab_scheme": ""
             }
-        ]
+        ],
+        "external_uri": "",
+        "external_vocab_scheme": ""
     }
 ]

@@ -3,6 +3,8 @@
 @prefix ui: <http://purl.org/linked-data/registry-ui#> .
 @prefix ldp: <http://www.w3.org/ns/ldp#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling>
   a skos:ConceptScheme ;
@@ -206,28 +208,40 @@
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold> ;
   skos:prefLabel "modelled anticline" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_anticline> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/anticline> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/anticline> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_antiform>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold> ;
   skos:prefLabel "modelled antiform" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_antiform> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/antiform> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/antiform> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_syncline>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold> ;
   skos:prefLabel "modelled syncline" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_syncline> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/syncline> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/syncline> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_synform>
   a skos:Concept ;
   skos:broader <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_fold> ;
   skos:prefLabel "modelled synform" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/analoguemodelling/1.4/modeled_structure-modelled_deformation_structure-modelled_fold-modelled_synform> ;
-  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> .
+  skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling> ;
+  rdfs:seeAlso <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/synform> ;
+  skos:exactMatch <http://inspire.ec.europa.eu/codelist/FoldProfileTypeValue/synform> ;
+  dc:source "inspire" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/analoguemodelling/modeled_structure-modelled_deformation_structure-modelled_boudinage>
   a skos:Concept ;
