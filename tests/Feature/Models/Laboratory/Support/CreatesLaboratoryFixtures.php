@@ -75,6 +75,43 @@ trait CreatesLaboratoryFixtures
             'fast_domain_id' => null,
             'fast_domain_name' => 'domain',
         ];
+        
     }
 
+    protected function makeVocabularyWithKeyword(): Keyword
+    {
+        $vocabulary = Vocabulary::create([
+            'name' => 'Materials',
+            'uri' => 'https://example.org/vocab/lab',
+            'display_name' => 'Materials',
+        ]);
+
+        return $vocabulary->keywords()->create([
+            'value' => 'widget',
+            'uri' => 'https://example.org/vocab/lab/widget',
+            'level' => 0,
+            'hyperlink' => '',
+            'label' => 'Widget',
+        ]);
+    }
+
+    protected function minimalEquipmentAttributes(?Keyword $keyword = null): array
+    {
+        return [
+            'description' => 'Equipment description',
+            'description_html' => '<p>Equipment description</p>',
+            'category_name' => 'cat',
+            'type_name' => 'type',
+            'domain_name' => 'domain',
+            'group_name' => 'group',
+            'brand' => 'brand',
+            'website' => 'https://eq.example.org',
+            'latitude' => '',
+            'longitude' => '',
+            'altitude' => '',
+            'external_identifier' => 'eq-1',
+            'name' => 'Equipment one',
+            'keyword_id' => $keyword?->id,
+        ];
+    }
 }
