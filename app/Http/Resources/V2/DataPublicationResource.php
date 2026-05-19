@@ -29,7 +29,7 @@ enum VocabularyType: string
 /** @mixin DataPublication */
 class DataPublicationResource extends JsonResource
 {
-    private ?EndpointContext $context = null;
+    private EndpointContext $context = EndpointContext::ALL;
 
     private array $uriStartsPerSubject = [];
 
