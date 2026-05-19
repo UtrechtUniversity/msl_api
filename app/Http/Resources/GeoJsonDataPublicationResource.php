@@ -15,10 +15,8 @@ class GeoJsonDataPublicationResource extends JsonResource
         return [
             'data_publications' => $dataPublications->map(
                 fn ($dataPublication) => (
-                    new DataPublicationResource(
-                        resource: $dataPublication,
-                        includesGeoJson: false
-                    ))
+                    (new DataPublicationResource($dataPublication))->setIncludesGeoJson(false)
+                )
             ),
             'geojson' => GeoJsonFeaturePerDataPublicationResource::collection($this->resource->features),
         ];
