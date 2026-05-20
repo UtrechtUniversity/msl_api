@@ -18,6 +18,8 @@ class KeywordResource extends JsonResource
         return [
             'name' => $this->value,
             'uri' => $this->uri,
+            'external_uri' => $this->external_uri,
+            'external_vocab_scheme' => $this->external_vocab_scheme,
             'synonyms' => KeywordSearchResource::collection($this->getSynonyms()),
             'parent' => ($this->hasParent() ? KeywordFlatResource::make($this->parent) : null),
             'children' => KeywordFlatResource::collection($this->getChildren()),
