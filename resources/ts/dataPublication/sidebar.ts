@@ -63,7 +63,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="publication-link">
-                 <div class="publication-content">
+                 <div class="data-publication-content">
                 <p class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</p>
                 <p class="data-publication-authors"> ${authors}</p>
                 <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>

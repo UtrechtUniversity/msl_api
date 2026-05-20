@@ -7,7 +7,7 @@
         @endforeach
     </div>
 
-    <div id='sidebar-content' class="w-70 bg-primary-100 flex-1 overflow-auto">
+    <div id='sidebar-content' class="w-70 bg-primary-100 flex-1 overflow-y-auto max-h-[720px]">
         @foreach ($tabs as $tab)
             <div data-content={{ $tab['name'] }} {{ !$tab['default'] ? 'hidden' : '' }}>
                 @include($tab['component'])
