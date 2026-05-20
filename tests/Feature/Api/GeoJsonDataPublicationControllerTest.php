@@ -51,6 +51,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                         'data_publications.9',
                         fn (AssertableJson $json) => $json->where('title', 'Paleomagnetic evidence for the existence of the geomagnetic field 3.5 Ga ago (Dataset)')
                             ->where('name', '86dcccf60dc76092265994e2c6b50470')
+                            ->where('inclusive', false)
                             ->where('portalLink', route('data-publication-detail', ['id' => '86dcccf60dc76092265994e2c6b50470']))
                             ->where('doi', '10.7288/v4/magic/20541')
                             ->where('source', 'https://earthref.org/MagIC/20541')
@@ -139,7 +140,7 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                 )->has(
                     'data.inclusive',
                     fn (AssertableJson $json) => $json
-                        ->count('data_publications', 2)->where('data_publications.0.doi', '10.1594/pangaea.770250')->where('data_publications.1.doi', '10.1594/pangaea.770250_3')
+                        ->count('data_publications', 2)->where('data_publications.0.doi', '10.1594/pangaea.770250')->where('data_publications.0.inclusive', true)->where('data_publications.1.doi', '10.1594/pangaea.770250_3')
                         ->count('geojson', 3)->has(
                             'geojson.0',
                             fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->where('data_publication_doi', '10.1594/pangaea.770250')->etc()
