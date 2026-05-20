@@ -59,6 +59,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         item.setAttribute('data-id', dataPublication.doi)
 
         const authors = dataPublication.creators.length > 0 ? dataPublication.creators.map(creator => creator.fullName).join(' | ') : '- no authors found -';
+        const icon = (dataPublication.inclusive) ? '<i class="fa-solid fa-circle-xmark"></i>' : '<i class="fa-solid fa-xmark"></i>'
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="publication-link">
@@ -68,8 +69,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>
                 </div>
                 <span class="publication-icon">
-                   <i class="fa-solid fa-circle-xmark"></i>
-                   <i class="fa-solid fa-xmark"></i>
+                  ${icon}
                  </span>
             </a>
             `;
