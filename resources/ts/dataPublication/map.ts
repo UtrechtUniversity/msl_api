@@ -165,7 +165,7 @@ class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(doi)
+                this.sideBar.highlight(doi, { scroll: true })
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({

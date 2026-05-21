@@ -41,9 +41,17 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         * Highlight items of the map related to specific
         * data publication
         */
-    highlight(id: string) {
-        $('[data-id="' + id + '"]').addClass('highlight');
+    highlight(id: string, { scroll }: { scroll: boolean } = { scroll: false }) {
+        const element = $('[data-id="' + id + '"]')
+        element.addClass('highlight');
+        if (scroll) {
+            element[0]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        }
+
+
     },
+
+
     /**
         * Remove highlight in items of the map related to specific
         * data publication

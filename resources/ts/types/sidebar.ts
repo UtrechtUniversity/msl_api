@@ -18,7 +18,7 @@ export interface Sidebar {
 
     includes: Evented,
     initialize({ id }: { id: string }): void
-    highlight(id: string): void,
+    highlight(id: string, opts?: { scroll: boolean }): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
     populate(dataPublications: { 'all': GeoJsonDataPublications }): void,
