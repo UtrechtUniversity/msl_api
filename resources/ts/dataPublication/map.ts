@@ -179,7 +179,7 @@ class DataPublicationMap {
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                _resultSet: e.resultSet,
+                resultSet: e.resultSet,
                 highlightOrReset: 'highlight'
             });
             this.sideBar.highlight(e.id)
@@ -189,7 +189,7 @@ class DataPublicationMap {
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                _resultSet: e.resultSet,
+                resultSet: e.resultSet,
                 highlightOrReset: 'reset'
             })
             this.sideBar.removeHighlight(e.id)

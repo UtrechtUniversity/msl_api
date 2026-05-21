@@ -43,13 +43,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         * data publication
         */
     highlight(id: string, { scroll }: { scroll: boolean } = { scroll: false }) {
-        const element = $('[data-id="' + id + '"]')
-        element.addClass('highlight');
+        const elements = $('[data-id="' + id + '"]')
+        assertSingleArray(elements, `Found more than one datapublications with doi '${id}' to highlight. This is a bug. `)
+        const element = elements[0]
+        element.classList.add('highlight');
         if (scroll) {
-            element[0]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
         }
-
-
     },
 
     /**
@@ -88,6 +88,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         assertElementNotNull(this._resultList, { name: "resultList" });
 
+        const resultSet = 'exclusive'
         this._resultList.innerHTML = '';
         dataPublications[EXCLUSIVE].data_publications.forEach(dataPublication => {
 
@@ -97,7 +98,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)
                 this._map.fire('sidebar-hover', {
                     id: dataPublication.doi,
-                    resultSet: 'all'
+                    resultSet
                 });
 
             });
@@ -105,7 +106,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             item.addEventListener('mouseleave', () => {
                 assertNotNull(this._map, `Map is undefined. This is a bug.`)
                 this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi, resultSet: 'all' })
+                    { id: dataPublication.doi, resultSet })
 
             });
 
@@ -165,3 +166,10 @@ function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is
         }
     }
 }
+
+function assertSingleArray<T>(arr: ArrayLike<T>, message: string): asserts arr is ArrayLike<T> & { 0: T; length: 1 } {
+    if (arr.length !== 1) {
+        throw new Error(`Expected array to have exactly 1 element, but it has ${arr.length}.`);
+    }
+}
+
