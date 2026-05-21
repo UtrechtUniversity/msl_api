@@ -20,7 +20,6 @@ class TestSharedStorageReadCommand extends Command
                 return 0;
             }
         }
-        $this->error('Failed to read file!');
-        return 1;
+        $this->fail('Failed to read file!');
     }
 }

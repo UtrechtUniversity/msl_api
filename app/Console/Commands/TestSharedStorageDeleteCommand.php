@@ -18,10 +18,10 @@ class TestSharedStorageDeleteCommand extends Command
             if(!Storage::disk('shared_storage')->exists('test/test.txt')) {
                 $this->info('File deleted successfully!');
             } else {
-                $this->error('Failed to delete file!');
+                $this->fail('Failed to delete file!');
             }
         } else {
-            $this->error('File does not exist!');
+            $this->fail('File does not exist!');
         }
 
         if(storage::disk('shared_storage')->exists('test')) {
@@ -29,7 +29,7 @@ class TestSharedStorageDeleteCommand extends Command
             if(!storage::disk('shared_storage')->exists('test')) {
                 $this->info('Directory deleted successfully!');
             } else {
-                $this->error('Failed to delete directory!');
+                $this->fail('Failed to delete directory!');
             }
         }
 

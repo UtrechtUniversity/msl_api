@@ -22,7 +22,7 @@ class TestSharedStorageWriteCommand extends Command
         if(Storage::disk('shared_storage')->exists('test/test.txt')) {
             $this->info('File written successfully!');
         } else {
-            $this->error('Failed to write file!');
+            $this->fail('Failed to write file!');
         }
     }
 }
