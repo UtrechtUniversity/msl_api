@@ -20,12 +20,17 @@ class InclusiveExclusiveGeoJsonFeatureService
     public function createInclusiveExclusiveGeoJson(array $dataPublications, BoundingBox $bbox): InclusiveExclusiveGeoJsonFeatureDataPublication
     {
 
-        //  split + sort
+        //  split + sort features
         $sortedFeatures = $this->sortFeatures($dataPublications);
-        // inclusive
+        // Filter and get dictionary with inclusive datapublications and the inclusive features
+        // We are going to use the dictionary in order to add more information about exclusivity/inclusivity
+        // in the next step in an easier and more performant way
         [$inclusivePublicationsWithDois, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
 
+        // Get exclusive list of datapublications including information about their inclusivity (or not)
+        // Reminder: the exclusive list of publications is a superset of the inclusive list.
         $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusivePublicationsWithDois);
+        // Get the inclusive datapublications including information about their inclusivity.
         $inclusivePublications = array_map(function (DataPublication $dp) {
             return new InclusiveOrNotDataPublication($dp, inclusiveOrNot: true);
         }, array_values($inclusivePublicationsWithDois));
@@ -104,6 +109,10 @@ class InclusiveExclusiveGeoJsonFeatureService
     }
 
     /**
+     * Filter and get back
+     * 1. array with inclusive geoFeatures
+     * 2. dictionary with dois as keys and inclusive datapublications as values
+     *
      * @param  array<int,GeoJsonFeaturePerDataPublication>  $features
      * @return array{0: array<string,DataPublication>, 1: array<int,GeoJsonFeaturePerDataPublication>}
      */
