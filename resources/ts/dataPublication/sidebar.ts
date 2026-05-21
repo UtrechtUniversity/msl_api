@@ -88,33 +88,34 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         assertElementNotNull(this._resultList, { name: "resultList" });
 
-        const resultSet = 'exclusive'
-        this._resultList.innerHTML = '';
-        dataPublications[EXCLUSIVE].data_publications.forEach(dataPublication => {
+        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+            this._resultList.innerHTML = '';
+            for (const dataPublication of dataPublications[tabName].data_publications) {
 
-            const item = this._createListItem(dataPublication)
 
-            item.addEventListener('mouseover', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-hover', {
-                    id: dataPublication.doi,
-                    resultSet
+                const item = this._createListItem(dataPublication)
+
+                item.addEventListener('mouseover', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-hover', {
+                        id: dataPublication.doi,
+                        resultSet: tabName
+                    });
+
                 });
 
-            });
+                item.addEventListener('mouseleave', () => {
+                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                    this._map.fire('sidebar-leave',
+                        { id: dataPublication.doi, resultSet: tabName })
 
-            item.addEventListener('mouseleave', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-leave',
-                    { id: dataPublication.doi, resultSet })
-
-            });
+                });
 
 
-            this._resultList!.appendChild(item);
-        });
+                this._resultList.appendChild(item);
+            };
 
-
+        }
 
     },
 
