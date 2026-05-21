@@ -5,6 +5,7 @@ import type { DataPublication, GeoJsonDataPublications, InclusiveExclusiveGeoJso
 import type { Sidebar, ViewPerTab } from "../types/sidebar.js";
 import { assertNotNull } from "../helpers.js";
 import { TAB_CONFIG, } from "./utils.js";
+import { EXCLUSIVE } from "../types/map.js";
 
 
 //TODO Rename from sidebar
@@ -51,7 +52,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
     },
 
-
     /**
         * Remove highlight in items of the map related to specific
         * data publication
@@ -83,13 +83,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             `;
         return item
     },
-    populate: function (dataPublications: { 'all': GeoJsonDataPublications }) {
+    populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
 
         assertElementNotNull(this._resultList, { name: "resultList" });
 
         this._resultList.innerHTML = '';
-        dataPublications['all'].data_publications.forEach(dataPublication => {
+        dataPublications[EXCLUSIVE].data_publications.forEach(dataPublication => {
 
             const item = this._createListItem(dataPublication)
 

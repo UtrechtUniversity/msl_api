@@ -6,7 +6,7 @@ import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
-import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
+import { EXCLUSIVE } from "../types/map.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";
@@ -16,16 +16,13 @@ interface SidebarHoverEvent extends LeafletEvent {
     id: string;
     resultSet: ResultSet
 }
-interface SidebarTabClickEvent extends LeafletEvent {
-    id: ResultSet
-}
+
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
 type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
-
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
@@ -80,7 +77,7 @@ class DataPublicationMap {
         { doi, resultSet, highlightOrReset }:
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
 
-        const geoFeatures = this.groupedMarkers[EXCLUSIVE][doi]
+        const geoFeatures = this.groupedMarkers[resultSet][doi]
         assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
@@ -108,13 +105,9 @@ class DataPublicationMap {
 
     private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            this.addFeaturesInMarkers(geoList, { resultSet: tabName })
-            if (tabInfo.active)
-                this.map.addLayer(this.markers[tabName]);
-
-        }
+        const tabName: ResultSet = 'exclusive'
+        this.addFeaturesInMarkers(geoList, { resultSet: tabName })
+        this.map.addLayer(this.markers[tabName]);
 
     }
 
@@ -152,9 +145,9 @@ class DataPublicationMap {
 
             // Store reference
             const doi = geoFeatureWithInfo.data_publication_doi
-            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[EXCLUSIVE][doi]
+            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[resultSet][doi]
 
-            this.groupedMarkers[EXCLUSIVE][doi] =
+            this.groupedMarkers[resultSet][doi] =
                 geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
 
 
@@ -186,7 +179,7 @@ class DataPublicationMap {
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                resultSet: e.resultSet,
+                _resultSet: e.resultSet,
                 highlightOrReset: 'highlight'
             });
             this.sideBar.highlight(e.id)
@@ -196,26 +189,14 @@ class DataPublicationMap {
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                resultSet: e.resultSet,
+                _resultSet: e.resultSet,
                 highlightOrReset: 'reset'
             })
             this.sideBar.removeHighlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
-
-
-        this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
-            this.handleSidebarTab(e.id)
-        }) as LeafletEventHandlerFn);
-
     }
 
-    private handleSidebarTab(activatedTab: ResultSet) {
-        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-        // this.sideBar.handleActivationOfTab(activatedTab)
-        this.map.addLayer(this.markers[activatedTab])
-        this.map.removeLayer(this.markers[deactivateTab])
-    }
     private async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
         let startPoint: LatLng | undefined = undefined;
@@ -360,7 +341,7 @@ class DataPublicationMap {
 
         const geo = await this.getJsonFromRequest(boundingBox);
         await this.drawResponse(geo);
-        this.sideBar.populate({ 'all': geo[EXCLUSIVE] });
+        this.sideBar.populate(geo);
 
     }
 }
