@@ -2,10 +2,10 @@
 
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
-import type { Sidebar, ViewPerTab } from "../types/sidebar.js";
+import type { Sidebar } from "../types/sidebar";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
-import { type ResultSet } from "../types/map.js";
+import type { ResultSet } from "../types/map";
 
 
 
