@@ -35,7 +35,7 @@ class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
     sideBar: Sidebar;
-    groupedMarkers: { all: GroupedLayer } = { 'all': {} }
+    groupedMarkers: GroupedLayerMapping = getResultSetMappingObj<GroupedLayer>(() => { return {} })
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
@@ -80,7 +80,7 @@ class DataPublicationMap {
         { doi, resultSet, highlightOrReset }:
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
 
-        const geoFeatures = this.groupedMarkers['all'][doi]
+        const geoFeatures = this.groupedMarkers[EXCLUSIVE][doi]
         assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
             assertIsPath(geoFeature)
@@ -152,9 +152,9 @@ class DataPublicationMap {
 
             // Store reference
             const doi = geoFeatureWithInfo.data_publication_doi
-            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers['all'][doi]
+            const geoFeaturesForDoi: Layer[] | undefined = this.groupedMarkers[EXCLUSIVE][doi]
 
-            this.groupedMarkers['all'][doi] =
+            this.groupedMarkers[EXCLUSIVE][doi] =
                 geoFeaturesForDoi ? [...geoFeaturesForDoi, layer] : [layer]
 
 

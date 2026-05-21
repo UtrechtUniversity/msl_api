@@ -3,7 +3,7 @@ import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEvent
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import { sideBar } from './sidebarDeprecated.js'
-import type { Sidebar } from "../types/sidebar.js";
+import type { Sidebar } from "../types/sidebarDeprecated.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
