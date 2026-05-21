@@ -71,13 +71,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const icon = (dataPublication.inclusive) ? '<i class="fa-solid fa-circle-xmark"></i>' : '<i class="fa-solid fa-xmark"></i>'
 
         item.innerHTML = `
-                <a href="${dataPublication.portalLink}" target="_blank" class="publication-link">
+                <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
                  <div class="data-publication-content">
                 <p class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</p>
                 <p class="data-publication-authors"> ${authors}</p>
                 <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>
                 </div>
-                <span class="publication-icon">
+                <span class="data-publication-icon">
                   ${icon}
                  </span>
             </a>
@@ -139,29 +139,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
 
-
-
-
-
-
-function assertSideBarNotNull(sideBar: HTMLElement | null): asserts sideBar is HTMLElement {
-    return assertNotNull(sideBar, `Sidebar should be set by now.This is a bug.`)
-}
-
-function assertElementNotNull(element: HTMLElement | null, { name, id }: { name: string, id?: true }): asserts element is HTMLElement {
-    if (!id)
-        return assertNotNull(sideBar, ` The element '${name}' should be set by now.This is a bug.`)
-    return assertNotNull(sideBar, ` The element with id '${name}' should be set by now.This is a bug.`)
-
-}
-
-function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is { [K in keyof ViewPerTab]: NonNullable<ViewPerTab[K]> } {
-    for (const [key, value] of Object.entries(viewPerTab)) {
-        if (value == null) {
-            throw new Error(`viewPerTab.${key} is null. This is a bug.`);
-        }
-    }
-}
 
 function assertSingleArray<T>(arr: ArrayLike<T>, message: string): asserts arr is ArrayLike<T> & { 0: T; length: 1 } {
     if (arr.length !== 1) {

@@ -1,6 +1,6 @@
 @reference "../app.css";
 
-.publication-link{
+.data-publication-link{
     
     position: relative;
     display: block;
@@ -59,7 +59,7 @@
     color: var(--color-secondary-900);
 }
 
-.publication-icon {
+.data-publication-icon {
     position: absolute;
     right: 12px;
     bottom: 12px;
