@@ -3,7 +3,6 @@
 namespace Tests\Feature\Models;
 
 use App\Models\LaboratoryManager;
-use App\Models\LaboratoryOrganization;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -13,12 +12,6 @@ class LaboratoryManagerTest extends TestCase
 
     public function test_laboratories_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
-            'fast_id' => 1,
-            'name' => 'Test organization',
-            'external_identifier' => 'ext-org-1',
-        ]);
-
         $manager = LaboratoryManager::create([
             'email' => 'manager@example.org',
             'first_name' => 'Pat',
@@ -36,8 +29,6 @@ class LaboratoryManagerTest extends TestCase
         ]);
 
         $laboratory = $manager->laboratories()->create([
-            'laboratory_organization_id' => $organization->id,
-            'fast_id' => 10,
             'msl_identifier' => 'lab_under_manager',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -52,12 +43,10 @@ class LaboratoryManagerTest extends TestCase
             'address_postalcode' => '2000BB',
             'address_city' => 'Utrecht',
             'address_country_code' => 'NL',
-            'address_country_name' => 'Netherlands',
-            'latitude' => '52.0',
-            'longitude' => '5.0',
+            'latitude' => '',
+            'longitude' => '',
             'altitude' => '0',
             'external_identifier' => 'ext-lab-1',
-            'fast_domain_id' => null,
             'fast_domain_name' => 'domain',
         ]);
 
