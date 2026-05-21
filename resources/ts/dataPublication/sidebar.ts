@@ -1,14 +1,13 @@
 /* global L */
 
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { DataPublication, GeoJsonDataPublications, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import type { Sidebar, ViewPerTab } from "../types/sidebar.js";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
-import { EXCLUSIVE, type ResultSet } from "../types/map.js";
+import { type ResultSet } from "../types/map.js";
 
 
-//TODO Rename from sidebar
 
 export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prototype */ {
     includes: (Evented.prototype || Mixin.Events),
@@ -16,16 +15,11 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _map: null,
     _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
 
-    // TODO we need an element which will include the list of datapublications
     initialize: function () {
-        this._sidebar = document.querySelector('#sidebar-content [data-content="Results"]')
+        this._sidebar = document.querySelector(' #sidebar-content [data-content="Results"] #datapublication-results')
         assertNotNull(this._sidebar, 'sidebar')
-        //TODO how to turn from element to htmlelement
-        const list: HTMLElement | null = document.querySelector('#datapublication-results')
-        assertNotNull(list, 'resultList')
-
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            const createdListView = DomUtil.create('div', 'list-view', list)
+            const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
             createdListView.id = tabName + '_data_publications_list'
             createdListView.hidden = !tabInfo.active
             this._tabViews[tabName] = { _tab: null, _listView: createdListView }
@@ -128,17 +122,17 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     resetList: function () {
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            //TODO fix this
-            const tabElements = DomUtil.create('div', 'bla');
-            assertNotNull(tabElements,
+
+            const tabElements = this._tabViews[tabName]
+            assertNotNull(tabElements._listView,
                 'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
             )
-            const listView = tabElements
+            const listView = tabElements._listView
             while (listView.firstChild) {
                 listView.firstChild.remove()
             }
         }
-    },
+    }
 
 });
 

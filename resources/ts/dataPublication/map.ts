@@ -230,7 +230,7 @@ class DataPublicationMap {
                     rectangle = null;
                     this.removeLayers();
                     this.resetMapView();
-                    // this.sideBar.resetList()
+                    this.sideBar.resetList()
                 }
                 return;
             }
@@ -249,7 +249,7 @@ class DataPublicationMap {
                 this.map.removeLayer(rectangle);
                 rectangle = null;
                 this.removeLayers()
-                // this.sideBar.resetList()
+                this.sideBar.resetList()
             }
 
             drawing = true;
