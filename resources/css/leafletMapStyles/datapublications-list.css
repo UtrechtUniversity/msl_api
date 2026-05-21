@@ -7,11 +7,10 @@
 
 }
 
-
-.data-publication-content.highlight .data-publication-title,
-.data-publication-content.highlight .data-publication-authors,
-.data-publication-content.highlight .data-publication-date {
-  @apply whitespace-normal overflow-visible text-clip;
+.data-publication-item.highlight .data-publication-title,
+.data-publication-item.highlight .data-publication-authors,
+.data-publication-item.highlight .data-publication-date {
+  @apply  whitespace-normal overflow-visible text-clip;
 }
 
 .data-publication-item {
