@@ -56,15 +56,11 @@ class DataPublicationMap {
         this.sideBar = new sideBar().addTo(this.map);
     }
 
-
     // Create the map in the beginning
     public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
-
     }
-
 
 
     private drawMap() {
@@ -115,9 +111,7 @@ class DataPublicationMap {
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName })
             if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
-
         }
-
     }
 
 

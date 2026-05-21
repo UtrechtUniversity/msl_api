@@ -6,7 +6,7 @@ import type { Sidebar } from "../types/sidebar.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
-import { EXCLUSIVE } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";
@@ -56,11 +56,7 @@ class DataPublicationMap {
     public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
-
     }
-
-
 
     private drawMap() {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -76,7 +72,6 @@ class DataPublicationMap {
     private setMarkersStyle(
         { doi, resultSet, highlightOrReset }:
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
-
         const geoFeatures = this.groupedMarkers[resultSet][doi]
         assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
@@ -105,10 +100,10 @@ class DataPublicationMap {
 
     private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-        const tabName: ResultSet = 'exclusive'
-        this.addFeaturesInMarkers(geoList, { resultSet: tabName })
-        this.map.addLayer(this.markers[tabName]);
-
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+            this.addFeaturesInMarkers(geoList, { resultSet: tabName })
+            if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
+        }
     }
 
 
