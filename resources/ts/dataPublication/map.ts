@@ -353,7 +353,7 @@ class DataPublicationMap {
     }
 
     private resetGroupedMarkers() {
-        this.groupedMarkers = { 'all': {} };
+        this.groupedMarkers = getResultSetMappingObj<GroupedLayer>(() => ({}));
     }
 
     private async addFeaturesAndSidebarInMap(boundingBox: string) {
