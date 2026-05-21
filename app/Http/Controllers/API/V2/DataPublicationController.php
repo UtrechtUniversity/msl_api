@@ -11,24 +11,26 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Validation\ValidationException;
 
 class DataPublicationController extends BaseDomainApiController
 {
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
      */
-    private $queryMappings = [
+    private array $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_creator_name_text',
         'labName' => 'msl_lab_name_text',
+        'maxArea' => 'msl_surface_area',
     ];
 
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
-    private $queryMappingsAll;
+    private array $queryMappingsAll;
 
     /**
      * Constructs a new controller
@@ -57,8 +59,9 @@ class DataPublicationController extends BaseDomainApiController
                 'tags' => ['nullable', 'string'],
                 'hasDownloads' => ['nullable', 'boolean'],
                 'boundingBox' => ['nullable', new GeoRule],
+                'maxArea' => ['nullable', 'integer', 'min:0'],
             ]);
-        } catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (ValidationException $e) {
             return new ValidationErrorResource($e);
         }
 
@@ -66,6 +69,7 @@ class DataPublicationController extends BaseDomainApiController
         $ckanClient = new Client($this->guzzleClient);
 
         $this->setRequestToCKAN($request, $context);
+
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
