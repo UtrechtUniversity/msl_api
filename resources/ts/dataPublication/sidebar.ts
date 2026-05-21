@@ -4,8 +4,8 @@ import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import type { DataPublication, GeoJsonDataPublications, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
 import type { Sidebar, ViewPerTab } from "../types/sidebar.js";
 import { assertNotNull } from "../helpers.js";
-import { TAB_CONFIG, } from "./utils.js";
-import { EXCLUSIVE } from "../types/map.js";
+import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
+import { EXCLUSIVE, type ResultSet } from "../types/map.js";
 
 
 //TODO Rename from sidebar
@@ -14,17 +14,23 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     includes: (Evented.prototype || Mixin.Events),
     _sidebar: null,
     _map: null,
-    _resultList: null,
+    _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
+
     // TODO we need an element which will include the list of datapublications
     initialize: function () {
         this._sidebar = document.querySelector('#sidebar-content [data-content="Results"]')
         assertNotNull(this._sidebar, 'sidebar')
-        this._resultList = document.querySelector('#datapublication-results')
-        assertNotNull(this._resultList, 'resultList')
+        //TODO how to turn from element to htmlelement
+        const list: HTMLElement | null = document.querySelector('#datapublication-results')
+        assertNotNull(list, 'resultList')
 
-        this._resultList.className = 'list-view'
-        this._resultList.id = 'data_publication_list'
-        this._sidebar.appendChild(this._resultList)
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+            const createdListView = DomUtil.create('div', 'list-view', list)
+            createdListView.id = tabName + '_data_publications_list'
+            createdListView.hidden = !tabInfo.active
+            this._tabViews[tabName] = { _tab: null, _listView: createdListView }
+
+        }
     },
 
     /**
@@ -42,8 +48,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         * Highlight items of the map related to specific
         * data publication
         */
-    highlight(id: string, { scroll }: { scroll: boolean } = { scroll: false }) {
-        const elements = $('[data-id="' + id + '"]')
+    highlight(id: string, resultSet: ResultSet, { scroll }: { scroll: boolean } = { scroll: false }) {
+        //We only want to highlight the element in the correct result set.
+        const elements = $('#' + resultSet + '_data_publications_list ' + '[data-id="' + id + '"]')
         assertSingleArray(elements, `Found more than one datapublications with doi '${id}' to highlight. This is a bug. `)
         const element = elements[0]
         element.classList.add('highlight');
@@ -86,13 +93,11 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
 
-        assertElementNotNull(this._resultList, { name: "resultList" });
-
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            this._resultList.innerHTML = '';
+            const { _tab, _listView } = this._tabViews[tabName]
+            if (!_listView) throw new Error('List view should not be null. This is a bug.')
+            _listView.innerHTML = '';
             for (const dataPublication of dataPublications[tabName].data_publications) {
-
-
                 const item = this._createListItem(dataPublication)
 
                 item.addEventListener('mouseover', () => {
@@ -112,7 +117,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 });
 
 
-                this._resultList.appendChild(item);
+                _listView.appendChild(item);
             };
 
         }
@@ -133,11 +138,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 listView.firstChild.remove()
             }
         }
-
     },
-
-
-
 
 });
 

@@ -153,7 +153,7 @@ class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(doi, { scroll: true })
+                this.sideBar.highlight(doi, resultSet, { scroll: true })
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -177,7 +177,7 @@ class DataPublicationMap {
                 resultSet: e.resultSet,
                 highlightOrReset: 'highlight'
             });
-            this.sideBar.highlight(e.id)
+            this.sideBar.highlight(e.id, e.resultSet)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 

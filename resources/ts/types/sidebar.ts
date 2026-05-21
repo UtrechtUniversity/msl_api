@@ -9,8 +9,7 @@ export interface Sidebar {
     // private methods
     _sidebar: HTMLElement | null
     _map: Leaflet.Map | null,
-    _resultList: HTMLElement | null,
-
+    _tabViews: ResultSetMapping<ViewPerTab>,
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
 
 
@@ -18,7 +17,7 @@ export interface Sidebar {
 
     includes: Evented,
     initialize({ id }: { id: string }): void
-    highlight(id: string, opts?: { scroll: boolean }): void,
+    highlight(id: string, resultSet: ResultSet, opts?: { scroll: boolean }): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
