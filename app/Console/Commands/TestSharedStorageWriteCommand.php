@@ -19,10 +19,10 @@ class TestSharedStorageWriteCommand extends Command
         $this->info('Writing file to shared disk');
         Storage::disk('shared_storage')->put('test/test.txt', 'Hello, world!');
 
-        if(Storage::disk('shared_storage')->exists('test/test.txt')) {
-            $this->info('File written successfully!');
-        } else {
+        if(!Storage::disk('shared_storage')->exists('test/test.txt')) {
             $this->fail('Failed to write file!');
         }
+
+        $this->info('File written successfully!');
     }
 }

@@ -13,13 +13,16 @@ class TestSharedStorageReadCommand extends Command
 
     public function handle()
     {
-        if(Storage::disk('shared_storage')->exists('test/test.txt')) {
-            $content = Storage::disk('shared_storage')->get('test/test.txt');
-            if($content === 'Hello, world!') {
-                $this->info('File read successfully!');
-                return 0;
-            }
+        $this->info('Reading file from shared disk');
+
+        if(!Storage::disk('shared_storage')->exists('test/test.txt')) {
+            $this->fail('Failed to read file!');
         }
-        $this->fail('Failed to read file!');
+
+        if('Hello, world!' !== Storage::disk('shared_storage')->get('test/test.txt')) {
+            $this->fail('Unexpected file content!');
+        }
+
+        $this->info('File read successfully!');
     }
 }
