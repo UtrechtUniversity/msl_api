@@ -32,7 +32,7 @@ class InclusiveExclusiveGeoJsonFeatureService
         $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusivePublicationsWithDois);
         // Get the inclusive datapublications including information about their inclusivity.
         $inclusivePublications = array_map(function (DataPublication $dp) {
-            return new InclusiveOrNotDataPublication($dp, inclusiveOrNot: true);
+            return new InclusiveOrNotDataPublication($dp, inclusive: true);
         }, array_values($inclusivePublicationsWithDois));
 
         return new InclusiveExclusiveGeoJsonFeatureDataPublication(
@@ -144,7 +144,7 @@ class InclusiveExclusiveGeoJsonFeatureService
         foreach ($dataPublications as $dataPublication) {
             array_push($dataPublicationsToReturn, new InclusiveOrNotDataPublication(
                 $dataPublication,
-                inclusiveOrNot: array_key_exists($dataPublication->msl_doi, $inclusiveDataPublications)
+                inclusive: array_key_exists($dataPublication->msl_doi, $inclusiveDataPublications)
             ));
         }
 

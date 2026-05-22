@@ -1,11 +1,11 @@
 /* global L */
 
-import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
 import type { Sidebar } from "../types/sidebar";
+import type { ResultSet } from "../types/map";
+import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
-import type { ResultSet } from "../types/map";
 
 
 
@@ -17,6 +17,10 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
     initialize: function () {
         this._sidebar = document.querySelector(' #sidebar-content [data-content="Results"] #datapublication-results')
+        this._initViews()
+    },
+
+    _initViews() {
         assertNotNull(this._sidebar, 'sidebar')
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
@@ -88,7 +92,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            const { _tab, _listView } = this._tabViews[tabName]
+            const { _tab: _, _listView } = this._tabViews[tabName]
             if (!_listView) throw new Error('List view should not be null. This is a bug.')
             _listView.innerHTML = '';
             for (const dataPublication of dataPublications[tabName].data_publications) {

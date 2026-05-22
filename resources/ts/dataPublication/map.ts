@@ -1,12 +1,11 @@
-import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
-import type { Sidebar } from "../types/sidebar.js";
+import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
+import type { Sidebar } from "../types/sidebar";
+import type { ResultSet, ResultSetMapping } from "../types/map";
+import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
-import type { ResultSet, ResultSetMapping } from "../types/map.js";
-import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";

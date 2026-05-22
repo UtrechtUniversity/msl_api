@@ -11,12 +11,11 @@ export interface Sidebar {
     _map: Leaflet.Map | null,
     _tabViews: ResultSetMapping<ViewPerTab>,
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
-
+    _initViews(): void,
 
     // public methods
-
     includes: Evented,
-    initialize({ id }: { id: string }): void
+    initialize(): void,
     highlight(id: string, resultSet: ResultSet, opts?: { scroll: boolean }): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
