@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
 use App\Models\Surveys\Response;
@@ -21,12 +20,14 @@ class ResponseTest extends TestCase
             'active' => true,
         ]);
 
-        $response = Response::create([
-            'survey_id' => $survey->id,
+        $response = new Response([
             'email' => 'em@il',
         ]);
 
-        $this->assertSame($survey->id, $response->survey->id);
+        $response->survey()->associate($survey);
+        $response->save();
+
+        $this->assertTrue($response->fresh()->survey->is($survey));
     }
 
     public function test_answers_relation(): void
@@ -36,8 +37,7 @@ class ResponseTest extends TestCase
             'active' => true,
         ]);
 
-        $response = Response::create([
-            'survey_id' => $survey->id,
+        $response = $survey->responses()->create([
             'email' => 'em@il',
         ]);
 
@@ -46,7 +46,7 @@ class ResponseTest extends TestCase
             'class' => SelectQuestion::class,
         ]);
 
-        $question = Question::create([
+        $question = $questionType->questions()->create([
             'question' => [
                 'label' => 'Is this a question?',
                 'options' => [
@@ -54,19 +54,19 @@ class ResponseTest extends TestCase
                     'option2',
                 ],
             ],
-            'question_type_id' => $questionType->id,
             'answerable' => true,
         ]);
 
-        $answer = $response->answers()->create([
-            'question_id' => $question->id,
+        $answer = $question->answers()->make([
             'answer' => [
                 'value' => 'answerQuestion1',
             ],
         ]);
 
+        $response->answers()->save($answer);
+
         $this->assertCount(1, $response->fresh()->answers);
         $this->assertTrue($response->answers->contains($answer));
-        $this->assertSame($response->id, $answer->response->id);
+        $this->assertTrue($answer->fresh()->response->is($response));
     }
 }
