@@ -1,9 +1,12 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
-import { getDefaultTab } from "./utils.js";
+
+import { getDefaultTab, type Paginator } from "./utils.js";
+
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
+import { Pagination } from "./pagination";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -14,6 +17,8 @@ export class MapController {
     // UI elements
     resultsSidebar: ResultsSidebar;
     mapView: MapView;
+    pagination: Pagination;
+    paginator: Paginator | null = null;
 
     // The current class controlls the map but also the state of the tabs
     // State
@@ -23,6 +28,8 @@ export class MapController {
     constructor() {
         this.mapView = new MapView();
         this.resultsSidebar = new ResultsSidebar();
+        this.pagination = new Pagination();
+
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
@@ -56,7 +63,10 @@ export class MapController {
     // Methods about requests and populating
 
     private async addFeaturesAndSidebarInMap() {
-        this.results = await this.getJsonFromRequest();
+        ({ data: this.results, meta: this.paginator } =
+            await this.getJsonFromRequest());
+
+        this.pagination.setArgs(this.paginator);
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
 
@@ -64,7 +74,10 @@ export class MapController {
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
 
-    public async getJsonFromRequest(): Promise<GeoFeatureDataPublications> {
+    public async getJsonFromRequest(): Promise<{
+        data: GeoFeatureDataPublications;
+        meta: Paginator;
+    }> {
         const boundingBox = this.searchFilters.boundingBox;
         if (!boundingBox)
             throw new Error(
@@ -86,8 +99,9 @@ export class MapController {
                     response.statusText,
             );
         }
-        const data = (await response.json()).data;
-        return data;
+
+        const { data, meta } = await response.json();
+        return { data, meta };
     }
     // Methods about interactions
 
@@ -123,6 +137,7 @@ export class MapController {
     private setActivatedTab(activatedTab: GeoFeatureResultSet) {
         this.activeTab = activatedTab;
         this.resultsSidebar.handleActivationOfTab(activatedTab)();
+
         this.mapView.handleActivatedLayers(activatedTab);
     }
 

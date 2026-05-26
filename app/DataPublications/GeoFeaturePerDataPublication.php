@@ -6,6 +6,7 @@ use App\GeoJson\Feature\Feature;
 use App\Models\Ckan\DataPublication;
 
 readonly class GeoFeaturePerDataPublication
+
 {
     public function __construct(
         public Feature $feature,

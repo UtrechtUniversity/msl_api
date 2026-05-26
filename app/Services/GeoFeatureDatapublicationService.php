@@ -26,6 +26,7 @@ class GeoFeatureDatapublicationService
         // We are going to use the dictionary in order to add more information about exclusivity/inclusivity
         // in the next step in an easier and more performant way
         [$inclusiveDataPublicationsWithDois, $insideFeatures] = $this->filterInside($sortedFeatures, $bbox);
+
         // Get exclusive list of datapublications including information about their inclusivity (or not)
         // Reminder: the exclusive list of publications is a superset of the inclusive list.
         $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusiveDataPublicationsWithDois);
@@ -125,6 +126,7 @@ class GeoFeatureDatapublicationService
      * @param  array<int,DataPublication>  $dataPublications
      * @param  array<string,DataPublication>  $inclusiveDataPublications
      * @return array<int, IsInclusiveDataPublication>
+
      */
     private function getDataPublicationsWithInclusiveInformation(array $dataPublications, array $inclusiveDataPublications): array
     {
@@ -135,7 +137,6 @@ class GeoFeatureDatapublicationService
                 isInclusive: isset($inclusiveDataPublications[$dataPublication->msl_doi])
             );
         }
-
         return $dataPublicationsToReturn;
     }
 }

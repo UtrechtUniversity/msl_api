@@ -11,5 +11,6 @@ readonly class GeoFeatureDataPublication
     public function __construct(
         public array $dataPublications,
         public InsideOverlappingGeoFeatures $features
+
     ) {}
 }

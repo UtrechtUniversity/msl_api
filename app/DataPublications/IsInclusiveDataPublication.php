@@ -9,5 +9,6 @@ readonly class IsInclusiveDataPublication
     public function __construct(
         public DataPublication $dataPublication,
         public bool $isInclusive
+
     ) {}
 }

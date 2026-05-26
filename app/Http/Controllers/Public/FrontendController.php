@@ -7,7 +7,6 @@ use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\voic;
 use App\Jobs\ProcessMatomoDownloadTrackingJob;
 use App\Models\Keyword;
 use App\Models\Laboratory;
@@ -677,7 +676,7 @@ class FrontendController extends Controller
     /**
      * Create CSV file based on keyword selector input
      *
-     * @return voic
+     * @return void
      */
     public function keywordExport(Request $request)
     {
@@ -698,7 +697,11 @@ class FrontendController extends Controller
             }
 
             $headers = [
-                'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',   'Content-type' => 'text/csv',   'Content-Disposition' => 'attachment; filename=keywords.csv',   'Expires' => '0',   'Pragma' => 'public',
+                'Cache-Control' => 'must-revalidate, post-check=0, pre-check=0',
+                'Content-type' => 'text/csv',
+                'Content-Disposition' => 'attachment; filename=keywords.csv',
+                'Expires' => '0',
+                'Pragma' => 'public',
             ];
 
             array_unshift($lines, array_keys($lines[0]));
