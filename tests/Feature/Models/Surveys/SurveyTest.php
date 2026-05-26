@@ -2,10 +2,8 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
-use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -26,7 +24,7 @@ class SurveyTest extends TestCase
             'class' => SelectQuestion::class,
         ]);
 
-        $question = Question::create([
+        $question = $questionType->questions()->create([
             'question' => [
                 'label' => 'Is this a question?',
                 'options' => [
@@ -34,15 +32,14 @@ class SurveyTest extends TestCase
                     'option2',
                 ],
             ],
-            'question_type_id' => $questionType->id,
             'answerable' => true,
         ]);
 
-        $survey->questions()->attach($question->id, ['order' => 1]);
+        $survey->questions()->attach($question, ['order' => 1]);
 
         $this->assertCount(1, $survey->fresh()->questions);
         $this->assertTrue($survey->questions->contains($question));
-        $this->assertSame($survey->id, $question->surveys->first()->id);
+        $this->assertTrue($question->fresh()->surveys->contains($survey));
     }
 
     public function test_responses_relation(): void
@@ -58,6 +55,6 @@ class SurveyTest extends TestCase
 
         $this->assertCount(1, $survey->fresh()->responses);
         $this->assertTrue($survey->responses->contains($response));
-        $this->assertSame($survey->id, $response->survey->id);
+        $this->assertTrue($response->fresh()->survey->is($survey));
     }
 }
