@@ -22,8 +22,10 @@ export default defineConfig({
 
             'resources/ts/dataPublication/tab-handle.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
-            'resources/css/leafletMapStyles/datapublications-list.css',
-            'resources/css/leafletMapStyles/in-map-styles.css'
+            'resources/css/datapublicationMap/datapublications-list.css',
+            'resources/css/datapublicationMap/in-map-styles.css',
+            'resources/css/datapublicationMap/top-menu.css'
+
         ]),
         commonjs()
     ],

@@ -1,5 +1,6 @@
 <head>
-    @vite(['resources/css/leafletMapStyles/datapublications-list.css', 'resources/css/leafletMapStyles/in-map-styles.css'])
+
+    @vite(['resources/css/datapublicationMap/datapublications-list.css', 'resources/css/datapublicationMap/in-map-styles.css'])
 </head>
 
 <body>

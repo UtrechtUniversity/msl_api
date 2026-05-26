@@ -1,0 +1,12 @@
+@reference "../app.css";
+
+#datapublication-menu 
+.menu-btn{
+  background-color: var(--color-base-200);
+
+}
+.menu-btn:disabled,
+.menu-btn[disabled]{
+  background-color: var(--color-neutral-200)  !important;
+
+}

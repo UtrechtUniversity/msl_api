@@ -27,7 +27,7 @@ type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
 
-class DataPublicationMap {
+export class DataPublicationMap {
     map: Map;
     markers: MarkerMapping;
     sideBar: Sidebar;
@@ -167,7 +167,7 @@ class DataPublicationMap {
     private resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
-
+    // THIS COULD BE MOVED
     private sideBarEventHandling() {
 
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
