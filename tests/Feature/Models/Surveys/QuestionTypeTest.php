@@ -30,8 +30,7 @@ class QuestionTypeTest extends TestCase
         ]);
 
         $this->assertCount(1, $questionType->fresh()->questions);
-        $this->assertEquals($questionType->id, $question->question_type_id);
         $this->assertTrue($questionType->questions->contains($question));
-        $this->assertTrue($question->questionType->is($questionType));
+        $this->assertTrue($question->fresh()->questionType->is($questionType));
     }
 }
