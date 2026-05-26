@@ -25,15 +25,15 @@ class InclusiveExclusiveGeoJsonFeatureService
         // Filter and get dictionary with inclusive datapublications and the inclusive features
         // We are going to use the dictionary in order to add more information about exclusivity/inclusivity
         // in the next step in an easier and more performant way
-        [$inclusivePublicationsWithDois, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
+        [$inclusiveDataPublicationsWithDois, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
 
         // Get exclusive list of datapublications including information about their inclusivity (or not)
         // Reminder: the exclusive list of publications is a superset of the inclusive list.
-        $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusivePublicationsWithDois);
+        $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusiveDataPublicationsWithDois);
         // Get the inclusive datapublications including information about their inclusivity.
-        $inclusivePublications = array_map(function (DataPublication $dp) {
-            return new InclusiveOrNotDataPublication($dp, inclusive: true);
-        }, array_values($inclusivePublicationsWithDois));
+        $inclusivePublications = array_map(function (DataPublication $dataPublication) {
+            return new InclusiveOrNotDataPublication($dataPublication, inclusive: true);
+        }, array_values($inclusiveDataPublicationsWithDois));
 
         return new InclusiveExclusiveGeoJsonFeatureDataPublication(
             exclusiveFeaturesWithDataPublications: new GeoJsonFeatureDataPublication(
@@ -119,7 +119,7 @@ class InclusiveExclusiveGeoJsonFeatureService
     private function filterInclusive(array $features, BoundingBox $bbox): array
     {
         $inclusiveFeatures = [];
-        $inclusivePublicationsWithDois = [];
+        $inclusiveDataPublicationsWithDois = [];
 
         foreach ($features as $feature) {
             if (! $bbox->contains($feature->feature->geometry)) {
@@ -127,10 +127,10 @@ class InclusiveExclusiveGeoJsonFeatureService
             }
 
             $inclusiveFeatures[] = $feature;
-            $inclusivePublicationsWithDois[$feature->dataPublication->msl_doi] = $feature->dataPublication;
+            $inclusiveDataPublicationsWithDois[$feature->dataPublication->msl_doi] = $feature->dataPublication;
         }
 
-        return [$inclusivePublicationsWithDois, $inclusiveFeatures];
+        return [$inclusiveDataPublicationsWithDois, $inclusiveFeatures];
     }
 
     /**
