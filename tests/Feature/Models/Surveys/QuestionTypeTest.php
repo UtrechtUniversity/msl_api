@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -19,7 +18,7 @@ class QuestionTypeTest extends TestCase
             'class' => SelectQuestion::class,
         ]);
 
-        $question = Question::create([
+        $question = $questionType->questions()->create([
             'question' => [
                 'label' => 'Is this a question?',
                 'options' => [
@@ -27,12 +26,12 @@ class QuestionTypeTest extends TestCase
                     'option2',
                 ],
             ],
-            'question_type_id' => $questionType->id,
             'answerable' => true,
         ]);
 
         $this->assertCount(1, $questionType->fresh()->questions);
+        $this->assertEquals($questionType->id, $question->question_type_id);
         $this->assertTrue($questionType->questions->contains($question));
-        $this->assertSame($questionType->id, $question->questionType->id);
+        $this->assertTrue($question->questionType->is($questionType));
     }
 }
