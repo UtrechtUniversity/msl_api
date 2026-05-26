@@ -1,121 +1,35 @@
 /* global L */
 
-import { Control, DomEvent, DomUtil, Evented, Mixin, type Map } from "leaflet";
-import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.ts";
-import type { Sidebar, ViewPerTab } from "../types/sidebar.ts";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
+import type { Sidebar } from "../types/sidebar";
+import type { ResultSet } from "../types/map";
+import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
-import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map.js";
-import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
-
-
-
-
-
-
+import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
 
 
 
 export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prototype */ {
     includes: (Evented.prototype || Mixin.Events),
-
-    _options: {
-        position: 'left',
-    },
     _sidebar: null,
-    _pane: null,
-    _closeButton: null,
-    _tab: null,
-    _tabLink: null,
-    _container: null,
     _map: null,
     _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
+
     initialize: function () {
-        // Sidebar element
-        this._initSideBarElement('sidebar')
-        // Tabs
-        this._initTab()
-        // Content
-        this._initContent()
-        // Main pane
-        this._initPane()
+        this._sidebar = document.querySelector(' #sidebar-content [data-content="Results"] #datapublication-results')
+        this._initViews()
     },
 
-
-    _initSideBarElement(id: string) {
-        this._sidebar = DomUtil.get(id);
-        assertNotNull(this._sidebar, `Sidebar element #${id} not found. This is a bug.`)
-
-        DomUtil.addClass(this._sidebar, 'sidebar-' + this._options.position);
-    },
-    _initContent() {
-        assertSideBarNotNull(this._sidebar)
-
-        this._container = DomUtil.create('div', 'sidebar-content', this._sidebar);
-
-        // Make sure scrolling in sidebar doesn't end up scrolling the page.
-        this._container.addEventListener('mouseenter', () => {
-            document.body.style.overflow = 'hidden';
-        });
-        this._container.addEventListener('mouseleave', () => {
-            document.body.style.overflow = '';
-        });
-    },
-    _initTab() {
-        assertSideBarNotNull(this._sidebar)
-        const tab = DomUtil.create('div', 'sidebar-tabs', this._sidebar)
-        const ul = DomUtil.create('ul', '', tab);
-        ul.setAttribute('role', 'tablist');
-
-        const li = DomUtil.create('li', '', ul);
-        const link: HTMLAnchorElement = DomUtil.create('a', '', li);
-        link.href = '#main';
-        link.setAttribute('role', 'tab');
-        link.innerHTML = '<i class="fa fa-bars"></i>';
-
-        DomEvent.on(link, 'click', this._onOpenClick, this);
-        this._tabLink = link;
-        this._tab = li;
-    },
-
-    _initPane() {
-        assertElementNotNull(this._container, { name: '_container' })
-        const mainPane = DomUtil.create('div', 'sidebar-pane', this._container);
-        mainPane.id = 'home';
-
-        const header = DomUtil.create('h1', 'sidebar-header', mainPane);
-        header.textContent = 'Data publications';
-
-        const closeButton = DomUtil.create('span', 'sidebar-close', header);
-        DomUtil.create('i', 'fa fa-caret-left', closeButton);
-        DomEvent.on(closeButton, 'click', this._onCloseClick, this);
-
-
-        // Tabs container
-        const tabs = DomUtil.create('div', 'sidebar-header-tabs', mainPane);
-
-        const tabList = DomUtil.create('ul', 'tab-list', tabs);
-
-
-        //  Populate tabs
+    _initViews() {
+        assertNotNull(this._sidebar, 'sidebar')
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-
-            const activeClass = (tabInfo.active) ? 'active' : ''
-            const createdTab = DomUtil.create('li', 'tab ' + activeClass, tabList);
-            createdTab.textContent = tabInfo.label
-
-
-            const createdListView = DomUtil.create('div', 'list-view', mainPane)
+            const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
             createdListView.id = tabName + '_data_publications_list'
             createdListView.hidden = !tabInfo.active
-
-            this._tabViews[tabName] = { _tab: createdTab, _listView: createdListView }
+            this._tabViews[tabName] = { _tab: null, _listView: createdListView }
 
         }
-
-        this._pane = mainPane
-        this._closeButton = closeButton;
     },
-
 
     /**
         * Add this sidebar to the specified map.
@@ -132,59 +46,23 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         * Highlight items of the map related to specific
         * data publication
         */
-    highlight(id: string) {
-        $('[data-id="' + id + '"]').addClass('highlight');
+    highlight(id: string, resultSet: ResultSet, { scroll }: { scroll: boolean } = { scroll: false }) {
+        //We only want to highlight the element in the correct result set.
+        const elements = $('#' + resultSet + '_data_publications_list ' + '[data-id="' + id + '"]')
+        assertSingleArray(elements, `Found more than one datapublications with doi '${id}' to highlight. This is a bug. `)
+        const element = elements[0]
+        element.classList.add('highlight');
+        if (scroll) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+        }
     },
+
     /**
         * Remove highlight in items of the map related to specific
         * data publication
         */
     removeHighlight(id: string) {
         $('[data-id="' + id + '"]').removeClass('highlight');
-    },
-
-
-    /**
-     * Open sidebar (if necessary).
-     *
-     */
-    open: function () {
-        assertElementNotNull(this._pane, { name: `_pane` });
-        assertElementNotNull(this._tab, { name: `_tab` });
-        assertSideBarNotNull(this._sidebar);
-
-        DomUtil.addClass(this._pane, 'active');
-        DomUtil.addClass(this._tab, 'active');
-
-
-        // open sidebar (if necessary)
-        assertSideBarNotNull(this._sidebar)
-        if (DomUtil.hasClass(this._sidebar, 'collapsed')) {
-            DomUtil.removeClass(this._sidebar, 'collapsed');
-        }
-
-        return this;
-    },
-
-    /**
-     * Close the sidebar (if necessary).
-     */
-    close: function () {
-        assertElementNotNull(this._pane, { name: `_pane` });
-        assertElementNotNull(this._tab, { name: `_tab` });
-        assertSideBarNotNull(this._sidebar);
-
-        DomUtil.removeClass(this._pane, 'active');
-        DomUtil.removeClass(this._tab, 'active');
-
-        // close sidebar
-        assertSideBarNotNull(this._sidebar)
-        if (!DomUtil.hasClass(this._sidebar, 'collapsed')) {
-
-            DomUtil.addClass(this._sidebar, 'collapsed');
-        }
-
-        return this;
     },
 
     _createListItem(dataPublication: DataPublication) {
@@ -194,12 +72,18 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         item.setAttribute('data-id', dataPublication.doi)
 
         const authors = dataPublication.creators.length > 0 ? dataPublication.creators.map(creator => creator.fullName).join(' | ') : '- no authors found -';
+        const icon = (dataPublication.inclusive) ? '<i class="fa-solid fa-circle-xmark"></i>' : '<i class="fa-solid fa-xmark"></i>'
 
         item.innerHTML = `
-                <a href="${dataPublication.portalLink}" target="_blank">
+                <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
+                 <div class="data-publication-content">
                 <p class="data-publication-title"> ${dataPublication.title ?? '- no title found -'}</p>
                 <p class="data-publication-authors"> ${authors}</p>
                 <p class="data-publication-date"> ${dataPublication.dates[0]?.date ?? '- no date found -'} </p>
+                </div>
+                <span class="data-publication-icon">
+                  ${icon}
+                 </span>
             </a>
             `;
         return item
@@ -208,15 +92,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            assertTabElementsNotNull(this._tabViews[tabName])
-            const { _tab, _listView } = this._tabViews[tabName]
-
+            const { _tab: _, _listView } = this._tabViews[tabName]
+            if (!_listView) throw new Error('List view should not be null. This is a bug.')
             _listView.innerHTML = '';
-            dataPublications[tabName].data_publications.forEach(dataPublication => {
-
+            for (const dataPublication of dataPublications[tabName].data_publications) {
                 const item = this._createListItem(dataPublication)
 
-                item.addEventListener('mouseenter', () => {
+                item.addEventListener('mouseover', () => {
                     assertNotNull(this._map, `Map is undefined. This is a bug.`)
                     this._map.fire('sidebar-hover', {
                         id: dataPublication.doi,
@@ -234,56 +116,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
                 _listView.appendChild(item);
-            });
-
-            DomEvent.on(_tab, 'click', this.handleActivationOfTab(tabName));
-
-
+            };
 
         }
 
-        this.open();
-
     },
 
 
-    handleActivationOfTab: function (activatedTab: ResultSet) {
-        return () => {
-            this._activateTab(activatedTab)
-
-        }
-    },
-
-    _activateTab: function (activatedTab: ResultSet) {
-        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-        const activatedTabElements = this._tabViews[activatedTab]
-        const deactivatedTabElements = this._tabViews[deactivateTab]
-
-
-        assertNotNull(this._map, `Map is undefined. This is a bug.`)
-        assertTabElementsNotNull(activatedTabElements);
-        assertTabElementsNotNull(deactivatedTabElements);
-
-        activatedTabElements._tab.classList.add('active')
-        activatedTabElements._listView.hidden = false;
-        deactivatedTabElements._tab.classList.remove('active')
-        deactivatedTabElements._listView.hidden = true;
-        this._map.fire('tab-click', { id: activatedTab }
-        )
-
-    },
-    _setDefaultTab: function () {
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            if (tabInfo.active) {
-                this._activateTab(tabName)
-                break;
-            }
-
-        }
-
-
-
-    },
     resetList: function () {
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
@@ -297,20 +136,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 listView.firstChild.remove()
             }
         }
-        this._setDefaultTab();
-        this.close()
-    },
-
-
-
-    _onOpenClick: function () {
-        this.open();
-    },
-
-
-    _onCloseClick: function () {
-        this.close();
-    },
+    }
 
 });
 
@@ -318,25 +144,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
 
 
-
-
-
-
-function assertSideBarNotNull(sideBar: HTMLElement | null): asserts sideBar is HTMLElement {
-    return assertNotNull(sideBar, `Sidebar should be set by now.This is a bug.`)
-}
-
-function assertElementNotNull(element: HTMLElement | null, { name, id }: { name: string, id?: true }): asserts element is HTMLElement {
-    if (!id)
-        return assertNotNull(sideBar, ` The element '${name}' should be set by now.This is a bug.`)
-    return assertNotNull(sideBar, ` The element with id '${name}' should be set by now.This is a bug.`)
-
-}
-
-function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is { [K in keyof ViewPerTab]: NonNullable<ViewPerTab[K]> } {
-    for (const [key, value] of Object.entries(viewPerTab)) {
-        if (value == null) {
-            throw new Error(`viewPerTab.${key} is null. This is a bug.`);
-        }
+function assertSingleArray<T>(arr: ArrayLike<T>, message: string): asserts arr is ArrayLike<T> & { 0: T; length: 1 } {
+    if (arr.length !== 1) {
+        throw new Error(`Expected array to have exactly 1 element, but it has ${arr.length}.`);
     }
 }
+

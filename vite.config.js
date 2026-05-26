@@ -19,7 +19,7 @@ export default defineConfig({
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/mapDeprecated.ts',
             'resources/ts/dataPublication/map.ts',
-            'resources/ts/dataPublication/sidebar.ts',
+
             'resources/ts/dataPublication/tab-handle.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
             'resources/css/leafletMapStyles/datapublications-list.css',

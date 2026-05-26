@@ -33,6 +33,10 @@ class DataPublicationResource extends JsonResource
 
     private array $uriStartsPerSubject = [];
 
+    private bool $includeInclusiveInformation = false;
+
+    private bool $inclusive = false;
+
     /**
      * We set whether the data-publication results should
      * include the geoJson information included or not.
@@ -49,6 +53,14 @@ class DataPublicationResource extends JsonResource
     public function setIncludesGeoJson(bool $includesGeoJson): self
     {
         $this->includesGeoJson = $includesGeoJson;
+
+        return $this;
+    }
+
+    public function setInclusiveInformation(bool $inclusive): self
+    {
+        $this->includeInclusiveInformation = true;
+        $this->inclusive = $inclusive;
 
         return $this;
     }
@@ -114,7 +126,7 @@ class DataPublicationResource extends JsonResource
     {
         $researchAspects = [];
         switch ($this->context) {
-            case EndpointContext::ROCK_PHYSICS;
+            case EndpointContext::ROCK_PHYSICS:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ROCK_PHYSICS));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -231,6 +243,9 @@ class DataPublicationResource extends JsonResource
         ];
         if ($this->includesGeoJson) {
             $genericResource += ['geojson' => json_decode($this->msl_geojson_featurecollection)];
+        }
+        if ($this->includeInclusiveInformation) {
+            $genericResource += ['inclusive' => $this->inclusive];
         }
 
         return $genericResource;

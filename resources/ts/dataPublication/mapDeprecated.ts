@@ -2,8 +2,8 @@ import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet
 import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
-import { sideBar } from './sidebar.js'
-import type { Sidebar } from "../types/sidebar.js";
+import { sideBar } from './sidebarDeprecated.js'
+import type { Sidebar } from "../types/sidebarDeprecated.js";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
 import type { ResultSet, ResultSetMapping } from "../types/map.js";
@@ -56,15 +56,11 @@ class DataPublicationMap {
         this.sideBar = new sideBar().addTo(this.map);
     }
 
-
     // Create the map in the beginning
     public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
-
     }
-
 
 
     private drawMap() {
@@ -115,9 +111,7 @@ class DataPublicationMap {
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName })
             if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
-
         }
-
     }
 
 
