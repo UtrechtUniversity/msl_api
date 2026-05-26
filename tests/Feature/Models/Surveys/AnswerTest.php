@@ -2,11 +2,8 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Surveys\Answer;
-use App\Models\Surveys\Question;
 use App\Models\Surveys\QuestionType;
 use App\Models\Surveys\QuestionTypes\SelectQuestion;
-use App\Models\Surveys\Response;
 use App\Models\Surveys\Survey;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -22,8 +19,7 @@ class AnswerTest extends TestCase
             'active' => true,
         ]);
 
-        $response = Response::create([
-            'survey_id' => $survey->id,
+        $response = $survey->responses()->create([
             'email' => 'em@il',
         ]);
 
@@ -32,7 +28,7 @@ class AnswerTest extends TestCase
             'class' => SelectQuestion::class,
         ]);
 
-        $question = Question::create([
+        $question = $questionType->questions()->create([
             'question' => [
                 'label' => 'Is this a question?',
                 'options' => [
@@ -40,19 +36,19 @@ class AnswerTest extends TestCase
                     'option2',
                 ],
             ],
-            'question_type_id' => $questionType->id,
             'answerable' => true,
         ]);
 
-        $answer = Answer::create([
-            'response_id' => $response->id,
-            'question_id' => $question->id,
+        $answer = $question->answers()->make([
             'answer' => [
                 'value' => 'answerQuestion1',
             ],
         ]);
 
-        $this->assertSame($response->id, $answer->response->id);
+        $answer->response()->associate($response);
+        $answer->save();
+
+        $this->assertTrue($answer->fresh()->response->is($response));
     }
 
     public function test_question_relation(): void
@@ -62,8 +58,7 @@ class AnswerTest extends TestCase
             'active' => true,
         ]);
 
-        $response = Response::create([
-            'survey_id' => $survey->id,
+        $response = $survey->responses()->create([
             'email' => 'em@il',
         ]);
 
@@ -72,7 +67,7 @@ class AnswerTest extends TestCase
             'class' => SelectQuestion::class,
         ]);
 
-        $question = Question::create([
+        $question = $questionType->questions()->create([
             'question' => [
                 'label' => 'Is this a question?',
                 'options' => [
@@ -80,18 +75,18 @@ class AnswerTest extends TestCase
                     'option2',
                 ],
             ],
-            'question_type_id' => $questionType->id,
             'answerable' => true,
         ]);
 
-        $answer = Answer::create([
-            'response_id' => $response->id,
-            'question_id' => $question->id,
+        $answer = $response->answers()->make([
             'answer' => [
                 'value' => 'answerQuestion1',
             ],
         ]);
 
-        $this->assertSame($question->id, $answer->question->id);
+        $answer->question()->associate($question);
+        $answer->save();
+
+        $this->assertTrue($answer->fresh()->question->is($question));
     }
 }
