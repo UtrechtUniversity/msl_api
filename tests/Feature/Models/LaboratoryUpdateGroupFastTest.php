@@ -45,7 +45,9 @@ class LaboratoryUpdateGroupFastTest extends TestCase
 
         $this->assertCount(1, $group->fresh()->laboratoryUpdatesFast);
         $this->assertTrue($group->laboratoryUpdatesFast->contains($update));
+        $this->assertInstanceOf(LaboratoryUpdateGroupFast::class, $update->laboratoryUpdateGroupFast);
         $this->assertSame($group->id, $update->laboratoryUpdateGroupFast->id);
+        $this->assertInstanceOf(Laboratory::class, $update->laboratory);
         $this->assertSame($laboratory->id, $update->laboratory->id);
     }
 }
