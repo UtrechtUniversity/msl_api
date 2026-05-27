@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\LaboratoryEquipment;
 use App\Models\Vocabulary;
@@ -51,6 +52,7 @@ class LaboratoryEquipmentTest extends TestCase
             'external_identifier' => 'eq-1',
         ]);
 
+        $this->assertInstanceOf(Laboratory::class, $equipment->laboratory);
         $this->assertSame($laboratory->id, $equipment->laboratory->id);
     }
 
@@ -86,6 +88,7 @@ class LaboratoryEquipmentTest extends TestCase
             'keyword_id' => $keyword->id,
         ]);
 
+        $this->assertInstanceOf(Keyword::class, $equipment->keyword);
         $this->assertSame($keyword->id, $equipment->keyword->id);
     }
 
@@ -114,6 +117,7 @@ class LaboratoryEquipmentTest extends TestCase
 
         $this->assertCount(1, $equipment->fresh()->laboratoryEquipmentAddons);
         $this->assertTrue($equipment->laboratoryEquipmentAddons->contains($addon));
+        $this->assertInstanceOf(LaboratoryEquipment::class, $addon->laboratoryEquipment);
         $this->assertSame($equipment->id, $addon->laboratoryEquipment->id);
     }
 }
