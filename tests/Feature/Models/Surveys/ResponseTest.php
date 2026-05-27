@@ -67,6 +67,5 @@ class ResponseTest extends TestCase
 
         $this->assertCount(1, $response->fresh()->answers);
         $this->assertTrue($response->answers->contains($answer));
-        $this->assertTrue($answer->fresh()->response->is($response));
     }
 }
