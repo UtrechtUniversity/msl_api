@@ -3,6 +3,8 @@
 namespace Tests\Feature\Models;
 
 use App\Models\DataRepository;
+use App\Models\Import;
+use App\Models\SourceDataset;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -44,6 +46,7 @@ class DatasetCreateTest extends TestCase
             'response_body' => '',
         ]);
 
+        $this->assertInstanceOf(SourceDataset::class, $datasetCreate->sourceDataset);
         $this->assertSame($sourceDataset->id, $datasetCreate->sourceDataset->id);
     }
 
@@ -81,6 +84,7 @@ class DatasetCreateTest extends TestCase
             'response_body' => '',
         ]);
 
+        $this->assertInstanceOf(Import::class, $datasetCreate->import);
         $this->assertSame($import->id, $datasetCreate->import->id);
     }
 }
