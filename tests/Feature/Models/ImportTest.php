@@ -3,6 +3,10 @@
 namespace Tests\Feature\Models;
 
 use App\Models\DataRepository;
+use App\Models\Import;
+use App\Models\Importer;
+use App\Models\SourceDataset;
+use App\Models\SourceDatasetIdentifier;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -26,6 +30,7 @@ class ImportTest extends TestCase
 
         $import = $importer->imports()->create([]);
 
+        $this->assertInstanceOf(Importer::class, $import->importer);
         $this->assertSame($importer->id, $import->importer->id);
     }
 
@@ -52,6 +57,7 @@ class ImportTest extends TestCase
 
         $this->assertCount(1, $import->fresh()->sourceDatasetIdentifiers);
         $this->assertTrue($import->sourceDatasetIdentifiers->contains($identifier));
+        $this->assertInstanceOf(Import::class, $identifier->import);
         $this->assertSame($import->id, $identifier->import->id);
     }
 
@@ -84,7 +90,9 @@ class ImportTest extends TestCase
 
         $this->assertCount(1, $import->fresh()->sourceDatasets);
         $this->assertTrue($import->sourceDatasets->contains($sourceDataset));
+        $this->assertInstanceOf(Import::class, $sourceDataset->import);
         $this->assertSame($import->id, $sourceDataset->import->id);
+        $this->assertInstanceOf(SourceDatasetIdentifier::class, $sourceDataset->sourceDatasetIdentifier);
         $this->assertSame($identifier->id, $sourceDataset->sourceDatasetIdentifier->id);
     }
 
@@ -124,7 +132,9 @@ class ImportTest extends TestCase
 
         $this->assertCount(1, $import->fresh()->datasetCreates);
         $this->assertTrue($import->datasetCreates->contains($datasetCreate));
+        $this->assertInstanceOf(Import::class, $datasetCreate->import);
         $this->assertSame($import->id, $datasetCreate->import->id);
+        $this->assertInstanceOf(SourceDataset::class, $datasetCreate->sourceDataset);
         $this->assertSame($sourceDataset->id, $datasetCreate->sourceDataset->id);
     }
 }
