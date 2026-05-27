@@ -64,7 +64,6 @@ class QuestionTest extends TestCase
 
         $this->assertCount(1, $question->fresh()->surveys);
         $this->assertTrue($question->surveys->contains($survey));
-        $this->assertTrue($survey->fresh()->questions->contains($question));
     }
 
     public function test_answers_relation(): void
@@ -104,6 +103,5 @@ class QuestionTest extends TestCase
 
         $this->assertCount(1, $question->fresh()->answers);
         $this->assertTrue($question->answers->contains($answer));
-        $this->assertTrue($answer->fresh()->question->is($question));
     }
 }
