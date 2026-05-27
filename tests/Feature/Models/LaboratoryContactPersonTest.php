@@ -38,6 +38,7 @@ class LaboratoryContactPersonTest extends TestCase
             'email' => 'contact@example.org',
         ]);
 
+        $this->assertInstanceOf(Laboratory::class, $contact->laboratory);
         $this->assertSame($laboratory->id, $contact->laboratory->id);
     }
 }
