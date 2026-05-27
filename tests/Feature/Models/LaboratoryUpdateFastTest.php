@@ -43,6 +43,7 @@ class LaboratoryUpdateFastTest extends TestCase
             'source_laboratory_data' => '{}',
         ]);
 
+        $this->assertInstanceOf(LaboratoryUpdateGroupFast::class, $update->laboratoryUpdateGroupFast);
         $this->assertSame($group->id, $update->laboratoryUpdateGroupFast->id);
     }
 
@@ -78,6 +79,7 @@ class LaboratoryUpdateFastTest extends TestCase
             'source_laboratory_data' => '{}',
         ]);
 
+        $this->assertInstanceOf(Laboratory::class, $update->laboratory);
         $this->assertSame($laboratory->id, $update->laboratory->id);
     }
 }
