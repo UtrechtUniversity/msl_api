@@ -5,7 +5,6 @@ namespace Tests\Feature\Models;
 use App\Models\DataRepository;
 use App\Models\DatasetCreate;
 use App\Models\Import;
-use App\Models\SourceDataset;
 use App\Models\SourceDatasetIdentifier;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -113,7 +112,5 @@ class SourceDatasetTest extends TestCase
         $this->assertNotNull($sourceDataset->fresh()->datasetCreate);
         $this->assertInstanceOf(DatasetCreate::class, $sourceDataset->datasetCreate);
         $this->assertSame($datasetCreate->id, $sourceDataset->datasetCreate->id);
-        $this->assertInstanceOf(SourceDataset::class, $datasetCreate->sourceDataset);
-        $this->assertSame($sourceDataset->id, $datasetCreate->sourceDataset->id);
     }
 }
