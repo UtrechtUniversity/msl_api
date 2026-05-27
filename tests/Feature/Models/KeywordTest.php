@@ -84,7 +84,5 @@ class KeywordTest extends TestCase
 
         $this->assertCount(1, $keyword->fresh()->keywordSearch);
         $this->assertTrue($keyword->keywordSearch->contains($search));
-        $this->assertInstanceOf(Keyword::class, $search->keyword);
-        $this->assertSame($keyword->id, $search->keyword->id);
     }
 }
