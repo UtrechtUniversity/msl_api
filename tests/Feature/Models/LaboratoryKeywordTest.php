@@ -39,6 +39,7 @@ class LaboratoryKeywordTest extends TestCase
             'uri' => 'https://example.org/kw/geology',
         ]);
 
+        $this->assertInstanceOf(Laboratory::class, $laboratoryKeyword->laboratory);
         $this->assertSame($laboratory->id, $laboratoryKeyword->laboratory->id);
     }
 }
