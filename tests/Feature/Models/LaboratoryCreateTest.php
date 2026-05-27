@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Seed;
 use App\Models\Seeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -26,6 +27,7 @@ class LaboratoryCreateTest extends TestCase
             'laboratory' => ['name' => 'Lab'],
         ]);
 
+        $this->assertInstanceOf(Seed::class, $laboratoryCreate->seed);
         $this->assertSame($seed->id, $laboratoryCreate->seed->id);
     }
 }
