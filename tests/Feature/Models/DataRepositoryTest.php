@@ -26,6 +26,7 @@ class DataRepositoryTest extends TestCase
 
         $this->assertCount(1, $repository->fresh()->importers);
         $this->assertTrue($repository->importers->contains($importer));
+        $this->assertInstanceOf(DataRepository::class, $importer->dataRepository);
         $this->assertSame($repository->id, $importer->dataRepository->id);
     }
 }
