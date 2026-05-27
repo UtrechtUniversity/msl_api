@@ -44,6 +44,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
+        $this->assertInstanceOf(LaboratoryOrganization::class, $laboratory->laboratoryOrganization);
         $this->assertSame($organization->id, $laboratory->laboratoryOrganization->id);
     }
 
@@ -77,6 +78,7 @@ class LaboratoryTest extends TestCase
 
         $this->assertCount(1, $laboratory->fresh()->laboratoryContactPersons);
         $this->assertTrue($laboratory->laboratoryContactPersons->contains($contact));
+        $this->assertInstanceOf(Laboratory::class, $contact->laboratory);
         $this->assertSame($laboratory->id, $contact->laboratory->id);
     }
 
@@ -121,6 +123,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
+        $this->assertInstanceOf(LaboratoryManager::class, $laboratory->laboratoryManager);
         $this->assertSame($manager->id, $laboratory->laboratoryManager->id);
     }
 
@@ -165,6 +168,7 @@ class LaboratoryTest extends TestCase
 
         $this->assertCount(1, $laboratory->fresh()->laboratoryEquipment);
         $this->assertTrue($laboratory->laboratoryEquipment->contains($equipment));
+        $this->assertInstanceOf(Laboratory::class, $equipment->laboratory);
         $this->assertSame($laboratory->id, $equipment->laboratory->id);
     }
 
@@ -199,6 +203,7 @@ class LaboratoryTest extends TestCase
 
         $this->assertCount(1, $laboratory->fresh()->laboratoryKeywords);
         $this->assertTrue($laboratory->laboratoryKeywords->contains($laboratoryKeyword));
+        $this->assertInstanceOf(Laboratory::class, $laboratoryKeyword->laboratory);
         $this->assertSame($laboratory->id, $laboratoryKeyword->laboratory->id);
     }
 
@@ -236,7 +241,9 @@ class LaboratoryTest extends TestCase
 
         $this->assertCount(1, $laboratory->fresh()->laboratoryUpdatesFast);
         $this->assertTrue($laboratory->laboratoryUpdatesFast->contains($update));
+        $this->assertInstanceOf(Laboratory::class, $update->laboratory);
         $this->assertSame($laboratory->id, $update->laboratory->id);
+        $this->assertInstanceOf(LaboratoryUpdateGroupFast::class, $update->laboratoryUpdateGroupFast);
         $this->assertSame($group->id, $update->laboratoryUpdateGroupFast->id);
     }
 }
