@@ -43,6 +43,7 @@ class LaboratoryOrganizationTest extends TestCase
 
         $this->assertCount(1, $organization->fresh()->laboratories);
         $this->assertTrue($organization->laboratories->contains($laboratory));
+        $this->assertInstanceOf(LaboratoryOrganization::class, $laboratory->laboratoryOrganization);
         $this->assertSame($organization->id, $laboratory->laboratoryOrganization->id);
     }
 
@@ -64,6 +65,7 @@ class LaboratoryOrganizationTest extends TestCase
 
         $this->assertCount(1, $organization->fresh()->laboratoryOrganizationUpdateRors);
         $this->assertTrue($organization->laboratoryOrganizationUpdateRors->contains($updateRor));
+        $this->assertInstanceOf(LaboratoryOrganization::class, $updateRor->laboratoryOrganization);
         $this->assertSame($organization->id, $updateRor->laboratoryOrganization->id);
     }
 }
