@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Keyword;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -28,6 +29,7 @@ class VocabularyTest extends TestCase
 
         $this->assertCount(1, $vocabulary->fresh()->keywords);
         $this->assertTrue($vocabulary->keywords->contains($keyword));
+        $this->assertInstanceOf(Vocabulary::class, $keyword->vocabulary);
         $this->assertSame($vocabulary->id, $keyword->vocabulary->id);
     }
 
@@ -56,6 +58,7 @@ class VocabularyTest extends TestCase
         $vocabulary->load('searchKeywords');
 
         $this->assertTrue($vocabulary->searchKeywords->contains($search));
+        $this->assertInstanceOf(Keyword::class, $search->keyword);
         $this->assertSame($keyword->id, $search->keyword->id);
     }
 }
