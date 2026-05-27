@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Keyword;
 use App\Models\LaboratoryEquipment;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -34,6 +35,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
             'group' => 'default',
         ]);
 
+        $this->assertInstanceOf(LaboratoryEquipment::class, $addon->laboratoryEquipment);
         $this->assertSame($equipment->id, $addon->laboratoryEquipment->id);
     }
 
@@ -75,6 +77,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
             'keyword_id' => $keyword->id,
         ]);
 
+        $this->assertInstanceOf(Keyword::class, $addon->keyword);
         $this->assertSame($keyword->id, $addon->keyword->id);
     }
 }
