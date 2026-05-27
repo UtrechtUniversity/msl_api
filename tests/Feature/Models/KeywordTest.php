@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Keyword;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -35,6 +36,7 @@ class KeywordTest extends TestCase
             'label' => 'Granite',
         ]);
 
+        $this->assertInstanceOf(Keyword::class, $child->parent);
         $this->assertSame($parent->id, $child->parent->id);
     }
 
@@ -54,6 +56,7 @@ class KeywordTest extends TestCase
             'label' => 'Granite',
         ]);
 
+        $this->assertInstanceOf(Vocabulary::class, $keyword->vocabulary);
         $this->assertSame($vocabulary->id, $keyword->vocabulary->id);
     }
 
@@ -81,6 +84,7 @@ class KeywordTest extends TestCase
 
         $this->assertCount(1, $keyword->fresh()->keywordSearch);
         $this->assertTrue($keyword->keywordSearch->contains($search));
+        $this->assertInstanceOf(Keyword::class, $search->keyword);
         $this->assertSame($keyword->id, $search->keyword->id);
     }
 }
