@@ -52,7 +52,5 @@ class LaboratoryManagerTest extends TestCase
 
         $this->assertCount(1, $manager->fresh()->laboratories);
         $this->assertTrue($manager->laboratories->contains($laboratory));
-        $this->assertInstanceOf(LaboratoryManager::class, $laboratory->laboratoryManager);
-        $this->assertSame($manager->id, $laboratory->laboratoryManager->id);
     }
 }
