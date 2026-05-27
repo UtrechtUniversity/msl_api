@@ -29,6 +29,7 @@ class LaboratoryOrganizationUpdateGroupRorTest extends TestCase
 
         $this->assertCount(1, $group->fresh()->laboratoryOrganizationUpdateRors);
         $this->assertTrue($group->laboratoryOrganizationUpdateRors->contains($updateRor));
+        $this->assertInstanceOf(LaboratoryOrganizationUpdateGroupRor::class, $updateRor->laboratoryOrganizationUpdateGroupRor);
         $this->assertSame($group->id, $updateRor->laboratoryOrganizationUpdateGroupRor->id);
     }
 }
