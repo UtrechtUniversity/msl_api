@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Keyword;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -32,6 +33,7 @@ class KeywordSearchTest extends TestCase
             'exclude_abstract_mapping' => false,
         ]);
 
+        $this->assertInstanceOf(Keyword::class, $search->keyword);
         $this->assertSame($keyword->id, $search->keyword->id);
     }
 }
