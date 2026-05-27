@@ -3,6 +3,7 @@
 namespace Tests\Feature\Models;
 
 use App\Models\DataRepository;
+use App\Models\Importer;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -24,6 +25,7 @@ class ImporterTest extends TestCase
             'options' => ['identifierProcessor' => ['type' => 'oai']],
         ]);
 
+        $this->assertInstanceOf(DataRepository::class, $importer->dataRepository);
         $this->assertSame($repository->id, $importer->dataRepository->id);
     }
 
@@ -45,6 +47,7 @@ class ImporterTest extends TestCase
 
         $this->assertCount(1, $importer->fresh()->imports);
         $this->assertTrue($importer->imports->contains($import));
+        $this->assertInstanceOf(Importer::class, $import->importer);
         $this->assertSame($importer->id, $import->importer->id);
     }
 }
