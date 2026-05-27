@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\Seed;
 use App\Models\Seeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -21,6 +22,7 @@ class SeedTest extends TestCase
 
         $seed = $seeder->seeds()->create([]);
 
+        $this->assertInstanceOf(Seeder::class, $seed->seeder);
         $this->assertSame($seeder->id, $seed->seeder->id);
     }
 
@@ -42,6 +44,7 @@ class SeedTest extends TestCase
 
         $this->assertCount(1, $seed->fresh()->creates);
         $this->assertTrue($seed->creates->contains($organizationCreate));
+        $this->assertInstanceOf(Seed::class, $organizationCreate->seed);
         $this->assertSame($seed->id, $organizationCreate->seed->id);
     }
 
@@ -63,6 +66,7 @@ class SeedTest extends TestCase
 
         $this->assertCount(1, $seed->fresh()->creates);
         $this->assertTrue($seed->creates->contains($laboratoryCreate));
+        $this->assertInstanceOf(Seed::class, $laboratoryCreate->seed);
         $this->assertSame($seed->id, $laboratoryCreate->seed->id);
     }
 
@@ -84,6 +88,7 @@ class SeedTest extends TestCase
 
         $this->assertCount(1, $seed->fresh()->creates);
         $this->assertTrue($seed->creates->contains($equipmentCreate));
+        $this->assertInstanceOf(Seed::class, $equipmentCreate->seed);
         $this->assertSame($seed->id, $equipmentCreate->seed->id);
     }
 }
