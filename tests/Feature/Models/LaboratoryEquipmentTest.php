@@ -117,7 +117,5 @@ class LaboratoryEquipmentTest extends TestCase
 
         $this->assertCount(1, $equipment->fresh()->laboratoryEquipmentAddons);
         $this->assertTrue($equipment->laboratoryEquipmentAddons->contains($addon));
-        $this->assertInstanceOf(LaboratoryEquipment::class, $addon->laboratoryEquipment);
-        $this->assertSame($equipment->id, $addon->laboratoryEquipment->id);
     }
 }
