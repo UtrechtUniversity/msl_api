@@ -23,6 +23,7 @@ class SeederTest extends TestCase
 
         $this->assertCount(1, $seeder->fresh()->seeds);
         $this->assertTrue($seeder->seeds->contains($seed));
+        $this->assertInstanceOf(Seeder::class, $seed->seeder);
         $this->assertSame($seeder->id, $seed->seeder->id);
     }
 }
