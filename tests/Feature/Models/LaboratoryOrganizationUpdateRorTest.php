@@ -29,6 +29,7 @@ class LaboratoryOrganizationUpdateRorTest extends TestCase
             'source_organization_data' => '{}',
         ]);
 
+        $this->assertInstanceOf(LaboratoryOrganizationUpdateGroupRor::class, $updateRor->laboratoryOrganizationUpdateGroupRor);
         $this->assertSame($group->id, $updateRor->laboratoryOrganizationUpdateGroupRor->id);
     }
 
@@ -49,6 +50,7 @@ class LaboratoryOrganizationUpdateRorTest extends TestCase
             'source_organization_data' => '{}',
         ]);
 
+        $this->assertInstanceOf(LaboratoryOrganization::class, $updateRor->laboratoryOrganization);
         $this->assertSame($organization->id, $updateRor->laboratoryOrganization->id);
     }
 }
