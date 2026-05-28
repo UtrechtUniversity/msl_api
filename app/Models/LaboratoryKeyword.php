@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LaboratoryKeyword extends Model
 {
@@ -14,7 +15,7 @@ class LaboratoryKeyword extends Model
         'uri',
     ];
 
-    public function laboratory()
+    public function laboratory(): BelongsTo
     {
         return $this->belongsTo(Laboratory::class);
     }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LaboratoryManager extends Model
 {
@@ -26,7 +27,7 @@ class LaboratoryManager extends Model
         'nationality_name',
     ];
 
-    public function laboratories()
+    public function laboratories(): HasMany
     {
         return $this->hasMany(Laboratory::class);
     }

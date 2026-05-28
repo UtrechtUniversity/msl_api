@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class LaboratoryOrganizationUpdateRor extends Model
 {
@@ -15,12 +16,12 @@ class LaboratoryOrganizationUpdateRor extends Model
 
     protected $table = 'laboratory_organization_update_ror';
 
-    public function laboratoryOrganizationUpdateGroupRor()
+    public function laboratoryOrganizationUpdateGroupRor(): BelongsTo
     {
         return $this->belongsTo(LaboratoryOrganizationUpdateGroupRor::class);
     }
 
-    public function laboratoryOrganization()
+    public function laboratoryOrganization(): BelongsTo
     {
         return $this->belongsTo(LaboratoryOrganization::class);
     }

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class SourceDataset extends Model
 {
@@ -13,12 +15,17 @@ class SourceDataset extends Model
         'source_dataset',
     ];
 
-    public function source_dataset_identifier()
+    public function sourceDatasetIdentifier(): BelongsTo
     {
         return $this->belongsTo(SourceDatasetIdentifier::class);
     }
 
-    public function dataset_create()
+    public function import(): BelongsTo
+    {
+        return $this->belongsTo(Import::class);
+    }
+
+    public function datasetCreate(): HasOne
     {
         return $this->hasOne(DatasetCreate::class);
     }

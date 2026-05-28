@@ -49,11 +49,11 @@
                                                 </tr>
                                                 <tr>
                                                     <td>Data repository:</td>
-                                                    <td>{{ $importer->data_repository->name }}</td>
+                                                    <td>{{ $importer->dataRepository->name }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Data repository ckan name:</td>
-                                                    <td>{{ $importer->data_repository->ckan_name }}</td>
+                                                    <td>{{ $importer->dataRepository->ckan_name }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td>Type:</td>

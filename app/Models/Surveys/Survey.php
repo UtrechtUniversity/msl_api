@@ -4,6 +4,7 @@ namespace App\Models\Surveys;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Survey extends Model
 {
@@ -19,7 +20,7 @@ class Survey extends Model
         return $this->belongsToMany(Question::class)->withPivot('order')->orderByPivot('order');
     }
 
-    public function responses()
+    public function responses(): HasMany
     {
         return $this->hasMany(Response::class);
     }

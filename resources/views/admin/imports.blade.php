@@ -44,7 +44,7 @@
                                                     {{ $import->response_code }}
                                                 @endif
                                             </td>
-                                            <td>{{ $import->source_dataset_identifiers->count() }}</td>
+                                            <td>{{ $import->sourceDatasetIdentifiers->count() }}</td>
                                             <td>{{ $import->created_at }}</td>
                                         </tr>
                                     @endforeach

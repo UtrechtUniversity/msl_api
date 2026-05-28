@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DatasetCreate extends Model
 {
@@ -18,9 +19,14 @@ class DatasetCreate extends Model
         'dataset' => 'array',
     ];
 
-    public function source_dataset()
+    public function sourceDataset(): BelongsTo
     {
         return $this->belongsTo(SourceDataset::class);
+    }
+
+    public function import(): BelongsTo
+    {
+        return $this->belongsTo(Import::class);
     }
 
     public function getDatasetAsJson($pretty = false)

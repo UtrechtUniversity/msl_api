@@ -31,7 +31,7 @@ class MappingService
         // set general fields independend of mapping implementation
 
         // set owner organization for data publication
-        $dataPublication->owner_org = $importer->data_repository->ckan_name;
+        $dataPublication->owner_org = $importer->dataRepository->ckan_name;
 
         // map keywords
         $keywordHelper = new KeywordHelper;

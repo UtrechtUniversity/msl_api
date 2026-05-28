@@ -1,5 +1,5 @@
 <div class="w-full">
-    @switch($questionConfig->question_type->name)
+    @switch($questionConfig->questionType->name)
         @case('text')
             <x-forms.text-question :title="$questionConfig->question->title" :titleBold="$questionConfig->question->titleBold" :sectionName="$questionConfig->question->sectionName" :placeholder="$questionConfig->question->placeholder" :textBlock="$questionConfig->question->textBlock" />
         @break
