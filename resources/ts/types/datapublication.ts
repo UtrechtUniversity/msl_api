@@ -43,6 +43,7 @@ export type DataPublication = {
     'relatedIdentifiers': RelatedIdentifier[],
     'subjects': Subject[],
     'subdomains': string[],
+    'inclusive': boolean
 }
 
 type Creator = {

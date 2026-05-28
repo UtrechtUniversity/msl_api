@@ -40,7 +40,7 @@ class GeoJsonDataPublicationService
     public function getBoundingBoxFromRequest(Request $request): BoundingBox
     {
         $boundingBox = json_decode($request->get('boundingBox'));
-        if (! ((bool) $boundingBox & is_array($boundingBox) & count($boundingBox) === 4)) {
+        if (! ((bool) $boundingBox && is_array($boundingBox) && count($boundingBox) === 4)) {
             throw new Exception('Bounding box is not defined correctly. This is a bug.');
         }
 

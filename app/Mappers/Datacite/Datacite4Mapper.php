@@ -702,7 +702,7 @@ class Datacite4Mapper implements MapperInterface
         /**
          * Area calculated is just a rough proximation as projection is not taken into account
          */
-        $dataset->msl_surface_area = round($area);
+        $dataset->msl_surface_area = round($area * 100);
 
         return $dataset;
     }

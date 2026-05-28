@@ -42,6 +42,11 @@ return [
             'visibility' => 'public',
         ],
 
+        'shared_storage' => [
+            'driver' => 'local',
+            'root' => storage_path('app/shared_storage'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

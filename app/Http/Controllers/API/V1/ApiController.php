@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1;
 
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;
 use App\Response\V1\ErrorResponse;
@@ -69,7 +70,7 @@ class ApiController extends BaseController
      */
     public function rockPhysics(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'rockPhysics');
+        return $this->dataPublicationResponse($request, EndpointContext::ROCK_PHYSICS);
     }
 
     /**
@@ -77,7 +78,7 @@ class ApiController extends BaseController
      */
     public function analogue(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'analogue');
+        return $this->dataPublicationResponse($request, EndpointContext::ANALOGUE);
     }
 
     /**
@@ -85,7 +86,7 @@ class ApiController extends BaseController
      */
     public function paleo(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'paleo');
+        return $this->dataPublicationResponse($request, EndpointContext::PALEO);
     }
 
     /**
@@ -93,7 +94,7 @@ class ApiController extends BaseController
      */
     public function microscopy(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'microscopy');
+        return $this->dataPublicationResponse($request, EndpointContext::MICROSCOPY);
     }
 
     /**
@@ -101,7 +102,7 @@ class ApiController extends BaseController
      */
     public function geochemistry(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'geochemistry');
+        return $this->dataPublicationResponse($request, EndpointContext::GEO_CHEMISTRY);
     }
 
     /**
@@ -109,7 +110,7 @@ class ApiController extends BaseController
      */
     public function geoenergy(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'geoenergy');
+        return $this->dataPublicationResponse($request, EndpointContext::FIELD_SCALE);
     }
 
     /**
@@ -117,7 +118,7 @@ class ApiController extends BaseController
      */
     public function all(Request $request)
     {
-        return $this->dataPublicationResponse($request, 'all');
+        return $this->dataPublicationResponse($request, EndpointContext::ALL);
     }
 
     /**
@@ -134,7 +135,7 @@ class ApiController extends BaseController
      *
      * @return JsonResponse
      */
-    private function dataPublicationResponse(Request $request, string $context)
+    private function dataPublicationResponse(Request $request, EndpointContext $context)
     {
         // Create CKAN client
         $ckanClient = new Client($this->guzzleClient);
@@ -150,33 +151,10 @@ class ApiController extends BaseController
             $packageSearchRequest->addFilterQuery('msl_download_link', '*', true);
         }
 
-        // Add subdomain filtering if required
-        switch ($context) {
-            case 'rockPhysics':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'rock and melt physics');
-                break;
-
-            case 'analogue':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'analogue modelling of geologic processes');
-                break;
-
-            case 'paleo':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'paleomagnetism');
-                break;
-
-            case 'microscopy':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'microscopy and tomography');
-                break;
-
-            case 'geochemistry':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'geochemistry');
-                break;
-
-            case 'geoenergy':
-                $packageSearchRequest->addFilterQuery('msl_subdomain', 'geo-energy test beds');
-                break;
+        $dataPublicationSubdomain = $context->getDataPublicationSubdomainValue();
+        if ($dataPublicationSubdomain !== null) {
+            $packageSearchRequest->addFilterQuery('msl_subdomain', $dataPublicationSubdomain);
         }
-
         // Set rows
         $paramRows = (int) $request->get('rows');
         if ($paramRows > 0) {

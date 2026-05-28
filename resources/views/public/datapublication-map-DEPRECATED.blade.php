@@ -1,15 +1,5 @@
 @section('title', 'Datapublications map')
 <x-layout_main>
-    <div class="tab-links-parent">
-        @include('public.components.tab-links', [
-            'categoryName' => 'Data Publications',
-            'routes' => [
-                'List' => route('data-access'),
-                'Map' => route('data-access-map'),
-            ],
-            'routeActive' => route('data-access-map'),
-        ])
-    </div>
 
     <div class="main-content">
         <div class="sub-content-wide flex place-content-center w-full">
@@ -29,7 +19,7 @@
                     <div class="w-full bg-primary-100">
                         {{-- list view --}}
                         <div class="list-view">
-                            @include('public.components.dataPublication-map-view')
+                            @include('public.components.datapublication-map.map-view-DEPRECATED')
                         </div>
                     </div>
 
@@ -37,4 +27,5 @@
             </div>
         </div>
     </div>
+
 </x-layout_main>

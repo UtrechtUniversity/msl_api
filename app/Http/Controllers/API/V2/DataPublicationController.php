@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V2\DataPublicationCollection;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
@@ -12,24 +11,26 @@ use App\Rules\GeoRule;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Validation\ValidationException;
 
 class DataPublicationController extends BaseDomainApiController
 {
     /**
      * @var array mappings from subdomain endpoint search parameters to ckan fields
      */
-    private $queryMappings = [
+    private array $queryMappings = [
         'query' => 'text',
         'tags' => 'tags',
         'title' => 'title',
         'authorName' => 'msl_creator_name_text',
         'labName' => 'msl_lab_name_text',
+        'maxArea' => 'msl_surface_area',
     ];
 
     /**
      * @var array mappings from all endpoint search parameters to ckan fields
      */
-    private $queryMappingsAll;
+    private array $queryMappingsAll;
 
     /**
      * Constructs a new controller
@@ -58,8 +59,9 @@ class DataPublicationController extends BaseDomainApiController
                 'tags' => ['nullable', 'string'],
                 'hasDownloads' => ['nullable', 'boolean'],
                 'boundingBox' => ['nullable', new GeoRule],
+                'maxArea' => ['nullable', 'integer', 'min:0'],
             ]);
-        } catch (\Illuminate\Validation\ValidationException $e) {
+        } catch (ValidationException $e) {
             return new ValidationErrorResource($e);
         }
 
@@ -67,6 +69,7 @@ class DataPublicationController extends BaseDomainApiController
         $ckanClient = new Client($this->guzzleClient);
 
         $this->setRequestToCKAN($request, $context);
+
         // Attempt to retrieve data from CKAN
         try {
             $response = $ckanClient->get($this->packageSearchRequest);
@@ -86,7 +89,9 @@ class DataPublicationController extends BaseDomainApiController
         $totalResultCount = $response->getTotalResultsCount();
         $currentResultCount = count($dataPublications);
 
-        $responseToReturn = new DataPublicationCollection($dataPublications, $context);
+        $responseToReturn = new DataPublicationCollection($dataPublications);
+        $responseToReturn->setContext($context);
+
         $responseToReturn->additional([
             'success' => 'true',
             'messages' => [],
@@ -132,32 +137,10 @@ class DataPublicationController extends BaseDomainApiController
 
     protected function getDomain(EndpointContext $context): void
     {
-        $msl_subdomain = 'msl_subdomain';
         // Add subdomain filtering if required
-        switch ($context) {
-            case EndpointContext::ROCK_PHYSICS:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ROCK_PHYSICS->value);
-                break;
-
-            case EndpointContext::ANALOGUE:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::ANALOGUE->value);
-                break;
-
-            case EndpointContext::PALEO:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::PALEO->value);
-                break;
-
-            case EndpointContext::MICROSCOPY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::MICROSCOPY->value);
-                break;
-
-            case EndpointContext::GEO_CHEMISTRY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_CHEMISTRY->value);
-                break;
-
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, DataPublicationSubDomain::GEO_ENERGY->value);
-                break;
+        $dataPublicationSubdomain = $context->getDataPublicationSubdomainValue();
+        if ($dataPublicationSubdomain !== null) {
+            $this->packageSearchRequest->addFilterQuery('msl_subdomain', $dataPublicationSubdomain);
         }
     }
 }

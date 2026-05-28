@@ -12,7 +12,7 @@ enum VocabularySubDomain: string
     case MICROSCOPY = 'microscopy';
     case PALEO = 'paleomagnetism';
     case GEO_CHEMISTRY = 'geochemistry';
-    case GEO_ENERGY = 'testbeds';
+    case FIELD_SCALE = 'fieldscale';
 
     public function dataPublicationSubDomain(): DataPublicationSubDomain
     {
@@ -22,7 +22,7 @@ enum VocabularySubDomain: string
             self::MICROSCOPY => DataPublicationSubDomain::MICROSCOPY,
             self::PALEO => DataPublicationSubDomain::PALEO,
             self::GEO_CHEMISTRY => DataPublicationSubDomain::GEO_CHEMISTRY,
-            self::GEO_ENERGY => DataPublicationSubDomain::GEO_ENERGY
+            self::FIELD_SCALE => DataPublicationSubDomain::FIELD_SCALE
         };
     }
 }

@@ -307,8 +307,8 @@ class DataPublicationTest extends TestCase
         $this->assertTrue($dataPublication->msl_has_microscopy_original);
         $this->assertFalse($dataPublication->msl_has_subsurface);
         $this->assertFalse($dataPublication->msl_has_subsurface_original);
-        $this->assertFalse($dataPublication->msl_has_geoenergy);
-        $this->assertFalse($dataPublication->msl_has_geoenergy_original);
+        $this->assertFalse($dataPublication->msl_has_fieldscale);
+        $this->assertFalse($dataPublication->msl_has_fieldscale_original);
         $this->assertFalse($dataPublication->msl_has_lab);
         $this->assertTrue($dataPublication->msl_has_organization);
     }

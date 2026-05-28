@@ -1,0 +1,11 @@
+<head>
+    @vite(['resources/css/leafletMapStyles/datapublications-list.css', 'resources/css/leafletMapStyles/in-map-styles.css'])
+</head>
+
+<body>
+
+    <div id="map" class="z-0 h-170"></div>
+
+    @vite(['resources/ts/dataPublication/map.ts'])
+
+</body>

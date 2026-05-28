@@ -1,3 +1,5 @@
+@use('Illuminate\Support\Str');
+
 @section('title', 'Laboratory')
 <x-layout_main>
     <div class="mainContentDiv ">
@@ -29,7 +31,7 @@
                                 <div class="collapse-content">
                                     @if (strlen($equipmentPiece->msl_description_html) > 0)
                                         <div class="p-4">
-                                            {!! $equipmentPiece->msl_description_html !!}
+                                            {!! Str::of($equipmentPiece->msl_description_html)->stripTags("<p>") !!}
                                         </div>
                                     @else
                                         <p class="italic text-center pt-10 pb-8">no description found</p>

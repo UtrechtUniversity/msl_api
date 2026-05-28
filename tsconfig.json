@@ -3,9 +3,11 @@
     "compilerOptions": {
         // File Layout
         "types": ["vite/client"],
+        "lib": ["DOM", "es2020"],
         // Environment Settings
-        "module": "nodenext",
+        "module": "esnext",
         "target": "esnext",
+        "moduleResolution": "bundler",
         "useDefineForClassFields": true,
         // Other Outputs
         "sourceMap": true,

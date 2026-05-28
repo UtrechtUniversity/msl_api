@@ -144,8 +144,8 @@ class FacilityController extends BaseDomainApiController
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_CHEMISTRY->value);
                 break;
 
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_ENERGY->value);
+            case EndpointContext::FIELD_SCALE:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::FIELD_SCALE->value);
                 break;
         }
     }

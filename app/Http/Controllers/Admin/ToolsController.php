@@ -16,6 +16,7 @@ use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Vocabulary;
+use App\Services\DataPublicatonFilterQueryService;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -351,68 +352,21 @@ class ToolsController extends Controller
         return view('admin.export-dois', ['organizations' => $organizations]);
     }
 
-    public function queryGenerator()
+    public function queryGenerator(DataPublicatonFilterQueryService $queryService)
     {
-        $group1 = [];
-        $group2 = [];
+        $group1Terms = $queryService->getQueryTerms('selection_group_1');
+        $group2Terms = $queryService->getQueryTerms('selection_group_2');
+        $group3Terms = $queryService->getQueryTerms('selection_group_3');
 
-        $vocabularies = Vocabulary::where('version', config('vocabularies.vocabularies_current_version'))->get();
-
-        foreach ($vocabularies as $vocabulary) {
-            $keywordsGroup1 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_1', true)->get();
-
-            foreach ($keywordsGroup1 as $keywordGroup1) {
-                foreach ($keywordGroup1->keywordSearch as $keywordSearch) {
-                    if (! $keywordSearch->exclude_abstract_mapping) {
-                        $group1[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
-                    }
-                }
-            }
-
-            $keywordsGroup2 = Keyword::where('vocabulary_id', $vocabulary->id)->where('selection_group_2', true)->get();
-
-            foreach ($keywordsGroup2 as $keywordGroup2) {
-                foreach ($keywordGroup2->keywordSearch as $keywordSearch) {
-                    if (! $keywordSearch->exclude_abstract_mapping) {
-                        $group2[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
-                    }
-                }
-            }
-        }
-
-        $query1 = implode(',', array_unique($group1));
-        $query2 = implode(',', array_unique($group2));
-
-        return view('admin.query-generator', ['queryGroup1' => $query1, 'group1Count' => count(array_unique($group1)), 'queryGroup2' => $query2, 'group2Count' => count(array_unique($group2))]);
-    }
-
-    private function createKeywordSearchRegex($searchValue)
-    {
-        $term = $searchValue;
-
-        $term = str_replace('(', '\\\\(', $term);
-        $term = str_replace(')', '\\\\)', $term);
-        $term = str_replace('.', '\\\\.', $term);
-        $term = str_replace('*', '\\\\*', $term);
-
-        if (str_ends_with($searchValue, ',')) {
-            return '"\\\\b'.$term.'"';
-        }
-
-        return '"\\\\b'.$term.'\\\\b"';
-    }
-
-    private function extractSynonyms($string)
-    {
-        $synonyms = [];
-        if (str_contains($string, '#')) {
-            $parts = explode('#', $string);
-            array_shift($parts);
-            foreach ($parts as $part) {
-                $synonyms[] = trim($part);
-            }
-        }
-
-        return $synonyms;
+        return view('admin.query-generator',
+            [
+                'queryGroup1' => implode(',', $group1Terms),
+                'group1Count' => count($group1Terms),
+                'queryGroup2' => implode(',', $group2Terms),
+                'group2Count' => count($group2Terms),
+                'queryGroup3' => implode(',', $group3Terms),
+                'group3Count' => count($group3Terms)
+            ]
+        );
     }
 }

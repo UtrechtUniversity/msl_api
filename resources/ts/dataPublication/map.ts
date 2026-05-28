@@ -1,31 +1,27 @@
-import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication.js";
-import { sideBar } from './sidebar.js'
-import type { Sidebar } from "../types/sidebar.js";
+import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
+import type { Sidebar } from "../types/sidebar";
+import type { ResultSet, ResultSetMapping } from "../types/map";
+import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
 import { assertNotUndefined } from "../helpers.js";
-import type { ResultSet, ResultSetMapping } from "../types/map.js";
-import { EXCLUSIVE, INCLUSIVE } from "../types/map.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
+import { sideBar } from "./sidebar.js";
 
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
     resultSet: ResultSet
 }
-interface SidebarTabClickEvent extends LeafletEvent {
-    id: ResultSet
-}
+
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
 type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
-
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
@@ -42,12 +38,10 @@ class DataPublicationMap {
     popupOptions = DEFAULT_POPUP_OPTIONS
     maxBounds = L.latLngBounds(southWest, northEast);
 
-
     constructor() {
         this.map = L.map('map', {
             maxBounds: this.maxBounds, maxBoundsViscosity: 1
         })
-
         this.markers = getResultSetMappingObj(() => L.markerClusterGroup({
             zoomToBoundsOnClick: true,
             showCoverageOnHover: false
@@ -61,11 +55,7 @@ class DataPublicationMap {
     public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
-
-
     }
-
-
 
     private drawMap() {
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -81,7 +71,6 @@ class DataPublicationMap {
     private setMarkersStyle(
         { doi, resultSet, highlightOrReset }:
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
-
         const geoFeatures = this.groupedMarkers[resultSet][doi]
         assertNotUndefined(geoFeatures, `Geofeatures should be populated for a datapublication with doi '${doi}'. This is a bug.`)
         geoFeatures.forEach(geoFeature => {
@@ -104,20 +93,16 @@ class DataPublicationMap {
             throw new Error('The response failed with status: ' + response.status + ' - ' + response.statusText);
         }
         const data = (await response.json()).data
-
         return data;
     }
 
 
     private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
-
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName })
             if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
-
         }
-
     }
 
 
@@ -167,7 +152,7 @@ class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(doi)
+                this.sideBar.highlight(doi, resultSet, { scroll: true })
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -191,7 +176,7 @@ class DataPublicationMap {
                 resultSet: e.resultSet,
                 highlightOrReset: 'highlight'
             });
-            this.sideBar.highlight(e.id)
+            this.sideBar.highlight(e.id, e.resultSet)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 
@@ -204,20 +189,8 @@ class DataPublicationMap {
             this.sideBar.removeHighlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
-
-
-        this.map.on('tab-click', ((e: SidebarTabClickEvent) => {
-            this.handleSidebarTab(e.id)
-        }) as LeafletEventHandlerFn);
-
     }
 
-    private handleSidebarTab(activatedTab: ResultSet) {
-        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-        this.sideBar.handleActivationOfTab(activatedTab)
-        this.map.addLayer(this.markers[activatedTab])
-        this.map.removeLayer(this.markers[deactivateTab])
-    }
     private async mouseEventHandling() {
         let rectangle: Rectangle | null = null;
         let startPoint: LatLng | undefined = undefined;

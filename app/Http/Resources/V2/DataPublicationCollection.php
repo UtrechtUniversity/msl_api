@@ -2,16 +2,18 @@
 
 namespace App\Http\Resources\V2;
 
+use App\Enums\SubDomains\EndpointContext;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class DataPublicationCollection extends ResourceCollection
 {
-    private $context;
+    private EndpointContext $context;
 
-    public function __construct($resource, $context = '')
+    public function setContext(EndpointContext $context): self
     {
-        parent::__construct($resource);
         $this->context = $context;
+
+        return $this;
     }
 
     /**
@@ -22,7 +24,8 @@ class DataPublicationCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-
-        return $this->collection->map(fn ($resource) => (new DataPublicationResource($resource, $this->context)));
+        return $this->collection->map(fn ($resource) =>
+            ((new DataPublicationResource($resource))->setContext($this->context)->setIncludesGeoJson(true))
+        );
     }
 }

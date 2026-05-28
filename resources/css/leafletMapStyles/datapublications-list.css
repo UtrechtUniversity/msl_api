@@ -1,9 +1,16 @@
 @reference "../app.css";
 
+.data-publication-link{
+    
+    position: relative;
+    display: block;
+
+}
+
 .data-publication-item.highlight .data-publication-title,
 .data-publication-item.highlight .data-publication-authors,
 .data-publication-item.highlight .data-publication-date {
-  @apply whitespace-normal overflow-visible text-clip;
+  @apply  whitespace-normal overflow-visible text-clip;
 }
 
 .data-publication-item {
@@ -52,4 +59,10 @@
     color: var(--color-secondary-900);
 }
 
+.data-publication-icon {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    color: #666;
+}
 
