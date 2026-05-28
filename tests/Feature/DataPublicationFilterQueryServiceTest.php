@@ -30,13 +30,13 @@ class DataPublicationFilterQueryServiceTest extends TestCase
             'selection_group_3' => false,
         ]);
 
-        $keyword1->keyword_search()->create([
+        $keyword1->keywordSearch()->create([
             'search_value' => 'search1',
             'isSynonym' => true,
             'exclude_abstract_mapping' => false,
         ]);
 
-        $keyword1->keyword_search()->create([
+        $keyword1->keywordSearch()->create([
             'search_value' => 'search2',
             'isSynonym' => true,
             'exclude_abstract_mapping' => false,
@@ -53,7 +53,7 @@ class DataPublicationFilterQueryServiceTest extends TestCase
             'selection_group_3' => false,
         ]);
 
-        $keyword2->keyword_search()->create([
+        $keyword2->keywordSearch()->create([
             'search_value' => 'search3',
             'isSynonym' => true,
             'exclude_abstract_mapping' => false,
