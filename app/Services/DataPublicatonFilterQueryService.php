@@ -19,7 +19,7 @@ class DataPublicatonFilterQueryService
             $keywords = $vocabulary->keywords->where($group, true);
 
             foreach ($keywords as $keyword) {
-                foreach ($keyword->keyword_search as $keywordSearch) {
+                foreach ($keyword->keywordSearch as $keywordSearch) {
                     if (! $keywordSearch->exclude_abstract_mapping) {
                         $terms[] = $this->createKeywordSearchRegex($keywordSearch->search_value);
                     }
