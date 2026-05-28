@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\Vocabulary;
 
-class DataPublicatonFilterQueryService
+class DataPublicationFilterQueryService
 {
     public function getQueryTerms(string $group): array
     {

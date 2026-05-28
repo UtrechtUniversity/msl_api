@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Vocabulary;
-use App\Services\DataPublicatonFilterQueryService;
+use App\Services\DataPublicationFilterQueryService;
 use Illuminate\Support\Facades\Config;
 use Tests\TestCase;
 
@@ -59,7 +59,7 @@ class DataPublicationFilterQueryServiceTest extends TestCase
             'exclude_abstract_mapping' => false,
         ]);
 
-        $queryService = new DataPublicatonFilterQueryService();
+        $queryService = new DataPublicationFilterQueryService();
         $queryTerms = $queryService->getQueryTerms('selection_group_1');
 
         $this->assertCount(3, $queryTerms);

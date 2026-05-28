@@ -16,7 +16,7 @@ use App\Mappers\Helpers\KeywordHelper;
 use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Vocabulary;
-use App\Services\DataPublicatonFilterQueryService;
+use App\Services\DataPublicationFilterQueryService;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -352,7 +352,7 @@ class ToolsController extends Controller
         return view('admin.export-dois', ['organizations' => $organizations]);
     }
 
-    public function queryGenerator(DataPublicatonFilterQueryService $queryService)
+    public function queryGenerator(DataPublicationFilterQueryService $queryService)
     {
         $group1Terms = $queryService->getQueryTerms('selection_group_1');
         $group2Terms = $queryService->getQueryTerms('selection_group_2');
