@@ -645,7 +645,7 @@ class ApiTest extends TestCase
                         ->where('latitude', '60.2026')
                         ->where('longitude', '24.9576')
                         ->has('altitude')
-                        ->where('portalLink', 'http://localhost/lab/fa7cdfad1a5aaf8370ebeda47a1ff1c3')
+                        ->where('portalLink', config('app.url').'/lab/fa7cdfad1a5aaf8370ebeda47a1ff1c3')
                         ->where('organization', 'University of Helsinki')
                         ->where('equipment.0.title', '2G cryogenic magnetometer')
                         ->where('equipment.0.description', 'cryogenic magnetometer for discrete samples, 2G Model 755 DC,')
