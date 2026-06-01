@@ -23,7 +23,7 @@ const L = window.L;
 type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
-
+type MenuButtons = { 'Overlapping': HTMLElement, 'Inside': HTMLElement, 'Spatial draw': HTMLElement, 'Spatial remove': HTMLElement }
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
 
@@ -37,7 +37,9 @@ export class DataPublicationMap {
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     popupOptions = DEFAULT_POPUP_OPTIONS
     maxBounds = L.latLngBounds(southWest, northEast);
-    buttons: { 'Overlapping': HTMLElement, 'Inside': HTMLElement }
+    buttons: MenuButtons
+    drawingEnabled: boolean = false
+    rectangle: Rectangle | null = null
 
     constructor() {
         this.map = L.map('map', {
@@ -54,13 +56,29 @@ export class DataPublicationMap {
 
 
 
-    getButtons(): { 'Overlapping': HTMLElement, 'Inside': HTMLElement } {
+    getButtons(): MenuButtons {
         const overlappingButton = document.getElementById('overlapping-filter-btn')
         assertNotNull(overlappingButton, 'Overlapping filter button is not found. This is a bug.')
         const insideButton = document.getElementById('inside-filter-btn')
         assertNotNull(insideButton, 'Inside filter button is not found. This is a bug.')
+        const spatialDrawButton = document.getElementById('spatial-draw')
+        assertNotNull(spatialDrawButton, 'Spatial draw filter button is not found. This is a bug.')
+        const spatialRemoveButton = document.getElementById('spatial-remove')
+        assertNotNull(spatialRemoveButton, 'Spatial remove filter button is not found. This is a bug.')
+        spatialDrawButton.addEventListener("click", () => {
+            this.drawingEnabled = true;
+        });
 
-        return { 'Overlapping': overlappingButton, 'Inside': insideButton }
+        spatialRemoveButton.addEventListener("click", () => {
+            if (this.rectangle) {
+                this.map.removeLayer(this.rectangle);
+                this.rectangle = null;
+                this.removeLayers()
+                this.sideBar.resetList()
+            }
+        });
+
+        return { 'Overlapping': overlappingButton, 'Inside': insideButton, 'Spatial draw': spatialDrawButton, 'Spatial remove': spatialRemoveButton }
 
     }
     // Create the map in the beginning
@@ -218,41 +236,26 @@ export class DataPublicationMap {
     }
 
     private async mouseEventHandling() {
-        let rectangle: Rectangle | null = null;
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
         let drawingBounds: LatLngBounds | undefined = undefined
 
-        const container = this.map.getContainer();
-
-        container.addEventListener(
-            'contextmenu',
-            (e: MouseEvent) => {
-                if (!e.ctrlKey) {
-                    return;
-                }
-
-                e.preventDefault();
-                e.stopPropagation();
-            },
-        );
         // On pressing a button on the mouse
         this.map.on("mousedown", async (e: LeafletMouseEvent) => {
 
             // This is about the browser
-            const { ctrlKey, button } = e.originalEvent;
+            const { button } = e.originalEvent;
             // This is about the leaflet event
             const latlng = e.latlng;
 
-            // Only proceed if ctrl is held
-            if (!ctrlKey) return;
+            if (!this.drawingEnabled) return;
 
             // If the click is on the right button,
             // reset the map and remove layers.
             if (button === 2) {
-                if (rectangle) {
-                    this.map.removeLayer(rectangle);
-                    rectangle = null;
+                if (this.rectangle) {
+                    this.map.removeLayer(this.rectangle);
+                    this.rectangle = null;
                     this.removeLayers();
                     this.resetMapView();
                     this.sideBar.resetList()
@@ -270,9 +273,9 @@ export class DataPublicationMap {
 
             // If a rectangle already existed,
             // clear the layers, and start again
-            if (rectangle) {
-                this.map.removeLayer(rectangle);
-                rectangle = null;
+            if (this.rectangle) {
+                this.map.removeLayer(this.rectangle);
+                this.rectangle = null;
                 this.removeLayers()
                 this.sideBar.resetList()
             }
@@ -289,7 +292,7 @@ export class DataPublicationMap {
                 // We need the line below, because, as the user draws,
                 // they create a lot of small rectangles
                 // from which we want to keep only the last one.
-                if (rectangle) this.map.removeLayer(rectangle);
+                if (this.rectangle) this.map.removeLayer(this.rectangle);
 
                 drawingBounds = L.latLngBounds(startPoint, this.restrictLatLng(ev.latlng));
                 // Create a new pane and add the bounding box layer there, 
@@ -301,8 +304,8 @@ export class DataPublicationMap {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                rectangle = L.rectangle(drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
-                rectangle.addTo(this.map);
+                this.rectangle = L.rectangle(drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
+                this.rectangle.addTo(this.map);
             };
 
 
