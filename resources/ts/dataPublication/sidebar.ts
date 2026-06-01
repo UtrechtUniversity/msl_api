@@ -169,10 +169,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         else {
             this._tabViews[EXCLUSIVE]._listView.forEach((item) => item.classList.remove('disabled'))
         }
-        // activatedTabElements._tab.classList.add('active')
-        // activatedTabElements._listView.hidden = false;
-        // deactivatedTabElements._tab.classList.remove('active')
-        // deactivatedTabElements._listView.hidden = true;
+        activatedTabElements._tab.classList.add('active')
+        deactivatedTabElements._tab.classList.remove('active')
+
         this._map.fire('tab-click', { id: activatedTab }
         )
 

@@ -40,6 +40,7 @@ export class DataPublicationMap {
     drawingEnabled: boolean = false
     rectangle: Rectangle | null = null
     activatedTab: ResultSet
+    drawingBounds: null | LatLngBounds
 
     constructor() {
         this.map = L.map('map', {
@@ -53,6 +54,7 @@ export class DataPublicationMap {
         this.sideBar = new sideBar().addTo(this.map);
         this.buttons = this.getButtons()
         this.activatedTab = 'exclusive'
+        this.drawingBounds = null
     }
 
 
@@ -67,7 +69,15 @@ export class DataPublicationMap {
         const spatialRemoveButton = document.getElementById('spatial-remove')
         assertNotNull(spatialRemoveButton, 'Spatial remove filter button is not found. This is a bug.')
         spatialDrawButton.addEventListener("click", () => {
-            this.drawingEnabled = true;
+            this.drawingEnabled = !this.drawingEnabled
+            if (this.drawingEnabled) {
+                spatialDrawButton.innerText = 'Stop spatial drawing'
+            } else {
+                spatialDrawButton.innerText = 'Draw spatial filter'
+                if (!this.drawingBounds) return;
+                this.drawingBoundsInMap()
+
+            }
         });
 
         spatialRemoveButton.addEventListener("click", () => {
@@ -240,7 +250,6 @@ export class DataPublicationMap {
     private async mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
-        let drawingBounds: LatLngBounds | undefined = undefined
 
         // On pressing a button on the mouse
         this.map.on("mousedown", async (e: LeafletMouseEvent) => {
@@ -256,6 +265,7 @@ export class DataPublicationMap {
             // reset the map and remove layers.
             if (button === 2) {
                 if (this.rectangle) {
+
                     this.map.removeLayer(this.rectangle);
                     this.rectangle = null;
                     this.removeLayers();
@@ -276,6 +286,8 @@ export class DataPublicationMap {
             // If a rectangle already existed,
             // clear the layers, and start again
             if (this.rectangle) {
+
+
                 this.map.removeLayer(this.rectangle);
                 this.rectangle = null;
                 this.removeLayers()
@@ -291,12 +303,14 @@ export class DataPublicationMap {
 
             const onMouseMove = (ev: LeafletMouseEvent) => {
                 assertNotUndefined(startPoint, 'StartPoint should have a value. This is a bug.')
+
                 // We need the line below, because, as the user draws,
                 // they create a lot of small rectangles
                 // from which we want to keep only the last one.
-                if (this.rectangle) this.map.removeLayer(this.rectangle);
+                if (this.rectangle)
+                    this.map.removeLayer(this.rectangle);
 
-                drawingBounds = L.latLngBounds(startPoint, this.restrictLatLng(ev.latlng));
+                this.drawingBounds = L.latLngBounds(startPoint, this.restrictLatLng(ev.latlng));
                 // Create a new pane and add the bounding box layer there, 
                 // so that the bbox is drawn always on top of geo layers but below 
                 // pop ups
@@ -306,7 +320,7 @@ export class DataPublicationMap {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                this.rectangle = L.rectangle(drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
+                this.rectangle = L.rectangle(this.drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
                 this.rectangle.addTo(this.map);
             };
 
@@ -322,18 +336,6 @@ export class DataPublicationMap {
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);
                 this.map.dragging.enable();
-                assertNotUndefined(drawingBounds, 'Bounds should not have been undefined. This is a bug.')
-                const sw = drawingBounds.getSouthWest();
-                const ne = drawingBounds.getNorthEast();
-                const boundingBox = JSON.stringify([
-                    sw.lng,
-                    sw.lat,
-                    ne.lng,
-                    ne.lat
-                ]);
-                this.map.fitBounds(drawingBounds);
-
-                this.addFeaturesAndSidebarInMap(boundingBox)
 
             };
 
@@ -344,6 +346,22 @@ export class DataPublicationMap {
             document.addEventListener("mouseup", onMouseUp);
 
         });
+    }
+
+    private drawingBoundsInMap() {
+        assertNotUndefined(this.drawingBounds, 'Bounds should not have been undefined. This is a bug.')
+
+        const sw = this.drawingBounds!.getSouthWest();
+        const ne = this.drawingBounds!.getNorthEast();
+        const boundingBox = JSON.stringify([
+            sw.lng,
+            sw.lat,
+            ne.lng,
+            ne.lat
+        ]);
+        this.map.fitBounds(this.drawingBounds!);
+
+        this.addFeaturesAndSidebarInMap(boundingBox)
     }
     private restrictLatLng(latlng: LatLng) {
         const lat = Math.max(this.maxBounds.getSouth(), Math.min(this.maxBounds.getNorth(), latlng.lat));
