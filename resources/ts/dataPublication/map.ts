@@ -13,7 +13,6 @@ import { sideBar } from "./sidebar.js";
 
 interface SidebarHoverEvent extends LeafletEvent {
     id: string;
-    resultSet: ResultSet
 }
 
 
@@ -40,6 +39,7 @@ export class DataPublicationMap {
     buttons: MenuButtons
     drawingEnabled: boolean = false
     rectangle: Rectangle | null = null
+    activatedTab: ResultSet
 
     constructor() {
         this.map = L.map('map', {
@@ -52,6 +52,7 @@ export class DataPublicationMap {
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
         this.buttons = this.getButtons()
+        this.activatedTab = 'exclusive'
     }
 
 
@@ -183,7 +184,7 @@ export class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(doi, resultSet, { scroll: true })
+                this.sideBar.highlight(doi, { scroll: true })
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -207,6 +208,7 @@ export class DataPublicationMap {
 
     private handleSidebarTab(activatedTab: ResultSet) {
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        this.activatedTab = activatedTab
         this.sideBar.handleActivationOfTab(activatedTab)()
         this.map.addLayer(this.markers[activatedTab])
         this.map.removeLayer(this.markers[deactivateTab])
@@ -217,17 +219,17 @@ export class DataPublicationMap {
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                resultSet: e.resultSet,
+                resultSet: this.activatedTab,
                 highlightOrReset: 'highlight'
             });
-            this.sideBar.highlight(e.id, e.resultSet)
+            this.sideBar.highlight(e.id)
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 
         this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
-                resultSet: e.resultSet,
+                resultSet: this.activatedTab,
                 highlightOrReset: 'reset'
             })
             this.sideBar.removeHighlight(e.id)

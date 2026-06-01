@@ -13,7 +13,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     includes: (Evented.prototype || Mixin.Events),
     _sidebar: null,
     _map: null,
-    _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: null } }),
+    _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: [] } }),
+    _list: null,
 
     initialize: function () {
         this._sidebar = document.querySelector(' #sidebar-content [data-content="Results"] #datapublication-results')
@@ -22,13 +23,16 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
     _initViews() {
         assertNotNull(this._sidebar, 'sidebar')
+        // for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+        const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
+        createdListView.id = 'data_publications_list'
+        // createdListView.hidden = !tabInfo.active
+        this._list = createdListView;
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
-            createdListView.id = tabName + '_data_publications_list'
-            createdListView.hidden = !tabInfo.active
+
             const tabButton = document.getElementById(tabInfo.buttonId)
             assertElementNotNull(tabButton, { name: tabInfo.buttonId, id: true })
-            this._tabViews[tabName] = { _tab: tabButton, _listView: createdListView }
+            this._tabViews[tabName] = { _tab: tabButton, _listView: [] }
 
         }
     },
@@ -48,9 +52,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         * Highlight items of the map related to specific
         * data publication
         */
-    highlight(id: string, resultSet: ResultSet, { scroll }: { scroll: boolean } = { scroll: false }) {
+    highlight(id: string, { scroll }: { scroll: boolean } = { scroll: false }) {
         //We only want to highlight the element in the correct result set.
-        const elements = $('#' + resultSet + '_data_publications_list ' + '[data-id="' + id + '"]')
+        const elements = $('#' + 'data_publications_list ' + '[data-id="' + id + '"]')
         assertSingleArray(elements, `Found more than one datapublications with doi '${id}' to highlight. This is a bug. `)
         const element = elements[0]
         element.classList.add('highlight');
@@ -93,34 +97,34 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
 
-        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-            const { _tab: _, _listView } = this._tabViews[tabName]
-            if (!_listView) throw new Error('List view should not be null. This is a bug.')
-            _listView.innerHTML = '';
-            for (const dataPublication of dataPublications[tabName].data_publications) {
-                const item = this._createListItem(dataPublication)
-
-                item.addEventListener('mouseover', () => {
-                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                    this._map.fire('sidebar-hover', {
-                        id: dataPublication.doi,
-                        resultSet: tabName
-                    });
-
+        // for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+        // const { _tab: _, _listView } = this._tabViews[tabName]
+        if (!this._list) throw new Error('List view should not be null. This is a bug.')
+        this._list.innerHTML = '';
+        for (const dataPublication of dataPublications[EXCLUSIVE].data_publications) {
+            const item = this._createListItem(dataPublication)
+            if (!dataPublication.inclusive) this._tabViews[EXCLUSIVE]._listView.push(item)
+            item.addEventListener('mouseover', () => {
+                assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                this._map.fire('sidebar-hover', {
+                    id: dataPublication.doi,
+                    resultSet: EXCLUSIVE
                 });
 
-                item.addEventListener('mouseleave', () => {
-                    assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                    this._map.fire('sidebar-leave',
-                        { id: dataPublication.doi, resultSet: tabName })
+            });
 
-                });
+            item.addEventListener('mouseleave', () => {
+                assertNotNull(this._map, `Map is undefined. This is a bug.`)
+                this._map.fire('sidebar-leave',
+                    { id: dataPublication.doi, resultSet: EXCLUSIVE })
+
+            });
 
 
-                _listView.appendChild(item);
-            };
+            this._list.appendChild(item);
+        };
 
-        }
+        // }
 
     },
 
@@ -129,13 +133,13 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
         for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
 
-            const tabElements = this._tabViews[tabName]
-            assertNotNull(tabElements._listView,
+            // const tabElements = this._tabViews[tabName]
+            assertNotNull(this._list,
                 'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
             )
-            const listView = tabElements._listView
-            while (listView.firstChild) {
-                listView.firstChild.remove()
+            // const listView = tabElements._listView
+            while (this._list.firstChild) {
+                this._list.firstChild.remove()
             }
         }
     },
@@ -155,10 +159,20 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         assertTabElementsNotNull(activatedTabElements);
         assertTabElementsNotNull(deactivatedTabElements);
 
-        activatedTabElements._tab.classList.add('active')
-        activatedTabElements._listView.hidden = false;
-        deactivatedTabElements._tab.classList.remove('active')
-        deactivatedTabElements._listView.hidden = true;
+
+
+        if (activatedTab === INCLUSIVE) {
+
+            this._tabViews[EXCLUSIVE]._listView.forEach((item) => item.classList.add('disabled'))
+
+        }
+        else {
+            this._tabViews[EXCLUSIVE]._listView.forEach((item) => item.classList.remove('disabled'))
+        }
+        // activatedTabElements._tab.classList.add('active')
+        // activatedTabElements._listView.hidden = false;
+        // deactivatedTabElements._tab.classList.remove('active')
+        // deactivatedTabElements._listView.hidden = true;
         this._map.fire('tab-click', { id: activatedTab }
         )
 

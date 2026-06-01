@@ -17,6 +17,7 @@
     background: var(--color-primary-100);
     padding-block: calc(var(--spacing) * 2);
 }
+.data-publication-item.disabled{opacity:0.25;  pointer-events: none}
 
 .data-publication-title {
     font-size: var(--text-base); /* 1rem (16px) */ 
