@@ -1,8 +1,8 @@
 /* global L */
 
 import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import type { Sidebar } from "../types/sidebar";
-import type { ResultSet } from "../types/map";
+import type { Sidebar, ViewPerTab } from "../types/sidebar";
+import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
@@ -26,7 +26,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
             createdListView.id = tabName + '_data_publications_list'
             createdListView.hidden = !tabInfo.active
-            this._tabViews[tabName] = { _tab: null, _listView: createdListView }
+            const tabButton = document.getElementById(tabInfo.buttonId)
+            assertElementNotNull(tabButton, { name: tabInfo.buttonId, id: true })
+            this._tabViews[tabName] = { _tab: tabButton, _listView: createdListView }
 
         }
     },
@@ -136,9 +138,9 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
                 listView.firstChild.remove()
             }
         }
-    }
+    },
 
-        handleActivationOfTab: function (activatedTab: ResultSet) {
+    handleActivationOfTab: function (activatedTab: ResultSet) {
         return () => {
             this._activateTab(activatedTab)
 
@@ -148,7 +150,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
         const activatedTabElements = this._tabViews[activatedTab]
         const deactivatedTabElements = this._tabViews[deactivateTab]
-
 
         assertNotNull(this._map, `Map is undefined. This is a bug.`)
         assertTabElementsNotNull(activatedTabElements);
@@ -175,3 +176,18 @@ function assertSingleArray<T>(arr: ArrayLike<T>, message: string): asserts arr i
     }
 }
 
+
+function assertTabElementsNotNull(viewPerTab: ViewPerTab): asserts viewPerTab is { [K in keyof ViewPerTab]: NonNullable<ViewPerTab[K]> } {
+    for (const [key, value] of Object.entries(viewPerTab)) {
+        if (value == null) {
+            throw new Error(`viewPerTab.${key} is null. This is a bug.`);
+        }
+    }
+}
+
+function assertElementNotNull(element: HTMLElement | null, { name, id }: { name: string, id?: true }): asserts element is HTMLElement {
+    if (!id)
+        return assertNotNull(sideBar, ` The element '${name}' should be set by now.This is a bug.`)
+    return assertNotNull(sideBar, ` The element with id '${name}' should be set by now.This is a bug.`)
+
+}

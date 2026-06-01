@@ -181,19 +181,18 @@ export class DataPublicationMap {
         this.map.setView([51.505, -0.09], 4);
     }
     private handleButtons() {
-        this.buttons.Overlapping.addEventListener("click", this.handleSidebarTab(EXCLUSIVE)
+        this.buttons.Overlapping.addEventListener("click", () => this.handleSidebarTab(EXCLUSIVE)
         );
-        this.buttons.Inside.addEventListener("click", this.handleSidebarTab(INCLUSIVE)
+        this.buttons.Inside.addEventListener("click", () => this.handleSidebarTab(INCLUSIVE)
         )
     }
 
     private handleSidebarTab(activatedTab: ResultSet) {
-        return () => {
-            const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-            this.sideBar.handleActivationOfTab(activatedTab)
-            this.map.addLayer(this.markers[activatedTab])
-            this.map.removeLayer(this.markers[deactivateTab])
-        }
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        this.sideBar.handleActivationOfTab(activatedTab)()
+        this.map.addLayer(this.markers[activatedTab])
+        this.map.removeLayer(this.markers[deactivateTab])
+
     }
     private sideBarEventHandling() {
 

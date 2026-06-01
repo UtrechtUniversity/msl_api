@@ -4,13 +4,14 @@ import type { DataPublication, GeoJsonDataPublications, InclusiveExclusiveGeoJso
 import { type ResultSet, type ResultSetMapping } from "./map.js";
 
 
-export type ViewPerTab = { _tab: HTMLLIElement | null, _listView: HTMLElement | null }
+export type ViewPerTab = { _tab: HTMLElement | null, _listView: HTMLElement | null }
 export interface Sidebar {
     // private methods
     _sidebar: HTMLElement | null
     _map: Leaflet.Map | null,
     _tabViews: ResultSetMapping<ViewPerTab>,
     _createListItem(dataPublication: DataPublication): HTMLDivElement,
+    _activateTab(activatedTab: ResultSet): void,
     _initViews(): void,
 
     // public methods
@@ -19,6 +20,7 @@ export interface Sidebar {
     highlight(id: string, resultSet: ResultSet, opts?: { scroll: boolean }): void,
     removeHighlight(id: string): void,
     addTo(map: Leaflet.Map): this,
+    handleActivationOfTab(activatedTab: ResultSet): () => void
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
     resetList(): void,
 

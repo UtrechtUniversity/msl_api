@@ -256,7 +256,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         assertNotNull(this._map, `Map is undefined. This is a bug.`)
         assertTabElementsNotNull(activatedTabElements);
         assertTabElementsNotNull(deactivatedTabElements);
-
         activatedTabElements._tab.classList.add('active')
         activatedTabElements._listView.hidden = false;
         deactivatedTabElements._tab.classList.remove('active')
