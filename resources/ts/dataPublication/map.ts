@@ -261,21 +261,8 @@ export class DataPublicationMap {
 
             if (!this.drawingEnabled) return;
 
-            // If the click is on the right button,
-            // reset the map and remove layers.
-            if (button === 2) {
-                if (this.rectangle) {
 
-                    this.map.removeLayer(this.rectangle);
-                    this.rectangle = null;
-                    this.removeLayers();
-                    this.resetMapView();
-                    this.sideBar.resetList()
-                }
-                return;
-            }
-
-            // If the click is on the middle button,
+            // If the click is in the middle of right button,
             // then do nothing
             if (button !== 0) return;
 
