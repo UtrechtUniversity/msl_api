@@ -10,13 +10,13 @@
                 </div>
                 <div class='flex flex-row gap-3'>
                     <div class="py-4">
-                        <button id='overlapping-filter' class=" menu-btn btn btn-md " disabled>
+                        <button id='overlapping-filter-btn' class=" menu-btn btn btn-md " disabled>
                             <i class="fa-solid fa-xmark"></i>
                             <span>Overlapping</span>
                         </button>
                     </div>
                     <div class="py-4">
-                        <button id='inside-filter' class="menu-btn btn btn-md">
+                        <button id='inside-filter-btn' class="menu-btn btn btn-md">
                             <i class="fa-solid fa-circle-xmark"></i>
                             <span>Inside</span>
                         </button>

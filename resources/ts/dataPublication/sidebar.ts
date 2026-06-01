@@ -138,6 +138,31 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         }
     }
 
+        handleActivationOfTab: function (activatedTab: ResultSet) {
+        return () => {
+            this._activateTab(activatedTab)
+
+        }
+    },
+    _activateTab: function (activatedTab: ResultSet) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        const activatedTabElements = this._tabViews[activatedTab]
+        const deactivatedTabElements = this._tabViews[deactivateTab]
+
+
+        assertNotNull(this._map, `Map is undefined. This is a bug.`)
+        assertTabElementsNotNull(activatedTabElements);
+        assertTabElementsNotNull(deactivatedTabElements);
+
+        activatedTabElements._tab.classList.add('active')
+        activatedTabElements._listView.hidden = false;
+        deactivatedTabElements._tab.classList.remove('active')
+        deactivatedTabElements._listView.hidden = true;
+        this._map.fire('tab-click', { id: activatedTab }
+        )
+
+    },
+
 });
 
 

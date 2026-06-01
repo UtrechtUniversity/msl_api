@@ -2,10 +2,10 @@ import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEvent
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
 import type { Sidebar } from "../types/sidebar";
-import type { ResultSet, ResultSetMapping } from "../types/map";
+import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from "../types/map";
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotUndefined } from "../helpers.js";
+import { assertNotNull, assertNotUndefined } from "../helpers.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";
@@ -37,6 +37,7 @@ export class DataPublicationMap {
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     popupOptions = DEFAULT_POPUP_OPTIONS
     maxBounds = L.latLngBounds(southWest, northEast);
+    buttons: { 'Overlapping': HTMLElement, 'Inside': HTMLElement }
 
     constructor() {
         this.map = L.map('map', {
@@ -48,13 +49,25 @@ export class DataPublicationMap {
         }));
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
+        this.buttons = this.getButtons()
     }
 
 
+
+    getButtons(): { 'Overlapping': HTMLElement, 'Inside': HTMLElement } {
+        const overlappingButton = document.getElementById('overlapping-filter-btn')
+        assertNotNull(overlappingButton, 'Overlapping filter button is not found. This is a bug.')
+        const insideButton = document.getElementById('inside-filter-btn')
+        assertNotNull(insideButton, 'Inside filter button is not found. This is a bug.')
+
+        return { 'Overlapping': overlappingButton, 'Inside': insideButton }
+
+    }
     // Create the map in the beginning
     public async init() {
         await this.mouseEventHandling();
         this.sideBarEventHandling();
+        this.handleButtons();
     }
 
     private drawMap() {
@@ -167,7 +180,21 @@ export class DataPublicationMap {
     private resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
-    // THIS COULD BE MOVED
+    private handleButtons() {
+        this.buttons.Overlapping.addEventListener("click", this.handleSidebarTab(EXCLUSIVE)
+        );
+        this.buttons.Inside.addEventListener("click", this.handleSidebarTab(INCLUSIVE)
+        )
+    }
+
+    private handleSidebarTab(activatedTab: ResultSet) {
+        return () => {
+            const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+            this.sideBar.handleActivationOfTab(activatedTab)
+            this.map.addLayer(this.markers[activatedTab])
+            this.map.removeLayer(this.markers[deactivateTab])
+        }
+    }
     private sideBarEventHandling() {
 
         this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
