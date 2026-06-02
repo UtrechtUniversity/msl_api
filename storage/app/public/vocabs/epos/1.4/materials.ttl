@@ -200,8 +200,8 @@
   skos:prefLabel "travertine" ;
   owl:sameAs <https://epos-msl.uu.nl/voc/materials/1.4/sedimentary_rock-limestone-travertine> ;
   skos:inScheme <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/materials> ;
-  rdfs:seeAlso <http://resource.geosciml.org/classifier/cgi/lithology/claystone> ;
-  skos:exactMatch <http://resource.geosciml.org/classifier/cgi/lithology/claystone> ;
+  rdfs:seeAlso <http://resource.geosciml.org/classifier/cgi/lithology/travertine> ;
+  skos:exactMatch <http://resource.geosciml.org/classifier/cgi/lithology/travertine> ;
   dc:source "geosciml" .
 
 <https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/materials/sedimentary_rock-marl>
