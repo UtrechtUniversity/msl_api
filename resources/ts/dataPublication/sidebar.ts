@@ -6,7 +6,7 @@ import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
-import { bus } from "./menuButtons";
+import { bus } from "./bus";
 
 
 
@@ -169,9 +169,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         }
         activatedTabElements._tab.classList.add('active')
         deactivatedTabElements._tab.classList.remove('active')
-
-        // bus.fire('tab-click', { id: activatedTab }
-        // )
 
     },
 

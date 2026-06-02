@@ -9,7 +9,8 @@ import { assertNotNull, assertNotUndefined } from "../helpers.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";
-import { bus } from './menuButtons';
+import { bus } from './bus';
+import { MenuButtons } from './menuButtons';
 
 
 interface SidebarHoverEvent extends LeafletEvent {
@@ -23,7 +24,6 @@ const L = window.L;
 type GroupedLayer = { [groupedId: string]: Layer[] }
 type GroupedLayerMapping = ResultSetMapping<GroupedLayer>
 type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
-type MenuButtons = { 'Overlapping': HTMLElement, 'Inside': HTMLElement, 'Spatial draw': HTMLElement, 'Spatial remove': HTMLElement }
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
 
@@ -37,7 +37,6 @@ export class DataPublicationMap {
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS
     popupOptions = DEFAULT_POPUP_OPTIONS
     maxBounds = L.latLngBounds(southWest, northEast);
-    buttons: MenuButtons
     drawingEnabled: boolean = false
     rectangle: Rectangle | null = null
     activatedTab: ResultSet
@@ -53,73 +52,12 @@ export class DataPublicationMap {
         }));
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
-        this.buttons = this.initButtons()
         this.activatedTab = 'exclusive'
         this.drawingBounds = null
     }
 
 
 
-    initButtons(): MenuButtons {
-        const overlappingButton = document.getElementById('overlapping-filter-btn')
-        assertNotNull(overlappingButton, 'Overlapping filter button is not found. This is a bug.')
-        const insideButton = document.getElementById('inside-filter-btn')
-        assertNotNull(insideButton, 'Inside filter button is not found. This is a bug.')
-        const spatialDrawButton = document.getElementById('spatial-draw')
-        assertNotNull(spatialDrawButton, 'Spatial draw filter button is not found. This is a bug.')
-        const spatialRemoveButton = document.getElementById('spatial-remove')
-        assertNotNull(spatialRemoveButton, 'Spatial remove filter button is not found. This is a bug.')
-        const drawing = this.drawingEnabled;
-
-        spatialDrawButton.innerText = drawing
-            ? 'Stop spatial drawing'
-            : 'Draw spatial filter';
-
-        (insideButton as HTMLButtonElement).disabled = !drawing;
-        (overlappingButton as HTMLButtonElement).disabled = !drawing;
-        (spatialRemoveButton as HTMLButtonElement).disabled = !drawing;
-
-        spatialDrawButton.addEventListener("click", () => {
-            this.drawingEnabled = !this.drawingEnabled
-
-            if (this.drawingEnabled) {
-                if (this.rectangle) {
-                    this.map.removeLayer(this.rectangle);
-                    this.rectangle = null;
-                    this.removeLayers()
-                    this.sideBar.resetList()
-                }
-                (insideButton as HTMLButtonElement).disabled = true;
-                (overlappingButton as HTMLButtonElement).disabled = true;
-                (spatialRemoveButton as HTMLButtonElement).disabled = true;
-                spatialDrawButton.innerText = 'Stop spatial drawing'
-            } else {
-                spatialDrawButton.innerText = 'Draw spatial filter'
-                if (!this.drawingBounds) return;
-                this.drawingBoundsInMap();
-                (insideButton as HTMLButtonElement).disabled = false;
-                (overlappingButton as HTMLButtonElement).disabled = false;
-                (spatialRemoveButton as HTMLButtonElement).disabled = false;
-                this.getDefaultTab()
-            }
-        });
-
-        spatialRemoveButton.addEventListener("click", () => {
-            if (this.rectangle) {
-                this.map.removeLayer(this.rectangle);
-                this.rectangle = null;
-                this.removeLayers()
-                this.sideBar.resetList()
-            }
-            (insideButton as HTMLButtonElement).disabled = true;
-            (overlappingButton as HTMLButtonElement).disabled = true;
-            (spatialRemoveButton as HTMLButtonElement).disabled = true;
-            this.getDefaultTab()
-        });
-
-        return { 'Overlapping': overlappingButton, 'Inside': insideButton, 'Spatial draw': spatialDrawButton, 'Spatial remove': spatialRemoveButton }
-
-    }
     // Create the map in the beginning
     public async init() {
         await this.mouseEventHandling();
@@ -238,10 +176,35 @@ export class DataPublicationMap {
         this.map.setView([51.505, -0.09], 4);
     }
     private handleButtons() {
-        this.buttons.Overlapping.addEventListener("click", () => this.handleSidebarTab(EXCLUSIVE)
-        );
-        this.buttons.Inside.addEventListener("click", () => this.handleSidebarTab(INCLUSIVE)
-        )
+
+        bus.on('filter:inside', (() => this.handleSidebarTab(INCLUSIVE)))
+        bus.on('filter:overlapping', (() => this.handleSidebarTab(EXCLUSIVE)))
+        bus.on('drawing:enabled', () => {
+            this.drawingEnabled = true;
+            if (this.rectangle) {
+                this.map.removeLayer(this.rectangle);
+                this.rectangle = null;
+                this.removeLayers()
+                this.sideBar.resetList()
+            }
+        })
+
+        bus.on('drawing:completed', () => {
+            if (!this.drawingBounds) return;
+            this.drawingBoundsInMap();
+            this.getDefaultTab()
+
+        })
+        bus.on('drawing:removed', () => {
+            if (this.rectangle) {
+                this.map.removeLayer(this.rectangle);
+                this.rectangle = null;
+                this.removeLayers()
+                this.sideBar.resetList()
+            }
+            this.getDefaultTab()
+
+        })
     }
 
     private handleSidebarTab(activatedTab: ResultSet) {
@@ -415,6 +378,7 @@ export class DataPublicationMap {
 
 const app = new DataPublicationMap();
 app.init();
+const menu = new MenuButtons();
 
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
