@@ -296,8 +296,8 @@
         <skos:prefLabel>travertine</skos:prefLabel>
         <owl:sameAs rdf:resource="https://epos-msl.uu.nl/voc/materials/1.4/sedimentary_rock-limestone-travertine"/>
         <skos:inScheme rdf:resource="https://registry.epos-eu.org/ncl/FAIR-Incubator/tcs-MSL/materials"/>
-        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/cgi/lithology/claystone"/>
-        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/cgi/lithology/claystone"/>
+        <rdfs:seeAlso rdf:resource="http://resource.geosciml.org/classifier/cgi/lithology/travertine"/>
+        <skos:exactMatch rdf:resource="http://resource.geosciml.org/classifier/cgi/lithology/travertine"/>
         <dc:source>geosciml</dc:source>
       </skos:Concept>
     </skos:narrower>
