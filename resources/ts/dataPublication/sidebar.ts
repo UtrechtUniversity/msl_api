@@ -6,6 +6,7 @@ import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
+import { bus } from "./menuButtons";
 
 
 
@@ -37,12 +38,12 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         }
     },
 
-    /**
-        * Add this sidebar to the specified map.
-        *
-        * @param {L.Map} map
-        * @returns {Sidebar}
-        */
+    // /**
+    //     * Add this sidebar to the specified map.
+    //     *
+    //     * @param {L.Map} map
+    //     * @returns {Sidebar}
+    //     */
     addTo: function (map: Map): Sidebar {
 
         this._map = map;
@@ -105,8 +106,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             const item = this._createListItem(dataPublication)
             if (!dataPublication.inclusive) this._tabViews[EXCLUSIVE]._listView.push(item)
             item.addEventListener('mouseover', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-hover', {
+                bus.fire('sidebar-hover', {
                     id: dataPublication.doi,
                     resultSet: EXCLUSIVE
                 });
@@ -114,8 +114,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             });
 
             item.addEventListener('mouseleave', () => {
-                assertNotNull(this._map, `Map is undefined. This is a bug.`)
-                this._map.fire('sidebar-leave',
+                bus.fire('sidebar-leave',
                     { id: dataPublication.doi, resultSet: EXCLUSIVE })
 
             });
@@ -155,7 +154,6 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         const activatedTabElements = this._tabViews[activatedTab]
         const deactivatedTabElements = this._tabViews[deactivateTab]
 
-        assertNotNull(this._map, `Map is undefined. This is a bug.`)
         assertTabElementsNotNull(activatedTabElements);
         assertTabElementsNotNull(deactivatedTabElements);
 
@@ -172,8 +170,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
         activatedTabElements._tab.classList.add('active')
         deactivatedTabElements._tab.classList.remove('active')
 
-        this._map.fire('tab-click', { id: activatedTab }
-        )
+        // bus.fire('tab-click', { id: activatedTab }
+        // )
 
     },
 

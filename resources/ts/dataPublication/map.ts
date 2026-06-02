@@ -9,6 +9,7 @@ import { assertNotNull, assertNotUndefined } from "../helpers.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { sideBar } from "./sidebar.js";
+import { bus } from './menuButtons';
 
 
 interface SidebarHoverEvent extends LeafletEvent {
@@ -52,14 +53,14 @@ export class DataPublicationMap {
         }));
         this.drawMap();
         this.sideBar = new sideBar().addTo(this.map);
-        this.buttons = this.getButtons()
+        this.buttons = this.initButtons()
         this.activatedTab = 'exclusive'
         this.drawingBounds = null
     }
 
 
 
-    getButtons(): MenuButtons {
+    initButtons(): MenuButtons {
         const overlappingButton = document.getElementById('overlapping-filter-btn')
         assertNotNull(overlappingButton, 'Overlapping filter button is not found. This is a bug.')
         const insideButton = document.getElementById('inside-filter-btn')
@@ -68,15 +69,38 @@ export class DataPublicationMap {
         assertNotNull(spatialDrawButton, 'Spatial draw filter button is not found. This is a bug.')
         const spatialRemoveButton = document.getElementById('spatial-remove')
         assertNotNull(spatialRemoveButton, 'Spatial remove filter button is not found. This is a bug.')
+        const drawing = this.drawingEnabled;
+
+        spatialDrawButton.innerText = drawing
+            ? 'Stop spatial drawing'
+            : 'Draw spatial filter';
+
+        (insideButton as HTMLButtonElement).disabled = !drawing;
+        (overlappingButton as HTMLButtonElement).disabled = !drawing;
+        (spatialRemoveButton as HTMLButtonElement).disabled = !drawing;
+
         spatialDrawButton.addEventListener("click", () => {
             this.drawingEnabled = !this.drawingEnabled
+
             if (this.drawingEnabled) {
+                if (this.rectangle) {
+                    this.map.removeLayer(this.rectangle);
+                    this.rectangle = null;
+                    this.removeLayers()
+                    this.sideBar.resetList()
+                }
+                (insideButton as HTMLButtonElement).disabled = true;
+                (overlappingButton as HTMLButtonElement).disabled = true;
+                (spatialRemoveButton as HTMLButtonElement).disabled = true;
                 spatialDrawButton.innerText = 'Stop spatial drawing'
             } else {
                 spatialDrawButton.innerText = 'Draw spatial filter'
                 if (!this.drawingBounds) return;
-                this.drawingBoundsInMap()
-
+                this.drawingBoundsInMap();
+                (insideButton as HTMLButtonElement).disabled = false;
+                (overlappingButton as HTMLButtonElement).disabled = false;
+                (spatialRemoveButton as HTMLButtonElement).disabled = false;
+                this.getDefaultTab()
             }
         });
 
@@ -87,6 +111,10 @@ export class DataPublicationMap {
                 this.removeLayers()
                 this.sideBar.resetList()
             }
+            (insideButton as HTMLButtonElement).disabled = true;
+            (overlappingButton as HTMLButtonElement).disabled = true;
+            (spatialRemoveButton as HTMLButtonElement).disabled = true;
+            this.getDefaultTab()
         });
 
         return { 'Overlapping': overlappingButton, 'Inside': insideButton, 'Spatial draw': spatialDrawButton, 'Spatial remove': spatialRemoveButton }
@@ -224,9 +252,16 @@ export class DataPublicationMap {
         this.map.removeLayer(this.markers[deactivateTab])
 
     }
+    private getDefaultTab() {
+        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+            if (tabInfo.active) {
+                this.handleSidebarTab(tabName); return;
+            }
+        }
+    }
     private sideBarEventHandling() {
 
-        this.map.on('sidebar-hover', ((e: SidebarHoverEvent) => {
+        bus.on('sidebar-hover', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
                 resultSet: this.activatedTab,
@@ -236,7 +271,7 @@ export class DataPublicationMap {
         }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
 
 
-        this.map.on('sidebar-leave', ((e: SidebarHoverEvent) => {
+        bus.on('sidebar-leave', ((e: SidebarHoverEvent) => {
             this.setMarkersStyle({
                 doi: e.id,
                 resultSet: this.activatedTab,
@@ -267,9 +302,7 @@ export class DataPublicationMap {
             if (button !== 0) return;
 
 
-            // If the click is on the left button,
-
-
+            // If the click is on the left button:
             // If a rectangle already existed,
             // clear the layers, and start again
             if (this.rectangle) {
