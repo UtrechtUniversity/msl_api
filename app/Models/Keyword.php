@@ -14,7 +14,6 @@ class Keyword extends Model
         'uri',
         'vocabulary_id',
         'level',
-        'hyperlink',
         'exclude_domain_mapping',
         'label',
         'external_vocab_scheme',
