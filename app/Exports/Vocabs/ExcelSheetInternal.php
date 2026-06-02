@@ -43,7 +43,6 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
             [
                 'indicator terms',
                 'uri',
-                'hyperlink',
                 'external_uri',
                 'external_vocab_scheme',
                 'external_description',
@@ -64,7 +63,6 @@ class ExcelSheetInternal implements FromCollection, WithHeadings, WithMapping, W
             [
                 $keyword->getSynonymString(),
                 $keyword->uri,
-                $keyword->hyperlink,
                 $keyword->external_uri,
                 $keyword->external_vocab_scheme,
                 $keyword->external_description,
