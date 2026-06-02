@@ -872,7 +872,6 @@ class VocabularySeeder extends Seeder
             'uri' => '',
             'external_uri' => $node->external_uri,
             'level' => $node->level,
-            'hyperlink' => $node->hyperlink,
             'label' => $node->value,
             'exclude_domain_mapping' => $node->exclude_domain_mapping,
             'selection_group_1' => $node->selection_group_1,
@@ -926,7 +925,6 @@ class VocabularySeeder extends Seeder
             'uri' => '',
             'external_uri' => $node->uri,
             'level' => $node->level,
-            'hyperlink' => $node->hyperlink,
             'label' => $node->value,
             'exclude_domain_mapping' => $excludeSubdomainMapping,
 
