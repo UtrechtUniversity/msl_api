@@ -68,7 +68,7 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
         [
             'columnName' => 'contributor_notes',
             'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
+            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri"',
         ],
     ];
 

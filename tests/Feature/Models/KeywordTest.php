@@ -23,7 +23,6 @@ class KeywordTest extends TestCase
             'value' => 'rock',
             'uri' => 'https://example.org/vocab/materials/rock',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Rock',
         ]);
 
@@ -32,7 +31,6 @@ class KeywordTest extends TestCase
             'value' => 'granite',
             'uri' => 'https://example.org/vocab/materials/granite',
             'level' => 1,
-            'hyperlink' => '',
             'label' => 'Granite',
         ]);
 
@@ -52,7 +50,6 @@ class KeywordTest extends TestCase
             'value' => 'granite',
             'uri' => 'https://example.org/vocab/materials/granite',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Granite',
         ]);
 
@@ -72,7 +69,6 @@ class KeywordTest extends TestCase
             'value' => 'granite',
             'uri' => 'https://example.org/vocab/materials/granite',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Granite',
         ]);
 

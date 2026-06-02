@@ -68,7 +68,6 @@ class LaboratoryEquipmentTest extends TestCase
             'value' => 'widget',
             'uri' => 'https://example.org/vocab/lab/widget',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Widget',
         ]);
 

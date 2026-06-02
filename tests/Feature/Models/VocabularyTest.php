@@ -22,7 +22,6 @@ class VocabularyTest extends TestCase
             'value' => 'granite',
             'uri' => 'https://example.org/vocab/materials/granite',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Granite',
         ]);
 
@@ -42,7 +41,6 @@ class VocabularyTest extends TestCase
             'value' => 'granite',
             'uri' => 'https://example.org/vocab/materials/granite',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Granite',
         ]);
 

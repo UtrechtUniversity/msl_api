@@ -41,7 +41,6 @@ class KeywordHelperTest extends TestCase
             'level' => 1,
             'vocabulary_id' => $materialsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -60,7 +59,6 @@ class KeywordHelperTest extends TestCase
             'level' => 2,
             'vocabulary_id' => $materialsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -87,7 +85,6 @@ class KeywordHelperTest extends TestCase
             'level' => 2,
             'vocabulary_id' => $materialsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -114,7 +111,6 @@ class KeywordHelperTest extends TestCase
             'level' => 3,
             'vocabulary_id' => $materialsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -140,7 +136,6 @@ class KeywordHelperTest extends TestCase
             'level' => 1,
             'vocabulary_id' => $rockphysicsVocabulary->id,
             'exclude_domain_mapping' => true,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -159,7 +154,6 @@ class KeywordHelperTest extends TestCase
             'level' => 2,
             'vocabulary_id' => $rockphysicsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -218,7 +212,6 @@ class KeywordHelperTest extends TestCase
             'level' => 3,
             'vocabulary_id' => $rockphysicsVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -300,7 +293,6 @@ class KeywordHelperTest extends TestCase
             'level' => 1,
             'vocabulary_id' => $microscopyVocabulary->id,
             'exclude_domain_mapping' => true,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -319,7 +311,6 @@ class KeywordHelperTest extends TestCase
             'level' => 2,
             'vocabulary_id' => $microscopyVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -338,7 +329,6 @@ class KeywordHelperTest extends TestCase
             'level' => 3,
             'vocabulary_id' => $microscopyVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([
@@ -357,7 +347,6 @@ class KeywordHelperTest extends TestCase
             'level' => 4,
             'vocabulary_id' => $microscopyVocabulary->id,
             'exclude_domain_mapping' => false,
-            'hyperlink' => '',
         ]);
 
         KeywordSearch::create([

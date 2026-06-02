@@ -66,7 +66,6 @@ class LaboratoryEquipmentAddonTest extends TestCase
             'value' => 'addon-term',
             'uri' => 'https://example.org/vocab/lab/addon-term',
             'level' => 0,
-            'hyperlink' => '',
             'label' => 'Addon term',
         ]);
 
