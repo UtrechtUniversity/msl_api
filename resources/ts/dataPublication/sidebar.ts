@@ -35,10 +35,8 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     },
     _initViews() {
         assertNotNull(this._sidebar, 'sidebar')
-        // for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
         const createdListView = DomUtil.create('div', 'list-view', this._sidebar)
         createdListView.id = 'data_publications_list'
-        // createdListView.hidden = !tabInfo.active
         this._list = createdListView;
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
 
@@ -109,8 +107,7 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     populate: function (dataPublications: InclusiveExclusiveGeoJsonDataPublications) {
 
 
-        // for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-        // const { _tab: _, _listView } = this._tabViews[tabName]
+
         if (!this._list) throw new Error('List view should not be null. This is a bug.')
         this._list.innerHTML = '';
         for (const dataPublication of dataPublications[EXCLUSIVE].data_publications) {
@@ -132,24 +129,17 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             this._list.appendChild(item);
         };
 
-        // }
-
     },
 
 
     resetList: function () {
 
-        // for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
-
-        // const tabElements = this._tabViews[tabName]
         assertNotNull(this._list,
             'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
         )
-        // const listView = tabElements._listView
         while (this._list.firstChild) {
             this._list.firstChild.remove()
         }
-        // }
     },
 
     handleActivationOfTab: function (activatedTab: ResultSet) {
