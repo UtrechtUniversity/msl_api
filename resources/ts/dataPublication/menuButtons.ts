@@ -1,0 +1,86 @@
+import { type Map } from "leaflet";
+import type { MapController } from "./mapController";
+
+export class MenuButtons {
+
+    overlappingFilterButton: HTMLButtonElement
+    insideFilterButton: HTMLButtonElement
+    spatialDrawButton: HTMLButtonElement
+    spatialRemoveButton: HTMLButtonElement
+    drawingEnabled: boolean = false
+
+    mapController: MapController
+    constructor(mapController: MapController) {
+
+        this.overlappingFilterButton = this.getButtonElement('overlapping-filter-btn')
+        this.insideFilterButton = this.getButtonElement('inside-filter-btn')
+        this.spatialDrawButton = this.getButtonElement('spatial-draw')
+        this.spatialRemoveButton = this.getButtonElement('spatial-remove')
+
+
+        this.disableButtonDuringDrawing()
+        this.initButtons()
+        this.mapController = mapController
+    }
+
+
+
+    private getButtonElement(id: string): HTMLButtonElement {
+        const htmlElement = document.getElementById(id)
+        assertIsHTMLButtonElement(htmlElement)
+        return htmlElement;
+    }
+    private disableButtonDuringDrawing(): void {
+        this.overlappingFilterButton.disabled = true
+        this.insideFilterButton.disabled = true
+        this.spatialRemoveButton.disabled = true
+    }
+    private enableButtonDuringDrawing(): void {
+        this.overlappingFilterButton.disabled = false
+        this.insideFilterButton.disabled = false
+        this.spatialRemoveButton.disabled = false
+    }
+
+    initButtons() {
+
+
+        this.spatialDrawButton.addEventListener("click", () => {
+            this.drawingEnabled = !this.drawingEnabled
+            if (this.drawingEnabled) {
+                this.mapController.enableDrawing()
+                this.disableButtonDuringDrawing()
+                this.spatialDrawButton.innerText = 'Stop spatial drawing'
+            } else {
+                this.spatialDrawButton.innerText = 'Draw spatial filter'
+                this.mapController.completeDrawing()
+                this.enableButtonDuringDrawing()
+            }
+        });
+
+        this.spatialRemoveButton.addEventListener("click", () => {
+            this.mapController.removeDrawing()
+            this.disableButtonDuringDrawing()
+        });
+
+
+
+        this.overlappingFilterButton.addEventListener("click", () => this.mapController.overlapFilter()
+        );
+        this.insideFilterButton.addEventListener("click", () => this.mapController.insideFilter()
+        )
+    }
+    public addTo(map: Map) {
+        return this;
+    }
+
+
+}
+
+function assertIsHTMLButtonElement(
+    el: HTMLElement | null,
+    message = "Element is not an HTMLButtonElement"
+): asserts el is HTMLButtonElement {
+    if (!(el instanceof HTMLButtonElement)) {
+        throw new Error(message);
+    }
+}

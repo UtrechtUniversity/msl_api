@@ -5,7 +5,7 @@ import type { Sidebar, ViewPerTab } from "../types/sidebar";
 import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
 import { Control, DomUtil, Evented, Mixin, type Map } from "leaflet";
 import { assertNotNull } from "../helpers.js";
-import { getResultSetMappingObj, TAB_CONFIG, type Entries, } from "./utils.js";
+import { getResultSetMappingObj, TAB_CONFIG, type Entries } from "./utils.js";
 import { bus } from "./bus";
 
 
@@ -16,12 +16,23 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
     _map: null,
     _tabViews: getResultSetMappingObj(() => { return { _tab: null, _listView: [] } }),
     _list: null,
+    onFeatureHover: () => { throw new Error('Bug') },
+    onFeatureOut: () => { throw new Error('Bug') },
 
     initialize: function () {
         this._sidebar = document.querySelector(' #sidebar-content [data-content="Results"] #datapublication-results')
         this._initViews()
     },
 
+    setHandlerfn: function ({ onFeatureHover,
+        onFeatureOut }: {
+            onFeatureHover: (doi: string) => void,
+            onFeatureOut: (doi: string) => void
+        }) {
+        this.onFeatureHover = onFeatureHover
+        this.onFeatureOut = onFeatureOut
+
+    },
     _initViews() {
         assertNotNull(this._sidebar, 'sidebar')
         // for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
@@ -106,16 +117,14 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
             const item = this._createListItem(dataPublication)
             if (!dataPublication.inclusive) this._tabViews[EXCLUSIVE]._listView.push(item)
             item.addEventListener('mouseover', () => {
-                bus.fire('sidebar-hover', {
-                    id: dataPublication.doi,
-                    resultSet: EXCLUSIVE
-                });
+                this.onFeatureHover(dataPublication.doi);
+                this.highlight(dataPublication.doi)
 
             });
 
             item.addEventListener('mouseleave', () => {
-                bus.fire('sidebar-leave',
-                    { id: dataPublication.doi, resultSet: EXCLUSIVE })
+                this.onFeatureOut(dataPublication.doi);
+                this.removeHighlight(dataPublication.doi)
 
             });
 
@@ -130,17 +139,17 @@ export const sideBar = Control.extend<Sidebar>(/** @lends L.Control.Sidebar.prot
 
     resetList: function () {
 
-        for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
+        // for (const tabName of Object.keys(TAB_CONFIG) as Array<keyof typeof TAB_CONFIG>) {
 
-            // const tabElements = this._tabViews[tabName]
-            assertNotNull(this._list,
-                'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
-            )
-            // const listView = tabElements._listView
-            while (this._list.firstChild) {
-                this._list.firstChild.remove()
-            }
+        // const tabElements = this._tabViews[tabName]
+        assertNotNull(this._list,
+            'The listview of tabViews was not populated properlym for the default tab. This is a bug.'
+        )
+        // const listView = tabElements._listView
+        while (this._list.firstChild) {
+            this._list.firstChild.remove()
         }
+        // }
     },
 
     handleActivationOfTab: function (activatedTab: ResultSet) {

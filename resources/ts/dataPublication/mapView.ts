@@ -1,21 +1,16 @@
-import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LeafletEventHandlerFn, LatLngBounds } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import type { Sidebar } from "../types/sidebar";
 import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from "../types/map";
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotNull, assertNotUndefined } from "../helpers.js";
+import { assertNotUndefined } from "../helpers.js";
 import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
-import { sideBar } from "./sidebar.js";
-import { bus } from './bus';
-import { MenuButtons } from './menuButtons';
 
 
-interface SidebarHoverEvent extends LeafletEvent {
-    id: string;
-}
+
+
 
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
@@ -27,10 +22,10 @@ type MarkerMapping = ResultSetMapping<MarkerClusterGroup>
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG)
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG)
 
-export class DataPublicationMap {
+export class MapView {
     map: Map;
+    // Drawing in map properties
     markers: MarkerMapping;
-    sideBar: Sidebar;
     groupedMarkers: GroupedLayerMapping = getResultSetMappingObj<GroupedLayer>(() => { return {} })
     defaultOptions = DEFAULT_MARKER_OPTIONS
     circleMarkerDefaultOptions: CircleMarkerOptions = DEFAULT_CIRCLE_MARKER_OPTIONS
@@ -39,8 +34,10 @@ export class DataPublicationMap {
     maxBounds = L.latLngBounds(southWest, northEast);
     drawingEnabled: boolean = false
     rectangle: Rectangle | null = null
-    activatedTab: ResultSet
     drawingBounds: null | LatLngBounds
+    private onFeatureHover?: (doi: string) => void;
+    private onFeatureOut?: (doi: string) => void;
+    private onCleanUp?: () => void
 
     constructor() {
         this.map = L.map('map', {
@@ -51,18 +48,29 @@ export class DataPublicationMap {
             showCoverageOnHover: false
         }));
         this.drawMap();
-        this.sideBar = new sideBar().addTo(this.map);
-        this.activatedTab = 'exclusive'
         this.drawingBounds = null
+        this.init()
     }
 
 
+    public setHandlerfn({ onFeatureHover, onFeatureOut,
+        onCleanUp }: {
+            onFeatureHover: (doi: string) => void;
+            onFeatureOut: (doi: string) => void,
+            onCleanUp: () => void
+        }) {
+        this.onCleanUp = onCleanUp;
+        this.onFeatureHover = onFeatureHover
+        this.onFeatureOut = onFeatureOut
+    }
 
-    // Create the map in the beginning
     public async init() {
         await this.mouseEventHandling();
-        this.sideBarEventHandling();
-        this.handleButtons();
+    }
+
+
+    public setDrawingEnable(enable: boolean) {
+        this.drawingEnabled = enable
     }
 
     private drawMap() {
@@ -76,7 +84,7 @@ export class DataPublicationMap {
         return;
     }
 
-    private setMarkersStyle(
+    public setMarkersStyle(
         { doi, resultSet, highlightOrReset }:
             { doi: string, resultSet: ResultSet, highlightOrReset: 'highlight' | 'reset' }) {
         const geoFeatures = this.groupedMarkers[resultSet][doi]
@@ -88,24 +96,8 @@ export class DataPublicationMap {
         })
     }
 
-    private async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
-        const parameters = { boundingBox, limit: '10' }
-        const params = new URLSearchParams(parameters);
 
-        const route = '/api/geoJsonDataPublications?' + params;
-
-        const response: Response = await fetch(route, {
-            method: "GET",
-        });
-        if (!response.ok) {
-            throw new Error('The response failed with status: ' + response.status + ' - ' + response.statusText);
-        }
-        const data = (await response.json()).data
-        return data;
-    }
-
-
-    private async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
+    public async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
 
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName })
@@ -160,7 +152,7 @@ export class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'highlight'
                 })
-                this.sideBar.highlight(doi, { scroll: true })
+                this.onFeatureHover ? this.onFeatureHover(doi) : null;
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -168,83 +160,31 @@ export class DataPublicationMap {
                     resultSet,
                     highlightOrReset: 'reset'
                 })
-                this.sideBar.removeHighlight(doi)
+                this.onFeatureOut ? this.onFeatureOut(doi) : null
             });
         };
 
     private resetMapView() {
         this.map.setView([51.505, -0.09], 4);
     }
-    private handleButtons() {
 
-        bus.on('filter:inside', (() => this.handleSidebarTab(INCLUSIVE)))
-        bus.on('filter:overlapping', (() => this.handleSidebarTab(EXCLUSIVE)))
-        bus.on('drawing:enabled', () => {
-            this.drawingEnabled = true;
-            if (this.rectangle) {
-                this.map.removeLayer(this.rectangle);
-                this.rectangle = null;
-                this.removeLayers()
-                this.sideBar.resetList()
-            }
-        })
-
-        bus.on('drawing:completed', () => {
-            if (!this.drawingBounds) return;
-            this.drawingBoundsInMap();
-            this.getDefaultTab()
-
-        })
-        bus.on('drawing:removed', () => {
-            if (this.rectangle) {
-                this.map.removeLayer(this.rectangle);
-                this.rectangle = null;
-                this.removeLayers()
-                this.sideBar.resetList()
-            }
-            this.getDefaultTab()
-
-        })
-    }
-
-    private handleSidebarTab(activatedTab: ResultSet) {
-        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-        this.activatedTab = activatedTab
-        this.sideBar.handleActivationOfTab(activatedTab)()
-        this.map.addLayer(this.markers[activatedTab])
-        this.map.removeLayer(this.markers[deactivateTab])
-
-    }
-    private getDefaultTab() {
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            if (tabInfo.active) {
-                this.handleSidebarTab(tabName); return;
-            }
+    public removeAllLayers() {
+        if (this.rectangle) {
+            this.map.removeLayer(this.rectangle);
+            this.rectangle = null;
+            this.removeLayers()
         }
     }
-    private sideBarEventHandling() {
 
-        bus.on('sidebar-hover', ((e: SidebarHoverEvent) => {
-            this.setMarkersStyle({
-                doi: e.id,
-                resultSet: this.activatedTab,
-                highlightOrReset: 'highlight'
-            });
-            this.sideBar.highlight(e.id)
-        }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
-
-
-        bus.on('sidebar-leave', ((e: SidebarHoverEvent) => {
-            this.setMarkersStyle({
-                doi: e.id,
-                resultSet: this.activatedTab,
-                highlightOrReset: 'reset'
-            })
-            this.sideBar.removeHighlight(e.id)
-        }) as LeafletEventHandlerFn); // We have to cast because typing in Leaflet is incorrect. 
-
+    public handleActivatedLayers(activatedTab: ResultSet) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        this.map.addLayer(this.markers[activatedTab])
+        this.map.removeLayer(this.markers[deactivateTab])
     }
-
+    public draw(): string | void {
+        if (!this.drawingBounds) return;
+        return this.drawingBoundsInMap();
+    }
     private async mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
@@ -274,7 +214,7 @@ export class DataPublicationMap {
                 this.map.removeLayer(this.rectangle);
                 this.rectangle = null;
                 this.removeLayers()
-                this.sideBar.resetList()
+                this.onCleanUp ? this.onCleanUp() : null
             }
 
             drawing = true;
@@ -344,7 +284,7 @@ export class DataPublicationMap {
         ]);
         this.map.fitBounds(this.drawingBounds!);
 
-        this.addFeaturesAndSidebarInMap(boundingBox)
+        return boundingBox;
     }
     private restrictLatLng(latlng: LatLng) {
         const lat = Math.max(this.maxBounds.getSouth(), Math.min(this.maxBounds.getNorth(), latlng.lat));
@@ -363,22 +303,13 @@ export class DataPublicationMap {
         this.groupedMarkers = getResultSetMappingObj<GroupedLayer>(() => ({}));
     }
 
-    private async addFeaturesAndSidebarInMap(boundingBox: string) {
-
-        const geo = await this.getJsonFromRequest(boundingBox);
-        await this.drawResponse(geo);
-        this.sideBar.populate(geo);
-
-    }
 }
 
 
 
 
 
-const app = new DataPublicationMap();
-app.init();
-const menu = new MenuButtons();
+
 
 
 // Path: An abstract class that contains options and constants shared between vector overlays 
@@ -387,10 +318,3 @@ function assertIsPath(layer: Layer): asserts layer is Path {
 
 }
 
-
-function assertIsPathElement(
-    element: Element | undefined,
-    doi: string
-): asserts element is Element {
-    if (!element) throw new Error(`Geofeature element for datapublication '${doi}' should not have been undefined. This is a bug.`);
-}

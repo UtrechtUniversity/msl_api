@@ -24,5 +24,12 @@ export interface Sidebar {
     handleActivationOfTab(activatedTab: ResultSet): () => void
     populate(dataPublications: InclusiveExclusiveGeoJsonDataPublications): void,
     resetList(): void,
+    onFeatureHover: (doi: string) => void,
+    onFeatureOut: (doi: string) => void,
+    setHandlerfn: ({ onFeatureHover, onFeatureOut }:
+        {
+            onFeatureHover: (doi: string) => void,
+            onFeatureOut: (doi: string) => void
+        }) => void
 
 }
