@@ -40,6 +40,16 @@ export class MenuButtons {
         this.insideFilterButton.disabled = false
         this.spatialRemoveButton.disabled = false
     }
+    private makeActiveButton(buttonType: "overlapping" | 'inside'): void {
+
+        if (buttonType === 'overlapping') {
+            this.overlappingFilterButton.classList.add('active')
+            this.insideFilterButton.classList.remove('active');
+            return;
+        }
+        this.overlappingFilterButton.classList.remove('active')
+        this.insideFilterButton.classList.add('active');
+    }
 
     initButtons() {
 
@@ -64,9 +74,15 @@ export class MenuButtons {
 
 
 
-        this.overlappingFilterButton.addEventListener("click", () => this.mapController.overlapFilter()
+        this.overlappingFilterButton.addEventListener("click", () => {
+            this.makeActiveButton("overlapping")
+            this.mapController.overlapFilter()
+        }
         );
-        this.insideFilterButton.addEventListener("click", () => this.mapController.insideFilter()
+        this.insideFilterButton.addEventListener("click", () => {
+            this.makeActiveButton("inside")
+            this.mapController.insideFilter()
+        }
         )
     }
     public addTo(map: Map) {

@@ -1,9 +1,7 @@
 import type { InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import type { Sidebar } from "../types/sidebar";
 import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
-import { Layer, Path } from "leaflet";
 import { TAB_CONFIG, type Entries } from "./utils.js";
-import { sideBar } from "./sidebar.js";
+import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from './menuButtons';
 import { MapView } from './mapView';
 
@@ -20,13 +18,13 @@ export class MapController {
     // State
     activatedTab: ResultSet
     // UI elements
-    sideBar: Sidebar;
+    sideBar: ResultsSidebar;
 
 
 
     constructor() {
         this.mapView = new MapView()
-        this.sideBar = new sideBar().addTo(this.mapView.map);
+        this.sideBar = new ResultsSidebar();
         this.activatedTab = this.getDefaultTab()
         this.mapView.setHandlerfn({
             onCleanUp: () => { this.sideBar.resetList() },

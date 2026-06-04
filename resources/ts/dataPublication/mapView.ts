@@ -1,4 +1,4 @@
-import type { LeafletMouseEvent, CircleMarkerOptions, LeafletEvent, LatLngBounds } from 'leaflet';
+import type { LeafletMouseEvent, CircleMarkerOptions, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
 import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
 import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from "../types/map";

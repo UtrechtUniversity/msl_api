@@ -17,3 +17,14 @@ export type Entries<T> = Array<
     }[keyof T]>
 
 export const LAT_LONG_RANGE = { MAX: { LAT: 90, LONG: 180 }, MIN: { LAT: -90, LONG: -180 } } as const
+
+export function assertSingleArray<T>(arr: ArrayLike<T>, message: string): asserts arr is ArrayLike<T> & { 0: T; length: 1 } {
+    if (arr.length !== 1) {
+        throw new Error(message);
+    }
+}
+
+
+export function throwWhenCallBackNotInitialized() {
+    throw new Error('Initialization of a callback did not happen. This is a bug.')
+}
