@@ -21,7 +21,6 @@ class DataPublicationFilterQueryServiceTest extends TestCase
 
         $keyword1 = $vocabulary->keywords()->create([
             'value' => 'testKeyword1',
-            'hyperlink' => 'test',
             'uri' => 'test',
             'level' => 1,
             'exclude_abstract_mapping' => false,
@@ -44,7 +43,6 @@ class DataPublicationFilterQueryServiceTest extends TestCase
 
         $keyword2 = $vocabulary->keywords()->create([
             'value' => 'testKeyword2',
-            'hyperlink' => 'test',
             'uri' => 'test',
             'level' => 1,
             'exclude_abstract_mapping' => false,

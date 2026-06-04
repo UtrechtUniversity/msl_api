@@ -26,11 +26,6 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
             'columnDescription' => 'The unique identifier for the term',
         ],
         [
-            'columnName' => 'hyperlink',
-            'columnPurpose' => 'For general use',
-            'columnDescription' => 'The link to an external resource. This is not a definition, but may contain more information about the term. For instance a link to a page which provides more context',
-        ],
-        [
             'columnName' => 'external_uri',
             'columnPurpose' => 'For general use',
             'columnDescription' => 'A reference to a term in an external vocabulary, which is equivalent to the term',
@@ -73,7 +68,7 @@ class ExcelSheetColumnDescriptions implements FromArray, WithHeadings, WithMappi
         [
             'columnName' => 'contributor_notes',
             'columnPurpose' => 'For continued vocabulary development',
-            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri" or "hyperlink"',
+            'columnDescription' => '[may contain information that is not verified by the EPOS-MSL community]: Definition or other notes about the term, provided by a contributor, like yourself, when working with this excel sheet. Structured information should be transferred to other columns, like "external_uri"',
         ],
     ];
 

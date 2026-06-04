@@ -61,8 +61,6 @@ class VocabularyToJsonConverter
                         $node['exclude_domain_mapping'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('uri', $allColNames)) {
                         $node['uri'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('hyperlink', $allColNames)) {
-                        $node['hyperlink'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_uri', $allColNames)) {
                         $node['external_uri'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_vocab_scheme', $allColNames)) {
@@ -192,7 +190,6 @@ class VocabularyToJsonConverter
             'synonyms' => [],
             'exclude_domain_mapping' => '',
             'uri' => '',
-            'hyperlink' => '',
             'external_uri' => '',
             'external_vocab_scheme' => '',
             'external_description' => '',
