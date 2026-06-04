@@ -1,10 +1,10 @@
 /* global L */
 
-import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from "../types/map";
-import { DomUtil } from "leaflet";
-import { assertNotNull } from "../helpers.js";
-import { assertSingleArray, TAB_CONFIG, throwWhenCallBackNotInitialized } from "./utils.js";
+import type { DataPublication, InclusiveExclusiveGeoJsonDataPublications } from '../types/datapublication';
+import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from '../types/map';
+import { DomUtil } from 'leaflet';
+import { assertNotNull } from '../helpers.js';
+import { assertSingleArray, TAB_CONFIG, throwWhenCallBackNotInitialized } from './utils.js';
 
 
 

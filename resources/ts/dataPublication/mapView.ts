@@ -1,12 +1,12 @@
 import type { LeafletMouseEvent, CircleMarkerOptions, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from "../types/map";
-import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from "leaflet";
-import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from "./markerStyling.js";
-import { assertNotUndefined } from "../helpers.js";
-import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from "./utils.js";
-import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
+import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from '../types/datapublication';
+import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from '../types/map';
+import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from 'leaflet';
+import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from './markerStyling.js';
+import { assertNotUndefined } from '../helpers.js';
+import { getResultSetMappingObj, LAT_LONG_RANGE, TAB_CONFIG, type Entries } from './utils.js';
+import { DEFAULT_POPUP_OPTIONS } from './popupStyling.js';
 
 
 
@@ -128,10 +128,10 @@ export class MapView {
     private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, resultSet: ResultSet) =>
         (_: Feature, layer: Layer) => {
             const popupContent = `
-                <div class="${this.popupOptions.classNameContent}">
-                    <h6 class="${this.popupOptions.classNameTitle}">${geoFeatureWithInfo.title}</h6>
-                    <a href="${geoFeatureWithInfo.portalLink}" target="_blank">
-                    <button class="btn btn-primary">View Publication</button>
+                <div class='${this.popupOptions.classNameContent}'>
+                    <h6 class='${this.popupOptions.classNameTitle}'>${geoFeatureWithInfo.title}</h6>
+                    <a href='${geoFeatureWithInfo.portalLink}' target='_blank'>
+                    <button class='btn btn-primary'>View Publication</button>
                     </a>
                 </div>
                 `;
@@ -146,7 +146,7 @@ export class MapView {
 
 
             // When hover over a geo feature
-            layer.on("mouseover", () => {
+            layer.on('mouseover', () => {
                 this.setMarkersStyle({
                     doi,
                     resultSet,
@@ -154,7 +154,7 @@ export class MapView {
                 })
                 this.onFeatureHover ? this.onFeatureHover(doi) : null;
             });
-            layer.on("mouseout", () => {
+            layer.on('mouseout', () => {
                 this.setMarkersStyle({
                     doi,
                     resultSet,
@@ -190,7 +190,7 @@ export class MapView {
         let drawing: boolean = false;
 
         // On pressing a button on the mouse
-        this.map.on("mousedown", async (e: LeafletMouseEvent) => {
+        this.map.on('mousedown', async (e: LeafletMouseEvent) => {
 
             // This is about the browser
             const { button } = e.originalEvent;
@@ -243,7 +243,7 @@ export class MapView {
                 // > a value of 650 will make the TileLayer
                 // > with the labels show on top of markers but below pop-ups.'
                 bboxPane.style.zIndex = '650';
-                this.rectangle = L.rectangle(this.drawingBounds, { className: "bbox-selection", interactive: false, pane: 'bboxPane' })
+                this.rectangle = L.rectangle(this.drawingBounds, { className: 'bbox-selection', interactive: false, pane: 'bboxPane' })
                 this.rectangle.addTo(this.map);
             };
 
@@ -256,17 +256,17 @@ export class MapView {
                 // We stop drawing
                 drawing = false;
                 // Remove listeners
-                this.map.off("mousemove", onMouseMove);
-                document.removeEventListener("mouseup", onMouseUp);
+                this.map.off('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
                 this.map.dragging.enable();
 
             };
 
 
-            this.map.on("mousemove", onMouseMove);
+            this.map.on('mousemove', onMouseMove);
             // Use document event rather than leaflet mouse event,
             // since the later seems to go into a weird state in some cases.
-            document.addEventListener("mouseup", onMouseUp);
+            document.addEventListener('mouseup', onMouseUp);
 
         });
     }

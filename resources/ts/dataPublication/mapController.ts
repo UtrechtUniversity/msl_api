@@ -1,7 +1,7 @@
-import type { InclusiveExclusiveGeoJsonDataPublications } from "../types/datapublication";
-import { EXCLUSIVE, INCLUSIVE, type ResultSet } from "../types/map";
-import { TAB_CONFIG, type Entries } from "./utils.js";
-import { ResultsSidebar } from "./resultsSidebar.js";
+import type { InclusiveExclusiveGeoJsonDataPublications } from '../types/datapublication';
+import { EXCLUSIVE, INCLUSIVE, type ResultSet } from '../types/map';
+import { getDefaultTab, getResultSetMappingObj, TAB_CONFIG, type Entries } from './utils.js';
+import { ResultsSidebar } from './resultsSidebar.js';
 import { MenuButtons } from './menuButtons';
 import { MapView } from './mapView';
 
@@ -13,19 +13,24 @@ const L = window.L;
 
 
 export class MapController {
-    mapView: MapView
-    // The current class controlls the map but also the state of the tabs
-    // State
-    activatedTab: ResultSet
     // UI elements
     sideBar: ResultsSidebar;
+    mapView: MapView
+
+    // The current class controlls the map but also the state of the tabs
+    // State
+    activeTab: ResultSet
+    results: InclusiveExclusiveGeoJsonDataPublications | null
+
 
 
 
     constructor() {
         this.mapView = new MapView()
         this.sideBar = new ResultsSidebar();
-        this.activatedTab = this.getDefaultTab()
+        this.activeTab = getDefaultTab()
+        this.results = null
+        // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => { this.sideBar.resetList() },
             onFeatureHover: (doi) => { this.sideBar.highlight(doi, { scroll: true }) },
@@ -35,19 +40,28 @@ export class MapController {
             onFeatureHover: (doi) => {
                 this.mapView.setMarkersStyle({
                     doi,
-                    resultSet: this.activatedTab,
+                    resultSet: this.activeTab,
                     highlightOrReset: 'highlight'
                 });
             }, onFeatureOut: (doi) => {
                 this.mapView.setMarkersStyle({
                     doi: doi,
-                    resultSet: this.activatedTab,
+                    resultSet: this.activeTab,
                     highlightOrReset: 'reset'
                 })
             }
         })
     }
 
+    // Methods about requests and populating
+
+    private async addFeaturesAndSidebarInMap(boundingBox: string) {
+
+        this.results = await this.getJsonFromRequest(boundingBox);
+        await this.mapView.drawResponse(this.results);
+        this.sideBar.populate(this.results);
+
+    }
 
     public async getJsonFromRequest(boundingBox: string): Promise<InclusiveExclusiveGeoJsonDataPublications> {
         const parameters = { boundingBox, limit: '10' }
@@ -56,7 +70,7 @@ export class MapController {
         const route = '/api/geoJsonDataPublications?' + params;
 
         const response: Response = await fetch(route, {
-            method: "GET",
+            method: 'GET',
         });
         if (!response.ok) {
             throw new Error('The response failed with status: ' + response.status + ' - ' + response.statusText);
@@ -64,6 +78,7 @@ export class MapController {
         const data = (await response.json()).data
         return data;
     }
+    // Methods about interactions
 
     public insideFilter() {
         this.setActivatedTab(INCLUSIVE)
@@ -73,59 +88,47 @@ export class MapController {
     }
 
     public enableDrawing() {
+        this.resetAllInformation()
+        // Start spatial filtering draw
         this.mapView.setDrawingEnable(true)
-        this.mapView.removeAllLayers(
-        )
-        this.sideBar.resetList()
+
     }
     public completeDrawing() {
+        this.mapView.setDrawingEnable(false)
+
         const boundingBox = this.mapView.draw();
         if (!boundingBox) return;
-        this.mapView.setDrawingEnable(false)
+
         this.addFeaturesAndSidebarInMap(boundingBox);
-        this.getDefaultTab()
     }
 
     public removeDrawing() {
-        this.mapView.removeAllLayers()
-        this.sideBar.resetList()
-        this.mapView.setDrawingEnable(false)
-        this.getDefaultTab()
-    }
+        this.resetAllInformation()
 
+        this.mapView.setDrawingEnable(false)
+
+    }
 
 
     private setActivatedTab(activatedTab: ResultSet) {
-        this.activatedTab = activatedTab
+        this.activeTab = activatedTab
         this.sideBar.handleActivationOfTab(activatedTab)()
         this.mapView.handleActivatedLayers(activatedTab)
     }
-    private getDefaultTab(): ResultSet {
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
-            if (tabInfo.active) {
-                this.setActivatedTab(tabName);
-                return tabName;
-            }
-        }
-        throw new Error(' Default result set value was not set. This is a bug.')
+
+    // Helper methods
+    private resetAllInformation() {
+        this.mapView.removeAllLayers()
+        this.sideBar.resetList()
+        this.results = null
     }
 
-
-
-    private async addFeaturesAndSidebarInMap(boundingBox: string) {
-
-        const geo = await this.getJsonFromRequest(boundingBox);
-        await this.mapView.drawResponse(geo);
-        this.sideBar.populate(geo);
-
-    }
 }
 
 
 
 
-
-const mapController = new MapController();
+const mapController = new MapController()
 const menuButtons = new MenuButtons(mapController)
 
 

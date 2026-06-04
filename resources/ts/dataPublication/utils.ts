@@ -1,4 +1,4 @@
-import { EXCLUSIVE, INCLUSIVE, type ResultSetMapping } from "../types/map.js";
+import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from '../types/map.js';
 
 export function getResultSetMappingObj<T>(factory: () => T): ResultSetMapping<T> {
     return { [EXCLUSIVE]: factory(), [INCLUSIVE]: factory() }
@@ -27,4 +27,15 @@ export function assertSingleArray<T>(arr: ArrayLike<T>, message: string): assert
 
 export function throwWhenCallBackNotInitialized() {
     throw new Error('Initialization of a callback did not happen. This is a bug.')
+}
+
+export function getDefaultTab(): ResultSet {
+    for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
+        if (tabInfo.active) {
+
+            return tabName
+
+        }
+    }
+    throw new Error('No default tab in config. This is a bug.')
 }
