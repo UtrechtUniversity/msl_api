@@ -96,7 +96,7 @@ export class MapController {
     public completeDrawing() {
         this.mapView.setDrawingEnable(false)
 
-        const boundingBox = this.mapView.draw();
+        const boundingBox = this.mapView.drawBoundingBox();
         if (!boundingBox) return;
 
         this.addFeaturesAndSidebarInMap(boundingBox);

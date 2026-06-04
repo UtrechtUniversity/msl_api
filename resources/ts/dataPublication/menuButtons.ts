@@ -1,4 +1,3 @@
-import { type Map } from 'leaflet';
 import type { MapController } from './mapController';
 
 export class MenuButtons {

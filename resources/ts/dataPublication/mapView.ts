@@ -73,16 +73,7 @@ export class MapView {
         this.drawingEnabled = enable
     }
 
-    private drawMap() {
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; OpenStreetMap',
-            noWrap: true,
-            minZoom: 2
-        }).addTo(this.map);
-        this.resetMapView()
-        return;
-    }
+
 
     public setMarkersStyle(
         { doi, resultSet, highlightOrReset }:
@@ -124,6 +115,26 @@ export class MapView {
     private pointToLayer = (_: Feature, latlng: LatLng) => {
         return L.circleMarker(latlng, this.circleMarkerDefaultOptions)
     }
+
+    public removeAllLayers() {
+        if (this.rectangle) {
+            this.map.removeLayer(this.rectangle);
+            this.rectangle = null;
+            this.removeLayers()
+        }
+    }
+
+    public handleActivatedLayers(activatedTab: ResultSet) {
+        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
+        this.map.addLayer(this.markers[activatedTab])
+        this.map.removeLayer(this.markers[deactivateTab])
+    }
+    public drawBoundingBox(): string | void {
+        if (!this.drawingBounds) return;
+        return this.drawingBoundsInMap();
+    }
+
+
     // We want to be able to pass information of the publication inside each feature of the geo collection
     private getOnEachFeaturePerPublication = (geoFeatureWithInfo: GeoFeature, resultSet: ResultSet) =>
         (_: Feature, layer: Layer) => {
@@ -164,27 +175,6 @@ export class MapView {
             });
         };
 
-    private resetMapView() {
-        this.map.setView([51.505, -0.09], 4);
-    }
-
-    public removeAllLayers() {
-        if (this.rectangle) {
-            this.map.removeLayer(this.rectangle);
-            this.rectangle = null;
-            this.removeLayers()
-        }
-    }
-
-    public handleActivatedLayers(activatedTab: ResultSet) {
-        const deactivateTab = (activatedTab === EXCLUSIVE) ? INCLUSIVE : EXCLUSIVE
-        this.map.addLayer(this.markers[activatedTab])
-        this.map.removeLayer(this.markers[deactivateTab])
-    }
-    public draw(): string | void {
-        if (!this.drawingBounds) return;
-        return this.drawingBoundsInMap();
-    }
     private async mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
@@ -290,6 +280,21 @@ export class MapView {
         const lat = Math.max(this.maxBounds.getSouth(), Math.min(this.maxBounds.getNorth(), latlng.lat));
         const lng = Math.max(this.maxBounds.getWest(), Math.min(this.maxBounds.getEast(), latlng.lng));
         return L.latLng(lat, lng);
+    }
+
+
+    private drawMap() {
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap',
+            noWrap: true,
+            minZoom: 2
+        }).addTo(this.map);
+        this.resetMapView()
+        return;
+    }
+    private resetMapView() {
+        this.map.setView([51.505, -0.09], 4);
     }
     private removeLayers() {
         Object.values(this.markers).forEach((layer) => {
