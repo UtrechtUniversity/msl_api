@@ -415,10 +415,126 @@
                                         instance.state.ajax.isFetching = false;
                                     }
                                 });
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.add('word-card-highlighted');
+                                            tag.setAttribute('data-force-highlight', 'true');
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    if($('#original-keywords-panel').attr('open') !== 'open') {
+                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    if($('#corresponding-keywords-panel').attr('open') !== 'open') {
+                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
                             },
                             onHidden(instance) {
                                 instance.setContent('Loading...')
                                 instance.state.ajax.canFetch = true
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.remove('word-card-highlighted');
+                                            if(tag.removeAttr) {
+                                                tag.removeAttr('data-force-highlight');
+                                            }
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
                             },
                         });
                     </script>
