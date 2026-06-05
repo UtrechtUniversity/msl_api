@@ -17,7 +17,6 @@ export default defineConfig({
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
-            'resources/ts/dataPublication/mapDeprecated.ts',
             'resources/ts/dataPublication/mapController.ts',
 
             'resources/ts/dataPublication/tab-handle.ts',
