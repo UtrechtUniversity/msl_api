@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class GeoJsonDataPublicationService
 {
-    protected $packageSearchRequest;
+    protected PackageSearchRequest $packageSearchRequest;
 
     public function __construct()
     {
@@ -64,7 +64,6 @@ class GeoJsonDataPublicationService
         if ($request->get('offset')) {
             $this->packageSearchRequest->start = $request->get('offset');
         }
-
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
     }

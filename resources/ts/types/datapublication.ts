@@ -2,10 +2,15 @@
 import type { Feature } from 'geojson'
 import type { ResultSetMapping } from './map.js'
 
-export type InclusiveExclusiveGeoJsonDataPublications = ResultSetMapping<GeoJsonDataPublications>
-export type GeoJsonDataPublications = {
-    'geojson': GeoFeature[],
+// export type InclusiveExclusiveGeoJsonDataPublications = ResultSetMapping<GeoFeatureDataPublications>
+export type GeoFeatureDataPublications = {
+    'geo_features': InsideOverlappingGeoFeature,
     'data_publications': DataPublication[]
+}
+
+type InsideOverlappingGeoFeature = {
+    'inside': GeoFeature[],
+    'overlapping': GeoFeature[]
 }
 export type GeoFeature = {
     'feature': Feature,

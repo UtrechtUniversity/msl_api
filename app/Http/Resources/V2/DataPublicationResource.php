@@ -35,7 +35,7 @@ class DataPublicationResource extends JsonResource
 
     private bool $includeInclusiveInformation = false;
 
-    private bool $inclusive = false;
+    private bool $isInclusive = false;
 
     /**
      * We set whether the data-publication results should
@@ -57,10 +57,10 @@ class DataPublicationResource extends JsonResource
         return $this;
     }
 
-    public function setInclusiveInformation(bool $inclusive): self
+    public function setInclusiveInformation(bool $isInclusive): self
     {
         $this->includeInclusiveInformation = true;
-        $this->inclusive = $inclusive;
+        $this->isInclusive = $isInclusive;
 
         return $this;
     }
@@ -245,7 +245,7 @@ class DataPublicationResource extends JsonResource
             $genericResource += ['geojson' => json_decode($this->msl_geojson_featurecollection)];
         }
         if ($this->includeInclusiveInformation) {
-            $genericResource += ['inclusive' => $this->inclusive];
+            $genericResource += ['isInclusive' => $this->isInclusive];
         }
 
         return $genericResource;

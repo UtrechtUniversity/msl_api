@@ -1,6 +1,6 @@
 import type { LeafletMouseEvent, CircleMarkerOptions, LatLngBounds } from 'leaflet';
 import type { Feature } from 'geojson'
-import type { GeoFeature, InclusiveExclusiveGeoJsonDataPublications } from '../types/datapublication';
+import type { GeoFeature, GeoFeatureDataPublications } from '../types/datapublication';
 import { EXCLUSIVE, INCLUSIVE, type ResultSet, type ResultSetMapping } from '../types/map';
 import { LatLng, Rectangle, Map, MarkerClusterGroup, Layer, Path } from 'leaflet';
 import { DEFAULT_CIRCLE_MARKER_OPTIONS, DEFAULT_MARKER_OPTIONS, HIGHLIGHT_MARKER_OPTIONS } from './markerStyling.js';
@@ -88,7 +88,7 @@ export class MapView {
     }
 
 
-    public async drawResponse(geoList: InclusiveExclusiveGeoJsonDataPublications) {
+    public async drawResponse(geoList: GeoFeatureDataPublications) {
 
         for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<typeof TAB_CONFIG>) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName })
@@ -97,7 +97,7 @@ export class MapView {
     }
 
 
-    private addFeaturesInMarkers(geoList: InclusiveExclusiveGeoJsonDataPublications,
+    private addFeaturesInMarkers(geoList: GeoFeatureDataPublications,
         { resultSet }: { resultSet: ResultSet }) {
 
         const features = geoList[resultSet].geojson;
