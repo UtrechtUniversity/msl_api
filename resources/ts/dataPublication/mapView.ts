@@ -133,7 +133,6 @@ export class MapView {
             typeof TAB_CONFIG
         >) {
             this.addFeaturesInMarkers(geoList, { resultSet: tabName });
-            if (tabInfo.active) this.map.addLayer(this.markers[tabName]);
         }
     }
 

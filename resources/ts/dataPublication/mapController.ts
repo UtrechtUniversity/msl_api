@@ -59,6 +59,9 @@ export class MapController {
         this.results = await this.getJsonFromRequest(boundingBox);
         await this.mapView.drawResponse(this.results);
         this.sideBar.populate(this.results);
+
+        this.mapView.handleActivatedLayers(this.activeTab);
+        this.sideBar.handleActivationOfTab(this.activeTab)();
     }
 
     public async getJsonFromRequest(
