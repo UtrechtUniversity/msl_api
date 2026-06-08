@@ -1,4 +1,3 @@
-/* global L */
 
 import type {
     DataPublication,

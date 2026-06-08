@@ -1,7 +1,6 @@
 import type { Feature } from "geojson";
 import type { GeoFeatureResultSetMapping } from "./map.js";
 
-// export type InclusiveExclusiveGeoJsonDataPublications = ResultSetMapping<GeoFeatureDataPublications>
 export type GeoFeatureDataPublications = {
     geo_features: InsideOverlappingGeoFeature;
     data_publications: DataPublication[];

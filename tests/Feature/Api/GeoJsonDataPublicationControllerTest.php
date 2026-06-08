@@ -154,12 +154,6 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                 )
         );
 
-        // )->has(
-        //     'data.inclusive',
-        //     fn(AssertableJson $json) => $json
-        //         ->count('data_publications', 2)->where('data_publications.0.doi', '10.1594/pangaea.770250')->where('data_publications.0.inclusive', true)->where('data_publications.1.doi', '10.1594/pangaea.770250_3')
-
-        // )
 
     }
 }
