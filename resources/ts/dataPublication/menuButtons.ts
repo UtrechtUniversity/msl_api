@@ -2,6 +2,8 @@ import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import type { MapController } from "./mapController";
 import { getDefaultTab } from "./utils";
 
+const L = window.L;
+
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
 const INSIDE_BUTTON_ID = "inside-filter-btn" as const;
@@ -17,6 +19,14 @@ export class MenuButtons {
     mapController: MapController;
     constructor(mapController: MapController) {
         this.mapController = mapController;
+
+        const menuEl = document.getElementById("datapublication-menu");
+        const wrapper = document.createElement("div");
+        wrapper.className = "menu-control-wrapper";
+        const container = this.mapController.mapView.map.getContainer();
+        wrapper.appendChild(menuEl!);
+
+        container.appendChild(wrapper);
 
         this.overlappingFilterButton = this.getButtonElement(
             OVERLAPPING_BUTTON_ID,
@@ -101,5 +111,24 @@ function assertIsHTMLButtonElement(
 ): asserts el is HTMLButtonElement {
     if (!(el instanceof HTMLButtonElement)) {
         throw new Error(message);
+    }
+}
+
+export class DatapublicationMenuControl {
+    private wrapper: HTMLElement;
+
+    constructor(
+        private map: L.Map,
+        private menuEl: HTMLElement,
+    ) {
+        this.wrapper = document.createElement("div");
+        this.wrapper.className = "menu-control-wrapper";
+
+        this.wrapper.appendChild(this.menuEl);
+    }
+
+    add() {
+        // attach directly to map container (NOT Leaflet control system)
+        this.map.getContainer().appendChild(this.wrapper);
     }
 }

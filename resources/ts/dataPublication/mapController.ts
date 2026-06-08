@@ -106,7 +106,6 @@ export class MapController {
     }
     public completeDrawing() {
         this.mapView.setDrawingEnable(false);
-
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.boundingBox) return;
 

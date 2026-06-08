@@ -12,3 +12,23 @@
 #datapublication-menu .menu-btn[disabled] {
   background-color: var(--color-neutral-200);
 }
+
+.leaflet-top-center-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    pointer-events: none;
+}
+
+#datapublication-menu {
+      background-color: var(--color-base-100);
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
