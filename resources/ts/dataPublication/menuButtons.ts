@@ -1,7 +1,6 @@
-import type { GeoFeature } from "../types/datapublication";
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import type { MapController } from "./mapController";
-import { getDefaultTab, TAB_CONFIG, type Entries } from "./utils";
+import { getDefaultTab } from "./utils";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
