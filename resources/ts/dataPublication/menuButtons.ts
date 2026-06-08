@@ -1,7 +1,7 @@
 import type { GeoFeature } from "../types/datapublication";
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import type { MapController } from "./mapController";
-import { TAB_CONFIG, type Entries } from "./utils";
+import { getDefaultTab, TAB_CONFIG, type Entries } from "./utils";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
@@ -68,13 +68,8 @@ export class MenuButtons {
         return htmlElement;
     }
     private setDefaultActiveResultSetButton() {
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
-            typeof TAB_CONFIG
-        >) {
-            if (tabInfo.active) {
-                this.makeActiveButton(tabName);
-            }
-        }
+        const activeTab = getDefaultTab();
+        this.makeActiveButton(activeTab);
     }
 
     private disableButtonForDrawing(): void {

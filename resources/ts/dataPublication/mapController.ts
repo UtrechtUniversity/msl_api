@@ -17,14 +17,12 @@ export class MapController {
 
     // The current class controlls the map but also the state of the tabs
     // State
-    activeTab: GeoFeatureResultSet;
-    results: GeoFeatureDataPublications | null;
+    activeTab: GeoFeatureResultSet = getDefaultTab();
+    results: GeoFeatureDataPublications | null = null;
     searchFilters: SearchFilter = { boundingBox: null };
     constructor() {
         this.mapView = new MapView();
         this.sideBar = new ResultsSidebar();
-        this.activeTab = getDefaultTab();
-        this.results = null;
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
@@ -130,8 +128,6 @@ export class MapController {
 
     // Helper methods
     private resetAllInformation() {
-        this.searchFilters.boundingBox = null;
-
         this.mapView.removeAllLayers();
         this.sideBar.resetList();
         this.results = null;

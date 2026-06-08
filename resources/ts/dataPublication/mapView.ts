@@ -27,7 +27,7 @@ import {
     DEFAULT_MARKER_OPTIONS,
     HIGHLIGHT_MARKER_OPTIONS,
 } from "./markerStyling.js";
-import { assertNotUndefined } from "../helpers.js";
+import { assertNotNull, assertNotUndefined } from "../helpers.js";
 import {
     getGeoFeatureResultSetMappingObj,
     LAT_LONG_RANGE,
@@ -48,7 +48,12 @@ const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG);
 export class MapView {
     map: Map;
     // Drawing in map properties
-    markers: MarkerMapping;
+    markers: MarkerMapping = getGeoFeatureResultSetMappingObj(() =>
+        L.markerClusterGroup({
+            zoomToBoundsOnClick: true,
+            showCoverageOnHover: false,
+        }),
+    );
     groupedMarkers: GroupedLayerMapping =
         getGeoFeatureResultSetMappingObj<GroupedLayer>(() => {
             return {};
@@ -61,7 +66,7 @@ export class MapView {
     maxBounds = L.latLngBounds(southWest, northEast);
     drawingEnabled: boolean = false;
     rectangle: Rectangle | null = null;
-    drawingBounds: null | LatLngBounds;
+    drawingBounds: null | LatLngBounds = null;
     private onFeatureHover?: (doi: string) => void;
     private onFeatureOut?: (doi: string) => void;
     private onCleanUp?: () => void;
@@ -71,14 +76,7 @@ export class MapView {
             maxBounds: this.maxBounds,
             maxBoundsViscosity: 1,
         });
-        this.markers = getGeoFeatureResultSetMappingObj(() =>
-            L.markerClusterGroup({
-                zoomToBoundsOnClick: true,
-                showCoverageOnHover: false,
-            }),
-        );
         this.drawMap();
-        this.drawingBounds = null;
         this.init();
     }
 
@@ -162,6 +160,7 @@ export class MapView {
         if (this.rectangle) {
             this.map.removeLayer(this.rectangle);
             this.rectangle = null;
+            this.drawingBounds = null;
             this.removeLayers();
         }
     }
@@ -302,13 +301,13 @@ export class MapView {
     }
 
     private drawingBoundsInMap() {
-        assertNotUndefined(
+        assertNotNull(
             this.drawingBounds,
             "Bounds should not have been undefined. This is a bug.",
         );
 
-        const sw = this.drawingBounds!.getSouthWest();
-        const ne = this.drawingBounds!.getNorthEast();
+        const sw = this.drawingBounds.getSouthWest();
+        const ne = this.drawingBounds.getNorthEast();
         const boundingBox = JSON.stringify([sw.lng, sw.lat, ne.lng, ne.lat]);
         this.map.fitBounds(this.drawingBounds!);
 

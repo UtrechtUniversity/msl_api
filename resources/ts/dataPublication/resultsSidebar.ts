@@ -14,7 +14,12 @@ type ViewPerTab = { listView: HTMLElement[] };
 export class ResultsSidebar {
     private sidebar: HTMLElement;
     private listDiv: HTMLDivElement;
-    private nonInclusiveListView: HTMLElement[];
+    /**
+     *  Data publications are exclusive but not inclusive.
+     *  In other words, data publications that are relative complement of
+     *  the inclusive set with respect to  the exclusive set.
+     */
+    private nonInclusiveListView: HTMLElement[] = [];
     public onFeatureHover: (doi: string) => void =
         throwWhenCallBackNotInitialized;
     public onFeatureOut: (doi: string) => void =
@@ -33,7 +38,6 @@ export class ResultsSidebar {
         );
         createdListView.id = "data_publications_list";
         this.listDiv = createdListView;
-        this.nonInclusiveListView = [];
     }
 
     public setHandlerfn({
