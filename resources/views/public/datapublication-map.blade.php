@@ -22,7 +22,7 @@
                         {{-- top search div --}}
                         @include('public.components.datapublication-map.search-div')
                         {{-- TODO change it to info.blade.php --}}
-                        @include('public.components.datapublication-map.info')
+                        @include('public.components.datapublication-map.top-menu')
 
                         {{-- list view --}}
                         <div class="list-view">
