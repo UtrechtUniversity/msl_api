@@ -7,7 +7,9 @@ import type { GeoFeatureDataPublications } from "../types/datapublication";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
-
+type SearchFilter = {
+    boundingBox: string | null;
+};
 export class MapController {
     // UI elements
     sideBar: ResultsSidebar;
@@ -17,7 +19,7 @@ export class MapController {
     // State
     activeTab: GeoFeatureResultSet;
     results: GeoFeatureDataPublications | null;
-
+    searchFilters: SearchFilter = { boundingBox: null };
     constructor() {
         this.mapView = new MapView();
         this.sideBar = new ResultsSidebar();
@@ -55,8 +57,8 @@ export class MapController {
 
     // Methods about requests and populating
 
-    private async addFeaturesAndSidebarInMap(boundingBox: string) {
-        this.results = await this.getJsonFromRequest(boundingBox);
+    private async addFeaturesAndSidebarInMap() {
+        this.results = await this.getJsonFromRequest();
         await this.mapView.drawResponse(this.results);
         this.sideBar.populate(this.results);
 
@@ -64,9 +66,12 @@ export class MapController {
         this.sideBar.handleActivationOfTab(this.activeTab)();
     }
 
-    public async getJsonFromRequest(
-        boundingBox: string,
-    ): Promise<GeoFeatureDataPublications> {
+    public async getJsonFromRequest(): Promise<GeoFeatureDataPublications> {
+        const boundingBox = this.searchFilters.boundingBox;
+        if (!boundingBox)
+            throw new Error(
+                "Bounding box doesn't have a correct value. This is a bug.",
+            );
         const parameters = { boundingBox, limit: "10" };
         const params = new URLSearchParams(parameters);
 
@@ -96,6 +101,7 @@ export class MapController {
     }
 
     public enableDrawing() {
+        this.searchFilters.boundingBox = null;
         this.resetAllInformation();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -103,13 +109,14 @@ export class MapController {
     public completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        const boundingBox = this.mapView.drawBoundingBox();
-        if (!boundingBox) return;
+        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
+        if (!this.searchFilters.boundingBox) return;
 
-        this.addFeaturesAndSidebarInMap(boundingBox);
+        this.addFeaturesAndSidebarInMap();
     }
 
     public removeDrawing() {
+        this.searchFilters.boundingBox = null;
         this.resetAllInformation();
 
         this.mapView.setDrawingEnable(false);
@@ -123,6 +130,8 @@ export class MapController {
 
     // Helper methods
     private resetAllInformation() {
+        this.searchFilters.boundingBox = null;
+
         this.mapView.removeAllLayers();
         this.sideBar.resetList();
         this.results = null;

@@ -172,8 +172,8 @@ export class MapView {
         this.map.addLayer(this.markers[activatedTab]);
         this.map.removeLayer(this.markers[deactivateTab]);
     }
-    public drawBoundingBox(): string | void {
-        if (!this.drawingBounds) return;
+    public drawBoundingBox(): string | null {
+        if (!this.drawingBounds) return null;
         return this.drawingBoundsInMap();
     }
 
