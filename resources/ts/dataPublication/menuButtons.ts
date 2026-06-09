@@ -180,9 +180,9 @@ export class MenuButtons {
         includeImage?: Overlapping | Inside;
     }): HTMLButtonElement {
         const img =
-            includeImage === OVERLAPPING
+            includeImage === INSIDE
                 ? '<i class="fa-solid fa-circle-xmark"></i>'
-                : includeImage === INSIDE
+                : includeImage === OVERLAPPING
                   ? '<i class="fa-solid fa-xmark"></i>'
                   : "";
         const button = document.createElement("button");
