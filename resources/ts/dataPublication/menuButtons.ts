@@ -1,5 +1,11 @@
 import { assertNotNull } from "../helpers";
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
+import {
+    INSIDE,
+    OVERLAPPING,
+    type GeoFeatureResultSet,
+    type Inside,
+    type Overlapping,
+} from "../types/map";
 import type { MapController } from "./mapController";
 import { getDefaultTab } from "./utils";
 
@@ -27,12 +33,14 @@ export class MenuButtons {
             id: OVERLAPPING_BUTTON_ID,
             text: "Overlapping",
             disabled: true,
+            includeImage: OVERLAPPING,
         });
 
         this.insideFilterButton = this.createButton({
             id: INSIDE_BUTTON_ID,
             text: "Inside",
             disabled: true,
+            includeImage: INSIDE,
         });
 
         this.spatialDrawButton = this.createButton({
@@ -164,16 +172,28 @@ export class MenuButtons {
         id,
         text,
         disabled,
+        includeImage,
     }: {
         id: string;
         text: string;
         disabled: boolean;
+        includeImage?: Overlapping | Inside;
     }): HTMLButtonElement {
+        const img =
+            includeImage === OVERLAPPING
+                ? '<i class="fa-solid fa-circle-xmark"></i>'
+                : includeImage === INSIDE
+                  ? '<i class="fa-solid fa-xmark"></i>'
+                  : "";
         const button = document.createElement("button");
+
         button.id = id;
         button.className = "menu-btn btn btn-md";
-        button.textContent = text;
         button.disabled = disabled;
+
+        button.innerHTML = `${img}
+        <span>${text}</span>`;
+
         return button;
     }
 
