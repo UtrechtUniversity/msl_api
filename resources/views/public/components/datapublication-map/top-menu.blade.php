@@ -1,8 +1,5 @@
-    <div>
-        @vite(['resources/css/datapublicationMap/top-menu.css'])
-    </div>
-    <div id="menu-on-map">
-        <div id='datapublication-menu' class="flex flex-col w-full pt-6 gap-3">
+<div id="menu-on-map">
+    {{-- <div id='datapublication-menu' class="flex flex-col w-full pt-6 gap-3">
             <div class="flex gap-2 min-h-[40px] flex-row justify-between w-full">
                 <div class='flex-1  flex flex-col items-center justify-center '>
 
@@ -39,5 +36,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
+</div>
