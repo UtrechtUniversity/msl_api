@@ -12,3 +12,19 @@
 #datapublication-menu .menu-btn[disabled] {
   background-color: var(--color-neutral-200);
 }
+
+#menu-on-map {
+  position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 50px; 
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+#datapublication-menu {
+    background: var(--color-base-100);
+}

@@ -4,9 +4,14 @@
 </head>
 
 <body>
+    <div id="map-wrapper" class="w-full h-full relative overflow-hidden">
 
-    <div id="map" class="z-0 h-170"></div>
+        <div id="map" class="z-0 h-170">
+            @include('public.components.datapublication-map.top-menu')
+            @vite(['resources/ts/dataPublication/mapController.ts'])
 
-    @vite(['resources/ts/dataPublication/mapController.ts'])
+        </div>
+
+    </div>
 
 </body>

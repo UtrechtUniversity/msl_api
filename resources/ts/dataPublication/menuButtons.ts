@@ -7,6 +7,9 @@ const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
 const INSIDE_BUTTON_ID = "inside-filter-btn" as const;
 const SPATIAL_DRAW = "spatial-draw" as const;
 const SPATIAL_REMOVE = "spatial-remove" as const;
+
+const L = window.L;
+
 export class MenuButtons {
     overlappingFilterButton: HTMLButtonElement;
     insideFilterButton: HTMLButtonElement;
@@ -17,7 +20,7 @@ export class MenuButtons {
     mapController: MapController;
     constructor(mapController: MapController) {
         this.mapController = mapController;
-
+        this.stopPropagation();
         this.overlappingFilterButton = this.getButtonElement(
             OVERLAPPING_BUTTON_ID,
         );
@@ -30,6 +33,11 @@ export class MenuButtons {
         this.initButtons();
     }
 
+    private stopPropagation() {
+        const ui = document.getElementById("menu-on-map");
+        L.DomEvent.disableClickPropagation(ui!);
+        L.DomEvent.disableScrollPropagation(ui!);
+    }
     private initButtons() {
         // Add listeners to buttons
         this.spatialDrawButton.addEventListener("click", () => {

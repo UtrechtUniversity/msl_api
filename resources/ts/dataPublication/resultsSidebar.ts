@@ -1,4 +1,3 @@
-
 import type {
     DataPublication,
     GeoFeatureDataPublications,
@@ -7,8 +6,6 @@ import { INSIDE, type GeoFeatureResultSet } from "../types/map";
 import { DomUtil } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import { assertSingleArray, throwWhenCallBackNotInitialized } from "./utils.js";
-
-type ViewPerTab = { listView: HTMLElement[] };
 
 export class ResultsSidebar {
     private sidebar: HTMLElement;
