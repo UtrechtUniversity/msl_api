@@ -6,23 +6,56 @@ import { getDefaultTab } from "./utils";
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
 const INSIDE_BUTTON_ID = "inside-filter-btn" as const;
-const SPATIAL_DRAW = "spatial-draw" as const;
-const SPATIAL_REMOVE = "spatial-remove" as const;
+const SPATIAL_DRAW_ID = "spatial-draw" as const;
+const SPATIAL_REMOVE_ID = "spatial-remove" as const;
 
 const L = window.L;
 
 export class MenuButtons {
-    overlappingFilterButton: HTMLButtonElement | null = null;
-    insideFilterButton: HTMLButtonElement | null = null;
-    spatialDrawButton: HTMLButtonElement | null = null;
-    spatialRemoveButton: HTMLButtonElement | null = null;
+    overlappingFilterButton: HTMLButtonElement;
+    insideFilterButton: HTMLButtonElement;
+    spatialDrawButton: HTMLButtonElement;
+    spatialRemoveButton: HTMLButtonElement;
     root: HTMLElement;
     drawingEnabled: boolean = false;
 
     mapController: MapController;
     constructor(mapController: MapController) {
         this.mapController = mapController;
+
+        this.overlappingFilterButton = this.createButton({
+            id: OVERLAPPING_BUTTON_ID,
+            text: "Overlapping",
+            disabled: true,
+        });
+
+        this.insideFilterButton = this.createButton({
+            id: INSIDE_BUTTON_ID,
+            text: "Inside",
+            disabled: true,
+        });
+
+        this.spatialDrawButton = this.createButton({
+            id: SPATIAL_DRAW_ID,
+            text: "Draw spatial filter",
+            disabled: false,
+        });
+
+        this.spatialRemoveButton = this.createButton({
+            id: SPATIAL_REMOVE_ID,
+            text: "Remove spatial filter",
+            disabled: true,
+        });
+        this.initButtons();
+
         this.root = this.createMenu();
+
+        const mapElement = document.getElementById("map");
+        assertNotNull(
+            mapElement,
+            `Element of map doesn't exist. This is a bug.`,
+        );
+        mapElement?.appendChild(this.root);
     }
 
     private stopPropagation(element: HTMLElement) {
@@ -30,12 +63,39 @@ export class MenuButtons {
         L.DomEvent.disableScrollPropagation(element);
     }
 
+    private initButtons() {
+        this.overlappingFilterButton.addEventListener("click", () => {
+            this.makeActiveButton(OVERLAPPING);
+        });
+
+        this.insideFilterButton.addEventListener("click", () => {
+            this.makeActiveButton(INSIDE);
+        });
+
+        // Add listeners to buttons
+        this.spatialDrawButton.addEventListener("click", () => {
+            this.drawingEnabled = !this.drawingEnabled;
+            if (this.drawingEnabled) {
+                this.mapController.enableDrawing();
+                this.disableButtonForDrawing();
+                this.setDefaultActiveResultSetButton();
+                this.spatialDrawButton!.innerText = "Stop spatial drawing";
+            } else {
+                this.mapController.completeDrawing();
+                this.enableButtonsAfterDrawing();
+                this.spatialDrawButton!.innerText = "Draw spatial filter";
+            }
+        });
+
+        this.spatialRemoveButton.addEventListener("click", () => {
+            this.mapController.removeDrawing();
+            this.disableButtonForDrawing();
+        });
+    }
     private createMenu(): HTMLElement {
-        const root = document.getElementById("menu-on-map");
-        assertNotNull(
-            root,
-            `The element for top-menu does not exist, this is a bug.`,
-        );
+        const root = document.createElement("div");
+        root.id = "menu-on-map";
+
         this.stopPropagation(root);
         const menu = document.createElement("div");
         menu.id = "datapublication-menu";
@@ -64,29 +124,12 @@ export class MenuButtons {
         const buttonRow = document.createElement("div");
         buttonRow.className = "flex flex-row gap-3";
 
-        const overlappingElement = this.createButton(
-            "overlapping-filter-btn",
-            "Overlapping",
-            true,
+        buttonRow.appendChild(
+            this.createButtonWrapper(this.overlappingFilterButton),
         );
-        this.overlappingFilterButton = overlappingElement.button;
-
-        const insideElement = this.createButton(
-            "inside-filter-btn",
-            "Inside",
-            true,
+        buttonRow.appendChild(
+            this.createButtonWrapper(this.insideFilterButton),
         );
-        this.insideFilterButton = insideElement.button;
-
-        this.overlappingFilterButton.addEventListener("click", () => {
-            this.makeActiveButton(OVERLAPPING);
-        });
-
-        this.insideFilterButton.addEventListener("click", () => {
-            this.makeActiveButton(INSIDE);
-        });
-        buttonRow.appendChild(overlappingElement.wrapper);
-        buttonRow.appendChild(insideElement.wrapper);
 
         section.appendChild(title);
         section.appendChild(buttonRow);
@@ -104,42 +147,10 @@ export class MenuButtons {
         const buttonRow = document.createElement("div");
         buttonRow.className = "flex flex-row gap-3";
 
-        const drawElement = this.createButton(
-            "spatial-draw",
-            "Draw spatial filter",
-            false,
+        buttonRow.appendChild(this.createButtonWrapper(this.spatialDrawButton));
+        buttonRow.appendChild(
+            this.createButtonWrapper(this.spatialRemoveButton),
         );
-        this.spatialDrawButton = drawElement.button;
-
-        const stopDrawElement = this.createButton(
-            "spatial-remove",
-            "Remove spatial filter",
-            true,
-        );
-        this.spatialRemoveButton = stopDrawElement.button;
-
-        // Add listeners to buttons
-        this.spatialDrawButton.addEventListener("click", () => {
-            this.drawingEnabled = !this.drawingEnabled;
-            if (this.drawingEnabled) {
-                this.mapController.enableDrawing();
-                this.disableButtonForDrawing();
-                this.setDefaultActiveResultSetButton();
-                this.spatialDrawButton!.innerText = "Stop spatial drawing";
-            } else {
-                this.mapController.completeDrawing();
-                this.enableButtonsAfterDrawing();
-                this.spatialDrawButton!.innerText = "Draw spatial filter";
-            }
-        });
-
-        this.spatialRemoveButton.addEventListener("click", () => {
-            this.mapController.removeDrawing();
-            this.disableButtonForDrawing();
-        });
-
-        buttonRow.appendChild(drawElement.wrapper);
-        buttonRow.appendChild(stopDrawElement.wrapper);
 
         section.appendChild(title);
         section.appendChild(buttonRow);
@@ -147,46 +158,54 @@ export class MenuButtons {
         return section;
     }
 
-    private createButton(
-        id: string,
-        text: string,
-        disabled: boolean,
-    ): { wrapper: HTMLDivElement; button: HTMLButtonElement } {
-        const wrapper = document.createElement("div");
-        wrapper.className = "py-4";
+    //Helper methods
 
+    private createButton({
+        id,
+        text,
+        disabled,
+    }: {
+        id: string;
+        text: string;
+        disabled: boolean;
+    }): HTMLButtonElement {
         const button = document.createElement("button");
         button.id = id;
         button.className = "menu-btn btn btn-md";
         button.textContent = text;
         button.disabled = disabled;
+        return button;
+    }
+
+    private createButtonWrapper(button: HTMLButtonElement): HTMLDivElement {
+        const wrapper = document.createElement("div");
+        wrapper.className = "py-4";
 
         wrapper.appendChild(button);
 
-        return { wrapper, button };
+        return wrapper;
     }
 
-    //Helper methods
     private setDefaultActiveResultSetButton() {
         const activeTab = getDefaultTab();
         this.makeActiveButton(activeTab);
     }
 
     private disableButtonForDrawing(): void {
-        this.overlappingFilterButton!.disabled = true;
-        this.insideFilterButton!.disabled = true;
-        this.spatialRemoveButton!.disabled = true;
+        this.overlappingFilterButton.disabled = true;
+        this.insideFilterButton.disabled = true;
+        this.spatialRemoveButton.disabled = true;
     }
     private enableButtonsAfterDrawing(): void {
-        this.overlappingFilterButton!.disabled = false;
-        this.insideFilterButton!.disabled = false;
-        this.spatialRemoveButton!.disabled = false;
+        this.overlappingFilterButton.disabled = false;
+        this.insideFilterButton.disabled = false;
+        this.spatialRemoveButton.disabled = false;
     }
 
     private makeActiveButton(buttonType: GeoFeatureResultSet): void {
         if (buttonType === OVERLAPPING) {
-            this.overlappingFilterButton!.classList.add(ACTIVE);
-            this.insideFilterButton!.classList.remove(ACTIVE);
+            this.overlappingFilterButton.classList.add(ACTIVE);
+            this.insideFilterButton.classList.remove(ACTIVE);
             this.mapController.overlapFilter();
             return;
         }

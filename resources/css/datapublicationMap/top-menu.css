@@ -1,29 +1,29 @@
 @reference "../app.css";
 
 #datapublication-menu .menu-btn {
-  background-color: var(--color-base-200);
+    background-color: var(--color-base-200);
 }
 
 #datapublication-menu .menu-btn.active {
-  background-color: var(--color-base-300);
+    background-color: var(--color-base-300);
 }
 
 #datapublication-menu .menu-btn:disabled,
 #datapublication-menu .menu-btn[disabled] {
-  background-color: var(--color-neutral-200);
+    background-color: var(--color-neutral-200);
 }
 
 #menu-on-map {
-  position: relative;
+    user-select: none;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
-    padding: 15px 50px; 
+    padding: 15px 50px;
     display: flex;
     justify-content: center;
     z-index: 1000;
 }
-
 
 #datapublication-menu {
     background: var(--color-base-100);
