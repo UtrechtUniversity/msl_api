@@ -12,7 +12,7 @@ type SearchFilter = {
 };
 export class MapController {
     // UI elements
-    sideBar: ResultsSidebar;
+    resultsSidebar: ResultsSidebar;
     mapView: MapView;
 
     // The current class controlls the map but also the state of the tabs
@@ -22,20 +22,20 @@ export class MapController {
     searchFilters: SearchFilter = { boundingBox: null };
     constructor() {
         this.mapView = new MapView();
-        this.sideBar = new ResultsSidebar();
+        this.resultsSidebar = new ResultsSidebar();
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
-                this.sideBar.resetList();
+                this.resultsSidebar.resetList();
             },
             onFeatureHover: (doi) => {
-                this.sideBar.highlight(doi, { scroll: true });
+                this.resultsSidebar.highlight(doi, { scroll: true });
             },
             onFeatureOut: (doi) => {
-                this.sideBar.removeHighlight(doi);
+                this.resultsSidebar.removeHighlight(doi);
             },
         });
-        this.sideBar.setHandlerfn({
+        this.resultsSidebar.setHandlerfn({
             onFeatureHover: (doi) => {
                 this.mapView.setMarkersStyle({
                     doi,
@@ -58,10 +58,10 @@ export class MapController {
     private async addFeaturesAndSidebarInMap() {
         this.results = await this.getJsonFromRequest();
         await this.mapView.drawResponse(this.results);
-        this.sideBar.populate(this.results);
+        this.resultsSidebar.populate(this.results);
 
         this.mapView.handleActivatedLayers(this.activeTab);
-        this.sideBar.handleActivationOfTab(this.activeTab)();
+        this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
 
     public async getJsonFromRequest(): Promise<GeoFeatureDataPublications> {
@@ -122,14 +122,14 @@ export class MapController {
 
     private setActivatedTab(activatedTab: GeoFeatureResultSet) {
         this.activeTab = activatedTab;
-        this.sideBar.handleActivationOfTab(activatedTab)();
+        this.resultsSidebar.handleActivationOfTab(activatedTab)();
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
     // Helper methods
     private resetAllInformation() {
         this.mapView.removeAllLayers();
-        this.sideBar.resetList();
+        this.resultsSidebar.resetList();
         this.results = null;
     }
 }
