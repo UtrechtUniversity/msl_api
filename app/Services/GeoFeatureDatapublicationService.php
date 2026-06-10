@@ -25,12 +25,12 @@ class GeoFeatureDatapublicationService
         // Filter and get dictionary with inclusive datapublications and the inclusive features
         // We are going to use the dictionary in order to add more information about exclusivity/inclusivity
         // in the next step in an easier and more performant way
-        [$inclusiveDataPublicationsWithDois, $inclusiveFeatures] = $this->filterInclusive($sortedFeatures, $bbox);
+        [$inclusiveDataPublicationsWithDois, $insideFeatures] = $this->filterInside($sortedFeatures, $bbox);
         // Get exclusive list of datapublications including information about their inclusivity (or not)
         // Reminder: the exclusive list of publications is a superset of the inclusive list.
         $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusiveDataPublicationsWithDois);
 
-        return new GeoFeatureDataPublication(dataPublications: $exclusiveDataPublications, features: new InsideOverlappingGeoFeatures(overlappingFeatures: $sortedFeatures, insideFeatures: $inclusiveFeatures));
+        return new GeoFeatureDataPublication(dataPublications: $exclusiveDataPublications, features: new InsideOverlappingGeoFeatures(overlappingFeatures: $sortedFeatures, insideFeatures: $insideFeatures));
     }
 
     /**
@@ -96,15 +96,15 @@ class GeoFeatureDatapublicationService
 
     /**
      * Filter and get back
-     * 1. array with inclusive geoFeatures
+     * 1. array with inside the bbox geoFeatures
      * 2. dictionary with dois as keys and inclusive datapublications as values
      *
      * @param  array<int,GeoFeaturePerDataPublication>  $features
      * @return array{0: array<string,DataPublication>, 1: array<int,GeoFeaturePerDataPublication>}
      */
-    private function filterInclusive(array $features, BoundingBox $bbox): array
+    private function filterInside(array $features, BoundingBox $bbox): array
     {
-        $inclusiveFeatures = [];
+        $insideFeatures = [];
         $inclusiveDataPublicationsWithDois = [];
 
         foreach ($features as $feature) {
@@ -112,12 +112,13 @@ class GeoFeatureDatapublicationService
                 continue;
             }
 
-            $inclusiveFeatures[] = $feature;
-            if (!isset($inclusiveDataPublicationsWithDois[$feature->dataPublication->msl_doi]))
+            $insideFeatures[] = $feature;
+            if (! isset($inclusiveDataPublicationsWithDois[$feature->dataPublication->msl_doi])) {
                 $inclusiveDataPublicationsWithDois[$feature->dataPublication->msl_doi] = $feature->dataPublication;
+            }
         }
 
-        return [$inclusiveDataPublicationsWithDois, $inclusiveFeatures];
+        return [$inclusiveDataPublicationsWithDois, $insideFeatures];
     }
 
     /**
@@ -134,6 +135,7 @@ class GeoFeatureDatapublicationService
                 isInclusive: isset($inclusiveDataPublications[$dataPublication->msl_doi])
             ));
         }
+
         return $dataPublicationsToReturn;
     }
 }
