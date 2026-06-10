@@ -32,6 +32,7 @@ import {
     getGeoFeatureResultSetMappingObj,
     LAT_LONG_RANGE,
     TAB_CONFIG,
+    throwWhenCallBackNotInitialized,
     type Entries,
 } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
@@ -67,9 +68,11 @@ export class MapView {
     drawingEnabled: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
-    private onFeatureHover?: (doi: string) => void;
-    private onFeatureOut?: (doi: string) => void;
-    private onCleanUp?: () => void;
+    private onFeatureHover: (doi: string) => void =
+        throwWhenCallBackNotInitialized;
+    private onFeatureOut: (doi: string) => void =
+        throwWhenCallBackNotInitialized;
+    private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
         this.map = L.map("map", {
