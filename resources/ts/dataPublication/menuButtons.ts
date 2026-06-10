@@ -33,14 +33,14 @@ export class MenuButtons {
             id: OVERLAPPING_BUTTON_ID,
             text: "Overlapping",
             disabled: true,
-            includeImage: OVERLAPPING,
+            includeIcon: OVERLAPPING,
         });
 
         this.insideFilterButton = this.createButton({
             id: INSIDE_BUTTON_ID,
             text: "Inside",
             disabled: true,
-            includeImage: INSIDE,
+            includeIcon: INSIDE,
         });
 
         this.spatialDrawButton = this.createButton({
@@ -63,7 +63,7 @@ export class MenuButtons {
             mapElement,
             `Element of map doesn't exist. This is a bug.`,
         );
-        mapElement?.appendChild(this.root);
+        mapElement.appendChild(this.root);
     }
 
     private stopPropagation(element: HTMLElement) {
@@ -87,11 +87,11 @@ export class MenuButtons {
                 this.mapController.enableDrawing();
                 this.disableButtonForDrawing();
                 this.setDefaultActiveResultSetButton();
-                this.spatialDrawButton!.innerText = "Stop spatial drawing";
+                this.spatialDrawButton.innerText = "Stop spatial drawing";
             } else {
                 this.mapController.completeDrawing();
                 this.enableButtonsAfterDrawing();
-                this.spatialDrawButton!.innerText = "Draw spatial filter";
+                this.spatialDrawButton.innerText = "Draw spatial filter";
             }
         });
 
@@ -172,17 +172,17 @@ export class MenuButtons {
         id,
         text,
         disabled,
-        includeImage,
+        includeIcon,
     }: {
         id: string;
         text: string;
         disabled: boolean;
-        includeImage?: Overlapping | Inside;
+        includeIcon?: Overlapping | Inside;
     }): HTMLButtonElement {
         const img =
-            includeImage === INSIDE
+            includeIcon === INSIDE
                 ? '<i class="fa-solid fa-circle-xmark"></i>'
-                : includeImage === OVERLAPPING
+                : includeIcon === OVERLAPPING
                   ? '<i class="fa-solid fa-xmark"></i>'
                   : "";
         const button = document.createElement("button");
@@ -229,8 +229,8 @@ export class MenuButtons {
             this.mapController.overlapFilter();
             return;
         }
-        this.overlappingFilterButton!.classList.remove(ACTIVE);
-        this.insideFilterButton!.classList.add(ACTIVE);
+        this.overlappingFilterButton.classList.remove(ACTIVE);
+        this.insideFilterButton.classList.add(ACTIVE);
         this.mapController.insideFilter();
     }
 }
