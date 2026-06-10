@@ -6,8 +6,9 @@
             <x-ri-search-line class="search-icon" />
         </div>
 
-        <form class="w-full h-16">
-            <input class="search-bar" type="text" id="search" placeholder="Search datapublications.." name="query[]" />
+        <form class="w-full h-16" disabled>
+            <input class="search-bar opacity-25 " type="text" id="search" placeholder="Search datapublications.."
+                name="query[]" disabled />
         </form>
     </div>
 
