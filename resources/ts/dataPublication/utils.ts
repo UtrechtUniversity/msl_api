@@ -51,3 +51,10 @@ export function getDefaultTab(): GeoFeatureResultSet {
     }
     throw new Error("No default tab in config. This is a bug.");
 }
+
+export type Paginator = {
+    offset: number;
+    limit: number;
+    totalCount: number;
+    resultCount: number;
+};
