@@ -4,7 +4,7 @@ namespace App\DataPublications;
 
 use App\Models\Ckan\DataPublication;
 
-class isInclusiveDataPublication
+class IsInclusiveDataPublication
 {
     public function __construct(
         public readonly DataPublication $dataPublication,

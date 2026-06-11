@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use App\DataPublications\isInclusiveDataPublication;
+use App\DataPublications\IsInclusiveDataPublication;
 use App\Http\Resources\V2\DataPublicationResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -15,7 +15,7 @@ class GeoFeatureDataPublicationResource extends JsonResource
 
         return [
             'data_publications' => $isInclusiveDataPublications->map(
-                fn (isInclusiveDataPublication $isInclusiveDataPublication) => (
+                fn (IsInclusiveDataPublication $isInclusiveDataPublication) => (
                     (new DataPublicationResource($isInclusiveDataPublication->dataPublication))->setIncludesGeoJson(false)->setInclusiveInformation($isInclusiveDataPublication->isInclusive)
                 )
             ),

@@ -124,13 +124,13 @@ class GeoFeatureDatapublicationService
     /**
      * @param  array<int,DataPublication>  $dataPublications
      * @param  array<string,DataPublication>  $inclusiveDataPublications
-     * @return array<int, isInclusiveDataPublication>
+     * @return array<int, IsInclusiveDataPublication>
      */
     private function getDataPublicationsWithInclusiveInformation(array $dataPublications, array $inclusiveDataPublications): array
     {
         $dataPublicationsToReturn = [];
         foreach ($dataPublications as $dataPublication) {
-            array_push($dataPublicationsToReturn, new isInclusiveDataPublication(
+            array_push($dataPublicationsToReturn, new IsInclusiveDataPublication(
                 $dataPublication,
                 isInclusive: isset($inclusiveDataPublications[$dataPublication->msl_doi])
             ));

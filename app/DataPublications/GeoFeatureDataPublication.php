@@ -5,7 +5,7 @@ namespace App\DataPublications;
 class GeoFeatureDataPublication
 {
     /**
-     * @param  array<int, isInclusiveDataPublication>  $dataPublications
+     * @param  array<int, IsInclusiveDataPublication>  $dataPublications
      * @return void
      */
     public function __construct(
