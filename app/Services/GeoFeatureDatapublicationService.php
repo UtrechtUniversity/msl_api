@@ -130,10 +130,10 @@ class GeoFeatureDatapublicationService
     {
         $dataPublicationsToReturn = [];
         foreach ($dataPublications as $dataPublication) {
-            array_push($dataPublicationsToReturn, new IsInclusiveDataPublication(
+            $dataPublicationsToReturn[] = new IsInclusiveDataPublication(
                 $dataPublication,
                 isInclusive: isset($inclusiveDataPublications[$dataPublication->msl_doi])
-            ));
+            );
         }
 
         return $dataPublicationsToReturn;
