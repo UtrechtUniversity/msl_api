@@ -1,26 +1,32 @@
 @reference "../app.css";
 
-.data-publication-link{
-    
+.data-publication-link {
     position: relative;
     display: block;
+}
 
+.data-publication-content {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .data-publication-item.highlight .data-publication-title,
 .data-publication-item.highlight .data-publication-authors,
 .data-publication-item.highlight .data-publication-date {
-  @apply  whitespace-normal overflow-visible text-clip;
+    @apply whitespace-normal overflow-visible text-clip;
 }
 
 .data-publication-item {
     background: var(--color-primary-100);
     padding-block: calc(var(--spacing) * 2);
 }
-.data-publication-item.disabled{opacity:0.25;  pointer-events: none}
+.data-publication-item.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
 
 .data-publication-title {
-    font-size: var(--text-base); /* 1rem (16px) */ 
+    font-size: var(--text-base); /* 1rem (16px) */
     line-height: var(--text-base--line-height); /* calc(1.5 / 1) */
     font-weight: 600;
     color: var(--color-primary-900);
@@ -28,11 +34,11 @@
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;   
+    white-space: nowrap;
 }
 
 .data-publication-authors {
-    font-size: var(--text-sm); /* 0.875rem (14px) */ 
+    font-size: var(--text-sm); /* 0.875rem (14px) */
     line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
     color: var(--color-primary-900);
     text-align: left;
@@ -43,9 +49,9 @@
 }
 
 .data-publication-date {
-    font-size: var(--text-sm); /* 0.875rem (14px) */ 
+    font-size: var(--text-sm); /* 0.875rem (14px) */
     line-height: var(--text-sm--line-height); /* calc(1.25 / 0.875) */
-    color:var(--color-primary-900);
+    color: var(--color-primary-900);
     font-style: italic;
     text-align: left;
     width: 100%;
@@ -54,7 +60,7 @@
     white-space: nowrap;
 }
 
-.data-publication-item.highlight{   
+.data-publication-item.highlight {
     background-color: var(--color-secondary-200);
     cursor: pointer;
     color: var(--color-secondary-900);
@@ -66,4 +72,3 @@
     bottom: 12px;
     color: #666;
 }
-
