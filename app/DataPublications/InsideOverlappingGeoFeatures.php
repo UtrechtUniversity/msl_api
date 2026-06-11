@@ -2,7 +2,7 @@
 
 namespace App\DataPublications;
 
-class InsideOverlappingGeoFeatures
+readonly class InsideOverlappingGeoFeatures
 {
     /**
      * @param  array<int, GeoFeaturePerDataPublication>  $overlappingFeatures
@@ -10,7 +10,7 @@ class InsideOverlappingGeoFeatures
      * @return void
      */
     public function __construct(
-        public readonly array $overlappingFeatures,
-        public readonly array $insideFeatures
+        public array $overlappingFeatures,
+        public array $insideFeatures
     ) {}
 }

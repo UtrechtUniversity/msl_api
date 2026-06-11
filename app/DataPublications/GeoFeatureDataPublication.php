@@ -2,14 +2,14 @@
 
 namespace App\DataPublications;
 
-class GeoFeatureDataPublication
+readonly class GeoFeatureDataPublication
 {
     /**
      * @param  array<int, IsInclusiveDataPublication>  $dataPublications
      * @return void
      */
     public function __construct(
-        public readonly array $dataPublications,
-        public readonly InsideOverlappingGeoFeatures $features
+        public array $dataPublications,
+        public InsideOverlappingGeoFeatures $features
     ) {}
 }
