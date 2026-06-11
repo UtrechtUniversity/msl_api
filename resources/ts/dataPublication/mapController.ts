@@ -23,6 +23,8 @@ export class MapController {
     constructor() {
         this.mapView = new MapView();
         this.resultsSidebar = new ResultsSidebar();
+
+        //
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
