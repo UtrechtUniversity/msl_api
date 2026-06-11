@@ -9,7 +9,9 @@ import { Pagination } from "./pagination";
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 type SearchFilter = {
-    boundingBox: string | null;
+    boundingBox: string;
+    page: number;
+    pageSize: 10;
 };
 export class MapController {
     // UI elements
@@ -20,7 +22,7 @@ export class MapController {
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
-    searchFilters: SearchFilter = { boundingBox: null };
+    searchFilters: SearchFilter = { boundingBox: "", page: 1, pageSize: 10 };
     paginator: Paginator | null = null;
 
     constructor() {
@@ -82,8 +84,11 @@ export class MapController {
             throw new Error(
                 "Bounding box doesn't have a correct value. This is a bug.",
             );
-        const parameters = { boundingBox, limit: "10" };
-        const params = new URLSearchParams(parameters);
+        const params = new URLSearchParams({
+            boundingBox: this.searchFilters.boundingBox,
+            page: this.searchFilters.page.toString(),
+            pageSize: this.searchFilters.pageSize.toString(),
+        });
 
         const route = "/api/geoJsonDataPublications?" + params;
 
@@ -111,7 +116,7 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.boundingBox = null;
+        this.searchFilters.boundingBox = "";
         this.resetAllInformation();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -126,7 +131,7 @@ export class MapController {
     }
 
     public removeDrawing() {
-        this.searchFilters.boundingBox = null;
+        this.searchFilters.boundingBox = "";
         this.resetAllInformation();
 
         this.mapView.setDrawingEnable(false);
