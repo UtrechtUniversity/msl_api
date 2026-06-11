@@ -53,8 +53,8 @@ export function getDefaultTab(): GeoFeatureResultSet {
 }
 
 export type Paginator = {
-    offset: number;
-    limit: number;
+    resultsCount: number;
     totalCount: number;
-    resultCount: number;
+    currentPage: number;
+    lastPage: number;
 };
