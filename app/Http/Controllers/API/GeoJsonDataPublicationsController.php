@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\GeoJsonDataPublicationRequest;
-use App\Http\Resources\InclusiveExclusiveGeoJsonDataPublicationsResource;
+use App\Http\Resources\GeoFeatureDataPublicationResource;
+use App\Services\GeoFeatureDatapublicationService;
 use App\Services\GeoJsonDataPublicationService;
-use App\Services\InclusiveExclusiveGeoJsonFeatureService;
 use GuzzleHttp\Client;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Resources\Json\ResourceCollection;
@@ -29,7 +29,7 @@ class GeoJsonDataPublicationsController extends Controller
     protected function index(
         GeoJsonDataPublicationRequest $request,
         GeoJsonDataPublicationService $dataPublicationService,
-        InclusiveExclusiveGeoJsonFeatureService $inclusiveExclusiveGeoJsonService,
+        GeoFeatureDatapublicationService $geoFeatureDatapublicationService,
     ): JsonResource|ResourceCollection {
 
         // Get bounding box
@@ -38,9 +38,9 @@ class GeoJsonDataPublicationsController extends Controller
         $dataPublicationResponse = $dataPublicationService->getDataPublicationResponse($this->guzzleClient, $request);
         // Create instance of an intermediate class,
         // where filtering and restructure is done.
-        $inclusiveExclusiveGeoJson = $inclusiveExclusiveGeoJsonService->createInclusiveExclusiveGeoJson($dataPublicationResponse->dataPublications, $bbox);
+        $geoFeatureDatapublication = $geoFeatureDatapublicationService->createGeoFeatureDataPublication($dataPublicationResponse->dataPublications, $bbox);
 
-        $resource = new InclusiveExclusiveGeoJsonDataPublicationsResource($inclusiveExclusiveGeoJson);
+        $resource = new GeoFeatureDataPublicationResource($geoFeatureDatapublication);
 
         return $dataPublicationResponse->getJsonResponse($resource);
     }

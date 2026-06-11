@@ -17,13 +17,14 @@ export default defineConfig({
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
-            'resources/ts/dataPublication/mapDeprecated.ts',
-            'resources/ts/dataPublication/map.ts',
+            'resources/ts/dataPublication/mapController.ts',
 
             'resources/ts/dataPublication/tab-handle.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
-            'resources/css/leafletMapStyles/datapublications-list.css',
-            'resources/css/leafletMapStyles/in-map-styles.css'
+            'resources/css/datapublicationMap/datapublications-list.css',
+            'resources/css/datapublicationMap/in-map-styles.css',
+            'resources/css/datapublicationMap/top-menu.css'
+
         ]),
         commonjs()
     ],

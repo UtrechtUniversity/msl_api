@@ -21,6 +21,8 @@
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
                         @include('public.components.datapublication-map.search-div')
+                        @include('public.components.datapublication-map.info')
+
                         {{-- list view --}}
                         <div class="list-view">
                             @include('public.components.datapublication-map.map-view')
