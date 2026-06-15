@@ -2,6 +2,7 @@ import { assertNotNull } from "../helpers";
 import type { Paginator } from "./utils";
 
 export class Pagination {
+    paginateElement: HTMLElement;
     paginator: Paginator | null = null;
     range: {
         lowerRange: number;
@@ -10,12 +11,29 @@ export class Pagination {
         count: number;
         currentPage: number;
     } | null = null;
-    constructor() {}
+    constructor() {
+        const paginateElement = document.getElementById("results-pagination");
+        assertNotNull(
+            paginateElement,
+            `There is not element for pagination of results. This is a bug.`,
+        );
+        this.paginateElement = paginateElement;
+    }
 
     public setArgs(paginator: Paginator) {
         this.paginator = paginator;
     }
 
+    populate() {}
+
+    public clear() {
+        //TODO clean up range and paginator?
+        this.paginator = null;
+        this.range = null;
+        while (this.paginateElement.firstChild) {
+            this.paginateElement.firstChild.remove();
+        }
+    }
     private getRange() {
         assertNotNull(
             this.paginator,

@@ -147,6 +147,8 @@ export class MapController {
     private resetAllInformation() {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
+        this.pagination.clear();
+        this.paginator = null;
         this.results = null;
     }
 }
