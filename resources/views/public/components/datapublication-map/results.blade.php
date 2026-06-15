@@ -1,6 +1,9 @@
-      <div id="datapublication-results">
+      <div id="datapublication-results" class="overflow-y-auto max-h-[720px]">
 
       </div>
+      <div id='results-pagination' class='flex justify-center py-2 border-t'>
+          pagination</div>
+
       {{-- <div class="shrink-0 border-t border-primary-700">
           <div class="list-view">
               <div id="pagination-list" class="self-center join p-4 rounded-xl divide-primary-100 divide-x-1">

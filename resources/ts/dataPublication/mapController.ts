@@ -67,9 +67,11 @@ export class MapController {
         ({ data: this.results, meta: this.paginator } =
             await this.getJsonFromRequest());
 
-        this.pagination.setArgs(this.paginator);
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
+        //TODO how to pass this info?
+        this.pagination.setArgs(this.paginator);
+        this.pagination.populate();
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
