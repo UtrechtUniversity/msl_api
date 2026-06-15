@@ -2,7 +2,7 @@
 
 namespace App\DataPublications;
 
-readonly class GeoFeatureDataPublication
+class GeoFeatureDataPublication
 {
     /**
      * @param  array<int, IsInclusiveDataPublication>  $dataPublications
