@@ -5,6 +5,7 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
+import { assertNotNull } from "../helpers";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -30,7 +31,6 @@ export class MapController {
         this.resultsSidebar = new ResultsSidebar();
         this.pagination = new Pagination();
 
-        //
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
@@ -58,6 +58,9 @@ export class MapController {
                     highlightOrReset: "reset",
                 });
             },
+        });
+        this.pagination.setHandlerfn({
+            onPageChange: (page) => this.handlePageChange(page),
         });
     }
 
@@ -106,6 +109,8 @@ export class MapController {
             );
         }
         const { data, meta } = await response.json();
+        console.log(data);
+
         return { data, meta };
     }
     // Methods about interactions
@@ -143,6 +148,16 @@ export class MapController {
         this.activeTab = activatedTab;
         this.resultsSidebar.handleActivationOfTab(activatedTab)();
         this.mapView.handleActivatedLayers(activatedTab);
+    }
+
+    private handlePageChange(page: number) {
+        assertNotNull(
+            this.paginator,
+            `Paginator should not be null. This is a bug.`,
+        );
+        // this.resetAllInformation();
+        this.paginator.currentPage = page;
+        // this.addFeaturesAndSidebarInMap();
     }
 
     // Helper methods
