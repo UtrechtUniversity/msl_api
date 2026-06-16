@@ -66,16 +66,17 @@ export class MapController {
 
     // Methods about requests and populating
 
-    private async addFeaturesAndSidebarInMap() {
+    private async addFeaturesAndSidebarInMap(opts?: { except: "pagination" }) {
         ({ data: this.results, meta: this.paginator } =
             await this.getJsonFromRequest());
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
-        //TODO how to pass this info?
-        this.pagination.setArgs(this.paginator);
-        this.pagination.populate();
 
+        if (opts?.except !== "pagination") {
+            this.pagination.setArgs(this.paginator);
+            this.pagination.populate();
+        }
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
@@ -109,7 +110,6 @@ export class MapController {
             );
         }
         const { data, meta } = await response.json();
-        console.log(data);
 
         return { data, meta };
     }
@@ -151,13 +151,13 @@ export class MapController {
     }
 
     private handlePageChange(page: number) {
-        assertNotNull(
-            this.paginator,
-            `Paginator should not be null. This is a bug.`,
-        );
-        // this.resetAllInformation();
-        this.paginator.currentPage = page;
-        // this.addFeaturesAndSidebarInMap();
+        this.mapView.removeAllLayers({ except: "rectangle" });
+        this.resultsSidebar.resetList();
+        this.paginator = null;
+        this.results = null;
+
+        this.searchFilters.page = page;
+        this.addFeaturesAndSidebarInMap({ except: "pagination" });
     }
 
     // Helper methods

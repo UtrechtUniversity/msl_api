@@ -159,13 +159,13 @@ export class MapView {
         return L.circleMarker(latlng, this.circleMarkerDefaultOptions);
     };
 
-    public removeAllLayers() {
-        if (this.rectangle) {
+    public removeAllLayers(opts?: { except: "rectangle" }) {
+        if (opts?.except !== "rectangle" && this.rectangle) {
             this.map.removeLayer(this.rectangle);
             this.rectangle = null;
             this.drawingBounds = null;
-            this.removeLayers();
         }
+        this.removeLayers();
     }
 
     public handleActivatedLayers(activatedTab: GeoFeatureResultSet) {
