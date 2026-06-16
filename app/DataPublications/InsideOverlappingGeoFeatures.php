@@ -2,7 +2,7 @@
 
 namespace App\DataPublications;
 
-readonly class InsideOverlappingGeoFeatures
+class InsideOverlappingGeoFeatures
 {
     /**
      * @param  array<int, GeoFeaturePerDataPublication>  $overlappingFeatures
