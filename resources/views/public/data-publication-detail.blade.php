@@ -256,7 +256,7 @@
                                     }
                                 }
                             },
-                            onHidden(instance) {
+                            onHide(instance) {
                                 instance.setContent('Loading...')
                                 instance.state.ajax.canFetch = true
 
@@ -475,7 +475,7 @@
                                     }
                                 }
                             },
-                            onHidden(instance) {
+                            onHide(instance) {
                                 instance.setContent('Loading...')
                                 instance.state.ajax.canFetch = true
 
