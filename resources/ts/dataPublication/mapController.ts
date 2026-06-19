@@ -73,10 +73,10 @@ export class MapController {
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
 
-        if (opts?.except !== "pagination") {
-            this.pagination.setArgs(this.paginator);
-            this.pagination.populate();
-        }
+        // if (opts?.except !== "pagination") {
+        this.pagination.setArgs(this.paginator);
+        this.pagination.populate();
+        // }
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
@@ -153,6 +153,7 @@ export class MapController {
     private handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
         this.resultsSidebar.resetList();
+        this.pagination.clear();
         this.paginator = null;
         this.results = null;
 

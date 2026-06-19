@@ -1,0 +1,29 @@
+  @reference "../app.css";
+
+
+
+
+  
+  .dp-pagination-button{
+   
+      @apply 
+      join-item /* needed for daisyUI */
+      btn 
+      font-semibold
+      w-6  
+      text-primary-800
+      bg-primary-200
+    }
+
+    .dp-pagination-button-active-page{
+      @apply
+      text-primary-900
+      font-bold 
+      bg-primary-300
+    }
+    .dp-pagination-button-last-left{
+      @apply rounded-l-xl hover:rounded-l-xl max-w-9 p-1
+    }
+    .dp-pagination-button-last-right{
+      @apply rounded-r-xl hover:rounded-r-xl max-w-9 p-1 
+    }
