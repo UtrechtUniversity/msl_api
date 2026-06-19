@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Vocabulary extends Model
 {
@@ -10,14 +12,15 @@ class Vocabulary extends Model
         'name',
         'uri',
         'display_name',
+        'version'
     ];
 
-    public function keywords()
+    public function keywords(): HasMany
     {
         return $this->hasMany(Keyword::class);
     }
 
-    public function search_keywords()
+    public function searchKeywords(): HasManyThrough
     {
         return $this->hasManyThrough(KeywordSearch::class, Keyword::class);
     }

@@ -5,13 +5,13 @@ namespace App\Http\Response;
 use App\CkanClient\Response\PackageSearchResponse;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class DataPublicationResponse
 {
-    public int $limit;
+    public int $page;
 
-    public int $offset;
+    public int $pageSize;
 
     public int $currentCount;
 
@@ -22,34 +22,38 @@ class DataPublicationResponse
 
     public string $currentUrl;
 
+    public LengthAwarePaginator $paginator;
+
     /**
      * Create a new class instance.
      */
-    public function __construct(PackageSearchResponse $response, int $limit, int $offset, string $currentUrl)
+    public function __construct(PackageSearchResponse $response, int $page, int $pageSize, string $currentUrl)
     {
 
-        $this->limit = $limit;
-        $this->offset = $offset;
+        $this->page = $page;
+        $this->pageSize = $pageSize;
         $this->dataPublications = $response->getResults(true);
         $this->totalCount = $response->getTotalResultsCount();
         $this->currentCount = count($this->dataPublications);
         $this->currentUrl = $currentUrl;
+        $this->paginator = new LengthAwarePaginator($this->dataPublications, $this->totalCount, $this->pageSize, $this->page, [$currentUrl]);
     }
 
-    public function getJsonResponse(JsonResource $dataPublicationResource): JsonResource|ResourceCollection
+    public function getJsonResponse(JsonResource $dataPublicationResource): JsonResource
     {
 
         return $dataPublicationResource->additional([
             'success' => 'true',
             'messages' => [],
             'meta' => [
-                'resultCount' => $this->currentCount,
-                'totalCount' => $this->totalCount,
-                'limit' => $this->limit,
-                'offset' => $this->offset,
+                'perPage' => $this->paginator->perPage(),
+                'resultsCount' => $this->currentCount,
+                'totalCount' => $this->paginator->total(),
+                'currentPage' => $this->paginator->currentPage(),
+                'lastPage' => $this->paginator->lastPage(),
             ],
             'links' => [
-                'current_url' => $this->currentUrl,
+                'currentUrl' => $this->currentUrl,
             ],
         ]);
     }

@@ -35,8 +35,8 @@ class ProcessSourceDataset implements ShouldQueue
      */
     public function handle(MappingService $mappingService)
     {
-        $importer = $this->sourceDataset->source_dataset_identifier->import->importer;
-        $import = $this->sourceDataset->source_dataset_identifier->import;
+        $importer = $this->sourceDataset->sourceDatasetIdentifier->import->importer;
+        $import = $this->sourceDataset->sourceDatasetIdentifier->import;
 
         try {
             $dataPublication = $mappingService->map($this->sourceDataset, $importer);

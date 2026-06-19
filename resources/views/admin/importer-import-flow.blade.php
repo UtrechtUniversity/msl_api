@@ -47,7 +47,7 @@
                                                 @endif
                                             </td>
 
-                                            <?php $sourceDataset = $sourceDatasetIdentifier->source_dataset; ?>
+                                            <?php $sourceDataset = $sourceDatasetIdentifier->sourceDataset; ?>
                                             <td>
                                                 @if ($sourceDataset)
                                                     @if ($sourceDataset->status == 'succes')
@@ -61,7 +61,7 @@
                                             </td>
 
                                             <?php if ($sourceDataset) {
-                                                $datasetCreate = $sourceDataset->dataset_create;
+                                                $datasetCreate = $sourceDataset->datasetCreate;
                                             } else {
                                                 $datasetCreate = null;
                                             } ?>

@@ -40,7 +40,7 @@ class GfzFileMapperTest extends TestCase
                 );
         });
 
-        $gfzFileMapper = new GfzFileMapper;
+        $gfzFileMapper = new GfzFileMapper([]);
         $dataPublication = $gfzFileMapper->map($dataPublication, $sourceDataset);
 
         $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, '2024-001_Wittmann-et-al_Data-Description.pdf');

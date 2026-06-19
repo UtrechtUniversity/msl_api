@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\V2;
 
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V2\Elements\AlternateIdentifierResource;
 use App\Http\Resources\V2\Elements\ContributorResource;
 use App\Http\Resources\V2\Elements\CreatorResource;
@@ -13,6 +14,7 @@ use App\Http\Resources\V2\Elements\RelatedIdentifierResource;
 use App\Http\Resources\V2\Elements\RightResource;
 use App\Http\Resources\V2\Elements\SubjectResource;
 use App\Http\Resources\V2\Helpers\Descriptions;
+use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 enum VocabularyType: string
@@ -22,25 +24,50 @@ enum VocabularyType: string
     case GEOLOGICAL_SETTING = 'geologicalSetting';
     case PALEO = 'paleo';
     case GEO_CHEMISTRY = 'geoChemistry';
-    case GEO_ENERGY = 'geoEnergy';
+    case FIELD_SCALE = 'fieldScale';
 }
+/** @mixin DataPublication */
 class DataPublicationResource extends JsonResource
 {
-    private $context;
+    private EndpointContext $context = EndpointContext::ALL;
 
-    private $uriStartsPerSubject = [];
+    private array $uriStartsPerSubject = [];
+
+    private bool $includeInclusiveInformation = false;
+
+    private bool $isInclusive = false;
 
     /**
      * We set whether the data-publication results should
      * include the geoJson information included or not.
      */
-    private bool $includesGeoJson;
+    private bool $includesGeoJson = true;
 
-    public function __construct($resource, $context = '', $includesGeoJson = true)
+    public function setContext(EndpointContext $context): self
+    {
+        $this->context = $context;
+
+        return $this;
+    }
+
+    public function setIncludesGeoJson(bool $includesGeoJson): self
+    {
+        $this->includesGeoJson = $includesGeoJson;
+
+        return $this;
+    }
+
+    public function setInclusiveInformation(bool $isInclusive): self
+    {
+        $this->includeInclusiveInformation = true;
+        $this->isInclusive = $isInclusive;
+
+        return $this;
+    }
+
+    public function __construct($resource)
     {
         parent::__construct($resource);
-        $this->context = $context;
-        $this->includesGeoJson = $includesGeoJson;
         $this->uriStartsPerSubject = [
             VocabularyType::ROCK_PHYSICS->value => [
                 'https://epos-msl.uu.nl/voc/rockphysics/'.config('vocabularies.vocabularies_current_version').'/measured_property-',
@@ -61,15 +88,15 @@ class DataPublicationResource extends JsonResource
             VocabularyType::GEO_CHEMISTRY->value => [
                 'https://epos-msl.uu.nl/voc/geochemistry/'.config('vocabularies.vocabularies_current_version').'/',
             ],
-            VocabularyType::GEO_ENERGY->value => [
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/equipment-',
-                'https://epos-msl.uu.nl/voc/testbeds/'.config('vocabularies.vocabularies_current_version').'/model-',
+            VocabularyType::FIELD_SCALE->value => [
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/facility_names-',
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/equipment-',
+                'https://epos-msl.uu.nl/voc/fieldscale/'.config('vocabularies.vocabularies_current_version').'/models-',
             ],
         ];
     }
 
-    private function getMaterials()
+    private function getMaterials(): array
     {
         $materials = [];
         foreach ($this->msl_enriched_keywords as $value) {
@@ -81,7 +108,7 @@ class DataPublicationResource extends JsonResource
         return $materials;
     }
 
-    private function getResearchAspectsPerSubject(VocabularyType $subject)
+    private function getResearchAspectsPerSubject(VocabularyType $subject): array
     {
         $keywords = [];
         foreach ($this->msl_enriched_keywords as $enrichedKeyword) {
@@ -95,11 +122,11 @@ class DataPublicationResource extends JsonResource
         return $keywords;
     }
 
-    private function getResearchAspects()
+    private function getResearchAspects(): array
     {
         $researchAspects = [];
         switch ($this->context) {
-            case 'rockPhysics':
+            case EndpointContext::ROCK_PHYSICS:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ROCK_PHYSICS));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -107,7 +134,7 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'analogue':
+            case EndpointContext::ANALOGUE:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ANALOGUE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -115,7 +142,7 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'paleo':
+            case EndpointContext::PALEO:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::PALEO));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -123,14 +150,14 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'microscopy':
+            case EndpointContext::MICROSCOPY:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 
                 $researchAspects = $keywords;
                 break;
-            case 'geochemistry':
+            case EndpointContext::GEO_CHEMISTRY:
                 $keywords = [];
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_CHEMISTRY));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
@@ -138,22 +165,22 @@ class DataPublicationResource extends JsonResource
 
                 $researchAspects = $keywords;
                 break;
-            case 'geoenergy':
+            case EndpointContext::FIELD_SCALE:
                 $keywords = [];
-                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_ENERGY));
+                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::FIELD_SCALE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 
                 $researchAspects = $keywords;
                 break;
-            case 'all':
+            case EndpointContext::ALL:
                 $keywords = [];
 
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ROCK_PHYSICS));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::ANALOGUE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::PALEO));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_CHEMISTRY));
-                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEO_ENERGY));
+                $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::FIELD_SCALE));
                 $keywords = array_merge($keywords, $this->getResearchAspectsPerSubject(VocabularyType::GEOLOGICAL_SETTING));
                 $keywords = array_values(array_unique($keywords));
 
@@ -164,7 +191,7 @@ class DataPublicationResource extends JsonResource
         return $researchAspects;
     }
 
-    private function getDescriptions()
+    private function getDescriptions(): Descriptions
     {
         return new Descriptions(
             abstract: $this->msl_description_abstract,
@@ -216,6 +243,9 @@ class DataPublicationResource extends JsonResource
         ];
         if ($this->includesGeoJson) {
             $genericResource += ['geojson' => json_decode($this->msl_geojson_featurecollection)];
+        }
+        if ($this->includeInclusiveInformation) {
+            $genericResource += ['isInclusive' => $this->isInclusive];
         }
 
         return $genericResource;

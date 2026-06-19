@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Client;
-use App\Enums\EndpointContext;
-use App\Enums\LabDomain;
+use App\Enums\SubDomains\EndpointContext;
+use App\Enums\SubDomains\LabDomain;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Resources\V2\Errors\ValidationErrorResource;
 use App\Http\Resources\V2\FacilityResource;
@@ -144,8 +144,8 @@ class FacilityController extends BaseDomainApiController
                 $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_CHEMISTRY->value);
                 break;
 
-            case EndpointContext::GEO_ENERGY:
-                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::GEO_ENERGY->value);
+            case EndpointContext::FIELD_SCALE:
+                $this->packageSearchRequest->addFilterQuery($msl_subdomain, LabDomain::FIELD_SCALE->value);
                 break;
         }
     }

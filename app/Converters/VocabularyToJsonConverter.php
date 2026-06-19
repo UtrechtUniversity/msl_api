@@ -29,7 +29,6 @@ class VocabularyToJsonConverter
         $data = $this->retrieveData($worksheet);
 
         return json_encode($data, JSON_PRETTY_PRINT);
-
     }
 
     private function retrieveData($worksheet): array
@@ -52,55 +51,32 @@ class VocabularyToJsonConverter
                 $currentColumn = $cell->getColumn();
 
                 if ($cell->getValue() && $cell->getValue() !== '') {
-
                     if (in_array($currentColumn, range('A', $lastColumnLetter))) {
-
                         $node['value'] = $cell->getValue();
                         $node['level'] = Coordinate::columnIndexFromString($cell->getColumn()) + ($baseLevel - 1);
                         $node['rowNr'] = $cell->getRow();
-
                     } elseif ($currentColumn == $this->checkColumnByName('indicator terms', $allColNames)) {
                         $node['synonyms'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('exclude_domain_mapping', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['exclude_domain_mapping'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['exclude_domain_mapping'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['exclude_domain_mapping'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('uri', $allColNames)) {
                         $node['uri'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('hyperlink', $allColNames)) {
-                        $node['hyperlink'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_uri', $allColNames)) {
                         $node['external_uri'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_vocab_scheme', $allColNames)) {
                         $node['external_vocab_scheme'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('external_description', $allColNames)) {
                         $node['external_description'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition', $allColNames)) {
-                        $node['extracted_definition'] = $cell->getValue();
-                    } elseif ($currentColumn == $this->checkColumnByName('contributor_definition_link', $allColNames)) {
-                        $node['extracted_definition_link'] = $cell->getValue();
+                    } elseif ($currentColumn == $this->checkColumnByName('contributor_notes', $allColNames)) {
+                        $node['notes'] = $cell->getValue();
                     } elseif ($currentColumn == $this->checkColumnByName('terms_exclude_abstract_mapping', $allColNames)) {
                         $node['terms_exclude_abstract_mapping'] = $this->extractTermsFromString($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_1', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['selection_group_1'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['selection_group_1'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['selection_group_1'] = $this->stringToIntBool($cell->getValue());
                     } elseif ($currentColumn == $this->checkColumnByName('selection_group_2', $allColNames)) {
-                        if ($cell->getValue() == 'yes') {
-                            $node['selection_group_2'] = 1;
-                        } elseif ($cell->getValue() == 'no') {
-                            $node['selection_group_2'] = 0;
-                        } else {
-                            throw new \Exception('entry is not string "no" or "yes" for term "'.$node['value'].'" in column "'.$currentColumn.'"');
-                        }
+                        $node['selection_group_2'] = $this->stringToIntBool($cell->getValue());
+                    } elseif ($currentColumn == $this->checkColumnByName('selection_group_3', $allColNames)) {
+                        $node['selection_group_3'] = $this->stringToIntBool($cell->getValue());
                     }
                 }
             }
@@ -119,6 +95,17 @@ class VocabularyToJsonConverter
         }
 
         return $nestedNodes;
+    }
+
+    private function stringToIntBool($string): int
+    {
+        if ($string == 'yes') {
+            return 1;
+        } elseif ($string == 'no') {
+            return 0;
+        } else {
+            throw new \Exception('Cannot convert string to boolean int: '.$string);
+        }
     }
 
     private function checkColumnByName($columnName, $allColNames)
@@ -203,15 +190,14 @@ class VocabularyToJsonConverter
             'synonyms' => [],
             'exclude_domain_mapping' => '',
             'uri' => '',
-            'hyperlink' => '',
             'external_uri' => '',
             'external_vocab_scheme' => '',
             'external_description' => '',
-            'extracted_definition' => '',
-            'extracted_definition_link' => '',
+            'notes' => '',
             'terms_exclude_abstract_mapping' => [],
             'selection_group_1' => '',
             'selection_group_2' => '',
+            'selection_group_3' => '',
             'subTerms' => [],
         ];
 

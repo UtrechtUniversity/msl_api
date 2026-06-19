@@ -66,7 +66,7 @@ class FilterTreeExport
         $paleomagnetismVocab = Vocabulary::where('name', 'paleomagnetism')->where('version', $vocabVersion)->first();
         $rockphysicsVocab = Vocabulary::where('name', 'rockphysics')->where('version', $vocabVersion)->first();
         $subsurfaceVocab = Vocabulary::where('name', 'subsurface')->where('version', $vocabVersion)->first();
-        $geoenergyVocab = Vocabulary::where('name', 'testbeds')->where('version', $vocabVersion)->first();
+        $fieldscaleVocab = Vocabulary::where('name', 'fieldscale')->where('version', $vocabVersion)->first();
 
         $tree = [
             [
@@ -166,6 +166,22 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($analogueVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'text' => 'Field-scale laboratories',
+                'state' => [
+                    'opened' => false,
+                    'disabled' => false,
+                    'selected' => false,
+                    'checked' => false,
+                ],
+                'extra' => [
+                    'type' => 'filter',
+                    'url' => '',
+                    'filterName' => 'msl_has_fieldscale',
+                    'filterValue' => 'true',
+                ],
+                'children' => $this->getVocabAsFilters($fieldscaleVocab->id, 'msl_enriched_keyword_uri'),
+            ],
+            [
                 'text' => 'Geochemistry',
                 'state' => [
                     'opened' => false,
@@ -180,22 +196,6 @@ class FilterTreeExport
                     'filterValue' => 'true',
                 ],
                 'children' => $this->getVocabAsFilters($geochemistryVocab->id, 'msl_enriched_keyword_uri'),
-            ],
-            [
-                'text' => 'Geo-energy test beds',
-                'state' => [
-                    'opened' => false,
-                    'disabled' => false,
-                    'selected' => false,
-                    'checked' => false,
-                ],
-                'extra' => [
-                    'type' => 'filter',
-                    'url' => '',
-                    'filterName' => 'msl_has_geoenergy',
-                    'filterValue' => 'true',
-                ],
-                'children' => $this->getVocabAsFilters($geoenergyVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
                 'text' => 'Microscopy and tomography',
@@ -301,7 +301,7 @@ class FilterTreeExport
         $paleomagnetismVocab = Vocabulary::where('name', 'paleomagnetism')->where('version', $vocabVersion)->first();
         $rockphysicsVocab = Vocabulary::where('name', 'rockphysics')->where('version', $vocabVersion)->first();
         $subsurfaceVocab = Vocabulary::where('name', 'subsurface')->where('version', $vocabVersion)->first();
-        $geoenergyVocab = Vocabulary::where('name', 'testbeds')->where('version', $vocabVersion)->first();
+        $fieldscaleVocab = Vocabulary::where('name', 'fieldscale')->where('version', $vocabVersion)->first();
 
         $tree = [
             [
@@ -401,6 +401,22 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($analogueVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'text' => 'Field-scale laboratories',
+                'state' => [
+                    'opened' => false,
+                    'disabled' => false,
+                    'selected' => false,
+                    'checked' => false,
+                ],
+                'extra' => [
+                    'type' => 'filter',
+                    'url' => '',
+                    'filterName' => 'msl_has_fieldscale_original',
+                    'filterValue' => 'true',
+                ],
+                'children' => $this->getVocabAsFilters($fieldscaleVocab->id, 'msl_original_keyword_uri', false, true),
+            ],
+            [
                 'text' => 'Geochemistry',
                 'state' => [
                     'opened' => false,
@@ -415,22 +431,6 @@ class FilterTreeExport
                     'filterValue' => 'true',
                 ],
                 'children' => $this->getVocabAsFilters($geochemistryVocab->id, 'msl_original_keyword_uri', false, true),
-            ],
-            [
-                'text' => 'Geo-energy test beds',
-                'state' => [
-                    'opened' => false,
-                    'disabled' => false,
-                    'selected' => false,
-                    'checked' => false,
-                ],
-                'extra' => [
-                    'type' => 'filter',
-                    'url' => '',
-                    'filterName' => 'msl_has_geoenergy_original',
-                    'filterValue' => 'true',
-                ],
-                'children' => $this->getVocabAsFilters($geoenergyVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
                 'text' => 'Microscopy and tomography',

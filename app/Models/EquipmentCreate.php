@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EquipmentCreate extends Model
 {
@@ -18,7 +19,7 @@ class EquipmentCreate extends Model
 
     protected $table = 'equipment_creates';
 
-    public function seed()
+    public function seed(): BelongsTo
     {
         return $this->belongsTo(Seed::class);
     }

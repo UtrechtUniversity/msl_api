@@ -1,0 +1,1812 @@
+[
+    {
+        "1": "tectonic plate boundary",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": "#plate margin#plate margin setting#tectonics#plate boundaries",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/plateMarginSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "convergent tectonic plate boundary",
+        "3": null,
+        "4": null,
+        "synonyms": "#convergent plate boundary#convergent margin",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "continental collision",
+        "4": null,
+        "synonyms": "#collisional setting#continentalcollision",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/collisionalSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "orogen",
+        "synonyms": "#orogenic wedge",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-orogen",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "continental subduction",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-continental_subduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "fold-and-thrust belt",
+        "synonyms": "#thrust sheetnappeoverthrust#modelled fold and thrust belt",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-fold-and-thrust_belt",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "suture zone",
+        "synonyms": "#plate suture#tectonic suture",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-suture_zone",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "foreland basin",
+        "synonyms": "#foreland setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-foreland_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "piggy-back basin",
+        "synonyms": "#piggy back basin",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-piggy-back_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "metamorphic core",
+        "synonyms": "#metamorphic core complex",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-metamorphic_core",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "high pressure metamorphism",
+        "synonyms": "#regional metamoporhism",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-high_pressure_metamorphism",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "peripheral bulge - continental collision",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-peripheral_bulge_-_continental_collision",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "post-orogenic collapse",
+        "synonyms": "#orogenic collapse",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-post-orogenic_collapse",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "retro-wedge",
+        "synonyms": "#retro wedge#retrowedge",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-wedge",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "pro-wedge",
+        "synonyms": "#pro wedge#prowedge",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-pro-wedge",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "retro-shear",
+        "synonyms": "#retro shear#retroshear",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-retro-shear",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "surface uplift",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-surface_uplift",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "rock exhumation",
+        "synonyms": "#exhumation",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-rock_exhumation",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "lithosphere folding",
+        "synonyms": "#lithosphere buckling#lithospheric folding#lithospheric buckling",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-continental_collision-lithosphere_folding",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "subduction",
+        "4": null,
+        "synonyms": "#subduction zone#subduction zone setting#subduction zones",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction",
+        "hyperlink": "https:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/subductionZoneSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "ocean-ocean subduction",
+        "synonyms": "#ocean-ocean convergent plate boundary#ocean-ocean plate boundary#ocean-ocean#ocean-ocean convergence",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-ocean_subduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "ocean-continent subduction",
+        "synonyms": "#ocean-continent convergent plate boundary#ocean-continent plate boundary#ocean-continent#ocean-continent convergence#active continental margin setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-ocean-continent_subduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "continent-continent subduction",
+        "synonyms": "#continent-continent convergent plate boundary#continent-continent plate boundary#continent-continent#continent-continent convergence",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-continent-continent_subduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "volcanic arc",
+        "synonyms": "#volcanic arc setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-volcanic_arc",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/volcanicArcSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "forearc basin",
+        "synonyms": "#forearc setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-forearc_basin",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/forearcSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "trench",
+        "synonyms": "#deep ocean trench#deep sea trench setting#deep trench#deep sea trench",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/deepSeaTrenchSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "accretionary wedge",
+        "synonyms": "#wedge#accretionnary wedge",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-accretionary_wedge",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "back-arc basin",
+        "synonyms": "#backarc basin#back arc basin#back arc setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-back-arc_basin",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/backArcSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "subducting plate interface",
+        "synonyms": "#subducting plate-interface#megathrust#subduction megathrust earthquakes",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subducting_plate_interface",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "steeply dipping slab",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-steeply_dipping_slab",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "shallow-dipping slab",
+        "synonyms": "#flat slab",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-shallow-dipping_slab",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "slab roll-back",
+        "synonyms": "#slab roll back#slab rollback#slab retreat",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-slab_roll-back",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "intra-arc fault",
+        "synonyms": "#intra arc fault#forearc sliver",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-intra-arc_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "trench retreat",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_retreat",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "trench advancement",
+        "synonyms": "#trench advancing",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-trench_advancement",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "peripheral bulge - subduction",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-peripheral_bulge_-_subduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "high pressure metamorphism",
+        "synonyms": "#regional metamoporhism",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-high_pressure_metamorphism",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "subduction initiation",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_initiation",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "subduction zone topography",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_zone_topography",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "subduction erosion",
+        "synonyms": "#tectonic erosion",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-subduction-subduction_erosion",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "obduction",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "ophiolite",
+        "synonyms": "#ophiolite complex",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-ophiolite",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "metamorphic sole",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-convergent_tectonic_plate_boundary-obduction-metamorphic_sole",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "divergent tectonic plate boundary",
+        "3": null,
+        "4": null,
+        "synonyms": "#divergent plate boundary#divergent margin",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "rifting",
+        "4": null,
+        "synonyms": "#rift setting#break-up#continental rift setting#continentalbreakup#continental rifting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/continentalRiftSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "narrow rift",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-narrow_rift",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "wide rift",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-wide_rift",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "horst-and-graben",
+        "synonyms": "#horst and graben",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-horst-and-graben",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "tilted block faulting",
+        "synonyms": "#bookshelf faulting#tilted blocks#domino style",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-tilted_block_faulting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "mantle exhumation",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-mantle_exhumation",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "oceanic core complex",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-oceanic_core_complex",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "continental core complex",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-continental_core_complex",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "asymmetric rifting",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-asymmetric_rifting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "symmetric rifting",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-symmetric_rifting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "boundary fault",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-boundary_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "rift volcanism",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-rift_volcanism",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "volcanic rifted margin",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-volcanic_rifted_margin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "non-volcanic rifted margin",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-non-volcanic_rifted_margin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "break-up unconmformity",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-rifting-break-up_unconmformity",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "plate spreading",
+        "4": null,
+        "synonyms": "#plate spreading center setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading",
+        "hyperlink": "https:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/activeSpreadingCenterSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "mid-ocean ridge",
+        "synonyms": "#spreading center",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-mid-ocean_ridge",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "transform fault",
+        "synonyms": "#active transfer zone",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-transform_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "fracture zone",
+        "synonyms": "#inactive transfer zone",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-fracture_zone",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "nodal basin",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-divergent_tectonic_plate_boundary-plate_spreading-nodal_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "transcurrent tectonic plate boundary",
+        "3": null,
+        "4": null,
+        "synonyms": "#transform tectonic plate boundary#transform plate boundary setting#transform plate boundary#transform margin#transcurrent plate boundary#transcurrent margin#strike-slip plate boundary#strike slip plate boundary#strike-slip boundary#strike slip boundary#san andreas fault",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/transformPlateBoundarySetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "pull-apart basin",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-pull-apart_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "stepover basin",
+        "4": null,
+        "synonyms": "#step-over basin#step over basin",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-stepover_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "transpressional basin",
+        "4": null,
+        "synonyms": "#transpression",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-transpressional_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "contractional bend",
+        "4": null,
+        "synonyms": "#push-up#push up#push-up structure#push up structure#pop-up structure#pop up structure#pop up#pop-up#modelled pop-up structure",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-contractional_bend",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "releasing and restraining bend",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_plate_boundary-transcurrent_tectonic_plate_boundary-releasing_and_restraining_bend",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": "intraplate setting",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": "#intraplate tectonic setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "hot spot magmatism",
+        "3": null,
+        "4": null,
+        "synonyms": "#hotspot activity#hotspotsetting#hotspot#hot-spot#hot spot#hot spot setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-hot_spot_magmatism",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/hotSpotSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "volcanic island",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-hot_spot_magmatism-volcanic_island",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "mantle plume",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-hot_spot_magmatism-mantle_plume",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "large igneous province (LIP)",
+        "4": null,
+        "synonyms": "#large igneous province",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-hot_spot_magmatism-large_igneous_province_lip",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "isostasy",
+        "3": null,
+        "4": null,
+        "synonyms": "#gravitational equilibrium",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-isostasy",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "isostatic loading",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-isostasy-isostatic_loading",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "isostatic rebound",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-isostasy-isostatic_rebound",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "flexural basin",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-isostasy-flexural_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "dynamic topography",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-isostasy-dynamic_topography",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "cratonisation",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-cratonisation",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "craton",
+        "4": null,
+        "synonyms": "#intracratonic setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-cratonisation-craton",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/intracratonicSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "cratonic basin",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-cratonisation-cratonic_basin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "passive continental margin",
+        "3": null,
+        "4": null,
+        "synonyms": "#passive continental margin setting#passive margin#passive margin setting#passive contential margin setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-passive_continental_margin",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/passiveContinentalMarginSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "continent-ocean transition",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-passive_continental_margin-continent-ocean_transition",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "seaward-dipping reflectors",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-passive_continental_margin-seaward-dipping_reflectors",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "non-volcanic rifted margin",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-passive_continental_margin-non-volcanic_rifted_margin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "volcanic rifted margin",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/intraplate_setting-passive_continental_margin-volcanic_rifted_margin",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": "Earth's structure",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": "#earth layers#earth shells",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "Earth crust",
+        "3": null,
+        "4": null,
+        "synonyms": "#continentalcrustal setting#crustal",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "upper crust",
+        "4": null,
+        "synonyms": "#upper continental crustal setting",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-upper_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "middle crust",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-middle_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "lower crust",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-lower_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "oceanic crust",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-oceanic_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "continental crust",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-continental_crust",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "ocean continent transition (OCT)",
+        "4": null,
+        "synonyms": "#continental-oceanic crust transition#ocean-continent transition (oct)",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_crust-ocean_continent_transition_oct",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "Mohorovicic discontinuity",
+        "3": null,
+        "4": null,
+        "synonyms": "#moho",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-mohorovicic_discontinuity",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "Earth mantle",
+        "3": null,
+        "4": null,
+        "synonyms": "#mantle setting#mantle flow",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/mantleSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "upper mantle",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-upper_mantle",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/upperMantleSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "lower mantle",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-lower_mantle",
+        "hyperlink": "https:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/lowerMantleSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "lithosphere-asthenosphere boundary",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-lithosphere-asthenosphere_boundary",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "410 km discontinuity",
+        "4": null,
+        "synonyms": "#410 kilometer discontinuity",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-410_km_discontinuity",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "660 km discontinuity",
+        "4": null,
+        "synonyms": "#660 kilometer discontinuity",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-660_km_discontinuity",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "D'' layer",
+        "4": null,
+        "synonyms": "#d double prime layer#d-double prime layer#d-double prime",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-d_layer",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "core-mantle boundary",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_mantle-core-mantle_boundary",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "Earth core",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_core",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "inner core",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_core-inner_core",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "outer core",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-earth_core-outer_core",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "lithosphere",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-lithosphere",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "cratonic lithosphere",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-lithosphere-cratonic_lithosphere",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "oceanic lithosphere",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-lithosphere-oceanic_lithosphere",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "sub-continental lithospheric mantle",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-lithosphere-sub-continental_lithospheric_mantle",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "sub-oceanic lithospheric mantle",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-lithosphere-sub-oceanic_lithospheric_mantle",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "asthenosphere",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/earths_structure-asthenosphere",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": "tectonic deformation structure",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": "#tectonic rock deformation structures#rock deformation structure#rock deformation structures#crust deformation structure#crustal deformation structure#crust deformation structures#crustal deformations structures",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "tectonic fault",
+        "3": null,
+        "4": null,
+        "synonyms": "#tectonic faults#tectonic fracture#tectonic faulting#tectonic fracturing#fault zone#fault zones#seismic fault#aseismic fault#fault slip#fault weakening#fault reactivation#fault reactivating#faults reactivating#slip weakening#fault gouge#fault rock#faultrelatedmaterial#fault rocks#faultrocks#faultrock#natural fault rocks#fault microstructure#faults rock#faults rocks#fault mirror#fault mirrors#fault movement#crustal fault#crustal faults#fault friction#displaced fault#faults in the crust",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "oblique-slip fault",
+        "4": null,
+        "synonyms": "#oblique slip fault#oblique slip fault#oblique slip faulting#oblique-slip faults#oblique slip faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-oblique-slip_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "reverse fault",
+        "4": null,
+        "synonyms": "#reverse faulting#reverse faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-reverse_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "scissor fault",
+        "4": null,
+        "synonyms": "#scissor faulting#scissor faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-scissor_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "strike-slip fault",
+        "4": null,
+        "synonyms": "#strike slip fault#strike slip faulting#strike-slip faulting#strike-slip faults#strike slip faults#strikeslip faults#strikeslip fault",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-strike-slip_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "normal fault",
+        "4": null,
+        "synonyms": "#normal faulting#normal faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-normal_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "thrust fault",
+        "4": null,
+        "synonyms": "#thrust faulting#thrust deformation#thrust displacement#thrust faults#megathrust#megathrusts",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-thrust_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "wrench fault",
+        "4": null,
+        "synonyms": "#wrench faulting#wrench faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-wrench_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "detachment fault",
+        "4": null,
+        "synonyms": "#detachment faulting#detachment faults",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fault-detachment_fault",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "tectonic fold",
+        "3": null,
+        "4": null,
+        "synonyms": "#tectonic folds#tectonic folding",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fold",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "anticline",
+        "4": null,
+        "synonyms": "#anticlyne#anti-cline#anti-clyne",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fold-anticline",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "antiform",
+        "4": null,
+        "synonyms": "#anti-form",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fold-antiform",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "syncline",
+        "4": null,
+        "synonyms": "#synclyne#syn-clyne#syn-cline",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fold-syncline",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "synform",
+        "4": null,
+        "synonyms": "#syn-form",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_fold-synform",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "tectonic shear zone",
+        "3": null,
+        "4": null,
+        "synonyms": "#tectonic shear zones",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_shear_zone",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "Riedel shear",
+        "4": null,
+        "synonyms": "#riedel shears",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/tectonic_deformation_structure-tectonic_shear_zone-riedel_shear",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": "extra-terrestrial setting",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/extra-terrestrial_setting",
+        "hyperlink": "http:\/\/resource.geosciml.org\/classifier\/cgi\/eventenvironment\/extra_terrestrial_origin",
+        "external_uri": null
+    },
+    {
+        "1": "surface morphological setting",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "glacier related setting",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-glacier_related_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/glacierRelatedSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "shoreline setting",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting",
+        "hyperlink": "https:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/shorelineSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "beach setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-beach_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/beachSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "estuary setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-estuary_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/estuarySetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "lagoonal setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-lagoonal_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/lagoonalSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "tidal setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-tidal_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/tidalSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "rocky coast setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-rocky_coast_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "barrier island coastline setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-shoreline_setting-barrier_island_coastline_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "river plain system setting",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-river_plain_system_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/riverPlainSystemSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "floodplain setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-river_plain_system_setting-floodplain_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/floodplainSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "river channel setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-river_plain_system_setting-river_channel_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/riverChannelSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "braided river channel setting",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-river_plain_system_setting-river_channel_setting-braided_river_channel_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/braidedRiverChannelSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": "meandering river channel setting",
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-river_plain_system_setting-river_channel_setting-meandering_river_channel_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/meanderingRiverChannelSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "deltaic system setting",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-deltaic_system_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/deltaicSystemSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "estuarine delta setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-deltaic_system_setting-estuarine_delta_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "lacustrine delta setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-deltaic_system_setting-lacustrine_delta_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "marine setting",
+        "3": null,
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/marineSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "continental shelf",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-continental_shelf",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/continentalShelfSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "slope-rise setting",
+        "4": null,
+        "synonyms": "#slope rise",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-slope-rise_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/slopeRiseSetting",
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "submarine fan setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-submarine_fan_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "basin plain setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-basin_plain_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "deep sea trench setting",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-deep_sea_trench_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "abyssal setting",
+        "4": null,
+        "synonyms": "#abyssal plain",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/surface_morphological_setting-marine_setting-abyssal_setting",
+        "hyperlink": "http:\/\/inspire.ec.europa.eu\/codelist\/EventEnvironmentValue\/abyssalSetting",
+        "external_uri": null
+    },
+    {
+        "1": "antropogenic setting",
+        "2": null,
+        "3": null,
+        "4": null,
+        "synonyms": "#human subsurface use",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "gas field",
+        "3": null,
+        "4": null,
+        "synonyms": "#hydrocarbon field#gas reservoir#hydrocarbon reservoir",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-gas_field",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "oil field",
+        "3": null,
+        "4": null,
+        "synonyms": "#oil reservoir#hydrocarbon field#hydrocarbon reservoir",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-oil_field",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "geothermal energy field",
+        "3": null,
+        "4": null,
+        "synonyms": "#geothermal",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-geothermal_energy_field",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "subsurface storage",
+        "3": null,
+        "4": null,
+        "synonyms": "#subsurface disposal#geological storage",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "gas storage",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-gas_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "oil storage",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-oil_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "radio-active waste storage",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-radio-active_waste_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "CO2 storage",
+        "4": null,
+        "synonyms": "#carbon dioxide storage#carbondioxide storage",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-co2_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "N2 storage",
+        "4": null,
+        "synonyms": "#nitrogen storage",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-n2_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "heat storage",
+        "4": null,
+        "synonyms": "#geothermal energy storage",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-heat_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "brine storage",
+        "4": null,
+        "synonyms": "#brackish water storage#salt water storage",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-brine_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "waste water storage",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-waste_water_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "drinking water storage",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-subsurface_storage-drinking_water_storage",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "ore mine",
+        "3": null,
+        "4": null,
+        "synonyms": "#mineral mine#ore deposit",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-ore_mine",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "mine tailing",
+        "4": null,
+        "synonyms": "#mine wastes#mine waste#mine waste disposal#mine disposal",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-ore_mine-mine_tailing",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "civil engineered setting",
+        "3": null,
+        "4": null,
+        "synonyms": "#civil engineering#civil engineered",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "underground research facility",
+        "4": null,
+        "synonyms": "#underground science lab",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting-underground_research_facility",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "tunnel",
+        "4": null,
+        "synonyms": "#highway tunnel#road tunnel",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting-tunnel",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "dam construction - geological aspects",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting-dam_construction_-_geological_aspects",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "road construction - geotechnical aspects",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting-road_construction_-_geotechnical_aspects",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "building foundation",
+        "4": null,
+        "synonyms": null,
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-civil_engineered_setting-building_foundation",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "Induced seismicity",
+        "3": null,
+        "4": null,
+        "synonyms": "#induced earthquake#induced seismic",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-induced_seismicity",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": "surface subsidence",
+        "3": null,
+        "4": null,
+        "synonyms": "#subsidence",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-surface_subsidence",
+        "hyperlink": null,
+        "external_uri": null
+    },
+    {
+        "1": null,
+        "2": null,
+        "3": "sinkhole",
+        "4": null,
+        "synonyms": "#sink hole",
+        "uri": "https:\/\/epos-msl.uu.nl\/voc\/geologicalsetting\/1.3\/antropogenic_setting-surface_subsidence-sinkhole",
+        "hyperlink": null,
+        "external_uri": null
+    }
+]

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API\V2;
 
 use App\CkanClient\Request\PackageSearchRequest;
-use App\Enums\EndpointContext;
+use App\Enums\SubDomains\EndpointContext;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -65,11 +65,11 @@ abstract class BaseDomainApiController extends Controller
     }
 
     /**
-     * Geo Energy Test Beds facilities endpoint
+     * Field-scale laboratories endpoint
      */
-    public function geoenergy(Request $request): JsonResource|ResourceCollection
+    public function fieldScale(Request $request): JsonResource|ResourceCollection
     {
-        return $this->domainResponse($request, EndpointContext::GEO_ENERGY);
+        return $this->domainResponse($request, EndpointContext::FIELD_SCALE);
     }
 
     /**
@@ -119,7 +119,9 @@ abstract class BaseDomainApiController extends Controller
         foreach ($queryMappings as $key => $value) {
             if ($request->filled($key)) {
                 if ($key == 'subDomain') {
-                    $queryParts[] = $value.':"'.$request->get($key).'"';
+                    $queryParts[] = $value . ':"' . $request->get($key) . '"';
+                } elseif($key == 'maxArea') {
+                    $queryParts[] = $value.':[* TO '.$request->get($key) . ']';
                 } else {
                     $queryParts[] = $value.':'.$request->get($key);
                 }

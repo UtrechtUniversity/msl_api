@@ -50,7 +50,11 @@ class ImportYodaSeeder extends Seeder
                         'type' => 'datacite',
                         'options' => [
                             'additionalMappers' => [
-                                YodaFileMapper::class,
+                                [
+                                    'type' => YodaFileMapper::class,
+                                    'options' => [],
+                                ],
+
                             ],
                         ],
                     ],

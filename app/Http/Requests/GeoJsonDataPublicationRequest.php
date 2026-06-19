@@ -18,9 +18,9 @@ class GeoJsonDataPublicationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'limit' => ['nullable', 'integer', 'min:0'],
-            'offset' => ['nullable', 'integer', 'min:0'],
-            'boundingBox' => ['nullable', new GeoRule],
+            'page' => ['required', 'integer', 'min:0'],
+            'pageSize' => ['required', 'integer', 'min:0'],
+            'boundingBox' => ['required', new GeoRule],
         ];
     }
 

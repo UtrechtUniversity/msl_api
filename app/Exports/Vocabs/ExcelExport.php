@@ -37,8 +37,8 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
             [
                 'synonyms',
                 'uri',
-                'hyperlink',
                 'external_uri',
+                'external_vocab_scheme',
             ]
         );
     }
@@ -50,8 +50,8 @@ class ExcelExport implements FromCollection, WithHeadings, WithMapping
             [
                 $keyword->getSynonymString(),
                 $keyword->uri,
-                $keyword->hyperlink,
                 $keyword->external_uri,
+                $keyword->external_vocab_scheme,
             ]
         );
     }

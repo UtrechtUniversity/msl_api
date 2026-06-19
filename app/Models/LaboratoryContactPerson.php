@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Validator;
 
 class LaboratoryContactPerson extends Model
@@ -14,7 +15,7 @@ class LaboratoryContactPerson extends Model
         'laboratory_id',
     ];
 
-    public function laboratory()
+    public function laboratory(): BelongsTo
     {
         return $this->belongsTo(Laboratory::class);
     }

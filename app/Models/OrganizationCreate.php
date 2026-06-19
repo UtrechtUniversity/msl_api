@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class OrganizationCreate extends Model
 {
@@ -16,7 +17,7 @@ class OrganizationCreate extends Model
         'organization' => 'array',
     ];
 
-    public function seed()
+    public function seed(): BelongsTo
     {
         return $this->belongsTo(Seed::class);
     }

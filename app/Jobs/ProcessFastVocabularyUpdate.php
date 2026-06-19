@@ -120,7 +120,6 @@ class ProcessFastVocabularyUpdate implements ShouldQueue
             'uri' => '',
             'external_uri' => '',
             'level' => $level,
-            'hyperlink' => '',
             'label' => $label,
             'exclude_domain_mapping' => true,
         ]);

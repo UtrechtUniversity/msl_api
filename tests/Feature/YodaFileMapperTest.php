@@ -40,7 +40,7 @@ class YodaFileMapperTest extends TestCase
                 );
         });
 
-        $yodaFileMapper = new YodaFileMapper;
+        $yodaFileMapper = new YodaFileMapper([]);
         $dataPublication = $yodaFileMapper->map($dataPublication, $sourceDataset);
 
         $this->assertEquals($dataPublication->msl_files[0]->msl_file_name, 'Data_explanation.pdf');

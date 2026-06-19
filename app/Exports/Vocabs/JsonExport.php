@@ -7,35 +7,23 @@ use App\Models\Vocabulary;
 
 class JsonExport
 {
-    public $vocabulary;
+    public Vocabulary $vocabulary;
 
     public function __construct(Vocabulary $vocabulary)
     {
         $this->vocabulary = $vocabulary;
     }
 
-    public function export()
+    public function export(): false|string
     {
         $topKeywords = $this->vocabulary->keywords->where('level', 1);
 
-        $tree = [];
-        foreach ($topKeywords as $topKeyword) {
-            $element = [
-                'uri' => $topKeyword->uri,
-                'vocab_uri' => $this->vocabulary->uri,
-                'value' => $topKeyword->value,
-                'label' => $topKeyword->label,
-                'synonyms' => $this->getSynonyms($topKeyword),
-                'children' => $this->getChildren($topKeyword),
-            ];
-
-            $tree[] = $element;
-        }
+        $tree = $this->getTree($topKeywords);
 
         return json_encode($tree, JSON_PRETTY_PRINT);
     }
 
-    private function getSynonyms(Keyword $keyword)
+    private function getSynonyms(Keyword $keyword): array
     {
         $synonyms = $keyword->getSynonyms();
         $return = [];
@@ -51,24 +39,35 @@ class JsonExport
         return $return;
     }
 
-    private function getChildren(Keyword $keyword)
+    private function getChildren(Keyword $keyword): array
     {
         $children = $keyword->getChildren();
-        $tree = [];
+        $tree = $this->getTree($children);
 
-        foreach ($children as $child) {
-            $childTree = [
-                'uri' => $child->uri,
+        return $tree;
+    }
+
+    /**
+     * @param iterable<int, Keyword> $Keywords
+     * @return array
+     */
+    private function getTree(iterable $Keywords): array
+    {
+        $tree = [];
+        foreach ($Keywords as $topKeyword) {
+            $element = [
+                'uri' => $topKeyword->uri,
                 'vocab_uri' => $this->vocabulary->uri,
-                'value' => $child->value,
-                'label' => $child->label,
-                'synonyms' => $this->getSynonyms($child),
-                'children' => $this->getChildren($child),
+                'value' => $topKeyword->value,
+                'label' => $topKeyword->label,
+                'synonyms' => $this->getSynonyms($topKeyword),
+                'children' => $this->getChildren($topKeyword),
+                'external_uri' => $topKeyword->external_uri,
+                'external_vocab_scheme' => $topKeyword->external_vocab_scheme,
             ];
 
-            $tree[] = $childTree;
+            $tree[] = $element;
         }
-
         return $tree;
     }
 }

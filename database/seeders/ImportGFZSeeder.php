@@ -54,7 +54,11 @@ class ImportGFZSeeder extends Seeder
                         'type' => 'datacite',
                         'options' => [
                             'additionalMappers' => [
-                                GfzFileMapper::class,
+                                [
+                                    'type' => GfzFileMapper::class,
+                                    'options' => [],
+                                ],
+
                             ],
                         ],
                     ],
