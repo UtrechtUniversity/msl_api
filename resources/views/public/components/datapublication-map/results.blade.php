@@ -1,8 +1,8 @@
       <div id="datapublication-results" class="overflow-y-auto max-h-[720px]">
 
       </div>
-      <div class='mt-auto'>
-          <div id='results-pagination' class='flex justify-center border-t'>
+      <div class='mt-auto join divide-x-1'>
+          <div id='results-pagination' class='flex justify-center border-t divide-x-1 p-2'>
               pagination</div>
       </div>
 
