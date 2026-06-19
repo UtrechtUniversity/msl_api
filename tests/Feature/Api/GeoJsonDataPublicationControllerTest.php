@@ -34,17 +34,17 @@ class GeoJsonDataPublicationControllerTest extends TestCase
         $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublications_all.json');
 
         // Retrieve response from API
-        $response = $this->get('/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D');
+        $response = $this->get('/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D&page=1&pageSize=10');
         // Check for 200 status response
         $response->assertStatus(200);
         // Verify response body contents
         $response->assertJson(
             fn (AssertableJson $json) => $json->has('success')->where('messages', [])
                 ->where('meta.totalCount', 3517)
-                ->where('meta.resultCount', 10)
-                ->where('meta.limit', 10)
-                ->where('meta.offset', 0)
-                ->where('links.current_url', config('app.url').'/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D&offset=0&limit=10')
+                ->where('meta.resultsCount', 10)
+                ->where('meta.perPage', 10)
+                ->where('meta.currentPage', 1)
+                ->where('links.currentUrl', config('app.url').'/api/geoJsonDataPublications?boundingBox=%5B0%2C0%2C180%2C90%5D&page=1&pageSize=10')
                 ->has(
                     'data',
                     fn (AssertableJson $json) => $json->has(
