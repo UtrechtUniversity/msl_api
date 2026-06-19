@@ -5,7 +5,6 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
-import { assertNotNull } from "../helpers";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -66,17 +65,16 @@ export class MapController {
 
     // Methods about requests and populating
 
-    private async addFeaturesAndSidebarInMap(opts?: { except: "pagination" }) {
+    private async addFeaturesAndSidebarInMap() {
         ({ data: this.results, meta: this.paginator } =
             await this.getJsonFromRequest());
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
 
-        // if (opts?.except !== "pagination") {
         this.pagination.setArgs(this.paginator);
         this.pagination.populate();
-        // }
+
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
@@ -153,12 +151,12 @@ export class MapController {
     private handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
         this.resultsSidebar.resetList();
-        this.pagination.clear();
+        this.pagination.resetValues();
         this.paginator = null;
         this.results = null;
 
         this.searchFilters.page = page;
-        this.addFeaturesAndSidebarInMap({ except: "pagination" });
+        this.addFeaturesAndSidebarInMap();
     }
 
     // Helper methods

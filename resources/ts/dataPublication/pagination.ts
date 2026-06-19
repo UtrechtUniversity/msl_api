@@ -42,6 +42,10 @@ export class Pagination {
     }
 
     public populate() {
+        // We want to remove the previous set of buttons,
+        // so that we have a smooth transition to the new ones
+        this.resetButtonList();
+
         assertNotNull(this.range, `Range should not be null. This is a bug.`);
 
         this.setButton(
@@ -67,10 +71,12 @@ export class Pagination {
                     });
                 }
             }
+            // if total count is more than the given range
+            // plus the last and first page
             // Then we don't want to display all
         } else {
             if (this.range.currentPage === 1) {
-                const button = this.setButton(
+                this.setButton(
                     "dp-pagination-button dp-pagination-button-active-page",
                     "1",
                     { toPage: 1 },
@@ -99,7 +105,7 @@ export class Pagination {
                 i < this.range.upperRange + 1;
                 i++
             ) {
-                //      if the count is not equal or over or under the first and last page then show
+                // if the count is not equal or over or under the first and last page then show
                 // (because we substract and add to a number over/undercount will be the case)
 
                 if (!(i <= 1) && !(i >= this.range.count)) {
@@ -168,13 +174,19 @@ export class Pagination {
         this.paginateElement.append(a);
         return button;
     }
-    public clear() {
-        //TODO clean up range and paginator?
-        this.paginator = null;
-        this.range = null;
+
+    public resetButtonList() {
         while (this.paginateElement.firstChild) {
             this.paginateElement.firstChild.remove();
         }
+    }
+    public resetValues() {
+        this.paginator = null;
+        this.range = null;
+    }
+    public clear() {
+        this.resetValues();
+        this.resetButtonList();
     }
     private getRange() {
         assertNotNull(
