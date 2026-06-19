@@ -57,7 +57,7 @@ export class Pagination {
         // plus the last and first page
         // then just display all
         if (this.range.count <= this.range.rangeShown + 2) {
-            for (let i = 1; i < this.range.count; i++) {
+            for (let i = 1; i <= this.range.count; i++) {
                 if (i === this.range.currentPage) {
                     this.setButton(
                         "dp-pagination-button dp-pagination-button-active-page",
