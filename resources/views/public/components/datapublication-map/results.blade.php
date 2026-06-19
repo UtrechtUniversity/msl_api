@@ -4,6 +4,7 @@
           </div>
           <div class='h-[57px] bg-primary-100'>
               <div id='results-pagination' class='flex justify-center border-t divide-x-1 p-2 '>
-                  pagination</div>
+
+              </div>
           </div>
       </div>
