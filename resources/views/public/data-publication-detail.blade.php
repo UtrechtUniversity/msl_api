@@ -99,136 +99,8 @@
 
             <div class="detail-entry-div !flex-col">
                 <h3 class="">Keywords</h3>
-
-                @if (count($dataPublication->msl_tags) > 0)
-                    <br>
-                    <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
-                        <summary class="collapse-title">Originally assigned keywords
-                            <x-ri-information-line id="orginal-keywords-popup" class="info-icon" />
-                        </summary>
-                        <div class="collapse-content word-card-parent">
-                            @foreach ($dataPublication->msl_tags as $keyword)
-                                <div class="word-card" data-highlight="tag" data-uris='{!! json_encode($keyword->msl_tag_msl_uris) !!}'>
-                                    {{ $keyword->msl_tag_string }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </details>
-                    <script>
-                        tippy('#orginal-keywords-popup', {
-                            content: "lists only keywords originally assigned by the authors",
-                            placement: "right",
-                            theme: "msl"
-                        });
-                    </script>
-                @endif
-
-                @if (count($dataPublication->msl_original_keywords) > 0)
-                    <br>
-                    <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
-
-                        <summary class="collapse-title">Corresponding MSL vocabulary keywords
-                            <x-ri-information-line id="corresponding-keywords-popup" class="info-icon" />
-                        </summary>
-                        <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
-                            @foreach ($dataPublication->msl_original_keywords as $keyword)
-                                <div class="word-card" data-uri="{{ $keyword->msl_original_keyword_uri }}"
-                                    data-highlight="text-keyword"
-                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}">
-                                    {{ $keyword->msl_original_keyword_label }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </details>
-                    <script>
-                        tippy('#corresponding-keywords-popup', {
-                            content: "lists terms from MSL vocabularies that are the same as, or are interpreted synonymous to the originally assigned keywords",
-                            placement: "right",
-                            theme: "msl"
-                        });
-
-                        tippy.delegate('#corresponding-keywords-container', {
-                            target: '.word-card',
-                            trigger: 'click',
-                            theme: "msl",
-                            placement: 'right',
-                            interactive: true,
-                            allowHTML: true,
-                            appendTo: document.body,
-                            maxWidth: 600,
-                            onShow(instance) {
-                                if (instance.state.ajax === undefined) {
-                                    instance.state.ajax = {
-                                        isFetching: false,
-                                        canFetch: true,
-                                    }
-                                }
-
-                                if (instance.state.ajax.isFetching || !instance.state.ajax.canFetch) {
-                                    return
-                                }
-
-                                $.ajax({
-                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
-                                    type: 'GET',
-                                    dataType: 'json',
-                                    dataset: instance.reference.dataset,
-                                    async: true,
-                                    beforeSend: function() {
-                                        instance.state.ajax.isFetching = true;
-                                    },
-                                    success: function(res) {
-                                        content = "<div>";
-                                        content += "<table>";
-                                        content += "<tr><td class=\"\">name</td><td>" + res.name + "</td></tr>";
-                                        content += "<tr><td class=\"\">indicators</td><td>";
-                                        res.synonyms.forEach((synonym) => {
-                                            content += '"' + synonym.name + '" ';
-                                        });
-                                        content += "</td></tr>";
-                                        content += "<tr><td class=\"\">parent term</td><td>";
-                                        if (res.parent) {
-                                            content += res.parent.name;
-                                        } else {
-                                            content += 'none';
-                                        }
-                                        content += "</td></tr>";
-
-                                        if (this.dataset.sources) {
-                                            matchSources = JSON.parse(this.dataset.sources);
-                                            if (matchSources.length > 0) {
-                                                content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(
-                                                    ", ") + "</td></tr>";
-                                            }
-                                        }
-
-                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
-                                            .display_name + "</td></tr>";
-                                        content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
-
-                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
-                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
-
-                                        content += "</table>";
-                                        content += "<a href=\"" + this.dataset.filterLink +
-                                            "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
-                                        content += "</div>";
-
-                                        instance.setContent(content);
-                                        instance.state.ajax.isFetching = false;
-                                    }
-                                });
-                            },
-                            onHidden(instance) {
-                                instance.setContent('Loading...')
-                                instance.state.ajax.canFetch = true
-                            },
-                        });
-                    </script>
-                @endif
-
                 @if (count($dataPublication->msl_enriched_keywords) > 0)
-                    <br>
+
                     <details class="collapse collapse-arrow word-card-collapser" open>
                         <summary class="collapse-title">MSL enriched keywords
                             <x-ri-information-line id="enriched-keywords-popup" class="info-icon" />
@@ -236,11 +108,11 @@
                         <div class="collapse-content word-card-parent" id="enriched-keywords-container">
                             @foreach ($dataPublication->msl_enriched_keywords as $keyword)
                                 <div class="word-card"
-                                    data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
-                                    data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
-                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
-                                    data-highlight="text-keyword" data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
-                                    data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'>
+                                     data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
+                                     data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
+                                     data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
+                                     data-highlight="text-keyword" data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
+                                     data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'>
                                     {{ $keyword->msl_enriched_keyword_label }}
                                 </div>
                             @endforeach
@@ -324,11 +196,368 @@
                                         instance.state.ajax.isFetching = false;
                                     }
                                 });
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.add('word-card-highlighted');
+                                            tag.setAttribute('data-force-highlight', 'true');
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    if($('#original-keywords-panel').attr('open') !== 'open') {
+                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    if($('#corresponding-keywords-panel').attr('open') !== 'open') {
+                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
                             },
-                            onHidden(instance) {
+                            onHide(instance) {
                                 instance.setContent('Loading...')
                                 instance.state.ajax.canFetch = true
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.remove('word-card-highlighted');
+                                            if(tag.removeAttr) {
+                                                tag.removeAttr('data-force-highlight');
+                                            }
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
                             },
+                        });
+                    </script>
+                @endif
+
+                @if (count($dataPublication->msl_original_keywords) > 0)
+                    <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
+
+                        <summary class="collapse-title">MSL vocabulary keywords corresponding to originally assigned keywords
+                            <x-ri-information-line id="corresponding-keywords-popup" class="info-icon" />
+                        </summary>
+                        <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
+                            @foreach ($dataPublication->msl_original_keywords as $keyword)
+                                <div class="word-card" data-uri="{{ $keyword->msl_original_keyword_uri }}"
+                                     data-highlight="text-keyword"
+                                     data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}">
+                                    {{ $keyword->msl_original_keyword_label }}
+                                </div>
+                            @endforeach
+                        </div>
+                    </details>
+                    <script>
+                        tippy('#corresponding-keywords-popup', {
+                            content: "lists terms from MSL vocabularies that are the same as, or are interpreted synonymous to the originally assigned keywords",
+                            placement: "right",
+                            theme: "msl"
+                        });
+
+                        tippy.delegate('#corresponding-keywords-container', {
+                            target: '.word-card',
+                            trigger: 'click',
+                            theme: "msl",
+                            placement: 'right',
+                            interactive: true,
+                            allowHTML: true,
+                            appendTo: document.body,
+                            maxWidth: 600,
+                            onShow(instance) {
+                                if (instance.state.ajax === undefined) {
+                                    instance.state.ajax = {
+                                        isFetching: false,
+                                        canFetch: true,
+                                    }
+                                }
+
+                                if (instance.state.ajax.isFetching || !instance.state.ajax.canFetch) {
+                                    return
+                                }
+
+                                $.ajax({
+                                    url: '/webservice/api/vocabularies' + "/term?uri=" + instance.reference.dataset.uri,
+                                    type: 'GET',
+                                    dataType: 'json',
+                                    dataset: instance.reference.dataset,
+                                    async: true,
+                                    beforeSend: function() {
+                                        instance.state.ajax.isFetching = true;
+                                    },
+                                    success: function(res) {
+                                        content = "<div>";
+                                        content += "<table>";
+                                        content += "<tr><td class=\"\">name</td><td>" + res.name + "</td></tr>";
+                                        content += "<tr><td class=\"\">indicators</td><td>";
+                                        res.synonyms.forEach((synonym) => {
+                                            content += '"' + synonym.name + '" ';
+                                        });
+                                        content += "</td></tr>";
+                                        content += "<tr><td class=\"\">parent term</td><td>";
+                                        if (res.parent) {
+                                            content += res.parent.name;
+                                        } else {
+                                            content += 'none';
+                                        }
+                                        content += "</td></tr>";
+
+                                        if (this.dataset.sources) {
+                                            matchSources = JSON.parse(this.dataset.sources);
+                                            if (matchSources.length > 0) {
+                                                content += "<tr><td class=\"\">sources</td><td>" + matchSources.join(
+                                                    ", ") + "</td></tr>";
+                                            }
+                                        }
+
+                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
+                                            .display_name + "</td></tr>";
+                                        content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
+
+                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
+                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
+
+                                        content += "</table>";
+                                        content += "<a href=\"" + this.dataset.filterLink +
+                                            "\"><button class=\"btn btn-primary\">view data publications with keyword</button</a>";
+                                        content += "</div>";
+
+                                        instance.setContent(content);
+                                        instance.state.ajax.isFetching = false;
+                                    }
+                                });
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.add('word-card-highlighted');
+                                            tag.setAttribute('data-force-highlight', 'true');
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    if($('#original-keywords-panel').attr('open') !== 'open') {
+                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    if($('#corresponding-keywords-panel').attr('open') !== 'open') {
+                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                    }
+                                }
+                            },
+                            onHide(instance) {
+                                instance.setContent('Loading...')
+                                instance.state.ajax.canFetch = true
+
+                                let tagsMatched = false;
+                                let originalKeywordsMatched = false;
+                                let tags;
+
+                                tags = document.querySelectorAll('[data-highlight="tag"]');
+                                tags.forEach((tag) => {
+                                    let tagData = JSON.parse(tag.dataset.uris);
+                                    tagData.forEach((uri) => {
+                                        if(uri == instance.reference.dataset.uri) {
+                                            tag.classList.remove('word-card-highlighted');
+                                            if(tag.removeAttr) {
+                                                tag.removeAttr('data-force-highlight');
+                                            }
+                                            tagsMatched = true;
+                                        }
+                                    });
+                                });
+
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                    originalKeywordsMatched = true;
+                                }
+
+                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                    let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
+
+                                    if(Array.isArray(matchedChildUris)) {
+                                        matchedChildUris.forEach((childUri) => {
+                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!originalKeywordsMatched) {
+                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                                    originalKeywordsMatched = true;
+                                                }
+                                            }
+
+                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            if(!tagsMatched) {
+                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                                    tagsMatched = true;
+                                                }
+                                            }
+
+                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                        });
+                                    }
+                                }
+
+                                if(tagsMatched) {
+                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
+
+                                if(originalKeywordsMatched) {
+                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                }
+                            },
+                        });
+                    </script>
+                @endif
+
+                @if (count($dataPublication->msl_tags) > 0)
+                    <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
+                        <summary class="collapse-title">Originally assigned keywords
+                            <x-ri-information-line id="orginal-keywords-popup" class="info-icon" />
+                        </summary>
+                        <div class="collapse-content word-card-parent">
+                            @foreach ($dataPublication->msl_tags as $keyword)
+                                <div class="word-card" data-highlight="tag" data-uris='{!! json_encode($keyword->msl_tag_msl_uris) !!}'>
+                                    {{ $keyword->msl_tag_string }}
+                                </div>
+                            @endforeach
+                        </div>
+                    </details>
+                    <script>
+                        tippy('#orginal-keywords-popup', {
+                            content: "lists only keywords originally assigned by the authors",
+                            placement: "right",
+                            theme: "msl"
                         });
                     </script>
                 @endif
