@@ -25,16 +25,31 @@ class GeoJsonDataPublicationService
     public function getDataPublicationResponse(\GuzzleHttp\Client $client, Request $request): DataPublicationResponse
     {
         $responseFromCkan = $this->getResponseFromCKAN($client, $request);
-        $limit = $this->packageSearchRequest->rows;
-        $offset = $this->packageSearchRequest->start;
-        $currentUrl = $request->fullUrlWithQuery(['offset' => $offset, 'limit' => $limit]);
+        [$page, $pageSize] = $this->toPageNumberAndPage($this->packageSearchRequest->rows, $this->packageSearchRequest->start);
+        $currentUrl = $request->fullUrlWithQuery(['page' => $page, 'pageSize' => $pageSize]);
 
         return new DataPublicationResponse(
-            response: $responseFromCkan,
-            limit: $limit,
-            offset: $offset,
+            $responseFromCkan,
+            page: $page,
+            pageSize: $pageSize,
             currentUrl: $currentUrl
         );
+    }
+
+    private function toRowsAndStart(int $page, int $pageSize)
+    {
+        $rows = $pageSize;
+        $start = ($page - 1) * $pageSize;
+
+        return [$rows,  $start];
+    }
+
+    private function toPageNumberAndPage(int $rows, int $start)
+    {
+        $page = floor($start / $rows) + 1;
+        $pageSize = $rows;
+
+        return [$page,  $pageSize];
     }
 
     public function getBoundingBoxFromRequest(Request $request): BoundingBox
@@ -55,15 +70,12 @@ class GeoJsonDataPublicationService
 
         // Filter on data-publications
         $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
+        [$rows, $start] = $this->toRowsAndStart($request->get('page'), $request->get('pageSize'));
 
         // Set rows
-        if (($request->get('limit'))) {
-            $this->packageSearchRequest->rows = $request->get('limit');
-        }
+        $this->packageSearchRequest->rows = $rows;
         // Set start
-        if ($request->get('offset')) {
-            $this->packageSearchRequest->start = $request->get('offset');
-        }
+        $this->packageSearchRequest->start = $start;
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
     }

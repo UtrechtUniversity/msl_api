@@ -1,28 +1,40 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
-import { getDefaultTab } from "./utils.js";
+import { getDefaultTab, type Paginator } from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
+import { Pagination } from "./pagination";
+import { cloneDeep } from "lodash";
 
-// If we dont assign L, typescript is complaining about using a UMD global in a module.
-const L = window.L;
 type SearchFilter = {
-    boundingBox: string | null;
+    boundingBox: string;
+    page: number;
+    pageSize: 10;
 };
+
+const DEFAULT_SEARCH_FILTERS: SearchFilter = {
+    boundingBox: "",
+    page: 1,
+    pageSize: 10,
+} as const;
 export class MapController {
     // UI elements
     resultsSidebar: ResultsSidebar;
     mapView: MapView;
-
+    pagination: Pagination;
     // The current class controlls the map but also the state of the tabs
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
-    searchFilters: SearchFilter = { boundingBox: null };
+    searchFilters: SearchFilter = DEFAULT_SEARCH_FILTERS;
+    paginator: Paginator | null = null;
+
     constructor() {
         this.mapView = new MapView();
         this.resultsSidebar = new ResultsSidebar();
+        this.pagination = new Pagination();
+
         // Callbacks
         this.mapView.setHandlerfn({
             onCleanUp: () => {
@@ -51,27 +63,41 @@ export class MapController {
                 });
             },
         });
+        this.pagination.setHandlerfn({
+            onPageChange: (page) => this.handlePageChange(page),
+        });
     }
 
     // Methods about requests and populating
 
     private async addFeaturesAndSidebarInMap() {
-        this.results = await this.getJsonFromRequest();
+        ({ data: this.results, meta: this.paginator } =
+            await this.getJsonFromRequest());
+
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
+
+        this.pagination.setArgs(this.paginator);
+        this.pagination.populate();
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
 
-    public async getJsonFromRequest(): Promise<GeoFeatureDataPublications> {
+    public async getJsonFromRequest(): Promise<{
+        data: GeoFeatureDataPublications;
+        meta: Paginator;
+    }> {
         const boundingBox = this.searchFilters.boundingBox;
         if (!boundingBox)
             throw new Error(
                 "Bounding box doesn't have a correct value. This is a bug.",
             );
-        const parameters = { boundingBox, limit: "10" };
-        const params = new URLSearchParams(parameters);
+        const params = new URLSearchParams({
+            boundingBox: this.searchFilters.boundingBox,
+            page: this.searchFilters.page.toString(),
+            pageSize: this.searchFilters.pageSize.toString(),
+        });
 
         const route = "/api/geoJsonDataPublications?" + params;
 
@@ -86,8 +112,9 @@ export class MapController {
                     response.statusText,
             );
         }
-        const data = (await response.json()).data;
-        return data;
+        const { data, meta } = await response.json();
+
+        return { data, meta };
     }
     // Methods about interactions
 
@@ -99,7 +126,7 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.boundingBox = null;
+        this.searchFilters.boundingBox = "";
         this.resetAllInformation();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -114,7 +141,7 @@ export class MapController {
     }
 
     public removeDrawing() {
-        this.searchFilters.boundingBox = null;
+        this.searchFilters.boundingBox = "";
         this.resetAllInformation();
 
         this.mapView.setDrawingEnable(false);
@@ -126,11 +153,28 @@ export class MapController {
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
+    private handlePageChange(page: number) {
+        this.mapView.removeAllLayers({ except: "rectangle" });
+        this.resultsSidebar.resetList();
+        this.pagination.resetValues();
+        this.paginator = null;
+        this.results = null;
+
+        this.searchFilters.page = page;
+        this.addFeaturesAndSidebarInMap();
+    }
+
     // Helper methods
     private resetAllInformation() {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
+        this.pagination.clear();
+        this.resetSearchFilter();
+        this.paginator = null;
         this.results = null;
+    }
+    private resetSearchFilter() {
+        this.searchFilters = cloneDeep(DEFAULT_SEARCH_FILTERS);
     }
 }
 
