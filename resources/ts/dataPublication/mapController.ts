@@ -5,14 +5,19 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
+import { cloneDeep } from "lodash";
 
-// If we dont assign L, typescript is complaining about using a UMD global in a module.
-const L = window.L;
 type SearchFilter = {
     boundingBox: string;
     page: number;
     pageSize: 10;
 };
+
+const DEFAULT_SEARCH_FILTERS: SearchFilter = {
+    boundingBox: "",
+    page: 1,
+    pageSize: 10,
+} as const;
 export class MapController {
     // UI elements
     resultsSidebar: ResultsSidebar;
@@ -22,7 +27,7 @@ export class MapController {
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
-    searchFilters: SearchFilter = { boundingBox: "", page: 1, pageSize: 10 };
+    searchFilters: SearchFilter = DEFAULT_SEARCH_FILTERS;
     paginator: Paginator | null = null;
 
     constructor() {
@@ -164,8 +169,12 @@ export class MapController {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
         this.pagination.clear();
+        this.resetSearchFilter();
         this.paginator = null;
         this.results = null;
+    }
+    private resetSearchFilter() {
+        this.searchFilters = cloneDeep(DEFAULT_SEARCH_FILTERS);
     }
 }
 

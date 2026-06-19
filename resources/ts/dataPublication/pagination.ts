@@ -47,7 +47,6 @@ export class Pagination {
         this.resetButtonList();
 
         assertNotNull(this.range, `Range should not be null. This is a bug.`);
-
         this.setButton(
             "dp-pagination-button dp-pagination-button-last-left",
             LEFT_ARROW_ICON,
@@ -123,7 +122,6 @@ export class Pagination {
                 }
             }
             // if the range is close to the count dont show the "..." otherwise show
-            // 14+2 < 18-2
             if (
                 this.range.currentPage + this.range.rangeUnilateral <=
                 this.range.count - this.range.rangeUnilateral
@@ -162,14 +160,19 @@ export class Pagination {
         { toPage }: { toPage: number | undefined },
     ): HTMLButtonElement {
         assertNotNull(this.range, `Range should not be null. This is a bug.`);
+
         const a = document.createElement("a");
         const button = document.createElement("button");
         button.setAttribute("class", classAttribute);
         button.innerHTML = text;
-        if (toPage)
-            button.addEventListener("click", () => {
-                this.onPageChange(toPage);
-            });
+        if (toPage !== undefined) {
+            toPage > this.range.count || toPage < 1
+                ? button.setAttribute("disabled", "true")
+                : button.addEventListener("click", () => {
+                      this.onPageChange(toPage);
+                  });
+        }
+
         a.appendChild(button);
         this.paginateElement.append(a);
         return button;
