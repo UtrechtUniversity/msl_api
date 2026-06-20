@@ -2,6 +2,7 @@
 
 namespace App\Scout;
 
+use App\Jobs\ProcessCkanCreate;
 use Laravel\Scout\Builder;
 use Laravel\Scout\Engines\Engine;
 
@@ -10,7 +11,13 @@ class CkanSearchEngine extends Engine
 
     public function update($models)
     {
-        // TODO: Implement update() method.
+        if ($models->isEmpty()) {
+            return;
+        }
+
+        foreach ($models as $model) {
+            ProcessCkanCreate::dispatch($model);
+        }
     }
 
     public function delete($models)

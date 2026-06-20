@@ -7,9 +7,12 @@ use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 
 class Laboratory extends Model
 {
+    use Searchable;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -70,6 +73,11 @@ class Laboratory extends Model
     public function laboratoryUpdatesFast(): HasMany
     {
         return $this->hasMany(LaboratoryUpdateFast::class, 'laboratory_id');
+    }
+
+    public function toSearchableArray()
+    {
+        return $this->toCkanArray();
     }
 
     /**
