@@ -4,11 +4,13 @@ namespace Tests\Feature;
 
 use App\Models\Vocabulary;
 use App\Services\DataPublicationFilterQueryService;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Config;
 use Tests\TestCase;
 
 class DataPublicationFilterQueryServiceTest extends TestCase
 {
+    use RefreshDatabase;
     public function testQueryTerms()
     {
         Config::set('vocabularies.vocabularies_current_version', '1.0');
