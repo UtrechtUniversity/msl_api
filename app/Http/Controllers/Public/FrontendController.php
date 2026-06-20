@@ -27,6 +27,28 @@ class FrontendController extends Controller
      */
     public function index()
     {
+        //$lab = Laboratory::where('fast_id', 1)->first();
+        //$lab->name = 'lab einz';
+        //$lab->save();
+
+
+        //$labs->each->touch();
+
+        //dd($labs);
+
+        //$labs = Laboratory::search('einz')->raw();
+        $labs = Laboratory::search('')->options(['filters' => 'test'])->where('msl_domain_name', ':', '')->get();
+
+        //Laboratory::search('')->options(['filters' => 'test'])->get();
+
+        dd($labs);
+
+        dd('test');
+
+
+
+
+
         $client = new Client;
         $SearchRequest = new PackageSearchRequest;
         $SearchRequest->addFilterQuery('type', 'data-publication');

@@ -2,12 +2,19 @@
 
 namespace App\Scout;
 
+use App\CkanClient\Client;
+use App\CkanClient\Request\PackageSearchRequest;
 use App\Jobs\ProcessCkanCreate;
 use Laravel\Scout\Builder;
 use Laravel\Scout\Engines\Engine;
 
 class CkanSearchEngine extends Engine
 {
+    private Client $ckanClient;
+    public function __construct()
+    {
+        $this->ckanClient = new Client();
+    }
 
     public function update($models)
     {
@@ -27,7 +34,10 @@ class CkanSearchEngine extends Engine
 
     public function search(Builder $builder)
     {
-        // TODO: Implement search() method.
+        return $this->performSearch($builder, array_filter([
+            //'query' => $this->buildQuery($builder),
+            //'limit' => $builder->limit,
+        ]));
     }
 
     public function paginate(Builder $builder, $perPage, $page)
@@ -35,14 +45,60 @@ class CkanSearchEngine extends Engine
         // TODO: Implement paginate() method.
     }
 
+    protected function performSearch(Builder $builder, array $options = [])
+    {
+        $request = new PackageSearchRequest();
+
+        if (array_key_exists('filters', $options)) {
+            $request->query = $options['filters'];
+        } else {
+            $request->query = $builder->query;
+        }
+
+        $request->query = $this->buildQuery($builder);
+
+        // TODO: add filterQuery parts to query
+
+
+        //dd($builder->options);
+        //dd($options);
+
+
+        // TODO: replace this filter with model property from model
+        $request->addFilterQuery('type', 'lab');
+
+        $response = $this->ckanClient->get($request);
+
+        return $response->getResult();
+    }
+
+    protected function buildQuery(Builder $builder)
+    {
+        dd($builder->wheres);
+    }
+
     public function mapIds($results)
     {
-        // TODO: Implement mapIds() method.
+        return collect($results['results'])->pluck('msl_id')->values();
     }
 
     public function map(Builder $builder, $results, $model)
     {
-        // TODO: Implement map() method.
+        if (count($results['results']) === 0) {
+            return $model->newCollection();
+        }
+
+        // TODO: the id field should either be a fixed field thats the same for all classes or set in model
+        $objectIds = collect($results['results'])->pluck('msl_fast_id')->values()->all();
+
+        $objectIdPositions = array_flip($objectIds);
+
+        return $model->getScoutModelsByIds($builder, $objectIds)
+            ->filter(function ($model) use ($objectIds) {
+                return in_array($model->getScoutKey(), $objectIds);
+            })->sortBy(function ($model) use ($objectIdPositions) {
+                return $objectIdPositions[$model->getScoutKey()];
+            })->values();
     }
 
     public function lazyMap(Builder $builder, $results, $model)
@@ -69,4 +125,5 @@ class CkanSearchEngine extends Engine
     {
         // TODO: Implement deleteIndex() method.
     }
+
 }
