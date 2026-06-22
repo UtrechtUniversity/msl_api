@@ -162,7 +162,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                     })->implode(' OR ').')';
             })->values();
 
-        //where not in not implemented due to solr issues
+        // whereNotIn not implemented due to solr issues
 
         return $search->merge($wheres)->merge($whereIns)->filter()->implode(' AND ');
     }

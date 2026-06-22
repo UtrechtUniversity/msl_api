@@ -27,6 +27,8 @@ class PackageSearchRequest implements RequestInterface
      */
     public string $query = '';
 
+    public string $filterQuery = '';
+
     /**
      * @var array filter query parts used to construct the solr filter query
      */
@@ -67,7 +69,7 @@ class PackageSearchRequest implements RequestInterface
         return [
             'query' => [
                 'q' => $this->query,
-                'fq' => $this->getFilterQueryQuery(),
+                'fq' => strlen($this->filterQuery) > 0 ? $this->filterQuery : $this->getFilterQueryQuery(),
                 'ext_bbox' => $this->boundingBox,
                 'rows' => $this->rows,
                 'start' => $this->start,
