@@ -19,16 +19,16 @@ class ProcessCkanDelete implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $model;
+    protected string $ckanIdentifier;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($model)
+    public function __construct(string $ckanIdentifier)
     {
-        $this->model = $model;
+        $this->ckanIdentifier = $ckanIdentifier;
     }
 
     /**
@@ -40,7 +40,7 @@ class ProcessCkanDelete implements ShouldQueue
     {
         $ckanClient = new Client;
         $DatasetPurgeRequest = new DatasetPurgeRequest;
-        $DatasetPurgeRequest->id = $this->model->toSearchableArray()['name'];;
+        $DatasetPurgeRequest->id = $this->ckanIdentifier;
 
         $ckanClient->get($DatasetPurgeRequest);
     }

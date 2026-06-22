@@ -15,4 +15,5 @@ interface CkanSearchableInterface
      */
     public function getCkanMapKeyName(): string;
 
+
 }

@@ -83,12 +83,12 @@ class Laboratory extends Model implements CkanSearchableInterface
 
     public function getScoutKey(): mixed
     {
-        return $this->fast_id;
+        return $this->id;
     }
 
     public function getScoutKeyName(): mixed
     {
-        return 'fast_id';
+        return 'id';
     }
 
     public function getCkanType(): string
@@ -98,7 +98,7 @@ class Laboratory extends Model implements CkanSearchableInterface
 
     public function getCkanMapKeyName(): string
     {
-        return 'msl_fast_id';
+        return 'name';
     }
 
     /**
@@ -111,9 +111,8 @@ class Laboratory extends Model implements CkanSearchableInterface
         return [
             'title' => $this->name,
             'type' => 'lab',
-            'name' => $this->msl_identifier,
+            'name' => (string)$this->id,
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
-            'msl_id' => $this->id,
             'msl_fast_id' => $this->fast_id,
             'msl_description' => $this->description,
             'msl_description_html' => $this->description_html,

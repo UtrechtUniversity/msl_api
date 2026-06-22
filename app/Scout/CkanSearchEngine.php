@@ -49,7 +49,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         }
 
         foreach ($models as $model) {
-            ProcessCkanDelete::dispatch($model);
+            ProcessCkanDelete::dispatch($model->id);
         }
     }
 
@@ -112,35 +112,8 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         $search = strlen($builder->query) > 0 ? $builder->query : [];
         $search = collect($search);
 
-        $wheres = collect($builder->wheres)
-            ->map(function ($where) {
-                $field = $where['field'];
-                $operator = $where['operator'];
-                $value = $where['value'];
-
-                if (!in_array($operator, ['=', ':'])) {
-                    throw new \Exception('Operator not supported: '.$operator);
-                }
-
-                if (is_string($value) || $operator === '=') {
-                    $operator = ':';
-                    $value = "\"{$value}\"";
-                }
-
-                return $field.$operator.$value;
-            })
-            ->values();
-
-        $whereIns = collect($builder->whereIns)
-            ->map(function ($values, $key) {
-                if (empty($values)) {
-                    return '';
-                }
-
-                return '('.collect($values)->map(function ($value) use ($key) {
-                        return $key.":\"{$value}\"";
-                    })->implode(' OR ').')';
-            })->values();
+        $wheres = $this->wheresToQueryParts($builder->wheres);
+        $whereIns = $this->whereInsToQueryParts($builder->whereIns);
 
         // whereNotIn not implemented due to solr issues
 
@@ -149,7 +122,17 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     protected function buildFilterQuery(Builder $builder): string
     {
-        $wheres = collect($builder->filterWheres)
+        $wheres = $this->wheresToQueryParts($builder->filterWheres);
+        $whereIns = $this->whereInsToQueryParts($builder->filterWhereIns);
+
+        // whereNotIn not implemented due to solr issues
+
+        return $wheres->merge($whereIns)->filter()->implode(' AND ');
+    }
+
+    private function wheresToQueryParts(array $wheres)
+    {
+        return collect($wheres)
             ->map(function ($where) {
                 $field = $where['field'];
                 $operator = $where['operator'];
@@ -167,8 +150,11 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                 return $field.$operator.$value;
             })
             ->values();
+    }
 
-        $whereIns = collect($builder->filterWhereIns)
+    private function whereInsToQueryParts(array $whereIns)
+    {
+        return collect($whereIns)
             ->map(function ($values, $key) {
                 if (empty($values)) {
                     return '';
@@ -178,11 +164,8 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                         return $key.":\"{$value}\"";
                     })->implode(' OR ').')';
             })->values();
-
-        // whereNotIn not implemented due to solr issues
-
-        return $wheres->merge($whereIns)->filter()->implode(' AND ');
     }
+
 
     /**
      * Pluck and return the primary keys of the given results.
@@ -196,7 +179,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
     /**
      * Map the given results to instances of the given model.
      */
-    public function map(ScoutBuilder $builder, $results, $model): ResultCollection
+    public function map($builder, $results, $model): ResultCollection
     {
         if (count($results['results']) === 0) {
             return ResultCollection::make();
@@ -235,7 +218,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      * @param Model $model
      * @return LazyCollection
      */
-    public function lazyMap(ScoutBuilder $builder, $results, $model)
+    public function lazyMap($builder, $results, $model)
     {
         // TODO: Implement lazyMap() method.
     }

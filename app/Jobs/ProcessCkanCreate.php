@@ -38,7 +38,7 @@ class ProcessCkanCreate implements ShouldQueue
     {
         $ckanClient = new Client;
         $packageShowRequest = new PackageShowRequest;
-        $packageShowRequest->id = $this->model->toSearchableArray()['name'];
+        $packageShowRequest->id = (string)$this->model->id;
 
         $response = $ckanClient->get($packageShowRequest);
 
