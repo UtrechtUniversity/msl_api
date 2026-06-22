@@ -24,6 +24,11 @@ class Builder extends ScoutBuilder
      */
     public array $filterWhereIns = [];
 
+    /**
+     * Bounding box
+     */
+    public array $boundingBox = [];
+
     public function facetField(string $field): static
     {
         $this->facetFields[] = $field;
@@ -55,6 +60,18 @@ class Builder extends ScoutBuilder
         }
 
         $this->filterWhereIns[$field] = $values;
+
+        return $this;
+    }
+
+    public function boundingBox(float $minX, float $minY, float $maxX, float $maxY): static
+    {
+        $this->boundingBox = [
+            'minX' => $minX,
+            'minY' => $minY,
+            'maxX' => $maxX,
+            'maxY' => $maxY,
+        ];
 
         return $this;
     }

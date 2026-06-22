@@ -112,6 +112,15 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
             $request->sortField = implode(', ', $orders);
         }
 
+        if ($builder->boundingBox) {
+           $request->setBoundingBox(
+               $builder->boundingBox['minX'],
+               $builder->boundingBox['minY'],
+               $builder->boundingBox['maxX'],
+               $builder->boundingBox['maxY']
+           );
+        }
+
         $response = $this->ckanClient->get($request);
 
         return $response->getResult();
