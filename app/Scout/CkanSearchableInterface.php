@@ -6,4 +6,6 @@ interface CkanSearchableInterface
 {
     public function getCkanType(): string;
 
+    public function getCkanKeyName(): string;
+
 }

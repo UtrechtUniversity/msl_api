@@ -11,7 +11,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\LazyCollection;
 use Laravel\Scout\Builder as ScoutBuilder;
-use App\Scout\Builder;
+use App\Scout\Builder as Builder;
 use Laravel\Scout\Contracts\PaginatesEloquentModels;
 use Laravel\Scout\Engines\Engine;
 use Laravel\Scout\Exceptions\NotSupportedException;
@@ -26,11 +26,8 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     /**
      * Update the given models in ckan.
-     *
-     * @param Collection $models
-     * @return void
      */
-    public function update($models)
+    public function update($models): void
     {
         if ($models->isEmpty()) {
             return;
@@ -54,27 +51,14 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     /**
      * Perform the given search on the engine.
-     *
-     * @param Builder $builder
-     *
-     * @return mixed
      */
     public function search(ScoutBuilder $builder): mixed
     {
-        return $this->performSearch($builder, array_filter([
-            //'query' => $this->buildQuery($builder),
-            //'limit' => $builder->limit,
-        ]));
+        return $this->performSearch($builder, array_filter([]));
     }
 
     /**
      * Perform the given search on the engine.
-     *
-     * @param Builder $builder
-     * @param int $perPage
-     * @param int $page
-     *
-     * @return mixed
      */
     public function paginate(ScoutBuilder $builder, $perPage, $page): mixed
     {
@@ -102,9 +86,6 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
         $request->rows = $builder->limit ?? 10;
 
-        // TODO: add filterQuery parts to query
-
-
         if(isset($options['hitsPerPage'])) {
             $request->rows = $options['hitsPerPage'];
         }
@@ -117,14 +98,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
             $request->addFacetField($facetField);
         }
 
-
-        //dd($builder->options);
-        //dd($options);
-
-        //$request->addFilterQuery('type', $builder->model->getCkanType());
-
         $response = $this->ckanClient->get($request);
-        //dd($request, $response);
 
         return $response->getResult();
     }
@@ -208,9 +182,6 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     /**
      * Pluck and return the primary keys of the given results.
-     *
-     * @param  mixed  $results
-     * @return \Illuminate\Support\Collection
      */
     public function mapIds($results): \Illuminate\Support\Collection
     {
@@ -219,10 +190,6 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     /**
      * Map the given results to instances of the given model.
-     *
-     * @param Builder $builder
-     * @param  mixed  $results
-     * @param  Model  $model
      */
     public function map(ScoutBuilder $builder, $results, $model): ResultCollection
     {
@@ -230,8 +197,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
             return ResultCollection::make();
         }
 
-        // TODO: the id field should either be a fixed field thats the same for all classes or set in model
-        $objectIds = collect($results['results'])->pluck('msl_fast_id')->values()->all();
+        $objectIds = collect($results['results'])->pluck($model->getCkanKeyName())->values()->all();
 
         $objectIdPositions = array_flip($objectIds);
 
@@ -308,7 +274,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         throw new NotSupportedException('Index deletion is not supported via CKAN API.');
     }
 
-    public function simplePaginate(ScoutBuilder $builder, $perPage, $page)
+    public function simplePaginate(ScoutBuilder $builder, $perPage, $page): Paginator
     {
         $searchResults = $this->performSearch($builder, [
             'hitsPerPage' => $perPage,
