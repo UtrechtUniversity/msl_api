@@ -7,7 +7,7 @@ use App\GeoJson\Geometry\Point;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Laravel\Scout\Searchable;
+use App\Scout\Searchable;
 
 class Laboratory extends Model
 {
@@ -78,6 +78,16 @@ class Laboratory extends Model
     public function toSearchableArray()
     {
         return $this->toCkanArray();
+    }
+
+    public function getScoutKey(): mixed
+    {
+        return $this->fast_id;
+    }
+
+    public function getScoutKeyName(): mixed
+    {
+        return 'fast_id';
     }
 
     /**

@@ -7,7 +7,6 @@ use App\CkanClient\Request\OrganizationListRequest;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\voic;
 use App\Jobs\ProcessMatomoDownloadTrackingJob;
 use App\Models\Keyword;
 use App\Models\Laboratory;
