@@ -38,7 +38,7 @@ class ProcessCkanCreate implements ShouldQueue
     {
         $ckanClient = new Client;
         $packageShowRequest = new PackageShowRequest;
-        $packageShowRequest->id = $this->model->name;
+        $packageShowRequest->id = $this->model->toSearchableArray()['name'];
 
         $response = $ckanClient->get($packageShowRequest);
 
@@ -54,7 +54,7 @@ class ProcessCkanCreate implements ShouldQueue
         $packageCreateRequest = new PackageCreateRequest;
         $packageCreateRequest->payload = $this->model->toSearchableArray();
 
-        $response = $client->get($packageCreateRequest);
+        $client->get($packageCreateRequest);
     }
 
     private function updateLaboratory(Client $client)
@@ -62,6 +62,6 @@ class ProcessCkanCreate implements ShouldQueue
         $packageUpdateRequest = new PackageUpdateRequest;
         $packageUpdateRequest->payload = $this->model->tosearchableArray();
 
-        $response = $client->get($packageUpdateRequest);
+        $client->get($packageUpdateRequest);
     }
 }

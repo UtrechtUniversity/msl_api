@@ -96,7 +96,7 @@ class Laboratory extends Model implements CkanSearchableInterface
         return 'lab';
     }
 
-    public function getCkanKeyName(): string
+    public function getCkanMapKeyName(): string
     {
         return 'msl_fast_id';
     }

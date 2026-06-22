@@ -5,6 +5,7 @@ namespace App\Scout;
 use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Jobs\ProcessCkanCreate;
+use App\Jobs\ProcessCkanDelete;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -40,13 +41,16 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     /**
      * Remove the given models from the ckan.
-     *
-     * @param Collection $models
-     * @return void
      */
     public function delete($models)
     {
-        // TODO: Implement delete() method.
+        if ($models->isEmpty()) {
+            return;
+        }
+
+        foreach ($models as $model) {
+            ProcessCkanDelete::dispatch($model);
+        }
     }
 
     /**
@@ -185,7 +189,8 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      */
     public function mapIds($results): \Illuminate\Support\Collection
     {
-        return collect($results['results'])->pluck('msl_fast_id')->values();
+        dd('?');
+        return collect($results['results'])->pluck()->values();
     }
 
     /**
@@ -197,7 +202,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
             return ResultCollection::make();
         }
 
-        $objectIds = collect($results['results'])->pluck($model->getCkanKeyName())->values()->all();
+        $objectIds = collect($results['results'])->pluck($model->getCkanMapKeyName())->values()->all();
 
         $objectIdPositions = array_flip($objectIds);
 
