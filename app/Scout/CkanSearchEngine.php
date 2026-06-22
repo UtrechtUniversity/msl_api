@@ -87,10 +87,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
         $perPage = $perPage ?: $builder->model->getPerPage();
 
-        $paginator = new LengthAwarePaginator($results, $results->totalResults, $perPage, $page);
-        $paginator->appends('query', $builder->query);
-
-        return $paginator;
+        return new LengthAwarePaginator($results, $results->totalResults, $perPage, $page);
     }
 
     protected function performSearch(Builder $builder, array $options = [])
@@ -276,6 +273,18 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     public function simplePaginate(ScoutBuilder $builder, $perPage, $page)
     {
-        // TODO: Implement simplePaginate() method.
+        $searchResults = $this->performSearch($builder, [
+            'hitsPerPage' => $perPage,
+            'page' => $page,
+        ]);
+
+        $results = $this->map($builder, $searchResults, $builder->model);
+
+        $perPage = $perPage ?: $builder->model->getPerPage();
+
+        $paginator = new Paginator($results, $results->totalResults, $perPage);
+        $paginator->hasMorePagesWhen(($perPage * $page) < $results->totalResults);
+
+        return $paginator;
     }
 }
