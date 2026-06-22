@@ -119,9 +119,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         //dd($builder->options);
         //dd($options);
 
-
-        // TODO: replace this filter with model property from model
-        $request->addFilterQuery('type', 'lab');
+        $request->addFilterQuery('type', $builder->model->getCkanType());
 
         $response = $this->ckanClient->get($request);
         //dd($request, $response);

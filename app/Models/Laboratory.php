@@ -4,12 +4,13 @@ namespace App\Models;
 
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
+use App\Scout\CkanSearchableInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use App\Scout\Searchable;
 
-class Laboratory extends Model
+class Laboratory extends Model implements CkanSearchableInterface
 {
     use Searchable;
 
@@ -88,6 +89,11 @@ class Laboratory extends Model
     public function getScoutKeyName(): mixed
     {
         return 'fast_id';
+    }
+
+    public function getCkanType(): string
+    {
+        return 'lab';
     }
 
     /**
