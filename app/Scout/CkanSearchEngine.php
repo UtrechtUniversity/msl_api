@@ -6,6 +6,7 @@ use App\CkanClient\Client;
 use App\CkanClient\Request\PackageSearchRequest;
 use App\Jobs\ProcessCkanCreate;
 use App\Jobs\ProcessCkanDelete;
+use App\Jobs\ProcessCkanFlush;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -243,7 +244,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      */
     public function flush($model)
     {
-        throw new NotSupportedException('Flush is not supported via CKAN API.');
+        ProcessCkanFlush::dispatch($model->getCkanType());
     }
 
     /**
