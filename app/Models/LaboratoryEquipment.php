@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LaboratoryEquipment extends Model
 {
+    protected $touches = ['laboratory'];
+
     protected $table = 'laboratory_equipment';
 
     /**
