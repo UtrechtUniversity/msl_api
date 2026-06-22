@@ -94,11 +94,13 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
     {
         $request = new PackageSearchRequest();
 
+        $builder->filterWhere('type', $builder->model->getCkanType());
+
         $request->query = $this->buildQuery($builder);
 
-        $request->rows = $builder->limit ?? 10;
+        $request->filterQuery = $this->buildFilterQuery($builder);
 
-        //dd($request->query);
+        $request->rows = $builder->limit ?? 10;
 
         // TODO: add filterQuery parts to query
 
@@ -119,7 +121,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         //dd($builder->options);
         //dd($options);
 
-        $request->addFilterQuery('type', $builder->model->getCkanType());
+        //$request->addFilterQuery('type', $builder->model->getCkanType());
 
         $response = $this->ckanClient->get($request);
         //dd($request, $response);
@@ -165,6 +167,43 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         // whereNotIn not implemented due to solr issues
 
         return $search->merge($wheres)->merge($whereIns)->filter()->implode(' AND ');
+    }
+
+    protected function buildFilterQuery(Builder $builder): string
+    {
+        $wheres = collect($builder->filterWheres)
+            ->map(function ($where) {
+                $field = $where['field'];
+                $operator = $where['operator'];
+                $value = $where['value'];
+
+                if (!in_array($operator, ['=', ':'])) {
+                    throw new \Exception('Operator not supported: '.$operator);
+                }
+
+                if (is_string($value) || $operator === '=') {
+                    $operator = ':';
+                    $value = "\"{$value}\"";
+                }
+
+                return $field.$operator.$value;
+            })
+            ->values();
+
+        $whereIns = collect($builder->filterWhereIns)
+            ->map(function ($values, $key) {
+                if (empty($values)) {
+                    return '';
+                }
+
+                return '('.collect($values)->map(function ($value) use ($key) {
+                        return $key.":\"{$value}\"";
+                    })->implode(' OR ').')';
+            })->values();
+
+        // whereNotIn not implemented due to solr issues
+
+        return $wheres->merge($whereIns)->filter()->implode(' AND ');
     }
 
     /**
