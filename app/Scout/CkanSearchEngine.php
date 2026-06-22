@@ -103,6 +103,15 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
             $request->addFacetField($facetField);
         }
 
+        if ($builder->orders) {
+            $orders = [];
+            foreach ($builder->orders as $sort) {
+                $orders[] = $sort['column'] . ' ' . $sort['direction'];
+            }
+
+            $request->sortField = implode(', ', $orders);
+        }
+
         $response = $this->ckanClient->get($request);
 
         return $response->getResult();
