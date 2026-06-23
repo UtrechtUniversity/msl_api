@@ -7,12 +7,126 @@ use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateGroupFast;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Queue;
+use Laravel\Scout\Jobs\MakeSearchable;
+use Laravel\Scout\Jobs\RemoveFromSearch;
 use Tests\TestCase;
 
 class LaboratoryTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_create_dispatches_scout_job(): void
+    {
+        Queue::fake();
+
+        $organization = LaboratoryOrganization::createQuietly([
+            'fast_id' => 1,
+            'name' => 'Test organization',
+            'external_identifier' => 'ext-org-1',
+        ]);
+
+        $laboratory = Laboratory::create([
+            'laboratory_organization_id' => $organization->id,
+            'msl_identifier' => 'test_lab_1',
+            'lab_portal_name' => 'Portal',
+            'lab_editor_name' => 'Editor',
+            'msl_identifier_inputstring' => 'test_lab_1',
+            'original_domain' => 'example.org',
+            'name' => 'Test Lab',
+            'description' => 'Description',
+            'description_html' => '<p>Description</p>',
+            'website' => 'https://lab.example.org',
+            'address_street_1' => '1 Lab Rd',
+            'address_street_2' => '',
+            'address_postalcode' => '2000BB',
+            'address_city' => 'Utrecht',
+            'address_country_code' => 'NL',
+            'latitude' => '',
+            'longitude' => '',
+            'altitude' => '',
+            'external_identifier' => 'ext-lab-1',
+            'fast_domain_name' => 'domain',
+        ]);
+
+        Queue::assertPushed(MakeSearchable::class);
+    }
+
+    public function test_update_dispatches_scout_job(): void
+    {
+        Queue::fake();
+
+        $organization = LaboratoryOrganization::createQuietly([
+            'fast_id' => 1,
+            'name' => 'Test organization',
+            'external_identifier' => 'ext-org-1',
+        ]);
+
+        $laboratory = Laboratory::createQuietly([
+            'laboratory_organization_id' => $organization->id,
+            'msl_identifier' => 'test_lab_1',
+            'lab_portal_name' => 'Portal',
+            'lab_editor_name' => 'Editor',
+            'msl_identifier_inputstring' => 'test_lab_1',
+            'original_domain' => 'example.org',
+            'name' => 'Test Lab',
+            'description' => 'Description',
+            'description_html' => '<p>Description</p>',
+            'website' => 'https://lab.example.org',
+            'address_street_1' => '1 Lab Rd',
+            'address_street_2' => '',
+            'address_postalcode' => '2000BB',
+            'address_city' => 'Utrecht',
+            'address_country_code' => 'NL',
+            'latitude' => '',
+            'longitude' => '',
+            'altitude' => '',
+            'external_identifier' => 'ext-lab-1',
+            'fast_domain_name' => 'domain',
+        ]);
+
+        $laboratory->touch();
+
+        Queue::assertPushed(MakeSearchable::class);
+    }
+
+    public function test_delete_dispatches_scout_job(): void
+    {
+        Queue::fake();
+
+        $organization = LaboratoryOrganization::createQuietly([
+            'fast_id' => 1,
+            'name' => 'Test organization',
+            'external_identifier' => 'ext-org-1',
+        ]);
+
+        $laboratory = Laboratory::createQuietly([
+            'laboratory_organization_id' => $organization->id,
+            'msl_identifier' => 'test_lab_1',
+            'lab_portal_name' => 'Portal',
+            'lab_editor_name' => 'Editor',
+            'msl_identifier_inputstring' => 'test_lab_1',
+            'original_domain' => 'example.org',
+            'name' => 'Test Lab',
+            'description' => 'Description',
+            'description_html' => '<p>Description</p>',
+            'website' => 'https://lab.example.org',
+            'address_street_1' => '1 Lab Rd',
+            'address_street_2' => '',
+            'address_postalcode' => '2000BB',
+            'address_city' => 'Utrecht',
+            'address_country_code' => 'NL',
+            'latitude' => '',
+            'longitude' => '',
+            'altitude' => '',
+            'external_identifier' => 'ext-lab-1',
+            'fast_domain_name' => 'domain',
+        ]);
+
+        $laboratory->delete();
+
+        Queue::assertPushed(RemoveFromSearch::class);
+    }
     public function test_laboratory_organization_relation(): void
     {
         $organization = LaboratoryOrganization::createQuietly([
