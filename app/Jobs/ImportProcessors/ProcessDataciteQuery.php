@@ -2,7 +2,7 @@
 
 namespace App\Jobs\ImportProcessors;
 
-use App\Datacite\Datacite;
+use App\Clients\Datacite\Datacite;
 use App\Jobs\ProcessSourceDatasetIdentifier;
 use App\Models\Import;
 use App\Models\SourceDatasetIdentifier;

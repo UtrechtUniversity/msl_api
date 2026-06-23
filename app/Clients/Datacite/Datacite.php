@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Datacite;
+namespace App\Clients\Datacite;
 
 use Illuminate\Support\Uri;
 use stdClass;
