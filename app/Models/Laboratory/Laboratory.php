@@ -2,8 +2,7 @@
 
 namespace App\Models\Laboratory;
 
-use App\GeoJson\Feature\Feature;
-use App\GeoJson\Geometry\Point;
+use App\Mappers\Ckan\LaboratoryMapper;
 use App\Models\LaboratoryUpdateFast;
 use App\Scout\CkanSearchableInterface;
 use App\Scout\Searchable;
@@ -107,114 +106,6 @@ class Laboratory extends Model implements CkanSearchableInterface
      */
     public function toCkanArray(): array
     {
-        return [
-            'title' => $this->name,
-            'type' => 'lab',
-            'name' => (string)$this->id,
-            'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
-            'msl_fast_id' => $this->fast_id,
-            'msl_description' => $this->description,
-            'msl_description_html' => $this->description_html,
-            'msl_website' => $this->website,
-            'msl_address_street_1' => $this->address_street_1,
-            'msl_address_street_2' => $this->address_street_2,
-            'msl_address_postalcode' => $this->address_postalcode,
-            'msl_address_city' => $this->address_city,
-            'msl_msl_address_country_code' => $this->address_country_code,
-            'msl_address_country_name' => $this->address_country_name,
-            'msl_domain_name' => $this->fast_domain_name,
-            'msl_organization_name' => $this->laboratoryOrganization->name,
-            'msl_latitude' => $this->latitude,
-            'msl_longitude' => $this->longitude,
-            'msl_altitude' => $this->altitude,
-            'msl_location' => $this->getGeoJsonFeature(),
-            'msl_has_spatial_data' => $this->hasSpatialData(),
-            'msl_laboratory_equipment' => $this->getLimitedEquipment(),
-            'extras' => [
-                ['key' => 'spatial', 'value' => $this->getPointGeoJson()],
-            ],
-        ];
-    }
-
-    /**
-     * Returns a limited set of properties for each equipment belonging to the lab.
-     * This data is used in CKAN to populate the facility API endpoint working around the
-     * need to combine equipment and laboratory datatypes seperately.
-     */
-    private function getLimitedEquipment(): array
-    {
-        $equipment = [];
-
-        $equipmentList = $this->laboratoryEquipment;
-
-        foreach ($equipmentList as $equipmentEntry) {
-            $equipment[] = [
-                'msl_laboratory_equipment_title' => $equipmentEntry->name,
-                'msl_laboratory_equipment_description' => $equipmentEntry->description,
-                'msl_laboratory_equipment_description_html' => $equipmentEntry->description_html,
-                'msl_laboratory_equipment_domain' => $equipmentEntry->domain_name,
-                'msl_laboratory_equipment_category' => $equipmentEntry->category_name,
-                'msl_laboratory_equipment_type' => $equipmentEntry->type_name,
-                'msl_laboratory_equipment_group' => $equipmentEntry->group_name,
-                'msl_laboratory_equipment_brand' => $equipmentEntry->brand,
-            ];
-        }
-
-        return $equipment;
-    }
-
-    /**
-     * Create point geojson string using latitude and longitude.
-     *
-     * @return string
-     */
-    public function getPointGeoJson()
-    {
-        if ($this->hasSpatialData()) {
-            return json_encode(
-                new Point((float) $this->longitude, (float) $this->latitude)
-            );
-        }
-
-        return '';
-    }
-
-    /**
-     * Get geojson feature object string.
-     *
-     * @return string
-     */
-    private function getGeoJsonFeature()
-    {
-        if ($this->hasSpatialData()) {
-            return json_encode(
-                new Feature(
-                    new Point((float) $this->longitude, (float) $this->latitude),
-                    [
-                        'title' => $this->name,
-                        'name' => $this->msl_identifier,
-                        'msl_id' => $this->id,
-                        'msl_organization_name' => $this->laboratoryOrganization->name,
-                        'msl_domain_name' => $this->fast_domain_name,
-                    ]
-                )
-            );
-        }
-
-        return '';
-    }
-
-    /**
-     * check if laboratory has spatial data
-     *
-     * @return bool
-     */
-    public function hasSpatialData()
-    {
-        if ((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
-            return true;
-        }
-
-        return false;
+        return LaboratoryMapper::fromLaboratory($this);
     }
 }
