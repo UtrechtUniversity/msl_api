@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Laboratory;
 
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
+use App\Models\Keyword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

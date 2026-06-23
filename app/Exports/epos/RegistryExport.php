@@ -2,9 +2,9 @@
 
 namespace App\Exports\epos;
 
-use App\Models\Laboratory;
-use App\Models\LaboratoryContactPerson;
-use App\Models\LaboratoryEquipment;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryContactPerson;
+use App\Models\Laboratory\LaboratoryEquipment;
 use EasyRdf\Graph;
 use EasyRdf\Literal;
 use EasyRdf\RdfNamespace;

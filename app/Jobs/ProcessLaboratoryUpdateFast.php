@@ -4,12 +4,12 @@ namespace App\Jobs;
 
 use App\fast\Fast;
 use App\Models\Keyword;
-use App\Models\Laboratory;
-use App\Models\LaboratoryContactPerson;
-use App\Models\LaboratoryEquipment;
-use App\Models\LaboratoryEquipmentAddon;
-use App\Models\LaboratoryManager;
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryContactPerson;
+use App\Models\Laboratory\LaboratoryEquipment;
+use App\Models\Laboratory\LaboratoryEquipmentAddon;
+use App\Models\Laboratory\LaboratoryManager;
+use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateFast;
 use App\Models\Vocabulary;
 use Illuminate\Bus\Queueable;

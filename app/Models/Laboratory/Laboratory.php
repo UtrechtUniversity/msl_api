@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Laboratory;
 
 use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
+use App\Models\LaboratoryUpdateFast;
 use App\Scout\CkanSearchableInterface;
+use App\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Scout\Searchable;
 
 class Laboratory extends Model implements CkanSearchableInterface
 {

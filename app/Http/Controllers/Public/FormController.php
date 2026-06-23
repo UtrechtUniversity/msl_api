@@ -11,7 +11,7 @@ use App\Mail\ContactUsConfirmationMail;
 use App\Mail\ContactUsSubmissionMail;
 use App\Mail\LabIntakeConfirmationMail;
 use App\Mail\LabIntakeSubmissionMail;
-use App\Models\Laboratory;
+use App\Models\Laboratory\Laboratory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;

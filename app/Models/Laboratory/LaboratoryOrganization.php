@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Laboratory;
 
+use App\Models\LaboratoryOrganizationUpdateRor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 

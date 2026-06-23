@@ -2,9 +2,9 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\Laboratory;
-use App\Models\LaboratoryManager;
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryManager;
+use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateGroupFast;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;

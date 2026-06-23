@@ -9,7 +9,7 @@ use App\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Jobs\ProcessMatomoDownloadTrackingJob;
 use App\Models\Keyword;
-use App\Models\Laboratory;
+use App\Models\Laboratory\Laboratory;
 use App\Models\Surveys\Survey;
 use App\Services\DataPublicationService;
 use Illuminate\Http\Request;

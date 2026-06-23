@@ -3,8 +3,8 @@
 namespace Tests\Feature\Models;
 
 use App\Models\Keyword;
-use App\Models\Laboratory;
-use App\Models\LaboratoryEquipment;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryEquipment;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;

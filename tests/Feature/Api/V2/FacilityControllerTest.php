@@ -3,10 +3,10 @@
 namespace Tests\Feature\Api\V2;
 
 use App\Http\Controllers\API\V2\FacilityController;
-use App\Models\Laboratory;
-use App\Models\LaboratoryEquipment;
-use App\Models\LaboratoryEquipmentAddon;
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryEquipment;
+use App\Models\Laboratory\LaboratoryEquipmentAddon;
+use App\Models\Laboratory\LaboratoryOrganization;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;

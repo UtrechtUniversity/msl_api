@@ -3,8 +3,8 @@
 namespace App\Jobs;
 
 use App\Mappers\Helpers\KeywordHelper;
-use App\Models\Laboratory;
-use App\Models\LaboratoryKeyword;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryKeyword;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

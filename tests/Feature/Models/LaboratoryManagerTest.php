@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Models;
 
-use App\Models\LaboratoryManager;
+use App\Models\Laboratory\LaboratoryManager;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
