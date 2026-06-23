@@ -30,13 +30,24 @@ class FrontendController extends Controller
         //$lab->name = 'lab einz';
         //$lab->save();
 
+        //$lab = Laboratory::where('id', 10)->first();
+        //$lab->name = 'lab einz zwei drei';
+        //$lab->save();
+        //$lab->delete();
+
+        //dd($lab->laboratoryEquipment->first()->touch());
+
 
         //$labs->each->touch();
 
         //dd($labs);
 
-        //$labs = Laboratory::search('einz')->raw();
-        $labs = Laboratory::search('')->options(['filters' => 'test'])->where('msl_domain_name', ':', '')->get();
+        $labs = Laboratory::search('')->filterWhere('msl_domain_name', ':', 'Paleomagnetism')->orderBy('name', 'desc')->get();
+        //$labs = Laboratory::search('')->options(['filters' => 'test'])->where('msl_domain_name', ':', 'Paleomagnetism')->get();
+        //$labs = Laboratory::search('')->options(['filters' => 'test'])->where('msl_domain_name', ':', 'Paleomagnetism')->where('msl_address_country_name', ':', 'Spain')->get();
+        //$labs = Laboratory::search('')->options(['filters' => 'test'])->whereIn('msl_address_country_name', ['Spain', 'United Kingdom'])->get();
+        //$labs = Laboratory::search('')->options(['filters' => 'test'])->whereIn('msl_address_country_name', ['Spain', 'United Kingdom'])->facetField('msl_domain_name')->paginate();
+        //$labs = Laboratory::search('')->options(['filters' => 'test'])->get();
 
         //Laboratory::search('')->options(['filters' => 'test'])->get();
 

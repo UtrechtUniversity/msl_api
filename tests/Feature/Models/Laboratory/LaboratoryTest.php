@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryManager;
@@ -15,13 +15,13 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_organization_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
+        $organization = LaboratoryOrganization::createQuietly([
             'fast_id' => 1,
             'name' => 'Test organization',
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'laboratory_organization_id' => $organization->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -50,7 +50,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_contact_persons_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -72,7 +72,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $contact = $laboratory->laboratoryContactPersons()->create([
+        $contact = $laboratory->laboratoryContactPersons()->createQuietly([
             'email' => 'contact@example.org',
         ]);
 
@@ -82,7 +82,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_manager_relation(): void
     {
-        $manager = LaboratoryManager::create([
+        $manager = LaboratoryManager::createQuietly([
             'email' => 'manager@example.org',
             'first_name' => 'Pat',
             'last_name' => 'Lee',
@@ -98,7 +98,7 @@ class LaboratoryTest extends TestCase
             'nationality_name' => 'Dutch',
         ]);
 
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'laboratory_manager_id' => $manager->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -127,7 +127,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_equipment_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -149,7 +149,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $equipment = $laboratory->laboratoryEquipment()->create([
+        $equipment = $laboratory->laboratoryEquipment()->createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -170,7 +170,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_keywords_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -192,7 +192,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $laboratoryKeyword = $laboratory->laboratoryKeywords()->create([
+        $laboratoryKeyword = $laboratory->laboratoryKeywords()->createQuietly([
             'value' => 'geology',
             'uri' => 'https://example.org/kw/geology',
         ]);
@@ -203,7 +203,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_updates_fast_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',

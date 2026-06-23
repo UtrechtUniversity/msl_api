@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
@@ -13,13 +13,13 @@ class LaboratoryOrganizationTest extends TestCase
 
     public function test_laboratories_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
+        $organization = LaboratoryOrganization::createQuietly([
             'fast_id' => 1,
             'name' => 'Test organization',
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = $organization->laboratories()->create([
+        $laboratory = $organization->laboratories()->createQuietly([
             'msl_identifier' => 'lab_under_org',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -42,12 +42,12 @@ class LaboratoryOrganizationTest extends TestCase
         ]);
 
         $this->assertCount(1, $organization->fresh()->laboratories);
-        $this->assertTrue($organization->laboratories->contains($laboratory));
+        $this->assertTrue($organization->fresh()->laboratories->contains($laboratory));
     }
 
     public function test_laboratory_organization_update_rors_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
+        $organization = LaboratoryOrganization::createQuietly([
             'fast_id' => 1,
             'name' => 'Org',
             'external_identifier' => 'ext-1',

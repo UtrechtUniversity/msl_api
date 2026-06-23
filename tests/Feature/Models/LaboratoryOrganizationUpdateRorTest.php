@@ -14,7 +14,7 @@ class LaboratoryOrganizationUpdateRorTest extends TestCase
 
     public function test_laboratory_organization_update_group_ror_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
+        $organization = LaboratoryOrganization::createQuietly([
             'fast_id' => 1,
             'name' => 'Org',
             'external_identifier' => 'ext-1',
@@ -35,7 +35,7 @@ class LaboratoryOrganizationUpdateRorTest extends TestCase
 
     public function test_laboratory_organization_relation(): void
     {
-        $organization = LaboratoryOrganization::create([
+        $organization = LaboratoryOrganization::createQuietly([
             'fast_id' => 1,
             'name' => 'Org',
             'external_identifier' => 'ext-1',

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Laboratory\Laboratory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -12,7 +12,7 @@ class LaboratoryKeywordTest extends TestCase
 
     public function test_laboratory_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -34,7 +34,7 @@ class LaboratoryKeywordTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $laboratoryKeyword = $laboratory->laboratoryKeywords()->create([
+        $laboratoryKeyword = $laboratory->laboratoryKeywords()->createQuietly([
             'value' => 'geology',
             'uri' => 'https://example.org/kw/geology',
         ]);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Laboratory\LaboratoryManager;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -12,7 +12,7 @@ class LaboratoryManagerTest extends TestCase
 
     public function test_laboratories_relation(): void
     {
-        $manager = LaboratoryManager::create([
+        $manager = LaboratoryManager::createQuietly([
             'email' => 'manager@example.org',
             'first_name' => 'Pat',
             'last_name' => 'Lee',
@@ -28,7 +28,7 @@ class LaboratoryManagerTest extends TestCase
             'nationality_name' => 'Dutch',
         ]);
 
-        $laboratory = $manager->laboratories()->create([
+        $laboratory = $manager->laboratories()->createQuietly([
             'msl_identifier' => 'lab_under_manager',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',

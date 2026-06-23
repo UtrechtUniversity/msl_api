@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Keyword;
 use App\Models\Laboratory\Laboratory;
@@ -15,7 +15,7 @@ class LaboratoryEquipmentTest extends TestCase
 
     public function test_laboratory_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -37,7 +37,7 @@ class LaboratoryEquipmentTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $equipment = $laboratory->laboratoryEquipment()->create([
+        $equipment = $laboratory->laboratoryEquipment()->createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -64,14 +64,14 @@ class LaboratoryEquipmentTest extends TestCase
             'display_name' => 'Materials',
         ]);
 
-        $keyword = $vocabulary->keywords()->create([
+        $keyword = $vocabulary->keywords()->createQuietly([
             'value' => 'widget',
             'uri' => 'https://example.org/vocab/lab/widget',
             'level' => 0,
             'label' => 'Widget',
         ]);
 
-        $equipment = LaboratoryEquipment::create([
+        $equipment = LaboratoryEquipment::createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -93,7 +93,7 @@ class LaboratoryEquipmentTest extends TestCase
 
     public function test_laboratory_equipment_addons_relation(): void
     {
-        $equipment = LaboratoryEquipment::create([
+        $equipment = LaboratoryEquipment::createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -108,7 +108,7 @@ class LaboratoryEquipmentTest extends TestCase
             'external_identifier' => 'eq-1',
         ]);
 
-        $addon = $equipment->laboratoryEquipmentAddons()->create([
+        $addon = $equipment->laboratoryEquipmentAddons()->createQuietly([
             'description' => 'Addon description',
             'type' => 'accessory',
             'group' => 'default',

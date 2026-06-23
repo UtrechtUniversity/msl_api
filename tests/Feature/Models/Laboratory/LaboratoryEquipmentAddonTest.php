@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature\Models;
+namespace Feature\Models\Laboratory;
 
 use App\Models\Keyword;
 use App\Models\Laboratory\LaboratoryEquipment;
@@ -14,7 +14,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
 
     public function test_laboratory_equipment_relation(): void
     {
-        $equipment = LaboratoryEquipment::create([
+        $equipment = LaboratoryEquipment::createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -29,7 +29,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
             'external_identifier' => 'eq-1',
         ]);
 
-        $addon = $equipment->laboratoryEquipmentAddons()->create([
+        $addon = $equipment->laboratoryEquipmentAddons()->createQuietly([
             'description' => 'Addon description',
             'type' => 'accessory',
             'group' => 'default',
@@ -41,7 +41,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
 
     public function test_keyword_relation(): void
     {
-        $equipment = LaboratoryEquipment::create([
+        $equipment = LaboratoryEquipment::createQuietly([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -62,14 +62,14 @@ class LaboratoryEquipmentAddonTest extends TestCase
             'display_name' => 'Materials',
         ]);
 
-        $keyword = $vocabulary->keywords()->create([
+        $keyword = $vocabulary->keywords()->createQuietly([
             'value' => 'addon-term',
             'uri' => 'https://example.org/vocab/lab/addon-term',
             'level' => 0,
             'label' => 'Addon term',
         ]);
 
-        $addon = $equipment->laboratoryEquipmentAddons()->create([
+        $addon = $equipment->laboratoryEquipmentAddons()->createQuietly([
             'description' => 'Addon description',
             'type' => 'accessory',
             'group' => 'default',

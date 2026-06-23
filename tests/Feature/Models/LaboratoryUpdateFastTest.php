@@ -13,7 +13,7 @@ class LaboratoryUpdateFastTest extends TestCase
 
     public function test_laboratory_update_group_fast_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -49,7 +49,7 @@ class LaboratoryUpdateFastTest extends TestCase
 
     public function test_laboratory_relation(): void
     {
-        $laboratory = Laboratory::create([
+        $laboratory = Laboratory::createQuietly([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
