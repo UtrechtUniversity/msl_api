@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Helpers\YodaDownloadHelper;
+use App\Mappers\DataPublicationImport\Helpers\YodaDownloadHelper;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Helpers\DataciteCitationHelper;
+use App\Mappers\DataPublicationImport\Helpers\DataciteCitationHelper;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;

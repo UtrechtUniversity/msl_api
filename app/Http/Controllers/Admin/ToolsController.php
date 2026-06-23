@@ -12,7 +12,7 @@ use App\Exports\FilterTreeExport;
 use App\Exports\UnmatchedKeywordsExport;
 use App\Exports\UriLabelExport;
 use App\Http\Controllers\Controller;
-use App\Mappers\Helpers\KeywordHelper;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
 use App\Models\Laboratory\Laboratory;
 use App\Models\Vocabulary;
 use App\Services\DataPublicationFilterQueryService;

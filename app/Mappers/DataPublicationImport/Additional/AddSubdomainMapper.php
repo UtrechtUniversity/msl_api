@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mappers\Additional;
+namespace App\Mappers\DataPublicationImport\Additional;
 
 use App\Enums\SubDomains\DataPublicationSubDomain;
 use App\Models\Ckan\DataPublication;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mappers\Additional;
+namespace App\Mappers\DataPublicationImport\Additional;
 
 abstract class AdditionalMapper implements AdditionalMapperInterface
 {

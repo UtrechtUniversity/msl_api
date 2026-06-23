@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\YodaFileMapper;
+use App\Mappers\DataPublicationImport\Additional\YodaFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;

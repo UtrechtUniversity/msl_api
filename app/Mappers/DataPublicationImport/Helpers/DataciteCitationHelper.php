@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Mappers\Helpers;
+namespace App\Mappers\DataPublicationImport\Helpers;
 
+use App\Mappers\Helpers\GuzzleClient;
 use GuzzleHttp\Client;
 
 class DataciteCitationHelper

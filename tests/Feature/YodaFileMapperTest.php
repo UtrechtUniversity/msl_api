@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Additional\YodaFileMapper;
-use App\Mappers\Helpers\YodaDownloadHelper;
+use App\Mappers\DataPublicationImport\Additional\YodaFileMapper;
+use App\Mappers\DataPublicationImport\Helpers\YodaDownloadHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Mockery\MockInterface;

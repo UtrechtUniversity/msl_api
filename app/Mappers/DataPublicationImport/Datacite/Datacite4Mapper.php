@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mappers\Datacite;
+namespace App\Mappers\DataPublicationImport\Datacite;
 
 use App\Exceptions\MappingException;
 use App\GeoJson\BoundingBox;
@@ -9,19 +9,20 @@ use App\GeoJson\Feature\FeatureCollection;
 use App\GeoJson\Geometry\Collection;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
-use App\Mappers\MapperInterface;
+use App\Mappers\DataPublicationImport\MapperInterface;
 use App\Models\Ckan\Affiliation;
 use App\Models\Ckan\AlternateIdentifier;
 use App\Models\Ckan\Contributor;
 use App\Models\Ckan\Creator;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\Date;
+use App\Models\Ckan\FundingReference;
 use App\Models\Ckan\NameIdentifier;
 use App\Models\Ckan\RelatedIdentifier;
 use App\Models\Ckan\Right;
 use App\Models\Ckan\Tag;
 
-class Datacite3Mapper implements MapperInterface
+class Datacite4Mapper implements MapperInterface
 {
     public function map(array $metadata, DataPublication $dataPublication): DataPublication
     {
@@ -35,6 +36,7 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
+        $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
         $dataPublication = $this->mapLanguages($metadata, $dataPublication);
         $dataPublication = $this->mapDates($metadata, $dataPublication);
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
@@ -326,6 +328,33 @@ class Datacite3Mapper implements MapperInterface
     public function mapUrl(array $metadata, DataPublication $dataset): DataPublication
     {
         $dataset->msl_source = (isset($metadata['data']['attributes']['url']) ? $metadata['data']['attributes']['url'] : throw new MappingException($dataset->msl_doi.': No url mapped'));
+
+        return $dataset;
+    }
+
+    /**
+     * maps the available funding references
+     * fundername is madatory
+     */
+    public function mapFundingReferences(array $metadata, DataPublication $dataset): DataPublication
+    {
+        $fundingReferences = $metadata['data']['attributes']['fundingReferences'];
+
+        if ($fundingReferences > 0) {
+            foreach ($fundingReferences as $fundingReference) {
+                $fundingReferenceInstance = new FundingReference(
+                    (isset($fundingReference['funderName']) ? $fundingReference['funderName'] : ''),
+                    (isset($fundingReference['funderIdentifier']) ? $fundingReference['funderIdentifier'] : ''),
+                    (isset($fundingReference['funderIdentifierType']) ? $fundingReference['funderIdentifierType'] : ''),
+                    (isset($fundingReference['schemeURI']) ? $fundingReference['schemeURI'] : ''),
+                    (isset($fundingReference['awardNumber']) ? $fundingReference['awardNumber'] : ''),
+                    (isset($fundingReference['awardUri']) ? $fundingReference['awardUri'] : ''),
+                    (isset($fundingReference['awardTitle']) ? $fundingReference['awardTitle'] : ''),
+                );
+
+                $dataset->addFundingReference($fundingReferenceInstance);
+            }
+        }
 
         return $dataset;
     }

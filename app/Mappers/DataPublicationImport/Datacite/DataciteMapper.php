@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Mappers\Datacite;
+namespace App\Mappers\DataPublicationImport\Datacite;
 
 use App\Exceptions\MappingException;
-use App\Mappers\Helpers\DataciteCitationHelper;
-use App\Mappers\MapperInterface;
+use App\Mappers\DataPublicationImport\Helpers\DataciteCitationHelper;
+use App\Mappers\DataPublicationImport\MapperInterface;
 use App\Models\Ckan\DataPublication;
 
 class DataciteMapper implements MapperInterface

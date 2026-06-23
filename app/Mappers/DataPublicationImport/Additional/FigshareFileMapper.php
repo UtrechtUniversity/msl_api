@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Mappers\Additional;
+namespace App\Mappers\DataPublicationImport\Additional;
 
-use App\Mappers\Helpers\FigshareFilesHelper;
-use App\Mappers\Helpers\RoCrateHelper;
+use App\Mappers\DataPublicationImport\Helpers\FigshareFilesHelper;
+use App\Mappers\DataPublicationImport\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
 use App\Models\SourceDataset;

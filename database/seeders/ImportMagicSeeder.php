@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Enums\SubDomains\DataPublicationSubDomain;
-use App\Mappers\Additional\AddSubdomainMapper;
-use App\Mappers\Additional\MagicFileMapper;
+use App\Mappers\DataPublicationImport\Additional\AddSubdomainMapper;
+use App\Mappers\DataPublicationImport\Additional\MagicFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;

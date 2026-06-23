@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Mappers;
+namespace App\Mappers\DataPublicationImport;
 
 use App\Exceptions\MappingException;
-use App\Mappers\Datacite\DataciteMapper;
-use App\Mappers\Helpers\KeywordHelper;
+use App\Mappers\DataPublicationImport\Datacite\DataciteMapper;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Importer;
 use App\Models\SourceDataset;

@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Mappers\Helpers\KeywordHelper;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
 use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryKeyword;
 use Illuminate\Bus\Queueable;

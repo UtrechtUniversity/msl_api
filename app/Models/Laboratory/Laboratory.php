@@ -77,7 +77,7 @@ class Laboratory extends Model implements CkanSearchableInterface
         return $this->hasMany(LaboratoryUpdateFast::class, 'laboratory_id');
     }
 
-    public function toSearchableArray()
+    public function toSearchableArray(): array
     {
         return $this->toCkanArray();
     }
@@ -104,10 +104,8 @@ class Laboratory extends Model implements CkanSearchableInterface
 
     /**
      * Convert object to CKAN representation
-     *
-     * @return array
      */
-    public function toCkanArray()
+    public function toCkanArray(): array
     {
         return [
             'title' => $this->name,

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mappers\Helpers;
+namespace App\Mappers\DataPublicationImport\Helpers;
 
 class RoCrateHelper
 {

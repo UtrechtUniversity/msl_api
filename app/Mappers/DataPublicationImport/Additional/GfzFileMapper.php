@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Mappers\Additional;
+namespace App\Mappers\DataPublicationImport\Additional;
 
-use App\Mappers\Helpers\YodaDownloadHelper;
+use App\Mappers\DataPublicationImport\Helpers\GfzDownloadHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\File;
 use App\Models\SourceDataset;
 use Exception;
 
-class YodaFileMapper extends AdditionalMapper
+class GfzFileMapper extends AdditionalMapper
 {
     protected function validateInput(array $args): array
     {
@@ -22,10 +22,10 @@ class YodaFileMapper extends AdditionalMapper
      */
     public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
-        $yodaFileHelper = new YodaDownloadHelper;
+        $yodaFileHelper = new GfzDownloadHelper;
 
         try {
-            $filelist = $yodaFileHelper->getFileList($dataPublication->msl_source);
+            $filelist = $yodaFileHelper->getFiles($dataPublication->msl_source);
         } catch (Exception $e) {
             return $dataPublication;
         }

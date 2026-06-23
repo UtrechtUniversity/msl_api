@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Additional\MagicFileMapper;
+use App\Mappers\DataPublicationImport\Additional\MagicFileMapper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use App\Models\SourceDatasetIdentifier;

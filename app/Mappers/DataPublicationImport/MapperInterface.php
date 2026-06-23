@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mappers;
+namespace App\Mappers\DataPublicationImport;
 
 use App\Models\Ckan\DataPublication;
 
