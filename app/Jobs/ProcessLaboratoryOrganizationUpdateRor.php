@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Clients\Ror\Ror;
 use App\Models\LaboratoryOrganizationUpdateRor;
-use App\Ror\Ror;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

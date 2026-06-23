@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Ror;
+namespace App\Clients\Ror;
 
 use Illuminate\Support\Facades\App;
 
