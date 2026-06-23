@@ -2,7 +2,7 @@
 
 namespace App\Http\Response;
 
-use App\CkanClient\Response\PackageSearchResponse;
+use App\Clients\CkanClient\Response\PackageSearchResponse;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\LengthAwarePaginator;

@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageShowRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Models\Ckan\DataPublication;
 
 class DataPublicationService

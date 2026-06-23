@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
 interface RequestInterface
 {

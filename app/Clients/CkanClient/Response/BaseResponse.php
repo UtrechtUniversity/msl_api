@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CkanClient\Response;
+namespace App\Clients\CkanClient\Response;
 
 use App\Models\Ckan\DataPublication;
 

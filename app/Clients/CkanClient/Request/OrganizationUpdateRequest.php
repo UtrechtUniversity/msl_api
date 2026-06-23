@@ -1,8 +1,8 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
 class OrganizationUpdateRequest implements RequestInterface
 {

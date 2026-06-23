@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\OrganizationListRequest;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Converters\ExcelToJsonConverter;
 use App\Converters\VocabularyToJsonConverter;
 use App\Exports\AbstractMatchingExport;

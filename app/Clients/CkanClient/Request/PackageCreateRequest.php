@@ -1,15 +1,15 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
-class DatasetPurgeRequest implements RequestInterface
+class PackageCreateRequest implements RequestInterface
 {
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private string $endpoint = 'action/dataset_purge';
+    private string $endpoint = 'action/package_create';
 
     /**
      * @var string method of request
@@ -22,16 +22,14 @@ class DatasetPurgeRequest implements RequestInterface
     private string $responseClass = BaseResponse::class;
 
     /**
-     * @var string id of dataset to be removed
+     * @var array data to store
      */
-    public string $id;
+    public array $payload;
 
     public function getPayloadAsArray(): array
     {
         return [
-            'form_params' => [
-                'id' => $this->id,
-            ],
+            'json' => $this->payload,
         ];
     }
 

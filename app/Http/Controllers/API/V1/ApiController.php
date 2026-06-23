@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\API\V1;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Enums\SubDomains\EndpointContext;
 use App\Http\Resources\V1\KeywordResource;
 use App\Models\Keyword;

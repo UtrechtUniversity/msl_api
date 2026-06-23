@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\GeoJson\BoundingBox;
 use App\Http\Resources\V2\Errors\CkanErrorResource;
 use App\Http\Response\DataPublicationResponse;

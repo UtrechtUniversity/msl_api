@@ -2,13 +2,8 @@
 
 namespace App\Jobs;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\DatasetPurgeRequest;
-use App\CkanClient\Request\PackageCreateRequest;
-use App\CkanClient\Request\PackageShowRequest;
-use App\CkanClient\Request\PackageUpdateRequest;
-use App\Models\LaboratoryCreate;
-use App\Scout\CkanSearchableInterface;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\DatasetPurgeRequest;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

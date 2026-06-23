@@ -1,20 +1,20 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
-class PackageUpdateRequest implements RequestInterface
+class PackageShowRequest implements RequestInterface
 {
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private string $endpoint = 'action/package_update';
+    private string $endpoint = 'action/package_show';
 
     /**
      * @var string method of request
      */
-    private string $method = 'POST';
+    private string $method = 'GET';
 
     /**
      * @var string class for creating result object
@@ -22,14 +22,16 @@ class PackageUpdateRequest implements RequestInterface
     private string $responseClass = BaseResponse::class;
 
     /**
-     * @var array data to update
+     * @var string ckan package id
      */
-    public array $payload;
+    public string $id;
 
     public function getPayloadAsArray(): array
     {
         return [
-            'json' => $this->payload,
+            'query' => [
+                'id' => $this->id,
+            ],
         ];
     }
 

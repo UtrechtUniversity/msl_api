@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CkanClient;
+namespace App\Clients\CkanClient;
 
 class SolrUtils
 {

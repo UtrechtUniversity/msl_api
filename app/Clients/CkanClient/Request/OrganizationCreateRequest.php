@@ -1,20 +1,20 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
-class OrganizationShowRequest implements RequestInterface
+class OrganizationCreateRequest implements RequestInterface
 {
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private string $endpoint = 'action/organization_show';
+    private string $endpoint = 'action/organization_create';
 
     /**
      * @var string method of request
      */
-    private string $method = 'GET';
+    private string $method = 'POST';
 
     /**
      * @var string class for creating result object
@@ -22,16 +22,14 @@ class OrganizationShowRequest implements RequestInterface
     private string $responseClass = BaseResponse::class;
 
     /**
-     * @var string ckan package id
+     * @var array data to store
      */
-    public string $id;
+    public array $payload;
 
     public function getPayloadAsArray(): array
     {
         return [
-            'query' => [
-                'id' => $this->id,
-            ],
+            'json' => $this->payload,
         ];
     }
 

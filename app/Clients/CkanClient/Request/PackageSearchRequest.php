@@ -1,9 +1,9 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\PackageSearchResponse;
-use App\CkanClient\SolrUtils;
+use App\Clients\CkanClient\Response\PackageSearchResponse;
+use App\Clients\CkanClient\SolrUtils;
 
 class PackageSearchRequest implements RequestInterface
 {

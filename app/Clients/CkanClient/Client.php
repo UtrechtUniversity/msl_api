@@ -1,8 +1,8 @@
 <?php
 
-namespace App\CkanClient;
+namespace App\Clients\CkanClient;
 
-use App\CkanClient\Request\RequestInterface;
+use App\Clients\CkanClient\Request\RequestInterface;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\TransferException;
 

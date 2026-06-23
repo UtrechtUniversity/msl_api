@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Public;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\CkanClient\Request\PackageShowRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\OrganizationListRequest;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Jobs\ProcessMatomoDownloadTrackingJob;
 use App\Models\Keyword;
@@ -30,7 +30,10 @@ class FrontendController extends Controller
         //$lab->name = 'lab einz';
         //$lab->save();
 
-        //$lab = Laboratory::where('id', 10)->first();
+        //$lab = Laboratory::where('id', 5)->first();
+        //dd($lab);
+
+
         //$lab->name = 'lab einz zwei drei';
         //$lab->save();
         //$lab->delete();

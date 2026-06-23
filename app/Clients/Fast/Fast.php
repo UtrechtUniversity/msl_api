@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Fast;
+namespace App\Clients\Fast;
 
 class Fast
 {

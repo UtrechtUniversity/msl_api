@@ -1,15 +1,15 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
-class PackageShowRequest implements RequestInterface
+class OrganizationShowRequest implements RequestInterface
 {
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private string $endpoint = 'action/package_show';
+    private string $endpoint = 'action/organization_show';
 
     /**
      * @var string method of request

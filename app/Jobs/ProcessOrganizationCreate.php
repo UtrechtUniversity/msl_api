@@ -2,10 +2,10 @@
 
 namespace App\Jobs;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationCreateRequest;
-use App\CkanClient\Request\OrganizationShowRequest;
-use App\CkanClient\Request\OrganizationUpdateRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\OrganizationCreateRequest;
+use App\Clients\CkanClient\Request\OrganizationShowRequest;
+use App\Clients\CkanClient\Request\OrganizationUpdateRequest;
 use App\Models\OrganizationCreate;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

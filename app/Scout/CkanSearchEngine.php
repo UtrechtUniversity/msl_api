@@ -2,18 +2,17 @@
 
 namespace App\Scout;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Jobs\ProcessCkanCreate;
 use App\Jobs\ProcessCkanDelete;
 use App\Jobs\ProcessCkanFlush;
-use Illuminate\Database\Eloquent\Collection;
+use App\Scout\Builder as Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\LazyCollection;
 use Laravel\Scout\Builder as ScoutBuilder;
-use App\Scout\Builder as Builder;
 use Laravel\Scout\Contracts\PaginatesEloquentModels;
 use Laravel\Scout\Engines\Engine;
 use Laravel\Scout\Exceptions\NotSupportedException;

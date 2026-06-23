@@ -1,15 +1,15 @@
 <?php
 
-namespace App\CkanClient\Request;
+namespace App\Clients\CkanClient\Request;
 
-use App\CkanClient\Response\BaseResponse;
+use App\Clients\CkanClient\Response\BaseResponse;
 
-class OrganizationCreateRequest implements RequestInterface
+class PackageUpdateRequest implements RequestInterface
 {
     /**
      * @var string endpoint in CKAN used for this request;
      */
-    private string $endpoint = 'action/organization_create';
+    private string $endpoint = 'action/package_update';
 
     /**
      * @var string method of request
@@ -22,7 +22,7 @@ class OrganizationCreateRequest implements RequestInterface
     private string $responseClass = BaseResponse::class;
 
     /**
-     * @var array data to store
+     * @var array data to update
      */
     public array $payload;
 

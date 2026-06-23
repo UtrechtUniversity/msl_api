@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Public;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageShowRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactLabConfirmationMail;
 use App\Mail\ContactLabSubmissionMail;

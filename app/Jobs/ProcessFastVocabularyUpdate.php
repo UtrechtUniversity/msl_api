@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Fast\Fast;
+use App\Clients\Fast\Fast;
 use App\Models\Keyword;
 use App\Models\Laboratory\LaboratoryContactPerson;
 use App\Models\Laboratory\LaboratoryEquipment;
