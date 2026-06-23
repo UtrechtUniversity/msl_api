@@ -21,12 +21,10 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $laboratoryUpdateGroupFast;
+    protected LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast;
 
     /**
      * Create a new job instance.
-     *
-     * @return void
      */
     public function __construct(LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast)
     {
@@ -35,21 +33,27 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(Fast $fast): void
     {
-        // Remove current data based upon last FAST update
+        // First, delete all existing laboratory data. So it synchs with CKAN.
+        $laboratories = Laboratory::all();
+        foreach ($laboratories as $laboratory) {
+            $laboratory->delete();
+        }
+
+        $equipment = LaboratoryEquipment::all();
+        foreach ($equipment as $equipmentRow) {
+            $equipmentRow->delete();
+        }
+
+        // Truncating will reset primary keys etc. and delete all content. This will however not trigger delete events.
         LaboratoryOrganization::truncate();
         LaboratoryContactPerson::truncate();
         LaboratoryManager::truncate();
         LaboratoryEquipment::truncate();
         LaboratoryEquipmentAddon::truncate();
         Laboratory::truncate();
-
-        // Retrieve all fast lab ids using API
-        $fast = new Fast;
 
         // Retrieve results for facilities with EPOS-MSL tag and process results.
         $facilitiesResult = $fast->facilitiesRequest();
@@ -59,10 +63,8 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
 
     /**
      * Create jobs to process fast API request results. When more pages with results are available process them too.
-     *
-     * @return void
      */
-    private function processResults($result, $fast)
+    private function processResults($result, Fast $fast): void
     {
         if ($result->response_code == 200) {
             if (count($result->response_body['data']) > 0) {

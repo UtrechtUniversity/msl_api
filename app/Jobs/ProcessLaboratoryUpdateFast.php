@@ -22,12 +22,10 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $laboratoryUpdateFast;
+    protected LaboratoryUpdateFast $laboratoryUpdateFast;
 
     /**
      * Create a new job instance.
-     *
-     * @return void
      */
     public function __construct(LaboratoryUpdateFast $laboratoryUpdateFast)
     {
@@ -36,15 +34,12 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(Fast $fast): void
     {
         $lab = new Laboratory;
         $lab->fast_id = $this->laboratoryUpdateFast->laboratory_id;
 
-        $fast = new Fast;
         $result = $fast->facilityRequest($lab->fast_id);
 
         if ($result->response_code == 200) {
@@ -76,7 +71,7 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
             $lab->fast_domain_id = $data['domain']['id'];
             $lab->fast_domain_name = $data['domain']['name'];
 
-            // Save to optain a database id needed in further processing
+            // Save to obtain a database id needed in further processing
             $lab->save();
 
             // include affiliation
@@ -205,8 +200,6 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
 
     /**
      * Attempt to locate keyword based upon equipment group, type and name
-     *
-     * @return int|null
      */
     private function getEquipmentKeyword($equipment)
     {
@@ -244,8 +237,6 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
 
     /**
      * Attempt to locate keyword based on received add-on information
-     *
-     * @return int|null
      */
     private function getAddonKeyword($addon, $equipment)
     {
