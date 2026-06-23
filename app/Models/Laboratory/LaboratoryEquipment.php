@@ -39,6 +39,15 @@ class LaboratoryEquipment extends Model
         'keyword_id',
     ];
 
+    protected static function booted(): void
+    {
+        static::deleting(function (LaboratoryEquipment $equipment) {
+            foreach ($equipment->laboratoryEquipmentAddons() as $addon) {
+                $addon->delete();
+            }
+        });
+    }
+
     public function laboratory(): BelongsTo
     {
         return $this->belongsTo(Laboratory::class);

@@ -46,6 +46,23 @@ class Laboratory extends Model implements CkanSearchableInterface
         'laboratory_manager_id',
     ];
 
+    protected static function booted(): void
+    {
+        static::deleting(function (Laboratory $laboratory) {
+            foreach ($laboratory->laboratoryContactPersons() as $contactPerson) {
+                $contactPerson->delete();
+            }
+
+            foreach ($laboratory->laboratoryEquipment() as $equipment) {
+                $equipment->delete();
+            }
+
+            foreach ($laboratory->laboratoryKeywords() as $keyword) {
+                $keyword->delete();
+            }
+        });
+    }
+
     public function laboratoryOrganization(): BelongsTo
     {
         return $this->belongsTo(LaboratoryOrganization::class, 'laboratory_organization_id');
@@ -108,4 +125,6 @@ class Laboratory extends Model implements CkanSearchableInterface
     {
         return LaboratoryMapper::fromLaboratory($this);
     }
+
+
 }
