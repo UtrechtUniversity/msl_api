@@ -42,7 +42,7 @@ class LaboratoryEquipment extends Model
     protected static function booted(): void
     {
         static::deleting(function (LaboratoryEquipment $equipment) {
-            foreach ($equipment->laboratoryEquipmentAddons() as $addon) {
+            foreach ($equipment->laboratoryEquipmentAddons()->get() as $addon) {
                 $addon->delete();
             }
         });

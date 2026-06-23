@@ -49,15 +49,15 @@ class Laboratory extends Model implements CkanSearchableInterface
     protected static function booted(): void
     {
         static::deleting(function (Laboratory $laboratory) {
-            foreach ($laboratory->laboratoryContactPersons() as $contactPerson) {
+            foreach ($laboratory->laboratoryContactPersons()->get() as $contactPerson) {
                 $contactPerson->delete();
             }
 
-            foreach ($laboratory->laboratoryEquipment() as $equipment) {
+            foreach ($laboratory->laboratoryEquipment()->get() as $equipment) {
                 $equipment->delete();
             }
 
-            foreach ($laboratory->laboratoryKeywords() as $keyword) {
+            foreach ($laboratory->laboratoryKeywords()->get() as $keyword) {
                 $keyword->delete();
             }
         });

@@ -13,6 +13,35 @@ class LaboratoryEquipmentTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_cascading_delete(): void
+    {
+        //LaboratoryEquipment::withoutSyncingToSearch(function () {
+            $equipment = LaboratoryEquipment::createQuietly([
+                'description' => 'Equipment description',
+                'description_html' => '<p>Equipment description</p>',
+                'category_name' => 'cat',
+                'type_name' => 'type',
+                'domain_name' => 'domain',
+                'group_name' => 'group',
+                'brand' => 'brand',
+                'website' => 'https://eq.example.org',
+                'latitude' => '',
+                'longitude' => '',
+                'altitude' => '',
+                'external_identifier' => 'eq-1',
+            ]);
+
+            $addon = $equipment->laboratoryEquipmentAddons()->createQuietly([
+                'description' => 'Addon description',
+                'type' => 'accessory',
+                'group' => 'default',
+            ]);
+
+            $equipment->delete();
+            $this->assertModelMissing($equipment);
+            $this->assertModelMissing($addon);
+        //});
+    }
     public function test_laboratory_relation(): void
     {
         $laboratory = Laboratory::createQuietly([

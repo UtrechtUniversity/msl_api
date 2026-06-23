@@ -16,6 +16,63 @@ class LaboratoryTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_cascading_delete(): void
+    {
+        Laboratory::withoutSyncingToSearch(function () {
+            $laboratory = Laboratory::createQuietly([
+                'msl_identifier' => 'test_lab_1',
+                'lab_portal_name' => 'Portal',
+                'lab_editor_name' => 'Editor',
+                'msl_identifier_inputstring' => 'test_lab_1',
+                'original_domain' => 'example.org',
+                'name' => 'Test Lab',
+                'description' => 'Description',
+                'description_html' => '<p>Description</p>',
+                'website' => 'https://lab.example.org',
+                'address_street_1' => '1 Lab Rd',
+                'address_street_2' => '',
+                'address_postalcode' => '2000BB',
+                'address_city' => 'Utrecht',
+                'address_country_code' => 'NL',
+                'latitude' => '',
+                'longitude' => '',
+                'altitude' => '',
+                'external_identifier' => 'ext-lab-1',
+                'fast_domain_name' => 'domain',
+            ]);
+
+            $contact = $laboratory->laboratoryContactPersons()->createQuietly([
+                'email' => 'contact@example.org',
+            ]);
+
+            $equipment = $laboratory->laboratoryEquipment()->createQuietly([
+                'description' => 'Equipment description',
+                'description_html' => '<p>Equipment description</p>',
+                'category_name' => 'cat',
+                'type_name' => 'type',
+                'domain_name' => 'domain',
+                'group_name' => 'group',
+                'brand' => 'brand',
+                'website' => 'https://eq.example.org',
+                'latitude' => '',
+                'longitude' => '',
+                'altitude' => '',
+                'external_identifier' => 'eq-1',
+            ]);
+
+            $laboratoryKeyword = $laboratory->laboratoryKeywords()->createQuietly([
+                'value' => 'geology',
+                'uri' => 'https://example.org/kw/geology',
+            ]);
+
+            $laboratory->delete();
+
+            $this->assertModelMissing($contact);
+            $this->assertModelMissing($equipment);
+            $this->assertModelMissing($laboratoryKeyword);
+        });
+    }
+
     public function test_create_dispatches_scout_job(): void
     {
         Queue::fake();
