@@ -36,15 +36,11 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
      */
     public function handle(Fast $fast): void
     {
-        // First, delete all existing laboratory data. So it synchs with CKAN.
+        // First, delete all existing laboratory data. So it synchs with CKAN. This should also trigger the deletion
+        // of equipment and its CKAN data.
         $laboratories = Laboratory::all();
         foreach ($laboratories as $laboratory) {
             $laboratory->delete();
-        }
-
-        $equipment = LaboratoryEquipment::all();
-        foreach ($equipment as $equipmentRow) {
-            $equipmentRow->delete();
         }
 
         // Truncating will reset primary keys etc. and delete all content. This will however not trigger delete events.
