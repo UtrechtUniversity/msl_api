@@ -11,6 +11,7 @@ use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateFast;
 use App\Models\LaboratoryUpdateGroupFast;
+use App\Services\FastHarvestingService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -34,8 +35,10 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(Fast $fast): void
+    public function handle(FastHarvestingService $service): void
     {
+        $service->removeExistingData();
+        /*
         // First, delete all existing laboratory data. So it synchs with CKAN. This should also trigger the deletion
         // of equipment and its CKAN data.
         $laboratories = Laboratory::all();
@@ -55,6 +58,7 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
         $facilitiesResult = $fast->facilitiesRequest();
 
         $this->processResults($facilitiesResult, $fast);
+        */
     }
 
     /**

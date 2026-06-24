@@ -48,7 +48,7 @@ class LabController extends Controller
     public function updateFastData(Request $request)
     {
         // Dispatch job to update fast vocabulary
-        ProcessFastVocabularyUpdate::dispatch();
+        //ProcessFastVocabularyUpdate::dispatch();
 
         $laboratoryUpdateGroup = LaboratoryUpdateGroupFast::create();
         ProcessLaboratoryUpdateGroupFast::dispatch($laboratoryUpdateGroup);

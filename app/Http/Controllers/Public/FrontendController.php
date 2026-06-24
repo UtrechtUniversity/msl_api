@@ -30,8 +30,8 @@ class FrontendController extends Controller
         //$lab->name = 'lab einz';
         //$lab->save();
 
-        //$lab = Laboratory::where('id', 5)->first();
-        //dd($lab);
+        $lab = Laboratory::where('id', 5)->first()->touch();
+        dd($lab);
 
 
         //$lab->name = 'lab einz zwei drei';
@@ -340,6 +340,8 @@ class FrontendController extends Controller
         }
 
         $labData = $result->getResult();
+
+        dd($labData);
 
         /**
          * All labs should have a contact person defined with an email address however this is
