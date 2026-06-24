@@ -1,0 +1,79 @@
+#!/bin/sh
+
+spinner() {
+    # PID of the background Pint process
+    pid="$1"
+    # How long the spinner should wait between frames
+    delay=0.1
+    # Characters for spinner animation
+    spin='-\|/'
+#   Wait while the process is processing
+    while kill -0 "$pid" 2>/dev/null; do
+    # Spinner animation
+        c=$(printf "%s" "$spin" | cut -c1)   # take first character
+        printf "\r%s Running Pint..." "$c"
+        # Spinner animation
+        spin=$(printf "%s" "$spin" | cut -c2-)"$(printf "%s" "$spin" | cut -c1)"
+
+        sleep "$delay"
+    done
+
+    printf "\rDone.                     \n"
+}
+
+
+echo "Checking PHP and Blade code style…"
+
+
+# Get relevant staged files 
+# --Cached for seeing the next commit
+# --name-only for gathering only the path of the file and not the code.
+# 
+BLADE_FILES=$(git diff --cached --diff-filter=AM --name-only -- '*.blade.php')
+PHP_FILES=$(git diff --cached --diff-filter=AM --name-only -- '*.php' ':!*.blade.php')
+
+PHP_STATUS=0
+BLADE_STATUS=0
+
+if [ -z "$PHP_FILES" ]; then
+    echo "No staged PHP files to check."
+else
+    # Run Pint in background
+    vendor/bin/pint --quiet $PHP_FILES &
+    # $! is the PID of the most recent background process.
+    spinner $!
+    # Status of spinner which is the status of pint
+    PHP_STATUS=$?
+
+    if [ $PHP_STATUS -eq 0 ]; then
+        printf "\r✔ Pint passed for PHP files!\n"
+        git add $PHP_FILES
+    else
+        printf "\r✖ Pint failed for PHP files.\n"
+    fi
+fi
+
+# Similar procedure for blade files
+if [ -z "$BLADE_FILES" ]; then
+    echo "No staged Blade files to check."
+else
+    ./node_modules/.bin/prettier --write $BLADE_FILES  --log-level warn &
+    spinner $!
+    BLADE_STATUS=$?
+
+    if [ $BLADE_STATUS -eq 0 ]; then
+        printf "\r✔ Prettier passed for Blade files!\n"
+        git add $BLADE_FILES
+    else
+        printf "\r✖ Prettier failed for Blade files.\n"
+    fi
+fi
+
+# if one check failed then exit
+if [ $PHP_STATUS -ne 0 ] || [ $BLADE_STATUS -ne 0 ]; then
+    echo ""
+    echo "✖ Some staged files did not pass formatting checks."
+    exit 1
+fi
+# Else success`!
+exit 0
