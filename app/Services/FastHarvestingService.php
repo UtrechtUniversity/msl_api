@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Clients\Fast\Fast;
+use App\Jobs\ProcessCkanFlush;
 use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryContactPerson;
 use App\Models\Laboratory\LaboratoryEquipment;
@@ -14,20 +15,18 @@ class FastHarvestingService
 {
     public function removeExistingData(): void
     {
-        // Truncating will reset primary keys etc. and delete all content. This will, however, not trigger deleted events.
+        // Truncating will reset primary keys etc. and delete all content. This will, however, not trigger deleted
+        // events and thus not trigger removal from CKAN.
         LaboratoryOrganization::truncate();
         LaboratoryContactPerson::truncate();
         LaboratoryManager::truncate();
         LaboratoryEquipmentAddon::truncate();
-
-        // First, delete all existing laboratory data. So it synchs with CKAN.
-        $laboratories = Laboratory::all();
-        foreach ($laboratories as $laboratory) {
-            $laboratory->delete();
-        }
-
         Laboratory::truncate();
         LaboratoryEquipment::truncate();
+
+        // Flush all laboratory and equipment information from CKAN.
+        ProcessCkanFlush::dispatch('lab');
+        ProcessCkanFlush::dispatch('equipment');
     }
 
     public function processFullLaboratoryUpdate()
