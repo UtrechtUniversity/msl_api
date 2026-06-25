@@ -13,7 +13,7 @@ class LaboratoryMapper
         return [
             'title' => $laboratory->name,
             'type' => 'lab',
-            'name' => (string)$laboratory->id,
+            'name' => (string)$laboratory->getScoutKey(),
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
             'msl_fast_id' => $laboratory->fast_id,
             'msl_description' => $laboratory->description,
@@ -26,7 +26,7 @@ class LaboratoryMapper
             'msl_msl_address_country_code' => $laboratory->address_country_code,
             'msl_address_country_name' => $laboratory->address_country_name,
             'msl_domain_name' => $laboratory->fast_domain_name,
-            'msl_organization_name' => $laboratory->laboratoryOrganization->name,
+            'msl_organization_name' => $laboratory->laboratoryOrganization ? $laboratory->laboratoryOrganization->name : '',
             'msl_latitude' => $laboratory->latitude,
             'msl_longitude' => $laboratory->longitude,
             'msl_altitude' => $laboratory->altitude,

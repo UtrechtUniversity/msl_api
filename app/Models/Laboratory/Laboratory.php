@@ -9,6 +9,7 @@ use App\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Laboratory extends Model implements CkanSearchableInterface
 {
@@ -46,6 +47,14 @@ class Laboratory extends Model implements CkanSearchableInterface
         'laboratory_manager_id',
     ];
 
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::creating(function ($laboratory) {
+            $laboratory->ckan_id = (string) Str::uuid();
+        });
+    }
     protected static function booted(): void
     {
         static::deleting(function (Laboratory $laboratory) {
@@ -100,12 +109,12 @@ class Laboratory extends Model implements CkanSearchableInterface
 
     public function getScoutKey(): mixed
     {
-        return $this->id;
+        return $this->ckan_id;
     }
 
     public function getScoutKeyName(): mixed
     {
-        return 'id';
+        return 'ckan_id';
     }
 
     public function getCkanType(): string
