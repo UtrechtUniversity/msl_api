@@ -41,7 +41,7 @@ class FastHarvestingService
         $this->processFastFacilitiesResults($facilitiesResult, $fast, $laboratoryUpdateGroupFast);
     }
 
-    public function processFacilityUpdate(LaboratoryUpdateFast $laboratoryUpdateFast)
+    public function processFacilityUpdate(LaboratoryUpdateFast $laboratoryUpdateFast): void
     {
         $fast = new Fast;
         $result = $fast->facilityRequest($laboratoryUpdateFast->laboratory_id);
@@ -50,7 +50,9 @@ class FastHarvestingService
             $data = $result->response_body['data'];
             $laboratory = FacilityResponseMapper::mapToLaboratory($data);
 
-            $laboratory->saveQuietly();
+            Laboratory::withoutSyncingToSearch(function () use ($laboratory) {
+                $laboratory->save();
+            });
 
             if (isset($data['affiliation'])) {
                 $organization = LaboratoryOrganization::where('fast_id', $data['affiliation']['id'])->first();
@@ -161,15 +163,12 @@ class FastHarvestingService
                     ]);
 
                     ProcessLaboratoryUpdateFast::dispatch($laboratoryUpdateFast);
-                    break;
                 }
 
-                /*
                 if ($result->response_body['page']['current'] < $result->response_body['page']['last']) {
                     $facilitiesResult = $fast->facilitiesRequest($result->response_body['page']['next']);
-                    $this->processFastFacilitiesResults($facilitiesResult, $fast);
+                    $this->processFastFacilitiesResults($facilitiesResult, $fast, $laboratoryUpdateGroupFast);
                 }
-                */
             }
         }
     }
