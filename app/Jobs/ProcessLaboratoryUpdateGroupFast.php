@@ -2,14 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Clients\Fast\Fast;
-use App\Models\Laboratory\Laboratory;
-use App\Models\Laboratory\LaboratoryContactPerson;
-use App\Models\Laboratory\LaboratoryEquipment;
-use App\Models\Laboratory\LaboratoryEquipmentAddon;
-use App\Models\Laboratory\LaboratoryManager;
-use App\Models\Laboratory\LaboratoryOrganization;
-use App\Models\LaboratoryUpdateFast;
 use App\Models\LaboratoryUpdateGroupFast;
 use App\Services\FastHarvestingService;
 use Illuminate\Bus\Queueable;
@@ -38,50 +30,8 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
     public function handle(FastHarvestingService $service): void
     {
         $service->removeExistingData();
-        /*
-        // First, delete all existing laboratory data. So it synchs with CKAN. This should also trigger the deletion
-        // of equipment and its CKAN data.
-        $laboratories = Laboratory::all();
-        foreach ($laboratories as $laboratory) {
-            $laboratory->delete();
-        }
-
-        // Truncating will reset primary keys etc. and delete all content. This will however not trigger delete events.
-        LaboratoryOrganization::truncate();
-        LaboratoryContactPerson::truncate();
-        LaboratoryManager::truncate();
-        LaboratoryEquipment::truncate();
-        LaboratoryEquipmentAddon::truncate();
-        Laboratory::truncate();
-
-        // Retrieve results for facilities with EPOS-MSL tag and process results.
-        $facilitiesResult = $fast->facilitiesRequest();
-
-        $this->processResults($facilitiesResult, $fast);
-        */
+        $service->retrieveFastData($this->laboratoryUpdateGroupFast);
     }
 
-    /**
-     * Create jobs to process fast API request results. When more pages with results are available process them too.
-     */
-    private function processResults($result, Fast $fast): void
-    {
-        if ($result->response_code == 200) {
-            if (count($result->response_body['data']) > 0) {
-                foreach ($result->response_body['data'] as $data) {
-                    $laboratoryUpdateFast = LaboratoryUpdateFast::create([
-                        'laboratory_update_group_fast_id' => $this->laboratoryUpdateGroupFast->id,
-                        'laboratory_id' => $data['id'],
-                    ]);
 
-                    ProcessLaboratoryUpdateFast::dispatch($laboratoryUpdateFast);
-                }
-
-                if ($result->response_body['page']['current'] < $result->response_body['page']['last']) {
-                    $facilitiesResult = $fast->facilitiesRequest($result->response_body['page']['next']);
-                    $this->processResults($facilitiesResult, $fast);
-                }
-            }
-        }
-    }
 }

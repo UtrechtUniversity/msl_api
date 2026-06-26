@@ -12,6 +12,7 @@ use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateFast;
 use App\Models\Vocabulary;
+use App\Services\FastHarvestingService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -35,167 +36,9 @@ class ProcessLaboratoryUpdateFast implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(Fast $fast): void
+    public function handle(FastHarvestingService $service): void
     {
-        $lab = new Laboratory;
-        $lab->fast_id = $this->laboratoryUpdateFast->laboratory_id;
-
-        $result = $fast->facilityRequest($lab->fast_id);
-
-        if ($result->response_code == 200) {
-            $data = $result->response_body['data'];
-
-            $lab->name = $data['name'];
-            $lab->description = $data['description'];
-            $lab->description_html = '';
-            if (isset($data['description_html'])) {
-                $lab->description_html = $data['description_html'];
-            }
-
-            $lab->website = $data['website'];
-            $lab->address_street_1 = $data['address_street_1'];
-            $lab->address_street_2 = $data['address_street_2'];
-            $lab->address_postalcode = $data['address_postcode'];
-            $lab->address_city = $data['address_city'];
-            $lab->address_country_code = $data['address_country_code'];
-            $lab->address_country_name = $data['address_country']['name'];
-            $lab->latitude = $data['gps_latitude'];
-            $lab->longitude = $data['gps_longitude'];
-            $lab->altitude = $data['gps_altitude'];
-            $lab->external_identifier = $data['external_identifier'];
-            $lab->msl_identifier = md5($lab->fast_id);
-            $lab->lab_portal_name = '';
-            $lab->lab_editor_name = '';
-            $lab->msl_identifier_inputstring = '';
-            $lab->original_domain = '';
-            $lab->fast_domain_id = $data['domain']['id'];
-            $lab->fast_domain_name = $data['domain']['name'];
-
-            // Save to obtain a database id needed in further processing
-            $lab->save();
-
-            // include affiliation
-            if (isset($data['affiliation'])) {
-                $fastAffiliationId = $data['affiliation']['id'];
-                $organization = LaboratoryOrganization::where('fast_id', $fastAffiliationId)->first();
-
-                if (! $organization) {
-                    $organization = new LaboratoryOrganization;
-                    $organization->fast_id = $data['affiliation']['id'];
-                }
-
-                $organization->name = $data['affiliation']['name'];
-
-                $organization->external_identifier = '';
-                if (isset($data['affiliation']['external_identifier'])) {
-                    $organization->external_identifier = $data['affiliation']['external_identifier'];
-                }
-
-                $organization->save();
-
-                $lab->laboratory_organization_id = $organization->id;
-            }
-
-            // include contact persons
-            if (isset($data['contact_persons'])) {
-                foreach ($data['contact_persons'] as $contactPersonEmail) {
-                    $contactPerson = new LaboratoryContactPerson;
-                    $contactPerson->email = $contactPersonEmail;
-                    $contactPerson->laboratory_id = $lab->id;
-                    $contactPerson->save();
-                }
-            }
-
-            // include manager
-            if (isset($data['manager'])) {
-                $fastManagerId = $data['manager']['id'];
-                $manager = LaboratoryManager::where('fast_id', $fastManagerId)->first();
-
-                if (! $manager) {
-                    $manager = new LaboratoryManager;
-                    $manager->fast_id = $data['manager']['id'];
-                }
-
-                $manager->email = $data['manager']['email'];
-                $manager->first_name = $data['manager']['first_name'];
-                $manager->last_name = $data['manager']['last_name'];
-                $manager->orcid = $data['manager']['orcid'];
-                $manager->address_street_1 = $data['manager']['address_street_1'];
-                $manager->address_street_2 = $data['manager']['address_street_2'];
-                $manager->address_postalcode = $data['manager']['address_postcode'];
-                $manager->address_city = $data['manager']['address_city'];
-                $manager->address_country_code = $data['manager']['address_country']['code'];
-                $manager->address_country_name = $data['manager']['address_country']['name'];
-                $manager->affiliation_fast_id = $data['manager']['affiliation_id'];
-                $manager->nationality_code = $data['manager']['nationality']['code'];
-                $manager->nationality_name = $data['manager']['nationality']['name'];
-
-                $manager->save();
-                $lab->laboratory_manager_id = $manager->id;
-            }
-
-            // include equipment
-            if (isset($data['equipment'])) {
-                foreach ($data['equipment'] as $fastEquipment) {
-                    $equipment = new LaboratoryEquipment;
-
-                    $equipment->fast_id = $fastEquipment['id'];
-                    $equipment->laboratory_id = $lab->id;
-                    $equipment->description = $fastEquipment['description'];
-
-                    $equipment->description_html = '';
-                    if (isset($fastEquipment['description_html'])) {
-                        $equipment->description_html = $fastEquipment['description_html'];
-                    }
-
-                    $equipment->category_name = $fastEquipment['category']['name'];
-                    $equipment->type_name = $fastEquipment['type']['name'];
-                    $equipment->domain_name = $fastEquipment['type']['domain']['name'];
-                    $equipment->group_name = $fastEquipment['group']['name'];
-                    $equipment->brand = $fastEquipment['brand'];
-                    $equipment->website = $fastEquipment['website'];
-                    $equipment->latitude = $fastEquipment['gps_latitude'];
-                    $equipment->longitude = $fastEquipment['gps_longitude'];
-                    $equipment->altitude = $fastEquipment['gps_altitude'];
-
-                    $equipment->external_identifier = '';
-                    if (isset($fastEquipment['external_identifier'])) {
-                        $equipment->external_identifier = $fastEquipment['external_identifier'];
-                    }
-
-                    $equipment->name = $fastEquipment['name']['name'];
-
-                    // create reference to keyword
-                    $equipment->keyword_id = $this->getEquipmentKeyword($equipment);
-
-                    $equipment->save();
-
-                    // add addons
-                    foreach ($fastEquipment['addons'] as $addon) {
-                        $laboratoryEquipmentAddon = new LaboratoryEquipmentAddon;
-                        if (isset($addon['description'])) {
-                            $laboratoryEquipmentAddon->description = $addon['description'];
-                            $laboratoryEquipmentAddon->laboratory_equipment_id = $equipment->id;
-                            $laboratoryEquipmentAddon->type = $addon['type']['name'];
-                            $laboratoryEquipmentAddon->group = $addon['group']['name'];
-                            $laboratoryEquipmentAddon->keyword_id = $this->getAddonKeyword($laboratoryEquipmentAddon, $equipment);
-
-                            $laboratoryEquipmentAddon->save();
-                        }
-                    }
-                }
-            }
-
-            $lab->save();
-
-            $this->laboratoryUpdateFast->response_code = $result->response_code;
-            $this->laboratoryUpdateFast->source_laboratory_data = $data;
-            $this->laboratoryUpdateFast->save();
-        } else {
-            $this->laboratoryUpdateFast->response_code = $result->response_code;
-            $this->laboratoryUpdateFast->save();
-        }
-
+        $service->processFacilityUpdate($this->laboratoryUpdateFast);
     }
 
     /**
