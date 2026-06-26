@@ -35,13 +35,6 @@ class ProcessFastVocabularyUpdate implements ShouldQueue
      */
     public function handle()
     {
-        // Remove current data based upon last FAST update
-        LaboratoryOrganization::truncate();
-        LaboratoryContactPerson::truncate();
-        LaboratoryManager::truncate();
-        LaboratoryEquipment::truncate();
-        LaboratoryEquipmentAddon::truncate();
-
         // Create a new equipment vocabulary based upon current FAST data
         // Delete current equipment vocabulary
         $currentVocab = Vocabulary::where('name', 'fast')->where('version', '1.0')->first();

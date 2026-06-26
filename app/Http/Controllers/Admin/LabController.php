@@ -14,6 +14,7 @@ use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
 use App\Models\LaboratoryUpdateGroupFast;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Bus;
 use Maatwebsite\Excel\Facades\Excel;
 
 class LabController extends Controller
@@ -47,11 +48,13 @@ class LabController extends Controller
 
     public function updateFastData(Request $request)
     {
-        // Dispatch job to update fast vocabulary
-        //ProcessFastVocabularyUpdate::dispatch();
-
         $laboratoryUpdateGroup = LaboratoryUpdateGroupFast::create();
-        ProcessLaboratoryUpdateGroupFast::dispatch($laboratoryUpdateGroup);
+
+        // Dispatch jobs in a chain for ordering later added tasks
+        Bus::chain([
+            new ProcessFastVocabularyUpdate,
+            new ProcessLaboratoryUpdateGroupFast($laboratoryUpdateGroup)
+        ])->dispatch();
 
         $request->session()->flash('status', 'Updating using Fast started');
 

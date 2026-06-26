@@ -4,6 +4,8 @@ namespace App\Mappers\Fast;
 
 use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryContactPerson;
+use App\Models\Laboratory\LaboratoryEquipment;
+use App\Models\Laboratory\LaboratoryEquipmentAddon;
 use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 
@@ -38,6 +40,39 @@ class FacilityResponseMapper
         $laboratory->fast_domain_name = $data['domain']['name'];
 
         return $laboratory;
+    }
+
+    public static function mapToEquipment(array $data): LaboratoryEquipment
+    {
+        $equipment = new LaboratoryEquipment();
+
+        $equipment->fast_id = $data['id'];
+        $equipment->description = $data['description'];
+        $equipment->description_html = $data['description_html'] ?? '';;
+        $equipment->category_name = $data['category']['name'];
+        $equipment->type_name = $data['type']['name'];
+        $equipment->domain_name = $data['type']['domain']['name'];
+        $equipment->group_name = $data['group']['name'];
+        $equipment->brand = $data['brand'];
+        $equipment->website = $data['website'];
+        $equipment->latitude = $data['gps_latitude'];
+        $equipment->longitude = $data['gps_longitude'];
+        $equipment->altitude = $data['gps_altitude'];
+        $equipment->external_identifier = $data['external_identifier'] ?? '';
+        $equipment->name = $data['name']['name'];
+
+        return $equipment;
+    }
+
+    public static function mapToEquipmentAddon(array $data): LaboratoryEquipmentAddon
+    {
+        $equipmentAddon = new LaboratoryEquipmentAddon();
+
+        $equipmentAddon->description = $data['description'];
+        $equipmentAddon->type = $data['type']['name'];
+        $equipmentAddon->group = $data['group']['name'];
+
+        return $equipmentAddon;
     }
 
     public static function mapToOrganization(array $data): LaboratoryOrganization

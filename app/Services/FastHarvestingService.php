@@ -5,7 +5,9 @@ namespace App\Services;
 use App\Clients\Fast\Fast;
 use App\Jobs\ProcessCkanFlush;
 use App\Jobs\ProcessLaboratoryUpdateFast;
+use App\Jobs\ProcessLaboratoryUpdateGroupFast;
 use App\Mappers\Fast\FacilityResponseMapper;
+use App\Models\Keyword;
 use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryContactPerson;
 use App\Models\Laboratory\LaboratoryEquipment;
@@ -14,10 +16,13 @@ use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateFast;
 use App\Models\LaboratoryUpdateGroupFast;
+use App\Models\Vocabulary;
+use Illuminate\Contracts\Queue\Job;
+use Illuminate\Contracts\Queue\QueueableEntity;
 
 class FastHarvestingService
 {
-    public function removeExistingData(): void
+    public function removeExistingData(ProcessLaboratoryUpdateGroupFast $job): void
     {
         // Truncating will reset primary keys etc. and delete all content. This will, however, not trigger deleted
         // events and thus not trigger removal from CKAN.
@@ -29,19 +34,23 @@ class FastHarvestingService
         LaboratoryEquipment::truncate();
 
         // Flush all laboratory and equipment information from CKAN.
-        ProcessCkanFlush::dispatch('lab');
-        ProcessCkanFlush::dispatch('equipment');
+        // Prepend to queue to ensure that the flush is executed before the next job.
+        $job->prependToChain(new ProcessCkanFlush('lab'));
+        $job->prependToChain(new ProcessCkanFlush('equipment'));
+
+        //ProcessCkanFlush::dispatch('lab');
+        //ProcessCkanFlush::dispatch('equipment');
     }
 
-    public function retrieveFastData(LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast): void
+    public function retrieveFastData(ProcessLaboratoryUpdateGroupFast $job): void
     {
         $fast = new Fast;
         $facilitiesResult = $fast->facilitiesRequest();
 
-        $this->processFastFacilitiesResults($facilitiesResult, $fast, $laboratoryUpdateGroupFast);
+        $this->processFastFacilitiesResults($facilitiesResult, $fast, $job);
     }
 
-    public function processFacilityUpdate(LaboratoryUpdateFast $laboratoryUpdateFast): void
+    public function processFacilityUpdate($laboratoryUpdateFast): void
     {
         $fast = new Fast;
         $result = $fast->facilityRequest($laboratoryUpdateFast->laboratory_id);
@@ -85,59 +94,35 @@ class FastHarvestingService
                 }
             }
 
-            /*
-            // include equipment
             if (isset($data['equipment'])) {
                 foreach ($data['equipment'] as $fastEquipment) {
-                    $equipment = new LaboratoryEquipment;
+                    $equipment = FacilityResponseMapper::mapToEquipment($fastEquipment);
 
-                    $equipment->fast_id = $fastEquipment['id'];
-                    $equipment->laboratory_id = $lab->id;
-                    $equipment->description = $fastEquipment['description'];
-
-                    $equipment->description_html = '';
-                    if (isset($fastEquipment['description_html'])) {
-                        $equipment->description_html = $fastEquipment['description_html'];
+                    $keyword = $this->getEquipmentKeyword($equipment);
+                    if ($keyword) {
+                        $equipment->keyword()->associate($keyword);
                     }
 
-                    $equipment->category_name = $fastEquipment['category']['name'];
-                    $equipment->type_name = $fastEquipment['type']['name'];
-                    $equipment->domain_name = $fastEquipment['type']['domain']['name'];
-                    $equipment->group_name = $fastEquipment['group']['name'];
-                    $equipment->brand = $fastEquipment['brand'];
-                    $equipment->website = $fastEquipment['website'];
-                    $equipment->latitude = $fastEquipment['gps_latitude'];
-                    $equipment->longitude = $fastEquipment['gps_longitude'];
-                    $equipment->altitude = $fastEquipment['gps_altitude'];
+                    $equipment->laboratory()->associate($laboratory);
 
-                    $equipment->external_identifier = '';
-                    if (isset($fastEquipment['external_identifier'])) {
-                        $equipment->external_identifier = $fastEquipment['external_identifier'];
-                    }
+                    LaboratoryEquipment::withoutSyncingToSearch(function () use ($equipment) {
+                        $equipment->save(['touch' => false]);
+                    });
 
-                    $equipment->name = $fastEquipment['name']['name'];
-
-                    // create reference to keyword
-                    $equipment->keyword_id = $this->getEquipmentKeyword($equipment);
-
-                    $equipment->save();
-
-                    // add addons
                     foreach ($fastEquipment['addons'] as $addon) {
-                        $laboratoryEquipmentAddon = new LaboratoryEquipmentAddon;
                         if (isset($addon['description'])) {
-                            $laboratoryEquipmentAddon->description = $addon['description'];
-                            $laboratoryEquipmentAddon->laboratory_equipment_id = $equipment->id;
-                            $laboratoryEquipmentAddon->type = $addon['type']['name'];
-                            $laboratoryEquipmentAddon->group = $addon['group']['name'];
-                            $laboratoryEquipmentAddon->keyword_id = $this->getAddonKeyword($laboratoryEquipmentAddon, $equipment);
+                            $laboratoryEquipmentAddon = FacilityResponseMapper::mapToEquipmentAddon($addon);
 
-                            $laboratoryEquipmentAddon->save();
+                            $laboratoryEquipmentAddon->keyword()->associate($this->getAddonKeyword($laboratoryEquipmentAddon, $equipment));
+
+                            $equipment->laboratoryEquipmentAddons()->saveQuietly($laboratoryEquipmentAddon);
                         }
                     }
+
+                    $equipment->save(['touch' => false]);
                 }
             }
-            */
+
 
             $laboratory->save();
 
@@ -152,25 +137,100 @@ class FastHarvestingService
 
     }
 
-    private function processFastFacilitiesResults($result, Fast $fast, LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast): void
+    private function processFastFacilitiesResults($result, Fast $fast, ProcessLaboratoryUpdateGroupFast $job): void
     {
         if ($result->response_code == 200) {
             if (count($result->response_body['data']) > 0) {
                 foreach ($result->response_body['data'] as $data) {
                     $laboratoryUpdateFast = LaboratoryUpdateFast::create([
-                        'laboratory_update_group_fast_id' => $laboratoryUpdateGroupFast->id,
+                        'laboratory_update_group_fast_id' => $job->laboratoryUpdateGroupFast->id,
                         'laboratory_id' => $data['id'],
                     ]);
 
-                    ProcessLaboratoryUpdateFast::dispatch($laboratoryUpdateFast);
+                    $job->appendToChain(new ProcessLaboratoryUpdateFast($laboratoryUpdateFast));
                 }
 
                 if ($result->response_body['page']['current'] < $result->response_body['page']['last']) {
                     $facilitiesResult = $fast->facilitiesRequest($result->response_body['page']['next']);
-                    $this->processFastFacilitiesResults($facilitiesResult, $fast, $laboratoryUpdateGroupFast);
+                    $this->processFastFacilitiesResults($facilitiesResult, $fast, $job);
                 }
             }
         }
+    }
+
+    /**
+     * Attempt to locate keyword based upon equipment group, type and name
+     */
+    private function getEquipmentKeyword(LaboratoryEquipment $equipment): ?Keyword
+    {
+        $vocabulary = Vocabulary::where('name', 'fast')->where('version', '1.0')->first();
+
+        // Get keywords that match based on the name value of the equipment
+        $nameKeywords = Keyword::where('vocabulary_id', $vocabulary->id)->where('value', $equipment->name)->get();
+
+        /**
+         * If we find 1 match we can assume the correct keyword is found. Otherwise traverse the vocabulary up
+         * and check parent keywords to see if we found the correct one.
+         */
+        if ($nameKeywords->count() == 0) {
+            return null;
+        } elseif ($nameKeywords->count() == 1) {
+            return $nameKeywords->first();
+        } else {
+            foreach ($nameKeywords as $nameKeyword) {
+                $GroupKeyword = $nameKeyword->parent;
+                if ($GroupKeyword->value == $equipment->group_name) {
+                    $typeKeyword = $GroupKeyword->parent;
+                    if ($typeKeyword->value == $equipment->type_name) {
+                        $nodeKeyword = $typeKeyword->parent;
+                        if ($nodeKeyword->value == 'Equipment') {
+                            $domainKeyword = $nodeKeyword->parent;
+                            if ($domainKeyword->value == $equipment->domain_name) {
+                                return $nameKeyword;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Attempt to locate keyword based on received add-on information
+     */
+    private function getAddonKeyword(LaboratoryEquipmentAddon $addon, LaboratoryEquipment $equipment): ?Keyword
+    {
+        $vocabulary = Vocabulary::where('name', 'fast')->where('version', '1.0')->first();
+
+        // Get keywords that match based on the group value of the equipment
+        $groupKeywords = Keyword::where('vocabulary_id', $vocabulary->id)->where('value', $addon->group)->get();
+
+        /**
+         * If we find 1 match we can assume the correct keyword is found. Otherwise traverse the vocabulary up
+         * and check parent keywords to see if we found the correct one.
+         */
+        if ($groupKeywords->count() == 0) {
+            return null;
+        } elseif ($groupKeywords->count() == 1) {
+            return $groupKeywords->first();
+        } else {
+            foreach ($groupKeywords as $groupKeyword) {
+                $typeKeyword = $groupKeyword->parent;
+                if ($typeKeyword->value == $addon->type) {
+                    $nodeKeyword = $typeKeyword->parent;
+                    if ($nodeKeyword->value == 'Add-ons') {
+                        $domainKeyword = $nodeKeyword->parent;
+                        if ($domainKeyword->value == $equipment->domain_name) {
+                            return $groupKeyword;
+                        }
+                    }
+                }
+            }
+        }
+
+        return null;
     }
 
 }

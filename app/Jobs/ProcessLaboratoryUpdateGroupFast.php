@@ -14,7 +14,7 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast;
+    public LaboratoryUpdateGroupFast $laboratoryUpdateGroupFast;
 
     /**
      * Create a new job instance.
@@ -29,8 +29,8 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
      */
     public function handle(FastHarvestingService $service): void
     {
-        $service->removeExistingData();
-        $service->retrieveFastData($this->laboratoryUpdateGroupFast);
+        $service->removeExistingData($this);
+        $service->retrieveFastData($this);
     }
 
 
