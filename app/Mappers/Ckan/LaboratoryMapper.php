@@ -12,7 +12,7 @@ class LaboratoryMapper
     {
         return [
             'title' => $laboratory->name,
-            'type' => 'lab',
+            'type' => $laboratory->getCkanType(),
             'name' => (string)$laboratory->getScoutKey(),
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
             'msl_fast_id' => $laboratory->fast_id,
@@ -31,7 +31,7 @@ class LaboratoryMapper
             'msl_longitude' => $laboratory->longitude,
             'msl_altitude' => $laboratory->altitude,
             'msl_location' => self::getGeoJsonFeature($laboratory),
-            'msl_has_spatial_data' => self::hasSpatialData($laboratory),
+            'msl_has_spatial_data' => $laboratory->hasSpatialData(),
             'msl_laboratory_equipment' => self::getLimitedEquipment($laboratory),
             'extras' => [
                 ['key' => 'spatial', 'value' => self::getPointGeoJson($laboratory)],
@@ -71,7 +71,7 @@ class LaboratoryMapper
      */
     public static function getPointGeoJson(Laboratory $laboratory): string
     {
-        if (self::hasSpatialData($laboratory)) {
+        if ($laboratory->hasSpatialData()) {
             return json_encode(
                 new Point((float) $laboratory->longitude, (float) $laboratory->latitude)
             );
@@ -85,13 +85,13 @@ class LaboratoryMapper
      */
     private static function getGeoJsonFeature(Laboratory $laboratory): string
     {
-        if (self::hasSpatialData($laboratory)) {
+        if ($laboratory->hasSpatialData()) {
             return json_encode(
                 new Feature(
                     new Point((float) $laboratory->longitude, (float) $laboratory->latitude),
                     [
                         'title' => $laboratory->name,
-                        'name' => $laboratory->msl_identifier,
+                        'name' => (string)$laboratory->getScoutKey(),
                         'msl_id' => $laboratory->id,
                         'msl_organization_name' => $laboratory->laboratoryOrganization->name,
                         'msl_domain_name' => $laboratory->fast_domain_name,
@@ -101,17 +101,5 @@ class LaboratoryMapper
         }
 
         return '';
-    }
-
-    /**
-     * check if the laboratory has spatial data
-     */
-    public static function hasSpatialData(Laboratory $laboratory): bool
-    {
-        if ((strlen($laboratory->latitude) > 0) && (strlen($laboratory->longitude) > 0)) {
-            return true;
-        }
-
-        return false;
     }
 }

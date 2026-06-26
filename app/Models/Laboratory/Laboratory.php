@@ -127,4 +127,16 @@ class Laboratory extends Model implements CkanSearchableInterface
         return 'name';
     }
 
+    /**
+     * check if the laboratory has spatial data
+     */
+    public function hasSpatialData(): bool
+    {
+        if ((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
+            return true;
+        }
+
+        return false;
+    }
+
 }
