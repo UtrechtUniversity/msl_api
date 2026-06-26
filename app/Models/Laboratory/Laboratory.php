@@ -104,7 +104,7 @@ class Laboratory extends Model implements CkanSearchableInterface
 
     public function toSearchableArray(): array
     {
-        return $this->toCkanArray();
+        return LaboratoryMapper::fromLaboratory($this);
     }
 
     public function getScoutKey(): mixed
@@ -126,14 +126,5 @@ class Laboratory extends Model implements CkanSearchableInterface
     {
         return 'name';
     }
-
-    /**
-     * Convert object to CKAN representation
-     */
-    public function toCkanArray(): array
-    {
-        return LaboratoryMapper::fromLaboratory($this);
-    }
-
 
 }
