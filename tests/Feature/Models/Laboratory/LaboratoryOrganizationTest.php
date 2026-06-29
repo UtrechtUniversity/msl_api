@@ -19,7 +19,7 @@ class LaboratoryOrganizationTest extends TestCase
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = $organization->laboratories()->createQuietly([
+        $laboratory = $organization->laboratories()->create([
             'msl_identifier' => 'lab_under_org',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',

@@ -14,7 +14,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
 
     public function test_laboratory_equipment_relation(): void
     {
-        $equipment = LaboratoryEquipment::createQuietly([
+        $equipment = LaboratoryEquipment::create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -41,7 +41,7 @@ class LaboratoryEquipmentAddonTest extends TestCase
 
     public function test_keyword_relation(): void
     {
-        $equipment = LaboratoryEquipment::createQuietly([
+        $equipment = LaboratoryEquipment::create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',

@@ -19,7 +19,7 @@ class LaboratoryTest extends TestCase
     public function test_cascading_delete(): void
     {
         Laboratory::withoutSyncingToSearch(function () {
-            $laboratory = Laboratory::createQuietly([
+            $laboratory = Laboratory::create([
                 'msl_identifier' => 'test_lab_1',
                 'lab_portal_name' => 'Portal',
                 'lab_editor_name' => 'Editor',
@@ -45,7 +45,7 @@ class LaboratoryTest extends TestCase
                 'email' => 'contact@example.org',
             ]);
 
-            $equipment = $laboratory->laboratoryEquipment()->createQuietly([
+            $equipment = $laboratory->laboratoryEquipment()->create([
                 'description' => 'Equipment description',
                 'description_html' => '<p>Equipment description</p>',
                 'category_name' => 'cat',
@@ -119,7 +119,7 @@ class LaboratoryTest extends TestCase
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'laboratory_organization_id' => $organization->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -157,7 +157,7 @@ class LaboratoryTest extends TestCase
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'laboratory_organization_id' => $organization->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -192,7 +192,7 @@ class LaboratoryTest extends TestCase
             'external_identifier' => 'ext-org-1',
         ]);
 
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'laboratory_organization_id' => $organization->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -221,7 +221,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_contact_persons_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -269,7 +269,7 @@ class LaboratoryTest extends TestCase
             'nationality_name' => 'Dutch',
         ]);
 
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'laboratory_manager_id' => $manager->id,
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
@@ -298,7 +298,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_equipment_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -320,7 +320,7 @@ class LaboratoryTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $equipment = $laboratory->laboratoryEquipment()->createQuietly([
+        $equipment = $laboratory->laboratoryEquipment()->create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -341,7 +341,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_keywords_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -374,7 +374,7 @@ class LaboratoryTest extends TestCase
 
     public function test_laboratory_updates_fast_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',

@@ -14,8 +14,7 @@ class LaboratoryUpdateGroupFastTest extends TestCase
     public function test_laboratory_updates_fast_relation(): void
     {
         $laboratory =
-        //Laboratory::withoutEvents(function () {
-            Laboratory::createQuietly([
+            Laboratory::create([
                 'msl_identifier' => 'test_lab_1',
                 'lab_portal_name' => 'Portal',
                 'lab_editor_name' => 'Editor',
@@ -36,7 +35,6 @@ class LaboratoryUpdateGroupFastTest extends TestCase
                 'external_identifier' => 'ext-lab-1',
                 'fast_domain_name' => 'domain',
             ]);
-        //});
 
         $group = LaboratoryUpdateGroupFast::create([]);
 

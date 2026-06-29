@@ -16,7 +16,7 @@ class LaboratoryEquipmentTest extends TestCase
     public function test_cascading_delete(): void
     {
         //LaboratoryEquipment::withoutSyncingToSearch(function () {
-            $equipment = LaboratoryEquipment::createQuietly([
+            $equipment = LaboratoryEquipment::create([
                 'description' => 'Equipment description',
                 'description_html' => '<p>Equipment description</p>',
                 'category_name' => 'cat',
@@ -44,7 +44,7 @@ class LaboratoryEquipmentTest extends TestCase
     }
     public function test_laboratory_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
@@ -66,7 +66,7 @@ class LaboratoryEquipmentTest extends TestCase
             'fast_domain_name' => 'domain',
         ]);
 
-        $equipment = $laboratory->laboratoryEquipment()->createQuietly([
+        $equipment = $laboratory->laboratoryEquipment()->create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -100,7 +100,7 @@ class LaboratoryEquipmentTest extends TestCase
             'label' => 'Widget',
         ]);
 
-        $equipment = LaboratoryEquipment::createQuietly([
+        $equipment = LaboratoryEquipment::create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',
@@ -122,7 +122,7 @@ class LaboratoryEquipmentTest extends TestCase
 
     public function test_laboratory_equipment_addons_relation(): void
     {
-        $equipment = LaboratoryEquipment::createQuietly([
+        $equipment = LaboratoryEquipment::create([
             'description' => 'Equipment description',
             'description_html' => '<p>Equipment description</p>',
             'category_name' => 'cat',

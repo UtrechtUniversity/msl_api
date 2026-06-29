@@ -28,7 +28,7 @@ class LaboratoryManagerTest extends TestCase
             'nationality_name' => 'Dutch',
         ]);
 
-        $laboratory = $manager->laboratories()->createQuietly([
+        $laboratory = $manager->laboratories()->create([
             'msl_identifier' => 'lab_under_manager',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',

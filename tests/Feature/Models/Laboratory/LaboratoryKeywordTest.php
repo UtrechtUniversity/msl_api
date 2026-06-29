@@ -12,7 +12,7 @@ class LaboratoryKeywordTest extends TestCase
 
     public function test_laboratory_relation(): void
     {
-        $laboratory = Laboratory::createQuietly([
+        $laboratory = Laboratory::create([
             'msl_identifier' => 'test_lab_1',
             'lab_portal_name' => 'Portal',
             'lab_editor_name' => 'Editor',
