@@ -8,6 +8,7 @@ use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Keyword;
 use App\Models\Laboratory\Laboratory;
+use App\Services\LaboratoryService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
@@ -16,8 +17,24 @@ class LabController extends Controller
     /**
      * Show the lab list page
      */
-    public function list(Request $request)
+    public function list(Request $request, LaboratoryService $service)
     {
+        $searchResults = $service->search($request);
+
+        //dd($searchResults);
+
+        return view('public.labs-list', [
+            'facets' => $searchResults->getCollection()->searchFacets,
+            'totalResultsCount' => $searchResults->total(),
+            'laboratories' => $searchResults->items(),
+            'paginator' => $searchResults,
+            'activeFilters' => $service->getActiveFilters($request),
+            'activeFiltersFrontend' => $service->getActiveFiltersFrontend($request),
+            'queryParams' => $request->query(),
+        ]);
+
+
+
         $resultsPerPage = 20;
 
         $client = new Client;
@@ -108,7 +125,15 @@ class LabController extends Controller
 
         $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
 
-        return view('public.labs-list', ['facets' => $result->getFacets(), 'totalResultsCount' => $result->getTotalResultsCount(), 'laboratories' => $result->getResults(), 'paginator' => $paginator, 'activeFilters' => $activeFilters, 'activeFiltersFrontend' => $activeFiltersFrontend, 'queryParams' => $request->query()]);
+        return view('public.labs-list', [
+            'facets' => $result->getFacets(),
+            'totalResultsCount' => $result->getTotalResultsCount(),
+            'laboratories' => $result->getResults(),
+            'paginator' => $paginator,
+            'activeFilters' => $activeFilters,
+            'activeFiltersFrontend' => $activeFiltersFrontend,
+            'queryParams' => $request->query()
+        ]);
     }
 
     /**
@@ -141,7 +166,12 @@ class LabController extends Controller
             $locations[] = json_decode($labData['msl_location']);
         }
 
-        return view('public.labs-map', ['facets' => $result->getFacets(), 'locations' => $locations, 'result' => $result, 'activeFilters' => $activeFilters]);
+        return view('public.labs-map', [
+            'facets' => $result->getFacets(),
+            'locations' => $locations,
+            'result' => $result,
+            'activeFilters' => $activeFilters
+        ]);
     }
 
     /**
@@ -158,7 +188,10 @@ class LabController extends Controller
             $labHasMailContact = $contactPersons->first()->hasValidEmail();
         }
 
-        return view('public.lab-detail', ['laboratory' => $laboratory, 'labHasMailContact' => $labHasMailContact]);
+        return view('public.lab-detail', [
+            'laboratory' => $laboratory,
+            'labHasMailContact' => $labHasMailContact
+        ]);
     }
 
     /**
@@ -166,6 +199,16 @@ class LabController extends Controller
      */
     public function detailEquipment($id)
     {
+        // @todo first the equipment page has to be redone to use correct id linking
+
+        $laboratory = Laboratory::where('ckan_id', $id)->firstOrFail();
+
+        return view('public.lab-detail-equipment', [
+            'laboratory' => $laboratory,
+            'ckanLabName' => '???',
+            'equipment' => $laboratory->equipment
+        ]);
+
         $client = new Client;
         $SearchRequest = new PackageSearchRequest;
         $SearchRequest->addFilterQuery('type', 'equipment');
@@ -190,7 +233,11 @@ class LabController extends Controller
             abort(404, 'ckan request failed');
         }
 
-        return view('public.lab-detail-equipment', ['laboratory' => $Labresult->getResult(true), 'ckanLabName' => $id, 'equipment' => $equipment]);
+        return view('public.lab-detail-equipment', [
+            'laboratory' => $Labresult->getResult(true),
+            'ckanLabName' => $id,
+            'equipment' => $equipment
+        ]);
     }
 
     /**
