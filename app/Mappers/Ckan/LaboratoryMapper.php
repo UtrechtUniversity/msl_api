@@ -30,7 +30,7 @@ class LaboratoryMapper
             'msl_latitude' => $laboratory->latitude,
             'msl_longitude' => $laboratory->longitude,
             'msl_altitude' => $laboratory->altitude,
-            'msl_location' => self::getGeoJsonFeature($laboratory),
+            'msl_location' => $laboratory->getGeoJsonFeature(),
             'msl_has_spatial_data' => $laboratory->hasSpatialData(),
             'msl_laboratory_equipment' => self::getLimitedEquipment($laboratory),
             'extras' => [
@@ -74,29 +74,6 @@ class LaboratoryMapper
         if ($laboratory->hasSpatialData()) {
             return json_encode(
                 new Point((float) $laboratory->longitude, (float) $laboratory->latitude)
-            );
-        }
-
-        return '';
-    }
-
-    /**
-     * Get geojson feature object string.
-     */
-    private static function getGeoJsonFeature(Laboratory $laboratory): string
-    {
-        if ($laboratory->hasSpatialData()) {
-            return json_encode(
-                new Feature(
-                    new Point((float) $laboratory->longitude, (float) $laboratory->latitude),
-                    [
-                        'title' => $laboratory->name,
-                        'name' => (string)$laboratory->getScoutKey(),
-                        'msl_id' => $laboratory->id,
-                        'msl_organization_name' => $laboratory->laboratoryOrganization->name,
-                        'msl_domain_name' => $laboratory->fast_domain_name,
-                    ]
-                )
             );
         }
 

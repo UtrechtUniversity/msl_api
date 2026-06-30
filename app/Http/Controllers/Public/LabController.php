@@ -149,34 +149,16 @@ class LabController extends Controller
      */
     public function detail($id)
     {
-        $client = new Client;
-        $request = new PackageShowRequest;
-        $request->id = $id;
+        $laboratory = Laboratory::where('ckan_id', $id)->firstOrFail();
 
-        $result = $client->get($request);
-
-        if (! $result->isSuccess()) {
-            abort(404, 'ckan request failed');
-        }
-
-        $labData = $result->getResult();
-
-        /**
-         * All labs should have a contact person defined with an email address however this is
-         * depending on harvested data from FAST so we should check if this is the case. Only
-         * display the contact button when a validated e-mail address is set in view.
-         */
         $labHasMailContact = false;
-        $labDatabase = Laboratory::where('fast_id', (int) $labData['msl_fast_id'])->first();
 
-        if ($labDatabase) {
-            $contactPersons = $labDatabase->laboratoryContactPersons;
-            if ($contactPersons->count() > 0) {
-                $labHasMailContact = $contactPersons->first()->hasValidEmail();
-            }
+        $contactPersons = $laboratory->laboratoryContactPersons;
+        if ($contactPersons->count() > 0) {
+            $labHasMailContact = $contactPersons->first()->hasValidEmail();
         }
 
-        return view('public.lab-detail', ['laboratory' => $result->getResult(), 'labHasMailContact' => $labHasMailContact]);
+        return view('public.lab-detail', ['laboratory' => $laboratory, 'labHasMailContact' => $labHasMailContact]);
     }
 
     /**

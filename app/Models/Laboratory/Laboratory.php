@@ -2,6 +2,8 @@
 
 namespace App\Models\Laboratory;
 
+use App\GeoJson\Feature\Feature;
+use App\GeoJson\Geometry\Point;
 use App\Mappers\Ckan\LaboratoryMapper;
 use App\Models\LaboratoryUpdateFast;
 use App\Scout\CkanSearchableInterface;
@@ -138,5 +140,30 @@ class Laboratory extends Model implements CkanSearchableInterface
 
         return false;
     }
+
+    /**
+     * Get geojson feature object string.
+     */
+    public function getGeoJsonFeature(): string
+    {
+        if ($this->hasSpatialData()) {
+            return json_encode(
+                new Feature(
+                    new Point((float) $this->longitude, (float) $this->latitude),
+                    [
+                        'title' => $this->name,
+                        'name' => (string)$this->getScoutKey(),
+                        'msl_id' => $this->id,
+                        'msl_organization_name' => $this->laboratoryOrganization->name,
+                        'msl_domain_name' => $this->fast_domain_name,
+                    ]
+                )
+            );
+        }
+
+        return '';
+    }
+
+
 
 }
