@@ -21,8 +21,6 @@ class LabController extends Controller
     {
         $searchResults = $service->search($request);
 
-        //dd($searchResults);
-
         return view('public.labs-list', [
             'facets' => $searchResults->getCollection()->searchFacets,
             'totalResultsCount' => $searchResults->total(),
@@ -31,108 +29,6 @@ class LabController extends Controller
             'activeFilters' => $service->getActiveFilters($request),
             'activeFiltersFrontend' => $service->getActiveFiltersFrontend($request),
             'queryParams' => $request->query(),
-        ]);
-
-
-
-        $resultsPerPage = 20;
-
-        $client = new Client;
-        $SearchRequest = new PackageSearchRequest;
-        $SearchRequest->addFilterQuery('type', 'lab');
-        $SearchRequest->rows = $resultsPerPage;
-        $SearchRequest->loadFacetsFromConfig('laboratories');
-
-        $page = $request->page ?? 1;
-        $SearchRequest->start = ($page - 1) * $resultsPerPage;
-
-        $query = $query = '';
-        if ($request->query('query')) {
-            if (count($request->query('query')) > 0) {
-                $query = implode(' ', $request->query('query'));
-            }
-        }
-        $SearchRequest->query = $query;
-
-        $SearchRequest->sortField = 'title_string asc';
-
-        // used by js filtertrees
-        $activeFilters = [];
-
-        // used to generate active filters in the template
-        $activeFiltersFrontend = [];
-
-        foreach ($request->query() as $key => $values) {
-            if (array_key_exists($key, config('ckan.facets.laboratories')) || $key === 'query') {
-                foreach ($values as $value) {
-                    $activeFilters[$key][] = $value;
-
-                    // Attach labels to the filters based upon the type
-                    if ($value === 'true') {
-                        $label = config('ckan.facets.laboratories')[$key];
-                    } elseif (str_starts_with($value, 'https://epos-msl.uu.nl/voc/')) {
-                        $keyword = Keyword::where('uri', $value)->first();
-                        if ($keyword) {
-                            $label = $keyword->label;
-                        } else {
-                            $label = '';
-                        }
-                    } elseif ($key === 'query') {
-                        $label = 'Search: '.$value;
-                    } else {
-                        $label = $value;
-                    }
-
-                    // Add links without the filter
-                    $query = request()->query();
-
-                    // Loop over query parameters and remove current active filter for remove link
-                    foreach ($query as $param => $paramValues) {
-                        if ($param == $key) {
-                            if (count($query[$param]) > 1) {
-                                foreach ($paramValues as $paramKey => $paramValue) {
-                                    if ($paramValue == $value) {
-                                        $query[$param][$paramKey] = null;
-                                    }
-                                }
-                            } else {
-                                unset($query[$param]);
-                            }
-                        }
-                    }
-
-                    $removeUrl = $query ? url()->current().'?'.http_build_query($query) : url()->current();
-
-                    $activeFiltersFrontend[] = [
-                        'value' => $value,
-                        'label' => $label,
-                        'removeUrl' => $removeUrl,
-                    ];
-
-                    if ($key !== 'query') {
-                        $SearchRequest->addFilterQuery($key, $value);
-                    }
-                }
-            }
-        }
-
-        $result = $client->get($SearchRequest);
-
-        $locations = [];
-        foreach ($result->getResults() as $labData) {
-            $locations[] = json_decode($labData['msl_location']);
-        }
-
-        $paginator = $this->getPaginator($request, [], $result->getTotalResultsCount(), $resultsPerPage);
-
-        return view('public.labs-list', [
-            'facets' => $result->getFacets(),
-            'totalResultsCount' => $result->getTotalResultsCount(),
-            'laboratories' => $result->getResults(),
-            'paginator' => $paginator,
-            'activeFilters' => $activeFilters,
-            'activeFiltersFrontend' => $activeFiltersFrontend,
-            'queryParams' => $request->query()
         ]);
     }
 

@@ -75,31 +75,36 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
         $perPage = $perPage ?: $builder->model->getPerPage();
 
-        return new LengthAwarePaginator($results, $results->totalResults, $perPage, $page);
+        return new LengthAwarePaginator(
+            $results,
+            $results->totalResults,
+            $perPage,
+            $page
+        );
     }
 
     protected function performSearch(Builder $builder, array $options = [])
     {
-        $request = new PackageSearchRequest();
+        $ckanRequest = new PackageSearchRequest();
 
         $builder->filterWhere('type', $builder->model->getCkanType());
 
-        $request->query = $this->buildQuery($builder);
+        $ckanRequest->query = $this->buildQuery($builder);
 
-        $request->filterQuery = $this->buildFilterQuery($builder);
+        $ckanRequest->filterQuery = $this->buildFilterQuery($builder);
 
-        $request->rows = $builder->limit ?? 10;
+        $ckanRequest->rows = $builder->limit ?? 10;
 
         if(isset($options['hitsPerPage'])) {
-            $request->rows = $options['hitsPerPage'];
+            $ckanRequest->rows = $options['hitsPerPage'];
         }
 
         if(isset($options['page'])) {
-            $request->start = $options['page'] * $request->rows;
+            $ckanRequest->start = $options['page'] * ($builder->limit ?? 10);
         }
 
         foreach ($builder->facetFields as $facetField) {
-            $request->addFacetField($facetField);
+            $ckanRequest->addFacetField($facetField);
         }
 
         if ($builder->orders) {
@@ -108,11 +113,11 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                 $orders[] = $sort['column'] . ' ' . $sort['direction'];
             }
 
-            $request->sortField = implode(', ', $orders);
+            $ckanRequest->sortField = implode(', ', $orders);
         }
 
         if ($builder->boundingBox) {
-           $request->setBoundingBox(
+            $ckanRequest->setBoundingBox(
                $builder->boundingBox['minX'],
                $builder->boundingBox['minY'],
                $builder->boundingBox['maxX'],
@@ -120,7 +125,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
            );
         }
 
-        $response = $this->ckanClient->get($request);
+        $response = $this->ckanClient->get($ckanRequest);
 
         return $response->getResult();
     }
