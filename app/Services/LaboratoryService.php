@@ -20,8 +20,18 @@ class LaboratoryService
         $builder = $this->setFacets($builder);
         $builder->orderBy('title_string', 'asc');
 
+        return $builder->paginate(1000, 'page', $request->page)->setPath($request->url())->appends($request->query());
+    }
 
-        return $builder->paginate(20, 'page', $request->page)->setPath($request->url())->appends($request->query());
+    public function getStaticMapData(Request $request)
+    {
+        $builder = Laboratory::search('');
+        $builder = $this->setFacetFilters($builder, $request);
+        $builder = $this->setFacets($builder);
+        $builder->filterWhere('msl_has_spatial_data', ':', 'true');
+        $builder->limit = 1000;
+
+        return $builder->get();
     }
 
     public function getActiveFilters(Request $request)

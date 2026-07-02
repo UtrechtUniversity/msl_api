@@ -35,8 +35,13 @@ class LabController extends Controller
     /**
      * Show the lab map page
      */
-    public function map(Request $request)
+    public function map(Request $request, LaboratoryService $service)
     {
+        $results = $service->getStaticMapData($request);
+
+        dd($results);
+
+
         $client = new Client;
         $SearchRequest = new PackageSearchRequest;
         $SearchRequest->addFilterQuery('type', 'lab');
@@ -133,21 +138,6 @@ class LabController extends Controller
             'laboratory' => $Labresult->getResult(true),
             'ckanLabName' => $id,
             'equipment' => $equipment
-        ]);
-    }
-
-    /**
-     * Get a paginator object
-     */
-    private function getPaginator(Request $request, array $items, int $total, int $resultsPerPage): LengthAwarePaginator
-    {
-        $page = $request->page ?? 1;
-        $offset = ($page - 1) * $resultsPerPage;
-        $items = array_slice($items, $offset, $resultsPerPage);
-
-        return new LengthAwarePaginator($items, $total, $resultsPerPage, $page, [
-            'path' => $request->url(),
-            'query' => $request->query(),
         ]);
     }
 }
