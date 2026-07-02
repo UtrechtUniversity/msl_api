@@ -100,7 +100,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         }
 
         if(isset($options['page'])) {
-            $ckanRequest->start = $options['page'] * ($builder->limit ?? 10);
+            $ckanRequest->start = ($options['page'] - 1) * ($builder->limit ?? 10);
         }
 
         foreach ($builder->facetFields as $facetField) {

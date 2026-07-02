@@ -10,5 +10,5 @@ class ResultCollection extends Collection
 
     public array $searchFacets= [];
 
-    public int $totalResults;
+    public int $totalResults = 0;
 }
