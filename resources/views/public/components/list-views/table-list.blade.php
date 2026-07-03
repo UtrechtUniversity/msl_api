@@ -27,14 +27,14 @@
 
                         @if ($wordBreakContent)
                             <td class="text-{{ $textSize }} p-0 wrap-break-word">
-                        @else
+                            @else
                             <td class="text-{{ $textSize }} p-0">
                         @endif
-                            @if (filter_var($value, FILTER_VALIDATE_URL))
-                                <a class='underline hover-interactive' href={{ $value }}>{{ $value }}</a>
-                            @else
-                                {{ $value }}
-                            @endif
+                        @if (filter_var($value, FILTER_VALIDATE_URL))
+                            <a class='underline hover-interactive' href={{ $value }}>{{ $value }}</a>
+                        @else
+                            {{ $value }}
+                        @endif
                         </td>
                     </tr>
                 @endif

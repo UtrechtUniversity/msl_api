@@ -27,6 +27,5 @@
             <p class="error-highlight"> {{ $errors->first($sectionName) }} </p>
         @endif
 
-
     </div>
 </div>
