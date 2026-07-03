@@ -59,13 +59,13 @@
 
                     <p class="pt-6">Are you interested in embedding the above keyword selector in the data repository
                         you’re affiliated to?
-                        The keyword selector is published openly on <a
+                        The keyword selector is published openly on <a class="hover-interactive underline"
                             href="https://github.com/UtrechtUniversity/msl_vocabularies" target="_blank"
                             title="MSL vocabularies on GitHub">Github</a>! If you’re interested in using this open
                         source tool, do let us know – we’re very
                         interested to hear who intends to use it. Similarly, if you need support to embed it at your
-                        repository <a href="{{ route('contact-us') }}" title="Contact us" target="_blank">get in
-                            touch</a>.</p>
+                        repository <a href="{{ route('contact-us') }}" title="Contact us"
+                             class="hover-interactive underline">get in touch</a>.</p>
 
                 </div>
 
