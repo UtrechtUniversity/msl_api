@@ -15,11 +15,11 @@ class TestSharedStorageReadCommand extends Command
     {
         $this->info('Reading file from shared disk');
 
-        if(!Storage::disk('shared_storage')->exists('test/test.txt')) {
+        if (! Storage::disk('shared_storage')->exists('test/test.txt')) {
             $this->fail('Failed to read file!');
         }
 
-        if('Hello, world!' !== Storage::disk('shared_storage')->get('test/test.txt')) {
+        if (Storage::disk('shared_storage')->get('test/test.txt') !== 'Hello, world!') {
             $this->fail('Unexpected file content!');
         }
 

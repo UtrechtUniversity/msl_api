@@ -65,7 +65,7 @@
                         source tool, do let us know – we’re very
                         interested to hear who intends to use it. Similarly, if you need support to embed it at your
                         repository <a href="{{ route('contact-us') }}" title="Contact us"
-                             class="hover-interactive underline">get in touch</a>.</p>
+                            class="hover-interactive underline">get in touch</a>.</p>
 
                 </div>
 

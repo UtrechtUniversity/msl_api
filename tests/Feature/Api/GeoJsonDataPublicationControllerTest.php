@@ -154,6 +154,5 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                 )
         );
 
-
     }
 }

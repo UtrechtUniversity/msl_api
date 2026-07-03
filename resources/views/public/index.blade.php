@@ -5,31 +5,35 @@
             <div class="w-full h-full bg-primary-100 opacity-75 absolute inset-0 rounded rounded-xl">
 
             </div>
-            <div class="sm:w-[470px] w-fit  backdrop-blur-sm flex flex-col place-items-center gap-8 p-6 text-primary-900 rounded rounded-xl">
+            <div
+                class="sm:w-[470px] w-fit  backdrop-blur-sm flex flex-col place-items-center gap-8 p-6 text-primary-900 rounded rounded-xl">
                 <h1 class="p-2">Welcome </h1>
                 <p>
                     This is the EPOS Multi-Scale Labs data catalogue, an access point for Earth scientific laboratory
-                    data in Europe. Here you can find data, labs and lab equipment from rock and melt physics, paleomagnetism,
-                    geochemistry, microscopy, tomography, field scale labs and analogue modelling of geological processes.
+                    data in Europe. Here you can find data, labs and lab equipment from rock and melt physics,
+                    paleomagnetism,
+                    geochemistry, microscopy, tomography, field scale labs and analogue modelling of geological
+                    processes.
                 </p>
 
                 <a href="{{ route('data-access') }}" class="w-full flex justify-center">
                     <button class="btn btn-xl btn-wide shadow-xl">Data Access</button>
                 </a>
 
-                <div class="sm:w-full w-fit text-primary-900 place-items-center pt-4 justify-between flex flex-row sm:flex-nowrap flex-wrap text-left gap-4">
+                <div
+                    class="sm:w-full w-fit text-primary-900 place-items-center pt-4 justify-between flex flex-row sm:flex-nowrap flex-wrap text-left gap-4">
                     <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
-                       href="{{ route('data-access') }}">
+                        href="{{ route('data-access') }}">
                         <h2 class="font-bold ">{{ $datasetsCount }}</h2>
                         <h5>Datasets</h5>
                     </a>
                     <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
-                       href="{{ route('labs-map') }}">
+                        href="{{ route('labs-map') }}">
                         <h2 class="font-bold ">{{ $labCount }}</h2>
                         <h5>Laboratories</h5>
                     </a>
                     <a class="flex flex-col justify-between w-full hover-interactive shadow-xl rounded-xl hover:rounded-xl p-2 bg-primary-100 "
-                       href="{{ route('data-repositories') }}">
+                        href="{{ route('data-repositories') }}">
                         <h2 class="font-bold ">{{ $reposCount }}</h2>
                         <h5>Repositories</h5>
                     </a>

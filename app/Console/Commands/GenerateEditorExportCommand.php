@@ -35,8 +35,6 @@ class GenerateEditorExportCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return int
      */
     public function handle(): int
     {
@@ -91,12 +89,14 @@ class GenerateEditorExportCommand extends Command
     private function getTopNodes(Vocabulary $vocabulary): array
     {
         $topKeywords = $vocabulary->keywords->where('level', 1);
+
         return $this->getTree($topKeywords);
     }
 
     private function getChildren(Keyword $keyword): array
     {
         $children = $keyword->getChildren();
+
         return $this->getTree($children);
     }
 
@@ -106,8 +106,7 @@ class GenerateEditorExportCommand extends Command
     }
 
     /**
-     * @param iterable<int, Keyword> $keywords
-     * @return array
+     * @param  iterable<int, Keyword>  $keywords
      */
     private function getTree(iterable $keywords): array
     {

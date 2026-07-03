@@ -13,7 +13,6 @@ use App\Exports\UnmatchedKeywordsExport;
 use App\Exports\UriLabelExport;
 use App\Http\Controllers\Controller;
 use App\Mappers\Helpers\KeywordHelper;
-use App\Models\Keyword;
 use App\Models\Laboratory;
 use App\Models\Vocabulary;
 use App\Services\DataPublicationFilterQueryService;
@@ -365,7 +364,7 @@ class ToolsController extends Controller
                 'queryGroup2' => implode(',', $group2Terms),
                 'group2Count' => count($group2Terms),
                 'queryGroup3' => implode(',', $group3Terms),
-                'group3Count' => count($group3Terms)
+                'group3Count' => count($group3Terms),
             ]
         );
     }
