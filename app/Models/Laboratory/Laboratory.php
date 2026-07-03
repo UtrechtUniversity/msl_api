@@ -119,6 +119,11 @@ class Laboratory extends Model implements CkanSearchableInterface
         return 'ckan_id';
     }
 
+    public function getScoutKeyType(): string
+    {
+        return 'string';
+    }
+
     public function getCkanType(): string
     {
         return 'lab';
