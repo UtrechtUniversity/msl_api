@@ -48,8 +48,7 @@ class JsonExport
     }
 
     /**
-     * @param iterable<int, Keyword> $Keywords
-     * @return array
+     * @param  iterable<int, Keyword>  $Keywords
      */
     private function getTree(iterable $Keywords): array
     {
@@ -68,6 +67,7 @@ class JsonExport
 
             $tree[] = $element;
         }
+
         return $tree;
     }
 }

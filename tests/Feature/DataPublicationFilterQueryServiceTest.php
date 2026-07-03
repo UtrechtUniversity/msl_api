@@ -11,7 +11,8 @@ use Tests\TestCase;
 class DataPublicationFilterQueryServiceTest extends TestCase
 {
     use RefreshDatabase;
-    public function testQueryTerms()
+
+    public function test_query_terms()
     {
         Config::set('vocabularies.vocabularies_current_version', '1.0');
 
@@ -59,10 +60,10 @@ class DataPublicationFilterQueryServiceTest extends TestCase
             'exclude_abstract_mapping' => false,
         ]);
 
-        $queryService = new DataPublicationFilterQueryService();
+        $queryService = new DataPublicationFilterQueryService;
         $queryTerms = $queryService->getQueryTerms('selection_group_1');
 
         $this->assertCount(3, $queryTerms);
-        $this->assertContains("\"\\\\bsearch1\\\\b\"", $queryTerms);
+        $this->assertContains('"\\\\bsearch1\\\\b"', $queryTerms);
     }
 }
