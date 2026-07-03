@@ -39,39 +39,16 @@ class LabController extends Controller
     {
         $results = $service->getStaticMapData($request);
 
-        dd($results);
-
-
-        $client = new Client;
-        $SearchRequest = new PackageSearchRequest;
-        $SearchRequest->addFilterQuery('type', 'lab');
-        $SearchRequest->addFilterQuery('msl_has_spatial_data', 'true');
-        $SearchRequest->loadFacetsFromConfig('laboratories');
-        $SearchRequest->rows = 200;
-
-        $activeFilters = [];
-
-        foreach ($request->query() as $key => $values) {
-            if (array_key_exists($key, config('ckan.facets.laboratories'))) {
-                foreach ($values as $value) {
-                    $activeFilters[$key][] = $value;
-                    $SearchRequest->addFilterQuery($key, $value);
-                }
-            }
-        }
-
-        $result = $client->get($SearchRequest);
-
         $locations = [];
-        foreach ($result->getResults() as $labData) {
-            $locations[] = json_decode($labData['msl_location']);
+        foreach ($results as $laboratory) {
+            $locations[] = json_decode($laboratory->getGeoJsonFeature());
         }
 
         return view('public.labs-map', [
-            'facets' => $result->getFacets(),
+            'facets' => $results->searchFacets,
             'locations' => $locations,
-            'result' => $result,
-            'activeFilters' => $activeFilters
+            'result' => $results,
+            'activeFilters' => $service->getActiveFilters($request)
         ]);
     }
 
