@@ -1,4 +1,4 @@
-@use('Illuminate\Support\Str');
+@use('Illuminate\Support\Str')
 
 @section('title', 'Laboratory')
 <x-layout_main>
@@ -6,10 +6,10 @@
         <div class="tab-links-parent">
             @include('public.components.tab-links', [
                 'routes' => [
-                    'Laboratory' => route('lab-detail', ['id' => $laboratory->name]),
-                    'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->name]),
+                    'Laboratory' => route('lab-detail', ['id' => $laboratory->ckan_id]),
+                    'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->ckan_id]),
                 ],
-                'routeActive' => route('lab-detail-equipment', ['id' => $laboratory->name]),
+                'routeActive' => route('lab-detail-equipment', ['id' => $laboratory->ckan_id]),
             ])
         </div>
         <div class="main-content">
@@ -17,7 +17,7 @@
 
                 <div class="detailEntryDiv">
                     <h2 class="">Laboratory Equipment</h2>
-                    <h1 class="text-lg">{{ $laboratory->title }}</h1>
+                    <h1 class="text-lg">{{ $laboratory->name }}</h1>
                 </div>
 
                 <div class="flex flex-wrap justify-center place-content-center gap-10 max-w-2xl py-10">
@@ -26,12 +26,12 @@
 
                         @foreach ($equipment as $equipmentPiece)
                             <details class="collapse collapse-arrow wordCardCollapser bg-primary-100 ">
-                                <summary class="collapse-title font-bold hover-interactive">{{ $equipmentPiece->title }}
+                                <summary class="collapse-title font-bold hover-interactive">{{ $equipmentPiece->name }}
                                 </summary>
                                 <div class="collapse-content">
-                                    @if (strlen($equipmentPiece->msl_description_html) > 0)
+                                    @if (strlen($equipmentPiece->description_html) > 0)
                                         <div class="p-4">
-                                            {!! Str::of($equipmentPiece->msl_description_html)->stripTags("<p>") !!}
+                                            {!! Str::of($equipmentPiece->description_html)->stripTags("<p>") !!}
                                         </div>
                                     @else
                                         <p class="italic text-center pt-10 pb-8">no description found</p>
@@ -43,37 +43,37 @@
                                             <p class="w-1/2 place-content-center text-left font-bold">
                                                 Category
                                             </p>
-                                            <p class="w-1/2 text-left">{{ $equipmentPiece->msl_category_name }}</p>
+                                            <p class="w-1/2 text-left">{{ $equipmentPiece->category_name }}</p>
                                         </div>
 
                                         <div class="w-3/4 max-w-96 flex flex-row">
                                             <p class="w-1/2 place-content-center text-left font-bold">
                                                 Group
                                             </p>
-                                            <p class="w-1/2 text-left">{{ $equipmentPiece->msl_group_name }}</p>
+                                            <p class="w-1/2 text-left">{{ $equipmentPiece->group_name }}</p>
                                         </div>
 
                                         <div class="w-3/4 max-w-96 flex flex-row">
                                             <p class="w-1/2 place-content-center text-left font-bold">
                                                 Type
                                             </p>
-                                            <p class="w-1/2 text-left">{{ $equipmentPiece->msl_type_name }}</p>
+                                            <p class="w-1/2 text-left">{{ $equipmentPiece->type_name }}</p>
                                         </div>
 
-                                        @if (isset($equipmentPiece->msl_equipment_addons))
+                                        @if (count($equipmentPiece->laboratoryEquipmentAddons) > 0)
                                             <div class="w-full flex flex-row p-2">
                                                 <p class="w-1/2 place-content-center text-left font-bold">
                                                     Addons
                                                 </p>
                                             </div>
-                                            @foreach ($equipmentPiece->msl_equipment_addons as $addon)
+                                            @foreach ($equipmentPiece->laboratoryEquipmentAddons as $addon)
                                                 <div class="bg-base-300 mb-4">
                                                     <div class="w-full flex flex-row p-2">
                                                         <p class="w-1/2 place-content-center text-left font-bold">
                                                             Type
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon['msl_equipment_addon_type'] }}</p>
+                                                            {{ $addon->type }}</p>
                                                     </div>
 
                                                     <div class="w-full flex flex-row p-2">
@@ -81,7 +81,7 @@
                                                             Group
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon['msl_equipment_addon_group'] }}</p>
+                                                            {{ $addon->group }}</p>
                                                     </div>
 
                                                     <div class="w-full flex flex-row p-2">
@@ -89,7 +89,7 @@
                                                             Description
                                                         </p>
                                                         <p class="w-1/2 text-left">
-                                                            {{ $addon['msl_equipment_addon_description'] }}</p>
+                                                            {{ $addon->description }}</p>
                                                     </div>
                                                 </div>
                                             @endforeach

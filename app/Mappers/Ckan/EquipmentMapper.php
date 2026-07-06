@@ -30,7 +30,7 @@ class EquipmentMapper
             'msl_equipment_keyword_uri' => $equipment->keyword ? $equipment->keyword->uri : '',
             'msl_equipment_keyword_label' => $equipment->keyword ? $equipment->keyword->label : '',
             'msl_equipment_addons' => self::getCkanAddons($equipment),
-            'msl_location' => self::getGeoJsonFeature($equipment),
+            'msl_location' => $equipment->getGeoJsonFeature(),
             'msl_has_spatial_data' => $equipment->hasSpatialData(),
             'extras' => [
                 ['key' => 'spatial', 'value' => self::getPointGeoJson($equipment)],
@@ -119,50 +119,7 @@ class EquipmentMapper
         return $keywords;
     }
 
-    /**
-     * Get geojson feature object string. Uses laboratory location if no equipment
-     * location is set.
-     */
-    public static function getGeoJsonFeature(LaboratoryEquipment $equipment): string
-    {
-        if ($equipment->hasSpatialData()) {
-            if ((strlen($equipment->latitude) > 0) && (strlen($equipment->longitude) > 0)) {
-                return json_encode(
-                    new Feature(
-                        new Point((float) $equipment->longitude, (float) $equipment->latitude),
-                        [
-                            'title' => $equipment->name,
-                            'name' => (string)$equipment->getScoutKey(),
-                            'msl_id' => $equipment->id,
-                            'msl_lab_ckan_name' => $equipment->laboratory->msl_identifier,
-                            'msl_lab_name' => $equipment->laboratory->name,
-                            'msl_domain_name' => $equipment->domain_name,
-                            'msl_group_name' => $equipment->group_name,
-                            'msl_type_name' => $equipment->type_name,
-                        ]
-                    )
-                );
-            } else {
-                return json_encode(
-                    new Feature(
-                        new Point((float) $equipment->laboratory->longitude, (float) $equipment->laboratory->latitude),
-                        [
-                            'title' => $equipment->name,
-                            'name' => (string)$equipment->getScoutKey(),
-                            'msl_id' => $equipment->id,
-                            'msl_lab_ckan_name' => $equipment->laboratory->msl_identifier,
-                            'msl_lab_name' => $equipment->laboratory->name,
-                            'msl_domain_name' => $equipment->domain_name,
-                            'msl_group_name' => $equipment->group_name,
-                            'msl_type_name' => $equipment->type_name,
-                        ]
-                    )
-                );
-            }
-        }
 
-        return '';
-    }
 
     /**
      * Create point geojson string using latitude and longitude. Uses laboratory

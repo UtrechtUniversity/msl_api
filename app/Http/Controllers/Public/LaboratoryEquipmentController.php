@@ -8,23 +8,24 @@ use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Keyword;
 use App\Models\Laboratory\Laboratory;
+use App\Services\LaboratoryEquipmentService;
 use App\Services\LaboratoryService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class LaboratoryController extends Controller
+class LaboratoryEquipmentController extends Controller
 {
     /**
-     * Show the lab list page
+     * Show the equipment list page
      */
-    public function list(Request $request, LaboratoryService $service)
+    public function list(Request $request, LaboratoryEquipmentService $service)
     {
         $searchResults = $service->search($request);
 
-        return view('public.labs-list', [
+        return view('public.equipment-list', [
             'facets' => $searchResults->getCollection()->searchFacets,
             'totalResultsCount' => $searchResults->total(),
-            'laboratories' => $searchResults->items(),
+            'result' => $searchResults->items(),
             'paginator' => $searchResults,
             'activeFilters' => $service->getActiveFilters($request),
             'activeFiltersFrontend' => $service->getActiveFiltersFrontend($request),
@@ -33,18 +34,18 @@ class LaboratoryController extends Controller
     }
 
     /**
-     * Show the lab map page
+     * Show the equipment map page
      */
-    public function map(Request $request, LaboratoryService $service)
+    public function map(Request $request, LaboratoryEquipmentService $service)
     {
         $results = $service->getStaticMapData($request);
 
         $locations = [];
-        foreach ($results as $laboratory) {
-            $locations[] = json_decode($laboratory->getGeoJsonFeature());
+        foreach ($results as $equipment) {
+            $locations[] = json_decode($equipment->getGeoJsonFeature());
         }
 
-        return view('public.labs-map', [
+        return view('public.equipment-map', [
             'facets' => $results->searchFacets,
             'locations' => $locations,
             'result' => $results,
@@ -59,16 +60,9 @@ class LaboratoryController extends Controller
     {
         $laboratory = Laboratory::where('ckan_id', $id)->firstOrFail();
 
-        $labHasMailContact = false;
-
-        $contactPersons = $laboratory->laboratoryContactPersons;
-        if ($contactPersons->count() > 0) {
-            $labHasMailContact = $contactPersons->first()->hasValidEmail();
-        }
-
-        return view('public.lab-detail', [
+        return view('public.lab-detail-equipment', [
             'laboratory' => $laboratory,
-            'labHasMailContact' => $labHasMailContact
+            'equipment' => $laboratory->laboratoryEquipment
         ]);
     }
 }

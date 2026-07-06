@@ -121,4 +121,49 @@ class LaboratoryEquipment extends Model implements CkanSearchableInterface
 
         return false;
     }
+
+    /**
+     * Get geojson feature object string. Uses laboratory location if no equipment
+     * location is set.
+     */
+    public function getGeoJsonFeature(): string
+    {
+        if ($this->hasSpatialData()) {
+            if ((strlen($this->latitude) > 0) && (strlen($this->longitude) > 0)) {
+                return json_encode(
+                    new Feature(
+                        new Point((float) $this->longitude, (float) $this->latitude),
+                        [
+                            'title' => $this->name,
+                            'name' => (string)$this->getScoutKey(),
+                            'msl_id' => $this->id,
+                            'msl_lab_ckan_name' => $this->laboratory->ckan_id,
+                            'msl_lab_name' => $this->laboratory->name,
+                            'msl_domain_name' => $this->domain_name,
+                            'msl_group_name' => $this->group_name,
+                            'msl_type_name' => $this->type_name,
+                        ]
+                    )
+                );
+            } else {
+                return json_encode(
+                    new Feature(
+                        new Point((float) $this->laboratory->longitude, (float) $this->laboratory->latitude),
+                        [
+                            'title' => $this->name,
+                            'name' => (string)$this->getScoutKey(),
+                            'msl_id' => $this->id,
+                            'msl_lab_ckan_name' => $this->laboratory->ckan_id,
+                            'msl_lab_name' => $this->laboratory->name,
+                            'msl_domain_name' => $this->domain_name,
+                            'msl_group_name' => $this->group_name,
+                            'msl_type_name' => $this->type_name,
+                        ]
+                    )
+                );
+            }
+        }
+
+        return '';
+    }
 }
