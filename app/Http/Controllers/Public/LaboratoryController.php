@@ -12,7 +12,7 @@ use App\Services\LaboratoryService;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class LabController extends Controller
+class LaboratoryController extends Controller
 {
     /**
      * Show the lab list page
