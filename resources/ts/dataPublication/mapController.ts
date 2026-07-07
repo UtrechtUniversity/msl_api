@@ -6,6 +6,7 @@ import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
 import { cloneDeep } from "lodash";
+import { ResultsMetadata } from "./resultsMetadata";
 
 type SearchFilter = {
     boundingBox: string;
@@ -23,7 +24,7 @@ export class MapController {
     resultsSidebar: ResultsSidebar;
     mapView: MapView;
     pagination: Pagination;
-    // The current class controlls the map but also the state of the tabs
+    resultsMetadata: ResultsMetadata;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -34,6 +35,7 @@ export class MapController {
         this.mapView = new MapView();
         this.resultsSidebar = new ResultsSidebar();
         this.pagination = new Pagination();
+        this.resultsMetadata = new ResultsMetadata();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -70,7 +72,7 @@ export class MapController {
 
     // Methods about requests and populating
 
-    private async addFeaturesAndSidebarInMap() {
+    private async populateElements() {
         ({ data: this.results, meta: this.paginator } =
             await this.getJsonFromRequest());
 
@@ -79,6 +81,8 @@ export class MapController {
 
         this.pagination.setArgs(this.paginator);
         this.pagination.populate();
+
+        this.resultsMetadata.updateMetadata(this.paginator);
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
@@ -116,8 +120,8 @@ export class MapController {
 
         return { data, meta };
     }
-    // Methods about interactions
 
+    // Methods about interactions
     public insideFilter() {
         this.setActivatedTab(INSIDE);
     }
@@ -137,7 +141,7 @@ export class MapController {
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.boundingBox) return;
 
-        this.addFeaturesAndSidebarInMap();
+        this.populateElements();
     }
 
     public removeDrawing() {
@@ -161,7 +165,7 @@ export class MapController {
         this.results = null;
 
         this.searchFilters.page = page;
-        this.addFeaturesAndSidebarInMap();
+        this.populateElements();
     }
 
     // Helper methods
@@ -169,6 +173,7 @@ export class MapController {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
         this.pagination.clear();
+        this.resultsMetadata.removeMetadata();
         this.resetSearchFilter();
         this.paginator = null;
         this.results = null;

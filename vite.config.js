@@ -24,7 +24,8 @@ export default defineConfig({
             'resources/css/datapublicationMap/datapublications-list.css',
             'resources/css/datapublicationMap/in-map-styles.css',
             'resources/css/datapublicationMap/top-menu.css',
-            'resources/css/datapublicationMap/dp-pagination.css'
+            'resources/css/datapublicationMap/pagination.css',
+            'resources/css/datapublicationMap/metadata.css'
 
         ]),
         commonjs()
