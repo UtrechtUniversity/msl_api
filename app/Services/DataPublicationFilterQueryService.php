@@ -8,7 +8,7 @@ class DataPublicationFilterQueryService
 {
     public function getQueryTerms(string $group): array
     {
-        if(!in_array($group, ['selection_group_1', 'selection_group_2', 'selection_group_3'])) {
+        if (! in_array($group, ['selection_group_1', 'selection_group_2', 'selection_group_3'])) {
             throw new \Exception('Invalid group');
         }
 

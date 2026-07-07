@@ -12,7 +12,7 @@ class Vocabulary extends Model
         'name',
         'uri',
         'display_name',
-        'version'
+        'version',
     ];
 
     public function keywords(): HasMany

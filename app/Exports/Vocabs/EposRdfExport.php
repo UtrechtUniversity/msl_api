@@ -60,10 +60,10 @@ class EposRdfExport
             $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'owl:sameAs', $keyword->uri);
             $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:inScheme', $this->convertVocabUriToEposUri($this->vocabulary));
 
-            if($keyword->external_uri !== "") {
+            if ($keyword->external_uri !== '') {
                 $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'rdfs:seeAlso', $keyword->external_uri);
                 $graph->addResource($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'skos:exactMatch', $keyword->external_uri);
-                if($keyword->external_vocab_scheme !== "") {
+                if ($keyword->external_vocab_scheme !== '') {
                     $graph->add($this->convertTermUriToEposUri($keyword->uri, $this->vocabulary), 'dc:source', $keyword->external_vocab_scheme);
                 }
             }

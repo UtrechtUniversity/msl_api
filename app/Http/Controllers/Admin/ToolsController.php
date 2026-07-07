@@ -364,7 +364,7 @@ class ToolsController extends Controller
                 'queryGroup2' => implode(',', $group2Terms),
                 'group2Count' => count($group2Terms),
                 'queryGroup3' => implode(',', $group3Terms),
-                'group3Count' => count($group3Terms)
+                'group3Count' => count($group3Terms),
             ]
         );
     }

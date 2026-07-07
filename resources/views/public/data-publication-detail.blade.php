@@ -108,11 +108,11 @@
                         <div class="collapse-content word-card-parent" id="enriched-keywords-container">
                             @foreach ($dataPublication->msl_enriched_keywords as $keyword)
                                 <div class="word-card"
-                                     data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
-                                     data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
-                                     data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
-                                     data-highlight="text-keyword" data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
-                                     data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'>
+                                    data-associated-subdomains='["{{ implode(', ', $keyword->msl_enriched_keyword_associated_subdomains) }}"]'
+                                    data-uri="{{ $keyword->msl_enriched_keyword_uri }}"
+                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_enriched_keyword_uri }}"
+                                    data-highlight="text-keyword" data-matched-child-uris='{!! json_encode($keyword->msl_enriched_keyword_match_child_uris) !!}'
+                                    data-sources='{!! json_encode($keyword->msl_enriched_keyword_match_locations) !!}'>
                                     {{ $keyword->msl_enriched_keyword_label }}
                                 </div>
                             @endforeach
@@ -180,12 +180,17 @@
                                             }
                                         }
 
-                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
+                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res
+                                            .vocabulary
                                             .display_name + "</td></tr>";
                                         content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
 
-                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
-                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
+                                        content +=
+                                            "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" +
+                                            res.external_uri + "' target='_blank' >" + res.external_uri +
+                                            "</a></td></tr>";
+                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res
+                                            .external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
                                         content += "<a href=\"" + this.dataset.filterLink +
@@ -205,7 +210,7 @@
                                 tags.forEach((tag) => {
                                     let tagData = JSON.parse(tag.dataset.uris);
                                     tagData.forEach((uri) => {
-                                        if(uri == instance.reference.dataset.uri) {
+                                        if (uri == instance.reference.dataset.uri) {
                                             tag.classList.add('word-card-highlighted');
                                             tag.setAttribute('data-force-highlight', 'true');
                                             tagsMatched = true;
@@ -213,46 +218,54 @@
                                     });
                                 });
 
-                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted")
+                                    .attr('data-force-highlight', 'true');
 
-                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
-                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted")
+                                    .attr('data-force-highlight', 'true');
+                                if ($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]")
+                                    .length > 0) {
                                     originalKeywordsMatched = true;
                                 }
 
-                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                if (instance.reference.dataset.matchedChildUris !== undefined) {
                                     let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
 
-                                    if(Array.isArray(matchedChildUris)) {
+                                    if (Array.isArray(matchedChildUris)) {
                                         matchedChildUris.forEach((childUri) => {
-                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
-                                            if(!originalKeywordsMatched) {
-                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr(
+                                                'data-force-highlight', 'true');
+                                            if (!originalKeywordsMatched) {
+                                                if ($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]")
+                                                    .length > 0) {
                                                     originalKeywordsMatched = true;
                                                 }
                                             }
 
                                             $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
-                                            if(!tagsMatched) {
-                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                            if (!tagsMatched) {
+                                                if ($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                                     tagsMatched = true;
                                                 }
                                             }
 
-                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted")
+                                                .attr('data-force-highlight', 'true');
                                         });
                                     }
                                 }
 
-                                if(tagsMatched) {
-                                    if($('#original-keywords-panel').attr('open') !== 'open') {
-                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if (tagsMatched) {
+                                    if ($('#original-keywords-panel').attr('open') !== 'open') {
+                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight',
+                                            'true');
                                     }
                                 }
 
-                                if(originalKeywordsMatched) {
-                                    if($('#corresponding-keywords-panel').attr('open') !== 'open') {
-                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if (originalKeywordsMatched) {
+                                    if ($('#corresponding-keywords-panel').attr('open') !== 'open') {
+                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr(
+                                            'data-force-highlight', 'true');
                                     }
                                 }
                             },
@@ -268,9 +281,9 @@
                                 tags.forEach((tag) => {
                                     let tagData = JSON.parse(tag.dataset.uris);
                                     tagData.forEach((uri) => {
-                                        if(uri == instance.reference.dataset.uri) {
+                                        if (uri == instance.reference.dataset.uri) {
                                             tag.classList.remove('word-card-highlighted');
-                                            if(tag.removeAttr) {
+                                            if (tag.removeAttr) {
                                                 tag.removeAttr('data-force-highlight');
                                             }
                                             tagsMatched = true;
@@ -278,43 +291,52 @@
                                     });
                                 });
 
-                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass(
+                                    "word-card-highlighted").removeAttr('data-force-highlight');
 
-                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted")
+                                    .removeAttr('data-force-highlight');
+                                if ($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]")
+                                    .length > 0) {
                                     originalKeywordsMatched = true;
                                 }
 
-                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                if (instance.reference.dataset.matchedChildUris !== undefined) {
                                     let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
 
-                                    if(Array.isArray(matchedChildUris)) {
+                                    if (Array.isArray(matchedChildUris)) {
                                         matchedChildUris.forEach((childUri) => {
-                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                            if(!originalKeywordsMatched) {
-                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted")
+                                                .removeAttr('data-force-highlight');
+                                            if (!originalKeywordsMatched) {
+                                                if ($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]")
+                                                    .length > 0) {
                                                     originalKeywordsMatched = true;
                                                 }
                                             }
 
-                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                            if(!tagsMatched) {
-                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted")
+                                                .removeAttr('data-force-highlight');
+                                            if (!tagsMatched) {
+                                                if ($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                                     tagsMatched = true;
                                                 }
                                             }
 
-                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass(
+                                                "word-card-highlighted").removeAttr('data-force-highlight');
                                         });
                                     }
                                 }
 
-                                if(tagsMatched) {
-                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if (tagsMatched) {
+                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr(
+                                        'data-force-highlight');
                                 }
 
-                                if(originalKeywordsMatched) {
-                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if (originalKeywordsMatched) {
+                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr(
+                                        'data-force-highlight');
                                 }
                             },
                         });
@@ -324,14 +346,15 @@
                 @if (count($dataPublication->msl_original_keywords) > 0)
                     <details class="collapse collapse-arrow word-card-collapser" id="corresponding-keywords-panel">
 
-                        <summary class="collapse-title">MSL vocabulary keywords corresponding to originally assigned keywords
+                        <summary class="collapse-title">MSL vocabulary keywords corresponding to originally assigned
+                            keywords
                             <x-ri-information-line id="corresponding-keywords-popup" class="info-icon" />
                         </summary>
                         <div class="collapse-content word-card-parent" id="corresponding-keywords-container">
                             @foreach ($dataPublication->msl_original_keywords as $keyword)
                                 <div class="word-card" data-uri="{{ $keyword->msl_original_keyword_uri }}"
-                                     data-highlight="text-keyword"
-                                     data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}">
+                                    data-highlight="text-keyword"
+                                    data-filter-link="/data-access?msl_enriched_keyword_uri[]={{ $keyword->msl_original_keyword_uri }}">
                                     {{ $keyword->msl_original_keyword_label }}
                                 </div>
                             @endforeach
@@ -399,12 +422,17 @@
                                             }
                                         }
 
-                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res.vocabulary
+                                        content += "<tr><td class=\"\">occurs in MSL vocabulary</td><td>" + res
+                                            .vocabulary
                                             .display_name + "</td></tr>";
                                         content += "<tr><td class=\"\">MSL uri</td><td>" + res.uri + "</td></tr>";
 
-                                        content += "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" + res.external_uri + "' target='_blank' >" + res.external_uri + "</a></td></tr>";
-                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res.external_vocab_scheme + "</td></tr>";
+                                        content +=
+                                            "<tr><td class=\"\">external uri</td><td><a class=\"underline\" href='" +
+                                            res.external_uri + "' target='_blank' >" + res.external_uri +
+                                            "</a></td></tr>";
+                                        content += "<tr><td class=\"\">occurs in external vocabulary</td><td>" + res
+                                            .external_vocab_scheme + "</td></tr>";
 
                                         content += "</table>";
                                         content += "<a href=\"" + this.dataset.filterLink +
@@ -424,7 +452,7 @@
                                 tags.forEach((tag) => {
                                     let tagData = JSON.parse(tag.dataset.uris);
                                     tagData.forEach((uri) => {
-                                        if(uri == instance.reference.dataset.uri) {
+                                        if (uri == instance.reference.dataset.uri) {
                                             tag.classList.add('word-card-highlighted');
                                             tag.setAttribute('data-force-highlight', 'true');
                                             tagsMatched = true;
@@ -432,46 +460,54 @@
                                     });
                                 });
 
-                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted")
+                                    .attr('data-force-highlight', 'true');
 
-                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
-                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").addClass("word-card-highlighted")
+                                    .attr('data-force-highlight', 'true');
+                                if ($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]")
+                                    .length > 0) {
                                     originalKeywordsMatched = true;
                                 }
 
-                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                if (instance.reference.dataset.matchedChildUris !== undefined) {
                                     let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
 
-                                    if(Array.isArray(matchedChildUris)) {
+                                    if (Array.isArray(matchedChildUris)) {
                                         matchedChildUris.forEach((childUri) => {
-                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
-                                            if(!originalKeywordsMatched) {
-                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                            $("div[data-uri=\"" + childUri + "\"]").addClass("word-card-highlighted").attr(
+                                                'data-force-highlight', 'true');
+                                            if (!originalKeywordsMatched) {
+                                                if ($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]")
+                                                    .length > 0) {
                                                     originalKeywordsMatched = true;
                                                 }
                                             }
 
                                             $("div[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted");
-                                            if(!tagsMatched) {
-                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                            if (!tagsMatched) {
+                                                if ($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                                     tagsMatched = true;
                                                 }
                                             }
 
-                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                            $("span[data-uris*='\"" + childUri + "\"']").addClass("word-card-highlighted")
+                                                .attr('data-force-highlight', 'true');
                                         });
                                     }
                                 }
 
-                                if(tagsMatched) {
-                                    if($('#original-keywords-panel').attr('open') !== 'open') {
-                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if (tagsMatched) {
+                                    if ($('#original-keywords-panel').attr('open') !== 'open') {
+                                        $('#original-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight',
+                                            'true');
                                     }
                                 }
 
-                                if(originalKeywordsMatched) {
-                                    if($('#corresponding-keywords-panel').attr('open') !== 'open') {
-                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr('data-force-highlight', 'true');
+                                if (originalKeywordsMatched) {
+                                    if ($('#corresponding-keywords-panel').attr('open') !== 'open') {
+                                        $('#corresponding-keywords-panel').addClass("word-card-highlighted").attr(
+                                            'data-force-highlight', 'true');
                                     }
                                 }
                             },
@@ -487,9 +523,9 @@
                                 tags.forEach((tag) => {
                                     let tagData = JSON.parse(tag.dataset.uris);
                                     tagData.forEach((uri) => {
-                                        if(uri == instance.reference.dataset.uri) {
+                                        if (uri == instance.reference.dataset.uri) {
                                             tag.classList.remove('word-card-highlighted');
-                                            if(tag.removeAttr) {
+                                            if (tag.removeAttr) {
                                                 tag.removeAttr('data-force-highlight');
                                             }
                                             tagsMatched = true;
@@ -497,43 +533,52 @@
                                     });
                                 });
 
-                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                $("span[data-uris*=\"" + instance.reference.dataset.uri + "\"]").removeClass(
+                                    "word-card-highlighted").removeAttr('data-force-highlight');
 
-                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                if($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]").length > 0) {
+                                $("div[data-uri=\"" + instance.reference.dataset.uri + "\"]").removeClass("word-card-highlighted")
+                                    .removeAttr('data-force-highlight');
+                                if ($("#corresponding-keywords-panel div[data-uri=\"" + instance.reference.dataset.uri + "\"]")
+                                    .length > 0) {
                                     originalKeywordsMatched = true;
                                 }
 
-                                if(instance.reference.dataset.matchedChildUris !== undefined) {
+                                if (instance.reference.dataset.matchedChildUris !== undefined) {
                                     let matchedChildUris = JSON.parse(instance.reference.dataset.matchedChildUris);
 
-                                    if(Array.isArray(matchedChildUris)) {
+                                    if (Array.isArray(matchedChildUris)) {
                                         matchedChildUris.forEach((childUri) => {
-                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                            if(!originalKeywordsMatched) {
-                                                if($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]").length > 0) {
+                                            $("div[data-uri=\"" + childUri + "\"]").removeClass("word-card-highlighted")
+                                                .removeAttr('data-force-highlight');
+                                            if (!originalKeywordsMatched) {
+                                                if ($("#corresponding-keywords-panel div[data-uri=\"" + childUri + "\"]")
+                                                    .length > 0) {
                                                     originalKeywordsMatched = true;
                                                 }
                                             }
 
-                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
-                                            if(!tagsMatched) {
-                                                if($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
+                                            $("div[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted")
+                                                .removeAttr('data-force-highlight');
+                                            if (!tagsMatched) {
+                                                if ($("div[data-uris*='\"" + childUri + "\"']").length > 0) {
                                                     tagsMatched = true;
                                                 }
                                             }
 
-                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                            $("span[data-uris*='\"" + childUri + "\"']").removeClass(
+                                                "word-card-highlighted").removeAttr('data-force-highlight');
                                         });
                                     }
                                 }
 
-                                if(tagsMatched) {
-                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if (tagsMatched) {
+                                    $('#original-keywords-panel').removeClass("word-card-highlighted").removeAttr(
+                                        'data-force-highlight');
                                 }
 
-                                if(originalKeywordsMatched) {
-                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr('data-force-highlight');
+                                if (originalKeywordsMatched) {
+                                    $('#corresponding-keywords-panel').removeClass("word-card-highlighted").removeAttr(
+                                        'data-force-highlight');
                                 }
                             },
                         });
