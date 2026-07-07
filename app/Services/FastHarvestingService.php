@@ -37,9 +37,6 @@ class FastHarvestingService
         // Prepend to queue to ensure that the flush is executed before the next job.
         $job->prependToChain(new ProcessCkanFlush('lab'));
         $job->prependToChain(new ProcessCkanFlush('equipment'));
-
-        //ProcessCkanFlush::dispatch('lab');
-        //ProcessCkanFlush::dispatch('equipment');
     }
 
     public function retrieveFastData(ProcessLaboratoryUpdateGroupFast $job): void
