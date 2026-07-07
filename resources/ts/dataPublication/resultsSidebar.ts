@@ -5,7 +5,12 @@ import type {
 import { INSIDE, type GeoFeatureResultSet } from "../types/map";
 import { DomUtil } from "leaflet";
 import { assertNotNull } from "../helpers.js";
-import { assertSingleArray, throwWhenCallBackNotInitialized } from "./utils.js";
+import {
+    assertSingleArray,
+    INSIDE_ICON,
+    OVERLAPPING_ICON,
+    throwWhenCallBackNotInitialized,
+} from "./utils.js";
 
 export class ResultsSidebar {
     private sidebar: HTMLElement;
@@ -94,8 +99,8 @@ export class ResultsSidebar {
                       .join(" | ")
                 : "- no authors found -";
         const icon = dataPublication.isInclusive
-            ? '<i class="fa-solid fa-circle-xmark"></i>'
-            : '<i class="fa-solid fa-xmark"></i>';
+            ? INSIDE_ICON
+            : OVERLAPPING_ICON;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">

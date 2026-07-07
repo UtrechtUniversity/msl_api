@@ -7,7 +7,7 @@ import {
     type Overlapping,
 } from "../types/map";
 import type { MapController } from "./mapController";
-import { getDefaultTab } from "./utils";
+import { getDefaultTab, INSIDE_ICON, OVERLAPPING_ICON } from "./utils";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
@@ -181,9 +181,9 @@ export class MenuButtons {
     }): HTMLButtonElement {
         const img =
             includeIcon === INSIDE
-                ? '<i class="fa-solid fa-circle-xmark"></i>'
+                ? INSIDE_ICON
                 : includeIcon === OVERLAPPING
-                  ? '<i class="fa-solid fa-xmark"></i>'
+                  ? OVERLAPPING_ICON
                   : "";
         const button = document.createElement("button");
 
