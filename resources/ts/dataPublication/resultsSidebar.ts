@@ -2,12 +2,7 @@ import type {
     DataPublication,
     GeoFeatureDataPublications,
 } from "../types/datapublication";
-import {
-
-    INSIDE,
-    OVERLAPPING,
-    type GeoFeatureResultSet,
-} from "../types/map";
+import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import { DomUtil } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import {
