@@ -1,12 +1,8 @@
 import { assertNotNull } from "../helpers";
 import {
-    EXCLUSIVE,
-    INCLUSIVE,
     INSIDE,
     OVERLAPPING,
-    type Exclusive,
     type GeoFeatureResultSet,
-    type Inclusive,
     type Inside,
     type Overlapping,
 } from "../types/map";

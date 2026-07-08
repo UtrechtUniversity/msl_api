@@ -3,8 +3,7 @@ import type {
     GeoFeatureDataPublications,
 } from "../types/datapublication";
 import {
-    EXCLUSIVE,
-    INCLUSIVE,
+
     INSIDE,
     OVERLAPPING,
     type GeoFeatureResultSet,
