@@ -130,10 +130,10 @@ export class MapView {
     }
 
     public async drawResponse(geoList: GeoFeatureDataPublications) {
-        for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
+        for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
             typeof TAB_CONFIG
         >) {
-            this.addFeaturesInMarkers(geoList, { resultSet: tabName });
+            this.addFeaturesInMarkers(geoList, { resultSet: tabInfo.label });
         }
     }
 

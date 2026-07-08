@@ -2,10 +2,14 @@ import type {
     DataPublication,
     GeoFeatureDataPublications,
 } from "../types/datapublication";
-import { INSIDE, type GeoFeatureResultSet } from "../types/map";
+import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import { DomUtil } from "leaflet";
 import { assertNotNull } from "../helpers.js";
-import { assertSingleArray, throwWhenCallBackNotInitialized } from "./utils.js";
+import {
+    assertSingleArray,
+    TAB_CONFIG,
+    throwWhenCallBackNotInitialized,
+} from "./utils.js";
 
 export class ResultsSidebar {
     private sidebar: HTMLElement;
@@ -94,8 +98,8 @@ export class ResultsSidebar {
                       .join(" | ")
                 : "- no authors found -";
         const icon = dataPublication.isInclusive
-            ? '<i class="fa-solid fa-circle-xmark"></i>'
-            : '<i class="fa-solid fa-xmark"></i>';
+            ? TAB_CONFIG[INSIDE].icon
+            : TAB_CONFIG[OVERLAPPING].icon;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
