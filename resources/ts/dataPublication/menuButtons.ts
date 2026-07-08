@@ -1,13 +1,17 @@
 import { assertNotNull } from "../helpers";
 import {
+    EXCLUSIVE,
+    INCLUSIVE,
     INSIDE,
     OVERLAPPING,
+    type Exclusive,
     type GeoFeatureResultSet,
+    type Inclusive,
     type Inside,
     type Overlapping,
 } from "../types/map";
 import type { MapController } from "./mapController";
-import { getDefaultTab, INSIDE_ICON, OVERLAPPING_ICON } from "./utils";
+import { getDefaultTab, TAB_CONFIG } from "./utils";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
@@ -33,14 +37,14 @@ export class MenuButtons {
             id: OVERLAPPING_BUTTON_ID,
             text: "Overlapping",
             disabled: true,
-            includeIcon: OVERLAPPING,
+            includeIcon: EXCLUSIVE,
         });
 
         this.insideFilterButton = this.createButton({
             id: INSIDE_BUTTON_ID,
             text: "Inside",
             disabled: true,
-            includeIcon: INSIDE,
+            includeIcon: INCLUSIVE,
         });
 
         this.spatialDrawButton = this.createButton({
@@ -177,14 +181,9 @@ export class MenuButtons {
         id: string;
         text: string;
         disabled: boolean;
-        includeIcon?: Overlapping | Inside;
+        includeIcon?: Exclusive | Inclusive;
     }): HTMLButtonElement {
-        const img =
-            includeIcon === INSIDE
-                ? INSIDE_ICON
-                : includeIcon === OVERLAPPING
-                  ? OVERLAPPING_ICON
-                  : "";
+        const img = !includeIcon ? "" : TAB_CONFIG[includeIcon].icon;
         const button = document.createElement("button");
 
         button.id = id;

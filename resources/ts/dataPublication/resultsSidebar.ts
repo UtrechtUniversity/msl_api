@@ -2,13 +2,17 @@ import type {
     DataPublication,
     GeoFeatureDataPublications,
 } from "../types/datapublication";
-import { INSIDE, type GeoFeatureResultSet } from "../types/map";
+import {
+    EXCLUSIVE,
+    INCLUSIVE,
+    INSIDE,
+    type GeoFeatureResultSet,
+} from "../types/map";
 import { DomUtil } from "leaflet";
 import { assertNotNull } from "../helpers.js";
 import {
     assertSingleArray,
-    INSIDE_ICON,
-    OVERLAPPING_ICON,
+    TAB_CONFIG,
     throwWhenCallBackNotInitialized,
 } from "./utils.js";
 
@@ -99,8 +103,8 @@ export class ResultsSidebar {
                       .join(" | ")
                 : "- no authors found -";
         const icon = dataPublication.isInclusive
-            ? INSIDE_ICON
-            : OVERLAPPING_ICON;
+            ? TAB_CONFIG[INCLUSIVE].icon
+            : TAB_CONFIG[EXCLUSIVE].icon;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
