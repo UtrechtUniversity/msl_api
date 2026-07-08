@@ -6,6 +6,7 @@ import {
     EXCLUSIVE,
     INCLUSIVE,
     INSIDE,
+    OVERLAPPING,
     type GeoFeatureResultSet,
 } from "../types/map";
 import { DomUtil } from "leaflet";
@@ -103,8 +104,8 @@ export class ResultsSidebar {
                       .join(" | ")
                 : "- no authors found -";
         const icon = dataPublication.isInclusive
-            ? TAB_CONFIG[INCLUSIVE].icon
-            : TAB_CONFIG[EXCLUSIVE].icon;
+            ? TAB_CONFIG[INSIDE].icon
+            : TAB_CONFIG[OVERLAPPING].icon;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">

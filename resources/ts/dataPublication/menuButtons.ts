@@ -37,14 +37,14 @@ export class MenuButtons {
             id: OVERLAPPING_BUTTON_ID,
             text: "Overlapping",
             disabled: true,
-            includeIcon: EXCLUSIVE,
+            includeIcon: OVERLAPPING,
         });
 
         this.insideFilterButton = this.createButton({
             id: INSIDE_BUTTON_ID,
             text: "Inside",
             disabled: true,
-            includeIcon: INCLUSIVE,
+            includeIcon: INSIDE,
         });
 
         this.spatialDrawButton = this.createButton({
@@ -181,7 +181,7 @@ export class MenuButtons {
         id: string;
         text: string;
         disabled: boolean;
-        includeIcon?: Exclusive | Inclusive;
+        includeIcon?: Overlapping | Inside;
     }): HTMLButtonElement {
         const img = !includeIcon ? "" : TAB_CONFIG[includeIcon].icon;
         const button = document.createElement("button");

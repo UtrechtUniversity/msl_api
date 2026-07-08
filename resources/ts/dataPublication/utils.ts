@@ -22,8 +22,18 @@ export function getGeoFeatureResultSetMappingObj<T>(
     return { [OVERLAPPING]: factory(), [INSIDE]: factory() };
 }
 export const TAB_CONFIG = {
-    [EXCLUSIVE]: { label: OVERLAPPING, icon: EXCLUSIVE_ICON, active: true },
-    [INCLUSIVE]: { label: INSIDE, icon: INCLUSIVE_ICON, active: false },
+    [OVERLAPPING]: {
+        label: OVERLAPPING,
+        icon: EXCLUSIVE_ICON,
+        active: true,
+        filterOnDataPublications: EXCLUSIVE,
+    },
+    [INSIDE]: {
+        label: INSIDE,
+        icon: INCLUSIVE_ICON,
+        active: false,
+        filterOnDataPublications: INCLUSIVE,
+    },
 } as const;
 
 export type Entries<T> = Array<
