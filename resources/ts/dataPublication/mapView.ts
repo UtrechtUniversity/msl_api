@@ -15,14 +15,7 @@ import {
     type GeoFeatureResultSet,
     type GeoFeatureResultSetMapping,
 } from "../types/map";
-import {
-    LatLng,
-    Rectangle,
-    Map,
-    MarkerClusterGroup,
-    Layer,
-    Path,
-} from "leaflet";
+import { LatLng, Rectangle, Map, Layer, Path } from "leaflet";
 import {
     DEFAULT_CIRCLE_MARKER_OPTIONS,
     DEFAULT_MARKER_OPTIONS,
