@@ -78,4 +78,5 @@ export type Paginator = {
     totalCount: number;
     currentPage: number;
     lastPage: number;
+    perPage: number;
 };

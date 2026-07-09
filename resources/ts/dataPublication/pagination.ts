@@ -48,7 +48,7 @@ export class Pagination {
 
         assertNotNull(this.range, `Range should not be null. This is a bug.`);
         this.setButton(
-            "dp-pagination-button dp-pagination-button-last-left",
+            "map-datapublication-pagination-button map-datapublication-pagination-button-last-left",
             LEFT_ARROW_ICON,
             { toPage: this.range.currentPage - 1 },
         );
@@ -60,14 +60,18 @@ export class Pagination {
             for (let i = 1; i <= this.range.count; i++) {
                 if (i === this.range.currentPage) {
                     this.setButton(
-                        "dp-pagination-button dp-pagination-button-active-page",
+                        "map-datapublication-pagination-button map-datapublication-pagination-button-active-page",
                         i + "",
                         { toPage: i },
                     );
                 } else {
-                    this.setButton("dp-pagination-button", i + "", {
-                        toPage: i,
-                    });
+                    this.setButton(
+                        "map-datapublication-pagination-button",
+                        i + "",
+                        {
+                            toPage: i,
+                        },
+                    );
                 }
             }
             // if total count is more than the given range
@@ -76,12 +80,14 @@ export class Pagination {
         } else {
             if (this.range.currentPage === 1) {
                 this.setButton(
-                    "dp-pagination-button dp-pagination-button-active-page",
+                    "map-datapublication-pagination-button map-datapublication-pagination-button-active-page",
                     "1",
                     { toPage: 1 },
                 );
             } else {
-                this.setButton("dp-pagination-button", "1", { toPage: 1 });
+                this.setButton("map-datapublication-pagination-button", "1", {
+                    toPage: 1,
+                });
             }
 
             //    if the range is close the first page dont show "..." otherwise show
@@ -91,7 +97,7 @@ export class Pagination {
                 this.range.lowerRange
             ) {
                 this.setButton(
-                    "dp-pagination-button btn-disabled !bg-primary-200",
+                    "map-datapublication-pagination-button btn-disabled !bg-primary-200",
                     "...",
                     { toPage: undefined },
                 );
@@ -110,14 +116,18 @@ export class Pagination {
                 if (!(i <= 1) && !(i >= this.range.count)) {
                     if (i == this.range.currentPage) {
                         this.setButton(
-                            "dp-pagination-button dp-pagination-button-active-page",
+                            "map-datapublication-pagination-button map-datapublication-pagination-button-active-page",
                             i + "",
                             { toPage: i },
                         );
                     } else {
-                        this.setButton("dp-pagination-button", i + "", {
-                            toPage: i,
-                        });
+                        this.setButton(
+                            "map-datapublication-pagination-button",
+                            i + "",
+                            {
+                                toPage: i,
+                            },
+                        );
                     }
                 }
             }
@@ -127,7 +137,7 @@ export class Pagination {
                 this.range.count - this.range.rangeUnilateral
             ) {
                 this.setButton(
-                    "dp-pagination-button btn-disabled !bg-primary-200",
+                    "map-datapublication-pagination-button btn-disabled !bg-primary-200",
                     "...",
                     { toPage: undefined },
                 );
@@ -135,20 +145,24 @@ export class Pagination {
 
             if (this.range.count == this.range.currentPage) {
                 this.setButton(
-                    "dp-pagination-button dp-pagination-button-active-page",
+                    "map-datapublication-pagination-button map-datapublication-pagination-button-active-page",
                     this.range.count + "",
                     {
                         toPage: this.range.count,
                     },
                 );
             } else {
-                this.setButton("dp-pagination-button", this.range.count + "", {
-                    toPage: this.range.count,
-                });
+                this.setButton(
+                    "map-datapublication-pagination-button",
+                    this.range.count + "",
+                    {
+                        toPage: this.range.count,
+                    },
+                );
             }
         }
         this.setButton(
-            "dp-pagination-button dp-pagination-button-last-right",
+            "map-datapublication-pagination-button map-datapublication-pagination-button-last-right",
             RIGHT_ARROW_ICON,
             { toPage: this.range.currentPage + 1 },
         );
