@@ -1,7 +1,8 @@
-import type {
-    LeafletMouseEvent,
-    CircleMarkerOptions,
-    LatLngBounds,
+import {
+    type LeafletMouseEvent,
+    type CircleMarkerOptions,
+    type LatLngBounds,
+    LayerGroup,
 } from "leaflet";
 import type { Feature } from "geojson";
 import type {
@@ -14,14 +15,7 @@ import {
     type GeoFeatureResultSet,
     type GeoFeatureResultSetMapping,
 } from "../types/map";
-import {
-    LatLng,
-    Rectangle,
-    Map,
-    MarkerClusterGroup,
-    Layer,
-    Path,
-} from "leaflet";
+import { LatLng, Rectangle, Map, Layer, Path } from "leaflet";
 import {
     DEFAULT_CIRCLE_MARKER_OPTIONS,
     DEFAULT_MARKER_OPTIONS,
@@ -42,18 +36,15 @@ const L = window.L;
 
 type GroupedLayer = { [groupedId: string]: Layer[] };
 type GroupedLayerMapping = GeoFeatureResultSetMapping<GroupedLayer>;
-type MarkerMapping = GeoFeatureResultSetMapping<MarkerClusterGroup>;
+type MarkerMapping = GeoFeatureResultSetMapping<LayerGroup>;
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG);
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG);
 
 export class MapView {
     map: Map;
     // Drawing in map properties
-    markers: MarkerMapping = getGeoFeatureResultSetMappingObj(() =>
-        L.markerClusterGroup({
-            zoomToBoundsOnClick: true,
-            showCoverageOnHover: false,
-        }),
+    markers: MarkerMapping = getGeoFeatureResultSetMappingObj(
+        () => new LayerGroup(),
     );
     groupedMarkers: GroupedLayerMapping =
         getGeoFeatureResultSetMappingObj<GroupedLayer>(() => {
