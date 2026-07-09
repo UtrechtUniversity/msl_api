@@ -19,6 +19,7 @@ const DEFAULT_SEARCH_FILTERS: SearchFilter = {
     page: 1,
     pageSize: 10,
 } as const;
+
 export class MapController {
     // UI elements
     resultsSidebar: ResultsSidebar;
