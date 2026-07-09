@@ -14,6 +14,7 @@ export class ResultsMetadata {
         this.resultsMetadataElement = overArchingElement;
         this.totalCount = this.createElement("total-count");
         this.currentCount = this.createElement("current-count");
+        this.setDefaultState();
     }
 
     private createElement(name: string): HTMLParagraphElement {
@@ -27,8 +28,7 @@ export class ResultsMetadata {
     }
     public updateMetadata(paginator: Paginator) {
         if (paginator.totalCount === 0) {
-            this.totalCount.textContent = this.createValueInTotalCount(0);
-            this.currentCount.textContent = "";
+            this.setDefaultState();
             return;
         }
 
@@ -44,8 +44,7 @@ export class ResultsMetadata {
         });
     }
     public removeMetadata() {
-        this.totalCount.textContent = "";
-        this.currentCount.textContent = "";
+        this.setDefaultState();
     }
     private createValueInTotalCount(value: number) {
         return `Data publications found: ${value}`;
@@ -58,5 +57,9 @@ export class ResultsMetadata {
         max: number;
     }) {
         return `Currently displayed: ${min} - ${max}`;
+    }
+    private setDefaultState() {
+        this.totalCount.textContent = this.createValueInTotalCount(0);
+        this.currentCount.textContent = "";
     }
 }
