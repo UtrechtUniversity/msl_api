@@ -195,8 +195,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      */
     public function mapIds($results): \Illuminate\Support\Collection
     {
-        dd('?');
-        return collect($results['results'])->pluck()->values();
+        throw new NotSupportedException('mapIds not implemented for CkanSearchEngine.');
     }
 
     /**
@@ -243,7 +242,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      */
     public function lazyMap($builder, $results, $model)
     {
-        // TODO: Implement lazyMap() method.
+        throw new NotSupportedException('lazyMap not implemented for CkanSearchEngine.');
     }
 
     /**
