@@ -15,7 +15,6 @@ class LaboratoryEquipmentTest extends TestCase
 
     public function test_cascading_delete(): void
     {
-        //LaboratoryEquipment::withoutSyncingToSearch(function () {
             $equipment = LaboratoryEquipment::create([
                 'description' => 'Equipment description',
                 'description_html' => '<p>Equipment description</p>',
