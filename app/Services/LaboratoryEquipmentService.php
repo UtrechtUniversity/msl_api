@@ -12,8 +12,6 @@ class LaboratoryEquipmentService
 {
     public function search(Request $request)
     {
-        // @todo add generic query builder for search to be reused in other searchable classes
-
         // first handle the query parameter as it set once to create the query builder
         $builder = LaboratoryEquipment::search($this->getSearchString($request));
 
