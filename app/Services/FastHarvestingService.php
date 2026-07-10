@@ -47,7 +47,7 @@ class FastHarvestingService
         $this->processFastFacilitiesResults($facilitiesResult, $fast, $job);
     }
 
-    public function processFacilityUpdate($laboratoryUpdateFast): void
+    public function processFacilityUpdate(LaboratoryUpdateFast $laboratoryUpdateFast): void
     {
         $fast = new Fast;
         $result = $fast->facilityRequest($laboratoryUpdateFast->laboratory_id);
