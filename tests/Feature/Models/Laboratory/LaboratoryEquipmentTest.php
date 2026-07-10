@@ -39,7 +39,6 @@ class LaboratoryEquipmentTest extends TestCase
             $equipment->delete();
             $this->assertModelMissing($equipment);
             $this->assertModelMissing($addon);
-        //});
     }
     public function test_laboratory_relation(): void
     {
