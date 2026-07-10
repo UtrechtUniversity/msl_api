@@ -43,7 +43,7 @@ class Builder extends ScoutBuilder
     {
         $this->filterWheres[] = [
             'field' => $field,
-            'operator' => func_num_args() === 2 ? '=' : $operator,
+            'operator' => func_num_args() === 2 ? ':' : $operator,
             'value' => func_num_args() === 2 ? $operator : $value,
         ];
 
