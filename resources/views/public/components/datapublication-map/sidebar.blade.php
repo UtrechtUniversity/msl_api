@@ -5,7 +5,6 @@
                 'name' => 'Keywords',
                 'component' => 'public.components.datapublication-map.keyword-tree',
                 'default' => false,
-                'disabled' => true,
             ],
             [
                 'name' => 'Results',
