@@ -1,0 +1,171 @@
+<?php
+
+namespace App\Clients\CkanClient\Request;
+
+use App\Clients\CkanClient\Response\PackageSearchResponse;
+use App\Clients\CkanClient\SolrUtils;
+
+class PackageSearchRequest implements RequestInterface
+{
+    /**
+     * @var string endpoint in CKAN used for this request;
+     */
+    private string $endpoint = 'action/package_search';
+
+    /**
+     * @var string method of request
+     */
+    private string $method = 'GET';
+
+    /**
+     * @var string class for creating result object
+     */
+    private string $responseClass = PackageSearchResponse::class;
+
+    /**
+     * @var string query string used in solr
+     */
+    public string $query = '';
+
+    public string $filterQuery = '';
+
+    /**
+     * @var array filter query parts used to construct the solr filter query
+     */
+    public array $filterQueries = [];
+
+    /**
+     * @var string bounding box spatial filter
+     */
+    private string $boundingBox = '';
+
+    /**
+     * @var int number of rows to request from solr
+     */
+    public int $rows = 10;
+
+    /**
+     * @var int number to start results from
+     */
+    public int $start = 0;
+
+    /**
+     * @var array facets used to contruct the facets part of the solr query
+     */
+    public array $facetFields = [];
+
+    /**
+     * @var string sort results
+     */
+    public string $sortField = '';
+
+    /**
+     * @var int maximum number of facet values returned by CKAN. Use a negative number for unlimited
+     */
+    private int $facetLimit = -1;
+
+    public function getPayloadAsArray(): array
+    {
+        return [
+            'query' => [
+                'q' => $this->query,
+                'fq' => strlen($this->filterQuery) > 0 ? $this->filterQuery : $this->getFilterQueryQuery(),
+                'ext_bbox' => $this->boundingBox,
+                'rows' => $this->rows,
+                'start' => $this->start,
+                'facet.field' => $this->getFacetFieldQuery(),
+                'facet.limit' => $this->facetLimit,
+                'sort' => $this->sortField,
+            ],
+        ];
+    }
+
+    public function addFilterQuery($fieldName, $value, $escape = true)
+    {
+        if ($escape) {
+            $this->filterQueries[$fieldName][] = '"'.SolrUtils::escape($value).'"';
+        } else {
+            $this->filterQueries[$fieldName][] = $value;
+        }
+    }
+
+    private function getFilterQueryQuery(): string
+    {
+        if (count($this->filterQueries) > 0) {
+            $parts = [];
+            foreach ($this->filterQueries as $key => $values) {
+                foreach ($values as $value) {
+                    $parts[] = $key.':'.$value;
+                }
+            }
+
+            $return = implode(' AND ', $parts);
+
+            return $return;
+        }
+
+        return '';
+    }
+
+    public function setBoundingBox(float $minX, float $minY, float $maxX, float $maxY): void
+    {
+        $this->boundingBox = (string) $minX.','.(string) $minY.','.(string) $maxX.','.(string) $maxY;
+    }
+
+    public function addFacetField($facetField): void
+    {
+        $this->facetFields[] = $facetField;
+    }
+
+    public function loadFacetsFromConfig($type): void
+    {
+        if ($type == 'data-publications') {
+            $facets = config('ckan.facets.data-publications');
+            foreach ($facets as $key => $value) {
+                $this->addFacetField($key);
+            }
+        } elseif ($type == 'laboratories') {
+            $facets = config('ckan.facets.laboratories');
+            foreach ($facets as $key => $value) {
+                $this->addFacetField($key);
+            }
+        } elseif ($type == 'equipment') {
+            $facets = config('ckan.facets.equipment');
+            foreach ($facets as $key => $value) {
+                $this->addFacetField($key);
+            }
+        }
+    }
+
+    private function getFacetFieldQuery(): string
+    {
+        if (count($this->facetFields) > 0) {
+            $return = '[';
+            $parts = [];
+            foreach ($this->facetFields as $facetField) {
+                $parts[] = '"'.$facetField.'"';
+            }
+            $return .= implode(',', $parts);
+            $return .= ']';
+
+            return $return;
+        }
+
+        return '[]';
+    }
+
+    public function getResponseClass(): string
+    {
+        return $this->responseClass;
+    }
+
+    public function getMethod(): string
+    {
+        return $this->method;
+    }
+
+    public function getEndpoint(): string
+    {
+        return $this->endpoint;
+    }
+}

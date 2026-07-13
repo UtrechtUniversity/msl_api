@@ -2,9 +2,9 @@
 
 namespace App\Exports;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
-use App\Mappers\Helpers\KeywordHelper;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;

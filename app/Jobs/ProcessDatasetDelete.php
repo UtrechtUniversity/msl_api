@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\DatasetPurgeRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\DatasetPurgeRequest;
 use App\Models\DatasetDelete;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

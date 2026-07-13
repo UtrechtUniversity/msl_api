@@ -2,7 +2,7 @@
 
 namespace App\Exports\Vocabs;
 
-use App\Models\Laboratory;
+use App\Models\Laboratory\Laboratory;
 
 class LaboratoriesJsonExport
 {

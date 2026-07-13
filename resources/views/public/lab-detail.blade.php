@@ -3,10 +3,10 @@
     <div class="tab-links-parent">
         @include('public.components.tab-links', [
             'routes' => [
-                'Laboratory' => route('lab-detail', ['id' => $laboratory['name']]),
-                'Equipment' => route('lab-detail-equipment', ['id' => $laboratory['name']]),
+                'Laboratory' => route('lab-detail', ['id' => $laboratory->ckan_id]),
+                'Equipment' => route('lab-detail-equipment', ['id' => $laboratory->ckan_id]),
             ],
-            'routeActive' => route('lab-detail', ['id' => $laboratory['name']]),
+            'routeActive' => route('lab-detail', ['id' => $laboratory->ckan_id]),
         ])
     </div>
 
@@ -14,16 +14,16 @@
         <div class="detail-div content-divide-y">
             <div class="detail-entry-div !flex-col">
                 <h2 class="">Laboratory Details</h2>
-                <h1 class="text-lg">{{ $laboratory['title'] }}</h1>
+                <h1 class="text-lg">{{ $laboratory->name }}</h1>
             </div>
 
-            @if (array_key_exists('msl_description_html', $laboratory))
+            @if ($laboratory->description_html != "")
                 <div class="detail-entry-div !flex-col place-items-center">
                     <h3>Description</h3>
                     @include('public.components.tab-list', [
                         'allTabs' => [
                             'Description' => [
-                                'content' => $laboratory['msl_description_html'],
+                                'content' => $laboratory->description_html,
                                 'id' => 'description',
                             ],
                         ],
@@ -35,15 +35,14 @@
                 <p class="italic text-center">no description found</p>
             @endif
 
-            {{-- report dead link? --}}
-            @if (array_key_exists('msl_website', $laboratory))
+            @if ($laboratory->website != "")
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Website</h4>
 
                     <div class="detail-entry-content">
                         @include('public.components.list-views.table-list', [
-                            'entries' => [$laboratory['msl_website']],
+                            'entries' => [$laboratory->website],
                             'withKeys' => false,
                             'textSize' => 'base',
                         ])
@@ -51,13 +50,13 @@
                 </div>
             @endif
 
-            @if (array_key_exists('msl_domain_name', $laboratory))
+            @if ($laboratory->fast_domain_name != "")
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Domain</h4>
                     <div class="detail-entry-content">
                         @include('public.components.list-views.table-list', [
-                            'entries' => [$laboratory['msl_domain_name']],
+                            'entries' => [$laboratory->fast_domain_name],
                             'withKeys' => false,
                             'textSize' => 'base',
                         ])
@@ -65,13 +64,13 @@
                 </div>
             @endif
 
-            @if (array_key_exists('msl_organization_name', $laboratory))
+            @if ($laboratory->laboratoryOrganization)
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Organization name</h4>
                     <div class="detail-entry-content">
                         @include('public.components.list-views.table-list', [
-                            'entries' => [$laboratory['msl_organization_name']],
+                            'entries' => [$laboratory->laboratoryOrganization->name],
                             'withKeys' => false,
                             'textSize' => 'base',
                         ])
@@ -85,11 +84,11 @@
                 <div class="detail-entry-content">
                     @include('public.components.list-views.table-list', [
                         'entries' => [
-                            $laboratory['msl_address_street_1'],
-                            $laboratory['msl_address_street_2'],
-                            $laboratory['msl_address_postalcode'],
-                            $laboratory['msl_address_city'],
-                            $laboratory['msl_address_country_name'],
+                            $laboratory->address_street_1,
+                            $laboratory->address_street_2,
+                            $laboratory->address_postalcode,
+                            $laboratory->address_city,
+                            $laboratory->address_country_name,
                         ],
                         'withKeys' => false,
                         'textSize' => 'base',
@@ -97,7 +96,7 @@
                 </div>
             </div>
 
-            @if (array_key_exists('msl_location', $laboratory))
+            @if ($laboratory->getGeoJsonFeature() != "")
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Location</h4>
@@ -116,7 +115,7 @@
                                     }
                                 }
 
-                                var features = <?php echo $laboratory['msl_location']; ?>;
+                                var features = <?php echo $laboratory->getGeoJsonFeature(); ?>;
 
                                 if (features.geometry.coordinates) {
                                     var map = L.map('map').setView([features.geometry.coordinates[1], features.geometry.coordinates[0]],
@@ -143,7 +142,7 @@
                 <div class="p-20 w-full flex justify-around">
                     <a
                         href="{{ route('laboratory-contact-person', [
-                            'id' => $laboratory['name'],
+                            'id' => $laboratory->ckan_id,
                         ]) }}">
                         <button class="btn btn-primary btn-lg btn-wide ">Contact Laboratory</button>
                     </a>

@@ -2,10 +2,10 @@
 
 namespace App\Jobs;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageCreateRequest;
-use App\CkanClient\Request\PackageShowRequest;
-use App\CkanClient\Request\PackageUpdateRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageCreateRequest;
+use App\Clients\CkanClient\Request\PackageShowRequest;
+use App\Clients\CkanClient\Request\PackageUpdateRequest;
 use App\Models\EquipmentCreate;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

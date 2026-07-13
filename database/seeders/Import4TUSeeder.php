@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\FigshareFileMapper;
+use App\Mappers\DataPublicationImport\Additional\FigshareFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;

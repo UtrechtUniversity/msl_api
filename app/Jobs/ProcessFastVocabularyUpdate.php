@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
-use App\Fast\Fast;
+use App\Clients\Fast\Fast;
 use App\Models\Keyword;
-use App\Models\LaboratoryContactPerson;
-use App\Models\LaboratoryEquipment;
-use App\Models\LaboratoryEquipmentAddon;
-use App\Models\LaboratoryManager;
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\LaboratoryContactPerson;
+use App\Models\Laboratory\LaboratoryEquipment;
+use App\Models\Laboratory\LaboratoryEquipmentAddon;
+use App\Models\Laboratory\LaboratoryManager;
+use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\Vocabulary;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -35,13 +35,6 @@ class ProcessFastVocabularyUpdate implements ShouldQueue
      */
     public function handle()
     {
-        // Remove current data based upon last FAST update
-        LaboratoryOrganization::truncate();
-        LaboratoryContactPerson::truncate();
-        LaboratoryManager::truncate();
-        LaboratoryEquipment::truncate();
-        LaboratoryEquipmentAddon::truncate();
-
         // Create a new equipment vocabulary based upon current FAST data
         // Delete current equipment vocabulary
         $currentVocab = Vocabulary::where('name', 'fast')->where('version', '1.0')->first();

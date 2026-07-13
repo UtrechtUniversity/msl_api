@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Mappers\Datacite\Datacite3Mapper;
+use App\Mappers\DataPublicationImport\Datacite\Datacite3Mapper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use PHPUnit\Framework\TestCase;
@@ -55,7 +55,7 @@ class Datacite3Test extends TestCase
                     "type": "dois",
                     "attributes": {
                         "alternateIdentifiers": [
-                           
+
                         ]
                     }
                 }
@@ -422,19 +422,19 @@ class Datacite3Test extends TestCase
                     "id": "10.1594/pangaea.937090",
                     "type": "dois",
                     "attributes": {
-                        "titles": [                            
+                        "titles": [
                             {
                                 "lang": "es",
                                 "title": "Example Title spanish"
                             },
-                            {   
+                            {
                                 "lang": "",
                                 "title": "Example Title no lang"
                             },
                             {
                                 "title": "Sedimentological and geochemical data of Lago di Vedana, north-eastern Italy"
                             },
-                            {   
+                            {
                                 "lang": "en",
                                 "title": "Example Title with lang english"
                             },
@@ -650,7 +650,7 @@ class Datacite3Test extends TestCase
                                 "relatedIdentifier": "urn:nbn:de:101:1-201102033592",
                                 "resourceTypeGeneral": "PeerReview",
                                 "relatedIdentifierType": "URN"
-                            },        
+                            },
                             {
                                 "relationType": "IsDerivedFrom",
                                 "relatedIdentifier": "10.1016/j.epsl.2011.11.037",

@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Additional\FigshareFileMapper;
-use App\Mappers\Helpers\FigshareFilesHelper;
-use App\Mappers\Helpers\RoCrateHelper;
+use App\Mappers\DataPublicationImport\Additional\FigshareFileMapper;
+use App\Mappers\DataPublicationImport\Helpers\FigshareFilesHelper;
+use App\Mappers\DataPublicationImport\Helpers\RoCrateHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Mockery\MockInterface;
