@@ -1,26 +1,26 @@
-URLSearchParams.prototype.remove = function (key, value) {
-    const entries = this.getAll(key);
-    const newEntries = entries.filter((entry) => entry !== value);
-    this.delete(key);
-    newEntries.forEach((newEntry) => this.append(key, newEntry));
-};
+import { assertNotUndefined } from "../helpers";
+import type { TreeNode, TreeSubNode } from "./utils";
 
-function processNodes(nodes, original = false) {
-    for (var i = nodes.length - 1; i >= 0; i--) {
-        var node = nodes[i];
+const activeFilters: { [key: string]: string[] } = {};
+const activeNodes: Array<string> = [];
+const facets: { [key: string]: string[] } = {};
+function processNodes(nodes: TreeNode[], original = false) {
+    for (let i = nodes.length - 1; i >= 0; i--) {
+        const node = nodes[i];
+        assertNotUndefined(node, "Node is undefined. This is a bug.");
         if (node.extra.type == "filter") {
-            if (node.extra.filterName in activeFilters) {
-                if (
-                    activeFilters[node.extra.filterName].includes(
-                        node.extra.filterValue,
-                    )
-                ) {
-                    node.state.checked = true;
-                    activeNodes.push(node.id);
-                }
+            const filterInActiveFilters = activeFilters[node.extra.filterName];
+
+            if (
+                filterInActiveFilters !== undefined &&
+                filterInActiveFilters.includes(node.extra.filterValue)
+            ) {
+                node.state.checked = true;
+                activeNodes.push(node.id);
             }
-            if (node.extra.filterName in facets) {
-                var result = facets[node.extra.filterName].items.find((obj) => {
+            const filterInFacets = facets[node.extra.filterName];
+            if (filterInFacets) {
+                const result = filterInFacets.items.find((obj) => {
                     return obj.name == node.extra.filterValue;
                 });
 
@@ -35,16 +35,13 @@ function processNodes(nodes, original = false) {
             }
         }
 
-        if (node.extra.includeFacet) {
-            if (node.extra.facetName in facets) {
-                for (
-                    let x = 0;
-                    x < facets[node.extra.facetName].items.length;
-                    x++
-                ) {
-                    var newNode = {
-                        text: facets[node.extra.facetName].items[x]
-                            .display_name,
+        if ("includeFacet" in node.extra) {
+            const facetInFacets = facets[node.extra.facetName];
+
+            if (facetInFacets) {
+                for (let x = 0; x < facetInFacets.items.length; x++) {
+                    const newNode: TreeSubNode = {
+                        text: facetInFacets.items[x].display_name,
                         id: node.extra.facetName + "-" + x,
                         state: {
                             opened: false,
@@ -56,8 +53,7 @@ function processNodes(nodes, original = false) {
                             type: "filter",
                             url: "",
                             filterName: node.extra.facetName,
-                            filterValue:
-                                facets[node.extra.facetName].items[x].name,
+                            filterValue: facetInFacets.items[x].name,
                         },
                         children: [],
                     };
@@ -72,6 +68,13 @@ function processNodes(nodes, original = false) {
         }
     }
 }
+const interpretedJsonResponse = await fetch("/interpreted.json");
+//TODO Throw if there is error.
+const dataInterpreted = await interpretedJsonResponse.json();
+
+const originalJsonResponse = await fetch("/original.json");
+//TODO Throw if there is error.
+const dataOriginal = await originalJsonResponse.json();
 
 processNodes(dataInterpreted);
 processNodes(dataOriginal, true);

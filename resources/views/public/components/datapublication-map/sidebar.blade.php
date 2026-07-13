@@ -4,12 +4,12 @@
             [
                 'name' => 'Keywords',
                 'component' => 'public.components.datapublication-map.keyword-tree',
-                'default' => false,
+                'default' => true,
             ],
             [
                 'name' => 'Results',
                 'component' => 'public.components.datapublication-map.results',
-                'default' => true,
+                'default' => false,
             ],
         ],
     ])

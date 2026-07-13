@@ -80,3 +80,51 @@ export type Paginator = {
     lastPage: number;
     perPage: number;
 };
+
+export type TreeNode = {
+    text: string;
+    state: NodeState;
+    extra: NodeExtra;
+    children: TreeSubNode[];
+};
+
+export type TreeSubNode = {
+    id: string;
+    text: string;
+    state: SubNodeState;
+    extra: SubTreeExtra;
+    children: TreeSubNode[];
+};
+
+interface SubTreeExtra {
+    type: "filter";
+    filterName: "msl_enriched_keyword_uri" | "msl_original_keyword_uri";
+    filterValue: string;
+}
+
+interface SubNodeState {
+    disabled: boolean;
+}
+interface NodeExtraWithoutFacet {
+    type: "filter";
+    url: string;
+    filterName: string;
+    filterValue: string;
+}
+
+interface NodeExtraWithFacet {
+    type: "filter";
+    url: string;
+    filterName: string;
+    filterValue: string;
+    includeFacet: boolean;
+    facetName: string;
+}
+
+type NodeExtra = NodeExtraWithFacet | NodeExtraWithoutFacet;
+interface NodeState {
+    opened: boolean;
+    disabled: boolean;
+    selected: boolean;
+    checked: boolean;
+}
