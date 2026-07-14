@@ -1,4 +1,5 @@
 import { processNodes } from "./utils";
+import "jstree";
 const activeFilters: { [key: string]: string[] } = {};
 const activeNodes: Array<string> = [];
 const facets: { [key: string]: string[] } = {};
