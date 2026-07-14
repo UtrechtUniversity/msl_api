@@ -7,6 +7,7 @@ import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
 import { cloneDeep } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
+import { KeywordTree } from "./keywordTree";
 
 type SearchFilter = {
     boundingBox: string;
@@ -26,6 +27,7 @@ export class MapController {
     mapView: MapView;
     pagination: Pagination;
     resultsMetadata: ResultsMetadata;
+    keywordTree: KeywordTree;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -37,6 +39,7 @@ export class MapController {
         this.resultsSidebar = new ResultsSidebar();
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
+        this.keywordTree = new KeywordTree();
 
         // Callbacks
         this.mapView.setHandlerfn({

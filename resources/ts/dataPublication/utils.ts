@@ -1,3 +1,4 @@
+import { assertNotUndefined } from "../helpers.js";
 import {
     EXCLUSIVE,
     INCLUSIVE,
@@ -127,4 +128,85 @@ interface NodeState {
     disabled: boolean;
     selected: boolean;
     checked: boolean;
+}
+
+export function processNodes(
+    nodes: (TreeNode | TreeSubNode)[],
+    original = false,
+    {
+        activeFilters,
+        activeNodes,
+        facets,
+    }: {
+        activeFilters: { [key: string]: string[] };
+        activeNodes: Array<string>;
+        facets: { [key: string]: string[] };
+    },
+) {
+    for (let i = nodes.length - 1; i >= 0; i--) {
+        const node = nodes[i];
+        assertNotUndefined(node, "Node is undefined. This is a bug.");
+        if (node.extra.type == "filter") {
+            const filterInActiveFilters = activeFilters[node.extra.filterName];
+
+            if (
+                filterInActiveFilters !== undefined &&
+                filterInActiveFilters.includes(node.extra.filterValue)
+            ) {
+                node.state.checked = true;
+                activeNodes.push(node.id);
+            }
+            const filterInFacets = facets[node.extra.filterName];
+            if (filterInFacets) {
+                const result = filterInFacets.items.find((obj) => {
+                    return obj.name == node.extra.filterValue;
+                });
+
+                if (result) {
+                    node.state.disabled = false;
+                    node.text =
+                        node.text +
+                        ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
+                        result.count +
+                        "</span>";
+                }
+            }
+        }
+
+        if ("includeFacet" in node.extra) {
+            const facetInFacets = facets[node.extra.facetName];
+
+            if (facetInFacets) {
+                for (let x = 0; x < facetInFacets.items.length; x++) {
+                    const newNode: TreeSubNode = {
+                        text: facetInFacets.items[x].display_name,
+                        id: node.extra.facetName + "-" + x,
+                        state: {
+                            opened: false,
+                            disabled: false,
+                            selected: false,
+                            checked: false,
+                        },
+                        extra: {
+                            type: "filter",
+                            url: "",
+                            filterName: node.extra.facetName,
+                            filterValue: facetInFacets.items[x].name,
+                        },
+                        children: [],
+                    };
+
+                    node.children.push(newNode);
+                }
+            }
+        }
+
+        if (node.children.length > 0) {
+            processNodes(node.children, original, {
+                activeFilters,
+                activeNodes,
+                facets,
+            });
+        }
+    }
 }
