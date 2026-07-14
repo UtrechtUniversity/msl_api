@@ -4,7 +4,7 @@ import type { TreeNode, TreeSubNode } from "./utils";
 const activeFilters: { [key: string]: string[] } = {};
 const activeNodes: Array<string> = [];
 const facets: { [key: string]: string[] } = {};
-function processNodes(nodes: TreeNode[], original = false) {
+function processNodes(nodes: (TreeNode | TreeSubNode)[], original = false) {
     for (let i = nodes.length - 1; i >= 0; i--) {
         const node = nodes[i];
         assertNotUndefined(node, "Node is undefined. This is a bug.");
