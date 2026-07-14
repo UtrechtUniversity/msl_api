@@ -81,7 +81,7 @@ class FacilityResponseMapper
 
         $organization->fast_id = $data['id'];
         $organization->name = $data['name'];
-        $organization->external_identifier = $data['affiliation']['external_identifier'] ?? '';
+        $organization->external_identifier = $data['external_identifier'] ?? '';
 
         return $organization;
     }
