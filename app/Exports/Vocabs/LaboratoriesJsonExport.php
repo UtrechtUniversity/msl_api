@@ -6,8 +6,20 @@ use App\Models\Laboratory\Laboratory;
 
 class LaboratoriesJsonExport
 {
+    public function export(string $version): false|string
+    {
+        switch ($version) {
+            case '1.0':
+                return $this->export10();
+            case '1.1':
+                return $this->export11();
+            default:
+                throw new \Exception('Invalid version requested');
+        }
 
-    public function export11(): false|string
+    }
+
+    private function export11(): false|string
     {
         $laboratories = Laboratory::where('external_identifier', '<>', '')->get();
 
@@ -32,7 +44,7 @@ class LaboratoriesJsonExport
         return json_encode($output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
     }
-    public function export10(): false|string
+    private function export10(): false|string
     {
         $laboratories = Laboratory::where('external_identifier', '<>', '')->get();
 

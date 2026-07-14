@@ -35,13 +35,13 @@ class GenerateLaboratoryExportCommand extends Command
         $basePath = 'vocabs/laboratories/';
 
         $path = $basePath.'laboratories.json';
-        Storage::disk('public')->put($path, $exporter->export10());
+        Storage::disk('public')->put($path, $exporter->export('1.0'));
 
         $path = $basePath.'1.0/laboratories.json';
-        Storage::disk('public')->put($path, $exporter->export10());
+        Storage::disk('public')->put($path, $exporter->export('1.0'));
 
         $path = $basePath.'1.1/laboratories.json';
-        Storage::disk('public')->put($path, $exporter->export11());
+        Storage::disk('public')->put($path, $exporter->export('1.1'));
 
         $this->line('Finished exporting laboratories.');
 
