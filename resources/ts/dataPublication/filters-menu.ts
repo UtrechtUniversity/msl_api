@@ -1,4 +1,4 @@
-import { processNodes } from "./utils";
+import { processNodes, type TreeNode, type TreeSubNode } from "./utils";
 import "jstree";
 const activeFilters: { [key: string]: string[] } = {};
 const activeNodes: Array<string> = [];
@@ -12,8 +12,8 @@ const originalJsonResponse = await fetch("/original.json");
 //TODO Throw if there is error.
 const dataOriginal = await originalJsonResponse.json();
 
-processNodes(dataInterpreted, false, { activeNodes, activeFilters, facets });
-processNodes(dataOriginal, true, { activeNodes, activeFilters, facets });
+processNodes(dataInterpreted);
+processNodes(dataOriginal, true);
 
 const TREES = {
     interpreted: {
@@ -27,26 +27,28 @@ const TREES = {
         filterToggle: "#filterTreeToggleOriginal",
     },
 } as const;
-const treeOptions = {
-    core: {
-        data: dataInterpreted,
-        check_callback: false,
-        themes: {
-            dots: false,
-            icons: false,
+function createTreeOptions(data: (TreeNode | TreeSubNode)[]) {
+    return {
+        core: {
+            data: data,
+            check_callback: false,
+            themes: {
+                dots: false,
+                icons: false,
+            },
         },
-    },
-    checkbox: {
-        three_state: false, // to avoid that fact that checking a node also check others
-        whole_node: false, // to avoid checking the box just clicking the node
-        tie_selection: false, // for checking without selecting and selecting without checking
-    },
-    plugins: ["checkbox", "search", "state"],
-    search: {
-        case_sensitive: false,
-        show_only_matches: true,
-    },
-};
+        checkbox: {
+            three_state: false, // to avoid that fact that checking a node also check others
+            whole_node: false, // to avoid checking the box just clicking the node
+            tie_selection: false, // for checking without selecting and selecting without checking
+        },
+        plugins: ["checkbox", "search", "state"],
+        search: {
+            case_sensitive: false,
+            show_only_matches: true,
+        },
+    };
+}
 
 function handleFilterChange(e, data) {
     if (data.node.original.extra.type == "filter") {
