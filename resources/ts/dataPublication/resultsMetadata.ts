@@ -28,7 +28,8 @@ export class ResultsMetadata {
     }
     public updateMetadata(paginator: Paginator) {
         if (paginator.totalCount === 0) {
-            this.setDefaultState();
+            this.totalCount.textContent = this.createValueInTotalCount(0);
+            this.currentCount.textContent = "";
             return;
         }
 
@@ -59,7 +60,7 @@ export class ResultsMetadata {
         return `Currently displayed: ${min} - ${max}`;
     }
     private setDefaultState() {
-        this.totalCount.textContent = this.createValueInTotalCount(0);
+        this.totalCount.textContent = "";
         this.currentCount.textContent = "";
     }
 }
