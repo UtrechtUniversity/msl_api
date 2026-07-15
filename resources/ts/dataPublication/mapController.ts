@@ -110,6 +110,7 @@ export class MapController {
         meta: Paginator;
     }> {
         const boundingBox = this.searchFilters.boundingBox;
+        console.log(this.searchFilters, "here");
         if (!boundingBox)
             throw new Error(
                 "Bounding box doesn't have a correct value. This is a bug.",
@@ -189,7 +190,8 @@ export class MapController {
             ...this.searchFilters.keywords,
             [value]: true,
         };
-        this.resetAllInformation();
+
+        this.resetAllInformation({ includeFilters: false });
         this.populateElements();
     }
 
@@ -202,12 +204,16 @@ export class MapController {
     }
 
     // Helper methods
-    private resetAllInformation() {
+    private resetAllInformation(
+        { includeFilters }: { includeFilters: boolean } = {
+            includeFilters: true,
+        },
+    ) {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
-        this.resetSearchFilter();
+        if (includeFilters) this.resetSearchFilter();
         this.paginator = null;
         this.results = null;
     }
