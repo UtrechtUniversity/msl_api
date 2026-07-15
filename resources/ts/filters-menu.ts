@@ -108,6 +108,7 @@ $("#jstree-interpreted")
         $("#jstree-interpreted").on(
             "check_node.jstree uncheck_node.jstree",
             function (e, data) {
+                //TODO Is it ever not 'filter'?
                 if (data.node.original.extra.type == "filter") {
                     if (e.type == "check_node") {
                         var url = new URL(window.location.href);

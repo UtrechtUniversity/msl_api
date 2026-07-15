@@ -13,12 +13,14 @@ type SearchFilter = {
     boundingBox: string;
     page: number;
     pageSize: 10;
+    keywords: { [key: string]: true };
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
     boundingBox: "",
     page: 1,
     pageSize: 10,
+    keywords: {},
 } as const;
 
 export class MapController {
@@ -40,6 +42,7 @@ export class MapController {
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
+        this.keywordTree.init();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -71,6 +74,16 @@ export class MapController {
         });
         this.pagination.setHandlerfn({
             onPageChange: (page) => this.handlePageChange(page),
+        });
+        this.keywordTree.setHandlerfn({
+            onKeywordFilterUpdate: (
+                type: "remove" | "add",
+                filter: { name: string },
+            ) => {
+                type === "add"
+                    ? this.handleKeywordFilterAdd(filter.name)
+                    : this.handleKeywordFilterRemove(filter.name);
+            },
         });
     }
 
@@ -169,6 +182,22 @@ export class MapController {
         this.results = null;
 
         this.searchFilters.page = page;
+        this.populateElements();
+    }
+    private handleKeywordFilterAdd(value: string) {
+        this.searchFilters.keywords = {
+            ...this.searchFilters.keywords,
+            [value]: true,
+        };
+        this.resetAllInformation();
+        this.populateElements();
+    }
+
+    private handleKeywordFilterRemove(value: string) {
+        //TODO should we really delete or just false?
+        delete this.searchFilters.keywords[value];
+
+        this.resetAllInformation();
         this.populateElements();
     }
 
