@@ -67,7 +67,6 @@ class GeoJsonDataPublicationService
      */
     private function setRequestToCKAN(Request $request): void
     {
-
         // Filter on data-publications
         $this->packageSearchRequest->addFilterQuery('type', 'data-publication');
         [$rows, $start] = $this->toRowsAndStart($request->get('page'), $request->get('pageSize'));
@@ -78,6 +77,17 @@ class GeoJsonDataPublicationService
         $this->packageSearchRequest->start = $start;
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
+
+        foreach (json_decode($request->get('keywords')) as $key => $values) {
+            // TODO do I need this check?
+            if (array_key_exists($key, config('ckan.facets.data-publications'))) {
+                foreach ($values as $value) {
+                    if ($key !== 'query') {
+                        $this->packageSearchRequest->addFilterQuery($key, $value);
+                    }
+                }
+            }
+        }
     }
 
     /**

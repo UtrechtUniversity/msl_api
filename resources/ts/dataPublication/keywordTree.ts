@@ -85,7 +85,8 @@ export class KeywordTree {
     private onKeywordFilterUpdate: (
         type: "remove" | "add",
         filter: {
-            name: string;
+            key: string;
+            value: string;
         },
     ) => void = throwWhenCallBackNotInitialized;
     private self = this;
@@ -97,7 +98,8 @@ export class KeywordTree {
         onKeywordFilterUpdate: (
             type: "remove" | "add",
             filter: {
-                name: string;
+                key: string;
+                value: string;
             },
         ) => void;
     }) {
@@ -203,11 +205,13 @@ export class KeywordTree {
             if (data.node.original.extra.type == "filter") {
                 if (e.type == "check_node") {
                     self.onKeywordFilterUpdate("add", {
-                        name: data.node.original.extra.filterName,
+                        key: data.node.original.extra.filterName,
+                        value: data.node.original.extra.filterValue,
                     });
                 } else if (e.type == "uncheck_node") {
                     self.onKeywordFilterUpdate("remove", {
-                        name: data.node.original.extra.filterName,
+                        key: data.node.original.extra.filterName,
+                        value: data.node.original.extra.filterValue,
                     });
                 }
             }

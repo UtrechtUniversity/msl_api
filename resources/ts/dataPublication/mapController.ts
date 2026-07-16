@@ -13,7 +13,7 @@ type SearchFilter = {
     boundingBox: string;
     page: number;
     pageSize: 10;
-    keywords: { [key: string]: true };
+    keywords: { [key: string]: string[] };
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
@@ -78,11 +78,11 @@ export class MapController {
         this.keywordTree.setHandlerfn({
             onKeywordFilterUpdate: (
                 type: "remove" | "add",
-                filter: { name: string },
+                filter: { key: string; value: string },
             ) => {
                 type === "add"
-                    ? this.handleKeywordFilterAdd(filter.name)
-                    : this.handleKeywordFilterRemove(filter.name);
+                    ? this.handleKeywordFilterAdd(filter)
+                    : this.handleKeywordFilterRemove(filter);
             },
         });
     }
@@ -119,6 +119,8 @@ export class MapController {
             boundingBox: this.searchFilters.boundingBox,
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
+            //TODO this doesn't work weell
+            keywords: JSON.stringify(this.searchFilters.keywords),
         });
 
         const route = "/api/geoJsonDataPublications?" + params;
@@ -185,35 +187,59 @@ export class MapController {
         this.searchFilters.page = page;
         this.populateElements();
     }
-    private handleKeywordFilterAdd(value: string) {
-        this.searchFilters.keywords = {
-            ...this.searchFilters.keywords,
-            [value]: true,
-        };
+    private handleKeywordFilterAdd({
+        key,
+        value,
+    }: {
+        key: string;
+        value: string;
+    }) {
+        const valuesInTree = this.searchFilters.keywords[key];
+        const setToAdd = new Set(valuesInTree ?? []);
+        setToAdd.add(value);
+        this.searchFilters.keywords[key] = [...setToAdd];
 
-        this.resetAllInformation({ includeFilters: false });
+        this.resetNecessaryInformationForKeyword();
         this.populateElements();
     }
 
-    private handleKeywordFilterRemove(value: string) {
-        //TODO should we really delete or just false?
-        delete this.searchFilters.keywords[value];
+    private handleKeywordFilterRemove({
+        key,
+        value,
+    }: {
+        key: string;
+        value: string;
+    }) {
+        let valuesInTree = this.searchFilters.keywords[key];
+        if (!valuesInTree)
+            throw new Error("Key not found in tree. This is a bug.");
+        valuesInTree = valuesInTree.filter(
+            (valueOfKey: string) => valueOfKey !== value,
+        );
+        this.searchFilters.keywords[key] = valuesInTree;
 
-        this.resetAllInformation();
+        if (this.searchFilters.keywords[key].length === 0)
+            delete this.searchFilters.keywords[key];
+
+        this.resetNecessaryInformationForKeyword();
         this.populateElements();
     }
 
     // Helper methods
-    private resetAllInformation(
-        { includeFilters }: { includeFilters: boolean } = {
-            includeFilters: true,
-        },
-    ) {
+    private resetAllInformation() {
         this.mapView.removeAllLayers();
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
-        if (includeFilters) this.resetSearchFilter();
+        this.resetSearchFilter();
+        this.paginator = null;
+        this.results = null;
+    }
+    private resetNecessaryInformationForKeyword() {
+        this.mapView.removeAllLayers({ except: "rectangle" });
+        this.resultsSidebar.resetList();
+        this.pagination.clear();
+        this.resultsMetadata.removeMetadata();
         this.paginator = null;
         this.results = null;
     }
