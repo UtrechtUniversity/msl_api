@@ -11,6 +11,7 @@ import { KeywordTree } from "./keywordTree";
 
 const BOUNDING_BOX_DEFAULT = "[-180,-90,180,90]";
 type SearchFilter = {
+    //TODO maybe add a function on how to create filters  and remove filters based on the filter.
     activeFilters: string[];
     filters: {
         boundingBox: string;
@@ -118,7 +119,6 @@ export class MapController {
     }> {
         const boundingBox =
             this.searchFilters.filters.boundingBox || BOUNDING_BOX_DEFAULT;
-        console.log(this.searchFilters, boundingBox);
         const params = new URLSearchParams({
             boundingBox: boundingBox,
             page: this.searchFilters.filters.page.toString(),
@@ -243,7 +243,6 @@ export class MapController {
             );
 
         this.resetNecessaryInformationForKeyword();
-        console.log(this.searchFilters.activeFilters.length);
         if (this.searchFilters.activeFilters.length) this.populateElements();
     }
 
