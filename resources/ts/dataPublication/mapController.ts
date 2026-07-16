@@ -9,18 +9,25 @@ import { cloneDeep } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 
+const BOUNDING_BOX_DEFAULT = "[-180,-90,180,90]";
 type SearchFilter = {
-    boundingBox: string;
-    page: number;
-    pageSize: 10;
-    keywords: { [key: string]: string[] };
+    activeFilters: string[];
+    filters: {
+        boundingBox: string;
+        page: number;
+        pageSize: 10;
+        keywords: { [key: string]: string[] };
+    };
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
-    boundingBox: "",
-    page: 1,
-    pageSize: 10,
-    keywords: {},
+    activeFilters: [],
+    filters: {
+        boundingBox: "",
+        page: 1,
+        pageSize: 10,
+        keywords: {},
+    },
 } as const;
 
 export class MapController {
@@ -109,18 +116,15 @@ export class MapController {
         data: GeoFeatureDataPublications;
         meta: Paginator;
     }> {
-        const boundingBox = this.searchFilters.boundingBox;
-        console.log(this.searchFilters, "here");
-        if (!boundingBox)
-            throw new Error(
-                "Bounding box doesn't have a correct value. This is a bug.",
-            );
+        const boundingBox =
+            this.searchFilters.filters.boundingBox || BOUNDING_BOX_DEFAULT;
+        console.log(this.searchFilters, boundingBox);
         const params = new URLSearchParams({
-            boundingBox: this.searchFilters.boundingBox,
-            page: this.searchFilters.page.toString(),
-            pageSize: this.searchFilters.pageSize.toString(),
+            boundingBox: boundingBox,
+            page: this.searchFilters.filters.page.toString(),
+            pageSize: this.searchFilters.filters.pageSize.toString(),
             //TODO this doesn't work weell
-            keywords: JSON.stringify(this.searchFilters.keywords),
+            keywords: JSON.stringify(this.searchFilters.filters.keywords),
         });
 
         const route = "/api/geoJsonDataPublications?" + params;
@@ -150,7 +154,11 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.filters.boundingBox = "";
+        this.searchFilters.activeFilters =
+            this.searchFilters.activeFilters.filter(
+                (filter) => filter !== "boundingBox",
+            );
         this.resetAllInformation();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -158,14 +166,20 @@ export class MapController {
     public completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.boundingBox) return;
+        this.searchFilters.filters.boundingBox = this.mapView.drawBoundingBox();
+        if (!this.searchFilters.filters.boundingBox) return;
+        this.searchFilters.activeFilters.push("boundingBox");
 
         this.populateElements();
     }
 
     public removeDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.filters.boundingBox = "";
+        this.searchFilters.activeFilters =
+            this.searchFilters.activeFilters.filter(
+                (filter) => filter !== "boundingBox",
+            );
+
         this.resetAllInformation();
 
         this.mapView.setDrawingEnable(false);
@@ -184,7 +198,8 @@ export class MapController {
         this.paginator = null;
         this.results = null;
 
-        this.searchFilters.page = page;
+        this.searchFilters.filters.page = page;
+        this.searchFilters.activeFilters.push("page:" + page);
         this.populateElements();
     }
     private handleKeywordFilterAdd({
@@ -194,10 +209,11 @@ export class MapController {
         key: string;
         value: string;
     }) {
-        const valuesInTree = this.searchFilters.keywords[key];
+        const valuesInTree = this.searchFilters.filters.keywords[key];
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
-        this.searchFilters.keywords[key] = [...setToAdd];
+        this.searchFilters.filters.keywords[key] = [...setToAdd];
+        this.searchFilters.activeFilters.push(key + ":" + value);
 
         this.resetNecessaryInformationForKeyword();
         this.populateElements();
@@ -210,19 +226,25 @@ export class MapController {
         key: string;
         value: string;
     }) {
-        let valuesInTree = this.searchFilters.keywords[key];
+        let valuesInTree = this.searchFilters.filters.keywords[key];
         if (!valuesInTree)
             throw new Error("Key not found in tree. This is a bug.");
         valuesInTree = valuesInTree.filter(
             (valueOfKey: string) => valueOfKey !== value,
         );
-        this.searchFilters.keywords[key] = valuesInTree;
+        this.searchFilters.filters.keywords[key] = valuesInTree;
 
-        if (this.searchFilters.keywords[key].length === 0)
-            delete this.searchFilters.keywords[key];
+        if (this.searchFilters.filters.keywords[key].length === 0)
+            delete this.searchFilters.filters.keywords[key];
+
+        this.searchFilters.activeFilters =
+            this.searchFilters.activeFilters.filter(
+                (filter) => filter !== key + ":" + value,
+            );
 
         this.resetNecessaryInformationForKeyword();
-        this.populateElements();
+        console.log(this.searchFilters.activeFilters.length);
+        if (this.searchFilters.activeFilters.length) this.populateElements();
     }
 
     // Helper methods
