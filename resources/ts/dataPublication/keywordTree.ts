@@ -92,7 +92,7 @@ export class KeywordTree {
             key: string;
             value: string;
         },
-    ) => Facets | void = throwWhenCallBackNotInitialized;
+    ) => Promise<Facets> | void = throwWhenCallBackNotInitialized;
     private self = this;
     constructor() {}
 
@@ -105,7 +105,7 @@ export class KeywordTree {
                 key: string;
                 value: string;
             },
-        ) => Facets;
+        ) => Promise<Facets>;
     }) {
         this.onKeywordFilterUpdate = onKeywordFilterUpdate;
     }
@@ -113,22 +113,55 @@ export class KeywordTree {
     public async init() {
         const interpretedJsonResponse = await fetch("/interpreted.json");
         //TODO Throw if there is error.
-        const dataInterpreted: (TreeNode | TreeSubNode)[] =
-            await interpretedJsonResponse.json();
+        this.dataInterpreted = await interpretedJsonResponse.json();
 
         const originalJsonResponse = await fetch("/original.json");
         //TODO Throw if there is error.
-        const dataOriginal: (TreeNode | TreeSubNode)[] =
-            await originalJsonResponse.json();
-        this.processNodes(dataInterpreted);
-        this.processNodes(dataOriginal, true);
+        this.dataOriginal = await originalJsonResponse.json();
+        this.processNodes(this.dataInterpreted);
+        this.preProcessNodes(this.dataOriginal);
+        this.processNodes(this.dataOriginal, true);
         this.treeOptions = {
-            interpreted: createTreeOptions(dataInterpreted),
-            original: createTreeOptions(dataOriginal),
+            interpreted: createTreeOptions(this.dataInterpreted),
+            original: createTreeOptions(this.dataOriginal),
         };
         this.createTrees();
     }
+    private createFacets(nodes: (TreeNode | TreeSubNode)[]) {
+        for (let i = nodes.length - 1; i >= 0; i--) {
+            const node = nodes[i];
+            if (!node) throw new Error("");
+            const tree = this.originalTree.jstree(true);
 
+            //  B. An to node einai sta facets, vres to value to sto facets
+            if (node.extra.filterName in this.facets) {
+                const result = this.facets[node.extra.filterName]!.items!.find(
+                    (obj) => {
+                        return obj.name == node.extra.filterValue;
+                    },
+                );
+                // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
+                if (result) {
+                    tree.enable_node(node.id);
+                    tree.rename_node(
+                        node.id,
+                        `${node.originalText} <span class="badge bg-primary text-primary-800 rounded-pill">${result.count}</span>`,
+                    );
+                } else {
+                    tree.disable_node(node.id);
+                    tree.rename_node(node.id, `${node.originalText}`);
+                }
+            } else {
+                // In case we have no facets, we don't want to disable everything.
+                // We want the user to be able to use the keywords as filters
+                tree.rename_node(node.id, `${node.originalText}`);
+            }
+
+            if (node.children.length > 0) {
+                this.createFacets(node.children);
+            }
+        }
+    }
     private createTrees() {
         this.initTree(this.interpretedTree, TREES.interpreted);
         this.initTree(this.originalTree, TREES.original);
@@ -192,6 +225,7 @@ export class KeywordTree {
             .on("state_ready.jstree", () => {
                 tree.on(
                     "check_node.jstree uncheck_node.jstree",
+
                     this.handleFilterChange(this.self),
                 );
             })
@@ -202,13 +236,14 @@ export class KeywordTree {
                 },
             );
     }
+
     private handleFilterChange(
         self: KeywordTree,
     ): (e: JQuery.Event, data: JsTreeCheckEventData) => void {
-        return (e: JQuery.Event, data: JsTreeCheckEventData) => {
+        return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
                 if (e.type == "check_node") {
-                    const facets = self.onKeywordFilterUpdate("add", {
+                    const facets = await self.onKeywordFilterUpdate("add", {
                         key: data.node.original.extra.filterName,
                         value: data.node.original.extra.filterValue,
                     });
@@ -218,7 +253,7 @@ export class KeywordTree {
                         );
                     this.facets = facets;
                 } else if (e.type == "uncheck_node") {
-                    const facets = self.onKeywordFilterUpdate("remove", {
+                    const facets = await self.onKeywordFilterUpdate("remove", {
                         key: data.node.original.extra.filterName,
                         value: data.node.original.extra.filterValue,
                     });
@@ -228,18 +263,9 @@ export class KeywordTree {
                         );
                     this.facets = facets;
                 }
-
-                // this.processNodes(cloneDeep(this.dataInterpreted));
-                // this.processNodes(cloneDeep(this.dataOriginal), true);
-                // this.treeOptions = {
-                //     interpreted: createTreeOptions(this.dataInterpreted),
-                //     original: createTreeOptions(this.dataOriginal),
-                // };
-                // const bla = this.interpretedTree.jstree(true);
-                // console.log(bla);
-                // bla.settings.core.data = this.dataInterpreted;
-                // bla.refresh();
             }
+            // Update your data
+            this.createFacets(this.dataOriginal);
         };
     }
 
@@ -355,6 +381,17 @@ export class KeywordTree {
             }
         });
     }
+    private preProcessNodes(nodes: (TreeNode | TreeSubNode)[]) {
+        for (let i = nodes.length - 1; i >= 0; i--) {
+            const node = nodes[i];
+            assertNotUndefined(node, "Node is undefined. This is a bug.");
+            node.originalText = node.text;
+            if (!node["id"]) node.id = "keyword_" + node.originalText;
+            if (node.children.length > 0) {
+                this.preProcessNodes(node.children);
+            }
+        }
+    }
     private processNodes(nodes: (TreeNode | TreeSubNode)[], original = false) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
@@ -375,46 +412,44 @@ export class KeywordTree {
                     const result = filterInFacets.items.find((obj) => {
                         return obj.name == node.extra.filterValue;
                     });
-
                     if (result) {
                         node.state.disabled = false;
                         node.text =
-                            node.text +
+                            node.originalText +
                             ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
                             result.count +
                             "</span>";
                     }
                 }
-            }
 
-            if ("includeFacet" in node.extra) {
-                const facetInFacets = this.facets[node.extra.facetName];
+                if ("includeFacet" in node.extra) {
+                    const facetInFacets = this.facets[node.extra.facetName];
 
-                if (facetInFacets) {
-                    for (let x = 0; x < facetInFacets.items.length; x++) {
-                        const newNode: TreeSubNode = {
-                            text: facetInFacets.items[x].display_name,
-                            id: node.extra.facetName + "-" + x,
-                            state: {
-                                opened: false,
-                                disabled: false,
-                                selected: false,
-                                checked: false,
-                            },
-                            extra: {
-                                type: "filter",
-                                url: "",
-                                filterName: node.extra.facetName,
-                                filterValue: facetInFacets.items[x].name,
-                            },
-                            children: [],
-                        };
+                    if (facetInFacets) {
+                        for (let x = 0; x < facetInFacets.items.length; x++) {
+                            const newNode: TreeSubNode = {
+                                text: facetInFacets.items[x].display_name,
+                                id: node.extra.facetName + "-" + x,
+                                state: {
+                                    opened: false,
+                                    disabled: false,
+                                    selected: false,
+                                    checked: false,
+                                },
+                                extra: {
+                                    type: "filter",
+                                    url: "",
+                                    filterName: node.extra.facetName,
+                                    filterValue: facetInFacets.items[x].name,
+                                },
+                                children: [],
+                            };
 
-                        node.children.push(newNode);
+                            node.children.push(newNode);
+                        }
                     }
                 }
             }
-
             if (node.children.length > 0) {
                 this.processNodes(node.children, original);
             }
@@ -440,7 +475,8 @@ function createTreeOptions(data: (TreeNode | TreeSubNode)[]) {
     return {
         core: {
             data,
-            check_callback: false,
+            //Allows renaming of nodes
+            check_callback: true,
             themes: {
                 dots: false,
                 icons: false,

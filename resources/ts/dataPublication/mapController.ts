@@ -85,13 +85,13 @@ export class MapController {
             onPageChange: (page) => this.handlePageChange(page),
         });
         this.keywordTree.setHandlerfn({
-            onKeywordFilterUpdate: (
+            onKeywordFilterUpdate: async (
                 type: "remove" | "add",
                 filter: { key: string; value: string },
             ) => {
                 return type === "add"
-                    ? this.handleKeywordFilterAdd(filter)
-                    : this.handleKeywordFilterRemove(filter);
+                    ? await this.handleKeywordFilterAdd(filter)
+                    : await this.handleKeywordFilterRemove(filter);
             },
         });
     }
@@ -104,7 +104,6 @@ export class MapController {
             meta: this.paginator,
             facets: this.facets,
         } = await this.getJsonFromRequest());
-
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
 
@@ -128,7 +127,6 @@ export class MapController {
             boundingBox: boundingBox,
             page: this.searchFilters.filters.page.toString(),
             pageSize: this.searchFilters.filters.pageSize.toString(),
-            //TODO this doesn't work weell
             keywords: JSON.stringify(this.searchFilters.filters.keywords),
         });
 
@@ -206,7 +204,7 @@ export class MapController {
         this.searchFilters.activeFilters.push("page:" + page);
         this.populateElements();
     }
-    private handleKeywordFilterAdd({
+    private async handleKeywordFilterAdd({
         key,
         value,
     }: {
@@ -220,17 +218,17 @@ export class MapController {
         this.searchFilters.activeFilters.push(key + ":" + value);
 
         this.resetNecessaryInformationForKeyword();
-        this.populateElements();
+        await this.populateElements();
         return this.facets;
     }
 
-    private handleKeywordFilterRemove({
+    private async handleKeywordFilterRemove({
         key,
         value,
     }: {
         key: string;
         value: string;
-    }) {
+    }): Promise<Facets> {
         let valuesInTree = this.searchFilters.filters.keywords[key];
         if (!valuesInTree)
             throw new Error("Key not found in tree. This is a bug.");
@@ -248,7 +246,8 @@ export class MapController {
             );
 
         this.resetNecessaryInformationForKeyword();
-        if (this.searchFilters.activeFilters.length) this.populateElements();
+        if (!this.searchFilters.activeFilters.length) return {};
+        await this.populateElements();
         return this.facets;
     }
 
@@ -261,7 +260,7 @@ export class MapController {
         this.resetSearchFilter();
         this.paginator = null;
         this.results = null;
-        this.facets = [];
+        this.facets = {};
     }
     private resetNecessaryInformationForKeyword() {
         this.mapView.removeAllLayers({ except: "rectangle" });
