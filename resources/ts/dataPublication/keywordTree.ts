@@ -1,6 +1,7 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
-import { throwWhenCallBackNotInitialized } from "./utils";
+import { throwWhenCallBackNotInitialized, type Facets } from "./utils";
+import { cloneDeep } from "lodash";
 
 export type TreeNode = {
     text: string;
@@ -73,10 +74,13 @@ const TREES = {
 } as const;
 
 export class KeywordTree {
+    // TODO do I need this?
     private activeFilters: { [key: string]: string[] } = {};
     private activeNodes: Array<string> = [];
-    private facets: { [key: string]: string[] } = {};
+    private facets: Facets = {};
     private treeOptions = { interpreted: {}, original: {} };
+    private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
+    private dataOriginal: (TreeNode | TreeSubNode)[] = [];
     //TODO can it query before instantiation?
     private interpretedTree = $(TREES.interpreted.id);
     private interpretedToggle = $(TREES.interpreted.filterToggle);
@@ -88,7 +92,7 @@ export class KeywordTree {
             key: string;
             value: string;
         },
-    ) => void = throwWhenCallBackNotInitialized;
+    ) => Facets | void = throwWhenCallBackNotInitialized;
     private self = this;
     constructor() {}
 
@@ -101,7 +105,7 @@ export class KeywordTree {
                 key: string;
                 value: string;
             },
-        ) => void;
+        ) => Facets;
     }) {
         this.onKeywordFilterUpdate = onKeywordFilterUpdate;
     }
@@ -204,16 +208,37 @@ export class KeywordTree {
         return (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
                 if (e.type == "check_node") {
-                    self.onKeywordFilterUpdate("add", {
+                    const facets = self.onKeywordFilterUpdate("add", {
                         key: data.node.original.extra.filterName,
                         value: data.node.original.extra.filterValue,
                     });
+                    if (!facets)
+                        throw new Error(
+                            " Filter update functions in keyword tree are not initialized. This is a bug.",
+                        );
+                    this.facets = facets;
                 } else if (e.type == "uncheck_node") {
-                    self.onKeywordFilterUpdate("remove", {
+                    const facets = self.onKeywordFilterUpdate("remove", {
                         key: data.node.original.extra.filterName,
                         value: data.node.original.extra.filterValue,
                     });
+                    if (!facets)
+                        throw new Error(
+                            " Filter update functions in keyword tree are not initialized. This is a bug.",
+                        );
+                    this.facets = facets;
                 }
+
+                // this.processNodes(cloneDeep(this.dataInterpreted));
+                // this.processNodes(cloneDeep(this.dataOriginal), true);
+                // this.treeOptions = {
+                //     interpreted: createTreeOptions(this.dataInterpreted),
+                //     original: createTreeOptions(this.dataOriginal),
+                // };
+                // const bla = this.interpretedTree.jstree(true);
+                // console.log(bla);
+                // bla.settings.core.data = this.dataInterpreted;
+                // bla.refresh();
             }
         };
     }

@@ -88,6 +88,8 @@ class GeoJsonDataPublicationService
                 }
             }
         }
+
+        $this->packageSearchRequest->loadFacetsFromConfig('data-publications');
     }
 
     /**

@@ -210,3 +210,5 @@ export function processNodes(
         }
     }
 }
+
+export type Facets = { [key: string]: { [key: string]: string[] } };

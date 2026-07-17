@@ -1,5 +1,5 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
-import { getDefaultTab, type Paginator } from "./utils.js";
+import { getDefaultTab, type Facets, type Paginator } from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
@@ -43,6 +43,7 @@ export class MapController {
     results: GeoFeatureDataPublications | null = null;
     searchFilters: SearchFilter = DEFAULT_SEARCH_FILTERS;
     paginator: Paginator | null = null;
+    facets: Facets = {};
 
     constructor() {
         this.mapView = new MapView();
@@ -88,7 +89,7 @@ export class MapController {
                 type: "remove" | "add",
                 filter: { key: string; value: string },
             ) => {
-                type === "add"
+                return type === "add"
                     ? this.handleKeywordFilterAdd(filter)
                     : this.handleKeywordFilterRemove(filter);
             },
@@ -98,8 +99,11 @@ export class MapController {
     // Methods about requests and populating
 
     private async populateElements() {
-        ({ data: this.results, meta: this.paginator } =
-            await this.getJsonFromRequest());
+        ({
+            data: this.results,
+            meta: this.paginator,
+            facets: this.facets,
+        } = await this.getJsonFromRequest());
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results);
@@ -116,6 +120,7 @@ export class MapController {
     public async getJsonFromRequest(): Promise<{
         data: GeoFeatureDataPublications;
         meta: Paginator;
+        facets: Facets;
     }> {
         const boundingBox =
             this.searchFilters.filters.boundingBox || BOUNDING_BOX_DEFAULT;
@@ -140,9 +145,8 @@ export class MapController {
                     response.statusText,
             );
         }
-        const { data, meta } = await response.json();
-
-        return { data, meta };
+        const { data, meta, facets } = await response.json();
+        return { data, meta, facets };
     }
 
     // Methods about interactions
@@ -217,6 +221,7 @@ export class MapController {
 
         this.resetNecessaryInformationForKeyword();
         this.populateElements();
+        return this.facets;
     }
 
     private handleKeywordFilterRemove({
@@ -244,6 +249,7 @@ export class MapController {
 
         this.resetNecessaryInformationForKeyword();
         if (this.searchFilters.activeFilters.length) this.populateElements();
+        return this.facets;
     }
 
     // Helper methods
@@ -255,6 +261,7 @@ export class MapController {
         this.resetSearchFilter();
         this.paginator = null;
         this.results = null;
+        this.facets = [];
     }
     private resetNecessaryInformationForKeyword() {
         this.mapView.removeAllLayers({ except: "rectangle" });
