@@ -97,7 +97,6 @@ export class MapController {
 
     public async init() {
         ({ facets: this.facets } = await this.getJsonFromRequest());
-
         this.keywordTree.init(this.facets);
     }
 
@@ -119,6 +118,7 @@ export class MapController {
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
+        this.keywordTree.recreateFacets(this.facets);
     }
 
     public async getJsonFromRequest(): Promise<{
@@ -134,7 +134,6 @@ export class MapController {
             pageSize: this.searchFilters.filters.pageSize.toString(),
             keywords: JSON.stringify(this.searchFilters.filters.keywords),
         });
-
         const route = "/api/geoJsonDataPublications?" + params;
 
         const response: Response = await fetch(route, {
@@ -148,6 +147,7 @@ export class MapController {
                     response.statusText,
             );
         }
+
         const { data, meta, facets } = await response.json();
         return { data, meta, facets };
     }
@@ -251,8 +251,11 @@ export class MapController {
             );
 
         this.resetNecessaryInformationForKeyword();
-        if (!this.searchFilters.activeFilters.length) return {};
-        await this.populateElements();
+        if (!this.searchFilters.activeFilters.length) {
+            ({ facets: this.facets } = await this.getJsonFromRequest());
+        } else {
+            await this.populateElements();
+        }
         return this.facets;
     }
 
