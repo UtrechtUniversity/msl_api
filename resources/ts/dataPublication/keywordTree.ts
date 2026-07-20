@@ -154,6 +154,7 @@ export class KeywordTree {
             } else {
                 // In case we have no facets, we don't want to disable everything.
                 // We want the user to be able to use the keywords as filters
+                tree.enable_node(node.id);
                 tree.rename_node(node.id, `${node.originalText}`);
             }
 
