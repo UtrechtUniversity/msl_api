@@ -1,9 +1,14 @@
-   <div class="w-80 flex flex-col place-items-center justify-self-center">
+   <div class=" flex flex-col place-items-center justify-self-center">
 
        <h2 class="py-4">Filters</h2>
 
        <div class="flex flex-col gap-3 pt-6">
-
+           <div class="search-bar-container form-field-text p-0 m-0 ">
+               <div class="search-bar-container-icon">
+                   <x-ri-search-line class="search-icon" />
+               </div>
+               <input class="search-bar" type="text" id="search-filters" placeholder="Search Filters..." />
+           </div>
            <div class="bg-primary-100 w-full">
                <div class="flex flex-col items-center w-full">
                    <div class="flex flex-col w-full">
