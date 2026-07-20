@@ -1,7 +1,7 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
 import { throwWhenCallBackNotInitialized, type Facets } from "./utils";
-import { cloneDeep } from "lodash";
+import { cloneDeep, isEmpty } from "lodash";
 
 export type TreeNode = {
     text: string;
@@ -77,7 +77,11 @@ export class KeywordTree {
     // TODO do I need this?
     private activeFilters: { [key: string]: string[] } = {};
     private activeNodes: Array<string> = [];
-    private facets: Facets = {};
+    private facets: { default: Facets; current: Facets } = {
+        default: {},
+        current: {},
+    };
+
     private treeOptions = { interpreted: {}, original: {} };
     private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
     private dataOriginal: (TreeNode | TreeSubNode)[] = [];
@@ -110,7 +114,8 @@ export class KeywordTree {
         this.onKeywordFilterUpdate = onKeywordFilterUpdate;
     }
 
-    public async init() {
+    public async init(facets: Facets) {
+        this.facets.default = facets;
         const interpretedJsonResponse = await fetch("/interpreted.json");
         //TODO Throw if there is error.
         this.dataInterpreted = await interpretedJsonResponse.json();
@@ -127,6 +132,10 @@ export class KeywordTree {
         };
         this.createTrees();
     }
+    public recreateFacets(facets: Facets) {
+        this.facets.current = facets;
+        this.createFacets(this.dataOriginal);
+    }
     private createFacets(nodes: (TreeNode | TreeSubNode)[]) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
@@ -134,12 +143,12 @@ export class KeywordTree {
             const tree = this.originalTree.jstree(true);
 
             //  B. An to node einai sta facets, vres to value to sto facets
-            if (node.extra.filterName in this.facets) {
-                const result = this.facets[node.extra.filterName]!.items!.find(
-                    (obj) => {
-                        return obj.name == node.extra.filterValue;
-                    },
-                );
+            if (node.extra.filterName in this.facets.current) {
+                const result = this.facets.current[
+                    node.extra.filterName
+                ]!.items!.find((obj) => {
+                    return obj.name == node.extra.filterValue;
+                });
                 // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
                 if (result) {
                     tree.enable_node(node.id);
@@ -252,7 +261,7 @@ export class KeywordTree {
                         throw new Error(
                             " Filter update functions in keyword tree are not initialized. This is a bug.",
                         );
-                    this.facets = facets;
+                    this.facets.current = facets;
                 } else if (e.type == "uncheck_node") {
                     const facets = await self.onKeywordFilterUpdate("remove", {
                         key: data.node.original.extra.filterName,
@@ -262,10 +271,12 @@ export class KeywordTree {
                         throw new Error(
                             " Filter update functions in keyword tree are not initialized. This is a bug.",
                         );
-                    this.facets = facets;
+                    this.facets.current = facets;
                 }
             }
             // Update your data
+            if (isEmpty(this.facets.current))
+                this.facets.current = this.facets.default;
             this.createFacets(this.dataOriginal);
         };
     }
@@ -408,7 +419,8 @@ export class KeywordTree {
                     node.state.checked = true;
                     this.activeNodes.push(node.id);
                 }
-                const filterInFacets = this.facets[node.extra.filterName];
+                const filterInFacets =
+                    this.facets.default[node.extra.filterName];
                 if (filterInFacets) {
                     const result = filterInFacets.items.find((obj) => {
                         return obj.name == node.extra.filterValue;
@@ -424,7 +436,8 @@ export class KeywordTree {
                 }
 
                 if ("includeFacet" in node.extra) {
-                    const facetInFacets = this.facets[node.extra.facetName];
+                    const facetInFacets =
+                        this.facets.default[node.extra.facetName];
 
                     if (facetInFacets) {
                         for (let x = 0; x < facetInFacets.items.length; x++) {

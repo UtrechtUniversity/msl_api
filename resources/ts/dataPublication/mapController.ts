@@ -51,7 +51,6 @@ export class MapController {
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
-        this.keywordTree.init();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -94,6 +93,12 @@ export class MapController {
                     : await this.handleKeywordFilterRemove(filter);
             },
         });
+    }
+
+    public async init() {
+        ({ facets: this.facets } = await this.getJsonFromRequest());
+
+        this.keywordTree.init(this.facets);
     }
 
     // Methods about requests and populating
@@ -276,4 +281,5 @@ export class MapController {
 }
 
 const mapController = new MapController();
+await mapController.init();
 const menuButtons = new MenuButtons(mapController);
