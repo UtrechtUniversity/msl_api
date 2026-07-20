@@ -420,34 +420,35 @@ export class KeywordTree {
                             ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
                             result.count +
                             "</span>";
+                    } else {
+                        node.state.disabled = true;
                     }
                 }
+            }
 
-                if ("includeFacet" in node.extra) {
-                    const facetInFacets = this.facets[node.extra.facetName];
-
-                    if (facetInFacets) {
-                        for (let x = 0; x < facetInFacets.items.length; x++) {
-                            const newNode: TreeSubNode = {
-                                text: facetInFacets.items[x].display_name,
-                                id: node.extra.facetName + "-" + x,
-                                state: {
-                                    opened: false,
-                                    disabled: false,
-                                    selected: false,
-                                    checked: false,
-                                },
-                                extra: {
-                                    type: "filter",
-                                    url: "",
-                                    filterName: node.extra.facetName,
-                                    filterValue: facetInFacets.items[x].name,
-                                },
-                                children: [],
-                            };
-
-                            node.children.push(newNode);
-                        }
+            if ("includeFacet" in node.extra) {
+                const facetInFacets = this.facets[node.extra.facetName];
+                if (facetInFacets) {
+                    for (let x = 0; x < facetInFacets.items.length; x++) {
+                        const newNode: TreeSubNode = {
+                            text: facetInFacets.items[x].display_name,
+                            originalText: facetInFacets.items[x].display_name,
+                            id: node.extra.facetName + "-" + x,
+                            state: {
+                                opened: false,
+                                disabled: false,
+                                selected: false,
+                                checked: false,
+                            },
+                            extra: {
+                                type: "filter",
+                                url: "",
+                                filterName: node.extra.facetName,
+                                filterValue: facetInFacets.items[x].name,
+                            },
+                            children: [],
+                        };
+                        node.children.push(newNode);
                     }
                 }
             }
