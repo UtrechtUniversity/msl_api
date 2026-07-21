@@ -218,7 +218,7 @@ export class MapController {
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
 
-        this.resetNecessaryInformationForKeyword();
+        this.resetAllInformation({ except: "boundingBox" });
         await this.populateElements();
         return this.facets;
     }
@@ -241,7 +241,7 @@ export class MapController {
         if (this.searchFilters.filters.keywords[key].length === 0)
             delete this.searchFilters.filters.keywords[key];
 
-        this.resetNecessaryInformationForKeyword();
+        this.resetAllInformation({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
         } else {
@@ -251,32 +251,46 @@ export class MapController {
     }
 
     // Helper methods
-    private resetAllInformation() {
-        this.mapView.removeAllLayers();
+    private resetAllInformation(opts?: { except: "boundingBox" }) {
+        this.mapView.removeAllLayers(
+            opts?.except === "boundingBox"
+                ? { except: "rectangle" }
+                : undefined,
+        );
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
-        this.resetSearchFilter();
+        this.resetSearchFilter(opts);
         this.paginator = null;
         this.results = null;
         this.facets = {};
     }
-    private resetNecessaryInformationForKeyword() {
-        this.mapView.removeAllLayers({ except: "rectangle" });
-        this.resultsSidebar.resetList();
-        this.pagination.clear();
-        this.resultsMetadata.removeMetadata();
-        this.paginator = null;
-        this.results = null;
-    }
-    private resetSearchFilter() {
+    // private resetNecessaryInformationForKeyword() {
+    //     this.mapView.removeAllLayers({ except: "rectangle" });
+    //     this.resultsSidebar.resetList();
+    //     this.pagination.clear();
+    //     this.resultsMetadata.removeMetadata();
+    //     this.paginator = null;
+    //     this.results = null;
+    //     this.facets = {};
+    // }
+    private resetSearchFilter(opts?: { except: "boundingBox" }) {
+        const boundingBoxToKeep = this.searchFilters.filters.boundingBox;
         this.searchFilters = cloneDeep(DEFAULT_SEARCH_FILTERS);
+        if (opts?.except === "boundingBox")
+            this.searchFilters.filters.boundingBox = boundingBoxToKeep;
     }
     private areActiveFilters(): boolean {
         const filters = this.searchFilters.filters;
-        if (!filters.boundingBox) return false;
-        if (!isEmpty(filters.keywords)) return false;
-        return true;
+        if (!filters.boundingBox) return true;
+        if (!isEmpty(filters.keywords)) return true;
+        return false;
+    }
+    private resetAndPossiblyRepopulate(opts?: { except: "boundingBox" }) {
+        this.resetAllInformation(opts);
+        if (this.areActiveFilters()) {
+            this.populateElements();
+        }
     }
 }
 
