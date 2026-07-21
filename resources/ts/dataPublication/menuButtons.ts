@@ -95,8 +95,8 @@ export class MenuButtons {
             }
         });
 
-        this.spatialRemoveButton.addEventListener("click", () => {
-            this.mapController.removeDrawing();
+        this.spatialRemoveButton.addEventListener("click", async () => {
+            await this.mapController.removeDrawing();
             this.disableButtonForDrawing();
         });
     }

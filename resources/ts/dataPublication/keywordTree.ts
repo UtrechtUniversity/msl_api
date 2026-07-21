@@ -163,11 +163,47 @@ export class KeywordTree {
                 tree.rename_node(node.id, `${node.originalText}`);
             }
 
+            if ("includeFacet" in node.extra) {
+                console.log(node);
+                const originalJsTree = this.originalTree.jstree(true);
+                const parent = originalJsTree.get_node(node.id);
+
+                originalJsTree.delete_node(parent.children);
+                node.children = [];
+                const facetInFacets = this.facets[node.extra.facetName];
+
+                if (facetInFacets) {
+                    for (let x = 0; x < facetInFacets.items.length; x++) {
+                        const newNode: TreeSubNode = {
+                            text: facetInFacets.items[x].display_name,
+                            originalText: facetInFacets.items[x].display_name,
+                            id: node.extra.facetName + "-" + x,
+                            state: {
+                                opened: false,
+                                disabled: false,
+                                selected: false,
+                                checked: false,
+                            },
+                            extra: {
+                                type: "filter",
+                                url: "",
+                                filterName: node.extra.facetName,
+                                filterValue: facetInFacets.items[x].name,
+                            },
+                            children: [],
+                        };
+                        node.children.push(newNode);
+
+                        originalJsTree.create_node(parent, newNode);
+                    }
+                }
+            }
             if (node.children.length > 0) {
                 this.createFacets(node.children);
             }
         }
     }
+
     private createTrees() {
         this.initTree(this.interpretedTree, TREES.interpreted);
         this.initTree(this.originalTree, TREES.original);

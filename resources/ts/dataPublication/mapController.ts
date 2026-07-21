@@ -108,8 +108,13 @@ export class MapController {
             meta: this.paginator,
             facets: this.facets,
         } = await this.getJsonFromRequest());
+        this.keywordTree.recreateFacets(this.facets);
+
         await this.mapView.drawResponse(this.results);
-        this.resultsSidebar.populate(this.results);
+        this.resultsSidebar.populate(this.results, {
+            includeIcons:
+                this.searchFilters.activeFilters.includes("boundingBox"),
+        });
 
         this.pagination.setArgs(this.paginator);
         this.pagination.populate();
@@ -118,7 +123,6 @@ export class MapController {
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
-        this.keywordTree.recreateFacets(this.facets);
     }
 
     public async getJsonFromRequest(): Promise<{
@@ -180,7 +184,7 @@ export class MapController {
         this.populateElements();
     }
 
-    public removeDrawing() {
+    public async removeDrawing() {
         this.searchFilters.filters.boundingBox = "";
         this.searchFilters.activeFilters =
             this.searchFilters.activeFilters.filter(
@@ -188,6 +192,12 @@ export class MapController {
             );
 
         this.resetAllInformation();
+        //TODO something is going wrong with async?
+        if (!this.searchFilters.activeFilters.length) {
+            ({ facets: this.facets } = await this.getJsonFromRequest());
+        } else {
+            await this.populateElements();
+        }
 
         this.mapView.setDrawingEnable(false);
     }
