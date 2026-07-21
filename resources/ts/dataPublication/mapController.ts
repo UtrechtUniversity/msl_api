@@ -5,14 +5,13 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
-import { cloneDeep } from "lodash";
+import { cloneDeep, isEmpty } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 
 const BOUNDING_BOX_DEFAULT = "[-180,-90,180,90]";
 type SearchFilter = {
     //TODO maybe add a function on how to create filters  and remove filters based on the filter.
-    activeFilters: string[];
     filters: {
         boundingBox: string;
         page: number;
@@ -22,7 +21,6 @@ type SearchFilter = {
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
-    activeFilters: [],
     filters: {
         boundingBox: "",
         page: 1,
@@ -112,8 +110,7 @@ export class MapController {
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
-            includeIcons:
-                this.searchFilters.activeFilters.includes("boundingBox"),
+            includeIcons: !!this.searchFilters.filters.boundingBox,
         });
 
         this.pagination.setArgs(this.paginator);
@@ -166,10 +163,6 @@ export class MapController {
 
     public enableDrawing() {
         this.searchFilters.filters.boundingBox = "";
-        this.searchFilters.activeFilters =
-            this.searchFilters.activeFilters.filter(
-                (filter) => filter !== "boundingBox",
-            );
         this.resetAllInformation();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -179,21 +172,16 @@ export class MapController {
 
         this.searchFilters.filters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.filters.boundingBox) return;
-        this.searchFilters.activeFilters.push("boundingBox");
 
         this.populateElements();
     }
 
     public async removeDrawing() {
         this.searchFilters.filters.boundingBox = "";
-        this.searchFilters.activeFilters =
-            this.searchFilters.activeFilters.filter(
-                (filter) => filter !== "boundingBox",
-            );
 
         this.resetAllInformation();
         //TODO something is going wrong with async?
-        if (!this.searchFilters.activeFilters.length) {
+        if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
         } else {
             await this.populateElements();
@@ -216,7 +204,6 @@ export class MapController {
         this.results = null;
 
         this.searchFilters.filters.page = page;
-        this.searchFilters.activeFilters.push("page:" + page);
         this.populateElements();
     }
     private async handleKeywordFilterAdd({
@@ -230,7 +217,6 @@ export class MapController {
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
-        this.searchFilters.activeFilters.push(key + ":" + value);
 
         this.resetNecessaryInformationForKeyword();
         await this.populateElements();
@@ -255,13 +241,8 @@ export class MapController {
         if (this.searchFilters.filters.keywords[key].length === 0)
             delete this.searchFilters.filters.keywords[key];
 
-        this.searchFilters.activeFilters =
-            this.searchFilters.activeFilters.filter(
-                (filter) => filter !== key + ":" + value,
-            );
-
         this.resetNecessaryInformationForKeyword();
-        if (!this.searchFilters.activeFilters.length) {
+        if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
         } else {
             await this.populateElements();
@@ -290,6 +271,12 @@ export class MapController {
     }
     private resetSearchFilter() {
         this.searchFilters = cloneDeep(DEFAULT_SEARCH_FILTERS);
+    }
+    private areActiveFilters(): boolean {
+        const filters = this.searchFilters.filters;
+        if (!filters.boundingBox) return false;
+        if (!isEmpty(filters.keywords)) return false;
+        return true;
     }
 }
 
