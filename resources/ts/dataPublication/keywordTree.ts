@@ -164,14 +164,14 @@ export class KeywordTree {
             }
 
             if ("includeFacet" in node.extra) {
+                //node here is the parent
                 const originalJsTree = this.originalTree.jstree(true);
                 const parent = originalJsTree.get_node(node.id);
                 originalJsTree.delete_node(parent.children);
                 node.children = [];
                 const facetInFacets = this.facets[node.extra.facetName];
-
                 if (facetInFacets) {
-                    for (let x = 0; x < facetInFacets.items.length; x++) {
+                    for (let x = 0; x < facetInFacets.items!.length; x++) {
                         const newNode: TreeSubNode = {
                             text: facetInFacets.items[x].display_name,
                             originalText: facetInFacets.items[x].display_name,
@@ -190,9 +190,20 @@ export class KeywordTree {
                             },
                             children: [],
                         };
+
+                        if (newNode.extra.filterName in this.activeFilters) {
+                            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
+                            if (
+                                this.activeFilters[
+                                    newNode.extra.filterName
+                                ]!.includes(newNode.extra.filterValue)
+                            ) {
+                                newNode.state.checked = true;
+                            }
+                        }
                         node.children.push(newNode);
 
-                        originalJsTree.create_node(parent, newNode);
+                        originalJsTree.create_node(node, newNode);
                     }
                 }
             }
@@ -282,19 +293,26 @@ export class KeywordTree {
     ): (e: JQuery.Event, data: JsTreeCheckEventData) => void {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
+                const key = data.node.original.extra.filterName;
+                const value = data.node.original.extra.filterValue;
                 if (e.type == "check_node") {
                     const facets = await self.onKeywordFilterUpdate("add", {
-                        key: data.node.original.extra.filterName,
-                        value: data.node.original.extra.filterValue,
+                        key,
+                        value,
                     });
+                    this.activeFilters[key] = [
+                        ...(this.activeFilters[key] ?? []),
+                        value,
+                    ];
                     // TODO
                     if (!facets) throw new Error("");
                     this.facets = facets;
                 } else if (e.type == "uncheck_node") {
                     const facets = await self.onKeywordFilterUpdate("remove", {
-                        key: data.node.original.extra.filterName,
-                        value: data.node.original.extra.filterValue,
+                        key,
+                        value,
                     });
+                    delete this.activeFilters[key];
                     //TODO
                     if (!facets) throw new Error("");
                     this.facets = facets;
@@ -431,6 +449,7 @@ export class KeywordTree {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
             assertNotUndefined(node, "Node is undefined. This is a bug.");
+            //TODO remove
             if (node.extra.type == "filter") {
                 const filterInActiveFilters =
                     this.activeFilters[node.extra.filterName];
