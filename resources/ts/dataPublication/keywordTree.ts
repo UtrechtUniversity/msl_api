@@ -164,10 +164,8 @@ export class KeywordTree {
             }
 
             if ("includeFacet" in node.extra) {
-                console.log(node);
                 const originalJsTree = this.originalTree.jstree(true);
                 const parent = originalJsTree.get_node(node.id);
-
                 originalJsTree.delete_node(parent.children);
                 node.children = [];
                 const facetInFacets = this.facets[node.extra.facetName];
