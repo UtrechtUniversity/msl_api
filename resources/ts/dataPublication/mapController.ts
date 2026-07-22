@@ -39,7 +39,7 @@ export class MapController {
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
-    searchFilters: SearchFilter = DEFAULT_SEARCH_FILTERS;
+    searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
     facets: Facets = {};
 
@@ -163,7 +163,7 @@ export class MapController {
 
     public enableDrawing() {
         this.searchFilters.filters.boundingBox = "";
-        this.resetAllInformation();
+        this.resetComponentsAndData();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
@@ -179,7 +179,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.filters.boundingBox = "";
 
-        this.resetAllInformation();
+        this.resetComponentsAndData();
         //TODO something is going wrong with async?
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
@@ -217,8 +217,7 @@ export class MapController {
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
-
-        this.resetAllInformation({ except: "boundingBox" });
+        this.resetComponentsAndData({ except: "boundingBox" });
         await this.populateElements();
         return this.facets;
     }
@@ -241,7 +240,7 @@ export class MapController {
         if (this.searchFilters.filters.keywords[key].length === 0)
             delete this.searchFilters.filters.keywords[key];
 
-        this.resetAllInformation({ except: "boundingBox" });
+        this.resetComponentsAndData({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
         } else {
@@ -251,7 +250,9 @@ export class MapController {
     }
 
     // Helper methods
-    private resetAllInformation(opts?: { except: "boundingBox" }) {
+    private resetComponentsAndData(opts?: {
+        except: "boundingBox" | "keywords";
+    }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
                 ? { except: "rectangle" }
@@ -260,34 +261,24 @@ export class MapController {
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
-        this.resetSearchFilter(opts);
+        // We never want to reset all filters at the same time
+        this.resetPage();
         this.paginator = null;
         this.results = null;
         this.facets = {};
     }
-    // private resetNecessaryInformationForKeyword() {
-    //     this.mapView.removeAllLayers({ except: "rectangle" });
-    //     this.resultsSidebar.resetList();
-    //     this.pagination.clear();
-    //     this.resultsMetadata.removeMetadata();
-    //     this.paginator = null;
-    //     this.results = null;
-    //     this.facets = {};
-    // }
-    private resetSearchFilter(opts?: { except: "boundingBox" }) {
-        const boundingBoxToKeep = this.searchFilters.filters.boundingBox;
-        this.searchFilters = cloneDeep(DEFAULT_SEARCH_FILTERS);
-        if (opts?.except === "boundingBox")
-            this.searchFilters.filters.boundingBox = boundingBoxToKeep;
+
+    private resetPage() {
+        this.searchFilters.filters.page = DEFAULT_SEARCH_FILTERS.filters.page;
     }
     private areActiveFilters(): boolean {
         const filters = this.searchFilters.filters;
-        if (!filters.boundingBox) return true;
+        if (!!filters.boundingBox) return true;
         if (!isEmpty(filters.keywords)) return true;
         return false;
     }
     private resetAndPossiblyRepopulate(opts?: { except: "boundingBox" }) {
-        this.resetAllInformation(opts);
+        this.resetComponentsAndData(opts);
         if (this.areActiveFilters()) {
             this.populateElements();
         }
