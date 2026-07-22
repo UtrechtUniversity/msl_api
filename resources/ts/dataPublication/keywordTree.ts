@@ -1,7 +1,6 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
 import { throwWhenCallBackNotInitialized, type Facets } from "./utils";
-import { cloneDeep, isEmpty } from "lodash";
 
 export type TreeNode = {
     text: string;
@@ -119,6 +118,7 @@ export class KeywordTree {
         const originalJsonResponse = await fetch("/original.json");
         //TODO Throw if there is error.
         this.dataOriginal = await originalJsonResponse.json();
+        this.preProcessNodes(this.dataInterpreted);
         this.processNodes(this.dataInterpreted);
         this.preProcessNodes(this.dataOriginal);
         this.processNodes(this.dataOriginal, true);
@@ -391,7 +391,6 @@ export class KeywordTree {
                 //set original tree
                 self.hideNodesForTree("original", true);
 
-                // TODO do we need this?
                 self.originalTree
                     .jstree()
                     .get_json("#", {
