@@ -130,13 +130,20 @@ export class KeywordTree {
     }
     public recreateFacets(facets: Facets) {
         this.facets = facets;
-        this.createFacets(this.dataOriginal);
+        this.createFacets(this.dataOriginal, "original");
+        this.createFacets(this.dataInterpreted, "interpreted");
     }
-    private createFacets(nodes: (TreeNode | TreeSubNode)[]) {
+    private createFacets(
+        nodes: (TreeNode | TreeSubNode)[],
+        treeType: "original" | "interpreted",
+    ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
             if (!node) throw new Error("");
-            const tree = this.originalTree.jstree(true);
+            const tree =
+                treeType === "original"
+                    ? this.originalTree.jstree(true)
+                    : this.interpretedTree.jstree(true);
 
             //  B. An to node einai sta facets, vres to value to sto facets
             if (node.extra.filterName in this.facets) {
@@ -326,33 +333,23 @@ export class KeywordTree {
         tree.on("change", function () {
             if (this.checked) {
                 localStorage.setItem(
-                    "interpretedFilters",
+                    "datapublicationMapInterpretedFilters",
                     type === "interpreted" ? this.checked : !this.checked,
                 );
-                let searchParams = new URLSearchParams(window.location.search);
 
-                if (searchParams.size > 0) {
-                    redirect();
-                } else {
-                    self.setActiveTree(
-                        type === "interpreted" ? "interpreted" : "original",
-                    );
-                }
+                self.setActiveTree(
+                    type === "interpreted" ? "interpreted" : "original",
+                );
             }
             if (!this.checked) {
                 localStorage.setItem(
-                    "interpretedFilters",
+                    "datapublicationMapInterpretedFilters",
                     type === "interpreted" ? !this.checked : this.checked,
                 );
-                let searchParams = new URLSearchParams(window.location.search);
 
-                if (searchParams.size > 0) {
-                    redirect();
-                } else {
-                    self.setActiveTree(
-                        type === "interpreted" ? "original" : "interpreted",
-                    );
-                }
+                self.setActiveTree(
+                    type === "interpreted" ? "original" : "interpreted",
+                );
             }
         });
     }
@@ -383,7 +380,10 @@ export class KeywordTree {
         const self = this;
         $("#hide_empty_terms").on("change", function () {
             if (this.checked) {
-                localStorage.setItem("hideEmptyTerms", this.checked);
+                localStorage.setItem(
+                    "datapublicationMapHideEmptyTerms",
+                    this.checked,
+                );
 
                 //set interpreted/enriched tree
                 self.hideNodesForTree("interpreted", true);
@@ -391,6 +391,7 @@ export class KeywordTree {
                 //set original tree
                 self.hideNodesForTree("original", true);
 
+                //TODO do we need this?
                 self.originalTree
                     .jstree()
                     .get_json("#", {
@@ -416,7 +417,7 @@ export class KeywordTree {
                     });
             }
             if (!this.checked) {
-                localStorage.setItem("hideEmptyTerms", false);
+                localStorage.setItem("datapublicationMapHideEmptyTerms", false);
 
                 //set interpreted/enriched tree
                 self.hideNodesForTree("interpreted", false);
@@ -465,8 +466,6 @@ export class KeywordTree {
                             ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
                             result.count +
                             "</span>";
-                    } else {
-                        node.state.disabled = true;
                     }
                 }
             }
@@ -540,12 +539,4 @@ function createTreeOptions(data: (TreeNode | TreeSubNode)[]) {
             show_only_matches: true,
         },
     };
-}
-
-function redirect() {
-    const text =
-        "Your currently selected filters will be removed when you switch trees.";
-    if (confirm(text)) {
-        window.location.href = "../data-access";
-    }
 }

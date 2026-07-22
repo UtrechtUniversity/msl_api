@@ -8,33 +8,36 @@ URLSearchParams.prototype.remove = function (key, value) {
 function processNodes(nodes, original = false) {
     for (var i = nodes.length - 1; i >= 0; i--) {
         var node = nodes[i];
-        if (node.extra.type == "filter") {
-            if (node.extra.filterName in activeFilters) {
-                if (
-                    activeFilters[node.extra.filterName].includes(
-                        node.extra.filterValue,
-                    )
-                ) {
-                    node.state.checked = true;
-                    activeNodes.push(node.id);
-                }
-            }
-            if (node.extra.filterName in facets) {
-                var result = facets[node.extra.filterName].items.find((obj) => {
-                    return obj.name == node.extra.filterValue;
-                });
-
-                if (result) {
-                    node.state.disabled = false;
-                    node.text =
-                        node.text +
-                        ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
-                        result.count +
-                        "</span>";
-                }
+        // if (node.extra.type == "filter") {
+        if (node.extra.filterName in activeFilters) {
+            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
+            if (
+                activeFilters[node.extra.filterName].includes(
+                    node.extra.filterValue,
+                )
+            ) {
+                node.state.checked = true;
+                activeNodes.push(node.id);
             }
         }
+        //  B. An to node einai sta facets, vres to value to sto facets
+        if (node.extra.filterName in facets) {
+            var result = facets[node.extra.filterName].items.find((obj) => {
+                return obj.name == node.extra.filterValue;
+            });
 
+            // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
+            if (result) {
+                node.state.disabled = false;
+                node.text =
+                    node.text +
+                    ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
+                    result.count +
+                    "</span>";
+            }
+            // }
+        }
+        // C. An kapoio node includes a facet kai to name tou einai sta facets.
         if (node.extra.includeFacet) {
             if (node.extra.facetName in facets) {
                 for (
@@ -61,7 +64,6 @@ function processNodes(nodes, original = false) {
                         },
                         children: [],
                     };
-
                     node.children.push(newNode);
                 }
             }
@@ -108,7 +110,6 @@ $("#jstree-interpreted")
         $("#jstree-interpreted").on(
             "check_node.jstree uncheck_node.jstree",
             function (e, data) {
-                //TODO Is it ever not 'filter'?
                 if (data.node.original.extra.type == "filter") {
                     if (e.type == "check_node") {
                         var url = new URL(window.location.href);
@@ -127,7 +128,7 @@ $("#jstree-interpreted")
                         var url = new URL(window.location.href);
                         var urlParams = new URLSearchParams(url.search);
 
-                        urlParams.delete(
+                        urlParams.remove(
                             data.node.original.extra.filterName + "[]",
                             data.node.original.extra.filterValue,
                         );
@@ -344,7 +345,9 @@ $(document).ready(function () {
                 })
                 .forEach((element) => {
                     if (element.state.disabled) {
-                        $("#jstree-original").jstree().hide_node(element);
+                        $("#jstree-original")
+                            .jstree()
+                            .hide_node(element, false);
                     }
                 });
 
@@ -397,4 +400,6 @@ $(document).ready(function () {
                 });
         }
     });
+
+    //$('[data-toggle=tooltip]').tooltip();
 });
