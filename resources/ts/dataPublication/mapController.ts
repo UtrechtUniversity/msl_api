@@ -85,7 +85,7 @@ export class MapController {
             onKeywordFilterUpdate: async (
                 type: "remove" | "add",
                 filter: { key: string; value: string },
-            ): Promise<Facets> => {
+            ): Promise<void> => {
                 return type === "add"
                     ? this.handleKeywordFilterAdd(filter)
                     : this.handleKeywordFilterRemove(filter);
@@ -220,7 +220,7 @@ export class MapController {
         this.searchFilters.filters.keywords[key] = [...setToAdd];
         this.resetComponentsAndData({ except: "boundingBox" });
         await this.populateElements();
-        return this.facets;
+        this.keywordTree.recreateFacets(this.facets);
     }
 
     private async handleKeywordFilterRemove({
@@ -229,7 +229,7 @@ export class MapController {
     }: {
         key: string;
         value: string;
-    }): Promise<Facets> {
+    }): Promise<void> {
         let valuesInTree = this.searchFilters.filters.keywords[key];
         if (!valuesInTree)
             throw new Error("Key not found in tree. This is a bug.");
@@ -247,7 +247,7 @@ export class MapController {
         } else {
             await this.populateElements();
         }
-        return this.facets;
+        this.keywordTree.recreateFacets(this.facets);
     }
 
     // Helper methods

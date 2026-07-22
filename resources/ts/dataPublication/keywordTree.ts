@@ -92,7 +92,7 @@ export class KeywordTree {
             key: string;
             value: string;
         },
-    ) => Promise<Facets> | void = throwWhenCallBackNotInitialized;
+    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private self = this;
     constructor() {}
 
@@ -105,7 +105,7 @@ export class KeywordTree {
                 key: string;
                 value: string;
             },
-        ) => Promise<Facets>;
+        ) => Promise<void>;
     }) {
         this.onKeywordFilterUpdate = onKeywordFilterUpdate;
     }
@@ -296,7 +296,7 @@ export class KeywordTree {
                 const key = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
                 if (e.type == "check_node") {
-                    const facets = await self.onKeywordFilterUpdate("add", {
+                    await self.onKeywordFilterUpdate("add", {
                         key,
                         value,
                     });
@@ -304,20 +304,13 @@ export class KeywordTree {
                         ...(this.activeFilters[key] ?? []),
                         value,
                     ];
-                    // TODO
-                    if (!facets) throw new Error("");
-                    this.facets = facets;
                 } else if (e.type == "uncheck_node") {
-                    const facets = await self.onKeywordFilterUpdate("remove", {
+                    await self.onKeywordFilterUpdate("remove", {
                         key,
                         value,
                     });
                     delete this.activeFilters[key];
-                    //TODO
-                    if (!facets) throw new Error("");
-                    this.facets = facets;
                 }
-                this.recreateFacets(this.facets);
             }
         };
     }
