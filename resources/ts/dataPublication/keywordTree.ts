@@ -138,6 +138,7 @@ export class KeywordTree {
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
+            //TODO
             if (!node) throw new Error("");
             const tree =
                 treeType === "original"
@@ -195,7 +196,6 @@ export class KeywordTree {
                             },
                             children: [],
                         };
-
                         if (newNode.extra.filterName in this.activeFilters) {
                             //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
                             if (
@@ -213,7 +213,7 @@ export class KeywordTree {
                 }
             }
             if (node.children.length > 0) {
-                this.createFacets(node.children);
+                this.createFacets(node.children, treeType);
             }
         }
     }
@@ -278,11 +278,10 @@ export class KeywordTree {
                 },
             },
         })
-            .on("state_ready.jstree", () => {
+            .on("state_ready.jstree", async () => {
                 tree.on(
                     "check_node.jstree uncheck_node.jstree",
-
-                    this.handleFilterChange(this.self),
+                    await this.handleFilterChange(this.self),
                 );
             })
             .on(
@@ -293,28 +292,30 @@ export class KeywordTree {
             );
     }
 
-    private handleFilterChange(
+    private async handleFilterChange(
         self: KeywordTree,
-    ): (e: JQuery.Event, data: JsTreeCheckEventData) => void {
+    ): Promise<(e: JQuery.Event, data: JsTreeCheckEventData) => void> {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
                 const key = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
                 if (e.type == "check_node") {
-                    await self.onKeywordFilterUpdate("add", {
-                        key,
-                        value,
-                    });
+                    //TODO this should be moved to mapController probably
                     this.activeFilters[key] = [
                         ...(this.activeFilters[key] ?? []),
                         value,
                     ];
+                    await self.onKeywordFilterUpdate("add", {
+                        key,
+                        value,
+                    });
                 } else if (e.type == "uncheck_node") {
+                    //TODO this should be moved to mapController probably
+                    delete this.activeFilters[key];
                     await self.onKeywordFilterUpdate("remove", {
                         key,
                         value,
                     });
-                    delete this.activeFilters[key];
                 }
             }
         };

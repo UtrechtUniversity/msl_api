@@ -220,7 +220,6 @@ export class MapController {
         this.searchFilters.filters.keywords[key] = [...setToAdd];
         this.resetComponentsAndData({ except: "boundingBox" });
         await this.populateElements();
-        this.keywordTree.recreateFacets(this.facets);
     }
 
     private async handleKeywordFilterRemove({
@@ -244,10 +243,10 @@ export class MapController {
         this.resetComponentsAndData({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
+            this.keywordTree.recreateFacets(this.facets);
         } else {
             await this.populateElements();
         }
-        this.keywordTree.recreateFacets(this.facets);
     }
 
     // Helper methods

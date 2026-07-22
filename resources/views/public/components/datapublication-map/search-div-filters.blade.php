@@ -11,15 +11,13 @@
            </div>
 
            <div class="bg-primary-100">
-               <div class="w-full">
+               <div class="">
                    <div
                        class="
                             form-control 
                             flex 
                             flex-col
-                            w-full 
                             justify-center
-                            w-full
                             ">
                        @foreach ([
         'filterTreeToggleInterpreted' => [
@@ -36,13 +34,12 @@
                                 flex 
                                 place-content-center
                                 items-center
-                                w-full">
+                                ">
                                <x-ri-information-line id="{{ $details['iconId'] }}" class="info-icon mx-2" />
                                <label
                                    class="
                                     label cursor-pointer 
                                     flex
-                                    w-full
                                     flex-row
                                     gap-4 
                                     p-2
@@ -64,76 +61,77 @@
                        @endforeach
                    </div>
                </div>
+           </div>
 
-               <script>
-                   tippy('#enriched-keywords-popup', {
-                       content: "MSL enriched keywords include MSL vocabulary terms corresponding to the keywords originally assigned by the authors, parent terms, and MSL vocabulary terms corresponding to words used in the data publication title and abstract. In enriching keyword sets like this, MSL strives to make datasets more findable. See anything odd? Contact us at epos.msl.data@uu.nl. MSL vocabularies available on GitHub - see top tab ‘vocabularies'.",
-                       placement: "right",
-                       theme: "msl"
-                   });
-               </script>
-               <script>
-                   tippy('#original-keywords-popup', {
-                       content: "Lists only the MSL vocabulary terms corresponding to the keywords originally assigned by the authors.",
-                       placement: "right",
-                       theme: "msl"
-                   });
-               </script>
+           <script>
+               tippy('#enriched-keywords-popup', {
+                   content: "MSL enriched keywords include MSL vocabulary terms corresponding to the keywords originally assigned by the authors, parent terms, and MSL vocabulary terms corresponding to words used in the data publication title and abstract. In enriching keyword sets like this, MSL strives to make datasets more findable. See anything odd? Contact us at epos.msl.data@uu.nl. MSL vocabularies available on GitHub - see top tab ‘vocabularies'.",
+                   placement: "right",
+                   theme: "msl"
+               });
+           </script>
+           <script>
+               tippy('#original-keywords-popup', {
+                   content: "Lists only the MSL vocabulary terms corresponding to the keywords originally assigned by the authors.",
+                   placement: "right",
+                   theme: "msl"
+               });
+           </script>
 
-               <div class="bg-primary-100 w-full">
-                   <div class="flex flex-col items-center w-full">
-                       <div class="flex flex-col w-full">
-                           <div class="flex-col space-y-2 place-content-center h-full w-full">
-                               @foreach (['Hide empty terms'] as $key => $option)
-                                   <div class="form-control w-full">
-                                       <label
-                                           class="
+           <div class="bg-primary-100 w-full">
+               <div class="flex flex-col items-center w-full">
+                   <div class="flex flex-col w-full">
+                       <div class="flex-col space-y-2 place-content-center h-full w-full">
+                           @foreach (['Hide empty terms'] as $key => $option)
+                               <div class="form-control w-full">
+                                   <label
+                                       class="
                                                 w-full
                                                 label p-2 
                                                 text-secondary-900
                                                 hover-interactive">
-                                           <span class="pr-4 text-sm w-full" value={{ $key }}
-                                               name={{ 'EmptyTerms' . '[]' }}>
-                                               {{ $option }}
-                                           </span>
+                                       <span class="pr-4 text-sm w-full" value={{ $key }}
+                                           name={{ 'EmptyTerms' . '[]' }}>
+                                           {{ $option }}
+                                       </span>
 
-                                           <input type="checkbox" value={{ $key }}
-                                               name={{ 'EmptyTerms' . '[]' }} id='hide_empty_terms'
-                                               class="checkbox checkbox-secondary checkbox-md rounded-sm border"
-                                               @if (is_array(old('EmptyTerms')) && in_array($key, old('EmptyTerms'))) checked="checked" @endif />
+                                       <input type="checkbox" value={{ $key }} name={{ 'EmptyTerms' . '[]' }}
+                                           id='hide_empty_terms'
+                                           class="checkbox checkbox-secondary checkbox-md rounded-sm border"
+                                           @if (is_array(old('EmptyTerms')) && in_array($key, old('EmptyTerms'))) checked="checked" @endif />
 
-                                       </label>
-                                   </div>
-                               @endforeach
-                           </div>
+                                   </label>
+                               </div>
+                           @endforeach
                        </div>
                    </div>
                </div>
+           </div>
 
-               <div class="px-2 py-3 w-full">
-                   <div class="w-full flex place-content-evenly">
-                       <a href="#" id="expand_all" title="expand all nodes">
-                           <button class="btn btn-sm w-20">
-                               expand all
-                           </button>
-                       </a>
-                       <a href="#" id="close_all" title="close all nodes">
-                           <button class="btn btn-sm w-20">
-                               close all
-                           </button>
-                       </a>
-                   </div>
+           <div class="px-2 py-3 w-full">
+               <div class="w-full flex place-content-evenly">
+                   <a href="#" id="expand_all" title="expand all nodes">
+                       <button class="btn btn-sm w-20">
+                           expand all
+                       </button>
+                   </a>
+                   <a href="#" id="close_all" title="close all nodes">
+                       <button class="btn btn-sm w-20">
+                           close all
+                       </button>
+                   </a>
                </div>
            </div>
+       </div>
 
-           <div class="pb-10">
+       <div class="pb-10">
 
-               <div id="jstree-interpreted" class="text-wrap pt-4" style="display: none;"></div>
-               <div id="jstree-original" class="text-wrap pt-4"></div>
-               @push('vite')
-                   @vite(['resources/ts/dataPublication/filters-menu.ts'])
-               @endpush
-
-           </div>
+           <div id="jstree-interpreted" class="text-wrap pt-4" style="display: none;"></div>
+           <div id="jstree-original" class="text-wrap pt-4"></div>
+           @push('vite')
+               @vite(['resources/ts/dataPublication/filters-menu.ts'])
+           @endpush
 
        </div>
+
+   </div>
