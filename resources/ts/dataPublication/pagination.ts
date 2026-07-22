@@ -36,7 +36,7 @@ export class Pagination {
     public setHandlerfn({
         onPageChange,
     }: {
-        onPageChange: (page: number) => void;
+        onPageChange: (page: number) => Promise<void>;
     }): void {
         this.onPageChange = onPageChange;
     }

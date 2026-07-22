@@ -81,7 +81,7 @@ export class MenuButtons {
         });
 
         // Add listeners to buttons
-        this.spatialDrawButton.addEventListener("click", () => {
+        this.spatialDrawButton.addEventListener("click", async () => {
             this.drawingEnabled = !this.drawingEnabled;
             if (this.drawingEnabled) {
                 this.mapController.enableDrawing();
@@ -89,7 +89,7 @@ export class MenuButtons {
                 this.setDefaultActiveResultSetButton();
                 this.spatialDrawButton.innerText = "Stop spatial drawing";
             } else {
-                this.mapController.completeDrawing();
+                await this.mapController.completeDrawing();
                 this.enableButtonsAfterDrawing();
                 this.spatialDrawButton.innerText = "Draw spatial filter";
             }

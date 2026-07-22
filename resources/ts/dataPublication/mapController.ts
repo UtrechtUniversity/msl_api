@@ -79,16 +79,16 @@ export class MapController {
             },
         });
         this.pagination.setHandlerfn({
-            onPageChange: (page) => this.handlePageChange(page),
+            onPageChange: async (page) => this.handlePageChange(page),
         });
         this.keywordTree.setHandlerfn({
             onKeywordFilterUpdate: async (
                 type: "remove" | "add",
                 filter: { key: string; value: string },
-            ) => {
+            ): Promise<Facets> => {
                 return type === "add"
-                    ? await this.handleKeywordFilterAdd(filter)
-                    : await this.handleKeywordFilterRemove(filter);
+                    ? this.handleKeywordFilterAdd(filter)
+                    : this.handleKeywordFilterRemove(filter);
             },
         });
     }
@@ -167,13 +167,13 @@ export class MapController {
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
-    public completeDrawing() {
+    public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.filters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.filters.boundingBox) return;
 
-        this.populateElements();
+        await this.populateElements();
     }
 
     public async removeDrawing() {
@@ -196,7 +196,7 @@ export class MapController {
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
-    private handlePageChange(page: number) {
+    private async handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
         this.resultsSidebar.resetList();
         this.pagination.resetValues();
@@ -204,7 +204,7 @@ export class MapController {
         this.results = null;
 
         this.searchFilters.filters.page = page;
-        this.populateElements();
+        await this.populateElements();
     }
     private async handleKeywordFilterAdd({
         key,
@@ -277,10 +277,10 @@ export class MapController {
         if (!isEmpty(filters.keywords)) return true;
         return false;
     }
-    private resetAndPossiblyRepopulate(opts?: { except: "boundingBox" }) {
+    private async resetAndPossiblyRepopulate(opts?: { except: "boundingBox" }) {
         this.resetComponentsAndData(opts);
         if (this.areActiveFilters()) {
-            this.populateElements();
+            await this.populateElements();
         }
     }
 }
