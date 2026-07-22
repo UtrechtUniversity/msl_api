@@ -80,7 +80,6 @@ export class KeywordTree {
     private treeOptions = { interpreted: {}, original: {} };
     private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
     private dataOriginal: (TreeNode | TreeSubNode)[] = [];
-    //TODO can it query before instantiation?
     private interpretedTree = $(TREES.interpreted.id);
     private interpretedToggle = $(TREES.interpreted.filterToggle);
     private originalTree = $(TREES.original.id);
