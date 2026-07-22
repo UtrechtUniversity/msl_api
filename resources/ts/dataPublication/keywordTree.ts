@@ -172,9 +172,8 @@ export class KeywordTree {
 
             if ("includeFacet" in node.extra) {
                 //node here is the parent
-                const originalJsTree = this.originalTree.jstree(true);
-                const parent = originalJsTree.get_node(node.id);
-                originalJsTree.delete_node(parent.children);
+                const parent = tree.get_node(node.id);
+                tree.delete_node(parent.children);
                 node.children = [];
                 const facetInFacets = this.facets[node.extra.facetName];
                 if (facetInFacets) {
@@ -210,7 +209,7 @@ export class KeywordTree {
                         }
                         node.children.push(newNode);
 
-                        originalJsTree.create_node(node, newNode);
+                        tree.create_node(node, newNode);
                     }
                 }
             }
