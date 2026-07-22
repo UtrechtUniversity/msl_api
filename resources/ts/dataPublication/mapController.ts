@@ -180,9 +180,10 @@ export class MapController {
         this.searchFilters.filters.boundingBox = "";
 
         this.resetComponentsAndData();
-        //TODO something is going wrong with async?
+
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
+            this.keywordTree.recreateFacets(this.facets);
         } else {
             await this.populateElements();
         }
