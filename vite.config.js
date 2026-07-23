@@ -19,7 +19,6 @@ export default defineConfig({
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/mapController.ts',
 
-
             'resources/ts/dataPublication/tab-handle.ts',
             'resources/css/leafletMapStyles/leaflet-sidebar.css',
             'resources/css/datapublicationMap/datapublications-list.css',
