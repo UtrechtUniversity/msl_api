@@ -80,10 +80,15 @@ export class KeywordTree {
     private treeOptions = { interpreted: {}, original: {} };
     private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
     private dataOriginal: (TreeNode | TreeSubNode)[] = [];
-    private interpretedTree = $(TREES.interpreted.id);
-    private interpretedToggle = $(TREES.interpreted.filterToggle);
-    private originalTree = $(TREES.original.id);
-    private originalToggle = $(TREES.original.filterToggle);
+    private interpretedTree: JQuery<HTMLElement> = $(TREES.interpreted.id);
+    private interpretedToggle: JQuery<HTMLElement> = $(
+        TREES.interpreted.filterToggle,
+    );
+    private originalTree: JQuery<HTMLElement> = $(TREES.original.id);
+    private originalToggle: JQuery<HTMLElement> = $(
+        TREES.original.filterToggle,
+    );
+
     private onKeywordFilterUpdate: (
         type: "remove" | "add",
         filter: {
@@ -127,98 +132,9 @@ export class KeywordTree {
         };
         this.createTrees();
     }
-    public recreateFacets(facets: Facets) {
-        this.facets = facets;
-        this.createFacets(this.dataOriginal, "original");
-        this.createFacets(this.dataInterpreted, "interpreted");
-    }
-    private createFacets(
-        nodes: (TreeNode | TreeSubNode)[],
-        treeType: "original" | "interpreted",
-    ) {
-        for (let i = nodes.length - 1; i >= 0; i--) {
-            const node = nodes[i];
-            //TODO
-            if (!node) throw new Error("");
-            const tree =
-                treeType === "original"
-                    ? this.originalTree.jstree(true)
-                    : this.interpretedTree.jstree(true);
-
-            //  B. An to node einai sta facets, vres to value to sto facets
-            if (node.extra.filterName in this.facets) {
-                const result = this.facets[node.extra.filterName]!.items!.find(
-                    (obj) => {
-                        return obj.name == node.extra.filterValue;
-                    },
-                );
-                // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
-                if (result) {
-                    tree.enable_node(node.id);
-                    tree.rename_node(
-                        node.id,
-                        `${node.originalText} <span class="badge bg-primary text-primary-800 rounded-pill">${result.count}</span>`,
-                    );
-                } else {
-                    tree.disable_node(node.id);
-                    tree.rename_node(node.id, `${node.originalText}`);
-                }
-            } else {
-                // In case we have no facets, we don't want to disable everything.
-                // We want the user to be able to use the keywords as filters
-                tree.enable_node(node.id);
-                tree.rename_node(node.id, `${node.originalText}`);
-            }
-
-            if ("includeFacet" in node.extra) {
-                //node here is the parent
-                const parent = tree.get_node(node.id);
-                tree.delete_node(parent.children);
-                node.children = [];
-                const facetInFacets = this.facets[node.extra.facetName];
-                if (facetInFacets) {
-                    for (let x = 0; x < facetInFacets.items!.length; x++) {
-                        const newNode: TreeSubNode = {
-                            text: facetInFacets.items[x].display_name,
-                            originalText: facetInFacets.items[x].display_name,
-                            id: node.extra.facetName + "-" + x,
-                            state: {
-                                opened: false,
-                                disabled: false,
-                                selected: false,
-                                checked: false,
-                            },
-                            extra: {
-                                type: "filter",
-                                url: "",
-                                filterName: node.extra.facetName,
-                                filterValue: facetInFacets.items[x].name,
-                            },
-                            children: [],
-                        };
-                        if (newNode.extra.filterName in this.activeFilters) {
-                            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
-                            if (
-                                this.activeFilters[
-                                    newNode.extra.filterName
-                                ]!.includes(newNode.extra.filterValue)
-                            ) {
-                                newNode.state.checked = true;
-                            }
-                        }
-                        node.children.push(newNode);
-
-                        tree.create_node(node, newNode);
-                    }
-                }
-            }
-            if (node.children.length > 0) {
-                this.createFacets(node.children, treeType);
-            }
-        }
-    }
 
     private createTrees() {
+        // A. Initialize trees
         this.initTree(this.interpretedTree, TREES.interpreted);
         this.initTree(this.originalTree, TREES.original);
         const self = this;
@@ -319,6 +235,97 @@ export class KeywordTree {
                 }
             }
         };
+    }
+
+    public updateTrees(facets: Facets) {
+        this.facets = facets;
+        this.updateTree(this.dataOriginal, "original");
+        this.updateTree(this.dataInterpreted, "interpreted");
+    }
+    private updateTree(
+        nodes: (TreeNode | TreeSubNode)[],
+        treeType: "original" | "interpreted",
+    ) {
+        for (let i = nodes.length - 1; i >= 0; i--) {
+            const node = nodes[i];
+            //TODO
+            if (!node) throw new Error("");
+            const tree =
+                treeType === "original"
+                    ? this.originalTree.jstree(true)
+                    : this.interpretedTree.jstree(true);
+
+            //  B. An to node einai sta facets, vres to value to sto facets
+            if (node.extra.filterName in this.facets) {
+                const result = this.facets[node.extra.filterName]!.items!.find(
+                    (obj) => {
+                        return obj.name == node.extra.filterValue;
+                    },
+                );
+                // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
+                if (result) {
+                    tree.enable_node(node.id);
+                    tree.rename_node(
+                        node.id,
+                        `${node.originalText} <span class="badge bg-primary text-primary-800 rounded-pill">${result.count}</span>`,
+                    );
+                } else {
+                    tree.disable_node(node.id);
+                    tree.rename_node(node.id, `${node.originalText}`);
+                }
+            } else {
+                // In case we have no facets, we don't want to disable everything.
+                // We want the user to be able to use the keywords as filters
+                tree.enable_node(node.id);
+                tree.rename_node(node.id, `${node.originalText}`);
+            }
+
+            if ("includeFacet" in node.extra) {
+                //node here is the parent
+                const parent = tree.get_node(node.id);
+                tree.delete_node(parent.children);
+                node.children = [];
+                const facetInFacets = this.facets[node.extra.facetName];
+                if (facetInFacets) {
+                    for (let x = 0; x < facetInFacets.items!.length; x++) {
+                        const newNode: TreeSubNode = {
+                            text: facetInFacets.items[x].display_name,
+                            originalText: facetInFacets.items[x].display_name,
+                            id: node.extra.facetName + "-" + x,
+                            state: {
+                                opened: false,
+                                disabled: false,
+                                selected: false,
+                                checked: false,
+                            },
+                            extra: {
+                                type: "filter",
+                                url: "",
+                                filterName: node.extra.facetName,
+                                filterValue: facetInFacets.items[x].name,
+                            },
+                            children: [],
+                        };
+                        if (newNode.extra.filterName in this.activeFilters) {
+                            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
+                            if (
+                                this.activeFilters[
+                                    newNode.extra.filterName
+                                ]!.includes(newNode.extra.filterValue)
+                            ) {
+                                newNode.state.checked = true;
+                            }
+                        }
+                        node.children.push(newNode);
+
+                        tree.create_node(node, newNode);
+                    }
+                }
+            }
+            if (node.children.length > 0) {
+                this.updateTree(node.children, treeType);
+            }
+        }
     }
 
     //B. Toggle between trees

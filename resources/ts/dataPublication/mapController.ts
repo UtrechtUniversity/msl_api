@@ -106,7 +106,7 @@ export class MapController {
             meta: this.paginator,
             facets: this.facets,
         } = await this.getJsonFromRequest());
-        this.keywordTree.recreateFacets(this.facets);
+        this.keywordTree.updateTrees(this.facets);
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
@@ -183,7 +183,7 @@ export class MapController {
 
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.recreateFacets(this.facets);
+            this.keywordTree.updateTrees(this.facets);
         } else {
             await this.populateElements();
         }
@@ -243,7 +243,7 @@ export class MapController {
         this.resetComponentsAndData({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.recreateFacets(this.facets);
+            this.keywordTree.updateTrees(this.facets);
         } else {
             await this.populateElements();
         }
