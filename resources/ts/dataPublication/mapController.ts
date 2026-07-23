@@ -250,9 +250,7 @@ export class MapController {
     }
 
     // Helper methods
-    private resetComponentsAndData(opts?: {
-        except: "boundingBox" | "keywords";
-    }) {
+    private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
                 ? { except: "rectangle" }
@@ -276,12 +274,6 @@ export class MapController {
         if (!!filters.boundingBox) return true;
         if (!isEmpty(filters.keywords)) return true;
         return false;
-    }
-    private async resetAndPossiblyRepopulate(opts?: { except: "boundingBox" }) {
-        this.resetComponentsAndData(opts);
-        if (this.areActiveFilters()) {
-            await this.populateElements();
-        }
     }
 }
 
