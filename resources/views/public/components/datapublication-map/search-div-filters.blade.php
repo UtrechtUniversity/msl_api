@@ -128,9 +128,6 @@
 
            <div id="jstree-interpreted" class="text-wrap pt-4" style="display: none;"></div>
            <div id="jstree-original" class="text-wrap pt-4"></div>
-           @push('vite')
-               @vite(['resources/ts/dataPublication/filters-menu.ts'])
-           @endpush
 
        </div>
 

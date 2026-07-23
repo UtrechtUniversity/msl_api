@@ -18,7 +18,6 @@ export default defineConfig({
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/mapController.ts',
-            'resources/ts/dataPublication/filters-menu.ts',
 
 
             'resources/ts/dataPublication/tab-handle.ts',
