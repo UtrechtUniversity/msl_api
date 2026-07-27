@@ -2,6 +2,12 @@ import { assertNotUndefined } from "../helpers";
 import "jstree";
 import { throwWhenCallBackNotInitialized, type Facets } from "./utils";
 
+const INTERPRETED = "interpreted" as const;
+type Interpreted = typeof INTERPRETED;
+
+const ORIGINAL = "original" as const;
+type Original = typeof ORIGINAL;
+
 export type TreeNode = {
     text: string;
     state: NodeState;
@@ -62,16 +68,23 @@ const TREES = {
         id: "#jstree-interpreted",
         name: "jstree-interpreted",
         filterToggle: "#filterTreeToggleInterpreted",
-        type: "interpreted",
+        type: INTERPRETED,
     },
     original: {
         id: "#jstree-original",
         name: "jstree-original",
         filterToggle: "#filterTreeToggleOriginal",
-        type: "original",
+        type: ORIGINAL,
     },
 } as const;
 
+const IS_INTERPRETED_FILTER_ENABLED =
+    "datapublicationMapInterpretedFilters" as const;
+// @Decision:
+// The state of tree, interpreted or original, is not of relevant in MapController.
+// The filtering works the same for any keyword, since original is a subtree of interpreted.
+// Also, the main tree is the interpreted one,
+// and we might want to get rid of the original one sooner or later.
 export class KeywordTree {
     // TODO do I need this?
     private activeFilters: { [key: string]: string[] } = {};
@@ -141,13 +154,11 @@ export class KeywordTree {
         // Jqueries when document is ready
         $(function () {
             const interpretedInStorage = localStorage.getItem(
-                "datapublicationMapInterpretedFilters",
+                IS_INTERPRETED_FILTER_ENABLED,
             );
             if (interpretedInStorage !== null) {
                 self.setActiveTree(
-                    interpretedInStorage === "false"
-                        ? "original"
-                        : "interpreted",
+                    interpretedInStorage === "false" ? ORIGINAL : INTERPRETED,
                 );
             }
 
@@ -158,8 +169,8 @@ export class KeywordTree {
                     : self.originalTree.jstree("search", searchString);
             });
 
-            self.toggleToAnotherTree("interpreted");
-            self.toggleToAnotherTree("original");
+            self.toggleToAnotherTree(INTERPRETED);
+            self.toggleToAnotherTree(ORIGINAL);
 
             $("#expand_all").on("click", function () {
                 self.interpretedToggle.is(":checked")
@@ -179,10 +190,10 @@ export class KeywordTree {
 
     private initTree(
         tree: JQuery<HTMLElement>,
-        { name, type }: { name: string; type: "original" | "interpreted" },
+        { name, type }: { name: string; type: Original | Interpreted },
     ) {
         const options =
-            type === "interpreted"
+            type === INTERPRETED
                 ? this.treeOptions.interpreted
                 : this.treeOptions.original;
         tree.jstree({
@@ -240,19 +251,19 @@ export class KeywordTree {
 
     public updateTrees(facets: Facets) {
         this.facets = facets;
-        this.updateTree(this.dataOriginal, "original");
-        this.updateTree(this.dataInterpreted, "interpreted");
+        this.updateTree(this.dataOriginal, ORIGINAL);
+        this.updateTree(this.dataInterpreted, INTERPRETED);
     }
     private updateTree(
         nodes: (TreeNode | TreeSubNode)[],
-        treeType: "original" | "interpreted",
+        treeType: Original | Interpreted,
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
             //TODO
             if (!node) throw new Error("");
             const tree =
-                treeType === "original"
+                treeType === ORIGINAL
                     ? this.originalTree.jstree(true)
                     : this.interpretedTree.jstree(true);
 
@@ -331,46 +342,39 @@ export class KeywordTree {
 
     //B. Toggle between trees
 
-    private toggleToAnotherTree(type: "interpreted" | "original") {
+    private toggleToAnotherTree(type: Interpreted | Original) {
         const self = this;
         const tree =
-            type === "interpreted"
-                ? self.interpretedToggle
-                : self.originalToggle;
+            type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
         tree.on("change", function () {
             if (this.checked) {
                 localStorage.setItem(
-                    "datapublicationMapInterpretedFilters",
-                    type === "interpreted" ? this.checked : !this.checked,
+                    IS_INTERPRETED_FILTER_ENABLED,
+                    type === INTERPRETED ? this.checked : !this.checked,
                 );
 
                 self.setActiveTree(
-                    type === "interpreted" ? "interpreted" : "original",
+                    type === INTERPRETED ? INTERPRETED : ORIGINAL,
                 );
             }
             if (!this.checked) {
                 localStorage.setItem(
-                    "datapublicationMapInterpretedFilters",
-                    type === "interpreted" ? !this.checked : this.checked,
+                    IS_INTERPRETED_FILTER_ENABLED,
+                    type === INTERPRETED ? !this.checked : this.checked,
                 );
 
                 self.setActiveTree(
-                    type === "interpreted" ? "original" : "interpreted",
+                    type === INTERPRETED ? ORIGINAL : INTERPRETED,
                 );
             }
         });
     }
     // C. Hide elements
-    private hideNodesForTree(
-        treeType: "interpreted" | "original",
-        hide: boolean,
-    ) {
+    private hideNodesForTree(treeType: Interpreted | Original, hide: boolean) {
         const self = this;
 
         const tree =
-            treeType === "interpreted"
-                ? self.interpretedTree
-                : self.originalTree;
+            treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
         tree.jstree()
             .get_json("#", {
                 flat: true,
@@ -393,10 +397,10 @@ export class KeywordTree {
                 );
 
                 //set interpreted/enriched tree
-                self.hideNodesForTree("interpreted", true);
+                self.hideNodesForTree(INTERPRETED, true);
 
                 //set original tree
-                self.hideNodesForTree("original", true);
+                self.hideNodesForTree(ORIGINAL, true);
 
                 //TODO do we need this?
                 self.originalTree
@@ -427,10 +431,10 @@ export class KeywordTree {
                 localStorage.setItem("datapublicationMapHideEmptyTerms", false);
 
                 //set interpreted/enriched tree
-                self.hideNodesForTree("interpreted", false);
+                self.hideNodesForTree(INTERPRETED, false);
 
                 //set original tree
-                self.hideNodesForTree("original", false);
+                self.hideNodesForTree(ORIGINAL, false);
             }
         });
     }
@@ -508,8 +512,8 @@ export class KeywordTree {
             }
         }
     }
-    private setActiveTree(type: "interpreted" | "original") {
-        if (type === "original") {
+    private setActiveTree(type: Interpreted | Original) {
+        if (type === ORIGINAL) {
             this.originalToggle.prop("checked", "checked");
             this.interpretedToggle.prop("checked", false);
             this.interpretedTree.hide();
