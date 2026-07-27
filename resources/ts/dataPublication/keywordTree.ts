@@ -13,6 +13,9 @@ type Interpreted = typeof INTERPRETED;
 const ORIGINAL = "original" as const;
 type Original = typeof ORIGINAL;
 
+type TreeNodeWithParent = (TreeNode | TreeSubNode) & {
+    parent: TreeNodeWithParent;
+};
 export type TreeNode = {
     id: string;
     text: string;
@@ -70,7 +73,7 @@ interface NodeState {
 }
 
 interface JsTreeCheckEventData {
-    instance: JQuery;
+    instance: JSTree;
     node: { original: TreeNode | TreeSubNode };
     selected: string[];
     event?: Event;
@@ -106,11 +109,11 @@ export class KeywordTree {
     private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
     private dataOriginal: (TreeNode | TreeSubNode)[] = [];
     private interpretedTree: JQuery<HTMLElement> = $(TREES.interpreted.id);
-    private interpretedToggle: JQuery<HTMLElement> = $(
+    private interpretedToggle: JQuery<HTMLInputElement> = $(
         TREES.interpreted.filterToggle,
     );
     private originalTree: JQuery<HTMLElement> = $(TREES.original.id);
-    private originalToggle: JQuery<HTMLElement> = $(
+    private originalToggle: JQuery<HTMLInputElement> = $(
         TREES.original.filterToggle,
     );
 
@@ -212,7 +215,10 @@ export class KeywordTree {
             ...options,
             state: {
                 key: name,
-                filter: function (state) {
+                // We use this function as filter,
+                // so that when we reload the page,
+                // the checks are removed as fefault state
+                filter: function (state: JSTreeStaticDefaults) {
                     delete state.checkbox;
                     return state;
                 },
@@ -362,7 +368,6 @@ export class KeywordTree {
     }
 
     //B. Toggle between trees
-
     private toggleToAnotherTree(type: Interpreted | Original) {
         const self = this;
         const tree =
@@ -371,7 +376,7 @@ export class KeywordTree {
             if (this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,
-                    type === INTERPRETED ? this.checked : !this.checked,
+                    "" + (type === INTERPRETED ? this.checked : !this.checked),
                 );
 
                 self.setActiveTree(
@@ -381,7 +386,7 @@ export class KeywordTree {
             if (!this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,
-                    type === INTERPRETED ? !this.checked : this.checked,
+                    "" + (type === INTERPRETED ? !this.checked : this.checked),
                 );
 
                 self.setActiveTree(
@@ -410,54 +415,63 @@ export class KeywordTree {
     }
     private hideEmptyTerms() {
         const self = this;
-        $("#hide_empty_terms").on("change", function () {
-            if (this.checked) {
-                localStorage.setItem(
-                    "datapublicationMapHideEmptyTerms",
-                    this.checked,
-                );
+        ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
+            "change",
+            function () {
+                if (this.checked) {
+                    localStorage.setItem(
+                        "datapublicationMapHideEmptyTerms",
+                        "" + this.checked,
+                    );
 
-                //set interpreted/enriched tree
-                self.hideNodesForTree(INTERPRETED, true);
+                    //set interpreted/enriched tree
+                    self.hideNodesForTree(INTERPRETED, true);
 
-                //set original tree
-                self.hideNodesForTree(ORIGINAL, true);
+                    //set original tree
+                    self.hideNodesForTree(ORIGINAL, true);
 
-                //TODO do we need this?
-                self.originalTree
-                    .jstree()
-                    .get_json("#", {
-                        flat: true,
-                    })
-                    .forEach((element) => {
-                        if (!element.state.disabled) {
-                            var parent = element.parent;
+                    //TODO do we need this?
+                    self.originalTree
+                        .jstree()
+                        .get_json("#", {
+                            flat: true,
+                        })
+                        .forEach((element: TreeNodeWithParent) => {
+                            if (
+                                !element.state.disabled &&
+                                "parent" in element
+                            ) {
+                                let parent = element.parent;
 
-                            if (parent) {
-                                while (parent) {
-                                    self.originalTree
-                                        .jstree()
-                                        .show_node(parent, false);
-                                    parent = parent.parent;
+                                if (parent) {
+                                    while (parent) {
+                                        self.originalTree
+                                            .jstree()
+                                            .show_node(parent, false);
+                                        parent = parent.parent;
+                                    }
                                 }
+
+                                self.originalTree
+                                    .jstree()
+                                    .show_node(element, false);
                             }
+                        });
+                }
+                if (!this.checked) {
+                    localStorage.setItem(
+                        "datapublicationMapHideEmptyTerms",
+                        "" + false,
+                    );
 
-                            self.originalTree
-                                .jstree()
-                                .show_node(element, false);
-                        }
-                    });
-            }
-            if (!this.checked) {
-                localStorage.setItem("datapublicationMapHideEmptyTerms", false);
+                    //set interpreted/enriched tree
+                    self.hideNodesForTree(INTERPRETED, false);
 
-                //set interpreted/enriched tree
-                self.hideNodesForTree(INTERPRETED, false);
-
-                //set original tree
-                self.hideNodesForTree(ORIGINAL, false);
-            }
-        });
+                    //set original tree
+                    self.hideNodesForTree(ORIGINAL, false);
+                }
+            },
+        );
     }
     private preProcessNodes(nodes: (TreeNode | TreeSubNode)[]) {
         for (let i = nodes.length - 1; i >= 0; i--) {
