@@ -254,9 +254,13 @@ export class KeywordTree {
         nodes: (TreeNode | TreeSubNode)[],
         treeType: Original | Interpreted,
         activeFilters: KeywordFilters,
+        { disableByDefault }: { disableByDefault: boolean } = {
+            disableByDefault: false,
+        },
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
+
             //TODO
             if (!node) throw new Error("");
             const tree =
@@ -264,6 +268,13 @@ export class KeywordTree {
                     ? this.originalTree.jstree(true)
                     : this.interpretedTree.jstree(true);
 
+            node.state.disabled = disableByDefault;
+            if (disableByDefault) {
+                const nodeInTree = tree.get_node(node.id);
+                tree.disable_node(nodeInTree);
+            }
+            if (node.originalText === "decane")
+                console.log(node.state.disabled);
             //  B. An to node einai sta facets, vres to value to sto facets
             if (node.extra.filterName in this.facets) {
                 const result = this.facets[node.extra.filterName]!.items!.find(
@@ -274,19 +285,23 @@ export class KeywordTree {
                 // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
                 if (result) {
                     tree.enable_node(node.id);
+
                     tree.rename_node(
                         node.id,
                         `${node.originalText} <span class="badge bg-primary text-primary-800 rounded-pill">${result.count}</span>`,
                     );
                 } else {
-                    tree.disable_node(node.id);
+                    if (node.originalText === "salt brine")
+                        console.log(node.state.disabled, "else");
                     tree.rename_node(node.id, `${node.originalText}`);
                 }
             } else {
                 // In case we have no facets, we don't want to disable everything.
                 // We want the user to be able to use the keywords as filters
-                tree.enable_node(node.id);
+                // tree.enable_node(node.id);
                 tree.rename_node(node.id, `${node.originalText}`);
+                if (node.originalText === "salt brine")
+                    console.log(node.state.disabled, "elseelse");
             }
 
             if ("includeFacet" in node.extra) {
@@ -303,7 +318,7 @@ export class KeywordTree {
                             id: node.extra.facetName + "-" + x,
                             state: {
                                 opened: false,
-                                disabled: false,
+                                disabled: true,
                                 selected: false,
                                 checked: false,
                             },
@@ -331,8 +346,12 @@ export class KeywordTree {
                     }
                 }
             }
+            if (node.originalText === "salt brine")
+                console.log(node.state.disabled);
             if (node.children.length > 0) {
-                this.updateTree(node.children, treeType);
+                this.updateTree(node.children, treeType, activeFilters, {
+                    disableByDefault: true,
+                });
             }
         }
     }
