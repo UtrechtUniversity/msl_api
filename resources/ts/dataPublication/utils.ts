@@ -82,6 +82,10 @@ export type Paginator = {
     perPage: number;
 };
 
-export type Facets = { [key: string]: { [key: string]: string[] } };
+export type Facets = {
+    [key: string]: {
+        items: { name: string; display_name: string; count: string }[];
+    };
+};
 
 export type KeywordFilters = { [key: string]: string[] };

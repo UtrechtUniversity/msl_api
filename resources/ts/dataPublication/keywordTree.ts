@@ -13,7 +13,9 @@ const ORIGINAL = "original" as const;
 type Original = typeof ORIGINAL;
 
 export type TreeNode = {
+    id: string;
     text: string;
+    originalText: string;
     state: NodeState;
     extra: NodeExtra;
     children: TreeSubNode[];
@@ -22,6 +24,7 @@ export type TreeNode = {
 export type TreeSubNode = {
     id: string;
     text: string;
+    originalText: string;
     state: SubNodeState;
     extra: SubTreeExtra;
     children: TreeSubNode[];
@@ -29,12 +32,17 @@ export type TreeSubNode = {
 
 interface SubTreeExtra {
     type: "filter";
-    filterName: "msl_enriched_keyword_uri" | "msl_original_keyword_uri";
+    url: string;
+    //"msl_enriched_keyword_uri" | "msl_original_keyword_uri"
+    filterName: string;
     filterValue: string;
 }
 
 interface SubNodeState {
+    opened: boolean;
     disabled: boolean;
+    selected: boolean;
+    checked: boolean;
 }
 interface NodeExtraWithoutFacet {
     type: "filter";
@@ -250,6 +258,19 @@ export class KeywordTree {
         this.updateTree(this.dataOriginal, ORIGINAL, activeFilters);
         this.updateTree(this.dataInterpreted, INTERPRETED, activeFilters);
     }
+    /**
+     * Update the tree. More specifically:
+     * - A. The static part of the tree is being updated, by renaming.
+     * - B. The dynamic part of the tree gets deleted and recreated.
+     *
+     * Note: in this method we don't change the default data structures as in 'processNodes()',
+     * but only the jstrees themselves
+     *
+     * @param nodes  Data nodes holding information about a tree
+     * @param treeType Type of the tree: original or interpreted
+     * @param activeFilters
+     * @param { disableByDefault:boolean } Option for disabling subtrees
+     */
     private updateTree(
         nodes: (TreeNode | TreeSubNode)[],
         treeType: Original | Interpreted,
@@ -260,95 +281,89 @@ export class KeywordTree {
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
+            assertNotUndefined(node, `Node is undefined. This is a bug.`);
 
-            //TODO
-            if (!node) throw new Error("");
             const tree =
                 treeType === ORIGINAL
                     ? this.originalTree.jstree(true)
                     : this.interpretedTree.jstree(true);
-
-            node.state.disabled = disableByDefault;
+            // We want nodes from subtrees to be disabled initially
             if (disableByDefault) {
-                const nodeInTree = tree.get_node(node.id);
-                tree.disable_node(nodeInTree);
+                tree.disable_node(node.id);
             }
-            if (node.originalText === "decane")
-                console.log(node.state.disabled);
-            //  B. An to node einai sta facets, vres to value to sto facets
-            if (node.extra.filterName in this.facets) {
-                const result = this.facets[node.extra.filterName]!.items!.find(
-                    (obj) => {
-                        return obj.name == node.extra.filterValue;
-                    },
-                );
-                // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
-                if (result) {
+            // A.
+            const nodeInFacets = this.facets[node.extra.filterName];
+            if (!nodeInFacets) {
+                tree.rename_node(node.id, `${node.originalText}`);
+            } else {
+                const result = nodeInFacets.items.find((obj) => {
+                    return obj.name == node.extra.filterValue;
+                });
+                if (!result) {
+                    tree.rename_node(node.id, `${node.originalText}`);
+                } else {
+                    // If current nodes is included in the facets, then rename and enable
                     tree.enable_node(node.id);
-
                     tree.rename_node(
                         node.id,
                         `${node.originalText} <span class="badge bg-primary text-primary-800 rounded-pill">${result.count}</span>`,
                     );
-                } else {
-                    if (node.originalText === "salt brine")
-                        console.log(node.state.disabled, "else");
-                    tree.rename_node(node.id, `${node.originalText}`);
                 }
-            } else {
-                // In case we have no facets, we don't want to disable everything.
-                // We want the user to be able to use the keywords as filters
-                // tree.enable_node(node.id);
-                tree.rename_node(node.id, `${node.originalText}`);
-                if (node.originalText === "salt brine")
-                    console.log(node.state.disabled, "elseelse");
             }
-
+            const newChildren = [];
+            // B.
+            // If current node include children nodes that can be a part of the dynamic facets, then  delete them
+            // Recreate children nodes, only if there are results relevant to them.
             if ("includeFacet" in node.extra) {
-                //node here is the parent
+                //The node here is the parent of facets' nodes
                 const parent = tree.get_node(node.id);
                 tree.delete_node(parent.children);
-                node.children = [];
+
                 const facetInFacets = this.facets[node.extra.facetName];
                 if (facetInFacets) {
-                    for (let x = 0; x < facetInFacets.items!.length; x++) {
+                    for (const [x, facetItem] of Object.entries(
+                        facetInFacets.items,
+                    )) {
+                        const filterName = node.extra.facetName;
+                        const filterValue = facetItem.name;
+
+                        const valuesOfActiveFilter = activeFilters[filterName];
+
                         const newNode: TreeSubNode = {
-                            text: facetInFacets.items[x].display_name,
-                            originalText: facetInFacets.items[x].display_name,
+                            text: facetItem.display_name,
+                            originalText: facetItem.display_name,
                             id: node.extra.facetName + "-" + x,
                             state: {
                                 opened: false,
                                 disabled: true,
                                 selected: false,
-                                checked: false,
+                                // Make sure that the children node is checked if it is an active filter.
+                                checked:
+                                    !!valuesOfActiveFilter &&
+                                    valuesOfActiveFilter.includes(filterValue),
                             },
                             extra: {
                                 type: "filter",
                                 url: "",
-                                filterName: node.extra.facetName,
-                                filterValue: facetInFacets.items[x].name,
+                                filterName,
+                                filterValue,
                             },
                             children: [],
                         };
-                        if (newNode.extra.filterName in activeFilters) {
-                            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
-                            if (
-                                activeFilters[
-                                    newNode.extra.filterName
-                                ]!.includes(newNode.extra.filterValue)
-                            ) {
-                                newNode.state.checked = true;
-                            }
-                        }
-                        node.children.push(newNode);
+
+                        newChildren.push(newNode);
 
                         tree.create_node(node, newNode);
                     }
                 }
             }
-            if (node.originalText === "salt brine")
-                console.log(node.state.disabled);
-            if (node.children.length > 0) {
+            // If we have created new children, then the recursion goes one with them.
+            if (newChildren.length > 0) {
+                this.updateTree(newChildren, treeType, activeFilters, {
+                    disableByDefault: true,
+                });
+                // Else the recursion goes on with the children as in the default data structure.
+            } else if (node.children.length > 0) {
                 this.updateTree(node.children, treeType, activeFilters, {
                     disableByDefault: true,
                 });
@@ -469,10 +484,10 @@ export class KeywordTree {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
             assertNotUndefined(node, "Node is undefined. This is a bug.");
-
-            const filterInFacets = this.facets[node.extra.filterName];
-            if (filterInFacets) {
-                const result = filterInFacets.items.find((obj) => {
+            // A. If node is part of facets, then populate it and enable it.
+            const nodeInFacets = this.facets[node.extra.filterName];
+            if (nodeInFacets) {
+                const result = nodeInFacets.items.find((obj) => {
                     return obj.name == node.extra.filterValue;
                 });
                 if (result) {
@@ -484,14 +499,20 @@ export class KeywordTree {
                         "</span>";
                 }
             }
-
+            //B.  If current node include children nodes that can be a part of the dynamic facets,
+            // then create and store them in the default data structure.
             if ("includeFacet" in node.extra) {
-                const facetInFacets = this.facets[node.extra.facetName];
-                if (facetInFacets) {
-                    for (let x = 0; x < facetInFacets.items.length; x++) {
+                const facetParentInFacets = this.facets[node.extra.facetName];
+                if (facetParentInFacets) {
+                    for (const [x, facetItem] of Object.entries(
+                        facetParentInFacets.items,
+                    )) {
+                        const filterName = node.extra.facetName;
+                        const filterValue = facetItem.name;
+
                         const newNode: TreeSubNode = {
-                            text: facetInFacets.items[x].display_name,
-                            originalText: facetInFacets.items[x].display_name,
+                            text: facetItem.display_name,
+                            originalText: facetItem.display_name,
                             id: node.extra.facetName + "-" + x,
                             state: {
                                 opened: false,
@@ -502,8 +523,8 @@ export class KeywordTree {
                             extra: {
                                 type: "filter",
                                 url: "",
-                                filterName: node.extra.facetName,
-                                filterValue: facetInFacets.items[x].name,
+                                filterName,
+                                filterValue,
                             },
                             children: [],
                         };
@@ -511,6 +532,7 @@ export class KeywordTree {
                     }
                 }
             }
+            // Do the same procedure for the children of the nodes, if they exist.
             if (node.children.length > 0) {
                 this.processNodes(node.children, original);
             }
