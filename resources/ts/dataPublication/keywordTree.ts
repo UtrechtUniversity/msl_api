@@ -140,8 +140,9 @@ export class KeywordTree {
         const self = this;
         // Jqueries when document is ready
         $(function () {
-            const interpretedInStorage =
-                localStorage.getItem("interpretedFilters");
+            const interpretedInStorage = localStorage.getItem(
+                "datapublicationMapInterpretedFilters",
+            );
             if (interpretedInStorage !== null) {
                 self.setActiveTree(
                     interpretedInStorage === "false"
