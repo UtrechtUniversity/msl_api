@@ -2,6 +2,7 @@ import { assertNotUndefined } from "../helpers";
 import "jstree";
 import {
     throwWhenCallBackNotInitialized,
+    type FacetItem,
     type Facets,
     type KeywordFilters,
 } from "./utils";
@@ -329,27 +330,16 @@ export class KeywordTree {
 
                         const valuesOfActiveFilter = activeFilters[filterName];
 
-                        const newNode: TreeSubNode = {
-                            text: facetItem.display_name,
-                            originalText: facetItem.display_name,
-                            id: node.extra.facetName + "-" + x,
-                            state: {
-                                opened: false,
-                                disabled: true,
-                                selected: false,
-                                // Make sure that the children node is checked if it is an active filter.
-                                checked:
-                                    !!valuesOfActiveFilter &&
-                                    valuesOfActiveFilter.includes(filterValue),
-                            },
-                            extra: {
-                                type: "filter",
-                                url: "",
-                                filterName,
-                                filterValue,
-                            },
-                            children: [],
-                        };
+                        const newNode: TreeSubNode = createSubNode({
+                            filterName,
+                            filterValue,
+                            facetItem,
+                            facetNumber: x,
+                        });
+                        // Make sure that the children node is checked if it is an active filter.
+                        newNode.state.checked =
+                            !!valuesOfActiveFilter &&
+                            valuesOfActiveFilter.includes(filterValue);
 
                         newChildren.push(newNode);
 
@@ -510,24 +500,12 @@ export class KeywordTree {
                         const filterName = node.extra.facetName;
                         const filterValue = facetItem.name;
 
-                        const newNode: TreeSubNode = {
-                            text: facetItem.display_name,
-                            originalText: facetItem.display_name,
-                            id: node.extra.facetName + "-" + x,
-                            state: {
-                                opened: false,
-                                disabled: false,
-                                selected: false,
-                                checked: false,
-                            },
-                            extra: {
-                                type: "filter",
-                                url: "",
-                                filterName,
-                                filterValue,
-                            },
-                            children: [],
-                        };
+                        const newNode: TreeSubNode = createSubNode({
+                            filterName,
+                            filterValue,
+                            facetItem,
+                            facetNumber: x,
+                        });
                         node.children.push(newNode);
                     }
                 }
@@ -575,5 +553,36 @@ function createTreeOptions(data: (TreeNode | TreeSubNode)[]) {
             case_sensitive: false,
             show_only_matches: true,
         },
+    };
+}
+
+function createSubNode({
+    facetItem,
+    facetNumber,
+    filterName,
+    filterValue,
+}: {
+    facetItem: FacetItem;
+    facetNumber: string;
+    filterName: string;
+    filterValue: string;
+}): TreeSubNode {
+    return {
+        text: facetItem.display_name,
+        originalText: facetItem.display_name,
+        id: filterName + "-" + facetNumber,
+        state: {
+            opened: false,
+            disabled: false,
+            selected: false,
+            checked: false,
+        },
+        extra: {
+            type: "filter",
+            url: "",
+            filterName,
+            filterValue,
+        },
+        children: [],
     };
 }

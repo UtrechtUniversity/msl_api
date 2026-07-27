@@ -84,8 +84,8 @@ export type Paginator = {
 
 export type Facets = {
     [key: string]: {
-        items: { name: string; display_name: string; count: string }[];
+        items: FacetItem[];
     };
 };
-
+export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
