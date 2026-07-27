@@ -1,5 +1,10 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
-import { getDefaultTab, type Facets, type Paginator } from "./utils.js";
+import {
+    getDefaultTab,
+    type Facets,
+    type KeywordFilters,
+    type Paginator,
+} from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
@@ -16,7 +21,7 @@ type SearchFilter = {
         boundingBox: string;
         page: number;
         pageSize: 10;
-        keywords: { [key: string]: string[] };
+        keywords: KeywordFilters;
     };
 };
 
@@ -106,7 +111,10 @@ export class MapController {
             meta: this.paginator,
             facets: this.facets,
         } = await this.getJsonFromRequest());
-        this.keywordTree.updateTrees(this.facets);
+        this.keywordTree.updateTrees(
+            this.facets,
+            this.searchFilters.filters.keywords,
+        );
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
@@ -183,7 +191,10 @@ export class MapController {
 
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.updateTrees(this.facets);
+            this.keywordTree.updateTrees(
+                this.facets,
+                this.searchFilters.filters.keywords,
+            );
         } else {
             await this.populateElements();
         }
@@ -243,7 +254,10 @@ export class MapController {
         this.resetComponentsAndData({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.updateTrees(this.facets);
+            this.keywordTree.updateTrees(
+                this.facets,
+                this.searchFilters.filters.keywords,
+            );
         } else {
             await this.populateElements();
         }

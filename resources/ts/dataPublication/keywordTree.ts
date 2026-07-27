@@ -1,6 +1,10 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
-import { throwWhenCallBackNotInitialized, type Facets } from "./utils";
+import {
+    throwWhenCallBackNotInitialized,
+    type Facets,
+    type KeywordFilters,
+} from "./utils";
 
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
@@ -87,7 +91,6 @@ const IS_INTERPRETED_FILTER_ENABLED =
 // and we might want to get rid of the original one sooner or later.
 export class KeywordTree {
     // TODO do I need this?
-    private activeFilters: { [key: string]: string[] } = {};
     private activeNodes: Array<string> = [];
     private facets: Facets = {};
     private treeOptions = { interpreted: {}, original: {} };
@@ -228,18 +231,11 @@ export class KeywordTree {
                 const key = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
                 if (e.type == "check_node") {
-                    //TODO this should be moved to mapController probably
-                    this.activeFilters[key] = [
-                        ...(this.activeFilters[key] ?? []),
-                        value,
-                    ];
                     await self.onKeywordFilterUpdate("add", {
                         key,
                         value,
                     });
                 } else if (e.type == "uncheck_node") {
-                    //TODO this should be moved to mapController probably
-                    delete this.activeFilters[key];
                     await self.onKeywordFilterUpdate("remove", {
                         key,
                         value,
@@ -249,14 +245,15 @@ export class KeywordTree {
         };
     }
 
-    public updateTrees(facets: Facets) {
+    public updateTrees(facets: Facets, activeFilters: KeywordFilters) {
         this.facets = facets;
-        this.updateTree(this.dataOriginal, ORIGINAL);
-        this.updateTree(this.dataInterpreted, INTERPRETED);
+        this.updateTree(this.dataOriginal, ORIGINAL, activeFilters);
+        this.updateTree(this.dataInterpreted, INTERPRETED, activeFilters);
     }
     private updateTree(
         nodes: (TreeNode | TreeSubNode)[],
         treeType: Original | Interpreted,
+        activeFilters: KeywordFilters,
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
@@ -318,10 +315,10 @@ export class KeywordTree {
                             },
                             children: [],
                         };
-                        if (newNode.extra.filterName in this.activeFilters) {
+                        if (newNode.extra.filterName in activeFilters) {
                             //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
                             if (
-                                this.activeFilters[
+                                activeFilters[
                                     newNode.extra.filterName
                                 ]!.includes(newNode.extra.filterValue)
                             ) {
@@ -453,31 +450,19 @@ export class KeywordTree {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
             assertNotUndefined(node, "Node is undefined. This is a bug.");
-            //TODO remove
-            if (node.extra.type == "filter") {
-                const filterInActiveFilters =
-                    this.activeFilters[node.extra.filterName];
 
-                if (
-                    filterInActiveFilters !== undefined &&
-                    filterInActiveFilters.includes(node.extra.filterValue)
-                ) {
-                    node.state.checked = true;
-                    this.activeNodes.push(node.id);
-                }
-                const filterInFacets = this.facets[node.extra.filterName];
-                if (filterInFacets) {
-                    const result = filterInFacets.items.find((obj) => {
-                        return obj.name == node.extra.filterValue;
-                    });
-                    if (result) {
-                        node.state.disabled = false;
-                        node.text =
-                            node.originalText +
-                            ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
-                            result.count +
-                            "</span>";
-                    }
+            const filterInFacets = this.facets[node.extra.filterName];
+            if (filterInFacets) {
+                const result = filterInFacets.items.find((obj) => {
+                    return obj.name == node.extra.filterValue;
+                });
+                if (result) {
+                    node.state.disabled = false;
+                    node.text =
+                        node.originalText +
+                        ' <span class="badge bg-primary text-primary-800 rounded-pill">' +
+                        result.count +
+                        "</span>";
                 }
             }
 

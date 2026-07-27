@@ -83,3 +83,5 @@ export type Paginator = {
 };
 
 export type Facets = { [key: string]: { [key: string]: string[] } };
+
+export type KeywordFilters = { [key: string]: string[] };
