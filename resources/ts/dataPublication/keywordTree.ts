@@ -395,7 +395,10 @@ export class KeywordTree {
         });
     }
     // C. Hide elements
-    private hideNodesForTree(treeType: Interpreted | Original, hide: boolean) {
+    private hideNodesForTree(
+        treeType: Interpreted | Original,
+        { hide }: { hide: boolean },
+    ) {
         const self = this;
 
         const tree =
@@ -424,10 +427,10 @@ export class KeywordTree {
                     );
 
                     //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, true);
+                    self.hideNodesForTree(INTERPRETED, { hide: true });
 
                     //set original tree
-                    self.hideNodesForTree(ORIGINAL, true);
+                    self.hideNodesForTree(ORIGINAL, { hide: true });
 
                     //TODO do we need this?
                     self.originalTree
@@ -464,10 +467,10 @@ export class KeywordTree {
                     );
 
                     //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, false);
+                    self.hideNodesForTree(INTERPRETED, { hide: false });
 
                     //set original tree
-                    self.hideNodesForTree(ORIGINAL, false);
+                    self.hideNodesForTree(ORIGINAL, { hide: false });
                 }
             },
         );
