@@ -6,6 +6,7 @@ import {
     type Facets,
     type KeywordFilters,
 } from "./utils";
+import { omit } from "lodash";
 
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
@@ -217,7 +218,7 @@ export class KeywordTree {
                 // so that when we reload the page,
                 // the checks are removed as fefault state
                 filter: function (state: JSTreeStaticDefaults) {
-                    delete state.checkbox;
+                    state = omit(state, "checkbox");
                     return state;
                 },
             },

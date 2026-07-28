@@ -10,7 +10,7 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
-import { cloneDeep, isEmpty } from "lodash";
+import { cloneDeep, isEmpty, omit } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 
@@ -247,9 +247,12 @@ export class MapController {
             (valueOfKey: string) => valueOfKey !== value,
         );
         this.searchFilters.filters.keywords[key] = valuesInTree;
-
-        if (this.searchFilters.filters.keywords[key].length === 0)
-            delete this.searchFilters.filters.keywords[key];
+        if (this.searchFilters.filters.keywords[key].length === 0) {
+            this.searchFilters.filters.keywords = omit(
+                this.searchFilters.filters.keywords,
+                key,
+            );
+        }
 
         this.resetComponentsAndData({ except: "boundingBox" });
         if (!this.areActiveFilters()) {
