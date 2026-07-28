@@ -10,16 +10,15 @@
                <input class="search-bar" type="text" id="search-filters" placeholder="Search Filters..." />
            </div>
 
-           <div class="bg-primary-100">
-               <div class="">
-                   <div
-                       class="
+           <div>
+               <div
+                   class=" 
                             form-control 
                             flex 
                             flex-col
                             justify-center
                             ">
-                       @foreach ([
+                   @foreach ([
         'filterTreeToggleInterpreted' => [
             'option' => 'MSL enriched keywords',
             'iconId' => 'enriched-keywords-popup',
@@ -29,37 +28,37 @@
             'iconId' => 'original-keywords-popup',
         ],
     ] as $id => $details)
-                           <div
-                               class="
+                       <div
+                           class="
                                 flex 
                                 place-content-center
                                 items-center
                                 ">
-                               <x-ri-information-line id="{{ $details['iconId'] }}" class="info-icon mx-2" />
-                               <label
-                                   class="
+                           <x-ri-information-line id="{{ $details['iconId'] }}" class="info-icon mx-2" />
+                           <label
+                               class="
                                     label cursor-pointer 
                                     flex
                                     flex-row
                                     gap-4 
                                     p-2
+                                    w-full
                                     justify-between
                                     hover-interactive
                                     ">
-                                   <span class="label-text text-primary-900 text-center"
-                                       value={{ $id }}>{{ $details['option'] }}</span>
-                                   <input type="radio" value={{ $id }} name='selectInterpretation'
-                                       id={{ $id }}
-                                       class="
+                               <span class="label-text text-primary-900 text-center"
+                                   value={{ $id }}>{{ $details['option'] }}</span>
+                               <input type="radio" value={{ $id }} name='selectInterpretation'
+                                   id={{ $id }}
+                                   class="
                                         radio 
                                         checked:bg-secondary-500 hover:bg-secondary-500
                                         border
                                         border-secondary-500
                                         " />
-                               </label>
-                           </div>
-                       @endforeach
-                   </div>
+                           </label>
+                       </div>
+                   @endforeach
                </div>
            </div>
 
@@ -126,8 +125,8 @@
 
        <div class="pb-10">
 
-           <div id="jstree-interpreted" class="text-wrap pt-4""></div>
-           <div id="jstree-original" class="text-wrap pt-4" style="display: none;"></div>
+           <div id="jstree-interpreted" class="text-wrap pt-2 pr-4 pl-2""></div>
+           <div id="jstree-original" class="text-wrap pt-2 pr-4 pl-2" style="display: none;"></div>
 
        </div>
 
