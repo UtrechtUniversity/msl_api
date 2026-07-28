@@ -16,7 +16,6 @@ import { KeywordTree } from "./keywordTree";
 
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
-    //TODO maybe add a function on how to create filters  and remove filters based on the filter.
     filters: {
         boundingBox: string;
         page: number;

@@ -103,8 +103,6 @@ const IS_INTERPRETED_FILTER_ENABLED =
 // Also, the main tree is the interpreted one,
 // and we might want to get rid of the original one sooner or later.
 export class KeywordTree {
-    // TODO do I need this?
-    private activeNodes: Array<string> = [];
     private facets: Facets = {};
     private treeOptions = { interpreted: {}, original: {} };
     private dataInterpreted: (TreeNode | TreeSubNode)[] = [];
@@ -142,15 +140,13 @@ export class KeywordTree {
 
     public async init(facets: Facets) {
         this.facets = facets;
-        const interpretedJsonResponse = await fetch("/interpreted.json");
-        //TODO Throw if there is error.
-        this.dataInterpreted = await interpretedJsonResponse.json();
 
-        const originalJsonResponse = await fetch("/original.json");
-        //TODO Throw if there is error.
-        this.dataOriginal = await originalJsonResponse.json();
+        this.dataInterpreted = await getJson("interpreted");
         this.processNodes(this.dataInterpreted);
+
+        this.dataOriginal = await getJson("original");
         this.processNodes(this.dataOriginal, true);
+
         this.treeOptions = {
             interpreted: createTreeOptions(this.dataInterpreted),
             original: createTreeOptions(this.dataOriginal),
@@ -220,19 +216,12 @@ export class KeywordTree {
                     return state;
                 },
             },
-        })
-            .on("state_ready.jstree", async () => {
-                tree.on(
-                    "check_node.jstree uncheck_node.jstree",
-                    await this.handleFilterChange(),
-                );
-            })
-            .on(
-                "ready.jstree",
-                (_: Event, { instance }: JsTreeCheckEventData) => {
-                    this.activeNodes.forEach(instance._open_to.bind(instance));
-                },
+        }).on("state_ready.jstree", async () => {
+            tree.on(
+                "check_node.jstree uncheck_node.jstree",
+                await this.handleFilterChange(),
             );
+        });
     }
 
     private async handleFilterChange(): Promise<
@@ -430,7 +419,6 @@ export class KeywordTree {
                     //set original tree
                     self.hideNodesForTree(ORIGINAL, { hide: true });
 
-                    //TODO do we need this?
                     self.originalTree
                         .jstree()
                         .get_json("#", {
@@ -589,4 +577,13 @@ function createSubNode({
         },
         children: [],
     };
+}
+
+function throwForReadingJson(response: Response, name: string): void {
+    if (!response.ok) throw new Error(`Could not read ${name} json file .`);
+}
+async function getJson(name: "interpreted" | "original") {
+    const jsonResponse = await fetch(`/${name}.json`);
+    throwForReadingJson(jsonResponse, name);
+    return jsonResponse.json();
 }
