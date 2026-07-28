@@ -14,7 +14,7 @@ import { cloneDeep, isEmpty, omit } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 
-const BOUNDING_BOX_DEFAULT = "[-180,-90,180,90]";
+const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     //TODO maybe add a function on how to create filters  and remove filters based on the filter.
     filters: {
@@ -136,7 +136,7 @@ export class MapController {
         facets: Facets;
     }> {
         const boundingBox =
-            this.searchFilters.filters.boundingBox || BOUNDING_BOX_DEFAULT;
+            this.searchFilters.filters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
             boundingBox: boundingBox,
             page: this.searchFilters.filters.page.toString(),
@@ -189,15 +189,7 @@ export class MapController {
 
         this.resetComponentsAndData();
 
-        if (!this.areActiveFilters()) {
-            ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.updateTrees(
-                this.facets,
-                this.searchFilters.filters.keywords,
-            );
-        } else {
-            await this.populateElements();
-        }
+        await this.populateBasedOnActiveFilters();
 
         this.mapView.setDrawingEnable(false);
     }
@@ -247,6 +239,7 @@ export class MapController {
             (valueOfKey: string) => valueOfKey !== value,
         );
         this.searchFilters.filters.keywords[key] = valuesInTree;
+
         if (this.searchFilters.filters.keywords[key].length === 0) {
             this.searchFilters.filters.keywords = omit(
                 this.searchFilters.filters.keywords,
@@ -255,15 +248,7 @@ export class MapController {
         }
 
         this.resetComponentsAndData({ except: "boundingBox" });
-        if (!this.areActiveFilters()) {
-            ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.updateTrees(
-                this.facets,
-                this.searchFilters.filters.keywords,
-            );
-        } else {
-            await this.populateElements();
-        }
+        await this.populateBasedOnActiveFilters();
     }
 
     // Helper methods
@@ -291,6 +276,17 @@ export class MapController {
         if (!!filters.boundingBox) return true;
         if (!isEmpty(filters.keywords)) return true;
         return false;
+    }
+    private async populateBasedOnActiveFilters() {
+        if (!this.areActiveFilters()) {
+            ({ facets: this.facets } = await this.getJsonFromRequest());
+            this.keywordTree.updateTrees(
+                this.facets,
+                this.searchFilters.filters.keywords,
+            );
+        } else {
+            await this.populateElements();
+        }
     }
 }
 
