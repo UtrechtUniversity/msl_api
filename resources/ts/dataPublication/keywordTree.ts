@@ -124,8 +124,6 @@ export class KeywordTree {
             value: string;
         },
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
-    private self = this;
-    constructor() {}
 
     public setHandlerfn({
         onKeywordFilterUpdate,
@@ -227,7 +225,7 @@ export class KeywordTree {
             .on("state_ready.jstree", async () => {
                 tree.on(
                     "check_node.jstree uncheck_node.jstree",
-                    await this.handleFilterChange(this.self),
+                    await this.handleFilterChange(),
                 );
             })
             .on(
@@ -238,20 +236,20 @@ export class KeywordTree {
             );
     }
 
-    private async handleFilterChange(
-        self: KeywordTree,
-    ): Promise<(e: JQuery.Event, data: JsTreeCheckEventData) => void> {
+    private async handleFilterChange(): Promise<
+        (e: JQuery.Event, data: JsTreeCheckEventData) => void
+    > {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
                 const key = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
                 if (e.type == "check_node") {
-                    await self.onKeywordFilterUpdate("add", {
+                    await this.onKeywordFilterUpdate("add", {
                         key,
                         value,
                     });
                 } else if (e.type == "uncheck_node") {
-                    await self.onKeywordFilterUpdate("remove", {
+                    await this.onKeywordFilterUpdate("remove", {
                         key,
                         value,
                     });
