@@ -25,7 +25,7 @@ class KeywordHelper
                 // get the keyword associated with the search keyword
                 $keyword = $searchKeyword->keyword;
 
-                // add a orginal keyword to the data publication
+                // add a original keyword to the data publication
                 $dataPublication->addOriginalKeyword(
                     new OriginalKeyword(
                         $keyword->value,

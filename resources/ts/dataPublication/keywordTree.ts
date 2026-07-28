@@ -149,9 +149,7 @@ export class KeywordTree {
         const originalJsonResponse = await fetch("/original.json");
         //TODO Throw if there is error.
         this.dataOriginal = await originalJsonResponse.json();
-        this.preProcessNodes(this.dataInterpreted);
         this.processNodes(this.dataInterpreted);
-        this.preProcessNodes(this.dataOriginal);
         this.processNodes(this.dataOriginal, true);
         this.treeOptions = {
             interpreted: createTreeOptions(this.dataInterpreted),
@@ -475,17 +473,7 @@ export class KeywordTree {
             },
         );
     }
-    private preProcessNodes(nodes: (TreeNode | TreeSubNode)[]) {
-        for (let i = nodes.length - 1; i >= 0; i--) {
-            const node = nodes[i];
-            assertNotUndefined(node, "Node is undefined. This is a bug.");
-            node.originalText = node.text;
-            if (!node["id"]) node.id = "keyword_" + node.originalText;
-            if (node.children.length > 0) {
-                this.preProcessNodes(node.children);
-            }
-        }
-    }
+
     private processNodes(nodes: (TreeNode | TreeSubNode)[], original = false) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];

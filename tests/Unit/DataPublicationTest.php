@@ -404,7 +404,7 @@ class DataPublicationTest extends TestCase
     /**
      * test adding an original keyword
      */
-    public function test_add_orginal_keyword(): void
+    public function test_add_original_keyword(): void
     {
         $dataPublication = new DataPublication;
 
@@ -421,7 +421,7 @@ class DataPublicationTest extends TestCase
     /**
      * test adding an existing original keyword
      */
-    public function test_add_existing_orginal_keyword(): void
+    public function test_add_existing_original_keyword(): void
     {
         $dataPublication = new DataPublication;
 

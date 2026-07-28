@@ -588,7 +588,7 @@
                 @if (count($dataPublication->msl_tags) > 0)
                     <details class="collapse collapse-arrow word-card-collapser" id="original-keywords-panel">
                         <summary class="collapse-title">Originally assigned keywords
-                            <x-ri-information-line id="orginal-keywords-popup" class="info-icon" />
+                            <x-ri-information-line id="original-keywords-popup" class="info-icon" />
                         </summary>
                         <div class="collapse-content word-card-parent">
                             @foreach ($dataPublication->msl_tags as $keyword)
@@ -599,7 +599,7 @@
                         </div>
                     </details>
                     <script>
-                        tippy('#orginal-keywords-popup', {
+                        tippy('#original-keywords-popup', {
                             content: "lists only keywords originally assigned by the authors",
                             placement: "right",
                             theme: "msl"
