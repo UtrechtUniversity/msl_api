@@ -78,8 +78,11 @@ class GeoJsonDataPublicationService
         $boundingBox = $request->get('boundingBox') ?? null;
         $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
 
-        foreach (json_decode($request->get('keywords')) as $key => $values) {
-            // TODO do I need this check?
+        $keywords = $request->get('keywords');
+        if ($keywords === null) {
+            return;
+        }
+        foreach (json_decode($keywords) as $key => $values) {
             if (array_key_exists($key, config('ckan.facets.data-publications'))) {
                 foreach ($values as $value) {
                     if ($key !== 'query') {
@@ -106,12 +109,12 @@ class GeoJsonDataPublicationService
         } catch (\Exception $e) {
             return new CkanErrorResource([]);
         }
-
         // Check if CKAN was succesful
         if (! $response->isSuccess()) {
             return new CkanErrorResource([]);
         }
 
+        // dd($response);
         return $response;
     }
 
