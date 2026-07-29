@@ -192,9 +192,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.filters.boundingBox = "";
 
-        this.resetComponentsAndData();
-
-        await this.populateBasedOnActiveFiltersOrReset();
+        this.resetAndRePopulateAfterUpdateTextFilters("remove");
 
         this.mapView.setDrawingEnable(false);
     }
@@ -218,8 +216,7 @@ export class MapController {
 
     public async handleSearchTextAdd(value: string) {
         this.searchFilters.filters.freeText.push(value);
-        this.resetComponentsAndData({ except: "boundingBox" });
-        await this.populateElements();
+        this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleKeywordFilterAdd({
@@ -233,8 +230,7 @@ export class MapController {
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
-        this.resetComponentsAndData({ except: "boundingBox" });
-        await this.populateElements();
+        this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleKeywordFilterRemove({
@@ -259,11 +255,25 @@ export class MapController {
             );
         }
 
-        this.resetComponentsAndData({ except: "boundingBox" });
-        await this.populateBasedOnActiveFiltersOrReset();
+        this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
     // Helper methods
+    /**
+     * Reset and populate after an update in search text or keywords filters.
+     * For bounding box, we reset in starting drawing and
+     * populate after the user confirms the selection of area.
+     */
+    private async resetAndRePopulateAfterUpdateTextFilters(
+        type: "add" | "remove",
+    ) {
+        this.resetComponentsAndData({ except: "boundingBox" });
+        if (type === "add") {
+            await this.populateElements();
+            return;
+        }
+        await this.populateBasedOnActiveFiltersOrReset();
+    }
     private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
@@ -287,7 +297,7 @@ export class MapController {
         const filters = this.searchFilters.filters;
         if (!!filters.boundingBox) return true;
         if (!isEmpty(filters.keywords)) return true;
-        if (!filters.freeText.length) return true;
+        if (!!filters.freeText.length) return true;
         return false;
     }
     private async populateBasedOnActiveFiltersOrReset() {
