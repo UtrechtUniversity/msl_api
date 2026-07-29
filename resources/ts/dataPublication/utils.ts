@@ -1,3 +1,4 @@
+import { assertNotUndefined } from "../helpers.js";
 import {
     EXCLUSIVE,
     INCLUSIVE,
@@ -80,3 +81,11 @@ export type Paginator = {
     lastPage: number;
     perPage: number;
 };
+
+export type Facets = {
+    [key: string]: {
+        items: FacetItem[];
+    };
+};
+export type FacetItem = { name: string; display_name: string; count: string };
+export type KeywordFilters = { [key: string]: string[] };

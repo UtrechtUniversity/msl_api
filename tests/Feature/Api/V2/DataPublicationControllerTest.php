@@ -120,7 +120,6 @@ class DataPublicationControllerTest extends TestCase
 
         // Retrieve response from API
         $response = $this->get('api/v2/datapublications/paleo?offset=2&limit=8');
-        // dd($response);
 
         // Check for 200 status response
         $response->assertStatus(200);

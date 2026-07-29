@@ -1,4 +1,4 @@
-<div class="search-bar-container form-field-text p-0 opacity-25 pointer-events-none">
+<div class="search-bar-container form-field-text p-0 ">
     {{-- Search bar --}}
     <div class="search-bar-container-icon">
         <x-ri-search-line class="search-icon" />

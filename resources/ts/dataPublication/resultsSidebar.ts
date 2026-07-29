@@ -86,7 +86,10 @@ export class ResultsSidebar {
         $('[data-id="' + id + '"]').removeClass("highlight");
     }
 
-    private _createListItem(dataPublication: DataPublication): HTMLDivElement {
+    private _createListItem(
+        dataPublication: DataPublication,
+        { includeIcons }: { includeIcons: boolean },
+    ): HTMLDivElement {
         const item = document.createElement("div");
         item.className = "data-publication-item";
         item.setAttribute("data-id", dataPublication.doi);
@@ -97,9 +100,12 @@ export class ResultsSidebar {
                       .map((creator) => creator.fullName)
                       .join(" | ")
                 : "- no authors found -";
-        const icon = dataPublication.isInclusive
-            ? TAB_CONFIG[INSIDE].icon
-            : TAB_CONFIG[OVERLAPPING].icon;
+
+        const icon = !includeIcons
+            ? ""
+            : dataPublication.isInclusive
+              ? TAB_CONFIG[INSIDE].icon
+              : TAB_CONFIG[OVERLAPPING].icon;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
@@ -116,10 +122,15 @@ export class ResultsSidebar {
         return item;
     }
 
-    public populate(dataPublications: GeoFeatureDataPublications): void {
+    public populate(
+        dataPublications: GeoFeatureDataPublications,
+        { includeIcons }: { includeIcons: boolean },
+    ): void {
         this.listDiv.innerHTML = "";
         for (const dataPublication of dataPublications.data_publications) {
-            const item = this._createListItem(dataPublication);
+            const item = this._createListItem(dataPublication, {
+                includeIcons,
+            });
             if (!dataPublication.isInclusive)
                 this.nonInclusiveListView.push(item);
             item.addEventListener("mouseover", () => {

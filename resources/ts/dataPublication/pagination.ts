@@ -36,7 +36,7 @@ export class Pagination {
     public setHandlerfn({
         onPageChange,
     }: {
-        onPageChange: (page: number) => void;
+        onPageChange: (page: number) => Promise<void>;
     }): void {
         this.onPageChange = onPageChange;
     }
@@ -182,7 +182,7 @@ export class Pagination {
         if (toPage !== undefined) {
             toPage > this.range.count || toPage < 1
                 ? button.setAttribute("disabled", "true")
-                : button.addEventListener("click", () => {
+                : button.addEventListener("click", async () => {
                       this.onPageChange(toPage);
                   });
         }
