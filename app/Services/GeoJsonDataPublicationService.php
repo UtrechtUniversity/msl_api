@@ -114,7 +114,6 @@ class GeoJsonDataPublicationService
             return new CkanErrorResource([]);
         }
 
-        // dd($response);
         return $response;
     }
 
