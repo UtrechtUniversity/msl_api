@@ -113,8 +113,10 @@ export class MapController {
         this.keywordTree.updateTrees(
             this.facets,
             this.searchFilters.filters.keywords,
+
         );
 
+        //
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
             includeIcons: !!this.searchFilters.filters.boundingBox,
