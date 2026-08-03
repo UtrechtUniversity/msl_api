@@ -22,6 +22,7 @@ class GeoJsonDataPublicationRequest extends FormRequest
             'pageSize' => ['required', 'integer', 'min:0'],
             'boundingBox' => ['required', new GeoRule],
             'keywords' => ['nullable', 'json'],
+            'freeText' => ['nullable', 'array'],
         ];
     }
 

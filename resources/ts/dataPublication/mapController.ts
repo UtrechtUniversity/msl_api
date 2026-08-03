@@ -13,6 +13,7 @@ import { Pagination } from "./pagination";
 import { cloneDeep, isEmpty, omit } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
+import { SearchTextField } from "./searchTextField";
 
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
@@ -21,6 +22,7 @@ type SearchFilter = {
         page: number;
         pageSize: 10;
         keywords: KeywordFilters;
+        freeText: string[];
     };
 };
 
@@ -30,6 +32,7 @@ const DEFAULT_SEARCH_FILTERS: SearchFilter = {
         page: 1,
         pageSize: 10,
         keywords: {},
+        freeText: [],
     },
 } as const;
 
@@ -142,6 +145,9 @@ export class MapController {
             pageSize: this.searchFilters.filters.pageSize.toString(),
             keywords: JSON.stringify(this.searchFilters.filters.keywords),
         });
+        this.searchFilters.filters.freeText.forEach((text) => {
+            params.append("freeText[]", text);
+        });
         const route = "/api/geoJsonDataPublications?" + params;
 
         const response: Response = await fetch(route, {
@@ -186,9 +192,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.filters.boundingBox = "";
 
-        this.resetComponentsAndData();
-
-        await this.populateBasedOnActiveFilters();
+        this.resetAndRePopulateAfterUpdateTextFilters("remove");
 
         this.mapView.setDrawingEnable(false);
     }
@@ -209,6 +213,12 @@ export class MapController {
         this.searchFilters.filters.page = page;
         await this.populateElements();
     }
+
+    public async handleSearchTextAdd(value: string) {
+        this.searchFilters.filters.freeText.push(value);
+        this.resetAndRePopulateAfterUpdateTextFilters("add");
+    }
+
     private async handleKeywordFilterAdd({
         key,
         value,
@@ -220,8 +230,7 @@ export class MapController {
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
-        this.resetComponentsAndData({ except: "boundingBox" });
-        await this.populateElements();
+        this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleKeywordFilterRemove({
@@ -246,11 +255,25 @@ export class MapController {
             );
         }
 
-        this.resetComponentsAndData({ except: "boundingBox" });
-        await this.populateBasedOnActiveFilters();
+        this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
     // Helper methods
+    /**
+     * Reset and populate after an update in search text or keywords filters.
+     * For bounding box, we reset in starting drawing and
+     * populate after the user confirms the selection of area.
+     */
+    private async resetAndRePopulateAfterUpdateTextFilters(
+        type: "add" | "remove",
+    ) {
+        this.resetComponentsAndData({ except: "boundingBox" });
+        if (type === "add") {
+            await this.populateElements();
+            return;
+        }
+        await this.populateBasedOnActiveFiltersOrReset();
+    }
     private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
@@ -274,9 +297,10 @@ export class MapController {
         const filters = this.searchFilters.filters;
         if (!!filters.boundingBox) return true;
         if (!isEmpty(filters.keywords)) return true;
+        if (!!filters.freeText.length) return true;
         return false;
     }
-    private async populateBasedOnActiveFilters() {
+    private async populateBasedOnActiveFiltersOrReset() {
         if (!this.areActiveFilters()) {
             ({ facets: this.facets } = await this.getJsonFromRequest());
             this.keywordTree.updateTrees(
@@ -292,3 +316,4 @@ export class MapController {
 const mapController = new MapController();
 await mapController.init();
 const menuButtons = new MenuButtons(mapController);
+const searchTextField = new SearchTextField(mapController);

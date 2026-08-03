@@ -79,20 +79,24 @@ class GeoJsonDataPublicationService
         $this->setBoundingBox($boundingBox, $this->packageSearchRequest);
 
         $keywords = $request->get('keywords');
-        if ($keywords === null) {
-            return;
-        }
-        foreach (json_decode($keywords) as $key => $values) {
-            if (array_key_exists($key, config('ckan.facets.data-publications'))) {
-                foreach ($values as $value) {
-                    if ($key !== 'query') {
+        if ($keywords !== null) {
+
+            foreach (json_decode($keywords) as $key => $values) {
+                if (array_key_exists($key, config('ckan.facets.data-publications'))) {
+                    foreach ($values as $value) {
                         $this->packageSearchRequest->addFilterQuery($key, $value);
                     }
                 }
             }
+
+            $this->packageSearchRequest->loadFacetsFromConfig('data-publications');
         }
 
-        $this->packageSearchRequest->loadFacetsFromConfig('data-publications');
+        $freeText = $request->get('freeText');
+        if ($freeText !== null && count($freeText) > 0) {
+            $query = implode(' ', $freeText);
+            $this->packageSearchRequest->query = $query;
+        }
     }
 
     /**

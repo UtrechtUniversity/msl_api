@@ -5,7 +5,7 @@
 
     </div>
 
-    <form class="w-full h-16">
-        <input class="search-bar " type="text" id="search" placeholder="Search datapublications.." name="query[]" />
+    <form id='form-search-text' class="w-full h-16">
+        <input class="search-bar" type="text" id="search-text" placeholder="Search datapublications.." />
     </form>
 </div>
