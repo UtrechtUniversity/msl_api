@@ -21,9 +21,16 @@
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
                         @include('public.components.datapublication-map.search-div')
-                        @include('public.components.datapublication-map.results-metadata')
-
-                        {{-- list view --}}
+                        <div class=' grid grid-cols-2'>
+                            @include('public.components.datapublication-map.results-metadata')
+                            @include('public.components.datapublication-map.search-div-list', [
+                                'searchFor' => 'data publications',
+                                'amountFoundLabel' => 'data publications',
+                                'sortingDropdown' => true,
+                                'activeSort' => true,
+                            ])
+                        </div>
+                        {{-- map --}}
                         <div class="list-view">
                             @include('public.components.datapublication-map.map-view')
                         </div>
