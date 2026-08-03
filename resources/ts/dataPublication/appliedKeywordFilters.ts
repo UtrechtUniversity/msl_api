@@ -1,21 +1,9 @@
 import { assertNotNull, assertNotUndefined } from "../helpers";
-import { REMOVE_BIN_ICON } from "./utils";
 const EnrichedKeywordsField = "msl_enriched_keyword_uri" as const;
 const OriginalKeywordsField = "msl_original_keyword_uri" as const;
 
 const noFiltersElement = `<h6 class="italic">- no filter applied -</h6>`;
-const removeIconElement = `
-                            <div
-                                class="
-                                flex place-content-center
-                                hover-interactive
-                                p-2
-                                size-fit
-                                ">
-                                ${REMOVE_BIN_ICON}
 
-                            </div>
-                        `;
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
     appliedFilters = new Map();
@@ -40,7 +28,6 @@ export class AppliedKeywordFilters {
         );
         appliedFiltersTitleElement.hidden = true;
         this.removeBinIcon = appliedFiltersTitleElement;
-        this.createLinkElement();
     }
 
     // Methods for mapcontroller to use
@@ -179,18 +166,6 @@ export class AppliedKeywordFilters {
             return;
         }
         this.removeBinIcon.hidden = false;
-    }
-
-    private createLinkElement() {
-        const linkElement = document.createElement("a");
-        linkElement.id = "remove-all-popup";
-        linkElement.innerHTML = removeIconElement;
-        const self = this;
-
-        linkElement.addEventListener("click", (e: Event) => {
-            this.removeBinIcon.hidden = true;
-        });
-        this.removeBinIcon.appendChild(linkElement);
     }
 
     private getValuesFromMapFilters({

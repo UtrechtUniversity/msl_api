@@ -100,7 +100,18 @@
         <div class="flex flex-col justify-center items-center">
             <div id="applied-filters-title" class="w-fit flex flex-row items-center place-content-center gap-3 ">
                 <h5 class="text-align-center inline">Applied Filters </h5>
-                <div id="remove-bin-icon"></div>
+                <div id="remove-bin-icon" hidden>
+                    <div
+                        class="
+                                flex place-content-center
+                                hover-interactive
+                                p-2
+                                size-fit
+                                ">
+                        <x-ri-delete-bin-2-line class="remove-all-icon" />
+
+                    </div>
+                </div>
             </div>
             <div class="word-card-parent" id="active-filter-container">
                 <div id="applied-filters-text"></div>
