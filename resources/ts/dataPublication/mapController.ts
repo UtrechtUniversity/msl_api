@@ -14,6 +14,7 @@ import { cloneDeep, isEmpty, omit } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
+import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
@@ -43,6 +44,7 @@ export class MapController {
     pagination: Pagination;
     resultsMetadata: ResultsMetadata;
     keywordTree: KeywordTree;
+    appliedKeywords: AppliedKeywordFilters;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -56,6 +58,7 @@ export class MapController {
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
+        this.appliedKeywords = new AppliedKeywordFilters();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -213,9 +216,26 @@ export class MapController {
         this.searchFilters.filters.page = page;
         await this.populateElements();
     }
-
+    //TODO
     public async handleSearchTextAdd(value: string) {
         this.searchFilters.filters.freeText.push(value);
+        this.appliedKeywords.addFilter({
+            value,
+            type: "freeText",
+        });
+        this.resetAndRePopulateAfterUpdateTextFilters("add");
+    }
+
+    private async handleSearchTextRemove(value: string) {
+        // todo should freeText have another data structure based on its usage?
+        this.searchFilters.filters.freeText =
+            this.searchFilters.filters.freeText.filter(
+                (textFilter) => value !== textFilter,
+            );
+        this.appliedKeywords.addFilter({
+            value,
+            type: "freeText",
+        });
         this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
@@ -230,6 +250,11 @@ export class MapController {
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
         this.searchFilters.filters.keywords[key] = [...setToAdd];
+        this.appliedKeywords.addFilter({
+            field: key,
+            value,
+            type: "keyword",
+        });
         this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
@@ -254,7 +279,11 @@ export class MapController {
                 key,
             );
         }
-
+        this.appliedKeywords.removeFilter({
+            field: key,
+            value,
+            type: "keyword",
+        });
         this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
