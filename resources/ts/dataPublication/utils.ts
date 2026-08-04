@@ -90,3 +90,10 @@ export type Facets = {
 };
 export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
+export type ActiveFilterInfo = {
+    displayName?: string | undefined;
+    type: "keyword" | "freeText";
+    name: string | undefined;
+    value: string;
+    id: string;
+};

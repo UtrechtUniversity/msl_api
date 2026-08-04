@@ -119,8 +119,9 @@ export class KeywordTree {
     private onKeywordFilterUpdate: (
         type: "remove" | "add",
         filter: {
-            key: string;
+            name: string;
             value: string;
+            displayName: string;
         },
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
 
@@ -130,8 +131,9 @@ export class KeywordTree {
         onKeywordFilterUpdate: (
             type: "remove" | "add",
             filter: {
-                key: string;
+                name: string;
                 value: string;
+                displayName: string;
             },
         ) => Promise<void>;
     }) {
@@ -229,17 +231,20 @@ export class KeywordTree {
     > {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
             if (data.node.original.extra.type == "filter") {
-                const key = data.node.original.extra.filterName;
+                const name = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
+                const displayName = data.node.original.originalText;
                 if (e.type == "check_node") {
                     await this.onKeywordFilterUpdate("add", {
-                        key,
+                        name,
                         value,
+                        displayName,
                     });
                 } else if (e.type == "uncheck_node") {
                     await this.onKeywordFilterUpdate("remove", {
-                        key,
+                        name,
                         value,
+                        displayName,
                     });
                 }
             }

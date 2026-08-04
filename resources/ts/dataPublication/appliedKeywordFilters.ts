@@ -1,5 +1,8 @@
 import { assertNotNull, assertNotUndefined } from "../helpers";
-import { throwWhenCallBackNotInitialized } from "./utils";
+import {
+    throwWhenCallBackNotInitialized,
+    type ActiveFilterInfo,
+} from "./utils";
 const EnrichedKeywordsField = "msl_enriched_keyword_uri" as const;
 const OriginalKeywordsField = "msl_original_keyword_uri" as const;
 
@@ -12,17 +15,12 @@ const closeIcon = `
         </svg>`;
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
-    private appliedFilters = new Map<string, string>();
+    private appliedFilters = new Map<string, ActiveFilterInfo>();
     private textFieldElement: HTMLElement;
     private removeBinIcon: HTMLElement;
     private activeFilterContainer: HTMLElement;
-    private onActiveFilterUpdate: (
-        type: "remove" | "add",
-        filter: {
-            key: string;
-            value: string;
-        },
-    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onActiveFilterRemove: () => Promise<void> | void =
+        throwWhenCallBackNotInitialized;
 
     constructor() {
         this.textFieldElement = getElementInActiveFilters(
@@ -45,17 +43,11 @@ export class AppliedKeywordFilters {
     }
 
     public setHandlerfn({
-        onActiveFilterUpdate,
+        onActiveFilterRemove,
     }: {
-        onActiveFilterUpdate: (
-            type: "remove" | "add",
-            filter: {
-                key: string;
-                value: string;
-            },
-        ) => Promise<void>;
+        onActiveFilterRemove: () => Promise<void>;
     }) {
-        this.onActiveFilterUpdate = onActiveFilterUpdate;
+        this.onActiveFilterRemove = onActiveFilterRemove;
     }
     private updateAppliedFilterElements(type: "add" | "remove") {
         if (!this.appliedFilters.size) {
@@ -68,8 +60,11 @@ export class AppliedKeywordFilters {
         }
         this.removeBinIcon.hidden = false;
         let elements = "";
-        for (const filter of this.appliedFilters.values()) {
-            elements += this.createKeywordElement(filter);
+        for (const [displayName, mtdata] of this.appliedFilters) {
+            elements += this.createKeywordElement({
+                displayName,
+                id: mtdata.id,
+            });
         }
         this.activeFilterContainer.innerHTML = elements;
 
@@ -85,13 +80,15 @@ export class AppliedKeywordFilters {
     // TODO do we care about the order? We probably do, what is the best way to keep the order?
     // Map!
     public addFilter({
-        field,
+        name,
         value,
         type,
+        displayName,
     }: {
-        field: string;
+        name: string;
         value: string;
         type: "keyword";
+        displayName: string;
     }): void;
     public addFilter({
         value,
@@ -101,30 +98,38 @@ export class AppliedKeywordFilters {
         type: "freeText";
     }): void;
     public addFilter({
-        field,
+        name,
         value,
         type,
+        displayName,
     }: {
-        field?: string;
+        name?: string;
         value: string;
         type: "keyword" | "freeText";
+        displayName?: string;
     }): void {
-        const { keyForMap, appliedValue } = this.getValuesFromMapFilters({
-            field,
+        const { displayNameForUI, id } = this.getValuesFromMapFilters({
             value,
+            displayName,
             type,
         });
 
-        this.appliedFilters.set(keyForMap, appliedValue);
+        this.appliedFilters.set(displayNameForUI, {
+            displayName,
+            type,
+            name,
+            value,
+            id,
+        });
         this.updateAppliedFilterElements("add");
     }
 
     public removeFilter({
-        field,
+        displayName,
         value,
         type,
     }: {
-        field: string;
+        displayName: string;
         value: string;
         type: "keyword";
     }): void;
@@ -136,20 +141,20 @@ export class AppliedKeywordFilters {
         type: "freeText";
     }): void;
     public removeFilter({
-        field,
         value,
         type,
+        displayName,
     }: {
-        field?: string;
         value: string;
         type: "keyword" | "freeText";
+        displayName?: string;
     }): void {
-        const { keyForMap } = this.getValuesFromMapFilters({
-            field,
+        const { displayNameForUI } = this.getValuesFromMapFilters({
             value,
             type,
+            displayName,
         });
-        this.appliedFilters.delete(keyForMap);
+        this.appliedFilters.delete(displayNameForUI);
         this.updateAppliedFilterElements("remove");
     }
 
@@ -178,45 +183,45 @@ export class AppliedKeywordFilters {
     //             </div>
 
     private getValuesFromMapFilters({
-        field,
         value,
+        displayName,
         type,
     }: {
-        field?: string | undefined;
         value: string;
+        displayName: string | undefined;
         type: "keyword" | "freeText";
-    }): { keyForMap: string; appliedValue: string } {
-        let appliedValue = "";
-        let keyForMap = "";
+    }): { displayNameForUI: string; id: string } {
+        let displayNameForUI = "";
         if (type === "freeText") {
-            keyForMap = value;
-            appliedValue = "Search: " + value;
+            displayNameForUI = "Search: " + value;
         } else {
             assertNotUndefined(
-                field,
+                displayName,
                 "Field should by definition have a value. This is a bug.",
             );
-            keyForMap = appliedValue =
-                field === OriginalKeywordsField ||
-                field === EnrichedKeywordsField
-                    ? value
-                    : field;
+            displayNameForUI = displayName;
         }
-        return { keyForMap, appliedValue };
+        return { displayNameForUI, id: type + "_" + value };
     }
-    private createKeywordElement(name: string): string {
+    private createKeywordElement({
+        displayName,
+        id,
+    }: {
+        displayName: string;
+        id: string;
+    }): string {
         return `  
-                <div class="keyword-word-card group h-fit max-w-60 relative hover:overflow-visible">
+                <div id=${id} class="keyword-word-card group h-fit max-w-60 relative hover:overflow-visible">
                     <div class="word-card truncate">
                             ${closeIcon}
-                        <text class="word-value"> ${name} </text>
+                        <text class="word-value"> ${displayName} </text>
                     </div>
 
                     <div
                         class="word-card hover-neutral hidden group-hover:block w-fit group-hover:wrap-anywhere group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-10"
                     >
                     ${closeIcon}
-                        <text class="word-value">${name}</text>
+                        <text class="word-value">${displayName}</text>
                     </div>
                 </div>
 

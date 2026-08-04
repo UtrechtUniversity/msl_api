@@ -94,7 +94,7 @@ export class MapController {
         this.keywordTree.setHandlerfn({
             onKeywordFilterUpdate: async (
                 type: "remove" | "add",
-                filter: { key: string; value: string },
+                filter: { name: string; value: string; displayName: string },
             ): Promise<void> => {
                 return type === "add"
                     ? this.handleKeywordFilterAdd(filter)
@@ -102,14 +102,7 @@ export class MapController {
             },
         });
         this.appliedKeywords.setHandlerfn({
-            onActiveFilterUpdate: async (
-                type: "remove" | "add",
-                filter: { key: string; value: string },
-            ): Promise<void> => {
-                return type === "add"
-                    ? this.handleKeywordFilterAdd(filter)
-                    : this.handleKeywordFilterRemove(filter);
-            },
+            onActiveFilterRemove: async (): Promise<void> => {},
         });
     }
 
@@ -250,48 +243,53 @@ export class MapController {
     }
 
     private async handleKeywordFilterAdd({
-        key,
+        name,
         value,
+        displayName,
     }: {
-        key: string;
+        name: string;
         value: string;
+        displayName: string;
     }) {
-        const valuesInTree = this.searchFilters.filters.keywords[key];
+        const valuesInTree = this.searchFilters.filters.keywords[name];
         const setToAdd = new Set(valuesInTree ?? []);
         setToAdd.add(value);
-        this.searchFilters.filters.keywords[key] = [...setToAdd];
+        this.searchFilters.filters.keywords[name] = [...setToAdd];
         this.appliedKeywords.addFilter({
-            field: key,
+            name,
             value,
+            displayName,
             type: "keyword",
         });
         this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleKeywordFilterRemove({
-        key,
+        name,
         value,
+        displayName,
     }: {
-        key: string;
+        name: string;
         value: string;
+        displayName: string;
     }): Promise<void> {
-        let valuesInTree = this.searchFilters.filters.keywords[key];
+        let valuesInTree = this.searchFilters.filters.keywords[name];
         if (!valuesInTree)
             throw new Error("Key not found in tree. This is a bug.");
         valuesInTree = valuesInTree.filter(
             (valueOfKey: string) => valueOfKey !== value,
         );
-        this.searchFilters.filters.keywords[key] = valuesInTree;
+        this.searchFilters.filters.keywords[name] = valuesInTree;
 
-        if (this.searchFilters.filters.keywords[key].length === 0) {
+        if (this.searchFilters.filters.keywords[name].length === 0) {
             this.searchFilters.filters.keywords = omit(
                 this.searchFilters.filters.keywords,
-                key,
+                name,
             );
         }
         this.appliedKeywords.removeFilter({
-            field: key,
             value,
+            displayName,
             type: "keyword",
         });
         this.resetAndRePopulateAfterUpdateTextFilters("remove");
