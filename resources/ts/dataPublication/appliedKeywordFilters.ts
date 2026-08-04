@@ -1,4 +1,5 @@
 import { assertNotNull, assertNotUndefined } from "../helpers";
+import { throwWhenCallBackNotInitialized } from "./utils";
 const EnrichedKeywordsField = "msl_enriched_keyword_uri" as const;
 const OriginalKeywordsField = "msl_original_keyword_uri" as const;
 
@@ -11,10 +12,18 @@ const closeIcon = `
         </svg>`;
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
-    appliedFilters = new Map<string, string>();
-    textFieldElement: HTMLElement;
-    removeBinIcon: HTMLElement;
-    activeFilterContainer: HTMLElement;
+    private appliedFilters = new Map<string, string>();
+    private textFieldElement: HTMLElement;
+    private removeBinIcon: HTMLElement;
+    private activeFilterContainer: HTMLElement;
+    private onActiveFilterUpdate: (
+        type: "remove" | "add",
+        filter: {
+            key: string;
+            value: string;
+        },
+    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+
     constructor() {
         this.textFieldElement = getElementInActiveFilters(
             "applied-filters-text",
@@ -35,6 +44,19 @@ export class AppliedKeywordFilters {
         );
     }
 
+    public setHandlerfn({
+        onActiveFilterUpdate,
+    }: {
+        onActiveFilterUpdate: (
+            type: "remove" | "add",
+            filter: {
+                key: string;
+                value: string;
+            },
+        ) => Promise<void>;
+    }) {
+        this.onActiveFilterUpdate = onActiveFilterUpdate;
+    }
     private updateAppliedFilterElements(type: "add" | "remove") {
         if (!this.appliedFilters.size) {
             //TODO this deletes the element below

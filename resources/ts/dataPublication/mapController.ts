@@ -101,6 +101,16 @@ export class MapController {
                     : this.handleKeywordFilterRemove(filter);
             },
         });
+        this.appliedKeywords.setHandlerfn({
+            onActiveFilterUpdate: async (
+                type: "remove" | "add",
+                filter: { key: string; value: string },
+            ): Promise<void> => {
+                return type === "add"
+                    ? this.handleKeywordFilterAdd(filter)
+                    : this.handleKeywordFilterRemove(filter);
+            },
+        });
     }
 
     public async init() {
