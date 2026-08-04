@@ -6,28 +6,33 @@ const noFiltersElement = `<h6 class="italic">- no filter applied -</h6>`;
 
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
-    appliedFilters = new Map();
+    appliedFilters = new Map<string, string>();
     textFieldElement: HTMLElement;
     removeBinIcon: HTMLElement;
+    activeFilterContainer: HTMLElement;
+    activeFieldTemplate: HTMLElement;
     constructor() {
-        const textFieldElement = document.getElementById(
+        this.textFieldElement = getElementInActiveFilters(
             "applied-filters-text",
+            "Applied filter text",
         );
-        assertNotNull(
-            textFieldElement,
-            `Text field element for applied keywords could not be found. This is a bug.`,
-        );
-        this.textFieldElement = textFieldElement;
         this.textFieldElement.innerHTML = noFiltersElement;
 
-        const appliedFiltersTitleElement =
-            document.getElementById("remove-bin-icon");
-        assertNotNull(
-            appliedFiltersTitleElement,
-            `Remove bin field element for applied keywords could not be found. This is a bug.`,
+        const appliedFiltersTitleElement = getElementInActiveFilters(
+            "remove-bin-icon",
+            "Remove bin field",
         );
         appliedFiltersTitleElement.hidden = true;
         this.removeBinIcon = appliedFiltersTitleElement;
+
+        this.activeFilterContainer = getElementInActiveFilters(
+            "active-filter-container",
+            "Active filter container ",
+        );
+        this.activeFieldTemplate = getElementInActiveFilters(
+            "template-for-active-filter",
+            `Template for active filters`,
+        );
     }
 
     // Methods for mapcontroller to use
@@ -110,28 +115,6 @@ export class AppliedKeywordFilters {
 
     //             <div class="w-fit flex flex-row items-center place-content-center gap-3 ">
     //                 <h5 class="inline">Applied Filters </h5>
-    //                 @if (count($activeFiltersFrontend) > 0)
-    //                     <a href="{{ route('data-access') }}" id="remove-all-popup">
-    //                         <div
-    //                             class="
-    //                             flex place-content-center
-    //                             hover-interactive
-    //                             p-2
-    //                             size-fit
-    //                             ">
-    //                             <x-ri-delete-bin-2-line class="remove-all-icon" />
-
-    //                         </div>
-
-    //                         <script>
-    //                             tippy('#remove-all-popup', {
-    //                                 content: "remove all filters",
-    //                                 placement: "right",
-    //                                 theme: "msl"
-    //                             });
-    //                         </script>
-    //                     </a>
-    //                 @endif
     //             </div>
 
     //             <div class="word-card-parent" id="active-filter-container">
@@ -145,14 +128,7 @@ export class AppliedKeywordFilters {
     //                             ])
     //                         </a>
     //                     @endforeach
-    //                     <script>
-    //                         tippy.delegate('#active-filter-container', {
-    //                             target: '.word-card',
-    //                             content: "click to remove filter",
-    //                             theme: "msl",
-    //                             placement: "right"
-    //                         });
-    //                     </script>
+    //
     //                 @else
     //                     <h6 class="italic">- no filter applied -</h6>
     //                 @endif
@@ -195,4 +171,46 @@ export class AppliedKeywordFilters {
         }
         return { keyForMap, appliedValue };
     }
+    private createKeywordElement(name: string): string {
+       return `  <div class="
+    group
+    h-fit
+    max-w-60
+    relative
+    hover:overflow-visible
+">
+
+    <div class="
+        word-card
+        truncate
+    ">
+                    <svg class="close-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>                <text class="word-value"> Material </text>
+    </div>
+
+    <div class="
+        word-card
+        hover-neutral
+        hidden
+        group-hover:block
+        w-fit
+        group-hover:wrap-anywhere
+        group-hover:absolute
+        group-hover:top-0
+        group-hover:left-0
+        group-hover:z-10
+    ">
+                    <svg class="close-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>                <text class="word-value"> Material</text>
+    </div>
+
+</div>
+                            `
+}
+
+function getElementInActiveFilters(elementId: string, name: string) {
+    const elementInActiveFilters = document.getElementById(elementId);
+    assertNotNull(
+        elementInActiveFilters,
+        ` Element '${name}' in applied keywords could not be found. This is a bug.`,
+    );
+    return elementInActiveFilters;
 }
