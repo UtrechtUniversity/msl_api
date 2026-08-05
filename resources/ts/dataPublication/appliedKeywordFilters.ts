@@ -126,9 +126,10 @@ export class AppliedKeywordFilters {
     }): void;
     public addFilter(opts: DistributiveOmit<ActiveFilterInfo, "id">): void {
         const { displayNameForUI, id } = this.getValuesFromMapFilters({
-            value: opts.value,
             displayName: opts.type === "keyword" ? opts.displayName : undefined,
             type: opts.type,
+            name: opts.type === "keyword" ? opts.name : undefined,
+            value: opts.value,
         });
         const metadata: ActiveFilterInfo = {
             ...opts,
@@ -144,10 +145,12 @@ export class AppliedKeywordFilters {
     }
 
     public removeFilter({
+        name,
         displayName,
         value,
         type,
     }: {
+        name: string;
         displayName: string;
         value: string;
         type: "keyword";
@@ -160,15 +163,18 @@ export class AppliedKeywordFilters {
         type: "freeText";
     }): void;
     public removeFilter({
+        name,
         value,
         type,
         displayName,
     }: {
+        name?: string;
         value: string;
         type: "keyword" | "freeText";
         displayName?: string;
     }): void {
         const { displayNameForUI, id } = this.getValuesFromMapFilters({
+            name,
             value,
             type,
             displayName,
@@ -181,35 +187,13 @@ export class AppliedKeywordFilters {
         });
     }
 
-    //   <div>
-    //         <div class="flex flex-col items-center place-content-center gap-2">
-
-    //             <div class="w-fit flex flex-row items-center place-content-center gap-3 ">
-    //                 <h5 class="inline">Applied Filters </h5>
-    //             </div>
-
-    //             <div class="word-card-parent" id="active-filter-container">
-
-    //                 @if (count($activeFiltersFrontend) > 0)
-    //                     @foreach ($activeFiltersFrontend as $filter)
-    //                         <a href="{{ $filter['removeUrl'] }}" class="">
-    //                             @include('public.components.word-card', [
-    //                                 'word' => $filter['label'],
-    //                                 'closeIcon' => true,
-    //                             ])
-    //                         </a>
-    //                     @endforeach
-    //
-    //                 @else
-    //                     <h6 class="italic">- no filter applied -</h6>
-    //                 @endif
-    //             </div>
-
     private getValuesFromMapFilters({
+        name,
         value,
         displayName,
         type,
     }: {
+        name: string | undefined;
         value: string;
         displayName: string | undefined;
         type: "keyword" | "freeText";
@@ -224,7 +208,10 @@ export class AppliedKeywordFilters {
             );
             displayNameForUI = displayName;
         }
-        return { displayNameForUI, id: type + "_" + value };
+        return {
+            displayNameForUI,
+            id: type + "_" + (name === undefined ? value : name),
+        };
     }
     private createKeywordElement({
         displayName,
