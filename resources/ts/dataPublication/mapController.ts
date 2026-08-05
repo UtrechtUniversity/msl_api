@@ -294,6 +294,7 @@ export class MapController {
                 name,
             );
         }
+
         this.appliedKeywords.removeFilter({
             value,
             displayName,

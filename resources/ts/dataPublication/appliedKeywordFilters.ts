@@ -52,6 +52,7 @@ export class AppliedKeywordFilters {
     }) {
         this.onActiveFilterRemove = onActiveFilterRemove;
     }
+
     private updateAppliedFilterElements({
         updateType,
         displayName,
@@ -69,7 +70,13 @@ export class AppliedKeywordFilters {
         }
         // If type='remove' and are filters left
         if (updateType === "remove") {
-            document.getElementById(id)?.remove();
+            const elementToRemove = document.getElementById(id);
+            assertNotNull(
+                elementToRemove,
+                `Element with id '${id}' could not be found. This is a bug.`,
+            );
+            elementToRemove.remove();
+            return;
         }
         // If type='add'
         if (this.appliedFilters.size === 1)
@@ -87,6 +94,7 @@ export class AppliedKeywordFilters {
                 mtdataInfo,
                 `Active filter with display name '${displayName}' should exist. This is a bug.`,
             );
+            await self.onActiveFilterRemove(mtdataInfo);
         });
 
         this.activeFilterContainer.appendChild(element);
