@@ -2,6 +2,8 @@ import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import {
     getDefaultTab,
     type Facets,
+    type freeTextFilterInfo,
+    type keywordFilterInfo,
     type KeywordFilters,
     type Paginator,
 } from "./utils.js";
@@ -102,7 +104,13 @@ export class MapController {
             },
         });
         this.appliedKeywords.setHandlerfn({
-            onActiveFilterRemove: async (): Promise<void> => {},
+            onActiveFilterRemove: async (
+                opts: freeTextFilterInfo | keywordFilterInfo,
+            ): Promise<void> => {
+                return opts.type === "freeText"
+                    ? this.handleSearchTextRemove(opts.value)
+                    : this.handleKeywordFilterRemove(opts);
+            },
         });
     }
 
@@ -230,16 +238,15 @@ export class MapController {
     }
 
     private async handleSearchTextRemove(value: string) {
-        // todo should freeText have another data structure based on its usage?
         this.searchFilters.filters.freeText =
             this.searchFilters.filters.freeText.filter(
                 (textFilter) => value !== textFilter,
             );
-        this.appliedKeywords.addFilter({
+        this.appliedKeywords.removeFilter({
             value,
             type: "freeText",
         });
-        this.resetAndRePopulateAfterUpdateTextFilters("add");
+        this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
     private async handleKeywordFilterAdd({

@@ -2,9 +2,9 @@ import { assertNotNull, assertNotUndefined } from "../helpers";
 import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
+    type freeTextFilterInfo,
+    type keywordFilterInfo,
 } from "./utils";
-const EnrichedKeywordsField = "msl_enriched_keyword_uri" as const;
-const OriginalKeywordsField = "msl_original_keyword_uri" as const;
 
 const noFiltersElement = `<h6 class="italic">- no filter applied -</h6>`;
 const closeIcon = `
@@ -13,22 +13,22 @@ const closeIcon = `
                 d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"
             ></path>
         </svg>`;
+
+type DistributiveOmit<T, K extends PropertyKey> = T extends any
+    ? Omit<T, K>
+    : never;
+type la = DistributiveOmit<ActiveFilterInfo, "id">;
+
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
     private appliedFilters = new Map<string, ActiveFilterInfo>();
-    private textFieldElement: HTMLElement;
     private removeBinIcon: HTMLElement;
     private activeFilterContainer: HTMLElement;
-    private onActiveFilterRemove: () => Promise<void> | void =
-        throwWhenCallBackNotInitialized;
+    private onActiveFilterRemove: (
+        opts: freeTextFilterInfo | keywordFilterInfo,
+    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
 
     constructor() {
-        this.textFieldElement = getElementInActiveFilters(
-            "applied-filters-text",
-            "Applied filter text",
-        );
-        this.textFieldElement.innerHTML = noFiltersElement;
-
         const appliedFiltersTitleElement = getElementInActiveFilters(
             "remove-bin-icon",
             "Remove bin field",
@@ -40,37 +40,56 @@ export class AppliedKeywordFilters {
             "active-filter-container",
             "Active filter container ",
         );
+        this.activeFilterContainer.innerHTML = noFiltersElement;
     }
 
     public setHandlerfn({
         onActiveFilterRemove,
     }: {
-        onActiveFilterRemove: () => Promise<void>;
+        onActiveFilterRemove: (
+            opts: freeTextFilterInfo | keywordFilterInfo,
+        ) => Promise<void>;
     }) {
         this.onActiveFilterRemove = onActiveFilterRemove;
     }
-    private updateAppliedFilterElements(type: "add" | "remove") {
+    private updateAppliedFilterElements({
+        updateType,
+        displayName,
+        id,
+    }: {
+        updateType: "add" | "remove";
+        displayName: string;
+        id: string;
+    }) {
+        // If type='remove' and no filters left
         if (!this.appliedFilters.size) {
-            //TODO this deletes the element below
-            this.activeFilterContainer.innerHTML = "";
-            this.textFieldElement.textContent = noFiltersElement;
+            this.activeFilterContainer.innerHTML = noFiltersElement;
             this.removeBinIcon.hidden = true;
-
             return;
         }
-        this.removeBinIcon.hidden = false;
-        let elements = "";
-        for (const [displayName, mtdata] of this.appliedFilters) {
-            elements += this.createKeywordElement({
-                displayName,
-                id: mtdata.id,
-            });
+        // If type='remove' and are filters left
+        if (updateType === "remove") {
+            document.getElementById(id)?.remove();
         }
-        this.activeFilterContainer.innerHTML = elements;
+        // If type='add'
+        if (this.appliedFilters.size === 1)
+            this.activeFilterContainer.innerHTML = "";
+        this.removeBinIcon.hidden = false;
 
-        $("div.keyword-word-card").on("click", function () {
-            console.log("here");
+        const element = this.createKeywordElement({
+            displayName,
+            id,
         });
+        const self = this;
+        element.addEventListener("click", async () => {
+            const mtdataInfo = self.appliedFilters.get(displayName);
+            assertNotUndefined(
+                mtdataInfo,
+                `Active filter with display name '${displayName}' should exist. This is a bug.`,
+            );
+        });
+
+        this.activeFilterContainer.appendChild(element);
     }
 
     // Methods for mapcontroller to use
@@ -97,31 +116,23 @@ export class AppliedKeywordFilters {
         value: string;
         type: "freeText";
     }): void;
-    public addFilter({
-        name,
-        value,
-        type,
-        displayName,
-    }: {
-        name?: string;
-        value: string;
-        type: "keyword" | "freeText";
-        displayName?: string;
-    }): void {
+    public addFilter(opts: DistributiveOmit<ActiveFilterInfo, "id">): void {
         const { displayNameForUI, id } = this.getValuesFromMapFilters({
-            value,
-            displayName,
-            type,
+            value: opts.value,
+            displayName: opts.type === "keyword" ? opts.displayName : undefined,
+            type: opts.type,
         });
+        const metadata: ActiveFilterInfo = {
+            ...opts,
+            id,
+        };
 
-        this.appliedFilters.set(displayNameForUI, {
-            displayName,
-            type,
-            name,
-            value,
+        this.appliedFilters.set(displayNameForUI, metadata);
+        this.updateAppliedFilterElements({
+            updateType: "add",
+            displayName: displayNameForUI,
             id,
         });
-        this.updateAppliedFilterElements("add");
     }
 
     public removeFilter({
@@ -149,13 +160,17 @@ export class AppliedKeywordFilters {
         type: "keyword" | "freeText";
         displayName?: string;
     }): void {
-        const { displayNameForUI } = this.getValuesFromMapFilters({
+        const { displayNameForUI, id } = this.getValuesFromMapFilters({
             value,
             type,
             displayName,
         });
         this.appliedFilters.delete(displayNameForUI);
-        this.updateAppliedFilterElements("remove");
+        this.updateAppliedFilterElements({
+            updateType: "remove",
+            displayName: displayNameForUI,
+            id,
+        });
     }
 
     //   <div>
@@ -209,8 +224,9 @@ export class AppliedKeywordFilters {
     }: {
         displayName: string;
         id: string;
-    }): string {
-        return `  
+    }): HTMLElement {
+        const wrapper = document.createElement("div");
+        const htmlString = `  
                 <div id=${id} class="keyword-word-card group h-fit max-w-60 relative hover:overflow-visible">
                     <div class="word-card truncate">
                             ${closeIcon}
@@ -226,6 +242,8 @@ export class AppliedKeywordFilters {
                 </div>
 
                             `;
+        wrapper.innerHTML = htmlString;
+        return wrapper.firstElementChild! as HTMLElement;
     }
 }
 

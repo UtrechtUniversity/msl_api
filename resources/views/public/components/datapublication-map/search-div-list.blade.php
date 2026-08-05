@@ -114,7 +114,7 @@
                 </div>
             </div>
             <div class="word-card-parent" id="active-filter-container">
-                <div id="applied-filters-text"></div>
+
             </div>
             <script>
                 tippy('#remove-all-popup', {
