@@ -115,6 +115,7 @@ export class KeywordTree {
     private originalToggle: JQuery<HTMLInputElement> = $(
         TREES.original.filterToggle,
     );
+    private suppressChangeEvents: boolean = false;
 
     private onKeywordFilterUpdate: (
         type: "remove" | "add",
@@ -212,7 +213,7 @@ export class KeywordTree {
                 key: name,
                 // We use this function as filter,
                 // so that when we reload the page,
-                // the checks are removed as fefault state
+                // the checks are removed as default state
                 filter: function (state: JSTreeStaticDefaults) {
                     state = omit(state, "checkbox");
                     return state;
@@ -230,6 +231,7 @@ export class KeywordTree {
         (e: JQuery.Event, data: JsTreeCheckEventData) => void
     > {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
+            if (this.suppressChangeEvents) return;
             if (data.node.original.extra.type == "filter") {
                 const name = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
@@ -279,16 +281,35 @@ export class KeywordTree {
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
+
             assertNotUndefined(node, `Node is undefined. This is a bug.`);
 
             const tree =
                 treeType === ORIGINAL
                     ? this.originalTree.jstree(true)
                     : this.interpretedTree.jstree(true);
+
             // We want nodes from subtrees to be disabled initially
             if (disableByDefault) {
                 tree.disable_node(node.id);
             }
+            // We want to have checked the active filters and unchecked all the rest of the nodes.
+            const activeFilterNode = activeFilters[node.extra.filterName];
+
+            if (activeFilterNode) {
+                if (activeFilterNode.includes(node.extra.filterValue)) {
+                    tree.check_node(node.id, "");
+                } else {
+                    this.suppressChangeEvents = true;
+                    tree.uncheck_node(node.id, "");
+                    this.suppressChangeEvents = false;
+                }
+            } else {
+                this.suppressChangeEvents = true;
+                tree.uncheck_node(node.id, "");
+                this.suppressChangeEvents = false;
+            }
+
             // A.
             const nodeInFacets = this.facets[node.extra.filterName];
             if (!nodeInFacets) {
