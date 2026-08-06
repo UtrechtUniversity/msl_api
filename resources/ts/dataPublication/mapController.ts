@@ -313,8 +313,9 @@ export class MapController {
      */
     private async resetAndRePopulateAfterUpdateTextFilters(
         type: "add" | "remove",
+        opts: { except: "boundingBox" } | undefined = undefined,
     ) {
-        this.resetComponentsAndData({ except: "boundingBox" });
+        this.resetComponentsAndData(opts);
         if (type === "add") {
             await this.populateElements();
             return;
