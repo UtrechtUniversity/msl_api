@@ -91,20 +91,20 @@ export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
 export type ActiveFilterInfo = KeywordActiveInfo | FreeTextActiveInfo;
 
-export type KeywordActiveInfo = {
-    displayName: string;
+export interface KeywordActiveInfo extends KeywordAddInfoWithType {
+    id: string;
+}
+
+export interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
+    id: string;
+}
+
+export interface KeywordAddInfoWithType extends KeywordAddInfo {
     type: "keyword";
-    name: string;
-    value: string;
-    id: string;
-};
-
-export type FreeTextActiveInfo = {
+}
+export interface FreeTextAddInfoWithType extends FreeTextAddInfo {
     type: "freeText";
-    value: string;
-    id: string;
-};
-
+}
 export type KeywordAddInfo = {
     name: string;
     value: string;

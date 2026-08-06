@@ -3,8 +3,12 @@ import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
     type FreeTextActiveInfo,
+    type FreeTextAddInfo,
+    type FreeTextAddInfoWithType,
     type FreeTextRemoveInfo,
     type KeywordActiveInfo,
+    type KeywordAddInfo,
+    type KeywordAddInfoWithType,
     type KeywordRemoveInfo,
 } from "./utils";
 
@@ -116,7 +120,9 @@ export class AppliedKeywordFilters {
         return;
     }
 
-    public addFilter(opts: DistributiveOmit<ActiveFilterInfo, "id">): void {
+    public addFilter(
+        opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
+    ): void {
         const { displayNameForUI, id } = this.getValuesFromMapFilters(opts);
         const metadata: ActiveFilterInfo = {
             ...opts,
@@ -153,7 +159,7 @@ export class AppliedKeywordFilters {
         this.removeFilter({ id: opts.id });
     }
     private getValuesFromMapFilters(
-        opts: DistributiveOmit<ActiveFilterInfo, "id">,
+        opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
     ): { displayNameForUI: string; id: string } {
         if (opts.type === "freeText")
             return this.getValuesForFreeText({ value: opts.value });
@@ -165,11 +171,7 @@ export class AppliedKeywordFilters {
         name,
         value,
         displayName,
-    }: {
-        name: string;
-        value: string;
-        displayName: string;
-    }): {
+    }: KeywordAddInfo): {
         displayNameForUI: string;
         id: string;
     } {
@@ -182,7 +184,7 @@ export class AppliedKeywordFilters {
         return { displayNameForUI, id };
     }
 
-    private getValuesForFreeText({ value }: { value: string }): {
+    private getValuesForFreeText({ value }: FreeTextAddInfo): {
         displayNameForUI: string;
         id: string;
     } {

@@ -5,6 +5,7 @@ import {
     type Facets,
     type FreeTextActiveInfo,
     type FreeTextAddInfo,
+    type FreeTextAddInfoWithType,
     type FreeTextRemoveInfo,
     type KeywordAddInfo,
     type KeywordFilters,
