@@ -230,7 +230,7 @@ export class MapController {
         this.searchFilters.filters.page = page;
         await this.populateElements();
     }
-    //TODO
+
     public async handleSearchTextAdd(value: string) {
         this.searchFilters.filters.freeText.push(value);
         this.appliedKeywords.addFilter({
@@ -247,6 +247,11 @@ export class MapController {
             this.searchFilters.filters.freeText.filter(
                 (textFilter) => opts.value !== textFilter,
             );
+        // We have to explicitly add the filter in appliedKeywords instance,
+        // since we are keeping state of the keywords
+        // and their order inside this component.
+        // That means that we don't make additions/deletion
+        // in standard reset methods of mapController.
         this.appliedKeywords.removeFilter({ id: opts.id });
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
@@ -269,10 +274,17 @@ export class MapController {
         value: string;
         displayName: string;
     }) {
-        const valuesInTree = this.searchFilters.filters.keywords[name];
-        const setToAdd = new Set(valuesInTree ?? []);
-        setToAdd.add(value);
-        this.searchFilters.filters.keywords[name] = [...setToAdd];
+        const existingValuesInTree = this.searchFilters.filters.keywords[name];
+        this.searchFilters.filters.keywords[name] = [
+            ...(existingValuesInTree ?? []),
+            value,
+        ];
+        // We have to explicitly add the filter in appliedKeywords instance,
+        // since we are keeping state of the keywords
+        // and their order inside this component.
+        // That means that we don't make additions/deletion
+        // in standard reset methods of mapController.
+
         this.appliedKeywords.addFilter({
             name,
             value,
