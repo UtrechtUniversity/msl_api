@@ -23,12 +23,7 @@
                         @include('public.components.datapublication-map.search-div')
                         <div class=' grid grid-cols-2'>
                             @include('public.components.datapublication-map.results-metadata')
-                            @include('public.components.datapublication-map.search-div-list', [
-                                'searchFor' => 'data publications',
-                                'amountFoundLabel' => 'data publications',
-                                'sortingDropdown' => true,
-                                'activeSort' => true,
-                            ])
+                            @include('public.components.datapublication-map.search-div-list')
                         </div>
                         {{-- map --}}
                         <div class="list-view">

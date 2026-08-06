@@ -237,7 +237,9 @@ export class MapController {
             value,
             type: "freeText",
         });
-        await this.resetAndRePopulateAfterUpdateTextFilters("add");
+        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+            except: "boundingBox",
+        });
     }
 
     private async handleSearchTextRemove(opts: FreeTextActiveInfo) {
@@ -246,13 +248,17 @@ export class MapController {
                 (textFilter) => opts.value !== textFilter,
             );
         this.appliedKeywords.removeFilter({ id: opts.id });
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+            except: "boundingBox",
+        });
     }
     private async handleRemoveAllFilters() {
         this.searchFilters.filters.freeText = [];
         this.searchFilters.filters.keywords = {};
         this.appliedKeywords.removeAllFilters();
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+            except: "boundingBox",
+        });
     }
     private async handleKeywordFilterAdd({
         name,
@@ -273,7 +279,9 @@ export class MapController {
             displayName,
             type: "keyword",
         });
-        await this.resetAndRePopulateAfterUpdateTextFilters("add");
+        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+            except: "boundingBox",
+        });
     }
 
     private async handleKeywordFilterRemove({
@@ -302,7 +310,9 @@ export class MapController {
             name,
             value,
         });
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+            except: "boundingBox",
+        });
     }
 
     // Helper methods
