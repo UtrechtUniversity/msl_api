@@ -104,3 +104,23 @@ export type FreeTextActiveInfo = {
     value: string;
     id: string;
 };
+
+export type KeywordAddInfo = {
+    name: string;
+    value: string;
+    displayName: string;
+};
+
+export type KeywordRemoveInfo = {
+    name: string;
+    value: string;
+};
+
+export type FreeTextAddInfo = {
+    value: string;
+    id: string;
+};
+
+export type FreeTextRemoveInfo = {
+    id: string;
+};

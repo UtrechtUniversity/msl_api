@@ -4,7 +4,9 @@ import {
     throwWhenCallBackNotInitialized,
     type FacetItem,
     type Facets,
+    type KeywordAddInfo,
     type KeywordFilters,
+    type KeywordRemoveInfo,
 } from "./utils";
 import { omit } from "lodash";
 
@@ -117,28 +119,21 @@ export class KeywordTree {
     );
     private suppressChangeEvents: boolean = false;
 
-    private onKeywordFilterUpdate: (
-        type: "remove" | "add",
-        filter: {
-            name: string;
-            value: string;
-            displayName: string;
-        },
+    private onKeywordFilterAdd: (
+        filter: KeywordAddInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
-
+    private onKeywordFilterRemove: (
+        opts: KeywordRemoveInfo,
+    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
     public setHandlerfn({
-        onKeywordFilterUpdate,
+        onKeywordFilterAdd,
+        onKeywordFilterRemove,
     }: {
-        onKeywordFilterUpdate: (
-            type: "remove" | "add",
-            filter: {
-                name: string;
-                value: string;
-                displayName: string;
-            },
-        ) => Promise<void>;
+        onKeywordFilterAdd: (opts: KeywordAddInfo) => Promise<void>;
+        onKeywordFilterRemove: (opts: KeywordRemoveInfo) => Promise<void>;
     }) {
-        this.onKeywordFilterUpdate = onKeywordFilterUpdate;
+        this.onKeywordFilterAdd = onKeywordFilterAdd;
+        this.onKeywordFilterRemove = onKeywordFilterRemove;
     }
 
     public async init(facets: Facets) {
@@ -237,16 +232,15 @@ export class KeywordTree {
                 const value = data.node.original.extra.filterValue;
                 const displayName = data.node.original.originalText;
                 if (e.type == "check_node") {
-                    await this.onKeywordFilterUpdate("add", {
+                    await this.onKeywordFilterAdd({
                         name,
                         value,
                         displayName,
                     });
                 } else if (e.type == "uncheck_node") {
-                    await this.onKeywordFilterUpdate("remove", {
+                    await this.onKeywordFilterRemove({
                         name,
                         value,
-                        displayName,
                     });
                 }
             }

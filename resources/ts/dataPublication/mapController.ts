@@ -4,7 +4,9 @@ import {
     type ActiveFilterInfo,
     type Facets,
     type FreeTextActiveInfo,
+    type KeywordAddInfo,
     type KeywordFilters,
+    type KeywordRemoveInfo,
     type Paginator,
 } from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
@@ -94,13 +96,13 @@ export class MapController {
             onPageChange: async (page) => this.handlePageChange(page),
         });
         this.keywordTree.setHandlerfn({
-            onKeywordFilterUpdate: async (
-                type: "remove" | "add",
-                filter: { name: string; value: string; displayName: string },
+            onKeywordFilterAdd: async (opts: KeywordAddInfo): Promise<void> => {
+                this.handleKeywordFilterAdd(opts);
+            },
+            onKeywordFilterRemove: async (
+                opts: KeywordRemoveInfo,
             ): Promise<void> => {
-                return type === "add"
-                    ? this.handleKeywordFilterAdd(filter)
-                    : this.handleKeywordFilterRemove(filter);
+                this.handleKeywordFilterRemove(opts);
             },
         });
         this.appliedKeywords.setHandlerfn({
@@ -269,11 +271,7 @@ export class MapController {
         name,
         value,
         displayName,
-    }: {
-        name: string;
-        value: string;
-        displayName: string;
-    }) {
+    }: KeywordAddInfo) {
         const existingValuesInTree = this.searchFilters.filters.keywords[name];
         this.searchFilters.filters.keywords[name] = [
             ...(existingValuesInTree ?? []),
@@ -299,10 +297,7 @@ export class MapController {
     private async handleKeywordFilterRemove({
         name,
         value,
-    }: {
-        name: string;
-        value: string;
-    }): Promise<void> {
+    }: KeywordRemoveInfo): Promise<void> {
         let valuesInTree = this.searchFilters.filters.keywords[name];
         if (!valuesInTree)
             throw new Error("Key not found in tree. This is a bug.");
