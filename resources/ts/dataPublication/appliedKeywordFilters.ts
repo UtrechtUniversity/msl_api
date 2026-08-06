@@ -27,6 +27,8 @@ export class AppliedKeywordFilters {
     private onActiveFilterRemove: (
         opts: ActiveFilterInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onActiveFilterRemoveAll: () => void | Promise<void> =
+        throwWhenCallBackNotInitialized;
 
     constructor() {
         const appliedFiltersTitleElement = getElementInActiveFilters(
@@ -34,6 +36,9 @@ export class AppliedKeywordFilters {
             "Remove bin field",
         );
         appliedFiltersTitleElement.hidden = true;
+        appliedFiltersTitleElement.addEventListener("click", () => {
+            this.onActiveFilterRemoveAll();
+        });
         this.removeBinIcon = appliedFiltersTitleElement;
 
         this.activeFilterContainer = getElementInActiveFilters(
@@ -45,10 +50,13 @@ export class AppliedKeywordFilters {
 
     public setHandlerfn({
         onActiveFilterRemove,
+        onActiveFilterRemoveAll,
     }: {
         onActiveFilterRemove: (opts: ActiveFilterInfo) => Promise<void>;
+        onActiveFilterRemoveAll: () => Promise<void>;
     }) {
         this.onActiveFilterRemove = onActiveFilterRemove;
+        this.onActiveFilterRemoveAll = onActiveFilterRemoveAll;
     }
 
     private addAppliedFilterElement({
@@ -83,8 +91,8 @@ export class AppliedKeywordFilters {
 
     private removeAppliedFilterElement({ id }: { id: string }) {
         if (!this.appliedFilters.size) {
-            this.activeFilterContainer.innerHTML = noFiltersElement;
-            this.removeBinIcon.hidden = true;
+            this.resetActiveFilters();
+
             return;
         }
         // If type='remove' and are filters left
@@ -117,7 +125,10 @@ export class AppliedKeywordFilters {
             id,
         });
     }
-
+    public removeAllFilters() {
+        this.appliedFilters = new Map();
+        this.resetActiveFilters();
+    }
     public removeFilter({ id }: { id: string }): void {
         this.appliedFilters.delete(id);
         this.removeAppliedFilterElement({
@@ -201,6 +212,10 @@ export class AppliedKeywordFilters {
                             `;
         wrapper.innerHTML = htmlString;
         return wrapper.firstElementChild! as HTMLElement;
+    }
+    private resetActiveFilters() {
+        this.activeFilterContainer.innerHTML = noFiltersElement;
+        this.removeBinIcon.hidden = true;
     }
 }
 

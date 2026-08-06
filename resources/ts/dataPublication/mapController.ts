@@ -111,6 +111,9 @@ export class MapController {
                     ? this.handleSearchTextRemove(opts)
                     : this.handleKeywordFilterRemove(opts);
             },
+            onActiveFilterRemoveAll: async () => {
+                this.handleRemoveAllFilters();
+            },
         });
     }
 
@@ -234,7 +237,7 @@ export class MapController {
             value,
             type: "freeText",
         });
-        this.resetAndRePopulateAfterUpdateTextFilters("add");
+        await this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleSearchTextRemove(opts: FreeTextActiveInfo) {
@@ -243,9 +246,14 @@ export class MapController {
                 (textFilter) => opts.value !== textFilter,
             );
         this.appliedKeywords.removeFilter({ id: opts.id });
-        this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
-
+    private async handleRemoveAllFilters() {
+        this.searchFilters.filters.freeText = [];
+        this.searchFilters.filters.keywords = {};
+        this.appliedKeywords.removeAllFilters();
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+    }
     private async handleKeywordFilterAdd({
         name,
         value,
@@ -265,7 +273,7 @@ export class MapController {
             displayName,
             type: "keyword",
         });
-        this.resetAndRePopulateAfterUpdateTextFilters("add");
+        await this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
     private async handleKeywordFilterRemove({
@@ -294,7 +302,7 @@ export class MapController {
             name,
             value,
         });
-        this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
     // Helper methods
