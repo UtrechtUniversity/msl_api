@@ -22,10 +22,10 @@ const CLOSE_ICON = `
         </svg>` as const;
 
 export class AppliedKeywordFilters {
-    // In other components other than mapController, we don't keep track of state
+    // In components other than mapController, we don't keep track of state
     // Here we have to keep track of it, since order matters!
     private appliedFilters = new Map<string, ActiveFilterInfo>();
-    private removeBinIcon: HTMLElement;
+    private removeBin: HTMLElement;
     private activeFilterContainer: HTMLElement;
     private onActiveKeywordRemove: (
         opts: KeywordRemoveInfo,
@@ -37,15 +37,15 @@ export class AppliedKeywordFilters {
         throwWhenCallBackNotInitialized;
 
     constructor() {
-        const appliedFiltersTitleElement = getElementInActiveFilters(
+        const removeBin = getElementInActiveFilters(
             "remove-bin-icon",
             "Remove bin field",
         );
-        appliedFiltersTitleElement.hidden = true;
-        appliedFiltersTitleElement.addEventListener("click", () => {
+        removeBin.hidden = true;
+        removeBin.addEventListener("click", () => {
             this.onActiveFilterRemoveAll();
         });
-        this.removeBinIcon = appliedFiltersTitleElement;
+        this.removeBin = removeBin;
 
         this.activeFilterContainer = getElementInActiveFilters(
             "active-filter-container",
@@ -76,11 +76,10 @@ export class AppliedKeywordFilters {
         displayName: string;
         id: string;
     }) {
-        // If type='add'
         //TODO explain this or move it to remove? Or have it as default for when we start?
         if (this.appliedFilters.size === 1)
             this.activeFilterContainer.innerHTML = "";
-        this.removeBinIcon.hidden = false;
+        this.removeBin.hidden = false;
 
         const element = this.createKeywordElement({
             displayName,
@@ -107,7 +106,6 @@ export class AppliedKeywordFilters {
 
             return;
         }
-        // If type='remove' and are filters left
         const elementToRemove = document.getElementById(id);
         assertNotNull(
             elementToRemove,
@@ -218,7 +216,7 @@ export class AppliedKeywordFilters {
     }
     private resetActiveFilters() {
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
-        this.removeBinIcon.hidden = true;
+        this.removeBin.hidden = true;
     }
 }
 
