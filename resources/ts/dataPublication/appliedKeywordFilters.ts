@@ -3,7 +3,9 @@ import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
     type FreeTextActiveInfo,
+    type FreeTextRemoveInfo,
     type KeywordActiveInfo,
+    type KeywordRemoveInfo,
 } from "./utils";
 
 const noFiltersElement = `<h6 class="italic">- no filter applied -</h6>`;
@@ -24,8 +26,11 @@ export class AppliedKeywordFilters {
     private appliedFilters = new Map<string, ActiveFilterInfo>();
     private removeBinIcon: HTMLElement;
     private activeFilterContainer: HTMLElement;
-    private onActiveFilterRemove: (
-        opts: ActiveFilterInfo,
+    private onActiveKeywordRemove: (
+        opts: KeywordRemoveInfo,
+    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onActiveFreeTextRemove: (
+        opts: FreeTextRemoveInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private onActiveFilterRemoveAll: () => void | Promise<void> =
         throwWhenCallBackNotInitialized;
@@ -49,13 +54,17 @@ export class AppliedKeywordFilters {
     }
 
     public setHandlerfn({
-        onActiveFilterRemove,
+        onActiveKeywordRemove,
+        onActiveFreeTextRemove,
         onActiveFilterRemoveAll,
     }: {
-        onActiveFilterRemove: (opts: ActiveFilterInfo) => Promise<void>;
+        onActiveKeywordRemove: (opts: KeywordRemoveInfo) => Promise<void>;
+        onActiveFreeTextRemove: (opts: FreeTextRemoveInfo) => Promise<void>;
         onActiveFilterRemoveAll: () => Promise<void>;
     }) {
-        this.onActiveFilterRemove = onActiveFilterRemove;
+        this.onActiveKeywordRemove = onActiveKeywordRemove;
+        this.onActiveFreeTextRemove = onActiveFreeTextRemove;
+
         this.onActiveFilterRemoveAll = onActiveFilterRemoveAll;
     }
 
@@ -83,7 +92,9 @@ export class AppliedKeywordFilters {
                 mtdataInfo,
                 `Active filter with display name '${displayName}' should exist. This is a bug.`,
             );
-            await self.onActiveFilterRemove(mtdataInfo);
+            mtdataInfo.type === "keyword"
+                ? await self.onActiveKeywordRemove(mtdataInfo)
+                : await self.onActiveFreeTextRemove(mtdataInfo);
         });
 
         this.activeFilterContainer.appendChild(element);
@@ -104,13 +115,6 @@ export class AppliedKeywordFilters {
         elementToRemove.remove();
         return;
     }
-
-    // Methods for mapcontroller to use
-    // TODO we have to add 'remove all icon' too
-    // todo add a listener for the new filter
-    // todo Do we want to keep a state or do we want to repopulate?
-    // TODO do we care about the order? We probably do, what is the best way to keep the order?
-    // Map!
 
     public addFilter(opts: DistributiveOmit<ActiveFilterInfo, "id">): void {
         const { displayNameForUI, id } = this.getValuesFromMapFilters(opts);

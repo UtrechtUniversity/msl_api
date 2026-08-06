@@ -4,6 +4,8 @@ import {
     type ActiveFilterInfo,
     type Facets,
     type FreeTextActiveInfo,
+    type FreeTextAddInfo,
+    type FreeTextRemoveInfo,
     type KeywordAddInfo,
     type KeywordFilters,
     type KeywordRemoveInfo,
@@ -106,12 +108,15 @@ export class MapController {
             },
         });
         this.appliedKeywords.setHandlerfn({
-            onActiveFilterRemove: async (
-                opts: ActiveFilterInfo,
+            onActiveKeywordRemove: async (
+                opts: KeywordRemoveInfo,
             ): Promise<void> => {
-                return opts.type === "freeText"
-                    ? this.handleSearchTextRemove(opts)
-                    : this.handleKeywordFilterRemove(opts);
+                this.handleKeywordFilterRemove(opts);
+            },
+            onActiveFreeTextRemove: async (
+                opts: FreeTextRemoveInfo,
+            ): Promise<void> => {
+                this.handleSearchTextRemove(opts);
             },
             onActiveFilterRemoveAll: async () => {
                 this.handleRemoveAllFilters();
@@ -233,7 +238,7 @@ export class MapController {
         await this.populateElements();
     }
 
-    public async handleSearchTextAdd(value: string) {
+    public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
         this.searchFilters.filters.freeText.push(value);
         this.appliedKeywords.addFilter({
             value,
@@ -244,7 +249,7 @@ export class MapController {
         });
     }
 
-    private async handleSearchTextRemove(opts: FreeTextActiveInfo) {
+    private async handleSearchTextRemove(opts: FreeTextRemoveInfo) {
         this.searchFilters.filters.freeText =
             this.searchFilters.filters.freeText.filter(
                 (textFilter) => opts.value !== textFilter,

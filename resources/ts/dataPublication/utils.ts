@@ -118,9 +118,9 @@ export type KeywordRemoveInfo = {
 
 export type FreeTextAddInfo = {
     value: string;
-    id: string;
 };
 
 export type FreeTextRemoveInfo = {
+    value: string;
     id: string;
 };
