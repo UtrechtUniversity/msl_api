@@ -301,15 +301,14 @@ export class KeywordTree {
             // For this reason, we have to use a custom flag.
             this.suppressChangeEvents = true;
 
+            if (!activeFilterNode) tree.uncheck_node(node.id, "");
+
             if (activeFilterNode) {
-                if (activeFilterNode.includes(node.extra.filterValue)) {
-                    tree.check_node(node.id, "");
-                } else {
-                    tree.uncheck_node(node.id, "");
-                }
-            } else {
-                tree.uncheck_node(node.id, "");
+                activeFilterNode.includes(node.extra.filterValue)
+                    ? tree.check_node(node.id, "")
+                    : tree.uncheck_node(node.id, "");
             }
+
             this.suppressChangeEvents = false;
 
             // A.
