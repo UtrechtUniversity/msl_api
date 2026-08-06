@@ -296,19 +296,18 @@ export class KeywordTree {
             // We want to have checked the active filters and unchecked all the rest of the nodes.
             const activeFilterNode = activeFilters[node.extra.filterName];
 
+            this.suppressChangeEvents = true;
+
             if (activeFilterNode) {
                 if (activeFilterNode.includes(node.extra.filterValue)) {
                     tree.check_node(node.id, "");
                 } else {
-                    this.suppressChangeEvents = true;
                     tree.uncheck_node(node.id, "");
-                    this.suppressChangeEvents = false;
                 }
             } else {
-                this.suppressChangeEvents = true;
                 tree.uncheck_node(node.id, "");
-                this.suppressChangeEvents = false;
             }
+            this.suppressChangeEvents = false;
 
             // A.
             const nodeInFacets = this.facets[node.extra.filterName];

@@ -17,7 +17,6 @@ const closeIcon = `
 type DistributiveOmit<T, K extends PropertyKey> = T extends any
     ? Omit<T, K>
     : never;
-type la = DistributiveOmit<ActiveFilterInfo, "id">;
 
 export class AppliedKeywordFilters {
     // todo can insert key values and remembers the order
@@ -210,7 +209,10 @@ export class AppliedKeywordFilters {
         }
         return {
             displayNameForUI,
-            id: type + "_" + (name === undefined ? value : name),
+            id:
+                type +
+                "_" +
+                (name === undefined || value !== "true" ? value : name),
         };
     }
     private createKeywordElement({
