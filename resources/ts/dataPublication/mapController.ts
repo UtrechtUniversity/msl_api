@@ -1,9 +1,9 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import {
     getDefaultTab,
+    type ActiveFilterInfo,
     type Facets,
-    type freeTextFilterInfo,
-    type keywordFilterInfo,
+    type FreeTextActiveInfo,
     type KeywordFilters,
     type Paginator,
 } from "./utils.js";
@@ -105,10 +105,10 @@ export class MapController {
         });
         this.appliedKeywords.setHandlerfn({
             onActiveFilterRemove: async (
-                opts: freeTextFilterInfo | keywordFilterInfo,
+                opts: ActiveFilterInfo,
             ): Promise<void> => {
                 return opts.type === "freeText"
-                    ? this.handleSearchTextRemove(opts.value)
+                    ? this.handleSearchTextRemove(opts)
                     : this.handleKeywordFilterRemove(opts);
             },
         });
@@ -237,15 +237,12 @@ export class MapController {
         this.resetAndRePopulateAfterUpdateTextFilters("add");
     }
 
-    private async handleSearchTextRemove(value: string) {
+    private async handleSearchTextRemove(opts: FreeTextActiveInfo) {
         this.searchFilters.filters.freeText =
             this.searchFilters.filters.freeText.filter(
-                (textFilter) => value !== textFilter,
+                (textFilter) => opts.value !== textFilter,
             );
-        this.appliedKeywords.removeFilter({
-            value,
-            type: "freeText",
-        });
+        this.appliedKeywords.removeFilter({ id: opts.id });
         this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }
 
@@ -274,11 +271,9 @@ export class MapController {
     private async handleKeywordFilterRemove({
         name,
         value,
-        displayName,
     }: {
         name: string;
         value: string;
-        displayName: string;
     }): Promise<void> {
         let valuesInTree = this.searchFilters.filters.keywords[name];
         if (!valuesInTree)
@@ -295,11 +290,9 @@ export class MapController {
             );
         }
 
-        this.appliedKeywords.removeFilter({
+        this.appliedKeywords.removeKeywordFilter({
             name,
             value,
-            displayName,
-            type: "keyword",
         });
         this.resetAndRePopulateAfterUpdateTextFilters("remove");
     }

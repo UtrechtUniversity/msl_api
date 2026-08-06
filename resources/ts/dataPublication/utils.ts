@@ -1,4 +1,3 @@
-import { assertNotUndefined } from "../helpers.js";
 import {
     EXCLUSIVE,
     INCLUSIVE,
@@ -65,7 +64,7 @@ export function throwWhenCallBackNotInitialized() {
 }
 
 export function getDefaultTab(): GeoFeatureResultSet {
-    for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
+    for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
         typeof TAB_CONFIG
     >) {
         if (tabInfo.active) {
@@ -92,7 +91,7 @@ export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
 export type ActiveFilterInfo = KeywordActiveInfo | FreeTextActiveInfo;
 
-type KeywordActiveInfo = {
+export type KeywordActiveInfo = {
     displayName: string;
     type: "keyword";
     name: string;
@@ -100,20 +99,8 @@ type KeywordActiveInfo = {
     id: string;
 };
 
-type FreeTextActiveInfo = {
+export type FreeTextActiveInfo = {
     type: "freeText";
     value: string;
     id: string;
-};
-
-export type freeTextFilterInfo = {
-    type: "freeText";
-    value: string;
-};
-
-export type keywordFilterInfo = {
-    type: "keyword";
-    value: string;
-    name: string;
-    displayName: string;
 };

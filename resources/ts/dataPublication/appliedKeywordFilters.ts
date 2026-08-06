@@ -2,8 +2,8 @@ import { assertNotNull, assertNotUndefined } from "../helpers";
 import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
-    type freeTextFilterInfo,
-    type keywordFilterInfo,
+    type FreeTextActiveInfo,
+    type KeywordActiveInfo,
 } from "./utils";
 
 const noFiltersElement = `<h6 class="italic">- no filter applied -</h6>`;
@@ -19,12 +19,13 @@ type DistributiveOmit<T, K extends PropertyKey> = T extends any
     : never;
 
 export class AppliedKeywordFilters {
-    // todo can insert key values and remembers the order
+    // In other components other than mapController, we don't keep track of state
+    // Here we have to keep track of it, since order matters!
     private appliedFilters = new Map<string, ActiveFilterInfo>();
     private removeBinIcon: HTMLElement;
     private activeFilterContainer: HTMLElement;
     private onActiveFilterRemove: (
-        opts: freeTextFilterInfo | keywordFilterInfo,
+        opts: ActiveFilterInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
 
     constructor() {
@@ -45,39 +46,20 @@ export class AppliedKeywordFilters {
     public setHandlerfn({
         onActiveFilterRemove,
     }: {
-        onActiveFilterRemove: (
-            opts: freeTextFilterInfo | keywordFilterInfo,
-        ) => Promise<void>;
+        onActiveFilterRemove: (opts: ActiveFilterInfo) => Promise<void>;
     }) {
         this.onActiveFilterRemove = onActiveFilterRemove;
     }
 
-    private updateAppliedFilterElements({
-        updateType,
+    private addAppliedFilterElement({
         displayName,
         id,
     }: {
-        updateType: "add" | "remove";
         displayName: string;
         id: string;
     }) {
-        // If type='remove' and no filters left
-        if (!this.appliedFilters.size) {
-            this.activeFilterContainer.innerHTML = noFiltersElement;
-            this.removeBinIcon.hidden = true;
-            return;
-        }
-        // If type='remove' and are filters left
-        if (updateType === "remove") {
-            const elementToRemove = document.getElementById(id);
-            assertNotNull(
-                elementToRemove,
-                `Element with id '${id}' could not be found. This is a bug.`,
-            );
-            elementToRemove.remove();
-            return;
-        }
         // If type='add'
+        //TODO explain this or move it to remove? Or have it as default for when we start?
         if (this.appliedFilters.size === 1)
             this.activeFilterContainer.innerHTML = "";
         this.removeBinIcon.hidden = false;
@@ -88,7 +70,7 @@ export class AppliedKeywordFilters {
         });
         const self = this;
         element.addEventListener("click", async () => {
-            const mtdataInfo = self.appliedFilters.get(displayName);
+            const mtdataInfo = self.appliedFilters.get(id);
             assertNotUndefined(
                 mtdataInfo,
                 `Active filter with display name '${displayName}' should exist. This is a bug.`,
@@ -99,121 +81,99 @@ export class AppliedKeywordFilters {
         this.activeFilterContainer.appendChild(element);
     }
 
+    private removeAppliedFilterElement({ id }: { id: string }) {
+        if (!this.appliedFilters.size) {
+            this.activeFilterContainer.innerHTML = noFiltersElement;
+            this.removeBinIcon.hidden = true;
+            return;
+        }
+        // If type='remove' and are filters left
+        const elementToRemove = document.getElementById(id);
+        assertNotNull(
+            elementToRemove,
+            `Element with id '${id}' could not be found. This is a bug.`,
+        );
+        elementToRemove.remove();
+        return;
+    }
+
     // Methods for mapcontroller to use
     // TODO we have to add 'remove all icon' too
     // todo add a listener for the new filter
     // todo Do we want to keep a state or do we want to repopulate?
     // TODO do we care about the order? We probably do, what is the best way to keep the order?
     // Map!
-    public addFilter({
-        name,
-        value,
-        type,
-        displayName,
-    }: {
-        name: string;
-        value: string;
-        type: "keyword";
-        displayName: string;
-    }): void;
-    public addFilter({
-        value,
-        type,
-    }: {
-        value: string;
-        type: "freeText";
-    }): void;
+
     public addFilter(opts: DistributiveOmit<ActiveFilterInfo, "id">): void {
-        const { displayNameForUI, id } = this.getValuesFromMapFilters({
-            displayName: opts.type === "keyword" ? opts.displayName : undefined,
-            type: opts.type,
-            name: opts.type === "keyword" ? opts.name : undefined,
-            value: opts.value,
-        });
+        const { displayNameForUI, id } = this.getValuesFromMapFilters(opts);
         const metadata: ActiveFilterInfo = {
             ...opts,
             id,
         };
 
-        this.appliedFilters.set(displayNameForUI, metadata);
-        this.updateAppliedFilterElements({
-            updateType: "add",
+        this.appliedFilters.set(id, metadata);
+        this.addAppliedFilterElement({
             displayName: displayNameForUI,
             id,
         });
     }
 
-    public removeFilter({
+    public removeFilter({ id }: { id: string }): void {
+        this.appliedFilters.delete(id);
+        this.removeAppliedFilterElement({
+            id,
+        });
+    }
+    public removeKeywordFilter(
+        opts: Pick<KeywordActiveInfo, "name" | "value">,
+    ) {
+        const id = getIdForActiveKeyword({
+            value: opts.value,
+            name: opts.name,
+        });
+        this.removeFilter({ id });
+    }
+
+    public removeFreeTextFilter(opts: Pick<FreeTextActiveInfo, "id">) {
+        this.removeFilter({ id: opts.id });
+    }
+    private getValuesFromMapFilters(
+        opts: DistributiveOmit<ActiveFilterInfo, "id">,
+    ): { displayNameForUI: string; id: string } {
+        if (opts.type === "freeText")
+            return this.getValuesForFreeText({ value: opts.value });
+
+        return this.getValuesForKeywords(opts);
+    }
+
+    private getValuesForKeywords({
         name,
-        displayName,
         value,
-        type,
+        displayName,
     }: {
         name: string;
+        value: string;
         displayName: string;
-        value: string;
-        type: "keyword";
-    }): void;
-    public removeFilter({
-        value,
-        type,
-    }: {
-        value: string;
-        type: "freeText";
-    }): void;
-    public removeFilter({
-        name,
-        value,
-        type,
-        displayName,
-    }: {
-        name?: string;
-        value: string;
-        type: "keyword" | "freeText";
-        displayName?: string;
-    }): void {
-        const { displayNameForUI, id } = this.getValuesFromMapFilters({
-            name,
-            value,
-            type,
+    }): {
+        displayNameForUI: string;
+        id: string;
+    } {
+        assertNotUndefined(
             displayName,
-        });
-        this.appliedFilters.delete(displayNameForUI);
-        this.updateAppliedFilterElements({
-            updateType: "remove",
-            displayName: displayNameForUI,
-            id,
-        });
+            "Field should by definition have a value. This is a bug.",
+        );
+        const displayNameForUI = displayName;
+        const id = getIdForActiveKeyword({ value, name });
+        return { displayNameForUI, id };
     }
 
-    private getValuesFromMapFilters({
-        name,
-        value,
-        displayName,
-        type,
-    }: {
-        name: string | undefined;
-        value: string;
-        displayName: string | undefined;
-        type: "keyword" | "freeText";
-    }): { displayNameForUI: string; id: string } {
-        let displayNameForUI = "";
-        if (type === "freeText") {
-            displayNameForUI = "Search: " + value;
-        } else {
-            assertNotUndefined(
-                displayName,
-                "Field should by definition have a value. This is a bug.",
-            );
-            displayNameForUI = displayName;
-        }
-        return {
-            displayNameForUI,
-            id:
-                type +
-                "_" +
-                (name === undefined || value !== "true" ? value : name),
-        };
+    private getValuesForFreeText({ value }: { value: string }): {
+        displayNameForUI: string;
+        id: string;
+    } {
+        const displayNameForUI = "Search: " + value;
+        const id = "freeText" + "_" + crypto.randomUUID();
+        return { displayNameForUI, id };
     }
     private createKeywordElement({
         displayName,
@@ -251,4 +211,14 @@ function getElementInActiveFilters(elementId: string, name: string) {
         ` Element '${name}' in applied keywords could not be found. This is a bug.`,
     );
     return elementInActiveFilters;
+}
+
+function getIdForActiveKeyword({
+    value,
+    name,
+}: {
+    value: string;
+    name: string;
+}) {
+    return "keyword" + "_" + (value !== "true" ? value : name);
 }
