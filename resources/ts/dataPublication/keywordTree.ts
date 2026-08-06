@@ -295,7 +295,10 @@ export class KeywordTree {
             }
             // We want to have checked the active filters and unchecked all the rest of the nodes.
             const activeFilterNode = activeFilters[node.extra.filterName];
-
+            // We are now removing keywords from outside the current element, too.
+            // For this reason, we want to update checked/unchecked nodes independently of jstree change events.
+            // Unfortunately, jstree doesn't have an option to check/uncheck node without firing the relevant event.
+            // For this reason, we have to use a custom flag.
             this.suppressChangeEvents = true;
 
             if (activeFilterNode) {
