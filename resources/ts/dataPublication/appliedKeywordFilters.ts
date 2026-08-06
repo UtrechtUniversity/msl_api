@@ -37,7 +37,7 @@ export class AppliedKeywordFilters {
         throwWhenCallBackNotInitialized;
 
     constructor() {
-        const removeBin = getElementInActiveFilters(
+        const removeBin = getElementOrThrow(
             "remove-bin-icon",
             "Remove bin field",
         );
@@ -47,7 +47,7 @@ export class AppliedKeywordFilters {
         });
         this.removeBin = removeBin;
 
-        this.activeFilterContainer = getElementInActiveFilters(
+        this.activeFilterContainer = getElementOrThrow(
             "active-filter-container",
             "Active filter container ",
         );
@@ -81,7 +81,7 @@ export class AppliedKeywordFilters {
             this.activeFilterContainer.innerHTML = "";
         this.removeBin.hidden = false;
 
-        const element = this.createKeywordElement({
+        const element = createKeywordElement({
             displayName,
             id,
         });
@@ -187,15 +187,41 @@ export class AppliedKeywordFilters {
         const id = "freeText" + "_" + crypto.randomUUID();
         return { displayNameForUI, id };
     }
-    private createKeywordElement({
-        displayName,
-        id,
-    }: {
-        displayName: string;
-        id: string;
-    }): HTMLElement {
-        const wrapper = document.createElement("div");
-        const htmlString = `  
+
+    private resetActiveFilters() {
+        this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
+        this.removeBin.hidden = true;
+    }
+}
+
+function getElementOrThrow(elementId: string, name: string) {
+    const element = document.getElementById(elementId);
+    assertNotNull(
+        element,
+        ` Element '${name}'could not be found. This is a bug.`,
+    );
+    return element;
+}
+
+function getIdForActiveKeyword({
+    value,
+    name,
+}: {
+    value: string;
+    name: string;
+}) {
+    return "keyword" + "_" + (value !== "true" ? value : name);
+}
+
+function createKeywordElement({
+    displayName,
+    id,
+}: {
+    displayName: string;
+    id: string;
+}): HTMLElement {
+    const wrapper = document.createElement("div");
+    const htmlString = `  
                 <div id=${id} class="keyword-word-card group h-fit max-w-60 relative hover:overflow-visible">
                     <div class="word-card truncate">
                             ${CLOSE_ICON}
@@ -211,30 +237,6 @@ export class AppliedKeywordFilters {
                 </div>
 
                             `;
-        wrapper.innerHTML = htmlString;
-        return wrapper.firstElementChild! as HTMLElement;
-    }
-    private resetActiveFilters() {
-        this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
-        this.removeBin.hidden = true;
-    }
-}
-
-function getElementInActiveFilters(elementId: string, name: string) {
-    const elementInActiveFilters = document.getElementById(elementId);
-    assertNotNull(
-        elementInActiveFilters,
-        ` Element '${name}' in applied keywords could not be found. This is a bug.`,
-    );
-    return elementInActiveFilters;
-}
-
-function getIdForActiveKeyword({
-    value,
-    name,
-}: {
-    value: string;
-    name: string;
-}) {
-    return "keyword" + "_" + (value !== "true" ? value : name);
+    wrapper.innerHTML = htmlString;
+    return wrapper.firstElementChild as HTMLElement;
 }
