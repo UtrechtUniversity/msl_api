@@ -109,9 +109,9 @@ export class AppliedKeywordFilters {
             id: opts.id,
         });
     }
-    public removeAllFilters() {
+    public removeAllActiveKeywordFilters() {
         this.areActiveFilters = false;
-        this.resetActiveFilters();
+        this.resetAppliedKeywordsInUI();
     }
     public removeFilter({ id }: { id: string }): void {
         this.removeAppliedFilterElement({
@@ -119,11 +119,11 @@ export class AppliedKeywordFilters {
         });
     }
     public removeKeywordFilter(opts: { id: string }) {
-        this.removeFilter({ id: opts.id });
+        this.removeFilter(opts);
     }
 
     public removeFreeTextFilter(opts: { id: string }) {
-        this.removeFilter({ id: opts.id });
+        this.removeFilter(opts);
     }
     private getValuesFromMapFilters(
         opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
@@ -133,7 +133,7 @@ export class AppliedKeywordFilters {
         return { displayNameForUI: opts.displayName };
     }
 
-    private resetActiveFilters() {
+    private resetAppliedKeywordsInUI() {
         this.removeBin.hidden = true;
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
     }

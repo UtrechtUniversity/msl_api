@@ -254,7 +254,7 @@ export class MapController {
     private async handleRemoveAllFilters() {
         this.searchFilters.filters = new Map();
 
-        this.appliedKeywords.removeAllFilters();
+        this.appliedKeywords.removeAllActiveKeywordFilters();
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
         });
@@ -353,7 +353,7 @@ export class MapController {
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.filters.size === 0)
-            this.appliedKeywords.removeAllFilters();
+            this.appliedKeywords.removeAllActiveKeywordFilters();
         // We never want to reset all filters at the same time
         this.resetPage();
         this.paginator = null;
@@ -372,7 +372,7 @@ export class MapController {
     }
     private async populateBasedOnActiveFiltersOrReset() {
         if (!this.areActiveFilters()) {
-            this.appliedKeywords.removeAllFilters();
+            this.appliedKeywords.removeAllActiveKeywordFilters();
             ({ facets: this.facets } = await this.getJsonFromRequest());
             this.keywordTree.updateTrees(this.facets, {});
         } else {
