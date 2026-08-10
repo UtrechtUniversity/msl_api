@@ -1,15 +1,12 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import {
     getDefaultTab,
+    getIdForKeyword,
     type ActiveFilterInfo,
     type Facets,
-    type FreeTextActiveInfo,
     type FreeTextAddInfo,
-    type FreeTextAddInfoWithType,
-    type FreeTextRemoveInfo,
     type KeywordAddInfo,
     type KeywordFilters,
-    type KeywordRemoveInfo,
     type Paginator,
 } from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
@@ -17,31 +14,25 @@ import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../types/datapublication";
 import { Pagination } from "./pagination";
-import { cloneDeep, isEmpty, omit } from "lodash";
+import { cloneDeep } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
-
+type FiltersInformation = ActiveFilterInfo;
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
-    filters: {
-        boundingBox: string;
-        page: number;
-        pageSize: 10;
-        keywords: KeywordFilters;
-        freeText: string[];
-    };
+    boundingBox: string;
+    page: number;
+    pageSize: 10;
+    filters: Map<string, FiltersInformation>;
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
-    filters: {
-        boundingBox: "",
-        page: 1,
-        pageSize: 10,
-        keywords: {},
-        freeText: [],
-    },
+    boundingBox: "",
+    page: 1,
+    pageSize: 10,
+    filters: new Map(),
 } as const;
 
 export class MapController {
@@ -102,21 +93,21 @@ export class MapController {
             onKeywordFilterAdd: async (opts: KeywordAddInfo): Promise<void> => {
                 this.handleKeywordFilterAdd(opts);
             },
-            onKeywordFilterRemove: async (
-                opts: KeywordRemoveInfo,
-            ): Promise<void> => {
+            onKeywordFilterRemove: async (opts: {
+                id: string;
+            }): Promise<void> => {
                 this.handleKeywordFilterRemove(opts);
             },
         });
         this.appliedKeywords.setHandlerfn({
-            onActiveKeywordRemove: async (
-                opts: KeywordRemoveInfo,
-            ): Promise<void> => {
+            onActiveKeywordRemove: async (opts: {
+                id: string;
+            }): Promise<void> => {
                 this.handleKeywordFilterRemove(opts);
             },
-            onActiveFreeTextRemove: async (
-                opts: FreeTextRemoveInfo,
-            ): Promise<void> => {
+            onActiveFreeTextRemove: async (opts: {
+                id: string;
+            }): Promise<void> => {
                 this.handleSearchTextRemove(opts);
             },
             onActiveFilterRemoveAll: async () => {
@@ -138,14 +129,14 @@ export class MapController {
             meta: this.paginator,
             facets: this.facets,
         } = await this.getJsonFromRequest());
-        this.keywordTree.updateTrees(
-            this.facets,
-            this.searchFilters.filters.keywords,
-        );
+
+        const keywords: KeywordFilters = this.getKeywords();
+
+        this.keywordTree.updateTrees(this.facets, keywords);
 
         await this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
-            includeIcons: !!this.searchFilters.filters.boundingBox,
+            includeIcons: !!this.searchFilters.boundingBox,
         });
 
         this.pagination.setArgs(this.paginator);
@@ -163,14 +154,14 @@ export class MapController {
         facets: Facets;
     }> {
         const boundingBox =
-            this.searchFilters.filters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
+            this.searchFilters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
             boundingBox: boundingBox,
-            page: this.searchFilters.filters.page.toString(),
-            pageSize: this.searchFilters.filters.pageSize.toString(),
-            keywords: JSON.stringify(this.searchFilters.filters.keywords),
+            page: this.searchFilters.page.toString(),
+            pageSize: this.searchFilters.pageSize.toString(),
+            keywords: JSON.stringify(this.getKeywords()),
         });
-        this.searchFilters.filters.freeText.forEach((text) => {
+        this.getFreeText().forEach((text) => {
             params.append("freeText[]", text);
         });
         const route = "/api/geoJsonDataPublications?" + params;
@@ -200,7 +191,7 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.filters.boundingBox = "";
+        this.searchFilters.boundingBox = "";
         this.resetComponentsAndData();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -208,14 +199,14 @@ export class MapController {
     public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        this.searchFilters.filters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.filters.boundingBox) return;
+        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
+        if (!this.searchFilters.boundingBox) return;
 
         await this.populateElements();
     }
 
     public async removeDrawing() {
-        this.searchFilters.filters.boundingBox = "";
+        this.searchFilters.boundingBox = "";
 
         this.resetAndRePopulateAfterUpdateTextFilters("remove");
 
@@ -235,13 +226,16 @@ export class MapController {
         this.paginator = null;
         this.results = null;
 
-        this.searchFilters.filters.page = page;
+        this.searchFilters.page = page;
         await this.populateElements();
     }
 
     public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
-        this.searchFilters.filters.freeText.push(value);
+        const id = getIdForFreeText();
+        this.searchFilters.filters.set(id, { value, id, type: "freeText" });
+
         this.appliedKeywords.addFilter({
+            id,
             value,
             type: "freeText",
         });
@@ -250,24 +244,16 @@ export class MapController {
         });
     }
 
-    private async handleSearchTextRemove(opts: FreeTextRemoveInfo) {
-        this.searchFilters.filters.freeText =
-            this.searchFilters.filters.freeText.filter(
-                (textFilter) => opts.value !== textFilter,
-            );
-        // We have to explicitly add the filter in appliedKeywords instance,
-        // since we are keeping state of the keywords
-        // and their order inside this component.
-        // That means that we don't make additions/deletion
-        // in standard reset methods of mapController.
-        this.appliedKeywords.removeFilter({ id: opts.id });
+    private async handleSearchTextRemove({ id }: { id: string }) {
+        this.searchFilters.filters.delete(id);
+        this.appliedKeywords.removeFilter({ id });
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
         });
     }
     private async handleRemoveAllFilters() {
-        this.searchFilters.filters.freeText = [];
-        this.searchFilters.filters.keywords = {};
+        this.searchFilters.filters = new Map();
+
         this.appliedKeywords.removeAllFilters();
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
@@ -278,11 +264,15 @@ export class MapController {
         value,
         displayName,
     }: KeywordAddInfo) {
-        const existingValuesInTree = this.searchFilters.filters.keywords[name];
-        this.searchFilters.filters.keywords[name] = [
-            ...(existingValuesInTree ?? []),
+        const id = getIdForKeyword({ value, name });
+        this.searchFilters.filters.set(id, {
             value,
-        ];
+            name,
+            id,
+            displayName,
+            type: "keyword",
+        });
+
         // We have to explicitly add the filter in appliedKeywords instance,
         // since we are keeping state of the keywords
         // and their order inside this component.
@@ -290,6 +280,7 @@ export class MapController {
         // in standard reset methods of mapController.
 
         this.appliedKeywords.addFilter({
+            id,
             name,
             value,
             displayName,
@@ -301,34 +292,41 @@ export class MapController {
     }
 
     private async handleKeywordFilterRemove({
-        name,
-        value,
-    }: KeywordRemoveInfo): Promise<void> {
-        let valuesInTree = this.searchFilters.filters.keywords[name];
-        if (!valuesInTree)
-            throw new Error("Key not found in tree. This is a bug.");
-        valuesInTree = valuesInTree.filter(
-            (valueOfKey: string) => valueOfKey !== value,
-        );
-        this.searchFilters.filters.keywords[name] = valuesInTree;
-
-        if (this.searchFilters.filters.keywords[name].length === 0) {
-            this.searchFilters.filters.keywords = omit(
-                this.searchFilters.filters.keywords,
-                name,
-            );
-        }
-
+        id,
+    }: {
+        id: string;
+    }): Promise<void> {
         this.appliedKeywords.removeKeywordFilter({
-            name,
-            value,
+            id,
         });
+        this.searchFilters.filters.delete(id);
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
         });
     }
 
     // Helper methods
+
+    private getFreeText(): string[] {
+        let freeText = [];
+        for (const [_, value] of this.searchFilters.filters) {
+            if (value.type !== "freeText") continue;
+            freeText.push(value.value);
+        }
+        return freeText;
+    }
+
+    private getKeywords(): KeywordFilters {
+        let keywords: KeywordFilters = {};
+        for (const [key, value] of this.searchFilters.filters) {
+            if (value.type !== "keyword") continue;
+            const element = keywords[value.name];
+            keywords[value.name] = element
+                ? [...element, value.value]
+                : [value.value];
+        }
+        return keywords;
+    }
     /**
      * Reset and populate after an update in search text or keywords filters.
      * For bounding box, we reset in starting drawing and
@@ -354,6 +352,8 @@ export class MapController {
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
+        if (this.searchFilters.filters.size === 0)
+            this.appliedKeywords.removeAllFilters();
         // We never want to reset all filters at the same time
         this.resetPage();
         this.paginator = null;
@@ -362,22 +362,19 @@ export class MapController {
     }
 
     private resetPage() {
-        this.searchFilters.filters.page = DEFAULT_SEARCH_FILTERS.filters.page;
+        this.searchFilters.page = DEFAULT_SEARCH_FILTERS.page;
     }
     private areActiveFilters(): boolean {
-        const filters = this.searchFilters.filters;
+        const filters = this.searchFilters;
         if (!!filters.boundingBox) return true;
-        if (!isEmpty(filters.keywords)) return true;
-        if (!!filters.freeText.length) return true;
+        if (filters.filters.size !== 0) return true;
         return false;
     }
     private async populateBasedOnActiveFiltersOrReset() {
         if (!this.areActiveFilters()) {
+            this.appliedKeywords.removeAllFilters();
             ({ facets: this.facets } = await this.getJsonFromRequest());
-            this.keywordTree.updateTrees(
-                this.facets,
-                this.searchFilters.filters.keywords,
-            );
+            this.keywordTree.updateTrees(this.facets, {});
         } else {
             await this.populateElements();
         }
@@ -388,3 +385,8 @@ const mapController = new MapController();
 await mapController.init();
 const menuButtons = new MenuButtons(mapController);
 const searchTextField = new SearchTextField(mapController);
+
+function getIdForFreeText() {
+    const id = "freeText" + "_" + crypto.randomUUID();
+    return id;
+}

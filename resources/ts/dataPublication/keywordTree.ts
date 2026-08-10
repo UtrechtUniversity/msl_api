@@ -1,12 +1,12 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
 import {
+    getIdForKeyword,
     throwWhenCallBackNotInitialized,
     type FacetItem,
     type Facets,
     type KeywordAddInfo,
     type KeywordFilters,
-    type KeywordRemoveInfo,
 } from "./utils";
 import { omit } from "lodash";
 
@@ -122,15 +122,15 @@ export class KeywordTree {
     private onKeywordFilterAdd: (
         filter: KeywordAddInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
-    private onKeywordFilterRemove: (
-        opts: KeywordRemoveInfo,
-    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onKeywordFilterRemove: (opts: {
+        id: string;
+    }) => Promise<void> | void = throwWhenCallBackNotInitialized;
     public setHandlerfn({
         onKeywordFilterAdd,
         onKeywordFilterRemove,
     }: {
         onKeywordFilterAdd: (opts: KeywordAddInfo) => Promise<void>;
-        onKeywordFilterRemove: (opts: KeywordRemoveInfo) => Promise<void>;
+        onKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
     }) {
         this.onKeywordFilterAdd = onKeywordFilterAdd;
         this.onKeywordFilterRemove = onKeywordFilterRemove;
@@ -239,8 +239,7 @@ export class KeywordTree {
                     });
                 } else if (e.type == "uncheck_node") {
                     await this.onKeywordFilterRemove({
-                        name,
-                        value,
+                        id: getIdForKeyword({ name, value }),
                     });
                 }
             }

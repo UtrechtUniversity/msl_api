@@ -1,15 +1,11 @@
-import { assertNotNull, assertNotUndefined } from "../helpers";
+import { assertNotNull } from "../helpers";
 import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
-    type FreeTextActiveInfo,
     type FreeTextAddInfo,
     type FreeTextAddInfoWithType,
-    type FreeTextRemoveInfo,
-    type KeywordActiveInfo,
     type KeywordAddInfo,
     type KeywordAddInfoWithType,
-    type KeywordRemoveInfo,
 } from "./utils";
 
 const NO_FILTER_ELEMENT =
@@ -22,17 +18,15 @@ const CLOSE_ICON = `
         </svg>` as const;
 
 export class AppliedKeywordFilters {
-    // In components other than mapController, we don't keep track of state
-    // Here we have to keep track of it, since order matters!
-    private appliedFilters = new Map<string, ActiveFilterInfo>();
+    private areActiveFilters = false;
     private removeBin: HTMLElement;
     private activeFilterContainer: HTMLElement;
-    private onActiveKeywordRemove: (
-        opts: KeywordRemoveInfo,
-    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
-    private onActiveFreeTextRemove: (
-        opts: FreeTextRemoveInfo,
-    ) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onActiveKeywordRemove: (opts: {
+        id: string;
+    }) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onActiveFreeTextRemove: (opts: {
+        id: string;
+    }) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private onActiveFilterRemoveAll: () => void | Promise<void> =
         throwWhenCallBackNotInitialized;
 
@@ -59,8 +53,8 @@ export class AppliedKeywordFilters {
         onActiveFreeTextRemove,
         onActiveFilterRemoveAll,
     }: {
-        onActiveKeywordRemove: (opts: KeywordRemoveInfo) => Promise<void>;
-        onActiveFreeTextRemove: (opts: FreeTextRemoveInfo) => Promise<void>;
+        onActiveKeywordRemove: (opts: { id: string }) => Promise<void>;
+        onActiveFreeTextRemove: (opts: { id: string }) => Promise<void>;
         onActiveFilterRemoveAll: () => Promise<void>;
     }) {
         this.onActiveKeywordRemove = onActiveKeywordRemove;
@@ -70,15 +64,18 @@ export class AppliedKeywordFilters {
     }
 
     private addAppliedFilterElement({
+        type,
         displayName,
         id,
     }: {
+        type: "keyword" | "freeText";
         displayName: string;
         id: string;
     }) {
-        //TODO explain this or move it to remove? Or have it as default for when we start?
-        if (this.appliedFilters.size === 1)
-            this.activeFilterContainer.innerHTML = "";
+        if (!this.areActiveFilters) this.activeFilterContainer.innerHTML = "";
+
+        this.areActiveFilters = true;
+
         this.removeBin.hidden = false;
 
         const element = createKeywordElement({
@@ -87,110 +84,61 @@ export class AppliedKeywordFilters {
         });
         const self = this;
         element.addEventListener("click", async () => {
-            const mtdataInfo = self.appliedFilters.get(id);
-            assertNotUndefined(
-                mtdataInfo,
-                `Active filter with display name '${displayName}' should exist. This is a bug.`,
-            );
-            mtdataInfo.type === "keyword"
-                ? await self.onActiveKeywordRemove(mtdataInfo)
-                : await self.onActiveFreeTextRemove(mtdataInfo);
+            type === "keyword"
+                ? await self.onActiveKeywordRemove({ id })
+                : await self.onActiveFreeTextRemove({ id });
         });
 
         this.activeFilterContainer.appendChild(element);
     }
 
     private removeAppliedFilterElement({ id }: { id: string }) {
-        if (!this.appliedFilters.size) {
-            this.resetActiveFilters();
-
-            return;
-        }
         const elementToRemove = document.getElementById(id);
         assertNotNull(
             elementToRemove,
             `Element with id '${id}' could not be found. This is a bug.`,
         );
         elementToRemove.remove();
+
         return;
     }
 
-    public addFilter(
-        opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
-    ): void {
-        const { displayNameForUI, id } = this.getValuesFromMapFilters(opts);
-        const metadata: ActiveFilterInfo = {
-            ...opts,
-            id,
-        };
+    public addFilter(opts: ActiveFilterInfo): void {
+        const { displayNameForUI } = this.getValuesFromMapFilters(opts);
 
-        this.appliedFilters.set(id, metadata);
         this.addAppliedFilterElement({
+            type: opts.type,
             displayName: displayNameForUI,
-            id,
+            id: opts.id,
         });
     }
     public removeAllFilters() {
-        this.appliedFilters = new Map();
+        this.areActiveFilters = false;
         this.resetActiveFilters();
     }
     public removeFilter({ id }: { id: string }): void {
-        this.appliedFilters.delete(id);
         this.removeAppliedFilterElement({
             id,
         });
     }
-    public removeKeywordFilter(
-        opts: Pick<KeywordActiveInfo, "name" | "value">,
-    ) {
-        const id = getIdForActiveKeyword({
-            value: opts.value,
-            name: opts.name,
-        });
-        this.removeFilter({ id });
+    public removeKeywordFilter(opts: { id: string }) {
+        this.removeFilter({ id: opts.id });
     }
 
-    public removeFreeTextFilter(opts: Pick<FreeTextActiveInfo, "id">) {
+    public removeFreeTextFilter(opts: { id: string }) {
         this.removeFilter({ id: opts.id });
     }
     private getValuesFromMapFilters(
         opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
-    ): { displayNameForUI: string; id: string } {
-        if (opts.type === "freeText")
-            return this.getValuesForFreeText({ value: opts.value });
+    ): { displayNameForUI: string } {
+        if (opts.type === "freeText") return { displayNameForUI: opts.value };
 
-        return this.getValuesForKeywords(opts);
-    }
-
-    private getValuesForKeywords({
-        name,
-        value,
-        displayName,
-    }: KeywordAddInfo): {
-        displayNameForUI: string;
-        id: string;
-    } {
-        assertNotUndefined(
-            displayName,
-            "Field should by definition have a value. This is a bug.",
-        );
-        const displayNameForUI = displayName;
-        const id = getIdForActiveKeyword({ value, name });
-        return { displayNameForUI, id };
-    }
-
-    private getValuesForFreeText({ value }: FreeTextAddInfo): {
-        displayNameForUI: string;
-        id: string;
-    } {
-        const displayNameForUI = "Search: " + value;
-        const id = "freeText" + "_" + crypto.randomUUID();
-        return { displayNameForUI, id };
+        return { displayNameForUI: opts.displayName };
     }
 
     private resetActiveFilters() {
-        this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
         this.removeBin.hidden = true;
+        this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
     }
 }
 
@@ -201,16 +149,6 @@ function getElementOrThrow(elementId: string, name: string) {
         ` Element '${name}'could not be found. This is a bug.`,
     );
     return element;
-}
-
-function getIdForActiveKeyword({
-    value,
-    name,
-}: {
-    value: string;
-    name: string;
-}) {
-    return "keyword" + "_" + (value !== "true" ? value : name);
 }
 
 function createKeywordElement({

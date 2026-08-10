@@ -90,11 +90,10 @@ export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
 export type ActiveFilterInfo = KeywordActiveInfo | FreeTextActiveInfo;
 
-export interface KeywordActiveInfo extends KeywordAddInfoWithType {
+interface KeywordActiveInfo extends KeywordAddInfoWithType {
     id: string;
 }
-
-export interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
+interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
     id: string;
 }
 
@@ -110,16 +109,16 @@ export type KeywordAddInfo = {
     displayName: string;
 };
 
-export type KeywordRemoveInfo = {
-    name: string;
-    value: string;
-};
-
 export type FreeTextAddInfo = {
     value: string;
 };
 
-export type FreeTextRemoveInfo = {
+export function getIdForKeyword({
+    value,
+    name,
+}: {
     value: string;
-    id: string;
-};
+    name: string;
+}) {
+    return "keyword" + "_" + (value !== "true" ? value : name);
+}
