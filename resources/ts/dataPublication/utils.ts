@@ -88,22 +88,24 @@ export type Facets = {
 };
 export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
-export type ActiveFilterInfo = KeywordActiveInfo | FreeTextActiveInfo;
+export type ActiveKeywordFilterInfo =
+    | TreeKeywordActiveInfo
+    | FreeTextActiveInfo;
 
-interface KeywordActiveInfo extends KeywordAddInfoWithType {
+interface TreeKeywordActiveInfo extends TreeKeywordAddInfoWithType {
     id: string;
 }
 interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
     id: string;
 }
 
-export interface KeywordAddInfoWithType extends KeywordAddInfo {
-    type: "keyword";
+export interface TreeKeywordAddInfoWithType extends TreeKeywordAddInfo {
+    type: TreeKeyword;
 }
 export interface FreeTextAddInfoWithType extends FreeTextAddInfo {
-    type: "freeText";
+    type: FreeTextSearchKeyword;
 }
-export type KeywordAddInfo = {
+export type TreeKeywordAddInfo = {
     name: string;
     value: string;
     displayName: string;
@@ -113,7 +115,7 @@ export type FreeTextAddInfo = {
     value: string;
 };
 
-export function getIdForKeyword({
+export function getIdForTreeKeyword({
     value,
     name,
 }: {
@@ -122,3 +124,11 @@ export function getIdForKeyword({
 }) {
     return "keyword" + "_" + (value !== "true" ? value : name);
 }
+
+export const TREE_KEYWORD = "treeKeyword" as const;
+export type TreeKeyword = typeof TREE_KEYWORD;
+
+export const FREE_TEXT_SEARCH_KEYWORD = "freeTextKeyword" as const;
+export type FreeTextSearchKeyword = typeof FREE_TEXT_SEARCH_KEYWORD;
+
+export type KeywordType = TreeKeyword | FreeTextSearchKeyword;

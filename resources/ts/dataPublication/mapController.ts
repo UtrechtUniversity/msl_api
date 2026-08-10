@@ -1,13 +1,15 @@
 import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
 import {
+    FREE_TEXT_SEARCH_KEYWORD,
     getDefaultTab,
-    getIdForKeyword,
-    type ActiveFilterInfo,
+    getIdForTreeKeyword,
+    type ActiveKeywordFilterInfo,
     type Facets,
     type FreeTextAddInfo,
-    type KeywordAddInfo,
+    type TreeKeywordAddInfo,
     type KeywordFilters as KeywordFiltersAsRequestArgs,
     type Paginator,
+    TREE_KEYWORD,
 } from "./utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
@@ -28,7 +30,7 @@ type SearchFilter = {
      * We want to keep order of active filters,
      *  without differentiating between keywords or free text search arguments.
      */
-    activeKeywordFilters: Map<string, ActiveFilterInfo>;
+    activeKeywordFilters: Map<string, ActiveKeywordFilterInfo>;
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
@@ -93,25 +95,27 @@ export class MapController {
             onPageChange: async (page) => this.handlePageChange(page),
         });
         this.keywordTree.setHandlerfn({
-            onKeywordFilterAdd: async (opts: KeywordAddInfo): Promise<void> => {
-                this.handleKeywordFilterAdd(opts);
+            onTreeKeywordFilterAdd: async (
+                opts: TreeKeywordAddInfo,
+            ): Promise<void> => {
+                this.handleTreeKeywordFilterAdd(opts);
             },
-            onKeywordFilterRemove: async (opts: {
+            onTreeKeywordFilterRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleKeywordFilterRemove(opts);
+                this.handleTreeKeywordFilterRemove(opts);
             },
         });
         this.appliedKeywords.setHandlerfn({
-            onActiveKeywordRemove: async (opts: {
+            onActiveTreeKeywordRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleKeywordFilterRemove(opts);
+                this.handleTreeKeywordFilterRemove(opts);
             },
-            onActiveFreeTextRemove: async (opts: {
+            onActiveFreeTextKeywordRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleSearchTextRemove(opts);
+                this.handleFreeTextKeywordRemove(opts);
             },
             onActiveFilterRemoveAll: async () => {
                 this.handleRemoveAllFilters();
@@ -239,20 +243,20 @@ export class MapController {
         this.searchFilters.activeKeywordFilters.set(id, {
             value,
             id,
-            type: "freeText",
+            type: FREE_TEXT_SEARCH_KEYWORD,
         });
 
         this.appliedKeywords.addFilter({
             id,
             value,
-            type: "freeText",
+            type: FREE_TEXT_SEARCH_KEYWORD,
         });
         await this.resetAndRePopulateAfterUpdateTextFilters("add", {
             except: "boundingBox",
         });
     }
 
-    private async handleSearchTextRemove({ id }: { id: string }) {
+    private async handleFreeTextKeywordRemove({ id }: { id: string }) {
         this.searchFilters.activeKeywordFilters.delete(id);
         this.appliedKeywords.removeFilter({ id });
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
@@ -267,18 +271,18 @@ export class MapController {
             except: "boundingBox",
         });
     }
-    private async handleKeywordFilterAdd({
+    private async handleTreeKeywordFilterAdd({
         name,
         value,
         displayName,
-    }: KeywordAddInfo) {
-        const id = getIdForKeyword({ value, name });
+    }: TreeKeywordAddInfo) {
+        const id = getIdForTreeKeyword({ value, name });
         this.searchFilters.activeKeywordFilters.set(id, {
             value,
             name,
             id,
             displayName,
-            type: "keyword",
+            type: TREE_KEYWORD,
         });
 
         this.appliedKeywords.addFilter({
@@ -286,14 +290,14 @@ export class MapController {
             name,
             value,
             displayName,
-            type: "keyword",
+            type: TREE_KEYWORD,
         });
         await this.resetAndRePopulateAfterUpdateTextFilters("add", {
             except: "boundingBox",
         });
     }
 
-    private async handleKeywordFilterRemove({
+    private async handleTreeKeywordFilterRemove({
         id,
     }: {
         id: string;
@@ -311,21 +315,21 @@ export class MapController {
 
     private getFreeTextFiltersAsArray(): string[] {
         let freeText = [];
-        for (const [_, value] of this.searchFilters.activeKeywordFilters) {
-            if (value.type !== "freeText") continue;
-            freeText.push(value.value);
+        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
+            if (metadata.type !== FREE_TEXT_SEARCH_KEYWORD) continue;
+            freeText.push(metadata.value);
         }
         return freeText;
     }
 
     private getKeywordsAsRequestArgs(): KeywordFiltersAsRequestArgs {
         let keywords: KeywordFiltersAsRequestArgs = {};
-        for (const [key, value] of this.searchFilters.activeKeywordFilters) {
-            if (value.type !== "keyword") continue;
-            const element = keywords[value.name];
-            keywords[value.name] = element
-                ? [...element, value.value]
-                : [value.value];
+        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
+            if (metadata.type !== TREE_KEYWORD) continue;
+            const values = keywords[metadata.name];
+            keywords[metadata.name] = values
+                ? [...values, metadata.value]
+                : [metadata.value];
         }
         return keywords;
     }

@@ -1,11 +1,11 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
 import {
-    getIdForKeyword,
+    getIdForTreeKeyword,
     throwWhenCallBackNotInitialized,
     type FacetItem,
     type Facets,
-    type KeywordAddInfo,
+    type TreeKeywordAddInfo,
     type KeywordFilters,
 } from "./utils";
 import { omit } from "lodash";
@@ -120,17 +120,17 @@ export class KeywordTree {
     private suppressChangeEvents: boolean = false;
 
     private onKeywordFilterAdd: (
-        filter: KeywordAddInfo,
+        filter: TreeKeywordAddInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private onKeywordFilterRemove: (opts: {
         id: string;
     }) => Promise<void> | void = throwWhenCallBackNotInitialized;
     public setHandlerfn({
-        onKeywordFilterAdd,
-        onKeywordFilterRemove,
+        onTreeKeywordFilterAdd: onKeywordFilterAdd,
+        onTreeKeywordFilterRemove: onKeywordFilterRemove,
     }: {
-        onKeywordFilterAdd: (opts: KeywordAddInfo) => Promise<void>;
-        onKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
+        onTreeKeywordFilterAdd: (opts: TreeKeywordAddInfo) => Promise<void>;
+        onTreeKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
     }) {
         this.onKeywordFilterAdd = onKeywordFilterAdd;
         this.onKeywordFilterRemove = onKeywordFilterRemove;
@@ -239,7 +239,7 @@ export class KeywordTree {
                     });
                 } else if (e.type == "uncheck_node") {
                     await this.onKeywordFilterRemove({
-                        id: getIdForKeyword({ name, value }),
+                        id: getIdForTreeKeyword({ name, value }),
                     });
                 }
             }

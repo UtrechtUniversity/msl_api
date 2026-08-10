@@ -1,9 +1,12 @@
 import { assertNotNull } from "../helpers";
 import {
+    FREE_TEXT_SEARCH_KEYWORD,
     throwWhenCallBackNotInitialized,
-    type ActiveFilterInfo,
+    TREE_KEYWORD,
+    type ActiveKeywordFilterInfo,
     type FreeTextAddInfoWithType,
-    type KeywordAddInfoWithType,
+    type KeywordType,
+    type TreeKeywordAddInfoWithType,
 } from "./utils";
 
 const NO_FILTER_ELEMENT =
@@ -47,12 +50,12 @@ export class AppliedKeywordFilters {
     }
 
     public setHandlerfn({
-        onActiveKeywordRemove,
-        onActiveFreeTextRemove,
+        onActiveTreeKeywordRemove: onActiveKeywordRemove,
+        onActiveFreeTextKeywordRemove: onActiveFreeTextRemove,
         onActiveFilterRemoveAll,
     }: {
-        onActiveKeywordRemove: (opts: { id: string }) => Promise<void>;
-        onActiveFreeTextRemove: (opts: { id: string }) => Promise<void>;
+        onActiveTreeKeywordRemove: (opts: { id: string }) => Promise<void>;
+        onActiveFreeTextKeywordRemove: (opts: { id: string }) => Promise<void>;
         onActiveFilterRemoveAll: () => Promise<void>;
     }) {
         this.onActiveKeywordRemove = onActiveKeywordRemove;
@@ -66,7 +69,7 @@ export class AppliedKeywordFilters {
         displayName,
         id,
     }: {
-        type: "keyword" | "freeText";
+        type: KeywordType;
         displayName: string;
         id: string;
     }) {
@@ -81,7 +84,7 @@ export class AppliedKeywordFilters {
             id,
         });
         element.addEventListener("click", async () => {
-            type === "keyword"
+            type === TREE_KEYWORD
                 ? await this.onActiveKeywordRemove({ id })
                 : await this.onActiveFreeTextRemove({ id });
         });
@@ -100,8 +103,8 @@ export class AppliedKeywordFilters {
         return;
     }
 
-    public addFilter(opts: ActiveFilterInfo): void {
-        const { displayNameForUI } = this.getValuesFromMapFilters(opts);
+    public addFilter(opts: ActiveKeywordFilterInfo): void {
+        const { displayNameForUI } = this.getDisplayNameForKeywords(opts);
 
         this.addAppliedFilterElement({
             type: opts.type,
@@ -125,10 +128,11 @@ export class AppliedKeywordFilters {
     public removeFreeTextFilter(opts: { id: string }) {
         this.removeFilter(opts);
     }
-    private getValuesFromMapFilters(
-        opts: KeywordAddInfoWithType | FreeTextAddInfoWithType,
+    private getDisplayNameForKeywords(
+        opts: TreeKeywordAddInfoWithType | FreeTextAddInfoWithType,
     ): { displayNameForUI: string } {
-        if (opts.type === "freeText") return { displayNameForUI: opts.value };
+        if (opts.type === FREE_TEXT_SEARCH_KEYWORD)
+            return { displayNameForUI: opts.value };
 
         return { displayNameForUI: opts.displayName };
     }
