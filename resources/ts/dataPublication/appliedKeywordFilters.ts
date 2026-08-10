@@ -2,9 +2,7 @@ import { assertNotNull } from "../helpers";
 import {
     throwWhenCallBackNotInitialized,
     type ActiveFilterInfo,
-    type FreeTextAddInfo,
     type FreeTextAddInfoWithType,
-    type KeywordAddInfo,
     type KeywordAddInfoWithType,
 } from "./utils";
 
@@ -82,11 +80,10 @@ export class AppliedKeywordFilters {
             displayName,
             id,
         });
-        const self = this;
         element.addEventListener("click", async () => {
             type === "keyword"
-                ? await self.onActiveKeywordRemove({ id })
-                : await self.onActiveFreeTextRemove({ id });
+                ? await this.onActiveKeywordRemove({ id })
+                : await this.onActiveFreeTextRemove({ id });
         });
 
         this.activeFilterContainer.appendChild(element);
