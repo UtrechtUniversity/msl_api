@@ -416,7 +416,6 @@ export class KeywordTree {
         const self = this;
         const tree =
             treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
-        const instance = tree.jstree(true);
 
         tree.jstree()
             .get_json("#", {
