@@ -19,7 +19,7 @@ const CLOSE_ICON = `
         </svg>` as const;
 
 export class AppliedKeywordFilters {
-    private areActiveFilters = false;
+    private areExistingAppliedFilters = false;
     private removeBin: HTMLElement;
     private activeFilterContainer: HTMLElement;
     private onActiveKeywordRemove: (opts: {
@@ -73,9 +73,10 @@ export class AppliedKeywordFilters {
         displayName: string;
         id: string;
     }) {
-        if (!this.areActiveFilters) this.activeFilterContainer.innerHTML = "";
+        if (!this.areExistingAppliedFilters)
+            this.activeFilterContainer.innerHTML = "";
 
-        this.areActiveFilters = true;
+        this.areExistingAppliedFilters = true;
 
         this.removeBin.hidden = false;
 
@@ -113,7 +114,7 @@ export class AppliedKeywordFilters {
         });
     }
     public removeAllActiveKeywordFilters() {
-        this.areActiveFilters = false;
+        this.areExistingAppliedFilters = false;
         this.resetAppliedKeywordsInUI();
     }
     public removeFilter({ id }: { id: string }): void {
