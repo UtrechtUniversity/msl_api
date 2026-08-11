@@ -26,7 +26,9 @@ export class SearchTextField {
                 inputField,
                 `Input search field was not found. This is a bug.`,
             );
-            await self.mapController.handleSearchTextAdd(inputField.value);
+            await self.mapController.handleSearchTextAdd({
+                value: inputField.value,
+            });
             inputField.value = "";
         });
     }

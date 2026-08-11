@@ -1,9 +1,11 @@
 import { assertNotUndefined } from "../helpers";
 import "jstree";
 import {
+    getIdForTreeKeyword,
     throwWhenCallBackNotInitialized,
     type FacetItem,
     type Facets,
+    type TreeKeywordAddInfo,
     type KeywordFilters,
 } from "./utils";
 import { omit } from "lodash";
@@ -115,27 +117,23 @@ export class KeywordTree {
     private originalToggle: JQuery<HTMLInputElement> = $(
         TREES.original.filterToggle,
     );
+    private suppressChangeEvents: boolean = false;
 
-    private onKeywordFilterUpdate: (
-        type: "remove" | "add",
-        filter: {
-            key: string;
-            value: string;
-        },
+    private onKeywordFilterAdd: (
+        filter: TreeKeywordAddInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
-
+    private onKeywordFilterRemove: (opts: {
+        id: string;
+    }) => Promise<void> | void = throwWhenCallBackNotInitialized;
     public setHandlerfn({
-        onKeywordFilterUpdate,
+        onTreeKeywordFilterAdd: onKeywordFilterAdd,
+        onTreeKeywordFilterRemove: onKeywordFilterRemove,
     }: {
-        onKeywordFilterUpdate: (
-            type: "remove" | "add",
-            filter: {
-                key: string;
-                value: string;
-            },
-        ) => Promise<void>;
+        onTreeKeywordFilterAdd: (opts: TreeKeywordAddInfo) => Promise<void>;
+        onTreeKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
     }) {
-        this.onKeywordFilterUpdate = onKeywordFilterUpdate;
+        this.onKeywordFilterAdd = onKeywordFilterAdd;
+        this.onKeywordFilterRemove = onKeywordFilterRemove;
     }
 
     public async init(facets: Facets) {
@@ -210,7 +208,7 @@ export class KeywordTree {
                 key: name,
                 // We use this function as filter,
                 // so that when we reload the page,
-                // the checks are removed as fefault state
+                // the checks are removed as default state
                 filter: function (state: JSTreeStaticDefaults) {
                     state = omit(state, "checkbox");
                     return state;
@@ -228,18 +226,20 @@ export class KeywordTree {
         (e: JQuery.Event, data: JsTreeCheckEventData) => void
     > {
         return async (e: JQuery.Event, data: JsTreeCheckEventData) => {
+            if (this.suppressChangeEvents) return;
             if (data.node.original.extra.type == "filter") {
-                const key = data.node.original.extra.filterName;
+                const name = data.node.original.extra.filterName;
                 const value = data.node.original.extra.filterValue;
+                const displayName = data.node.original.originalText;
                 if (e.type == "check_node") {
-                    await this.onKeywordFilterUpdate("add", {
-                        key,
+                    await this.onKeywordFilterAdd({
+                        name,
                         value,
+                        displayName,
                     });
                 } else if (e.type == "uncheck_node") {
-                    await this.onKeywordFilterUpdate("remove", {
-                        key,
-                        value,
+                    await this.onKeywordFilterRemove({
+                        id: getIdForTreeKeyword({ name, value }),
                     });
                 }
             }
@@ -274,16 +274,36 @@ export class KeywordTree {
     ) {
         for (let i = nodes.length - 1; i >= 0; i--) {
             const node = nodes[i];
+
             assertNotUndefined(node, `Node is undefined. This is a bug.`);
 
             const tree =
                 treeType === ORIGINAL
                     ? this.originalTree.jstree(true)
                     : this.interpretedTree.jstree(true);
+
             // We want nodes from subtrees to be disabled initially
             if (disableByDefault) {
                 tree.disable_node(node.id);
             }
+            // We want to have checked the active filters and unchecked all the rest of the nodes.
+            const activeFilterNode = activeFilters[node.extra.filterName];
+            // We are now removing keywords from outside the current element, too.
+            // For this reason, we want to update checked/unchecked nodes independently of jstree change events.
+            // Unfortunately, jstree doesn't have an option to check/uncheck node without firing the relevant event.
+            // For this reason, we have to use a custom flag.
+            this.suppressChangeEvents = true;
+
+            if (!activeFilterNode) tree.uncheck_node(node.id, "");
+
+            if (activeFilterNode) {
+                activeFilterNode.includes(node.extra.filterValue)
+                    ? tree.check_node(node.id, "")
+                    : tree.uncheck_node(node.id, "");
+            }
+
+            this.suppressChangeEvents = false;
+
             // A.
             const nodeInFacets = this.facets[node.extra.filterName];
             if (!nodeInFacets) {

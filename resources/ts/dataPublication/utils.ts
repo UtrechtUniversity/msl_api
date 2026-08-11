@@ -1,4 +1,3 @@
-import { assertNotUndefined } from "../helpers.js";
 import {
     EXCLUSIVE,
     INCLUSIVE,
@@ -64,7 +63,7 @@ export function throwWhenCallBackNotInitialized() {
 }
 
 export function getDefaultTab(): GeoFeatureResultSet {
-    for (const [tabName, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
+    for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
         typeof TAB_CONFIG
     >) {
         if (tabInfo.active) {
@@ -89,3 +88,47 @@ export type Facets = {
 };
 export type FacetItem = { name: string; display_name: string; count: string };
 export type KeywordFilters = { [key: string]: string[] };
+export type ActiveKeywordFilterInfo =
+    | TreeKeywordActiveInfo
+    | FreeTextActiveInfo;
+
+interface TreeKeywordActiveInfo extends TreeKeywordAddInfoWithType {
+    id: string;
+}
+interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
+    id: string;
+}
+
+export interface TreeKeywordAddInfoWithType extends TreeKeywordAddInfo {
+    type: TreeKeyword;
+}
+export interface FreeTextAddInfoWithType extends FreeTextAddInfo {
+    type: FreeTextSearchKeyword;
+}
+export type TreeKeywordAddInfo = {
+    name: string;
+    value: string;
+    displayName: string;
+};
+
+export type FreeTextAddInfo = {
+    value: string;
+};
+
+export function getIdForTreeKeyword({
+    value,
+    name,
+}: {
+    value: string;
+    name: string;
+}) {
+    return "keyword" + "_" + (value !== "true" ? value : name);
+}
+
+export const TREE_KEYWORD = "treeKeyword" as const;
+export type TreeKeyword = typeof TREE_KEYWORD;
+
+export const FREE_TEXT_SEARCH_KEYWORD = "freeTextKeyword" as const;
+export type FreeTextSearchKeyword = typeof FREE_TEXT_SEARCH_KEYWORD;
+
+export type KeywordType = TreeKeyword | FreeTextSearchKeyword;
