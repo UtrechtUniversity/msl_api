@@ -10,6 +10,7 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
+const HIDE_EMPTY_TERMS = "datapublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
@@ -190,7 +191,7 @@ export class KeywordTree {
                     : self.originalTree.jstree("close_all");
             });
 
-            self.hideEmptyTerms();
+            self.handleHideEmptyTerms();
         });
     }
 
@@ -215,6 +216,12 @@ export class KeywordTree {
                 },
             },
         }).on("state_ready.jstree", async () => {
+            const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
+            if (hideInStorage !== null) {
+                hideInStorage === "true"
+                    ? this.hideEmptyTerms()
+                    : this.unhideEmptyTerms();
+            }
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
                 await this.handleFilterChange(),
@@ -407,9 +414,10 @@ export class KeywordTree {
         { hide }: { hide: boolean },
     ) {
         const self = this;
-
         const tree =
             treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
+        const instance = tree.jstree(true);
+
         tree.jstree()
             .get_json("#", {
                 flat: true,
@@ -423,61 +431,52 @@ export class KeywordTree {
             });
     }
     private hideEmptyTerms() {
+        //set interpreted/enriched tree
+        this.hideNodesForTree(INTERPRETED, { hide: true });
+
+        //set original tree
+        this.hideNodesForTree(ORIGINAL, { hide: true });
+
+        this.originalTree
+            .jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element: TreeNodeWithParent) => {
+                if (!element.state.disabled && "parent" in element) {
+                    let parent = element.parent;
+
+                    if (parent) {
+                        while (parent) {
+                            this.originalTree.jstree().show_node(parent, false);
+                            parent = parent.parent;
+                        }
+                    }
+
+                    this.originalTree.jstree().show_node(element, false);
+                }
+            });
+    }
+    private unhideEmptyTerms() {
+        //set interpreted/enriched tree
+        this.hideNodesForTree(INTERPRETED, { hide: false });
+
+        //set original tree
+        this.hideNodesForTree(ORIGINAL, { hide: false });
+    }
+    private handleHideEmptyTerms() {
         const self = this;
         ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
-            "change",
+            "click",
             function () {
                 if (this.checked) {
-                    localStorage.setItem(
-                        "datapublicationMapHideEmptyTerms",
-                        "" + this.checked,
-                    );
-
-                    //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, { hide: true });
-
-                    //set original tree
-                    self.hideNodesForTree(ORIGINAL, { hide: true });
-
-                    self.originalTree
-                        .jstree()
-                        .get_json("#", {
-                            flat: true,
-                        })
-                        .forEach((element: TreeNodeWithParent) => {
-                            if (
-                                !element.state.disabled &&
-                                "parent" in element
-                            ) {
-                                let parent = element.parent;
-
-                                if (parent) {
-                                    while (parent) {
-                                        self.originalTree
-                                            .jstree()
-                                            .show_node(parent, false);
-                                        parent = parent.parent;
-                                    }
-                                }
-
-                                self.originalTree
-                                    .jstree()
-                                    .show_node(element, false);
-                            }
-                        });
+                    localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
+                    self.hideEmptyTerms();
+                    return;
                 }
-                if (!this.checked) {
-                    localStorage.setItem(
-                        "datapublicationMapHideEmptyTerms",
-                        "" + false,
-                    );
 
-                    //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, { hide: false });
-
-                    //set original tree
-                    self.hideNodesForTree(ORIGINAL, { hide: false });
-                }
+                localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
+                self.unhideEmptyTerms();
             },
         );
     }
