@@ -142,14 +142,14 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                                 fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
                             )->count('inside', 3)->has(
                                 'inside.0',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->where('data_publication_doi', '10.1594/pangaea.770250')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250')->etc()
                             )->has(
                                 'inside.1',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('data_publication_doi', '10.1594/pangaea.770250')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250')->etc()
                             )
                             ->has(
                                 'inside.2',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('data_publication_doi', '10.1594/pangaea.770250_3')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250_3')->etc()
                             )->etc())
                 )
                 ->has('facets')

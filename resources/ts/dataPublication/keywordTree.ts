@@ -99,7 +99,7 @@ const TREES = {
 } as const;
 
 const IS_INTERPRETED_FILTER_ENABLED =
-    "datapublicationMapInterpretedFilters" as const;
+    "dataPublicationMapInterpretedFilters" as const;
 // @Decision:
 // The state of tree, interpreted or original, is not of relevant in MapController.
 // The filtering works the same for any keyword, since original is a subtree of interpreted.
