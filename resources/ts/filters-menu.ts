@@ -141,6 +141,9 @@ $("#jstree-interpreted")
         );
     })
     .bind("ready.jstree", function (event, data) {
+        localStorage.getItem("hideEmptyTerms")
+            ? hideEmptyTerms()
+            : unhideEmptyTerms();
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
@@ -324,82 +327,83 @@ $(document).ready(function () {
     $("#hide_empty_terms").change(function () {
         if (this.checked) {
             localStorage.setItem("hideEmptyTerms", true);
-
-            //set interpreted/enriched tree
-            $("#jstree-interpreted")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-interpreted").jstree().hide_node(element);
-                    }
-                });
-
-            //set original tree
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-original")
-                            .jstree()
-                            .hide_node(element, false);
-                    }
-                });
-
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (!element.state.disabled) {
-                        var parent = element.parent;
-
-                        if (parent) {
-                            while (parent) {
-                                $("#jstree-original")
-                                    .jstree()
-                                    .show_node(parent);
-                                parent = parent.parent;
-                            }
-                        }
-
-                        $("#jstree-original").jstree().show_node(element);
-                    }
-                });
+            hideEmptyTerms();
         } else {
             localStorage.setItem("hideEmptyTerms", false);
-
-            //set interpreted/enriched tree
-            $("#jstree-interpreted")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-interpreted").jstree().show_node(element);
-                    }
-                });
-
-            //set original tree
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-original").jstree().show_node(element);
-                    }
-                });
+            unhideEmptyTerms();
         }
     });
 
     //$('[data-toggle=tooltip]').tooltip();
 });
+
+function hideEmptyTerms() {
+    //set interpreted/enriched tree
+    $("#jstree-interpreted")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-interpreted").jstree().hide_node(element);
+            }
+        });
+
+    //set original tree
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-original").jstree().hide_node(element, false);
+            }
+        });
+
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (!element.state.disabled) {
+                var parent = element.parent;
+
+                if (parent) {
+                    while (parent) {
+                        $("#jstree-original").jstree().show_node(parent);
+                        parent = parent.parent;
+                    }
+                }
+
+                $("#jstree-original").jstree().show_node(element);
+            }
+        });
+}
+function unhideEmptyTerms() {
+    //set interpreted/enriched tree
+    $("#jstree-interpreted")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-interpreted").jstree().show_node(element);
+            }
+        });
+
+    //set original tree
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-original").jstree().show_node(element);
+            }
+        });
+}
