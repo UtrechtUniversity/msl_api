@@ -328,13 +328,11 @@ $(document).ready(function () {
         if (this.checked) {
             localStorage.setItem("hideEmptyTerms", true);
             hideEmptyTerms();
-        } else {
-            localStorage.setItem("hideEmptyTerms", false);
-            unhideEmptyTerms();
+            return;
         }
+        localStorage.setItem("hideEmptyTerms", false);
+        unhideEmptyTerms();
     });
-
-    //$('[data-toggle=tooltip]').tooltip();
 });
 
 function hideEmptyTerms() {
