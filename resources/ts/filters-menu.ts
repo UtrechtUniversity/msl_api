@@ -8,9 +8,8 @@ URLSearchParams.prototype.remove = function (key, value) {
 function processNodes(nodes, original = false) {
     for (var i = nodes.length - 1; i >= 0; i--) {
         var node = nodes[i];
-        // if (node.extra.type == "filter") {
         if (node.extra.filterName in activeFilters) {
-            //A. An einai to node sta active filters sta activeFilters as einai included sta active nodes.
+            //A. If node is in active filters, let's include it in active nodes
             if (
                 activeFilters[node.extra.filterName].includes(
                     node.extra.filterValue,
@@ -20,13 +19,13 @@ function processNodes(nodes, original = false) {
                 activeNodes.push(node.id);
             }
         }
-        //  B. An to node einai sta facets, vres to value to sto facets
+        //  B. If node is in facets, find value in facets
         if (node.extra.filterName in facets) {
             var result = facets[node.extra.filterName].items.find((obj) => {
                 return obj.name == node.extra.filterValue;
             });
 
-            // An iparxei ontws match tou node kai twn assets, enable to node kai ftiakse span. Alliws, disable.
+            // If match in facets, then create the label with count and enable
             if (result) {
                 node.state.disabled = false;
                 node.text =
@@ -35,9 +34,8 @@ function processNodes(nodes, original = false) {
                     result.count +
                     "</span>";
             }
-            // }
         }
-        // C. An kapoio node includes a facet kai to name tou einai sta facets.
+        // C. If a node includes a facet and it's name is included in facet information
         if (node.extra.includeFacet) {
             if (node.extra.facetName in facets) {
                 for (
