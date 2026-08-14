@@ -169,7 +169,7 @@ export class KeywordTree {
                 );
             }
 
-            $("#search-filters").keyup(function () {
+            $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
                 self.interpretedToggle.is(":checked")
                     ? self.interpretedTree.jstree("search", searchString)
@@ -217,11 +217,14 @@ export class KeywordTree {
             },
         }).on("state_ready.jstree", async () => {
             const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
-
             hideInStorage === "true"
-                ? this.hideEmptyTerms()
+                ? type === "interpreted"
+                    ? this.hideOrNotNodesForTree(INTERPRETED, { hide: true })
+                    : this.hideEmptyTermsInOriginal()
                 : //if it's null or 'false'
-                  this.unhideEmptyTerms();
+                  type === "interpreted"
+                  ? this.hideOrNotNodesForTree(INTERPRETED, { hide: false })
+                  : this.hideOrNotNodesForTree(ORIGINAL, { hide: false });
 
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
@@ -410,7 +413,7 @@ export class KeywordTree {
         });
     }
     // C. Hide elements
-    private hideNodesForTree(
+    private hideOrNotNodesForTree(
         treeType: Interpreted | Original,
         { hide }: { hide: boolean },
     ) {
@@ -430,12 +433,17 @@ export class KeywordTree {
                 }
             });
     }
-    private hideEmptyTerms() {
+    private hideEmptyTermsInTrees() {
         //set interpreted/enriched tree
-        this.hideNodesForTree(INTERPRETED, { hide: true });
+        this.hideOrNotNodesForTree(INTERPRETED, { hide: true });
 
         //set original tree
-        this.hideNodesForTree(ORIGINAL, { hide: true });
+        this.hideEmptyTermsInOriginal();
+    }
+
+    private hideEmptyTermsInOriginal() {
+        //set original tree
+        this.hideOrNotNodesForTree(ORIGINAL, { hide: true });
 
         this.originalTree
             .jstree()
@@ -457,12 +465,12 @@ export class KeywordTree {
                 }
             });
     }
-    private unhideEmptyTerms() {
+    private unhideEmptyTermsInTrees() {
         //set interpreted/enriched tree
-        this.hideNodesForTree(INTERPRETED, { hide: false });
+        this.hideOrNotNodesForTree(INTERPRETED, { hide: false });
 
         //set original tree
-        this.hideNodesForTree(ORIGINAL, { hide: false });
+        this.hideOrNotNodesForTree(ORIGINAL, { hide: false });
     }
     private handleHideEmptyTerms() {
         const self = this;
@@ -471,12 +479,12 @@ export class KeywordTree {
             function () {
                 if (this.checked) {
                     localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
-                    self.hideEmptyTerms();
+                    self.hideEmptyTermsInTrees();
                     return;
                 }
 
                 localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
-                self.unhideEmptyTerms();
+                self.unhideEmptyTermsInTrees();
             },
         );
     }

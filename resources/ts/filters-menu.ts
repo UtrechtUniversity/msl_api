@@ -141,9 +141,11 @@ $("#jstree-interpreted")
         );
     })
     .bind("ready.jstree", function (event, data) {
-        localStorage.getItem("hideEmptyTerms")
-            ? hideEmptyTerms()
-            : unhideEmptyTerms();
+        if (localStorage.getItem("hideEmptyTerms") === "true") {
+            hideEmptyTerms("interpreted");
+        } else {
+            unhideEmptyTerms("interpreted");
+        }
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
@@ -212,12 +214,17 @@ $("#jstree-original")
         );
     })
     .bind("ready.jstree", function (event, data) {
+        if (localStorage.getItem("hideEmptyTerms") === "true") {
+            hideEmptyTerms("original");
+        } else {
+            unhideEmptyTerms("original");
+        }
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
     });
 
-$(document).ready(function () {
+$(function () {
     var checked = localStorage.getItem("interpretedFilters");
     if (checked !== null) {
         if (checked === "false") {
@@ -327,26 +334,38 @@ $(document).ready(function () {
     $("#hide_empty_terms").change(function () {
         if (this.checked) {
             localStorage.setItem("hideEmptyTerms", true);
-            hideEmptyTerms();
+            hideAllEmptyTerms();
             return;
         }
         localStorage.setItem("hideEmptyTerms", false);
-        unhideEmptyTerms();
+        unhideAllEmptyTerms();
     });
 });
 
-function hideEmptyTerms() {
-    //set interpreted/enriched tree
-    $("#jstree-interpreted")
-        .jstree()
-        .get_json("#", {
-            flat: true,
-        })
-        .forEach((element) => {
-            if (element.state.disabled) {
-                $("#jstree-interpreted").jstree().hide_node(element);
-            }
-        });
+function hideAllEmptyTerms() {
+    hideEmptyTerms("interpreted");
+    hideEmptyTerms("original");
+}
+function unhideAllEmptyTerms() {
+    unhideEmptyTerms("interpreted");
+    unhideEmptyTerms("original");
+}
+
+function hideEmptyTerms(tree: "interpreted" | "original") {
+    if (tree === "interpreted") {
+        //set interpreted/enriched tree
+        $("#jstree-interpreted")
+            .jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element) => {
+                if (element.state.disabled) {
+                    $("#jstree-interpreted").jstree().hide_node(element);
+                }
+            });
+        return;
+    }
 
     //set original tree
     $("#jstree-original")
@@ -380,18 +399,21 @@ function hideEmptyTerms() {
             }
         });
 }
-function unhideEmptyTerms() {
-    //set interpreted/enriched tree
-    $("#jstree-interpreted")
-        .jstree()
-        .get_json("#", {
-            flat: true,
-        })
-        .forEach((element) => {
-            if (element.state.disabled) {
-                $("#jstree-interpreted").jstree().show_node(element);
-            }
-        });
+function unhideEmptyTerms(tree: "interpreted" | "original") {
+    if (tree === "interpreted") {
+        //set interpreted/enriched tree
+        $("#jstree-interpreted")
+            .jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element) => {
+                if (element.state.disabled) {
+                    $("#jstree-interpreted").jstree().show_node(element);
+                }
+            });
+        return;
+    }
 
     //set original tree
     $("#jstree-original")
