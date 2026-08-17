@@ -218,13 +218,9 @@ export class KeywordTree {
         }).on("state_ready.jstree", async () => {
             const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
             hideInStorage === "true"
-                ? type === "interpreted"
-                    ? this.hideOrNotNodesForTree(INTERPRETED, { hide: true })
-                    : this.hideEmptyTermsInOriginal()
+                ? this.hideEmptyTerms(type)
                 : //if it's null or 'false'
-                  type === "interpreted"
-                  ? this.hideOrNotNodesForTree(INTERPRETED, { hide: false })
-                  : this.hideOrNotNodesForTree(ORIGINAL, { hide: false });
+                  this.unhideEmptyTerms(type);
 
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
@@ -413,10 +409,7 @@ export class KeywordTree {
         });
     }
     // C. Hide elements
-    private hideOrNotNodesForTree(
-        treeType: Interpreted | Original,
-        { hide }: { hide: boolean },
-    ) {
+    private hideEmptyTerms(treeType: Interpreted | Original) {
         const self = this;
         const tree =
             treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
@@ -427,50 +420,56 @@ export class KeywordTree {
             })
             .forEach((element: TreeNode | TreeSubNode) => {
                 if (element.state.disabled) {
-                    hide
-                        ? tree.jstree().hide_node(element, false)
-                        : tree.jstree().show_node(element, false);
+                    tree.jstree().hide_node(element, false);
+                }
+            });
+
+        if (treeType === ORIGINAL) {
+            tree.jstree()
+                .get_json("#", {
+                    flat: true,
+                })
+                .forEach((element: TreeNodeWithParent) => {
+                    if (!element.state.disabled && "parent" in element) {
+                        let parent = element.parent;
+
+                        if (parent) {
+                            while (parent) {
+                                this.originalTree
+                                    .jstree()
+                                    .show_node(parent, false);
+                                parent = parent.parent;
+                            }
+                        }
+
+                        this.originalTree.jstree().show_node(element, false);
+                    }
+                });
+        }
+    }
+    private unhideEmptyTerms(treeType: Interpreted | Original) {
+        const self = this;
+        const tree =
+            treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
+
+        tree.jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element: TreeNode | TreeSubNode) => {
+                if (element.state.disabled) {
+                    tree.jstree().show_node(element, false);
                 }
             });
     }
     private hideEmptyTermsInTrees() {
-        //set interpreted/enriched tree
-        this.hideOrNotNodesForTree(INTERPRETED, { hide: true });
-
-        //set original tree
-        this.hideEmptyTermsInOriginal();
+        this.hideEmptyTerms(INTERPRETED);
+        this.hideEmptyTerms(ORIGINAL);
     }
 
-    private hideEmptyTermsInOriginal() {
-        //set original tree
-        this.hideOrNotNodesForTree(ORIGINAL, { hide: true });
-
-        this.originalTree
-            .jstree()
-            .get_json("#", {
-                flat: true,
-            })
-            .forEach((element: TreeNodeWithParent) => {
-                if (!element.state.disabled && "parent" in element) {
-                    let parent = element.parent;
-
-                    if (parent) {
-                        while (parent) {
-                            this.originalTree.jstree().show_node(parent, false);
-                            parent = parent.parent;
-                        }
-                    }
-
-                    this.originalTree.jstree().show_node(element, false);
-                }
-            });
-    }
     private unhideEmptyTermsInTrees() {
-        //set interpreted/enriched tree
-        this.hideOrNotNodesForTree(INTERPRETED, { hide: false });
-
-        //set original tree
-        this.hideOrNotNodesForTree(ORIGINAL, { hide: false });
+        this.unhideEmptyTerms(INTERPRETED);
+        this.unhideEmptyTerms(ORIGINAL);
     }
     private handleHideEmptyTerms() {
         const self = this;
