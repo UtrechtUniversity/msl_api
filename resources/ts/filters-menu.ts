@@ -4,6 +4,7 @@ URLSearchParams.prototype.remove = function (key, value) {
     this.delete(key);
     newEntries.forEach((newEntry) => this.append(key, newEntry));
 };
+const hideInStorage = localStorage.getItem("hideEmptyTerms");
 
 function processNodes(nodes, original = false) {
     for (var i = nodes.length - 1; i >= 0; i--) {
@@ -141,11 +142,10 @@ $("#jstree-interpreted")
         );
     })
     .bind("ready.jstree", function (event, data) {
-        if (localStorage.getItem("hideEmptyTerms") === "true") {
-            hideEmptyTerms("interpreted");
-        } else {
-            unhideEmptyTerms("interpreted");
-        }
+        hideInStorage === "true"
+            ? hideEmptyTerms("interpreted")
+            : unhideEmptyTerms("interpreted");
+
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
@@ -214,11 +214,10 @@ $("#jstree-original")
         );
     })
     .bind("ready.jstree", function (event, data) {
-        if (localStorage.getItem("hideEmptyTerms") === "true") {
-            hideEmptyTerms("original");
-        } else {
-            unhideEmptyTerms("original");
-        }
+        hideInStorage === "true"
+            ? hideEmptyTerms("original")
+            : unhideEmptyTerms("original");
+
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
@@ -334,19 +333,19 @@ $(function () {
     $("#hide_empty_terms").change(function () {
         if (this.checked) {
             localStorage.setItem("hideEmptyTerms", true);
-            hideAllEmptyTerms();
+            hideEmptyTermsInTrees();
             return;
         }
         localStorage.setItem("hideEmptyTerms", false);
-        unhideAllEmptyTerms();
+        unhideEmptyTermsInTrees();
     });
 });
 
-function hideAllEmptyTerms() {
+function hideEmptyTermsInTrees() {
     hideEmptyTerms("interpreted");
     hideEmptyTerms("original");
 }
-function unhideAllEmptyTerms() {
+function unhideEmptyTermsInTrees() {
     unhideEmptyTerms("interpreted");
     unhideEmptyTerms("original");
 }
