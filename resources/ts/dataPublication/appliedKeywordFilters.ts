@@ -133,7 +133,7 @@ export class AppliedKeywordFilters {
         opts: TreeKeywordAddInfoWithType | FreeTextAddInfoWithType,
     ): { displayNameForUI: string } {
         if (opts.type === FREE_TEXT_SEARCH_KEYWORD)
-            return { displayNameForUI: opts.value };
+            return { displayNameForUI: "Search: " + opts.value };
 
         return { displayNameForUI: opts.displayName };
     }
