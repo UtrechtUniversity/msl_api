@@ -4,6 +4,7 @@ URLSearchParams.prototype.remove = function (key, value) {
     this.delete(key);
     newEntries.forEach((newEntry) => this.append(key, newEntry));
 };
+const hideInStorage = localStorage.getItem("hideEmptyTerms");
 
 function processNodes(nodes, original = false) {
     for (var i = nodes.length - 1; i >= 0; i--) {
@@ -139,6 +140,10 @@ $("#jstree-interpreted")
         );
     })
     .bind("ready.jstree", function (event, data) {
+        hideInStorage === "true"
+            ? hideEmptyTerms("interpreted")
+            : unhideEmptyTerms("interpreted");
+
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
@@ -207,12 +212,16 @@ $("#jstree-original")
         );
     })
     .bind("ready.jstree", function (event, data) {
+        hideInStorage === "true"
+            ? hideEmptyTerms("original")
+            : unhideEmptyTerms("original");
+
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
         }
     });
 
-$(document).ready(function () {
+$(function () {
     var checked = localStorage.getItem("interpretedFilters");
     if (checked !== null) {
         if (checked === "false") {
@@ -322,82 +331,96 @@ $(document).ready(function () {
     $("#hide_empty_terms").change(function () {
         if (this.checked) {
             localStorage.setItem("hideEmptyTerms", true);
-
-            //set interpreted/enriched tree
-            $("#jstree-interpreted")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-interpreted").jstree().hide_node(element);
-                    }
-                });
-
-            //set original tree
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-original")
-                            .jstree()
-                            .hide_node(element, false);
-                    }
-                });
-
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (!element.state.disabled) {
-                        var parent = element.parent;
-
-                        if (parent) {
-                            while (parent) {
-                                $("#jstree-original")
-                                    .jstree()
-                                    .show_node(parent);
-                                parent = parent.parent;
-                            }
-                        }
-
-                        $("#jstree-original").jstree().show_node(element);
-                    }
-                });
-        } else {
-            localStorage.setItem("hideEmptyTerms", false);
-
-            //set interpreted/enriched tree
-            $("#jstree-interpreted")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-interpreted").jstree().show_node(element);
-                    }
-                });
-
-            //set original tree
-            $("#jstree-original")
-                .jstree()
-                .get_json("#", {
-                    flat: true,
-                })
-                .forEach((element) => {
-                    if (element.state.disabled) {
-                        $("#jstree-original").jstree().show_node(element);
-                    }
-                });
+            hideEmptyTermsInTrees();
+            return;
         }
+        localStorage.setItem("hideEmptyTerms", false);
+        unhideEmptyTermsInTrees();
     });
-
-    //$('[data-toggle=tooltip]').tooltip();
 });
+
+function hideEmptyTermsInTrees() {
+    hideEmptyTerms("interpreted");
+    hideEmptyTerms("original");
+}
+function unhideEmptyTermsInTrees() {
+    unhideEmptyTerms("interpreted");
+    unhideEmptyTerms("original");
+}
+
+function hideEmptyTerms(tree: "interpreted" | "original") {
+    if (tree === "interpreted") {
+        //set interpreted/enriched tree
+        $("#jstree-interpreted")
+            .jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element) => {
+                if (element.state.disabled) {
+                    $("#jstree-interpreted").jstree().hide_node(element);
+                }
+            });
+        return;
+    }
+
+    //set original tree
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-original").jstree().hide_node(element, false);
+            }
+        });
+
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (!element.state.disabled) {
+                var parent = element.parent;
+
+                if (parent) {
+                    while (parent) {
+                        $("#jstree-original").jstree().show_node(parent);
+                        parent = parent.parent;
+                    }
+                }
+
+                $("#jstree-original").jstree().show_node(element);
+            }
+        });
+}
+function unhideEmptyTerms(tree: "interpreted" | "original") {
+    if (tree === "interpreted") {
+        //set interpreted/enriched tree
+        $("#jstree-interpreted")
+            .jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element) => {
+                if (element.state.disabled) {
+                    $("#jstree-interpreted").jstree().show_node(element);
+                }
+            });
+        return;
+    }
+
+    //set original tree
+    $("#jstree-original")
+        .jstree()
+        .get_json("#", {
+            flat: true,
+        })
+        .forEach((element) => {
+            if (element.state.disabled) {
+                $("#jstree-original").jstree().show_node(element);
+            }
+        });
+}

@@ -10,6 +10,7 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
+const HIDE_EMPTY_TERMS = "datapublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
@@ -168,7 +169,7 @@ export class KeywordTree {
                 );
             }
 
-            $("#search-filters").keyup(function () {
+            $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
                 self.interpretedToggle.is(":checked")
                     ? self.interpretedTree.jstree("search", searchString)
@@ -190,7 +191,7 @@ export class KeywordTree {
                     : self.originalTree.jstree("close_all");
             });
 
-            self.hideEmptyTerms();
+            self.handleHideEmptyTerms();
         });
     }
 
@@ -215,6 +216,12 @@ export class KeywordTree {
                 },
             },
         }).on("state_ready.jstree", async () => {
+            const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
+            hideInStorage === "true"
+                ? this.hideEmptyTerms(type)
+                : //if it's null or 'false'
+                  this.unhideEmptyTerms(type);
+
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
                 await this.handleFilterChange(),
@@ -402,82 +409,81 @@ export class KeywordTree {
         });
     }
     // C. Hide elements
-    private hideNodesForTree(
-        treeType: Interpreted | Original,
-        { hide }: { hide: boolean },
-    ) {
+    private hideEmptyTerms(treeType: Interpreted | Original) {
         const self = this;
-
         const tree =
             treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
+
         tree.jstree()
             .get_json("#", {
                 flat: true,
             })
             .forEach((element: TreeNode | TreeSubNode) => {
                 if (element.state.disabled) {
-                    hide
-                        ? tree.jstree().hide_node(element, false)
-                        : tree.jstree().show_node(element, false);
+                    tree.jstree().hide_node(element, false);
+                }
+            });
+
+        if (treeType === ORIGINAL) {
+            tree.jstree()
+                .get_json("#", {
+                    flat: true,
+                })
+                .forEach((element: TreeNodeWithParent) => {
+                    if (!element.state.disabled && "parent" in element) {
+                        let parent = element.parent;
+
+                        if (parent) {
+                            while (parent) {
+                                this.originalTree
+                                    .jstree()
+                                    .show_node(parent, false);
+                                parent = parent.parent;
+                            }
+                        }
+
+                        this.originalTree.jstree().show_node(element, false);
+                    }
+                });
+        }
+    }
+    private unhideEmptyTerms(treeType: Interpreted | Original) {
+        const self = this;
+        const tree =
+            treeType === INTERPRETED ? self.interpretedTree : self.originalTree;
+
+        tree.jstree()
+            .get_json("#", {
+                flat: true,
+            })
+            .forEach((element: TreeNode | TreeSubNode) => {
+                if (element.state.disabled) {
+                    tree.jstree().show_node(element, false);
                 }
             });
     }
-    private hideEmptyTerms() {
+    private hideEmptyTermsInTrees() {
+        this.hideEmptyTerms(INTERPRETED);
+        this.hideEmptyTerms(ORIGINAL);
+    }
+
+    private unhideEmptyTermsInTrees() {
+        this.unhideEmptyTerms(INTERPRETED);
+        this.unhideEmptyTerms(ORIGINAL);
+    }
+    private handleHideEmptyTerms() {
         const self = this;
         ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
-            "change",
+            "click",
             function () {
                 if (this.checked) {
-                    localStorage.setItem(
-                        "datapublicationMapHideEmptyTerms",
-                        "" + this.checked,
-                    );
-
-                    //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, { hide: true });
-
-                    //set original tree
-                    self.hideNodesForTree(ORIGINAL, { hide: true });
-
-                    self.originalTree
-                        .jstree()
-                        .get_json("#", {
-                            flat: true,
-                        })
-                        .forEach((element: TreeNodeWithParent) => {
-                            if (
-                                !element.state.disabled &&
-                                "parent" in element
-                            ) {
-                                let parent = element.parent;
-
-                                if (parent) {
-                                    while (parent) {
-                                        self.originalTree
-                                            .jstree()
-                                            .show_node(parent, false);
-                                        parent = parent.parent;
-                                    }
-                                }
-
-                                self.originalTree
-                                    .jstree()
-                                    .show_node(element, false);
-                            }
-                        });
+                    localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
+                    self.hideEmptyTermsInTrees();
+                    return;
                 }
-                if (!this.checked) {
-                    localStorage.setItem(
-                        "datapublicationMapHideEmptyTerms",
-                        "" + false,
-                    );
 
-                    //set interpreted/enriched tree
-                    self.hideNodesForTree(INTERPRETED, { hide: false });
-
-                    //set original tree
-                    self.hideNodesForTree(ORIGINAL, { hide: false });
-                }
+                localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
+                self.unhideEmptyTermsInTrees();
             },
         );
     }
