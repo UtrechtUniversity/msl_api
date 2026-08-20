@@ -10,7 +10,7 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
-const HIDE_EMPTY_TERMS = "datapublicationMapHideEmptyTerms" as const;
+const HIDE_EMPTY_TERMS = "dataPublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
