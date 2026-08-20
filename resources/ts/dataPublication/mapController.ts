@@ -122,7 +122,7 @@ export class MapController {
             },
         });
     }
-
+    
     public async init() {
         ({ facets: this.facets } = await this.getJsonFromRequest());
         this.keywordTree.init(this.facets);

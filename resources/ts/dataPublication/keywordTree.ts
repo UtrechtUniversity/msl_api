@@ -10,7 +10,7 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
-const HIDE_EMPTY_TERMS = "datapublicationMapHideEmptyTerms" as const;
+const HIDE_EMPTY_TERMS = "dataPublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
@@ -99,7 +99,7 @@ const TREES = {
 } as const;
 
 const IS_INTERPRETED_FILTER_ENABLED =
-    "datapublicationMapInterpretedFilters" as const;
+    "dataPublicationMapInterpretedFilters" as const;
 // @Decision:
 // The state of tree, interpreted or original, is not of relevant in MapController.
 // The filtering works the same for any keyword, since original is a subtree of interpreted.

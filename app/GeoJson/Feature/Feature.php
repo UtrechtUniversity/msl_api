@@ -62,4 +62,16 @@ class Feature implements JsonSerializable
 
         return $return;
     }
+
+    public function addProperties(array $extraProperties): Feature
+    {
+        foreach ($extraProperties as $key => $value) {
+            if (isset($this->properties[$key])) {
+                throw new Exception("Key '$key' already exists in properties.");
+            }
+            $this->properties[$key] = $value;
+        }
+
+        return $this;
+    }
 }
