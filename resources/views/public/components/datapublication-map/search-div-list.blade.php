@@ -1,8 +1,8 @@
-<div class='mx-auto sm:p-4 w-full'>
+<div class='mx-auto sm:p-4 w-full '>
 
-    <div class="flex flex-col justify-center items-center h-16 w-full ">
-        <div id="applied-filters-title" class="w-fit flex flex-row items-center place-content-center gap-3 ">
-            <h5 class="text-align-center inline"> Applied Filters </h5>
+    <div class="flex flex-col items-center w-full  h-20  overflow-y-auto ">
+        <div id="applied-filters-title" class="w-fit flex flex-row ">
+            <h6 class="text-align-center inline"> Applied Filters </h6>
             <div id="remove-bin-icon" hidden>
                 <div
                     class="
