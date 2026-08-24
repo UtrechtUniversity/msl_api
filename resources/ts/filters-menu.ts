@@ -140,9 +140,7 @@ $("#jstree-interpreted")
         );
     })
     .bind("ready.jstree", function (event, data) {
-        hideInStorage === "true"
-            ? hideEmptyTerms("interpreted")
-            : unhideEmptyTerms("interpreted");
+        if (hideInStorage === "true") hideEmptyTerms("interpreted");
 
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);
@@ -212,9 +210,7 @@ $("#jstree-original")
         );
     })
     .bind("ready.jstree", function (event, data) {
-        hideInStorage === "true"
-            ? hideEmptyTerms("original")
-            : unhideEmptyTerms("original");
+        if (hideInStorage === "true") hideEmptyTerms("original");
 
         for (let i = 0; i < activeNodes.length; i++) {
             data.instance._open_to(activeNodes[i]);

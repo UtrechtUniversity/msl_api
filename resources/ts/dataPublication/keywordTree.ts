@@ -217,10 +217,7 @@ export class KeywordTree {
             },
         }).on("state_ready.jstree", async () => {
             const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
-            hideInStorage === "true"
-                ? this.hideEmptyTerms(type)
-                : //if it's null or 'false'
-                  this.unhideEmptyTerms(type);
+            if (hideInStorage === "true") this.hideEmptyTerms(type);
 
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
