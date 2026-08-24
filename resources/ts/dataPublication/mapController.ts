@@ -21,6 +21,7 @@ import { ResultsMetadata } from "./resultsMetadata";
 import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
+import { StartScreen } from "./startScreen";
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     boundingBox: string;
@@ -48,6 +49,7 @@ export class MapController {
     resultsMetadata: ResultsMetadata;
     keywordTree: KeywordTree;
     appliedKeywords: AppliedKeywordFilters;
+    startScreen: StartScreen;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -62,6 +64,7 @@ export class MapController {
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
         this.appliedKeywords = new AppliedKeywordFilters();
+        this.startScreen = new StartScreen();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -387,12 +390,12 @@ export class MapController {
     }
 }
 
-const mapController = new MapController();
-await mapController.init();
-const menuButtons = new MenuButtons(mapController);
-const searchTextField = new SearchTextField(mapController);
-
 function createIdForFreeText() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
 }
+
+const mapController = new MapController();
+await mapController.init();
+const menuButtons = new MenuButtons(mapController);
+const searchTextField = new SearchTextField(mapController);
