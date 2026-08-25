@@ -120,6 +120,11 @@
            </div>
        </div>
 
+       <div class="divide-y w-1/2 flex flex-col place-self-center py-3 divide-primary-700 opacity-50">
+           <div></div>
+           <div></div>
+       </div>
+
        <div class="pb-10">
 
            <div id="jstree-interpreted" class="text-wrap pt-2 pr-4 pl-2""></div>
