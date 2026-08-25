@@ -127,8 +127,8 @@
 
        <div class="pb-5">
 
-           <div id="jstree-interpreted" class="text-wrap pt-2 pr-4 pl-2""></div>
-           <div id="jstree-original" class="text-wrap pt-2 pr-4 pl-2" style="display: none;"></div>
+           <div id="jstree-interpreted" class="text-wrap pt-2 pr-2 pl-2""></div>
+           <div id="jstree-original" class="text-wrap pt-2 pr-2 pl-2" style="display: none;"></div>
 
        </div>
 
