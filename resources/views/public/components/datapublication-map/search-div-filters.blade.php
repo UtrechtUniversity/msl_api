@@ -1,7 +1,4 @@
    <div class=" flex flex-col place-items-center justify-self-center">
-
-       <h2 class="py-4">Filters</h2>
-
        <div class="flex flex-col gap-3 pt-6">
            <div class="search-bar-container form-field-text p-0 m-0 ">
                <div class="search-bar-container-icon">
