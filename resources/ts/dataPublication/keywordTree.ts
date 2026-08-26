@@ -176,8 +176,8 @@ export class KeywordTree {
                     : self.originalTree.jstree("search", searchString);
             });
 
-            self.toggleToAnotherTree(INTERPRETED);
-            self.toggleToAnotherTree(ORIGINAL);
+            self.attachToggleToAnotherTreeListener(INTERPRETED);
+            self.attachToggleToAnotherTreeListener(ORIGINAL);
 
             $("#expand_all").on("click", function () {
                 self.interpretedToggle.is(":checked")
@@ -191,7 +191,7 @@ export class KeywordTree {
                     : self.originalTree.jstree("close_all");
             });
 
-            self.handleHideEmptyTerms();
+            self.attachHideEmptyTermsListener();
         });
     }
 
@@ -378,7 +378,7 @@ export class KeywordTree {
     }
 
     //B. Toggle between trees
-    private toggleToAnotherTree(type: Interpreted | Original) {
+    private attachToggleToAnotherTreeListener(type: Interpreted | Original) {
         const self = this;
         const tree =
             type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
@@ -468,7 +468,7 @@ export class KeywordTree {
         this.unhideEmptyTerms(INTERPRETED);
         this.unhideEmptyTerms(ORIGINAL);
     }
-    private handleHideEmptyTerms() {
+    private attachHideEmptyTermsListener() {
         const self = this;
         ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
             "click",
