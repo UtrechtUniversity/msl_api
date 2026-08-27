@@ -157,18 +157,20 @@ export class KeywordTree {
         // A. Initialize trees
         this.initTree(this.interpretedTree, TREES.interpreted);
         this.initTree(this.originalTree, TREES.original);
+
         const self = this;
         // Jqueries when document is ready
         $(function () {
             const interpretedInStorage = localStorage.getItem(
                 IS_INTERPRETED_FILTER_ENABLED,
             );
-            if (interpretedInStorage !== null) {
-                self.setActiveTree(
-                    interpretedInStorage === "false" ? ORIGINAL : INTERPRETED,
-                );
-            }
 
+            self.setActiveTree(
+                interpretedInStorage === "false"
+                    ? ORIGINAL
+                    : // if the value is true or null
+                      INTERPRETED,
+            );
             $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
                 self.interpretedToggle.is(":checked")
@@ -380,9 +382,9 @@ export class KeywordTree {
     //B. Toggle between trees
     private attachToggleToAnotherTreeListener(type: Interpreted | Original) {
         const self = this;
-        const tree =
+        const toggle =
             type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
-        tree.on("change", function () {
+        toggle.on("change", function () {
             if (this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,
