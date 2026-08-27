@@ -93,7 +93,7 @@ $("#jstree-interpreted")
             tie_selection: false, // for checking without selecting and selecting without checking
         },
         state: {
-            key: "jstree-interpreted",
+            key: "list-view-" + "jstree-interpreted",
             filter: function (state) {
                 delete state.checkbox;
                 return state;
@@ -163,7 +163,7 @@ $("#jstree-original")
             tie_selection: false, // for checking without selecting and selecting without checking
         },
         state: {
-            key: "jstree-original",
+            key: "list-view-" + "jstree-original",
             filter: function (state) {
                 delete state.checkbox;
                 return state;

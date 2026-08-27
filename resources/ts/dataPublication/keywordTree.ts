@@ -156,6 +156,7 @@ export class KeywordTree {
     private createTrees() {
         // A. Initialize trees
         this.initTree(this.interpretedTree, TREES.interpreted);
+
         this.initTree(this.originalTree, TREES.original);
 
         const self = this;
@@ -168,7 +169,7 @@ export class KeywordTree {
             self.setActiveTree(
                 interpretedInStorage === "false"
                     ? ORIGINAL
-                    : // if the value is true or null
+                    : // if the value is "true" or null
                       INTERPRETED,
             );
             $("#search-filters").on("keyup", function () {
@@ -208,7 +209,7 @@ export class KeywordTree {
         tree.jstree({
             ...options,
             state: {
-                key: name,
+                key: "map-view-" + name,
                 // We use this function as filter,
                 // so that when we reload the page,
                 // the checks are removed as default state
@@ -535,7 +536,7 @@ export class KeywordTree {
     }
     private setActiveTree(type: Interpreted | Original) {
         if (type === ORIGINAL) {
-            this.originalToggle.prop("checked", "checked");
+            this.originalToggle.prop("checked", true);
             this.interpretedToggle.prop("checked", false);
             this.interpretedTree.hide();
             this.originalTree.show();
@@ -543,7 +544,7 @@ export class KeywordTree {
         }
 
         this.originalToggle.prop("checked", false);
-        this.interpretedToggle.prop("checked", "checked");
+        this.interpretedToggle.prop("checked", true);
         this.interpretedTree.show();
         this.originalTree.hide();
     }
