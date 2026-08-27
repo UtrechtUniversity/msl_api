@@ -118,6 +118,8 @@ export class KeywordTree {
     private originalToggle: JQuery<HTMLInputElement> = $(
         TREES.original.filterToggle,
     );
+    private hideEmptyTermsToggle: JQuery<HTMLInputElement> =
+        $("#hide_empty_terms");
     private suppressChangeEvents: boolean = false;
 
     private onKeywordFilterAdd: (
@@ -154,11 +156,9 @@ export class KeywordTree {
     }
 
     private createTrees() {
-        // A. Initialize trees
-        this.initTree(this.interpretedTree, TREES.interpreted);
-        this.initTree(this.originalTree, TREES.original);
-        const self = this;
         // Jqueries when document is ready
+        const self = this;
+
         $(function () {
             const interpretedInStorage = localStorage.getItem(
                 IS_INTERPRETED_FILTER_ENABLED,
@@ -168,6 +168,23 @@ export class KeywordTree {
                     interpretedInStorage === "false" ? ORIGINAL : INTERPRETED,
                 );
             }
+            let readyTrees = 0;
+            $(TREES.interpreted.id + "," + TREES.original.id).on(
+                "state_ready.jstree",
+                async () => {
+                    readyTrees++;
+                    // We have to trigger the toggle here,
+                    //  because we have to be sure that trees are initialized
+                    if (readyTrees == 2) {
+                        console.log("here");
+                        const hideInStorage =
+                            localStorage.getItem(HIDE_EMPTY_TERMS);
+                        if (hideInStorage === "true") {
+                            self.hideEmptyTermsToggle.trigger("click");
+                        }
+                    }
+                },
+            );
 
             $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
@@ -193,6 +210,9 @@ export class KeywordTree {
 
             self.handleHideEmptyTerms();
         });
+        //  Initialize trees
+        this.initTree(this.interpretedTree, TREES.interpreted);
+        this.initTree(this.originalTree, TREES.original);
     }
 
     private initTree(
@@ -216,9 +236,6 @@ export class KeywordTree {
                 },
             },
         }).on("state_ready.jstree", async () => {
-            const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
-            if (hideInStorage === "true") this.hideEmptyTerms(type);
-
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
                 await this.handleFilterChange(),
@@ -470,19 +487,16 @@ export class KeywordTree {
     }
     private handleHideEmptyTerms() {
         const self = this;
-        ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
-            "click",
-            function () {
-                if (this.checked) {
-                    localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
-                    self.hideEmptyTermsInTrees();
-                    return;
-                }
+        self.hideEmptyTermsToggle.on("click", function () {
+            if (this.checked) {
+                localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
+                self.hideEmptyTermsInTrees();
+                return;
+            }
 
-                localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
-                self.unhideEmptyTermsInTrees();
-            },
-        );
+            localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
+            self.unhideEmptyTermsInTrees();
+        });
     }
 
     private processNodes(nodes: (TreeNode | TreeSubNode)[], original = false) {
