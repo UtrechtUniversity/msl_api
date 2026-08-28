@@ -155,9 +155,11 @@ export class KeywordTree {
     }
 
     private createTrees() {
-        // Jqueries when document is ready
+        // A. Initialize trees
+        this.initTree(this.interpretedTree, TREES.interpreted);
+        this.initTree(this.originalTree, TREES.original);
         const self = this;
-
+        // Jqueries when document is ready
         $(function () {
             const interpretedInStorage = localStorage.getItem(
                 IS_INTERPRETED_FILTER_ENABLED,
