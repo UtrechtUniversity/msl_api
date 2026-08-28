@@ -194,9 +194,6 @@ export class KeywordTree {
 
             self.handleHideEmptyTerms();
         });
-        //  Initialize trees
-        this.initTree(this.interpretedTree, TREES.interpreted);
-        this.initTree(this.originalTree, TREES.original);
     }
 
     private initTree(
