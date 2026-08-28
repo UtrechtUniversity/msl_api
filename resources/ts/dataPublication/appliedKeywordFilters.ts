@@ -34,8 +34,8 @@ export class AppliedKeywordFilters {
     constructor() {
         const removeBin = getElementOrThrow("remove-bin-icon");
         removeBin.hidden = true;
-        removeBin.addEventListener("click", () => {
-            this.onActiveFilterRemoveAll();
+        removeBin.addEventListener("click", async () => {
+            await this.onActiveFilterRemoveAll();
         });
         this.removeBin = removeBin;
 
