@@ -94,6 +94,7 @@
                                        <input type="checkbox" value={{ $key }} name={{ 'EmptyTerms' . '[]' }}
                                            id='hide_empty_terms'
                                            class="checkbox checkbox-secondary checkbox-md rounded-sm border"
+                                           autocomplete="off"
                                            @if (is_array(old('EmptyTerms')) && in_array($key, old('EmptyTerms'))) checked="checked" @endif />
 
                                    </label>

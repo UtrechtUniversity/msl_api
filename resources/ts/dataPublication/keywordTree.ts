@@ -10,7 +10,6 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
-const HIDE_EMPTY_TERMS = "dataPublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
@@ -118,6 +117,8 @@ export class KeywordTree {
     private originalToggle: JQuery<HTMLInputElement> = $(
         TREES.original.filterToggle,
     );
+    private hideEmptyTermsToggle: JQuery<HTMLInputElement> =
+        $("#hide_empty_terms");
     private suppressChangeEvents: boolean = false;
 
     private onKeywordFilterAdd: (
@@ -219,9 +220,6 @@ export class KeywordTree {
                 },
             },
         }).on("state_ready.jstree", async () => {
-            const hideInStorage = localStorage.getItem(HIDE_EMPTY_TERMS);
-            if (hideInStorage === "true") this.hideEmptyTerms(type);
-
             tree.on(
                 "check_node.jstree uncheck_node.jstree",
                 await this.handleFilterChange(),
@@ -473,19 +471,14 @@ export class KeywordTree {
     }
     private attachHideEmptyTermsListener() {
         const self = this;
-        ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
-            "click",
-            function () {
-                if (this.checked) {
-                    localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
-                    self.hideEmptyTermsInTrees();
-                    return;
-                }
+        self.hideEmptyTermsToggle.on("click", function () {
+            if (this.checked) {
+                self.hideEmptyTermsInTrees();
+                return;
+            }
 
-                localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
-                self.unhideEmptyTermsInTrees();
-            },
-        );
+            self.unhideEmptyTermsInTrees();
+        });
     }
 
     private processNodes(nodes: (TreeNode | TreeSubNode)[], original = false) {
