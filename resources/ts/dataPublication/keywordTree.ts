@@ -156,19 +156,22 @@ export class KeywordTree {
     private createTrees() {
         // A. Initialize trees
         this.initTree(this.interpretedTree, TREES.interpreted);
+
         this.initTree(this.originalTree, TREES.original);
+
         const self = this;
         // Jqueries when document is ready
         $(function () {
             const interpretedInStorage = localStorage.getItem(
                 IS_INTERPRETED_FILTER_ENABLED,
             );
-            if (interpretedInStorage !== null) {
-                self.setActiveTree(
-                    interpretedInStorage === "false" ? ORIGINAL : INTERPRETED,
-                );
-            }
 
+            self.setActiveTree(
+                interpretedInStorage === "false"
+                    ? ORIGINAL
+                    : // if the value is "true" or null
+                      INTERPRETED,
+            );
             $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
                 self.interpretedToggle.is(":checked")
@@ -176,8 +179,8 @@ export class KeywordTree {
                     : self.originalTree.jstree("search", searchString);
             });
 
-            self.toggleToAnotherTree(INTERPRETED);
-            self.toggleToAnotherTree(ORIGINAL);
+            self.attachToggleToAnotherTreeListener(INTERPRETED);
+            self.attachToggleToAnotherTreeListener(ORIGINAL);
 
             $("#expand_all").on("click", function () {
                 self.interpretedToggle.is(":checked")
@@ -191,7 +194,7 @@ export class KeywordTree {
                     : self.originalTree.jstree("close_all");
             });
 
-            self.handleHideEmptyTerms();
+            self.attachHideEmptyTermsListener();
         });
     }
 
@@ -206,7 +209,7 @@ export class KeywordTree {
         tree.jstree({
             ...options,
             state: {
-                key: name,
+                key: "map-view-" + name,
                 // We use this function as filter,
                 // so that when we reload the page,
                 // the checks are removed as default state
@@ -378,11 +381,11 @@ export class KeywordTree {
     }
 
     //B. Toggle between trees
-    private toggleToAnotherTree(type: Interpreted | Original) {
+    private attachToggleToAnotherTreeListener(type: Interpreted | Original) {
         const self = this;
-        const tree =
+        const toggle =
             type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
-        tree.on("change", function () {
+        toggle.on("change", function () {
             if (this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,
@@ -468,7 +471,7 @@ export class KeywordTree {
         this.unhideEmptyTerms(INTERPRETED);
         this.unhideEmptyTerms(ORIGINAL);
     }
-    private handleHideEmptyTerms() {
+    private attachHideEmptyTermsListener() {
         const self = this;
         ($("#hide_empty_terms") as JQuery<HTMLInputElement>).on(
             "click",
@@ -533,7 +536,7 @@ export class KeywordTree {
     }
     private setActiveTree(type: Interpreted | Original) {
         if (type === ORIGINAL) {
-            this.originalToggle.prop("checked", "checked");
+            this.originalToggle.prop("checked", true);
             this.interpretedToggle.prop("checked", false);
             this.interpretedTree.hide();
             this.originalTree.show();
@@ -541,7 +544,7 @@ export class KeywordTree {
         }
 
         this.originalToggle.prop("checked", false);
-        this.interpretedToggle.prop("checked", "checked");
+        this.interpretedToggle.prop("checked", true);
         this.interpretedTree.show();
         this.originalTree.hide();
     }

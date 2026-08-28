@@ -93,7 +93,7 @@ $("#jstree-interpreted")
             tie_selection: false, // for checking without selecting and selecting without checking
         },
         state: {
-            key: "jstree-interpreted",
+            key: "list-view-" + "jstree-interpreted",
             filter: function (state) {
                 delete state.checkbox;
                 return state;
@@ -163,7 +163,7 @@ $("#jstree-original")
             tie_selection: false, // for checking without selecting and selecting without checking
         },
         state: {
-            key: "jstree-original",
+            key: "list-view-" + "jstree-original",
             filter: function (state) {
                 delete state.checkbox;
                 return state;
@@ -218,17 +218,16 @@ $("#jstree-original")
     });
 
 $(function () {
-    var checked = localStorage.getItem("interpretedFilters");
-    if (checked !== null) {
-        if (checked === "false") {
-            $("#filterTreeToggleInterpreted").prop("checked", false);
-            $("#filterTreeToggleOriginal").prop("checked", "checked");
-            $("#jstree-interpreted").hide();
-            $("#jstree-original").show();
-        } else {
-            $("#filterTreeToggleInterpreted").prop("checked", "checked");
-            $("#filterTreeToggleOriginal").prop("checked", false);
-        }
+    const checked = localStorage.getItem("interpretedFilters");
+    if (checked === "false") {
+        $("#filterTreeToggleInterpreted").prop("checked", false);
+        $("#filterTreeToggleOriginal").prop("checked", "checked");
+        $("#jstree-interpreted").hide();
+        $("#jstree-original").show();
+    } else {
+        // If the value is 'null' or 'true'
+        $("#filterTreeToggleInterpreted").prop("checked", "checked");
+        $("#filterTreeToggleOriginal").prop("checked", false);
     }
 
     $("#search-filters").keyup(function () {

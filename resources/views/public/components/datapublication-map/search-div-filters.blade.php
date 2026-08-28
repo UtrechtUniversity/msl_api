@@ -1,7 +1,4 @@
    <div class=" flex flex-col place-items-center justify-self-center">
-
-       <h2 class="py-4">Filters</h2>
-
        <div class="flex flex-col gap-3 pt-6">
            <div class="search-bar-container form-field-text p-0 m-0 ">
                <div class="search-bar-container-icon">
@@ -123,10 +120,15 @@
            </div>
        </div>
 
-       <div class="pb-10">
+       <div class="divide-y w-1/2 flex flex-col place-self-center py-3 divide-primary-700 opacity-50">
+           <div></div>
+           <div></div>
+       </div>
 
-           <div id="jstree-interpreted" class="text-wrap pt-2 pr-4 pl-2""></div>
-           <div id="jstree-original" class="text-wrap pt-2 pr-4 pl-2" style="display: none;"></div>
+       <div class="pb-5">
+
+           <div id="jstree-interpreted" class="text-wrap pt-2 pr-2 pl-2""></div>
+           <div id="jstree-original" class="text-wrap pt-2 pr-2 pl-2" style="display: none;"></div>
 
        </div>
 
