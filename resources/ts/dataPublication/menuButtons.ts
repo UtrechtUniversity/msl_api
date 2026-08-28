@@ -1,4 +1,4 @@
-import { assertNotNull } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../helpers";
 import {
     INSIDE,
     OVERLAPPING,
@@ -58,11 +58,8 @@ export class MenuButtons {
 
         this.root = this.createMenu();
 
-        const mapElement = document.getElementById("map");
-        assertNotNull(
-            mapElement,
-            `Element of map doesn't exist. This is a bug.`,
-        );
+        const mapElement = getElementOrThrow("map");
+
         mapElement.appendChild(this.root);
     }
 
