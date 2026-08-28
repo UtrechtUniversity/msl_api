@@ -10,7 +10,6 @@ import {
 } from "./utils";
 import { omit } from "lodash";
 
-const HIDE_EMPTY_TERMS = "dataPublicationMapHideEmptyTerms" as const;
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
 
@@ -168,23 +167,6 @@ export class KeywordTree {
                     interpretedInStorage === "false" ? ORIGINAL : INTERPRETED,
                 );
             }
-            let readyTrees = 0;
-            $(TREES.interpreted.id + "," + TREES.original.id).on(
-                "state_ready.jstree",
-                async () => {
-                    readyTrees++;
-                    // We have to trigger the toggle here,
-                    //  because we have to be sure that trees are initialized
-                    if (readyTrees == 2) {
-                        console.log("here");
-                        const hideInStorage =
-                            localStorage.getItem(HIDE_EMPTY_TERMS);
-                        if (hideInStorage === "true") {
-                            self.hideEmptyTermsToggle.trigger("click");
-                        }
-                    }
-                },
-            );
 
             $("#search-filters").on("keyup", function () {
                 const searchString = $(this).val();
@@ -489,12 +471,10 @@ export class KeywordTree {
         const self = this;
         self.hideEmptyTermsToggle.on("click", function () {
             if (this.checked) {
-                localStorage.setItem(HIDE_EMPTY_TERMS, "" + this.checked);
                 self.hideEmptyTermsInTrees();
                 return;
             }
 
-            localStorage.setItem(HIDE_EMPTY_TERMS, "" + false);
             self.unhideEmptyTermsInTrees();
         });
     }
