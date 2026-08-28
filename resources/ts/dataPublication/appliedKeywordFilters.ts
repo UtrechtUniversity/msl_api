@@ -113,7 +113,7 @@ export class AppliedKeywordFilters {
         this.areExistingAppliedFilters = false;
         this.resetAppliedKeywordsInUI();
     }
-    public removeFilter({ id }: { id: string }): void {
+    private removeFilter({ id }: { id: string }): void {
         this.removeAppliedFilterElement({
             id,
         });

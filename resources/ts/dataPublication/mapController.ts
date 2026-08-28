@@ -122,7 +122,7 @@ export class MapController {
             },
         });
     }
-    
+
     public async init() {
         ({ facets: this.facets } = await this.getJsonFromRequest());
         this.keywordTree.init(this.facets);
@@ -258,7 +258,7 @@ export class MapController {
 
     private async handleFreeTextKeywordRemove({ id }: { id: string }) {
         this.searchFilters.activeKeywordFilters.delete(id);
-        this.appliedKeywords.removeFilter({ id });
+        this.appliedKeywords.removeFreeTextFilter({ id });
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
         });
