@@ -155,7 +155,7 @@ export class MapController {
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
-
+    //
     public async getJsonFromRequest(): Promise<{
         data: GeoFeatureDataPublications;
         meta: Paginator;
