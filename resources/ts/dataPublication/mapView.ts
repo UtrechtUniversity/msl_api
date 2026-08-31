@@ -153,7 +153,8 @@ export class MapView {
      * where we:
      * 1. get the point coordinates of the click
      * 2. gather layers that overlap with this point and their metadata
-     * 3. use this gathered information to populate the pop up and add relevant interactions
+     * 3. use this gathered information to create an html list
+     * 4. populate the pop up and add relevant interactions
      */
     private addClickListenerPerFeatureGroup({
         resultSet,
@@ -182,7 +183,7 @@ export class MapView {
                 };
             });
 
-            const highLightPoputContent =
+            const multipleOverlappingFeatures =
                 Object.keys(popUpInfoPerDoi).length > 1;
 
             const outerDiv = document.createElement("div");
@@ -203,7 +204,7 @@ export class MapView {
                 `;
                 // We want to highlight on hover datapublications only
                 // if we have a list of more than one in the popup
-                if (highLightPoputContent) {
+                if (multipleOverlappingFeatures) {
                     dataPublicationPopUpElement.addEventListener(
                         "mouseover",
                         () => {
@@ -237,7 +238,7 @@ export class MapView {
             }
             const popup = new PopupWithDirection({
                 closeButton: true,
-                maxHeight: 100,
+                maxHeight: multipleOverlappingFeatures ? 200 : undefined,
             })
                 .setContent(outerDiv)
                 .setLatLng(clickedPoint)
