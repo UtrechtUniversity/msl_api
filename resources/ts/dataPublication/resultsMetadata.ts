@@ -1,4 +1,4 @@
-import { assertNotNull } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../helpers";
 import type { Paginator } from "./utils";
 
 export class ResultsMetadata {
@@ -6,12 +6,7 @@ export class ResultsMetadata {
     totalCount: HTMLParagraphElement;
     currentCount: HTMLParagraphElement;
     constructor() {
-        const overArchingElement = document.getElementById("results-metadata");
-        assertNotNull(
-            overArchingElement,
-            `Element about results metadata was not found. This is a bug`,
-        );
-        this.resultsMetadataElement = overArchingElement;
+        this.resultsMetadataElement = getElementOrThrow("results-metadata");
         this.totalCount = this.createElement("total-count");
         this.currentCount = this.createElement("current-count");
         this.setDefaultState();

@@ -1,4 +1,4 @@
-import { assertNotNull } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../helpers";
 import {
     LEFT_ARROW_ICON,
     RIGHT_ARROW_ICON,
@@ -20,11 +20,7 @@ export class Pagination {
     public onPageChange: (page: number) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
-        const paginateElement = document.getElementById("results-pagination");
-        assertNotNull(
-            paginateElement,
-            `There is not element for pagination of results. This is a bug.`,
-        );
+        const paginateElement = getElementOrThrow("results-pagination");
         this.paginateElement = paginateElement;
     }
 

@@ -1,4 +1,4 @@
-import { assertNotNull } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../helpers";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     throwWhenCallBackNotInitialized,
@@ -32,19 +32,15 @@ export class AppliedKeywordFilters {
         throwWhenCallBackNotInitialized;
 
     constructor() {
-        const removeBin = getElementOrThrow(
-            "remove-bin-icon",
-            "Remove bin field",
-        );
+        const removeBin = getElementOrThrow("remove-bin-icon");
         removeBin.hidden = true;
-        removeBin.addEventListener("click", () => {
-            this.onActiveFilterRemoveAll();
+        removeBin.addEventListener("click", async () => {
+            await this.onActiveFilterRemoveAll();
         });
         this.removeBin = removeBin;
 
         this.activeFilterContainer = getElementOrThrow(
             "active-filter-container",
-            "Active filter container ",
         );
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
     }
@@ -117,7 +113,7 @@ export class AppliedKeywordFilters {
         this.areExistingAppliedFilters = false;
         this.resetAppliedKeywordsInUI();
     }
-    public removeFilter({ id }: { id: string }): void {
+    private removeFilter({ id }: { id: string }): void {
         this.removeAppliedFilterElement({
             id,
         });
@@ -142,15 +138,6 @@ export class AppliedKeywordFilters {
         this.removeBin.hidden = true;
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
     }
-}
-
-function getElementOrThrow(elementId: string, name: string) {
-    const element = document.getElementById(elementId);
-    assertNotNull(
-        element,
-        ` Element '${name}'could not be found. This is a bug.`,
-    );
-    return element;
 }
 
 function createKeywordElement({

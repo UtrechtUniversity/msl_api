@@ -98,34 +98,34 @@ export class MapController {
             onTreeKeywordFilterAdd: async (
                 opts: TreeKeywordAddInfo,
             ): Promise<void> => {
-                this.handleTreeKeywordFilterAdd(opts);
+                await this.handleTreeKeywordFilterAdd(opts);
             },
             onTreeKeywordFilterRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(opts);
             },
         });
         this.appliedKeywords.setHandlerfn({
             onActiveTreeKeywordRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(opts);
             },
             onActiveFreeTextKeywordRemove: async (opts: {
                 id: string;
             }): Promise<void> => {
-                this.handleFreeTextKeywordRemove(opts);
+                await this.handleFreeTextKeywordRemove(opts);
             },
             onActiveFilterRemoveAll: async () => {
-                this.handleRemoveAllFilters();
+                await this.handleRemoveAllFilters();
             },
         });
     }
-    
-    public async init() {
+
+    public async init(): Promise<void> {
         ({ facets: this.facets } = await this.getJsonFromRequest());
-        this.keywordTree.init(this.facets);
+        await this.keywordTree.init(this.facets);
     }
 
     // Methods about requests and populating
@@ -216,7 +216,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.boundingBox = "";
 
-        this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
 
         this.mapView.setDrawingEnable(false);
     }
@@ -258,7 +258,7 @@ export class MapController {
 
     private async handleFreeTextKeywordRemove({ id }: { id: string }) {
         this.searchFilters.activeKeywordFilters.delete(id);
-        this.appliedKeywords.removeFilter({ id });
+        this.appliedKeywords.removeFreeTextFilter({ id });
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
         });
@@ -314,7 +314,7 @@ export class MapController {
     // Helper methods
 
     private getFreeTextFiltersAsArray(): string[] {
-        let freeText = [];
+        const freeText = [];
         for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
             if (metadata.type !== FREE_TEXT_SEARCH_KEYWORD) continue;
             freeText.push(metadata.value);
@@ -323,7 +323,7 @@ export class MapController {
     }
 
     private getKeywordsAsRequestArgs(): KeywordFiltersAsRequestArgs {
-        let keywords: KeywordFiltersAsRequestArgs = {};
+        const keywords: KeywordFiltersAsRequestArgs = {};
         for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
             if (metadata.type !== TREE_KEYWORD) continue;
             const values = keywords[metadata.name];
@@ -372,7 +372,7 @@ export class MapController {
     }
     private areActiveFilters(): boolean {
         const filters = this.searchFilters;
-        if (!!filters.boundingBox) return true;
+        if (filters.boundingBox) return true;
         if (filters.activeKeywordFilters.size !== 0) return true;
         return false;
     }

@@ -93,8 +93,8 @@ export class MapView {
         this.onFeatureOut = onFeatureOut;
     }
 
-    public async init() {
-        await this.mouseEventHandling();
+    public init() {
+        this.mouseEventHandling();
     }
 
     public setDrawingEnable(enable: boolean) {
@@ -303,7 +303,7 @@ export class MapView {
             });
         };
 
-    private async mouseEventHandling() {
+    private mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
 

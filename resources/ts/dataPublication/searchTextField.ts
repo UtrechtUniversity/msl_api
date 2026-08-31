@@ -1,4 +1,8 @@
-import { assertNotNull, assertNotUndefined } from "../helpers";
+import {
+    assertNotNull,
+    assertNotUndefined,
+    getElementOrThrow,
+} from "../helpers";
 import type { MapController } from "./mapController";
 
 export class SearchTextField {
@@ -9,11 +13,7 @@ export class SearchTextField {
     }
 
     private initInput() {
-        const formField = document.getElementById("form-search-text");
-        assertNotNull(
-            formField,
-            `Form search field was not found. This is a bug.`,
-        );
+        const formField = getElementOrThrow("form-search-text");
 
         const self = this;
         formField.addEventListener("submit", async function (e) {
