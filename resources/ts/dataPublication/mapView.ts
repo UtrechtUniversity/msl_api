@@ -131,7 +131,7 @@ export class MapView {
         >) {
             const resultSet = tabInfo.label;
             this.addFeaturesInMarkers(geoList, { resultSet: tabInfo.label });
-            this.addClickListenerPerResultSet({ resultSet });
+            this.addClickListenerPerFeatureGroup({ resultSet });
         }
     }
 
@@ -148,8 +148,14 @@ export class MapView {
             }).addTo(this.markers[resultSet]);
         }
     }
-
-    private addClickListenerPerResultSet({
+    /**
+     * We add a click listener in a specific feature group belonging to a result set,
+     * where we:
+     * 1. get the point coordinates of the click
+     * 2. gather layers that overlap with this point and their metadata
+     * 3. use this gathered information to populate the pop up and add relevant interactions
+     */
+    private addClickListenerPerFeatureGroup({
         resultSet,
     }: {
         resultSet: GeoFeatureResultSet;
