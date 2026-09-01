@@ -1,4 +1,4 @@
-import { assertNotNull } from "../helpers";
+import { assertNotNull } from "../../helpers";
 const MAP_AREA_ID = "datapublication-map-area" as const;
 const START_SCREEN_ID = "start-screen-overlay" as const;
 export class StartScreen {

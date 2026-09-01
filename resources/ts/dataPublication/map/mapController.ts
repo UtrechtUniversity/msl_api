@@ -1,4 +1,4 @@
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
+import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     getDefaultTab,
@@ -10,11 +10,11 @@ import {
     type KeywordFilters as KeywordFiltersAsRequestArgs,
     type Paginator,
     TREE_KEYWORD,
-} from "./utils.js";
+} from "../utils.js";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
-import type { GeoFeatureDataPublications } from "../types/datapublication";
+import type { GeoFeatureDataPublications } from "../../types/datapublication";
 import { Pagination } from "./pagination";
 import { cloneDeep } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
@@ -22,6 +22,7 @@ import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
+import { assertNotNull, getElementOrThrow } from "../../helpers";
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     boundingBox: string;
@@ -316,7 +317,8 @@ export class MapController {
     }
 
     private addRedirectionWarning() {
-        $("#list-view-tab").on("click", (e: JQuery.ClickEvent) => {
+        const listViewTab = getElementOrThrow("list-view-tab");
+        listViewTab.addEventListener("click", (e: Event) => {
             if (this.areActiveFilters()) {
                 const text = `Switching to the list will not transfer your applied filters in the list view. 
             \nDo you want to proceed?`;

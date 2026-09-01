@@ -1,4 +1,4 @@
-import { assertNotNull, getElementOrThrow } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../../helpers";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     throwWhenCallBackNotInitialized,
@@ -7,7 +7,7 @@ import {
     type FreeTextAddInfoWithType,
     type KeywordType,
     type TreeKeywordAddInfoWithType,
-} from "./utils";
+} from "../utils";
 
 const NO_FILTER_ELEMENT =
     `<h6 class="italic">- no filter applied -</h6>` as const;

@@ -1,4 +1,4 @@
-import { assertNotUndefined } from "../helpers";
+import { assertNotUndefined } from "../../helpers";
 import "jstree";
 import {
     getIdForTreeKeyword,
@@ -7,7 +7,7 @@ import {
     type Facets,
     type TreeKeywordAddInfo,
     type KeywordFilters,
-} from "./utils";
+} from "../utils";
 import { omit } from "lodash";
 
 const INTERPRETED = "interpreted" as const;

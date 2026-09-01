@@ -17,10 +17,10 @@ export default defineConfig({
             'resources/ts/filters-menu-labs.ts',
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
-            'resources/ts/dataPublication/mapController.ts',
-            'resources/ts/warningTab.ts',
+            'resources/ts/dataPublication/map/mapController.ts',
+            'resources/ts/dataPublication/list/warningWindow.ts',
 
-            'resources/ts/dataPublication/tab-handle.ts',
+            'resources/ts/dataPublication/map/sidebarTabHandle.ts',
             'resources/css/generalStyles/popupWithDirection.css',
             'resources/css/dataPublicationMap/datapublications-list.css',
             'resources/css/dataPublicationMap/in-map-styles.css',
