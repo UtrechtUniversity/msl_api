@@ -10,6 +10,7 @@
             ],
             'routeActive' => route('data-access-map'),
         ])
+
     </div>
 
     <div class="main-content flex-col h-full">

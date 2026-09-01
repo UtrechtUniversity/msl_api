@@ -18,6 +18,7 @@ export default defineConfig({
             'resources/ts/keyword-form.ts',
             'resources/ts/tracker.ts',
             'resources/ts/dataPublication/mapController.ts',
+            'resources/ts/warningTab.ts',
 
             'resources/ts/dataPublication/tab-handle.ts',
             'resources/css/generalStyles/popupWithDirection.css',

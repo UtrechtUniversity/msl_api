@@ -124,6 +124,7 @@ export class MapController {
                 await this.handleRemoveAllFilters();
             },
         });
+        this.addRedirectionWarning();
     }
 
     public async init(): Promise<void> {
@@ -158,7 +159,7 @@ export class MapController {
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
     }
-    //
+
     public async getJsonFromRequest(): Promise<{
         data: GeoFeatureDataPublications;
         meta: Paginator;
@@ -311,6 +312,18 @@ export class MapController {
         this.searchFilters.activeKeywordFilters.delete(id);
         await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
             except: "boundingBox",
+        });
+    }
+
+    private addRedirectionWarning() {
+        $("#list-view-tab").on("click", (e: JQuery.ClickEvent) => {
+            if (this.areActiveFilters()) {
+                const text = `Switching to the list will not transfer your applied filters in the list view. 
+            \nDo you want to proceed?`;
+                if (!confirm(text)) {
+                    e.preventDefault();
+                }
+            }
         });
     }
 

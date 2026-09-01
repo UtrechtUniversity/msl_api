@@ -9,6 +9,7 @@
             ],
             'routeActive' => route('data-access'),
         ])
+        @vite(['resources/ts/warningTab.ts'])
     </div>
 
     <div class="main-content">
