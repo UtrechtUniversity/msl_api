@@ -2,11 +2,12 @@ import {
     type LeafletMouseEvent,
     type CircleMarkerOptions,
     type LatLngBounds,
-    LayerGroup,
+    FeatureGroup,
+    CircleMarker,
+    Polygon,
 } from "leaflet";
-import type { Feature } from "geojson";
 import type {
-    GeoFeature,
+    FeatureWithExtraInfo,
     GeoFeatureDataPublications,
 } from "../types/datapublication";
 import {
@@ -30,13 +31,14 @@ import {
     type Entries,
 } from "./utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
+import { PopupWithDirection } from "../popupWithDirection";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
 
 type GroupedLayer = { [groupedId: string]: Layer[] };
 type GroupedLayerMapping = GeoFeatureResultSetMapping<GroupedLayer>;
-type MarkerMapping = GeoFeatureResultSetMapping<LayerGroup>;
+type MarkerMapping = GeoFeatureResultSetMapping<FeatureGroup>;
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG);
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG);
 
@@ -44,8 +46,11 @@ export class MapView {
     map: Map;
     // Drawing in map properties
     markers: MarkerMapping = getGeoFeatureResultSetMappingObj(
-        () => new LayerGroup(),
+        () => new FeatureGroup(),
     );
+    /**
+     * Grouped markers per doi.
+     */
     groupedMarkers: GroupedLayerMapping =
         getGeoFeatureResultSetMappingObj<GroupedLayer>(() => {
             return {};
@@ -88,8 +93,8 @@ export class MapView {
         this.onFeatureOut = onFeatureOut;
     }
 
-    public async init() {
-        await this.mouseEventHandling();
+    public init() {
+        this.mouseEventHandling();
     }
 
     public setDrawingEnable(enable: boolean) {
@@ -124,7 +129,9 @@ export class MapView {
         for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
             typeof TAB_CONFIG
         >) {
+            const resultSet = tabInfo.label;
             this.addFeaturesInMarkers(geoList, { resultSet: tabInfo.label });
+            this.addClickListenerPerFeatureGroup({ resultSet });
         }
     }
 
@@ -133,20 +140,118 @@ export class MapView {
         { resultSet }: { resultSet: GeoFeatureResultSet },
     ) {
         const features = geoList.geo_features[resultSet];
-
         for (const feature of features) {
             L.geoJSON(feature.feature, {
                 pointToLayer: this.pointToLayer,
-                onEachFeature: this.getOnEachFeaturePerPublication(
-                    feature,
-                    resultSet,
-                ),
+                onEachFeature: this.getOnEachFeaturePerPublication(resultSet),
                 style: this.defaultOptions,
             }).addTo(this.markers[resultSet]);
         }
     }
+    /**
+     * We add a click listener in a specific feature group belonging to a result set,
+     * where we:
+     * 1. get the point coordinates of the click
+     * 2. gather layers that overlap with this point and their metadata
+     * 3. use this gathered information to create an html list
+     * 4. populate the pop up and add relevant interactions
+     */
+    private addClickListenerPerFeatureGroup({
+        resultSet,
+    }: {
+        resultSet: GeoFeatureResultSet;
+    }) {
+        this.markers[resultSet].on("click", (e) => {
+            const clickedPoint = e.latlng;
+            const popUpInfoPerDoi: {
+                [doi: string]: { title: string; portalLink: string };
+            } = {};
+            const self = this;
+            this.markers[resultSet].eachLayer(function (geoJson: Layer) {
+                const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
+                    geoJson,
+                    map: self.map,
+                    clickedPoint,
+                });
+                if (!infoFromGeoJson) return;
+                const { doi, portalLink, title } = infoFromGeoJson;
+                // If we have already stored information, we can go on.
+                if (popUpInfoPerDoi[doi]) return;
+                popUpInfoPerDoi[doi] = {
+                    portalLink,
+                    title,
+                };
+            });
 
-    private pointToLayer = (_: Feature, latlng: LatLng) => {
+            const multipleOverlappingFeatures =
+                Object.keys(popUpInfoPerDoi).length > 1;
+
+            const outerDiv = document.createElement("div");
+            outerDiv.classList = "list-view";
+
+            for (const [doi, { portalLink, title }] of Object.entries(
+                popUpInfoPerDoi,
+            )) {
+                const dataPublicationPopUpElement =
+                    document.createElement("div");
+                dataPublicationPopUpElement.classList =
+                    this.popupOptions.classNameContent;
+                dataPublicationPopUpElement.innerHTML = `   
+                       <h6 class='${this.popupOptions.classNameTitle}'>${title}</h6>
+                       <a href='${portalLink}' target='_blank'>
+                       <button class='btn popup-btn'>View Publication</button>
+                     </a>
+                `;
+                // We want to highlight on hover datapublications only
+                // if we have a list of more than one in the popup
+                if (multipleOverlappingFeatures) {
+                    dataPublicationPopUpElement.addEventListener(
+                        "mouseover",
+                        () => {
+                            dataPublicationPopUpElement.classList.add(
+                                "highlight",
+                            );
+                            this.setMarkersStyle({
+                                doi,
+                                resultSet,
+                                highlightOrReset: "highlight",
+                            });
+                            this.onFeatureHover(doi);
+                        },
+                    );
+                    dataPublicationPopUpElement.addEventListener(
+                        "mouseout",
+                        () => {
+                            dataPublicationPopUpElement.classList.remove(
+                                "highlight",
+                            );
+                            this.setMarkersStyle({
+                                doi,
+                                resultSet,
+                                highlightOrReset: "reset",
+                            });
+                            this.onFeatureOut(doi);
+                        },
+                    );
+                }
+                outerDiv.append(dataPublicationPopUpElement);
+            }
+            const popup = new PopupWithDirection({
+                closeButton: true,
+                maxHeight: multipleOverlappingFeatures ? 200 : undefined,
+            })
+                .setContent(outerDiv)
+                .setLatLng(clickedPoint)
+                .openOn(this.map);
+
+            this.markers[resultSet].bindPopup(popup);
+            // We have to open the pop up on click, and not only bind.
+            // If we don't then the pop up will open only on the second click.
+            this.markers[resultSet].openPopup(clickedPoint);
+        });
+    }
+
+    private pointToLayer = (_: FeatureWithExtraInfo, latlng: LatLng) => {
         return L.circleMarker(latlng, this.circleMarkerDefaultOptions);
     };
 
@@ -172,27 +277,20 @@ export class MapView {
 
     // We want to be able to pass information of the publication inside each feature of the geo collection
     private getOnEachFeaturePerPublication =
-        (geoFeatureWithInfo: GeoFeature, resultSet: GeoFeatureResultSet) =>
-        (_: Feature, layer: Layer) => {
-            const popupContent = `
-                <div class='${this.popupOptions.classNameContent}'>
-                    <h6 class='${this.popupOptions.classNameTitle}'>${geoFeatureWithInfo.title}</h6>
-                    <a href='${geoFeatureWithInfo.portalLink}' target='_blank'>
-                    <button class='btn btn-primary'>View Publication</button>
-                    </a>
-                </div>
-                `;
-            layer.bindPopup(popupContent);
-
+        (resultSet: GeoFeatureResultSet) =>
+        (feature: FeatureWithExtraInfo, layer: Layer) => {
+            assertNotNull(
+                feature.properties,
+                `Properties of feature '${JSON.stringify(feature)}' should not be null. This is a bug.`,
+            );
             // Store reference
-            const doi = geoFeatureWithInfo.data_publication_doi;
+            const doi = feature.properties.data_publication.doi;
+
             const geoFeaturesForDoi: Layer[] | undefined =
                 this.groupedMarkers[resultSet][doi];
-
             this.groupedMarkers[resultSet][doi] = geoFeaturesForDoi
                 ? [...geoFeaturesForDoi, layer]
                 : [layer];
-
             // When hover over a geo feature
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
@@ -200,7 +298,7 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "highlight",
                 });
-                this.onFeatureHover ? this.onFeatureHover(doi) : null;
+                this.onFeatureHover(doi);
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -208,11 +306,11 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "reset",
                 });
-                this.onFeatureOut ? this.onFeatureOut(doi) : null;
+                this.onFeatureOut(doi);
             });
         };
 
-    private async mouseEventHandling() {
+    private mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
 
@@ -347,10 +445,85 @@ export class MapView {
     }
 }
 
+// Inspired by https://github.com/geoman-io/leaflet-geoman/blob/develop/src/js/L.PM.Utils.js
+function pxToMeterRadius({
+    radiusInPx,
+    map,
+}: {
+    radiusInPx: number;
+    map: Map;
+}): number {
+    const center = map.project(map.getCenter());
+    const point = L.point(center.x + radiusInPx, center.y);
+    return map.distance(map.unproject(point), map.getCenter());
+}
+
 // Path: An abstract class that contains options and constants shared between vector overlays
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path))
         throw new Error(
             `Geofeature should be instance of a path, but it is not. This is a bug.`,
         );
+}
+// Helper
+function getDataPublicationInfoFromGeoJson({
+    geoJson,
+    map,
+    clickedPoint,
+}: {
+    geoJson: Layer;
+    map: Map;
+    clickedPoint: LatLng;
+}): { doi: string; title: string; portalLink: string } | null {
+    if (!(geoJson instanceof L.GeoJSON))
+        throw new Error(
+            "GeoJson should have been of correct type. This is a bug.",
+        );
+    const layers = geoJson.getLayers();
+    // Each geoJson should have one layer with one feature.
+    if (layers.length > 1)
+        throw new Error("Layers of GeoJson are more than one. This is a bug.");
+
+    const layer = layers[0];
+    if (layer instanceof CircleMarker) {
+        assertNotUndefined(
+            layer.feature,
+            `Layer should have 'feature' property defined. This is a bug.`,
+        );
+
+        const center = layer.getLatLng();
+        const radius = pxToMeterRadius({
+            radiusInPx: layer.getRadius(),
+            map,
+        });
+
+        if (center.distanceTo(clickedPoint) <= radius) {
+            const { doi, title, portalLink } =
+                layer.feature.properties.data_publication;
+            return {
+                doi,
+                title,
+                portalLink,
+            };
+        }
+        return null;
+    }
+    if (layer instanceof Polygon) {
+        assertNotUndefined(
+            layer.feature,
+            `Layer should have 'feature' property defined. This is a bug.`,
+        );
+        const bounds = layer.getBounds();
+        if (bounds.contains(clickedPoint)) {
+            const { doi, title, portalLink } =
+                layer.feature.properties.data_publication;
+            return {
+                doi,
+                title,
+                portalLink,
+            };
+        }
+        return null;
+    }
+    throw new Error("Layer is of incorrect type. This is a bug.");
 }

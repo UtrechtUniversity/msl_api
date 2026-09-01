@@ -22,7 +22,7 @@
                             keywords</a>
                         <a class="btn btn-primary" href="{{ route('filter-tree-download-original') }}">Download tree
                             with
-                            orginal assigned keywords</a>
+                            original assigned keywords</a>
                         <a class="btn btn-primary" href="{{ route('filter-tree-download-equipment') }}">Download tree
                             equipment</a>
                     </div>

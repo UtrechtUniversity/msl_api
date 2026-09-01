@@ -142,17 +142,42 @@ class GeoJsonDataPublicationControllerTest extends TestCase
                                 fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->etc()
                             )->count('inside', 3)->has(
                                 'inside.0',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->where('data_publication_doi', '10.1594/pangaea.770250')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Polygon')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250')->etc()
                             )->has(
                                 'inside.1',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('data_publication_doi', '10.1594/pangaea.770250')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250')->etc()
                             )
                             ->has(
                                 'inside.2',
-                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('data_publication_doi', '10.1594/pangaea.770250_3')->etc()
+                                fn (AssertableJson $json) => $json->where('feature.geometry.type', 'Point')->where('feature.properties.data_publication.doi', '10.1594/pangaea.770250_3')->etc()
                             )->etc())
                 )
+                ->has('facets')
         );
+    }
 
+    public function test_all_geojson_success_facets(): void
+    {
+        $this->bindControllerToApp(fileContents: '/tests/MockData/CkanResponses/V2/datapublication_with_facet.json');
+
+        // Retrieve response from API
+        $response = $this->get('/api/geoJsonDataPublications?page=1&pageSize=10&boundingBox=%5B-180%2C-90%2C180%2C90%5D&keywords=%7B%22msl_enriched_keyword_uri%22%3A%5B%22https%3A%2F%2Fepos-msl.uu.nl%2Fvoc%2Fgeologicalage%2F1.4%2Fprecambrian-archean-eoarchean%22%5D%7D');
+        // Check for 200 status response
+        $response->assertStatus(200);
+
+        $response->assertJson(
+            fn (AssertableJson $json) => $json->has('success')->where('messages', [])
+                ->has(
+                    'facets',
+                    fn (AssertableJson $json) => $json->has(
+                        'msl_has_geologicalage',
+                        fn (AssertableJson $json) => $json->where('title', 'msl_has_geologicalage')->has(
+                            'items.0',
+                            fn (AssertableJson $json) => $json->where('name', 'true')->where('display_name', 'true')->where('count', 1)
+                        )
+
+                    )->etc()
+                )->etc()
+        );
     }
 }

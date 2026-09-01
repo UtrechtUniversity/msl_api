@@ -22,6 +22,9 @@
         "isolatedModules": true,
         "noUncheckedSideEffectImports": true,
         "moduleDetection": "force",
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        // Disabling so we get these warning only from eslint
+        "noUnusedLocals": false,
+        "noUnusedParameters": false
     }
 }

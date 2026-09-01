@@ -1,0 +1,34 @@
+@reference "../app.css";
+
+.bbox-selection {
+  @apply 
+  stroke-red-700 
+  stroke-2 
+  fill-red-100;
+}
+
+.popup-data-publication-content {
+  padding-block: calc(var(--spacing) * 2);
+  @apply 
+  text-sm 
+  font-medium 
+  text-neutral-800;
+}
+
+.popup-data-publication-content.highlight {
+    background-color: var(--color-secondary-100);
+    cursor: pointer;
+    color: var(--color-secondary-900);
+}
+
+.popup-data-publication-title {
+  @apply
+  text-sm
+  font-semibold
+  text-primary-900
+  text-left
+  w-full
+  m-2;
+}
+
+

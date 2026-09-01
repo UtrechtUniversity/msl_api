@@ -1,5 +1,6 @@
 @section('title', 'Datapublications map')
 <x-layout_main>
+
     <div class="tab-links-parent">
         @include('public.components.tab-links', [
             'categoryName' => 'Data Publications',
@@ -12,7 +13,7 @@
     </div>
 
     <div class="main-content flex-col h-full">
-        <div class="sub-content-wide flex place-content-center w-full h-full">
+        <div id='datapublication-map-area' class="sub-content-wide flex place-content-center w-full h-full">
             <div class="drawer lg:drawer-open w-full h-full">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content bg-secondary-100 flex h-full ">
@@ -21,9 +22,11 @@
                     <div class="w-full h-full flex flex-col bg-primary-100 pl-4">
                         {{-- top search div --}}
                         @include('public.components.datapublication-map.search-div')
-                        @include('public.components.datapublication-map.results-metadata')
-
-                        {{-- list view --}}
+                        <div class=' grid grid-cols-2'>
+                            @include('public.components.datapublication-map.results-metadata')
+                            @include('public.components.datapublication-map.search-div-list')
+                        </div>
+                        {{-- map --}}
                         <div class="list-view">
                             @include('public.components.datapublication-map.map-view')
                         </div>
@@ -34,7 +37,7 @@
                     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                     {{-- side bar --}}
 
-                    <ul class="menu h-full w-80 p-0  text-primary-900 bg-primary-200 flex flex-col ">
+                    <ul class="menu h-full w-[340px] p-0  text-primary-900 bg-primary-200 flex flex-col ">
                         <!-- Sidebar content here -->
                         @include('public.components.datapublication-map.sidebar')
                     </ul>

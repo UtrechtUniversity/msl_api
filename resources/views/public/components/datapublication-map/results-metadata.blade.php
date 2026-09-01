@@ -1,7 +1,7 @@
-<div class="flex p-2">
+<div class="flex py-4">
     {{-- content above map --}}
     <div class=" flex items-center h-16 w-full  ">
-        <div class='p-12'>
+        <div class='px-12'>
             <div id='results-metadata' class="flex flex-col">
 
             </div>
