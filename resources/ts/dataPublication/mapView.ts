@@ -236,6 +236,7 @@ export class MapView {
                 }
                 outerDiv.append(dataPublicationPopUpElement);
             }
+            //
             const popup = new PopupWithDirection({
                 closeButton: true,
                 maxHeight: multipleOverlappingFeatures ? 200 : undefined,
