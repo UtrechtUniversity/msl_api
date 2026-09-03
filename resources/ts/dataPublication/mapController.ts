@@ -108,6 +108,21 @@ export class MapController {
             }): Promise<void> => {
                 await this.handleTreeKeywordFilterRemove(opts);
             },
+            onTreeToggle: (e: JQuery.ClickEvent): boolean => {
+                let isConfirmed = true;
+                if (this.areActiveFilters()) {
+                    const text = `Switching to the list will not transfer your applied filters in the list view. 
+            \nDo you want to proceed?`;
+                    isConfirmed = confirm(text);
+                    if (!isConfirmed) {
+                        e.preventDefault();
+                        return isConfirmed;
+                    }
+                    this.resetComponentsAndData();
+                    return isConfirmed;
+                }
+                return isConfirmed;
+            },
         });
         this.appliedKeywords.setHandlerfn({
             onActiveTreeKeywordRemove: async (opts: {
