@@ -22,7 +22,7 @@ import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { assertNotNull, getElementOrThrow } from "../../helpers";
+import { getElementOrThrow } from "../../helpers";
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     boundingBox: string;
@@ -320,7 +320,7 @@ export class MapController {
         const listViewTab = getElementOrThrow("list-view-tab");
         listViewTab.addEventListener("click", (e: Event) => {
             if (this.areActiveFilters()) {
-                const text = `Switching to the list will not transfer your applied filters in the list view. 
+                const text = `Switching to the list view will not transfer your applied filters in the map view. 
             \nDo you want to proceed?`;
                 if (!confirm(text)) {
                     e.preventDefault();
