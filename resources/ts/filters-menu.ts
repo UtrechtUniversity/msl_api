@@ -234,7 +234,7 @@ $(function () {
         }
     });
 
-    $("#filterTreeToggleInterpreted").change(function () {
+    $("#filterTreeToggleInterpreted").on("click", function (e) {
         if (this.checked) {
             localStorage.setItem("interpretedFilters", true);
             let searchParams = new URLSearchParams(window.location.search);
@@ -244,6 +244,8 @@ $(function () {
                     "Your currently selected filters will be removed when you switch trees.";
                 if (confirm(text)) {
                     window.location.href = "../data-access";
+                } else {
+                    e.preventDefault();
                 }
             } else {
                 $("#filterTreeToggleOriginal").prop("checked", false);
@@ -259,6 +261,8 @@ $(function () {
                     "Your currently selected filters will be removed when you switch trees.";
                 if (confirm(text)) {
                     window.location.href = "../data-access";
+                } else {
+                    e.preventDefault();
                 }
             } else {
                 $("#filterTreeToggleOriginal").prop("checked", "checked");
@@ -268,7 +272,7 @@ $(function () {
         }
     });
 
-    $("#filterTreeToggleOriginal").change(function () {
+    $("#filterTreeToggleOriginal").on("click", function (e) {
         if (this.checked) {
             localStorage.setItem("interpretedFilters", false);
             let searchParams = new URLSearchParams(window.location.search);
@@ -278,6 +282,8 @@ $(function () {
                     "Your currently selected filters will be removed when you switch trees.";
                 if (confirm(text)) {
                     window.location.href = "../data-access";
+                } else {
+                    e.preventDefault();
                 }
             } else {
                 $("#filterTreeToggleInterpreted").prop("checked", false);
@@ -293,6 +299,9 @@ $(function () {
                     "Your currently selected filters will be removed when you switch trees.";
                 if (confirm(text)) {
                     window.location.href = "../data-access";
+                }
+                {
+                    e.preventDefault();
                 }
             } else {
                 $("#filterTreeToggleInterpreted").prop("checked", "checked");
