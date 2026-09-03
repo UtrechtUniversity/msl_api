@@ -2,7 +2,7 @@ import {
     assertNotNull,
     assertNotUndefined,
     getElementOrThrow,
-} from "../helpers";
+} from "../../helpers";
 import type { MapController } from "./mapController";
 
 export class SearchTextField {

@@ -1,10 +1,10 @@
-import { assertNotNull, getElementOrThrow } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../../helpers";
 import {
     LEFT_ARROW_ICON,
     RIGHT_ARROW_ICON,
     throwWhenCallBackNotInitialized,
     type Paginator,
-} from "./utils";
+} from "../utils";
 
 export class Pagination {
     paginateElement: HTMLElement;

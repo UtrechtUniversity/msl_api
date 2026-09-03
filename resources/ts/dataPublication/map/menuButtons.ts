@@ -1,13 +1,13 @@
-import { assertNotNull, getElementOrThrow } from "../helpers";
+import { assertNotNull, getElementOrThrow } from "../../helpers";
 import {
     INSIDE,
     OVERLAPPING,
     type GeoFeatureResultSet,
     type Inside,
     type Overlapping,
-} from "../types/map";
+} from "../../types/map";
 import type { MapController } from "./mapController";
-import { getDefaultTab, TAB_CONFIG } from "./utils";
+import { getDefaultTab, TAB_CONFIG } from "../utils";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;

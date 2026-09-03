@@ -1,15 +1,15 @@
 import type {
     DataPublication,
     GeoFeatureDataPublications,
-} from "../types/datapublication";
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../types/map";
+} from "../../types/datapublication";
+import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
 import { DomUtil } from "leaflet";
-import { assertNotNull } from "../helpers.js";
+import { assertNotNull } from "../../helpers.js";
 import {
     assertSingleArray,
     TAB_CONFIG,
     throwWhenCallBackNotInitialized,
-} from "./utils.js";
+} from "../utils.js";
 
 export class ResultsSidebar {
     private sidebar: HTMLElement;

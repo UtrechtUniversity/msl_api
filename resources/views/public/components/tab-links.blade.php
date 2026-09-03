@@ -18,11 +18,15 @@ includeIcon    = string - to select which icon
     <div role="tablist" class="tabs tabs-box tabs-md flex flex-row bg-primary-200 justify-around gap-1">
 
         @foreach ($routes as $routeKey => $route)
+            @php
+                $id = implode('-', explode(' ', strtolower($routeKey)));
+            @endphp
+
             @if (isset($routeActive) && $routeActive == $route)
-                <a role="tab" href="{{ $route }}"
+                <a id="{{ $id }}-view-tab" role="tab" href="{{ $route }}"
                     class="tab tab-active w-full sm:w-20 hover-interactive !text-primary-900">{{ $routeKey }}</a>
             @else
-                <a role="tab" href="{{ $route }}"
+                <a id="{{ $id }}-view-tab" role="tab" href="{{ $route }}"
                     class="tab w-full sm:w-20 hover-interactive !text-primary-800">{{ $routeKey }}</a>
             @endif
         @endforeach

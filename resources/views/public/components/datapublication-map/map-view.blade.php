@@ -9,7 +9,7 @@
 
         <div id="map" class="z-0 h-170 relative">
             @include('public.components.datapublication-map.start-screen-overlay')
-            @vite(['resources/ts/dataPublication/mapController.ts'])
+            @vite(['resources/ts/dataPublication/map/mapController.ts'])
 
         </div>
 

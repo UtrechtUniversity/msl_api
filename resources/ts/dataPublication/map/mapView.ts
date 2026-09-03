@@ -9,29 +9,29 @@ import {
 import type {
     FeatureWithExtraInfo,
     GeoFeatureDataPublications,
-} from "../types/datapublication";
+} from "../../types/datapublication";
 import {
     INSIDE,
     OVERLAPPING,
     type GeoFeatureResultSet,
     type GeoFeatureResultSetMapping,
-} from "../types/map";
+} from "../../types/map";
 import { LatLng, Rectangle, Map, Layer, Path } from "leaflet";
 import {
     DEFAULT_CIRCLE_MARKER_OPTIONS,
     DEFAULT_MARKER_OPTIONS,
     HIGHLIGHT_MARKER_OPTIONS,
 } from "./markerStyling.js";
-import { assertNotNull, assertNotUndefined } from "../helpers.js";
+import { assertNotNull, assertNotUndefined } from "../../helpers.js";
 import {
     getGeoFeatureResultSetMappingObj,
     LAT_LONG_RANGE,
     TAB_CONFIG,
     throwWhenCallBackNotInitialized,
     type Entries,
-} from "./utils.js";
+} from "../utils.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
-import { PopupWithDirection } from "../popupWithDirection";
+import { PopupWithDirection } from "../../popupWithDirection";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -236,6 +236,7 @@ export class MapView {
                 }
                 outerDiv.append(dataPublicationPopUpElement);
             }
+
             const popup = new PopupWithDirection({
                 closeButton: true,
                 maxHeight: multipleOverlappingFeatures ? 200 : undefined,
