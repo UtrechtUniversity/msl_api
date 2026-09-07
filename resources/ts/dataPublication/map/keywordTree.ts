@@ -1,14 +1,9 @@
-import { assertNotUndefined } from "../../helpers";
+import { assertNotUndefined, throwWhenCallBackNotInitialized } from "../../assertions";
 import "jstree";
-import {
-    getIdForTreeKeyword,
-    throwWhenCallBackNotInitialized,
-    type FacetItem,
-    type Facets,
-    type TreeKeywordAddInfo,
-    type KeywordFilters,
-} from "../utils";
+import type { FacetItem, Facets } from "../../types/map/components";
+import type { KeywordFilters, TreeKeywordAddInfo } from "../../types/map/keywordFilters";
 import { omit } from "lodash";
+8
 
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
@@ -612,4 +607,15 @@ async function getJson(name: "interpreted" | "original") {
     const jsonResponse = await fetch(`/${name}.json`);
     throwForReadingJson(jsonResponse, name);
     return jsonResponse.json();
+}
+
+
+export function getIdForTreeKeyword({
+    value,
+    name,
+}: {
+    value: string;
+    name: string;
+}) {
+    return "keyword" + "_" + (value !== "true" ? value : name);
 }

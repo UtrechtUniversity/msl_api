@@ -1,16 +1,12 @@
-import { getElementOrThrow } from "../../helpers";
+import { getElementOrThrow } from "../../assertions";
 import {
     INSIDE,
     OVERLAPPING,
     type GeoFeatureResultSet,
     type Inside,
     type Overlapping,
-} from "../../types/map";
-import {
-    getDefaultTab,
-    TAB_CONFIG,
-    throwWhenCallBackNotInitialized,
-} from "../utils";
+} from "../../types/map/resultSet";
+import { getDefaultTab, RESULT_SET_CONFIG } from "./config";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
@@ -202,7 +198,7 @@ export class MenuButtons {
         disabled: boolean;
         includeIcon?: Overlapping | Inside;
     }): HTMLButtonElement {
-        const img = !includeIcon ? "" : TAB_CONFIG[includeIcon].icon;
+        const img = !includeIcon ? "" : RESULT_SET_CONFIG[includeIcon].icon;
         const button = document.createElement("button");
 
         button.id = id;

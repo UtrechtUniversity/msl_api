@@ -10,29 +10,27 @@ import {
 import type {
     FeatureWithExtraInfo,
     GeoFeatureDataPublications,
-} from "../../types/datapublication";
+} from "../../types/map/datapublication";
 import {
     INSIDE,
     OVERLAPPING,
     type GeoFeatureResultSet,
     type GeoFeatureResultSetMapping,
-} from "../../types/map";
+} from "../../types/map/resultSet";
 import { LatLng, Rectangle, Map, Layer, Path } from "leaflet";
 import {
     DEFAULT_CIRCLE_MARKER_OPTIONS,
     DEFAULT_MARKER_OPTIONS,
     HIGHLIGHT_MARKER_OPTIONS,
 } from "./markerStyling.js";
-import { assertNotNull, assertNotUndefined } from "../../helpers.js";
 import {
-    getGeoFeatureResultSetMappingObj,
-    LAT_LONG_RANGE,
-    TAB_CONFIG,
+    assertNotNull,
+    assertNotUndefined,
     throwWhenCallBackNotInitialized,
-    type Entries,
-} from "../utils.js";
+} from "../../assertions.js";
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { PopupWithDirection } from "../../popupWithDirection";
+import { LAT_LONG_RANGE, RESULT_SET_CONFIG } from "./config";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -69,10 +67,23 @@ export class MapView {
         "div",
         " leaflet-pane click-stopper-pane",
     );
-    private onFeatureHover: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
-    private onFeatureOut: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
+    private onFeatureHover: ({
+        doi,
+        resultSet,
+        scroll,
+    }: {
+        doi: string;
+        resultSet: GeoFeatureResultSet;
+        scroll: true;
+    }) => void = throwWhenCallBackNotInitialized;
+    private onFeatureOut: ({
+        doi,
+        resultSet,
+    }: {
+        doi: string;
+        resultSet: GeoFeatureResultSet;
+    }) => void = throwWhenCallBackNotInitialized;
+    private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
         this.map = L.map("map", {
@@ -87,8 +98,23 @@ export class MapView {
         onFeatureHover,
         onFeatureOut,
     }: {
-        onFeatureHover: (doi: string) => void;
-        onFeatureOut: (doi: string) => void;
+        onFeatureHover: ({
+            doi,
+            resultSet,
+            scroll,
+        }: {
+            doi: string;
+            resultSet: GeoFeatureResultSet;
+            scroll: true;
+        }) => void;
+        onFeatureOut: ({
+            doi,
+            resultSet,
+        }: {
+            doi: string;
+            resultSet: GeoFeatureResultSet;
+        }) => void;
+        onCleanUp: () => void;
     }) {
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
@@ -132,12 +158,14 @@ export class MapView {
         });
     }
 
-    public drawResponse(geoList: GeoFeatureDataPublications) {
-        for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
-            typeof TAB_CONFIG
-        >) {
-            const resultSet = tabInfo.label;
-            this.addFeaturesInMarkers(geoList, { resultSet });
+    public async drawResponse(geoList: GeoFeatureDataPublications) {
+        for (const [_, resultSetInfo] of Object.entries(
+            RESULT_SET_CONFIG,
+        ) as Entries<typeof RESULT_SET_CONFIG>) {
+            const resultSet = resultSetInfo.label;
+            this.addFeaturesInMarkers(geoList, {
+                resultSet: resultSetInfo.label,
+            });
             this.addClickListenerPerFeatureGroup({ resultSet });
         }
     }
@@ -229,12 +257,12 @@ export class MapView {
                                 dataPublicationPopUpElement.classList.add(
                                     "highlight",
                                 );
-                                self.setMarkersStyle({
+
+                                self.onFeatureHover({
                                     doi,
                                     resultSet,
-                                    highlightOrReset: "highlight",
+                                    scroll: true,
                                 });
-                                self.onFeatureHover(doi);
                             },
                         );
                         dataPublicationPopUpElement.addEventListener(
@@ -243,12 +271,7 @@ export class MapView {
                                 dataPublicationPopUpElement.classList.remove(
                                     "highlight",
                                 );
-                                self.setMarkersStyle({
-                                    doi,
-                                    resultSet,
-                                    highlightOrReset: "reset",
-                                });
-                                self.onFeatureOut(doi);
+                                self.onFeatureOut({ resultSet, doi });
                             },
                         );
                     }
@@ -319,12 +342,7 @@ export class MapView {
 
             // When hover over a geo feature
             layer.on("mouseover", () => {
-                this.setMarkersStyle({
-                    doi,
-                    resultSet,
-                    highlightOrReset: "highlight",
-                });
-                this.onFeatureHover(doi);
+                this.onFeatureHover({ doi, resultSet, scroll: true });
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -332,7 +350,7 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "reset",
                 });
-                this.onFeatureOut(doi);
+                this.onFeatureOut({ doi, resultSet });
             });
         };
 
@@ -566,3 +584,15 @@ function pxToMeterRadius({
     const point = L.point(center.x + radiusInPx, center.y);
     return map.distance(map.unproject(point), map.getCenter());
 }
+
+function getGeoFeatureResultSetMappingObj<T>(
+    factory: () => T,
+): GeoFeatureResultSetMapping<T> {
+    return { [OVERLAPPING]: factory(), [INSIDE]: factory() };
+}
+
+type Entries<T> = Array<
+    {
+        [K in keyof T]: [K, T[K]];
+    }[keyof T]
+>;
