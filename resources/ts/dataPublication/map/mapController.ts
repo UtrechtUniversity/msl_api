@@ -118,7 +118,7 @@ export class MapController {
                         e.preventDefault();
                         return isConfirmed;
                     }
-                    this.resetComponentsAndData();
+                    this.removeAllFilters();
                     return isConfirmed;
                 }
                 return isConfirmed;
@@ -381,6 +381,13 @@ export class MapController {
         }
         await this.populateBasedOnActiveFiltersOrReset();
     }
+    private removeAllFilters() {
+        this.searchFilters.activeKeywordFilters = new Map();
+        this.resetComponentsAndData();
+    }
+    /**
+     * We reset parts of the map, after an update in filters.
+     */
     private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
@@ -392,7 +399,7 @@ export class MapController {
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeKeywordFilters.size === 0)
             this.appliedKeywords.removeAllActiveKeywordFilters();
-        // We never want to reset all filters at the same time
+
         this.resetPage();
         this.paginator = null;
         this.results = null;
