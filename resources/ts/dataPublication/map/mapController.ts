@@ -209,12 +209,15 @@ export class MapController {
     public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.boundingBox) {
+        const drawnBoundingBox = this.mapView.drawBoundingBox();
+        if (!drawnBoundingBox) {
             await this.resetAndRePopulateAfterUpdateTextFilters("remove");
             return;
         }
-        await this.populateElements();
+        this.searchFilters.boundingBox = drawnBoundingBox;
+        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+            except: "boundingBox",
+        });
     }
 
     public async removeDrawing() {
