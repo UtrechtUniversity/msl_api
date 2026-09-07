@@ -71,7 +71,7 @@ export class MapView {
     }: {
         doi: string;
         resultSet: GeoFeatureResultSet;
-        scroll: boolean;
+        scroll: true;
     }) => void = throwWhenCallBackNotInitialized;
     private onFeatureOut: ({
         doi,
@@ -103,7 +103,7 @@ export class MapView {
         }: {
             doi: string;
             resultSet: GeoFeatureResultSet;
-            scroll: boolean;
+            scroll: true;
         }) => void;
         onFeatureOut: ({
             doi,

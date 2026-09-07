@@ -49,13 +49,7 @@ export class ResultsSidebar {
         onFeatureHover,
         onFeatureOut,
     }: {
-        onFeatureHover: ({
-            doi,
-            scroll,
-        }: {
-            doi: string;
-            scroll: boolean;
-        }) => void;
+        onFeatureHover: ({ doi }: { doi: string }) => void;
         onFeatureOut: ({ doi }: { doi: string }) => void;
     }): void {
         this.onFeatureHover = onFeatureHover;

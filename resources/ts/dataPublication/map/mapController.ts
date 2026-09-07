@@ -231,7 +231,7 @@ export class MapController {
     }: {
         doi: string;
         resultSet?: GeoFeatureResultSet;
-        scroll: boolean;
+        scroll?: true;
     }) {
         const appliedResultSet = resultSet ?? this.activeTab;
         this.mapView.setMarkersStyle({
@@ -239,7 +239,7 @@ export class MapController {
             resultSet: appliedResultSet,
             highlightOrReset: "highlight",
         });
-        this.resultsSidebar.highlight(doi, { scroll });
+        this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
     }
 
     public handleFeatureOut({
