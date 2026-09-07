@@ -114,12 +114,9 @@ export class MapController {
                 if (this.areActiveFilters()) {
                     const text = `Your currently selected filters will be removed when you switch trees.`;
                     isConfirmed = confirm(text);
-                    if (!isConfirmed) {
-                        e.preventDefault();
-                        return isConfirmed;
-                    }
-                    await this.removeAllFilters();
-                    return isConfirmed;
+                    !isConfirmed
+                        ? e.preventDefault()
+                        : await this.removeAllFilters();
                 }
                 return isConfirmed;
             },
