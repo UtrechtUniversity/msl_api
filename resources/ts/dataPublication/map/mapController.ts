@@ -72,28 +72,12 @@ export class MapController {
             onCleanUp: () => {
                 this.resultsSidebar.resetList();
             },
-            onFeatureHover: (doi) => {
-                this.resultsSidebar.highlight(doi, { scroll: true });
-            },
-            onFeatureOut: (doi) => {
-                this.resultsSidebar.removeHighlight(doi);
-            },
+            onFeatureHover: this.handleFeatureHover,
+            onFeatureOut: this.handleFeatureOut,
         });
         this.resultsSidebar.setHandlerfn({
-            onFeatureHover: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "highlight",
-                });
-            },
-            onFeatureOut: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi: doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "reset",
-                });
-            },
+            onFeatureHover: this.handleFeatureHover,
+            onFeatureOut: this.handleFeatureOut,
         });
         this.pagination.setHandlerfn({
             onPageChange: async (page) => this.handlePageChange(page),
@@ -232,6 +216,40 @@ export class MapController {
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
+    public handleFeatureHover = ({
+        doi,
+        resultSet,
+        scroll,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+        scroll?: true;
+    }) => {
+        const appliedResultSet = resultSet ?? this.activeTab;
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "highlight",
+        });
+        this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
+    };
+
+    public handleFeatureOut = ({
+        doi,
+        resultSet,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+    }) => {
+        const appliedResultSet = resultSet ?? this.activeTab;
+
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "reset",
+        });
+        this.resultsSidebar.removeHighlight(doi);
+    };
     private async handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
         this.resultsSidebar.resetList();
