@@ -375,8 +375,9 @@ export class MapController {
             this.appliedKeywords.removeAllActiveKeywordFilters();
         // When we have change in page, we don't want to reset the page,
         // since this is the new filter value!
-        // Also, pagination gets cleared,
+        // Also, pagination gets cleared
         // inside the instance when (re)populating
+        // so no need to do it again
         if (opts?.except !== "page") {
             this.resetPage();
             this.pagination.clear();
