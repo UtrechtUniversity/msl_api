@@ -64,10 +64,22 @@ export class MapView {
     drawingEnabled: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
-    private onFeatureHover: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
-    private onFeatureOut: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
+    private onFeatureHover: ({
+        doi,
+        resultSet,
+        scroll,
+    }: {
+        doi: string;
+        resultSet: GeoFeatureResultSet;
+        scroll: boolean;
+    }) => void = throwWhenCallBackNotInitialized;
+    private onFeatureOut: ({
+        doi,
+        resultSet,
+    }: {
+        doi: string;
+        resultSet: GeoFeatureResultSet;
+    }) => void = throwWhenCallBackNotInitialized;
     private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
@@ -84,8 +96,22 @@ export class MapView {
         onFeatureOut,
         onCleanUp,
     }: {
-        onFeatureHover: (doi: string) => void;
-        onFeatureOut: (doi: string) => void;
+        onFeatureHover: ({
+            doi,
+            resultSet,
+            scroll,
+        }: {
+            doi: string;
+            resultSet: GeoFeatureResultSet;
+            scroll: boolean;
+        }) => void;
+        onFeatureOut: ({
+            doi,
+            resultSet,
+        }: {
+            doi: string;
+            resultSet: GeoFeatureResultSet;
+        }) => void;
         onCleanUp: () => void;
     }) {
         this.onCleanUp = onCleanUp;
@@ -211,12 +237,12 @@ export class MapView {
                             dataPublicationPopUpElement.classList.add(
                                 "highlight",
                             );
-                            this.setMarkersStyle({
+
+                            this.onFeatureHover({
                                 doi,
                                 resultSet,
-                                highlightOrReset: "highlight",
+                                scroll: true,
                             });
-                            this.onFeatureHover(doi);
                         },
                     );
                     dataPublicationPopUpElement.addEventListener(
@@ -230,7 +256,7 @@ export class MapView {
                                 resultSet,
                                 highlightOrReset: "reset",
                             });
-                            this.onFeatureOut(doi);
+                            this.onFeatureOut({ resultSet, doi });
                         },
                     );
                 }
@@ -294,12 +320,7 @@ export class MapView {
                 : [layer];
             // When hover over a geo feature
             layer.on("mouseover", () => {
-                this.setMarkersStyle({
-                    doi,
-                    resultSet,
-                    highlightOrReset: "highlight",
-                });
-                this.onFeatureHover(doi);
+                this.onFeatureHover({ doi, resultSet, scroll: true });
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -307,7 +328,7 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "reset",
                 });
-                this.onFeatureOut(doi);
+                this.onFeatureOut({ doi, resultSet });
             });
         };
 

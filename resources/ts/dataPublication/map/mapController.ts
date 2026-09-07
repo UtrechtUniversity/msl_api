@@ -72,27 +72,19 @@ export class MapController {
             onCleanUp: () => {
                 this.resultsSidebar.resetList();
             },
-            onFeatureHover: (doi) => {
-                this.resultsSidebar.highlight(doi, { scroll: true });
+            onFeatureHover: (opts) => {
+                return this.handleFeatureHover(opts);
             },
-            onFeatureOut: (doi) => {
-                this.resultsSidebar.removeHighlight(doi);
+            onFeatureOut: (opts) => {
+                return this.handleFeatureOut(opts);
             },
         });
         this.resultsSidebar.setHandlerfn({
-            onFeatureHover: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "highlight",
-                });
+            onFeatureHover: (opts) => {
+                return this.handleFeatureHover(opts);
             },
-            onFeatureOut: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi: doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "reset",
-                });
+            onFeatureOut: (opts) => {
+                return this.handleFeatureOut(opts);
             },
         });
         this.pagination.setHandlerfn({
@@ -232,6 +224,40 @@ export class MapController {
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
+    public handleFeatureHover({
+        doi,
+        resultSet,
+        scroll,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+        scroll: boolean;
+    }) {
+        const appliedResultSet = resultSet ?? this.activeTab;
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "highlight",
+        });
+        this.resultsSidebar.highlight(doi, { scroll });
+    }
+
+    public handleFeatureOut({
+        doi,
+        resultSet,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+    }) {
+        const appliedResultSet = resultSet ?? this.activeTab;
+
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "reset",
+        });
+        this.resultsSidebar.removeHighlight(doi);
+    }
     private async handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
         this.resultsSidebar.resetList();

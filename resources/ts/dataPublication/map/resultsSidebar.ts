@@ -20,9 +20,14 @@ export class ResultsSidebar {
      *  the inclusive set with respect to  the exclusive set.
      */
     private nonInclusiveListView: HTMLElement[] = [];
-    public onFeatureHover: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
-    public onFeatureOut: (doi: string) => void =
+    public onFeatureHover: ({
+        doi,
+        scroll,
+    }: {
+        doi: string;
+        scroll: false;
+    }) => void = throwWhenCallBackNotInitialized;
+    public onFeatureOut: ({ doi }: { doi: string }) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
         const sideBarElement: HTMLElement | null = document.querySelector(
@@ -44,8 +49,14 @@ export class ResultsSidebar {
         onFeatureHover,
         onFeatureOut,
     }: {
-        onFeatureHover: (doi: string) => void;
-        onFeatureOut: (doi: string) => void;
+        onFeatureHover: ({
+            doi,
+            scroll,
+        }: {
+            doi: string;
+            scroll: boolean;
+        }) => void;
+        onFeatureOut: ({ doi }: { doi: string }) => void;
     }): void {
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
@@ -55,10 +66,7 @@ export class ResultsSidebar {
      * Highlight items of the map related to specific
      * data publication
      */
-    public highlight(
-        id: string,
-        { scroll }: { scroll: boolean } = { scroll: false },
-    ): void {
+    public highlight(id: string, { scroll }: { scroll: boolean }): void {
         //We only want to highlight the element in the correct result set.
         const elements = $(
             "#" + "data_publications_list " + '[data-id="' + id + '"]',
@@ -134,12 +142,13 @@ export class ResultsSidebar {
             if (!dataPublication.isInclusive)
                 this.nonInclusiveListView.push(item);
             item.addEventListener("mouseover", () => {
-                this.onFeatureHover(dataPublication.doi);
-                this.highlight(dataPublication.doi);
+                this.onFeatureHover({
+                    doi: dataPublication.doi,
+                    scroll: false,
+                });
             });
             item.addEventListener("mouseleave", () => {
-                this.onFeatureOut(dataPublication.doi);
-                this.removeHighlight(dataPublication.doi);
+                this.onFeatureOut({ doi: dataPublication.doi });
             });
             this.listDiv.appendChild(item);
         }
