@@ -389,8 +389,8 @@ export class KeywordTree {
         const toggle =
             type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
         toggle.on("click", function (e: JQuery.ClickEvent) {
-            const canToggle = self.onTreeToggle(e);
-            if (!canToggle) return;
+            const shouldToggleTree = self.onTreeToggle(e);
+            if (!shouldToggleTree) return;
             if (this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,

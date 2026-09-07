@@ -112,8 +112,7 @@ export class MapController {
             onTreeToggle: (e: JQuery.ClickEvent): boolean => {
                 let isConfirmed = true;
                 if (this.areActiveFilters()) {
-                    const text = `Switching to the list will not transfer your applied filters in the list view. 
-            \nDo you want to proceed?`;
+                    const text = `Your currently selected filters will be removed when you switch trees.`;
                     isConfirmed = confirm(text);
                     if (!isConfirmed) {
                         e.preventDefault();
