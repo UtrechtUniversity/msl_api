@@ -373,7 +373,6 @@ export class MapController {
                 ? { except: "rectangle" }
                 : undefined,
         );
-
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();
