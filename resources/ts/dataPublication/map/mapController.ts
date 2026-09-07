@@ -69,9 +69,6 @@ export class MapController {
 
         // Callbacks
         this.mapView.setHandlerfn({
-            onCleanUp: () => {
-                this.resultsSidebar.resetList();
-            },
             onFeatureHover: (doi) => {
                 this.resultsSidebar.highlight(doi, { scroll: true });
             },

@@ -68,7 +68,6 @@ export class MapView {
         throwWhenCallBackNotInitialized;
     private onFeatureOut: (doi: string) => void =
         throwWhenCallBackNotInitialized;
-    private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
         this.map = L.map("map", {
@@ -82,13 +81,10 @@ export class MapView {
     public setHandlerfn({
         onFeatureHover,
         onFeatureOut,
-        onCleanUp,
     }: {
         onFeatureHover: (doi: string) => void;
         onFeatureOut: (doi: string) => void;
-        onCleanUp: () => void;
     }) {
-        this.onCleanUp = onCleanUp;
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
     }
@@ -337,12 +333,10 @@ export class MapView {
 
             // If the click is on the left button:
             // If a rectangle already existed,
-            // clear the layers, and start again
+            // remove it and start again
             if (this.rectangle) {
                 this.map.removeLayer(this.rectangle);
                 this.rectangle = null;
-                this.removeLayers();
-                this.onCleanUp ? this.onCleanUp() : null;
             }
 
             drawing = true;
