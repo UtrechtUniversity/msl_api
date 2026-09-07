@@ -109,6 +109,17 @@ export class MapController {
             }): Promise<void> => {
                 await this.handleTreeKeywordFilterRemove(opts);
             },
+            onTreeToggle: async (e: JQuery.ClickEvent): Promise<boolean> => {
+                let isConfirmed = true;
+                if (this.areActiveFilters()) {
+                    const text = `Your currently selected filters will be removed when you switch trees.`;
+                    isConfirmed = confirm(text);
+                    !isConfirmed
+                        ? e.preventDefault()
+                        : await this.removeAllFilters();
+                }
+                return isConfirmed;
+            },
         });
         this.appliedKeywords.setHandlerfn({
             onActiveTreeKeywordRemove: async (opts: {
@@ -367,6 +378,14 @@ export class MapController {
         }
         await this.populateBasedOnActiveFiltersOrReset();
     }
+    private async removeAllFilters() {
+        this.searchFilters.boundingBox = "";
+        this.searchFilters.activeKeywordFilters = new Map();
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+    }
+    /**
+     * We reset parts of the map, after an update in filters.
+     */
     private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
@@ -378,7 +397,7 @@ export class MapController {
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeKeywordFilters.size === 0)
             this.appliedKeywords.removeAllActiveKeywordFilters();
-        // We never want to reset all filters at the same time
+
         this.resetPage();
         this.paginator = null;
         this.results = null;
