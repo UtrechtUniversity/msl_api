@@ -205,7 +205,7 @@ export class MapController {
 
     public enableDrawing() {
         this.searchFilters.boundingBox = "";
-        this.resetComponentsAndData();
+        this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
@@ -213,8 +213,10 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.boundingBox) return;
-
+        if (!this.searchFilters.boundingBox) {
+            await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+            return;
+        }
         await this.populateElements();
     }
 
@@ -234,6 +236,7 @@ export class MapController {
 
     private async handlePageChange(page: number) {
         this.mapView.removeAllLayers({ except: "rectangle" });
+
         this.resultsSidebar.resetList();
         this.pagination.resetValues();
         this.paginator = null;
@@ -373,6 +376,7 @@ export class MapController {
                 ? { except: "rectangle" }
                 : undefined,
         );
+
         this.resultsSidebar.resetList();
         this.pagination.clear();
         this.resultsMetadata.removeMetadata();

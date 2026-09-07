@@ -264,7 +264,14 @@ export class MapView {
         }
         this.removeLayers();
     }
-
+    public removeExistingDrawnBoundingBox(): void {
+        if (this.rectangle) {
+            this.map.removeLayer(this.rectangle);
+            this.rectangle = null;
+            this.drawingBounds = null;
+        }
+        return;
+    }
     public handleActivatedLayers(activatedTab: GeoFeatureResultSet) {
         const deactivateTab =
             activatedTab === OVERLAPPING ? INSIDE : OVERLAPPING;
