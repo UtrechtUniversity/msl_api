@@ -211,11 +211,11 @@ export class MapController {
 
         const drawnBoundingBox = this.mapView.drawBoundingBox();
         if (!drawnBoundingBox) {
-            await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+            await this.resetAndRePopulateAfterUpdate("remove");
             return;
         }
         this.searchFilters.boundingBox = drawnBoundingBox;
-        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+        await this.resetAndRePopulateAfterUpdate("add", {
             except: "boundingBox",
         });
     }
@@ -223,7 +223,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.boundingBox = "";
 
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+        await this.resetAndRePopulateAfterUpdate("remove");
 
         this.mapView.setDrawingEnable(false);
     }
@@ -235,15 +235,10 @@ export class MapController {
     }
 
     private async handlePageChange(page: number) {
-        this.mapView.removeAllLayers({ except: "rectangle" });
-
-        this.resultsSidebar.resetList();
-        this.pagination.resetValues();
-        this.paginator = null;
-        this.results = null;
-
         this.searchFilters.page = page;
-        await this.populateElements();
+        await this.resetAndRePopulateAfterUpdate("add", {
+            except: "page",
+        });
     }
 
     public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
@@ -259,7 +254,7 @@ export class MapController {
             value,
             type: FREE_TEXT_SEARCH_KEYWORD,
         });
-        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+        await this.resetAndRePopulateAfterUpdate("add", {
             except: "boundingBox",
         });
     }
@@ -267,7 +262,7 @@ export class MapController {
     private async handleFreeTextKeywordRemove({ id }: { id: string }) {
         this.searchFilters.activeKeywordFilters.delete(id);
         this.appliedKeywords.removeFreeTextFilter({ id });
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+        await this.resetAndRePopulateAfterUpdate("remove", {
             except: "boundingBox",
         });
     }
@@ -275,7 +270,7 @@ export class MapController {
         this.searchFilters.activeKeywordFilters = new Map();
 
         this.appliedKeywords.removeAllActiveKeywordFilters();
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+        await this.resetAndRePopulateAfterUpdate("remove", {
             except: "boundingBox",
         });
     }
@@ -300,7 +295,7 @@ export class MapController {
             displayName,
             type: TREE_KEYWORD,
         });
-        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+        await this.resetAndRePopulateAfterUpdate("add", {
             except: "boundingBox",
         });
     }
@@ -314,7 +309,7 @@ export class MapController {
             id,
         });
         this.searchFilters.activeKeywordFilters.delete(id);
-        await this.resetAndRePopulateAfterUpdateTextFilters("remove", {
+        await this.resetAndRePopulateAfterUpdate("remove", {
             except: "boundingBox",
         });
     }
@@ -355,13 +350,13 @@ export class MapController {
         return keywords;
     }
     /**
-     * Reset and populate after an update in search text or keywords filters.
-     * For bounding box, we reset in starting drawing and
-     * populate after the user confirms the selection of area.
+     * Reset and populate after an update in filters.
+     * In some cases, we want to not reset drawn bounding box
+     * or page information.
      */
-    private async resetAndRePopulateAfterUpdateTextFilters(
+    private async resetAndRePopulateAfterUpdate(
         type: "add" | "remove",
-        opts: { except: "boundingBox" } | undefined = undefined,
+        opts: { except: "boundingBox" | "page" } | undefined = undefined,
     ) {
         this.resetComponentsAndData(opts);
         if (type === "add") {
@@ -370,19 +365,22 @@ export class MapController {
         }
         await this.populateBasedOnActiveFiltersOrReset();
     }
-    private resetComponentsAndData(opts?: { except: "boundingBox" }) {
+    private resetComponentsAndData(opts?: { except: "boundingBox" | "page" }) {
         this.mapView.removeAllLayers(
-            opts?.except === "boundingBox"
-                ? { except: "rectangle" }
-                : undefined,
+            opts ? { except: "rectangle" } : undefined,
         );
         this.resultsSidebar.resetList();
-        this.pagination.clear();
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeKeywordFilters.size === 0)
             this.appliedKeywords.removeAllActiveKeywordFilters();
-        // We never want to reset all filters at the same time
-        this.resetPage();
+        // When we have change in page, we don't want to reset the page,
+        // since this is the new filter value!
+        // Also, pagination gets cleared,
+        // inside the instance when (re)populating
+        if (opts?.except !== "page") {
+            this.resetPage();
+            this.pagination.clear();
+        }
         this.paginator = null;
         this.results = null;
         this.facets = {};
