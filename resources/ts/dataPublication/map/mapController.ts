@@ -373,16 +373,18 @@ export class MapController {
         );
         this.resultsSidebar.resetList();
         this.resultsMetadata.removeMetadata();
-        if (this.searchFilters.activeKeywordFilters.size === 0)
+        if (this.searchFilters.activeKeywordFilters.size === 0) {
             this.appliedKeywords.removeAllActiveKeywordFilters();
+        }
+        // If no filters are present,
+        // we have to make sure that pagination elements get removed.
+        if (!this.areActiveFilters) {
+            this.pagination.clear();
+        }
         // When we have change in page, we don't want to reset the page,
         // since this is the new filter value!
-        // Also, pagination gets cleared
-        // inside the instance when (re)populating
-        // so no need to do it again
         if (opts?.except !== "page") {
             this.resetPage();
-            this.pagination.clear();
         }
         this.paginator = null;
         this.results = null;
