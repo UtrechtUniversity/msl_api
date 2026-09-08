@@ -157,7 +157,14 @@ export class MapView {
     }: {
         resultSet: GeoFeatureResultSet;
     }) {
-        this.markers[resultSet].on("click", (e) => {
+        this.markers[resultSet].on("click", (e: LeafletMouseEvent) => {
+            // We want to make sure that if the user is trying to draw a rectangle,
+            // Then a random popup won't show up right when they release the left button.
+            if (this.drawingEnabled) {
+                e.originalEvent.preventDefault();
+                return;
+            }
+
             const clickedPoint = e.latlng;
             const popUpInfoPerDoi: {
                 [doi: string]: { title: string; portalLink: string };

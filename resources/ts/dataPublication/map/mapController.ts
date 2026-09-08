@@ -367,6 +367,8 @@ export class MapController {
     }
     private resetComponentsAndData(opts?: { except: "boundingBox" | "page" }) {
         this.mapView.removeAllLayers(
+            // In cases of preserving bounding box information and page information,
+            // we want to keep the bounding box drawn
             opts ? { except: "rectangle" } : undefined,
         );
         this.resultsSidebar.resetList();
