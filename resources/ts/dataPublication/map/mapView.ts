@@ -260,10 +260,8 @@ export class MapView {
     };
 
     public removeAllLayers(opts?: { except: "rectangle" }) {
-        if (opts?.except !== "rectangle" && this.rectangle) {
-            this.map.removeLayer(this.rectangle);
-            this.rectangle = null;
-            this.drawingBounds = null;
+        if (opts?.except !== "rectangle") {
+            this.removeExistingDrawnBoundingBox();
         }
         this.removeLayers();
     }
@@ -337,14 +335,6 @@ export class MapView {
             // If the click is in the middle of right button,
             // then do nothing
             if (button !== 0) return;
-
-            // If the click is on the left button:
-            // If a rectangle already existed,
-            // remove it and start again
-            if (this.rectangle) {
-                this.map.removeLayer(this.rectangle);
-                this.rectangle = null;
-            }
 
             drawing = true;
             startPoint = this.restrictLatLng(latlng);

@@ -378,7 +378,7 @@ export class MapController {
         }
         // If no filters are present,
         // we have to make sure that pagination elements get removed.
-        if (!this.areActiveFilters) {
+        if (!this.areActiveFilters()) {
             this.pagination.clear();
         }
         // When we have change in page, we don't want to reset the page,
