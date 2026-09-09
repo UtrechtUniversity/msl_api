@@ -17,7 +17,7 @@
             </div>
         </div>
         {{-- This is where we will create elements for active filters or the default text element through js --}}
-        <div class="  flex flex-wrap justify-center content-start w-full gap-1 overflow-y-scroll"
+        <div class="  flex flex-wrap justify-center content-start w-full gap-1 overflow-y-auto"
             id="active-filter-container">
 
         </div>
