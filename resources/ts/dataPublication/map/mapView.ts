@@ -336,7 +336,7 @@ export class MapView {
             // then do nothing
             if (button !== 0) return;
 
-            // Just making sure that
+            // Making sure that
             // previous rectangle information has been reset
             if (this.rectangle) {
                 this.removeExistingDrawnBoundingBox();
