@@ -68,7 +68,6 @@ export class MapView {
         throwWhenCallBackNotInitialized;
     private onFeatureOut: (doi: string) => void =
         throwWhenCallBackNotInitialized;
-    private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
         this.map = L.map("map", {
@@ -82,13 +81,10 @@ export class MapView {
     public setHandlerfn({
         onFeatureHover,
         onFeatureOut,
-        onCleanUp,
     }: {
         onFeatureHover: (doi: string) => void;
         onFeatureOut: (doi: string) => void;
-        onCleanUp: () => void;
     }) {
-        this.onCleanUp = onCleanUp;
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
     }
@@ -161,7 +157,14 @@ export class MapView {
     }: {
         resultSet: GeoFeatureResultSet;
     }) {
-        this.markers[resultSet].on("click", (e) => {
+        this.markers[resultSet].on("click", (e: LeafletMouseEvent) => {
+            // We want to make sure that if the user is trying to draw a rectangle,
+            // Then a random popup won't show up right when they release the left button.
+            if (this.drawingEnabled) {
+                e.originalEvent.preventDefault();
+                return;
+            }
+
             const clickedPoint = e.latlng;
             const popUpInfoPerDoi: {
                 [doi: string]: { title: string; portalLink: string };
@@ -257,14 +260,19 @@ export class MapView {
     };
 
     public removeAllLayers(opts?: { except: "rectangle" }) {
-        if (opts?.except !== "rectangle" && this.rectangle) {
+        if (opts?.except !== "rectangle") {
+            this.removeExistingDrawnBoundingBox();
+        }
+        this.removeLayers();
+    }
+    public removeExistingDrawnBoundingBox(): void {
+        if (this.rectangle) {
             this.map.removeLayer(this.rectangle);
             this.rectangle = null;
             this.drawingBounds = null;
         }
-        this.removeLayers();
+        return;
     }
-
     public handleActivatedLayers(activatedTab: GeoFeatureResultSet) {
         const deactivateTab =
             activatedTab === OVERLAPPING ? INSIDE : OVERLAPPING;
@@ -328,16 +336,11 @@ export class MapView {
             // then do nothing
             if (button !== 0) return;
 
-            // If the click is on the left button:
-            // If a rectangle already existed,
-            // clear the layers, and start again
+            // Making sure that
+            // previous rectangle information has been reset
             if (this.rectangle) {
-                this.map.removeLayer(this.rectangle);
-                this.rectangle = null;
-                this.removeLayers();
-                this.onCleanUp ? this.onCleanUp() : null;
+                this.removeExistingDrawnBoundingBox();
             }
-
             drawing = true;
             startPoint = this.restrictLatLng(latlng);
 
