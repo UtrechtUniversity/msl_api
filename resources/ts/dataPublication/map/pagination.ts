@@ -88,10 +88,7 @@ export class Pagination {
 
             //    if the range is close the first page dont show "..." otherwise show
 
-            if (
-                this.range.currentPage - this.range.lowerRange <
-                this.range.lowerRange
-            ) {
+            if (this.range.lowerRange >= 2) {
                 this.setButton(
                     "map-datapublication-pagination-button btn-disabled !bg-primary-200",
                     "...",
@@ -128,6 +125,8 @@ export class Pagination {
                 }
             }
             // if the range is close to the count dont show the "..." otherwise show
+            // this.range.upperRange + 2 >= this.range.count;
+
             if (
                 this.range.currentPage + this.range.rangeUnilateral <=
                 this.range.count - this.range.rangeUnilateral
