@@ -121,7 +121,7 @@ export class MapView {
         });
     }
 
-    public async drawResponse(geoList: GeoFeatureDataPublications) {
+    public drawResponse(geoList: GeoFeatureDataPublications) {
         for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
             typeof TAB_CONFIG
         >) {
@@ -157,102 +157,105 @@ export class MapView {
     }: {
         resultSet: GeoFeatureResultSet;
     }) {
-        this.markers[resultSet].on("click", (e: LeafletMouseEvent) => {
-            // We want to make sure that if the user is trying to draw a rectangle,
-            // Then a random popup won't show up right when they release the left button.
-            if (this.drawingEnabled) {
-                e.originalEvent.preventDefault();
-                return;
-            }
+        const self = this;
 
-            const clickedPoint = e.latlng;
-            const popUpInfoPerDoi: {
-                [doi: string]: { title: string; portalLink: string };
-            } = {};
-            const self = this;
-            this.markers[resultSet].eachLayer(function (geoJson: Layer) {
-                const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
-                    geoJson,
-                    map: self.map,
-                    clickedPoint,
+        self.markers[resultSet].on(
+            "click",
+            function (this: FeatureGroup, e: LeafletMouseEvent) {
+                // We want to make sure that if the user is trying to draw a rectangle,
+                // Then a random popup won't show up right when they release the left button.
+                if (self.drawingEnabled) {
+                    e.originalEvent.preventDefault();
+                    return;
+                }
+
+                const clickedPoint = e.latlng;
+                const popUpInfoPerDoi: {
+                    [doi: string]: { title: string; portalLink: string };
+                } = {};
+                this.eachLayer(function (geoJson: Layer) {
+                    const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
+                        geoJson,
+                        map: self.map,
+                        clickedPoint,
+                    });
+                    if (!infoFromGeoJson) return;
+                    const { doi, portalLink, title } = infoFromGeoJson;
+                    // If we have already stored information, we can go on.
+                    if (popUpInfoPerDoi[doi]) return;
+                    popUpInfoPerDoi[doi] = {
+                        portalLink,
+                        title,
+                    };
                 });
-                if (!infoFromGeoJson) return;
-                const { doi, portalLink, title } = infoFromGeoJson;
-                // If we have already stored information, we can go on.
-                if (popUpInfoPerDoi[doi]) return;
-                popUpInfoPerDoi[doi] = {
-                    portalLink,
-                    title,
-                };
-            });
+                if (Object.keys(popUpInfoPerDoi).length === 0) return;
 
-            const multipleOverlappingFeatures =
-                Object.keys(popUpInfoPerDoi).length > 1;
+                const multipleOverlappingFeatures =
+                    Object.keys(popUpInfoPerDoi).length > 1;
 
-            const outerDiv = document.createElement("div");
-            outerDiv.classList = "list-view";
+                const outerDiv = document.createElement("div");
+                outerDiv.classList = "list-view";
 
-            for (const [doi, { portalLink, title }] of Object.entries(
-                popUpInfoPerDoi,
-            )) {
-                const dataPublicationPopUpElement =
-                    document.createElement("div");
-                dataPublicationPopUpElement.classList =
-                    this.popupOptions.classNameContent;
-                dataPublicationPopUpElement.innerHTML = `   
-                       <h6 class='${this.popupOptions.classNameTitle}'>${title}</h6>
+                for (const [doi, { portalLink, title }] of Object.entries(
+                    popUpInfoPerDoi,
+                )) {
+                    const dataPublicationPopUpElement =
+                        document.createElement("div");
+                    dataPublicationPopUpElement.classList =
+                        self.popupOptions.classNameContent;
+                    dataPublicationPopUpElement.innerHTML = `   
+                       <h6 class='${self.popupOptions.classNameTitle}'>${title}</h6>
                        <a href='${portalLink}' target='_blank'>
                        <button class='btn popup-btn'>View Publication</button>
                      </a>
                 `;
-                // We want to highlight on hover datapublications only
-                // if we have a list of more than one in the popup
-                if (multipleOverlappingFeatures) {
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseover",
-                        () => {
-                            dataPublicationPopUpElement.classList.add(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "highlight",
-                            });
-                            this.onFeatureHover(doi);
-                        },
-                    );
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseout",
-                        () => {
-                            dataPublicationPopUpElement.classList.remove(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "reset",
-                            });
-                            this.onFeatureOut(doi);
-                        },
-                    );
+                    // We want to highlight on hover datapublications only
+                    // if we have a list of more than one in the popup
+                    if (multipleOverlappingFeatures) {
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseover",
+                            () => {
+                                dataPublicationPopUpElement.classList.add(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "highlight",
+                                });
+                                self.onFeatureHover(doi);
+                            },
+                        );
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseout",
+                            () => {
+                                dataPublicationPopUpElement.classList.remove(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "reset",
+                                });
+                                self.onFeatureOut(doi);
+                            },
+                        );
+                    }
+                    outerDiv.append(dataPublicationPopUpElement);
                 }
-                outerDiv.append(dataPublicationPopUpElement);
-            }
 
-            const popup = new PopupWithDirection({
-                closeButton: true,
-                maxHeight: multipleOverlappingFeatures ? 200 : undefined,
-            })
-                .setContent(outerDiv)
-                .setLatLng(clickedPoint)
-                .openOn(this.map);
+                const popup = new PopupWithDirection({
+                    closeButton: true,
+                    maxHeight: multipleOverlappingFeatures ? 200 : undefined,
+                })
+                    .setContent(outerDiv)
+                    .setLatLng(clickedPoint)
+                    .openOn(self.map);
 
-            this.markers[resultSet].bindPopup(popup);
-            // We have to open the pop up on click, and not only bind.
-            // If we don't then the pop up will open only on the second click.
-            this.markers[resultSet].openPopup(clickedPoint);
-        });
+                // Types are wrong
+                this.openPopup(popup);
+            },
+        );
     }
 
     private pointToLayer = (_: FeatureWithExtraInfo, latlng: LatLng) => {
@@ -451,19 +454,6 @@ export class MapView {
     }
 }
 
-// Inspired by https://github.com/geoman-io/leaflet-geoman/blob/develop/src/js/L.PM.Utils.js
-function pxToMeterRadius({
-    radiusInPx,
-    map,
-}: {
-    radiusInPx: number;
-    map: Map;
-}): number {
-    const center = map.project(map.getCenter());
-    const point = L.point(center.x + radiusInPx, center.y);
-    return map.distance(map.unproject(point), map.getCenter());
-}
-
 // Path: An abstract class that contains options and constants shared between vector overlays
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path))
@@ -472,6 +462,10 @@ function assertIsPath(layer: Layer): asserts layer is Path {
         );
 }
 // Helper
+/**
+ * We are getting information of the datapublication
+ * if point of click is inside the corresponding layer.
+ */
 function getDataPublicationInfoFromGeoJson({
     geoJson,
     map,
@@ -485,12 +479,14 @@ function getDataPublicationInfoFromGeoJson({
         throw new Error(
             "GeoJson should have been of correct type. This is a bug.",
         );
+
     const layers = geoJson.getLayers();
     // Each geoJson should have one layer with one feature.
     if (layers.length > 1)
         throw new Error("Layers of GeoJson are more than one. This is a bug.");
 
     const layer = layers[0];
+
     if (layer instanceof CircleMarker) {
         assertNotUndefined(
             layer.feature,
@@ -532,4 +528,17 @@ function getDataPublicationInfoFromGeoJson({
         return null;
     }
     throw new Error("Layer is of incorrect type. This is a bug.");
+}
+
+// Inspired by https://github.com/geoman-io/leaflet-geoman/blob/develop/src/js/L.PM.Utils.js
+function pxToMeterRadius({
+    radiusInPx,
+    map,
+}: {
+    radiusInPx: number;
+    map: Map;
+}): number {
+    const center = map.project(map.getCenter());
+    const point = L.point(center.x + radiusInPx, center.y);
+    return map.distance(map.unproject(point), map.getCenter());
 }

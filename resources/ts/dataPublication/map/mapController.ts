@@ -180,7 +180,7 @@ export class MapController {
 
         this.keywordTree.updateTrees(this.facets, keywords);
 
-        await this.mapView.drawResponse(this.results);
+        this.mapView.drawResponse(this.results);
         this.resultsSidebar.populate(this.results, {
             includeIcons: !!this.searchFilters.boundingBox,
         });

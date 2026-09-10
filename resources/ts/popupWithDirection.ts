@@ -107,7 +107,7 @@ export const PopupWithDirection: typeof Popup = Popup.extend({
         const y_diff = this._latlng.lat - centerOfView.lat;
         this.options.position = y_diff > 0 ? "s" : "n";
 
-        var x_diff = this._latlng.lng - centerOfView.lng;
+        const x_diff = this._latlng.lng - centerOfView.lng;
         this.options.position += x_diff > 0 ? "w" : "e";
     },
     _setCloseButton() {
