@@ -127,7 +127,7 @@ export class Pagination {
             // if the range is close to the count dont show the "..." otherwise show
 
             if (
-                this.range.upperRange + 1 <=
+                this.range.upperRange + this.range.rangeUnilateral <=
                 this.range.count - this.range.rangeUnilateral
             ) {
                 this.setButton(

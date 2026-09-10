@@ -27,7 +27,7 @@
   font-semibold
   text-primary-900
   text-left
-  w-full
+  max-w-full
   m-2;
 }
 
