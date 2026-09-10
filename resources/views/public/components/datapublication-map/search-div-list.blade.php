@@ -1,6 +1,6 @@
 <div class='mx-auto sm:p-2 w-full '>
 
-    <div class="flex flex-col items-center w-full h-25   ">
+    <div class="flex flex-col items-center w-full h-20   ">
         <div id="applied-filters-title" class="w-fit flex flex-row ">
             <h6 class="text-align-center inline"> Applied Filters </h6>
             <div id="remove-bin-icon" hidden>
