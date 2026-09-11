@@ -446,19 +446,6 @@ export class MapView {
     }
 }
 
-// Inspired by https://github.com/geoman-io/leaflet-geoman/blob/develop/src/js/L.PM.Utils.js
-function pxToMeterRadius({
-    radiusInPx,
-    map,
-}: {
-    radiusInPx: number;
-    map: Map;
-}): number {
-    const center = map.project(map.getCenter());
-    const point = L.point(center.x + radiusInPx, center.y);
-    return map.distance(map.unproject(point), map.getCenter());
-}
-
 // Path: An abstract class that contains options and constants shared between vector overlays
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path))
@@ -467,6 +454,10 @@ function assertIsPath(layer: Layer): asserts layer is Path {
         );
 }
 // Helper
+/**
+ * We are getting information of the datapublication
+ * if point of click is inside the corresponding layer.
+ */
 function getDataPublicationInfoFromGeoJson({
     geoJson,
     map,
@@ -480,25 +471,26 @@ function getDataPublicationInfoFromGeoJson({
         throw new Error(
             "GeoJson should have been of correct type. This is a bug.",
         );
+
     const layers = geoJson.getLayers();
     // Each geoJson should have one layer with one feature.
     if (layers.length > 1)
         throw new Error("Layers of GeoJson are more than one. This is a bug.");
 
     const layer = layers[0];
+
+    // We have to use pixels instead of coordinates because they are more accurate, especially as zoom decreases
+    const pointInPx = map.latLngToContainerPoint(clickedPoint);
+
     if (layer instanceof CircleMarker) {
         assertNotUndefined(
             layer.feature,
             `Layer should have 'feature' property defined. This is a bug.`,
         );
 
-        const center = layer.getLatLng();
-        const radius = pxToMeterRadius({
-            radiusInPx: layer.getRadius(),
-            map,
-        });
-
-        if (center.distanceTo(clickedPoint) <= radius) {
+        const center = map.latLngToContainerPoint(layer.getLatLng());
+        const radius = layer.getRadius();
+        if (center.distanceTo(pointInPx) <= radius) {
             const { doi, title, portalLink } =
                 layer.feature.properties.data_publication;
             return {
@@ -514,8 +506,20 @@ function getDataPublicationInfoFromGeoJson({
             layer.feature,
             `Layer should have 'feature' property defined. This is a bug.`,
         );
-        const bounds = layer.getBounds();
-        if (bounds.contains(clickedPoint)) {
+        const northWestInPx = map.latLngToContainerPoint(
+            layer.getBounds().getNorthWest(),
+        );
+        const southEastInPx = map.latLngToContainerPoint(
+            layer.getBounds().getSouthEast(),
+        );
+
+        const inside =
+            pointInPx.x >= northWestInPx.x &&
+            pointInPx.x <= southEastInPx.x &&
+            pointInPx.y >= northWestInPx.y &&
+            pointInPx.y <= southEastInPx.y;
+
+        if (inside) {
             const { doi, title, portalLink } =
                 layer.feature.properties.data_publication;
             return {
