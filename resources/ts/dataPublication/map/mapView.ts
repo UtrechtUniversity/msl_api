@@ -161,95 +161,99 @@ export class MapView {
     }: {
         resultSet: GeoFeatureResultSet;
     }) {
-        this.markers[resultSet].on("click", (e) => {
-            const clickedPoint = e.latlng;
-            const popUpInfoPerDoi: {
-                [doi: string]: { title: string; portalLink: string };
-            } = {};
-            const self = this;
-            this.markers[resultSet].eachLayer(function (geoJson: Layer) {
-                const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
-                    geoJson,
-                    map: self.map,
-                    clickedPoint,
+        const self = this;
+
+        self.markers[resultSet].on(
+            "click",
+            function (this: FeatureGroup, e: LeafletMouseEvent) {
+                const clickedPoint = e.latlng;
+                const popUpInfoPerDoi: {
+                    [doi: string]: { title: string; portalLink: string };
+                } = {};
+                this.eachLayer(function (geoJson: Layer) {
+                    const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
+                        geoJson,
+                        map: self.map,
+                        clickedPoint,
+                    });
+                    if (!infoFromGeoJson) return;
+                    const { doi, portalLink, title } = infoFromGeoJson;
+                    // If we have already stored information, we can go on.
+                    if (popUpInfoPerDoi[doi]) return;
+                    popUpInfoPerDoi[doi] = {
+                        portalLink,
+                        title,
+                    };
                 });
-                if (!infoFromGeoJson) return;
-                const { doi, portalLink, title } = infoFromGeoJson;
-                // If we have already stored information, we can go on.
-                if (popUpInfoPerDoi[doi]) return;
-                popUpInfoPerDoi[doi] = {
-                    portalLink,
-                    title,
-                };
-            });
 
-            const multipleOverlappingFeatures =
-                Object.keys(popUpInfoPerDoi).length > 1;
+                const multipleOverlappingFeatures =
+                    Object.keys(popUpInfoPerDoi).length > 1;
 
-            const outerDiv = document.createElement("div");
-            outerDiv.classList = "list-view";
+                const outerDiv = document.createElement("div");
+                outerDiv.classList = "list-view";
 
-            for (const [doi, { portalLink, title }] of Object.entries(
-                popUpInfoPerDoi,
-            )) {
-                const dataPublicationPopUpElement =
-                    document.createElement("div");
-                dataPublicationPopUpElement.classList =
-                    this.popupOptions.classNameContent;
-                dataPublicationPopUpElement.innerHTML = `   
-                       <h6 class='${this.popupOptions.classNameTitle}'>${title}</h6>
+                for (const [doi, { portalLink, title }] of Object.entries(
+                    popUpInfoPerDoi,
+                )) {
+                    const dataPublicationPopUpElement =
+                        document.createElement("div");
+                    dataPublicationPopUpElement.classList =
+                        self.popupOptions.classNameContent;
+                    dataPublicationPopUpElement.innerHTML = `   
+                       <h6 class='${self.popupOptions.classNameTitle}'>${title}</h6>
                        <a href='${portalLink}' target='_blank'>
                        <button class='btn popup-btn'>View Publication</button>
                      </a>
                 `;
-                // We want to highlight on hover datapublications only
-                // if we have a list of more than one in the popup
-                if (multipleOverlappingFeatures) {
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseover",
-                        () => {
-                            dataPublicationPopUpElement.classList.add(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "highlight",
-                            });
-                            this.onFeatureHover(doi);
-                        },
-                    );
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseout",
-                        () => {
-                            dataPublicationPopUpElement.classList.remove(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "reset",
-                            });
-                            this.onFeatureOut(doi);
-                        },
-                    );
+                    // We want to highlight on hover datapublications only
+                    // if we have a list of more than one in the popup
+                    if (multipleOverlappingFeatures) {
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseover",
+                            () => {
+                                dataPublicationPopUpElement.classList.add(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "highlight",
+                                });
+                                self.onFeatureHover(doi);
+                            },
+                        );
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseout",
+                            () => {
+                                dataPublicationPopUpElement.classList.remove(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "reset",
+                                });
+                                self.onFeatureOut(doi);
+                            },
+                        );
+                    }
+                    outerDiv.append(dataPublicationPopUpElement);
                 }
-                outerDiv.append(dataPublicationPopUpElement);
-            }
 
-            const popup = new PopupWithDirection({
-                closeButton: true,
-                maxHeight: multipleOverlappingFeatures ? 200 : undefined,
-            })
-                .setContent(outerDiv)
-                .setLatLng(clickedPoint)
-                .openOn(this.map);
+                const popup = new PopupWithDirection({
+                    closeButton: true,
+                    maxHeight: multipleOverlappingFeatures ? 200 : undefined,
+                })
+                    .setContent(outerDiv)
+                    .setLatLng(clickedPoint)
+                    .openOn(self.map);
 
-            this.markers[resultSet].bindPopup(popup);
-            // We have to open the pop up on click, and not only bind.
-            // If we don't then the pop up will open only on the second click.
-            this.markers[resultSet].openPopup(clickedPoint);
-        });
+                this.bindPopup(popup);
+                // We have to open the pop up on click, and not only bind.
+                // If we don't then the pop up will open only on the second click.
+                this.openPopup(clickedPoint);
+            },
+        );
     }
 
     private pointToLayer = (_: FeatureWithExtraInfo, latlng: LatLng) => {
