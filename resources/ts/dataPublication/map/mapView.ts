@@ -161,95 +161,99 @@ export class MapView {
     }: {
         resultSet: GeoFeatureResultSet;
     }) {
-        this.markers[resultSet].on("click", (e) => {
-            const clickedPoint = e.latlng;
-            const popUpInfoPerDoi: {
-                [doi: string]: { title: string; portalLink: string };
-            } = {};
-            const self = this;
-            this.markers[resultSet].eachLayer(function (geoJson: Layer) {
-                const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
-                    geoJson,
-                    map: self.map,
-                    clickedPoint,
+        const self = this;
+
+        self.markers[resultSet].on(
+            "click",
+            function (this: FeatureGroup, e: LeafletMouseEvent) {
+                const clickedPoint = e.latlng;
+                const popUpInfoPerDoi: {
+                    [doi: string]: { title: string; portalLink: string };
+                } = {};
+                this.eachLayer(function (geoJson: Layer) {
+                    const infoFromGeoJson = getDataPublicationInfoFromGeoJson({
+                        geoJson,
+                        map: self.map,
+                        clickedPoint,
+                    });
+                    if (!infoFromGeoJson) return;
+                    const { doi, portalLink, title } = infoFromGeoJson;
+                    // If we have already stored information, we can go on.
+                    if (popUpInfoPerDoi[doi]) return;
+                    popUpInfoPerDoi[doi] = {
+                        portalLink,
+                        title,
+                    };
                 });
-                if (!infoFromGeoJson) return;
-                const { doi, portalLink, title } = infoFromGeoJson;
-                // If we have already stored information, we can go on.
-                if (popUpInfoPerDoi[doi]) return;
-                popUpInfoPerDoi[doi] = {
-                    portalLink,
-                    title,
-                };
-            });
 
-            const multipleOverlappingFeatures =
-                Object.keys(popUpInfoPerDoi).length > 1;
+                const multipleOverlappingFeatures =
+                    Object.keys(popUpInfoPerDoi).length > 1;
 
-            const outerDiv = document.createElement("div");
-            outerDiv.classList = "list-view";
+                const outerDiv = document.createElement("div");
+                outerDiv.classList = "list-view";
 
-            for (const [doi, { portalLink, title }] of Object.entries(
-                popUpInfoPerDoi,
-            )) {
-                const dataPublicationPopUpElement =
-                    document.createElement("div");
-                dataPublicationPopUpElement.classList =
-                    this.popupOptions.classNameContent;
-                dataPublicationPopUpElement.innerHTML = `   
-                       <h6 class='${this.popupOptions.classNameTitle}'>${title}</h6>
+                for (const [doi, { portalLink, title }] of Object.entries(
+                    popUpInfoPerDoi,
+                )) {
+                    const dataPublicationPopUpElement =
+                        document.createElement("div");
+                    dataPublicationPopUpElement.classList =
+                        self.popupOptions.classNameContent;
+                    dataPublicationPopUpElement.innerHTML = `   
+                       <h6 class='${self.popupOptions.classNameTitle}'>${title}</h6>
                        <a href='${portalLink}' target='_blank'>
                        <button class='btn popup-btn'>View Publication</button>
                      </a>
                 `;
-                // We want to highlight on hover datapublications only
-                // if we have a list of more than one in the popup
-                if (multipleOverlappingFeatures) {
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseover",
-                        () => {
-                            dataPublicationPopUpElement.classList.add(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "highlight",
-                            });
-                            this.onFeatureHover(doi);
-                        },
-                    );
-                    dataPublicationPopUpElement.addEventListener(
-                        "mouseout",
-                        () => {
-                            dataPublicationPopUpElement.classList.remove(
-                                "highlight",
-                            );
-                            this.setMarkersStyle({
-                                doi,
-                                resultSet,
-                                highlightOrReset: "reset",
-                            });
-                            this.onFeatureOut(doi);
-                        },
-                    );
+                    // We want to highlight on hover datapublications only
+                    // if we have a list of more than one in the popup
+                    if (multipleOverlappingFeatures) {
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseover",
+                            () => {
+                                dataPublicationPopUpElement.classList.add(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "highlight",
+                                });
+                                self.onFeatureHover(doi);
+                            },
+                        );
+                        dataPublicationPopUpElement.addEventListener(
+                            "mouseout",
+                            () => {
+                                dataPublicationPopUpElement.classList.remove(
+                                    "highlight",
+                                );
+                                self.setMarkersStyle({
+                                    doi,
+                                    resultSet,
+                                    highlightOrReset: "reset",
+                                });
+                                self.onFeatureOut(doi);
+                            },
+                        );
+                    }
+                    outerDiv.append(dataPublicationPopUpElement);
                 }
-                outerDiv.append(dataPublicationPopUpElement);
-            }
 
-            const popup = new PopupWithDirection({
-                closeButton: true,
-                maxHeight: multipleOverlappingFeatures ? 200 : undefined,
-            })
-                .setContent(outerDiv)
-                .setLatLng(clickedPoint)
-                .openOn(this.map);
+                const popup = new PopupWithDirection({
+                    closeButton: true,
+                    maxHeight: multipleOverlappingFeatures ? 200 : undefined,
+                })
+                    .setContent(outerDiv)
+                    .setLatLng(clickedPoint)
+                    .openOn(self.map);
 
-            this.markers[resultSet].bindPopup(popup);
-            // We have to open the pop up on click, and not only bind.
-            // If we don't then the pop up will open only on the second click.
-            this.markers[resultSet].openPopup(clickedPoint);
-        });
+                this.bindPopup(popup);
+                // We have to open the pop up on click, and not only bind.
+                // If we don't then the pop up will open only on the second click.
+                this.openPopup(clickedPoint);
+            },
+        );
     }
 
     private pointToLayer = (_: FeatureWithExtraInfo, latlng: LatLng) => {
@@ -446,19 +450,6 @@ export class MapView {
     }
 }
 
-// Inspired by https://github.com/geoman-io/leaflet-geoman/blob/develop/src/js/L.PM.Utils.js
-function pxToMeterRadius({
-    radiusInPx,
-    map,
-}: {
-    radiusInPx: number;
-    map: Map;
-}): number {
-    const center = map.project(map.getCenter());
-    const point = L.point(center.x + radiusInPx, center.y);
-    return map.distance(map.unproject(point), map.getCenter());
-}
-
 // Path: An abstract class that contains options and constants shared between vector overlays
 function assertIsPath(layer: Layer): asserts layer is Path {
     if (!(layer instanceof Path))
@@ -467,6 +458,10 @@ function assertIsPath(layer: Layer): asserts layer is Path {
         );
 }
 // Helper
+/**
+ * We are getting information of the datapublication
+ * if point of click is inside the corresponding layer.
+ */
 function getDataPublicationInfoFromGeoJson({
     geoJson,
     map,
@@ -480,25 +475,26 @@ function getDataPublicationInfoFromGeoJson({
         throw new Error(
             "GeoJson should have been of correct type. This is a bug.",
         );
+
     const layers = geoJson.getLayers();
     // Each geoJson should have one layer with one feature.
     if (layers.length > 1)
         throw new Error("Layers of GeoJson are more than one. This is a bug.");
 
     const layer = layers[0];
+
+    // We have to use pixels instead of coordinates because they are more accurate, especially as zoom decreases
+    const pointInPx = map.latLngToContainerPoint(clickedPoint);
+
     if (layer instanceof CircleMarker) {
         assertNotUndefined(
             layer.feature,
             `Layer should have 'feature' property defined. This is a bug.`,
         );
 
-        const center = layer.getLatLng();
-        const radius = pxToMeterRadius({
-            radiusInPx: layer.getRadius(),
-            map,
-        });
-
-        if (center.distanceTo(clickedPoint) <= radius) {
+        const center = map.latLngToContainerPoint(layer.getLatLng());
+        const radius = layer.getRadius();
+        if (center.distanceTo(pointInPx) <= radius) {
             const { doi, title, portalLink } =
                 layer.feature.properties.data_publication;
             return {
@@ -514,8 +510,20 @@ function getDataPublicationInfoFromGeoJson({
             layer.feature,
             `Layer should have 'feature' property defined. This is a bug.`,
         );
-        const bounds = layer.getBounds();
-        if (bounds.contains(clickedPoint)) {
+        const northWestInPx = map.latLngToContainerPoint(
+            layer.getBounds().getNorthWest(),
+        );
+        const southEastInPx = map.latLngToContainerPoint(
+            layer.getBounds().getSouthEast(),
+        );
+
+        const inside =
+            pointInPx.x >= northWestInPx.x &&
+            pointInPx.x <= southEastInPx.x &&
+            pointInPx.y >= northWestInPx.y &&
+            pointInPx.y <= southEastInPx.y;
+
+        if (inside) {
             const { doi, title, portalLink } =
                 layer.feature.properties.data_publication;
             return {
