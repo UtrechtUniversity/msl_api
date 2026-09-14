@@ -510,11 +510,12 @@ function getDataPublicationInfoFromGeoJson({
             layer.feature,
             `Layer should have 'feature' property defined. This is a bug.`,
         );
+        const layerBounds = layer.getBounds();
         const northWestInPx = map.latLngToContainerPoint(
-            layer.getBounds().getNorthWest(),
+            layerBounds.getNorthWest(),
         );
         const southEastInPx = map.latLngToContainerPoint(
-            layer.getBounds().getSouthEast(),
+            layerBounds.getSouthEast(),
         );
 
         const inside =
