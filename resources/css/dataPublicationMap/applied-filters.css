@@ -1,0 +1,29 @@
+@reference "../app.css";
+
+.applied-filter-card {
+    @apply 
+    max-w-60 
+    relative 
+    hover:overflow-visible;
+}
+
+.applied-filter-item {
+    @apply 
+    hover-neutral
+    hidden
+    group-hover:block
+    w-fit
+    group-hover:wrap-anywhere
+    group-hover:absolute
+    group-hover:top-0
+    group-hover:left-0
+    group-hover:z-10;
+}
+
+.text-item{
+    @apply
+    text-base
+}
+ .close-filter-icon{
+    @apply size-4 fill-error-600  rounded-full inline
+  }
