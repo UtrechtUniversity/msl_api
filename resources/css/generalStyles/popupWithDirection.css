@@ -103,11 +103,6 @@ a.leaflet-popupWithDirection-close-button-s {
     margin: 18px 0;
 }
 
-.leaflet-popupWithDirection-scrolled {
-    overflow: auto;
-    border-bottom: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-}
 
 /* Visual appearance */
 
