@@ -125,7 +125,7 @@ export class MapView {
         });
     }
 
-    public async drawResponse(geoList: GeoFeatureDataPublications) {
+    public drawResponse(geoList: GeoFeatureDataPublications) {
         for (const [_, tabInfo] of Object.entries(TAB_CONFIG) as Entries<
             typeof TAB_CONFIG
         >) {
