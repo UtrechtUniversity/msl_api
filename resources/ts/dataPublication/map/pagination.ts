@@ -86,7 +86,7 @@ export class Pagination {
                 });
             }
 
-            //    if the range is close the first page dont show "..." otherwise show
+            // If there are more steps than range between 1 and lower range, then show "..."
 
             if (this.range.lowerRange > 1 + this.range.rangeUnilateral) {
                 this.setButton(
@@ -124,11 +124,12 @@ export class Pagination {
                     }
                 }
             }
-            // if the range is close to the count dont show the "..." otherwise show
+            // if there are more steps from upper range to total count
+            // than the number of range, then show "..."
 
             if (
-                this.range.upperRange + this.range.rangeUnilateral <=
-                this.range.count - this.range.rangeUnilateral
+                this.range.upperRange + this.range.rangeUnilateral <
+                this.range.count
             ) {
                 this.setButton(
                     "map-datapublication-pagination-button btn-disabled !bg-primary-200",
