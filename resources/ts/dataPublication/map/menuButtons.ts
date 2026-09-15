@@ -2,7 +2,6 @@ import { getElementOrThrow } from "../../helpers";
 import {
     INSIDE,
     OVERLAPPING,
-    type DrawingActionType,
     type GeoFeatureResultSet,
     type Inside,
     type Overlapping,

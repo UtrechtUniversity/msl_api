@@ -15,5 +15,3 @@ export type Exclusive = typeof EXCLUSIVE;
 
 export const INCLUSIVE = "inclusive";
 export type Inclusive = typeof INCLUSIVE;
-
-export type DrawingActionType = "start" | "complete" | "remove";

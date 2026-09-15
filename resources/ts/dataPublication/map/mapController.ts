@@ -1,9 +1,4 @@
-import {
-    INSIDE,
-    OVERLAPPING,
-    type DrawingActionType,
-    type GeoFeatureResultSet,
-} from "../../types/map";
+import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     getDefaultTab,
