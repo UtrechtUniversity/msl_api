@@ -126,7 +126,7 @@ export class MapView {
             typeof TAB_CONFIG
         >) {
             const resultSet = tabInfo.label;
-            this.addFeaturesInMarkers(geoList, { resultSet: tabInfo.label });
+            this.addFeaturesInMarkers(geoList, { resultSet });
             this.addClickListenerPerFeatureGroup({ resultSet });
         }
     }
@@ -436,9 +436,11 @@ export class MapView {
     }
     private removeLayers() {
         Object.values(this.markers).forEach((layer) => {
-            layer.clearLayers();
             this.map.removeLayer(layer);
         });
+        this.markers = getGeoFeatureResultSetMappingObj(
+            () => new FeatureGroup(),
+        );
         this.resetGroupedMarkers();
     }
 
