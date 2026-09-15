@@ -1,4 +1,4 @@
-<div class='mx-auto sm:p-2 w-full '>
+<div class='mx-auto sm:p-4 w-full '>
 
     <div class="flex flex-col items-center w-full h-25   ">
         <div id="applied-filters-title" class="w-fit flex flex-row ">
