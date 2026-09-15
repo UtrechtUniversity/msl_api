@@ -1,6 +1,6 @@
 <div class='mx-auto sm:p-4 w-full '>
 
-    <div class="flex flex-col items-center w-full  h-20  overflow-y-auto ">
+    <div class="flex flex-col items-center w-full  h-25   ">
         <div id="applied-filters-title" class="w-fit flex flex-row ">
             <h6 class="text-align-center inline"> Applied Filters </h6>
             <div id="remove-bin-icon" hidden>
@@ -17,7 +17,7 @@
             </div>
         </div>
         {{-- This is where we will create elements for active filters or the default text element through js --}}
-        <div class="word-card-parent" id="active-filter-container">
+        <div class="word-card-parent overflow-y-auto" id="active-filter-container">
 
         </div>
 
