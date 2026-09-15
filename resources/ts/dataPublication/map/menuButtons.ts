@@ -28,7 +28,10 @@ export class MenuButtons {
     root: HTMLElement;
     drawingEnabled: boolean = false;
 
-    private onDrawing: (type: DrawingActionType) => Promise<void> | void =
+    private onEnableDrawing: () => void = throwWhenCallBackNotInitialized;
+    private onCompleteDrawing: () => Promise<false | true> | void =
+        throwWhenCallBackNotInitialized;
+    private onRemoveDrawing: () => Promise<void> | void =
         throwWhenCallBackNotInitialized;
     private onSpatialFilter: (type: GeoFeatureResultSet) => void =
         throwWhenCallBackNotInitialized;
@@ -68,13 +71,19 @@ export class MenuButtons {
     }
 
     public setHandlerfn({
-        onDrawing,
+        onEnableDrawing,
+        onCompleteDrawing,
+        onRemoveDrawing,
         onSpatialFilter,
     }: {
-        onDrawing: (type: DrawingActionType) => Promise<void> | void;
+        onEnableDrawing: () => void;
+        onCompleteDrawing: () => Promise<false | true> | void;
+        onRemoveDrawing: () => Promise<void> | void;
         onSpatialFilter: (type: GeoFeatureResultSet) => void;
     }) {
-        this.onDrawing = onDrawing;
+        this.onEnableDrawing = onEnableDrawing;
+        this.onCompleteDrawing = onCompleteDrawing;
+        this.onRemoveDrawing = onRemoveDrawing;
         this.onSpatialFilter = onSpatialFilter;
     }
 
@@ -99,19 +108,19 @@ export class MenuButtons {
         this.spatialDrawButton.addEventListener("click", async () => {
             this.drawingEnabled = !this.drawingEnabled;
             if (this.drawingEnabled) {
-                await this.onDrawing("start");
+                this.onEnableDrawing();
                 this.disableButtonForDrawing();
                 this.setDefaultActiveResultSetButton();
                 this.spatialDrawButton.innerText = "Stop spatial drawing";
             } else {
-                await this.onDrawing("complete");
-                this.enableButtonsAfterDrawing();
+                const isValidBoundingBox = await this.onCompleteDrawing();
+                if (isValidBoundingBox) this.enableButtonsAfterDrawing();
                 this.spatialDrawButton.innerText = "Draw spatial filter";
             }
         });
 
         this.spatialRemoveButton.addEventListener("click", async () => {
-            await this.onDrawing("remove");
+            await this.onRemoveDrawing();
             this.disableButtonForDrawing();
         });
     }

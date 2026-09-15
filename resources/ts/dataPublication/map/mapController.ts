@@ -144,18 +144,16 @@ export class MapController {
             },
         });
         this.menuButtons.setHandlerfn({
-            onDrawing: async (type: DrawingActionType) => {
-                switch (type) {
-                    case "start":
-                        this.enableDrawing();
-                        break;
-                    case "complete":
-                        await this.completeDrawing();
-                        break;
-                    case "remove":
-                        await this.removeDrawing();
-                        break;
-                }
+            onEnableDrawing: () => {
+                this.enableDrawing();
+                return;
+            },
+            onCompleteDrawing: async () => {
+                await this.completeDrawing();
+                return !!this.searchFilters.boundingBox;
+            },
+            onRemoveDrawing: async () => {
+                await this.removeDrawing();
             },
             onSpatialFilter: (type: GeoFeatureResultSet) => {
                 switch (type) {
@@ -256,9 +254,13 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.boundingBox) return;
-
-        await this.populateElements();
+        if (!this.searchFilters.boundingBox) {
+            await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+            return;
+        }
+        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+            except: "boundingBox",
+        });
     }
 
     public async removeDrawing() {
