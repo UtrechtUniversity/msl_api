@@ -20,7 +20,7 @@
     group-hover:z-10;
 }
 
-.text-item{
+.applied-filter-text-item{
     @apply
     text-base
 }
