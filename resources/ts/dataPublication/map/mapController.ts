@@ -1,4 +1,9 @@
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
+import {
+    INSIDE,
+    OVERLAPPING,
+    type DrawingActionType,
+    type GeoFeatureResultSet,
+} from "../../types/map";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     getDefaultTab,
@@ -51,6 +56,7 @@ export class MapController {
     keywordTree: KeywordTree;
     appliedKeywords: AppliedKeywordFilters;
     startScreen: StartScreen;
+    menuButtons: MenuButtons;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -66,6 +72,7 @@ export class MapController {
         this.keywordTree = new KeywordTree();
         this.appliedKeywords = new AppliedKeywordFilters();
         this.startScreen = new StartScreen();
+        this.menuButtons = new MenuButtons();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -134,6 +141,31 @@ export class MapController {
             },
             onActiveFilterRemoveAll: async () => {
                 await this.handleRemoveAllFilters();
+            },
+        });
+        this.menuButtons.setHandlerfn({
+            onDrawing: async (type: DrawingActionType) => {
+                switch (type) {
+                    case "start":
+                        this.enableDrawing();
+                        break;
+                    case "complete":
+                        await this.completeDrawing();
+                        break;
+                    case "remove":
+                        await this.removeDrawing();
+                        break;
+                }
+            },
+            onSpatialFilter: (type: GeoFeatureResultSet) => {
+                switch (type) {
+                    case INSIDE:
+                        this.insideFilter();
+                        break;
+                    case OVERLAPPING:
+                        this.overlapFilter();
+                        break;
+                }
             },
         });
         this.addRedirectionWarning();
@@ -397,6 +429,7 @@ export class MapController {
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeKeywordFilters.size === 0)
             this.appliedKeywords.removeAllActiveKeywordFilters();
+        if (!this.searchFilters.boundingBox) this.menuButtons.reset();
 
         this.resetPage();
         this.paginator = null;
@@ -431,5 +464,4 @@ function createIdForFreeText() {
 
 const mapController = new MapController();
 await mapController.init();
-const menuButtons = new MenuButtons(mapController);
 const searchTextField = new SearchTextField(mapController);
