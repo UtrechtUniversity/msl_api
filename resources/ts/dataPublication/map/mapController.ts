@@ -51,6 +51,7 @@ export class MapController {
     keywordTree: KeywordTree;
     appliedKeywords: AppliedKeywordFilters;
     startScreen: StartScreen;
+    menuButtons: MenuButtons;
     // State
     activeTab: GeoFeatureResultSet = getDefaultTab();
     results: GeoFeatureDataPublications | null = null;
@@ -66,6 +67,7 @@ export class MapController {
         this.keywordTree = new KeywordTree();
         this.appliedKeywords = new AppliedKeywordFilters();
         this.startScreen = new StartScreen();
+        this.menuButtons = new MenuButtons();
 
         // Callbacks
         this.mapView.setHandlerfn({
@@ -109,6 +111,17 @@ export class MapController {
             }): Promise<void> => {
                 await this.handleTreeKeywordFilterRemove(opts);
             },
+            onTreeToggle: async (e: JQuery.ClickEvent): Promise<boolean> => {
+                let isConfirmed = true;
+                if (this.areActiveFilters()) {
+                    const text = `Your currently selected filters will be removed when you switch trees.`;
+                    isConfirmed = confirm(text);
+                    !isConfirmed
+                        ? e.preventDefault()
+                        : await this.removeAllFilters();
+                }
+                return isConfirmed;
+            },
         });
         this.appliedKeywords.setHandlerfn({
             onActiveTreeKeywordRemove: async (opts: {
@@ -123,6 +136,29 @@ export class MapController {
             },
             onActiveFilterRemoveAll: async () => {
                 await this.handleRemoveAllFilters();
+            },
+        });
+        this.menuButtons.setHandlerfn({
+            onEnableDrawing: () => {
+                this.enableDrawing();
+                return;
+            },
+            onCompleteDrawing: async () => {
+                await this.completeDrawing();
+                return !!this.searchFilters.boundingBox;
+            },
+            onRemoveDrawing: async () => {
+                await this.removeDrawing();
+            },
+            onSpatialFilter: (type: GeoFeatureResultSet) => {
+                switch (type) {
+                    case INSIDE:
+                        this.insideFilter();
+                        break;
+                    case OVERLAPPING:
+                        this.overlapFilter();
+                        break;
+                }
             },
         });
         this.addRedirectionWarning();
@@ -213,9 +249,13 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
-        if (!this.searchFilters.boundingBox) return;
-
-        await this.populateElements();
+        if (!this.searchFilters.boundingBox) {
+            await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+            return;
+        }
+        await this.resetAndRePopulateAfterUpdateTextFilters("add", {
+            except: "boundingBox",
+        });
     }
 
     public async removeDrawing() {
@@ -367,6 +407,14 @@ export class MapController {
         }
         await this.populateBasedOnActiveFiltersOrReset();
     }
+    private async removeAllFilters() {
+        this.searchFilters.boundingBox = "";
+        this.searchFilters.activeKeywordFilters = new Map();
+        await this.resetAndRePopulateAfterUpdateTextFilters("remove");
+    }
+    /**
+     * We reset parts of the map, after an update in filters.
+     */
     private resetComponentsAndData(opts?: { except: "boundingBox" }) {
         this.mapView.removeAllLayers(
             opts?.except === "boundingBox"
@@ -378,7 +426,8 @@ export class MapController {
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeKeywordFilters.size === 0)
             this.appliedKeywords.removeAllActiveKeywordFilters();
-        // We never want to reset all filters at the same time
+        if (!this.searchFilters.boundingBox) this.menuButtons.reset();
+
         this.resetPage();
         this.paginator = null;
         this.results = null;
@@ -412,5 +461,4 @@ function createIdForFreeText() {
 
 const mapController = new MapController();
 await mapController.init();
-const menuButtons = new MenuButtons(mapController);
 const searchTextField = new SearchTextField(mapController);

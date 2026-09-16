@@ -127,15 +127,20 @@ export class KeywordTree {
     private onKeywordFilterRemove: (opts: {
         id: string;
     }) => Promise<void> | void = throwWhenCallBackNotInitialized;
+    private onTreeToggle: (e: JQuery.ClickEvent) => Promise<boolean> | void =
+        throwWhenCallBackNotInitialized;
     public setHandlerfn({
         onTreeKeywordFilterAdd: onKeywordFilterAdd,
         onTreeKeywordFilterRemove: onKeywordFilterRemove,
+        onTreeToggle: onTreeToggle,
     }: {
         onTreeKeywordFilterAdd: (opts: TreeKeywordAddInfo) => Promise<void>;
         onTreeKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
+        onTreeToggle: (e: JQuery.ClickEvent) => Promise<boolean>;
     }) {
         this.onKeywordFilterAdd = onKeywordFilterAdd;
         this.onKeywordFilterRemove = onKeywordFilterRemove;
+        this.onTreeToggle = onTreeToggle;
     }
 
     public async init(facets: Facets) {
@@ -383,7 +388,9 @@ export class KeywordTree {
         const self = this;
         const toggle =
             type === INTERPRETED ? self.interpretedToggle : self.originalToggle;
-        toggle.on("change", function () {
+        toggle.on("click", async function (e: JQuery.ClickEvent) {
+            const shouldToggleTree = await self.onTreeToggle(e);
+            if (!shouldToggleTree) return;
             if (this.checked) {
                 localStorage.setItem(
                     IS_INTERPRETED_FILTER_ENABLED,
