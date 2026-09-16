@@ -42,11 +42,11 @@
                                 <select name="sort" onchange="this.form.submit()"
                                     class="select form-field-text focus:select-secondary w-full pr-9 bg-white">
                                     @foreach ([
-        'score desc' => 'Relevance',
-        'msl_citation asc' => 'Author Ascending',
-        'msl_citation desc' => 'Author Descending',
-        'msl_publication_date desc' => 'Publication date',
-    ] as $value => $label)
+                                        'score desc' => 'Relevance',
+                                        'msl_citation asc' => 'Author ascending',
+                                        'msl_citation desc' => 'Author descending',
+                                        'msl_publication_year desc' => 'Publication year descending',
+                                    ] as $value => $label)
                                         <option value="{{ $value }}"
                                             @if ($value == $sort) {{ 'selected' }} @endif>
                                             {{ $label }}
