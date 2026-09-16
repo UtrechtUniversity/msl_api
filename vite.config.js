@@ -24,6 +24,7 @@ export default defineConfig({
             'resources/css/generalStyles/popupWithDirection.css',
             'resources/css/dataPublicationMap/datapublications-list.css',
             'resources/css/dataPublicationMap/in-map-styles.css',
+            'resources/css/dataPublicationMap/applied-filters.css',
             'resources/css/dataPublicationMap/top-menu.css',
             'resources/css/dataPublicationMap/pagination.css',
             'resources/css/dataPublicationMap/metadata.css',
