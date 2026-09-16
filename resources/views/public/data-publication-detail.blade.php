@@ -690,11 +690,19 @@
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">DOI</h4>
                     <div class="detail-entry-content">
-                        @include('public.components.list-views.table-list', [
-                            'entries' => [$dataPublication->msl_doi],
-                            'withKeys' => false,
-                            'textSize' => 'base',
-                        ])
+                        <div class="w-full py-2">
+                            <table class="table-fixed w-full">
+                                <tbody>
+                                    <td class="text-base p-0">
+                                        @if (filter_var($dataPublication->msl_source, FILTER_VALIDATE_URL))
+                                            <a class='underline hover-interactive' href="{{ $dataPublication->msl_source }}">{{ $dataPublication->msl_doi }}</a>
+                                        @else
+                                            {{ $dataPublication->msl_doi }}
+                                        @endif
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             @endif
