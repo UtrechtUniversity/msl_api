@@ -16,6 +16,8 @@
                         @foreach ($values as $value)
                             <input type="hidden" name="{{ $param }}[]" value="{{ $value }}">
                         @endforeach
+                    @else
+                        <input type="hidden" name="{{ $param }}" value="{{ $values }}">
                     @endif
                 @endforeach
             @endif
@@ -55,7 +57,13 @@
                                 </select>
                             </div>
                         </div>
-                        <input type="hidden" name="page" value="1" />
+                        @foreach ($queryParams as $param => $values)
+                            @if (is_array($values))
+                                @foreach ($values as $value)
+                                    <input type="hidden" name="{{ $param }}[]" value="{{ $value }}">
+                                @endforeach
+                            @endif
+                        @endforeach
                     </form>
                 </div>
             @endif
