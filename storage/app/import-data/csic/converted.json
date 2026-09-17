@@ -1,5 +1,77 @@
 [
     {
+        "doi": "10.20350\/digitalcsic\/29093",
+        "title": "Dataset of \u201cBuoyancy effects on mechanical stability during and after large-scale CO2 injection\u201d",
+        "description": "Large-scale geological CO2 storage may lead to important buoyancy effects as the CO2 density at the typical storage formations is about half of the resident brine. However, how such buoyancy affects the hydro-mechanical coupling processes and site stability has not been reported yet. Here, we propose a numerical modeling approach to address this issue. We configure a zero-gravity scenario accompanying the regular-gravity scenario for the same model setting, to isolate the buoyancy effects of CO2 from the injection-induced hydro-mechanical coupling response. Apart from the base case study, we also simulate three other cases to understand the impact of the reservoir permeability, porosity, and outer boundary on buoyancy effects. Expected findings may be key to the safe deployment of CO2 storage projects, and the proposed modeling approach is also valid for the subsurface storage of lighter gases, like natural gas and hydrogen.",
+        "subjects": "Buoyancy effects | CO2 density | Hydro-mechanical coupling | Geological carbon storage | Ensure access to affordable, reliable, sustainable and modern energy for all | Take urgent action to combat climate change and its impacts",
+        "group1matches": "subsurface storage",
+        "group2matches": "permeability",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/29055",
+        "title": "Dataset for Thermoporoelastic flow control strategies for enhancing the longevity of hydraulic fracture-based enhanced geothermal systems",
+        "description": "This dataset includes the input files of the numerical models used in the manuscript for simulating different cases of the hydraulic fracture-based Enhanced Geothermal Systems (EGS). There are two main folders named \u2018no_FCDs\u2019 and \u2018with_FCDs\u2019 that contain subfolders corresponding to their different circulation flow rates and pre-existing fracture cases. In the no_FCDs folder, there are 6 subfolders where 5 of them are named with their circulation flow rates (90 kgps, 105 kgps, 120 kgps, 135 kgps and 150 kgps) and another subfolder named \u2018pre existing fracture\u2019. The folder named with_FCDs has three folders named \u2018135 kgps\u2019, \u2018150 kgps\u2019 and \u2018pre existing fracture\u2019. The 135 kgps folder has subfolders named \u2018from start\u2019, \u2018from 21 yr\u2019 and \u2018from 24 yr\u2019. The 150 kgps folder has subfolders named \u2018from start\u2019, \u2018from 13 yr\u2019 and \u2018from 16 yr\u2019. Within each subfolder, the model is defined by two text files in a ResFrac-specific keyword format. The 'settings' file and the 'input' file together contain the simulation-specific parameters, including material and formation properties, initial and boundary conditions, the mesh definition (matrix region extent and element sizing), the fluid and relative permeability models, and the well controls and treatment schedule. Because the model was built on a rectilinear grid within the user interface, no separate mesh file is generated and the gridding is contained directly within these input files.",
+        "subjects": "Enhanced geothermal systems | Flow control devices | Flow non-uniformity | Thermoporoelasticity | Thermal breakthrough | Net-electricity generation",
+        "group1matches": "geothermal|Geothermal|geothermal",
+        "group2matches": "relative permeability",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/29008",
+        "title": "Dataset for Pyroxenite veins in the Loma Caribe peridotite massif of the Caribbean island arc: a record of boninitic magma crystallization, melt-harzburgite reaction and lithospheric deformation during embryonic intra-oceanic subduction",
+        "description": "[EN] This dataset present microstructural, petrological, mineralogical and geochemical (major and trace elements) data for a suite of pyroxenites and peridotites from the Loma Caribe peridotite massif in the northern Dominican Republic, which represents a mantle section of the Early Cretaceous intra-oceanic Caribbean island arc.",
+        "subjects": null,
+        "group1matches": "Pyroxenite|peridotite|boninitic|magma|pyroxenites|peridotites|peridotite|subduction",
+        "group2matches": "trace elements|veins|microstructural|geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/18495",
+        "title": "Use of non-destructive techniques to investigate the origin of chert from recent prehistoric sites in north-eastern Iberia (Lleida plains) [Dataset]",
+        "description": "[ES] Fichero de datos brutos (extensi\u00f3n .xls) de composici\u00f3n qu\u00edmica de muestras geol\u00f3gicas y arqueol\u00f3gicas de rocas sil\u00edceas, adquiridos con t\u00e9cnicas de Fluorescencia de rayos X con equipos port\u00e1tiles. Ficheros de c\u00f3digo en lenguaje de programaci\u00f3n R (extensi\u00f3n .R), que ejecutan funciones de procesado de datos, c\u00e1lculos estad\u00edsticos y generaci\u00f3n de tablas y gr\u00e1ficos de resultados que se publican en el trabajo. Los ficheros de datos brutos y de c\u00f3digo de programaci\u00f3n R garantizan la reproducci\u00f3n de los resultados del trabajo [EN] Raw data file (extension .xls) containing the chemical composition of geological and archaeological samples of siliceous rocks, obtained using X-ray fluorescence techniques with portable equipment. Code files written in the R programming language (extension .R), which perform data processing functions, statistical calculations and the generation of tables and graphs of results published in the paper. The raw data files and R code files ensure that the results of the study can be reproduced",
+        "subjects": "Lleida | NE Pen\u00ednsula ib\u00e9rica | Prehistoria | S\u00edlex | Caracterizaci\u00f3n geoqu\u00edmica | pFRX | North-eastern Iberia | Prehistory | Flint | Geochemical characterization",
+        "group1matches": "chert",
+        "group2matches": "Geochemical",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/18393",
+        "title": "Marine Geological Reference Collections Cruise KEB-79 [Dataset]",
+        "description": "The 1979 marine geology work on the Ebro Delta focused on analysing continuous piston cores and high\u2011resolution seismic profiles to characterise the sedimentary architecture and recent evolution of the submerged delta and adjacent continental shelf. Two oceanographic campaigns\u2014aboard the Cornide de Saavedra and the Catherine Laurence\u2014collected 40 piston cores, grab and gravity samples, and around 250 seismic profiles across the Catalano\u2011Balearic margin. Laboratory analyses included gamma\u2011density logging, grain\u2011size and carbonate determinations, radiography, and microscopic study of the sand fraction, complemented by triangular diagrams to define sedimentary facies. The seismic data reveal prograding deltaic lobes, gas\u2011charged sediment zones, and stratigraphic sequences spanning the last ~500,000 years, with thicker sediment accumulations east and south of the delta, providing the first integrated reconstruction of the recent geological development of the Ebro Delta system.",
+        "subjects": "Ebro | An\u00e1lisis qu\u00edmico | An\u00e1lisis sedimentol\u00f3gico | Testigo de pist\u00f3n",
+        "group1matches": "continental shelf",
+        "group2matches": "radiography",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/18372",
+        "title": "High-quality epitaxial five-layer Aurivillius films with in-plane ferroelectricity for electrocaloric cooling [Dataset]",
+        "description": "High-quality purely c-axis oriented epitaxial thin films of the Aurivillius phase Sr2Bi4Ti5O18 with n = 5 (Sr,Bi)TiO3 perovskite-like layers, are grown on SrTiO3 substrates by pulsed laser deposition. The highest crystalline quality is obtained with a 20 wt.% Bi-excess target and average stacking order values in the proximity of the ideal value n = 5 are attained for an optimum deposition temperature of 650 \u00b0C. Scanning transmission electron microscopy reveals regions with n ranging from 4 to 6 around an average thickness of n = 5, in agreement with the X-ray diffraction analysis. Interdigital electrodes are used to probe the in-plane polarization and survey the electrocaloric properties. A maximum adiabatic temperature change of \u0394T \u223c 0.95 \u00b0C for an electric field of 150 kV cm\u22121 is observed at \u2248135 \u00b0C. Larger values are expected at higher temperatures around the ferroelectric Curie temperature, TC. Since TC of Sr2Bi4Ti5O18 can be tuned by codoping, the findings pave the way toward a large electrocaloric effect at ambient temperature.",
+        "subjects": "Aurivillius oxides | Solid-state electrocaloric cooling | Epitaxial thin films | Ferroelectricity | Pulsed laser deposition",
+        "group1matches": "perovskite",
+        "group2matches": "temperature change|electron microscopy|X-ray diffraction|microscopy",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/18342",
+        "title": "Raw data behind tables and figures-Gelatin and Gellan Gum Bigels_CFE [Dataset]",
+        "description": "Alicia Guti\u00e9rrez, Susana Cofrades, Arancha Saiz and Mar\u00eda Dolores \u00c1lvarez Bigels (BGs) were formulated using gelatin (GA) or gellan gum (GG) hydrogels (HGs) and beeswax\u2011structured oleogels (OGs), incorporating inositol\u2011rich (I\u2011CFE) and polyphe-nol\u2011rich (P\u2011CFE) carob fruit extracts into the HG and OG phases. The effects of composi-tion on their rheological, textural, thermal, color and physical stability properties were evaluated at HG\/OG ratios of 70\/30, 60\/40 and 50\/50. GG\u2011based BGs formed rigid, coher-ent and crystal\u2011reinforced networks, showing the highest oscillatory stiffness and complex viscosity. GA\u2011based BGs developed softer, more deformable and viscous structures, with mechanical behavior strongly governed by damping and water content. Increasing OG reinforced GG BGs through beeswax crystal integration, whereas in GA it increased oscil-latory stiffness but weakened the cohesive, viscous and recoverable character of the pro-tein network. CATPCA revealed two mechanical domains: a GA\u2011associated regime dom-inated by viscosity, penetration resistance and loss factor (tan\u202f\u03b4), and a GG\u2011associated re-gime governed by elastic stiffness. Correlations confirmed tan\u202f\u03b4max as a marker of structur-al fragility in GA, while stiffness parameters dominated GG behavior. Melting points re-mained within 53\u201354\u202f\u00b0C, and all BGs showed excellent physical stability. Overall, GA and GG provide complementary design spaces, offering a mechanistic basis for the rational design of BGs with controlled structural and functional properties.",
+        "subjects": "Bigels | Carob fruit extracts | Gelatin | Gellan gum | Rheology | Mechanical properties | Structure-function relatioships | Dual delivery",
+        "group1matches": "Gelatin|gelatin|Gelatin",
+        "group2matches": "rheological|Rheology",
+        "group3matches": null
+    },
+    {
+        "doi": "10.20350\/digitalcsic\/17958",
+        "title": "Raw data regarding rheological characterization, pore size determination and distribution, printability and oil sorption and revovery tests of the materials employed in the study: \u201c3D-Printed Alginate\/BSA-Based Aerogels: Freeze-Drying Strategies for Tunable Porosity and Enhanced Oil Sorption and Chemical-free Recovery",
+        "description": "This dataset contains raw data obtained for the determination of rheological propesties, printability assessment, average pore size, pore size distribution, oil sorption test and oil sorption, retention and recovery tests organized in EXCEL files and employed in the study \u201c3D-Printed Alginate\/BSA-Based Aerogels: Freeze-Drying Strategies for Tunable Porosity and Enhanced Oil Sorption and Chemical-free Recovery\u201d.",
+        "subjects": "aerogels | biopolymers | 3D extrusion printing | rheological properties | average pore size | pore size distribution | oil sorption | oil retention | oil recovery",
+        "group1matches": "3D-Printed|3D-Printed",
+        "group2matches": "pore size|pore size|pore size distribution|pore size|pore size distribution|rheological|rheological|rheological",
+        "group3matches": null
+    },
+    {
         "doi": "10.20350\/digitalcsic\/17382",
         "title": "Dataset for the paper \u201cCriado, M., Torres, E., Hinojosa-Platero, J., Pach\u00f3n-Monta\u00f1o, A. 2025. Decontamination-Sludge-Induced Corrosion of Steel in Simulated Pore Solutions and Alkali-Activated Slag Pastes. Corrosion and Degradation Materials. 6(1), 8\u201d",
         "description": "[EN] This is the experimental dataset used in the paper Corrosion and Degradation Material, 6: 8 (2025) (https:\/\/doi.org\/10.3390\/cmd6010008) in which the potential corrosion and current density of the steel sheets, simulating drums embedded in new sodium carbonate and silicate-activated slag formulations with surrogate decontamination sludges have been determined. This data set includes the results of the FTIR spectrum of the surrogate decontamination sludge, which presents the vibration bands of its main constituents such as EDTA, hydrazine and citric and oxalic acids. In addition, the results of the evolution of the corrosion potential (Ecorr) and corrosion current density (icorr) values as a function of time for carbon steel sheets submerged in simulated Portland cement and alkali-activated cements pore solutions along with the decontamination sludge have also been included, where was observed that the steel was in an active state. The results of the evolution of these two parameters and the electrochemical impedance spectroscopy for carbon steel embedded in the reference cement and sodium carbonate-activated slag and sodium silicate-activated slag pastes have been compiled in this data set and the carbon steel coupons in the reference cement showed the best corrosion resistance, followed by those embedded in the sodium silicate-activated slag. The results of the Raman spectrum of the corrosion deposits on the surface of the steel embedded in the sodium carbonate-activated slag show the presence of hematite. Finally, the results of the characterisation of the cementitious pastes mixed with the decontamination sludge by XRD and FTIR have been included, where the presence of the acidic sludge results in a decrease in pore-water pH and favours the initiation of the corrosion process in the sodium carbonate-activated slag paste.",
@@ -114,15 +186,6 @@
         "subjects": "Color | Conservation-restoration | Contemporary art | Corrosion | Cultural heritage | Lepidocrocite | Raman spectroscopy | Sculpture | Weathering steel | X-ray Diffraction",
         "group1matches": "Lepidocrocite|Lepidocrocite",
         "group2matches": "Raman|X-ray Diffraction",
-        "group3matches": null
-    },
-    {
-        "doi": "10.20350\/digitalcsic\/14813",
-        "title": "[Dataset] Global physics-based database of injection-induced seismicity",
-        "description": "We present a comprehensive, publicly accessible database of injection-induced seismicity. The database is sourced from a comprehensive review of more than 500 published documents and contains information for 158 cases of induced earthquakes from around the world. The collected earthquakes are associated with a variety of geoenergy applications, which can be broadly categorized into geologic gas storage, geothermal energy development, shale gas fracturing, research projects and wastewater disposal. The compilation comprises more than 70 variables, including general project information, host rock properties, \u200ein situ site characteristics, fault attributes, operational parameters, and recorded seismicity data (both overall seismic activities and the largest event sequence). The developed database opens up opportunities for improved understanding of the causative mechanisms of injection-induced seismicity and advancing on seismic hazard forecasting and mitigation.",
-        "subjects": "Induced Seismicity | Database | Multi-physics | Rock characteristics | Fault properties | Geoenergy resources | Energy transition",
-        "group1matches": "shale|induced seismicity|induced seismicity|geothermal|induced seismicity|Induced Seismicity",
-        "group2matches": "geoenergy|Geoenergy",
         "group3matches": null
     },
     {
