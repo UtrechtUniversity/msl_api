@@ -39,7 +39,7 @@ class ImportYodaSeeder extends Seeder
                         'type' => 'jsonListing',
                         'options' => [
                             'filePath' => '/import-data/yoda/converted.json',
-                            'identifierKey' => 'DOI',
+                            'identifierKey' => 'doi',
                         ],
                     ],
                     'identifierProcessor' => [
