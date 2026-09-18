@@ -3,7 +3,7 @@
 
     <h4 class="text-left">{{ $laboratory->name }}</h4>
 
-    @if ($laboratory->fast_domain_name != "")
+    @if ($laboratory->fast_domain_name != '')
         <p>{{ $laboratory->fast_domain_name }}</p>
     @endif
 

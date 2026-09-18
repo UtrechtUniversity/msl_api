@@ -17,7 +17,7 @@
                 <h1 class="text-lg">{{ $laboratory->name }}</h1>
             </div>
 
-            @if ($laboratory->description_html != "")
+            @if ($laboratory->description_html != '')
                 <div class="detail-entry-div !flex-col place-items-center">
                     <h3>Description</h3>
                     @include('public.components.tab-list', [
@@ -35,7 +35,7 @@
                 <p class="italic text-center">no description found</p>
             @endif
 
-            @if ($laboratory->website != "")
+            @if ($laboratory->website != '')
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Website</h4>
@@ -50,7 +50,7 @@
                 </div>
             @endif
 
-            @if ($laboratory->fast_domain_name != "")
+            @if ($laboratory->fast_domain_name != '')
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Domain</h4>
@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            @if ($laboratory->getGeoJsonFeature() != "")
+            @if ($laboratory->getGeoJsonFeature() != '')
                 <br>
                 <div class="detail-entry-div flex flex-row">
                     <h4 class="detail-entry-title">Location</h4>

@@ -31,7 +31,7 @@
                                 <div class="collapse-content">
                                     @if (strlen($equipmentPiece->description_html) > 0)
                                         <div class="p-4">
-                                            {!! Str::of($equipmentPiece->description_html)->stripTags("<p>") !!}
+                                            {!! Str::of($equipmentPiece->description_html)->stripTags('<p>') !!}
                                         </div>
                                     @else
                                         <p class="italic text-center pt-10 pb-8">no description found</p>

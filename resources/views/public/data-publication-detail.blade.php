@@ -695,7 +695,8 @@
                                 <tbody>
                                     <td class="text-base p-0">
                                         @if (filter_var($dataPublication->msl_source, FILTER_VALIDATE_URL))
-                                            <a class='underline hover-interactive' href="{{ $dataPublication->msl_source }}">{{ $dataPublication->msl_doi }}</a>
+                                            <a class='underline hover-interactive'
+                                                href="{{ $dataPublication->msl_source }}">{{ $dataPublication->msl_doi }}</a>
                                         @else
                                             {{ $dataPublication->msl_doi }}
                                         @endif
