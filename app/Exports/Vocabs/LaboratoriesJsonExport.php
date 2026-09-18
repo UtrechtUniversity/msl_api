@@ -31,7 +31,7 @@ class LaboratoriesJsonExport
             $element = [
                 'identifier' => $laboratory->external_identifier,
                 'name' => mb_convert_encoding($laboratory->name, 'UTF-8'),
-                'display_name' => mb_convert_encoding($laboratory->name, 'UTF-8') . ' - ' . $organization->name,
+                'display_name' => mb_convert_encoding($laboratory->name, 'UTF-8').' - '.$organization->name,
                 'affiliation_name' => $organization->name,
                 'affiliation_ror' => $organization->external_identifier,
                 'scientific_domain' => $laboratory->fast_domain_name,
@@ -44,6 +44,7 @@ class LaboratoriesJsonExport
         return json_encode($output, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
     }
+
     private function export10(): false|string
     {
         $laboratories = Laboratory::where('external_identifier', '<>', '')->get();

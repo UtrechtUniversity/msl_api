@@ -28,13 +28,11 @@ class ProcessCkanFlush implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
     public function handle(): void
     {
         $ckanClient = new Client;
-        $searchRequest = new PackageSearchRequest();
+        $searchRequest = new PackageSearchRequest;
 
         $searchRequest->addFilterQuery('type', $this->ckanType);
         $searchRequest->start = 0;
@@ -43,7 +41,7 @@ class ProcessCkanFlush implements ShouldQueue
         $result = $ckanClient->get($searchRequest);
         $ids = collect($result->getResults())->pluck('name');
 
-        while(($searchRequest->start + $searchRequest->rows) < $result->getTotalResultsCount()) {
+        while (($searchRequest->start + $searchRequest->rows) < $result->getTotalResultsCount()) {
             $searchRequest->start = $searchRequest->start + $searchRequest->rows;
             $result = $ckanClient->get($searchRequest);
 

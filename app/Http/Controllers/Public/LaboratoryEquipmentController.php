@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers\Public;
 
-use App\Clients\CkanClient\Client;
-use App\Clients\CkanClient\Request\PackageSearchRequest;
-use App\Clients\CkanClient\Request\PackageShowRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Keyword;
 use App\Models\Laboratory\Laboratory;
 use App\Services\LaboratoryEquipmentService;
-use App\Services\LaboratoryService;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class LaboratoryEquipmentController extends Controller
 {
@@ -49,7 +43,7 @@ class LaboratoryEquipmentController extends Controller
             'facets' => $results->searchFacets,
             'locations' => $locations,
             'result' => $results,
-            'activeFilters' => $service->getActiveFilters($request)
+            'activeFilters' => $service->getActiveFilters($request),
         ]);
     }
 
@@ -62,7 +56,7 @@ class LaboratoryEquipmentController extends Controller
 
         return view('public.lab-detail-equipment', [
             'laboratory' => $laboratory,
-            'equipment' => $laboratory->laboratoryEquipment
+            'equipment' => $laboratory->laboratoryEquipment,
         ]);
     }
 }

@@ -7,7 +7,6 @@ use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Jobs\ProcessCkanCreate;
 use App\Jobs\ProcessCkanDelete;
 use App\Jobs\ProcessCkanFlush;
-use App\Scout\Builder as Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -20,9 +19,10 @@ use Laravel\Scout\Exceptions\NotSupportedException;
 class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 {
     private Client $ckanClient;
+
     public function __construct()
     {
-        $this->ckanClient = new Client();
+        $this->ckanClient = new Client;
     }
 
     /**
@@ -85,7 +85,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
     protected function performSearch(Builder $builder, array $options = [])
     {
-        $ckanRequest = new PackageSearchRequest();
+        $ckanRequest = new PackageSearchRequest;
 
         $builder->filterWhere('type', $builder->model->getCkanType());
 
@@ -95,11 +95,11 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
         $ckanRequest->rows = $builder->limit ?? 10;
 
-        if(isset($options['hitsPerPage'])) {
+        if (isset($options['hitsPerPage'])) {
             $ckanRequest->rows = $options['hitsPerPage'];
         }
 
-        if(isset($options['page'])) {
+        if (isset($options['page'])) {
             $ckanRequest->start = ($options['page'] - 1) * ($builder->limit ?? 10);
         }
 
@@ -110,7 +110,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
         if ($builder->orders) {
             $orders = [];
             foreach ($builder->orders as $sort) {
-                $orders[] = $sort['column'] . ' ' . $sort['direction'];
+                $orders[] = $sort['column'].' '.$sort['direction'];
             }
 
             $ckanRequest->sortField = implode(', ', $orders);
@@ -118,11 +118,11 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
 
         if ($builder->boundingBox) {
             $ckanRequest->setBoundingBox(
-               $builder->boundingBox['minX'],
-               $builder->boundingBox['minY'],
-               $builder->boundingBox['maxX'],
-               $builder->boundingBox['maxY']
-           );
+                $builder->boundingBox['minX'],
+                $builder->boundingBox['minY'],
+                $builder->boundingBox['maxX'],
+                $builder->boundingBox['maxY']
+            );
         }
 
         $response = $this->ckanClient->get($ckanRequest);
@@ -161,7 +161,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                 $operator = $where['operator'];
                 $value = $where['value'];
 
-                if (!in_array($operator, ['=', ':'])) {
+                if (! in_array($operator, ['=', ':'])) {
                     throw new \Exception('Operator not supported: '.$operator);
                 }
 
@@ -184,11 +184,10 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
                 }
 
                 return '('.collect($values)->map(function ($value) use ($key) {
-                        return $key.":\"{$value}\"";
-                    })->implode(' OR ').')';
+                    return $key.":\"{$value}\"";
+                })->implode(' OR ').')';
             })->values();
     }
-
 
     /**
      * Pluck and return the primary keys of the given results.
@@ -237,7 +236,7 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      *
      * @param  Builder  $builder
      * @param  mixed  $results
-     * @param Model $model
+     * @param  Model  $model
      * @return LazyCollection
      */
     public function lazyMap($builder, $results, $model)
@@ -249,7 +248,6 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
      * Get the total count from a raw result returned by the engine.
      *
      * @param  mixed  $results
-     * @return int
      */
     public function getTotalCount($results): int
     {
@@ -259,8 +257,9 @@ class CkanSearchEngine extends Engine implements PaginatesEloquentModels
     /**
      * Flush all of the model's records from the engine.
      *
-     * @param Model $model
+     * @param  Model  $model
      * @return void
+     *
      * @throws NotSupportedException
      */
     public function flush($model)

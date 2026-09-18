@@ -8,7 +8,7 @@ class ResultCollection extends Collection
 {
     public array $facets = [];
 
-    public array $searchFacets= [];
+    public array $searchFacets = [];
 
     public int $totalResults = 0;
 }

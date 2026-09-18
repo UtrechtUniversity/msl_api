@@ -15,10 +15,8 @@ use App\Models\Laboratory\LaboratoryEquipmentAddon;
 use App\Models\Laboratory\LaboratoryManager;
 use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryUpdateFast;
-use App\Models\LaboratoryUpdateGroupFast;
 use App\Models\Vocabulary;
 use Illuminate\Contracts\Queue\Job;
-use Illuminate\Contracts\Queue\QueueableEntity;
 
 class FastHarvestingService
 {
@@ -63,7 +61,7 @@ class FastHarvestingService
             if (isset($data['affiliation'])) {
                 $organization = LaboratoryOrganization::where('fast_id', $data['affiliation']['id'])->first();
 
-                if(!$organization) {
+                if (! $organization) {
                     $organization = FacilityResponseMapper::mapToOrganization($data['affiliation']);
                     $organization->saveQuietly();
                 }
@@ -82,7 +80,7 @@ class FastHarvestingService
                 foreach ($data['managers'] as $managerData) {
                     $manager = LaboratoryManager::where('fast_id', $managerData['id'])->first();
 
-                    if (!$manager) {
+                    if (! $manager) {
                         $manager = FacilityResponseMapper::mapToManager($managerData);
                         $manager->saveQuietly();
                     }
@@ -120,7 +118,6 @@ class FastHarvestingService
                 }
             }
 
-
             $laboratory->save();
 
             $laboratoryUpdateFast->response_code = $result->response_code;
@@ -130,7 +127,6 @@ class FastHarvestingService
             $laboratoryUpdateFast->response_code = $result->response_code;
             $laboratoryUpdateFast->save();
         }
-
 
     }
 
@@ -229,5 +225,4 @@ class FastHarvestingService
 
         return null;
     }
-
 }

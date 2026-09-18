@@ -53,7 +53,7 @@ class LabController extends Controller
         // Dispatch jobs in a chain for ordering later added tasks
         Bus::chain([
             new ProcessFastVocabularyUpdate,
-            new ProcessLaboratoryUpdateGroupFast($laboratoryUpdateGroup)
+            new ProcessLaboratoryUpdateGroupFast($laboratoryUpdateGroup),
         ])->dispatch();
 
         $request->session()->flash('status', 'Updating using Fast started');

@@ -57,6 +57,7 @@ class Laboratory extends Model implements CkanSearchableInterface
             $laboratory->ckan_id = (string) Str::uuid();
         });
     }
+
     protected static function booted(): void
     {
         static::deleting(function (Laboratory $laboratory) {
@@ -157,7 +158,7 @@ class Laboratory extends Model implements CkanSearchableInterface
                     new Point((float) $this->longitude, (float) $this->latitude),
                     [
                         'title' => $this->name,
-                        'name' => (string)$this->getScoutKey(),
+                        'name' => (string) $this->getScoutKey(),
                         'msl_id' => $this->id,
                         'msl_organization_name' => $this->laboratoryOrganization->name,
                         'msl_domain_name' => $this->fast_domain_name,
@@ -168,7 +169,4 @@ class Laboratory extends Model implements CkanSearchableInterface
 
         return '';
     }
-
-
-
 }

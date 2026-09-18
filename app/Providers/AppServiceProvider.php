@@ -25,8 +25,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -37,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
             LogMailSendListener::class
         );
         resolve(EngineManager::class)->extend('ckan', function () {
-            return new CkanSearchEngine();
+            return new CkanSearchEngine;
         });
     }
 }

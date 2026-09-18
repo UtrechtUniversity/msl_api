@@ -2,14 +2,9 @@
 
 namespace App\Scout;
 
-use Laravel\Scout\EngineManager;
-use App\Scout\Builder;
-
 trait Searchable
 {
     use \Laravel\Scout\Searchable;
-
-
 
     public static function search($query = '', $callback = null)
     {

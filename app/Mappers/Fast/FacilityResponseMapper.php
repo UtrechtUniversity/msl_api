@@ -11,10 +11,9 @@ use App\Models\Laboratory\LaboratoryOrganization;
 
 class FacilityResponseMapper
 {
-
     public static function mapToLaboratory(array $data): Laboratory
     {
-        $laboratory = new Laboratory();
+        $laboratory = new Laboratory;
 
         $laboratory->fast_id = $data['id'];
         $laboratory->name = $data['name'];
@@ -44,11 +43,11 @@ class FacilityResponseMapper
 
     public static function mapToEquipment(array $data): LaboratoryEquipment
     {
-        $equipment = new LaboratoryEquipment();
+        $equipment = new LaboratoryEquipment;
 
         $equipment->fast_id = $data['id'];
         $equipment->description = $data['description'];
-        $equipment->description_html = $data['description_html'] ?? '';;
+        $equipment->description_html = $data['description_html'] ?? '';
         $equipment->category_name = $data['category']['name'];
         $equipment->type_name = $data['type']['name'];
         $equipment->domain_name = $data['type']['domain']['name'];
@@ -66,7 +65,7 @@ class FacilityResponseMapper
 
     public static function mapToEquipmentAddon(array $data): LaboratoryEquipmentAddon
     {
-        $equipmentAddon = new LaboratoryEquipmentAddon();
+        $equipmentAddon = new LaboratoryEquipmentAddon;
 
         $equipmentAddon->description = $data['description'];
         $equipmentAddon->type = $data['type']['name'];
@@ -77,7 +76,7 @@ class FacilityResponseMapper
 
     public static function mapToOrganization(array $data): LaboratoryOrganization
     {
-        $organization = new LaboratoryOrganization();
+        $organization = new LaboratoryOrganization;
 
         $organization->fast_id = $data['id'];
         $organization->name = $data['name'];
@@ -88,7 +87,7 @@ class FacilityResponseMapper
 
     public static function mapToContactPerson(string $contactPersonEmail): LaboratoryContactPerson
     {
-        $contactPerson = new LaboratoryContactPerson();
+        $contactPerson = new LaboratoryContactPerson;
         $contactPerson->email = $contactPersonEmail;
 
         return $contactPerson;
@@ -96,7 +95,7 @@ class FacilityResponseMapper
 
     public static function mapToManager(array $data): LaboratoryManager
     {
-        $manager = new LaboratoryManager();
+        $manager = new LaboratoryManager;
 
         $manager->fast_id = $data['id'];
         $manager->email = $data['email'];

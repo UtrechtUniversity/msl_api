@@ -135,7 +135,7 @@ class LaboratoryEquipment extends Model implements CkanSearchableInterface
                         new Point((float) $this->longitude, (float) $this->latitude),
                         [
                             'title' => $this->name,
-                            'name' => (string)$this->getScoutKey(),
+                            'name' => (string) $this->getScoutKey(),
                             'msl_id' => $this->id,
                             'msl_lab_ckan_name' => $this->laboratory->ckan_id,
                             'msl_lab_name' => $this->laboratory->name,
@@ -151,7 +151,7 @@ class LaboratoryEquipment extends Model implements CkanSearchableInterface
                         new Point((float) $this->laboratory->longitude, (float) $this->laboratory->latitude),
                         [
                             'title' => $this->name,
-                            'name' => (string)$this->getScoutKey(),
+                            'name' => (string) $this->getScoutKey(),
                             'msl_id' => $this->id,
                             'msl_lab_ckan_name' => $this->laboratory->ckan_id,
                             'msl_lab_name' => $this->laboratory->name,

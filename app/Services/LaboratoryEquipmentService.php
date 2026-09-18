@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Keyword;
-use App\Models\Laboratory\Laboratory;
 use App\Models\Laboratory\LaboratoryEquipment;
 use App\Scout\Builder;
 use Illuminate\Http\Request;
@@ -39,7 +38,7 @@ class LaboratoryEquipmentService
 
         foreach ($request->query() as $key => $values) {
             if (array_key_exists($key, config('ckan.facets.equipment')) || $key === 'query') {
-                if(is_array($values)) {
+                if (is_array($values)) {
                     foreach ($values as $value) {
                         $activeFilters[$key][] = $value;
                     }
@@ -56,7 +55,7 @@ class LaboratoryEquipmentService
 
         foreach ($request->query() as $key => $values) {
             if (array_key_exists($key, config('ckan.facets.equipment')) || $key === 'query') {
-                if(is_array($values)) {
+                if (is_array($values)) {
                     foreach ($values as $value) {
                         // Attach labels to the filters based upon the type
                         if ($value === 'true') {
@@ -69,7 +68,7 @@ class LaboratoryEquipmentService
                                 $label = '';
                             }
                         } elseif ($key === 'query') {
-                            $label = 'Search: ' . $value;
+                            $label = 'Search: '.$value;
                         } else {
                             $label = $value;
                         }
@@ -92,7 +91,7 @@ class LaboratoryEquipmentService
                             }
                         }
 
-                        $removeUrl = $query ? url()->current() . '?' . http_build_query($query) : url()->current();
+                        $removeUrl = $query ? url()->current().'?'.http_build_query($query) : url()->current();
 
                         $activeFiltersFrontend[] = [
                             'value' => $value,
@@ -109,10 +108,9 @@ class LaboratoryEquipmentService
 
     private function getSearchString(Request $request)
     {
-        $searchQuery = "";
+        $searchQuery = '';
         if ($request->query('query')) {
-            if(is_array($request->query('query')))
-            {
+            if (is_array($request->query('query'))) {
                 $searchQuery = implode(' ', $request->query('query'));
             } else {
                 $searchQuery = $request->query('query');

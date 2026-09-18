@@ -2,7 +2,6 @@
 
 namespace App\Mappers\Ckan;
 
-use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
 use App\Models\Laboratory\LaboratoryEquipment;
 
@@ -13,7 +12,7 @@ class EquipmentMapper
         return [
             'title' => $equipment->name,
             'type' => $equipment->getCkanType(),
-            'name' => (string)$equipment->getScoutKey(),
+            'name' => (string) $equipment->getScoutKey(),
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
             'msl_description' => $equipment->description,
             'msl_description_html' => $equipment->description_html,
@@ -119,8 +118,6 @@ class EquipmentMapper
         return $keywords;
     }
 
-
-
     /**
      * Create point geojson string using latitude and longitude. Uses laboratory
      * location if none is set for equipment.
@@ -139,5 +136,4 @@ class EquipmentMapper
 
         return '';
     }
-
 }

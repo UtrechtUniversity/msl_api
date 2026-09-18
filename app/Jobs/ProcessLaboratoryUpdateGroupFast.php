@@ -32,6 +32,4 @@ class ProcessLaboratoryUpdateGroupFast implements ShouldQueue
         $service->removeExistingData($this);
         $service->retrieveFastData($this);
     }
-
-
 }

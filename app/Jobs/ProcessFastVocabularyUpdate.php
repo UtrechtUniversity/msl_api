@@ -4,11 +4,6 @@ namespace App\Jobs;
 
 use App\Clients\Fast\Fast;
 use App\Models\Keyword;
-use App\Models\Laboratory\LaboratoryContactPerson;
-use App\Models\Laboratory\LaboratoryEquipment;
-use App\Models\Laboratory\LaboratoryEquipmentAddon;
-use App\Models\Laboratory\LaboratoryManager;
-use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\Vocabulary;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

@@ -184,6 +184,7 @@ class LaboratoryTest extends TestCase
 
         Queue::assertPushed(RemoveFromSearch::class);
     }
+
     public function test_laboratory_organization_relation(): void
     {
         $organization = LaboratoryOrganization::createQuietly([

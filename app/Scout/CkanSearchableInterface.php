@@ -14,6 +14,4 @@ interface CkanSearchableInterface
      * The reverse key is specified in the getScoutKeyName function.
      */
     public function getCkanMapKeyName(): string;
-
-
 }

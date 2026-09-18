@@ -2,7 +2,6 @@
 
 namespace App\Mappers\Ckan;
 
-use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
 use App\Models\Laboratory\Laboratory;
 
@@ -13,7 +12,7 @@ class LaboratoryMapper
         return [
             'title' => $laboratory->name,
             'type' => $laboratory->getCkanType(),
-            'name' => (string)$laboratory->getScoutKey(),
+            'name' => (string) $laboratory->getScoutKey(),
             'owner_org' => 'epos-multi-scale-laboratories-thematic-core-service',
             'msl_fast_id' => $laboratory->fast_id,
             'msl_description' => $laboratory->description,

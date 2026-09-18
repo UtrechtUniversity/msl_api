@@ -75,7 +75,4 @@ class Builder extends ScoutBuilder
 
         return $this;
     }
-
-
-
 }
