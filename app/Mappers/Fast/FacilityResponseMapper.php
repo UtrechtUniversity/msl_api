@@ -102,7 +102,7 @@ class FacilityResponseMapper
         $manager->email = $data['email'];
         $manager->first_name = $data['first_name'];
         $manager->last_name = $data['last_name'];
-        $manager->orcid = $data['orcid'];
+        $manager->orcid = '';
         $manager->address_street_1 = $data['address_street_1'];
         $manager->address_street_2 = $data['address_street_2'];
         $manager->address_postalcode = $data['address_postcode'];
