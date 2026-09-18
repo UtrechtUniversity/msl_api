@@ -2,11 +2,13 @@
 
 namespace App\DataPublications;
 
+use App\GeoJson\Feature\Feature;
+
 class InsideOverlappingGeoFeatures
 {
     /**
-     * @param  array<int, GeoFeaturePerDataPublication>  $overlappingFeatures
-     * @param  array<int, GeoFeaturePerDataPublication>  $insideFeatures
+     * @param  array<int, Feature>  $overlappingFeatures
+     * @param  array<int, Feature>  $insideFeatures
      * @return void
      */
     public function __construct(

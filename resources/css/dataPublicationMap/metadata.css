@@ -1,0 +1,6 @@
+  @reference "../app.css";
+
+
+.metadata-text{
+    @apply  italic m-0 p-0 text-lg
+}

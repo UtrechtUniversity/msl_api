@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Mappers\MappingService;
+use App\Mappers\DataPublicationImport\MappingService;
 use App\Models\DatasetCreate;
 use App\Models\SourceDataset;
 use Exception;

@@ -7,6 +7,7 @@ use App\DataPublications\GeoFeaturePerDataPublication;
 use App\DataPublications\InsideOverlappingGeoFeatures;
 use App\DataPublications\IsInclusiveDataPublication;
 use App\GeoJson\BoundingBox;
+use App\GeoJson\Feature\Feature;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
 use App\Models\Ckan\DataPublication;
@@ -30,7 +31,10 @@ class GeoFeatureDatapublicationService
         // Reminder: the exclusive list of publications is a superset of the inclusive list.
         $exclusiveDataPublications = $this->getDataPublicationsWithInclusiveInformation($dataPublications, $inclusiveDataPublicationsWithDois);
 
-        return new GeoFeatureDataPublication(dataPublications: $exclusiveDataPublications, features: new InsideOverlappingGeoFeatures(overlappingFeatures: $sortedFeatures, insideFeatures: $insideFeatures));
+        return new GeoFeatureDataPublication(
+            dataPublications: $exclusiveDataPublications,
+            features: new InsideOverlappingGeoFeatures(overlappingFeatures: array_column($sortedFeatures, 'feature'), insideFeatures: array_column($insideFeatures, 'feature'))
+        );
     }
 
     /**
@@ -86,12 +90,27 @@ class GeoFeatureDatapublicationService
         foreach ($dataPublications as $dataPublication) {
             $featuresCollection = $dataPublication->geojson_featurecollection;
             foreach ($featuresCollection->features as $feature) {
-                // Create a feature which includes the datapublication as it gets out of CKAN
-                $features[] = new GeoFeaturePerDataPublication($feature, $dataPublication);
+                $enrichedFeature = $this->enrichFeatureWithDataPublicationInfo($feature, $dataPublication);
+                $features[] = new GeoFeaturePerDataPublication($enrichedFeature, $dataPublication);
             }
         }
 
         return $features;
+    }
+
+    /**
+     * Enrich feature with information about data publication, such as title, doi and portallink
+     */
+    private function enrichFeatureWithDataPublicationInfo(Feature $feature, DataPublication $dataPublication): Feature
+    {
+        return $feature->addProperties(['data_publication' => [
+            'title' => $dataPublication->title,
+            'doi' => $dataPublication->msl_doi,
+            'portalLink' => route(
+                'data-publication-detail',
+                ['id' => $dataPublication->name]
+            ),
+        ]]);
     }
 
     /**

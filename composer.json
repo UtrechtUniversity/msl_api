@@ -10,6 +10,7 @@
         "caseyamcl/phpoaipmh": "^3.3",
         "easyrdf/easyrdf": "^1.1",
         "laravel/framework": "^12.0",
+        "laravel/scout": "^11.3",
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.5",
         "maatwebsite/excel": "^3.1",

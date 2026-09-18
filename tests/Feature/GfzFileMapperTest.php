@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Additional\GfzFileMapper;
-use App\Mappers\Helpers\GfzDownloadHelper;
+use App\Mappers\DataPublicationImport\Additional\GfzFileMapper;
+use App\Mappers\DataPublicationImport\Helpers\GfzDownloadHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\SourceDataset;
 use Mockery\MockInterface;

@@ -677,7 +677,7 @@ class DataPublication
     }
 
     /**
-     * Check if orginal sub domain is included in data publication
+     * Check if original sub domain is included in data publication
      */
     public function hasOriginalSubDomain(DataPublicationSubDomain $subDomain): bool
     {

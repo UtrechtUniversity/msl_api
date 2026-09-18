@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Helpers\GfzDownloadHelper;
+use App\Mappers\DataPublicationImport\Helpers\GfzDownloadHelper;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

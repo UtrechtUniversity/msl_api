@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Enums\SubDomains\DataPublicationSubDomain;
-use App\Mappers\Helpers\KeywordHelper;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
 use App\Models\Ckan\DataPublication;
 use App\Models\Ckan\Tag;
 use App\Models\Keyword;

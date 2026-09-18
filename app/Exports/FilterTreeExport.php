@@ -70,7 +70,9 @@ class FilterTreeExport
 
         $tree = [
             [
+                'id' => 'keyword_material',
                 'text' => 'Material',
+                'originalText' => 'Material',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -86,7 +88,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($materialVocab->id, 'msl_enriched_keyword_uri', true),
             ],
             [
+                'id' => 'keyword_geological_age',
                 'text' => 'Geological age',
+                'originalText' => 'Geological age',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -102,7 +106,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geologicalAgeVocab->id, 'msl_enriched_keyword_uri', false, false),
             ],
             [
+                'id' => 'keyword_pore_fluid',
                 'text' => 'Pore fluid',
+                'originalText' => 'Pore fluid',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -118,7 +124,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($poreFluidVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_geological_setting',
                 'text' => 'Geological setting',
+                'originalText' => 'Geological setting',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -134,7 +142,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geologicalSettingVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_(sub)surface_utilization_setting',
                 'text' => '(sub)surface utilization setting',
+                'originalText' => '(sub)surface utilization setting',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -150,7 +160,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($subsurfaceVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_analogue_modelling_of_geological_processes',
                 'text' => 'Analogue modelling of geological processes',
+                'originalText' => 'Analogue modelling of geological processes',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -166,7 +178,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($analogueVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_field-scale_laboratories',
                 'text' => 'Field-scale laboratories',
+                'originalText' => 'Field-scale laboratories',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -182,7 +196,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($fieldscaleVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_geochemistry',
                 'text' => 'Geochemistry',
+                'originalText' => 'Geochemistry',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -198,7 +214,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geochemistryVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_microscopy_and_tomography',
                 'text' => 'Microscopy and tomography',
+                'originalText' => 'Microscopy and tomography',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -214,7 +232,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($microscopyVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_paleomagnetism',
                 'text' => 'Paleomagnetism',
+                'originalText' => 'Paleomagnetism',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -230,7 +250,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($paleomagnetismVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_rock_and_melt_physics',
                 'text' => 'Rock and melt physics',
+                'originalText' => 'Rock and melt physics',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -246,7 +268,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($rockphysicsVocab->id, 'msl_enriched_keyword_uri'),
             ],
             [
+                'id' => 'keyword_research_institute',
                 'text' => 'Research Institute',
+                'originalText' => 'Research Institute',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -264,7 +288,9 @@ class FilterTreeExport
                 'children' => [],
             ],
             [
+                'id' => 'keyword_data_repository',
                 'text' => 'Data repository',
+                'originalText' => 'Data repository',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -305,7 +331,9 @@ class FilterTreeExport
 
         $tree = [
             [
+                'id' => 'keyword_material',
                 'text' => 'Material',
+                'originalText' => 'Material',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -321,7 +349,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($materialVocab->id, 'msl_original_keyword_uri', true, true),
             ],
             [
+                'id' => 'keyword_geological_age',
                 'text' => 'Geological age',
+                'originalText' => 'Geological age',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -337,7 +367,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geologicalAgeVocab->id, 'msl_original_keyword_uri', false, false),
             ],
             [
+                'id' => 'keyword_pore_fluid',
                 'text' => 'Pore fluid',
+                'originalText' => 'Pore fluid',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -353,7 +385,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($poreFluidVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_geological_setting',
                 'text' => 'Geological setting',
+                'originalText' => 'Geological setting',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -369,7 +403,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geologicalSettingVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_(sub)surface_utilization_setting',
                 'text' => '(sub)surface utilization setting',
+                'originalText' => '(sub)surface utilization setting',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -385,7 +421,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($subsurfaceVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_analogue_modelling_of_geological_processes',
                 'text' => 'Analogue modelling of geological processes',
+                'originalText' => 'Analogue modelling of geological processes',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -401,7 +439,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($analogueVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_field-scale_laboratories',
                 'text' => 'Field-scale laboratories',
+                'originalText' => 'Field-scale laboratories',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -417,7 +457,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($fieldscaleVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_geochemistry',
                 'text' => 'Geochemistry',
+                'originalText' => 'Geochemistry',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -433,7 +475,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($geochemistryVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_microscopy_and_tomography',
                 'text' => 'Microscopy and tomography',
+                'originalText' => 'Microscopy and tomography',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -449,7 +493,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($microscopyVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_paleomagnetism',
                 'text' => 'Paleomagnetism',
+                'originalText' => 'Paleomagnetism',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -465,7 +511,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($paleomagnetismVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_rock_and_melt_physics',
                 'text' => 'Rock and melt physics',
+                'originalText' => 'Rock and melt physics',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -481,7 +529,9 @@ class FilterTreeExport
                 'children' => $this->getVocabAsFilters($rockphysicsVocab->id, 'msl_original_keyword_uri', false, true),
             ],
             [
+                'id' => 'keyword_research_institute',
                 'text' => 'Research Institute',
+                'originalText' => 'Research Institute',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -499,7 +549,9 @@ class FilterTreeExport
                 'children' => [],
             ],
             [
+                'id' => 'keyword_data_repository',
                 'text' => 'Data repository',
+                'originalText' => 'Data repository',
                 'state' => [
                     'opened' => false,
                     'disabled' => false,
@@ -534,8 +586,12 @@ class FilterTreeExport
             $filter = [
                 'id' => $filterPrefix.$node->id.$filterSuffix,
                 'text' => $node->value,
+                'originalText' => $node->value,
                 'state' => [
+                    'opened' => false,
                     'disabled' => true,
+                    'selected' => false,
+                    'checked' => false,
                 ],
                 'extra' => [
                     'type' => 'filter',
@@ -566,8 +622,12 @@ class FilterTreeExport
             $filter = [
                 'id' => $filterPrefix.$child->id.$filterSuffix,
                 'text' => $child->value,
+                'originalText' => $child->value,
                 'state' => [
+                    'opened' => false,
                     'disabled' => true,
+                    'selected' => false,
+                    'checked' => false,
                 ],
                 'extra' => [
                     'type' => 'filter',

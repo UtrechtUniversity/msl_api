@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Helpers\RoCrateHelper;
+use App\Mappers\DataPublicationImport\Helpers\RoCrateHelper;
 use Tests\TestCase;
 
 class RoCrateHelperTest extends TestCase

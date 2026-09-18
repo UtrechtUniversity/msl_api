@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Models\LaboratoryOrganization;
+use App\Models\Laboratory\LaboratoryOrganization;
 use App\Models\LaboratoryOrganizationUpdateGroupRor;
 use App\Models\LaboratoryOrganizationUpdateRor;
 use Illuminate\Bus\Queueable;

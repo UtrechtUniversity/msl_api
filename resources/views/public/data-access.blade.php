@@ -9,6 +9,7 @@
             ],
             'routeActive' => route('data-access'),
         ])
+        @vite(['resources/ts/dataPublication/list/warningWindow.ts'])
     </div>
 
     <div class="main-content">

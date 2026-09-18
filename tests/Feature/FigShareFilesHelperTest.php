@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Mappers\Helpers\FigshareFilesHelper;
+use App\Mappers\DataPublicationImport\Helpers\FigshareFilesHelper;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

@@ -2,13 +2,13 @@
 
 namespace App\Jobs;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Models\DatasetDelete;
 use App\Models\EquipmentCreate;
-use App\Models\Laboratory;
+use App\Models\Laboratory\Laboratory;
+use App\Models\Laboratory\LaboratoryEquipment;
 use App\Models\LaboratoryCreate;
-use App\Models\LaboratoryEquipment;
 use App\Models\OrganizationCreate;
 use App\Models\Seed;
 use Illuminate\Bus\Queueable;

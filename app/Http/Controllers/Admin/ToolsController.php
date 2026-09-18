@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\CkanClient\Client;
-use App\CkanClient\Request\OrganizationListRequest;
-use App\CkanClient\Request\PackageSearchRequest;
+use App\Clients\CkanClient\Client;
+use App\Clients\CkanClient\Request\OrganizationListRequest;
+use App\Clients\CkanClient\Request\PackageSearchRequest;
 use App\Converters\ExcelToJsonConverter;
 use App\Converters\VocabularyToJsonConverter;
 use App\Exports\AbstractMatchingExport;
@@ -12,8 +12,8 @@ use App\Exports\FilterTreeExport;
 use App\Exports\UnmatchedKeywordsExport;
 use App\Exports\UriLabelExport;
 use App\Http\Controllers\Controller;
-use App\Mappers\Helpers\KeywordHelper;
-use App\Models\Laboratory;
+use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
+use App\Models\Laboratory\Laboratory;
 use App\Models\Vocabulary;
 use App\Services\DataPublicationFilterQueryService;
 use Illuminate\Http\Request;
