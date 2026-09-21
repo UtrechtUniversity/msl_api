@@ -1,13 +1,15 @@
 <head>
 
-    @vite(['resources/css/datapublicationMap/datapublications-list.css', 'resources/css/datapublicationMap/dp-pagination.css', 'resources/css/datapublicationMap/in-map-styles.css', 'resources/css/datapublicationMap/top-menu.css'])
+    @vite(['resources/css/generalStyles/popupWithDirection.css', 'resources/css/dataPublicationMap/datapublications-list.css', 'resources/css/dataPublicationMap/metadata.css', 'resources/css/dataPublicationMap/pagination.css', 'resources/css/dataPublicationMap/in-map-styles.css', 'resources/css/dataPublicationMap/top-menu.css', 'resources/css/dataPublicationMap/applied-filters.css'])
 </head>
 
 <body>
+
     <div id="map-wrapper" class="w-full h-full relative overflow-hidden">
 
-        <div id="map" class="z-0 h-170">
-            @vite(['resources/ts/dataPublication/mapController.ts'])
+        <div id="map" class="z-0 h-170 relative">
+            @include('public.components.datapublication-map.start-screen-overlay')
+            @vite(['resources/ts/dataPublication/map/mapController.ts'])
 
         </div>
 

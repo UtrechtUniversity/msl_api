@@ -11,12 +11,14 @@ type InsideOverlappingGeoFeature = {
     overlapping: GeoFeature[];
 };
 export type GeoFeature = {
-    feature: Feature;
-    title: string;
-    data_publication_doi: string;
-    portalLink: string;
+    feature: FeatureWithExtraInfo;
 };
-
+export interface FeatureWithExtraInfo extends Feature {
+    properties: {
+        name: string;
+        data_publication: { doi: string; portalLink: string; title: string };
+    };
+}
 export type DataPublication = {
     title: string;
     doi: string;

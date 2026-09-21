@@ -2,7 +2,7 @@
 
 namespace App\Jobs\SourceDatasetIdentifierProcessors;
 
-use App\Datacite\Datacite;
+use App\Clients\Datacite\Datacite;
 use App\Jobs\ProcessSourceDataset;
 use App\Models\SourceDataset;
 use App\Models\SourceDatasetIdentifier;

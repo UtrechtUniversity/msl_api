@@ -15,3 +15,12 @@ export function assertNotUndefined<T>(
         throw new Error(message);
     }
 }
+
+export function getElementOrThrow(elementId: string) {
+    const element = document.getElementById(elementId);
+    assertNotNull(
+        element,
+        ` Element '${elementId}'could not be found. This is a bug.`,
+    );
+    return element;
+}

@@ -21,6 +21,7 @@
     <server name="PULSE_ENABLED" value="false" force="true" />
     <server name="TELESCOPE_ENABLED" value="false" force="true" />
     <server name="NIGHTWATCH_ENABLED" value="false" force="true" />
+    <server name="SCOUT_DRIVER" value='"null"' force="true" />
   </php>
   <source>
     <include>

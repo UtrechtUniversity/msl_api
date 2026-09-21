@@ -10,10 +10,10 @@ class InsideOverlappingGeoFeaturesResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'overlapping' => GeoFeaturePerDataPublicationResource::collection(
+            'overlapping' => GeoFeatureResource::collection(
                 $this->resource->overlappingFeatures
             ),
-            'inside' => GeoFeaturePerDataPublicationResource::collection(
+            'inside' => GeoFeatureResource::collection(
                 $this->resource->insideFeatures
             ),
         ];

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API\V2;
 
-use App\CkanClient\Client;
+use App\Clients\CkanClient\Client;
 use App\Enums\SubDomains\EndpointContext;
 use App\Enums\SubDomains\LabDomain;
 use App\Http\Resources\V2\Errors\CkanErrorResource;

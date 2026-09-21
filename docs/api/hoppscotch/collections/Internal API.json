@@ -10,21 +10,33 @@
             "params": [
                 {
                     "key": "page",
-                    "value": "",
+                    "value": "1",
                     "active": true,
                     "description": "(number, optional) The current page of the results."
                 },
                 {
                     "key": "pageSize",
-                    "value": "",
+                    "value": "10",
                     "active": true,
                     "description": "(number, optional) The number of results in each page."
                 },
                 {
                     "key": "boundingBox",
                     "value": "[-123.3, 49.18, -123.0,49.33]",
-                    "active": false,
+                    "active": true,
                     "description": "(minx,miny,maxx,maxy) decimals, optional - Bounding box geographically filtering the results."
+                },
+                {
+                    "key": "keywords",
+                    "value": "{'msl_has_paleomagnetism':['true']}",
+                    "active": false,
+                    "description": "{ [ key:string ]: string[ ] } - Keywords filtering results. Works in 'and' fashion."
+                },
+                {
+                    "key": "freeText[]",
+                    "value": null,
+                    "active": false,
+                    "description": "(string) - Free text search filtering results. Works in 'or' fashion."
                 }
             ],
             "headers": [],

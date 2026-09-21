@@ -2,13 +2,15 @@
 
 namespace App\Http\Response;
 
-use App\CkanClient\Response\PackageSearchResponse;
+use App\Clients\CkanClient\Response\PackageSearchResponse;
 use App\Models\Ckan\DataPublication;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class DataPublicationResponse
 {
+    public array $facets;
+
     public int $page;
 
     public int $pageSize;
@@ -32,6 +34,7 @@ class DataPublicationResponse
 
         $this->page = $page;
         $this->pageSize = $pageSize;
+        $this->facets = $response->getFacets();
         $this->dataPublications = $response->getResults(true);
         $this->totalCount = $response->getTotalResultsCount();
         $this->currentCount = count($this->dataPublications);
@@ -45,6 +48,7 @@ class DataPublicationResponse
         return $dataPublicationResource->additional([
             'success' => 'true',
             'messages' => [],
+            'facets' => $this->facets,
             'meta' => [
                 'perPage' => $this->paginator->perPage(),
                 'resultsCount' => $this->currentCount,

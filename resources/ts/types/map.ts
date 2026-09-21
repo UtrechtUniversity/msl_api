@@ -10,3 +10,8 @@ export type GeoFeatureResultSetMapping<T> = {
     [OVERLAPPING]: T;
     [INSIDE]: T;
 };
+export const EXCLUSIVE = "exclusive";
+export type Exclusive = typeof EXCLUSIVE;
+
+export const INCLUSIVE = "inclusive";
+export type Inclusive = typeof INCLUSIVE;

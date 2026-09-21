@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Mappers\Additional\GfzFileMapper;
+use App\Mappers\DataPublicationImport\Additional\GfzFileMapper;
 use App\Models\DataRepository;
 use App\Models\Importer;
 use Illuminate\Database\Seeder;
