@@ -27,7 +27,7 @@ export class MenuButtons {
     root: HTMLElement;
     drawingEnabled: boolean = false;
 
-    private onEnableDrawing: () => void = throwWhenCallBackNotInitialized;
+    private onStartDrawing: () => void = throwWhenCallBackNotInitialized;
     private onCompleteDrawing: () => Promise<false | true> | void =
         throwWhenCallBackNotInitialized;
     private onRemoveDrawing: () => Promise<void> | void =
@@ -70,17 +70,17 @@ export class MenuButtons {
     }
 
     public setHandlerfn({
-        onEnableDrawing,
+        onStartDrawing,
         onCompleteDrawing,
         onRemoveDrawing,
         onSpatialFilter,
     }: {
-        onEnableDrawing: () => void;
+        onStartDrawing: () => void;
         onCompleteDrawing: () => Promise<false | true> | void;
         onRemoveDrawing: () => Promise<void> | void;
         onSpatialFilter: (type: GeoFeatureResultSet) => void;
     }) {
-        this.onEnableDrawing = onEnableDrawing;
+        this.onStartDrawing = onStartDrawing;
         this.onCompleteDrawing = onCompleteDrawing;
         this.onRemoveDrawing = onRemoveDrawing;
         this.onSpatialFilter = onSpatialFilter;
@@ -107,7 +107,7 @@ export class MenuButtons {
         this.spatialDrawButton.addEventListener("click", async () => {
             this.drawingEnabled = !this.drawingEnabled;
             if (this.drawingEnabled) {
-                this.onEnableDrawing();
+                this.onStartDrawing();
                 this.disableButtonForDrawing();
                 this.setDefaultActiveResultSetButton();
                 this.spatialDrawButton.innerText = "Stop spatial drawing";

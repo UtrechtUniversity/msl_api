@@ -61,7 +61,7 @@ export class MapView {
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS;
     popupOptions = DEFAULT_POPUP_OPTIONS;
     maxBounds = L.latLngBounds(southWest, northEast);
-    drawingEnabled: boolean = false;
+    drawingStarted: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
     private onFeatureHover: (doi: string) => void =
@@ -93,14 +93,13 @@ export class MapView {
         this.mouseEventHandling();
     }
 
-    public setDrawingEnable(enable: boolean) {
-        const controlContainer = this.map.getContainer();
-        if (enable) {
-            L.DomUtil.addClass(controlContainer, "crosshair-cursor-enabled");
-        } else {
-            L.DomUtil.removeClass(controlContainer, "crosshair-cursor-enabled");
-        }
-        this.drawingEnabled = enable;
+    public setStartDrawing(hasStarted: boolean) {
+        const container = this.map.getContainer();
+        hasStarted
+            ? L.DomUtil.addClass(container, "crosshair-cursor-enabled")
+            : L.DomUtil.removeClass(container, "crosshair-cursor-enabled");
+
+        this.drawingStarted = hasStarted;
     }
 
     public setMarkersStyle({
@@ -170,7 +169,7 @@ export class MapView {
             function (this: FeatureGroup, e: LeafletMouseEvent) {
                 // We want to make sure that if the user is trying to draw a rectangle,
                 // Then a random popup won't show up right when they release the left button.
-                if (self.drawingEnabled) {
+                if (self.drawingStarted) {
                     e.originalEvent.preventDefault();
                     return;
                 }
@@ -310,6 +309,7 @@ export class MapView {
             this.groupedMarkers[resultSet][doi] = geoFeaturesForDoi
                 ? [...geoFeaturesForDoi, layer]
                 : [layer];
+
             // When hover over a geo feature
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
@@ -340,7 +340,7 @@ export class MapView {
             // This is about the leaflet event
             const latlng = e.latlng;
 
-            if (!this.drawingEnabled) return;
+            if (!this.drawingStarted) return;
 
             // If the click is in the middle of right button,
             // then do nothing
@@ -351,7 +351,9 @@ export class MapView {
             if (this.rectangle) {
                 this.removeExistingDrawnBoundingBox();
             }
+
             drawing = true;
+
             startPoint = this.restrictLatLng(latlng);
 
             this.map.dragging.disable();
@@ -393,6 +395,7 @@ export class MapView {
                 if (!drawing) return;
                 // We stop drawing
                 drawing = false;
+
                 // Remove listeners
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);

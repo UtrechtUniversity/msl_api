@@ -136,8 +136,8 @@ export class MapController {
             },
         });
         this.menuButtons.setHandlerfn({
-            onEnableDrawing: () => {
-                this.enableDrawing();
+            onStartDrawing: () => {
+                this.startDrawing();
                 return;
             },
             onCompleteDrawing: async () => {
@@ -236,14 +236,14 @@ export class MapController {
         this.setActivatedTab(OVERLAPPING);
     }
 
-    public enableDrawing() {
+    public startDrawing() {
         this.searchFilters.boundingBox = "";
         this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
-        this.mapView.setDrawingEnable(true);
+        this.mapView.setStartDrawing(true);
     }
     public async completeDrawing() {
-        this.mapView.setDrawingEnable(false);
+        this.mapView.setStartDrawing(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.boundingBox) {
@@ -260,7 +260,7 @@ export class MapController {
 
         await this.resetAndRePopulateAfterUpdate("remove");
 
-        this.mapView.setDrawingEnable(false);
+        this.mapView.setStartDrawing(false);
     }
 
     private setActivatedTab(activatedTab: GeoFeatureResultSet) {
