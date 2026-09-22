@@ -94,6 +94,14 @@ export class MapView {
     }
 
     public setDrawingEnable(enable: boolean) {
+        if (enable) {
+            L.DomUtil.addClass(this.map._container, "crosshair-cursor-enabled");
+        } else {
+            L.DomUtil.removeClass(
+                this.map._container,
+                "crosshair-cursor-enabled",
+            );
+        }
         this.drawingEnabled = enable;
     }
 
