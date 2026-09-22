@@ -64,7 +64,7 @@ export class MenuButtons {
 
         this.root = this.createMenu();
 
-        const mapElement = getElementOrThrow("map");
+        const mapElement = getElementOrThrow("map-wrapper");
 
         mapElement.appendChild(this.root);
     }

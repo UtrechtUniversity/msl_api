@@ -94,13 +94,11 @@ export class MapView {
     }
 
     public setDrawingEnable(enable: boolean) {
+        const controlContainer = this.map.getContainer();
         if (enable) {
-            L.DomUtil.addClass(this.map._container, "crosshair-cursor-enabled");
+            L.DomUtil.addClass(controlContainer, "crosshair-cursor-enabled");
         } else {
-            L.DomUtil.removeClass(
-                this.map._container,
-                "crosshair-cursor-enabled",
-            );
+            L.DomUtil.removeClass(controlContainer, "crosshair-cursor-enabled");
         }
         this.drawingEnabled = enable;
     }
@@ -274,6 +272,7 @@ export class MapView {
         if (opts?.except !== "rectangle") {
             this.removeExistingDrawnBoundingBox();
         }
+        this.map.closePopup();
         this.removeLayers();
     }
     public removeExistingDrawnBoundingBox(): void {
