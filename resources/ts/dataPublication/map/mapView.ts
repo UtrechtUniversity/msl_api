@@ -64,6 +64,7 @@ export class MapView {
     drawingStarted: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
+    clickStopperPane = L.DomUtil.create("div", "click-stopper-pane");
     private onFeatureHover: (doi: string) => void =
         throwWhenCallBackNotInitialized;
     private onFeatureOut: (doi: string) => void =
@@ -351,6 +352,7 @@ export class MapView {
             if (this.rectangle) {
                 this.removeExistingDrawnBoundingBox();
             }
+            this.disableInteractiveLayers(true);
 
             drawing = true;
 
@@ -396,6 +398,7 @@ export class MapView {
                 // We stop drawing
                 drawing = false;
 
+                this.disableInteractiveLayers(false);
                 // Remove listeners
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);
@@ -461,6 +464,22 @@ export class MapView {
         this.groupedMarkers = getGeoFeatureResultSetMappingObj<GroupedLayer>(
             () => ({}),
         );
+    }
+    private disableInteractiveLayers(disable: boolean) {
+        const markerPane = this.map.getPane("markerPane");
+        assertNotUndefined(
+            markerPane,
+            `Marker pane is not defined. This is a bug.`,
+        );
+
+        const childrenOfPane = markerPane.children[0];
+        if (disable) {
+            this.clickStopperPane.remove();
+            return;
+        }
+
+        markerPane.insertBefore(this.clickStopperPane, childrenOfPane ?? null);
+        L.DomEvent.disableClickPropagation(this.clickStopperPane);
     }
 }
 
