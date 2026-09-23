@@ -473,13 +473,20 @@ export class MapView {
         );
 
         const childrenOfPane = markerPane.children[0];
-        if (disable) {
+        if (!disable) {
             this.clickStopperPane.remove();
             return;
         }
-
+        // L.DomEvent.disableClickPropagation(this.clickStopperPane);
+        // L.DomEvent.on(
+        //     this.clickStopperPane,
+        //     "mousewheel",
+        //     // () => {
+        //     //     console.log("heeey");
+        //     // },
+        //     L.DomEvent.stopPropagation,
+        // );
         markerPane.insertBefore(this.clickStopperPane, childrenOfPane ?? null);
-        L.DomEvent.disableClickPropagation(this.clickStopperPane);
     }
 }
 
