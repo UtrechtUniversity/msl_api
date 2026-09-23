@@ -477,15 +477,7 @@ export class MapView {
             this.clickStopperPane.remove();
             return;
         }
-        // L.DomEvent.disableClickPropagation(this.clickStopperPane);
-        // L.DomEvent.on(
-        //     this.clickStopperPane,
-        //     "mousewheel",
-        //     // () => {
-        //     //     console.log("heeey");
-        //     // },
-        //     L.DomEvent.stopPropagation,
-        // );
+
         markerPane.insertBefore(this.clickStopperPane, childrenOfPane ?? null);
     }
 }
