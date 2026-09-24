@@ -6,6 +6,7 @@ use App\Models\Keyword;
 use App\Models\KeywordSearch;
 use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class VocabularySeeder extends Seeder
@@ -21,6 +22,13 @@ class VocabularySeeder extends Seeder
         Keyword::truncate();
         KeywordSearch::truncate();
 
+        DB::transaction(function () {
+            $this->seedVocabularies();
+        });
+    }
+
+    private function seedVocabularies()
+    {
         // Current domain names for version 1.4+
         $allFileDomains = [
             [
