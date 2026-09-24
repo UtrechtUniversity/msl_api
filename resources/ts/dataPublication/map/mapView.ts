@@ -64,7 +64,10 @@ export class MapView {
     drawingStarted: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
-    clickStopperPane = L.DomUtil.create("div", "click-stopper-pane");
+    clickStopperPane = L.DomUtil.create(
+        "div",
+        " leaflet-pane click-stopper-pane",
+    );
     private onFeatureHover: (doi: string) => void =
         throwWhenCallBackNotInitialized;
     private onFeatureOut: (doi: string) => void =
@@ -101,6 +104,7 @@ export class MapView {
             : L.DomUtil.removeClass(container, "crosshair-cursor-enabled");
 
         this.drawingStarted = hasStarted;
+        this.disableInteractiveLayers(hasStarted);
     }
 
     public setMarkersStyle({
@@ -352,7 +356,6 @@ export class MapView {
             if (this.rectangle) {
                 this.removeExistingDrawnBoundingBox();
             }
-            this.disableInteractiveLayers(true);
 
             drawing = true;
 
@@ -398,7 +401,6 @@ export class MapView {
                 // We stop drawing
                 drawing = false;
 
-                this.disableInteractiveLayers(false);
                 // Remove listeners
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);
