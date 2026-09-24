@@ -135,7 +135,6 @@ export class MapController {
                 await this.handleRemoveAllFilters();
             },
         });
-        const self = this;
         this.menuButtons.setHandlerfn({
             onEnableDrawing: () => {
                 this.enableDrawing();
