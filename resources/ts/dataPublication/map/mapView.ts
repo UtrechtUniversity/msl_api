@@ -64,6 +64,10 @@ export class MapView {
     drawingEnabled: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
+    clickStopperPane = L.DomUtil.create(
+        "div",
+        " leaflet-pane click-stopper-pane",
+    );
     private onFeatureHover: (doi: string) => void =
         throwWhenCallBackNotInitialized;
     private onFeatureOut: (doi: string) => void =
@@ -93,8 +97,14 @@ export class MapView {
         this.mouseEventHandling();
     }
 
-    public setDrawingEnable(enable: boolean) {
-        this.drawingEnabled = enable;
+    public setDrawingEnable(drawingEnabled: boolean) {
+        this.drawingEnabled = drawingEnabled;
+        const container = this.map.getContainer();
+        drawingEnabled
+            ? L.DomUtil.addClass(container, "crosshair-cursor-enabled")
+            : L.DomUtil.removeClass(container, "crosshair-cursor-enabled");
+
+        this.setClickStopperPane({ enable: drawingEnabled });
     }
 
     public setMarkersStyle({
@@ -266,6 +276,7 @@ export class MapView {
         if (opts?.except !== "rectangle") {
             this.removeExistingDrawnBoundingBox();
         }
+        this.map.closePopup();
         this.removeLayers();
     }
     public removeExistingDrawnBoundingBox(): void {
@@ -303,6 +314,7 @@ export class MapView {
             this.groupedMarkers[resultSet][doi] = geoFeaturesForDoi
                 ? [...geoFeaturesForDoi, layer]
                 : [layer];
+
             // When hover over a geo feature
             layer.on("mouseover", () => {
                 this.setMarkersStyle({
@@ -344,7 +356,9 @@ export class MapView {
             if (this.rectangle) {
                 this.removeExistingDrawnBoundingBox();
             }
+
             drawing = true;
+
             startPoint = this.restrictLatLng(latlng);
 
             this.map.dragging.disable();
@@ -386,6 +400,7 @@ export class MapView {
                 if (!drawing) return;
                 // We stop drawing
                 drawing = false;
+
                 // Remove listeners
                 this.map.off("mousemove", onMouseMove);
                 document.removeEventListener("mouseup", onMouseUp);
@@ -424,7 +439,7 @@ export class MapView {
         return L.latLng(lat, lng);
     }
 
-    private drawMap() {
+    private drawMap(): void {
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: "&copy; OpenStreetMap",
@@ -432,12 +447,11 @@ export class MapView {
             minZoom: 2,
         }).addTo(this.map);
         this.resetMapView();
-        return;
     }
-    private resetMapView() {
+    private resetMapView(): void {
         this.map.setView([51.505, -0.09], 4);
     }
-    private removeLayers() {
+    private removeLayers(): void {
         Object.values(this.markers).forEach((layer) => {
             this.map.removeLayer(layer);
         });
@@ -447,10 +461,18 @@ export class MapView {
         this.resetGroupedMarkers();
     }
 
-    private resetGroupedMarkers() {
+    private resetGroupedMarkers(): void {
         this.groupedMarkers = getGeoFeatureResultSetMappingObj<GroupedLayer>(
             () => ({}),
         );
+    }
+    private setClickStopperPane({ enable }: { enable: boolean }): void {
+        const mapPane = this.map.getPane("mapPane");
+        assertNotUndefined(mapPane, `Map pane is not defined. This is a bug.`);
+
+        enable
+            ? mapPane.appendChild(this.clickStopperPane)
+            : this.clickStopperPane.remove();
     }
 }
 
