@@ -61,7 +61,7 @@ export class MapView {
     highlightedOptions = HIGHLIGHT_MARKER_OPTIONS;
     popupOptions = DEFAULT_POPUP_OPTIONS;
     maxBounds = L.latLngBounds(southWest, northEast);
-    drawingStarted: boolean = false;
+    drawingEnabled: boolean = false;
     rectangle: Rectangle | null = null;
     drawingBounds: null | LatLngBounds = null;
     clickStopperPane = L.DomUtil.create(
@@ -97,14 +97,14 @@ export class MapView {
         this.mouseEventHandling();
     }
 
-    public setStartDrawing(hasStarted: boolean) {
+    public setDrawingEnable(drawingEnabled: boolean) {
+        this.drawingEnabled = drawingEnabled;
         const container = this.map.getContainer();
-        hasStarted
+        drawingEnabled
             ? L.DomUtil.addClass(container, "crosshair-cursor-enabled")
             : L.DomUtil.removeClass(container, "crosshair-cursor-enabled");
 
-        this.drawingStarted = hasStarted;
-        this.disableInteractiveLayers(hasStarted);
+        this.setClickStopperPane({ enable: drawingEnabled });
     }
 
     public setMarkersStyle({
@@ -174,7 +174,7 @@ export class MapView {
             function (this: FeatureGroup, e: LeafletMouseEvent) {
                 // We want to make sure that if the user is trying to draw a rectangle,
                 // Then a random popup won't show up right when they release the left button.
-                if (self.drawingStarted) {
+                if (self.drawingEnabled) {
                     e.originalEvent.preventDefault();
                     return;
                 }
@@ -345,7 +345,7 @@ export class MapView {
             // This is about the leaflet event
             const latlng = e.latlng;
 
-            if (!this.drawingStarted) return;
+            if (!this.drawingEnabled) return;
 
             // If the click is in the middle of right button,
             // then do nothing
@@ -439,7 +439,7 @@ export class MapView {
         return L.latLng(lat, lng);
     }
 
-    private drawMap() {
+    private drawMap(): void {
         L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: "&copy; OpenStreetMap",
@@ -447,12 +447,11 @@ export class MapView {
             minZoom: 2,
         }).addTo(this.map);
         this.resetMapView();
-        return;
     }
-    private resetMapView() {
+    private resetMapView(): void {
         this.map.setView([51.505, -0.09], 4);
     }
-    private removeLayers() {
+    private removeLayers(): void {
         Object.values(this.markers).forEach((layer) => {
             this.map.removeLayer(layer);
         });
@@ -462,25 +461,18 @@ export class MapView {
         this.resetGroupedMarkers();
     }
 
-    private resetGroupedMarkers() {
+    private resetGroupedMarkers(): void {
         this.groupedMarkers = getGeoFeatureResultSetMappingObj<GroupedLayer>(
             () => ({}),
         );
     }
-    private disableInteractiveLayers(disable: boolean) {
-        const markerPane = this.map.getPane("markerPane");
-        assertNotUndefined(
-            markerPane,
-            `Marker pane is not defined. This is a bug.`,
-        );
+    private setClickStopperPane({ enable }: { enable: boolean }): void {
+        const mapPane = this.map.getPane("mapPane");
+        assertNotUndefined(mapPane, `Map pane is not defined. This is a bug.`);
 
-        const childrenOfPane = markerPane.children[0];
-        if (!disable) {
-            this.clickStopperPane.remove();
-            return;
-        }
-
-        markerPane.insertBefore(this.clickStopperPane, childrenOfPane ?? null);
+        enable
+            ? mapPane.appendChild(this.clickStopperPane)
+            : this.clickStopperPane.remove();
     }
 }
 
