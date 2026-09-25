@@ -6,10 +6,13 @@ use App\Models\Keyword;
 use App\Models\KeywordSearch;
 use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class VocabularySeeder extends Seeder
 {
+    private array $keywordPaths = [];
+
     /**
      * Run the database seeds.
      *
@@ -21,6 +24,13 @@ class VocabularySeeder extends Seeder
         Keyword::truncate();
         KeywordSearch::truncate();
 
+        DB::transaction(function () {
+            $this->seedVocabularies();
+        });
+    }
+
+    private function seedVocabularies()
+    {
         // Current domain names for version 1.4+
         $allFileDomains = [
             [
@@ -865,11 +875,13 @@ class VocabularySeeder extends Seeder
 
     private function processNode($node, $vocabulary, $parentId = null)
     {
+        $path = $this->buildPath($node->value, $parentId);
+
         $keyword = Keyword::create([
             'parent_id' => $parentId,
             'vocabulary_id' => $vocabulary->id,
             'value' => $node->value,
-            'uri' => '',
+            'uri' => $this->generateURI($path, $vocabulary),
             'external_uri' => $node->external_uri,
             'level' => $node->level,
             'label' => $node->value,
@@ -881,7 +893,7 @@ class VocabularySeeder extends Seeder
             'external_vocab_scheme' => $node->external_vocab_scheme,
         ]);
 
-        $this->generateURI($keyword, $vocabulary);
+        $this->keywordPaths[$keyword->id] = $path;
 
         KeywordSearch::create([
             'keyword_id' => $keyword->id,
@@ -918,11 +930,13 @@ class VocabularySeeder extends Seeder
     private function processNodeOld($node, $vocabulary, $parentId = null, $excludeAbstractMapping = false, $forceExcludeAbstractMapping = false, $excludeSubdomainMapping = false, $forceExcludeSubdomainMapping = false)
     {
 
+        $path = $this->buildPath($node->value, $parentId);
+
         $keyword = Keyword::create([
             'parent_id' => $parentId,
             'vocabulary_id' => $vocabulary->id,
             'value' => $node->value,
-            'uri' => '',
+            'uri' => $this->generateURI($path, $vocabulary),
             'external_uri' => $node->uri,
             'level' => $node->level,
             'label' => $node->value,
@@ -930,7 +944,7 @@ class VocabularySeeder extends Seeder
 
         ]);
 
-        $this->generateURI($keyword, $vocabulary);
+        $this->keywordPaths[$keyword->id] = $path;
 
         KeywordSearch::create([
             'keyword_id' => $keyword->id,
@@ -969,10 +983,21 @@ class VocabularySeeder extends Seeder
         }
     }
 
-    private function generateURI($keyword, $vocabulary)
+    /**
+     * Builds the full path of a keyword from the path of its parent, equal to Keyword::getFullPath()
+     */
+    private function buildPath($value, $parentId)
     {
-        $keyword->uri = $vocabulary->uri.$this->cleanUri($keyword->getFullPath());
-        $keyword->save();
+        if ($parentId === null) {
+            return $value;
+        }
+
+        return $this->keywordPaths[$parentId].'>'.$value;
+    }
+
+    private function generateURI($path, $vocabulary)
+    {
+        return $vocabulary->uri.$this->cleanUri($path);
     }
 
     private function cleanUri($string)
