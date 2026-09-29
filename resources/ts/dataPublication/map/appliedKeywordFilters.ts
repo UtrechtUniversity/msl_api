@@ -150,7 +150,7 @@ function createKeywordElement({
     const wrapper = document.createElement("div");
 
     const htmlString = `  
-                <div id=${id} class=" group h-fit max-w-60 relative">
+                <div id=${id} class="group h-fit max-w-60 relative hover:overflow-visible">
 
                     <div class="word-card truncate">
                         ${CLOSE_ICON}
