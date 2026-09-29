@@ -37,6 +37,7 @@ class ApiTest extends TestCase
 
         // Check for 200 status response
         $response->assertStatus(200);
+        $response->assertHeader('X-Robots-Tag', 'none');
 
         // Verify response body contents
         $response->assertJson(
