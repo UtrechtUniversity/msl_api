@@ -31,3 +31,15 @@
 }
 
 
+.leaflet-container.crosshair-cursor-enabled {
+    cursor:crosshair;
+}
+
+
+.leaflet-container 
+    .click-stopper-pane {
+        position: absolute;
+        width: 9999px;
+        height: 9999px;
+        z-index: 1000;
+    }
