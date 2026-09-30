@@ -148,19 +148,20 @@ function createKeywordElement({
     id: string;
 }): HTMLElement {
     const wrapper = document.createElement("div");
+
     const htmlString = `  
-                <div id=${id} class="keyword-word-card applied-filter-card">
+                <div id=${id} class="group h-fit max-w-60 relative hover:overflow-visible">
+
                     <div class="word-card truncate">
-                            ${CLOSE_ICON}
-                        <text class="word-value applied-filter-text-item"> ${displayName.substring(0, 40)} </text>
+                        ${CLOSE_ICON}
+                        <text class="word-value text-base"> ${displayName.substring(0, 40)} </text>
                     </div>
 
-                    <div
-                        class="word-card applied-filter-item"
-                    >
-                    ${CLOSE_ICON}
+                     <div class="word-card hover-neutral hidden group-hover:block w-fit group-hover:wrap-anywhere group-hover:absolute group-hover:top-0 group-hover:left-0 group-hover:z-10">
+                        ${CLOSE_ICON}
                         <text class="word-value">${displayName}</text>
                     </div>
+
                 </div>
 
                             `;
