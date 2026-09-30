@@ -21,10 +21,16 @@ import { DomEvent, DomUtil, Point, Popup } from "leaflet";
 export const PopupWithDirection: typeof Popup = Popup.extend({
     _containerPrefix: "leaflet-popupWithDirection",
     options: {
+        centerOffset: undefined,
         // We want this number as a default for the popup to work nicely
         // We can always change this number during instantiation
         offset: new Point(0, -10),
     },
+    setCenterOffset(point: Point): void {
+        this.centerOffset = point;
+        return;
+    },
+
     _initLayout: function () {
         this._container = DomUtil.create(
             "div",
@@ -103,7 +109,15 @@ export const PopupWithDirection: typeof Popup = Popup.extend({
     },
 
     _setPositionInOptions() {
-        const centerOfView = (this._map as L.Map).getCenter();
+        const map = this._map as L.Map;
+        // todo 127px
+        const targetPoint = map
+            .project(map.getCenter())
+            .subtract([0, -127 / 2]);
+
+        const targetLatLng = map.unproject(targetPoint);
+        const centerOfView = targetLatLng;
+
         const y_diff = this._latlng.lat - centerOfView.lat;
         this.options.position = y_diff > 0 ? "s" : "n";
 
