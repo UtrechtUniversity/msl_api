@@ -1,4 +1,4 @@
-import { DomEvent, DomUtil, Point, Popup } from "leaflet";
+import { DomEvent, DomUtil, Point, Popup, type PopupOptions } from "leaflet";
 
 // Inspired by : https://github.com/erictheise/rrose/blob/master/leaflet.rrose-src.js
 
@@ -18,17 +18,32 @@ import { DomEvent, DomUtil, Point, Popup } from "leaflet";
   COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-export const PopupWithDirection: typeof Popup = Popup.extend({
+
+interface PopupWithDirectionOptions extends PopupOptions {
+    centerOffset?: Point;
+    offset?: Point;
+}
+
+interface PopupWithDirection extends Popup {
+    setCenterOffset(point: Point): this;
+}
+
+interface PopupWithDirectionConstructor {
+    new (options?: PopupWithDirectionOptions): PopupWithDirection;
+}
+
+export const PopupWithDirection = Popup.extend({
     _containerPrefix: "leaflet-popupWithDirection",
     options: {
-        centerOffset: undefined,
+        centerOffset: new Point(0, 0),
         // We want this number as a default for the popup to work nicely
         // We can always change this number during instantiation
         offset: new Point(0, -10),
-    },
+    } satisfies PopupWithDirectionOptions,
+
     setCenterOffset(point: Point): void {
-        this.centerOffset = point;
-        return;
+        this.options.centerOffset = point;
+        return this;
     },
 
     _initLayout: function () {
@@ -110,13 +125,19 @@ export const PopupWithDirection: typeof Popup = Popup.extend({
 
     _setPositionInOptions() {
         const map = this._map as L.Map;
-        // todo 127px
+        // In order to get the offset center we have to:
+        // 1. Get the accurate number of pixels, by projecting
+        // 2. Subtracting the offset
+        // 3. Go back to coordinates of the offset center
         const targetPoint = map
             .project(map.getCenter())
-            .subtract([0, -127 / 2]);
-
-        const targetLatLng = map.unproject(targetPoint);
-        const centerOfView = targetLatLng;
+            .subtract([
+                -this.options.centerOffset.x / 2,
+                -this.options.centerOffset.y / 2,
+            ]);
+        const centerOfView = map.unproject(targetPoint);
+        console.log(centerOfView, "subtracted");
+        console.log(map.getCenter(), "without subtract");
 
         const y_diff = this._latlng.lat - centerOfView.lat;
         this.options.position = y_diff > 0 ? "s" : "n";
@@ -151,4 +172,4 @@ export const PopupWithDirection: typeof Popup = Popup.extend({
             (position ? "-" + this.options.position : "")
         );
     },
-});
+}) as PopupWithDirectionConstructor;

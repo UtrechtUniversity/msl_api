@@ -275,7 +275,7 @@ export class MapController {
             except: "page",
         });
     }
-    //
+
     public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
         const id = createIdForFreeText();
         this.searchFilters.activeKeywordFilters.set(id, {
