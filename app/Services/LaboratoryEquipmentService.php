@@ -18,7 +18,7 @@ class LaboratoryEquipmentService
         $builder = $this->setFacets($builder);
         $builder->orderBy('title_string', 'asc');
 
-        return $builder->paginate(1000, 'page', $request->page)->setPath($request->url())->appends($request->query());
+        return $builder->paginate(20, 'page', $request->page)->setPath($request->url())->appends($request->query());
     }
 
     public function getStaticMapData(Request $request)
