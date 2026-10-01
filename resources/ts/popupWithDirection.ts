@@ -136,8 +136,6 @@ export const PopupWithDirection = Popup.extend({
                 -this.options.centerOffset.y / 2,
             ]);
         const centerOfView = map.unproject(targetPoint);
-        console.log(centerOfView, "subtracted");
-        console.log(map.getCenter(), "without subtract");
 
         const y_diff = this._latlng.lat - centerOfView.lat;
         this.options.position = y_diff > 0 ? "s" : "n";
