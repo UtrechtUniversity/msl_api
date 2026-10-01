@@ -5,6 +5,7 @@ import {
     FeatureGroup,
     CircleMarker,
     Polygon,
+    Point,
 } from "leaflet";
 import type {
     FeatureWithExtraInfo,
@@ -260,6 +261,7 @@ export class MapView {
                 })
                     .setContent(outerDiv)
                     .setLatLng(clickedPoint)
+                    .setCenterOffset(new Point(0, 127))
                     .openOn(self.map);
 
                 // Types are wrong
