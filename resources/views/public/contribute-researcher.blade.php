@@ -108,9 +108,13 @@
                 We can then start working towards including data from your repository too.
             </p>
 
-            <h2 class="pt-10 pb-4" id="step-2">Step 2: Check data formatting requirements
+            <h2 class="pt-10 pb-4" id="step-2">
+                Step 2: Check data formatting requirements
             </h2>
-            <p class="">Some repositories have specific requirements or data formats/templates to take into
+            <p class="">
+                Wherever you publish your data, it helps if you add a data description file (you can find a template
+                here: <a href="https://gfzpublic.gfz.de/pubman/item/item_5007103" title="Data description template" class="hover-interactive underline">Data description template</a>).
+                Furthermore, some repositories have specific requirements or data formats/templates to take into
                 account.
                 Check whether this is relevant for your work → better to know this before you start publishing.</p>
             <p class="">
