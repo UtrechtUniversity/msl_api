@@ -7,6 +7,9 @@
             <p class="max-w-(--breakpoint-md) px-4 pt-20">
                 Thank you for your interest in joining the EPOS Multi-Scale Laboratories (MSL) community. Below you will
                 find a brief description of EPOS and MSL, and the application procedure to join our community.
+                If your lab is already part of the MSL community, you can update your lab information (e.g. equipment,
+                contact person) on <a href="https://fast.geo.uu.nl" title="FAST" class="hover-interactive underline">FAST</a>
+                whenever you like. The change will be visible in a few weeks.
             </p>
 
             {{-- timeline start --}}
