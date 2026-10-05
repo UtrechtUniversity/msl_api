@@ -35,12 +35,19 @@ interface PopupWithDirectionConstructor {
 export const PopupWithDirection = Popup.extend({
     _containerPrefix: "leaflet-popupWithDirection",
     options: {
+        /**
+         *  Move the center based of this offset point.
+         */
         centerOffset: new Point(0, 0),
         // We want this number as a default for the popup to work nicely
         // We can always change this number during instantiation
         offset: new Point(0, -10),
     } satisfies PopupWithDirectionOptions,
-
+/**
+ * Set offsetting of center based on a pixel point.
+ * Add negative or positive sign based on whether the
+ * center is going to move towards the negative or posivite values of each axis.
+ */
     setCenterOffset(point: Point): void {
         this.options.centerOffset = point;
         return this;
@@ -132,8 +139,8 @@ export const PopupWithDirection = Popup.extend({
         const targetPoint = map
             .project(map.getCenter())
             .subtract([
-                -this.options.centerOffset.x / 2,
-                -this.options.centerOffset.y / 2,
+                this.options.centerOffset.x / 2,
+                this.options.centerOffset.y / 2,
             ]);
         const centerOfView = map.unproject(targetPoint);
 
