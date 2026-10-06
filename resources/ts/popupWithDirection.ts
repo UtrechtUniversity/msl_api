@@ -36,26 +36,42 @@ export const PopupWithDirection = Popup.extend({
     _containerPrefix: "leaflet-popupWithDirection",
     options: {
         /**
-         * Offset of center: 
-         * moves the center based on the values (and their signs) of the given point 
+         * Offset of center:
+         * moves the center based on the values (and their signs) of the given point
+         * Note: this option doesn't change
+         * the center of map in other parts of leaflet code.
+         * It is used only for setting the direction of the popups.
          */
         offsetOfCenter: new Point(0, 0),
 
         /**
-         * Offset of popup: 
-         * moves the popup based on the values (and their signs) of the given point 
-         * 
+         * Offset of popup:
+         * moves the popup based on the values (and their signs) of the given point
+         *
          * Note that this is a default option of the Popup class, and we cannot rename it.
-         * Also, we want the point (0,-1) as default for the popup-with-direction to work nicely.  
+         * Also, we want the point (0,-10) as default for the popup-with-direction to work nicely.
          * We can always change this number during instantiation.
          */
         offset: new Point(0, -10),
     } satisfies PopupWithDirectionOptions as PopupWithDirectionOptions,
-/**
- * Set offsetting of center based on a pixel point.
- * Add negative or positive sign based on whether the
- * center is going to move towards the negative or positive values of each axis.
- */
+    /**
+     * Set offsetting of center for the popup creation based on a pixel point.
+     * Note that you should you:
+     * - Negative sign (-)
+     *      - on x axis if you want the center to move to the left
+     *      - on y axis if you want the center to move towards the bottom
+     * - Positive sign (+)
+     *      - on x axis if you want the center to move to the right
+     *      - on y axis if you want the center to move towards the top
+     *
+     * Example:
+     * If you set offset as new Point (100,0),
+     * the center will be move towards the right side of the viewport,
+     * and the popups for the most part of the viewport
+     * will be created towards the opposite side, here left.
+     *
+     *
+     */
     setOffsetOfCenter(point: Point): void {
         this.options.offsetOfCenter = point;
         return this;
