@@ -46,7 +46,7 @@ export const PopupWithDirection = Popup.extend({
 /**
  * Set offsetting of center based on a pixel point.
  * Add negative or positive sign based on whether the
- * center is going to move towards the negative or posivite values of each axis.
+ * center is going to move towards the negative or positive values of each axis.
  */
     setCenterOffset(point: Point): void {
         this.options.centerOffset = point;
