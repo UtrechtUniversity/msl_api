@@ -20,12 +20,12 @@ import { DomEvent, DomUtil, Point, Popup, type PopupOptions } from "leaflet";
 */
 
 interface PopupWithDirectionOptions extends PopupOptions {
-    centerOffset?: Point;
+    offsetOfCenter?: Point;
     offset?: Point;
 }
 
 interface PopupWithDirection extends Popup {
-    setCenterOffset(point: Point): this;
+    setOffsetOfCenter(point: Point): this;
 }
 
 interface PopupWithDirectionConstructor {
@@ -36,20 +36,28 @@ export const PopupWithDirection = Popup.extend({
     _containerPrefix: "leaflet-popupWithDirection",
     options: {
         /**
-         *  Move the center based of this offset point.
+         * Offset of center: 
+         * moves the center based on the values (and their signs) of the given point 
          */
-        centerOffset: new Point(0, 0),
-        // We want this number as a default for the popup to work nicely
-        // We can always change this number during instantiation
+        offsetOfCenter: new Point(0, 0),
+
+        /**
+         * Offset of popup: 
+         * moves the popup based on the values (and their signs) of the given point 
+         * 
+         * Note that this is a default option of the Popup class, and we cannot rename it.
+         * Also, we want the point (0,-1) as default for the popup-with-direction to work nicely.  
+         * We can always change this number during instantiation.
+         */
         offset: new Point(0, -10),
-    } satisfies PopupWithDirectionOptions,
+    } satisfies PopupWithDirectionOptions as PopupWithDirectionOptions,
 /**
  * Set offsetting of center based on a pixel point.
  * Add negative or positive sign based on whether the
  * center is going to move towards the negative or positive values of each axis.
  */
-    setCenterOffset(point: Point): void {
-        this.options.centerOffset = point;
+    setOffsetOfCenter(point: Point): void {
+        this.options.offsetOfCenter = point;
         return this;
     },
 
@@ -139,8 +147,8 @@ export const PopupWithDirection = Popup.extend({
         const targetPoint = map
             .project(map.getCenter())
             .subtract([
-                this.options.centerOffset.x / 2,
-                this.options.centerOffset.y / 2,
+                this.options.offsetOfCenter.x / 2,
+                this.options.offsetOfCenter.y / 2,
             ]);
         const centerOfView = map.unproject(targetPoint);
 

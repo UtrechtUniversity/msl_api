@@ -261,7 +261,7 @@ export class MapView {
                 })
                     .setContent(outerDiv)
                     .setLatLng(clickedPoint)
-                    .setCenterOffset(new Point(0, -127))
+                    .setOffsetOfCenter(new Point(0, -127))
                     .openOn(self.map);
 
                 // Types are wrong
