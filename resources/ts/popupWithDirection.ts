@@ -58,11 +58,11 @@ export const PopupWithDirection = Popup.extend({
      * Set offsetting of center for the popup creation based on a pixel point.
      * Note that you should you:
      * - Negative sign (-)
-     *      - on x axis if you want the center to move to the left
-     *      - on y axis if you want the center to move towards the bottom
+     *      - on x axis if you want the center to shift to the left
+     *      - on y axis if you want the center to shift towards the bottom
      * - Positive sign (+)
-     *      - on x axis if you want the center to move to the right
-     *      - on y axis if you want the center to move towards the top
+     *      - on x axis if you want the center to shift to the right
+     *      - on y axis if you want the center to shift towards the top
      *
      * Example:
      * If you set offset as new Point (100,0),
