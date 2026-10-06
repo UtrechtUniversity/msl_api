@@ -16,7 +16,7 @@ class PreventIndexingBySearchEngines
     public function handle(Request $request, Closure $next): Response
     {
         $response = $next($request);
-        $contents = config('app.env') === 'production' ? 'all' : 'none';
+        $contents = config('app.allow_indexing') ? 'all' : 'none';
         $response->header('X-Robots-Tag', $contents);
 
         return $response;
