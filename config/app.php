@@ -29,6 +29,11 @@ return [
     'env' => env('APP_ENV', 'production'),
 
     /*
+    | This value determines if the website is allowed to get indexed by search engines.
+    */
+    'allow_indexing'=>env('ALLOW_INDEXING',false),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
