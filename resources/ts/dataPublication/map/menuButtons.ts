@@ -251,12 +251,3 @@ export class MenuButtons {
         this.onSpatialFilter(INSIDE);
     }
 }
-
-function assertIsHTMLButtonElement(
-    el: HTMLElement | null,
-    message = "Element is not an HTMLButtonElement",
-): asserts el is HTMLButtonElement {
-    if (!(el instanceof HTMLButtonElement)) {
-        throw new Error(message);
-    }
-}

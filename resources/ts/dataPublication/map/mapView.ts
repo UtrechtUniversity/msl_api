@@ -31,6 +31,7 @@ import {
 import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { PopupWithDirection } from "../../popupWithDirection";
 import { LAT_LONG_RANGE, RESULT_SET_CONFIG } from "./config";
+import type { Entries } from "../../types/entries";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
