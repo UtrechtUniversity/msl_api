@@ -590,9 +590,3 @@ function getGeoFeatureResultSetMappingObj<T>(
 ): GeoFeatureResultSetMapping<T> {
     return { [OVERLAPPING]: factory(), [INSIDE]: factory() };
 }
-
-type Entries<T> = Array<
-    {
-        [K in keyof T]: [K, T[K]];
-    }[keyof T]
->;

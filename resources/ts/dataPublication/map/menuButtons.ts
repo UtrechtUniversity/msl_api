@@ -1,4 +1,7 @@
-import { getElementOrThrow } from "../../assertions";
+import {
+    getElementOrThrow,
+    throwWhenCallBackNotInitialized,
+} from "../../assertions";
 import {
     INSIDE,
     OVERLAPPING,
