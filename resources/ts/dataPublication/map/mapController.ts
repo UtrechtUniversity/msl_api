@@ -1,29 +1,37 @@
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
 import {
-    FREE_TEXT_SEARCH_KEYWORD,
-    getDefaultTab,
-    getIdForTreeKeyword,
-    type ActiveKeywordFilterInfo,
-    type Facets,
-    type FreeTextAddInfo,
-    type TreeKeywordAddInfo,
-    type KeywordFilters as KeywordFiltersAsRequestArgs,
-    type Paginator,
-    TREE_KEYWORD,
-} from "../utils.js";
+    INSIDE,
+    OVERLAPPING,
+    type GeoFeatureResultSet,
+} from "../../types/map/resultSet";
 import { ResultsSidebar } from "./resultsSidebar.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
-import type { GeoFeatureDataPublications } from "../../types/datapublication";
+import type { GeoFeatureDataPublications } from "../../types/map/datapublication";
 import { Pagination } from "./pagination";
 import { cloneDeep } from "lodash";
 import { ResultsMetadata } from "./resultsMetadata";
-import { KeywordTree } from "./keywordTree";
+import { getIdForTreeKeyword, KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { getElementOrThrow } from "../../helpers";
-const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
+import { getElementOrThrow } from "../../assertions";
+import {
+    FREE_TEXT_SEARCH_KEYWORD,
+    TREE_KEYWORD,
+    type ActiveKeywordFilterInfo,
+    type FreeTextAddInfo,
+    type KeywordFilters,
+    type TreeKeywordAddInfo,
+} from "../../types/map/keywordFilters";
+import { getDefaultTab, LAT_LONG_RANGE } from "./config";
+import type { Facets, Paginator } from "../../types/map/components";
+
+const BOUNDING_BOX_OF_THE_WORLD = [
+    LAT_LONG_RANGE.MIN.LONG,
+    LAT_LONG_RANGE.MIN.LAT,
+    LAT_LONG_RANGE.MAX.LONG,
+    LAT_LONG_RANGE.MAX.LAT,
+].toString();
 type SearchFilter = {
     boundingBox: string;
     page: number;
@@ -71,28 +79,15 @@ export class MapController {
 
         // Callbacks
         this.mapView.setHandlerfn({
-            onFeatureHover: (doi) => {
-                this.resultsSidebar.highlight(doi, { scroll: true });
+            onCleanUp: () => {
+                this.resultsSidebar.resetList();
             },
-            onFeatureOut: (doi) => {
-                this.resultsSidebar.removeHighlight(doi);
-            },
+            onFeatureHover: this.handleFeatureHover,
+            onFeatureOut: this.handleFeatureOut,
         });
         this.resultsSidebar.setHandlerfn({
-            onFeatureHover: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "highlight",
-                });
-            },
-            onFeatureOut: (doi) => {
-                this.mapView.setMarkersStyle({
-                    doi: doi,
-                    resultSet: this.activeTab,
-                    highlightOrReset: "reset",
-                });
-            },
+            onFeatureHover: this.handleFeatureHover,
+            onFeatureOut: this.handleFeatureOut,
         });
         this.pagination.setHandlerfn({
             onPageChange: async (page) => this.handlePageChange(page),
@@ -175,8 +170,7 @@ export class MapController {
             facets: this.facets,
         } = await this.getJsonFromRequest());
 
-        const keywords: KeywordFiltersAsRequestArgs =
-            this.getKeywordsAsRequestArgs();
+        const keywords: KeywordFilters = this.getKeywordsAsRequestArgs();
 
         this.keywordTree.updateTrees(this.facets, keywords);
 
@@ -269,6 +263,40 @@ export class MapController {
         this.mapView.handleActivatedLayers(activatedTab);
     }
 
+    public handleFeatureHover = ({
+        doi,
+        resultSet,
+        scroll,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+        scroll?: true;
+    }) => {
+        const appliedResultSet = resultSet ?? this.activeTab;
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "highlight",
+        });
+        this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
+    };
+
+    public handleFeatureOut = ({
+        doi,
+        resultSet,
+    }: {
+        doi: string;
+        resultSet?: GeoFeatureResultSet;
+    }) => {
+        const appliedResultSet = resultSet ?? this.activeTab;
+
+        this.mapView.setMarkersStyle({
+            doi,
+            resultSet: appliedResultSet,
+            highlightOrReset: "reset",
+        });
+        this.resultsSidebar.removeHighlight(doi);
+    };
     private async handlePageChange(page: number) {
         this.searchFilters.page = page;
         await this.resetAndRePopulateAfterUpdate("add", {
@@ -373,8 +401,8 @@ export class MapController {
         return freeText;
     }
 
-    private getKeywordsAsRequestArgs(): KeywordFiltersAsRequestArgs {
-        const keywords: KeywordFiltersAsRequestArgs = {};
+    private getKeywordsAsRequestArgs(): KeywordFilters {
+        const keywords: KeywordFilters = {};
         for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
             if (metadata.type !== TREE_KEYWORD) continue;
             const values = keywords[metadata.name];

@@ -1,8 +1,4 @@
-import {
-    assertNotNull,
-    assertNotUndefined,
-    getElementOrThrow,
-} from "../../helpers";
+import { assertNotNull, getElementOrThrow } from "../../assertions";
 import type { MapController } from "./mapController";
 
 export class SearchTextField {
