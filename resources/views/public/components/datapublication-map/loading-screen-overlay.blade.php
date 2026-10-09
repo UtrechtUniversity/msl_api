@@ -1,15 +1,30 @@
  <div id="loading-screen-overlay" {{-- TODO fix placing --}}
-     class="absolute inset-0
+     class="
+     absolute 
       {{-- We want this element to be above map-controls (i,e. z-index=1000) and menu-on-map (i.e. z-index=1100) --}}
-      z-1150 sub-content-wide place-content-center h-full w-full
-      bg-primary-200/75 flex flex-col justify-center items-center pointer-events-auto"
-     hidden>
-     <div class="h-1/3 w-1/2 bg-info-300 p-10 ">
+      z-1150 
+      sub-content-wide 
+      h-full 
+      w-full
+      bg-primary-200/75
+      {{-- opacity-0 --}}
+      flex 
+      flex-col 
+      justify-center 
+      items-center  
+      place-content-center 
+      pointer-events-auto 
+      bg-clip-content 
+      pb-10
+      pt-10
+      ">
+     <div class="drawer-content bg-red-500 flex h-full">
+         {{-- <div class="drawer lg:drawer-open w-full h-full ">
+             ldsl
+             <div class="drawer-content bg-secondary-100 flex h-full ">
 
-         <p class='text-xl text-center'>Apply spatial or keyword filter to
-             get results.
-         </p>
-         <br />
-         <p class='text-xl text-center'>Click on map to start navigation.</p>
+                 <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
+             </div>
+         </div> --}}
      </div>
  </div>

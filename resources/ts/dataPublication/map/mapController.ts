@@ -24,7 +24,7 @@ import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
 import { assertNotNull, getElementOrThrow } from "../../helpers";
 
-const LOADING_SCREEN_ID = "loading_screen_overlay" as const;
+const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     boundingBox: string;
@@ -179,6 +179,8 @@ export class MapController {
     // Methods about requests and populating
 
     private async populateElements() {
+        this.loadingScreen.hidden = false;
+
         ({
             data: this.results,
             meta: this.paginator,
@@ -202,6 +204,7 @@ export class MapController {
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
+        this.loadingScreen.hidden = true;
     }
 
     public async getJsonFromRequest(): Promise<{
