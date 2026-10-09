@@ -22,7 +22,9 @@ import { KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { getElementOrThrow } from "../../helpers";
+import { assertNotNull, getElementOrThrow } from "../../helpers";
+
+const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
 const BOUNDING_BOX_OF_THE_WORLD = "[-180,-90,180,90]";
 type SearchFilter = {
     boundingBox: string;
@@ -58,6 +60,8 @@ export class MapController {
     searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
     facets: Facets = {};
+    // Element
+    private loadingScreen: HTMLElement;
 
     constructor() {
         this.mapView = new MapView();
@@ -158,6 +162,12 @@ export class MapController {
                 }
             },
         });
+        const loadingScreen = document.getElementById(LOADING_SCREEN_ID);
+        assertNotNull(
+            loadingScreen,
+            `Loading screen element could not be found. This is a bug.`,
+        );
+        this.loadingScreen = loadingScreen;
         this.addRedirectionWarning();
     }
 
@@ -169,6 +179,8 @@ export class MapController {
     // Methods about requests and populating
 
     private async populateElements() {
+        this.loadingScreen.hidden = false;
+
         ({
             data: this.results,
             meta: this.paginator,
@@ -192,6 +204,7 @@ export class MapController {
 
         this.mapView.handleActivatedLayers(this.activeTab);
         this.resultsSidebar.handleActivationOfTab(this.activeTab)();
+        this.loadingScreen.hidden = true;
     }
 
     public async getJsonFromRequest(): Promise<{
