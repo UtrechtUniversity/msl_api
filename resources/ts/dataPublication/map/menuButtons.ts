@@ -251,6 +251,7 @@ export class MenuButtons {
         this.insideFilterButton.classList.add(ACTIVE);
         this.onSpatialFilter(INSIDE);
     }
+
 }
 
 function assertIsHTMLButtonElement(
