@@ -13,8 +13,9 @@
 
     </div>
 
-    <div class="main-content flex-col h-full">
-        <div id='datapublication-map-area' class="sub-content-wide flex place-content-center w-full h-full">
+    <div class="main-content flex flex-col h-full relative">
+        @include('public.components.datapublication-map.loading-screen-overlay')
+        <div id='datapublication-map-area' class="sub-content-wide place-content-center w-full h-full">
             <div class="drawer lg:drawer-open w-full h-full">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content bg-secondary-100 flex h-full ">
@@ -37,7 +38,6 @@
                 <div class="drawer-side z-40 h-full">
                     <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
                     {{-- side bar --}}
-
                     <ul class="menu h-full w-[340px] p-0  text-primary-900 bg-primary-200 flex flex-col ">
                         <!-- Sidebar content here -->
                         @include('public.components.datapublication-map.sidebar')
