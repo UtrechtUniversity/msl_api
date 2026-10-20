@@ -46,8 +46,8 @@
                     <br>
                     <br>
                     @if ($dataPublication->msl_source != '')
-                        <a class="hover-interactive text-center underline" href="{{ $dataPublication->msl_source }}"
-                            target="_blank">{{ $dataPublication->msl_source }}</a>
+                        <a class="hover-interactive text-center underline" href="https://doi.org/{{ $dataPublication->msl_doi }}"
+                            target="_blank">{{ $dataPublication->msl_doi }}</a>
                     @endif
                     <br>
                     <br>

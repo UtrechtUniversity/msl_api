@@ -661,12 +661,18 @@
                 <br>
                 <div class="detail-entry-div">
                     <h4 class="detail-entry-title">Source</h4>
-                    <div class="detail-entry-content ">
-                        @include('public.components.list-views.table-list', [
-                            'entries' => [$dataPublication->msl_source],
-                            'withKeys' => false,
-                            'textSize' => 'base',
-                        ])
+                    <div class="detail-entry-content">
+                        <div class="w-full py-2">
+                            <table class="table-fixed w-full">
+                                <tbody>
+                                <td class="text-base p-0">
+                                    <a class='underline hover-interactive' href="https://doi.org/{{ $dataPublication->msl_doi }}">
+                                        {{ $dataPublication->msl_source }}
+                                    </a>
+                                </td>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             @endif
@@ -694,12 +700,9 @@
                             <table class="table-fixed w-full">
                                 <tbody>
                                     <td class="text-base p-0">
-                                        @if (filter_var($dataPublication->msl_source, FILTER_VALIDATE_URL))
-                                            <a class='underline hover-interactive'
-                                                href="{{ $dataPublication->msl_source }}">{{ $dataPublication->msl_doi }}</a>
-                                        @else
+                                        <a class='underline hover-interactive' href="https://doi.org/{{ $dataPublication->msl_doi }}">
                                             {{ $dataPublication->msl_doi }}
-                                        @endif
+                                        </a>
                                     </td>
                                 </tbody>
                             </table>
