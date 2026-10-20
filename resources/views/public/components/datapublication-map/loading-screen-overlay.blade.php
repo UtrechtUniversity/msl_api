@@ -14,7 +14,8 @@
       bg-clip-content 
       pb-10
       pt-10
-      ">
+      "
+     hidden>
      <div class="pt-20 pl-70">
          <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600"></div>
      </div>
