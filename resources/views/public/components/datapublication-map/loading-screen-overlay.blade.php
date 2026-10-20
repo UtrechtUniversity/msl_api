@@ -6,8 +6,7 @@
       sub-content-wide 
       h-full 
       w-full
-      bg-primary-200/75
-      {{-- opacity-0 --}}
+      bg-primary-200/40
       flex 
       flex-col 
       items-center  
