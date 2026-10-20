@@ -10,21 +10,13 @@
       {{-- opacity-0 --}}
       flex 
       flex-col 
-      justify-center 
       items-center  
-      place-content-center 
       pointer-events-auto 
       bg-clip-content 
       pb-10
       pt-10
       ">
-     <div class="drawer-content bg-red-500 flex h-full">
-         {{-- <div class="drawer lg:drawer-open w-full h-full ">
-             ldsl
-             <div class="drawer-content bg-secondary-100 flex h-full ">
-
-                 <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />
-             </div>
-         </div> --}}
+     <div class="pt-20 pl-70">
+         <div class="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600"></div>
      </div>
  </div>
