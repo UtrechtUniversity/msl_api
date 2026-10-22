@@ -20,7 +20,6 @@ export default defineConfig({
             'resources/ts/dataPublication/map/mapController.ts',
             'resources/ts/dataPublication/list/warningWindow.ts',
 
-            'resources/ts/dataPublication/map/sidebarTabHandle.ts',
             'resources/css/generalStyles/popupWithDirection.css',
             'resources/css/dataPublicationMap/datapublications-list.css',
             'resources/css/dataPublicationMap/in-map-styles.css',

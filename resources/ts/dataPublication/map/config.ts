@@ -34,3 +34,7 @@ export const LAT_LONG_RANGE = {
     MAX: { LAT: 90, LONG: 180 },
     MIN: { LAT: -90, LONG: -180 },
 } as const;
+
+export const RESULTS = "Results" as const;
+export const KEYWORDS = "Keywords" as const;
+export type SidebarTabName = typeof RESULTS | typeof KEYWORDS;

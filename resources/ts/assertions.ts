@@ -25,6 +25,15 @@ export function getElementByIdOrThrow(elementId: string) {
     return element;
 }
 
+export function getElementByQueryOrThrow(query: string) {
+    const element: HTMLElement | null = document.querySelector(query);
+    assertNotNull(
+        element,
+        ` Could not find element with query '${query}'. This is a bug.`,
+    );
+    return element;
+}
+
 export function assertSingleArray<T>(
     arr: ArrayLike<T>,
     message: string,

@@ -15,5 +15,4 @@
             </div>
         @endforeach
     </div>
-    @vite(['resources/ts/dataPublication/map/sidebarTabHandle.ts'])
 </div>
