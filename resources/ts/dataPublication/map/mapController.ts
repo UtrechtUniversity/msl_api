@@ -165,6 +165,7 @@ export class MapController {
         ({ facets: this.facets } = await this.getJsonFromRequest());
         await this.keywordTree.init(this.facets);
     }
+    //
 
     // Methods about requests and populating
 
