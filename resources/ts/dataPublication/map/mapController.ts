@@ -79,9 +79,6 @@ export class MapController {
 
         // Callbacks
         this.mapView.setHandlerfn({
-            onCleanUp: () => {
-                this.resultsSidebar.resetList();
-            },
             onFeatureHover: this.handleFeatureHover,
             onFeatureOut: this.handleFeatureOut,
         });

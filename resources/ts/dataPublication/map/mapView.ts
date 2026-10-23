@@ -84,7 +84,6 @@ export class MapView {
         doi: string;
         resultSet: GeoFeatureResultSet;
     }) => void = throwWhenCallBackNotInitialized;
-    private onCleanUp: () => void = throwWhenCallBackNotInitialized;
 
     constructor() {
         this.map = L.map("map", {
@@ -115,7 +114,6 @@ export class MapView {
             doi: string;
             resultSet: GeoFeatureResultSet;
         }) => void;
-        onCleanUp: () => void;
     }) {
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
