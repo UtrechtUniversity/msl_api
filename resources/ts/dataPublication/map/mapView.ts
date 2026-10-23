@@ -371,6 +371,12 @@ export class MapView {
                     "StartPoint should have a value. This is a bug.",
                 );
 
+                // In firefox, we have issues under certain conditions when dragging.
+                // This is why we want to disable its default behavior.
+                document.addEventListener("dragstart", function (e) {
+                    e.preventDefault();
+                });
+
                 // We need the line below, because, as the user draws,
                 // they create a lot of small rectangles
                 // from which we want to keep only the last one.
