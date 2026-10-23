@@ -26,12 +26,15 @@ import {
 import { getDefaultTab, LAT_LONG_RANGE } from "./config";
 import type { Facets, Paginator } from "../../types/map/components";
 
-const BOUNDING_BOX_OF_THE_WORLD = [
-    LAT_LONG_RANGE.MIN.LONG,
-    LAT_LONG_RANGE.MIN.LAT,
-    LAT_LONG_RANGE.MAX.LONG,
-    LAT_LONG_RANGE.MAX.LAT,
-].toString();
+const BOUNDING_BOX_OF_THE_WORLD =
+    "[" +
+    [
+        LAT_LONG_RANGE.MIN.LONG,
+        LAT_LONG_RANGE.MIN.LAT,
+        LAT_LONG_RANGE.MAX.LONG,
+        LAT_LONG_RANGE.MAX.LAT,
+    ].toString() +
+    "]";
 type SearchFilter = {
     boundingBox: string;
     page: number;
