@@ -3,7 +3,6 @@ import "jstree";
 import type { FacetItem, Facets } from "../../types/map/components";
 import type { KeywordFilters, TreeKeywordAddInfo } from "../../types/map/keywordFilters";
 import { omit } from "lodash";
-8
 
 const INTERPRETED = "interpreted" as const;
 type Interpreted = typeof INTERPRETED;
