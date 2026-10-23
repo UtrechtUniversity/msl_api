@@ -1,5 +1,5 @@
-import { assertNotNull, getElementOrThrow } from "../../helpers";
-import type { Paginator } from "../utils";
+import { getElementOrThrow } from "../../assertions";
+import type { Paginator } from "../../types/map/components";
 
 export class ResultsMetadata {
     resultsMetadataElement: HTMLElement;

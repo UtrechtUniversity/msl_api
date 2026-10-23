@@ -1,4 +1,4 @@
-import { getElementOrThrow } from "../../helpers";
+import { getElementOrThrow } from "../../assertions";
 
 const mapViewTab = getElementOrThrow("map-view-tab");
 

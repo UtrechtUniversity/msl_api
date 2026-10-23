@@ -1,15 +1,19 @@
 import type {
     DataPublication,
     GeoFeatureDataPublications,
-} from "../../types/datapublication";
-import { INSIDE, OVERLAPPING, type GeoFeatureResultSet } from "../../types/map";
-import { DomUtil } from "leaflet";
-import { assertNotNull } from "../../helpers.js";
+} from "../../types/map/datapublication";
 import {
+    INSIDE,
+    OVERLAPPING,
+    type GeoFeatureResultSet,
+} from "../../types/map/resultSet";
+import { DomUtil } from "leaflet";
+import {
+    assertNotNull,
     assertSingleArray,
-    TAB_CONFIG,
     throwWhenCallBackNotInitialized,
-} from "../utils.js";
+} from "../../assertions.js";
+import { RESULT_SET_CONFIG } from "./config";
 
 export class ResultsSidebar {
     private sidebar: HTMLElement;
@@ -20,9 +24,14 @@ export class ResultsSidebar {
      *  the inclusive set with respect to  the exclusive set.
      */
     private nonInclusiveListView: HTMLElement[] = [];
-    public onFeatureHover: (doi: string) => void =
-        throwWhenCallBackNotInitialized;
-    public onFeatureOut: (doi: string) => void =
+    public onFeatureHover: ({
+        doi,
+        scroll,
+    }: {
+        doi: string;
+        scroll: false;
+    }) => void = throwWhenCallBackNotInitialized;
+    public onFeatureOut: ({ doi }: { doi: string }) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
         const sideBarElement: HTMLElement | null = document.querySelector(
@@ -44,8 +53,8 @@ export class ResultsSidebar {
         onFeatureHover,
         onFeatureOut,
     }: {
-        onFeatureHover: (doi: string) => void;
-        onFeatureOut: (doi: string) => void;
+        onFeatureHover: ({ doi }: { doi: string }) => void;
+        onFeatureOut: ({ doi }: { doi: string }) => void;
     }): void {
         this.onFeatureHover = onFeatureHover;
         this.onFeatureOut = onFeatureOut;
@@ -55,10 +64,7 @@ export class ResultsSidebar {
      * Highlight items of the map related to specific
      * data publication
      */
-    public highlight(
-        id: string,
-        { scroll }: { scroll: boolean } = { scroll: false },
-    ): void {
+    public highlight(id: string, { scroll }: { scroll: boolean }): void {
         //We only want to highlight the element in the correct result set.
         const elements = $(
             "#" + "data_publications_list " + '[data-id="' + id + '"]',
@@ -104,8 +110,8 @@ export class ResultsSidebar {
         const icon = !includeIcons
             ? ""
             : dataPublication.isInclusive
-              ? TAB_CONFIG[INSIDE].icon
-              : TAB_CONFIG[OVERLAPPING].icon;
+              ? RESULT_SET_CONFIG[INSIDE].icon
+              : RESULT_SET_CONFIG[OVERLAPPING].icon;
 
         item.innerHTML = `
                 <a href="${dataPublication.portalLink}" target="_blank" class="data-publication-link">
@@ -134,12 +140,13 @@ export class ResultsSidebar {
             if (!dataPublication.isInclusive)
                 this.nonInclusiveListView.push(item);
             item.addEventListener("mouseover", () => {
-                this.onFeatureHover(dataPublication.doi);
-                this.highlight(dataPublication.doi);
+                this.onFeatureHover({
+                    doi: dataPublication.doi,
+                    scroll: false,
+                });
             });
             item.addEventListener("mouseleave", () => {
-                this.onFeatureOut(dataPublication.doi);
-                this.removeHighlight(dataPublication.doi);
+                this.onFeatureOut({ doi: dataPublication.doi });
             });
             this.listDiv.appendChild(item);
         }
