@@ -1,6 +1,6 @@
-import { getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 
-const mapViewTab = getElementOrThrow("map-view-tab");
+const mapViewTab = getElementByIdOrThrow("map-view-tab");
 
 mapViewTab.addEventListener("click", (e: Event) => {
     const searchParams = new URLSearchParams(window.location.search);

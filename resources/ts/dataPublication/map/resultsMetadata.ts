@@ -1,4 +1,4 @@
-import { getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 import type { Paginator } from "../../types/map/components";
 
 export class ResultsMetadata {
@@ -6,7 +6,7 @@ export class ResultsMetadata {
     totalCount: HTMLParagraphElement;
     currentCount: HTMLParagraphElement;
     constructor() {
-        this.resultsMetadataElement = getElementOrThrow("results-metadata");
+        this.resultsMetadataElement = getElementByIdOrThrow("results-metadata");
         this.totalCount = this.createElement("total-count");
         this.currentCount = this.createElement("current-count");
         this.setDefaultState();

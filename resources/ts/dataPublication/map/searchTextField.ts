@@ -1,4 +1,4 @@
-import { getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 import type { MapController } from "./mapController";
 
 export class SearchTextField {
@@ -9,13 +9,13 @@ export class SearchTextField {
     }
 
     private initInput() {
-        const formField = getElementOrThrow("form-search-text");
+        const formField = getElementByIdOrThrow("form-search-text");
 
         const self = this;
         formField.addEventListener("submit", async function (e) {
             e.preventDefault(); // stops the page from reloading
 
-            const inputField = getElementOrThrow(
+            const inputField = getElementByIdOrThrow(
                 "search-text",
             ) as HTMLInputElement;
             await self.mapController.handleSearchTextAdd({

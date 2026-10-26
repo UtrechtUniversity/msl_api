@@ -14,7 +14,7 @@ import { getIdForTreeKeyword, KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     TREE_KEYWORD,
@@ -158,7 +158,7 @@ export class MapController {
                 }
             },
         });
-        this.loadingScreen = getElementOrThrow(LOADING_SCREEN_ID);
+        this.loadingScreen = getElementByIdOrThrow(LOADING_SCREEN_ID);
         this.addRedirectionWarning();
     }
 
@@ -384,7 +384,7 @@ export class MapController {
     }
 
     private addRedirectionWarning() {
-        const listViewTab = getElementOrThrow("list-view-tab");
+        const listViewTab = getElementByIdOrThrow("list-view-tab");
         listViewTab.addEventListener("click", (e: Event) => {
             if (this.areActiveFilters()) {
                 const text = `Switching to the list view will not transfer your applied filters in the map view. 

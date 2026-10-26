@@ -1,6 +1,6 @@
 import {
     assertNotNull,
-    getElementOrThrow,
+    getElementByIdOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import type { Paginator } from "../../types/map/components";
@@ -20,7 +20,7 @@ export class Pagination {
     public onPageChange: (page: number) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
-        const paginateElement = getElementOrThrow("results-pagination");
+        const paginateElement = getElementByIdOrThrow("results-pagination");
         this.paginateElement = paginateElement;
     }
 

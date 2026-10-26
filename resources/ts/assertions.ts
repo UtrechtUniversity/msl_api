@@ -16,7 +16,7 @@ export function assertNotUndefined<T>(
     }
 }
 
-export function getElementOrThrow(elementId: string) {
+export function getElementByIdOrThrow(elementId: string) {
     const element = document.getElementById(elementId);
     assertNotNull(
         element,

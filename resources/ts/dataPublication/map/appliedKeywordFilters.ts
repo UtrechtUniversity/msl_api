@@ -1,5 +1,5 @@
 import {
-    getElementOrThrow,
+    getElementByIdOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import {
@@ -29,14 +29,14 @@ export class AppliedKeywordFilters {
         throwWhenCallBackNotInitialized;
 
     constructor() {
-        const removeBin = getElementOrThrow("remove-bin-icon");
+        const removeBin = getElementByIdOrThrow("remove-bin-icon");
         removeBin.hidden = true;
         removeBin.addEventListener("click", async () => {
             await this.onActiveFilterRemoveAll();
         });
         this.removeBin = removeBin;
 
-        this.activeFilterContainer = getElementOrThrow(
+        this.activeFilterContainer = getElementByIdOrThrow(
             "active-filter-container",
         );
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
@@ -87,7 +87,7 @@ export class AppliedKeywordFilters {
     }
 
     private removeAppliedFilterElement({ id }: { id: string }) {
-        const elementToRemove = getElementOrThrow(id);
+        const elementToRemove = getElementByIdOrThrow(id);
         elementToRemove.remove();
 
         return;
