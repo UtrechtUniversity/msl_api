@@ -1,4 +1,4 @@
- <div id="loading-screen-overlay" {{-- TODO fix placing --}}
+ <div id="loading-screen-overlay"
      class="
      absolute 
       {{-- We want this element to be above map-controls (i,e. z-index=1000) and menu-on-map (i.e. z-index=1100) --}}
