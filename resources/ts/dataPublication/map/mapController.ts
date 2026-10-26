@@ -14,7 +14,7 @@ import { getIdForTreeKeyword, KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { assertNotNull, getElementOrThrow } from "../../assertions";
+import { getElementOrThrow } from "../../assertions";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     TREE_KEYWORD,
@@ -158,12 +158,7 @@ export class MapController {
                 }
             },
         });
-        const loadingScreen = document.getElementById(LOADING_SCREEN_ID);
-        assertNotNull(
-            loadingScreen,
-            `Loading screen element could not be found. This is a bug.`,
-        );
-        this.loadingScreen = loadingScreen;
+        this.loadingScreen = getElementOrThrow(LOADING_SCREEN_ID);
         this.addRedirectionWarning();
     }
 

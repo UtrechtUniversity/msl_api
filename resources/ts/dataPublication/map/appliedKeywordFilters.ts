@@ -1,5 +1,4 @@
 import {
-    assertNotNull,
     getElementOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
@@ -88,11 +87,7 @@ export class AppliedKeywordFilters {
     }
 
     private removeAppliedFilterElement({ id }: { id: string }) {
-        const elementToRemove = document.getElementById(id);
-        assertNotNull(
-            elementToRemove,
-            `Element with id '${id}' could not be found. This is a bug.`,
-        );
+        const elementToRemove = getElementOrThrow(id);
         elementToRemove.remove();
 
         return;
