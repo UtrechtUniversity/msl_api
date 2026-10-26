@@ -1,4 +1,4 @@
-import { assertNotNull, getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 import type { MapController } from "./mapController";
 
 export class SearchTextField {
@@ -9,19 +9,15 @@ export class SearchTextField {
     }
 
     private initInput() {
-        const formField = getElementOrThrow("form-search-text");
+        const formField = getElementByIdOrThrow("form-search-text");
 
         const self = this;
         formField.addEventListener("submit", async function (e) {
             e.preventDefault(); // stops the page from reloading
 
-            const inputField = document.getElementById(
+            const inputField = getElementByIdOrThrow(
                 "search-text",
-            ) as HTMLInputElement | null;
-            assertNotNull(
-                inputField,
-                `Input search field was not found. This is a bug.`,
-            );
+            ) as HTMLInputElement;
             await self.mapController.handleSearchTextAdd({
                 value: inputField.value,
             });

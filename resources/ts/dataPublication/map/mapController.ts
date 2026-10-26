@@ -14,7 +14,7 @@ import { getIdForTreeKeyword, KeywordTree } from "./keywordTree";
 import { SearchTextField } from "./searchTextField";
 import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
-import { getElementOrThrow } from "../../assertions";
+import { getElementByIdOrThrow } from "../../assertions";
 import {
     FREE_TEXT_SEARCH_KEYWORD,
     TREE_KEYWORD,
@@ -35,6 +35,9 @@ const BOUNDING_BOX_OF_THE_WORLD =
         LAT_LONG_RANGE.MAX.LAT,
     ].toString() +
     "]";
+
+const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
+
 type SearchFilter = {
     boundingBox: string;
     page: number;
@@ -69,6 +72,8 @@ export class MapController {
     searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
     facets: Facets = {};
+    // Element
+    private loadingScreen: HTMLElement;
 
     constructor() {
         this.mapView = new MapView();
@@ -127,7 +132,7 @@ export class MapController {
                 await this.handleFreeTextKeywordRemove(opts);
             },
             onActiveFilterRemoveAll: async () => {
-                await this.handleRemoveAllFilters();
+                await this.handleRemoveAllKeywordFilters();
             },
         });
         this.menuButtons.setHandlerfn({
@@ -153,6 +158,7 @@ export class MapController {
                 }
             },
         });
+        this.loadingScreen = getElementByIdOrThrow(LOADING_SCREEN_ID);
         this.addRedirectionWarning();
     }
 
@@ -163,7 +169,7 @@ export class MapController {
 
     // Methods about requests and populating
 
-    private async populateElements() {
+    private async populateWithResults() {
         ({
             data: this.results,
             meta: this.paginator,
@@ -241,10 +247,10 @@ export class MapController {
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
         if (!this.searchFilters.boundingBox) {
-            await this.resetAndRePopulateAfterUpdate("remove");
+            await this.resetAndRePopulateAfterUpdate();
             return;
         }
-        await this.resetAndRePopulateAfterUpdate("add", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
@@ -252,7 +258,7 @@ export class MapController {
     public async removeDrawing() {
         this.searchFilters.boundingBox = "";
 
-        await this.resetAndRePopulateAfterUpdate("remove");
+        await this.resetAndRePopulateAfterUpdate();
 
         this.mapView.setDrawingEnable(false);
     }
@@ -299,7 +305,7 @@ export class MapController {
     };
     private async handlePageChange(page: number) {
         this.searchFilters.page = page;
-        await this.resetAndRePopulateAfterUpdate("add", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "page",
         });
     }
@@ -317,7 +323,7 @@ export class MapController {
             value,
             type: FREE_TEXT_SEARCH_KEYWORD,
         });
-        await this.resetAndRePopulateAfterUpdate("add", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
@@ -325,15 +331,15 @@ export class MapController {
     private async handleFreeTextKeywordRemove({ id }: { id: string }) {
         this.searchFilters.activeKeywordFilters.delete(id);
         this.appliedKeywords.removeFreeTextFilter({ id });
-        await this.resetAndRePopulateAfterUpdate("remove", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
-    private async handleRemoveAllFilters() {
+    private async handleRemoveAllKeywordFilters() {
         this.searchFilters.activeKeywordFilters = new Map();
 
         this.appliedKeywords.removeAllActiveKeywordFilters();
-        await this.resetAndRePopulateAfterUpdate("remove", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
@@ -358,7 +364,7 @@ export class MapController {
             displayName,
             type: TREE_KEYWORD,
         });
-        await this.resetAndRePopulateAfterUpdate("add", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
@@ -372,13 +378,13 @@ export class MapController {
             id,
         });
         this.searchFilters.activeKeywordFilters.delete(id);
-        await this.resetAndRePopulateAfterUpdate("remove", {
+        await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
 
     private addRedirectionWarning() {
-        const listViewTab = getElementOrThrow("list-view-tab");
+        const listViewTab = getElementByIdOrThrow("list-view-tab");
         listViewTab.addEventListener("click", (e: Event) => {
             if (this.areActiveFilters()) {
                 const text = `Switching to the list view will not transfer your applied filters in the map view. 
@@ -390,7 +396,7 @@ export class MapController {
         });
     }
 
-    // Helper methods
+    // Other methods
 
     private getFreeTextFiltersAsArray(): string[] {
         const freeText = [];
@@ -418,20 +424,15 @@ export class MapController {
      * or page information.
      */
     private async resetAndRePopulateAfterUpdate(
-        type: "add" | "remove",
         opts: { except: "boundingBox" | "page" } | undefined = undefined,
     ) {
         this.resetComponentsAndData(opts);
-        if (type === "add") {
-            await this.populateElements();
-            return;
-        }
-        await this.populateBasedOnActiveFiltersOrReset();
+        await this.populateBasedOnActiveFilters();
     }
     private async removeAllFilters() {
         this.searchFilters.boundingBox = "";
         this.searchFilters.activeKeywordFilters = new Map();
-        await this.resetAndRePopulateAfterUpdate("remove");
+        await this.resetAndRePopulateAfterUpdate();
     }
     /**
      * We reset parts of the map, after an update in filters.
@@ -472,14 +473,21 @@ export class MapController {
         if (filters.activeKeywordFilters.size !== 0) return true;
         return false;
     }
-    private async populateBasedOnActiveFiltersOrReset() {
+
+    private async populateBasedOnActiveFilters() {
+        this.showLoadingScreen({ show: true });
+
         if (!this.areActiveFilters()) {
             this.appliedKeywords.removeAllActiveKeywordFilters();
             ({ facets: this.facets } = await this.getJsonFromRequest());
             this.keywordTree.updateTrees(this.facets, {});
         } else {
-            await this.populateElements();
+            await this.populateWithResults();
         }
+        this.showLoadingScreen({ show: false });
+    }
+    private showLoadingScreen({ show }: { show: true | false }) {
+        this.loadingScreen.hidden = !show;
     }
 }
 

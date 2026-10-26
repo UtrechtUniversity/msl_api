@@ -16,15 +16,14 @@ export function assertNotUndefined<T>(
     }
 }
 
-export function getElementOrThrow(elementId: string) {
+export function getElementByIdOrThrow(elementId: string) {
     const element = document.getElementById(elementId);
     assertNotNull(
         element,
-        ` Element '${elementId}'could not be found. This is a bug.`,
+        ` Element '${elementId}' could not be found. This is a bug.`,
     );
     return element;
 }
-
 
 export function assertSingleArray<T>(
     arr: ArrayLike<T>,

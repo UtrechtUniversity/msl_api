@@ -1,5 +1,5 @@
 import {
-    getElementOrThrow,
+    getElementByIdOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import {
@@ -63,7 +63,7 @@ export class MenuButtons {
 
         this.root = this.createMenu();
 
-        const mapElement = getElementOrThrow("map-wrapper");
+        const mapElement = getElementByIdOrThrow("map-wrapper");
 
         mapElement.appendChild(this.root);
     }
