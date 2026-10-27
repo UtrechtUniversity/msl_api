@@ -1,7 +1,13 @@
-import { assertNotUndefined, throwWhenCallBackNotInitialized } from "../../assertions";
+import {
+    assertNotUndefined,
+    throwWhenCallBackNotInitialized,
+} from "../../assertions";
 import "jstree";
 import type { FacetItem, Facets } from "../../types/map/components";
-import type { KeywordFilters, TreeKeywordAddInfo } from "../../types/map/keywordFilters";
+import type {
+    KeywordFilters,
+    TreeKeywordAddInfo,
+} from "../../types/map/keywordFilters";
 import { omit } from "lodash";
 
 const INTERPRETED = "interpreted" as const;
@@ -114,6 +120,7 @@ export class KeywordTree {
     private hideEmptyTermsToggle: JQuery<HTMLInputElement> =
         $("#hide_empty_terms");
     private suppressChangeEvents: boolean = false;
+    private searchFilters: JQuery<HTMLInputElement> = $("#search-filters");
 
     private onKeywordFilterAdd: (
         filter: TreeKeywordAddInfo,
@@ -172,8 +179,8 @@ export class KeywordTree {
                     : // if the value is "true" or null
                       INTERPRETED,
             );
-            $("#search-filters").on("keyup", function () {
-                const searchString = $(this).val();
+            self.searchFilters.on("keyup", function () {
+                const searchString = this.value;
                 self.interpretedToggle.is(":checked")
                     ? self.interpretedTree.jstree("search", searchString)
                     : self.originalTree.jstree("search", searchString);
@@ -241,6 +248,8 @@ export class KeywordTree {
                         value,
                         displayName,
                     });
+
+                    this.clearSearchFiltersAfterSelection(data.instance);
                 } else if (e.type == "uncheck_node") {
                     await this.onKeywordFilterRemove({
                         id: getIdForTreeKeyword({ name, value }),
@@ -542,6 +551,23 @@ export class KeywordTree {
         this.interpretedTree.show();
         this.originalTree.hide();
     }
+    private clearSearchFiltersAfterSelection(tree: JSTree) {
+        // we have to make sure that opened nodes remain open,
+        // after clear_search closes all nodes
+        const openNodes = tree
+            .get_json("#", {
+                flat: true,
+            })
+            .filter((element: TreeNode | TreeSubNode) => element.state.opened)
+            .map((element: TreeNode | TreeSubNode) => element.id);
+
+        this.searchFilters.val("");
+        tree.clear_search();
+
+        openNodes.forEach((id: string) => {
+            tree.open_node(id);
+        });
+    }
 }
 
 function createTreeOptions(data: (TreeNode | TreeSubNode)[]) {
@@ -607,7 +633,6 @@ async function getJson(name: "interpreted" | "original") {
     throwForReadingJson(jsonResponse, name);
     return jsonResponse.json();
 }
-
 
 export function getIdForTreeKeyword({
     value,
