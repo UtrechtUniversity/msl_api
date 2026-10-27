@@ -16,19 +16,15 @@ export class SidebarTabs {
     constructor() {
         this.sidebarInfoPerTab = {
             [RESULTS]: {
-                tabElement: getElementByQueryOrThrow(
-                    '#sidebar-tabs [data-tab="Results"]',
-                ),
+                tabElement: getElementByQueryOrThrow(getTabQuery(RESULTS)),
                 contentElement: getElementByQueryOrThrow(
-                    ' #sidebar-content [data-content="Results"]',
+                    getContentQuery(RESULTS),
                 ),
             },
             [KEYWORDS]: {
-                tabElement: getElementByQueryOrThrow(
-                    '#sidebar-tabs [data-tab="Keywords"]',
-                ),
+                tabElement: getElementByQueryOrThrow(getTabQuery(KEYWORDS)),
                 contentElement: getElementByQueryOrThrow(
-                    ' #sidebar-content [data-content="Keywords"]',
+                    getContentQuery(KEYWORDS),
                 ),
             },
         };
@@ -44,13 +40,14 @@ export class SidebarTabs {
             });
         }
     }
-    public activateSidebarTab(tabName: SidebarTabName) {
-        showSidebarTabInfo(this.sidebarInfoPerTab[RESULTS], {
-            show: tabName === RESULTS,
-        });
-        showSidebarTabInfo(this.sidebarInfoPerTab[KEYWORDS], {
-            show: tabName === KEYWORDS,
-        });
+    public activateSidebarTab(tabNameToActivate: SidebarTabName) {
+        for (const [tabName, tabInfo] of Object.entries(
+            this.sidebarInfoPerTab,
+        ) as Entries<SidebarInfoPerTab>) {
+            showSidebarTabInfo(tabInfo, {
+                show: tabNameToActivate === tabName,
+            });
+        }
         return;
     }
 }
@@ -65,4 +62,12 @@ function showSidebarTabInfo(
 
     sidebarTabInfo.contentElement.hidden = !show;
     return;
+}
+
+function getTabQuery(tabName: SidebarTabName) {
+    return `#sidebar-tabs [data-tab="${tabName}"]`;
+}
+
+function getContentQuery(tabName: SidebarTabName) {
+    return ` #sidebar-content [data-content="${tabName}"]`;
 }
