@@ -453,7 +453,6 @@ export class MapController {
         this.searchFilters.boundingBox = "";
         this.searchFilters.activeKeywordFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
-        this.sidebarTabs.activateSidebarTab(KEYWORDS);
     }
     /**
      * We reset parts of the map, after an update in filters.
