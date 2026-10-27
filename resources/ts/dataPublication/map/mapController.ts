@@ -23,7 +23,12 @@ import {
     type KeywordFilters,
     type TreeKeywordAddInfo,
 } from "../../types/map/keywordFilters";
-import { getDefaultResultSetTab, LAT_LONG_RANGE, RESULTS } from "./config";
+import {
+    getDefaultResultSetTab,
+    KEYWORDS,
+    LAT_LONG_RANGE,
+    RESULTS,
+} from "./config";
 import type { Facets, Paginator } from "../../types/map/components";
 import { SidebarTabs } from "./sidebarTabs";
 
@@ -448,6 +453,7 @@ export class MapController {
         this.searchFilters.boundingBox = "";
         this.searchFilters.activeKeywordFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
+        this.sidebarTabs.activateSidebarTab(KEYWORDS);
     }
     /**
      * We reset parts of the map, after an update in filters.
@@ -496,6 +502,7 @@ export class MapController {
             this.appliedKeywords.removeAllActiveKeywordFilters();
             ({ facets: this.facets } = await this.getJsonFromRequest());
             this.keywordTree.updateTrees(this.facets, {});
+            this.sidebarTabs.activateSidebarTab(KEYWORDS);
         } else {
             await this.populateWithResults();
         }
