@@ -159,15 +159,17 @@ export class ResultsSidebar {
         }
     }
 
-    public handleActivationOfTab(
-        activatedTab: GeoFeatureResultSet,
+    public handleResultSetActivationOfTab(
+        activatedResultSetTab: GeoFeatureResultSet,
     ): () => void {
         return () => {
-            this.activateTab(activatedTab);
+            this.activateResultSetTab(activatedResultSetTab);
         };
     }
-    private activateTab(activatedTab: GeoFeatureResultSet): void {
-        activatedTab === INSIDE
+    private activateResultSetTab(
+        activatedResultSetTab: GeoFeatureResultSet,
+    ): void {
+        activatedResultSetTab === INSIDE
             ? this.nonInclusiveListView.forEach((item) =>
                   item.classList.add("disabled"),
               )

@@ -23,7 +23,7 @@ import {
     type KeywordFilters,
     type TreeKeywordAddInfo,
 } from "../../types/map/keywordFilters";
-import { getDefaultTab, LAT_LONG_RANGE, RESULTS } from "./config";
+import { getDefaultResultSetTab, LAT_LONG_RANGE, RESULTS } from "./config";
 import type { Facets, Paginator } from "../../types/map/components";
 import { SidebarTabs } from "./sidebarTabs";
 
@@ -69,7 +69,7 @@ export class MapController {
     menuButtons: MenuButtons;
     sidebarTabs: SidebarTabs;
     // State
-    activeTab: GeoFeatureResultSet = getDefaultTab();
+    resultSetActiveTab: GeoFeatureResultSet = getDefaultResultSetTab();
     results: GeoFeatureDataPublications | null = null;
     searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
@@ -193,8 +193,10 @@ export class MapController {
 
         this.resultsMetadata.updateMetadata(this.paginator);
 
-        this.mapView.handleActivatedLayers(this.activeTab);
-        this.resultsSidebar.handleActivationOfTab(this.activeTab)();
+        this.mapView.handleResultSetActivatedLayers(this.resultSetActiveTab);
+        this.resultsSidebar.handleResultSetActivationOfTab(
+            this.resultSetActiveTab,
+        )();
     }
 
     public async getJsonFromRequest(): Promise<{
@@ -233,10 +235,10 @@ export class MapController {
 
     // Methods about interactions
     public insideFilter() {
-        this.setActivatedTab(INSIDE);
+        this.setResultSetActivatedTab(INSIDE);
     }
     public overlapFilter() {
-        this.setActivatedTab(OVERLAPPING);
+        this.setResultSetActivatedTab(OVERLAPPING);
     }
 
     public enableDrawing() {
@@ -246,10 +248,14 @@ export class MapController {
         this.mapView.setDrawingEnable(true);
     }
 
-    private setActivatedTab(activatedTab: GeoFeatureResultSet) {
-        this.activeTab = activatedTab;
-        this.resultsSidebar.handleActivationOfTab(activatedTab)();
-        this.mapView.handleActivatedLayers(activatedTab);
+    private setResultSetActivatedTab(
+        resultSetActivatedTab: GeoFeatureResultSet,
+    ) {
+        this.resultSetActiveTab = resultSetActivatedTab;
+        this.resultsSidebar.handleResultSetActivationOfTab(
+            resultSetActivatedTab,
+        )();
+        this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
     }
 
     // Methods about handling filtering
@@ -285,7 +291,7 @@ export class MapController {
         resultSet?: GeoFeatureResultSet;
         scroll?: true;
     }) => {
-        const appliedResultSet = resultSet ?? this.activeTab;
+        const appliedResultSet = resultSet ?? this.resultSetActiveTab;
         this.mapView.setMarkersStyle({
             doi,
             resultSet: appliedResultSet,
@@ -301,7 +307,7 @@ export class MapController {
         doi: string;
         resultSet?: GeoFeatureResultSet;
     }) => {
-        const appliedResultSet = resultSet ?? this.activeTab;
+        const appliedResultSet = resultSet ?? this.resultSetActiveTab;
 
         this.mapView.setMarkersStyle({
             doi,

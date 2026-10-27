@@ -311,11 +311,13 @@ export class MapView {
         }
         return;
     }
-    public handleActivatedLayers(activatedTab: GeoFeatureResultSet) {
-        const deactivateTab =
-            activatedTab === OVERLAPPING ? INSIDE : OVERLAPPING;
-        this.map.addLayer(this.markers[activatedTab]);
-        this.map.removeLayer(this.markers[deactivateTab]);
+    public handleResultSetActivatedLayers(
+        activatedResultSetTab: GeoFeatureResultSet,
+    ) {
+        const deactivateResultSetTab =
+            activatedResultSetTab === OVERLAPPING ? INSIDE : OVERLAPPING;
+        this.map.addLayer(this.markers[activatedResultSetTab]);
+        this.map.removeLayer(this.markers[deactivateResultSetTab]);
     }
     public drawBoundingBox(): string {
         if (!this.drawingBounds) return "";

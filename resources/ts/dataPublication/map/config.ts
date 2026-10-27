@@ -19,7 +19,7 @@ export const RESULT_SET_CONFIG = {
     },
 } as const;
 
-export function getDefaultTab(): GeoFeatureResultSet {
+export function getDefaultResultSetTab(): GeoFeatureResultSet {
     for (const [_, resultSetInfo] of Object.entries(
         RESULT_SET_CONFIG,
     ) as Entries<typeof RESULT_SET_CONFIG>) {

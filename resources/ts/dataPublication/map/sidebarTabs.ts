@@ -1,4 +1,4 @@
-import { assertNotNull, getElementByQueryOrThrow } from "../../assertions";
+import { getElementByQueryOrThrow } from "../../assertions";
 import type { Entries } from "../../types/entries";
 import { KEYWORDS, RESULTS, type SidebarTabName } from "./config";
 
