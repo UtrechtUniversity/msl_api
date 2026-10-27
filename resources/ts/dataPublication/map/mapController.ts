@@ -121,7 +121,6 @@ export class MapController {
             },
         });
 
-        //
         this.appliedKeywords.setHandlerfn({
             onActiveTreeKeywordRemove: async (opts: {
                 id: string;
