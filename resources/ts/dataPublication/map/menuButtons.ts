@@ -9,7 +9,7 @@ import {
     type Inside,
     type Overlapping,
 } from "../../types/map/resultSet";
-import { getDefaultTab, RESULT_SET_CONFIG } from "./config";
+import { getDefaultResultSetTab, RESULT_SET_CONFIG } from "./config";
 
 const ACTIVE = "active" as const;
 const OVERLAPPING_BUTTON_ID = "overlapping-filter-btn" as const;
@@ -224,8 +224,8 @@ export class MenuButtons {
     }
 
     private setDefaultActiveResultSetButton() {
-        const activeTab = getDefaultTab();
-        this.makeActiveButton(activeTab);
+        const activeResultSetTab = getDefaultResultSetTab();
+        this.makeActiveButton(activeResultSetTab);
     }
 
     private disableButtonForDrawing(): void {
