@@ -56,6 +56,15 @@ This project uses queued jobs for several tasks like importing data publications
 php artisan queue:work  --rest=1 --tries=3 --timeout=300
 ```
 
+By default, jobs are stored in the database (`QUEUE_CONNECTION=database`). When the web server and queue worker run
+on separate hosts or containers, Redis can be used instead by setting `QUEUE_CONNECTION=redis` and the `REDIS_*`
+settings. In that case `CACHE_DRIVER` should also be set to `redis`, because the job rate limiter uses cache locks
+that need to be shared between the web server and the worker(s). The PHP Redis extension (`phpredis`) is required for this.
+
+`QUEUE_RETRY_AFTER` (default: 660) sets the number of seconds after which a job that is still being processed is
+considered stuck and released back onto the queue. It should be larger than the longest job timeout, otherwise long-running
+jobs can be queued twice.
+
 ## Env settings
 
 Running the project requires a .env file to be present within the root directory. This file is used to store deployment specific application settings. As a base the project contains a .env.example file to use for a fresh setup.
