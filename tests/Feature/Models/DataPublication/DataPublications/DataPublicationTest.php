@@ -4,6 +4,7 @@ namespace Tests\Feature\Models\DataPublication\DataPublications;
 
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Description;
+use App\Models\DataPublication\Right;
 use App\Models\DataRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -26,5 +27,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(5, $dataPublication->descriptions);
+    }
+
+    public function test_rights_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Right::factory()->count(2))
+            ->create();
+
+        $this->assertCount(2, $dataPublication->rights);
     }
 }

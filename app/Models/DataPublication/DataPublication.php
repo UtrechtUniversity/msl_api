@@ -35,4 +35,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(Description::class);
     }
+
+    public function rights(): hasMany
+    {
+        return $this->hasMany(Right::class);
+    }
 }
