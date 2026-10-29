@@ -9,5 +9,6 @@
             "extensions": [],
             "settings": {}
         }
-    }
+    },
+     "postCreateCommand": "echo 'source /var/www/.nvm/nvm.sh' >> ~/.bashrc"
 }
