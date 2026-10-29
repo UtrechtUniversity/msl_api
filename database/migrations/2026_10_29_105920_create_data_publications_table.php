@@ -20,8 +20,9 @@ return new class extends Migration {
             $table->string('datacite_version', 100);
             $table->string('publisher', 250);
             $table->text('citation');
-            $table->json('geojson_feature_collection');
+            $table->json('geojson_feature_collection')->nullable();
             $table->integer('surface_area')->default(0);
+            $table->unsignedBigInteger('data_repository_id');
             $table->timestamps();
         });
     }

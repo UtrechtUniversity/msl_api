@@ -2,8 +2,10 @@
 
 namespace App\Models\DataPublication;
 
+use App\Models\DataRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class DataPublication extends Model
 {
@@ -16,10 +18,15 @@ class DataPublication extends Model
         'resource_type',
         'resource_type_general',
         'doi',
-        'year',
+        'publication_year',
         'language',
         'datacite_version',
         'publisher',
         'citation',
     ];
+
+    public function dataRepository(): BelongsTo
+    {
+        return $this->belongsTo(DataRepository::class);
+    }
 }
