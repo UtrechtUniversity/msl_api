@@ -45,4 +45,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(AlternateIdentifier::class);
     }
+
+    public function relatedIdentifiers(): hasMany
+    {
+        return $this->hasMany(RelatedIdentifier::class);
+    }
 }

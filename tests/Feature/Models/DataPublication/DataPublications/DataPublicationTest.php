@@ -5,6 +5,7 @@ namespace Tests\Feature\Models\DataPublication\DataPublications;
 use App\Models\DataPublication\AlternateIdentifier;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Description;
+use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
 use App\Models\DataRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -46,5 +47,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(3, $dataPublication->alternateIdentifiers);
+    }
+
+    public function test_related_identifiers_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(RelatedIdentifier::factory()->count(4))
+            ->create();
+
+        $this->assertCount(4, $dataPublication->relatedIdentifiers);
     }
 }
