@@ -4,6 +4,7 @@ namespace Tests\Feature\Models\DataPublication\DataPublications;
 
 use App\Models\DataPublication\AlternateIdentifier;
 use App\Models\DataPublication\DataPublication;
+use App\Models\DataPublication\Date;
 use App\Models\DataPublication\Description;
 use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
@@ -66,5 +67,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(6,$dataPublication->fundingReferences);
+    }
+
+    public function test_dates_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Date::factory()->count(2))
+            ->create();
+
+        $this->assertCount(2, $dataPublication->dates);
     }
 }

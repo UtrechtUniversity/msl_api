@@ -55,4 +55,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(FundingReference::class);
     }
+
+    public function dates(): hasMany
+    {
+        return $this->hasMany(Date::class);
+    }
 }
