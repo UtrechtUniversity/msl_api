@@ -6,6 +6,7 @@ use App\Models\DataRepository;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class DataPublication extends Model
 {
@@ -28,5 +29,10 @@ class DataPublication extends Model
     public function dataRepository(): BelongsTo
     {
         return $this->belongsTo(DataRepository::class);
+    }
+
+    public function descriptions(): hasMany
+    {
+        return $this->hasMany(Description::class);
     }
 }
