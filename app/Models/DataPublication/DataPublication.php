@@ -50,4 +50,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(RelatedIdentifier::class);
     }
+
+    public function fundingReferences(): hasMany
+    {
+        return $this->hasMany(FundingReference::class);
+    }
 }

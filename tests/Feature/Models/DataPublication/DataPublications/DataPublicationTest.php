@@ -5,6 +5,7 @@ namespace Tests\Feature\Models\DataPublication\DataPublications;
 use App\Models\DataPublication\AlternateIdentifier;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Description;
+use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
 use App\Models\DataRepository;
@@ -56,5 +57,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(4, $dataPublication->relatedIdentifiers);
+    }
+
+    public function test_funding_references_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(FundingReference::factory()->count(6))
+            ->create();
+
+        $this->assertCount(6,$dataPublication->fundingReferences);
     }
 }
