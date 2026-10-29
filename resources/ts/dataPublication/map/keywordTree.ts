@@ -1,6 +1,5 @@
 import {
     assertNotUndefined,
-    getElementByIdOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import "jstree";
