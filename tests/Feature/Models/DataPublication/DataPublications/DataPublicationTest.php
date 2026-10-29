@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models\DataPublication\DataPublications;
 
+use App\Models\DataPublication\AlternateIdentifier;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Description;
 use App\Models\DataPublication\Right;
@@ -36,5 +37,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(2, $dataPublication->rights);
+    }
+
+    public function test_alternate_identifiers_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(AlternateIdentifier::factory()->count(3))
+            ->create();
+
+        $this->assertCount(3, $dataPublication->alternateIdentifiers);
     }
 }
