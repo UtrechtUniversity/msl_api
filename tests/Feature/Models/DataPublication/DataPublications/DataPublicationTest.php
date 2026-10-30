@@ -13,6 +13,7 @@ use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
 use App\Models\DataPublication\Size;
+use App\Models\DataPublication\Subject;
 use App\Models\DataRepository;
 use App\Models\SubDomain;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -135,5 +136,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(10, $dataPublication->interpretedSubDomains);
+    }
+
+    public function test_subjects_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Subject::factory()->count(5))
+            ->create();
+
+        $this->assertCount(5, $dataPublication->subjects);
     }
 }

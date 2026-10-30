@@ -92,4 +92,9 @@ class DataPublication extends Model
     {
         return $this->belongsToMany(SubDomain::class, 'data_publication_interpreted_sub_domain' );
     }
+
+    public function subjects(): hasMany
+    {
+        return $this->hasMany(Subject::class);
+    }
 }

@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use App\Models\DataPublication\Subject;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Keyword extends Model
 {
+    use HasFactory;
+
     public $fillable = [
         'parent_id',
         'value',
@@ -52,6 +57,11 @@ class Keyword extends Model
     public function keywordSearch(): HasMany
     {
         return $this->hasMany(KeywordSearch::class, 'keyword_id');
+    }
+
+    public function subjects(): BelongsToMany
+    {
+        return $this->BelongsToMany(Subject::class);
     }
 
     public function getSynonyms()
