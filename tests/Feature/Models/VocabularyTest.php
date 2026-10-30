@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\SubDomain;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -53,5 +54,14 @@ class VocabularyTest extends TestCase
         $vocabulary->load('searchKeywords');
 
         $this->assertTrue($vocabulary->searchKeywords->contains($search));
+    }
+
+    public function test_sub_domain_relation(): void
+    {
+        $vocabulary = Vocabulary::factory()
+            ->for(SubDomain::factory())
+            ->create();
+
+        $this->assertInstanceOf(SubDomain::class, $vocabulary->subDomain);
     }
 }

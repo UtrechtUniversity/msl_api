@@ -4,6 +4,7 @@ namespace Tests\Feature\Models;
 
 use App\Models\DataPublication\DataPublication;
 use App\Models\SubDomain;
+use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -27,5 +28,14 @@ class SubDomainTest extends TestCase
             ->create();
 
         $this->assertCount(9, $subDomain->dataPublicationsInterpretedDomain);
+    }
+
+    public function test_vocabularies_relation()
+    {
+        $subDomain = SubDomain::factory()
+            ->has(Vocabulary::factory()->count(3))
+            ->create();
+
+        $this->assertCount(3,$subDomain->vocabularies);
     }
 }

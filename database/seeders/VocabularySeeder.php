@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Keyword;
 use App\Models\KeywordSearch;
+use App\Models\SubDomain;
 use App\Models\Vocabulary;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -103,6 +104,12 @@ class VocabularySeeder extends Seeder
                     'uri' => 'https://epos-msl.uu.nl/voc/'.$domain['uri-name'].'/1.4/',
                 ]
             );
+
+            $subDomain = SubDomain::where('short_name', $domain['name'])->first();
+            if($subDomain) {
+                $vocabulary->subDomain()->associate($subDomain);
+                $vocabulary->save();
+            }
 
             // load jsonData from file
             $fileString = file_get_contents(base_path('database/seeders/datafiles/vocabularies/1-4/'.$domain['name'].'.json'));
