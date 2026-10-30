@@ -3,9 +3,11 @@
 namespace App\Models\DataPublication;
 
 use App\Models\DataRepository;
+use App\Models\SubDomain;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class DataPublication extends Model
@@ -79,5 +81,15 @@ class DataPublication extends Model
     public function formats(): hasMany
     {
         return $this->hasMany(Format::class);
+    }
+
+    public function originalSubDomains(): BelongsToMany
+    {
+        return $this->belongsToMany(SubDomain::class, 'data_publication_original_sub_domain' );
+    }
+
+    public function interpretedSubDomains(): BelongsToMany
+    {
+        return $this->belongsToMany(SubDomain::class, 'data_publication_interpreted_sub_domain' );
     }
 }

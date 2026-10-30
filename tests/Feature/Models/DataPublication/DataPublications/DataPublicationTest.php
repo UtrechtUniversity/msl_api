@@ -14,6 +14,7 @@ use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
 use App\Models\DataPublication\Size;
 use App\Models\DataRepository;
+use App\Models\SubDomain;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -116,5 +117,23 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(2, $dataPublication->formats);
+    }
+
+    public function test_original_sub_domains_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(SubDomain::factory()->count(3), 'originalSubDomains')
+            ->create();
+
+        $this->assertCount(3, $dataPublication->originalSubDomains);
+    }
+
+    public function test_interpreted_sub_domains_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(SubDomain::factory()->count(10), 'interpretedSubDomains')
+            ->create();
+
+        $this->assertCount(10, $dataPublication->interpretedSubDomains);
     }
 }

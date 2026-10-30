@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ImportingSeeder::class,
+            SubDomainSeeder::class,
             VocabularySeeder::class,
             SeederSeeder::class,
         ]);
