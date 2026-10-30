@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -62,6 +63,11 @@ class Keyword extends Model
     public function subjects(): BelongsToMany
     {
         return $this->BelongsToMany(Subject::class);
+    }
+
+    public function dataPublicationsOriginalKeyword(): BelongsToMany
+    {
+        return $this->BelongsToMany(DataPublication::class, 'data_publication_original_keyword' );
     }
 
     public function getSynonyms()

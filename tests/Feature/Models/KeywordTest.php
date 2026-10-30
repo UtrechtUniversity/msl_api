@@ -2,6 +2,8 @@
 
 namespace Tests\Feature\Models;
 
+use App\Models\DataPublication\DataPublication;
+use App\Models\DataPublication\Subject;
 use App\Models\Keyword;
 use App\Models\Vocabulary;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -80,5 +82,23 @@ class KeywordTest extends TestCase
 
         $this->assertCount(1, $keyword->fresh()->keywordSearch);
         $this->assertTrue($keyword->keywordSearch->contains($search));
+    }
+
+    public function test_subjects_relation(): void
+    {
+        $keyword = Keyword::factory()
+            ->has(Subject::factory()->count(3))
+            ->create();
+
+        $this->assertCount(3, $keyword->subjects);
+    }
+
+    public function test_data_publications_original_keywords_relation(): void
+    {
+        $keyword = Keyword::factory()
+            ->has(DataPublication::factory()->count(6), 'dataPublicationsOriginalKeyword')
+            ->create();
+
+        $this->assertCount(6, $keyword->dataPublicationsOriginalKeyword);
     }
 }
