@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\DataPublication\DataPublication;
+use App\Models\DataPublication\EnrichedKeyword;
 use App\Models\DataPublication\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -68,6 +69,11 @@ class Keyword extends Model
     public function dataPublicationsOriginalKeyword(): BelongsToMany
     {
         return $this->BelongsToMany(DataPublication::class, 'data_publication_original_keyword' );
+    }
+
+    public function enrichedKeywords(): BelongsToMany
+    {
+        return $this->BelongsToMany(EnrichedKeyword::class, 'enriched_keyword_child_keywords');
     }
 
     public function getSynonyms()

@@ -103,4 +103,9 @@ class DataPublication extends Model
     {
         return $this->belongsToMany(Keyword::class, 'data_publication_original_keyword' );
     }
+
+    public function enrichedKeywords(): hasMany
+    {
+        return $this->hasMany(EnrichedKeyword::class);
+    }
 }

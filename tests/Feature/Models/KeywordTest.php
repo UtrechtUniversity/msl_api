@@ -3,6 +3,7 @@
 namespace Tests\Feature\Models;
 
 use App\Models\DataPublication\DataPublication;
+use App\Models\DataPublication\EnrichedKeyword;
 use App\Models\DataPublication\Subject;
 use App\Models\Keyword;
 use App\Models\Vocabulary;
@@ -100,5 +101,14 @@ class KeywordTest extends TestCase
             ->create();
 
         $this->assertCount(6, $keyword->dataPublicationsOriginalKeyword);
+    }
+
+    public function test_enriched_keywords_relation(): void
+    {
+        $keyword = Keyword::factory()
+            ->has(EnrichedKeyword::factory()->count(9), 'enrichedKeywords')
+            ->create();
+
+        $this->assertCount(9, $keyword->enrichedKeywords);
     }
 }

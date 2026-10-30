@@ -8,6 +8,7 @@ use App\Models\DataPublication\Creator;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Date;
 use App\Models\DataPublication\Description;
+use App\Models\DataPublication\EnrichedKeyword;
 use App\Models\DataPublication\Format;
 use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
@@ -155,5 +156,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(12, $dataPublication->originalKeywords);
+    }
+
+    public function test_enriched_keywords_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(EnrichedKeyword::factory()->count(7))
+            ->create();
+
+        $this->assertCount(7, $dataPublication->enrichedKeywords);
     }
 }
