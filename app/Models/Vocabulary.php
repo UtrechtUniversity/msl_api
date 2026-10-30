@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Vocabulary extends Model
 {
+    use HasFactory;
+
     public $fillable = [
         'name',
         'uri',
@@ -28,5 +32,10 @@ class Vocabulary extends Model
     public function maxLevel()
     {
         return Keyword::where('vocabulary_id', $this->id)->max('level');
+    }
+
+    public function subDomain(): BelongsTo
+    {
+        return $this->belongsTo(SubDomain::class);
     }
 }
