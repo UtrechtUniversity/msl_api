@@ -5,7 +5,7 @@ namespace App\Models\DataPublication;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class format extends Model
+class Format extends Model
 {
     use HasFactory;
 

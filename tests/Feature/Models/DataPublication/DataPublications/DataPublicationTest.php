@@ -8,7 +8,7 @@ use App\Models\DataPublication\Creator;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Date;
 use App\Models\DataPublication\Description;
-use App\Models\DataPublication\format;
+use App\Models\DataPublication\Format;
 use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
@@ -113,7 +113,7 @@ class DataPublicationTest extends TestCase
     public function test_formats_relation()
     {
         $dataPublication = DataPublication::factory()
-            ->has(format::factory()->count(2))
+            ->has(Format::factory()->count(2))
             ->create();
 
         $this->assertCount(2, $dataPublication->formats);

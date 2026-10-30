@@ -6,7 +6,7 @@ use App\Models\DataPublication\format;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
-class formatFactory extends Factory
+class FormatFactory extends Factory
 {
     protected $model = format::class;
 
