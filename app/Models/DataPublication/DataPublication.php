@@ -75,4 +75,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(Size::class);
     }
+
+    public function formats(): hasMany
+    {
+        return $this->hasMany(Format::class);
+    }
 }
