@@ -15,6 +15,7 @@ use App\Models\DataPublication\Right;
 use App\Models\DataPublication\Size;
 use App\Models\DataPublication\Subject;
 use App\Models\DataRepository;
+use App\Models\Keyword;
 use App\Models\SubDomain;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -145,5 +146,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(5, $dataPublication->subjects);
+    }
+
+    public function test_original_keywords_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Keyword::factory()->count(12), 'originalKeywords')
+            ->create();
+
+        $this->assertCount(12, $dataPublication->originalKeywords);
     }
 }

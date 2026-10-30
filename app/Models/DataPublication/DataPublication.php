@@ -3,6 +3,7 @@
 namespace App\Models\DataPublication;
 
 use App\Models\DataRepository;
+use App\Models\Keyword;
 use App\Models\SubDomain;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -96,5 +97,10 @@ class DataPublication extends Model
     public function subjects(): hasMany
     {
         return $this->hasMany(Subject::class);
+    }
+
+    public function originalKeywords(): BelongsToMany
+    {
+        return $this->belongsToMany(Keyword::class, 'data_publication_original_keyword' );
     }
 }
