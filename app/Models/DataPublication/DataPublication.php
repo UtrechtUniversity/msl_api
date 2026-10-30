@@ -70,4 +70,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(Contributor::class);
     }
+
+    public function sizes(): hasMany
+    {
+        return $this->hasMany(Size::class);
+    }
 }

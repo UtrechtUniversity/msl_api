@@ -11,6 +11,7 @@ use App\Models\DataPublication\Description;
 use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
 use App\Models\DataPublication\Right;
+use App\Models\DataPublication\Size;
 use App\Models\DataRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -96,5 +97,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(4, $dataPublication->contributors);
+    }
+
+    public function test_sizes_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Size::factory()->count(8))
+            ->create();
+
+        $this->assertCount(8, $dataPublication->sizes);
     }
 }
