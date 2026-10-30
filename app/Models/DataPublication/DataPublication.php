@@ -60,4 +60,14 @@ class DataPublication extends Model
     {
         return $this->hasMany(Date::class);
     }
+
+    public function creators(): hasMany
+    {
+        return $this->hasMany(Creator::class);
+    }
+
+    public function contributors(): hasMany
+    {
+        return $this->hasMany(Contributor::class);
+    }
 }

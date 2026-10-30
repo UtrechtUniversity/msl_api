@@ -3,6 +3,8 @@
 namespace Tests\Feature\Models\DataPublication\DataPublications;
 
 use App\Models\DataPublication\AlternateIdentifier;
+use App\Models\DataPublication\Contributor;
+use App\Models\DataPublication\Creator;
 use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Date;
 use App\Models\DataPublication\Description;
@@ -76,5 +78,23 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(2, $dataPublication->dates);
+    }
+
+    public function test_creators_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Creator::factory()->count(3))
+            ->create();
+
+        $this->assertCount(3, $dataPublication->creators);
+    }
+
+    public function test_contributors_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(Contributor::factory()->count(4))
+            ->create();
+
+        $this->assertCount(4, $dataPublication->contributors);
     }
 }
