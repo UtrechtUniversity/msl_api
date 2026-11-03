@@ -53,7 +53,11 @@ class YodaDownloadHelper
      */
     private function getPage($url): string
     {
-        $response = $this->client->request('GET', $url);
+        $response = $this->client->request('GET', $url, [
+            'headers' => [
+                'User-Agent' => 'F-UJI/4.0 (+https://github.com/pangaea-data-publisher/fuji)',
+            ]
+        ]);
 
         if (isset($response)) {
             return (string) $response->getBody();
