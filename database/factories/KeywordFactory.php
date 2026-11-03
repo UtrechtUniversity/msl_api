@@ -22,9 +22,7 @@ class KeywordFactory extends Factory
             'selection_group_1' => $this->faker->boolean(),
             'selection_group_2' => $this->faker->boolean(),
             'selection_group_3' => $this->faker->boolean(),
-
-            // replace with vocab factory
-            'vocabulary_id' => 1,
+            'vocabulary_id' => Vocabulary::factory(),
         ];
     }
 }
