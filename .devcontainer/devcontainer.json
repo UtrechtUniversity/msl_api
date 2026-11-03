@@ -10,5 +10,5 @@
             "settings": {}
         }
     },
-    "postCreateCommand": "echo '/var/www/.nvm/nvm.sh' >> ~/.bashrc"
+    "postCreateCommand": "echo 'source /var/www/.nvm/nvm.sh' >> ~/.bashrc"
 }
