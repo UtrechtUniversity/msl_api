@@ -9,6 +9,7 @@ use App\Models\DataPublication\DataPublication;
 use App\Models\DataPublication\Date;
 use App\Models\DataPublication\Description;
 use App\Models\DataPublication\EnrichedKeyword;
+use App\Models\DataPublication\File;
 use App\Models\DataPublication\Format;
 use App\Models\DataPublication\FundingReference;
 use App\Models\DataPublication\RelatedIdentifier;
@@ -165,5 +166,14 @@ class DataPublicationTest extends TestCase
             ->create();
 
         $this->assertCount(7, $dataPublication->enrichedKeywords);
+    }
+
+    public function test_files_relation()
+    {
+        $dataPublication = DataPublication::factory()
+            ->has(File::factory()->count(14))
+            ->create();
+
+        $this->assertCount(14, $dataPublication->files);
     }
 }
