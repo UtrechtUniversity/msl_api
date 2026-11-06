@@ -108,4 +108,9 @@ class DataPublication extends Model
     {
         return $this->hasMany(EnrichedKeyword::class);
     }
+
+    public function files(): hasMany
+    {
+        return $this->hasMany(File::class);
+    }
 }
