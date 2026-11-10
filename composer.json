@@ -24,6 +24,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "fruitcake/laravel-debugbar": "^4.4",
         "laravel/pint": "^1.21",
         "laravel/sail": "^1.32",
         "mockery/mockery": "^1.6",
