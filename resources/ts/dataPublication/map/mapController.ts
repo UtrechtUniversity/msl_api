@@ -169,7 +169,6 @@ export class MapController {
         this.loadingScreen = getElementByIdOrThrow(LOADING_SCREEN_ID);
         this.addRedirectionWarning();
     }
-    //
     public async init(): Promise<void> {
         ({ facets: this.facets } = await this.getJsonFromRequest());
         await this.keywordTree.init(this.facets);
