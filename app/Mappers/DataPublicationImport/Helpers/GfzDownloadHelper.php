@@ -18,23 +18,30 @@ class GfzDownloadHelper
     /**
      * constructs a new GfzDownloadHelper
      *
-     * @param  client  $client
+     * @param client $client
      */
-    public function __construct($client = new Client)
+    public function __construct(Client $client = new Client(['http_errors' => false,]))
     {
         $this->client = $client;
     }
 
-    public function getFiles(string $landingPageUrl)
+    public function getFiles(string $doi)
     {
-        // get landing page
-        $landingPage = $this->getpage($landingPageUrl);
-
         // get downloads page url
-        $downloadsUrl = $this->getDownloadsUrl($landingPage);
+        $downloadsUrl = $this->getDownloadsUrl($doi);
+        $downloadsPageResponse = $this->getpage($downloadsUrl);
+
+        if($downloadsPageResponse->getStatusCode() != 200) {
+            $downloadsUrl = $this->getDownloadsUrl(strtoupper($doi));
+            $downloadsPageResponse = $this->getpage($downloadsUrl);
+        }
+
+        if($downloadsPageResponse->getStatusCode() != 200) {
+            return [];
+        }
 
         // get downloads page
-        $downloadsPage = $this->getpage($downloadsUrl);
+        $downloadsPage = (string) $downloadsPageResponse->getBody();
 
         // extract files from downloads page
         return $this->getFilesFromPage($downloadsPage, $downloadsUrl);
@@ -43,56 +50,31 @@ class GfzDownloadHelper
     /**
      * Get content of page by url
      */
-    private function getPage($url): string
+    private function getPage($url)
     {
-        $response = $this->client->request('GET', $url);
-
-        if (isset($response)) {
-            return (string) $response->getBody();
-        }
-
-        throw new Exception('page retrieved empty');
+        return $this->client->request('GET', $url);
     }
 
     /**
      * extract url of link to downloads page from landingpage source
      */
-    private function getDownloadsUrl(string $landingPageSource): string
+    private function getDownloadsUrl(string $doi): string
     {
-        $domDocument = new DOMDocument;
-        $domDocument->loadHTML($landingPageSource, LIBXML_NOERROR);
+        $baseUrl = 'https://datapub.gfz.de/download/';
 
-        $xpath = new DOMXPath($domDocument);
-        // Link text sometimes contains whitespace at end...
-        $query = '//a[contains(text(), "Download data and description")]';
+        $escapedDoi = str_replace('gfz', 'GFZ', $doi);
+        $escapedDoi = str_replace('/', '.', $escapedDoi);
 
-        $matches = $xpath->query($query);
-        if ($matches->length > 0) {
-            $resultNode = $matches->item(0);
-
-            return $resultNode->getAttribute('href');
-        }
-
-        // some landing pages have a different name for the download link
-        $query = '//a[text() = "Download data"]';
-
-        $matches = $xpath->query($query);
-        if ($matches->length > 0) {
-            $resultNode = $matches->item(0);
-
-            return $resultNode->getAttribute('href');
-        }
-
-        throw new Exception('download url could not be extracted');
+        return $baseUrl.$escapedDoi.'/';
     }
 
     /**
      * extract file information from downloads page source
      */
-    private function getFilesFromPage(string $downsloadPageSource, string $baseUrl): array
+    private function getFilesFromPage(string $downloadPageSource, string $baseUrl): array
     {
         $domDocument = new DOMDocument;
-        $domDocument->loadHTML($downsloadPageSource, LIBXML_NOERROR);
+        $domDocument->loadHTML($downloadPageSource, LIBXML_NOERROR);
 
         $xpath = new DOMXPath($domDocument);
         $query = '//body/pre/a';
