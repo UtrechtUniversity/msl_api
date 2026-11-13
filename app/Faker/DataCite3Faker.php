@@ -38,6 +38,7 @@ class DataCite3Faker
             'titles' => $this->generateTitles($this->faker->numberBetween(1, 3)),
             'descriptions' => $this->generateDescriptions($this->faker->numberBetween(0, 6)),
             'rightsList' => $this->generateRights($this->faker->numberBetween(0, 3)),
+            'publicationYear' => $this->faker->year,
         ];
 
         $this->datacite['data']['attributes'] = $attributes;

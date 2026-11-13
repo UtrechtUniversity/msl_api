@@ -66,4 +66,15 @@ class Datacite3MapperTest extends TestCase
             $this->assertContains($dataPublication->rights->first()->right, $dataciteRights);
         }
     }
+
+    public function test_publication_year_mapping()
+    {
+        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapPublicationYear($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataciteMetadata['data']['attributes']['publicationYear'], $dataPublication->publication_year);
+    }
 }
