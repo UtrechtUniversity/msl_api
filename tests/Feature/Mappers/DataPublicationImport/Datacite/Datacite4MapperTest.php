@@ -79,4 +79,20 @@ class Datacite4MapperTest extends TestCase
 
         $this->assertEquals($dataciteMetadata['data']['attributes']['publicationYear'], $dataPublication->publication_year);
     }
+
+    public function test_map_alternate_identifiers()
+    {
+        $dataciteMetadata = (new DataCite4Faker())->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapAlternateIdentifiers($dataciteMetadata, $dataPublication);
+
+        $dataciteAlternateIdentifiers = Arr::pluck($dataciteMetadata['data']['attributes']['alternateIdentifiers'], 'alternateIdentifier');
+
+        $this->assertCount(count($dataciteMetadata['data']['attributes']['alternateIdentifiers']), $dataPublication->alternateIdentifiers);
+        if(count($dataPublication->alternateIdentifiers) > 0) {
+            $this->assertContains($dataPublication->alternateIdentifiers->first()->identifier, $dataciteAlternateIdentifiers);
+        }
+    }
 }

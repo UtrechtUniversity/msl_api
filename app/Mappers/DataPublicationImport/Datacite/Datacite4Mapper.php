@@ -22,9 +22,9 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapTitles($metadata, $dataPublication);
         $dataPublication = $this->mapDescriptions($metadata, $dataPublication);
         $dataPublication = $this->mapRights($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
@@ -49,22 +49,20 @@ class Datacite4Mapper implements MapperInterface
      * and adds those to the dataset
      * this is optional
      */
-    public function mapAlternateIdentifiers(array $metadata, DataPublication $dataset): DataPublication
+    public function mapAlternateIdentifiers(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $altIds = $metadata['data']['attributes']['alternateIdentifiers'];
 
         if ($altIds > 0) {
             foreach ($altIds as $altIdEntry) {
-                $alternateIdentifier = new AlternateIdentifier(
-                    (isset($altIdEntry['alternateIdentifier']) ? $altIdEntry['alternateIdentifier'] : ''),
-                    (isset($altIdEntry['alternateIdentifierType']) ? $altIdEntry['alternateIdentifierType'] : '')
-                );
-
-                $dataset->addAlternateIdentifier($alternateIdentifier);
+                $dataPublication->alternateIdentifiers()->create([
+                    'identifier' => $altIdEntry['alternateIdentifier'],
+                    'type' => $altIdEntry['alternateIdentifierType'],
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

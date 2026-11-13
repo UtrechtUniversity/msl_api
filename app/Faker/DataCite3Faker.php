@@ -39,6 +39,7 @@ class DataCite3Faker
             'descriptions' => $this->generateDescriptions($this->faker->numberBetween(0, 6)),
             'rightsList' => $this->generateRights($this->faker->numberBetween(0, 3)),
             'publicationYear' => $this->faker->year,
+            'alternateIdentifiers' => $this->generateAlternateIdentifiers($this->faker->numberBetween(0, 2)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
@@ -46,6 +47,24 @@ class DataCite3Faker
         return $this;
     }
 
+    private function generateAlternateIdentifiers($amount = 0): array
+    {
+        $alternateIdentifiers = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $alternateIdentifiers[] = $this->generateAlternativeIdentifier();
+        }
+
+        return $alternateIdentifiers;
+    }
+
+    private function generateAlternativeIdentifier(): array
+    {
+        return [
+            'alternateIdentifier' => $this->faker->word,
+            'alternateIdentifierType' => $this->faker->randomElement(['ARK', 'DOI', 'Handle', 'URL', 'Other']),
+        ];
+    }
     private function generateRights($amount = 0): array
     {
         $rights = [];
