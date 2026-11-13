@@ -21,8 +21,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapIdentifier($metadata, $dataPublication);
         $dataPublication = $this->mapTitles($metadata, $dataPublication);
         $dataPublication = $this->mapDescriptions($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapRights($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
@@ -118,25 +118,23 @@ class Datacite4Mapper implements MapperInterface
      * Maps the rights of a datacite entry
      * It is an optional entry
      */
-    public function mapRights(array $metadata, DataPublication $dataset): DataPublication
+    public function mapRights(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $rights = $metadata['data']['attributes']['rightsList'];
 
         if ($rights > 0) {
             foreach ($rights as $right) {
-                $right = new Right(
-                    (isset($right['rights']) ? $right['rights'] : ''),
-                    (isset($right['rightsUri']) ? $right['rightsUri'] : ''),
-                    (isset($right['rightsIdentifier']) ? $right['rightsIdentifier'] : ''),
-                    (isset($right['rightsIdentifierScheme']) ? $right['rightsIdentifierScheme'] : ''),
-                    (isset($right['schemeUri']) ? $right['schemeUri'] : ''),
-                );
-
-                $dataset->addRight($right);
+                $dataPublication->rights()->create([
+                    'right' => $right['rights'],
+                    'uri' => ($right['rightsUri'] ?? ''),
+                    'identifier' => ($right['rightsIdentifier'] ?? ''),
+                    'identifier_scheme' => ($right['rightsIdentifierScheme'] ?? ''),
+                    'identifier_scheme_uri' => ($right['schemeUri'] ?? ''),
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

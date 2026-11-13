@@ -37,11 +37,52 @@ class DataCite3Faker
             'doi' => $this->datacite['data']['id'],
             'titles' => $this->generateTitles($this->faker->numberBetween(1, 3)),
             'descriptions' => $this->generateDescriptions($this->faker->numberBetween(0, 6)),
+            'rightsList' => $this->generateRights($this->faker->numberBetween(0, 3)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateRights($amount = 0): array
+    {
+        $rights = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $rights[] = $this->generateRight();
+        }
+
+        return $rights;
+    }
+
+    private function generateRight(): array
+    {
+        $right = [
+            'rights' => $this->faker->randomElement(['CreativeCommonsAttribution', 'CreativeCommonsNonCommercial', 'CreativeCommonsNonDerivative', 'CreativeCommonsNoDerivatives', 'CreativeCommonsShareAlike', 'Other']),
+        ];
+
+        if($this->faker->boolean()) {
+            $right['rightsUri'] = $this->faker->url;
+        }
+
+        if($this->faker->boolean()) {
+            $right['rightsIdentifier'] = $this->faker->word;
+        }
+
+        if($this->faker->boolean()) {
+            $right['rightsIdentifierScheme'] = $this->faker->word;
+        }
+
+        if($this->faker->boolean()) {
+            $right['schemeURI'] = $this->faker->url;
+        }
+
+        if($this->faker->boolean()) {
+            $right['lang'] = $this->faker->languageCode;
+        }
+
+        return $right;
     }
 
     private function generateDescriptions($amount = 0): array

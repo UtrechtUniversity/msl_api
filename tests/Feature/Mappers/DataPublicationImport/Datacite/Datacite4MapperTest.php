@@ -48,6 +48,24 @@ class Datacite4MapperTest extends TestCase
         $dataciteDescriptionDescriptions = Arr::pluck($dataciteMetadata['data']['attributes']['descriptions'], 'description');
 
         $this->assertCount(count($dataciteDescriptionTypes), $dataPublication->descriptions);
-        $this->assertContains($dataPublication->descriptions->first()->description, $dataciteDescriptionDescriptions);
+        if(count($dataPublication->descriptions) > 0) {
+            $this->assertContains($dataPublication->descriptions->first()->description, $dataciteDescriptionDescriptions);
+        }
+    }
+
+    public function test_map_rights()
+    {
+        $dataciteMetadata = (new DataCite4Faker())->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapRights($dataciteMetadata, $dataPublication);
+
+        $dataciteRights = Arr::pluck($dataciteMetadata['data']['attributes']['rightsList'], 'rights');
+
+        $this->assertCount(count($dataciteMetadata['data']['attributes']['rightsList']), $dataPublication->rights);
+        if(count($dataPublication->rights) > 0) {
+            $this->assertContains($dataPublication->rights->first()->right, $dataciteRights);
+        }
     }
 }
