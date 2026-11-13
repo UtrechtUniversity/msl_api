@@ -211,7 +211,12 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-                $dataPublication->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
+                if(count($titlesCandidates) > 0) {
+                    $dataPublication->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
+                } else {
+                    $dataPublication->title = $this->getEntryFilterByLang($titles)['title'];
+                }
+
 
                 return $dataPublication;
 
