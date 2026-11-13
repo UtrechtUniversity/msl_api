@@ -5,7 +5,7 @@ namespace App\Mappers\DataPublicationImport;
 use App\Exceptions\MappingException;
 use App\Mappers\DataPublicationImport\Datacite\DataciteMapper;
 use App\Mappers\DataPublicationImport\Helpers\KeywordHelper;
-use App\Models\Ckan\DataPublication;
+use App\Models\DataPublication\DataPublication;
 use App\Models\Importer;
 use App\Models\SourceDataset;
 use Exception;
@@ -15,7 +15,7 @@ class MappingService
 {
     public function map(SourceDataset $sourceDataset, Importer $importer): DataPublication
     {
-        $dataPublication = new DataPublication;
+        $dataPublication = new DataPublication();
         $config = $importer->options;
 
         switch ($config['sourceDatasetProcessor']['type']) {

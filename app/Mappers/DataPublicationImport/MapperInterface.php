@@ -2,7 +2,9 @@
 
 namespace App\Mappers\DataPublicationImport;
 
-use App\Models\Ckan\DataPublication;
+
+
+use App\Models\DataPublication\DataPublication;
 
 interface MapperInterface
 {

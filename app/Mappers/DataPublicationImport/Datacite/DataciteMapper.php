@@ -5,7 +5,7 @@ namespace App\Mappers\DataPublicationImport\Datacite;
 use App\Exceptions\MappingException;
 use App\Mappers\DataPublicationImport\Helpers\DataciteCitationHelper;
 use App\Mappers\DataPublicationImport\MapperInterface;
-use App\Models\Ckan\DataPublication;
+use App\Models\DataPublication\DataPublication;
 
 class DataciteMapper implements MapperInterface
 {

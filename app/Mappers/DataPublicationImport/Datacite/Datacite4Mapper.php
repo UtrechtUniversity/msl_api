@@ -10,17 +10,7 @@ use App\GeoJson\Geometry\Collection;
 use App\GeoJson\Geometry\Point;
 use App\GeoJson\Geometry\Polygon;
 use App\Mappers\DataPublicationImport\MapperInterface;
-use App\Models\Ckan\Affiliation;
-use App\Models\Ckan\AlternateIdentifier;
-use App\Models\Ckan\Contributor;
-use App\Models\Ckan\Creator;
-use App\Models\Ckan\DataPublication;
-use App\Models\Ckan\Date;
-use App\Models\Ckan\FundingReference;
-use App\Models\Ckan\NameIdentifier;
-use App\Models\Ckan\RelatedIdentifier;
-use App\Models\Ckan\Right;
-use App\Models\Ckan\Tag;
+use App\Models\DataPublication\DataPublication;
 
 class Datacite4Mapper implements MapperInterface
 {
@@ -30,6 +20,7 @@ class Datacite4Mapper implements MapperInterface
         // start with the identifier to enable usage in logging/exceptions
         $dataPublication = $this->mapIdentifier($metadata, $dataPublication);
         $dataPublication = $this->mapTitles($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapDescriptions($metadata, $dataPublication);
         $dataPublication = $this->mapRights($metadata, $dataPublication);
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
@@ -48,6 +39,7 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
         $dataPublication = $this->mapGeolocations($metadata, $dataPublication);
+        */
 
         return $dataPublication;
     }
@@ -101,8 +93,9 @@ class Datacite4Mapper implements MapperInterface
     /**
      * Maps the identifier/doi of a datacite entry
      * It is a mandatory entry, failure throws exception
+     * @throws MappingException
      */
-    public function mapIdentifier(array $metadata, DataPublication $dataset): DataPublication
+    public function mapIdentifier(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $identifier = '';
 
@@ -113,12 +106,12 @@ class Datacite4Mapper implements MapperInterface
         }
 
         if (strlen($identifier) > 0) {
-            $dataset->msl_doi = $identifier;
+            $dataPublication->doi = $identifier;
         } else {
             throw new MappingException('Identifier/doi string empty');
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**
@@ -213,8 +206,9 @@ class Datacite4Mapper implements MapperInterface
      * this entry is mandatory
      *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
+     * @throws MappingException
      */
-    public function mapTitles(array $metadata, DataPublication $dataset): DataPublication
+    public function mapTitles(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $titles = $metadata['data']['attributes']['titles'];
         $titleSize = count($titles);
@@ -237,22 +231,20 @@ class Datacite4Mapper implements MapperInterface
                     }
                 }
 
-                $dataset->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
+                $dataPublication->title = $this->getEntryFilterByLang($titlesCandidates)['title'];
 
-                return $dataset;
+                return $dataPublication;
 
             } else {
                 // the only title present
-                $dataset->title = $metadata['data']['attributes']['titles'][0]['title'];
+                $dataPublication->title = $metadata['data']['attributes']['titles'][0]['title'];
 
-                return $dataset;
+                return $dataPublication;
             }
 
         } else {
-            throw new MappingException($dataset->msl_doi.': No title mapped');
+            throw new MappingException($dataPublication->doi.': No title mapped');
         }
-
-        return $dataset;
     }
 
     /**
