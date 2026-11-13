@@ -28,10 +28,12 @@ class MappingService
                 break;
         }
 
-        // set general fields independend of mapping implementation
+        // set general fields independent of mapping implementation
 
         // set owner organization for data publication
         $dataPublication->owner_org = $importer->dataRepository->ckan_name;
+
+        /*
 
         // map keywords
         $keywordHelper = new KeywordHelper;
@@ -68,6 +70,7 @@ class MappingService
         if ($validator->fails()) {
             throw new MappingException('Datapublication could not be validated');
         }
+        */
 
         return $dataPublication;
     }
