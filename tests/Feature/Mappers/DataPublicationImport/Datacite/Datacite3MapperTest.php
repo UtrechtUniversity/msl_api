@@ -34,6 +34,20 @@ class Datacite3MapperTest extends TestCase
 
         $dataciteTitles = Arr::pluck($dataciteMetadata['data']['attributes']['titles'], 'title');
         $this->assertContains($dataPublication->title, $dataciteTitles);
+    }
 
+    public function test_map_descriptions()
+    {
+        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapDescriptions($dataciteMetadata, $dataPublication);
+
+        $dataciteDescriptionTypes = array_unique(Arr::pluck($dataciteMetadata['data']['attributes']['descriptions'], 'descriptionType'));
+        $dataciteDescriptionDescriptions = Arr::pluck($dataciteMetadata['data']['attributes']['descriptions'], 'description');
+
+        $this->assertCount(count($dataciteDescriptionTypes), $dataPublication->descriptions);
+        $this->assertContains($dataPublication->descriptions->first()->description, $dataciteDescriptionDescriptions);
     }
 }

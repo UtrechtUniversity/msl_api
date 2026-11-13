@@ -36,11 +36,37 @@ class DataCite4Faker
         $attributes = [
             'doi' => $this->datacite['data']['id'],
             'titles' => $this->generateTitles($this->faker->numberBetween(1, 3)),
+            'descriptions' => $this->generateDescriptions($this->faker->numberBetween(0, 6)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateDescriptions($amount = 0): array
+    {
+        $descriptions = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $descriptions[] = $this->generateDescription();
+        }
+
+        return $descriptions;
+    }
+
+    private function generateDescription(): array
+    {
+        $title = [
+            'description' => $this->faker->text,
+            'descriptionType' => $this->faker->randomElement(['Abstract', 'Methods', 'SeriesInformation', 'TableOfContents', 'TechnicalInfo', 'Other']),
+        ];
+
+        if($this->faker->boolean()) {
+            $title['lang'] = $this->faker->optional(0.5, '')->languageCode;
+        }
+
+        return $title;
     }
 
     private function generateTitles($amount = 1): array

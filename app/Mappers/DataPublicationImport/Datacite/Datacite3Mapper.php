@@ -20,8 +20,8 @@ class Datacite3Mapper implements MapperInterface
         // start with the identifier to enable usage in logging/exceptions
         $dataPublication = $this->mapIdentifier($metadata, $dataPublication);
         $dataPublication = $this->mapTitles($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapDescriptions($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapRights($metadata, $dataPublication);
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
@@ -153,42 +153,27 @@ class Datacite3Mapper implements MapperInterface
      *
      * ASSUMPTIONS FOR PRIORITIES ARE COMMENTED IN THE FUNCTION
      */
-    public function mapDescriptions(array $metadata, DataPublication $dataset): DataPublication
+    public function mapDescriptions(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $descriptions = $metadata['data']['attributes']['descriptions'];
+        $descriptionsByType = [];
 
-        $dataset->msl_description_abstract = $this->getDescription('Abstract', $descriptions);
-        $dataset->msl_description_methods = $this->getDescription('Methods', $descriptions);
-        $dataset->msl_description_series_information = $this->getDescription('SeriesInformation', $descriptions);
-        $dataset->msl_description_table_of_contents = $this->getDescription('TableOfContents', $descriptions);
-        $dataset->msl_description_technical_info = $this->getDescription('TechnicalInfo', $descriptions);
-        $dataset->msl_description_other = $this->getDescription('Other', $descriptions);
-
-        return $dataset;
-    }
-
-    private function getDescription(string $descriptionType, array $descriptions): string
-    {
-        $descriptionString = '';
-        $descriptionsCandidates = [];
-
-        // ///////////////  additional notes
-        // -> description is optional, so it can be empty
-        // -> "descriptionType" is always present
-        // ///////////////
-
-        // filter if descriptions with descriptionType are present and collect candidates
         foreach ($descriptions as $description) {
-            if (isset($description['descriptionType']) && $description['descriptionType'] == $descriptionType) {
-                array_push($descriptionsCandidates, $description);
-            }
+            $descriptionsByType[$description['descriptionType']][] = $description;
         }
 
-        if (count($descriptionsCandidates) > 0) {
-            return $this->getEntryFilterByLang($descriptionsCandidates)['description'];
+        foreach ($descriptionsByType as $descriptionType => $descriptionCandidates) {
+            $mainDescriptionByType = $this->getEntryFilterByLang($descriptionCandidates);
+
+            $dataPublication->descriptions()->create([
+                'type' => $descriptionType,
+                'description' => $mainDescriptionByType['description'],
+                'annotated' => '',
+                'language' => ($mainDescriptionByType['lang'] ?? ''),
+            ]);
         }
 
-        return $descriptionString;
+        return $dataPublication;
     }
 
     /**
