@@ -93,4 +93,20 @@ class Datacite3MapperTest extends TestCase
             $this->assertContains($dataPublication->alternateIdentifiers->first()->identifier, $dataciteAlternateIdentifiers);
         }
     }
+
+    public function test_map_related_identifiers()
+    {
+        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapRelatedIdentifiers($dataciteMetadata, $dataPublication);
+
+        $dataciteRelatedIdentifiers = Arr::pluck($dataciteMetadata['data']['attributes']['relatedIdentifiers'], 'relatedIdentifier');
+
+        $this->assertCount(count($dataciteMetadata['data']['attributes']['relatedIdentifiers']), $dataPublication->relatedIdentifiers);
+        if(count($dataPublication->relatedIdentifiers) > 0) {
+            $this->assertContains($dataPublication->relatedIdentifiers->first()->identifier, $dataciteRelatedIdentifiers);
+        }
+    }
 }

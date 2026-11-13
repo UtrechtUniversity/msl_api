@@ -24,8 +24,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapRights($metadata, $dataPublication);
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
         $dataPublication = $this->mapLanguages($metadata, $dataPublication);
@@ -271,26 +271,25 @@ class Datacite4Mapper implements MapperInterface
      *
      * this entry is optional
      */
-    public function mapRelatedIdentifiers(array $metadata, DataPublication $dataset): DataPublication
+    public function mapRelatedIdentifiers(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $relatedIdentifiers = $metadata['data']['attributes']['relatedIdentifiers'];
+
         if (count($relatedIdentifiers) > 0) {
             foreach ($relatedIdentifiers as $relatedIdentifier) {
-                $relatedIdentifier = new RelatedIdentifier(
-                    (isset($relatedIdentifier['relatedIdentifier']) ? $relatedIdentifier['relatedIdentifier'] : ''),
-                    (isset($relatedIdentifier['relatedIdentifierType']) ? $relatedIdentifier['relatedIdentifierType'] : ''),
-                    (isset($relatedIdentifier['relationType']) ? $relatedIdentifier['relationType'] : ''),
-                    (isset($relatedIdentifier['relatedMetadataScheme']) ? $relatedIdentifier['relatedMetadataScheme'] : ''),
-                    (isset($relatedIdentifier['schemeURI']) ? $relatedIdentifier['schemeURI'] : ''),
-                    (isset($relatedIdentifier['schemeType']) ? $relatedIdentifier['schemeType'] : ''),
-                    (isset($relatedIdentifier['resourceTypeGeneral']) ? $relatedIdentifier['resourceTypeGeneral'] : ''),
-                );
-
-                $dataset->addRelatedIdentifier($relatedIdentifier);
+                $dataPublication->relatedIdentifiers()->create([
+                    'identifier' => $relatedIdentifier['relatedIdentifier'],
+                    'type' => $relatedIdentifier['relatedIdentifierType'],
+                    'relation_type' => $relatedIdentifier['relationType'],
+                    'metadata_scheme' => ($relatedIdentifier['relatedMetadataScheme'] ?? ''),
+                    'metadata_scheme_uri' => ($relatedIdentifier['schemeURI'] ?? ''),
+                    'metadata_scheme_type' => ($relatedIdentifier['schemeType'] ?? ''),
+                    'resource_type_general' => ($relatedIdentifier['resourceTypeGeneral'] ?? ''),
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

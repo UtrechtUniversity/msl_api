@@ -40,11 +40,50 @@ class DataCite3Faker
             'rightsList' => $this->generateRights($this->faker->numberBetween(0, 3)),
             'publicationYear' => $this->faker->year,
             'alternateIdentifiers' => $this->generateAlternateIdentifiers($this->faker->numberBetween(0, 2)),
+            'relatedIdentifiers' => $this->generateRelatedIdentifiers($this->faker->numberBetween(0, 10)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateRelatedIdentifiers($amount = 0): array
+    {
+        $relatedIdentifiers = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $relatedIdentifiers[] = $this->generateRelatedIdentifier();
+        }
+
+        return $relatedIdentifiers;
+    }
+
+    private function generateRelatedIdentifier(): array
+    {
+        $relatedIdentifier = [
+            'relatedIdentifier' => $this->faker->word,
+            'relationType' => $this->faker->randomElement(['IsCitedBy', 'Cites', 'IsSupplementTo', 'HasVersion']),
+            'relatedIdentifierType' => $this->faker->randomElement(['ARK', 'DOI', 'Handle', 'URL']),
+        ];
+
+        if($this->faker->boolean()) {
+            $relatedIdentifier['relatedMetadataScheme'] = $this->faker->word;
+        }
+
+        if($this->faker->boolean()) {
+            $relatedIdentifier['metadata_scheme_uri'] = $this->faker->url();
+        }
+
+        if($this->faker->boolean()) {
+            $relatedIdentifier['metadata_scheme_type'] = $this->faker->word;
+        }
+
+        if($this->faker->boolean()) {
+            $relatedIdentifier['resource_type_general'] = $this->faker->randomElement(['Text', 'Dataset', 'Image', 'InteractiveResource', 'Software', 'Collection', 'Event', 'SoftwareApplication', 'Model', 'PhysicalObject', 'Service']);
+        }
+
+        return $relatedIdentifier;
     }
 
     private function generateAlternateIdentifiers($amount = 0): array
