@@ -38,16 +38,16 @@ class ImportGFZSeeder extends Seeder
                     'importProcessor' => [
                         'type' => 'oaiListing',
                         'options' => [
-                            'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'datacite',
-                            'setDefinition' => '~P3E9c3ViamVjdCUzQSUyMm11bHRpLXNjYWxlK2xhYm9yYXRvcmllcyUyMg',
+                            'oaiEndpoint' => 'https://dataservices.gfz.de/oai-pmh',
+                            'metadataPrefix' => 'oai_datacite',
+                            'setDefinition' => 'epos-msl',
                         ],
                     ],
                     'identifierProcessor' => [
                         'type' => 'oaiToDataciteRetrieval',
                         'options' => [
-                            'oaiEndpoint' => 'https://doidb.wdc-terra.org/oaip/oai',
-                            'metadataPrefix' => 'datacite',
+                            'oaiEndpoint' => 'https://dataservices.gfz.de/oai-pmh',
+                            'metadataPrefix' => 'oai_datacite',
                         ],
                     ],
                     'sourceDatasetProcessor' => [
