@@ -18,19 +18,19 @@ class GfzFileMapper extends AdditionalMapper
     protected function initialize(array $args): void {}
 
     /**
-     * Add figshare files associated by DOI
+     * Add GFZ files associated by DOI
      */
     public function map(DataPublication $dataPublication, SourceDataset $sourceDataset): DataPublication
     {
-        $yodaFileHelper = new GfzDownloadHelper;
+        $gfzFileHelper = new GfzDownloadHelper;
 
         try {
-            $filelist = $yodaFileHelper->getFiles($dataPublication->msl_source);
+            $fileList = $gfzFileHelper->getFiles($dataPublication->msl_doi);
         } catch (Exception $e) {
             return $dataPublication;
         }
 
-        foreach ($filelist as $file) {
+        foreach ($fileList as $file) {
             $dataPublication->addFile(
                 new File(
                     $file['fileName'],
