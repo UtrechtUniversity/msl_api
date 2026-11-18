@@ -26,8 +26,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapLanguages($metadata, $dataPublication);
         $dataPublication = $this->mapDates($metadata, $dataPublication);
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
@@ -312,27 +312,25 @@ class Datacite4Mapper implements MapperInterface
      * maps the available funding references
      * fundername is madatory
      */
-    public function mapFundingReferences(array $metadata, DataPublication $dataset): DataPublication
+    public function mapFundingReferences(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $fundingReferences = $metadata['data']['attributes']['fundingReferences'];
 
         if ($fundingReferences > 0) {
             foreach ($fundingReferences as $fundingReference) {
-                $fundingReferenceInstance = new FundingReference(
-                    (isset($fundingReference['funderName']) ? $fundingReference['funderName'] : ''),
-                    (isset($fundingReference['funderIdentifier']) ? $fundingReference['funderIdentifier'] : ''),
-                    (isset($fundingReference['funderIdentifierType']) ? $fundingReference['funderIdentifierType'] : ''),
-                    (isset($fundingReference['schemeURI']) ? $fundingReference['schemeURI'] : ''),
-                    (isset($fundingReference['awardNumber']) ? $fundingReference['awardNumber'] : ''),
-                    (isset($fundingReference['awardUri']) ? $fundingReference['awardUri'] : ''),
-                    (isset($fundingReference['awardTitle']) ? $fundingReference['awardTitle'] : ''),
-                );
-
-                $dataset->addFundingReference($fundingReferenceInstance);
+                $dataPublication->fundingReferences()->create([
+                    'funder_name' => $fundingReference['funderName'],
+                    'funder_identifier' => ($fundingReference['funderIdentifier'] ?? ''),
+                    'funder_identifier_type' => ($fundingReference['funderIdentifierType'] ?? ''),
+                    'scheme_uri' => ($fundingReference['schemeURI'] ?? ''),
+                    'award_number' => ($fundingReference['awardNumber'] ?? ''),
+                    'award_uri' => ($fundingReference['awardUri'] ?? ''),
+                    'award_title' => ($fundingReference['awardTitle'] ?? ''),
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /*

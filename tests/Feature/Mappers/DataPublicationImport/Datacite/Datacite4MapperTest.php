@@ -122,4 +122,20 @@ class Datacite4MapperTest extends TestCase
 
         $this->assertEquals($dataciteMetadata['data']['attributes']['url'], $dataPublication->source_landing_page_url);
     }
+
+    public function test_map_funding_references()
+    {
+        $dataciteMetadata = new DataCite4Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapFundingReferences($dataciteMetadata, $dataPublication);
+
+        $dataciteFunderNames = Arr::pluck($dataciteMetadata['data']['attributes']['fundingReferences'], 'funderName');
+
+        $this->assertCount(count($dataciteMetadata['data']['attributes']['fundingReferences']), $dataPublication->fundingReferences);
+        foreach ($dataPublication->fundingReferences as $fundingReference) {
+            $this->assertContains($fundingReference->funder_name, $dataciteFunderNames);
+        }
+    }
 }

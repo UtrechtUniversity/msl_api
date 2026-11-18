@@ -42,11 +42,52 @@ class DataCite4Faker
             'alternateIdentifiers' => $this->generateAlternateIdentifiers($this->faker->numberBetween(0, 2)),
             'relatedIdentifiers' => $this->generateRelatedIdentifiers($this->faker->numberBetween(0, 10)),
             'url' => $this->faker->url,
+            'fundingReferences' => $this->generateFundingReferences($this->faker->numberBetween(0, 3)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateFundingReferences($amount = 0): array
+    {
+        $fundingReferences = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $fundingReferences[] = $this->generateFundingReference();
+        }
+
+        return $fundingReferences;
+    }
+
+    private function generateFundingReference(): array
+    {
+        $fundingReference = [
+            'funderName' => $this->faker->word,
+        ];
+
+        if($this->faker->boolean()) {
+            $fundingReference['funderIdentifier'] = $this->faker->word;
+            $fundingReference['funderIdentifierType'] = $this->faker->randomElement(['ISNI', 'ISBN', 'ISRC', 'Other']);
+            if($this->faker->boolean()) {
+                $fundingReference['schemeURI'] = $this->faker->url;
+            }
+        }
+
+        if($this->faker->boolean()) {
+            $fundingReference['awardNumber'] = $this->faker->word;
+        }
+
+        if($this->faker->boolean()) {
+            $fundingReference['awardURI'] = $this->faker->url;
+        }
+
+        if($this->faker->boolean()) {
+            $fundingReference['awardTitle'] = $this->faker->word;
+        }
+
+        return $fundingReference;
     }
 
     private function generateRelatedIdentifiers($amount = 0): array
