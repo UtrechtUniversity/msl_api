@@ -15,7 +15,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_identifier()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = new DataPublication();
         $mapper = new Datacite3Mapper();
 
@@ -26,7 +26,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_titles()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = new DataPublication();
         $mapper = new Datacite3Mapper();
 
@@ -38,7 +38,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_descriptions()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = DataPublication::factory()->create();
         $mapper = new Datacite3Mapper();
 
@@ -53,7 +53,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_rights()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = DataPublication::factory()->create();
         $mapper = new Datacite3Mapper();
 
@@ -69,7 +69,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_publication_year_mapping()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = new DataPublication();
         $mapper = new Datacite3Mapper();
 
@@ -80,7 +80,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_alternate_identifiers()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = DataPublication::factory()->create();
         $mapper = new Datacite3Mapper();
 
@@ -96,7 +96,7 @@ class Datacite3MapperTest extends TestCase
 
     public function test_map_related_identifiers()
     {
-        $dataciteMetadata = (new DataCite3Faker())->populate()->toArray();
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
         $dataPublication = DataPublication::factory()->create();
         $mapper = new Datacite3Mapper();
 
