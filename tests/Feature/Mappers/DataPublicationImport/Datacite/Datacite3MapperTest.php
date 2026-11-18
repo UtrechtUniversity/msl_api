@@ -109,4 +109,15 @@ class Datacite3MapperTest extends TestCase
             $this->assertContains($dataPublication->relatedIdentifiers->first()->identifier, $dataciteRelatedIdentifiers);
         }
     }
+
+    public function test_map_url()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapUrl($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataciteMetadata['data']['attributes']['url'], $dataPublication->source_landing_page_url);
+    }
 }

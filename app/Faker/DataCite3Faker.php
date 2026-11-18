@@ -41,6 +41,7 @@ class DataCite3Faker
             'publicationYear' => $this->faker->year,
             'alternateIdentifiers' => $this->generateAlternateIdentifiers($this->faker->numberBetween(0, 2)),
             'relatedIdentifiers' => $this->generateRelatedIdentifiers($this->faker->numberBetween(0, 10)),
+            'url' => $this->faker->url,
         ];
 
         $this->datacite['data']['attributes'] = $attributes;

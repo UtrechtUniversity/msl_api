@@ -25,8 +25,8 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapPublicationYear($metadata, $dataPublication);
         $dataPublication = $this->mapAlternateIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapLanguages($metadata, $dataPublication);
         $dataPublication = $this->mapDates($metadata, $dataPublication);
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
@@ -299,11 +299,11 @@ class Datacite3Mapper implements MapperInterface
      * stores the url to the dataset
      * this is not part of the data-publication but part of the api response
      */
-    public function mapUrl(array $metadata, DataPublication $dataset): DataPublication
+    public function mapUrl(array $metadata, DataPublication $dataPublication): DataPublication
     {
-        $dataset->msl_source = (isset($metadata['data']['attributes']['url']) ? $metadata['data']['attributes']['url'] : throw new MappingException($dataset->msl_doi.': No url mapped'));
+        $dataPublication->source_landing_page_url = ($metadata['data']['attributes']['url'] ?? throw new MappingException($dataPublication->doi . ': No url mapped'));
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /*
