@@ -48,7 +48,12 @@ class Datacite3MapperTest extends TestCase
         $dataciteDescriptionDescriptions = Arr::pluck($dataciteMetadata['data']['attributes']['descriptions'], 'description');
 
         $this->assertCount(count($dataciteDescriptionTypes), $dataPublication->descriptions);
-        $this->assertContains($dataPublication->descriptions->first()->description, $dataciteDescriptionDescriptions);
+
+        foreach($dataPublication->descriptions as $description)
+        {
+            $this->assertContains($description->description, $dataciteDescriptionDescriptions);
+            $this->assertContains($description->type, $dataciteDescriptionTypes);
+        }
     }
 
     public function test_map_rights()
@@ -59,11 +64,16 @@ class Datacite3MapperTest extends TestCase
 
         $dataPublication = $mapper->mapRights($dataciteMetadata, $dataPublication);
 
-        $dataciteRights = Arr::pluck($dataciteMetadata['data']['attributes']['rightsList'], 'rights');
+        $dataciteRights = $dataciteMetadata['data']['attributes']['rightsList'];
 
-        $this->assertCount(count($dataciteMetadata['data']['attributes']['rightsList']), $dataPublication->rights);
-        if(count($dataPublication->rights) > 0) {
-            $this->assertContains($dataPublication->rights->first()->right, $dataciteRights);
+        $this->assertCount(count($dataciteRights), $dataPublication->rights);
+
+        for ($i = 0; $i < count($dataPublication->rights); $i++) {
+            $this->assertEquals($dataPublication->rights[$i]->right, $dataciteRights[$i]['rights']);
+            $this->assertEquals($dataPublication->rights[$i]->uri, $dataciteRights[$i]['rightsUri'] ?? '');
+            $this->assertEquals($dataPublication->rights[$i]->identifier, $dataciteRights[$i]['rightsIdentifier'] ?? '');
+            $this->assertEquals($dataPublication->rights[$i]->identifier_scheme, $dataciteRights[$i]['rightsIdentifierScheme'] ?? '');
+            $this->assertEquals($dataPublication->rights[$i]->identifier_scheme_uri, $dataciteRights[$i]['schemeUri'] ?? '');
         }
     }
 
@@ -86,11 +96,13 @@ class Datacite3MapperTest extends TestCase
 
         $dataPublication = $mapper->mapAlternateIdentifiers($dataciteMetadata, $dataPublication);
 
-        $dataciteAlternateIdentifiers = Arr::pluck($dataciteMetadata['data']['attributes']['alternateIdentifiers'], 'alternateIdentifier');
+        $dataciteAlternateIdentifiers = $dataciteMetadata['data']['attributes']['alternateIdentifiers'];
 
-        $this->assertCount(count($dataciteMetadata['data']['attributes']['alternateIdentifiers']), $dataPublication->alternateIdentifiers);
-        if(count($dataPublication->alternateIdentifiers) > 0) {
-            $this->assertContains($dataPublication->alternateIdentifiers->first()->identifier, $dataciteAlternateIdentifiers);
+        $this->assertCount(count($dataciteAlternateIdentifiers), $dataPublication->alternateIdentifiers);
+
+        for ($i = 0; $i < count($dataPublication->alternateIdentifiers); $i++) {
+            $this->assertEquals($dataPublication->alternateIdentifiers[$i]->identifier, $dataciteAlternateIdentifiers[$i]['alternateIdentifier']);
+            $this->assertEquals($dataPublication->alternateIdentifiers[$i]->type, $dataciteAlternateIdentifiers[$i]['alternateIdentifierType'] ?? '');
         }
     }
 
@@ -102,11 +114,18 @@ class Datacite3MapperTest extends TestCase
 
         $dataPublication = $mapper->mapRelatedIdentifiers($dataciteMetadata, $dataPublication);
 
-        $dataciteRelatedIdentifiers = Arr::pluck($dataciteMetadata['data']['attributes']['relatedIdentifiers'], 'relatedIdentifier');
+        $dataciteRelatedIdentifiers = $dataciteMetadata['data']['attributes']['relatedIdentifiers'];
 
-        $this->assertCount(count($dataciteMetadata['data']['attributes']['relatedIdentifiers']), $dataPublication->relatedIdentifiers);
-        if(count($dataPublication->relatedIdentifiers) > 0) {
-            $this->assertContains($dataPublication->relatedIdentifiers->first()->identifier, $dataciteRelatedIdentifiers);
+        $this->assertCount(count($dataciteRelatedIdentifiers), $dataPublication->relatedIdentifiers);
+
+        for ($i = 0; $i < count($dataPublication->relatedIdentifiers); $i++) {
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->identifier, $dataciteRelatedIdentifiers[$i]['relatedIdentifier']);
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->type, $dataciteRelatedIdentifiers[$i]['relatedIdentifierType']);
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->relation_type, $dataciteRelatedIdentifiers[$i]['relationType']);
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->metadata_scheme, $dataciteRelatedIdentifiers[$i]['relatedMetadataScheme'] ?? '');
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->metadata_scheme_uri, $dataciteRelatedIdentifiers[$i]['schemeURI'] ?? '');
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->metadata_scheme_type, $dataciteRelatedIdentifiers[$i]['schemeType'] ?? '');
+            $this->assertEquals($dataPublication->relatedIdentifiers[$i]->resource_type_general, $dataciteRelatedIdentifiers[$i]['resourceTypeGeneral'] ?? '');
         }
     }
 
