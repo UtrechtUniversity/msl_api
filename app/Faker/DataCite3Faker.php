@@ -44,6 +44,7 @@ class DataCite3Faker
             'url' => $this->faker->url,
             'language' => $this->faker->optional(0.5, '')->languageCode,
             'dates' => $this->generateDates($this->faker->numberBetween(0, 3)),
+            'publisher' => $this->faker->company,
         ];
 
         $this->datacite['data']['attributes'] = $attributes;

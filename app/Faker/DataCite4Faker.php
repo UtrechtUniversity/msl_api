@@ -45,11 +45,38 @@ class DataCite4Faker
             'fundingReferences' => $this->generateFundingReferences($this->faker->numberBetween(0, 3)),
             'language' => $this->faker->optional(0.5, '')->languageCode,
             'dates' => $this->generateDates($this->faker->numberBetween(0, 3)),
+            'publisher' => $this->generatePublisher(),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generatePublisher(): array|string
+    {
+        if($this->faker->boolean()) {
+            return $this->faker->company;
+        }
+
+        $publisher = [
+            'name' => $this->faker->company,
+        ];
+
+        if($this->faker->boolean()) {
+            $publisher['nameIdentifier'] = $this->faker->word;
+            $publisher['nameIdentifierScheme'] = $this->faker->randomElement(['ISNI', 'ISBN', 'ISRC', 'Other']);
+        }
+
+        if($this->faker->boolean()) {
+            $publisher['schemeUri'] = $this->faker->url;
+        }
+
+        if($this->faker->boolean()) {
+            $publisher['lang'] = $this->faker->countryCode;
+        }
+
+        return $publisher;
     }
 
     private function generateDates($amount = 0): array

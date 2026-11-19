@@ -29,8 +29,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
         $dataPublication = $this->mapLanguage($metadata, $dataPublication);
         $dataPublication = $this->mapDates($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
@@ -375,23 +375,23 @@ class Datacite4Mapper implements MapperInterface
      * stores the publishers to the dataset
      * this entry is mandatory
      */
-    public function mapPublishers(array $metadata, DataPublication $dataset): DataPublication
+    public function mapPublishers(array $metadata, DataPublication $dataPublication): DataPublication
     {
         if (isset($metadata['data']['attributes']['publisher'])) {
             $publisherEntry = $metadata['data']['attributes']['publisher'];
 
             if (isset($publisherEntry['name'])) {
-                $dataset->msl_publisher = $publisherEntry['name'];
+                $dataPublication->publisher = $publisherEntry['name'];
             }
 
             if (! is_array($publisherEntry)) {
-                $dataset->msl_publisher = $publisherEntry;
+                $dataPublication->publisher = $publisherEntry;
             }
         } else {
-            throw new MappingException($dataset->msl_doi.': No publisher mapped');
+            throw new MappingException($dataPublication->doi.': No publisher mapped');
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

@@ -169,4 +169,15 @@ class Datacite3MapperTest extends TestCase
             $this->assertEquals($dataPublication->dates[$i]->information, $dataciteDates[$i]['dateInformation'] ?? '');
         }
     }
+
+    public function test_map_publishers()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapPublishers($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataciteMetadata['data']['attributes']['publisher'], $dataPublication->publisher);
+    }
 }

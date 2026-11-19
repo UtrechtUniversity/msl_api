@@ -193,4 +193,21 @@ class Datacite4MapperTest extends TestCase
             $this->assertEquals($dataPublication->dates[$i]->information, $dataciteDates[$i]['dateInformation'] ?? '');
         }
     }
+
+    public function test_map_publishers()
+    {
+        $dataciteMetadata = new DataCite4Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapPublishers($dataciteMetadata, $dataPublication);
+
+        if(is_array($dataciteMetadata['data']['attributes']['publisher'])) {
+            $datacitePublisherName = $dataciteMetadata['data']['attributes']['publisher']['name'];
+        } else {
+            $datacitePublisherName = $dataciteMetadata['data']['attributes']['publisher'];
+        }
+
+        $this->assertEquals($dataPublication->publisher, $datacitePublisherName);
+    }
 }
