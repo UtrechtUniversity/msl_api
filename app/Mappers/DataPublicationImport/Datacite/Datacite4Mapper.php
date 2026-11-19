@@ -32,8 +32,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapContributors($metadata, $dataPublication);
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
@@ -462,18 +462,17 @@ class Datacite4Mapper implements MapperInterface
 
     /**
      * stores the resource type to the dataset
-     * this entry is optional
      */
-    public function mapResourceTypes(array $metadata, DataPublication $dataset): DataPublication
+    public function mapResourceTypes(array $metadata, DataPublication $dataPublication): DataPublication
     {
         if (isset($metadata['data']['attributes']['types'])) {
             $resourceTypeEntry = $metadata['data']['attributes']['types'];
 
-            $dataset->msl_resource_type = (isset($resourceTypeEntry['resourceType']) ? $resourceTypeEntry['resourceType'] : '');
-            $dataset->msl_resource_type_general = (isset($resourceTypeEntry['resourceTypeGeneral']) ? $resourceTypeEntry['resourceTypeGeneral'] : '');
+            $dataPublication->resource_type = $resourceTypeEntry['resourceType'];
+            $dataPublication->resource_type_general = $resourceTypeEntry['resourceTypeGeneral'];
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

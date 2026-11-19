@@ -47,11 +47,25 @@ class DataCite3Faker
             'publisher' => $this->faker->company,
             'creators' => $this->generateCreators($this->faker->numberBetween(1, 10)),
             'version' => $this->faker->optional(0.5, '')->randomElement(['1.0', '2.0', 'first']),
+            'types' => $this->generateResourceTypes(),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateResourceTypes(): array
+    {
+        $resourceTypes = [
+            'resourceType' => $this->faker->word,
+        ];
+
+        if($this->faker->boolean()) {
+            $resourceTypes['resourceTypeGeneral'] = $this->faker->randomElement(['Text', 'Dataset', 'Image', 'InteractiveResource', 'Software', 'Collection', 'Event', 'SoftwareApplication', 'Model', 'PhysicalObject', 'Service']);
+        }
+
+        return $resourceTypes;
     }
 
     private function generateCreators($amount = 0): array

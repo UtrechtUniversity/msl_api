@@ -224,4 +224,16 @@ class Datacite3MapperTest extends TestCase
 
         $this->assertEquals($dataPublication->datacite_version, $dataciteMetadata['data']['attributes']['version']);
     }
+
+    public function test_map_resource_types()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapResourceTypes($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataPublication->resource_type, $dataciteMetadata['data']['attributes']['types']['resourceType']);
+        $this->assertEquals($dataPublication->resource_type_general, $dataciteMetadata['data']['attributes']['types']['resourceTypeGeneral'] ?? '');
+    }
 }
