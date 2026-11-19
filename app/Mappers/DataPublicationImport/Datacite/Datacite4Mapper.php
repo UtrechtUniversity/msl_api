@@ -398,54 +398,53 @@ class Datacite4Mapper implements MapperInterface
      * stores the creators to the dataset
      * this entry is mandatory
      */
-    public function mapCreators(array $metadata, DataPublication $dataset)
+    public function mapCreators(array $metadata, DataPublication $dataPublication): DataPublication
     {
-        $creators = $metadata['data']['attributes']['creators'];
+        $dataciteCreators = $metadata['data']['attributes']['creators'];
 
-        if (count($creators) > 0) {
-            foreach ($creators as $creator) {
-                $creatorInstance = new Creator(
-                    (isset($creator['name']) ? $creator['name'] : ''),
-                    (isset($creator['givenName']) ? $creator['givenName'] : ''),
-                    (isset($creator['familyName']) ? $creator['familyName'] : ''),
-                    (isset($creator['nameType']) ? $creator['nameType'] : '')
-                );
+        if (count($dataciteCreators) > 0) {
+            foreach ($dataciteCreators as $dataciteCreator) {
+                $creator = $dataPublication->creators()->create([
+                    'name' => $dataciteCreator['name'],
+                    'first_name' => $dataciteCreator['givenName'] ?? '',
+                    'last_name' => $dataciteCreator['familyName'] ?? '',
+                    'name_type' => $dataciteCreator['nameType'] ?? '',
+                ]);
 
-                if (isset($creator['nameIdentifiers']) && $creator['nameIdentifiers'] > 0) {
-                    foreach ($creator['nameIdentifiers'] as $nameIdentifierEntry) {
-                        $nameIdentifierInst = new NameIdentifier(
-                            (isset($nameIdentifierEntry['nameIdentifier']) ? $nameIdentifierEntry['nameIdentifier'] : ''),
-                            (isset($nameIdentifierEntry['nameIdentifierScheme']) ? $nameIdentifierEntry['nameIdentifierScheme'] : ''),
-                            (isset($nameIdentifierEntry['schemeUri']) ? $nameIdentifierEntry['schemeUri'] : ''),
-                        );
-
-                        $creatorInstance->addNameIdentifier($nameIdentifierInst);
+                if (isset($dataciteCreator['nameIdentifiers']) && $dataciteCreator['nameIdentifiers'] > 0) {
+                    foreach ($dataciteCreator['nameIdentifiers'] as $dataciteCreatorNameIdentifier) {
+                        $creator->nameIdentifiers()->create([
+                            'identifier' => $dataciteCreatorNameIdentifier['nameIdentifier'],
+                            'scheme' => $dataciteCreatorNameIdentifier['nameIdentifierScheme'],
+                            'uri' => $dataciteCreatorNameIdentifier['schemeUri'] ?? '',
+                        ]);
                     }
-
                 }
 
-                if (isset($creator['affiliation']) && $creator['affiliation'] > 0) {
-                    foreach ($creator['affiliation'] as $affiliationEntry) {
-                        if (isset($affiliationEntry['name'])) {
-                            $affiliation = new Affiliation(
-                                (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
-                                (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
-                                (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
-                                (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
-                            );
-                        } elseif (! is_array($affiliationEntry)) {
-                            $affiliation = new Affiliation($affiliationEntry);
+                if (isset($dataciteCreator['affiliation']) && $dataciteCreator['affiliation'] > 0) {
+                    foreach ($dataciteCreator['affiliation'] as $dataciteCreatorAffiliation) {
+                        if(is_array($dataciteCreatorAffiliation)) {
+                            $creator->affiliations()->create([
+                                'name' => $dataciteCreatorAffiliation['name'],
+                                'identifier' => $dataciteCreatorAffiliation['affiliationIdentifier'] ?? '',
+                                'scheme' => $dataciteCreatorAffiliation['affiliationIdentifierScheme'] ?? '',
+                                'uri' => $dataciteCreatorAffiliation['schemeUri'] ?? '',
+                            ]);
+                        } else {
+                            $creator->affiliations()->create([
+                                'name' => $dataciteCreatorAffiliation,
+                                'identifier' => '',
+                                'scheme' => '',
+                                'uri' => '',
+                            ]);
                         }
-
-                        $creatorInstance->addAffiliation($affiliation);
                     }
 
                 }
-                $dataset->addCreator($creatorInstance);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

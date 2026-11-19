@@ -46,11 +46,109 @@ class DataCite4Faker
             'language' => $this->faker->optional(0.5, '')->languageCode,
             'dates' => $this->generateDates($this->faker->numberBetween(0, 3)),
             'publisher' => $this->generatePublisher(),
+            'creators' => $this->generateCreators($this->faker->numberBetween(1, 10)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateCreators($amount = 0): array
+    {
+        $creators = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $creators[] = $this->generateCreator();
+        }
+
+        return $creators;
+    }
+
+    private function generateCreator(): array
+    {
+        $creator = [
+            'name' => $this->faker->name,
+        ];
+
+        if($this->faker->boolean()) {
+            $creator['nameType'] = $this->faker->randomElement(['Personal', 'Organizational']);
+        }
+
+        if($this->faker->boolean()) {
+            $creator['givenName'] = $this->faker->firstName;
+        }
+
+        if($this->faker->boolean()) {
+            $creator['familyName'] = $this->faker->lastName;
+        }
+
+        if($this->faker->boolean()) {
+            $creator['nameIdentifiers'] = $this->generateNameIdentifiers($this->faker->numberBetween(1, 2));
+        }
+
+        if($this->faker->boolean()) {
+            $creator['affiliation'] = $this->generateAffiliations($this->faker->numberBetween(1, 2));
+        }
+
+        return $creator;
+    }
+
+    private function generateAffiliations($amount = 0): array
+    {
+        $affiliations = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $affiliations[] = $this->generateAffiliation();
+        }
+
+        return $affiliations;
+    }
+
+    private function generateAffiliation(): array|string
+    {
+        if($this->faker->boolean()) {
+            return $this->faker->company;
+        }
+
+        $affiliation = [
+            'name' => $this->faker->company,
+        ];
+
+        if($this->faker->boolean()) {
+            $affiliation['affiliationIdentifier'] = $this->faker->word;
+            $affiliation['affiliationIdentifierScheme'] = $this->faker->randomElement(['ROR', 'ISNI']);
+        }
+
+        if($this->faker->boolean()) {
+            $affiliation['schemeURI'] = $this->faker->url;
+        }
+
+        return $affiliation;
+    }
+    private function generateNameIdentifiers($amount = 0): array
+    {
+        $nameIdentifiers = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $nameIdentifiers[] = $this->generateNameIdentifier();
+        }
+
+        return $nameIdentifiers;
+    }
+
+    private function generateNameIdentifier(): array|string
+    {
+        $nameIdentifier = [
+            'nameIdentifier' => $this->faker->word,
+            'nameIdentifierScheme' => $this->faker->randomElement(['ORCID', 'ISNI', 'ROR']),
+        ];
+
+        if($this->faker->boolean()) {
+            $nameIdentifier['schemeURI'] = $this->faker->url;
+        }
+
+        return $nameIdentifier;
     }
 
     private function generatePublisher(): array|string

@@ -180,4 +180,37 @@ class Datacite3MapperTest extends TestCase
 
         $this->assertEquals($dataciteMetadata['data']['attributes']['publisher'], $dataPublication->publisher);
     }
+
+    public function test_map_creators()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapCreators($dataciteMetadata, $dataPublication);
+
+        $dataciteCreators = $dataciteMetadata['data']['attributes']['creators'];
+
+        $this->assertCount(count($dataciteCreators), $dataPublication->creators);
+
+        for ($i = 0; $i < count($dataPublication->creators); $i++) {
+            $this->assertEquals($dataPublication->creators[$i]->name, $dataciteCreators[$i]['name']);
+            $this->assertEquals($dataPublication->creators[$i]->first_name, $dataciteCreators[$i]['givenName'] ?? '');
+            $this->assertEquals($dataPublication->creators[$i]->last_name, $dataciteCreators[$i]['familyName'] ?? '');
+            $this->assertEquals($dataPublication->creators[$i]->name_type, $dataciteCreators[$i]['nameType'] ?? '');
+
+            for ($j = 0; $j < count($dataPublication->creators[$i]->nameIdentifiers); $j++) {
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->identifier, $dataciteCreators[$i]['nameIdentifiers'][$j]['nameIdentifier']);
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->scheme, $dataciteCreators[$i]['nameIdentifiers'][$j]['nameIdentifierScheme']);
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->uri, $dataciteCreators[$i]['nameIdentifiers'][$j]['schemeUri'] ?? '');
+            }
+
+            for ($j = 0; $j < count($dataPublication->creators[$i]->affiliations); $j++) {
+                $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->name, $dataciteCreators[$i]['affiliation'][$j]);
+                $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->identifier, '');
+                $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->scheme, '');
+                $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->uri, '');
+            }
+        }
+    }
 }

@@ -210,4 +210,44 @@ class Datacite4MapperTest extends TestCase
 
         $this->assertEquals($dataPublication->publisher, $datacitePublisherName);
     }
+
+    public function test_map_creators()
+    {
+        $dataciteMetadata = new DataCite4Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapCreators($dataciteMetadata, $dataPublication);
+
+        $dataciteCreators = $dataciteMetadata['data']['attributes']['creators'];
+
+        $this->assertCount(count($dataciteCreators), $dataPublication->creators);
+
+        for ($i = 0; $i < count($dataPublication->creators); $i++) {
+            $this->assertEquals($dataPublication->creators[$i]->name, $dataciteCreators[$i]['name']);
+            $this->assertEquals($dataPublication->creators[$i]->first_name, $dataciteCreators[$i]['givenName'] ?? '');
+            $this->assertEquals($dataPublication->creators[$i]->last_name, $dataciteCreators[$i]['familyName'] ?? '');
+            $this->assertEquals($dataPublication->creators[$i]->name_type, $dataciteCreators[$i]['nameType'] ?? '');
+
+            for ($j = 0; $j < count($dataPublication->creators[$i]->nameIdentifiers); $j++) {
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->identifier, $dataciteCreators[$i]['nameIdentifiers'][$j]['nameIdentifier']);
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->scheme, $dataciteCreators[$i]['nameIdentifiers'][$j]['nameIdentifierScheme']);
+                $this->assertEquals($dataPublication->creators[$i]->nameIdentifiers[$j]->uri, $dataciteCreators[$i]['nameIdentifiers'][$j]['schemeUri'] ?? '');
+            }
+
+            for ($j = 0; $j < count($dataPublication->creators[$i]->affiliations); $j++) {
+                if(is_array($dataciteCreators[$i]['affiliation'][$j])) {
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->name, $dataciteCreators[$i]['affiliation'][$j]['name']);
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->identifier, $dataciteCreators[$i]['affiliation'][$j]['affiliationIdentifier'] ?? '');
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->scheme, $dataciteCreators[$i]['affiliation'][$j]['affiliationIdentifierScheme'] ?? '');
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->uri, $dataciteCreators[$i]['affiliation'][$j]['schemeUri'] ?? '');
+                } else {
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->name, $dataciteCreators[$i]['affiliation'][$j]);
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->identifier, '');
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->scheme, '');
+                    $this->assertEquals($dataPublication->creators[$i]->affiliations[$j]->uri, '');
+                }
+            }
+        }
+    }
 }
