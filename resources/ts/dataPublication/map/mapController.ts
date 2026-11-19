@@ -32,20 +32,17 @@ import {
 import type { Facets, Paginator } from "../../types/map/components";
 import { SidebarTabs } from "./sidebarTabs";
 
-const BOUNDING_BOX_OF_THE_WORLD =
-    "[" +
-    [
-        LAT_LONG_RANGE.MIN.LONG,
-        LAT_LONG_RANGE.MIN.LAT,
-        LAT_LONG_RANGE.MAX.LONG,
-        LAT_LONG_RANGE.MAX.LAT,
-    ].toString() +
-    "]";
+const BOUNDING_BOX_OF_THE_WORLD = [
+    LAT_LONG_RANGE.MIN.LONG,
+    LAT_LONG_RANGE.MIN.LAT,
+    LAT_LONG_RANGE.MAX.LONG,
+    LAT_LONG_RANGE.MAX.LAT,
+];
 
 const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
 
 type SearchFilter = {
-    boundingBox: string;
+    boundingBox: [number, number, number, number] | undefined;
     page: number;
     pageSize: 10;
     /**
@@ -56,7 +53,7 @@ type SearchFilter = {
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
-    boundingBox: "",
+    boundingBox: undefined,
     page: 1,
     pageSize: 10,
     activeKeywordFilters: new Map(),
@@ -211,7 +208,7 @@ export class MapController {
         const boundingBox =
             this.searchFilters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
-            boundingBox: boundingBox,
+            boundingBox: "[" + boundingBox + "]",
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
             keywords: JSON.stringify(this.getKeywordsAsRequestArgs()),
@@ -225,6 +222,8 @@ export class MapController {
             method: "GET",
         });
         if (!response.ok) {
+            //TODO do we want this?
+            this.showLoadingScreen({ show: false });
             throw new Error(
                 "The response failed with status: " +
                     response.status +
@@ -246,7 +245,7 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
         this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -267,7 +266,10 @@ export class MapController {
     public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
+        this.searchFilters.boundingBox = getBoundingBoxWithDefaults(
+            this.mapView.drawBoundingBox(),
+        );
+
         if (!this.searchFilters.boundingBox) {
             await this.resetAndRePopulateAfterUpdate();
             return;
@@ -279,7 +281,7 @@ export class MapController {
     }
 
     public async removeDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
 
         await this.resetAndRePopulateAfterUpdate();
 
@@ -449,7 +451,7 @@ export class MapController {
         await this.populateBasedOnActiveFilters();
     }
     private async removeAllFilters() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
         this.searchFilters.activeKeywordFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
     }
@@ -514,6 +516,18 @@ export class MapController {
 function createIdForFreeText() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
+}
+function getBoundingBoxWithDefaults(
+    bbox: [number, number, number, number] | undefined,
+): [number, number, number, number] | undefined {
+    if (!bbox) return bbox;
+    const bboxWithDefaults: [number, number, number, number] = [...bbox];
+    const margin = 0.00001;
+    if (bboxWithDefaults[0] === bboxWithDefaults[2])
+        bboxWithDefaults[2] = bboxWithDefaults[2] + margin;
+    if (bboxWithDefaults[1] === bboxWithDefaults[3])
+        bboxWithDefaults[3] = bboxWithDefaults[3] + margin;
+    return bboxWithDefaults;
 }
 
 const mapController = new MapController();

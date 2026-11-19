@@ -319,8 +319,8 @@ export class MapView {
         this.map.addLayer(this.markers[activatedResultSetTab]);
         this.map.removeLayer(this.markers[deactivateResultSetTab]);
     }
-    public drawBoundingBox(): string {
-        if (!this.drawingBounds) return "";
+    public drawBoundingBox(): [number,number,number,number]|undefined {
+        if (!this.drawingBounds) return ;
         return this.drawingBoundsInMap();
     }
 
@@ -441,16 +441,16 @@ export class MapView {
         });
     }
 
-    private drawingBoundsInMap() {
+    private drawingBoundsInMap():[number,number,number,number]{
         assertNotNull(
             this.drawingBounds,
             "Bounds should not have been undefined. This is a bug.",
         );
+        this.map.fitBounds(this.drawingBounds);
 
         const sw = this.drawingBounds.getSouthWest();
         const ne = this.drawingBounds.getNorthEast();
-        const boundingBox = JSON.stringify([sw.lng, sw.lat, ne.lng, ne.lat]);
-        this.map.fitBounds(this.drawingBounds!);
+        const boundingBox:[number,number,number,number] = [sw.lng, sw.lat, ne.lng, ne.lat];
 
         return boundingBox;
     }
