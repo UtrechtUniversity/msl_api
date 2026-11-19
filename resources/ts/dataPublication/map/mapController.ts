@@ -522,11 +522,11 @@ function getBoundingBoxWithDefaults(
 ): [number, number, number, number] | undefined {
     if (!bbox) return bbox;
     const bboxWithDefaults: [number, number, number, number] = [...bbox];
-    const margin = 0.00001;
+    const minValue = 0.00001;
     if (bboxWithDefaults[0] === bboxWithDefaults[2])
-        bboxWithDefaults[2] = bboxWithDefaults[2] + margin;
+        bboxWithDefaults[2] = bboxWithDefaults[2] + minValue;
     if (bboxWithDefaults[1] === bboxWithDefaults[3])
-        bboxWithDefaults[3] = bboxWithDefaults[3] + margin;
+        bboxWithDefaults[3] = bboxWithDefaults[3] + minValue;
     return bboxWithDefaults;
 }
 
