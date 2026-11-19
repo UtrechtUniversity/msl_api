@@ -213,4 +213,15 @@ class Datacite3MapperTest extends TestCase
             }
         }
     }
+
+    public function test_map_version()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapVersion($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataPublication->datacite_version, $dataciteMetadata['data']['attributes']['version']);
+    }
 }

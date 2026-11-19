@@ -250,4 +250,15 @@ class Datacite4MapperTest extends TestCase
             }
         }
     }
+
+    public function test_map_version()
+    {
+        $dataciteMetadata = new DataCite4Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapVersion($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataPublication->datacite_version, $dataciteMetadata['data']['attributes']['version']);
+    }
 }

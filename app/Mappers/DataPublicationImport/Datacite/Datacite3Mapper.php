@@ -30,8 +30,8 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapDates($metadata, $dataPublication);
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
         $dataPublication = $this->mapContributors($metadata, $dataPublication);
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
@@ -414,13 +414,13 @@ class Datacite3Mapper implements MapperInterface
      * stores the version to the dataset
      * this entry is optional
      */
-    public function mapVersion(array $metadata, DataPublication $dataset): DataPublication
+    public function mapVersion(array $metadata, DataPublication $dataPublication): DataPublication
     {
         if (isset($metadata['data']['attributes']['version'])) {
-            $dataset->msl_datacite_version = (($metadata['data']['attributes']['version']) != null ? $metadata['data']['attributes']['version'] : '');
+            $dataPublication->datacite_version = (($metadata['data']['attributes']['version']) != null ? $metadata['data']['attributes']['version'] : '');
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

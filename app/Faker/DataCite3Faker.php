@@ -46,6 +46,7 @@ class DataCite3Faker
             'dates' => $this->generateDates($this->faker->numberBetween(0, 3)),
             'publisher' => $this->faker->company,
             'creators' => $this->generateCreators($this->faker->numberBetween(1, 10)),
+            'version' => $this->faker->optional(0.5, '')->randomElement(['1.0', '2.0', 'first']),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
