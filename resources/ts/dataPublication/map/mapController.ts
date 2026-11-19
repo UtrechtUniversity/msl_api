@@ -29,7 +29,7 @@ import {
     LAT_LONG_RANGE,
     RESULTS,
 } from "./config";
-import type { Facets, Paginator } from "../../types/map/components";
+import type { BoundingBox, Facets, Paginator } from "../../types/map/sharedBetweenComponents";
 import { SidebarTabs } from "./sidebarTabs";
 
 const BOUNDING_BOX_OF_THE_WORLD = [
@@ -42,7 +42,7 @@ const BOUNDING_BOX_OF_THE_WORLD = [
 const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
 
 type SearchFilter = {
-    boundingBox: [number, number, number, number] | undefined;
+    boundingBox: BoundingBox | undefined;
     page: number;
     pageSize: 10;
     /**
@@ -222,8 +222,7 @@ export class MapController {
             method: "GET",
         });
         if (!response.ok) {
-            //TODO do we want this?
-            this.showLoadingScreen({ show: false });
+
             throw new Error(
                 "The response failed with status: " +
                     response.status +
@@ -518,10 +517,10 @@ function createIdForFreeText() {
     return id;
 }
 function getBoundingBoxWithDefaults(
-    bbox: [number, number, number, number] | undefined,
-): [number, number, number, number] | undefined {
+    bbox: BoundingBox | undefined,
+):  BoundingBox | undefined {
     if (!bbox) return bbox;
-    const bboxWithDefaults: [number, number, number, number] = [...bbox];
+    const bboxWithDefaults:BoundingBox = [...bbox];
     const minValue = 0.00001;
     if (bboxWithDefaults[0] === bboxWithDefaults[2])
         bboxWithDefaults[2] = bboxWithDefaults[2] + minValue;
