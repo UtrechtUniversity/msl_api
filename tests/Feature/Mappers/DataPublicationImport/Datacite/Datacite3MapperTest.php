@@ -150,4 +150,23 @@ class Datacite3MapperTest extends TestCase
 
         $this->assertEquals($dataciteMetadata['data']['attributes']['language'], $dataPublication->language);
     }
+
+    public function test_map_dates()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapDates($dataciteMetadata, $dataPublication);
+
+        $dataciteDates = $dataciteMetadata['data']['attributes']['dates'];
+
+        $this->assertCount(count($dataciteDates), $dataPublication->dates);
+
+        for ($i = 0; $i < count($dataPublication->dates); $i++) {
+            $this->assertEquals($dataPublication->dates[$i]->date, $dataciteDates[$i]['date']);
+            $this->assertEquals($dataPublication->dates[$i]->type, $dataciteDates[$i]['dateType'] ?? '');
+            $this->assertEquals($dataPublication->dates[$i]->information, $dataciteDates[$i]['dateInformation'] ?? '');
+        }
+    }
 }

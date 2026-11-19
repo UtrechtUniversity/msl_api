@@ -28,8 +28,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
         $dataPublication = $this->mapLanguage($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapDates($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
@@ -354,23 +354,21 @@ class Datacite4Mapper implements MapperInterface
      * stores the dates to the dataset
      * this entry is optional
      */
-    public function mapDates(array $metadata, DataPublication $dataset): DataPublication
+    public function mapDates(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $allDates = $metadata['data']['attributes']['dates'];
 
         if (count($allDates) > 0) {
             foreach ($allDates as $date) {
-                $date = new Date(
-                    (isset($date['date']) ? $date['date'] : ''),
-                    (isset($date['dateType']) ? $date['dateType'] : ''),
-                    (isset($date['dateInformation']) ? $date['dateInformation'] : ''),
-                );
-
-                $dataset->addDate($date);
+                $dataPublication->dates()->create([
+                    'date' => $date['date'],
+                    'type' => $date['dateType'],
+                    'information' => $date['dateInformation'] ?? '',
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

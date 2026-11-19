@@ -44,11 +44,37 @@ class DataCite4Faker
             'url' => $this->faker->url,
             'fundingReferences' => $this->generateFundingReferences($this->faker->numberBetween(0, 3)),
             'language' => $this->faker->optional(0.5, '')->languageCode,
+            'dates' => $this->generateDates($this->faker->numberBetween(0, 3)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateDates($amount = 0): array
+    {
+        $dates = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $dates[] = $this->generateDate();
+        }
+
+        return $dates;
+    }
+
+    private function generateDate(): array
+    {
+        $date = [
+            'date' => $this->faker->date,
+            'dateType' => $this->faker->randomElement(['Collected', 'Created', 'Issued', 'Submitted', 'Updated', 'Accepted', 'Published']),
+        ];
+
+        if($this->faker->boolean()) {
+            $date['dateInformation'] = $this->faker->word;
+        }
+
+        return $date;
     }
 
     private function generateFundingReferences($amount = 0): array
