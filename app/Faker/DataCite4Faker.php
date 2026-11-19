@@ -43,6 +43,7 @@ class DataCite4Faker
             'relatedIdentifiers' => $this->generateRelatedIdentifiers($this->faker->numberBetween(0, 10)),
             'url' => $this->faker->url,
             'fundingReferences' => $this->generateFundingReferences($this->faker->numberBetween(0, 3)),
+            'language' => $this->faker->optional(0.5, '')->languageCode,
         ];
 
         $this->datacite['data']['attributes'] = $attributes;

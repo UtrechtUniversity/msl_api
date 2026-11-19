@@ -163,4 +163,15 @@ class Datacite4MapperTest extends TestCase
             $this->assertEquals($dataPublication->fundingReferences[$i]->award_title, $dataciteFundingReferences[$i]['awardTitle'] ?? '');
         }
     }
+
+    public function test_map_language()
+    {
+        $dataciteMetadata = new DataCite4Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite4Mapper();
+
+        $dataPublication = $mapper->mapLanguage($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataciteMetadata['data']['attributes']['language'], $dataPublication->language);
+    }
 }

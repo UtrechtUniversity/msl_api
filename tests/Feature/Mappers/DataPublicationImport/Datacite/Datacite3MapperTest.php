@@ -139,4 +139,15 @@ class Datacite3MapperTest extends TestCase
 
         $this->assertEquals($dataciteMetadata['data']['attributes']['url'], $dataPublication->source_landing_page_url);
     }
+
+    public function test_map_language()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = new DataPublication();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapLanguage($dataciteMetadata, $dataPublication);
+
+        $this->assertEquals($dataciteMetadata['data']['attributes']['language'], $dataPublication->language);
+    }
 }

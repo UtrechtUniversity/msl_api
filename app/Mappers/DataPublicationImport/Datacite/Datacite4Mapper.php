@@ -27,8 +27,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapRelatedIdentifiers($metadata, $dataPublication);
         $dataPublication = $this->mapUrl($metadata, $dataPublication);
         $dataPublication = $this->mapFundingReferences($metadata, $dataPublication);
+        $dataPublication = $this->mapLanguage($metadata, $dataPublication);
         /*
-        $dataPublication = $this->mapLanguages($metadata, $dataPublication);
         $dataPublication = $this->mapDates($metadata, $dataPublication);
         $dataPublication = $this->mapPublishers($metadata, $dataPublication);
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
@@ -337,7 +337,7 @@ class Datacite4Mapper implements MapperInterface
      * stores the language to the dataset
      * this entry is optional
      */
-    public function mapLanguages(array $metadata, DataPublication $dataset): DataPublication
+    public function mapLanguage(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $lang = '';
 
@@ -345,9 +345,9 @@ class Datacite4Mapper implements MapperInterface
             $lang = $metadata['data']['attributes']['language'];
         }
 
-        $dataset->msl_language = $lang;
+        $dataPublication->language = $lang;
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**
