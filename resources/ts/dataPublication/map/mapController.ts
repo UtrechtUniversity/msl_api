@@ -516,6 +516,8 @@ function createIdForFreeText() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
 }
+// We want to make sure that if the user selects a line instead of a box,
+// that they get results for a small bounding box, instead of no results.
 function getBoundingBoxWithDefaults(
     bbox: BoundingBox | undefined,
 ):  BoundingBox | undefined {
