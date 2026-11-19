@@ -32,7 +32,7 @@ import {
 import type { BoundingBox, Facets, Paginator } from "../../types/map/sharedBetweenComponents";
 import { SidebarTabs } from "./sidebarTabs";
 
-const BOUNDING_BOX_OF_THE_WORLD = [
+const BOUNDING_BOX_OF_THE_WORLD:BoundingBox = [
     LAT_LONG_RANGE.MIN.LONG,
     LAT_LONG_RANGE.MIN.LAT,
     LAT_LONG_RANGE.MAX.LONG,
@@ -205,7 +205,7 @@ export class MapController {
         meta: Paginator;
         facets: Facets;
     }> {
-        const boundingBox =
+        const boundingBox:BoundingBox =
             this.searchFilters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
             boundingBox: "[" + boundingBox + "]",
