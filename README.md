@@ -4,50 +4,6 @@
 
 This repository contains the code for the [EPOS MSL data catalogue](https://epos-msl.uu.nl/). The applications requires a specific [CKAN](https://ckan.org/) server is to run besides this application. This application is build using [Laravel](https://laravel.com/). The frontend is build using [Tailwind](https://tailwindcss.com/).
 
-## Laravel Sail / Docker
-
-The project contains a Docker Compose setup build using Laravel Sail. An vs code devcontainer setup is also included. If you are setting up the project where no PHP/Composer is available you can use the following command to install Laravel sail to run the containers. 
-
-```
-sudo docker run --rm \
-    -u "$(id -u):$(id -g)" \
-    -v "$(pwd):/var/www/html" \
-    -w /var/www/html \
-    laravelsail/php84-composer:latest \
-    composer install --ignore-platform-reqs
-```
-
-## Project setup
-
-Install project dependencies:
-
-```
-composer install
-```
-
-Add an .env file for the application. You can use the example as a base
-
-```
-cp .env.example .env
-```
-
-Create the application key:
-
-```
-php artisan key:generate
-```
-
-Run database migrations:
-
-```
-php artisan migrate
-```
-
-Run database seeders:
-
-```
-php artisan db:seed
-```
 
 ## Queue processor
 
@@ -99,18 +55,4 @@ If you manually create a database for testing its name, user credentials etc. ha
 
 More information about testing in Laravel can be found [here](https://laravel.com/docs/12.x/testing).
 
-## Frontend
 
-### Developement
-
-```
-npm run dev
-```
-
-### Builds
-
-```
-npm run build
-```
-
-## Composer
