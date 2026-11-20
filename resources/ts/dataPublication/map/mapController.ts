@@ -43,7 +43,7 @@ const BOUNDING_BOX_OF_THE_WORLD =
     "]";
 
 const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
-
+type ActiveTextFilterMap = Map<string, ActiveTextFilterInfo>;
 type SearchFilter = {
     boundingBox: string;
     page: number;
@@ -52,7 +52,7 @@ type SearchFilter = {
      * We want to keep order of active filters,
      *  without differentiating between keywords or free text search arguments.
      */
-    activeTextFilters: Map<string, ActiveTextFilterInfo>;
+    activeTextFilters: ActiveTextFilterMap;
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
@@ -189,7 +189,9 @@ export class MapController {
             facets: this.facets,
         } = await this.getResponse());
 
-        const keywords: TextFilters = this.getTextFiltersAsRequestArgs();
+        const keywords: TextFilters = getTreeKeywordFiltersAsRequestArgs(
+            this.searchFilters.activeTextFilters,
+        );
 
         this.keywordTree.updateTrees(this.facets, keywords);
 
@@ -220,9 +222,15 @@ export class MapController {
             boundingBox: boundingBox,
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
-            keywords: JSON.stringify(this.getTextFiltersAsRequestArgs()),
+            keywords: JSON.stringify(
+                getTreeKeywordFiltersAsRequestArgs(
+                    this.searchFilters.activeTextFilters,
+                ),
+            ),
         });
-        this.getFreeTextSearchQueriesAsArray().forEach((text) => {
+        getFreeTextSearchQueriesAsArray(
+            this.searchFilters.activeTextFilters,
+        ).forEach((text) => {
             params.append("freeText[]", text);
         });
         const route = "/api/geoJsonDataPublications?" + params;
@@ -420,27 +428,7 @@ export class MapController {
         );
         this.mapView.setSpatialFilterSettingLayers(resultSetActivatedTab);
     }
-    //TODO move it outside
-    private getFreeTextSearchQueriesAsArray(): string[] {
-        const freeText = [];
-        for (const [_, metadata] of this.searchFilters.activeTextFilters) {
-            if (metadata.type !== FREE_TEXT_SEARCH_QUERY) continue;
-            freeText.push(metadata.value);
-        }
-        return freeText;
-    }
-    //TODO move it outside
-    private getTextFiltersAsRequestArgs(): TextFilters {
-        const keywords: TextFilters = {};
-        for (const [_, metadata] of this.searchFilters.activeTextFilters) {
-            if (metadata.type !== TREE_KEYWORD) continue;
-            const values = keywords[metadata.name];
-            keywords[metadata.name] = values
-                ? [...values, metadata.value]
-                : [metadata.value];
-        }
-        return keywords;
-    }
+
     /**
      * Reset and populate after an update in filters.
      * In some cases, we want to not reset drawn bounding box
@@ -524,4 +512,28 @@ const searchTextField = new SearchTextField(mapController);
 function createIdForFreeTextSearchQuery() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
+}
+
+function getFreeTextSearchQueriesAsArray(
+    activeTextFilters: ActiveTextFilterMap,
+): string[] {
+    const freeText = [];
+    for (const [_, metadata] of activeTextFilters) {
+        if (metadata.type !== FREE_TEXT_SEARCH_QUERY) continue;
+        freeText.push(metadata.value);
+    }
+    return freeText;
+}
+function getTreeKeywordFiltersAsRequestArgs(
+    activeTextFilters: ActiveTextFilterMap,
+): TextFilters {
+    const keywords: TextFilters = {};
+    for (const [_, metadata] of activeTextFilters) {
+        if (metadata.type !== TREE_KEYWORD) continue;
+        const values = keywords[metadata.name];
+        keywords[metadata.name] = values
+            ? [...values, metadata.value]
+            : [metadata.value];
+    }
+    return keywords;
 }
