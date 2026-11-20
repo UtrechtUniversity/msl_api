@@ -34,8 +34,8 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
         $dataPublication = $this->mapContributors($metadata, $dataPublication);
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
         $dataPublication = $this->mapGeolocations($metadata, $dataPublication);
         */
@@ -516,17 +516,19 @@ class Datacite3Mapper implements MapperInterface
      * can be "application/xml" or "text/plain"
      * this entry is optional
      */
-    public function mapFormats(array $metadata, DataPublication $dataset): DataPublication
+    public function mapFormats(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $formats = $metadata['data']['attributes']['formats'];
 
         if (count($formats) > 0) {
             foreach ($formats as $format) {
-                $dataset->addFormat($format);
+                $dataPublication->formats()->create([
+                    'format' => $format,
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     public function mapSubjects(array $metadata, DataPublication $dataset): DataPublication

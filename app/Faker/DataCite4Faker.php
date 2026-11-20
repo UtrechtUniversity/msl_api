@@ -51,11 +51,28 @@ class DataCite4Faker
             'types' => $this->generateResourceTypes(),
             'contributors' => $this->generateContributors($this->faker->numberBetween(0, 5)),
             'sizes' => $this->generateSizes($this->faker->numberBetween(0, 3)),
+            'formats' => $this->generateFormats($this->faker->numberBetween(0, 3)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateFormats($amount = 0): array
+    {
+        $formats = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $this->generateFormat();
+        }
+
+        return $formats;
+    }
+
+    private function generateFormat(): string
+    {
+        return $this->faker->randomElement(['PDF', 'XML', 'MPG', 'application/pdf', 'text/xml']);
     }
 
     private function generateSizes($amount = 0): array

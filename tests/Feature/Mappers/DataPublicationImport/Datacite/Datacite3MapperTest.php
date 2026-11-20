@@ -287,4 +287,21 @@ class Datacite3MapperTest extends TestCase
             $this->assertEquals($dataPublication->sizes[$i]->size, $dataciteSizes[$i]);
         }
     }
+
+    public function test_map_formats()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapFormats($dataciteMetadata, $dataPublication);
+
+        $dataciteFormats = $dataciteMetadata['data']['attributes']['formats'];
+
+        $this->assertCount(count($dataciteFormats), $dataPublication->formats);
+
+        for ($i = 0; $i < count($dataPublication->formats); $i++) {
+            $this->assertEquals($dataPublication->formats[$i]->format, $dataciteFormats[$i]);
+        }
+    }
 }
