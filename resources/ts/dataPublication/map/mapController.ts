@@ -16,12 +16,12 @@ import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
 import { getElementByIdOrThrow } from "../../assertions";
 import {
-    FREE_TEXT_SEARCH_KEYWORD,
+    FREE_TEXT_SEARCH_QUERY,
     TREE_KEYWORD,
-    type ActiveKeywordFilterInfo,
-    type FreeTextAddInfo,
-    type KeywordFilters,
-    type TreeKeywordAddInfo,
+    type ActiveTextFilterInfo,
+    type FreeTextSearchQueryInfo,
+    type TextFilters,
+    type TreeKeywordInfo,
 } from "../../types/map/keywordFilters";
 import {
     getDefaultResultSetTab,
@@ -52,35 +52,39 @@ type SearchFilter = {
      * We want to keep order of active filters,
      *  without differentiating between keywords or free text search arguments.
      */
-    activeKeywordFilters: Map<string, ActiveKeywordFilterInfo>;
+    activeTextFilters: Map<string, ActiveTextFilterInfo>;
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
     boundingBox: "",
     page: 1,
     pageSize: 10,
-    activeKeywordFilters: new Map(),
+    activeTextFilters: new Map(),
 } as const;
 
 export class MapController {
     // UI elements
+    //TODO add comments
+    // TODO maybe resultsList? or something similarly generic
     resultsSidebar: ResultsSidebar;
+    keywordTree: KeywordTree;
+    sidebarTabs: SidebarTabs;
+    // TODO add a comment
     mapView: MapView;
     pagination: Pagination;
     resultsMetadata: ResultsMetadata;
-    keywordTree: KeywordTree;
-    appliedKeywords: AppliedKeywordFilters;
+    appliedKeywordFilters: AppliedKeywordFilters;
     startScreen: StartScreen;
+    //todo add a comment
     menuButtons: MenuButtons;
-    sidebarTabs: SidebarTabs;
+    loadingScreen: HTMLElement;
+
     // State
     resultSetActiveTab: GeoFeatureResultSet = getDefaultResultSetTab();
     results: GeoFeatureDataPublications | null = null;
     searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
     facets: Facets = {};
-    // Element
-    private loadingScreen: HTMLElement;
 
     constructor() {
         this.mapView = new MapView();
@@ -88,37 +92,42 @@ export class MapController {
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
-        this.appliedKeywords = new AppliedKeywordFilters();
+        this.appliedKeywordFilters = new AppliedKeywordFilters();
         this.startScreen = new StartScreen();
         this.menuButtons = new MenuButtons();
         this.sidebarTabs = new SidebarTabs();
 
         // Callbacks
         this.mapView.setHandlerfn({
-            onFeatureHover: this.handleFeatureHover,
-            onFeatureOut: this.handleFeatureOut,
+            //TODO hoveron hoverout
+            onFeatureHover: this.handleFeatureHoverOn,
+            onFeatureOut: this.handleFeatureHoverOut,
         });
+        //TODO hoveron hoverout
+
         this.resultsSidebar.setHandlerfn({
-            onFeatureHover: this.handleFeatureHover,
-            onFeatureOut: this.handleFeatureOut,
+            onFeatureHover: this.handleFeatureHoverOn,
+            onFeatureOut: this.handleFeatureHoverOut,
         });
+        // TODO check this
         this.pagination.setHandlerfn({
             onPageChange: async (page) => this.handlePageChange(page),
         });
+
         this.keywordTree.setHandlerfn({
             onTreeKeywordFilterAdd: async (
-                opts: TreeKeywordAddInfo,
+                args: TreeKeywordInfo,
             ): Promise<void> => {
-                await this.handleTreeKeywordFilterAdd(opts);
+                await this.handleTreeKeywordFilterAdd(args);
             },
-            onTreeKeywordFilterRemove: async (opts: {
+            onTreeKeywordFilterRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(args);
             },
             onTreeToggle: async (e: JQuery.ClickEvent): Promise<boolean> => {
                 let isConfirmed = true;
-                if (this.areActiveFilters()) {
+                if (this.hasActiveFilters()) {
                     const text = `Your currently selected filters will be removed when you switch trees.`;
                     isConfirmed = confirm(text);
                     !isConfirmed
@@ -128,19 +137,19 @@ export class MapController {
                 return isConfirmed;
             },
         });
-        this.appliedKeywords.setHandlerfn({
-            onActiveTreeKeywordRemove: async (opts: {
+        this.appliedKeywordFilters.setHandlerfn({
+            onActiveTreeKeywordRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(args);
             },
-            onActiveFreeTextKeywordRemove: async (opts: {
+            onActiveFreeTextQueryRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleFreeTextKeywordRemove(opts);
+                await this.handleFreeTextSearchQueryRemove(args);
             },
-            onActiveFilterRemoveAll: async () => {
-                await this.handleRemoveAllKeywordFilters();
+            onActiveTextFiltersRemoveAll: async () => {
+                await this.handleRemoveAllTextFilters();
             },
         });
         this.menuButtons.setHandlerfn({
@@ -155,7 +164,8 @@ export class MapController {
             onRemoveDrawing: async () => {
                 await this.removeDrawing();
             },
-            onSpatialFilter: (type: GeoFeatureResultSet) => {
+            // todo check in menubuttons if we have something similar
+            onSpatialFilterSetting: (type: GeoFeatureResultSet) => {
                 switch (type) {
                     case INSIDE:
                         this.insideFilter();
@@ -170,7 +180,7 @@ export class MapController {
         this.addRedirectionWarning();
     }
     public async init(): Promise<void> {
-        ({ facets: this.facets } = await this.getJsonFromRequest());
+        ({ facets: this.facets } = await this.getResponse());
         await this.keywordTree.init(this.facets);
     }
 
@@ -181,9 +191,9 @@ export class MapController {
             data: this.results,
             meta: this.paginator,
             facets: this.facets,
-        } = await this.getJsonFromRequest());
+        } = await this.getResponse());
 
-        const keywords: KeywordFilters = this.getKeywordsAsRequestArgs();
+        const keywords: TextFilters = this.getTextFiltersAsRequestArgs();
 
         this.keywordTree.updateTrees(this.facets, keywords);
 
@@ -203,7 +213,7 @@ export class MapController {
         )();
     }
 
-    public async getJsonFromRequest(): Promise<{
+    public async getResponse(): Promise<{
         data: GeoFeatureDataPublications;
         meta: Paginator;
         facets: Facets;
@@ -214,9 +224,9 @@ export class MapController {
             boundingBox: boundingBox,
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
-            keywords: JSON.stringify(this.getKeywordsAsRequestArgs()),
+            keywords: JSON.stringify(this.getTextFiltersAsRequestArgs()),
         });
-        this.getFreeTextFiltersAsArray().forEach((text) => {
+        this.getFreeTextSearchQueriesAsArray().forEach((text) => {
             params.append("freeText[]", text);
         });
         const route = "/api/geoJsonDataPublications?" + params;
@@ -252,18 +262,6 @@ export class MapController {
         this.mapView.setDrawingEnable(true);
     }
 
-    private setResultSetActivatedTab(
-        resultSetActivatedTab: GeoFeatureResultSet,
-    ) {
-        this.resultSetActiveTab = resultSetActivatedTab;
-        this.resultsSidebar.handleResultSetActivationOfTab(
-            resultSetActivatedTab,
-        )();
-        this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
-    }
-
-    // Methods about handling filtering
-
     public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
@@ -286,7 +284,8 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
     }
 
-    public handleFeatureHover = ({
+    //TODO make sure it is consistent
+    public handleFeatureHoverOn = ({
         doi,
         resultSet,
         scroll,
@@ -304,7 +303,7 @@ export class MapController {
         this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
     };
 
-    public handleFeatureOut = ({
+    public handleFeatureHoverOut = ({
         doi,
         resultSet,
     }: {
@@ -320,6 +319,7 @@ export class MapController {
         });
         this.resultsSidebar.removeHighlight(doi);
     };
+
     private async handlePageChange(page: number) {
         this.searchFilters.page = page;
         await this.resetAndRePopulateAfterUpdate({
@@ -327,18 +327,20 @@ export class MapController {
         });
     }
 
-    public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
-        const id = createIdForFreeText();
-        this.searchFilters.activeKeywordFilters.set(id, {
+    public async handleFreeTextSearchQueryAdd({
+        value,
+    }: FreeTextSearchQueryInfo) {
+        const id = createIdForFreeTextSearchQuery();
+        this.searchFilters.activeTextFilters.set(id, {
             value,
             id,
-            type: FREE_TEXT_SEARCH_KEYWORD,
+            type: FREE_TEXT_SEARCH_QUERY,
         });
 
-        this.appliedKeywords.addFilter({
+        this.appliedKeywordFilters.addTextFilter({
             id,
             value,
-            type: FREE_TEXT_SEARCH_KEYWORD,
+            type: FREE_TEXT_SEARCH_QUERY,
         });
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
@@ -346,17 +348,18 @@ export class MapController {
         this.sidebarTabs.activateSidebarTab(RESULTS);
     }
 
-    private async handleFreeTextKeywordRemove({ id }: { id: string }) {
-        this.searchFilters.activeKeywordFilters.delete(id);
-        this.appliedKeywords.removeFreeTextFilter({ id });
+    private async handleFreeTextSearchQueryRemove({ id }: { id: string }) {
+        this.searchFilters.activeTextFilters.delete(id);
+        this.appliedKeywordFilters.removeAppliedTextFilter({ id });
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
-    private async handleRemoveAllKeywordFilters() {
-        this.searchFilters.activeKeywordFilters = new Map();
 
-        this.appliedKeywords.removeAllActiveKeywordFilters();
+    private async handleRemoveAllTextFilters() {
+        this.searchFilters.activeTextFilters = new Map();
+
+        this.appliedKeywordFilters.removeAllActiveTextFilters();
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
@@ -366,9 +369,9 @@ export class MapController {
         name,
         value,
         displayName,
-    }: TreeKeywordAddInfo) {
+    }: TreeKeywordInfo) {
         const id = getIdForTreeKeyword({ value, name });
-        this.searchFilters.activeKeywordFilters.set(id, {
+        this.searchFilters.activeTextFilters.set(id, {
             value,
             name,
             id,
@@ -376,7 +379,7 @@ export class MapController {
             type: TREE_KEYWORD,
         });
 
-        this.appliedKeywords.addFilter({
+        this.appliedKeywordFilters.addTextFilter({
             id,
             name,
             value,
@@ -388,15 +391,11 @@ export class MapController {
         });
     }
 
-    private async handleTreeKeywordFilterRemove({
-        id,
-    }: {
+    private async handleTreeKeywordFilterRemove(args: {
         id: string;
     }): Promise<void> {
-        this.appliedKeywords.removeKeywordFilter({
-            id,
-        });
-        this.searchFilters.activeKeywordFilters.delete(id);
+        this.appliedKeywordFilters.removeAppliedTextFilter(args);
+        this.searchFilters.activeTextFilters.delete(args.id);
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
@@ -405,7 +404,7 @@ export class MapController {
     private addRedirectionWarning() {
         const listViewTab = getElementByIdOrThrow("list-view-tab");
         listViewTab.addEventListener("click", (e: Event) => {
-            if (this.areActiveFilters()) {
+            if (this.hasActiveFilters()) {
                 const text = `Switching to the list view will not transfer your applied filters in the map view. 
             \nDo you want to proceed?`;
                 if (!confirm(text)) {
@@ -417,18 +416,28 @@ export class MapController {
 
     // Other methods
 
-    private getFreeTextFiltersAsArray(): string[] {
+    private setResultSetActivatedTab(
+        resultSetActivatedTab: GeoFeatureResultSet,
+    ) {
+        this.resultSetActiveTab = resultSetActivatedTab;
+        this.resultsSidebar.handleResultSetActivationOfTab(
+            resultSetActivatedTab,
+        )();
+        this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
+    }
+    //TODO move it outside
+    private getFreeTextSearchQueriesAsArray(): string[] {
         const freeText = [];
-        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
-            if (metadata.type !== FREE_TEXT_SEARCH_KEYWORD) continue;
+        for (const [_, metadata] of this.searchFilters.activeTextFilters) {
+            if (metadata.type !== FREE_TEXT_SEARCH_QUERY) continue;
             freeText.push(metadata.value);
         }
         return freeText;
     }
-
-    private getKeywordsAsRequestArgs(): KeywordFilters {
-        const keywords: KeywordFilters = {};
-        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
+    //TODO move it outside
+    private getTextFiltersAsRequestArgs(): TextFilters {
+        const keywords: TextFilters = {};
+        for (const [_, metadata] of this.searchFilters.activeTextFilters) {
             if (metadata.type !== TREE_KEYWORD) continue;
             const values = keywords[metadata.name];
             keywords[metadata.name] = values
@@ -448,9 +457,10 @@ export class MapController {
         this.resetComponentsAndData(opts);
         await this.populateBasedOnActiveFilters();
     }
+
     private async removeAllFilters() {
         this.searchFilters.boundingBox = "";
-        this.searchFilters.activeKeywordFilters = new Map();
+        this.searchFilters.activeTextFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
     }
     /**
@@ -464,13 +474,13 @@ export class MapController {
         );
         this.resultsSidebar.resetList();
         this.resultsMetadata.removeMetadata();
-        if (this.searchFilters.activeKeywordFilters.size === 0) {
-            this.appliedKeywords.removeAllActiveKeywordFilters();
+        if (this.searchFilters.activeTextFilters.size === 0) {
+            this.appliedKeywordFilters.removeAllActiveTextFilters();
             if (!this.searchFilters.boundingBox) this.menuButtons.reset();
         }
         // If no filters are present,
         // we have to make sure that pagination elements get removed.
-        if (!this.areActiveFilters()) {
+        if (!this.hasActiveFilters()) {
             this.pagination.clear();
         }
         // When we have change in page, we don't want to reset the page,
@@ -485,20 +495,21 @@ export class MapController {
 
     private resetPage() {
         this.searchFilters.page = DEFAULT_SEARCH_FILTERS.page;
+        return;
     }
-    private areActiveFilters(): boolean {
+    private hasActiveFilters(): boolean {
         const filters = this.searchFilters;
         if (filters.boundingBox) return true;
-        if (filters.activeKeywordFilters.size !== 0) return true;
+        if (filters.activeTextFilters.size !== 0) return true;
         return false;
     }
 
     private async populateBasedOnActiveFilters() {
         this.showLoadingScreen({ show: true });
 
-        if (!this.areActiveFilters()) {
-            this.appliedKeywords.removeAllActiveKeywordFilters();
-            ({ facets: this.facets } = await this.getJsonFromRequest());
+        if (!this.hasActiveFilters()) {
+            this.appliedKeywordFilters.removeAllActiveTextFilters();
+            ({ facets: this.facets } = await this.getResponse());
             this.keywordTree.updateTrees(this.facets, {});
             this.sidebarTabs.activateSidebarTab(KEYWORDS);
         } else {
@@ -511,11 +522,11 @@ export class MapController {
     }
 }
 
-function createIdForFreeText() {
-    const id = "freeText" + "_" + crypto.randomUUID();
-    return id;
-}
-
 const mapController = new MapController();
 await mapController.init();
 const searchTextField = new SearchTextField(mapController);
+
+function createIdForFreeTextSearchQuery() {
+    const id = "freeText" + "_" + crypto.randomUUID();
+    return id;
+}

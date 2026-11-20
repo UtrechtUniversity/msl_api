@@ -31,7 +31,7 @@ export class MenuButtons {
         throwWhenCallBackNotInitialized;
     private onRemoveDrawing: () => Promise<void> | void =
         throwWhenCallBackNotInitialized;
-    private onSpatialFilter: (type: GeoFeatureResultSet) => void =
+    private onSpatialFilterSetting: (type: GeoFeatureResultSet) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
         this.overlappingFilterButton = this.createButton({
@@ -72,17 +72,17 @@ export class MenuButtons {
         onEnableDrawing,
         onCompleteDrawing,
         onRemoveDrawing,
-        onSpatialFilter,
+        onSpatialFilterSetting,
     }: {
         onEnableDrawing: () => void;
         onCompleteDrawing: () => Promise<false | true> | void;
         onRemoveDrawing: () => Promise<void> | void;
-        onSpatialFilter: (type: GeoFeatureResultSet) => void;
+        onSpatialFilterSetting: (type: GeoFeatureResultSet) => void;
     }) {
         this.onEnableDrawing = onEnableDrawing;
         this.onCompleteDrawing = onCompleteDrawing;
         this.onRemoveDrawing = onRemoveDrawing;
-        this.onSpatialFilter = onSpatialFilter;
+        this.onSpatialFilterSetting = onSpatialFilterSetting;
     }
 
     private stopPropagation(element: HTMLElement) {
@@ -243,11 +243,11 @@ export class MenuButtons {
         if (buttonType === OVERLAPPING) {
             this.overlappingFilterButton.classList.add(ACTIVE);
             this.insideFilterButton.classList.remove(ACTIVE);
-            this.onSpatialFilter(OVERLAPPING);
+            this.onSpatialFilterSetting(OVERLAPPING);
             return;
         }
         this.overlappingFilterButton.classList.remove(ACTIVE);
         this.insideFilterButton.classList.add(ACTIVE);
-        this.onSpatialFilter(INSIDE);
+        this.onSpatialFilterSetting(INSIDE);
     }
 }

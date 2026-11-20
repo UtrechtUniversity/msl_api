@@ -3,10 +3,10 @@ import {
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import {
-    FREE_TEXT_SEARCH_KEYWORD,
+    FREE_TEXT_SEARCH_QUERY,
     TREE_KEYWORD,
-    type ActiveKeywordFilterInfo,
-    type FreeTextAddInfoWithType,
+    type ActiveTextFilterInfo,
+    type FreeTextSearchQueryInfoWithType,
     type KeywordType,
     type TreeKeywordAddInfoWithType,
 } from "../../types/map/keywordFilters";
@@ -16,23 +16,23 @@ const NO_FILTER_ELEMENT =
     `<h6 class="italic">- no filter applied -</h6>` as const;
 
 export class AppliedKeywordFilters {
-    private areExistingAppliedFilters = false;
+    private hasExistingAppliedTextFilters = false;
     private removeBin: HTMLElement;
     private activeFilterContainer: HTMLElement;
-    private onActiveKeywordRemove: (opts: {
+    private onActiveTreeKeywordFilterRemove: (opts: {
         id: string;
     }) => Promise<void> | void = throwWhenCallBackNotInitialized;
-    private onActiveFreeTextRemove: (opts: {
+    private onActiveFreeTextSearchQueryRemove: (opts: {
         id: string;
     }) => Promise<void> | void = throwWhenCallBackNotInitialized;
-    private onActiveFilterRemoveAll: () => void | Promise<void> =
+    private onActiveTextFilterRemoveAll: () => void | Promise<void> =
         throwWhenCallBackNotInitialized;
 
     constructor() {
         const removeBin = getElementByIdOrThrow("remove-bin-icon");
         removeBin.hidden = true;
         removeBin.addEventListener("click", async () => {
-            await this.onActiveFilterRemoveAll();
+            await this.onActiveTextFilterRemoveAll();
         });
         this.removeBin = removeBin;
 
@@ -43,21 +43,21 @@ export class AppliedKeywordFilters {
     }
 
     public setHandlerfn({
-        onActiveTreeKeywordRemove: onActiveKeywordRemove,
-        onActiveFreeTextKeywordRemove: onActiveFreeTextRemove,
-        onActiveFilterRemoveAll,
+        onActiveTreeKeywordRemove: onActiveTreeKeywordFilterRemove,
+        onActiveFreeTextQueryRemove: onActiveFreeTextSearchQueryRemove,
+        onActiveTextFiltersRemoveAll: onActiveTextFilterRemoveAll,
     }: {
         onActiveTreeKeywordRemove: (opts: { id: string }) => Promise<void>;
-        onActiveFreeTextKeywordRemove: (opts: { id: string }) => Promise<void>;
-        onActiveFilterRemoveAll: () => Promise<void>;
+        onActiveFreeTextQueryRemove: (opts: { id: string }) => Promise<void>;
+        onActiveTextFiltersRemoveAll: () => Promise<void>;
     }) {
-        this.onActiveKeywordRemove = onActiveKeywordRemove;
-        this.onActiveFreeTextRemove = onActiveFreeTextRemove;
-
-        this.onActiveFilterRemoveAll = onActiveFilterRemoveAll;
+        this.onActiveTreeKeywordFilterRemove = onActiveTreeKeywordFilterRemove;
+        this.onActiveFreeTextSearchQueryRemove =
+            onActiveFreeTextSearchQueryRemove;
+        this.onActiveTextFilterRemoveAll = onActiveTextFilterRemoveAll;
     }
 
-    private addAppliedFilterElement({
+    private addAppliedTextFilterElement({
         type,
         displayName,
         id,
@@ -66,74 +66,68 @@ export class AppliedKeywordFilters {
         displayName: string;
         id: string;
     }) {
-        if (!this.areExistingAppliedFilters)
+        if (!this.hasExistingAppliedTextFilters)
             this.activeFilterContainer.innerHTML = "";
 
-        this.areExistingAppliedFilters = true;
+        this.hasExistingAppliedTextFilters = true;
 
         this.removeBin.hidden = false;
 
-        const element = createKeywordElement({
+        const element = createAppliedTextFilterElement({
             displayName,
             id,
         });
         element.addEventListener("click", async () => {
             type === TREE_KEYWORD
-                ? await this.onActiveKeywordRemove({ id })
-                : await this.onActiveFreeTextRemove({ id });
+                ? await this.onActiveTreeKeywordFilterRemove({ id })
+                : await this.onActiveFreeTextSearchQueryRemove({ id });
         });
 
         this.activeFilterContainer.appendChild(element);
     }
 
-    private removeAppliedFilterElement({ id }: { id: string }) {
+    private removeAppliedTextFilterElement({ id }: { id: string }) {
         const elementToRemove = getElementByIdOrThrow(id);
         elementToRemove.remove();
 
         return;
     }
 
-    public addFilter(opts: ActiveKeywordFilterInfo): void {
-        const { displayNameForUI } = this.getDisplayNameForKeywords(opts);
+    public addTextFilter(opts: ActiveTextFilterInfo): void {
+        const { displayNameForUI } = this.getDisplayNameForTextFilters(opts);
 
-        this.addAppliedFilterElement({
+        this.addAppliedTextFilterElement({
             type: opts.type,
             displayName: displayNameForUI,
             id: opts.id,
         });
     }
-    public removeAllActiveKeywordFilters() {
-        this.areExistingAppliedFilters = false;
-        this.resetAppliedKeywordsInUI();
+    public removeAllActiveTextFilters() {
+        this.hasExistingAppliedTextFilters = false;
+        this.resetAppliedTextFiltersInUI();
     }
-    private removeFilter({ id }: { id: string }): void {
-        this.removeAppliedFilterElement({
+    public removeAppliedTextFilter({ id }: { id: string }): void {
+        this.removeAppliedTextFilterElement({
             id,
         });
     }
-    public removeKeywordFilter(opts: { id: string }) {
-        this.removeFilter(opts);
-    }
 
-    public removeFreeTextFilter(opts: { id: string }) {
-        this.removeFilter(opts);
-    }
-    private getDisplayNameForKeywords(
-        opts: TreeKeywordAddInfoWithType | FreeTextAddInfoWithType,
+    private getDisplayNameForTextFilters(
+        opts: TreeKeywordAddInfoWithType | FreeTextSearchQueryInfoWithType,
     ): { displayNameForUI: string } {
-        if (opts.type === FREE_TEXT_SEARCH_KEYWORD)
+        if (opts.type === FREE_TEXT_SEARCH_QUERY)
             return { displayNameForUI: "Search: " + opts.value };
 
         return { displayNameForUI: opts.displayName };
     }
 
-    private resetAppliedKeywordsInUI() {
+    private resetAppliedTextFiltersInUI() {
         this.removeBin.hidden = true;
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;
     }
 }
 
-function createKeywordElement({
+function createAppliedTextFilterElement({
     displayName,
     id,
 }: {
