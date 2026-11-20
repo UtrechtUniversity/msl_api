@@ -49,11 +49,28 @@ class DataCite3Faker
             'version' => $this->faker->optional(0.5, '')->randomElement(['1.0', '2.0', 'first']),
             'types' => $this->generateResourceTypes(),
             'contributors' => $this->generateContributors($this->faker->numberBetween(0, 5)),
+            'sizes' => $this->generateSizes($this->faker->numberBetween(0, 3)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateSizes($amount = 0): array
+    {
+        $sizes = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $sizes[] = $this->generateSize();
+        }
+
+        return $sizes;
+    }
+
+    private function generateSize(): string
+    {
+        return $this->faker->randomElement(['15 pages', '6 MB', '45 minutes']);
     }
 
     private function generateContributors($amount = 0): array

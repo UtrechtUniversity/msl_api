@@ -271,4 +271,20 @@ class Datacite3MapperTest extends TestCase
         }
     }
 
+    public function test_map_sizes()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapSizes($dataciteMetadata, $dataPublication);
+
+        $dataciteSizes = $dataciteMetadata['data']['attributes']['sizes'];
+
+        $this->assertCount(count($dataciteSizes), $dataPublication->sizes);
+
+        for ($i = 0; $i < count($dataPublication->sizes); $i++) {
+            $this->assertEquals($dataPublication->sizes[$i]->size, $dataciteSizes[$i]);
+        }
+    }
 }

@@ -33,8 +33,8 @@ class Datacite3Mapper implements MapperInterface
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
         $dataPublication = $this->mapContributors($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
         $dataPublication = $this->mapGeolocations($metadata, $dataPublication);
@@ -496,17 +496,19 @@ class Datacite3Mapper implements MapperInterface
      * can be pages, or bytes
      * this entry is optional
      */
-    public function mapSizes(array $metadata, DataPublication $dataset): DataPublication
+    public function mapSizes(array $metadata, DataPublication $dataPublication): DataPublication
     {
         $sizes = $metadata['data']['attributes']['sizes'];
 
         if (count($sizes) > 0) {
             foreach ($sizes as $size) {
-                $dataset->addSize($size);
+                $dataPublication->sizes()->create([
+                    'size' => $size,
+                ]);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**
