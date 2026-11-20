@@ -3,7 +3,7 @@ import {
     OVERLAPPING,
     type GeoFeatureResultSet,
 } from "../../types/map/resultSet";
-import { ResultsSidebar } from "./resultsSidebar.js";
+import { SearchResultsList } from "./searchResultsList.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../../types/map/datapublication";
@@ -64,18 +64,18 @@ const DEFAULT_SEARCH_FILTERS: SearchFilter = {
 
 export class MapController {
     // UI elements
-    //TODO add comments
-    // TODO maybe resultsList? or something similarly generic
-    resultsSidebar: ResultsSidebar;
+    //list of results on sidebar
+    searchResultsList: SearchResultsList;
+    // keyword tree on sidebar
     keywordTree: KeywordTree;
+    // tabs for toggling between list of results and keyword tree
     sidebarTabs: SidebarTabs;
-    // TODO add a comment
     mapView: MapView;
     pagination: Pagination;
     resultsMetadata: ResultsMetadata;
     appliedKeywordFilters: AppliedKeywordFilters;
     startScreen: StartScreen;
-    //todo add a comment
+    // buttons regarding spatial filtering setting
     menuButtons: MenuButtons;
     loadingScreen: HTMLElement;
 
@@ -88,7 +88,7 @@ export class MapController {
 
     constructor() {
         this.mapView = new MapView();
-        this.resultsSidebar = new ResultsSidebar();
+        this.searchResultsList = new SearchResultsList();
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
@@ -105,7 +105,7 @@ export class MapController {
         });
         //TODO hoveron hoverout
 
-        this.resultsSidebar.setHandlerfn({
+        this.searchResultsList.setHandlerfn({
             onFeatureHover: this.handleFeatureHoverOn,
             onFeatureOut: this.handleFeatureHoverOut,
         });
@@ -198,7 +198,7 @@ export class MapController {
         this.keywordTree.updateTrees(this.facets, keywords);
 
         this.mapView.drawResponse(this.results);
-        this.resultsSidebar.populate(this.results, {
+        this.searchResultsList.populate(this.results, {
             includeIcons: !!this.searchFilters.boundingBox,
         });
 
@@ -208,7 +208,7 @@ export class MapController {
         this.resultsMetadata.updateMetadata(this.paginator);
 
         this.mapView.handleResultSetActivatedLayers(this.resultSetActiveTab);
-        this.resultsSidebar.handleResultSetActivationOfTab(
+        this.searchResultsList.handleResultSetActivationOfTab(
             this.resultSetActiveTab,
         )();
     }
@@ -300,7 +300,7 @@ export class MapController {
             resultSet: appliedResultSet,
             highlightOrReset: "highlight",
         });
-        this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
+        this.searchResultsList.highlight(doi, { scroll: scroll ?? false });
     };
 
     public handleFeatureHoverOut = ({
@@ -317,7 +317,7 @@ export class MapController {
             resultSet: appliedResultSet,
             highlightOrReset: "reset",
         });
-        this.resultsSidebar.removeHighlight(doi);
+        this.searchResultsList.removeHighlight(doi);
     };
 
     private async handlePageChange(page: number) {
@@ -420,7 +420,7 @@ export class MapController {
         resultSetActivatedTab: GeoFeatureResultSet,
     ) {
         this.resultSetActiveTab = resultSetActivatedTab;
-        this.resultsSidebar.handleResultSetActivationOfTab(
+        this.searchResultsList.handleResultSetActivationOfTab(
             resultSetActivatedTab,
         )();
         this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
@@ -472,7 +472,7 @@ export class MapController {
             // we want to keep the bounding box drawn
             opts ? { except: "rectangle" } : undefined,
         );
-        this.resultsSidebar.resetList();
+        this.searchResultsList.resetList();
         this.resultsMetadata.removeMetadata();
         if (this.searchFilters.activeTextFilters.size === 0) {
             this.appliedKeywordFilters.removeAllActiveTextFilters();

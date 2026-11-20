@@ -18,6 +18,10 @@ const SPATIAL_DRAW_ID = "spatial-draw" as const;
 const SPATIAL_REMOVE_ID = "spatial-remove" as const;
 
 const L = window.L;
+
+/**
+ * In this component, we add listeners for buttons about spatial filtering and manipulate their activity.
+ */
 export class MenuButtons {
     overlappingFilterButton: HTMLButtonElement;
     insideFilterButton: HTMLButtonElement;

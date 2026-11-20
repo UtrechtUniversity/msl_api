@@ -15,7 +15,15 @@ import {
 } from "../../assertions.js";
 import { RESULT_SET_CONFIG } from "./config";
 
-export class ResultsSidebar {
+/**
+ * In this component, we are handling all functionality relevant to the sidebar tab of results, that is:
+ *
+ * -  Populating the results list
+ *
+ * - Changing the style of a result based on hover-over/ hover-out, overlapping/inside tab activation
+ *  etc.
+ */
+export class SearchResultsList {
     private sidebar: HTMLElement;
     private listDiv: HTMLDivElement;
     /**

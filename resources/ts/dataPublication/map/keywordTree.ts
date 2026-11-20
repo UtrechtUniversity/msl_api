@@ -104,6 +104,10 @@ const IS_INTERPRETED_FILTER_ENABLED =
 // The filtering works the same for any keyword, since original is a subtree of interpreted.
 // Also, the main tree is the interpreted one,
 // and we might want to get rid of the original one sooner or later.
+
+/**
+ *In this component, we create the keyword tree and add needed functionality for the corresponding tab of sidebar.
+ */
 export class KeywordTree {
     private facets: Facets = {};
     private treeOptions = { interpreted: {}, original: {} };

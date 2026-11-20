@@ -41,7 +41,9 @@ type GroupedLayerMapping = GeoFeatureResultSetMapping<GroupedLayer>;
 type MarkerMapping = GeoFeatureResultSetMapping<FeatureGroup>;
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG);
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG);
-
+/**
+ * In this component, we include all functionality that is related to the leaflet map area.
+ */
 export class MapView {
     map: Map;
     // Drawing in map properties
