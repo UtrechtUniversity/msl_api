@@ -167,14 +167,14 @@ export class SearchResultsList {
         }
     }
 
-    public handleResultSetActivationOfTab(
+    public filterBasedOnSpatialFilterSetting(
         activatedResultSetTab: GeoFeatureResultSet,
     ): () => void {
         return () => {
-            this.activateResultSetTab(activatedResultSetTab);
+            this.filterResultsBasedOnResultSet(activatedResultSetTab);
         };
     }
-    private activateResultSetTab(
+    private filterResultsBasedOnResultSet(
         activatedResultSetTab: GeoFeatureResultSet,
     ): void {
         activatedResultSetTab === INSIDE

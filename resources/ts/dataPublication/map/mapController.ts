@@ -151,23 +151,23 @@ export class MapController {
         });
         this.menuButtons.setHandlerfn({
             onEnableDrawing: () => {
-                this.enableDrawing();
+                this.handleEnableDrawing();
                 return;
             },
             onCompleteDrawing: async () => {
-                await this.completeDrawing();
+                await this.handleCompleteDrawing();
                 return !!this.searchFilters.boundingBox;
             },
             onRemoveDrawing: async () => {
-                await this.removeDrawing();
+                await this.handleRemoveDrawing();
             },
             onSpatialFilterSetting: (type: GeoFeatureResultSet) => {
                 switch (type) {
                     case INSIDE:
-                        this.insideFilter();
+                        this.handleinsideFilterActivation();
                         break;
                     case OVERLAPPING:
-                        this.overlapFilter();
+                        this.handleOverlappingFilterActivation();
                         break;
                 }
             },
@@ -203,8 +203,8 @@ export class MapController {
 
         this.resultsMetadata.updateMetadata(this.paginator);
 
-        this.mapView.handleResultSetActivatedLayers(this.resultSetActiveTab);
-        this.searchResultsList.handleResultSetActivationOfTab(
+        this.mapView.setSpatialFilterSettingLayers(this.resultSetActiveTab);
+        this.searchResultsList.filterBasedOnSpatialFilterSetting(
             this.resultSetActiveTab,
         )();
     }
@@ -244,21 +244,21 @@ export class MapController {
     }
 
     // Methods about interactions
-    public insideFilter() {
+    public handleinsideFilterActivation() {
         this.setResultSetActivatedTab(INSIDE);
     }
-    public overlapFilter() {
+    public handleOverlappingFilterActivation() {
         this.setResultSetActivatedTab(OVERLAPPING);
     }
 
-    public enableDrawing() {
+    public handleEnableDrawing() {
         this.searchFilters.boundingBox = "";
         this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
 
-    public async completeDrawing() {
+    public async handleCompleteDrawing() {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
@@ -272,7 +272,7 @@ export class MapController {
         this.sidebarTabs.activateSidebarTab(RESULTS);
     }
 
-    public async removeDrawing() {
+    public async handleRemoveDrawing() {
         this.searchFilters.boundingBox = "";
 
         await this.resetAndRePopulateAfterUpdate();
@@ -280,7 +280,6 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
     }
 
-    //TODO make sure it is consistent
     public handleFeatureHoverOn = ({
         doi,
         resultSet,
@@ -416,10 +415,10 @@ export class MapController {
         resultSetActivatedTab: GeoFeatureResultSet,
     ) {
         this.resultSetActiveTab = resultSetActivatedTab;
-        this.searchResultsList.handleResultSetActivationOfTab(
+        this.searchResultsList.filterBasedOnSpatialFilterSetting(
             resultSetActivatedTab,
         )();
-        this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
+        this.mapView.setSpatialFilterSettingLayers(resultSetActivatedTab);
     }
     //TODO move it outside
     private getFreeTextSearchQueriesAsArray(): string[] {

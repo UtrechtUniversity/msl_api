@@ -313,7 +313,7 @@ export class MapView {
         }
         return;
     }
-    public handleResultSetActivatedLayers(
+    public setSpatialFilterSettingLayers(
         activatedResultSetTab: GeoFeatureResultSet,
     ) {
         const deactivateResultSetTab =
