@@ -32,6 +32,7 @@ import { DEFAULT_POPUP_OPTIONS } from "./popupStyling.js";
 import { PopupWithDirection } from "../../popupWithDirection";
 import { LAT_LONG_RANGE, RESULT_SET_CONFIG } from "./config";
 import type { Entries } from "../../types/entries";
+import type { BoundingBox } from "../../types/map/sharedBetweenComponents";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -319,8 +320,8 @@ export class MapView {
         this.map.addLayer(this.markers[activatedResultSetTab]);
         this.map.removeLayer(this.markers[deactivateResultSetTab]);
     }
-    public drawBoundingBox(): string {
-        if (!this.drawingBounds) return "";
+    public drawBoundingBox(): BoundingBox |undefined {
+        if (!this.drawingBounds) return ;
         return this.drawingBoundsInMap();
     }
 
@@ -441,16 +442,14 @@ export class MapView {
         });
     }
 
-    private drawingBoundsInMap() {
+    private drawingBoundsInMap():BoundingBox{
         assertNotNull(
             this.drawingBounds,
             "Bounds should not have been undefined. This is a bug.",
         );
-
         const sw = this.drawingBounds.getSouthWest();
         const ne = this.drawingBounds.getNorthEast();
-        const boundingBox = JSON.stringify([sw.lng, sw.lat, ne.lng, ne.lat]);
-        this.map.fitBounds(this.drawingBounds!);
+        const boundingBox:BoundingBox = [sw.lng, sw.lat, ne.lng, ne.lat];
 
         return boundingBox;
     }

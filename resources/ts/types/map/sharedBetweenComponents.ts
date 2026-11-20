@@ -1,3 +1,4 @@
+// Pagination
 export type Paginator = {
     resultsCount: number;
     totalCount: number;
@@ -11,4 +12,8 @@ export type Facets = {
         items: FacetItem[];
     };
 };
+// Keyword tree
 export type FacetItem = { name: string; display_name: string; count: string };
+
+// MapView
+export type BoundingBox=[number,number,number,number]

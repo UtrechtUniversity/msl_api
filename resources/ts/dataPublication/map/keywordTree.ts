@@ -3,7 +3,7 @@ import {
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
 import "jstree";
-import type { FacetItem, Facets } from "../../types/map/components";
+import type { FacetItem, Facets } from "../../types/map/sharedBetweenComponents";
 import type {
     KeywordFilters,
     TreeKeywordAddInfo,

@@ -1,5 +1,5 @@
 import { getElementByIdOrThrow } from "../../assertions";
-import type { Paginator } from "../../types/map/components";
+import type { Paginator } from "../../types/map/sharedBetweenComponents";
 
 export class ResultsMetadata {
     resultsMetadataElement: HTMLElement;

@@ -3,7 +3,7 @@ import {
     getElementByIdOrThrow,
     throwWhenCallBackNotInitialized,
 } from "../../assertions";
-import type { Paginator } from "../../types/map/components";
+import type { Paginator } from "../../types/map/sharedBetweenComponents";
 import { LEFT_ARROW_ICON, RIGHT_ARROW_ICON } from "./icons";
 
 export class Pagination {
