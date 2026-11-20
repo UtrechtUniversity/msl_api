@@ -168,21 +168,15 @@ export class SearchResultsList {
     }
 
     public filterBasedOnSpatialFilterSetting(
-        activatedResultSetTab: GeoFeatureResultSet,
-    ): () => void {
-        return () => {
-            this.filterResultsBasedOnResultSet(activatedResultSetTab);
-        };
-    }
-    private filterResultsBasedOnResultSet(
-        activatedResultSetTab: GeoFeatureResultSet,
+        resultSet: GeoFeatureResultSet,
     ): void {
-        activatedResultSetTab === INSIDE
+        resultSet === INSIDE
             ? this.nonInclusiveListView.forEach((item) =>
                   item.classList.add("disabled"),
               )
             : this.nonInclusiveListView.forEach((item) =>
                   item.classList.remove("disabled"),
               );
+        return;
     }
 }

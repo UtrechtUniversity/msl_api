@@ -206,7 +206,7 @@ export class MapController {
         this.mapView.setSpatialFilterSettingLayers(this.resultSetActiveTab);
         this.searchResultsList.filterBasedOnSpatialFilterSetting(
             this.resultSetActiveTab,
-        )();
+        );
     }
 
     public async getResponse(): Promise<{
@@ -417,7 +417,7 @@ export class MapController {
         this.resultSetActiveTab = resultSetActivatedTab;
         this.searchResultsList.filterBasedOnSpatialFilterSetting(
             resultSetActivatedTab,
-        )();
+        );
         this.mapView.setSpatialFilterSettingLayers(resultSetActivatedTab);
     }
     //TODO move it outside
