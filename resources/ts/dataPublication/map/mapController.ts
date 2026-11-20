@@ -228,7 +228,7 @@ export class MapController {
                 ),
             ),
         });
-        getFreeTextSearchQueriesAsArray(
+        getFreeTextSearchQueryList(
             this.searchFilters.activeTextFilters,
         ).forEach((text) => {
             params.append("freeText[]", text);
@@ -514,7 +514,7 @@ function createIdForFreeTextSearchQuery() {
     return id;
 }
 
-function getFreeTextSearchQueriesAsArray(
+function getFreeTextSearchQueryList(
     activeTextFilters: ActiveTextFilterMap,
 ): string[] {
     const freeText = [];
