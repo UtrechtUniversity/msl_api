@@ -447,8 +447,6 @@ export class MapView {
             this.drawingBounds,
             "Bounds should not have been undefined. This is a bug.",
         );
-        this.map.fitBounds(this.drawingBounds);
-
         const sw = this.drawingBounds.getSouthWest();
         const ne = this.drawingBounds.getNorthEast();
         const boundingBox:BoundingBox = [sw.lng, sw.lat, ne.lng, ne.lat];

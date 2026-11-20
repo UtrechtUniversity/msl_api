@@ -29,10 +29,14 @@ import {
     LAT_LONG_RANGE,
     RESULTS,
 } from "./config";
-import type { BoundingBox, Facets, Paginator } from "../../types/map/sharedBetweenComponents";
+import type {
+    BoundingBox,
+    Facets,
+    Paginator,
+} from "../../types/map/sharedBetweenComponents";
 import { SidebarTabs } from "./sidebarTabs";
 
-const BOUNDING_BOX_OF_THE_WORLD:BoundingBox = [
+const BOUNDING_BOX_OF_THE_WORLD: BoundingBox = [
     LAT_LONG_RANGE.MIN.LONG,
     LAT_LONG_RANGE.MIN.LAT,
     LAT_LONG_RANGE.MAX.LONG,
@@ -205,7 +209,7 @@ export class MapController {
         meta: Paginator;
         facets: Facets;
     }> {
-        const boundingBox:BoundingBox =
+        const boundingBox: BoundingBox =
             this.searchFilters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
             boundingBox: "[" + boundingBox + "]",
@@ -222,7 +226,6 @@ export class MapController {
             method: "GET",
         });
         if (!response.ok) {
-
             throw new Error(
                 "The response failed with status: " +
                     response.status +
@@ -520,14 +523,24 @@ function createIdForFreeText() {
 // that they get results for a small bounding box, instead of no results.
 function getBoundingBoxWithDefaults(
     bbox: BoundingBox | undefined,
-):  BoundingBox | undefined {
+): BoundingBox | undefined {
     if (!bbox) return bbox;
-    const bboxWithDefaults:BoundingBox = [...bbox];
+    const bboxWithDefaults: BoundingBox = [...bbox];
     const minValue = 0.00001;
-    if (bboxWithDefaults[0] === bboxWithDefaults[2])
-        bboxWithDefaults[2] = bboxWithDefaults[2] + minValue;
-    if (bboxWithDefaults[1] === bboxWithDefaults[3])
-        bboxWithDefaults[3] = bboxWithDefaults[3] + minValue;
+    if (bbox[0] === bbox[2]) {
+        if (bbox[2] <= BOUNDING_BOX_OF_THE_WORLD[2] - minValue) {
+            bboxWithDefaults[2] = bbox[2] + minValue;
+        } else {
+            bboxWithDefaults[0] = bbox[0] - minValue;
+        }
+    }
+    if (bbox[1] === bbox[3]) {
+        if (bbox[3] <= BOUNDING_BOX_OF_THE_WORLD[3] - minValue) {
+            bboxWithDefaults[3] = bbox[3] + minValue;
+        } else {
+            bboxWithDefaults[1] = bbox[1] - minValue;
+        }
+    }
     return bboxWithDefaults;
 }
 
