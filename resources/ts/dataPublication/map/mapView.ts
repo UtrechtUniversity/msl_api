@@ -97,8 +97,8 @@ export class MapView {
     }
 
     public setHandlerfn({
-        onFeatureHoverOn: onFeatureHover,
-        onFeatureHoverOut: onFeatureOut,
+        onFeatureHoverOn: onFeatureHoverOn,
+        onFeatureHoverOut: onFeatureHoverOut,
     }: {
         onFeatureHoverOn: ({
             doi,
@@ -117,8 +117,8 @@ export class MapView {
             resultSet: GeoFeatureResultSet;
         }) => void;
     }) {
-        this.onFeatureHoverOn = onFeatureHover;
-        this.onFeatureHoverOut = onFeatureOut;
+        this.onFeatureHoverOn = onFeatureHoverOn;
+        this.onFeatureHoverOut = onFeatureHoverOut;
     }
 
     public init() {
