@@ -33,8 +33,8 @@ class Datacite4Mapper implements MapperInterface
         $dataPublication = $this->mapCreators($metadata, $dataPublication);
         $dataPublication = $this->mapVersion($metadata, $dataPublication);
         $dataPublication = $this->mapResourceTypes($metadata, $dataPublication);
-        /*
         $dataPublication = $this->mapContributors($metadata, $dataPublication);
+        /*
         $dataPublication = $this->mapSizes($metadata, $dataPublication);
         $dataPublication = $this->mapFormats($metadata, $dataPublication);
         $dataPublication = $this->mapSubjects($metadata, $dataPublication);
@@ -439,7 +439,6 @@ class Datacite4Mapper implements MapperInterface
                             ]);
                         }
                     }
-
                 }
             }
         }
@@ -479,53 +478,53 @@ class Datacite4Mapper implements MapperInterface
      * stores the contributors to the dataset
      * this entry is optional
      */
-    public function mapContributors(array $metadata, DataPublication $dataset): DataPublication
+    public function mapContributors(array $metadata, DataPublication $dataPublication): DataPublication
     {
-        $allContributors = $metadata['data']['attributes']['contributors'];
+        $dataciteContributors = $metadata['data']['attributes']['contributors'];
 
-        if (count($allContributors) > 0) {
-            foreach ($allContributors as $contributor) {
-                $creatorInstance = new Contributor(
-                    (isset($contributor['name']) ? $contributor['name'] : ''),
-                    (isset($contributor['contributorType']) ? $contributor['contributorType'] : ''),
-                    (isset($contributor['givenName']) ? $contributor['givenName'] : ''),
-                    (isset($contributor['familyName']) ? $contributor['familyName'] : ''),
-                    (isset($contributor['nameType']) ? $contributor['nameType'] : '')
-                );
+        if (count($dataciteContributors) > 0) {
+            foreach ($dataciteContributors as $dataciteContributor) {
+                $contributor = $dataPublication->contributors()->create([
+                    'name' => $dataciteContributor['name'],
+                    'type' => $dataciteContributor['contributorType'],
+                    'first_name' => $dataciteContributor['givenName'] ?? '',
+                    'last_name' => $dataciteContributor['familyName'] ?? '',
+                    'name_type' => $dataciteContributor['nameType'] ?? '',
+                ]);
 
-                if (isset($contributor['nameIdentifiers']) && $contributor['nameIdentifiers'] > 0) {
-                    foreach ($contributor['nameIdentifiers'] as $nameIdentifierEntry) {
-                        $nameIdentifierInst = new NameIdentifier(
-                            (isset($nameIdentifierEntry['nameIdentifier']) ? $nameIdentifierEntry['nameIdentifier'] : ''),
-                            (isset($nameIdentifierEntry['nameIdentifierScheme']) ? $nameIdentifierEntry['nameIdentifierScheme'] : ''),
-                            (isset($nameIdentifierEntry['schemeUri']) ? $nameIdentifierEntry['schemeUri'] : ''),
-                        );
-
-                        $creatorInstance->addNameIdentifier($nameIdentifierInst);
+                if (isset($dataciteContributor['nameIdentifiers']) && $dataciteContributor['nameIdentifiers'] > 0) {
+                    foreach ($dataciteContributor['nameIdentifiers'] as $dataciteNameIdentifier) {
+                        $contributor->nameIdentifiers()->create([
+                            'identifier' => $dataciteNameIdentifier['nameIdentifier'],
+                            'scheme' => $dataciteNameIdentifier['nameIdentifierScheme'],
+                            'uri' => $dataciteNameIdentifier['schemeUri'] ?? '',
+                        ]);
                     }
                 }
 
-                if (isset($contributor['affiliation']) && $contributor['affiliation'] > 0) {
-                    foreach ($contributor['affiliation'] as $affiliationEntry) {
-                        if (isset($affiliationEntry['name'])) {
-                            $affiliation = new Affiliation(
-                                (isset($affiliationEntry['name']) ? $affiliationEntry['name'] : ''),
-                                (isset($affiliationEntry['affiliationIdentifier']) ? $affiliationEntry['affiliationIdentifier'] : ''),
-                                (isset($affiliationEntry['affiliationIdentifierScheme']) ? $affiliationEntry['affiliationIdentifierScheme'] : ''),
-                                (isset($affiliationEntry['schemeUri']) ? $affiliationEntry['schemeUri'] : ''),
-                            );
-                        } elseif (! is_array($affiliationEntry)) {
-                            $affiliation = new Affiliation($affiliationEntry);
+                if (isset($dataciteContributor['affiliation']) && $dataciteContributor['affiliation'] > 0) {
+                    foreach ($dataciteContributor['affiliation'] as $dataciteAffiliation) {
+                        if(is_array($dataciteAffiliation)) {
+                            $contributor->affiliations()->create([
+                                'name' => $dataciteAffiliation['name'],
+                                'identifier' => $dataciteAffiliation['affiliationIdentifier'] ?? '',
+                                'scheme' => $dataciteAffiliation['affiliationIdentifierScheme'] ?? '',
+                                'uri' => $dataciteAffiliation['schemeUri'] ?? '',
+                            ]);
+                        } else {
+                            $contributor->affiliations()->create([
+                                'name' => $dataciteAffiliation,
+                                'identifier' => '',
+                                'scheme' => '',
+                                'uri' => '',
+                            ]);
                         }
-
-                        $creatorInstance->addAffiliation($affiliation);
                     }
                 }
-                $dataset->addContributor($creatorInstance);
             }
         }
 
-        return $dataset;
+        return $dataPublication;
     }
 
     /**

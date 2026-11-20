@@ -236,4 +236,39 @@ class Datacite3MapperTest extends TestCase
         $this->assertEquals($dataPublication->resource_type, $dataciteMetadata['data']['attributes']['types']['resourceType']);
         $this->assertEquals($dataPublication->resource_type_general, $dataciteMetadata['data']['attributes']['types']['resourceTypeGeneral'] ?? '');
     }
+
+    public function test_map_contributors()
+    {
+        $dataciteMetadata = new DataCite3Faker()->populate()->toArray();
+        $dataPublication = DataPublication::factory()->create();
+        $mapper = new Datacite3Mapper();
+
+        $dataPublication = $mapper->mapContributors($dataciteMetadata, $dataPublication);
+
+        $dataciteContributors = $dataciteMetadata['data']['attributes']['contributors'];
+
+        $this->assertCount(count($dataciteContributors), $dataPublication->contributors);
+
+        for ($i = 0; $i < count($dataPublication->contributors); $i++) {
+            $this->assertEquals($dataPublication->contributors[$i]->name, $dataciteContributors[$i]['name']);
+            $this->assertEquals($dataPublication->contributors[$i]->type, $dataciteContributors[$i]['contributorType']);
+            $this->assertEquals($dataPublication->contributors[$i]->first_name, $dataciteContributors[$i]['givenName'] ?? '');
+            $this->assertEquals($dataPublication->contributors[$i]->last_name, $dataciteContributors[$i]['familyName'] ?? '');
+            $this->assertEquals($dataPublication->contributors[$i]->name_type, $dataciteContributors[$i]['nameType'] ?? '');
+
+            for ($j = 0; $j < count($dataPublication->contributors[$i]->nameIdentifiers); $j++) {
+                $this->assertEquals($dataPublication->contributors[$i]->nameIdentifiers[$j]->identifier, $dataciteContributors[$i]['nameIdentifiers'][$j]['nameIdentifier']);
+                $this->assertEquals($dataPublication->contributors[$i]->nameIdentifiers[$j]->scheme, $dataciteContributors[$i]['nameIdentifiers'][$j]['nameIdentifierScheme']);
+                $this->assertEquals($dataPublication->contributors[$i]->nameIdentifiers[$j]->uri, $dataciteContributors[$i]['nameIdentifiers'][$j]['schemeUri'] ?? '');
+            }
+
+            for ($j = 0; $j < count($dataPublication->contributors[$i]->affiliations); $j++) {
+                $this->assertEquals($dataPublication->contributors[$i]->affiliations[$j]->name, $dataciteContributors[$i]['affiliation'][$j]);
+                $this->assertEquals($dataPublication->contributors[$i]->affiliations[$j]->identifier, '');
+                $this->assertEquals($dataPublication->contributors[$i]->affiliations[$j]->scheme, '');
+                $this->assertEquals($dataPublication->contributors[$i]->affiliations[$j]->uri, '');
+            }
+        }
+    }
+
 }

@@ -49,11 +49,53 @@ class DataCite4Faker
             'creators' => $this->generateCreators($this->faker->numberBetween(1, 10)),
             'version' => $this->faker->optional(0.5, '')->randomElement(['1.0', '2.0', 'first']),
             'types' => $this->generateResourceTypes(),
+            'contributors' => $this->generateContributors($this->faker->numberBetween(0, 5)),
         ];
 
         $this->datacite['data']['attributes'] = $attributes;
 
         return $this;
+    }
+
+    private function generateContributors($amount = 0): array
+    {
+        $contributors = [];
+
+        for($i = 0; $i < $amount; $i++) {
+            $contributors[] = $this->generateContributor();
+        }
+
+        return $contributors;
+    }
+
+    private function generateContributor(): array
+    {
+        $contributor = [
+            'name' => $this->faker->name,
+            'contributorType' => $this->faker->randomElement(['ContactPerson', 'Distributor', 'RegistrationAgency', 'RightsHolder', 'WorkPackageLeader'])
+        ];
+
+        if($this->faker->boolean()) {
+            $contributor['nameType'] = $this->faker->randomElement(['Personal', 'Organizational']);
+        }
+
+        if($this->faker->boolean()) {
+            $contributor['givenName'] = $this->faker->firstName;
+        }
+
+        if($this->faker->boolean()) {
+            $contributor['familyName'] = $this->faker->lastName;
+        }
+
+        if($this->faker->boolean()) {
+            $contributor['nameIdentifiers'] = $this->generateNameIdentifiers($this->faker->numberBetween(1, 2));
+        }
+
+        if($this->faker->boolean()) {
+            $contributor['affiliation'] = $this->generateAffiliations($this->faker->numberBetween(1, 2));
+        }
+
+        return $contributor;
     }
 
     private function generateResourceTypes(): array
