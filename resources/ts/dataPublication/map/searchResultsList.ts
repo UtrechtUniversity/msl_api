@@ -32,14 +32,14 @@ export class SearchResultsList {
      *  the inclusive set with respect to  the exclusive set.
      */
     private nonInclusiveListView: HTMLElement[] = [];
-    public onFeatureHover: ({
+    public onFeatureHoverOn: ({
         doi,
         scroll,
     }: {
         doi: string;
         scroll: false;
     }) => void = throwWhenCallBackNotInitialized;
-    public onFeatureOut: ({ doi }: { doi: string }) => void =
+    public onFeatureHoverOut: ({ doi }: { doi: string }) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
         const sideBarElement: HTMLElement | null = document.querySelector(
@@ -58,14 +58,14 @@ export class SearchResultsList {
     }
 
     public setHandlerfn({
-        onFeatureHover,
-        onFeatureOut,
+        onFeatureHoverOn: onFeatureHoverOn,
+        onFeatureHoverOut: onFeatureHoverOut,
     }: {
-        onFeatureHover: ({ doi }: { doi: string }) => void;
-        onFeatureOut: ({ doi }: { doi: string }) => void;
+        onFeatureHoverOn: ({ doi }: { doi: string }) => void;
+        onFeatureHoverOut: ({ doi }: { doi: string }) => void;
     }): void {
-        this.onFeatureHover = onFeatureHover;
-        this.onFeatureOut = onFeatureOut;
+        this.onFeatureHoverOn = onFeatureHoverOn;
+        this.onFeatureHoverOut = onFeatureHoverOut;
     }
 
     /**
@@ -148,13 +148,13 @@ export class SearchResultsList {
             if (!dataPublication.isInclusive)
                 this.nonInclusiveListView.push(item);
             item.addEventListener("mouseover", () => {
-                this.onFeatureHover({
+                this.onFeatureHoverOn({
                     doi: dataPublication.doi,
                     scroll: false,
                 });
             });
             item.addEventListener("mouseleave", () => {
-                this.onFeatureOut({ doi: dataPublication.doi });
+                this.onFeatureHoverOut({ doi: dataPublication.doi });
             });
             this.listDiv.appendChild(item);
         }

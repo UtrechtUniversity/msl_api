@@ -70,7 +70,7 @@ export class MapView {
         "div",
         " leaflet-pane click-stopper-pane",
     );
-    private onFeatureHover: ({
+    private onFeatureHoverOn: ({
         doi,
         resultSet,
         scroll,
@@ -79,7 +79,7 @@ export class MapView {
         resultSet: GeoFeatureResultSet;
         scroll: true;
     }) => void = throwWhenCallBackNotInitialized;
-    private onFeatureOut: ({
+    private onFeatureHoverOut: ({
         doi,
         resultSet,
     }: {
@@ -97,10 +97,10 @@ export class MapView {
     }
 
     public setHandlerfn({
-        onFeatureHover,
-        onFeatureOut,
+        onFeatureHoverOn: onFeatureHover,
+        onFeatureHoverOut: onFeatureOut,
     }: {
-        onFeatureHover: ({
+        onFeatureHoverOn: ({
             doi,
             resultSet,
             scroll,
@@ -109,7 +109,7 @@ export class MapView {
             resultSet: GeoFeatureResultSet;
             scroll: true;
         }) => void;
-        onFeatureOut: ({
+        onFeatureHoverOut: ({
             doi,
             resultSet,
         }: {
@@ -117,8 +117,8 @@ export class MapView {
             resultSet: GeoFeatureResultSet;
         }) => void;
     }) {
-        this.onFeatureHover = onFeatureHover;
-        this.onFeatureOut = onFeatureOut;
+        this.onFeatureHoverOn = onFeatureHover;
+        this.onFeatureHoverOut = onFeatureOut;
     }
 
     public init() {
@@ -259,7 +259,7 @@ export class MapView {
                                     "highlight",
                                 );
 
-                                self.onFeatureHover({
+                                self.onFeatureHoverOn({
                                     doi,
                                     resultSet,
                                     scroll: true,
@@ -272,7 +272,7 @@ export class MapView {
                                 dataPublicationPopUpElement.classList.remove(
                                     "highlight",
                                 );
-                                self.onFeatureOut({ resultSet, doi });
+                                self.onFeatureHoverOut({ resultSet, doi });
                             },
                         );
                     }
@@ -345,7 +345,7 @@ export class MapView {
 
             // When hover over a geo feature
             layer.on("mouseover", () => {
-                this.onFeatureHover({ doi, resultSet, scroll: true });
+                this.onFeatureHoverOn({ doi, resultSet, scroll: true });
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -353,7 +353,7 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "reset",
                 });
-                this.onFeatureOut({ doi, resultSet });
+                this.onFeatureHoverOut({ doi, resultSet });
             });
         };
 

@@ -17,7 +17,7 @@ export class Pagination {
         count: number;
         currentPage: number;
     } | null = null;
-    public onPageChange: (page: number) => void =
+    public onPageChange: (page: number) => Promise<void> | void =
         throwWhenCallBackNotInitialized;
     constructor() {
         const paginateElement = getElementByIdOrThrow("results-pagination");
