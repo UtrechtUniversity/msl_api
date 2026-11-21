@@ -15,7 +15,15 @@ import {
 } from "../../assertions.js";
 import { RESULT_SET_CONFIG } from "./config";
 
-export class ResultsSidebar {
+/**
+ * In this component, we are handling all functionality relevant to the sidebar tab of results, that is:
+ *
+ * -  Populating the results list
+ *
+ * - Changing the style of a result based on hover-over/ hover-out, overlapping/inside tab activation
+ *  etc.
+ */
+export class SearchResultsList {
     private sidebar: HTMLElement;
     private listDiv: HTMLDivElement;
     /**
@@ -24,14 +32,14 @@ export class ResultsSidebar {
      *  the inclusive set with respect to  the exclusive set.
      */
     private nonInclusiveListView: HTMLElement[] = [];
-    public onFeatureHover: ({
+    public onFeatureHoverOn: ({
         doi,
         scroll,
     }: {
         doi: string;
         scroll: false;
     }) => void = throwWhenCallBackNotInitialized;
-    public onFeatureOut: ({ doi }: { doi: string }) => void =
+    public onFeatureHoverOut: ({ doi }: { doi: string }) => void =
         throwWhenCallBackNotInitialized;
     constructor() {
         const sideBarElement: HTMLElement | null = document.querySelector(
@@ -50,14 +58,14 @@ export class ResultsSidebar {
     }
 
     public setHandlerfn({
-        onFeatureHover,
-        onFeatureOut,
+        onFeatureHoverOn: onFeatureHoverOn,
+        onFeatureHoverOut: onFeatureHoverOut,
     }: {
-        onFeatureHover: ({ doi }: { doi: string }) => void;
-        onFeatureOut: ({ doi }: { doi: string }) => void;
+        onFeatureHoverOn: ({ doi }: { doi: string }) => void;
+        onFeatureHoverOut: ({ doi }: { doi: string }) => void;
     }): void {
-        this.onFeatureHover = onFeatureHover;
-        this.onFeatureOut = onFeatureOut;
+        this.onFeatureHoverOn = onFeatureHoverOn;
+        this.onFeatureHoverOut = onFeatureHoverOut;
     }
 
     /**
@@ -140,13 +148,13 @@ export class ResultsSidebar {
             if (!dataPublication.isInclusive)
                 this.nonInclusiveListView.push(item);
             item.addEventListener("mouseover", () => {
-                this.onFeatureHover({
+                this.onFeatureHoverOn({
                     doi: dataPublication.doi,
                     scroll: false,
                 });
             });
             item.addEventListener("mouseleave", () => {
-                this.onFeatureOut({ doi: dataPublication.doi });
+                this.onFeatureHoverOut({ doi: dataPublication.doi });
             });
             this.listDiv.appendChild(item);
         }
@@ -159,22 +167,16 @@ export class ResultsSidebar {
         }
     }
 
-    public handleResultSetActivationOfTab(
-        activatedResultSetTab: GeoFeatureResultSet,
-    ): () => void {
-        return () => {
-            this.activateResultSetTab(activatedResultSetTab);
-        };
-    }
-    private activateResultSetTab(
-        activatedResultSetTab: GeoFeatureResultSet,
+    public filterBasedOnSpatialFilterSetting(
+        resultSet: GeoFeatureResultSet,
     ): void {
-        activatedResultSetTab === INSIDE
+        resultSet === INSIDE
             ? this.nonInclusiveListView.forEach((item) =>
                   item.classList.add("disabled"),
               )
             : this.nonInclusiveListView.forEach((item) =>
                   item.classList.remove("disabled"),
               );
+        return;
     }
 }

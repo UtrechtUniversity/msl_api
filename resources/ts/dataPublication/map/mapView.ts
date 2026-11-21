@@ -41,7 +41,9 @@ type GroupedLayerMapping = GeoFeatureResultSetMapping<GroupedLayer>;
 type MarkerMapping = GeoFeatureResultSetMapping<FeatureGroup>;
 const southWest = L.latLng(LAT_LONG_RANGE.MIN.LAT, LAT_LONG_RANGE.MIN.LONG);
 const northEast = L.latLng(LAT_LONG_RANGE.MAX.LAT, LAT_LONG_RANGE.MAX.LONG);
-
+/**
+ * In this component, we include all functionality that is related to the leaflet map area.
+ */
 export class MapView {
     map: Map;
     // Drawing in map properties
@@ -68,7 +70,7 @@ export class MapView {
         "div",
         " leaflet-pane click-stopper-pane",
     );
-    private onFeatureHover: ({
+    private onFeatureHoverOn: ({
         doi,
         resultSet,
         scroll,
@@ -77,7 +79,7 @@ export class MapView {
         resultSet: GeoFeatureResultSet;
         scroll: true;
     }) => void = throwWhenCallBackNotInitialized;
-    private onFeatureOut: ({
+    private onFeatureHoverOut: ({
         doi,
         resultSet,
     }: {
@@ -95,10 +97,10 @@ export class MapView {
     }
 
     public setHandlerfn({
-        onFeatureHover,
-        onFeatureOut,
+        onFeatureHoverOn: onFeatureHoverOn,
+        onFeatureHoverOut: onFeatureHoverOut,
     }: {
-        onFeatureHover: ({
+        onFeatureHoverOn: ({
             doi,
             resultSet,
             scroll,
@@ -107,7 +109,7 @@ export class MapView {
             resultSet: GeoFeatureResultSet;
             scroll: true;
         }) => void;
-        onFeatureOut: ({
+        onFeatureHoverOut: ({
             doi,
             resultSet,
         }: {
@@ -115,8 +117,8 @@ export class MapView {
             resultSet: GeoFeatureResultSet;
         }) => void;
     }) {
-        this.onFeatureHover = onFeatureHover;
-        this.onFeatureOut = onFeatureOut;
+        this.onFeatureHoverOn = onFeatureHoverOn;
+        this.onFeatureHoverOut = onFeatureHoverOut;
     }
 
     public init() {
@@ -257,7 +259,7 @@ export class MapView {
                                     "highlight",
                                 );
 
-                                self.onFeatureHover({
+                                self.onFeatureHoverOn({
                                     doi,
                                     resultSet,
                                     scroll: true,
@@ -270,7 +272,7 @@ export class MapView {
                                 dataPublicationPopUpElement.classList.remove(
                                     "highlight",
                                 );
-                                self.onFeatureOut({ resultSet, doi });
+                                self.onFeatureHoverOut({ resultSet, doi });
                             },
                         );
                     }
@@ -311,7 +313,7 @@ export class MapView {
         }
         return;
     }
-    public handleResultSetActivatedLayers(
+    public setSpatialFilterSettingLayers(
         activatedResultSetTab: GeoFeatureResultSet,
     ) {
         const deactivateResultSetTab =
@@ -343,7 +345,7 @@ export class MapView {
 
             // When hover over a geo feature
             layer.on("mouseover", () => {
-                this.onFeatureHover({ doi, resultSet, scroll: true });
+                this.onFeatureHoverOn({ doi, resultSet, scroll: true });
             });
             layer.on("mouseout", () => {
                 this.setMarkersStyle({
@@ -351,7 +353,7 @@ export class MapView {
                     resultSet,
                     highlightOrReset: "reset",
                 });
-                this.onFeatureOut({ doi, resultSet });
+                this.onFeatureHoverOut({ doi, resultSet });
             });
         };
 

@@ -1,35 +1,33 @@
-export type KeywordFilters = { [key: string]: string[] };
-export type ActiveKeywordFilterInfo =
-    | TreeKeywordActiveInfo
-    | FreeTextActiveInfo;
+export type TextFilters = { [key: string]: string[] };
+export type ActiveTextFilterInfo = TreeKeywordActiveInfo | FreeTextActiveInfo;
 
 interface TreeKeywordActiveInfo extends TreeKeywordAddInfoWithType {
     id: string;
 }
-interface FreeTextActiveInfo extends FreeTextAddInfoWithType {
+interface FreeTextActiveInfo extends FreeTextSearchQueryInfoWithType {
     id: string;
 }
 
-export interface TreeKeywordAddInfoWithType extends TreeKeywordAddInfo {
+export interface TreeKeywordAddInfoWithType extends TreeKeywordInfo {
     type: TreeKeyword;
 }
-export interface FreeTextAddInfoWithType extends FreeTextAddInfo {
-    type: FreeTextSearchKeyword;
+export interface FreeTextSearchQueryInfoWithType extends FreeTextSearchQueryInfo {
+    type: FreeTextSearchQuery;
 }
-export type TreeKeywordAddInfo = {
+export type TreeKeywordInfo = {
     name: string;
     value: string;
     displayName: string;
 };
 
-export type FreeTextAddInfo = {
+export type FreeTextSearchQueryInfo = {
     value: string;
 };
 
 export const TREE_KEYWORD = "treeKeyword" as const;
 export type TreeKeyword = typeof TREE_KEYWORD;
 
-export const FREE_TEXT_SEARCH_KEYWORD = "freeTextKeyword" as const;
-export type FreeTextSearchKeyword = typeof FREE_TEXT_SEARCH_KEYWORD;
+export const FREE_TEXT_SEARCH_QUERY = "freeTextSearchQuery" as const;
+export type FreeTextSearchQuery = typeof FREE_TEXT_SEARCH_QUERY;
 
-export type KeywordType = TreeKeyword | FreeTextSearchKeyword;
+export type KeywordType = TreeKeyword | FreeTextSearchQuery;

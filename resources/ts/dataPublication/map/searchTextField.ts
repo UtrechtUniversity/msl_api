@@ -18,7 +18,7 @@ export class SearchTextField {
             const inputField = getElementByIdOrThrow(
                 "search-text",
             ) as HTMLInputElement;
-            await self.mapController.handleSearchTextAdd({
+            await self.mapController.handleFreeTextSearchQueryAdd({
                 value: inputField.value,
             });
             inputField.value = "";

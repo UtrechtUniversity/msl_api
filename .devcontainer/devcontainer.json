@@ -10,5 +10,6 @@
             "settings": {}
         }
     },
+    "remoteUser": "1000",
     "postCreateCommand": "echo 'source /var/www/.nvm/nvm.sh' >> ~/.bashrc"
 }

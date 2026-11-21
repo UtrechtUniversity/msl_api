@@ -5,8 +5,8 @@ import {
 import "jstree";
 import type { FacetItem, Facets } from "../../types/map/components";
 import type {
-    KeywordFilters,
-    TreeKeywordAddInfo,
+    TextFilters,
+    TreeKeywordInfo,
 } from "../../types/map/keywordFilters";
 import { omit } from "lodash";
 
@@ -104,6 +104,10 @@ const IS_INTERPRETED_FILTER_ENABLED =
 // The filtering works the same for any keyword, since original is a subtree of interpreted.
 // Also, the main tree is the interpreted one,
 // and we might want to get rid of the original one sooner or later.
+
+/**
+ *In this component, we create the keyword tree and add needed functionality for the corresponding tab of sidebar.
+ */
 export class KeywordTree {
     private facets: Facets = {};
     private treeOptions = { interpreted: {}, original: {} };
@@ -123,7 +127,7 @@ export class KeywordTree {
     private searchFilters: JQuery<HTMLInputElement> = $("#search-filters");
 
     private onKeywordFilterAdd: (
-        filter: TreeKeywordAddInfo,
+        filter: TreeKeywordInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private onKeywordFilterRemove: (opts: {
         id: string;
@@ -135,7 +139,7 @@ export class KeywordTree {
         onTreeKeywordFilterRemove: onKeywordFilterRemove,
         onTreeToggle: onTreeToggle,
     }: {
-        onTreeKeywordFilterAdd: (opts: TreeKeywordAddInfo) => Promise<void>;
+        onTreeKeywordFilterAdd: (opts: TreeKeywordInfo) => Promise<void>;
         onTreeKeywordFilterRemove: (opts: { id: string }) => Promise<void>;
         onTreeToggle: (e: JQuery.ClickEvent) => Promise<boolean>;
     }) {
@@ -259,7 +263,7 @@ export class KeywordTree {
         };
     }
 
-    public updateTrees(facets: Facets, activeFilters: KeywordFilters) {
+    public updateTrees(facets: Facets, activeFilters: TextFilters) {
         this.facets = facets;
         this.updateTree(this.dataOriginal, ORIGINAL, activeFilters);
         this.updateTree(this.dataInterpreted, INTERPRETED, activeFilters);
@@ -280,7 +284,7 @@ export class KeywordTree {
     private updateTree(
         nodes: (TreeNode | TreeSubNode)[],
         treeType: Original | Interpreted,
-        activeFilters: KeywordFilters,
+        activeFilters: TextFilters,
         { disableByDefault }: { disableByDefault: boolean } = {
             disableByDefault: false,
         },

@@ -3,7 +3,7 @@ import {
     OVERLAPPING,
     type GeoFeatureResultSet,
 } from "../../types/map/resultSet";
-import { ResultsSidebar } from "./resultsSidebar.js";
+import { SearchResultsList } from "./searchResultsList.js";
 import { MenuButtons } from "./menuButtons";
 import { MapView } from "./mapView";
 import type { GeoFeatureDataPublications } from "../../types/map/datapublication";
@@ -16,12 +16,12 @@ import { AppliedKeywordFilters } from "./appliedKeywordFilters";
 import { StartScreen } from "./startScreen";
 import { getElementByIdOrThrow } from "../../assertions";
 import {
-    FREE_TEXT_SEARCH_KEYWORD,
+    FREE_TEXT_SEARCH_QUERY,
     TREE_KEYWORD,
-    type ActiveKeywordFilterInfo,
-    type FreeTextAddInfo,
-    type KeywordFilters,
-    type TreeKeywordAddInfo,
+    type ActiveTextFilterInfo,
+    type FreeTextSearchQueryInfo,
+    type TextFilters,
+    type TreeKeywordInfo,
 } from "../../types/map/keywordFilters";
 import {
     getDefaultResultSetTab,
@@ -43,7 +43,7 @@ const BOUNDING_BOX_OF_THE_WORLD =
     "]";
 
 const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
-
+type ActiveTextFilterMap = Map<string, ActiveTextFilterInfo>;
 type SearchFilter = {
     boundingBox: string;
     page: number;
@@ -52,73 +52,79 @@ type SearchFilter = {
      * We want to keep order of active filters,
      *  without differentiating between keywords or free text search arguments.
      */
-    activeKeywordFilters: Map<string, ActiveKeywordFilterInfo>;
+    activeTextFilters: ActiveTextFilterMap;
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
     boundingBox: "",
     page: 1,
     pageSize: 10,
-    activeKeywordFilters: new Map(),
+    activeTextFilters: new Map(),
 } as const;
 
 export class MapController {
     // UI elements
-    resultsSidebar: ResultsSidebar;
+    //list of results on sidebar
+    searchResultsList: SearchResultsList;
+    // keyword tree on sidebar
+    keywordTree: KeywordTree;
+    // tabs for toggling between list of results and keyword tree
+    sidebarTabs: SidebarTabs;
     mapView: MapView;
     pagination: Pagination;
     resultsMetadata: ResultsMetadata;
-    keywordTree: KeywordTree;
-    appliedKeywords: AppliedKeywordFilters;
+    appliedTextFilters: AppliedKeywordFilters;
     startScreen: StartScreen;
+    // buttons regarding spatial filtering setting
     menuButtons: MenuButtons;
-    sidebarTabs: SidebarTabs;
+    loadingScreen: HTMLElement;
+
     // State
     resultSetActiveTab: GeoFeatureResultSet = getDefaultResultSetTab();
     results: GeoFeatureDataPublications | null = null;
     searchFilters: SearchFilter = cloneDeep(DEFAULT_SEARCH_FILTERS);
     paginator: Paginator | null = null;
     facets: Facets = {};
-    // Element
-    private loadingScreen: HTMLElement;
 
     constructor() {
         this.mapView = new MapView();
-        this.resultsSidebar = new ResultsSidebar();
+        this.searchResultsList = new SearchResultsList();
         this.pagination = new Pagination();
         this.resultsMetadata = new ResultsMetadata();
         this.keywordTree = new KeywordTree();
-        this.appliedKeywords = new AppliedKeywordFilters();
+        this.appliedTextFilters = new AppliedKeywordFilters();
         this.startScreen = new StartScreen();
         this.menuButtons = new MenuButtons();
         this.sidebarTabs = new SidebarTabs();
 
         // Callbacks
         this.mapView.setHandlerfn({
-            onFeatureHover: this.handleFeatureHover,
-            onFeatureOut: this.handleFeatureOut,
+            onFeatureHoverOn: this.handleFeatureHoverOn,
+            onFeatureHoverOut: this.handleFeatureHoverOut,
         });
-        this.resultsSidebar.setHandlerfn({
-            onFeatureHover: this.handleFeatureHover,
-            onFeatureOut: this.handleFeatureOut,
+
+        this.searchResultsList.setHandlerfn({
+            onFeatureHoverOn: this.handleFeatureHoverOn,
+            onFeatureHoverOut: this.handleFeatureHoverOut,
         });
         this.pagination.setHandlerfn({
             onPageChange: async (page) => this.handlePageChange(page),
         });
+
         this.keywordTree.setHandlerfn({
             onTreeKeywordFilterAdd: async (
-                opts: TreeKeywordAddInfo,
+                args: TreeKeywordInfo,
             ): Promise<void> => {
-                await this.handleTreeKeywordFilterAdd(opts);
+                await this.handleTreeKeywordFilterAdd(args);
             },
-            onTreeKeywordFilterRemove: async (opts: {
+            onTreeKeywordFilterRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(args);
             },
             onTreeToggle: async (e: JQuery.ClickEvent): Promise<boolean> => {
                 let isConfirmed = true;
-                if (this.areActiveFilters()) {
+                if (this.hasActiveFilters()) {
                     const text = `Your currently selected filters will be removed when you switch trees.`;
                     isConfirmed = confirm(text);
                     !isConfirmed
@@ -128,40 +134,40 @@ export class MapController {
                 return isConfirmed;
             },
         });
-        this.appliedKeywords.setHandlerfn({
-            onActiveTreeKeywordRemove: async (opts: {
+        this.appliedTextFilters.setHandlerfn({
+            onActiveTreeKeywordRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleTreeKeywordFilterRemove(opts);
+                await this.handleTreeKeywordFilterRemove(args);
             },
-            onActiveFreeTextKeywordRemove: async (opts: {
+            onActiveFreeTextQueryRemove: async (args: {
                 id: string;
             }): Promise<void> => {
-                await this.handleFreeTextKeywordRemove(opts);
+                await this.handleFreeTextSearchQueryRemove(args);
             },
-            onActiveFilterRemoveAll: async () => {
-                await this.handleRemoveAllKeywordFilters();
+            onActiveTextFiltersRemoveAll: async () => {
+                await this.handleRemoveAllTextFilters();
             },
         });
         this.menuButtons.setHandlerfn({
             onEnableDrawing: () => {
-                this.enableDrawing();
+                this.handleEnableDrawing();
                 return;
             },
             onCompleteDrawing: async () => {
-                await this.completeDrawing();
+                await this.handleCompleteDrawing();
                 return !!this.searchFilters.boundingBox;
             },
             onRemoveDrawing: async () => {
-                await this.removeDrawing();
+                await this.handleRemoveDrawing();
             },
-            onSpatialFilter: (type: GeoFeatureResultSet) => {
+            onSpatialFilterSetting: (type: GeoFeatureResultSet) => {
                 switch (type) {
                     case INSIDE:
-                        this.insideFilter();
+                        this.handleinsideFilterActivation();
                         break;
                     case OVERLAPPING:
-                        this.overlapFilter();
+                        this.handleOverlappingFilterActivation();
                         break;
                 }
             },
@@ -170,7 +176,7 @@ export class MapController {
         this.addRedirectionWarning();
     }
     public async init(): Promise<void> {
-        ({ facets: this.facets } = await this.getJsonFromRequest());
+        ({ facets: this.facets } = await this.getResponse());
         await this.keywordTree.init(this.facets);
     }
 
@@ -181,14 +187,16 @@ export class MapController {
             data: this.results,
             meta: this.paginator,
             facets: this.facets,
-        } = await this.getJsonFromRequest());
+        } = await this.getResponse());
 
-        const keywords: KeywordFilters = this.getKeywordsAsRequestArgs();
+        const keywords: TextFilters = getTreeKeywordFiltersAsRequestArgs(
+            this.searchFilters.activeTextFilters,
+        );
 
         this.keywordTree.updateTrees(this.facets, keywords);
 
         this.mapView.drawResponse(this.results);
-        this.resultsSidebar.populate(this.results, {
+        this.searchResultsList.populate(this.results, {
             includeIcons: !!this.searchFilters.boundingBox,
         });
 
@@ -197,13 +205,13 @@ export class MapController {
 
         this.resultsMetadata.updateMetadata(this.paginator);
 
-        this.mapView.handleResultSetActivatedLayers(this.resultSetActiveTab);
-        this.resultsSidebar.handleResultSetActivationOfTab(
+        this.mapView.setSpatialFilterSettingLayers(this.resultSetActiveTab);
+        this.searchResultsList.filterBasedOnSpatialFilterSetting(
             this.resultSetActiveTab,
-        )();
+        );
     }
 
-    public async getJsonFromRequest(): Promise<{
+    public async getResponse(): Promise<{
         data: GeoFeatureDataPublications;
         meta: Paginator;
         facets: Facets;
@@ -214,9 +222,15 @@ export class MapController {
             boundingBox: boundingBox,
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
-            keywords: JSON.stringify(this.getKeywordsAsRequestArgs()),
+            keywords: JSON.stringify(
+                getTreeKeywordFiltersAsRequestArgs(
+                    this.searchFilters.activeTextFilters,
+                ),
+            ),
         });
-        this.getFreeTextFiltersAsArray().forEach((text) => {
+        getFreeTextSearchQueryList(
+            this.searchFilters.activeTextFilters,
+        ).forEach((text) => {
             params.append("freeText[]", text);
         });
         const route = "/api/geoJsonDataPublications?" + params;
@@ -238,33 +252,21 @@ export class MapController {
     }
 
     // Methods about interactions
-    public insideFilter() {
+    public handleinsideFilterActivation() {
         this.setResultSetActivatedTab(INSIDE);
     }
-    public overlapFilter() {
+    public handleOverlappingFilterActivation() {
         this.setResultSetActivatedTab(OVERLAPPING);
     }
 
-    public enableDrawing() {
+    public handleEnableDrawing() {
         this.searchFilters.boundingBox = "";
         this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
 
-    private setResultSetActivatedTab(
-        resultSetActivatedTab: GeoFeatureResultSet,
-    ) {
-        this.resultSetActiveTab = resultSetActivatedTab;
-        this.resultsSidebar.handleResultSetActivationOfTab(
-            resultSetActivatedTab,
-        )();
-        this.mapView.handleResultSetActivatedLayers(resultSetActivatedTab);
-    }
-
-    // Methods about handling filtering
-
-    public async completeDrawing() {
+    public async handleCompleteDrawing() {
         this.mapView.setDrawingEnable(false);
 
         this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
@@ -278,7 +280,7 @@ export class MapController {
         this.sidebarTabs.activateSidebarTab(RESULTS);
     }
 
-    public async removeDrawing() {
+    public async handleRemoveDrawing() {
         this.searchFilters.boundingBox = "";
 
         await this.resetAndRePopulateAfterUpdate();
@@ -286,7 +288,7 @@ export class MapController {
         this.mapView.setDrawingEnable(false);
     }
 
-    public handleFeatureHover = ({
+    public handleFeatureHoverOn = ({
         doi,
         resultSet,
         scroll,
@@ -301,10 +303,10 @@ export class MapController {
             resultSet: appliedResultSet,
             highlightOrReset: "highlight",
         });
-        this.resultsSidebar.highlight(doi, { scroll: scroll ?? false });
+        this.searchResultsList.highlight(doi, { scroll: scroll ?? false });
     };
 
-    public handleFeatureOut = ({
+    public handleFeatureHoverOut = ({
         doi,
         resultSet,
     }: {
@@ -318,8 +320,9 @@ export class MapController {
             resultSet: appliedResultSet,
             highlightOrReset: "reset",
         });
-        this.resultsSidebar.removeHighlight(doi);
+        this.searchResultsList.removeHighlight(doi);
     };
+
     private async handlePageChange(page: number) {
         this.searchFilters.page = page;
         await this.resetAndRePopulateAfterUpdate({
@@ -327,18 +330,20 @@ export class MapController {
         });
     }
 
-    public async handleSearchTextAdd({ value }: FreeTextAddInfo) {
-        const id = createIdForFreeText();
-        this.searchFilters.activeKeywordFilters.set(id, {
+    public async handleFreeTextSearchQueryAdd({
+        value,
+    }: FreeTextSearchQueryInfo) {
+        const id = createIdForFreeTextSearchQuery();
+        this.searchFilters.activeTextFilters.set(id, {
             value,
             id,
-            type: FREE_TEXT_SEARCH_KEYWORD,
+            type: FREE_TEXT_SEARCH_QUERY,
         });
 
-        this.appliedKeywords.addFilter({
+        this.appliedTextFilters.addTextFilter({
             id,
             value,
-            type: FREE_TEXT_SEARCH_KEYWORD,
+            type: FREE_TEXT_SEARCH_QUERY,
         });
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
@@ -346,17 +351,18 @@ export class MapController {
         this.sidebarTabs.activateSidebarTab(RESULTS);
     }
 
-    private async handleFreeTextKeywordRemove({ id }: { id: string }) {
-        this.searchFilters.activeKeywordFilters.delete(id);
-        this.appliedKeywords.removeFreeTextFilter({ id });
+    private async handleFreeTextSearchQueryRemove({ id }: { id: string }) {
+        this.searchFilters.activeTextFilters.delete(id);
+        this.appliedTextFilters.removeAppliedTextFilter({ id });
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
     }
-    private async handleRemoveAllKeywordFilters() {
-        this.searchFilters.activeKeywordFilters = new Map();
 
-        this.appliedKeywords.removeAllActiveKeywordFilters();
+    private async handleRemoveAllTextFilters() {
+        this.searchFilters.activeTextFilters = new Map();
+
+        this.appliedTextFilters.removeAllActiveTextFilters();
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
@@ -366,9 +372,9 @@ export class MapController {
         name,
         value,
         displayName,
-    }: TreeKeywordAddInfo) {
+    }: TreeKeywordInfo) {
         const id = getIdForTreeKeyword({ value, name });
-        this.searchFilters.activeKeywordFilters.set(id, {
+        this.searchFilters.activeTextFilters.set(id, {
             value,
             name,
             id,
@@ -376,7 +382,7 @@ export class MapController {
             type: TREE_KEYWORD,
         });
 
-        this.appliedKeywords.addFilter({
+        this.appliedTextFilters.addTextFilter({
             id,
             name,
             value,
@@ -388,15 +394,11 @@ export class MapController {
         });
     }
 
-    private async handleTreeKeywordFilterRemove({
-        id,
-    }: {
+    private async handleTreeKeywordFilterRemove(args: {
         id: string;
     }): Promise<void> {
-        this.appliedKeywords.removeKeywordFilter({
-            id,
-        });
-        this.searchFilters.activeKeywordFilters.delete(id);
+        this.appliedTextFilters.removeAppliedTextFilter(args);
+        this.searchFilters.activeTextFilters.delete(args.id);
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
@@ -405,7 +407,7 @@ export class MapController {
     private addRedirectionWarning() {
         const listViewTab = getElementByIdOrThrow("list-view-tab");
         listViewTab.addEventListener("click", (e: Event) => {
-            if (this.areActiveFilters()) {
+            if (this.hasActiveFilters()) {
                 const text = `Switching to the list view will not transfer your applied filters in the map view. 
             \nDo you want to proceed?`;
                 if (!confirm(text)) {
@@ -417,26 +419,16 @@ export class MapController {
 
     // Other methods
 
-    private getFreeTextFiltersAsArray(): string[] {
-        const freeText = [];
-        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
-            if (metadata.type !== FREE_TEXT_SEARCH_KEYWORD) continue;
-            freeText.push(metadata.value);
-        }
-        return freeText;
+    private setResultSetActivatedTab(
+        resultSetActivatedTab: GeoFeatureResultSet,
+    ) {
+        this.resultSetActiveTab = resultSetActivatedTab;
+        this.searchResultsList.filterBasedOnSpatialFilterSetting(
+            resultSetActivatedTab,
+        );
+        this.mapView.setSpatialFilterSettingLayers(resultSetActivatedTab);
     }
 
-    private getKeywordsAsRequestArgs(): KeywordFilters {
-        const keywords: KeywordFilters = {};
-        for (const [_, metadata] of this.searchFilters.activeKeywordFilters) {
-            if (metadata.type !== TREE_KEYWORD) continue;
-            const values = keywords[metadata.name];
-            keywords[metadata.name] = values
-                ? [...values, metadata.value]
-                : [metadata.value];
-        }
-        return keywords;
-    }
     /**
      * Reset and populate after an update in filters.
      * In some cases, we want to not reset drawn bounding box
@@ -448,9 +440,10 @@ export class MapController {
         this.resetComponentsAndData(opts);
         await this.populateBasedOnActiveFilters();
     }
+
     private async removeAllFilters() {
         this.searchFilters.boundingBox = "";
-        this.searchFilters.activeKeywordFilters = new Map();
+        this.searchFilters.activeTextFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
     }
     /**
@@ -462,15 +455,15 @@ export class MapController {
             // we want to keep the bounding box drawn
             opts ? { except: "rectangle" } : undefined,
         );
-        this.resultsSidebar.resetList();
+        this.searchResultsList.resetList();
         this.resultsMetadata.removeMetadata();
-        if (this.searchFilters.activeKeywordFilters.size === 0) {
-            this.appliedKeywords.removeAllActiveKeywordFilters();
+        if (this.searchFilters.activeTextFilters.size === 0) {
+            this.appliedTextFilters.removeAllActiveTextFilters();
             if (!this.searchFilters.boundingBox) this.menuButtons.reset();
         }
         // If no filters are present,
         // we have to make sure that pagination elements get removed.
-        if (!this.areActiveFilters()) {
+        if (!this.hasActiveFilters()) {
             this.pagination.clear();
         }
         // When we have change in page, we don't want to reset the page,
@@ -485,20 +478,21 @@ export class MapController {
 
     private resetPage() {
         this.searchFilters.page = DEFAULT_SEARCH_FILTERS.page;
+        return;
     }
-    private areActiveFilters(): boolean {
+    private hasActiveFilters(): boolean {
         const filters = this.searchFilters;
         if (filters.boundingBox) return true;
-        if (filters.activeKeywordFilters.size !== 0) return true;
+        if (filters.activeTextFilters.size !== 0) return true;
         return false;
     }
 
     private async populateBasedOnActiveFilters() {
         this.showLoadingScreen({ show: true });
 
-        if (!this.areActiveFilters()) {
-            this.appliedKeywords.removeAllActiveKeywordFilters();
-            ({ facets: this.facets } = await this.getJsonFromRequest());
+        if (!this.hasActiveFilters()) {
+            this.appliedTextFilters.removeAllActiveTextFilters();
+            ({ facets: this.facets } = await this.getResponse());
             this.keywordTree.updateTrees(this.facets, {});
             this.sidebarTabs.activateSidebarTab(KEYWORDS);
         } else {
@@ -511,11 +505,35 @@ export class MapController {
     }
 }
 
-function createIdForFreeText() {
+const mapController = new MapController();
+await mapController.init();
+const searchTextField = new SearchTextField(mapController);
+
+function createIdForFreeTextSearchQuery() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
 }
 
-const mapController = new MapController();
-await mapController.init();
-const searchTextField = new SearchTextField(mapController);
+function getFreeTextSearchQueryList(
+    activeTextFilters: ActiveTextFilterMap,
+): string[] {
+    const freeText = [];
+    for (const [_, metadata] of activeTextFilters) {
+        if (metadata.type !== FREE_TEXT_SEARCH_QUERY) continue;
+        freeText.push(metadata.value);
+    }
+    return freeText;
+}
+function getTreeKeywordFiltersAsRequestArgs(
+    activeTextFilters: ActiveTextFilterMap,
+): TextFilters {
+    const keywords: TextFilters = {};
+    for (const [_, metadata] of activeTextFilters) {
+        if (metadata.type !== TREE_KEYWORD) continue;
+        const values = keywords[metadata.name];
+        keywords[metadata.name] = values
+            ? [...values, metadata.value]
+            : [metadata.value];
+    }
+    return keywords;
+}

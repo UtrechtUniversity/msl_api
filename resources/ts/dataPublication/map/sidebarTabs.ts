@@ -10,6 +10,9 @@ interface SidebarInfoPerTab {
     [RESULTS]: SidebarTabInfo;
     [KEYWORDS]: SidebarTabInfo;
 }
+/**
+ * This component listens to clicks on sidebar buttons for toggling between keyword tree and results.
+ */
 export class SidebarTabs {
     private sidebarInfoPerTab: SidebarInfoPerTab;
 
