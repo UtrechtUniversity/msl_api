@@ -33,6 +33,7 @@ import { PopupWithDirection } from "../../popupWithDirection";
 import { LAT_LONG_RANGE, RESULT_SET_CONFIG } from "./config";
 import type { Entries } from "../../types/entries";
 import type { BoundingBox } from "../../types/map/sharedBetweenComponents";
+import { cloneDeep } from "lodash";
 
 // If we dont assign L, typescript is complaining about using a UMD global in a module.
 const L = window.L;
@@ -442,15 +443,19 @@ export class MapView {
         });
     }
 
-    private drawingBoundsInMap():BoundingBox{
+    private drawingBoundsInMap(): BoundingBox {
         assertNotNull(
             this.drawingBounds,
             "Bounds should not have been undefined. This is a bug.",
         );
+
         const sw = this.drawingBounds.getSouthWest();
         const ne = this.drawingBounds.getNorthEast();
-        const boundingBox:BoundingBox = [sw.lng, sw.lat, ne.lng, ne.lat];
-
+        const boundingBox: BoundingBox = [sw.lng, sw.lat, ne.lng, ne.lat];
+        // We want to set the view and zoom based on the drawing box.
+        // But we want to make sure that the object doesn't change
+        // affecting our coordinates
+        this.map.fitBounds(cloneDeep(this.drawingBounds));
         return boundingBox;
     }
     private restrictLatLng(latlng: LatLng) {
