@@ -29,23 +29,24 @@ import {
     LAT_LONG_RANGE,
     RESULTS,
 } from "./config";
-import type { Facets, Paginator } from "../../types/map/components";
+import type {
+    BoundingBox,
+    Facets,
+    Paginator,
+} from "../../types/map/sharedBetweenComponents";
 import { SidebarTabs } from "./sidebarTabs";
 
-const BOUNDING_BOX_OF_THE_WORLD =
-    "[" +
-    [
-        LAT_LONG_RANGE.MIN.LONG,
-        LAT_LONG_RANGE.MIN.LAT,
-        LAT_LONG_RANGE.MAX.LONG,
-        LAT_LONG_RANGE.MAX.LAT,
-    ].toString() +
-    "]";
+const BOUNDING_BOX_OF_THE_WORLD: BoundingBox = [
+    LAT_LONG_RANGE.MIN.LONG,
+    LAT_LONG_RANGE.MIN.LAT,
+    LAT_LONG_RANGE.MAX.LONG,
+    LAT_LONG_RANGE.MAX.LAT,
+];
 
 const LOADING_SCREEN_ID = "loading-screen-overlay" as const;
 
 type SearchFilter = {
-    boundingBox: string;
+    boundingBox: BoundingBox | undefined;
     page: number;
     pageSize: 10;
     /**
@@ -56,7 +57,7 @@ type SearchFilter = {
 };
 
 const DEFAULT_SEARCH_FILTERS: SearchFilter = {
-    boundingBox: "",
+    boundingBox: undefined,
     page: 1,
     pageSize: 10,
     activeKeywordFilters: new Map(),
@@ -208,10 +209,10 @@ export class MapController {
         meta: Paginator;
         facets: Facets;
     }> {
-        const boundingBox =
+        const boundingBox: BoundingBox =
             this.searchFilters.boundingBox || BOUNDING_BOX_OF_THE_WORLD;
         const params = new URLSearchParams({
-            boundingBox: boundingBox,
+            boundingBox: "[" + boundingBox + "]",
             page: this.searchFilters.page.toString(),
             pageSize: this.searchFilters.pageSize.toString(),
             keywords: JSON.stringify(this.getKeywordsAsRequestArgs()),
@@ -246,7 +247,7 @@ export class MapController {
     }
 
     public enableDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
         this.mapView.removeExistingDrawnBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
@@ -267,7 +268,10 @@ export class MapController {
     public async completeDrawing() {
         this.mapView.setDrawingEnable(false);
 
-        this.searchFilters.boundingBox = this.mapView.drawBoundingBox();
+        this.searchFilters.boundingBox = getBoundingBoxWithDefaults(
+            this.mapView.drawBoundingBox(),
+        );
+
         if (!this.searchFilters.boundingBox) {
             await this.resetAndRePopulateAfterUpdate();
             return;
@@ -279,7 +283,7 @@ export class MapController {
     }
 
     public async removeDrawing() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
 
         await this.resetAndRePopulateAfterUpdate();
 
@@ -449,7 +453,7 @@ export class MapController {
         await this.populateBasedOnActiveFilters();
     }
     private async removeAllFilters() {
-        this.searchFilters.boundingBox = "";
+        this.searchFilters.boundingBox = undefined;
         this.searchFilters.activeKeywordFilters = new Map();
         await this.resetAndRePopulateAfterUpdate();
     }
@@ -514,6 +518,34 @@ export class MapController {
 function createIdForFreeText() {
     const id = "freeText" + "_" + crypto.randomUUID();
     return id;
+}
+// We want to make sure that if the user selects a line instead of a box,
+// that they get results for a small bounding box, instead of no results.
+function getBoundingBoxWithDefaults(
+    bbox: BoundingBox | undefined,
+): BoundingBox | undefined {
+    if (!bbox) return bbox;
+    const bboxWithDefaults: BoundingBox = [...bbox];
+    const minValue = 0.00001;
+    if (bbox[0] === bbox[2]) {
+        // if extending the highest longitude goes beyond the max longitude,
+        // then move the lowest longitude
+        if (bbox[2] + minValue > BOUNDING_BOX_OF_THE_WORLD[2]) {
+            bboxWithDefaults[0] = bbox[0] - minValue;
+        } else {
+            bboxWithDefaults[2] = bbox[2] + minValue;
+        }
+    }
+    if (bbox[1] === bbox[3]) {
+        // if extending the highest latitude goes beyond the max latitude,
+        // then move the lowest latitude
+        if (bbox[3] + minValue > BOUNDING_BOX_OF_THE_WORLD[3]) {
+            bboxWithDefaults[1] = bbox[1] - minValue;
+        } else {
+            bboxWithDefaults[3] = bbox[3] + minValue;
+        }
+    }
+    return bboxWithDefaults;
 }
 
 const mapController = new MapController();
