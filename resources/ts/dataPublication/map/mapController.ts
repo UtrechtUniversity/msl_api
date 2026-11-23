@@ -528,17 +528,21 @@ function getBoundingBoxWithDefaults(
     const bboxWithDefaults: BoundingBox = [...bbox];
     const minValue = 0.00001;
     if (bbox[0] === bbox[2]) {
-        if (bbox[2] <= BOUNDING_BOX_OF_THE_WORLD[2] - minValue) {
-            bboxWithDefaults[2] = bbox[2] + minValue;
-        } else {
+        // if extending the highest longitude goes beyond the max longitude,
+        // then move the lowest longitude
+        if (bbox[2] + minValue > BOUNDING_BOX_OF_THE_WORLD[2]) {
             bboxWithDefaults[0] = bbox[0] - minValue;
+        } else {
+            bboxWithDefaults[2] = bbox[2] + minValue;
         }
     }
     if (bbox[1] === bbox[3]) {
-        if (bbox[3] <= BOUNDING_BOX_OF_THE_WORLD[3] - minValue) {
-            bboxWithDefaults[3] = bbox[3] + minValue;
-        } else {
+        // if extending the highest latitude goes beyond the max latitude,
+        // then move the lowest latitude
+        if (bbox[3] + minValue > BOUNDING_BOX_OF_THE_WORLD[3]) {
             bboxWithDefaults[1] = bbox[1] - minValue;
+        } else {
+            bboxWithDefaults[3] = bbox[3] + minValue;
         }
     }
     return bboxWithDefaults;
