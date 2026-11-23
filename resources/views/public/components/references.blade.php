@@ -27,6 +27,7 @@ Input
             $dataPublicationList[] = $relatedIdValue;
             break;
     }
+    $dataPublicationList[] = $relatedIdType;
 
     // if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
     //     $relatedIdentifierValue = $relatedidentifier->msl_related_identifier;
