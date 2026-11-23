@@ -519,3 +519,5 @@ function createIdForFreeText() {
 const mapController = new MapController();
 await mapController.init();
 const searchTextField = new SearchTextField(mapController);
+
+//
