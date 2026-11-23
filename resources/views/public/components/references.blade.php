@@ -18,34 +18,24 @@ Input
 
     switch ($relatedIdType) {
         case 'DOI':
-            $dataPublicationList[] = str_starts_with($relatedIdValue, 'http')
+            $updatedRelatedId = str_starts_with($relatedIdValue, 'http')
                 ? $relatedIdValue
                 : 'https://doi.org/' . $relatedIdValue;
             break;
         case 'URL':
         default:
-            $dataPublicationList[] = $relatedIdValue;
+            $updatedRelatedId = $relatedIdValue;
             break;
     }
     $dataPublicationList[] = $relatedIdType;
-
-    // if ($relatedidentifier->msl_related_identifier_type == 'DOI') {
-    //     $relatedIdentifierValue = $relatedidentifier->msl_related_identifier;
-    //     $dataPublicationList[] = str_starts_with($relatedIdentifierValue, 'http')
-    //         ? $relatedIdentifierValue
-    //         : 'https://doi.org/' . $relatedIdentifierValue;
-    // } else {
-    //     if ($relatedidentifier->msl_related_identifier_type != '') {
-    //         $dataPublicationList[] = $relatedidentifier->msl_related_identifier_type;
-    //     }
-
-    //     if ($relatedidentifier->msl_related_identifier_relation_type != '') {
-    //         $dataPublicationList[] = $relatedidentifier->msl_related_identifier_relation_type;
-    //     }
-    // }
+    $dataPublicationList[] = $relatedIdType;
 
 @endphp
 @include('public.components.list-views.table-list', [
-    'entries' => $dataPublicationList,
-    'withKeys' => false,
+    'entries' => [
+        'Identifier' => $updatedRelatedId,
+        'Identifier Type' => $relatedIdType,
+        'Relation Type' => $relatedidentifier->msl_related_identifier_relation_type,
+    ],
+    'withKeys' => true,
 ])
