@@ -106,14 +106,6 @@ class ApiController extends BaseController
     }
 
     /**
-     * Geo Energy Test Beds API endpoint
-     */
-    public function geoenergy(Request $request)
-    {
-        return $this->dataPublicationResponse($request, EndpointContext::FIELD_SCALE);
-    }
-
-    /**
      * All subdomains API endpoint
      */
     public function all(Request $request)
