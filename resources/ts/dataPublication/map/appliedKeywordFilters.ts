@@ -43,13 +43,17 @@ export class AppliedKeywordFilters {
     }
 
     public setHandlerfn({
-        onActiveTreeKeywordRemove: onActiveTreeKeywordFilterRemove,
-        onActiveFreeTextQueryRemove: onActiveFreeTextSearchQueryRemove,
-        onActiveTextFiltersRemoveAll: onActiveTextFilterRemoveAll,
+        onActiveTreeKeywordFilterRemove,
+        onActiveFreeTextSearchQueryRemove,
+        onActiveTextFilterRemoveAll,
     }: {
-        onActiveTreeKeywordRemove: (opts: { id: string }) => Promise<void>;
-        onActiveFreeTextQueryRemove: (opts: { id: string }) => Promise<void>;
-        onActiveTextFiltersRemoveAll: () => Promise<void>;
+        onActiveTreeKeywordFilterRemove: (opts: {
+            id: string;
+        }) => Promise<void>;
+        onActiveFreeTextSearchQueryRemove: (opts: {
+            id: string;
+        }) => Promise<void>;
+        onActiveTextFilterRemoveAll: () => Promise<void>;
     }) {
         this.onActiveTreeKeywordFilterRemove = onActiveTreeKeywordFilterRemove;
         this.onActiveFreeTextSearchQueryRemove =
