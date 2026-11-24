@@ -100,7 +100,7 @@ export class SearchResultsList {
         $('[data-id="' + id + '"]').removeClass("highlight");
     }
 
-    private _createListItem(
+    private createListItem(
         dataPublication: DataPublication,
         { includeIcons }: { includeIcons: boolean },
     ): HTMLDivElement {
@@ -142,7 +142,7 @@ export class SearchResultsList {
     ): void {
         this.listDiv.innerHTML = "";
         for (const dataPublication of dataPublications.data_publications) {
-            const item = this._createListItem(dataPublication, {
+            const item = this.createListItem(dataPublication, {
                 includeIcons,
             });
             if (!dataPublication.isInclusive)

@@ -39,11 +39,11 @@ export class SidebarTabs {
             this.sidebarInfoPerTab,
         ) as Entries<SidebarInfoPerTab>) {
             tabInfo.tabElement.addEventListener("click", () => {
-                this.activateSidebarTab(tabName);
+                this.setSidebarTabActive(tabName);
             });
         }
     }
-    public activateSidebarTab(tabNameToActivate: SidebarTabName) {
+    public setSidebarTabActive(tabNameToActivate: SidebarTabName) {
         for (const [tabName, tabInfo] of Object.entries(
             this.sidebarInfoPerTab,
         ) as Entries<SidebarInfoPerTab>) {

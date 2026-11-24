@@ -14,10 +14,12 @@ import { CLOSE_ICON } from "./icons";
 
 const NO_FILTER_ELEMENT =
     `<h6 class="italic">- no filter applied -</h6>` as const;
-
+// todo applied instead of active
+//todo change the name
 export class AppliedKeywordFilters {
     private hasExistingAppliedTextFilters = false;
     private removeBin: HTMLElement;
+    //todo add text
     private activeFilterContainer: HTMLElement;
     private onActiveTreeKeywordFilterRemove: (opts: {
         id: string;
@@ -61,6 +63,16 @@ export class AppliedKeywordFilters {
         this.onActiveTextFilterRemoveAll = onActiveTextFilterRemoveAll;
     }
 
+    public addTextFilter(opts: ActiveTextFilterInfo): void {
+        const { displayNameForUI } = this.getDisplayNameForTextFilters(opts);
+
+        this.addAppliedTextFilterElement({
+            type: opts.type,
+            displayName: displayNameForUI,
+            id: opts.id,
+        });
+    }
+
     private addAppliedTextFilterElement({
         type,
         displayName,
@@ -97,19 +109,11 @@ export class AppliedKeywordFilters {
         return;
     }
 
-    public addTextFilter(opts: ActiveTextFilterInfo): void {
-        const { displayNameForUI } = this.getDisplayNameForTextFilters(opts);
-
-        this.addAppliedTextFilterElement({
-            type: opts.type,
-            displayName: displayNameForUI,
-            id: opts.id,
-        });
-    }
     public removeAllActiveTextFilters() {
         this.hasExistingAppliedTextFilters = false;
         this.resetAppliedTextFiltersInUI();
     }
+    // todo use directly code from method
     public removeAppliedTextFilter({ id }: { id: string }): void {
         this.removeAppliedTextFilterElement({
             id,
@@ -124,7 +128,7 @@ export class AppliedKeywordFilters {
 
         return { displayNameForUI: opts.displayName };
     }
-
+    // todo change name to resetAppliedTextFilterContainer
     private resetAppliedTextFiltersInUI() {
         this.removeBin.hidden = true;
         this.activeFilterContainer.innerHTML = NO_FILTER_ELEMENT;

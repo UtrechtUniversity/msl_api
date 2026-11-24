@@ -63,7 +63,7 @@ export class MenuButtons {
             text: "Remove spatial filter",
             disabled: true,
         });
-        this.addListenersInButtons();
+        this.attachButtonListeners();
 
         this.root = this.createMenu();
 
@@ -94,16 +94,16 @@ export class MenuButtons {
         L.DomEvent.disableScrollPropagation(element);
     }
     public reset() {
-        this.disableButtonForDrawing();
+        this.disableButtonsWhileDrawing();
     }
 
-    private addListenersInButtons() {
+    private attachButtonListeners() {
         this.overlappingFilterButton.addEventListener("click", () => {
-            this.makeActiveButton(OVERLAPPING);
+            this.makeButtonActive(OVERLAPPING);
         });
 
         this.insideFilterButton.addEventListener("click", () => {
-            this.makeActiveButton(INSIDE);
+            this.makeButtonActive(INSIDE);
         });
 
         // Add listeners to buttons
@@ -111,8 +111,8 @@ export class MenuButtons {
             this.drawingEnabled = !this.drawingEnabled;
             if (this.drawingEnabled) {
                 this.onEnableDrawing();
-                this.disableButtonForDrawing();
-                this.setDefaultActiveResultSetButton();
+                this.disableButtonsWhileDrawing();
+                this.setDefaultSpatialFilterSettingButton();
                 this.spatialDrawButton.innerText = "Stop spatial drawing";
             } else {
                 const isValidBoundingBox = await this.onCompleteDrawing();
@@ -123,7 +123,7 @@ export class MenuButtons {
 
         this.spatialRemoveButton.addEventListener("click", async () => {
             await this.onRemoveDrawing();
-            this.disableButtonForDrawing();
+            this.disableButtonsWhileDrawing();
         });
     }
     private createMenu(): HTMLElement {
@@ -227,12 +227,12 @@ export class MenuButtons {
         return wrapper;
     }
 
-    private setDefaultActiveResultSetButton() {
+    private setDefaultSpatialFilterSettingButton() {
         const activeResultSetTab = getDefaultResultSetTab();
-        this.makeActiveButton(activeResultSetTab);
+        this.makeButtonActive(activeResultSetTab);
     }
 
-    private disableButtonForDrawing(): void {
+    private disableButtonsWhileDrawing(): void {
         this.overlappingFilterButton.disabled = true;
         this.insideFilterButton.disabled = true;
         this.spatialRemoveButton.disabled = true;
@@ -243,7 +243,7 @@ export class MenuButtons {
         this.spatialRemoveButton.disabled = false;
     }
 
-    private makeActiveButton(buttonType: GeoFeatureResultSet): void {
+    private makeButtonActive(buttonType: GeoFeatureResultSet): void {
         if (buttonType === OVERLAPPING) {
             this.overlappingFilterButton.classList.add(ACTIVE);
             this.insideFilterButton.classList.remove(ACTIVE);

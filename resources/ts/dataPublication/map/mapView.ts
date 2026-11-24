@@ -120,7 +120,7 @@ export class MapView {
         this.onFeatureHoverOn = onFeatureHoverOn;
         this.onFeatureHoverOut = onFeatureHoverOut;
     }
-
+    // todo remove it if it is not async
     public init() {
         this.mouseEventHandling();
     }
@@ -158,7 +158,7 @@ export class MapView {
             );
         });
     }
-
+    //todo drawDataPublications
     public async drawResponse(geoList: GeoFeatureDataPublications) {
         for (const [_, resultSetInfo] of Object.entries(
             RESULT_SET_CONFIG,
@@ -167,7 +167,7 @@ export class MapView {
             this.addFeaturesInMarkers(geoList, {
                 resultSet: resultSetInfo.label,
             });
-            this.addClickListenerPerFeatureGroup({ resultSet });
+            this.attachClickListenerPerFeatureGroup({ resultSet });
         }
     }
 
@@ -192,7 +192,7 @@ export class MapView {
      * 3. use this gathered information to create an html list
      * 4. populate the pop up and add relevant interactions
      */
-    private addClickListenerPerFeatureGroup({
+    private attachClickListenerPerFeatureGroup({
         resultSet,
     }: {
         resultSet: GeoFeatureResultSet;
@@ -300,12 +300,12 @@ export class MapView {
 
     public removeAllLayers(opts?: { except: "rectangle" }) {
         if (opts?.except !== "rectangle") {
-            this.removeExistingDrawnBoundingBox();
+            this.removeBoundingBox();
         }
         this.map.closePopup();
-        this.removeLayers();
+        this.removeMarkerLayers();
     }
-    public removeExistingDrawnBoundingBox(): void {
+    public removeBoundingBox(): void {
         if (this.rectangle) {
             this.map.removeLayer(this.rectangle);
             this.rectangle = null;
@@ -313,14 +313,14 @@ export class MapView {
         }
         return;
     }
-    public setSpatialFilterSettingLayers(
-        activatedResultSetTab: GeoFeatureResultSet,
-    ) {
+
+    public setSpatialFilterSettingLayers(resultSet: GeoFeatureResultSet) {
         const deactivateResultSetTab =
-            activatedResultSetTab === OVERLAPPING ? INSIDE : OVERLAPPING;
-        this.map.addLayer(this.markers[activatedResultSetTab]);
+            resultSet === OVERLAPPING ? INSIDE : OVERLAPPING;
+        this.map.addLayer(this.markers[resultSet]);
         this.map.removeLayer(this.markers[deactivateResultSetTab]);
     }
+
     public drawBoundingBox(): string {
         if (!this.drawingBounds) return "";
         return this.drawingBoundsInMap();
@@ -356,7 +356,7 @@ export class MapView {
                 this.onFeatureHoverOut({ doi, resultSet });
             });
         };
-
+    // todo attachMouseEventListeners
     private mouseEventHandling() {
         let startPoint: LatLng | undefined = undefined;
         let drawing: boolean = false;
@@ -377,7 +377,7 @@ export class MapView {
             // Making sure that
             // previous rectangle information has been reset
             if (this.rectangle) {
-                this.removeExistingDrawnBoundingBox();
+                this.removeBoundingBox();
             }
 
             drawing = true;
@@ -442,7 +442,7 @@ export class MapView {
             document.addEventListener("mouseup", onMouseUp);
         });
     }
-
+    // todo getBoundingBoxAsArray
     private drawingBoundsInMap() {
         assertNotNull(
             this.drawingBounds,
@@ -456,6 +456,7 @@ export class MapView {
 
         return boundingBox;
     }
+
     private restrictLatLng(latlng: LatLng) {
         const lat = Math.max(
             this.maxBounds.getSouth(),
@@ -477,10 +478,12 @@ export class MapView {
         }).addTo(this.map);
         this.resetMapView();
     }
+
     private resetMapView(): void {
         this.map.setView([51.505, -0.09], 4);
     }
-    private removeLayers(): void {
+
+    private removeMarkerLayers(): void {
         Object.values(this.markers).forEach((layer) => {
             this.map.removeLayer(layer);
         });
@@ -495,6 +498,7 @@ export class MapView {
             () => ({}),
         );
     }
+
     private setClickStopperPane({ enable }: { enable: boolean }): void {
         const mapPane = this.map.getPane("mapPane");
         assertNotUndefined(mapPane, `Map pane is not defined. This is a bug.`);
@@ -512,7 +516,7 @@ function assertIsPath(layer: Layer): asserts layer is Path {
             `Geofeature should be instance of a path, but it is not. This is a bug.`,
         );
 }
-// Helper
+
 /**
  * We are getting information of the datapublication
  * if point of click is inside the corresponding layer.
@@ -594,6 +598,7 @@ function pxToMeterRadius({
     return map.distance(map.unproject(point), map.getCenter());
 }
 
+// todo do we have this in config?
 function getGeoFeatureResultSetMappingObj<T>(
     factory: () => T,
 ): GeoFeatureResultSetMapping<T> {

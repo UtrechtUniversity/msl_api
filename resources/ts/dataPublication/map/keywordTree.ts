@@ -125,7 +125,7 @@ export class KeywordTree {
         $("#hide_empty_terms");
     private suppressChangeEvents: boolean = false;
     private searchFilters: JQuery<HTMLInputElement> = $("#search-filters");
-
+    //todo change the naming
     private onKeywordFilterAdd: (
         filter: TreeKeywordInfo,
     ) => Promise<void> | void = throwWhenCallBackNotInitialized;
@@ -134,6 +134,7 @@ export class KeywordTree {
     }) => Promise<void> | void = throwWhenCallBackNotInitialized;
     private onTreeToggle: (e: JQuery.ClickEvent) => Promise<boolean> | void =
         throwWhenCallBackNotInitialized;
+
     public setHandlerfn({
         onTreeKeywordFilterAdd: onKeywordFilterAdd,
         onTreeKeywordFilterRemove: onKeywordFilterRemove,
@@ -189,7 +190,7 @@ export class KeywordTree {
                     ? self.interpretedTree.jstree("search", searchString)
                     : self.originalTree.jstree("search", searchString);
             });
-
+            // todo remove another
             self.attachToggleToAnotherTreeListener(INTERPRETED);
             self.attachToggleToAnotherTreeListener(ORIGINAL);
 
@@ -236,7 +237,7 @@ export class KeywordTree {
             );
         });
     }
-
+    // todo think about renaming
     private async handleFilterChange(): Promise<
         (e: JQuery.Event, data: JsTreeCheckEventData) => void
     > {
@@ -555,6 +556,10 @@ export class KeywordTree {
         this.interpretedTree.show();
         this.originalTree.hide();
     }
+    // todo think about renaming and remove after selection
+    // todo if we could use another function for this, let's do it and have a specific argument
+    //todo add a comment
+
     private clearSearchFiltersAfterSelection(tree: JSTree) {
         // we have to make sure that opened nodes remain open,
         // after clear_search closes all nodes
@@ -629,12 +634,9 @@ function createSubNode({
     };
 }
 
-function throwForReadingJson(response: Response, name: string): void {
-    if (!response.ok) throw new Error(`Could not read ${name} json file .`);
-}
 async function getJson(name: "interpreted" | "original") {
     const jsonResponse = await fetch(`/${name}.json`);
-    throwForReadingJson(jsonResponse, name);
+    if (!jsonResponse.ok) throw new Error(`Could not read ${name} json file .`);
     return jsonResponse.json();
 }
 

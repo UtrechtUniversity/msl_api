@@ -1,6 +1,7 @@
 import { getElementByIdOrThrow } from "../../assertions";
 import type { MapController } from "./mapController";
 
+//todo change the name
 export class SearchTextField {
     mapController: MapController;
     constructor(mapController: MapController) {

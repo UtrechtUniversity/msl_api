@@ -135,17 +135,17 @@ export class MapController {
             },
         });
         this.appliedTextFilters.setHandlerfn({
-            onActiveTreeKeywordRemove: async (args: {
+            onActiveTreeKeywordFilterRemove: async (args: {
                 id: string;
             }): Promise<void> => {
                 await this.handleTreeKeywordFilterRemove(args);
             },
-            onActiveFreeTextQueryRemove: async (args: {
+            onActiveFreeTextSearchQueryRemove: async (args: {
                 id: string;
             }): Promise<void> => {
                 await this.handleFreeTextSearchQueryRemove(args);
             },
-            onActiveTextFiltersRemoveAll: async () => {
+            onActiveTextFilterRemoveAll: async () => {
                 await this.handleRemoveAllTextFilters();
             },
         });
@@ -261,7 +261,7 @@ export class MapController {
 
     public handleEnableDrawing() {
         this.searchFilters.boundingBox = "";
-        this.mapView.removeExistingDrawnBoundingBox();
+        this.mapView.removeBoundingBox();
         // Start spatial filtering draw
         this.mapView.setDrawingEnable(true);
     }
@@ -277,7 +277,7 @@ export class MapController {
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
-        this.sidebarTabs.activateSidebarTab(RESULTS);
+        this.sidebarTabs.setSidebarTabActive(RESULTS);
     }
 
     public async handleRemoveDrawing() {
@@ -348,7 +348,7 @@ export class MapController {
         await this.resetAndRePopulateAfterUpdate({
             except: "boundingBox",
         });
-        this.sidebarTabs.activateSidebarTab(RESULTS);
+        this.sidebarTabs.setSidebarTabActive(RESULTS);
     }
 
     private async handleFreeTextSearchQueryRemove({ id }: { id: string }) {
@@ -494,7 +494,7 @@ export class MapController {
             this.appliedTextFilters.removeAllActiveTextFilters();
             ({ facets: this.facets } = await this.getResponse());
             this.keywordTree.updateTrees(this.facets, {});
-            this.sidebarTabs.activateSidebarTab(KEYWORDS);
+            this.sidebarTabs.setSidebarTabActive(KEYWORDS);
         } else {
             await this.populateWithResults();
         }
