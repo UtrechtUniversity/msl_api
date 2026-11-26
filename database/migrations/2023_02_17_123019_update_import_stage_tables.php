@@ -28,13 +28,15 @@ class UpdateImportStageTables extends Migration
         }
 
         // Update newly created columns to contain correct references to imports
-        DB::statement('UPDATE source_datasets AS U1, source_dataset_identifiers AS U2 
-            SET U1.import_id = U2.import_id
-            WHERE U2.id = U1.source_dataset_identifier_id;');
+        DB::statement('UPDATE source_datasets
+            SET import_id = (SELECT U2.import_id FROM source_dataset_identifiers AS U2
+                WHERE U2.id = source_datasets.source_dataset_identifier_id)
+            WHERE source_dataset_identifier_id IN (SELECT id FROM source_dataset_identifiers);');
 
-        DB::statement('UPDATE dataset_creates AS U1, source_datasets AS U2 
-            SET U1.import_id = U2.import_id
-            WHERE U2.id = U1.source_dataset_id;');
+        DB::statement('UPDATE dataset_creates
+            SET import_id = (SELECT U2.import_id FROM source_datasets AS U2
+                WHERE U2.id = dataset_creates.source_dataset_id)
+            WHERE source_dataset_id IN (SELECT id FROM source_datasets);');
 
     }
 
